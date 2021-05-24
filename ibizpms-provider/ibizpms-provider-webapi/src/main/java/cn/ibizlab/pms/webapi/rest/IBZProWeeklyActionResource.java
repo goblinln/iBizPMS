@@ -186,5 +186,133 @@ public class IBZProWeeklyActionResource {
         ibzproweeklyactiondto = ibzproweeklyactionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyactiondto);
     }
+    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'CREATE')")
+    @ApiOperation(value = "根据周报建立周报日志", tags = {"周报日志" },  notes = "根据周报建立周报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/ibzproweeklyactions")
+    public ResponseEntity<IBZProWeeklyActionDTO> createByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody IBZProWeeklyActionDTO ibzproweeklyactiondto) {
+        IBZProWeeklyAction domain = ibzproweeklyactionMapping.toDomain(ibzproweeklyactiondto);
+        domain.setObjectid(ibzweekly_id);
+		ibzproweeklyactionService.create(domain);
+        IBZProWeeklyActionDTO dto = ibzproweeklyactionMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'CREATE')")
+    @ApiOperation(value = "根据周报批量建立周报日志", tags = {"周报日志" },  notes = "根据周报批量建立周报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/ibzproweeklyactions/batch")
+    public ResponseEntity<Boolean> createBatchByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody List<IBZProWeeklyActionDTO> ibzproweeklyactiondtos) {
+        List<IBZProWeeklyAction> domainlist=ibzproweeklyactionMapping.toDomain(ibzproweeklyactiondtos);
+        for(IBZProWeeklyAction domain:domainlist){
+            domain.setObjectid(ibzweekly_id);
+        }
+        ibzproweeklyactionService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'UPDATE')")
+    @ApiOperation(value = "根据周报更新周报日志", tags = {"周报日志" },  notes = "根据周报更新周报日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibzweeklies/{ibzweekly_id}/ibzproweeklyactions/{ibzproweeklyaction_id}")
+    public ResponseEntity<IBZProWeeklyActionDTO> updateByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @PathVariable("ibzproweeklyaction_id") Long ibzproweeklyaction_id, @RequestBody IBZProWeeklyActionDTO ibzproweeklyactiondto) {
+        IBZProWeeklyAction domain = ibzproweeklyactionMapping.toDomain(ibzproweeklyactiondto);
+        domain.setObjectid(ibzweekly_id);
+        domain.setId(ibzproweeklyaction_id);
+		ibzproweeklyactionService.update(domain);
+        IBZProWeeklyActionDTO dto = ibzproweeklyactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'UPDATE')")
+    @ApiOperation(value = "根据周报批量更新周报日志", tags = {"周报日志" },  notes = "根据周报批量更新周报日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibzweeklies/{ibzweekly_id}/ibzproweeklyactions/batch")
+    public ResponseEntity<Boolean> updateBatchByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody List<IBZProWeeklyActionDTO> ibzproweeklyactiondtos) {
+        List<IBZProWeeklyAction> domainlist=ibzproweeklyactionMapping.toDomain(ibzproweeklyactiondtos);
+        for(IBZProWeeklyAction domain:domainlist){
+            domain.setObjectid(ibzweekly_id);
+        }
+        ibzproweeklyactionService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'DELETE')")
+    @ApiOperation(value = "根据周报删除周报日志", tags = {"周报日志" },  notes = "根据周报删除周报日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzweeklies/{ibzweekly_id}/ibzproweeklyactions/{ibzproweeklyaction_id}")
+    public ResponseEntity<Boolean> removeByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @PathVariable("ibzproweeklyaction_id") Long ibzproweeklyaction_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyactionService.remove(ibzproweeklyaction_id));
+    }
+
+    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'DELETE')")
+    @ApiOperation(value = "根据周报批量删除周报日志", tags = {"周报日志" },  notes = "根据周报批量删除周报日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzweeklies/{ibzweekly_id}/ibzproweeklyactions/batch")
+    public ResponseEntity<Boolean> removeBatchByIbzWeekly(@RequestBody List<Long> ids) {
+        ibzproweeklyactionService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
+    @ApiOperation(value = "根据周报获取周报日志", tags = {"周报日志" },  notes = "根据周报获取周报日志")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzweeklies/{ibzweekly_id}/ibzproweeklyactions/{ibzproweeklyaction_id}")
+    public ResponseEntity<IBZProWeeklyActionDTO> getByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @PathVariable("ibzproweeklyaction_id") Long ibzproweeklyaction_id) {
+        IBZProWeeklyAction domain = ibzproweeklyactionService.get(ibzproweeklyaction_id);
+        IBZProWeeklyActionDTO dto = ibzproweeklyactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据周报获取周报日志草稿", tags = {"周报日志" },  notes = "根据周报获取周报日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibzweeklies/{ibzweekly_id}/ibzproweeklyactions/getdraft")
+    public ResponseEntity<IBZProWeeklyActionDTO> getDraftByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, IBZProWeeklyActionDTO dto) {
+        IBZProWeeklyAction domain = ibzproweeklyactionMapping.toDomain(dto);
+        domain.setObjectid(ibzweekly_id);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyactionMapping.toDto(ibzproweeklyactionService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据周报检查周报日志", tags = {"周报日志" },  notes = "根据周报检查周报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/ibzproweeklyactions/checkkey")
+    public ResponseEntity<Boolean> checkKeyByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody IBZProWeeklyActionDTO ibzproweeklyactiondto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyactionService.checkKey(ibzproweeklyactionMapping.toDomain(ibzproweeklyactiondto)));
+    }
+
+    @ApiOperation(value = "根据周报保存周报日志", tags = {"周报日志" },  notes = "根据周报保存周报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/ibzproweeklyactions/save")
+    public ResponseEntity<IBZProWeeklyActionDTO> saveByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody IBZProWeeklyActionDTO ibzproweeklyactiondto) {
+        IBZProWeeklyAction domain = ibzproweeklyactionMapping.toDomain(ibzproweeklyactiondto);
+        domain.setObjectid(ibzweekly_id);
+        ibzproweeklyactionService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyactionMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据周报批量保存周报日志", tags = {"周报日志" },  notes = "根据周报批量保存周报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/ibzproweeklyactions/savebatch")
+    public ResponseEntity<Boolean> saveBatchByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody List<IBZProWeeklyActionDTO> ibzproweeklyactiondtos) {
+        List<IBZProWeeklyAction> domainlist=ibzproweeklyactionMapping.toDomain(ibzproweeklyactiondtos);
+        for(IBZProWeeklyAction domain:domainlist){
+             domain.setObjectid(ibzweekly_id);
+        }
+        ibzproweeklyactionService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
+	@ApiOperation(value = "根据周报获取数据集", tags = {"周报日志" } ,notes = "根据周报获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/{ibzweekly_id}/ibzproweeklyactions/fetchdefault")
+	public ResponseEntity<List<IBZProWeeklyActionDTO>> fetchIBZProWeeklyActionDefaultByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id,@RequestBody IBZProWeeklyActionSearchContext context) {
+        context.setN_objectid_eq(ibzweekly_id);
+        Page<IBZProWeeklyAction> domains = ibzproweeklyactionService.searchDefault(context) ;
+        List<IBZProWeeklyActionDTO> list = ibzproweeklyactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
+	@ApiOperation(value = "根据周报查询数据集", tags = {"周报日志" } ,notes = "根据周报查询数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/{ibzweekly_id}/ibzproweeklyactions/searchdefault")
+	public ResponseEntity<Page<IBZProWeeklyActionDTO>> searchIBZProWeeklyActionDefaultByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody IBZProWeeklyActionSearchContext context) {
+        context.setN_objectid_eq(ibzweekly_id);
+        Page<IBZProWeeklyAction> domains = ibzproweeklyactionService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzproweeklyactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
 }
 

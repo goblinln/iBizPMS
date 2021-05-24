@@ -29973,6 +29973,39 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'products/:product?/stories/:story?/ibzstoryactions/:ibzstoryaction?/views/gridview',
+                    meta: {
+                        caption: 'entities.ibzstoryaction.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'ibzstoryactions', parameterName: 'ibzstoryaction' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'ibzstoryaction',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'stories/:story?/ibzstoryactions/:ibzstoryaction?/views/gridview',
+                    meta: {
+                        caption: 'entities.ibzstoryaction.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'ibzstoryactions', parameterName: 'ibzstoryaction' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'ibzstoryaction',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'ibzstoryactions/:ibzstoryaction?/views/gridview',
                     meta: {
                         caption: 'entities.ibzstoryaction.views.gridview.caption',
@@ -29986,6 +30019,39 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/ibzstoryactions/:ibzstoryaction?/views/editview',
+                    meta: {
+                        caption: 'entities.ibzstoryaction.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'ibzstoryactions', parameterName: 'ibzstoryaction' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'ibzstoryaction',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'stories/:story?/ibzstoryactions/:ibzstoryaction?/views/editview',
+                    meta: {
+                        caption: 'entities.ibzstoryaction.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'ibzstoryactions', parameterName: 'ibzstoryaction' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'ibzstoryaction',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'ibzstoryactions/:ibzstoryaction?/views/editview',

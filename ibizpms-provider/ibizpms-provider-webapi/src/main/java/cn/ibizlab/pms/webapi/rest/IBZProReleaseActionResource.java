@@ -208,5 +208,307 @@ public class IBZProReleaseActionResource {
         ibzproreleaseactiondto = ibzproreleaseactionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactiondto);
     }
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'CREATE')")
+    @ApiOperation(value = "根据发布建立发布日志", tags = {"发布日志" },  notes = "根据发布建立发布日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/releases/{release_id}/ibzproreleaseactions")
+    public ResponseEntity<IBZProReleaseActionDTO> createByRelease(@PathVariable("release_id") Long release_id, @RequestBody IBZProReleaseActionDTO ibzproreleaseactiondto) {
+        IBZProReleaseAction domain = ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondto);
+        domain.setObjectid(release_id);
+		ibzproreleaseactionService.create(domain);
+        IBZProReleaseActionDTO dto = ibzproreleaseactionMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'CREATE')")
+    @ApiOperation(value = "根据发布批量建立发布日志", tags = {"发布日志" },  notes = "根据发布批量建立发布日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/releases/{release_id}/ibzproreleaseactions/batch")
+    public ResponseEntity<Boolean> createBatchByRelease(@PathVariable("release_id") Long release_id, @RequestBody List<IBZProReleaseActionDTO> ibzproreleaseactiondtos) {
+        List<IBZProReleaseAction> domainlist=ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondtos);
+        for(IBZProReleaseAction domain:domainlist){
+            domain.setObjectid(release_id);
+        }
+        ibzproreleaseactionService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'UPDATE')")
+    @ApiOperation(value = "根据发布更新发布日志", tags = {"发布日志" },  notes = "根据发布更新发布日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/releases/{release_id}/ibzproreleaseactions/{ibzproreleaseaction_id}")
+    public ResponseEntity<IBZProReleaseActionDTO> updateByRelease(@PathVariable("release_id") Long release_id, @PathVariable("ibzproreleaseaction_id") Long ibzproreleaseaction_id, @RequestBody IBZProReleaseActionDTO ibzproreleaseactiondto) {
+        IBZProReleaseAction domain = ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondto);
+        domain.setObjectid(release_id);
+        domain.setId(ibzproreleaseaction_id);
+		ibzproreleaseactionService.update(domain);
+        IBZProReleaseActionDTO dto = ibzproreleaseactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'UPDATE')")
+    @ApiOperation(value = "根据发布批量更新发布日志", tags = {"发布日志" },  notes = "根据发布批量更新发布日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/releases/{release_id}/ibzproreleaseactions/batch")
+    public ResponseEntity<Boolean> updateBatchByRelease(@PathVariable("release_id") Long release_id, @RequestBody List<IBZProReleaseActionDTO> ibzproreleaseactiondtos) {
+        List<IBZProReleaseAction> domainlist=ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondtos);
+        for(IBZProReleaseAction domain:domainlist){
+            domain.setObjectid(release_id);
+        }
+        ibzproreleaseactionService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'DELETE')")
+    @ApiOperation(value = "根据发布删除发布日志", tags = {"发布日志" },  notes = "根据发布删除发布日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/releases/{release_id}/ibzproreleaseactions/{ibzproreleaseaction_id}")
+    public ResponseEntity<Boolean> removeByRelease(@PathVariable("release_id") Long release_id, @PathVariable("ibzproreleaseaction_id") Long ibzproreleaseaction_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactionService.remove(ibzproreleaseaction_id));
+    }
+
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'DELETE')")
+    @ApiOperation(value = "根据发布批量删除发布日志", tags = {"发布日志" },  notes = "根据发布批量删除发布日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/releases/{release_id}/ibzproreleaseactions/batch")
+    public ResponseEntity<Boolean> removeBatchByRelease(@RequestBody List<Long> ids) {
+        ibzproreleaseactionService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
+    @ApiOperation(value = "根据发布获取发布日志", tags = {"发布日志" },  notes = "根据发布获取发布日志")
+	@RequestMapping(method = RequestMethod.GET, value = "/releases/{release_id}/ibzproreleaseactions/{ibzproreleaseaction_id}")
+    public ResponseEntity<IBZProReleaseActionDTO> getByRelease(@PathVariable("release_id") Long release_id, @PathVariable("ibzproreleaseaction_id") Long ibzproreleaseaction_id) {
+        IBZProReleaseAction domain = ibzproreleaseactionService.get(ibzproreleaseaction_id);
+        IBZProReleaseActionDTO dto = ibzproreleaseactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据发布获取发布日志草稿", tags = {"发布日志" },  notes = "根据发布获取发布日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/releases/{release_id}/ibzproreleaseactions/getdraft")
+    public ResponseEntity<IBZProReleaseActionDTO> getDraftByRelease(@PathVariable("release_id") Long release_id, IBZProReleaseActionDTO dto) {
+        IBZProReleaseAction domain = ibzproreleaseactionMapping.toDomain(dto);
+        domain.setObjectid(release_id);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactionMapping.toDto(ibzproreleaseactionService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据发布检查发布日志", tags = {"发布日志" },  notes = "根据发布检查发布日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/releases/{release_id}/ibzproreleaseactions/checkkey")
+    public ResponseEntity<Boolean> checkKeyByRelease(@PathVariable("release_id") Long release_id, @RequestBody IBZProReleaseActionDTO ibzproreleaseactiondto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactionService.checkKey(ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondto)));
+    }
+
+    @ApiOperation(value = "根据发布保存发布日志", tags = {"发布日志" },  notes = "根据发布保存发布日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/releases/{release_id}/ibzproreleaseactions/save")
+    public ResponseEntity<IBZProReleaseActionDTO> saveByRelease(@PathVariable("release_id") Long release_id, @RequestBody IBZProReleaseActionDTO ibzproreleaseactiondto) {
+        IBZProReleaseAction domain = ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondto);
+        domain.setObjectid(release_id);
+        ibzproreleaseactionService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactionMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据发布批量保存发布日志", tags = {"发布日志" },  notes = "根据发布批量保存发布日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/releases/{release_id}/ibzproreleaseactions/savebatch")
+    public ResponseEntity<Boolean> saveBatchByRelease(@PathVariable("release_id") Long release_id, @RequestBody List<IBZProReleaseActionDTO> ibzproreleaseactiondtos) {
+        List<IBZProReleaseAction> domainlist=ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondtos);
+        for(IBZProReleaseAction domain:domainlist){
+             domain.setObjectid(release_id);
+        }
+        ibzproreleaseactionService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
+	@ApiOperation(value = "根据发布获取数据集", tags = {"发布日志" } ,notes = "根据发布获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/releases/{release_id}/ibzproreleaseactions/fetchdefault")
+	public ResponseEntity<List<IBZProReleaseActionDTO>> fetchIBZProReleaseActionDefaultByRelease(@PathVariable("release_id") Long release_id,@RequestBody IBZProReleaseActionSearchContext context) {
+        context.setN_objectid_eq(release_id);
+        Page<IBZProReleaseAction> domains = ibzproreleaseactionService.searchDefault(context) ;
+        List<IBZProReleaseActionDTO> list = ibzproreleaseactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
+	@ApiOperation(value = "根据发布查询数据集", tags = {"发布日志" } ,notes = "根据发布查询数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/releases/{release_id}/ibzproreleaseactions/searchdefault")
+	public ResponseEntity<Page<IBZProReleaseActionDTO>> searchIBZProReleaseActionDefaultByRelease(@PathVariable("release_id") Long release_id, @RequestBody IBZProReleaseActionSearchContext context) {
+        context.setN_objectid_eq(release_id);
+        Page<IBZProReleaseAction> domains = ibzproreleaseactionService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzproreleaseactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
+	@ApiOperation(value = "根据发布获取动态(根据类型过滤)", tags = {"发布日志" } ,notes = "根据发布获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/releases/{release_id}/ibzproreleaseactions/fetchtype")
+	public ResponseEntity<List<IBZProReleaseActionDTO>> fetchIBZProReleaseActionTypeByRelease(@PathVariable("release_id") Long release_id,@RequestBody IBZProReleaseActionSearchContext context) {
+        context.setN_objectid_eq(release_id);
+        Page<IBZProReleaseAction> domains = ibzproreleaseactionService.searchType(context) ;
+        List<IBZProReleaseActionDTO> list = ibzproreleaseactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
+	@ApiOperation(value = "根据发布查询动态(根据类型过滤)", tags = {"发布日志" } ,notes = "根据发布查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/releases/{release_id}/ibzproreleaseactions/searchtype")
+	public ResponseEntity<Page<IBZProReleaseActionDTO>> searchIBZProReleaseActionTypeByRelease(@PathVariable("release_id") Long release_id, @RequestBody IBZProReleaseActionSearchContext context) {
+        context.setN_objectid_eq(release_id);
+        Page<IBZProReleaseAction> domains = ibzproreleaseactionService.searchType(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzproreleaseactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品发布建立发布日志", tags = {"发布日志" },  notes = "根据产品发布建立发布日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/{release_id}/ibzproreleaseactions")
+    public ResponseEntity<IBZProReleaseActionDTO> createByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody IBZProReleaseActionDTO ibzproreleaseactiondto) {
+        IBZProReleaseAction domain = ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondto);
+        domain.setObjectid(release_id);
+		ibzproreleaseactionService.create(domain);
+        IBZProReleaseActionDTO dto = ibzproreleaseactionMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品发布批量建立发布日志", tags = {"发布日志" },  notes = "根据产品发布批量建立发布日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/{release_id}/ibzproreleaseactions/batch")
+    public ResponseEntity<Boolean> createBatchByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody List<IBZProReleaseActionDTO> ibzproreleaseactiondtos) {
+        List<IBZProReleaseAction> domainlist=ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondtos);
+        for(IBZProReleaseAction domain:domainlist){
+            domain.setObjectid(release_id);
+        }
+        ibzproreleaseactionService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @ApiOperation(value = "根据产品发布更新发布日志", tags = {"发布日志" },  notes = "根据产品发布更新发布日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/releases/{release_id}/ibzproreleaseactions/{ibzproreleaseaction_id}")
+    public ResponseEntity<IBZProReleaseActionDTO> updateByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @PathVariable("ibzproreleaseaction_id") Long ibzproreleaseaction_id, @RequestBody IBZProReleaseActionDTO ibzproreleaseactiondto) {
+        IBZProReleaseAction domain = ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondto);
+        domain.setObjectid(release_id);
+        domain.setId(ibzproreleaseaction_id);
+		ibzproreleaseactionService.update(domain);
+        IBZProReleaseActionDTO dto = ibzproreleaseactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @ApiOperation(value = "根据产品发布批量更新发布日志", tags = {"发布日志" },  notes = "根据产品发布批量更新发布日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/releases/{release_id}/ibzproreleaseactions/batch")
+    public ResponseEntity<Boolean> updateBatchByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody List<IBZProReleaseActionDTO> ibzproreleaseactiondtos) {
+        List<IBZProReleaseAction> domainlist=ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondtos);
+        for(IBZProReleaseAction domain:domainlist){
+            domain.setObjectid(release_id);
+        }
+        ibzproreleaseactionService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @ApiOperation(value = "根据产品发布删除发布日志", tags = {"发布日志" },  notes = "根据产品发布删除发布日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/releases/{release_id}/ibzproreleaseactions/{ibzproreleaseaction_id}")
+    public ResponseEntity<Boolean> removeByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @PathVariable("ibzproreleaseaction_id") Long ibzproreleaseaction_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactionService.remove(ibzproreleaseaction_id));
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @ApiOperation(value = "根据产品发布批量删除发布日志", tags = {"发布日志" },  notes = "根据产品发布批量删除发布日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/releases/{release_id}/ibzproreleaseactions/batch")
+    public ResponseEntity<Boolean> removeBatchByProductRelease(@RequestBody List<Long> ids) {
+        ibzproreleaseactionService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @ApiOperation(value = "根据产品发布获取发布日志", tags = {"发布日志" },  notes = "根据产品发布获取发布日志")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/releases/{release_id}/ibzproreleaseactions/{ibzproreleaseaction_id}")
+    public ResponseEntity<IBZProReleaseActionDTO> getByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @PathVariable("ibzproreleaseaction_id") Long ibzproreleaseaction_id) {
+        IBZProReleaseAction domain = ibzproreleaseactionService.get(ibzproreleaseaction_id);
+        IBZProReleaseActionDTO dto = ibzproreleaseactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据产品发布获取发布日志草稿", tags = {"发布日志" },  notes = "根据产品发布获取发布日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/releases/{release_id}/ibzproreleaseactions/getdraft")
+    public ResponseEntity<IBZProReleaseActionDTO> getDraftByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, IBZProReleaseActionDTO dto) {
+        IBZProReleaseAction domain = ibzproreleaseactionMapping.toDomain(dto);
+        domain.setObjectid(release_id);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactionMapping.toDto(ibzproreleaseactionService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据产品发布检查发布日志", tags = {"发布日志" },  notes = "根据产品发布检查发布日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/{release_id}/ibzproreleaseactions/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody IBZProReleaseActionDTO ibzproreleaseactiondto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactionService.checkKey(ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondto)));
+    }
+
+    @ApiOperation(value = "根据产品发布保存发布日志", tags = {"发布日志" },  notes = "根据产品发布保存发布日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/{release_id}/ibzproreleaseactions/save")
+    public ResponseEntity<IBZProReleaseActionDTO> saveByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody IBZProReleaseActionDTO ibzproreleaseactiondto) {
+        IBZProReleaseAction domain = ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondto);
+        domain.setObjectid(release_id);
+        ibzproreleaseactionService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactionMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据产品发布批量保存发布日志", tags = {"发布日志" },  notes = "根据产品发布批量保存发布日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/{release_id}/ibzproreleaseactions/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody List<IBZProReleaseActionDTO> ibzproreleaseactiondtos) {
+        List<IBZProReleaseAction> domainlist=ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondtos);
+        for(IBZProReleaseAction domain:domainlist){
+             domain.setObjectid(release_id);
+        }
+        ibzproreleaseactionService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品发布获取数据集", tags = {"发布日志" } ,notes = "根据产品发布获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/{release_id}/ibzproreleaseactions/fetchdefault")
+	public ResponseEntity<List<IBZProReleaseActionDTO>> fetchIBZProReleaseActionDefaultByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id,@RequestBody IBZProReleaseActionSearchContext context) {
+        context.setN_objectid_eq(release_id);
+        Page<IBZProReleaseAction> domains = ibzproreleaseactionService.searchDefault(context) ;
+        List<IBZProReleaseActionDTO> list = ibzproreleaseactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品发布查询数据集", tags = {"发布日志" } ,notes = "根据产品发布查询数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/{release_id}/ibzproreleaseactions/searchdefault")
+	public ResponseEntity<Page<IBZProReleaseActionDTO>> searchIBZProReleaseActionDefaultByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody IBZProReleaseActionSearchContext context) {
+        context.setN_objectid_eq(release_id);
+        Page<IBZProReleaseAction> domains = ibzproreleaseactionService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzproreleaseactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品发布获取动态(根据类型过滤)", tags = {"发布日志" } ,notes = "根据产品发布获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/{release_id}/ibzproreleaseactions/fetchtype")
+	public ResponseEntity<List<IBZProReleaseActionDTO>> fetchIBZProReleaseActionTypeByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id,@RequestBody IBZProReleaseActionSearchContext context) {
+        context.setN_objectid_eq(release_id);
+        Page<IBZProReleaseAction> domains = ibzproreleaseactionService.searchType(context) ;
+        List<IBZProReleaseActionDTO> list = ibzproreleaseactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品发布查询动态(根据类型过滤)", tags = {"发布日志" } ,notes = "根据产品发布查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/{release_id}/ibzproreleaseactions/searchtype")
+	public ResponseEntity<Page<IBZProReleaseActionDTO>> searchIBZProReleaseActionTypeByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody IBZProReleaseActionSearchContext context) {
+        context.setN_objectid_eq(release_id);
+        Page<IBZProReleaseAction> domains = ibzproreleaseactionService.searchType(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzproreleaseactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
 }
 

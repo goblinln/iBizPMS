@@ -22,6 +22,7 @@ export class IBZStoryActionBaseService extends EntityBaseService<IIBZStoryAction
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['actor',];
     protected selectContextParam = {
+        story: 'objectid',
     };
 
     newEntity(data: IIBZStoryAction): IBZStoryAction {
@@ -38,6 +39,13 @@ export class IBZStoryActionBaseService extends EntityBaseService<IIBZStoryAction
 
     async getLocal(context: IContext, srfKey: string): Promise<IIBZStoryAction> {
         const entity = this.cache.get(context, srfKey);
+        if (entity && entity.objectid && entity.objectid !== '') {
+            const s = await ___ibz___.gs.getStoryService();
+            const data = await s.getLocal2(context, entity.objectid);
+            if (data) {
+                entity.objectid = data.id;
+            }
+        }
         return entity!;
     }
 
@@ -46,6 +54,13 @@ export class IBZStoryActionBaseService extends EntityBaseService<IIBZStoryAction
     }
 
     async getDraftLocal(_context: IContext, entity: IIBZStoryAction = {}): Promise<IIBZStoryAction> {
+        if (_context.story && _context.story !== '') {
+            const s = await ___ibz___.gs.getStoryService();
+            const data = await s.getLocal2(_context, _context.story);
+            if (data) {
+                entity.objectid = data.id;
+            }
+        }
         return new IBZStoryAction(entity);
     }
 
@@ -74,6 +89,12 @@ export class IBZStoryActionBaseService extends EntityBaseService<IIBZStoryAction
      * @memberof IBZStoryActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.ibzstoryaction) {
+            return this.http.get(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}/select`);
+        }
+        if (_context.story && _context.ibzstoryaction) {
+            return this.http.get(`/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}/select`);
+        }
         return this.http.get(`/ibzstoryactions/${_context.ibzstoryaction}/select`);
     }
     /**
@@ -85,6 +106,26 @@ export class IBZStoryActionBaseService extends EntityBaseService<IIBZStoryAction
      * @memberof IBZStoryActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions`, _data);
+        }
+        if (_context.story && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/stories/${_context.story}/ibzstoryactions`, _data);
+        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -103,6 +144,14 @@ export class IBZStoryActionBaseService extends EntityBaseService<IIBZStoryAction
      * @memberof IBZStoryActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.ibzstoryaction) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}`, _data);
+        }
+        if (_context.story && _context.ibzstoryaction) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}`, _data);
+        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/ibzstoryactions/${_context.ibzstoryaction}`, _data);
     }
@@ -115,6 +164,12 @@ export class IBZStoryActionBaseService extends EntityBaseService<IIBZStoryAction
      * @memberof IBZStoryActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.ibzstoryaction) {
+            return this.http.delete(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}`);
+        }
+        if (_context.story && _context.ibzstoryaction) {
+            return this.http.delete(`/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}`);
+        }
         return this.http.delete(`/ibzstoryactions/${_context.ibzstoryaction}`);
     }
     /**
@@ -126,6 +181,14 @@ export class IBZStoryActionBaseService extends EntityBaseService<IIBZStoryAction
      * @memberof IBZStoryActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.ibzstoryaction) {
+            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}`);
+            return res;
+        }
+        if (_context.story && _context.ibzstoryaction) {
+            const res = await this.http.get(`/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}`);
+            return res;
+        }
         const res = await this.http.get(`/ibzstoryactions/${_context.ibzstoryaction}`);
         return res;
     }
@@ -138,6 +201,18 @@ export class IBZStoryActionBaseService extends EntityBaseService<IIBZStoryAction
      * @memberof IBZStoryActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/getdraft`, _data);
+            return res;
+        }
+        if (_context.story && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/stories/${_context.story}/ibzstoryactions/getdraft`, _data);
+            return res;
+        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzstoryactions/getdraft`, _data);
@@ -152,6 +227,12 @@ export class IBZStoryActionBaseService extends EntityBaseService<IIBZStoryAction
      * @memberof IBZStoryActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/fetchdefault`, _data);
+        }
+        if (_context.story && true) {
+            return this.http.post(`/stories/${_context.story}/ibzstoryactions/fetchdefault`, _data);
+        }
         return this.http.post(`/ibzstoryactions/fetchdefault`, _data);
     }
 }
