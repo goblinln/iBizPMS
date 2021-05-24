@@ -153,7 +153,6 @@ public class IBZProReleaseHistoryResource {
 	@ApiOperation(value = "获取数据集", tags = {"发布操作历史" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproreleasehistories/fetchdefault")
 	public ResponseEntity<List<IBZProReleaseHistoryDTO>> fetchdefault(@RequestBody IBZProReleaseHistorySearchContext context) {
-        ibzproreleasehistoryRuntime.addAuthorityConditions(context,"READ");
         Page<IBZProReleaseHistory> domains = ibzproreleasehistoryService.searchDefault(context) ;
         List<IBZProReleaseHistoryDTO> list = ibzproreleasehistoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -167,7 +166,6 @@ public class IBZProReleaseHistoryResource {
 	@ApiOperation(value = "查询数据集", tags = {"发布操作历史" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproreleasehistories/searchdefault")
 	public ResponseEntity<Page<IBZProReleaseHistoryDTO>> searchDefault(@RequestBody IBZProReleaseHistorySearchContext context) {
-        ibzproreleasehistoryRuntime.addAuthorityConditions(context,"READ");
         Page<IBZProReleaseHistory> domains = ibzproreleasehistoryService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproreleasehistoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

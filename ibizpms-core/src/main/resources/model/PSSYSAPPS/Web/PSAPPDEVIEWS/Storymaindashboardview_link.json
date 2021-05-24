@@ -456,7 +456,6 @@
                         },
                         "getPSLayoutPos" : {
                           "colLG" : 2,
-                          "colLGOffset" : 6,
                           "colMD" : 24,
                           "layout" : "TABLE_24COL",
                           "width" : 70
@@ -500,7 +499,7 @@
                           "enableLinkView" : false
                         },
                         "getPSLayoutPos" : {
-                          "colLG" : 6,
+                          "colLG" : 18,
                           "colMD" : 24,
                           "layout" : "TABLE_24COL"
                         },

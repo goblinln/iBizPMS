@@ -200,6 +200,9 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskAction.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBzDoc.json"
   }, {
     "modelref" : true,
@@ -228,6 +231,9 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildAction.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
