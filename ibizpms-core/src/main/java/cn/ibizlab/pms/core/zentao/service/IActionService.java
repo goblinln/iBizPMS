@@ -56,6 +56,7 @@ public interface IActionService extends IService<Action> {
     List<Action> selectBianGengLineHistory(ActionSearchContext context);
     List<Action> selectDefault(ActionSearchContext context);
     List<Action> selectMobType(ActionSearchContext context);
+    List<Action> selectMyAction(ActionSearchContext context);
     List<Action> selectMyTrends(ActionSearchContext context);
     List<Action> selectProductTrends(ActionSearchContext context);
     List<Action> selectProjectTrends(ActionSearchContext context);
@@ -65,6 +66,7 @@ public interface IActionService extends IService<Action> {
 
     Page<Action> searchDefault(ActionSearchContext context);
     Page<Action> searchMobType(ActionSearchContext context);
+    Page<Action> searchMyAction(ActionSearchContext context);
     Page<Action> searchMyTrends(ActionSearchContext context);
     Page<Action> searchProductTrends(ActionSearchContext context);
     Page<Action> searchProjectTrends(ActionSearchContext context);

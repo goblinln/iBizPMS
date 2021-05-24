@@ -22,6 +22,7 @@ public interface ActionMapper extends BaseMapper<Action> {
     List<Action> selectBianGengLineHistory(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     List<Action> selectDefault(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     List<Action> selectMobType(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
+    List<Action> selectMyAction(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     List<Action> selectMyTrends(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     List<Action> selectProductTrends(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     List<Action> selectProjectTrends(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
@@ -31,6 +32,7 @@ public interface ActionMapper extends BaseMapper<Action> {
 
     Page<Action> searchDefault(IPage page, @Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     Page<Action> searchMobType(IPage page, @Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
+    Page<Action> searchMyAction(IPage page, @Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     Page<Action> searchMyTrends(IPage page, @Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     Page<Action> searchProductTrends(IPage page, @Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     Page<Action> searchProjectTrends(IPage page, @Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);

@@ -4,7 +4,7 @@
           <v-touch v-on:press="node_touch(item)" :key="item.url">
     <div class="app-mob-file-list_item" @click="onItemClick(item)" >
       <div class="index_icon">
-        <img v-if="isImages(item)" @click.stop="openImages(getImage(item))"  data-error="xxx.jpg" attempt="1"  v-lazy="getImage(item)" alt="">
+        <img v-if="isImages(item)" @click.stop="openImages(item.base64_img)"  data-error="xxx.jpg" attempt="1"  :src="item.base64_img" alt="">
         <app-mob-icon v-else :class="item.extension" :name="item.extensionName"></app-mob-icon> 
       </div>
       <div class="file_info_content">
@@ -28,6 +28,7 @@ import { Vue, Component, Prop, Provide, Emit, Watch, } from "vue-property-decora
 import { Environment } from "@/environments/environment";
 import { Uploader } from "vant";
 import { ImagePreview } from 'vant';
+import { ImgurlBase64 } from "ibiz-core";
 Vue.use(Uploader);
 @Component({
     i18n: {
@@ -92,7 +93,12 @@ export default class AppMobFileList extends Vue {
     @Watch('items')
     public initExtensionName(newVal: any,oldVal: any){
         if(newVal){
-            this.items.forEach((item: any)=>{
+          this.items.forEach((item: any)=>{
+                //图片转base64 
+                if (Object.is(item.extension, 'jpg') || Object.is(item.extension, 'gif') || Object.is(item.extension, 'bmp') || Object.is(item.extension, 'png')) {
+                    this.getImage(item);
+                }
+                // 不是图片根据类型做处理
                 if(!Object.is(item.extension, 'jpg') && !Object.is(item.extension, 'gif') && !Object.is(item.extension, 'bmp') && !Object.is(item.extension, 'png')){
                     switch (item.extension) {
                         case 'doc':
@@ -166,10 +172,12 @@ export default class AppMobFileList extends Vue {
     }
 
     /**
-     * 解析图片地址
+     * 解析图片地址转base64
      */
     public getImage(item: any) {
-        return `${this.downloadUrl}` + `/${item.url}`
+        ImgurlBase64.getInstance().getImgURLOfBase64(`${this.downloadUrl}` + `/${item.url}`).then((res:any)=>{
+            this.$set(item,'base64_img',res)
+        });
     }
 
     /**

@@ -545,6 +545,22 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'actions/:action?/views/mobmdview9',
                     meta: {
                         caption: 'entities.action.views.mobmdview9.caption',
@@ -558,6 +574,22 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'actions/:action?/views/allmobmdview9',
@@ -575,6 +607,22 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'actions/:action?/views/moremobmdview',
                     meta: {
                         caption: 'entities.action.views.moremobmdview.caption',
@@ -588,6 +636,22 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'actions/:action?/views/mobmapview',

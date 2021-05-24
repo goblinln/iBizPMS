@@ -1,0 +1,34 @@
+package cn.ibizlab.pms.ibiz.logic.ibzprotesttaskactionlogic.comment;
+        import java.util.Map;
+        import java.util.HashMap;
+        import com.alibaba.fastjson.JSONObject;
+        import org.springframework.util.StringUtils;
+        import org.springframework.util.ObjectUtils;
+        import cn.ibizlab.pms.util.errors.BadRequestAlertException;
+                global cn.ibizlab.pms.core.ibiz.domain.IbzProTestTaskAction ibzprotesttaskactioncommentdefault;
+        global cn.ibizlab.pms.core.ibiz.service.IIbzProTestTaskActionService iBzSysIbzprotesttaskactionDefaultService;
+        global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
+
+
+    no-loop
+
+            //逻辑处理节点[设置默认参数]
+            rule "prepareparam1"
+            ruleflow-group "ibzprotesttaskactioncommentprepareparam1"
+            when
+            then
+                                ibzprotesttaskactioncommentdefault.set("actor",curuser.getSessionParams().get("srfloginname"));
+                            ibzprotesttaskactioncommentdefault.set("product","0");
+                            ibzprotesttaskactioncommentdefault.set("project","0");
+                            ibzprotesttaskactioncommentdefault.set("read","0");
+                            ibzprotesttaskactioncommentdefault.set("action","commented");
+                            ibzprotesttaskactioncommentdefault.set("extra","");
+                        update(ibzprotesttaskactioncommentdefault);//更新fact中变量值
+            end
+
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "ibzprotesttaskactioncommentbegin"
+            when
+            then
+            end

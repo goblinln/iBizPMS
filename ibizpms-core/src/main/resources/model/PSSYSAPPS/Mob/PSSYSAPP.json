@@ -23878,6 +23878,15 @@
           "id" : "FetchType"
         },
         "builtinMethod" : false
+      }, {
+        "codeName" : "FetchMyAction",
+        "methodType" : "FETCH",
+        "name" : "MyAction",
+        "getPSDEDataSet" : {
+          "modelref" : true,
+          "id" : "MyAction"
+        },
+        "builtinMethod" : false
       } ],
       "getAllPSAppDEFields" : [ {
         "codeName" : "Thismonth",
@@ -24373,6 +24382,15 @@
         "getPSDEServiceAPIMethod" : {
           "modelref" : true,
           "id" : "FetchType"
+        },
+        "builtinMethod" : false
+      }, {
+        "codeName" : "FetchMyAction",
+        "methodType" : "FETCH",
+        "name" : "MyAction",
+        "getPSDEDataSet" : {
+          "modelref" : true,
+          "id" : "MyAction"
         },
         "builtinMethod" : false
       }, {

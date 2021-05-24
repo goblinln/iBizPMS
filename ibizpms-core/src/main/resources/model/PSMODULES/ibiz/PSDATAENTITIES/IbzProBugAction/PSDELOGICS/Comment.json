@@ -1,0 +1,104 @@
+{
+  "codeName" : "Comment",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBugAction/PSDELOGICS/Comment.json",
+  "logicName" : "Comment",
+  "name" : "Comment",
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "设置默认参数",
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "ACTOR",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "用户全局对象[srfloginname] ==> Default[ACTOR]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "dstFieldName" : "PRODUCT",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "直接值[0] ==> Default[PRODUCT]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcValue" : "0",
+      "srcValueType" : "SRCVALUE"
+    }, {
+      "dstFieldName" : "PROJECT",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "直接值[0] ==> Default[PROJECT]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcValue" : "0",
+      "srcValueType" : "SRCVALUE"
+    }, {
+      "dstFieldName" : "READ",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "直接值[0] ==> Default[READ]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcValue" : "0",
+      "srcValueType" : "SRCVALUE"
+    }, {
+      "dstFieldName" : "ACTION",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "直接值[commented] ==> Default[ACTION]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcValue" : "commented",
+      "srcValueType" : "SRCVALUE"
+    }, {
+      "dstFieldName" : "EXTRA",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "直接值[null] ==> Default[EXTRA]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcValueType" : "SRCVALUE"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "name" : "连接6740",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
+    } ],
+    "parallelOutput" : true
+  } ],
+  "getPSDELogicParams" : [ {
+    "codeName" : "Default",
+    "name" : "传入变量",
+    "default" : true,
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  } ],
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
+}

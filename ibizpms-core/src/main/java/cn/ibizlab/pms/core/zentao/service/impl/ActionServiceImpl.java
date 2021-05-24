@@ -372,6 +372,9 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     public List<Action> selectMobType(ActionSearchContext context){
         return baseMapper.selectMobType(context, context.getSelectCond());
     }
+    public List<Action> selectMyAction(ActionSearchContext context){
+        return baseMapper.selectMyAction(context, context.getSelectCond());
+    }
     public List<Action> selectMyTrends(ActionSearchContext context){
         return baseMapper.selectMyTrends(context, context.getSelectCond());
     }
@@ -407,6 +410,15 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     @Override
     public Page<Action> searchMobType(ActionSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Action> pages=baseMapper.searchMobType(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Action>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我的日志（权限）
+     */
+    @Override
+    public Page<Action> searchMyAction(ActionSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Action> pages=baseMapper.searchMyAction(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Action>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

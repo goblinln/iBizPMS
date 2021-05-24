@@ -131,6 +131,8 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
             return actionService.searchDefault(searchContext);    
         if (iPSDEDataSet.getName().equals("MobType"))
             return actionService.searchMobType(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyAction"))
+            return actionService.searchMyAction(searchContext);    
         if (iPSDEDataSet.getName().equals("MyTrends"))
             return actionService.searchMyTrends(searchContext);    
         if (iPSDEDataSet.getName().equals("ProductTrends"))
@@ -153,6 +155,8 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
             return actionService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("MobType"))
             return actionService.selectMobType(searchContext);
+        if (iPSDataQuery.getName().equals("MyAction"))
+            return actionService.selectMyAction(searchContext);
         if (iPSDataQuery.getName().equals("MyTrends"))
             return actionService.selectMyTrends(searchContext);
         if (iPSDataQuery.getName().equals("ProductTrends"))
@@ -364,6 +368,9 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         }
         else if (action.equals("searchMobType")) {
             return aroundDataSet("MobType", point);
+        }
+        else if (action.equals("searchMyAction")) {
+            return aroundDataSet("MyAction", point);
         }
         else if (action.equals("searchMyTrends")) {
             return aroundDataSet("MyTrends", point);
