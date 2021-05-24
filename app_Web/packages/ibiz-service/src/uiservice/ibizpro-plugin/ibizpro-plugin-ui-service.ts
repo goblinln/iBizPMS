@@ -44,7 +44,7 @@ export default class IBIZProPluginUIService extends IBIZProPluginUIServiceBase {
      */
     public static getInstance(context: any): IBIZProPluginUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBIZProPluginUIService();
+            this.basicUIServiceInstance = new IBIZProPluginUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

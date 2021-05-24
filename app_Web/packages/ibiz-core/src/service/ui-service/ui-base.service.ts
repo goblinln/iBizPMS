@@ -551,7 +551,7 @@ export class UIServiceBase {
             return 1;
         }
         const curActiveKey: string = `${this.deName}-${data[this.appDeKeyFieldName?.toLowerCase()]}`;
-        const result = this.authService.getOPPrivs(curActiveKey, this.getDEMainStateOPPrivs(data));
+        const result = this.authService.getOPPrivs(curActiveKey,dataaccaction,this.getDEMainStateOPPrivs(data));
         return result[dataaccaction];
     }
 }

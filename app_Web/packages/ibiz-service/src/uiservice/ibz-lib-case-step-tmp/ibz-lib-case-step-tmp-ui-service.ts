@@ -44,7 +44,7 @@ export default class IbzLibCaseStepTmpUIService extends IbzLibCaseStepTmpUIServi
      */
     public static getInstance(context: any): IbzLibCaseStepTmpUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzLibCaseStepTmpUIService();
+            this.basicUIServiceInstance = new IbzLibCaseStepTmpUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

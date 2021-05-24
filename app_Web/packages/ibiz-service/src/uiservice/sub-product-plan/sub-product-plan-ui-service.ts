@@ -44,7 +44,7 @@ export default class SubProductPlanUIService extends SubProductPlanUIServiceBase
      */
     public static getInstance(context: any): SubProductPlanUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SubProductPlanUIService();
+            this.basicUIServiceInstance = new SubProductPlanUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

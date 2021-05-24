@@ -44,7 +44,7 @@ export default class CompanyUIService extends CompanyUIServiceBase {
      */
     public static getInstance(context: any): CompanyUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new CompanyUIService();
+            this.basicUIServiceInstance = new CompanyUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

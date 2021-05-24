@@ -44,7 +44,7 @@ export default class HistoryUIService extends HistoryUIServiceBase {
      */
     public static getInstance(context: any): HistoryUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new HistoryUIService();
+            this.basicUIServiceInstance = new HistoryUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

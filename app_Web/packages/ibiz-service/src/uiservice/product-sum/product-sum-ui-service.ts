@@ -44,7 +44,7 @@ export default class ProductSumUIService extends ProductSumUIServiceBase {
      */
     public static getInstance(context: any): ProductSumUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ProductSumUIService();
+            this.basicUIServiceInstance = new ProductSumUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

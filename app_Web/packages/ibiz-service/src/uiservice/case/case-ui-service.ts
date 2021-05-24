@@ -44,7 +44,7 @@ export default class CaseUIService extends CaseUIServiceBase {
      */
     public static getInstance(context: any): CaseUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new CaseUIService();
+            this.basicUIServiceInstance = new CaseUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

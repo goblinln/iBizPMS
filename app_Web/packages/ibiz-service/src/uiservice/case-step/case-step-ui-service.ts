@@ -44,7 +44,7 @@ export default class CaseStepUIService extends CaseStepUIServiceBase {
      */
     public static getInstance(context: any): CaseStepUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new CaseStepUIService();
+            this.basicUIServiceInstance = new CaseStepUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

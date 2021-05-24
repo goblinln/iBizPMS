@@ -44,7 +44,7 @@ export default class IBIZProKeywordUIService extends IBIZProKeywordUIServiceBase
      */
     public static getInstance(context: any): IBIZProKeywordUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBIZProKeywordUIService();
+            this.basicUIServiceInstance = new IBIZProKeywordUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

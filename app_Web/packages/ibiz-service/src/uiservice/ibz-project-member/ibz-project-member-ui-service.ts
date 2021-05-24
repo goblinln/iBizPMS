@@ -44,7 +44,7 @@ export default class IbzProjectMemberUIService extends IbzProjectMemberUIService
      */
     public static getInstance(context: any): IbzProjectMemberUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzProjectMemberUIService();
+            this.basicUIServiceInstance = new IbzProjectMemberUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

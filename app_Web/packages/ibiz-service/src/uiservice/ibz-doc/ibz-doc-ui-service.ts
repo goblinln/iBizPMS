@@ -44,7 +44,7 @@ export default class IBzDocUIService extends IBzDocUIServiceBase {
      */
     public static getInstance(context: any): IBzDocUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBzDocUIService();
+            this.basicUIServiceInstance = new IBzDocUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

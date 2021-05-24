@@ -44,7 +44,7 @@ export default class UserYearWorkStatsUIService extends UserYearWorkStatsUIServi
      */
     public static getInstance(context: any): UserYearWorkStatsUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new UserYearWorkStatsUIService();
+            this.basicUIServiceInstance = new UserYearWorkStatsUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -44,7 +44,7 @@ export default class DocLibUIService extends DocLibUIServiceBase {
      */
     public static getInstance(context: any): DocLibUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new DocLibUIService();
+            this.basicUIServiceInstance = new DocLibUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

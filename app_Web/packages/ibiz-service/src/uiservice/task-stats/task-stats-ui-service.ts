@@ -44,7 +44,7 @@ export default class TaskStatsUIService extends TaskStatsUIServiceBase {
      */
     public static getInstance(context: any): TaskStatsUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TaskStatsUIService();
+            this.basicUIServiceInstance = new TaskStatsUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

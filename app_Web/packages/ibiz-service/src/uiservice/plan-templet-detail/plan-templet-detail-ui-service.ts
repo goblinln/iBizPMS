@@ -44,7 +44,7 @@ export default class PlanTempletDetailUIService extends PlanTempletDetailUIServi
      */
     public static getInstance(context: any): PlanTempletDetailUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new PlanTempletDetailUIService();
+            this.basicUIServiceInstance = new PlanTempletDetailUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

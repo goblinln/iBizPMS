@@ -44,7 +44,7 @@ export default class SubTaskUIService extends SubTaskUIServiceBase {
      */
     public static getInstance(context: any): SubTaskUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SubTaskUIService();
+            this.basicUIServiceInstance = new SubTaskUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

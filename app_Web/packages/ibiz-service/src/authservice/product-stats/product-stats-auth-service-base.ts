@@ -32,11 +32,12 @@ export class ProductStatsAuthServiceBase extends AuthService {
      * 根据当前数据获取实体操作标识
      *
      * @param {*} activeKey 实体权限数据缓存标识
-     * @param {*} mainSateOPPrivs 传入数据操作标识
+     * @param {*} dataaccaction 操作标识
+     * @param {*} mainSateOPPrivs 传入数据主状态操作标识集合
      * @returns {any}
      * @memberof ProductStatsAuthServiceBase
      */
-     public getOPPrivs(activeKey: string, mainSateOPPrivs: any): any {
+    public getOPPrivs(activeKey: string,dataaccaction:string, mainSateOPPrivs: any): any {
         let curDefaultOPPrivs:any = this.getSysOPPrivs();
         let copyDefaultOPPrivs:any = JSON.parse(JSON.stringify(curDefaultOPPrivs));
         if(mainSateOPPrivs){

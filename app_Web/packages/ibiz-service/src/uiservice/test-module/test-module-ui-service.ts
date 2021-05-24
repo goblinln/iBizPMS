@@ -44,7 +44,7 @@ export default class TestModuleUIService extends TestModuleUIServiceBase {
      */
     public static getInstance(context: any): TestModuleUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TestModuleUIService();
+            this.basicUIServiceInstance = new TestModuleUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

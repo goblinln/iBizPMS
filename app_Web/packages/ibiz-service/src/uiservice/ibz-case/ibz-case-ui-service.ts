@@ -44,7 +44,7 @@ export default class IbzCaseUIService extends IbzCaseUIServiceBase {
      */
     public static getInstance(context: any): IbzCaseUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzCaseUIService();
+            this.basicUIServiceInstance = new IbzCaseUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

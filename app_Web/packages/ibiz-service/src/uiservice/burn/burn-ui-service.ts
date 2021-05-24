@@ -44,7 +44,7 @@ export default class BurnUIService extends BurnUIServiceBase {
      */
     public static getInstance(context: any): BurnUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new BurnUIService();
+            this.basicUIServiceInstance = new BurnUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

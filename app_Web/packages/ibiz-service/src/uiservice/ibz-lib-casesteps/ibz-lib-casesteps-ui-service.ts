@@ -44,7 +44,7 @@ export default class IbzLibCasestepsUIService extends IbzLibCasestepsUIServiceBa
      */
     public static getInstance(context: any): IbzLibCasestepsUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzLibCasestepsUIService();
+            this.basicUIServiceInstance = new IbzLibCasestepsUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

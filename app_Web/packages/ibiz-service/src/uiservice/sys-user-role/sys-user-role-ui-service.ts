@@ -44,7 +44,7 @@ export default class SysUserRoleUIService extends SysUserRoleUIServiceBase {
      */
     public static getInstance(context: any): SysUserRoleUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysUserRoleUIService();
+            this.basicUIServiceInstance = new SysUserRoleUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

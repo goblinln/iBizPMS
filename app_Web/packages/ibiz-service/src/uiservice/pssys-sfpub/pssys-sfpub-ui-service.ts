@@ -44,7 +44,7 @@ export default class PSSysSFPubUIService extends PSSysSFPubUIServiceBase {
      */
     public static getInstance(context: any): PSSysSFPubUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new PSSysSFPubUIService();
+            this.basicUIServiceInstance = new PSSysSFPubUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

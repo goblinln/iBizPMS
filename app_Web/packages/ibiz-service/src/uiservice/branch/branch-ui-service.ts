@@ -44,7 +44,7 @@ export default class BranchUIService extends BranchUIServiceBase {
      */
     public static getInstance(context: any): BranchUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new BranchUIService();
+            this.basicUIServiceInstance = new BranchUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

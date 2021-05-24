@@ -44,7 +44,7 @@ export default class IbzPlanTempletUIService extends IbzPlanTempletUIServiceBase
      */
     public static getInstance(context: any): IbzPlanTempletUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzPlanTempletUIService();
+            this.basicUIServiceInstance = new IbzPlanTempletUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

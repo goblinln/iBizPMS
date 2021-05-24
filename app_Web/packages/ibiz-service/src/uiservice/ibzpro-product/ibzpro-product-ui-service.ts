@@ -44,7 +44,7 @@ export default class IBZProProductUIService extends IBZProProductUIServiceBase {
      */
     public static getInstance(context: any): IBZProProductUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBZProProductUIService();
+            this.basicUIServiceInstance = new IBZProProductUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -44,7 +44,7 @@ export default class UserTplUIService extends UserTplUIServiceBase {
      */
     public static getInstance(context: any): UserTplUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new UserTplUIService();
+            this.basicUIServiceInstance = new UserTplUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

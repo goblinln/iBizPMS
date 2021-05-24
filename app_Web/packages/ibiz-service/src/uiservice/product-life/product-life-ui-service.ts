@@ -44,7 +44,7 @@ export default class ProductLifeUIService extends ProductLifeUIServiceBase {
      */
     public static getInstance(context: any): ProductLifeUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ProductLifeUIService();
+            this.basicUIServiceInstance = new ProductLifeUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

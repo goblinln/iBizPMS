@@ -44,7 +44,7 @@ export default class PRODUCTTEAMUIService extends PRODUCTTEAMUIServiceBase {
      */
     public static getInstance(context: any): PRODUCTTEAMUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new PRODUCTTEAMUIService();
+            this.basicUIServiceInstance = new PRODUCTTEAMUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

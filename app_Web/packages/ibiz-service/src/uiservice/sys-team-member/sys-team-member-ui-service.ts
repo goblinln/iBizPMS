@@ -44,7 +44,7 @@ export default class SysTeamMemberUIService extends SysTeamMemberUIServiceBase {
      */
     public static getInstance(context: any): SysTeamMemberUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysTeamMemberUIService();
+            this.basicUIServiceInstance = new SysTeamMemberUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

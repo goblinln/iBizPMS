@@ -44,7 +44,7 @@ export default class AccountTaskestimateUIService extends AccountTaskestimateUIS
      */
     public static getInstance(context: any): AccountTaskestimateUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new AccountTaskestimateUIService();
+            this.basicUIServiceInstance = new AccountTaskestimateUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

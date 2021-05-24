@@ -156,21 +156,25 @@ export class AuthServiceBase {
     /**
      * 根据当前数据获取实体操作标识
      *
-     * @param {string} name 实体名称
+     * @param {*} activeKey 实体权限数据缓存标识
+     * @param {*} dataaccaction 操作标识
+     * @param {*} mainSateOPPrivs 传入数据主状态操作标识集合
      * @returns {any}
      * @memberof AuthServiceBase
      */
-    public getOPPrivs(activeKey: string, data: any): any {
+    public getOPPrivs(activeKey: string,dataaccaction:string,mainSateOPPrivs: any): any {
         return null;
     }
 
     /**
      * 获取实体级数据操作标识
      *
+     * @param {*} key 缓存主键
+     * @param {*} dataaccaction 操作标识
      * @returns {}
      * @memberof AuthServiceBase
      */
-     public getActivedDeOPPrivs(key: string) {
+    public getActivedDeOPPrivs(key: string,dataaccaction:string) {
         if(this.dataAccCtrlMode == 0){
             return true;
         }else if(this.dataAccCtrlMode == 1){

@@ -44,7 +44,7 @@ export default class IBIZProTagUIService extends IBIZProTagUIServiceBase {
      */
     public static getInstance(context: any): IBIZProTagUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBIZProTagUIService();
+            this.basicUIServiceInstance = new IBIZProTagUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

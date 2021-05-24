@@ -44,7 +44,7 @@ export default class IbizproProductMonthlyUIService extends IbizproProductMonthl
      */
     public static getInstance(context: any): IbizproProductMonthlyUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbizproProductMonthlyUIService();
+            this.basicUIServiceInstance = new IbizproProductMonthlyUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

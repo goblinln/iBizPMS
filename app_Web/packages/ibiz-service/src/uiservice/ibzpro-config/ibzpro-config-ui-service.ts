@@ -44,7 +44,7 @@ export default class IbzproConfigUIService extends IbzproConfigUIServiceBase {
      */
     public static getInstance(context: any): IbzproConfigUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzproConfigUIService();
+            this.basicUIServiceInstance = new IbzproConfigUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

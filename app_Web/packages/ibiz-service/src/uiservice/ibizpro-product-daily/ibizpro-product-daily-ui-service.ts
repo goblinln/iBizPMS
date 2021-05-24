@@ -44,7 +44,7 @@ export default class IbizproProductDailyUIService extends IbizproProductDailyUIS
      */
     public static getInstance(context: any): IbizproProductDailyUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbizproProductDailyUIService();
+            this.basicUIServiceInstance = new IbizproProductDailyUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

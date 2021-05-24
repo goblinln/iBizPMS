@@ -44,7 +44,7 @@ export default class TodoUIService extends TodoUIServiceBase {
      */
     public static getInstance(context: any): TodoUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TodoUIService();
+            this.basicUIServiceInstance = new TodoUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

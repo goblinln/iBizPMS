@@ -44,7 +44,7 @@ export default class IbzReportlyUIService extends IbzReportlyUIServiceBase {
      */
     public static getInstance(context: any): IbzReportlyUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzReportlyUIService();
+            this.basicUIServiceInstance = new IbzReportlyUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

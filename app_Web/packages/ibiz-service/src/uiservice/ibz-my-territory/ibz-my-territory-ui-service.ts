@@ -44,7 +44,7 @@ export default class IbzMyTerritoryUIService extends IbzMyTerritoryUIServiceBase
      */
     public static getInstance(context: any): IbzMyTerritoryUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzMyTerritoryUIService();
+            this.basicUIServiceInstance = new IbzMyTerritoryUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

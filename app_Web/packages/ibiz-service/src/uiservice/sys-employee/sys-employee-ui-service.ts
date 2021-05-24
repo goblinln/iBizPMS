@@ -44,7 +44,7 @@ export default class SysEmployeeUIService extends SysEmployeeUIServiceBase {
      */
     public static getInstance(context: any): SysEmployeeUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysEmployeeUIService();
+            this.basicUIServiceInstance = new SysEmployeeUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

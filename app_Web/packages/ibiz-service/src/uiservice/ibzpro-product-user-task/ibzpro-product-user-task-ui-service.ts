@@ -44,7 +44,7 @@ export default class IbzproProductUserTaskUIService extends IbzproProductUserTas
      */
     public static getInstance(context: any): IbzproProductUserTaskUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzproProductUserTaskUIService();
+            this.basicUIServiceInstance = new IbzproProductUserTaskUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

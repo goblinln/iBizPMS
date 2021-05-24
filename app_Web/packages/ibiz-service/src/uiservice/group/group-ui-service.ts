@@ -44,7 +44,7 @@ export default class GroupUIService extends GroupUIServiceBase {
      */
     public static getInstance(context: any): GroupUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new GroupUIService();
+            this.basicUIServiceInstance = new GroupUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -44,7 +44,7 @@ export default class TestReportUIService extends TestReportUIServiceBase {
      */
     public static getInstance(context: any): TestReportUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TestReportUIService();
+            this.basicUIServiceInstance = new TestReportUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

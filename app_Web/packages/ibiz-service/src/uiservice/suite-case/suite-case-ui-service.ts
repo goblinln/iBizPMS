@@ -44,7 +44,7 @@ export default class SuiteCaseUIService extends SuiteCaseUIServiceBase {
      */
     public static getInstance(context: any): SuiteCaseUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SuiteCaseUIService();
+            this.basicUIServiceInstance = new SuiteCaseUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

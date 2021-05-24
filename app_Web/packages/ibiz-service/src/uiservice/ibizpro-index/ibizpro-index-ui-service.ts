@@ -44,7 +44,7 @@ export default class IbizproIndexUIService extends IbizproIndexUIServiceBase {
      */
     public static getInstance(context: any): IbizproIndexUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbizproIndexUIService();
+            this.basicUIServiceInstance = new IbizproIndexUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

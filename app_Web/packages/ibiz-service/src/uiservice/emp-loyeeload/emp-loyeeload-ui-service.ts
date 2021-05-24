@@ -44,7 +44,7 @@ export default class EmpLoyeeloadUIService extends EmpLoyeeloadUIServiceBase {
      */
     public static getInstance(context: any): EmpLoyeeloadUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new EmpLoyeeloadUIService();
+            this.basicUIServiceInstance = new EmpLoyeeloadUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

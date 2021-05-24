@@ -44,7 +44,7 @@ export default class IBZStoryActionUIService extends IBZStoryActionUIServiceBase
      */
     public static getInstance(context: any): IBZStoryActionUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBZStoryActionUIService();
+            this.basicUIServiceInstance = new IBZStoryActionUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

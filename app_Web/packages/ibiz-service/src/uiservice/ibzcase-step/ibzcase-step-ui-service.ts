@@ -44,7 +44,7 @@ export default class IBZCaseStepUIService extends IBZCaseStepUIServiceBase {
      */
     public static getInstance(context: any): IBZCaseStepUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBZCaseStepUIService();
+            this.basicUIServiceInstance = new IBZCaseStepUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

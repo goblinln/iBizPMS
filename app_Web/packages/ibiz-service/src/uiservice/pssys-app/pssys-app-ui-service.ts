@@ -44,7 +44,7 @@ export default class PSSysAppUIService extends PSSysAppUIServiceBase {
      */
     public static getInstance(context: any): PSSysAppUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new PSSysAppUIService();
+            this.basicUIServiceInstance = new PSSysAppUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

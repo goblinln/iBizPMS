@@ -44,7 +44,7 @@ export default class IBZTaskEstimateUIService extends IBZTaskEstimateUIServiceBa
      */
     public static getInstance(context: any): IBZTaskEstimateUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBZTaskEstimateUIService();
+            this.basicUIServiceInstance = new IBZTaskEstimateUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

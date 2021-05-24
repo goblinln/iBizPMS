@@ -44,7 +44,7 @@ export default class StoryUIService extends StoryUIServiceBase {
      */
     public static getInstance(context: any): StoryUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new StoryUIService();
+            this.basicUIServiceInstance = new StoryUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -44,7 +44,7 @@ export default class DeptUIService extends DeptUIServiceBase {
      */
     public static getInstance(context: any): DeptUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new DeptUIService();
+            this.basicUIServiceInstance = new DeptUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

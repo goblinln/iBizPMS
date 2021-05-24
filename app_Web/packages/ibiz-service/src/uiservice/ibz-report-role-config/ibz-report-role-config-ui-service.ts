@@ -44,7 +44,7 @@ export default class IbzReportRoleConfigUIService extends IbzReportRoleConfigUIS
      */
     public static getInstance(context: any): IbzReportRoleConfigUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzReportRoleConfigUIService();
+            this.basicUIServiceInstance = new IbzReportRoleConfigUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

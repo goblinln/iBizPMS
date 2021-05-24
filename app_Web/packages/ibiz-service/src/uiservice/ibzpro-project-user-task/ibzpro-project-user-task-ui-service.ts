@@ -44,7 +44,7 @@ export default class IbzproProjectUserTaskUIService extends IbzproProjectUserTas
      */
     public static getInstance(context: any): IbzproProjectUserTaskUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzproProjectUserTaskUIService();
+            this.basicUIServiceInstance = new IbzproProjectUserTaskUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -44,7 +44,7 @@ export default class TaskEstimateUIService extends TaskEstimateUIServiceBase {
      */
     public static getInstance(context: any): TaskEstimateUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TaskEstimateUIService();
+            this.basicUIServiceInstance = new TaskEstimateUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

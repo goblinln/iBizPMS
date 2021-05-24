@@ -44,7 +44,7 @@ export default class IbzAgentUIService extends IbzAgentUIServiceBase {
      */
     public static getInstance(context: any): IbzAgentUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzAgentUIService();
+            this.basicUIServiceInstance = new IbzAgentUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

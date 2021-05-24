@@ -44,7 +44,7 @@ export default class PSSystemDBCfgUIService extends PSSystemDBCfgUIServiceBase {
      */
     public static getInstance(context: any): PSSystemDBCfgUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new PSSystemDBCfgUIService();
+            this.basicUIServiceInstance = new PSSystemDBCfgUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -44,7 +44,7 @@ export default class IBZProStoryModuleUIService extends IBZProStoryModuleUIServi
      */
     public static getInstance(context: any): IBZProStoryModuleUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBZProStoryModuleUIService();
+            this.basicUIServiceInstance = new IBZProStoryModuleUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -44,7 +44,7 @@ export default class SubStoryUIService extends SubStoryUIServiceBase {
      */
     public static getInstance(context: any): SubStoryUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SubStoryUIService();
+            this.basicUIServiceInstance = new SubStoryUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;
