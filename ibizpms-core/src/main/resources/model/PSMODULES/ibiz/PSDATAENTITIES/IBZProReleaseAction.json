@@ -1416,8 +1416,28 @@
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
+    "logicName" : "建立",
+    "mapPSDEName" : "ZT_RELEASE",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction/PSDERS/DER1N_IBZPRO_RELEASEACTION_ZT_RELEASE_OBJECTID.json"
+    },
+    "name" : "CREATE",
+    "id" : "IbzProRelease__CREATE"
+  }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "管理",
+    "mapPSDEName" : "ZT_RELEASE",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction/PSDERS/DER1N_IBZPRO_RELEASEACTION_ZT_RELEASE_OBJECTID.json"
+    },
+    "name" : "MANAGE",
+    "id" : "IbzProRelease__MANAGE"
   }, {
     "logicName" : "读取",
     "name" : "READ"

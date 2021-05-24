@@ -741,6 +741,16 @@
     "logicName" : "读取",
     "name" : "READ"
   }, {
+    "logicName" : "读",
+    "mapPSDEName" : "IBZPRO_RELEASEACTION",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseHistory/PSDERS/DER1N_IBZPRO_RELEASEHISTORY_IBZPRO_RELEASEACTION_ACTION.json"
+    },
+    "name" : "READ",
+    "id" : "IbzProRelease__READ"
+  }, {
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
