@@ -69,17 +69,27 @@ export class ControlServiceBase {
      * 应用实体codeName
      *
      * @readonly
-     * @memberof MainViewBase
+     * @memberof ControlServiceBase
      */
      get appDeCodeName(){
         return this.controlInstance?.getPSAppDataEntity()?.codeName || '';
     }
 
     /**
+     * 应用实体映射实体名称
+     *
+     * @readonly
+     * @memberof ControlServiceBase
+     */
+     get deName(){
+        return this.controlInstance?.getPSAppDataEntity()?.getPSDEName() || '';
+    }
+
+    /**
      * 应用实体主键属性codeName
      *
      * @readonly
-     * @memberof MainViewBase
+     * @memberof ControlServiceBase
      */
     get appDeKeyFieldName(){
         return (ModelTool.getAppEntityKeyField(this.controlInstance?.getPSAppDataEntity() as IPSAppDataEntity) as IPSAppDEField)?.codeName || '';
@@ -89,7 +99,7 @@ export class ControlServiceBase {
      * 应用实体主信息属性codeName
      *
      * @readonly
-     * @memberof MainViewBase
+     * @memberof ControlServiceBase
      */
     get appDeMajorFieldName(){
         return (ModelTool.getAppEntityMajorField(this.controlInstance?.getPSAppDataEntity() as IPSAppDataEntity) as IPSAppDEField)?.codeName || '';
@@ -211,6 +221,9 @@ export class ControlServiceBase {
      * @memberof ControlServiceBase
      */
     public handleResponseData(action: string, data: any = {}, isCreate?: boolean, codelistArray?: any) {
+        if(data.srfopprivs){
+            this.getStore().commit('authresource/setSrfappdeData', { key: `${this.deName}-${data[this.appDeKeyFieldName.toLowerCase()]}`, value: data.srfopprivs });
+        }
         let model: any = this.getMode();
         if (!(model && model.getDataItems instanceof Function)) {
             return data;

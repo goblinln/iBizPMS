@@ -100,6 +100,16 @@ export class MainViewBase extends ViewBase {
     }
 
     /**
+     * 应用实体映射实体名称
+     *
+     * @readonly
+     * @memberof MainViewBase
+     */
+    get deName(){
+        return (this.viewInstance?.getPSAppDataEntity() as any)?.getPSDEName() || '';
+    }
+
+    /**
      * 应用实体主信息属性codeName
      *
      * @readonly

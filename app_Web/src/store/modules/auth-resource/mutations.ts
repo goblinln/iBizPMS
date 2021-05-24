@@ -43,3 +43,13 @@ export const setEnablePermissionValid = (state: any, enablepermissionvalid:boole
  export const setStandDynainstid = (state: any, srfdynainstid:string) => {
     state.srfdynainstid = srfdynainstid;
 }
+
+/**
+ * 设置实体权限数据
+ * 
+ * @param state 
+ * @param {key:string,value:any}
+ */
+ export const setSrfappdeData = (state: any, {key,value}:{key:string,value:any}) => {
+    state.srfappdeData[key] = value;
+}

@@ -541,7 +541,7 @@ export class AppGridBase extends GridControlBase {
                     show-elevator
                     show-total
                 >
-                    {columnPopTip}
+                    {this.controlInstance.enableColFilter ? columnPopTip : null}
                     {this.renderBatchToolbar()}
                     <span class='page-button'>
                         <i-button icon='md-refresh' title='刷新' on-click={() => this.pageRefresh()}></i-button>
@@ -656,7 +656,7 @@ export class AppGridBase extends GridControlBase {
                       {this.isControlLoaded ? this.renderEmptyDataTip() : this.renderLoadDataTip()}
                     </div>}
                     {this.controlInstance?.enablePagingBar ? this.renderPagingBar(h) : ''}
-                    {this.items?.length > 0 ? this.renderColumnFilter() : null}
+                    {this.items?.length > 0 && this.controlInstance?.enableColFilter ? this.renderColumnFilter() : null}
                 </i-form>
             </div>
         );

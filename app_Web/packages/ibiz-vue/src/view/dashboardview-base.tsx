@@ -93,6 +93,9 @@ export class DashboardViewBase extends MainViewBase {
                     return;
                 }
                 const { data: _data } = response;
+                if(_data.srfopprivs){
+                    this.$store.commit('authresource/setSrfappdeData', { key: `${this.deName}-${_data[this.appDeKeyFieldName.toLowerCase()]}`, value: _data.srfopprivs });
+                }
                 _this.viewState.next({ tag: 'all-portlet', action: 'loadmodel', data:_data});
                 if (_data[this.appDeMajorFieldName.toLowerCase()]) {
                     this.model.dataInfo = _data[this.appDeMajorFieldName.toLowerCase()];

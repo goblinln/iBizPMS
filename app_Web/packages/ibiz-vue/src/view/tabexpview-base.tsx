@@ -47,6 +47,9 @@ export class TabExpViewBase extends MainViewBase {
                     return;
                 }
                 const { data: _data } = response;
+                if(_data.srfopprivs){
+                    this.$store.commit('authresource/setSrfappdeData', { key: `${this.deName}-${_data[this.appDeKeyFieldName.toLowerCase()]}`, value: _data.srfopprivs });
+                }
                 this.engine.computeToolbarState(false, _data);
                 this.viewState.next({ tag: 'tabexppanel', action: 'loadmodel', data: _data });
                 if (_data[this.appDeMajorFieldName.toLowerCase()]) {

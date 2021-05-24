@@ -85,6 +85,7 @@ export const getAuthMenuWithRT = (state: any) => (menu: any) => {
         return true;
     }
 }
+
 /**
  * 获取标准模型实例标识
  * 
@@ -92,4 +93,13 @@ export const getAuthMenuWithRT = (state: any) => (menu: any) => {
  */
  export const getStandDynainstid = (state: any) => {
     return state.srfdynainstid;
+}
+
+/**
+ * 获取实体权限数据
+ * 
+ * @param state 
+ */
+export const getSrfappdeData = (state: any) =>(key:string) => {
+    return state.srfappdeData[key];
 }

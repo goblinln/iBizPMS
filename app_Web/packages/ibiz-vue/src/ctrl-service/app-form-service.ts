@@ -460,6 +460,9 @@ export class AppFormService extends ControlServiceBase {
      * @memberof AppFormService
      */
     public handleResponseData(action: string, data: any = {}, isCreate?: boolean, codelistArray?: any) {
+        if(data.srfopprivs){
+            this.getStore().commit('authresource/setSrfappdeData', { key: `${this.deName}-${data[this.appDeKeyFieldName.toLowerCase()]}`, value: data.srfopprivs });
+        }
         let model: any = this.getMode();
         if (!model && model.getDataItems instanceof Function) {
             return data;

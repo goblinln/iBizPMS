@@ -9,5 +9,7 @@ export const resourcestate: any = {
     // 是否开启权限认证
     enablePermissionValid: false,
     // 标准模型实例标识
-    srfdynainstid: ""
+    srfdynainstid: "",
+    // 实体权限数据
+    srfappdeData: {}
 }
