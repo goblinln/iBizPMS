@@ -1,8 +1,17 @@
 package cn.ibizlab.pms.core.extensions.service;
 
 import cn.ibizlab.pms.core.ibiz.service.impl.IBZProProductActionServiceImpl;
+import cn.ibizlab.pms.core.ibizplugin.service.IIBIZProMessageService;
+import cn.ibizlab.pms.core.ou.service.ISysEmployeeService;
+import cn.ibizlab.pms.core.zentao.domain.Action;
+import cn.ibizlab.pms.core.zentao.domain.Case;
+import cn.ibizlab.pms.core.zentao.domain.Story;
+import cn.ibizlab.pms.core.zentao.service.*;
+import cn.ibizlab.pms.util.dict.StaticDict;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import lombok.extern.slf4j.Slf4j;
 import cn.ibizlab.pms.core.ibiz.domain.IBZProProductAction;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
@@ -15,6 +24,49 @@ import java.util.*;
 @Primary
 @Service("IBZProProductActionExService")
 public class IBZProProductActionExService extends IBZProProductActionServiceImpl {
+
+    @Autowired
+    IFileService iFileService;
+
+    @Autowired
+    IStoryService iStoryService;
+
+    @Autowired
+    ICaseService iCaseService;
+
+    @Autowired
+    ITaskService iTaskService;
+
+    @Autowired
+    IBugService iBugService;
+
+    @Autowired
+    IHistoryService iHistoryService;
+
+    @Autowired
+    IIBIZProMessageService iibizProMessageService;
+
+    @Autowired
+    ISysEmployeeService iSysEmployeeService;
+
+    @Autowired
+    IActionService iActionService;
+
+    @Override
+    public boolean create(IBZProProductAction et) {
+        et.setComment(et.getComment() == null ? "" : et.getComment());
+        String noticeusers = et.getNoticeusers();
+        String files = et.getFiles();
+        et.setObjecttype(StaticDict.Action__object_type.PRODUCT.getValue());
+        this.createHis(et);
+        // send(noticeusers, et);
+        // 保存文件
+        // 更新file
+        String extra = "0";
+
+        FileHelper.updateObjectID(et.getObjectid(), et.getObjecttype(), files, extra, iFileService);
+        return true;
+    }
 
     @Override
     protected Class currentModelClass() {
@@ -29,7 +81,10 @@ public class IBZProProductActionExService extends IBZProProductActionServiceImpl
     @Override
     @Transactional
     public IBZProProductAction createHis(IBZProProductAction et) {
-        return super.createHis(et);
+        Action action = new Action();
+        CachedBeanCopier.copy(et, action);
+        CachedBeanCopier.copy(iActionService.createHis(action), et);
+        return et;
     }
     /**
      * [EditComment:编辑备注信息] 行为扩展
