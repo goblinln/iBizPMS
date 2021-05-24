@@ -140,7 +140,7 @@ public class ProductPlanResource {
         domain = productplanService.batchUnlinkBug(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
     @ApiOperation(value = "批量处理[批量解除关联Bug]", tags = {"产品计划" },  notes = "批量处理[批量解除关联Bug]")
@@ -159,7 +159,7 @@ public class ProductPlanResource {
         domain = productplanService.batchUnlinkStory(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
     @ApiOperation(value = "批量处理[批量解除关联需求]", tags = {"产品计划" },  notes = "批量处理[批量解除关联需求]")
@@ -184,7 +184,7 @@ public class ProductPlanResource {
         domain = productplanService.eeActivePlan(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
     @ApiOperation(value = "批量处理[EE激活计划]", tags = {"产品计划" },  notes = "批量处理[EE激活计划]")
@@ -203,7 +203,7 @@ public class ProductPlanResource {
         domain = productplanService.eeCancelPlan(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
     @ApiOperation(value = "批量处理[EE取消计划]", tags = {"产品计划" },  notes = "批量处理[EE取消计划]")
@@ -222,7 +222,7 @@ public class ProductPlanResource {
         domain = productplanService.eeClosePlan(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
     @ApiOperation(value = "批量处理[EE关闭计划]", tags = {"产品计划" },  notes = "批量处理[EE关闭计划]")
@@ -241,7 +241,7 @@ public class ProductPlanResource {
         domain = productplanService.eeFinishPlan(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
     @ApiOperation(value = "批量处理[EE完成计划]", tags = {"产品计划" },  notes = "批量处理[EE完成计划]")
@@ -260,7 +260,7 @@ public class ProductPlanResource {
         domain = productplanService.eePausePlan(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
     @ApiOperation(value = "批量处理[EE暂停计划]", tags = {"产品计划" },  notes = "批量处理[EE暂停计划]")
@@ -279,7 +279,7 @@ public class ProductPlanResource {
         domain = productplanService.eeRestartPlan(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
     @ApiOperation(value = "批量处理[继续计划]", tags = {"产品计划" },  notes = "批量处理[继续计划]")
@@ -298,7 +298,7 @@ public class ProductPlanResource {
         domain = productplanService.eeStartPlan(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
     @ApiOperation(value = "批量处理[EE开始计划]", tags = {"产品计划" },  notes = "批量处理[EE开始计划]")
@@ -318,7 +318,7 @@ public class ProductPlanResource {
         domain = productplanService.getOldPlanName(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
@@ -331,7 +331,7 @@ public class ProductPlanResource {
         domain = productplanService.importPlanTemplet(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
     @ApiOperation(value = "批量处理[导入计划模板]", tags = {"产品计划" },  notes = "批量处理[导入计划模板]")
@@ -351,7 +351,7 @@ public class ProductPlanResource {
         domain = productplanService.linkBug(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
     @ApiOperation(value = "批量处理[关联Bug]", tags = {"产品计划" },  notes = "批量处理[关联Bug]")
@@ -371,7 +371,7 @@ public class ProductPlanResource {
         domain = productplanService.linkStory(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
     @ApiOperation(value = "批量处理[关联需求]", tags = {"产品计划" },  notes = "批量处理[关联需求]")
@@ -390,7 +390,7 @@ public class ProductPlanResource {
         domain = productplanService.linkTask(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
     @ApiOperation(value = "批量处理[关联任务]", tags = {"产品计划" },  notes = "批量处理[关联任务]")
@@ -409,7 +409,7 @@ public class ProductPlanResource {
         domain = productplanService.mobProductPlanCounter(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
@@ -439,7 +439,7 @@ public class ProductPlanResource {
         domain = productplanService.unlinkBug(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
     @ApiOperation(value = "批量处理[解除关联Bug]", tags = {"产品计划" },  notes = "批量处理[解除关联Bug]")
@@ -458,7 +458,7 @@ public class ProductPlanResource {
         domain = productplanService.unlinkStory(domain);
         productplandto = productplanMapping.toDto(domain);
         Map<String,Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
     @ApiOperation(value = "批量处理[解除关联需求]", tags = {"产品计划" },  notes = "批量处理[解除关联需求]")

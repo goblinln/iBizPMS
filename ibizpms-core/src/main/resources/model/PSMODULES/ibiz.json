@@ -266,6 +266,9 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildHistory.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProMonthlyAction.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProReportlyAction.json"
   }, {
     "modelref" : true,

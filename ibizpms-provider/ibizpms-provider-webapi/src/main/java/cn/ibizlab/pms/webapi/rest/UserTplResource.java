@@ -146,7 +146,7 @@ public class UserTplResource {
         domain = usertplService.hasDeleted(domain);
         usertpldto = usertplMapping.toDto(domain);
         Map<String,Integer> opprivs = usertplRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        usertpldto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(usertpldto);
     }
     @ApiOperation(value = "批量处理[删除]", tags = {"用户模板" },  notes = "批量处理[删除]")

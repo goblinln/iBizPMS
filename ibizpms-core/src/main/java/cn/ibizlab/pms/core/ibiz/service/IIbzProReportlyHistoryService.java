@@ -44,6 +44,9 @@ public interface IIbzProReportlyHistoryService extends IService<IbzProReportlyHi
     List<IbzProReportlyHistory> selectView(IbzProReportlyHistorySearchContext context);
 
     Page<IbzProReportlyHistory> searchDefault(IbzProReportlyHistorySearchContext context);
+    List<IbzProReportlyHistory> selectByAction(Long id);
+    void removeByAction(Long id);
+    void saveByAction(Long id, List<IbzProReportlyHistory> list) ;
     IbzProReportlyHistory dynamicCall(Long key, String action, IbzProReportlyHistory et);
     /**
      *自定义查询SQL

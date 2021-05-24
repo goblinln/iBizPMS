@@ -147,7 +147,7 @@ public class TaskEstimateResource {
         domain = taskestimateService.pMEvaluation(domain);
         taskestimatedto = taskestimateMapping.toDto(domain);
         Map<String,Integer> opprivs = taskestimateRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        taskestimatedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatedto);
     }
     @ApiOperation(value = "批量处理[项目经理评估]", tags = {"任务预计" },  notes = "批量处理[项目经理评估]")

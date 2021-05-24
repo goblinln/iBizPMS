@@ -60,7 +60,7 @@ public class ProjectTeamResource {
         domain = projectteamService.getUserRole(domain);
         projectteamdto = projectteamMapping.toDto(domain);
         Map<String,Integer> opprivs = projectteamRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectteamdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectteamdto);
     }
     @ApiOperation(value = "批量处理[获取成员角色]", tags = {"项目团队" },  notes = "批量处理[获取成员角色]")

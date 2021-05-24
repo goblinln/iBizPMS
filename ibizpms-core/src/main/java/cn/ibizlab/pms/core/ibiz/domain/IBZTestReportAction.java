@@ -262,6 +262,30 @@ public class IBZTestReportAction extends EntityMP implements Serializable {
     @JsonProperty("actor")
     @ApiModelProperty("操作者")
     private String actor;
+    /**
+     * 项目
+     */
+    @TableField(value = "`PROJECT`")
+    @JSONField(name = "project")
+    @JsonProperty("project")
+    @ApiModelProperty("项目")
+    private Long project;
+    /**
+     * 编号
+     */
+    @TableField(value = "`OBJECTID`")
+    @JSONField(name = "objectid")
+    @JsonProperty("objectid")
+    @ApiModelProperty("编号")
+    private Long objectid;
+
+    /**
+     * 
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private cn.ibizlab.pms.core.zentao.domain.TestReport ibzprotestreport;
 
 
 
@@ -327,6 +351,22 @@ public class IBZTestReportAction extends EntityMP implements Serializable {
     public void setActor(String actor) {
         this.actor = actor;
         this.modify("actor", actor);
+    }
+
+    /**
+     * 设置 [项目]
+     */
+    public void setProject(Long project) {
+        this.project = project;
+        this.modify("project", project);
+    }
+
+    /**
+     * 设置 [编号]
+     */
+    public void setObjectid(Long objectid) {
+        this.objectid = objectid;
+        this.modify("objectid", objectid);
     }
 
 

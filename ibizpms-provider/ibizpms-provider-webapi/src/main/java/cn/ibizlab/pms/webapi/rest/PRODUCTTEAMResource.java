@@ -146,7 +146,7 @@ public class PRODUCTTEAMResource {
         domain = productteamService.productTeamGuoLv(domain);
         productteamdto = productteamMapping.toDto(domain);
         Map<String,Integer> opprivs = productteamRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productteamdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productteamdto);
     }
     @ApiOperation(value = "批量处理[PmsEe团队管理过滤]", tags = {"产品团队" },  notes = "批量处理[PmsEe团队管理过滤]")

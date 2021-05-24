@@ -146,7 +146,7 @@ public class ProductModuleResource {
         domain = productmoduleService.fix(domain);
         productmoduledto = productmoduleMapping.toDto(domain);
         Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productmoduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);
     }
 
@@ -159,7 +159,7 @@ public class ProductModuleResource {
         domain = productmoduleService.removeModule(domain);
         productmoduledto = productmoduleMapping.toDto(domain);
         Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productmoduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);
     }
 
@@ -189,7 +189,7 @@ public class ProductModuleResource {
         domain = productmoduleService.syncFromIBIZ(domain);
         productmoduledto = productmoduleMapping.toDto(domain);
         Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productmoduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);
     }
     @ApiOperation(value = "批量处理[同步Ibz平台模块]", tags = {"需求模块" },  notes = "批量处理[同步Ibz平台模块]")

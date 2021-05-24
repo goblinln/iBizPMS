@@ -145,7 +145,7 @@ public class ProductStatsResource {
         domain = productstatsService.getTestStats(domain);
         productstatsdto = productstatsMapping.toDto(domain);
         Map<String,Integer> opprivs = productstatsRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productstatsdto);
     }
 

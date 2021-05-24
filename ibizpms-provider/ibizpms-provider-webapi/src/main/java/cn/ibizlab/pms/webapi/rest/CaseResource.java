@@ -148,7 +148,7 @@ public class CaseResource {
         domain = caseService.caseFavorite(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -161,7 +161,7 @@ public class CaseResource {
         domain = caseService.caseNFavorite(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -180,7 +180,7 @@ public class CaseResource {
         domain = caseService.confirmChange(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
     @ApiOperation(value = "批量处理[确认用例变更]", tags = {"测试用例" },  notes = "批量处理[确认用例变更]")
@@ -199,7 +199,7 @@ public class CaseResource {
         domain = caseService.confirmstorychange(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
     @ApiOperation(value = "批量处理[确认需求变更]", tags = {"测试用例" },  notes = "批量处理[确认需求变更]")
@@ -219,7 +219,7 @@ public class CaseResource {
         domain = caseService.getByTestTask(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
     @ApiOperation(value = "批量处理[根据测试单获取或者状态]", tags = {"测试用例" },  notes = "批量处理[根据测试单获取或者状态]")
@@ -239,7 +239,7 @@ public class CaseResource {
         domain = caseService.getTestTaskCntRun(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
     @ApiOperation(value = "批量处理[获取测试单执行结果]", tags = {"测试用例" },  notes = "批量处理[获取测试单执行结果]")
@@ -258,7 +258,7 @@ public class CaseResource {
         domain = caseService.linkCase(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
     @ApiOperation(value = "批量处理[测试单关联测试用例]", tags = {"测试用例" },  notes = "批量处理[测试单关联测试用例]")
@@ -278,7 +278,7 @@ public class CaseResource {
         domain = caseService.mobLinkCase(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
     @ApiOperation(value = "批量处理[移动端关联需求]", tags = {"测试用例" },  notes = "批量处理[移动端关联需求]")
@@ -298,7 +298,7 @@ public class CaseResource {
         domain = caseService.runCase(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
     @ApiOperation(value = "批量处理[执行测试]", tags = {"测试用例" },  notes = "批量处理[执行测试]")
@@ -318,7 +318,7 @@ public class CaseResource {
         domain = caseService.runCases(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -349,7 +349,7 @@ public class CaseResource {
         domain = caseService.testRunCase(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
     @ApiOperation(value = "批量处理[执行测试]", tags = {"测试用例" },  notes = "批量处理[执行测试]")
@@ -369,7 +369,7 @@ public class CaseResource {
         domain = caseService.testRunCases(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -381,7 +381,7 @@ public class CaseResource {
         domain = caseService.testsuitelinkCase(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
     @ApiOperation(value = "批量处理[套件关联]", tags = {"测试用例" },  notes = "批量处理[套件关联]")
@@ -401,7 +401,7 @@ public class CaseResource {
         domain = caseService.unlinkCase(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
     @ApiOperation(value = "批量处理[移除用例]", tags = {"测试用例" },  notes = "批量处理[移除用例]")
@@ -421,7 +421,7 @@ public class CaseResource {
         domain = caseService.unlinkCases(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -434,7 +434,7 @@ public class CaseResource {
         domain = caseService.unlinkSuiteCase(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
     @ApiOperation(value = "批量处理[移除用例]", tags = {"测试用例" },  notes = "批量处理[移除用例]")
@@ -454,7 +454,7 @@ public class CaseResource {
         domain = caseService.unlinkSuiteCases(domain);
         casedto = caseMapping.toDto(domain);
         Map<String,Integer> opprivs = caseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 

@@ -148,7 +148,7 @@ public class IbzproConfigResource {
         domain = ibzproconfigService.getSystemConfig(domain);
         ibzproconfigdto = ibzproconfigMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzproconfigRuntime.getOPPrivs(domain.getIbzproconfigid());
-        dto.setSrfopprivs(opprivs);
+        ibzproconfigdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproconfigdto);
     }
     @PreAuthorize("@IbzproConfigRuntime.test('READ')")

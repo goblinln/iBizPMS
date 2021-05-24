@@ -164,7 +164,7 @@ public class IBZProStoryModuleResource {
         domain = ibzprostorymoduleService.syncFromIBIZ(domain);
         ibzprostorymoduledto = ibzprostorymoduleMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        ibzprostorymoduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzprostorymoduledto);
     }
     @ApiOperation(value = "批量处理[同步Ibz平台模块]", tags = {"需求模块" },  notes = "批量处理[同步Ibz平台模块]")

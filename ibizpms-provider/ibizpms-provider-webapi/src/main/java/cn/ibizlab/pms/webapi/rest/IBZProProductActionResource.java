@@ -147,7 +147,7 @@ public class IBZProProductActionResource {
         domain = ibzproproductactionService.comment(domain);
         ibzproproductactiondto = ibzproproductactionMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzproproductactionRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        ibzproproductactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactiondto);
     }
 
@@ -160,7 +160,7 @@ public class IBZProProductActionResource {
         domain = ibzproproductactionService.createHis(domain);
         ibzproproductactiondto = ibzproproductactionMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzproproductactionRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        ibzproproductactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactiondto);
     }
     @ApiOperation(value = "批量处理[创建历史日志]", tags = {"产品日志" },  notes = "批量处理[创建历史日志]")
@@ -180,7 +180,7 @@ public class IBZProProductActionResource {
         domain = ibzproproductactionService.editComment(domain);
         ibzproproductactiondto = ibzproproductactionMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzproproductactionRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        ibzproproductactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactiondto);
     }
     @ApiOperation(value = "批量处理[编辑备注信息]", tags = {"产品日志" },  notes = "批量处理[编辑备注信息]")
@@ -199,7 +199,7 @@ public class IBZProProductActionResource {
         domain = ibzproproductactionService.managePmsEe(domain);
         ibzproproductactiondto = ibzproproductactionMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzproproductactionRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        ibzproproductactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactiondto);
     }
     @ApiOperation(value = "批量处理[Pms企业专用]", tags = {"产品日志" },  notes = "批量处理[Pms企业专用]")
@@ -236,7 +236,7 @@ public class IBZProProductActionResource {
         domain = ibzproproductactionService.sendMarkDone(domain);
         ibzproproductactiondto = ibzproproductactionMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzproproductactionRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        ibzproproductactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactiondto);
     }
     @ApiOperation(value = "批量处理[已读]", tags = {"产品日志" },  notes = "批量处理[已读]")
@@ -255,7 +255,7 @@ public class IBZProProductActionResource {
         domain = ibzproproductactionService.sendTodo(domain);
         ibzproproductactiondto = ibzproproductactionMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzproproductactionRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        ibzproproductactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactiondto);
     }
     @ApiOperation(value = "批量处理[发送待办]", tags = {"产品日志" },  notes = "批量处理[发送待办]")
@@ -274,7 +274,7 @@ public class IBZProProductActionResource {
         domain = ibzproproductactionService.sendToread(domain);
         ibzproproductactiondto = ibzproproductactionMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzproproductactionRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        ibzproproductactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactiondto);
     }
     @ApiOperation(value = "批量处理[发送待阅]", tags = {"产品日志" },  notes = "批量处理[发送待阅]")

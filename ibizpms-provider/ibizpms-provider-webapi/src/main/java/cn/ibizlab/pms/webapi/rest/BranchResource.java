@@ -164,7 +164,7 @@ public class BranchResource {
         domain = branchService.sort(domain);
         branchdto = branchMapping.toDto(domain);
         Map<String,Integer> opprivs = branchRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        branchdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(branchdto);
     }
     @ApiOperation(value = "批量处理[排序]", tags = {"产品的分支和平台信息" },  notes = "批量处理[排序]")

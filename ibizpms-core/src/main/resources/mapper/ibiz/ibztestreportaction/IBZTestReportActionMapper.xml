@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`ACTION`, (case when t1.objectType in ('bug','story','release') and t1.action in ('changestatus','resolved','closed', 'reviewed') and t1.extra <> '' then CONCAT_WS('_',t1.objectType,t1.action,t1.extra) else '' end) AS `ACTIONMANNER`, t1.`ACTIONSN`, t1.`ACTOR`, t1.`COMMENT`, t1.`DATE`, DATE_FORMAT(t1.date,'%m月%d日 %H:%i') AS `DATE1`, t1.`DEPT`, t1.`DEPTNAME`, t1.`EXTRA`, t1.`ID`, 0 AS `ISACTORSS`, t1.`comment` AS `LASTCOMMENT`, (case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 MONTH),'%Y-%m') then '1' end) AS `LASTMONTH`, (case when YEARWEEK(DATE_ADD(now(),INTERVAL -1 WEEK)) = YEARWEEK(t1.date) then '1' end) AS `LASTWEEK`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t1.`READ`, (case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(now(),'%Y-%m') then '1' end) AS `THISMONTH`, (case when YEARWEEK(now()) = YEARWEEK(t1.date) then '1' end) AS `THISWEEK`, (case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(now(),'%Y-%m-%d') then '1' end) AS `TODAY`, (case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 DAY),'%Y-%m-%d') then '1' end) AS `YESTERDAY` FROM `zt_action` t1   ]]>
+        <![CDATA[ SELECT t1.`ACTION`, (case when t1.objectType in ('bug','story','release') and t1.action in ('changestatus','resolved','closed', 'reviewed') and t1.extra <> '' then CONCAT_WS('_',t1.objectType,t1.action,t1.extra) else '' end) AS `ACTIONMANNER`, t1.`ACTIONSN`, t1.`ACTOR`, t1.`COMMENT`, t1.`DATE`, DATE_FORMAT(t1.date,'%m月%d日 %H:%i') AS `DATE1`, t1.`DEPT`, t1.`DEPTNAME`, t1.`EXTRA`, t1.`ID`, 0 AS `ISACTORSS`, t1.`comment` AS `LASTCOMMENT`, (case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 MONTH),'%Y-%m') then '1' end) AS `LASTMONTH`, (case when YEARWEEK(DATE_ADD(now(),INTERVAL -1 WEEK)) = YEARWEEK(t1.date) then '1' end) AS `LASTWEEK`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t1.`PROJECT`, t1.`READ`, (case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(now(),'%Y-%m') then '1' end) AS `THISMONTH`, (case when YEARWEEK(now()) = YEARWEEK(t1.date) then '1' end) AS `THISWEEK`, (case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(now(),'%Y-%m-%d') then '1' end) AS `TODAY`, (case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 DAY),'%Y-%m-%d') then '1' end) AS `YESTERDAY` FROM `zt_action` t1   ]]>
     </sql>
 
 	
@@ -30,6 +30,9 @@
 		<if test="srf.n_actionmanner_eq != null ">
 			<![CDATA[ AND  (case when t1.objectType in ('bug','story','release') and t1.action in ('changestatus','resolved','closed', 'reviewed') and t1.extra <> '' then CONCAT_WS('_',t1.objectType,t1.action,t1.extra) else '' end) = #{srf.n_actionmanner_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_objectid_eq != null ">
+			<![CDATA[ AND  t1.`OBJECTID` = #{srf.n_objectid_eq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
 		AND ${ew.sqlSegment}
 		</if>
@@ -48,10 +51,20 @@
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="IBZTestReportActionResultMap" type="cn.ibizlab.pms.core.ibiz.domain.IBZTestReportAction" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
+		<result property="objectid" column="objectid" />
             
 		
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ibzprotestreport" javaType="cn.ibizlab.pms.core.zentao.domain.TestReport" column="objectid" select="cn.ibizlab.pms.core.zentao.mapper.TestReportMapper.selectById" fetchType="lazy"></association>
     </resultMap>
 
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZPRO_TESTREPROTACTION_ZT_TESTREPORT_OBJECTID] -->
+	 <select id="selectByObjectid" resultMap="IBZTestReportActionResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND t1.`OBJECTID`=#{id} ]]>
+		</trim>
+     </select>
 
     <!--数据集合[Default]-->
 	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IBZTestReportActionSearchContext"  resultMap="IBZTestReportActionResultMap">
@@ -62,7 +75,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACTION`, (case when t1.objectType in ('bug','story','release') and t1.action in ('changestatus','resolved','closed', 'reviewed') and t1.extra <> '' then CONCAT_WS('_',t1.objectType,t1.action,t1.extra) else '' end) AS `ACTIONMANNER`, t1.`ACTIONSN`, t1.`ACTOR`, t1.`COMMENT`, t1.`DATE`, DATE_FORMAT(t1.date,'%m月%d日 %H:%i') AS `DATE1`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, 0 AS `ISACTORSS`, t1.`comment` AS `LASTCOMMENT`, (case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 MONTH),'%Y-%m') then '1' end) AS `LASTMONTH`, (case when YEARWEEK(DATE_ADD(now(),INTERVAL -1 WEEK)) = YEARWEEK(t1.date) then '1' end) AS `LASTWEEK`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t1.`READ`, (case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(now(),'%Y-%m') then '1' end) AS `THISMONTH`, (case when YEARWEEK(now()) = YEARWEEK(t1.date) then '1' end) AS `THISWEEK`, (case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(now(),'%Y-%m-%d') then '1' end) AS `TODAY`, (case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 DAY),'%Y-%m-%d') then '1' end) AS `YESTERDAY` FROM `zt_action` t1   ]]>
+		<![CDATA[ SELECT t1.`ACTION`, (case when t1.objectType in ('bug','story','release') and t1.action in ('changestatus','resolved','closed', 'reviewed') and t1.extra <> '' then CONCAT_WS('_',t1.objectType,t1.action,t1.extra) else '' end) AS `ACTIONMANNER`, t1.`ACTIONSN`, t1.`ACTOR`, t1.`COMMENT`, t1.`DATE`, DATE_FORMAT(t1.date,'%m月%d日 %H:%i') AS `DATE1`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, 0 AS `ISACTORSS`, t1.`comment` AS `LASTCOMMENT`, (case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 MONTH),'%Y-%m') then '1' end) AS `LASTMONTH`, (case when YEARWEEK(DATE_ADD(now(),INTERVAL -1 WEEK)) = YEARWEEK(t1.date) then '1' end) AS `LASTWEEK`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t1.`PROJECT`, t1.`READ`, (case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(now(),'%Y-%m') then '1' end) AS `THISMONTH`, (case when YEARWEEK(now()) = YEARWEEK(t1.date) then '1' end) AS `THISWEEK`, (case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(now(),'%Y-%m-%d') then '1' end) AS `TODAY`, (case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 DAY),'%Y-%m-%d') then '1' end) AS `YESTERDAY` FROM `zt_action` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
@@ -86,7 +99,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACTION`, (case when t1.objectType in ('bug','story','release') and t1.action in ('changestatus','resolved','closed', 'reviewed') and t1.extra <> '' then CONCAT_WS('_',t1.objectType,t1.action,t1.extra) else '' end) AS `ACTIONMANNER`, t1.`ACTIONSN`, t1.`ACTOR`, t1.`COMMENT`, t1.`DATE`, DATE_FORMAT(t1.date,'%m月%d日 %H:%i') AS `DATE1`, t1.`DEPT`, t1.`DEPTNAME`, t1.`EXTRA`, t1.`ID`, 0 AS `ISACTORSS`, t1.`comment` AS `LASTCOMMENT`, (case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 MONTH),'%Y-%m') then '1' end) AS `LASTMONTH`, (case when YEARWEEK(DATE_ADD(now(),INTERVAL -1 WEEK)) = YEARWEEK(t1.date) then '1' end) AS `LASTWEEK`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t1.`READ`, (case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(now(),'%Y-%m') then '1' end) AS `THISMONTH`, (case when YEARWEEK(now()) = YEARWEEK(t1.date) then '1' end) AS `THISWEEK`, (case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(now(),'%Y-%m-%d') then '1' end) AS `TODAY`, (case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 DAY),'%Y-%m-%d') then '1' end) AS `YESTERDAY` FROM `zt_action` t1   ]]>
+		<![CDATA[ SELECT t1.`ACTION`, (case when t1.objectType in ('bug','story','release') and t1.action in ('changestatus','resolved','closed', 'reviewed') and t1.extra <> '' then CONCAT_WS('_',t1.objectType,t1.action,t1.extra) else '' end) AS `ACTIONMANNER`, t1.`ACTIONSN`, t1.`ACTOR`, t1.`COMMENT`, t1.`DATE`, DATE_FORMAT(t1.date,'%m月%d日 %H:%i') AS `DATE1`, t1.`DEPT`, t1.`DEPTNAME`, t1.`EXTRA`, t1.`ID`, 0 AS `ISACTORSS`, t1.`comment` AS `LASTCOMMENT`, (case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 MONTH),'%Y-%m') then '1' end) AS `LASTMONTH`, (case when YEARWEEK(DATE_ADD(now(),INTERVAL -1 WEEK)) = YEARWEEK(t1.date) then '1' end) AS `LASTWEEK`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t1.`PROJECT`, t1.`READ`, (case when DATE_FORMAT(t1.date,'%Y-%m') = DATE_FORMAT(now(),'%Y-%m') then '1' end) AS `THISMONTH`, (case when YEARWEEK(now()) = YEARWEEK(t1.date) then '1' end) AS `THISWEEK`, (case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(now(),'%Y-%m-%d') then '1' end) AS `TODAY`, (case when DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(DATE_ADD(now(),INTERVAL -1 DAY),'%Y-%m-%d') then '1' end) AS `YESTERDAY` FROM `zt_action` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

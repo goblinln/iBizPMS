@@ -154,7 +154,7 @@ public class IbizproProductWeeklyResource {
         domain = ibizproproductweeklyService.sumProductWeekly(domain);
         ibizproproductweeklydto = ibizproproductweeklyMapping.toDto(domain);
         Map<String,Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(domain.getIbizproProductweeklyid());
-        dto.setSrfopprivs(opprivs);
+        ibizproproductweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklydto);
     }
     @ApiOperation(value = "批量处理[统计产品周报]", tags = {"产品周报" },  notes = "批量处理[统计产品周报]")

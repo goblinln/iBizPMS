@@ -142,7 +142,7 @@ public class SubStoryResource {
         domain = storyService.activate(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[激活]", tags = {"需求" },  notes = "批量处理[激活]")
@@ -162,7 +162,7 @@ public class SubStoryResource {
         domain = storyService.allPush(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[全部推送]", tags = {"需求" },  notes = "批量处理[全部推送]")
@@ -182,7 +182,7 @@ public class SubStoryResource {
         domain = storyService.assignTo(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[指派]", tags = {"需求" },  notes = "批量处理[指派]")
@@ -202,7 +202,7 @@ public class SubStoryResource {
         domain = storyService.batchAssignTo(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[批量指派]", tags = {"需求" },  notes = "批量处理[批量指派]")
@@ -222,7 +222,7 @@ public class SubStoryResource {
         domain = storyService.batchChangeBranch(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[批量变更平台/分支]", tags = {"需求" },  notes = "批量处理[批量变更平台/分支]")
@@ -242,7 +242,7 @@ public class SubStoryResource {
         domain = storyService.batchChangeModule(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[批量变更模块]", tags = {"需求" },  notes = "批量处理[批量变更模块]")
@@ -262,7 +262,7 @@ public class SubStoryResource {
         domain = storyService.batchChangePlan(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[批量关联计划]", tags = {"需求" },  notes = "批量处理[批量关联计划]")
@@ -282,7 +282,7 @@ public class SubStoryResource {
         domain = storyService.batchChangeStage(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[批量变更阶段]", tags = {"需求" },  notes = "批量处理[批量变更阶段]")
@@ -302,7 +302,7 @@ public class SubStoryResource {
         domain = storyService.batchClose(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[批量关闭]", tags = {"需求" },  notes = "批量处理[批量关闭]")
@@ -322,7 +322,7 @@ public class SubStoryResource {
         domain = storyService.batchReview(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[批量评审]", tags = {"需求" },  notes = "批量处理[批量评审]")
@@ -342,7 +342,7 @@ public class SubStoryResource {
         domain = storyService.batchUnlinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[计划批量解除关联需求]", tags = {"需求" },  notes = "批量处理[计划批量解除关联需求]")
@@ -362,7 +362,7 @@ public class SubStoryResource {
         domain = storyService.bugToStory(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[bug转需求]", tags = {"需求" },  notes = "批量处理[bug转需求]")
@@ -382,7 +382,7 @@ public class SubStoryResource {
         domain = storyService.buildBatchUnlinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[版本批量解除关联需求]", tags = {"需求" },  notes = "批量处理[版本批量解除关联需求]")
@@ -402,7 +402,7 @@ public class SubStoryResource {
         domain = storyService.buildLinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[项目关联需求]", tags = {"需求" },  notes = "批量处理[项目关联需求]")
@@ -422,7 +422,7 @@ public class SubStoryResource {
         domain = storyService.buildUnlinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[版本解除关联需求]", tags = {"需求" },  notes = "批量处理[版本解除关联需求]")
@@ -442,7 +442,7 @@ public class SubStoryResource {
         domain = storyService.buildUnlinkStorys(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -455,7 +455,7 @@ public class SubStoryResource {
         domain = storyService.change(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[变更]", tags = {"需求" },  notes = "批量处理[变更]")
@@ -481,7 +481,7 @@ public class SubStoryResource {
         domain = storyService.close(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[关闭]", tags = {"需求" },  notes = "批量处理[关闭]")
@@ -501,7 +501,7 @@ public class SubStoryResource {
         domain = storyService.createTasks(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[生成任务]", tags = {"需求" },  notes = "批量处理[生成任务]")
@@ -521,7 +521,7 @@ public class SubStoryResource {
         domain = storyService.getStorySpec(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[获取需求描述]", tags = {"需求" },  notes = "批量处理[获取需求描述]")
@@ -541,7 +541,7 @@ public class SubStoryResource {
         domain = storyService.getStorySpecs(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -554,7 +554,7 @@ public class SubStoryResource {
         domain = storyService.importPlanStories(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[项目关联需求-按计划关联]", tags = {"需求" },  notes = "批量处理[项目关联需求-按计划关联]")
@@ -574,7 +574,7 @@ public class SubStoryResource {
         domain = storyService.linkStory(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[计划关联需求]", tags = {"需求" },  notes = "批量处理[计划关联需求]")
@@ -594,7 +594,7 @@ public class SubStoryResource {
         domain = storyService.projectBatchUnlinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[项目批量解除关联需求]", tags = {"需求" },  notes = "批量处理[项目批量解除关联需求]")
@@ -614,7 +614,7 @@ public class SubStoryResource {
         domain = storyService.projectLinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[项目关联需求]", tags = {"需求" },  notes = "批量处理[项目关联需求]")
@@ -634,7 +634,7 @@ public class SubStoryResource {
         domain = storyService.projectUnlinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[项目解除关联需求]", tags = {"需求" },  notes = "批量处理[项目解除关联需求]")
@@ -654,7 +654,7 @@ public class SubStoryResource {
         domain = storyService.projectUnlinkStorys(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -667,7 +667,7 @@ public class SubStoryResource {
         domain = storyService.push(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[推送]", tags = {"需求" },  notes = "批量处理[推送]")
@@ -687,7 +687,7 @@ public class SubStoryResource {
         domain = storyService.releaseBatchUnlinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[发布批量解除关联需求]", tags = {"需求" },  notes = "批量处理[发布批量解除关联需求]")
@@ -707,7 +707,7 @@ public class SubStoryResource {
         domain = storyService.releaseLinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[发布关联需求]", tags = {"需求" },  notes = "批量处理[发布关联需求]")
@@ -727,7 +727,7 @@ public class SubStoryResource {
         domain = storyService.releaseUnlinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[发布解除关联需求]", tags = {"需求" },  notes = "批量处理[发布解除关联需求]")
@@ -747,7 +747,7 @@ public class SubStoryResource {
         domain = storyService.resetReviewedBy(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[重置由谁评审]", tags = {"需求" },  notes = "批量处理[重置由谁评审]")
@@ -767,7 +767,7 @@ public class SubStoryResource {
         domain = storyService.review(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[评审]", tags = {"需求" },  notes = "批量处理[评审]")
@@ -807,7 +807,7 @@ public class SubStoryResource {
         domain = storyService.sendMessage(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[行为]", tags = {"需求" },  notes = "批量处理[行为]")
@@ -827,7 +827,7 @@ public class SubStoryResource {
         domain = storyService.sendMsgPreProcess(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[发送消息前置处理]", tags = {"需求" },  notes = "批量处理[发送消息前置处理]")
@@ -846,7 +846,7 @@ public class SubStoryResource {
         domain = storyService.setStage(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[设置需求阶段]", tags = {"需求" },  notes = "批量处理[设置需求阶段]")
@@ -866,7 +866,7 @@ public class SubStoryResource {
         domain = storyService.storyFavorites(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -879,7 +879,7 @@ public class SubStoryResource {
         domain = storyService.storyNFavorites(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -891,7 +891,7 @@ public class SubStoryResource {
         domain = storyService.syncFromIbiz(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[同步Ibz平台实体]", tags = {"需求" },  notes = "批量处理[同步Ibz平台实体]")
@@ -911,7 +911,7 @@ public class SubStoryResource {
         domain = storyService.unlinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
         Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
     @ApiOperation(value = "批量处理[计划解除关联需求]", tags = {"需求" },  notes = "批量处理[计划解除关联需求]")

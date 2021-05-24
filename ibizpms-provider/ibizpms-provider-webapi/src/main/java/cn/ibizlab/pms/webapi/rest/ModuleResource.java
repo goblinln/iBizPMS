@@ -146,7 +146,7 @@ public class ModuleResource {
         domain = moduleService.fix(domain);
         moduledto = moduleMapping.toDto(domain);
         Map<String,Integer> opprivs = moduleRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        moduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(moduledto);
     }
     @ApiOperation(value = "批量处理[重建模块路径]", tags = {"模块" },  notes = "批量处理[重建模块路径]")

@@ -148,7 +148,7 @@ public class SysUpdateLogResource {
         domain = sysupdatelogService.getLastUpdateInfo(domain);
         sysupdatelogdto = sysupdatelogMapping.toDto(domain);
         Map<String,Integer> opprivs = sysupdatelogRuntime.getOPPrivs(domain.getSysupdatelogid());
-        dto.setSrfopprivs(opprivs);
+        sysupdatelogdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogdto);
     }
     @PreAuthorize("@SysUpdateLogRuntime.test('READ')")

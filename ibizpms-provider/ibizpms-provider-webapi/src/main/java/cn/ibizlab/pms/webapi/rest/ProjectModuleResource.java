@@ -146,7 +146,7 @@ public class ProjectModuleResource {
         domain = projectmoduleService.fix(domain);
         projectmoduledto = projectmoduleMapping.toDto(domain);
         Map<String,Integer> opprivs = projectmoduleRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectmoduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduledto);
     }
 
@@ -159,7 +159,7 @@ public class ProjectModuleResource {
         domain = projectmoduleService.removeModule(domain);
         projectmoduledto = projectmoduleMapping.toDto(domain);
         Map<String,Integer> opprivs = projectmoduleRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectmoduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduledto);
     }
 

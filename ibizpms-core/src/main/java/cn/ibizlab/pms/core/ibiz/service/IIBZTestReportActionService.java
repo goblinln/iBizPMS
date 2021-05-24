@@ -44,6 +44,8 @@ public interface IIBZTestReportActionService extends IService<IBZTestReportActio
     List<IBZTestReportAction> selectView(IBZTestReportActionSearchContext context);
 
     Page<IBZTestReportAction> searchDefault(IBZTestReportActionSearchContext context);
+    List<IBZTestReportAction> selectByObjectid(Long id);
+    void removeByObjectid(Long id);
     IBZTestReportAction dynamicCall(Long key, String action, IBZTestReportAction et);
     /**
      *自定义查询SQL

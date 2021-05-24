@@ -146,7 +146,7 @@ public class IbzReportResource {
         domain = ibzreportService.myReportINotSubmit(domain);
         ibzreportdto = ibzreportMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzreportRuntime.getOPPrivs(domain.getIbzdailyid());
-        dto.setSrfopprivs(opprivs);
+        ibzreportdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportdto);
     }
 
@@ -158,7 +158,7 @@ public class IbzReportResource {
         domain = ibzreportService.reportIReceived(domain);
         ibzreportdto = ibzreportMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzreportRuntime.getOPPrivs(domain.getIbzdailyid());
-        dto.setSrfopprivs(opprivs);
+        ibzreportdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportdto);
     }
 

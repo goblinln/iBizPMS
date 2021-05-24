@@ -136,7 +136,7 @@ public class IbzReportlyResource {
         domain = ibzreportlyService.haveRead(domain);
         ibzreportlydto = ibzreportlyMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzreportlyRuntime.getOPPrivs(domain.getIbzreportlyid());
-        dto.setSrfopprivs(opprivs);
+        ibzreportlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportlydto);
     }
     @ApiOperation(value = "批量处理[已读]", tags = {"汇报" },  notes = "批量处理[已读]")
@@ -173,7 +173,7 @@ public class IbzReportlyResource {
         domain = ibzreportlyService.submit(domain);
         ibzreportlydto = ibzreportlyMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzreportlyRuntime.getOPPrivs(domain.getIbzreportlyid());
-        dto.setSrfopprivs(opprivs);
+        ibzreportlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportlydto);
     }
     @ApiOperation(value = "批量处理[提交]", tags = {"汇报" },  notes = "批量处理[提交]")

@@ -146,7 +146,7 @@ public class DocLibResource {
         domain = doclibService.collect(domain);
         doclibdto = doclibMapping.toDto(domain);
         Map<String,Integer> opprivs = doclibRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        doclibdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
     @ApiOperation(value = "批量处理[收藏]", tags = {"文档库" },  notes = "批量处理[收藏]")
@@ -183,7 +183,7 @@ public class DocLibResource {
         domain = doclibService.unCollect(domain);
         doclibdto = doclibMapping.toDto(domain);
         Map<String,Integer> opprivs = doclibRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        doclibdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
     @ApiOperation(value = "批量处理[取消收藏]", tags = {"文档库" },  notes = "批量处理[取消收藏]")

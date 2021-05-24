@@ -52,6 +52,9 @@ public class IbzProReportlyHistoryServiceImpl extends ServiceImpl<IbzProReportly
     @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IbzProReportlyHistoryRuntime ibzproreportlyhistoryRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIbzProReportlyActionService ibzproreportlyactionService;
 
     protected int batchSize = 500;
 
@@ -232,6 +235,47 @@ public class IbzProReportlyHistoryServiceImpl extends ServiceImpl<IbzProReportly
     }
 
 
+	@Override
+    public List<IbzProReportlyHistory> selectByAction(Long id) {
+        return baseMapper.selectByAction(id);
+    }
+    @Override
+    public void removeByAction(Long id) {
+        this.remove(new QueryWrapper<IbzProReportlyHistory>().eq("action",id));
+    }
+
+    public IIbzProReportlyHistoryService getProxyService() {
+        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
+    }
+	@Override
+    public void saveByAction(Long id,List<IbzProReportlyHistory> list) {
+        if(list==null)
+            return;
+        Set<Long> delIds=new HashSet<Long>();
+        List<IbzProReportlyHistory> _update=new ArrayList<IbzProReportlyHistory>();
+        List<IbzProReportlyHistory> _create=new ArrayList<IbzProReportlyHistory>();
+        for(IbzProReportlyHistory before:selectByAction(id)){
+            delIds.add(before.getId());
+        }
+        for(IbzProReportlyHistory sub:list) {
+            sub.setAction(id);
+            if(ObjectUtils.isEmpty(sub.getId()))
+                sub.setId((Long)sub.getDefaultKey(true));
+            if(delIds.contains(sub.getId())) {
+                delIds.remove(sub.getId());
+                _update.add(sub);
+            }
+            else
+                _create.add(sub);
+        }
+        if(_update.size()>0)
+            getProxyService().updateBatch(_update);
+        if(_create.size()>0)
+            getProxyService().createBatch(_create);
+        if(delIds.size()>0)
+            getProxyService().removeBatch(delIds);
+	}
+
 
     public List<IbzProReportlyHistory> selectDefault(IbzProReportlyHistorySearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
@@ -306,9 +350,6 @@ public class IbzProReportlyHistoryServiceImpl extends ServiceImpl<IbzProReportly
     }
 
 
-    public IIbzProReportlyHistoryService getProxyService() {
-        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
-    }
     @Override
     @Transactional
     public IbzProReportlyHistory dynamicCall(Long key, String action, IbzProReportlyHistory et) {

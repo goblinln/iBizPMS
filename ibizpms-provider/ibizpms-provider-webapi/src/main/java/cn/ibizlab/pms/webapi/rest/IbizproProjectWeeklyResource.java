@@ -136,7 +136,7 @@ public class IbizproProjectWeeklyResource {
         domain = ibizproprojectweeklyService.pushSumProjectWeekly(domain);
         ibizproprojectweeklydto = ibizproprojectweeklyMapping.toDto(domain);
         Map<String,Integer> opprivs = ibizproprojectweeklyRuntime.getOPPrivs(domain.getProjectweeklyid());
-        dto.setSrfopprivs(opprivs);
+        ibizproprojectweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklydto);
     }
     @ApiOperation(value = "批量处理[定时推送项目周报]", tags = {"项目周报" },  notes = "批量处理[定时推送项目周报]")

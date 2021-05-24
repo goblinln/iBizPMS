@@ -61,7 +61,7 @@ public class IbzLoginResource {
         domain = ibiloginService.getUser(domain);
         ibzlogindto = ibzloginMapping.toDto(domain);
         Map<String,Integer> opprivs = ibiloginRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        ibzlogindto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzlogindto);
     }
     @PreAuthorize("@IbiLoginRuntime.test('READ')")
@@ -81,7 +81,7 @@ public class IbzLoginResource {
         domain = ibiloginService.ztlogin(domain);
         ibzlogindto = ibzloginMapping.toDto(domain);
         Map<String,Integer> opprivs = ibiloginRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        ibzlogindto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzlogindto);
     }
     @ApiOperation(value = "批量处理[ZT登录]", tags = {"实体" },  notes = "批量处理[ZT登录]")

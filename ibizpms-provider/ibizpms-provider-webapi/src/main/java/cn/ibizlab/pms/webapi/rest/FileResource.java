@@ -165,7 +165,7 @@ public class FileResource {
         domain = fileService.updateObjectID(domain);
         filedto = fileMapping.toDto(domain);
         Map<String,Integer> opprivs = fileRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        filedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(filedto);
     }
     @PreAuthorize("@FileRuntime.test('UPDATE')")
@@ -186,7 +186,7 @@ public class FileResource {
         domain = fileService.updateObjectIDForPmsEe(domain);
         filedto = fileMapping.toDto(domain);
         Map<String,Integer> opprivs = fileRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        filedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(filedto);
     }
     @PreAuthorize("@FileRuntime.test('UPDATE')")

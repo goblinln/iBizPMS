@@ -154,6 +154,16 @@ public class IbzProReportlyHistoryDTO extends DTOBase implements Serializable {
     @ApiModelProperty("由谁更新")
     private String updateby;
 
+    /**
+     * 属性 [ACTION]
+     *
+     */
+    @JSONField(name = "action")
+    @JsonProperty("action")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("id")
+    private Long action;
+
 
     /**
      * 设置 [DIFF]
@@ -193,6 +203,14 @@ public class IbzProReportlyHistoryDTO extends DTOBase implements Serializable {
     public void setIbiznew(String  ibiznew){
         this.ibiznew = ibiznew ;
         this.modify("new",ibiznew);
+    }
+
+    /**
+     * 设置 [ACTION]
+     */
+    public void setAction(Long  action){
+        this.action = action ;
+        this.modify("action",action);
     }
 
 

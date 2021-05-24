@@ -147,7 +147,7 @@ public class ProjectResource {
         domain = projectService.activate(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
     @PreAuthorize("@ProjectRuntime.test('ACTIVATE')")
@@ -168,7 +168,7 @@ public class ProjectResource {
         domain = projectService.batchUnlinkStory(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
     @PreAuthorize("@ProjectRuntime.test('MANAGE')")
@@ -189,7 +189,7 @@ public class ProjectResource {
         domain = projectService.cancelProjectTop(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
 
@@ -208,7 +208,7 @@ public class ProjectResource {
         domain = projectService.close(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
     @PreAuthorize("@ProjectRuntime.test('CLOSE')")
@@ -228,7 +228,7 @@ public class ProjectResource {
         domain = projectService.importPlanStories(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
     @ApiOperation(value = "批量处理[项目关联需求-按计划关联]", tags = {"项目" },  notes = "批量处理[项目关联需求-按计划关联]")
@@ -248,7 +248,7 @@ public class ProjectResource {
         domain = projectService.linkStory(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
     @PreAuthorize("@ProjectRuntime.test('MANAGE')")
@@ -269,7 +269,7 @@ public class ProjectResource {
         domain = projectService.manageMembers(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
     @PreAuthorize("@ProjectRuntime.test('MANAGE')")
@@ -289,7 +289,7 @@ public class ProjectResource {
         domain = projectService.mobProjectCount(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
 
@@ -301,7 +301,7 @@ public class ProjectResource {
         domain = projectService.pmsEeProjectAllTaskCount(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
     @ApiOperation(value = "批量处理[项目立项任务快速分组计数器]", tags = {"项目" },  notes = "批量处理[项目立项任务快速分组计数器]")
@@ -320,7 +320,7 @@ public class ProjectResource {
         domain = projectService.pmsEeProjectTodoTaskCount(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
     @ApiOperation(value = "批量处理[项目立项待办任务快速分组计数器]", tags = {"项目" },  notes = "批量处理[项目立项待办任务快速分组计数器]")
@@ -339,7 +339,7 @@ public class ProjectResource {
         domain = projectService.projectTaskQCnt(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
 
@@ -352,7 +352,7 @@ public class ProjectResource {
         domain = projectService.projectTop(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
 
@@ -365,7 +365,7 @@ public class ProjectResource {
         domain = projectService.putoff(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
     @PreAuthorize("@ProjectRuntime.test('PUTOFF')")
@@ -404,7 +404,7 @@ public class ProjectResource {
         domain = projectService.start(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
     @PreAuthorize("@ProjectRuntime.test('START')")
@@ -425,7 +425,7 @@ public class ProjectResource {
         domain = projectService.suspend(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
     @PreAuthorize("@ProjectRuntime.test('SUSPEND')")
@@ -446,7 +446,7 @@ public class ProjectResource {
         domain = projectService.unlinkMember(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
     @PreAuthorize("@ProjectRuntime.test('MANAGE')")
@@ -467,7 +467,7 @@ public class ProjectResource {
         domain = projectService.unlinkStory(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
     @PreAuthorize("@ProjectRuntime.test('MANAGE')")
@@ -488,7 +488,7 @@ public class ProjectResource {
         domain = projectService.updateOrder(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
     @PreAuthorize("@ProjectRuntime.test('MANAGE')")

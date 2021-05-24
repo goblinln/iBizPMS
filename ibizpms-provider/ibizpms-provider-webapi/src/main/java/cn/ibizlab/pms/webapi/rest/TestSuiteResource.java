@@ -147,7 +147,7 @@ public class TestSuiteResource {
         domain = testsuiteService.linkCase(domain);
         testsuitedto = testsuiteMapping.toDto(domain);
         Map<String,Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        testsuitedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
     @ApiOperation(value = "批量处理[关联测试]", tags = {"测试套件" },  notes = "批量处理[关联测试]")
@@ -166,7 +166,7 @@ public class TestSuiteResource {
         domain = testsuiteService.mobTestSuiteCount(domain);
         testsuitedto = testsuiteMapping.toDto(domain);
         Map<String,Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        testsuitedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
 
@@ -196,7 +196,7 @@ public class TestSuiteResource {
         domain = testsuiteService.unlinkCase(domain);
         testsuitedto = testsuiteMapping.toDto(domain);
         Map<String,Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        testsuitedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
     @ApiOperation(value = "批量处理[未关联测试]", tags = {"测试套件" },  notes = "批量处理[未关联测试]")

@@ -146,7 +146,7 @@ public class BurnResource {
         domain = burnService.computeBurn(domain);
         burndto = burnMapping.toDto(domain);
         Map<String,Integer> opprivs = burnRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        burndto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(burndto);
     }
     @ApiOperation(value = "批量处理[更新燃尽图]", tags = {"burn" },  notes = "批量处理[更新燃尽图]")

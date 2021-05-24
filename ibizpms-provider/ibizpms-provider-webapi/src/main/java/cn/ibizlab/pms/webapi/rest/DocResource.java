@@ -141,7 +141,7 @@ public class DocResource {
         domain = docService.byVersionUpdateContext(domain);
         docdto = docMapping.toDto(domain);
         Map<String,Integer> opprivs = docRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        docdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
     @ApiOperation(value = "批量处理[根据版本更新正文信息]", tags = {"文档" },  notes = "批量处理[根据版本更新正文信息]")
@@ -167,7 +167,7 @@ public class DocResource {
         domain = docService.collect(domain);
         docdto = docMapping.toDto(domain);
         Map<String,Integer> opprivs = docRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        docdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
     @ApiOperation(value = "批量处理[收藏]", tags = {"文档" },  notes = "批量处理[收藏]")
@@ -186,7 +186,7 @@ public class DocResource {
         domain = docService.getDocStatus(domain);
         docdto = docMapping.toDto(domain);
         Map<String,Integer> opprivs = docRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        docdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
     @ApiOperation(value = "批量处理[行为]", tags = {"文档" },  notes = "批量处理[行为]")
@@ -206,7 +206,7 @@ public class DocResource {
         domain = docService.onlyCollectDoc(domain);
         docdto = docMapping.toDto(domain);
         Map<String,Integer> opprivs = docRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        docdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
     @ApiOperation(value = "批量处理[仅收藏文档]", tags = {"文档" },  notes = "批量处理[仅收藏文档]")
@@ -226,7 +226,7 @@ public class DocResource {
         domain = docService.onlyUnCollectDoc(domain);
         docdto = docMapping.toDto(domain);
         Map<String,Integer> opprivs = docRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        docdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
     @ApiOperation(value = "批量处理[仅取消收藏文档]", tags = {"文档" },  notes = "批量处理[仅取消收藏文档]")
@@ -264,7 +264,7 @@ public class DocResource {
         domain = docService.unCollect(domain);
         docdto = docMapping.toDto(domain);
         Map<String,Integer> opprivs = docRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        docdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
     @ApiOperation(value = "批量处理[取消收藏]", tags = {"文档" },  notes = "批量处理[取消收藏]")

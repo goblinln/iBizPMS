@@ -154,7 +154,7 @@ public class IbzPlanTempletResource {
         domain = ibzplantempletService.getPlan(domain);
         ibzplantempletdto = ibzplantempletMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzplantempletRuntime.getOPPrivs(domain.getIbzplantempletid());
-        dto.setSrfopprivs(opprivs);
+        ibzplantempletdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletdto);
     }
     @PreAuthorize("@IbzPlanTempletRuntime.test('READ')")

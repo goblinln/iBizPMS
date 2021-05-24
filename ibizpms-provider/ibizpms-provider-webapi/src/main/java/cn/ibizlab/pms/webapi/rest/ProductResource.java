@@ -142,7 +142,7 @@ public class ProductResource {
         domain = productService.cancelProductTop(domain);
         productdto = productMapping.toDto(domain);
         Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
 
@@ -161,7 +161,7 @@ public class ProductResource {
         domain = productService.close(domain);
         productdto = productMapping.toDto(domain);
         Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
     @PreAuthorize("@ProductRuntime.test('MANAGE')")
@@ -181,7 +181,7 @@ public class ProductResource {
         domain = productService.mobProductCounter(domain);
         productdto = productMapping.toDto(domain);
         Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
 
@@ -193,7 +193,7 @@ public class ProductResource {
         domain = productService.mobProductTestCounter(domain);
         productdto = productMapping.toDto(domain);
         Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
 
@@ -206,7 +206,7 @@ public class ProductResource {
         domain = productService.productTop(domain);
         productdto = productMapping.toDto(domain);
         Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        productdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
 

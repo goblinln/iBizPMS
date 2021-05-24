@@ -145,7 +145,7 @@ public class ProjectStatsResource {
         domain = projectstatsService.projectQualitySum(domain);
         projectstatsdto = projectstatsMapping.toDto(domain);
         Map<String,Integer> opprivs = projectstatsRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        projectstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectstatsdto);
     }
 

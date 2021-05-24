@@ -146,7 +146,7 @@ public class IbizproProjectMonthlyResource {
         domain = ibizproprojectmonthlyService.manualCreateMonthly(domain);
         ibizproprojectmonthlydto = ibizproprojectmonthlyMapping.toDto(domain);
         Map<String,Integer> opprivs = ibizproprojectmonthlyRuntime.getOPPrivs(domain.getIbizproprojectmonthlyid());
-        dto.setSrfopprivs(opprivs);
+        ibizproprojectmonthlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectmonthlydto);
     }
     @ApiOperation(value = "批量处理[手动生成项目月报]", tags = {"项目月报" },  notes = "批量处理[手动生成项目月报]")
@@ -183,7 +183,7 @@ public class IbizproProjectMonthlyResource {
         domain = ibizproprojectmonthlyService.sumProjectMonthly(domain);
         ibizproprojectmonthlydto = ibizproprojectmonthlyMapping.toDto(domain);
         Map<String,Integer> opprivs = ibizproprojectmonthlyRuntime.getOPPrivs(domain.getIbizproprojectmonthlyid());
-        dto.setSrfopprivs(opprivs);
+        ibizproprojectmonthlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectmonthlydto);
     }
     @ApiOperation(value = "批量处理[汇总项目月报]", tags = {"项目月报" },  notes = "批量处理[汇总项目月报]")

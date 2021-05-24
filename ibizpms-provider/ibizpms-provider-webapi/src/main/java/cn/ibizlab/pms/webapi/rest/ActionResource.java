@@ -147,7 +147,7 @@ public class ActionResource {
         domain = actionService.comment(domain);
         actiondto = actionMapping.toDto(domain);
         Map<String,Integer> opprivs = actionRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        actiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
 
@@ -160,7 +160,7 @@ public class ActionResource {
         domain = actionService.createHis(domain);
         actiondto = actionMapping.toDto(domain);
         Map<String,Integer> opprivs = actionRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        actiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
     @PreAuthorize("@ActionRuntime.test('CREATE')")
@@ -181,7 +181,7 @@ public class ActionResource {
         domain = actionService.editComment(domain);
         actiondto = actionMapping.toDto(domain);
         Map<String,Integer> opprivs = actionRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        actiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
     @PreAuthorize("@ActionRuntime.test('MANAGE')")
@@ -201,7 +201,7 @@ public class ActionResource {
         domain = actionService.managePmsEe(domain);
         actiondto = actionMapping.toDto(domain);
         Map<String,Integer> opprivs = actionRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        actiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
     @ApiOperation(value = "批量处理[Pms企业专用]", tags = {"系统日志" },  notes = "批量处理[Pms企业专用]")
@@ -238,7 +238,7 @@ public class ActionResource {
         domain = actionService.sendMarkDone(domain);
         actiondto = actionMapping.toDto(domain);
         Map<String,Integer> opprivs = actionRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        actiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
     @ApiOperation(value = "批量处理[已读]", tags = {"系统日志" },  notes = "批量处理[已读]")
@@ -257,7 +257,7 @@ public class ActionResource {
         domain = actionService.sendTodo(domain);
         actiondto = actionMapping.toDto(domain);
         Map<String,Integer> opprivs = actionRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        actiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
     @ApiOperation(value = "批量处理[发送待办]", tags = {"系统日志" },  notes = "批量处理[发送待办]")
@@ -276,7 +276,7 @@ public class ActionResource {
         domain = actionService.sendToread(domain);
         actiondto = actionMapping.toDto(domain);
         Map<String,Integer> opprivs = actionRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        actiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
     @ApiOperation(value = "批量处理[发送待阅]", tags = {"系统日志" },  notes = "批量处理[发送待阅]")

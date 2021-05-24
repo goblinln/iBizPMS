@@ -54,6 +54,9 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
 
     @Autowired
     @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIBZTestReportActionService ibztestreportactionService;
+    @Autowired
+    @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IProductService productService;
     @Autowired
     @Lazy

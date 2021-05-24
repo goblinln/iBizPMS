@@ -702,6 +702,10 @@
     "length" : 30,
     "logicName" : "对象类型",
     "name" : "OBJECTTYPE",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSCODELISTS/Action__object_type.json"
+    },
     "stdDataType" : 25,
     "stringLength" : 30,
     "valueFormat" : "%1$s"
@@ -953,6 +957,10 @@
     "length" : 1,
     "logicName" : "已读",
     "name" : "READ",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSCODELISTS/Action__read.json"
+    },
     "stdDataType" : 25,
     "stringLength" : 1,
     "valueFormat" : "%1$s"
@@ -1353,13 +1361,118 @@
     "stringLength" : 100,
     "valueFormat" : "%1$s",
     "enableQuickSearch" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "PROJECT",
+      "dBType" : "MYSQL5",
+      "name" : "PROJECT",
+      "queryCodeExp" : "t1.`PROJECT`",
+      "standardColumnName" : "`PROJECT`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Project",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 9,
+    "logicName" : "项目",
+    "name" : "PROJECT",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "OBJECTID",
+      "dBType" : "MYSQL5",
+      "name" : "OBJECTID",
+      "queryCodeExp" : "t1.`OBJECTID`",
+      "standardColumnName" : "`OBJECTID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_OBJECTID_EQ",
+      "name" : "N_OBJECTID_EQ",
+      "stdDataType" : 1,
+      "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "OBJECTID",
+        "codeName" : "ObjectID"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "ObjectID",
+    "dEFType" : 1,
+    "dataType" : "PICKUP",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "编号",
+    "name" : "OBJECTID",
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction/PSDERS/DER1N_IBZPRO_TESTREPROTACTION_ZT_TESTREPORT_OBJECTID.json"
+    },
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s",
+    "linkDEField" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "添加备注",
+    "mapPSDEName" : "ZT_TESTREPORT",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction/PSDERS/DER1N_IBZPRO_TESTREPROTACTION_ZT_TESTREPORT_OBJECTID.json"
+    },
+    "name" : "CREATE",
+    "id" : "IbzProTestReport__CREATE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "管理",
+    "mapPSDEName" : "ZT_TESTREPORT",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction/PSDERS/DER1N_IBZPRO_TESTREPROTACTION_ZT_TESTREPORT_OBJECTID.json"
+    },
+    "name" : "MANAGE",
+    "id" : "IbzProTestReport__MANAGE"
   }, {
     "logicName" : "读取",
     "name" : "READ"
@@ -1474,9 +1587,33 @@
   "enableViewLevel" : 0,
   "extendMode" : 0,
   "logicName" : "报告日志",
+  "getMinorPSDERs" : [ {
+    "codeName" : "IbzProTestReport",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction/PSDERS/DER1N_IBZPRO_TESTREPROTACTION_ZT_TESTREPORT_OBJECTID.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 4,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction.json"
+    },
+    "name" : "DER1N_IBZPRO_TESTREPROTACTION_ZT_TESTREPORT_OBJECTID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "pickupDEFName" : "OBJECTID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
+  } ],
   "name" : "IBZPRO_TESTREPROTACTION",
   "saaSMode" : 0,
-  "serviceAPIMode" : 0,
+  "serviceAPIMode" : 1,
   "serviceCodeName" : "IBZTestReportAction",
   "storageMode" : 1,
   "systemTag" : "iBizPMS",

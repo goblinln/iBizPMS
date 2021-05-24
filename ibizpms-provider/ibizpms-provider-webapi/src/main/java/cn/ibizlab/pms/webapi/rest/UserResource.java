@@ -147,7 +147,7 @@ public class UserResource {
         domain = userService.getByCommiter(domain);
         userdto = userMapping.toDto(domain);
         Map<String,Integer> opprivs = userRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        userdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(userdto);
     }
 
@@ -177,7 +177,7 @@ public class UserResource {
         domain = userService.syncAccount(domain);
         userdto = userMapping.toDto(domain);
         Map<String,Integer> opprivs = userRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        userdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(userdto);
     }
     @ApiOperation(value = "批量处理[同步账号]", tags = {"用户" },  notes = "批量处理[同步账号]")

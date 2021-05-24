@@ -66,4 +66,6 @@ public interface IBZTestReportActionMapper extends BaseMapper<IBZTestReportActio
     @Delete("${sql}")
     boolean deleteBySQL(@Param("sql") String sql, @Param("et")Map param);
 
+    List<IBZTestReportAction> selectByObjectid(@Param("id") Serializable id);
+
 }

@@ -52,6 +52,9 @@ public class IBZTestReportActionServiceImpl extends ServiceImpl<IBZTestReportAct
     @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IBZTestReportActionRuntime ibztestreportactionRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.zentao.service.ITestReportService testreportService;
 
     protected int batchSize = 500;
 
@@ -231,6 +234,15 @@ public class IBZTestReportActionServiceImpl extends ServiceImpl<IBZTestReportAct
         }
     }
 
+
+	@Override
+    public List<IBZTestReportAction> selectByObjectid(Long id) {
+        return baseMapper.selectByObjectid(id);
+    }
+    @Override
+    public void removeByObjectid(Long id) {
+        this.remove(new QueryWrapper<IBZTestReportAction>().eq("objectid",id));
+    }
 
 
     public List<IBZTestReportAction> selectDefault(IBZTestReportActionSearchContext context){

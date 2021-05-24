@@ -147,7 +147,7 @@ public class UserYearWorkStatsResource {
         domain = useryearworkstatsService.getDevInfomation(domain);
         useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
         Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        useryearworkstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
 
@@ -160,7 +160,7 @@ public class UserYearWorkStatsResource {
         domain = useryearworkstatsService.getPoInfomation(domain);
         useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
         Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        useryearworkstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
 
@@ -173,7 +173,7 @@ public class UserYearWorkStatsResource {
         domain = useryearworkstatsService.getQaInfomation(domain);
         useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
         Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        useryearworkstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
 
@@ -186,7 +186,7 @@ public class UserYearWorkStatsResource {
         domain = useryearworkstatsService.getUserYearAction(domain);
         useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
         Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        useryearworkstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
     @PreAuthorize("@UserYearWorkStatsRuntime.test('READ')")
@@ -225,7 +225,7 @@ public class UserYearWorkStatsResource {
         domain = useryearworkstatsService.updateTitleByYear(domain);
         useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
         Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        useryearworkstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
     @PreAuthorize("@UserYearWorkStatsRuntime.test('READ')")

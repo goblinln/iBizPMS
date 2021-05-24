@@ -141,7 +141,7 @@ public class TodoResource {
         domain = todoService.activate(domain);
         tododto = todoMapping.toDto(domain);
         Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        tododto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
     @PreAuthorize("@TodoRuntime.test('MANAGE')")
@@ -162,7 +162,7 @@ public class TodoResource {
         domain = todoService.assignTo(domain);
         tododto = todoMapping.toDto(domain);
         Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        tododto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
     @PreAuthorize("@TodoRuntime.test('MANAGE')")
@@ -189,7 +189,7 @@ public class TodoResource {
         domain = todoService.close(domain);
         tododto = todoMapping.toDto(domain);
         Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        tododto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
     @PreAuthorize("@TodoRuntime.test('MANAGE')")
@@ -210,7 +210,7 @@ public class TodoResource {
         domain = todoService.createCycle(domain);
         tododto = todoMapping.toDto(domain);
         Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        tododto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
     @PreAuthorize("@TodoRuntime.test('READ')")
@@ -231,7 +231,7 @@ public class TodoResource {
         domain = todoService.finish(domain);
         tododto = todoMapping.toDto(domain);
         Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        tododto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
     @PreAuthorize("@TodoRuntime.test('MANAGE')")
@@ -270,7 +270,7 @@ public class TodoResource {
         domain = todoService.sendMessage(domain);
         tododto = todoMapping.toDto(domain);
         Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        tododto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
     @PreAuthorize("@TodoRuntime.test('MANAGE')")
@@ -291,7 +291,7 @@ public class TodoResource {
         domain = todoService.sendMsgPreProcess(domain);
         tododto = todoMapping.toDto(domain);
         Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
+        tododto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
     @PreAuthorize("@TodoRuntime.test('MANAGE')")

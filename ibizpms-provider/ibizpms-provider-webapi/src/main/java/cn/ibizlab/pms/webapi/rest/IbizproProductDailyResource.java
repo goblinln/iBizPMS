@@ -146,7 +146,7 @@ public class IbizproProductDailyResource {
         domain = ibizproproductdailyService.manualCreateDaily(domain);
         ibizproproductdailydto = ibizproproductdailyMapping.toDto(domain);
         Map<String,Integer> opprivs = ibizproproductdailyRuntime.getOPPrivs(domain.getIbizproproductdailyid());
-        dto.setSrfopprivs(opprivs);
+        ibizproproductdailydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductdailydto);
     }
     @ApiOperation(value = "批量处理[手动生成产品日报]", tags = {"产品日报" },  notes = "批量处理[手动生成产品日报]")
@@ -183,7 +183,7 @@ public class IbizproProductDailyResource {
         domain = ibizproproductdailyService.statsProductDaily(domain);
         ibizproproductdailydto = ibizproproductdailyMapping.toDto(domain);
         Map<String,Integer> opprivs = ibizproproductdailyRuntime.getOPPrivs(domain.getIbizproproductdailyid());
-        dto.setSrfopprivs(opprivs);
+        ibizproproductdailydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductdailydto);
     }
     @ApiOperation(value = "批量处理[汇总产品日报]", tags = {"产品日报" },  notes = "批量处理[汇总产品日报]")

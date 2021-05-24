@@ -164,7 +164,7 @@ public class IbizproProjectDailyResource {
         domain = ibizproprojectdailyService.sumProjectDaily(domain);
         ibizproprojectdailydto = ibizproprojectdailyMapping.toDto(domain);
         Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(domain.getIbizproprojectdailyid());
-        dto.setSrfopprivs(opprivs);
+        ibizproprojectdailydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailydto);
     }
     @ApiOperation(value = "批量处理[汇总项目日报]", tags = {"项目日报" },  notes = "批量处理[汇总项目日报]")
