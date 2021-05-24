@@ -2,7 +2,8 @@ import { IPSAppDEUIAction } from '@ibiz/dynamic-model-api';
 import { UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
 import { IbzProjectMemberService } from '../../service';
-import IbzProjectMemberAuthService from '../../authservice/ibz-project-member/ibz-project-member-auth-service';
+import { AuthServiceRegister } from '../../register';
+import { GlobalService } from '../../service';
 
 /**
  * 项目相关成员UI服务对象基类
@@ -32,6 +33,17 @@ export class IbzProjectMemberUIServiceBase extends UIServiceBase {
     }
 
     /**
+     * 加载应用实体模型数据
+     *
+     * @memberof  IbzProjectMemberUIServiceBase
+     */
+     protected async loaded() {
+        await super.loaded();
+        this.authService = AuthServiceRegister.getInstance().getService(this.context,`${this.entityModel?.codeName.toLowerCase()}`);
+        this.dataService = await new GlobalService().getService(`${this.entityModel?.codeName}`);
+    }
+
+    /**
      * 初始化基础数据
      * 
      * @memberof  IbzProjectMemberUIServiceBase
@@ -45,8 +57,6 @@ export class IbzProjectMemberUIServiceBase extends UIServiceBase {
         this.indexTypeDEField = null;
         this.stateField = "";
         this.mainStateFields = [];
-        this.authService = new IbzProjectMemberAuthService({context:this.context});
-        this.dataService = new IbzProjectMemberService();
     }
 
     /**

@@ -29632,6 +29632,22 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/actions/:action?/views/historylistview',
+                    meta: {
+                        caption: 'entities.action.views.historylistview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'historylistview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
@@ -29645,6 +29661,22 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/actions/:action?/views/addcommenthistorylistview',
+                    meta: {
+                        caption: 'entities.action.views.addcommenthistorylistview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'addcommenthistorylistview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'actions/:action?/views/addcommenthistorylistview',
@@ -29662,6 +29694,22 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/actions/:action?/views/alltrendslistview',
+                    meta: {
+                        caption: 'entities.action.views.alltrendslistview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'alltrendslistview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
@@ -29675,6 +29723,22 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/actions/:action?/views/projecttrendslistview',
+                    meta: {
+                        caption: 'entities.action.views.projecttrendslistview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'projecttrendslistview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'actions/:action?/views/projecttrendslistview',
@@ -29692,6 +29756,22 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/actions/:action?/views/projecttrendslistview9',
+                    meta: {
+                        caption: 'entities.action.views.projecttrendslistview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'projecttrendslistview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
@@ -29705,6 +29785,22 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/actions/:action?/views/producttrendslistview9',
+                    meta: {
+                        caption: 'entities.action.views.producttrendslistview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'producttrendslistview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'actions/:action?/views/producttrendslistview9',
@@ -29722,6 +29818,22 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/actions/:action?/views/myalltrendslistview',
+                    meta: {
+                        caption: 'entities.action.views.myalltrendslistview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'myalltrendslistview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
@@ -29735,6 +29847,22 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/actions/:action?/views/mytrendslistview',
+                    meta: {
+                        caption: 'entities.action.views.mytrendslistview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mytrendslistview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'actions/:action?/views/mytrendslistview',
@@ -29752,6 +29880,22 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/actions/:action?/views/optionview',
+                    meta: {
+                        caption: 'entities.action.views.optionview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'optionview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
@@ -29767,6 +29911,22 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/actions/:action?/views/producttrendslistview',
+                    meta: {
+                        caption: 'entities.action.views.producttrendslistview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'producttrendslistview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
@@ -29780,6 +29940,22 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/actions/:action?/views/editview',
+                    meta: {
+                        caption: 'entities.action.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'actions/:action?/views/editview',

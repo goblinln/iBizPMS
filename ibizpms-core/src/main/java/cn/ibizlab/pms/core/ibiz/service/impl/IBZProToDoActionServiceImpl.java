@@ -54,6 +54,9 @@ public class IBZProToDoActionServiceImpl extends ServiceImpl<IBZProToDoActionMap
 
     @Autowired
     @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIBZProToDoHistoryService ibzprotodohistoryService;
+    @Autowired
+    @Lazy
     protected cn.ibizlab.pms.core.zentao.service.ITodoService todoService;
 
     protected int batchSize = 500;
@@ -70,6 +73,9 @@ public class IBZProToDoActionServiceImpl extends ServiceImpl<IBZProToDoActionMap
     public boolean create(IBZProToDoAction et) {
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
+        }
+        if(!ibzprotodoactionRuntime.isRtmodel()){
+            ibzprotodohistoryService.saveByAction(et.getId(), et.getIbzprotodohistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -91,6 +97,9 @@ public class IBZProToDoActionServiceImpl extends ServiceImpl<IBZProToDoActionMap
     public boolean update(IBZProToDoAction et) {
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
+        }
+        if(!ibzprotodoactionRuntime.isRtmodel()){
+            ibzprotodohistoryService.saveByAction(et.getId(), et.getIbzprotodohistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -121,6 +130,7 @@ public class IBZProToDoActionServiceImpl extends ServiceImpl<IBZProToDoActionMap
     @Transactional
     public boolean remove(Long key) {
         if(!ibzprotodoactionRuntime.isRtmodel()){
+            ibzprotodohistoryService.removeByAction(key) ;
         }
         boolean result = removeById(key);
         return result ;
@@ -146,6 +156,7 @@ public class IBZProToDoActionServiceImpl extends ServiceImpl<IBZProToDoActionMap
         }
         else {
             if(!ibzprotodoactionRuntime.isRtmodel()){
+                et.setIbzprotodohistory(ibzprotodohistoryService.selectByAction(key));
             }
         }
         return et;
@@ -251,6 +262,9 @@ public class IBZProToDoActionServiceImpl extends ServiceImpl<IBZProToDoActionMap
     public List<IBZProToDoAction> selectSimple(IBZProToDoActionSearchContext context){
         return baseMapper.selectSimple(context, context.getSelectCond());
     }
+    public List<IBZProToDoAction> selectType(IBZProToDoActionSearchContext context){
+        return baseMapper.selectType(context, context.getSelectCond());
+    }
     public List<IBZProToDoAction> selectView(IBZProToDoActionSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }
@@ -262,6 +276,15 @@ public class IBZProToDoActionServiceImpl extends ServiceImpl<IBZProToDoActionMap
     @Override
     public Page<IBZProToDoAction> searchDefault(IBZProToDoActionSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZProToDoAction> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IBZProToDoAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 动态(根据类型过滤)
+     */
+    @Override
+    public Page<IBZProToDoAction> searchType(IBZProToDoActionSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZProToDoAction> pages=baseMapper.searchType(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IBZProToDoAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

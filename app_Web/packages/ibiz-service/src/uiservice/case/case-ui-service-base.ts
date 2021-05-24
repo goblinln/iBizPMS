@@ -2,7 +2,8 @@ import { IPSAppDEUIAction } from '@ibiz/dynamic-model-api';
 import { UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
 import { CaseService } from '../../service';
-import CaseAuthService from '../../authservice/case/case-auth-service';
+import { AuthServiceRegister } from '../../register';
+import { GlobalService } from '../../service';
 
 /**
  * 测试用例UI服务对象基类
@@ -32,6 +33,17 @@ export class CaseUIServiceBase extends UIServiceBase {
     }
 
     /**
+     * 加载应用实体模型数据
+     *
+     * @memberof  CaseUIServiceBase
+     */
+     protected async loaded() {
+        await super.loaded();
+        this.authService = AuthServiceRegister.getInstance().getService(this.context,`${this.entityModel?.codeName.toLowerCase()}`);
+        this.dataService = await new GlobalService().getService(`${this.entityModel?.codeName}`);
+    }
+
+    /**
      * 初始化基础数据
      * 
      * @memberof  CaseUIServiceBase
@@ -45,8 +57,6 @@ export class CaseUIServiceBase extends UIServiceBase {
         this.indexTypeDEField = null;
         this.stateField = "";
         this.mainStateFields = ['status1','lastrunresult1','isfavorites'];
-        this.authService = new CaseAuthService({context:this.context});
-        this.dataService = new CaseService();
     }
 
     /**

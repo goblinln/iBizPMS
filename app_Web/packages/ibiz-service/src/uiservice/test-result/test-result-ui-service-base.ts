@@ -2,7 +2,8 @@ import { IPSAppDEUIAction } from '@ibiz/dynamic-model-api';
 import { UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
 import { TestResultService } from '../../service';
-import TestResultAuthService from '../../authservice/test-result/test-result-auth-service';
+import { AuthServiceRegister } from '../../register';
+import { GlobalService } from '../../service';
 
 /**
  * 测试结果UI服务对象基类
@@ -32,6 +33,17 @@ export class TestResultUIServiceBase extends UIServiceBase {
     }
 
     /**
+     * 加载应用实体模型数据
+     *
+     * @memberof  TestResultUIServiceBase
+     */
+     protected async loaded() {
+        await super.loaded();
+        this.authService = AuthServiceRegister.getInstance().getService(this.context,`${this.entityModel?.codeName.toLowerCase()}`);
+        this.dataService = await new GlobalService().getService(`${this.entityModel?.codeName}`);
+    }
+
+    /**
      * 初始化基础数据
      * 
      * @memberof  TestResultUIServiceBase
@@ -45,8 +57,6 @@ export class TestResultUIServiceBase extends UIServiceBase {
         this.indexTypeDEField = null;
         this.stateField = "";
         this.mainStateFields = [];
-        this.authService = new TestResultAuthService({context:this.context});
-        this.dataService = new TestResultService();
     }
 
     /**

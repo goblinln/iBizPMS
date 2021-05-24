@@ -2,7 +2,8 @@ import { IPSAppDEUIAction } from '@ibiz/dynamic-model-api';
 import { UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
 import { SysUserRoleService } from '../../service';
-import SysUserRoleAuthService from '../../authservice/sys-user-role/sys-user-role-auth-service';
+import { AuthServiceRegister } from '../../register';
+import { GlobalService } from '../../service';
 
 /**
  * 用户角色关系UI服务对象基类
@@ -32,6 +33,17 @@ export class SysUserRoleUIServiceBase extends UIServiceBase {
     }
 
     /**
+     * 加载应用实体模型数据
+     *
+     * @memberof  SysUserRoleUIServiceBase
+     */
+     protected async loaded() {
+        await super.loaded();
+        this.authService = AuthServiceRegister.getInstance().getService(this.context,`${this.entityModel?.codeName.toLowerCase()}`);
+        this.dataService = await new GlobalService().getService(`${this.entityModel?.codeName}`);
+    }
+
+    /**
      * 初始化基础数据
      * 
      * @memberof  SysUserRoleUIServiceBase
@@ -45,8 +57,6 @@ export class SysUserRoleUIServiceBase extends UIServiceBase {
         this.indexTypeDEField = null;
         this.stateField = "";
         this.mainStateFields = [];
-        this.authService = new SysUserRoleAuthService({context:this.context});
-        this.dataService = new SysUserRoleService();
     }
 
     /**

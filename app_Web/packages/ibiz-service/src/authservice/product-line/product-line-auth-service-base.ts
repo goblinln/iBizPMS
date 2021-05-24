@@ -22,11 +22,12 @@ export class ProductLineAuthServiceBase extends AuthService {
     /**
      * 根据当前数据获取实体操作标识
      *
+     * @param {*} activeKey 实体权限数据缓存标识
      * @param {*} mainSateOPPrivs 传入数据操作标识
      * @returns {any}
      * @memberof ProductLineAuthServiceBase
      */
-    public getOPPrivs(mainSateOPPrivs:any):any{
+     public getOPPrivs(activeKey: string, mainSateOPPrivs: any): any {
         let curDefaultOPPrivs:any = this.getSysOPPrivs();
         let copyDefaultOPPrivs:any = JSON.parse(JSON.stringify(curDefaultOPPrivs));
         if(mainSateOPPrivs){
@@ -38,6 +39,10 @@ export class ProductLineAuthServiceBase extends AuthService {
                 curDefaultOPPrivs[name] = copyDefaultOPPrivs[name];
             }
         });
+        // 合并实体级权限数据
+        if (this.getActivedDeOPPrivs(activeKey)) {
+            Object.assign(curDefaultOPPrivs, this.getActivedDeOPPrivs(activeKey));
+        }
         return curDefaultOPPrivs;
     }
 

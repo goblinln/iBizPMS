@@ -515,12 +515,33 @@ export class UIServiceBase {
     }
 
     /**
+     * 应用实体映射实体名称
+     *
+     * @readonly
+     * @memberof UIServiceBase
+     */
+    get deName() {
+        return (this.entityModel as any)?.getPSDEName() || '';
+    }
+
+    /**
+     * 应用实体codeName
+     *
+     * @readonly
+     * @memberof UIServiceBase
+     */
+    get appDeCodeName() {
+        return this.entityModel?.codeName || '';
+    }
+
+    /**
      * 获取数据对象所有的操作标识
      *
      * @param data 当前数据
      * @memberof  UIServiceBase
      */
     protected getAllOPPrivs(data: any) {
-        return this.authService.getOPPrivs(this.getDEMainStateOPPrivs(data));
+        const curActiveKey: string = `${this.deName}-${data[this.appDeCodeName]}`;
+        return this.authService.getOPPrivs(curActiveKey, this.getDEMainStateOPPrivs(data));
     }
 }

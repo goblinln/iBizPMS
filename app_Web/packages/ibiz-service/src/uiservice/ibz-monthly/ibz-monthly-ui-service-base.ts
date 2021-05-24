@@ -2,7 +2,8 @@ import { IPSAppDEUIAction } from '@ibiz/dynamic-model-api';
 import { UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
 import { IbzMonthlyService } from '../../service';
-import IbzMonthlyAuthService from '../../authservice/ibz-monthly/ibz-monthly-auth-service';
+import { AuthServiceRegister } from '../../register';
+import { GlobalService } from '../../service';
 
 /**
  * 月报UI服务对象基类
@@ -32,6 +33,17 @@ export class IbzMonthlyUIServiceBase extends UIServiceBase {
     }
 
     /**
+     * 加载应用实体模型数据
+     *
+     * @memberof  IbzMonthlyUIServiceBase
+     */
+     protected async loaded() {
+        await super.loaded();
+        this.authService = AuthServiceRegister.getInstance().getService(this.context,`${this.entityModel?.codeName.toLowerCase()}`);
+        this.dataService = await new GlobalService().getService(`${this.entityModel?.codeName}`);
+    }
+
+    /**
      * 初始化基础数据
      * 
      * @memberof  IbzMonthlyUIServiceBase
@@ -45,8 +57,6 @@ export class IbzMonthlyUIServiceBase extends UIServiceBase {
         this.indexTypeDEField = null;
         this.stateField = "";
         this.mainStateFields = ['issubmit'];
-        this.authService = new IbzMonthlyAuthService({context:this.context});
-        this.dataService = new IbzMonthlyService();
     }
 
     /**

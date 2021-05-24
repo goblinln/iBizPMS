@@ -82,6 +82,20 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`OBJECTTYPE` = 'todo'",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "Type",
+    "logicName" : "动态(根据类型过滤)",
+    "name" : "Type",
+    "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
       "name" : "MySQL5"
     } ],
     "codeName" : "View",
@@ -97,6 +111,16 @@
       "id" : "Default"
     } ],
     "defaultMode" : true,
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "Type",
+    "logicName" : "动态(根据类型过滤)",
+    "name" : "Type",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Type"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1416,6 +1440,7 @@
       "columnName" : "PROJECT",
       "dBType" : "MYSQL5",
       "name" : "PROJECT",
+      "queryCodeExp" : "t1.`PROJECT`",
       "standardColumnName" : "`PROJECT`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1450,8 +1475,28 @@
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
+    "logicName" : "添加备注",
+    "mapPSDEName" : "ZT_TODO",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction/PSDERS/DER1N_IBZPRO_TODOACTION_ZT_TODO_OBJECTID.json"
+    },
+    "name" : "CREATE",
+    "id" : "IBZProToDoAction__CREATE"
+  }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "管理",
+    "mapPSDEName" : "ZT_TODO",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction/PSDERS/DER1N_IBZPRO_TODOACTION_ZT_TODO_OBJECTID.json"
+    },
+    "name" : "MANAGE",
+    "id" : "IBZProToDoAction__MANAGE"
   }, {
     "logicName" : "读取",
     "name" : "READ"
@@ -1552,7 +1597,7 @@
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -1566,6 +1611,31 @@
   "enableViewLevel" : 0,
   "extendMode" : 0,
   "logicName" : "ToDo日志",
+  "getMajorPSDERs" : [ {
+    "codeName" : "IBZProToDoHistory",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoHistory/PSDERS/DER1N_IBZPRO_TODOHISTORY_IBZPRO_TODOACTION_ACTION.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 12,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoHistory.json"
+    },
+    "name" : "DER1N_IBZPRO_TODOHISTORY_IBZPRO_TODOACTION_ACTION",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "ACTION",
+      "codeName" : "Action"
+    },
+    "pickupDEFName" : "ACTION",
+    "removeActionType" : -1,
+    "removeOrder" : 0,
+    "nestedRS" : true
+  } ],
   "getMinorPSDERs" : [ {
     "codeName" : "IBZProToDoAction",
     "dERType" : "DER1N",

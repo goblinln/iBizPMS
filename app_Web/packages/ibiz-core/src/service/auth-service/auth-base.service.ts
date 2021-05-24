@@ -24,7 +24,7 @@ export class AuthServiceBase {
      * @type {Map<string,any>}
      * @memberof AuthServiceBase
      */
-    public sysOPPrivsMap:Map<string,any> = new  Map();
+    public sysOPPrivsMap: Map<string, any> = new Map();
 
     /**
      * 默认操作标识
@@ -33,7 +33,7 @@ export class AuthServiceBase {
      * @type {(any)}
      * @memberof AuthServiceBase
      */
-    public defaultOPPrivs: any; 
+    public defaultOPPrivs: any;
 
     /**
      * Creates an instance of AuthServiceBase.
@@ -62,26 +62,15 @@ export class AuthServiceBase {
      * @returns {}
      * @memberof AuthServiceBase
      */
-    public getSysOPPrivs(){
-        let copySysOPPrivs:any = JSON.parse(JSON.stringify(this.defaultOPPrivs));
-        if(Object.keys(copySysOPPrivs).length === 0) return {};
-        Object.keys(copySysOPPrivs).forEach((name:any) =>{
-            if(this.sysOPPrivsMap.get(name)){
-                copySysOPPrivs[name] = this.getResourcePermission(this.sysOPPrivsMap.get(name))?1:0;
+    public getSysOPPrivs() {
+        let copySysOPPrivs: any = JSON.parse(JSON.stringify(this.defaultOPPrivs));
+        if (Object.keys(copySysOPPrivs).length === 0) return {};
+        Object.keys(copySysOPPrivs).forEach((name: any) => {
+            if (this.sysOPPrivsMap.get(name)) {
+                copySysOPPrivs[name] = this.getResourcePermission(this.sysOPPrivsMap.get(name)) ? 1 : 0;
             }
         })
         return copySysOPPrivs;
-    }
-
-    /**
-     * 获取实体权限服务
-     *
-     * @param {string} name 实体名称
-     * @returns {Promise<any>}
-     * @memberof AuthServiceBase
-     */
-    public getService(name: string): Promise<any> {
-        return (window as any)['authServiceRegister'].getService(name);
     }
 
     /**
@@ -90,8 +79,8 @@ export class AuthServiceBase {
      * @param {string} name 实体名称
      * @returns {Promise<any>}
      * @memberof AuthServiceBase
-     */ 
-    public registerSysOPPrivs(){}
+     */
+    public registerSysOPPrivs() { }
 
     /**
      * 根据当前数据获取实体操作标识
@@ -100,8 +89,18 @@ export class AuthServiceBase {
      * @returns {any}
      * @memberof AuthServiceBase
      */
-    public getOPPrivs(data: any): any {
+    public getOPPrivs(activeKey: string, data: any): any {
         return null;
+    }
+
+    /**
+     * 获取实体级数据操作标识
+     *
+     * @returns {}
+     * @memberof AuthServiceBase
+     */
+     public getActivedDeOPPrivs(key: string) {
+        return this.getStore().getters['authresource/getSrfappdeData'](key);
     }
 
     /**
@@ -113,14 +112,14 @@ export class AuthServiceBase {
      */
     public getMenusPermission(item: any): boolean {
         const Environment = AppServiceBase.getInstance().getAppEnvironment();
-        if(!this.$store.getters['authresource/getEnablePermissionValid']) {
+        if (!this.$store.getters['authresource/getEnablePermissionValid']) {
             return true;
         }
-        if(Object.is(Environment.menuPermissionMode,"RT")){
+        if (Object.is(Environment.menuPermissionMode, "RT")) {
             return this.$store.getters['authresource/getAuthMenuWithRT'](item);
-        }else if(Object.is(Environment.menuPermissionMode,"RESOURCE")){
+        } else if (Object.is(Environment.menuPermissionMode, "RESOURCE")) {
             return this.$store.getters['authresource/getAuthMenuWithResource'](item);
-        }else{
+        } else {
             return this.$store.getters['authresource/getAuthMenu'](item);
         }
     }
@@ -133,7 +132,7 @@ export class AuthServiceBase {
      * @memberof AuthServiceBase
      */
     public getResourcePermission(tag: any): boolean {
-        if(!this.$store.getters['authresource/getEnablePermissionValid']) {
+        if (!this.$store.getters['authresource/getEnablePermissionValid']) {
             return true;
         }
         return this.$store.getters['authresource/getResourceData'](tag);

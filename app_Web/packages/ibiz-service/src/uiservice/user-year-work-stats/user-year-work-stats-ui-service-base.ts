@@ -2,7 +2,8 @@ import { IPSAppDEUIAction } from '@ibiz/dynamic-model-api';
 import { UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
 import { UserYearWorkStatsService } from '../../service';
-import UserYearWorkStatsAuthService from '../../authservice/user-year-work-stats/user-year-work-stats-auth-service';
+import { AuthServiceRegister } from '../../register';
+import { GlobalService } from '../../service';
 
 /**
  * 用户年度工作内容统计UI服务对象基类
@@ -32,6 +33,17 @@ export class UserYearWorkStatsUIServiceBase extends UIServiceBase {
     }
 
     /**
+     * 加载应用实体模型数据
+     *
+     * @memberof  UserYearWorkStatsUIServiceBase
+     */
+     protected async loaded() {
+        await super.loaded();
+        this.authService = AuthServiceRegister.getInstance().getService(this.context,`${this.entityModel?.codeName.toLowerCase()}`);
+        this.dataService = await new GlobalService().getService(`${this.entityModel?.codeName}`);
+    }
+
+    /**
      * 初始化基础数据
      * 
      * @memberof  UserYearWorkStatsUIServiceBase
@@ -45,8 +57,6 @@ export class UserYearWorkStatsUIServiceBase extends UIServiceBase {
         this.indexTypeDEField = null;
         this.stateField = "";
         this.mainStateFields = [];
-        this.authService = new UserYearWorkStatsAuthService({context:this.context});
-        this.dataService = new UserYearWorkStatsService();
     }
 
     /**

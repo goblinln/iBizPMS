@@ -2,7 +2,8 @@ import { IPSAppDEUIAction } from '@ibiz/dynamic-model-api';
 import { UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
 import { IBIZProKeywordService } from '../../service';
-import IBIZProKeywordAuthService from '../../authservice/ibizpro-keyword/ibizpro-keyword-auth-service';
+import { AuthServiceRegister } from '../../register';
+import { GlobalService } from '../../service';
 
 /**
  * 关键字UI服务对象基类
@@ -32,6 +33,17 @@ export class IBIZProKeywordUIServiceBase extends UIServiceBase {
     }
 
     /**
+     * 加载应用实体模型数据
+     *
+     * @memberof  IBIZProKeywordUIServiceBase
+     */
+     protected async loaded() {
+        await super.loaded();
+        this.authService = AuthServiceRegister.getInstance().getService(this.context,`${this.entityModel?.codeName.toLowerCase()}`);
+        this.dataService = await new GlobalService().getService(`${this.entityModel?.codeName}`);
+    }
+
+    /**
      * 初始化基础数据
      * 
      * @memberof  IBIZProKeywordUIServiceBase
@@ -45,8 +57,6 @@ export class IBIZProKeywordUIServiceBase extends UIServiceBase {
         this.indexTypeDEField = null;
         this.stateField = "";
         this.mainStateFields = [];
-        this.authService = new IBIZProKeywordAuthService({context:this.context});
-        this.dataService = new IBIZProKeywordService();
     }
 
     /**

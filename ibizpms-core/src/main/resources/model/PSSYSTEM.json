@@ -1170,6 +1170,9 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoHistory.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProTranslator.json"
   }, {
     "modelref" : true,
@@ -2920,6 +2923,9 @@
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction.json"
+    }, {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoHistory.json"
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProWeeklyAction.json"

@@ -160,7 +160,6 @@ public class IBZProToDoActionResource {
 	@ApiOperation(value = "获取数据集", tags = {"ToDo日志" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprotodoactions/fetchdefault")
 	public ResponseEntity<List<IBZProToDoActionDTO>> fetchdefault(@RequestBody IBZProToDoActionSearchContext context) {
-        ibzprotodoactionRuntime.addAuthorityConditions(context,"READ");
         Page<IBZProToDoAction> domains = ibzprotodoactionService.searchDefault(context) ;
         List<IBZProToDoActionDTO> list = ibzprotodoactionMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -174,8 +173,29 @@ public class IBZProToDoActionResource {
 	@ApiOperation(value = "查询数据集", tags = {"ToDo日志" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprotodoactions/searchdefault")
 	public ResponseEntity<Page<IBZProToDoActionDTO>> searchDefault(@RequestBody IBZProToDoActionSearchContext context) {
-        ibzprotodoactionRuntime.addAuthorityConditions(context,"READ");
         Page<IBZProToDoAction> domains = ibzprotodoactionService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzprotodoactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@IBZProToDoActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"ToDo日志" } ,notes = "获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzprotodoactions/fetchtype")
+	public ResponseEntity<List<IBZProToDoActionDTO>> fetchtype(@RequestBody IBZProToDoActionSearchContext context) {
+        Page<IBZProToDoAction> domains = ibzprotodoactionService.searchType(context) ;
+        List<IBZProToDoActionDTO> list = ibzprotodoactionMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IBZProToDoActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"ToDo日志" } ,notes = "查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzprotodoactions/searchtype")
+	public ResponseEntity<Page<IBZProToDoActionDTO>> searchType(@RequestBody IBZProToDoActionSearchContext context) {
+        Page<IBZProToDoAction> domains = ibzprotodoactionService.searchType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzprotodoactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}

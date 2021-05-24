@@ -2,7 +2,8 @@ import { IPSAppDEUIAction } from '@ibiz/dynamic-model-api';
 import { UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
 import { SubProductPlanService } from '../../service';
-import SubProductPlanAuthService from '../../authservice/sub-product-plan/sub-product-plan-auth-service';
+import { AuthServiceRegister } from '../../register';
+import { GlobalService } from '../../service';
 
 /**
  * 产品计划UI服务对象基类
@@ -32,6 +33,17 @@ export class SubProductPlanUIServiceBase extends UIServiceBase {
     }
 
     /**
+     * 加载应用实体模型数据
+     *
+     * @memberof  SubProductPlanUIServiceBase
+     */
+     protected async loaded() {
+        await super.loaded();
+        this.authService = AuthServiceRegister.getInstance().getService(this.context,`${this.entityModel?.codeName.toLowerCase()}`);
+        this.dataService = await new GlobalService().getService(`${this.entityModel?.codeName}`);
+    }
+
+    /**
      * 初始化基础数据
      * 
      * @memberof  SubProductPlanUIServiceBase
@@ -45,8 +57,6 @@ export class SubProductPlanUIServiceBase extends UIServiceBase {
         this.indexTypeDEField = null;
         this.stateField = "";
         this.mainStateFields = ['statuss'];
-        this.authService = new SubProductPlanAuthService({context:this.context});
-        this.dataService = new SubProductPlanService();
     }
 
     /**

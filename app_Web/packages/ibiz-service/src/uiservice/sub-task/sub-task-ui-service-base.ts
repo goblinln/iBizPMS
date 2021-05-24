@@ -2,7 +2,8 @@ import { IPSAppDEUIAction } from '@ibiz/dynamic-model-api';
 import { UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
 import { SubTaskService } from '../../service';
-import SubTaskAuthService from '../../authservice/sub-task/sub-task-auth-service';
+import { AuthServiceRegister } from '../../register';
+import { GlobalService } from '../../service';
 
 /**
  * 任务UI服务对象基类
@@ -32,6 +33,17 @@ export class SubTaskUIServiceBase extends UIServiceBase {
     }
 
     /**
+     * 加载应用实体模型数据
+     *
+     * @memberof  SubTaskUIServiceBase
+     */
+     protected async loaded() {
+        await super.loaded();
+        this.authService = AuthServiceRegister.getInstance().getService(this.context,`${this.entityModel?.codeName.toLowerCase()}`);
+        this.dataService = await new GlobalService().getService(`${this.entityModel?.codeName}`);
+    }
+
+    /**
      * 初始化基础数据
      * 
      * @memberof  SubTaskUIServiceBase
@@ -45,8 +57,6 @@ export class SubTaskUIServiceBase extends UIServiceBase {
         this.indexTypeDEField = null;
         this.stateField = "";
         this.mainStateFields = ['status1','isfavorites','tasktype'];
-        this.authService = new SubTaskAuthService({context:this.context});
-        this.dataService = new SubTaskService();
     }
 
     /**

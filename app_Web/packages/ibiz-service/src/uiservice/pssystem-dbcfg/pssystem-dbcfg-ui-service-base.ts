@@ -2,7 +2,8 @@ import { IPSAppDEUIAction } from '@ibiz/dynamic-model-api';
 import { UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
 import { PSSystemDBCfgService } from '../../service';
-import PSSystemDBCfgAuthService from '../../authservice/pssystem-dbcfg/pssystem-dbcfg-auth-service';
+import { AuthServiceRegister } from '../../register';
+import { GlobalService } from '../../service';
 
 /**
  * 系统数据库UI服务对象基类
@@ -32,6 +33,17 @@ export class PSSystemDBCfgUIServiceBase extends UIServiceBase {
     }
 
     /**
+     * 加载应用实体模型数据
+     *
+     * @memberof  PSSystemDBCfgUIServiceBase
+     */
+     protected async loaded() {
+        await super.loaded();
+        this.authService = AuthServiceRegister.getInstance().getService(this.context,`${this.entityModel?.codeName.toLowerCase()}`);
+        this.dataService = await new GlobalService().getService(`${this.entityModel?.codeName}`);
+    }
+
+    /**
      * 初始化基础数据
      * 
      * @memberof  PSSystemDBCfgUIServiceBase
@@ -45,8 +57,6 @@ export class PSSystemDBCfgUIServiceBase extends UIServiceBase {
         this.indexTypeDEField = null;
         this.stateField = "";
         this.mainStateFields = [];
-        this.authService = new PSSystemDBCfgAuthService({context:this.context});
-        this.dataService = new PSSystemDBCfgService();
     }
 
     /**

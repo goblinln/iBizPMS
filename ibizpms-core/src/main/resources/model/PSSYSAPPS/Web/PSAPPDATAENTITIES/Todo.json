@@ -119,7 +119,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "ACTIVATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -135,7 +135,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "ASSIGNTO"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -163,7 +163,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "CLOSE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -195,7 +195,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "FINISH"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -762,7 +762,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "ACTIVATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -778,7 +778,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "ASSIGNTO"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -806,7 +806,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "CLOSE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -838,7 +838,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "FINISH"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
