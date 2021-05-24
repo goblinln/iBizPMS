@@ -231,14 +231,6 @@ public class IbzProMonthlyAction extends EntityMP implements Serializable {
     @ApiModelProperty("已读")
     private String read;
     /**
-     * 前端键值
-     */
-    @TableField(exist = false)
-    @JSONField(name = "srfkey")
-    @JsonProperty("srfkey")
-    @ApiModelProperty("前端键值")
-    private Long srfkey;
-    /**
      * 本月
      */
     @TableField(exist = false)
@@ -270,6 +262,30 @@ public class IbzProMonthlyAction extends EntityMP implements Serializable {
     @JsonProperty("yesterday")
     @ApiModelProperty("昨天")
     private String yesterday;
+    /**
+     * 项目
+     */
+    @TableField(value = "`PROJECT`")
+    @JSONField(name = "project")
+    @JsonProperty("project")
+    @ApiModelProperty("项目")
+    private Long project;
+    /**
+     * 月报标识
+     */
+    @TableField(value = "`OBJECTID`")
+    @JSONField(name = "objectid")
+    @JsonProperty("objectid")
+    @ApiModelProperty("月报标识")
+    private Long objectid;
+
+    /**
+     * 
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private cn.ibizlab.pms.core.report.domain.IbzMonthly ibzpromonthlyaction;
 
 
 
@@ -335,6 +351,22 @@ public class IbzProMonthlyAction extends EntityMP implements Serializable {
     public void setRead(String read) {
         this.read = read;
         this.modify("read", read);
+    }
+
+    /**
+     * 设置 [项目]
+     */
+    public void setProject(Long project) {
+        this.project = project;
+        this.modify("project", project);
+    }
+
+    /**
+     * 设置 [月报标识]
+     */
+    public void setObjectid(Long objectid) {
+        this.objectid = objectid;
+        this.modify("objectid", objectid);
     }
 
 

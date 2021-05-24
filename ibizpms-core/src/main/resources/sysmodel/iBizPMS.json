@@ -23674,6 +23674,12 @@
     }
     ],
     "subEntitys":[
+    {"name":"DER1N_IBZPRO_MONTHLYACTION_IBZ_MONTHLY_OBJECTID",
+     "relation_type":"DER1N",
+     "code_name":"IbzProMonthlyAction",
+     "entity_name":"IBZPRO_MONTHLYACTION",
+     "ref_entity_name":"IBZ_MONTHLY"
+    }
     ],
     "parentEntitys":[
     ]
@@ -26240,20 +26246,6 @@
     "major_field":0
     },
     {
-    "fieldname":"SRFKEY" ,
-    "codename":"Srfkey",
-    "field_logic_name":"前端键值",
-    "entity_name":"IBZPRO_MONTHLYACTION",
-    "field_type":"BIGINT",
-    "nullable":1,
-    "physical_field":0,
-    "data_type":"BIGINT",
-    "expression":"t1.id",
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
     "fieldname":"THISMONTH" ,
     "codename":"Thismonth",
     "field_logic_name":"本月",
@@ -26312,11 +26304,49 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"PROJECT" ,
+    "codename":"Project",
+    "field_logic_name":"项目",
+    "entity_name":"IBZPRO_MONTHLYACTION",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"OBJECTID" ,
+    "codename":"ObjectID",
+    "field_logic_name":"月报标识",
+    "entity_name":"IBZPRO_MONTHLYACTION",
+    "ref_de":"IBZ_MONTHLY",
+    "ref_field_name":"IBZ_MONTHLYID",
+    "relation_name":"DER1N_IBZPRO_MONTHLYACTION_IBZ_MONTHLY_OBJECTID",
+    "relation_codename":"IbzProMonthlyAction",
+    "field_type":"PICKUP",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":100,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
     ],
     "parentEntitys":[
+    {"name":"DER1N_IBZPRO_MONTHLYACTION_IBZ_MONTHLY_OBJECTID",
+     "relation_type":"DER1N",
+     "code_name":"IbzProMonthlyAction",
+     "entity_name":"IBZPRO_MONTHLYACTION",
+     "ref_entity_name":"IBZ_MONTHLY"
+    }
     ]
  }
     ,

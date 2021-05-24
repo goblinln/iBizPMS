@@ -52,6 +52,9 @@ public class IbzProMonthlyActionServiceImpl extends ServiceImpl<IbzProMonthlyAct
     @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IbzProMonthlyActionRuntime ibzpromonthlyactionRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.report.service.IIbzMonthlyService ibzmonthlyService;
 
     protected int batchSize = 500;
 
@@ -231,6 +234,15 @@ public class IbzProMonthlyActionServiceImpl extends ServiceImpl<IbzProMonthlyAct
         }
     }
 
+
+	@Override
+    public List<IbzProMonthlyAction> selectByObjectid(Long ibzmonthlyid) {
+        return baseMapper.selectByObjectid(ibzmonthlyid);
+    }
+    @Override
+    public void removeByObjectid(Long ibzmonthlyid) {
+        this.remove(new QueryWrapper<IbzProMonthlyAction>().eq("objectid",ibzmonthlyid));
+    }
 
 
     public List<IbzProMonthlyAction> selectDefault(IbzProMonthlyActionSearchContext context){

@@ -1613,6 +1613,30 @@
     "name" : "ISSUBMIT",
     "codeName" : "Issubmit"
   } ],
+  "getMajorPSDERs" : [ {
+    "codeName" : "IbzProMonthlyAction",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProMonthlyAction/PSDERS/DER1N_IBZPRO_MONTHLYACTION_IBZ_MONTHLY_OBJECTID.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 4,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProMonthlyAction.json"
+    },
+    "name" : "DER1N_IBZPRO_MONTHLYACTION_IBZ_MONTHLY_OBJECTID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "pickupDEFName" : "OBJECTID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
+  } ],
   "name" : "IBZ_MONTHLY",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",

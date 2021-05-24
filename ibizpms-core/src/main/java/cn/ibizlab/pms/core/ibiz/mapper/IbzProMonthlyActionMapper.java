@@ -66,4 +66,6 @@ public interface IbzProMonthlyActionMapper extends BaseMapper<IbzProMonthlyActio
     @Delete("${sql}")
     boolean deleteBySQL(@Param("sql") String sql, @Param("et")Map param);
 
+    List<IbzProMonthlyAction> selectByObjectid(@Param("ibzmonthlyid") Serializable ibzmonthlyid);
+
 }

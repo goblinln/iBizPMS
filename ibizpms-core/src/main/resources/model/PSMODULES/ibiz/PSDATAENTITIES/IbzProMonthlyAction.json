@@ -1167,42 +1167,6 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "SRFKEY",
-      "dBType" : "MYSQL5",
-      "name" : "SRFKEY",
-      "queryCodeExp" : "t1.id",
-      "standardColumnName" : "`SRFKEY`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SRFKEY",
-        "codeName" : "Srfkey"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Srfkey",
-    "dEFType" : 2,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "logicName" : "前端键值",
-    "name" : "SRFKEY",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s",
-    "formulaDEField" : true,
-    "phisicalDEField" : false
-  }, {
-    "getAllPSDEFDTColumns" : [ {
       "columnName" : "THISMONTH",
       "dBType" : "MYSQL5",
       "name" : "THISMONTH",
@@ -1397,8 +1361,103 @@
     "valueFormat" : "%1$s",
     "formulaDEField" : true,
     "phisicalDEField" : false
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "PROJECT",
+      "dBType" : "MYSQL5",
+      "name" : "PROJECT",
+      "queryCodeExp" : "t1.`PROJECT`",
+      "standardColumnName" : "`PROJECT`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Project",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "项目",
+    "name" : "PROJECT",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "OBJECTID",
+      "dBType" : "MYSQL5",
+      "name" : "OBJECTID",
+      "queryCodeExp" : "t1.`OBJECTID`",
+      "standardColumnName" : "`OBJECTID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_OBJECTID_EQ",
+      "name" : "N_OBJECTID_EQ",
+      "stdDataType" : 1,
+      "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "OBJECTID",
+        "codeName" : "ObjectID"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "ObjectID",
+    "dEFType" : 1,
+    "dataType" : "PICKUP",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "月报标识",
+    "name" : "OBJECTID",
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProMonthlyAction/PSDERS/DER1N_IBZPRO_MONTHLYACTION_IBZ_MONTHLY_OBJECTID.json"
+    },
+    "getRelatedPSDEField" : {
+      "name" : "IBZ_MONTHLYID",
+      "codeName" : "IbzMonthlyId"
+    },
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s",
+    "linkDEField" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "添加备注",
+    "mapPSDEName" : "IBZ_MONTHLY",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProMonthlyAction/PSDERS/DER1N_IBZPRO_MONTHLYACTION_IBZ_MONTHLY_OBJECTID.json"
+    },
+    "name" : "CREATE",
+    "id" : "IbzProMonthlyAction__CREATE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
@@ -1504,7 +1563,7 @@
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -1518,9 +1577,33 @@
   "enableViewLevel" : 0,
   "extendMode" : 0,
   "logicName" : "月报日志",
+  "getMinorPSDERs" : [ {
+    "codeName" : "IbzProMonthlyAction",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProMonthlyAction/PSDERS/DER1N_IBZPRO_MONTHLYACTION_IBZ_MONTHLY_OBJECTID.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 4,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProMonthlyAction.json"
+    },
+    "name" : "DER1N_IBZPRO_MONTHLYACTION_IBZ_MONTHLY_OBJECTID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "pickupDEFName" : "OBJECTID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
+  } ],
   "name" : "IBZPRO_MONTHLYACTION",
   "saaSMode" : 0,
-  "serviceAPIMode" : 0,
+  "serviceAPIMode" : 1,
   "serviceCodeName" : "IbzProMonthlyAction",
   "storageMode" : 1,
   "systemTag" : "iBizPMS",

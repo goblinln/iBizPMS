@@ -44,6 +44,8 @@ public interface IIbzProMonthlyActionService extends IService<IbzProMonthlyActio
     List<IbzProMonthlyAction> selectView(IbzProMonthlyActionSearchContext context);
 
     Page<IbzProMonthlyAction> searchDefault(IbzProMonthlyActionSearchContext context);
+    List<IbzProMonthlyAction> selectByObjectid(Long ibzmonthlyid);
+    void removeByObjectid(Long ibzmonthlyid);
     IbzProMonthlyAction dynamicCall(Long key, String action, IbzProMonthlyAction et);
     /**
      *自定义查询SQL

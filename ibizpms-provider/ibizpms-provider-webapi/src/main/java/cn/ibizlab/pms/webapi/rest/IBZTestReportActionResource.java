@@ -160,7 +160,6 @@ public class IBZTestReportActionResource {
 	@ApiOperation(value = "获取数据集", tags = {"报告日志" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibztestreportactions/fetchdefault")
 	public ResponseEntity<List<IBZTestReportActionDTO>> fetchdefault(@RequestBody IBZTestReportActionSearchContext context) {
-        ibztestreportactionRuntime.addAuthorityConditions(context,"READ");
         Page<IBZTestReportAction> domains = ibztestreportactionService.searchDefault(context) ;
         List<IBZTestReportActionDTO> list = ibztestreportactionMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -174,7 +173,6 @@ public class IBZTestReportActionResource {
 	@ApiOperation(value = "查询数据集", tags = {"报告日志" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibztestreportactions/searchdefault")
 	public ResponseEntity<Page<IBZTestReportActionDTO>> searchDefault(@RequestBody IBZTestReportActionSearchContext context) {
-        ibztestreportactionRuntime.addAuthorityConditions(context,"READ");
         Page<IBZTestReportAction> domains = ibztestreportactionService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibztestreportactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
