@@ -7,6 +7,12 @@ window.Environment = {
     isAppMode:true,
     // 是否开启权限认证
     enablePermissionValid:false,
+    // 远端动态基础路径
+    remoteDynaPath:'/dynamodel',
+    // 实例配置地址
+    configDynaPath: 'http://studio.ibizmodeling.cn/DynamicBackend/designtool/redirect',
+    // 是否启用动态
+    bDynamic: true,
     // 打开目标工具，可选参数：sln、mos
     debugOpenMode:'mos',
     // 配置平台地址
