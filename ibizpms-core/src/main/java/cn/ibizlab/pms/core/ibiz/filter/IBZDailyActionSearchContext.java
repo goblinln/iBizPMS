@@ -57,6 +57,11 @@ public class IBZDailyActionSearchContext extends QueryWrapperContext<IBZDailyAct
 	public void setN_actionmanner_eq(String n_actionmanner_eq) {
         this.n_actionmanner_eq = n_actionmanner_eq;
     }
+                
+	private Long n_objectid_eq;//[日报标识]
+	public void setN_objectid_eq(Long n_objectid_eq) {
+        this.n_objectid_eq = n_objectid_eq;
+    }
 
     /**
 	 * 启用快速搜索

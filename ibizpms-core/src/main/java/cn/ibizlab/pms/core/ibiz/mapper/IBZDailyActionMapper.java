@@ -66,4 +66,6 @@ public interface IBZDailyActionMapper extends BaseMapper<IBZDailyAction> {
     @Delete("${sql}")
     boolean deleteBySQL(@Param("sql") String sql, @Param("et")Map param);
 
+    List<IBZDailyAction> selectByObjectid(@Param("ibzdailyid") Serializable ibzdailyid);
+
 }

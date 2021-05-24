@@ -52,6 +52,12 @@ public class IBZDailyActionServiceImpl extends ServiceImpl<IBZDailyActionMapper,
     @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IBZDailyActionRuntime ibzdailyactionRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIBZDailyHistoryService ibzdailyhistoryService;
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.report.service.IIbzDailyService ibzdailyService;
 
     protected int batchSize = 500;
 
@@ -67,6 +73,9 @@ public class IBZDailyActionServiceImpl extends ServiceImpl<IBZDailyActionMapper,
     public boolean create(IBZDailyAction et) {
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
+        }
+        if(!ibzdailyactionRuntime.isRtmodel()){
+            ibzdailyhistoryService.saveByAction(et.getId(), et.getIbzdailyhistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -88,6 +97,9 @@ public class IBZDailyActionServiceImpl extends ServiceImpl<IBZDailyActionMapper,
     public boolean update(IBZDailyAction et) {
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
+        }
+        if(!ibzdailyactionRuntime.isRtmodel()){
+            ibzdailyhistoryService.saveByAction(et.getId(), et.getIbzdailyhistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -118,6 +130,7 @@ public class IBZDailyActionServiceImpl extends ServiceImpl<IBZDailyActionMapper,
     @Transactional
     public boolean remove(Long key) {
         if(!ibzdailyactionRuntime.isRtmodel()){
+            ibzdailyhistoryService.removeByAction(key) ;
         }
         boolean result = removeById(key);
         return result ;
@@ -143,6 +156,7 @@ public class IBZDailyActionServiceImpl extends ServiceImpl<IBZDailyActionMapper,
         }
         else {
             if(!ibzdailyactionRuntime.isRtmodel()){
+                et.setIbzdailyhistory(ibzdailyhistoryService.selectByAction(key));
             }
         }
         return et;
@@ -231,6 +245,15 @@ public class IBZDailyActionServiceImpl extends ServiceImpl<IBZDailyActionMapper,
         }
     }
 
+
+	@Override
+    public List<IBZDailyAction> selectByObjectid(Long ibzdailyid) {
+        return baseMapper.selectByObjectid(ibzdailyid);
+    }
+    @Override
+    public void removeByObjectid(Long ibzdailyid) {
+        this.remove(new QueryWrapper<IBZDailyAction>().eq("objectid",ibzdailyid));
+    }
 
 
     public List<IBZDailyAction> selectDefault(IBZDailyActionSearchContext context){

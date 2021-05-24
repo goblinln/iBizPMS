@@ -262,7 +262,39 @@ public class IBZProWeeklyAction extends EntityMP implements Serializable {
     @JsonProperty("today")
     @ApiModelProperty("今天")
     private String today;
+    /**
+     * 周报标识
+     */
+    @TableField(value = "`OBJECTID`")
+    @JSONField(name = "objectid")
+    @JsonProperty("objectid")
+    @ApiModelProperty("周报标识")
+    private Long objectid;
+    /**
+     * 项目
+     */
+    @TableField(value = "`PROJECT`")
+    @JSONField(name = "project")
+    @JsonProperty("project")
+    @ApiModelProperty("项目")
+    private Long project;
 
+    /**
+     * 
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private cn.ibizlab.pms.core.report.domain.IbzWeekly ibzproweeklyaction;
+
+
+    /**
+     * 周报操作历史
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private List<cn.ibizlab.pms.core.ibiz.domain.IbzProWeeklyHistory> ibzproweeklyhistory;
 
 
     /**
@@ -327,6 +359,22 @@ public class IBZProWeeklyAction extends EntityMP implements Serializable {
     public void setRead(String read) {
         this.read = read;
         this.modify("read", read);
+    }
+
+    /**
+     * 设置 [周报标识]
+     */
+    public void setObjectid(Long objectid) {
+        this.objectid = objectid;
+        this.modify("objectid", objectid);
+    }
+
+    /**
+     * 设置 [项目]
+     */
+    public void setProject(Long project) {
+        this.project = project;
+        this.modify("project", project);
     }
 
 

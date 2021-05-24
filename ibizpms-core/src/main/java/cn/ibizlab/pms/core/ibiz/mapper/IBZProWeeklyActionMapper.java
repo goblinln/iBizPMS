@@ -66,4 +66,6 @@ public interface IBZProWeeklyActionMapper extends BaseMapper<IBZProWeeklyAction>
     @Delete("${sql}")
     boolean deleteBySQL(@Param("sql") String sql, @Param("et")Map param);
 
+    List<IBZProWeeklyAction> selectByObjectid(@Param("ibzweeklyid") Serializable ibzweeklyid);
+
 }

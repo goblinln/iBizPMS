@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.ibiz.mapper.IBZDailyHistoryMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`ACTION`, t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DIFF`, t1.`FIELD`, t1.`HISTORYSN`, t1.`ID`, t1.`NEW`, t1.`OLD`, t1.`ORG`, t1.`ORGNAME`, t1.`UPDATEBY` FROM `zt_history` t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_diff_like != null ">
+            <bind name="bind_n_diff_like" value="'%' + srf.n_diff_like + '%'" />
+            <![CDATA[ AND  t1.`DIFF` like #{bind_n_diff_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="srf.n_action_eq != null ">
+			<![CDATA[ AND  t1.`ACTION` = #{srf.n_action_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="IBZDailyHistoryResultMap" databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.ID = #{id} ]]>
+		</trim>
+    </select>
+
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="IBZDailyHistoryResultMap" type="cn.ibizlab.pms.core.ibiz.domain.IBZDailyHistory" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
+		<result property="ibiznew" column="new" />
+		<result property="action" column="action" />
+            
+		
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="dailyhistory" javaType="cn.ibizlab.pms.core.ibiz.domain.IBZDailyAction" column="action" select="cn.ibizlab.pms.core.ibiz.mapper.IBZDailyActionMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZPRO_DAILYHISTORY_IBZPRO_DAILYACTION_ACTION] -->
+	 <select id="selectByAction" resultMap="IBZDailyHistoryResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND t1.`ACTION`=#{id} ]]>
+		</trim>
+     </select>
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IBZDailyHistorySearchContext"  resultMap="IBZDailyHistoryResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACTION`, t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DIFF`, t1.`FIELD`, t1.`HISTORYSN`, t1.`ID`, t1.`NEW`, t1.`OLD`, t1.`ORG`, t1.`ORGNAME`, t1.`UPDATEBY` FROM `zt_history` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IBZDailyHistorySearchContext" resultMap="IBZDailyHistoryResultMap">
+		<include refid="Default" />
+	</select>
+
+    <!--数据查询[Simple]-->
+    <sql id="Simple" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DIFF`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`UPDATEBY` FROM `zt_history` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectSimple"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IBZDailyHistorySearchContext" resultMap="IBZDailyHistoryResultMap">
+		<include refid="Simple" />
+	</select>
+
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACTION`, t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DIFF`, t1.`FIELD`, t1.`HISTORYSN`, t1.`ID`, t1.`NEW`, t1.`OLD`, t1.`ORG`, t1.`ORGNAME`, t1.`UPDATEBY` FROM `zt_history` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IBZDailyHistorySearchContext" resultMap="IBZDailyHistoryResultMap">
+		<include refid="View" />
+	</select>
+
+</mapper>
+

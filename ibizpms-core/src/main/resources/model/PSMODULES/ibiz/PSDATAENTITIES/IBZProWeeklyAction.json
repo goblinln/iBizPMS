@@ -914,6 +914,10 @@
     "length" : 30,
     "logicName" : "对象类型",
     "name" : "OBJECTTYPE",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSCODELISTS/Action__object_type.json"
+    },
     "stdDataType" : 25,
     "stringLength" : 30,
     "valueFormat" : "%1$s"
@@ -1154,6 +1158,10 @@
     "length" : 1,
     "logicName" : "已读",
     "name" : "READ",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSCODELISTS/Action__read.json"
+    },
     "stdDataType" : 25,
     "stringLength" : 1,
     "valueFormat" : "%1$s"
@@ -1353,10 +1361,105 @@
     "valueFormat" : "%1$s",
     "formulaDEField" : true,
     "phisicalDEField" : false
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "OBJECTID",
+      "dBType" : "MYSQL5",
+      "name" : "OBJECTID",
+      "queryCodeExp" : "t1.`OBJECTID`",
+      "standardColumnName" : "`OBJECTID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_OBJECTID_EQ",
+      "name" : "N_OBJECTID_EQ",
+      "stdDataType" : 1,
+      "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "OBJECTID",
+        "codeName" : "ObjectID"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "ObjectID",
+    "dEFType" : 1,
+    "dataType" : "PICKUP",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "周报标识",
+    "name" : "OBJECTID",
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProWeeklyAction/PSDERS/DER1N_IBZPRO_WEEKLYACTION_IBZ_WEEKLY_OBJECTID.json"
+    },
+    "getRelatedPSDEField" : {
+      "name" : "IBZ_WEEKLYID",
+      "codeName" : "IbzWeeklyId"
+    },
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s",
+    "linkDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "PROJECT",
+      "dBType" : "MYSQL5",
+      "name" : "PROJECT",
+      "queryCodeExp" : "t1.`PROJECT`",
+      "standardColumnName" : "`PROJECT`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Project",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "项目",
+    "name" : "PROJECT",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
+  }, {
+    "logicName" : "添加备注",
+    "mapPSDEName" : "IBZ_WEEKLY",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProWeeklyAction/PSDERS/DER1N_IBZPRO_WEEKLYACTION_IBZ_WEEKLY_OBJECTID.json"
+    },
+    "name" : "CREATE",
+    "id" : "IbzProWeeklyAction__CREATE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
@@ -1460,7 +1563,7 @@
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -1474,9 +1577,58 @@
   "enableViewLevel" : 0,
   "extendMode" : 0,
   "logicName" : "周报日志",
+  "getMajorPSDERs" : [ {
+    "codeName" : "IBZProWeeklyHistory",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProWeeklyHistory/PSDERS/DER1N_IBZPRO_WEEKLYHISTORY_IBZPRO_WEEKLYACTION_ACTION.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProWeeklyAction.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 12,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProWeeklyHistory.json"
+    },
+    "name" : "DER1N_IBZPRO_WEEKLYHISTORY_IBZPRO_WEEKLYACTION_ACTION",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "ACTION",
+      "codeName" : "Action"
+    },
+    "pickupDEFName" : "ACTION",
+    "removeActionType" : -1,
+    "removeOrder" : 0,
+    "nestedRS" : true
+  } ],
+  "getMinorPSDERs" : [ {
+    "codeName" : "IbzProWeeklyAction",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProWeeklyAction/PSDERS/DER1N_IBZPRO_WEEKLYACTION_IBZ_WEEKLY_OBJECTID.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 4,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProWeeklyAction.json"
+    },
+    "name" : "DER1N_IBZPRO_WEEKLYACTION_IBZ_WEEKLY_OBJECTID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "pickupDEFName" : "OBJECTID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
+  } ],
   "name" : "IBZPRO_WEEKLYACTION",
   "saaSMode" : 0,
-  "serviceAPIMode" : 0,
+  "serviceAPIMode" : 1,
   "serviceCodeName" : "IBZProWeeklyAction",
   "storageMode" : 1,
   "systemTag" : "iBizPMS",

@@ -1635,6 +1635,30 @@
     "name" : "ISSUBMIT",
     "codeName" : "Issubmit"
   } ],
+  "getMajorPSDERs" : [ {
+    "codeName" : "IbzProDaily",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZDailyAction/PSDERS/DER1N_IBZPRO_DAILYACTION_IBZ_DAILY_OBJECTID.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 4,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZDailyAction.json"
+    },
+    "name" : "DER1N_IBZPRO_DAILYACTION_IBZ_DAILY_OBJECTID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "pickupDEFName" : "OBJECTID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
+  } ],
   "name" : "IBZ_DAILY",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",

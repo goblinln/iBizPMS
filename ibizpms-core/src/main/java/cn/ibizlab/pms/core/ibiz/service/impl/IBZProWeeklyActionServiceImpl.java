@@ -52,6 +52,12 @@ public class IBZProWeeklyActionServiceImpl extends ServiceImpl<IBZProWeeklyActio
     @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IBZProWeeklyActionRuntime ibzproweeklyactionRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIbzProWeeklyHistoryService ibzproweeklyhistoryService;
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.report.service.IIbzWeeklyService ibzweeklyService;
 
     protected int batchSize = 500;
 
@@ -67,6 +73,9 @@ public class IBZProWeeklyActionServiceImpl extends ServiceImpl<IBZProWeeklyActio
     public boolean create(IBZProWeeklyAction et) {
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
+        }
+        if(!ibzproweeklyactionRuntime.isRtmodel()){
+            ibzproweeklyhistoryService.saveByAction(et.getId(), et.getIbzproweeklyhistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -88,6 +97,9 @@ public class IBZProWeeklyActionServiceImpl extends ServiceImpl<IBZProWeeklyActio
     public boolean update(IBZProWeeklyAction et) {
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
+        }
+        if(!ibzproweeklyactionRuntime.isRtmodel()){
+            ibzproweeklyhistoryService.saveByAction(et.getId(), et.getIbzproweeklyhistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -118,6 +130,7 @@ public class IBZProWeeklyActionServiceImpl extends ServiceImpl<IBZProWeeklyActio
     @Transactional
     public boolean remove(Long key) {
         if(!ibzproweeklyactionRuntime.isRtmodel()){
+            ibzproweeklyhistoryService.removeByAction(key) ;
         }
         boolean result = removeById(key);
         return result ;
@@ -143,6 +156,7 @@ public class IBZProWeeklyActionServiceImpl extends ServiceImpl<IBZProWeeklyActio
         }
         else {
             if(!ibzproweeklyactionRuntime.isRtmodel()){
+                et.setIbzproweeklyhistory(ibzproweeklyhistoryService.selectByAction(key));
             }
         }
         return et;
@@ -231,6 +245,15 @@ public class IBZProWeeklyActionServiceImpl extends ServiceImpl<IBZProWeeklyActio
         }
     }
 
+
+	@Override
+    public List<IBZProWeeklyAction> selectByObjectid(Long ibzweeklyid) {
+        return baseMapper.selectByObjectid(ibzweeklyid);
+    }
+    @Override
+    public void removeByObjectid(Long ibzweeklyid) {
+        this.remove(new QueryWrapper<IBZProWeeklyAction>().eq("objectid",ibzweeklyid));
+    }
 
 
     public List<IBZProWeeklyAction> selectDefault(IBZProWeeklyActionSearchContext context){

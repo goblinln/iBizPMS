@@ -262,7 +262,39 @@ public class IBZDailyAction extends EntityMP implements Serializable {
     @JsonProperty("actor")
     @ApiModelProperty("操作者")
     private String actor;
+    /**
+     * 日报标识
+     */
+    @TableField(value = "`OBJECTID`")
+    @JSONField(name = "objectid")
+    @JsonProperty("objectid")
+    @ApiModelProperty("日报标识")
+    private Long objectid;
+    /**
+     * 项目
+     */
+    @TableField(value = "`PROJECT`")
+    @JSONField(name = "project")
+    @JsonProperty("project")
+    @ApiModelProperty("项目")
+    private Long project;
 
+    /**
+     * 
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private cn.ibizlab.pms.core.report.domain.IbzDaily ibzprodaily;
+
+
+    /**
+     * 日报操作历史
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private List<cn.ibizlab.pms.core.ibiz.domain.IBZDailyHistory> ibzdailyhistory;
 
 
     /**
@@ -327,6 +359,22 @@ public class IBZDailyAction extends EntityMP implements Serializable {
     public void setActor(String actor) {
         this.actor = actor;
         this.modify("actor", actor);
+    }
+
+    /**
+     * 设置 [日报标识]
+     */
+    public void setObjectid(Long objectid) {
+        this.objectid = objectid;
+        this.modify("objectid", objectid);
+    }
+
+    /**
+     * 设置 [项目]
+     */
+    public void setProject(Long project) {
+        this.project = project;
+        this.modify("project", project);
     }
 
 

@@ -302,18 +302,18 @@ export class UIServiceBase {
 
     /**
      * 获取指定数据的重定向页面
-     * 
+     *
      * @param srfkey 数据主键
      * @param enableWorkflowParam  重定向视图需要处理流程中的数据
      * @memberof  UIServiceBase
      */
-    protected async getRDAppView(srfkey: string, enableWorkflowParam: any) {
+     protected async getRDAppView(srfkey: string, enableWorkflowParam: any) {
         // 进行数据查询
         let result: any = await this.dataService.Get({ [this.entityModel.codeName.toLowerCase()]: srfkey });
         const curData: any = result.data;
         // 设置临时组织标识（用于获取多实例）
-        if(this.tempOrgIdDEField && curData && curData[this.tempOrgIdDEField]){
-            setSessionStorage("tempOrgId",curData[this.tempOrgIdDEField]);
+        if (this.tempOrgIdDEField && curData && curData[this.tempOrgIdDEField]) {
+            setSessionStorage('srfdynaorgid', curData[this.tempOrgIdDEField]);
         }
         //判断当前数据模式,默认为true，todo
         const iRealDEModel: boolean = true;
@@ -321,7 +321,12 @@ export class UIServiceBase {
         let bDataInWF: boolean = false;
         let bWFMode: any = false;
         // 计算数据模式
-        if ((enableWorkflowParam && enableWorkflowParam.srfwf && (this.InWorkflowArray.indexOf(enableWorkflowParam.srfwf) !== -1)) || (enableWorkflowParam && enableWorkflowParam.enableWorkflow)) {
+        if (
+            (enableWorkflowParam &&
+                enableWorkflowParam.srfwf &&
+                this.InWorkflowArray.indexOf(enableWorkflowParam.srfwf) !== -1) ||
+            (enableWorkflowParam && enableWorkflowParam.enableWorkflow)
+        ) {
             bDataInWF = true;
         }
         let strPDTViewParam: string = await this.getDESDDEViewPDTParam(curData, bDataInWF, bWFMode);
@@ -334,7 +339,7 @@ export class UIServiceBase {
             return strPDTViewParam;
         } else {
             //返回视图功能数据
-            return `${this.allViewFuncMap.get(strPDTViewParam) ? this.allViewFuncMap.get(strPDTViewParam) : ""}`;
+            return `${this.allViewFuncMap.get(strPDTViewParam) ? this.allViewFuncMap.get(strPDTViewParam) : ''}`;
         }
     }
 

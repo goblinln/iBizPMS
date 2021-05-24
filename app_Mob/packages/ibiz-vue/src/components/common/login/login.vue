@@ -231,7 +231,7 @@ export default class Login extends Vue {
         this.$store.dispatch('authresource/commitAuthData', {});
         // 清除租户相关信息
         removeSessionStorage("activeOrgData");
-        removeSessionStorage("tempOrgId");
+        removeSessionStorage("srfdynaorgid");
         removeSessionStorage("dcsystem");
         removeSessionStorage("orgsData");
     }

@@ -144,6 +144,10 @@
     "length" : 100,
     "logicName" : "由谁创建",
     "name" : "CREATEBY",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
+    },
     "predefinedType" : "CREATEMANNAME",
     "stdDataType" : 25,
     "stringLength" : 100,
@@ -627,6 +631,10 @@
     "length" : 100,
     "logicName" : "由谁更新",
     "name" : "UPDATEBY",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
+    },
     "predefinedType" : "UPDATEMANNAME",
     "stdDataType" : 25,
     "stringLength" : 100,

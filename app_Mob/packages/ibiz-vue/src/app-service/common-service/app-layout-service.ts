@@ -17,6 +17,7 @@ import { AppDefaultMobPickUpTreeViewLayout } from "../../components/layout/app-d
 import { AppDefaultMobWFDynaEditViewLayout } from "../../components/layout/app-default-layout/app-default-mob-wfdynaeditview-layout/app-default-mob-wfdynaeditview-layout";
 import { AppDefaultMobWFDynaActionViewLayout } from "../../components/layout/app-default-layout/app-default-mob-wfdynaactionview-layout/app-default-mob-wfdynaactionview-layout";
 import { AppDefaultMobWfDynaExpMdViewLayout } from "../../components/layout/app-default-layout/app-default-mob-wfdynaexpmdview-layout/app-default-mob-wfdynaexpmdview-layout";
+import { AppDefaultMobDeRedirectViewLayout } from "../../components/layout/app-default-layout/app-default-mob-deredirectview-layout/app-default-mob-deredirectview-layout";
 
 /**
  * 应用组件服务
@@ -59,6 +60,7 @@ export class AppLayoutService {
         this.layoutMap.set("DEMOBWFDYNAEDITVIEW-DEFAULT", AppDefaultMobWFDynaEditViewLayout);
         this.layoutMap.set("DEMOBWFDYNAACTIONVIEW-DEFAULT", AppDefaultMobWFDynaActionViewLayout);
         this.layoutMap.set("DEMOBWFDYNAEXPMDVIEW-DEFAULT", AppDefaultMobWfDynaExpMdViewLayout);
+        this.layoutMap.set("DEMOBREDIRECTVIEW-DEFAULT", AppDefaultMobDeRedirectViewLayout);
     }
 
     /**

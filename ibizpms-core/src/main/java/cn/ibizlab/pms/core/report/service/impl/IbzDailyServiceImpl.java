@@ -52,6 +52,9 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
     @Lazy
     cn.ibizlab.pms.core.report.runtime.IbzDailyRuntime ibzdailyRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIBZDailyActionService ibzdailyactionService;
 
     protected int batchSize = 500;
 

@@ -57,6 +57,11 @@ public class IBZProWeeklyActionSearchContext extends QueryWrapperContext<IBZProW
 	public void setN_read_eq(String n_read_eq) {
         this.n_read_eq = n_read_eq;
     }
+                
+	private Long n_objectid_eq;//[周报标识]
+	public void setN_objectid_eq(Long n_objectid_eq) {
+        this.n_objectid_eq = n_objectid_eq;
+    }
 
     /**
 	 * 启用快速搜索

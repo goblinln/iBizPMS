@@ -1116,6 +1116,9 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZDailyAction.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZDailyHistory.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProBugHostory.json"
   }, {
     "modelref" : true,
@@ -1276,6 +1279,9 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProWeeklyHistory.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
@@ -2880,6 +2886,9 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZDailyAction.json"
     }, {
       "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZDailyHistory.json"
+    }, {
+      "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProBugHostory.json"
     }, {
       "modelref" : true,
@@ -2983,6 +2992,9 @@
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction.json"
+    }, {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProWeeklyHistory.json"
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
