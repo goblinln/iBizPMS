@@ -54,6 +54,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -72,7 +96,8 @@
           "viewType" : "DEPORTALVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -1140,6 +1165,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -1150,9 +1176,11 @@
     "noSort" : false,
     "singleSelect" : true,
     "name" : "grid",
-    "modelid" : "589136858371babab427fdad1550d4fd"
+    "modelid" : "589136858371babab427fdad1550d4fd",
+    "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "GridView9_MyAssignedToMe",
+  "getPSDEViewId" : "195c91a132d526d2fc4d352708b22b97",
   "getPSSysImage" : {
     "glyph" : "xf188@FontAwesome",
     "cssClass" : "fa fa-bug"
@@ -1188,6 +1216,7 @@
   "rowEditDefault" : false,
   "showCaptionBar" : false,
   "modelid" : "8e637d967d51f005c958f8ee56a17979",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

@@ -33,11 +33,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSControls" : [ {
@@ -306,7 +317,8 @@
           "showCaption" : true,
           "showIcon" : true
         } ],
-        "modelid" : "040e17a872f9b422d3cba7598adea41b"
+        "modelid" : "040e17a872f9b422d3cba7598adea41b",
+        "modeltype" : "PSDETOOLBAR"
       } ],
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
@@ -587,7 +599,8 @@
             "showCaption" : true,
             "showIcon" : true
           } ],
-          "modelid" : "040e17a872f9b422d3cba7598adea41b"
+          "modelid" : "040e17a872f9b422d3cba7598adea41b",
+          "modeltype" : "PSDETOOLBAR"
         },
         "getPSNavigateContexts" : [ {
           "key" : "DEPT",
@@ -724,15 +737,18 @@
       "outputIconDefault" : false,
       "rootVisible" : false,
       "name" : "treeexpbar_tree",
-      "modelid" : "04e67fac47c6753cff100b8cbf0738b1"
+      "modelid" : "04e67fac47c6753cff100b8cbf0738b1",
+      "modeltype" : "PSDETREEVIEW"
     } ],
     "xDataControlName" : "treeexpbar_tree",
     "enableCounter" : true,
     "enableSearch" : false,
     "showTitleBar" : false,
-    "modelid" : "dd7fc6839d2e1f024028a23ae1f53489_treeexpbar"
+    "modelid" : "dd7fc6839d2e1f024028a23ae1f53489_treeexpbar",
+    "modeltype" : "PSEXPBAR"
   } ],
   "getPSDEViewCodeName" : "TreeExpView",
+  "getPSDEViewId" : "9510d4cffa3a1f73c231ba3c45629b47",
   "getPSSysImage" : {
     "glyph" : "xf0c0@FontAwesome",
     "cssClass" : "fa fa-users"
@@ -758,5 +774,6 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "dd7fc6839d2e1f024028a23ae1f53489"
+  "modelid" : "dd7fc6839d2e1f024028a23ae1f53489",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -87,6 +87,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -105,7 +129,8 @@
           "viewType" : "DEPORTALVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -290,7 +315,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b"
+    "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "NONE",
     "codeName" : "MyFavoriteMain",
@@ -1716,6 +1742,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -1726,7 +1753,8 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "059a3574c824d6dec864c0b7c0ba5d39"
+    "modelid" : "059a3574c824d6dec864c0b7c0ba5d39",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "Custom",
     "controlType" : "SEARCHBAR",
@@ -2882,9 +2910,11 @@
     "enableQuickSearch" : true,
     "mobileSearchBar" : false,
     "name" : "searchbar",
-    "modelid" : "f48f6753b28b83cbb139774abd86cc6c"
+    "modelid" : "f48f6753b28b83cbb139774abd86cc6c",
+    "modeltype" : "PSSYSSEARCHBAR"
   } ],
   "getPSDEViewCodeName" : "MyFavoriteGridView",
+  "getPSDEViewId" : "b637b61e1dff855a76e43069f64dd257",
   "getPSSysImage" : {
     "glyph" : "xf0ae@FontAwesome",
     "cssClass" : "fa fa-tasks"
@@ -2921,6 +2951,7 @@
   "rowEditDefault" : false,
   "showCaptionBar" : false,
   "modelid" : "3e64fd6ff52a743fc5861c88e4d2da35",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

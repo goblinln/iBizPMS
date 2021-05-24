@@ -65,6 +65,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -83,7 +107,8 @@
           "viewType" : "DEEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavContexts" : [ {
@@ -278,7 +303,8 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "history",
-    "modelid" : "c3a36618c939852256c260861292987f"
+    "modelid" : "c3a36618c939852256c260861292987f",
+    "modeltype" : "PSDELIST"
   }, {
     "codeName" : "AddCommentHistoryListViewtoolbar",
     "controlType" : "TOOLBAR",
@@ -344,7 +370,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "a3eda21b193077f1b51aed307ce96138"
+    "modelid" : "a3eda21b193077f1b51aed307ce96138",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "ClassifyByType",
     "controlType" : "LIST",
@@ -533,9 +560,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "list",
-    "modelid" : "3b94c5ec8c0db8db6a5f36fa82c3ed3b"
+    "modelid" : "3b94c5ec8c0db8db6a5f36fa82c3ed3b",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "AddCommentHistoryListView",
+  "getPSDEViewId" : "980a6d624690126294ea41f30b7150b8",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDELISTVIEW_STYLE2",
@@ -556,5 +585,6 @@
   "enableDP" : true,
   "enableFilter" : false,
   "showCaptionBar" : false,
-  "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b"
+  "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -65,6 +65,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -83,7 +107,8 @@
           "viewType" : "DEEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -172,7 +197,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "c25092e001ee150ca27e240a79970400"
+    "modelid" : "c25092e001ee150ca27e240a79970400",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "PAGE",
     "codeName" : "ProjectBugTypeSum",
@@ -623,6 +649,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : false,
     "enableRowEdit" : false,
@@ -633,9 +660,11 @@
     "noSort" : false,
     "singleSelect" : true,
     "name" : "grid",
-    "modelid" : "1226cd87815a2a0b461bf3a561e6b0c3"
+    "modelid" : "1226cd87815a2a0b461bf3a561e6b0c3",
+    "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "ProjectBugTypeSumUsr2GridView",
+  "getPSDEViewId" : "0e14f1950a705346feeb0f37b04fe6af",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -660,5 +689,6 @@
   "enableRowEdit" : false,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
-  "modelid" : "f0533943874edff99f02a3cdfb584b38"
+  "modelid" : "f0533943874edff99f02a3cdfb584b38",
+  "modeltype" : "PSAPPDEVIEW"
 }

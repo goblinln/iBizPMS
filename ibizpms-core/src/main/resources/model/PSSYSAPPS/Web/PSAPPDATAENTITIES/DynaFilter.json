@@ -354,6 +354,7 @@
   "enableUIActions" : 15,
   "logicName" : "动态搜索栏",
   "name" : "DYNAFILTER",
+  "getPSDEName" : "DYNAFILTER",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaFilter/PSDESERVICEAPIS/DynaFilter.json"

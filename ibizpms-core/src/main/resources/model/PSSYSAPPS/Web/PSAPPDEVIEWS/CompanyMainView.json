@@ -69,9 +69,11 @@
     } ],
     "enableCustomized" : false,
     "name" : "dashboard",
-    "modelid" : "b293e263c81ae9f040fd871f38287bca"
+    "modelid" : "b293e263c81ae9f040fd871f38287bca",
+    "modeltype" : "PSSYSDASHBOARD"
   } ],
   "getPSDEViewCodeName" : "MainView",
+  "getPSDEViewId" : "47c02cdac19e48aac4fce69ae8c9f11f",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPORTALVIEW_STYLE2",
@@ -96,5 +98,6 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "b293e263c81ae9f040fd871f38287bca"
+  "modelid" : "b293e263c81ae9f040fd871f38287bca",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -295,7 +295,8 @@
       "showCaption" : true
     } ],
     "name" : "itemlayoutpanel",
-    "modelid" : "6eb77d5e09d06f843a76afdce1cfe48e"
+    "modelid" : "6eb77d5e09d06f843a76afdce1cfe48e",
+    "modeltype" : "PSSYSVIEWPANEL"
   },
   "logicName" : "需求看板（产品需求阶段）",
   "minorSortDir" : "DESC",
@@ -549,5 +550,6 @@
   "enablePagingBar" : true,
   "noSort" : false,
   "singleSelect" : false,
-  "modelid" : "6eb77d5e09d06f843a76afdce1cfe48e"
+  "modelid" : "6eb77d5e09d06f843a76afdce1cfe48e",
+  "modeltype" : "PSDEKANBAN"
 }

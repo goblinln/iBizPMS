@@ -88,6 +88,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ModuleEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ModuleEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -106,7 +130,8 @@
           "viewType" : "DEEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -265,7 +290,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "d62b035e8b320c4dd1cbc91d319449f5"
+    "modelid" : "d62b035e8b320c4dd1cbc91d319449f5",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "NONE",
     "codeName" : "Main",
@@ -567,6 +593,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -577,9 +604,11 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "deaaeb73ae64b50998f3c0667971ada6"
+    "modelid" : "deaaeb73ae64b50998f3c0667971ada6",
+    "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "GridView",
+  "getPSDEViewId" : "95846c12e84d8d4eaa8659df835e03c4",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -605,5 +634,6 @@
   "enableRowEdit" : false,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
-  "modelid" : "7bbf35767e7763b69ad6acd4b06c06d1"
+  "modelid" : "7bbf35767e7763b69ad6acd4b06c06d1",
+  "modeltype" : "PSAPPDEVIEW"
 }

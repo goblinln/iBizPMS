@@ -306,7 +306,8 @@
         "enableFilterSave" : false,
         "noTabHeader" : true,
         "name" : "searchform",
-        "modelid" : "688525aeddf3ee62b32ef0636a35de03"
+        "modelid" : "688525aeddf3ee62b32ef0636a35de03",
+        "modeltype" : "PSDEFORM_SEARCHFORM"
       }, {
         "codeName" : "Mob_3335",
         "controlStyle" : "LISTVIEW",
@@ -556,7 +557,8 @@
           } ],
           "mobilePanel" : true,
           "name" : "mdctrl_itempanel",
-          "modelid" : "881c273f0a3edb62a7fded4f04b338fe"
+          "modelid" : "881c273f0a3edb62a7fded4f04b338fe",
+          "modeltype" : "PSSYSVIEWPANEL"
         },
         "logicName" : "MOB_5419",
         "minorSortDir" : "DESC",
@@ -748,9 +750,11 @@
         "noSort" : false,
         "showHeader" : true,
         "name" : "mdctrl",
-        "modelid" : "238067a474cf53546ab63e7689f338c9"
+        "modelid" : "238067a474cf53546ab63e7689f338c9",
+        "modeltype" : "PSDELIST"
       } ],
       "getPSDEViewCodeName" : "MobPickupMDView",
+      "getPSDEViewId" : "216ca46b54f316635ab1666d4836e6b4",
       "getPSSysImage" : {
         "glyph" : "xf0ae@FontAwesome",
         "cssClass" : "fa fa-tasks"
@@ -779,6 +783,7 @@
       "expandSearchForm" : true,
       "showCaptionBar" : true,
       "modelid" : "7f925dfc6bbe2e8c9de0a0922445e178",
+      "modeltype" : "PSAPPDEVIEW",
       "getPSAppDERSPaths" : [ [ {
         "actionRSMode" : 1,
         "codeName" : "ProjectModules",
@@ -1042,6 +1047,7 @@
     }
   } ],
   "getPSDEViewCodeName" : "MobPickupView",
+  "getPSDEViewId" : "33a73268c145e80aad4162935dedb3dd",
   "getPSSysImage" : {
     "glyph" : "xf0ae@FontAwesome",
     "cssClass" : "fa fa-tasks"
@@ -1066,6 +1072,7 @@
   "enablePullDownRefresh" : false,
   "showCaptionBar" : false,
   "modelid" : "dd80bc5b2ebbb1fa5beb4c61b76ada0f",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

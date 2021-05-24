@@ -57,6 +57,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeUsr3GridViewUserConcat.json",
+          "viewType" : "DEGRIDVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeUsr3GridViewUserConcat.json",
+          "viewType" : "DEGRIDVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -75,7 +99,8 @@
           "viewType" : "DEGRIDVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -381,6 +406,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -391,7 +417,8 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "8ce039b21566185c06243f99ff11cc42"
+    "modelid" : "8ce039b21566185c06243f99ff11cc42",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
@@ -468,9 +495,11 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "2b6df0c3a3ce2f5bcb741da0f59796f3"
+    "modelid" : "2b6df0c3a3ce2f5bcb741da0f59796f3",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "Usr2GridView",
+  "getPSDEViewId" : "4c2d48978473703ebddd814c22a35f0f",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -497,5 +526,6 @@
   "enableSearch" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
-  "modelid" : "a486140991fa432e84d721479bebfd4b"
+  "modelid" : "a486140991fa432e84d721479bebfd4b",
+  "modeltype" : "PSAPPDEVIEW"
 }

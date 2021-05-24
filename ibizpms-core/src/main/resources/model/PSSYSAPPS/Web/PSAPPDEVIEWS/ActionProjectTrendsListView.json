@@ -54,6 +54,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -72,7 +96,8 @@
           "viewType" : "DEEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -265,9 +290,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "list",
-    "modelid" : "ff3ad7c07969e763b5df209fc71ba18e"
+    "modelid" : "ff3ad7c07969e763b5df209fc71ba18e",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "ProjectTrendsListView",
+  "getPSDEViewId" : "de06053b4930b767bc7c634641fc07fa",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDELISTVIEW_STYLE2",
@@ -293,5 +320,6 @@
   "enableFilter" : false,
   "enableQuickGroup" : true,
   "showCaptionBar" : false,
-  "modelid" : "7d34636d1c24d613abf8d3fdc64ec7ba"
+  "modelid" : "7d34636d1c24d613abf8d3fdc64ec7ba",
+  "modeltype" : "PSAPPDEVIEW"
 }

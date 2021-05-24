@@ -201,6 +201,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -219,7 +243,8 @@
           "viewType" : "DEEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -780,7 +805,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "f41d31cabfd45aa26034f1c0b03986d1"
+    "modelid" : "f41d31cabfd45aa26034f1c0b03986d1",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "NONE",
     "codeName" : "Main",
@@ -1101,6 +1127,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -1111,7 +1138,8 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "35bf2f5d41a460858611cd2916f90618"
+    "modelid" : "35bf2f5d41a460858611cd2916f90618",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
@@ -1188,9 +1216,11 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "75cb9295da00e65e47cc2d3067c8be13"
+    "modelid" : "75cb9295da00e65e47cc2d3067c8be13",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "GridView",
+  "getPSDEViewId" : "d9d036bbc23c15cebda39aa80c5f3821",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -1217,5 +1247,6 @@
   "enableSearch" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
-  "modelid" : "40fe6b28b9f7902341da46bb74a02d59"
+  "modelid" : "40fe6b28b9f7902341da46bb74a02d59",
+  "modeltype" : "PSAPPDEVIEW"
 }

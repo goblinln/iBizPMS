@@ -927,6 +927,7 @@
   "enableUIActions" : 15,
   "logicName" : "用户",
   "name" : "ZT_USER",
+  "getPSDEName" : "ZT_USER",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDESERVICEAPIS/User.json"

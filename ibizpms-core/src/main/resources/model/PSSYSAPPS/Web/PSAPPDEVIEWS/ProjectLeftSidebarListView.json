@@ -87,6 +87,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
+          "viewType" : "DETABEXPVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
+          "viewType" : "DETABEXPVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -105,7 +129,8 @@
           "viewType" : "DETABEXPVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -293,7 +318,8 @@
       "showCaption" : false,
       "showIcon" : true
     } ],
-    "modelid" : "934956410a597b0f98bb40f19fe41bfc"
+    "modelid" : "934956410a597b0f98bb40f19fe41bfc",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "Sidebar",
     "controlStyle" : "LISTVIEW",
@@ -552,7 +578,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "ec4939f802261dd9603febd37dcce6ae"
+      "modelid" : "ec4939f802261dd9603febd37dcce6ae",
+      "modeltype" : "PSDETOOLBAR"
     } ],
     "getPSDEListDataItems" : [ {
       "dataType" : 25,
@@ -639,9 +666,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "list",
-    "modelid" : "547fa4cbd79cffd2b831b89850a79e25"
+    "modelid" : "547fa4cbd79cffd2b831b89850a79e25",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "LeftSidebarListView",
+  "getPSDEViewId" : "5478a9514becfd263d9173cf63960a51",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDELISTVIEW_STYLE2",
@@ -663,5 +692,6 @@
   "enableFilter" : false,
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
-  "modelid" : "7c79a923d0cdd1a5bc41a34367809077"
+  "modelid" : "7c79a923d0cdd1a5bc41a34367809077",
+  "modeltype" : "PSAPPDEVIEW"
 }

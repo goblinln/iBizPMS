@@ -145,7 +145,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "040e17a872f9b422d3cba7598adea41b"
+    "modelid" : "040e17a872f9b422d3cba7598adea41b",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
@@ -426,7 +427,8 @@
         "showCaption" : true,
         "showIcon" : true
       } ],
-      "modelid" : "040e17a872f9b422d3cba7598adea41b"
+      "modelid" : "040e17a872f9b422d3cba7598adea41b",
+      "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
       "key" : "DEPT",
@@ -562,5 +564,6 @@
   "enableSearchDefault" : true,
   "outputIconDefault" : false,
   "rootVisible" : false,
-  "modelid" : "04e67fac47c6753cff100b8cbf0738b1"
+  "modelid" : "04e67fac47c6753cff100b8cbf0738b1",
+  "modeltype" : "PSDETREEVIEW"
 }

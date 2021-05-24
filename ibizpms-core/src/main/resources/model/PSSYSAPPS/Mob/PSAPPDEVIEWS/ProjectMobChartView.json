@@ -259,6 +259,7 @@
     "readOnly" : true,
     "name" : "chart",
     "modelid" : "cdfeac5598e322329cbf846d75eeb69a",
+    "modeltype" : "PSDECHART",
     "getUserParam" : {
       "EC.barWidth" : "20",
       "EC.yAxis" : "[{gridIndex:0,position:\"top\",type:'value',name:'',show:false } ]",
@@ -266,6 +267,7 @@
     }
   } ],
   "getPSDEViewCodeName" : "MobChartView",
+  "getPSDEViewId" : "ff31a1e1e66df44effa09b5c08771ba6",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBCHARTVIEW",
@@ -290,5 +292,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : true,
-  "modelid" : "8091af66b37838c706bd0e6bd7ae368d"
+  "modelid" : "8091af66b37838c706bd0e6bd7ae368d",
+  "modeltype" : "PSAPPDEVIEW"
 }

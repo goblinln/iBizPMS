@@ -88,6 +88,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ModuleEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ModuleEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -106,7 +130,8 @@
           "viewType" : "DEEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -275,7 +300,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "57eb6fc74e63b35b06df4779e4d1c839"
+    "modelid" : "57eb6fc74e63b35b06df4779e4d1c839",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "NONE",
     "codeName" : "Line",
@@ -619,6 +645,7 @@
     },
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : true,
@@ -629,9 +656,11 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "3d1572254561722cf8d4d0131d0a2953"
+    "modelid" : "3d1572254561722cf8d4d0131d0a2953",
+    "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "LineGridView",
+  "getPSDEViewId" : "5f517357bc1099901f90c68eca5fb9f9",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -657,5 +686,6 @@
   "enableRowEdit" : true,
   "rowEditDefault" : true,
   "showCaptionBar" : true,
-  "modelid" : "060fd533b0e7eacaa8e008007d588630"
+  "modelid" : "060fd533b0e7eacaa8e008007d588630",
+  "modeltype" : "PSAPPDEVIEW"
 }

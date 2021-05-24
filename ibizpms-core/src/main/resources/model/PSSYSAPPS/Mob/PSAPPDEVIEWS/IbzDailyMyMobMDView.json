@@ -64,6 +64,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyDailyMobTabExpView.json",
+          "viewType" : "DEMOBTABEXPVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyDailyMobTabExpView.json",
+          "viewType" : "DEMOBTABEXPVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -82,7 +106,8 @@
           "viewType" : "DEMOBTABEXPVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavParams" : [ {
@@ -375,7 +400,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",
-      "modelid" : "881c273f0a3edb62a7fded4f04b338fe"
+      "modelid" : "881c273f0a3edb62a7fded4f04b338fe",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "MOB",
     "mobListStyle" : "LISTVIEW",
@@ -535,7 +561,8 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "4d78ace183b45e7e6ff6b2ec6be25d9a"
+    "modelid" : "4d78ace183b45e7e6ff6b2ec6be25d9a",
+    "modeltype" : "PSDELIST"
   }, {
     "codeName" : "MyMobMDViewrighttoolbar",
     "controlType" : "TOOLBAR",
@@ -592,9 +619,11 @@
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBBOTTOMMENU",
-    "modelid" : "5ad21b662e43fd5724b41620471178d8"
+    "modelid" : "5ad21b662e43fd5724b41620471178d8",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "MyMobMDView",
+  "getPSDEViewId" : "60e53f4d70944a06147f1c3bca3e76b7",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBMDVIEW",
@@ -617,5 +646,6 @@
   "enablePullDownRefresh" : false,
   "enableQuickSearch" : true,
   "showCaptionBar" : true,
-  "modelid" : "b95d6918fd4f4b7742ccdd9ff6385afb"
+  "modelid" : "b95d6918fd4f4b7742ccdd9ff6385afb",
+  "modeltype" : "PSAPPDEVIEW"
 }

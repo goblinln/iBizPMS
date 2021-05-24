@@ -711,6 +711,7 @@
   "enableUIActions" : 15,
   "logicName" : "模块",
   "name" : "ZT_MODULE",
+  "getPSDEName" : "ZT_MODULE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDESERVICEAPIS/Module.json"

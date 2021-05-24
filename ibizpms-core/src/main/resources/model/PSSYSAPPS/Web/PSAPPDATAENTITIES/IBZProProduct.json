@@ -368,6 +368,7 @@
   "enableUIActions" : 15,
   "logicName" : "平台产品",
   "name" : "IBZPRO_PRODUCT",
+  "getPSDEName" : "IBZPRO_PRODUCT",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProduct/PSDESERVICEAPIS/IBZProProduct.json"

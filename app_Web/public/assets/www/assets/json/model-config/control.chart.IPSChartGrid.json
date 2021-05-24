@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"getPSChartGridXAxis0","desc":"绘图表格X轴[0]","order":1000},{"name":"getPSChartGridXAxis1","desc":"绘图表格X轴[1]","order":1000},{"name":"getPSChartGridYAxis0","desc":"绘图表格Y轴[0]","order":1000},{"name":"getPSChartGridYAxis1","desc":"绘图表格Y轴[1]","order":1000}]}]

@@ -34,7 +34,8 @@
     "getPSControlParam" : {
       "id" : "TOOLBAR"
     },
-    "modelid" : "5ad21b662e43fd5724b41620471178d8"
+    "modelid" : "5ad21b662e43fd5724b41620471178d8",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "PlatformManagement",
     "controlType" : "FORM",
@@ -313,9 +314,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "9da102c1aeb5337836443f2c9f40699d"
+    "modelid" : "9da102c1aeb5337836443f2c9f40699d",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "PMInfoEditView",
+  "getPSDEViewId" : "8b34f5a86b365a5462deb664a38c9c36",
   "getPSSysImage" : {
     "glyph" : "xf126@FontAwesome",
     "cssClass" : "fa fa-code-fork"
@@ -341,6 +344,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "b281875cc25dc5ace73c1fe5bf383ad0",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Branches",

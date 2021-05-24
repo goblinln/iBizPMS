@@ -101,7 +101,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
+    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "MainEdit",
     "controlType" : "FORM",
@@ -1204,9 +1205,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "badc0a81d821ad8f87c45604bf6f970f"
+    "modelid" : "badc0a81d821ad8f87c45604bf6f970f",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "MainEditEditView",
+  "getPSDEViewId" : "8410a187090c868ec64e342751cf930e",
   "getPSSysImage" : {
     "glyph" : "xf0f6@FontAwesome",
     "cssClass" : "fa fa-file-text-o"
@@ -1232,6 +1235,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "1862fb87e7333882bdf3e54f9fb412cd",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestReports",

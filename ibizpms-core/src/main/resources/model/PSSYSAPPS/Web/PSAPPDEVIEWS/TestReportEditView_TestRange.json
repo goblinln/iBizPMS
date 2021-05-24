@@ -283,6 +283,30 @@
             }, {
               "logicTrigger" : "CUSTOM",
               "logicType" : "SYSUILOGIC",
+              "name" : "editdata",
+              "getPSAppUILogic" : {
+                "logicType" : "PREDEFINED",
+                "name" : "编辑数据",
+                "getOpenDataPSAppView" : {
+                  "getRefPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+                    "viewType" : "DEPORTALVIEW"
+                  }
+                },
+                "getPSAppUILogicRefViews" : [ {
+                  "getRefPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+                    "viewType" : "DEPORTALVIEW"
+                  }
+                } ],
+                "viewLogicType" : "APP_OPENDATA",
+                "editMode" : true
+              }
+            }, {
+              "logicTrigger" : "CUSTOM",
+              "logicType" : "SYSUILOGIC",
               "name" : "opendata",
               "getPSAppUILogic" : {
                 "logicType" : "PREDEFINED",
@@ -301,7 +325,8 @@
                     "viewType" : "DEPORTALVIEW"
                   }
                 } ],
-                "viewLogicType" : "APP_OPENDATA"
+                "viewLogicType" : "APP_OPENDATA",
+                "editMode" : false
               }
             } ],
             "getPSAppViewRefs" : [ {
@@ -486,7 +511,8 @@
                 "showCaption" : true,
                 "showIcon" : true
               } ],
-              "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b"
+              "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b",
+              "modeltype" : "PSDETOOLBAR"
             }, {
               "aggMode" : "NONE",
               "codeName" : "Main_ReportSub",
@@ -943,6 +969,7 @@
               "sortMode" : "REMOTE",
               "hasWFDataItems" : false,
               "enableColFilter" : false,
+              "enableCustomized" : true,
               "enableGroup" : false,
               "enablePagingBar" : false,
               "enableRowEdit" : false,
@@ -953,7 +980,8 @@
               "noSort" : false,
               "singleSelect" : true,
               "name" : "grid",
-              "modelid" : "a1c83794bac9d4a7a7eb208c16ac08c0"
+              "modelid" : "a1c83794bac9d4a7a7eb208c16ac08c0",
+              "modeltype" : "PSDEGRID"
             }, {
               "codeName" : "Custom",
               "controlType" : "SEARCHBAR",
@@ -2306,9 +2334,11 @@
               "enableQuickSearch" : true,
               "mobileSearchBar" : false,
               "name" : "searchbar",
-              "modelid" : "195849838c242281e8361cde56aa4654"
+              "modelid" : "195849838c242281e8361cde56aa4654",
+              "modeltype" : "PSSYSSEARCHBAR"
             } ],
             "getPSDEViewCodeName" : "ReportSubGridView",
+            "getPSDEViewId" : "3df53d8776d3e6b75e8267254d0c6ef3",
             "getPSSysImage" : {
               "glyph" : "xf006@FontAwesome",
               "cssClass" : "fa fa-star-o"
@@ -2340,6 +2370,7 @@
             "rowEditDefault" : false,
             "showCaptionBar" : false,
             "modelid" : "c7344b0a55eadb587f401c2ea5a4d01f",
+            "modeltype" : "PSAPPDEVIEW",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -2472,6 +2503,30 @@
             }, {
               "logicTrigger" : "CUSTOM",
               "logicType" : "SYSUILOGIC",
+              "name" : "editdata",
+              "getPSAppUILogic" : {
+                "logicType" : "PREDEFINED",
+                "name" : "编辑数据",
+                "getOpenDataPSAppView" : {
+                  "getRefPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+                    "viewType" : "DEPORTALVIEW"
+                  }
+                },
+                "getPSAppUILogicRefViews" : [ {
+                  "getRefPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+                    "viewType" : "DEPORTALVIEW"
+                  }
+                } ],
+                "viewLogicType" : "APP_OPENDATA",
+                "editMode" : true
+              }
+            }, {
+              "logicTrigger" : "CUSTOM",
+              "logicType" : "SYSUILOGIC",
               "name" : "opendata",
               "getPSAppUILogic" : {
                 "logicType" : "PREDEFINED",
@@ -2490,7 +2545,8 @@
                     "viewType" : "DEPORTALVIEW"
                   }
                 } ],
-                "viewLogicType" : "APP_OPENDATA"
+                "viewLogicType" : "APP_OPENDATA",
+                "editMode" : false
               }
             } ],
             "getPSAppViewRefs" : [ {
@@ -2676,7 +2732,8 @@
                 "showCaption" : true,
                 "showIcon" : true
               } ],
-              "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b"
+              "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b",
+              "modeltype" : "PSDETOOLBAR"
             }, {
               "aggMode" : "NONE",
               "codeName" : "Main_ReportSub",
@@ -3152,6 +3209,7 @@
               "sortMode" : "REMOTE",
               "hasWFDataItems" : false,
               "enableColFilter" : false,
+              "enableCustomized" : true,
               "enableGroup" : false,
               "enablePagingBar" : false,
               "enableRowEdit" : false,
@@ -3162,7 +3220,8 @@
               "noSort" : false,
               "singleSelect" : true,
               "name" : "grid",
-              "modelid" : "f8d4f4f3c2ccb36c1d9fa91828c2022d"
+              "modelid" : "f8d4f4f3c2ccb36c1d9fa91828c2022d",
+              "modeltype" : "PSDEGRID"
             }, {
               "codeName" : "Custom",
               "controlType" : "SEARCHBAR",
@@ -4811,9 +4870,11 @@
               "enableQuickSearch" : true,
               "mobileSearchBar" : false,
               "name" : "searchbar",
-              "modelid" : "b15ebe8f6547321abe40858a702d54c6"
+              "modelid" : "b15ebe8f6547321abe40858a702d54c6",
+              "modeltype" : "PSSYSSEARCHBAR"
             } ],
             "getPSDEViewCodeName" : "TestReportSubGridView",
+            "getPSDEViewId" : "5c6a213c7254ed6b01b150df5c136f08",
             "getPSSysImage" : {
               "glyph" : "xf188@FontAwesome",
               "cssClass" : "fa fa-bug"
@@ -4845,6 +4906,7 @@
             "rowEditDefault" : false,
             "showCaptionBar" : false,
             "modelid" : "6f90a9ed63f9dcec5758480a76e2680c",
+            "modeltype" : "PSAPPDEVIEW",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -5020,9 +5082,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "77a8e82f6762f8e07ed9a67de07de61b"
+    "modelid" : "77a8e82f6762f8e07ed9a67de07de61b",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "EditView_TestRange",
+  "getPSDEViewId" : "8df1781d82d28c4d98a12b0263e24399",
   "getPSSysImage" : {
     "glyph" : "xf0f6@FontAwesome",
     "cssClass" : "fa fa-file-text-o"
@@ -5048,6 +5112,7 @@
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
   "modelid" : "5918176ed83c3a3809e0b822a2823d7d",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestReports",

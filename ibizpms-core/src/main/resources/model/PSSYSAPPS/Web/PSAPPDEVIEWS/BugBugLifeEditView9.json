@@ -1137,9 +1137,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "2e47ec728d91e504aaa65400f1ae814b"
+    "modelid" : "2e47ec728d91e504aaa65400f1ae814b",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "BugLifeEditView9",
+  "getPSDEViewId" : "484f40897ab57467834e68ca3ac74a65",
   "getPSSysImage" : {
     "glyph" : "xf188@FontAwesome",
     "cssClass" : "fa fa-bug"
@@ -1165,6 +1167,7 @@
   "showCaptionBar" : false,
   "showDataInfoBar" : false,
   "modelid" : "114241c3104f51fe267e9708ba41fe29",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

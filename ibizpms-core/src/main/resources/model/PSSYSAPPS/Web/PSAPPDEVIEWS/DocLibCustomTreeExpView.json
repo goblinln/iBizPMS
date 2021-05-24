@@ -33,11 +33,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSControls" : [ {
@@ -430,7 +441,8 @@
           "showCaption" : true,
           "showIcon" : true
         } ],
-        "modelid" : "32c526ed4f9dec64c320511e681e4efb"
+        "modelid" : "32c526ed4f9dec64c320511e681e4efb",
+        "modeltype" : "PSDETOOLBAR"
       }, {
         "codeName" : "CustomTreeExpViewall_cm",
         "controlType" : "CONTEXTMENU",
@@ -476,7 +488,8 @@
           "showCaption" : true,
           "showIcon" : true
         } ],
-        "modelid" : "022f0111597cba0a05a1d53d48a8cb04"
+        "modelid" : "022f0111597cba0a05a1d53d48a8cb04",
+        "modeltype" : "PSDETOOLBAR"
       } ],
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
@@ -871,7 +884,8 @@
             "showCaption" : true,
             "showIcon" : true
           } ],
-          "modelid" : "32c526ed4f9dec64c320511e681e4efb"
+          "modelid" : "32c526ed4f9dec64c320511e681e4efb",
+          "modeltype" : "PSDETOOLBAR"
         },
         "getPSSysImage" : {
           "glyph" : "xf114@FontAwesome",
@@ -958,7 +972,8 @@
             "showCaption" : true,
             "showIcon" : true
           } ],
-          "modelid" : "022f0111597cba0a05a1d53d48a8cb04"
+          "modelid" : "022f0111597cba0a05a1d53d48a8cb04",
+          "modeltype" : "PSDETOOLBAR"
         },
         "text" : "所有文档库",
         "treeNodeType" : "STATIC",
@@ -1064,15 +1079,18 @@
       "outputIconDefault" : true,
       "rootVisible" : false,
       "name" : "treeexpbar_tree",
-      "modelid" : "36f03a5f448b1ed7c71d294d2c4dfa4e"
+      "modelid" : "36f03a5f448b1ed7c71d294d2c4dfa4e",
+      "modeltype" : "PSDETREEVIEW"
     } ],
     "xDataControlName" : "treeexpbar_tree",
     "enableCounter" : true,
     "enableSearch" : false,
     "showTitleBar" : false,
-    "modelid" : "e475ce86ef6e70e70e098747075a3b1d_treeexpbar"
+    "modelid" : "e475ce86ef6e70e70e098747075a3b1d_treeexpbar",
+    "modeltype" : "PSEXPBAR"
   } ],
   "getPSDEViewCodeName" : "CustomTreeExpView",
+  "getPSDEViewId" : "326fb71d001442e099307adc2e6e59ac",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
@@ -1094,5 +1112,6 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "e475ce86ef6e70e70e098747075a3b1d"
+  "modelid" : "e475ce86ef6e70e70e098747075a3b1d",
+  "modeltype" : "PSAPPDEVIEW"
 }

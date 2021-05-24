@@ -2551,6 +2551,7 @@
         "getPSDELogicLinkGroupCond" : {
           "groupOP" : "AND",
           "logicType" : "GROUP",
+          "name" : "连接条件组",
           "getPSDELogicLinkConds" : [ {
             "condOP" : "EQ",
             "dstFieldName" : "BEGINSTR",
@@ -2561,9 +2562,7 @@
             "logicType" : "SINGLE",
             "name" : "Default[BEGINSTR] 等于(=) (待定)",
             "paramValue" : "待定"
-          } ],
-          "notMode" : false,
-          "id" : "5ea56445c43b5d2525d3b1d5d363529b"
+          } ]
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,
@@ -3297,6 +3296,7 @@
     "name" : "ADDPROJ"
   }, {
     "logicName" : "添加项目-产品",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -3309,6 +3309,7 @@
     "name" : "CHILDPLAN"
   }, {
     "logicName" : "子计划-产品",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -3318,6 +3319,7 @@
     "id" : "ZTProduct__CHILDPLAN"
   }, {
     "logicName" : "Product_Create",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -3333,6 +3335,7 @@
     "name" : "DELETE"
   }, {
     "logicName" : "Product_Delete",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "DELETE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -3342,6 +3345,7 @@
     "id" : "ZTProduct__DELETE"
   }, {
     "logicName" : "关联Bug-产品",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -3354,6 +3358,7 @@
     "name" : "LINKBUG"
   }, {
     "logicName" : "关联需求-产品",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -3369,6 +3374,7 @@
     "name" : "MANAGE"
   }, {
     "logicName" : "Product_Manage",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -3378,6 +3384,7 @@
     "id" : "ZTProduct__MANAGE"
   }, {
     "logicName" : "Product_Read",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -3393,6 +3400,7 @@
     "name" : "UPDATE"
   }, {
     "logicName" : "Product_Update",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,

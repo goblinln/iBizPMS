@@ -906,7 +906,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a"
+      "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a",
+      "modeltype" : "PSDETOOLBAR"
     }, {
       "codeName" : "ProductTreeViewdoclib_cm",
       "controlType" : "CONTEXTMENU",
@@ -1138,7 +1139,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "282914f7c04998d26bfae35beb08d9e2"
+      "modelid" : "282914f7c04998d26bfae35beb08d9e2",
+      "modeltype" : "PSDETOOLBAR"
     }, {
       "codeName" : "ProductTreeViewdoclibdoc_cm",
       "controlType" : "CONTEXTMENU",
@@ -1374,7 +1376,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37"
+      "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37",
+      "modeltype" : "PSDETOOLBAR"
     }, {
       "codeName" : "ProductTreeViewdoclibmodule_cm",
       "controlType" : "CONTEXTMENU",
@@ -1605,7 +1608,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a"
+      "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a",
+      "modeltype" : "PSDETOOLBAR"
     }, {
       "codeName" : "ProductTreeViewmoduledoc_cm",
       "controlType" : "CONTEXTMENU",
@@ -1841,7 +1845,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37"
+      "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37",
+      "modeltype" : "PSDETOOLBAR"
     }, {
       "codeName" : "ProductTreeViewfile_cm",
       "controlType" : "CONTEXTMENU",
@@ -1943,7 +1948,8 @@
         "showCaption" : true,
         "showIcon" : true
       } ],
-      "modelid" : "41940344eb2ecce1ebfbe089e9953c92"
+      "modelid" : "41940344eb2ecce1ebfbe089e9953c92",
+      "modeltype" : "PSDETOOLBAR"
     } ],
     "getPSDETreeNodeRSs" : [ {
       "getChildPSDETreeNode" : {
@@ -2439,7 +2445,8 @@
           "showCaption" : false,
           "showIcon" : true
         } ],
-        "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a"
+        "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a",
+        "modeltype" : "PSDETOOLBAR"
       },
       "textFormat" : "文档库子模块",
       "getTextPSAppDEField" : {
@@ -2738,7 +2745,8 @@
           "showCaption" : false,
           "showIcon" : true
         } ],
-        "modelid" : "282914f7c04998d26bfae35beb08d9e2"
+        "modelid" : "282914f7c04998d26bfae35beb08d9e2",
+        "modeltype" : "PSDETOOLBAR"
       },
       "textFormat" : "文档库",
       "getTextPSAppDEField" : {
@@ -3010,7 +3018,8 @@
           "showCaption" : false,
           "showIcon" : true
         } ],
-        "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a"
+        "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a",
+        "modeltype" : "PSDETOOLBAR"
       },
       "textFormat" : "文档库根模块",
       "getTextPSAppDEField" : {
@@ -3153,7 +3162,8 @@
           "showCaption" : true,
           "showIcon" : true
         } ],
-        "modelid" : "41940344eb2ecce1ebfbe089e9953c92"
+        "modelid" : "41940344eb2ecce1ebfbe089e9953c92",
+        "modeltype" : "PSDETOOLBAR"
       },
       "textFormat" : "附件",
       "getTextPSAppDEField" : {
@@ -3453,7 +3463,8 @@
           "showCaption" : false,
           "showIcon" : true
         } ],
-        "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37"
+        "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37",
+        "modeltype" : "PSDETOOLBAR"
       },
       "textFormat" : "文档",
       "getTextPSAppDEField" : {
@@ -3730,7 +3741,8 @@
           "showCaption" : false,
           "showIcon" : true
         } ],
-        "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37"
+        "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37",
+        "modeltype" : "PSDETOOLBAR"
       },
       "textFormat" : "文档库分类下文档",
       "getTextPSAppDEField" : {
@@ -3774,9 +3786,11 @@
     "outputIconDefault" : true,
     "rootVisible" : false,
     "name" : "tree",
-    "modelid" : "8dddbec5d266a4d3e2687e5f277894ca"
+    "modelid" : "8dddbec5d266a4d3e2687e5f277894ca",
+    "modeltype" : "PSDETREEVIEW"
   } ],
   "getPSDEViewCodeName" : "ProductTreeView",
+  "getPSDEViewId" : "e84d22382b7b325a145248ff468971ad",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETREEVIEW_STYLE2",
@@ -3797,5 +3811,6 @@
   "enableDP" : true,
   "enableFilter" : false,
   "showCaptionBar" : false,
-  "modelid" : "d38df3a0f4241bde77b4494cc4b6f897"
+  "modelid" : "d38df3a0f4241bde77b4494cc4b6f897",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -442,6 +442,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "SYS_UPDATE_FEATURES",
+  "getPSDEName" : "SYS_UPDATE_FEATURES",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateFeatures/PSDESERVICEAPIS/SysUpdateFeatures.json"

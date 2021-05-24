@@ -31,7 +31,8 @@
           "viewType" : "DEPORTALVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
     }
   }, {
     "logicTrigger" : "CUSTOM",
@@ -54,7 +55,8 @@
           "viewType" : "DEPORTALVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
     }
   } ],
   "getPSDETreeColumns" : [ {
@@ -485,5 +487,6 @@
   "enableSearchDefault" : false,
   "outputIconDefault" : false,
   "rootVisible" : false,
-  "modelid" : "9a6cae3896699f86c265d4a4a65b2aa5"
+  "modelid" : "9a6cae3896699f86c265d4a4a65b2aa5",
+  "modeltype" : "PSDEGANTT"
 }

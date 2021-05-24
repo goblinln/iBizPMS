@@ -117,6 +117,36 @@
 }
 /***    END:加载遮罩    ***/
 
+/***    BRGIN:权限遮罩    ***/
+.no-authority-shade {
+  position: relative;
+  height: auto;
+  & :first-child {
+    filter: blur(2px);
+  }
+  .no-authority-shade-child {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(125,125,125, .3);
+    background-image: url("/assets/img/no-authority.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 100;
+    &::after {
+      content: '暂无权限';
+      position: absolute;
+      color: white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50px,90px);
+    }
+  }
+  
+}
+/***    END:权限遮罩    ***/
+
 .grid-row-select {
     background-color: var(--ctrl-font-color-bright) !important;
     td {

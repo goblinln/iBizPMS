@@ -203,6 +203,7 @@
   "sortMode" : "REMOTE",
   "hasWFDataItems" : false,
   "enableColFilter" : false,
+  "enableCustomized" : true,
   "enableGroup" : false,
   "enablePagingBar" : false,
   "enableRowEdit" : false,
@@ -212,5 +213,6 @@
   "hideHeader" : false,
   "noSort" : false,
   "singleSelect" : false,
-  "modelid" : "4e12f7b85d667b4fb420b72b177abb6f"
+  "modelid" : "4e12f7b85d667b4fb420b72b177abb6f",
+  "modeltype" : "PSDEGRID"
 }

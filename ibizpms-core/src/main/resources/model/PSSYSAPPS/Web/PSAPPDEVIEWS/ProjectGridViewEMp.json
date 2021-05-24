@@ -54,6 +54,54 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getPSNavigateContexts" : [ {
+          "key" : "SRFPARENTKEY",
+          "name" : "SRFPARENTKEY",
+          "value" : "project",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
+          "value" : "project",
+          "rawValue" : false
+        } ],
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeUsr3GridView.json",
+          "viewType" : "DEGRIDVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getPSNavigateContexts" : [ {
+          "key" : "SRFPARENTKEY",
+          "name" : "SRFPARENTKEY",
+          "value" : "project",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
+          "value" : "project",
+          "rawValue" : false
+        } ],
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeUsr3GridView.json",
+          "viewType" : "DEGRIDVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -96,7 +144,8 @@
           "viewType" : "DEGRIDVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -394,6 +443,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : false,
     "enableRowEdit" : false,
@@ -404,7 +454,8 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "8d736c4b3876712b5b358e9bc11c6059"
+    "modelid" : "8d736c4b3876712b5b358e9bc11c6059",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "Custom",
     "controlType" : "SEARCHBAR",
@@ -1096,9 +1147,11 @@
     "enableQuickSearch" : true,
     "mobileSearchBar" : false,
     "name" : "searchbar",
-    "modelid" : "7a3e2a4a8fda692657acf5c039f1a6dc"
+    "modelid" : "7a3e2a4a8fda692657acf5c039f1a6dc",
+    "modeltype" : "PSSYSSEARCHBAR"
   } ],
   "getPSDEViewCodeName" : "GridViewEMp",
+  "getPSDEViewId" : "a27e931fe6866349feb3d16705a1b97a",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -1125,5 +1178,6 @@
   "enableSearch" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : false,
-  "modelid" : "4c2040e690ea12ee2f937e84c448aad2"
+  "modelid" : "4c2040e690ea12ee2f937e84c448aad2",
+  "modeltype" : "PSAPPDEVIEW"
 }

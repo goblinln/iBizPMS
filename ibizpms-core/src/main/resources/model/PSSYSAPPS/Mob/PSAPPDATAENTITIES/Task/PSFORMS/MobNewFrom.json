@@ -786,11 +786,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSControls" : [ {
@@ -1073,6 +1084,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : false,
             "enableRowEdit" : false,
@@ -1083,9 +1095,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "meditviewpanel",
-            "modelid" : "ec35d9cbe2de19b349490d0899565a8c"
+            "modelid" : "ec35d9cbe2de19b349490d0899565a8c",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "MobMEditView9",
+          "getPSDEViewId" : "6fed84c198ae6d029e61ba7862bce039",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEMOBMEDITVIEW9",
@@ -1109,6 +1123,7 @@
           "enableQuickSearch" : true,
           "showCaptionBar" : true,
           "modelid" : "4bc49227ec9547eb6fa613706771da38",
+          "modeltype" : "PSAPPDEVIEW",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "ProjectModules",
@@ -2124,5 +2139,6 @@
   "noTabHeader" : true,
   "readOnly" : false,
   "showFormNavBar" : false,
-  "modelid" : "68b1050477454fdcd5ca79011242292a"
+  "modelid" : "68b1050477454fdcd5ca79011242292a",
+  "modeltype" : "PSDEFORM_EDITFORM"
 }

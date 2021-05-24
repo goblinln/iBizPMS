@@ -33,11 +33,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSControls" : [ {
@@ -333,6 +344,7 @@
       "sortMode" : "REMOTE",
       "hasWFDataItems" : false,
       "enableColFilter" : false,
+      "enableCustomized" : true,
       "enableGroup" : false,
       "enablePagingBar" : false,
       "enableRowEdit" : false,
@@ -343,16 +355,19 @@
       "noSort" : false,
       "singleSelect" : false,
       "name" : "gridexpbar_grid",
-      "modelid" : "8d736c4b3876712b5b358e9bc11c6059"
+      "modelid" : "8d736c4b3876712b5b358e9bc11c6059",
+      "modeltype" : "PSDEGRID"
     } ],
     "width" : 300.0,
     "xDataControlName" : "gridexpbar_grid",
     "enableCounter" : true,
     "enableSearch" : false,
     "showTitleBar" : false,
-    "modelid" : "407b9d94c4c324b057e3ef37d1b343c8_gridexpbar"
+    "modelid" : "407b9d94c4c324b057e3ef37d1b343c8_gridexpbar",
+    "modeltype" : "PSEXPBAR"
   } ],
   "getPSDEViewCodeName" : "GridExpView",
+  "getPSDEViewId" : "05da29efe50fafd4044fd3824f0097bd",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDEXPVIEW_STYLE2",
@@ -375,5 +390,6 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "407b9d94c4c324b057e3ef37d1b343c8"
+  "modelid" : "407b9d94c4c324b057e3ef37d1b343c8",
+  "modeltype" : "PSAPPDEVIEW"
 }

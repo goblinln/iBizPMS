@@ -467,6 +467,7 @@
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "Project_Create",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -482,6 +483,7 @@
     "name" : "DELETE"
   }, {
     "logicName" : "Project_Delete",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "DELETE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -491,6 +493,7 @@
     "id" : "Ztproject__DELETE"
   }, {
     "logicName" : "Project_Manage",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -500,6 +503,7 @@
     "id" : "Ztproject__MANAGE"
   }, {
     "logicName" : "Project_Read",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -512,6 +516,7 @@
     "name" : "READ"
   }, {
     "logicName" : "Project_Update",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -530,6 +535,7 @@
   "enableUIActions" : 15,
   "logicName" : "员工负载表",
   "name" : "IBZ_EMPLOYEELOAD",
+  "getPSDEName" : "IBZ_EMPLOYEELOAD",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDESERVICEAPIS/EmpLoyeeload.json"

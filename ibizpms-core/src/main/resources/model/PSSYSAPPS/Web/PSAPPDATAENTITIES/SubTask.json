@@ -6137,6 +6137,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -7368,6 +7369,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -8446,6 +8448,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -10791,6 +10794,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -11910,6 +11914,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -13068,6 +13073,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -14292,6 +14298,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -15529,6 +15536,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -18015,6 +18023,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -19221,6 +19230,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -19782,6 +19792,7 @@
     "name" : "CONSUM"
   }, {
     "logicName" : "建立",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -19794,6 +19805,7 @@
     "name" : "CREATE"
   }, {
     "logicName" : "ProjectModule_Create",
+    "mapPSDEName" : "IBZ_PROJECTMODULE",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -19806,6 +19818,7 @@
     "name" : "DELETE"
   }, {
     "logicName" : "删除",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "DELETE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -19815,6 +19828,7 @@
     "id" : "ZTProject__DELETE"
   }, {
     "logicName" : "ProjectModule_Delete",
+    "mapPSDEName" : "IBZ_PROJECTMODULE",
     "mapPSDEOPPrivName" : "DELETE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -19836,6 +19850,7 @@
     "name" : "FORWARD"
   }, {
     "logicName" : "管理",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -19845,6 +19860,7 @@
     "id" : "ZTProject__MANAGE"
   }, {
     "logicName" : "ProjectModule_Manage",
+    "mapPSDEName" : "IBZ_PROJECTMODULE",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -19860,6 +19876,7 @@
     "name" : "PAUSE"
   }, {
     "logicName" : "Story_Read",
+    "mapPSDEName" : "ZT_STORY",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -19869,6 +19886,7 @@
     "id" : "ZTStory__READ"
   }, {
     "logicName" : "ProjectModule_Read",
+    "mapPSDEName" : "IBZ_PROJECTMODULE",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -19878,6 +19896,7 @@
     "id" : "ProjectModule__READ"
   }, {
     "logicName" : "读取",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -19905,6 +19924,7 @@
     "name" : "UPDATE"
   }, {
     "logicName" : "更新",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -19914,6 +19934,7 @@
     "id" : "ZTProject__UPDATE"
   }, {
     "logicName" : "ProjectModule_Update",
+    "mapPSDEName" : "IBZ_PROJECTMODULE",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -19958,6 +19979,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "IBZ_SUBTASK",
+  "getPSDEName" : "ZT_TASK",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDESERVICEAPIS/SubTask.json"

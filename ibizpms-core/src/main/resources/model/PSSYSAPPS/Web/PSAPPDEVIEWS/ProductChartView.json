@@ -196,11 +196,13 @@
     "readOnly" : true,
     "name" : "chart",
     "modelid" : "2b1d9d534cc4b8bc73b4e4721d39882a",
+    "modeltype" : "PSDECHART",
     "getUserParam" : {
       "EC.color" : "[\"#f69f54\",\"#42B3FF\",\"#aa00ff\",\"#884bff\",'#00ffa9','#85B3FF','#A1FFFF']"
     }
   } ],
   "getPSDEViewCodeName" : "ChartView",
+  "getPSDEViewId" : "6e2e438b830d8ff0f33434a97a02fb09",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDECHARTVIEW_STYLE2",
@@ -224,5 +226,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : false,
-  "modelid" : "7588ac8608220bbc97176e29408dab9d"
+  "modelid" : "7588ac8608220bbc97176e29408dab9d",
+  "modeltype" : "PSAPPDEVIEW"
 }

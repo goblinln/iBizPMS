@@ -414,7 +414,8 @@
         "showCaption" : true
       } ],
       "name" : "list_itempanel",
-      "modelid" : "c6bb9e7ace35f2d2ef0a9cf787f4fbd7"
+      "modelid" : "c6bb9e7ace35f2d2ef0a9cf787f4fbd7",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "PersonInfoMyWork",
     "getPSAppDataEntity" : {
@@ -543,9 +544,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "list",
-    "modelid" : "4dd517f089050019617f247c2be7bb2b"
+    "modelid" : "4dd517f089050019617f247c2be7bb2b",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "ListView9PersonInfo",
+  "getPSDEViewId" : "41e5517fbc9cd429c0b589e36d353d43",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDELISTVIEW9_STYLE2",
@@ -566,5 +569,6 @@
   "enableDP" : true,
   "enableFilter" : false,
   "showCaptionBar" : false,
-  "modelid" : "12b93621cdf2d44e4bf3d664c17adb44"
+  "modelid" : "12b93621cdf2d44e4bf3d664c17adb44",
+  "modeltype" : "PSAPPDEVIEW"
 }

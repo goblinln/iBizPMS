@@ -203,5 +203,6 @@
   "noTabHeader" : true,
   "readOnly" : false,
   "showFormNavBar" : false,
-  "modelid" : "ce2d73dc64e4f0db19544f61c9be8884"
+  "modelid" : "ce2d73dc64e4f0db19544f61c9be8884",
+  "modeltype" : "PSDEFORM_EDITFORM"
 }

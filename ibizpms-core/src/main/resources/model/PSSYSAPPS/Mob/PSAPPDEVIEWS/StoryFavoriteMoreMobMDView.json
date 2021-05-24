@@ -56,6 +56,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -74,7 +98,8 @@
           "viewType" : "DEMOBEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -296,7 +321,8 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "6034ddf3d51d3ed410d3bbe84cda2756"
+    "modelid" : "6034ddf3d51d3ed410d3bbe84cda2756",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   }, {
     "codeName" : "FavoriteMOB",
     "controlStyle" : "LISTVIEW",
@@ -575,7 +601,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",
-      "modelid" : "8461cee8a8b1bc815ac8715ddfac555a"
+      "modelid" : "8461cee8a8b1bc815ac8715ddfac555a",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "FavoriteMOB",
     "minorSortDir" : "DESC",
@@ -895,9 +922,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "7ee37519b9d104a9ab63057cf504816e"
+    "modelid" : "7ee37519b9d104a9ab63057cf504816e",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "FavoriteMoreMobMDView",
+  "getPSDEViewId" : "2f34a11f0c8170e10267d4de93f6628f",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -926,6 +955,7 @@
   "enableSearch" : true,
   "showCaptionBar" : true,
   "modelid" : "8d305ad08a55bf35174181eedcbb8caa",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

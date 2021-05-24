@@ -178,7 +178,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
+    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "CaseToBug",
     "controlType" : "FORM",
@@ -2015,9 +2016,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "53cb02f0ea2d6495e63fb21183008f5e"
+    "modelid" : "53cb02f0ea2d6495e63fb21183008f5e",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "CaseToBugEditView",
+  "getPSDEViewId" : "c08b67481ea5ec40b571372c289c0737",
   "getPSSysImage" : {
     "glyph" : "xf188@FontAwesome",
     "cssClass" : "fa fa-bug"
@@ -2043,6 +2046,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "a0fc84298809f2371ecccfeae95ccdcd",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

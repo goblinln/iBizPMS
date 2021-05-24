@@ -54,11 +54,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -135,7 +146,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "b9fe1849d6192ef0f24d2c58f51fc039"
+    "modelid" : "b9fe1849d6192ef0f24d2c58f51fc039",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "NONE",
     "codeName" : "TaskFinishGird",
@@ -674,6 +686,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -684,7 +697,8 @@
     "noSort" : false,
     "singleSelect" : true,
     "name" : "grid",
-    "modelid" : "b1fbeff64dd1c0df071ac39bee918aee"
+    "modelid" : "b1fbeff64dd1c0df071ac39bee918aee",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "TaskFinshSearchGird",
     "controlType" : "SEARCHFORM",
@@ -911,9 +925,11 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "497f162549be9f6c019a3ca31ace3f74"
+    "modelid" : "497f162549be9f6c019a3ca31ace3f74",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "UserFinishTaskGridView",
+  "getPSDEViewId" : "d4a9d27dd70d487af52e36dcceb11690",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -940,5 +956,6 @@
   "expandSearchForm" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
-  "modelid" : "8582ea1e2990a679847b6933cc5211eb"
+  "modelid" : "8582ea1e2990a679847b6933cc5211eb",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -65,6 +65,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -83,7 +107,8 @@
           "viewType" : "DEEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -172,7 +197,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "a6ad61fc7b57b6887e853b936d9c57cc"
+    "modelid" : "a6ad61fc7b57b6887e853b936d9c57cc",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "PAGE",
     "codeName" : "ProductBugTypeSumForm",
@@ -616,6 +642,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : false,
     "enableRowEdit" : false,
@@ -626,9 +653,11 @@
     "noSort" : true,
     "singleSelect" : true,
     "name" : "grid",
-    "modelid" : "a2e6af3651bb0375e1ff0b79ac5fddc9"
+    "modelid" : "a2e6af3651bb0375e1ff0b79ac5fddc9",
+    "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "ProductBugTypeSumUsr4GridView",
+  "getPSDEViewId" : "1763b2d6c8e774bd651c06558de35110",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -654,5 +683,6 @@
   "enableRowEdit" : false,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
-  "modelid" : "9ca10f6c70b556f095cfca06c1132f5a"
+  "modelid" : "9ca10f6c70b556f095cfca06c1132f5a",
+  "modeltype" : "PSAPPDEVIEW"
 }

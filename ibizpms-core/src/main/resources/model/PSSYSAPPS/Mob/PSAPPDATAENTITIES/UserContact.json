@@ -469,6 +469,7 @@
   "enableUIActions" : 15,
   "logicName" : "用户联系方式",
   "name" : "ZT_USERCONTACT",
+  "getPSDEName" : "ZT_USERCONTACT",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDESERVICEAPIS/UserContact.json"

@@ -54,6 +54,7 @@
         "id" : "TABVIEWPANEL"
       },
       "modelid" : "4e229fd1de7c3b68c2a18a3d16916d61_tabviewpanel",
+      "modeltype" : "PSVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "accUserMode" : 2,
         "caption" : "功能测试",
@@ -143,6 +144,30 @@
         }, {
           "logicTrigger" : "CUSTOM",
           "logicType" : "SYSUILOGIC",
+          "name" : "editdata",
+          "getPSAppUILogic" : {
+            "logicType" : "PREDEFINED",
+            "name" : "编辑数据",
+            "getOpenDataPSAppView" : {
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
+                "viewType" : "DEPORTALVIEW"
+              }
+            },
+            "getPSAppUILogicRefViews" : [ {
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
+                "viewType" : "DEPORTALVIEW"
+              }
+            } ],
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : true
+          }
+        }, {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "SYSUILOGIC",
           "name" : "opendata",
           "getPSAppUILogic" : {
             "logicType" : "PREDEFINED",
@@ -161,7 +186,8 @@
                 "viewType" : "DEPORTALVIEW"
               }
             } ],
-            "viewLogicType" : "APP_OPENDATA"
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : false
           }
         } ],
         "getPSAppViewNavContexts" : [ {
@@ -389,7 +415,8 @@
             "showCaption" : true,
             "showIcon" : true
           } ],
-          "modelid" : "a367f1c87484ad35865184abea15eece"
+          "modelid" : "a367f1c87484ad35865184abea15eece",
+          "modeltype" : "PSDETOOLBAR"
         }, {
           "aggMode" : "NONE",
           "codeName" : "TestMainGrid",
@@ -1398,6 +1425,7 @@
           "sortMode" : "REMOTE",
           "hasWFDataItems" : false,
           "enableColFilter" : false,
+          "enableCustomized" : true,
           "enableGroup" : false,
           "enablePagingBar" : true,
           "enableRowEdit" : false,
@@ -1408,7 +1436,8 @@
           "noSort" : false,
           "singleSelect" : false,
           "name" : "grid",
-          "modelid" : "19894e16f00d3316505ec96ae32851db"
+          "modelid" : "19894e16f00d3316505ec96ae32851db",
+          "modeltype" : "PSDEGRID"
         }, {
           "codeName" : "OtherCustom",
           "controlType" : "SEARCHBAR",
@@ -2270,9 +2299,11 @@
           "enableQuickSearch" : true,
           "mobileSearchBar" : false,
           "name" : "searchbar",
-          "modelid" : "94b56c57283d48847abaeb57d37cc4cd"
+          "modelid" : "94b56c57283d48847abaeb57d37cc4cd",
+          "modeltype" : "PSSYSSEARCHBAR"
         } ],
         "getPSDEViewCodeName" : "CurTestTaskGridView",
+        "getPSDEViewId" : "dbfb197e87e8fd65916fc73efd85c519",
         "getPSSysImage" : {
           "glyph" : "xf006@FontAwesome",
           "cssClass" : "fa fa-star-o"
@@ -2309,6 +2340,7 @@
         "rowEditDefault" : false,
         "showCaptionBar" : false,
         "modelid" : "178ae3b2e5f30d153fa8a30edace0383",
+        "modeltype" : "PSAPPDEVIEW",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -2428,7 +2460,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL2"
       },
-      "modelid" : "4e229fd1de7c3b68c2a18a3d16916d61_tabviewpanel2"
+      "modelid" : "4e229fd1de7c3b68c2a18a3d16916d61_tabviewpanel2",
+      "modeltype" : "PSVIEWPANEL"
     } ],
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel"
@@ -2436,9 +2469,11 @@
       "name" : "tabviewpanel2"
     } ],
     "tabLayout" : "TOP",
-    "modelid" : "4e229fd1de7c3b68c2a18a3d16916d61_tabexppanel"
+    "modelid" : "4e229fd1de7c3b68c2a18a3d16916d61_tabexppanel",
+    "modeltype" : "PSTABEXPPANEL"
   } ],
   "getPSDEViewCodeName" : "MainTabExpView",
+  "getPSDEViewId" : "f8427f27213337876bf0149bc75fe7e0",
   "getPSSysImage" : {
     "glyph" : "xf0ea@FontAwesome",
     "cssClass" : "fa fa-clipboard"
@@ -2468,6 +2503,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "4e229fd1de7c3b68c2a18a3d16916d61",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestTasks",

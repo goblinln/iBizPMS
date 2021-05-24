@@ -68,6 +68,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -86,7 +110,8 @@
           "viewType" : "DEEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -175,7 +200,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "a6ad61fc7b57b6887e853b936d9c57cc"
+    "modelid" : "a6ad61fc7b57b6887e853b936d9c57cc",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "PAGE",
     "codeName" : "ProductStorySum",
@@ -665,6 +691,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : false,
     "enableRowEdit" : false,
@@ -675,7 +702,8 @@
     "noSort" : true,
     "singleSelect" : true,
     "name" : "grid",
-    "modelid" : "7f666c41d1c111c3f7c65b3bd6160800"
+    "modelid" : "7f666c41d1c111c3f7c65b3bd6160800",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "ProductStorySum",
     "controlType" : "SEARCHFORM",
@@ -842,9 +870,11 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "7f666c41d1c111c3f7c65b3bd6160800"
+    "modelid" : "7f666c41d1c111c3f7c65b3bd6160800",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "StorySumGridView",
+  "getPSDEViewId" : "235cdc37a295e5e786083d4c7ce59f6b",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -871,5 +901,6 @@
   "expandSearchForm" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
-  "modelid" : "ae280d70f2ed0232df0d011af22a5746"
+  "modelid" : "ae280d70f2ed0232df0d011af22a5746",
+  "modeltype" : "PSAPPDEVIEW"
 }

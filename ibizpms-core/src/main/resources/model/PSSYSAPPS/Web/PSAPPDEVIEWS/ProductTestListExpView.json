@@ -33,11 +33,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSControls" : [ {
@@ -259,7 +270,8 @@
           "showCaption" : true,
           "showIcon" : true
         } ],
-        "modelid" : "b5f265a97376e60ddeef17447557883a"
+        "modelid" : "b5f265a97376e60ddeef17447557883a",
+        "modeltype" : "PSDETOOLBAR"
       } ],
       "getPSDEListDataItems" : [ {
         "dataType" : 25,
@@ -304,16 +316,19 @@
       "noSort" : false,
       "showHeader" : true,
       "name" : "listexpbar_list",
-      "modelid" : "39eccc280ce56a6592d72d227bbcc15d"
+      "modelid" : "39eccc280ce56a6592d72d227bbcc15d",
+      "modeltype" : "PSDELIST"
     } ],
     "width" : 200.0,
     "xDataControlName" : "listexpbar_list",
     "enableCounter" : true,
     "enableSearch" : true,
     "showTitleBar" : false,
-    "modelid" : "6b595fd11428565335f1d1bbd66911bb_listexpbar"
+    "modelid" : "6b595fd11428565335f1d1bbd66911bb_listexpbar",
+    "modeltype" : "PSEXPBAR"
   } ],
   "getPSDEViewCodeName" : "TestListExpView",
+  "getPSDEViewId" : "5e802c3db5a0b275a662eef64c4965f8",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDELISTEXPVIEW_STYLE2",
@@ -336,5 +351,6 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "6b595fd11428565335f1d1bbd66911bb"
+  "modelid" : "6b595fd11428565335f1d1bbd66911bb",
+  "modeltype" : "PSAPPDEVIEW"
 }

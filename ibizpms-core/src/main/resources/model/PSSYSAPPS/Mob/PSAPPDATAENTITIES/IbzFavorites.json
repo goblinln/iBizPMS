@@ -397,6 +397,7 @@
   "enableUIActions" : 15,
   "logicName" : "收藏",
   "name" : "IBZ_FAVORITES",
+  "getPSDEName" : "IBZ_FAVORITES",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites/PSDESERVICEAPIS/IbzFavorites.json"

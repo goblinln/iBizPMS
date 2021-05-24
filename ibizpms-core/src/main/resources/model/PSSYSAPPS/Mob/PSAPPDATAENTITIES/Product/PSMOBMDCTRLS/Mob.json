@@ -57,7 +57,8 @@
     "getPSControlParam" : {
       "id" : "mdctrl_batchtoolbar"
     },
-    "modelid" : "dc72839424ae81886458969764aad35c"
+    "modelid" : "dc72839424ae81886458969764aad35c",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEListDataItems" : [ {
     "dataType" : 25,
@@ -118,5 +119,6 @@
   "enableRowNew" : false,
   "noSort" : false,
   "showHeader" : true,
-  "modelid" : "367d445821a484a912a99a012f155a76"
+  "modelid" : "367d445821a484a912a99a012f155a76",
+  "modeltype" : "PSDELIST"
 }

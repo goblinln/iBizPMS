@@ -339,5 +339,6 @@
   } ],
   "enableCustomize" : false,
   "name" : "zentao",
-  "modelid" : "0a4e485b6222864606f7d7e77325ee2d"
+  "modelid" : "0a4e485b6222864606f7d7e77325ee2d",
+  "modeltype" : "PSAPPMENU"
 }

@@ -101,7 +101,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
+    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "MainSubPlan",
     "controlType" : "FORM",
@@ -762,9 +763,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "0bb3e1565480bebca629eea214ecb68c"
+    "modelid" : "0bb3e1565480bebca629eea214ecb68c",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "SubPlanCreateView",
+  "getPSDEViewId" : "ed55245f0da3a2432e76419ae32a63a2",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW_STYLE2",
@@ -786,6 +789,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "727ff5c540998137c588dff49ca7f17b",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProductPlans",

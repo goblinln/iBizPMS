@@ -644,6 +644,30 @@
               }, {
                 "logicTrigger" : "CUSTOM",
                 "logicType" : "SYSUILOGIC",
+                "name" : "editdata",
+                "getPSAppUILogic" : {
+                  "logicType" : "PREDEFINED",
+                  "name" : "编辑数据",
+                  "getOpenDataPSAppView" : {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  },
+                  "getPSAppUILogicRefViews" : [ {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  } ],
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : true
+                }
+              }, {
+                "logicTrigger" : "CUSTOM",
+                "logicType" : "SYSUILOGIC",
                 "name" : "opendata",
                 "getPSAppUILogic" : {
                   "logicType" : "PREDEFINED",
@@ -662,7 +686,8 @@
                       "viewType" : "DEEDITVIEW"
                     }
                   } ],
-                  "viewLogicType" : "APP_OPENDATA"
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : false
                 }
               } ],
               "getPSAppViewRefs" : [ {
@@ -1139,6 +1164,7 @@
                 "sortMode" : "REMOTE",
                 "hasWFDataItems" : false,
                 "enableColFilter" : false,
+                "enableCustomized" : true,
                 "enableGroup" : false,
                 "enablePagingBar" : true,
                 "enableRowEdit" : false,
@@ -1149,9 +1175,11 @@
                 "noSort" : false,
                 "singleSelect" : true,
                 "name" : "grid",
-                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27"
+                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27",
+                "modeltype" : "PSDEGRID"
               } ],
               "getPSDEViewCodeName" : "ProjectWeeklyGridView",
+              "getPSDEViewId" : "cdbb5f5a7df2e897dcd697fef3af3606",
               "getPSViewLayoutPanel" : {
                 "codeName" : "Layoutpanel",
                 "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -1176,7 +1204,8 @@
               "enableRowEdit" : false,
               "rowEditDefault" : false,
               "showCaptionBar" : false,
-              "modelid" : "e288763f49b2c168996087e7b44084c4"
+              "modelid" : "e288763f49b2c168996087e7b44084c4",
+              "modeltype" : "PSAPPDEVIEW"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -1321,6 +1350,30 @@
               }, {
                 "logicTrigger" : "CUSTOM",
                 "logicType" : "SYSUILOGIC",
+                "name" : "editdata",
+                "getPSAppUILogic" : {
+                  "logicType" : "PREDEFINED",
+                  "name" : "编辑数据",
+                  "getOpenDataPSAppView" : {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  },
+                  "getPSAppUILogicRefViews" : [ {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  } ],
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : true
+                }
+              }, {
+                "logicTrigger" : "CUSTOM",
+                "logicType" : "SYSUILOGIC",
                 "name" : "opendata",
                 "getPSAppUILogic" : {
                   "logicType" : "PREDEFINED",
@@ -1339,7 +1392,8 @@
                       "viewType" : "DEEDITVIEW"
                     }
                   } ],
-                  "viewLogicType" : "APP_OPENDATA"
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : false
                 }
               } ],
               "getPSAppViewRefs" : [ {
@@ -1816,6 +1870,7 @@
                 "sortMode" : "REMOTE",
                 "hasWFDataItems" : false,
                 "enableColFilter" : false,
+                "enableCustomized" : true,
                 "enableGroup" : false,
                 "enablePagingBar" : true,
                 "enableRowEdit" : false,
@@ -1826,9 +1881,11 @@
                 "noSort" : false,
                 "singleSelect" : true,
                 "name" : "grid",
-                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27"
+                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27",
+                "modeltype" : "PSDEGRID"
               } ],
               "getPSDEViewCodeName" : "ProjectWeeklyGridView",
+              "getPSDEViewId" : "cdbb5f5a7df2e897dcd697fef3af3606",
               "getPSViewLayoutPanel" : {
                 "codeName" : "Layoutpanel",
                 "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -1853,7 +1910,8 @@
               "enableRowEdit" : false,
               "rowEditDefault" : false,
               "showCaptionBar" : false,
-              "modelid" : "e288763f49b2c168996087e7b44084c4"
+              "modelid" : "e288763f49b2c168996087e7b44084c4",
+              "modeltype" : "PSAPPDEVIEW"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -1998,6 +2056,30 @@
               }, {
                 "logicTrigger" : "CUSTOM",
                 "logicType" : "SYSUILOGIC",
+                "name" : "editdata",
+                "getPSAppUILogic" : {
+                  "logicType" : "PREDEFINED",
+                  "name" : "编辑数据",
+                  "getOpenDataPSAppView" : {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  },
+                  "getPSAppUILogicRefViews" : [ {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  } ],
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : true
+                }
+              }, {
+                "logicTrigger" : "CUSTOM",
+                "logicType" : "SYSUILOGIC",
                 "name" : "opendata",
                 "getPSAppUILogic" : {
                   "logicType" : "PREDEFINED",
@@ -2016,7 +2098,8 @@
                       "viewType" : "DEEDITVIEW"
                     }
                   } ],
-                  "viewLogicType" : "APP_OPENDATA"
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : false
                 }
               } ],
               "getPSAppViewRefs" : [ {
@@ -2493,6 +2576,7 @@
                 "sortMode" : "REMOTE",
                 "hasWFDataItems" : false,
                 "enableColFilter" : false,
+                "enableCustomized" : true,
                 "enableGroup" : false,
                 "enablePagingBar" : true,
                 "enableRowEdit" : false,
@@ -2503,9 +2587,11 @@
                 "noSort" : false,
                 "singleSelect" : true,
                 "name" : "grid",
-                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27"
+                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27",
+                "modeltype" : "PSDEGRID"
               } ],
               "getPSDEViewCodeName" : "ProjectWeeklyGridView",
+              "getPSDEViewId" : "cdbb5f5a7df2e897dcd697fef3af3606",
               "getPSViewLayoutPanel" : {
                 "codeName" : "Layoutpanel",
                 "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -2530,7 +2616,8 @@
               "enableRowEdit" : false,
               "rowEditDefault" : false,
               "showCaptionBar" : false,
-              "modelid" : "e288763f49b2c168996087e7b44084c4"
+              "modelid" : "e288763f49b2c168996087e7b44084c4",
+              "modeltype" : "PSAPPDEVIEW"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -2675,6 +2762,30 @@
               }, {
                 "logicTrigger" : "CUSTOM",
                 "logicType" : "SYSUILOGIC",
+                "name" : "editdata",
+                "getPSAppUILogic" : {
+                  "logicType" : "PREDEFINED",
+                  "name" : "编辑数据",
+                  "getOpenDataPSAppView" : {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  },
+                  "getPSAppUILogicRefViews" : [ {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  } ],
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : true
+                }
+              }, {
+                "logicTrigger" : "CUSTOM",
+                "logicType" : "SYSUILOGIC",
                 "name" : "opendata",
                 "getPSAppUILogic" : {
                   "logicType" : "PREDEFINED",
@@ -2693,7 +2804,8 @@
                       "viewType" : "DEEDITVIEW"
                     }
                   } ],
-                  "viewLogicType" : "APP_OPENDATA"
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : false
                 }
               } ],
               "getPSAppViewRefs" : [ {
@@ -3170,6 +3282,7 @@
                 "sortMode" : "REMOTE",
                 "hasWFDataItems" : false,
                 "enableColFilter" : false,
+                "enableCustomized" : true,
                 "enableGroup" : false,
                 "enablePagingBar" : true,
                 "enableRowEdit" : false,
@@ -3180,9 +3293,11 @@
                 "noSort" : false,
                 "singleSelect" : true,
                 "name" : "grid",
-                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27"
+                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27",
+                "modeltype" : "PSDEGRID"
               } ],
               "getPSDEViewCodeName" : "ProjectWeeklyGridView",
+              "getPSDEViewId" : "cdbb5f5a7df2e897dcd697fef3af3606",
               "getPSViewLayoutPanel" : {
                 "codeName" : "Layoutpanel",
                 "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -3207,7 +3322,8 @@
               "enableRowEdit" : false,
               "rowEditDefault" : false,
               "showCaptionBar" : false,
-              "modelid" : "e288763f49b2c168996087e7b44084c4"
+              "modelid" : "e288763f49b2c168996087e7b44084c4",
+              "modeltype" : "PSAPPDEVIEW"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -3352,6 +3468,30 @@
               }, {
                 "logicTrigger" : "CUSTOM",
                 "logicType" : "SYSUILOGIC",
+                "name" : "editdata",
+                "getPSAppUILogic" : {
+                  "logicType" : "PREDEFINED",
+                  "name" : "编辑数据",
+                  "getOpenDataPSAppView" : {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  },
+                  "getPSAppUILogicRefViews" : [ {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  } ],
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : true
+                }
+              }, {
+                "logicTrigger" : "CUSTOM",
+                "logicType" : "SYSUILOGIC",
                 "name" : "opendata",
                 "getPSAppUILogic" : {
                   "logicType" : "PREDEFINED",
@@ -3370,7 +3510,8 @@
                       "viewType" : "DEEDITVIEW"
                     }
                   } ],
-                  "viewLogicType" : "APP_OPENDATA"
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : false
                 }
               } ],
               "getPSAppViewRefs" : [ {
@@ -3847,6 +3988,7 @@
                 "sortMode" : "REMOTE",
                 "hasWFDataItems" : false,
                 "enableColFilter" : false,
+                "enableCustomized" : true,
                 "enableGroup" : false,
                 "enablePagingBar" : true,
                 "enableRowEdit" : false,
@@ -3857,9 +3999,11 @@
                 "noSort" : false,
                 "singleSelect" : true,
                 "name" : "grid",
-                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27"
+                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27",
+                "modeltype" : "PSDEGRID"
               } ],
               "getPSDEViewCodeName" : "ProjectWeeklyGridView",
+              "getPSDEViewId" : "cdbb5f5a7df2e897dcd697fef3af3606",
               "getPSViewLayoutPanel" : {
                 "codeName" : "Layoutpanel",
                 "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -3884,7 +4028,8 @@
               "enableRowEdit" : false,
               "rowEditDefault" : false,
               "showCaptionBar" : false,
-              "modelid" : "e288763f49b2c168996087e7b44084c4"
+              "modelid" : "e288763f49b2c168996087e7b44084c4",
+              "modeltype" : "PSAPPDEVIEW"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -4029,6 +4174,30 @@
               }, {
                 "logicTrigger" : "CUSTOM",
                 "logicType" : "SYSUILOGIC",
+                "name" : "editdata",
+                "getPSAppUILogic" : {
+                  "logicType" : "PREDEFINED",
+                  "name" : "编辑数据",
+                  "getOpenDataPSAppView" : {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  },
+                  "getPSAppUILogicRefViews" : [ {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  } ],
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : true
+                }
+              }, {
+                "logicTrigger" : "CUSTOM",
+                "logicType" : "SYSUILOGIC",
                 "name" : "opendata",
                 "getPSAppUILogic" : {
                   "logicType" : "PREDEFINED",
@@ -4047,7 +4216,8 @@
                       "viewType" : "DEEDITVIEW"
                     }
                   } ],
-                  "viewLogicType" : "APP_OPENDATA"
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : false
                 }
               } ],
               "getPSAppViewRefs" : [ {
@@ -4524,6 +4694,7 @@
                 "sortMode" : "REMOTE",
                 "hasWFDataItems" : false,
                 "enableColFilter" : false,
+                "enableCustomized" : true,
                 "enableGroup" : false,
                 "enablePagingBar" : true,
                 "enableRowEdit" : false,
@@ -4534,9 +4705,11 @@
                 "noSort" : false,
                 "singleSelect" : true,
                 "name" : "grid",
-                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27"
+                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27",
+                "modeltype" : "PSDEGRID"
               } ],
               "getPSDEViewCodeName" : "ProjectWeeklyGridView",
+              "getPSDEViewId" : "cdbb5f5a7df2e897dcd697fef3af3606",
               "getPSViewLayoutPanel" : {
                 "codeName" : "Layoutpanel",
                 "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -4561,7 +4734,8 @@
               "enableRowEdit" : false,
               "rowEditDefault" : false,
               "showCaptionBar" : false,
-              "modelid" : "e288763f49b2c168996087e7b44084c4"
+              "modelid" : "e288763f49b2c168996087e7b44084c4",
+              "modeltype" : "PSAPPDEVIEW"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -4706,6 +4880,30 @@
               }, {
                 "logicTrigger" : "CUSTOM",
                 "logicType" : "SYSUILOGIC",
+                "name" : "editdata",
+                "getPSAppUILogic" : {
+                  "logicType" : "PREDEFINED",
+                  "name" : "编辑数据",
+                  "getOpenDataPSAppView" : {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  },
+                  "getPSAppUILogicRefViews" : [ {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  } ],
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : true
+                }
+              }, {
+                "logicTrigger" : "CUSTOM",
+                "logicType" : "SYSUILOGIC",
                 "name" : "opendata",
                 "getPSAppUILogic" : {
                   "logicType" : "PREDEFINED",
@@ -4724,7 +4922,8 @@
                       "viewType" : "DEEDITVIEW"
                     }
                   } ],
-                  "viewLogicType" : "APP_OPENDATA"
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : false
                 }
               } ],
               "getPSAppViewRefs" : [ {
@@ -5201,6 +5400,7 @@
                 "sortMode" : "REMOTE",
                 "hasWFDataItems" : false,
                 "enableColFilter" : false,
+                "enableCustomized" : true,
                 "enableGroup" : false,
                 "enablePagingBar" : true,
                 "enableRowEdit" : false,
@@ -5211,9 +5411,11 @@
                 "noSort" : false,
                 "singleSelect" : true,
                 "name" : "grid",
-                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27"
+                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27",
+                "modeltype" : "PSDEGRID"
               } ],
               "getPSDEViewCodeName" : "ProjectWeeklyGridView",
+              "getPSDEViewId" : "cdbb5f5a7df2e897dcd697fef3af3606",
               "getPSViewLayoutPanel" : {
                 "codeName" : "Layoutpanel",
                 "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -5238,7 +5440,8 @@
               "enableRowEdit" : false,
               "rowEditDefault" : false,
               "showCaptionBar" : false,
-              "modelid" : "e288763f49b2c168996087e7b44084c4"
+              "modelid" : "e288763f49b2c168996087e7b44084c4",
+              "modeltype" : "PSAPPDEVIEW"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -5383,6 +5586,30 @@
               }, {
                 "logicTrigger" : "CUSTOM",
                 "logicType" : "SYSUILOGIC",
+                "name" : "editdata",
+                "getPSAppUILogic" : {
+                  "logicType" : "PREDEFINED",
+                  "name" : "编辑数据",
+                  "getOpenDataPSAppView" : {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  },
+                  "getPSAppUILogicRefViews" : [ {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  } ],
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : true
+                }
+              }, {
+                "logicTrigger" : "CUSTOM",
+                "logicType" : "SYSUILOGIC",
                 "name" : "opendata",
                 "getPSAppUILogic" : {
                   "logicType" : "PREDEFINED",
@@ -5401,7 +5628,8 @@
                       "viewType" : "DEEDITVIEW"
                     }
                   } ],
-                  "viewLogicType" : "APP_OPENDATA"
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : false
                 }
               } ],
               "getPSAppViewRefs" : [ {
@@ -5878,6 +6106,7 @@
                 "sortMode" : "REMOTE",
                 "hasWFDataItems" : false,
                 "enableColFilter" : false,
+                "enableCustomized" : true,
                 "enableGroup" : false,
                 "enablePagingBar" : true,
                 "enableRowEdit" : false,
@@ -5888,9 +6117,11 @@
                 "noSort" : false,
                 "singleSelect" : true,
                 "name" : "grid",
-                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27"
+                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27",
+                "modeltype" : "PSDEGRID"
               } ],
               "getPSDEViewCodeName" : "ProjectWeeklyGridView",
+              "getPSDEViewId" : "cdbb5f5a7df2e897dcd697fef3af3606",
               "getPSViewLayoutPanel" : {
                 "codeName" : "Layoutpanel",
                 "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -5915,7 +6146,8 @@
               "enableRowEdit" : false,
               "rowEditDefault" : false,
               "showCaptionBar" : false,
-              "modelid" : "e288763f49b2c168996087e7b44084c4"
+              "modelid" : "e288763f49b2c168996087e7b44084c4",
+              "modeltype" : "PSAPPDEVIEW"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -6060,6 +6292,30 @@
               }, {
                 "logicTrigger" : "CUSTOM",
                 "logicType" : "SYSUILOGIC",
+                "name" : "editdata",
+                "getPSAppUILogic" : {
+                  "logicType" : "PREDEFINED",
+                  "name" : "编辑数据",
+                  "getOpenDataPSAppView" : {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  },
+                  "getPSAppUILogicRefViews" : [ {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  } ],
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : true
+                }
+              }, {
+                "logicTrigger" : "CUSTOM",
+                "logicType" : "SYSUILOGIC",
                 "name" : "opendata",
                 "getPSAppUILogic" : {
                   "logicType" : "PREDEFINED",
@@ -6078,7 +6334,8 @@
                       "viewType" : "DEEDITVIEW"
                     }
                   } ],
-                  "viewLogicType" : "APP_OPENDATA"
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : false
                 }
               } ],
               "getPSAppViewRefs" : [ {
@@ -6555,6 +6812,7 @@
                 "sortMode" : "REMOTE",
                 "hasWFDataItems" : false,
                 "enableColFilter" : false,
+                "enableCustomized" : true,
                 "enableGroup" : false,
                 "enablePagingBar" : true,
                 "enableRowEdit" : false,
@@ -6565,9 +6823,11 @@
                 "noSort" : false,
                 "singleSelect" : true,
                 "name" : "grid",
-                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27"
+                "modelid" : "2a1dd6d9e50a00fbaa69211a03f7df27",
+                "modeltype" : "PSDEGRID"
               } ],
               "getPSDEViewCodeName" : "ProjectWeeklyGridView",
+              "getPSDEViewId" : "cdbb5f5a7df2e897dcd697fef3af3606",
               "getPSViewLayoutPanel" : {
                 "codeName" : "Layoutpanel",
                 "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -6592,7 +6852,8 @@
               "enableRowEdit" : false,
               "rowEditDefault" : false,
               "showCaptionBar" : false,
-              "modelid" : "e288763f49b2c168996087e7b44084c4"
+              "modelid" : "e288763f49b2c168996087e7b44084c4",
+              "modeltype" : "PSAPPDEVIEW"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -6740,6 +7001,30 @@
               }, {
                 "logicTrigger" : "CUSTOM",
                 "logicType" : "SYSUILOGIC",
+                "name" : "editdata",
+                "getPSAppUILogic" : {
+                  "logicType" : "PREDEFINED",
+                  "name" : "编辑数据",
+                  "getOpenDataPSAppView" : {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  },
+                  "getPSAppUILogicRefViews" : [ {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  } ],
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : true
+                }
+              }, {
+                "logicTrigger" : "CUSTOM",
+                "logicType" : "SYSUILOGIC",
                 "name" : "opendata",
                 "getPSAppUILogic" : {
                   "logicType" : "PREDEFINED",
@@ -6758,7 +7043,8 @@
                       "viewType" : "DEEDITVIEW"
                     }
                   } ],
-                  "viewLogicType" : "APP_OPENDATA"
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : false
                 }
               } ],
               "getPSAppViewRefs" : [ {
@@ -7072,6 +7358,7 @@
                 "sortMode" : "REMOTE",
                 "hasWFDataItems" : false,
                 "enableColFilter" : false,
+                "enableCustomized" : true,
                 "enableGroup" : false,
                 "enablePagingBar" : false,
                 "enableRowEdit" : false,
@@ -7082,7 +7369,8 @@
                 "noSort" : false,
                 "singleSelect" : false,
                 "name" : "grid",
-                "modelid" : "4e12f7b85d667b4fb420b72b177abb6f"
+                "modelid" : "4e12f7b85d667b4fb420b72b177abb6f",
+                "modeltype" : "PSDEGRID"
               }, {
                 "codeName" : "Default",
                 "controlType" : "SEARCHFORM",
@@ -7159,9 +7447,11 @@
                 "enableFilterSave" : false,
                 "noTabHeader" : true,
                 "name" : "searchform",
-                "modelid" : "4b843fc8c083cf654f21cfe76f058373"
+                "modelid" : "4b843fc8c083cf654f21cfe76f058373",
+                "modeltype" : "PSDEFORM_SEARCHFORM"
               } ],
               "getPSDEViewCodeName" : "ProjectWeeklyGridView",
+              "getPSDEViewId" : "d5eda3ff2af174567e52416069e641f8",
               "getPSViewLayoutPanel" : {
                 "codeName" : "Layoutpanel",
                 "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -7188,7 +7478,8 @@
               "enableSearch" : true,
               "rowEditDefault" : false,
               "showCaptionBar" : true,
-              "modelid" : "164d0925f78aa99e9221cb34d656de93"
+              "modelid" : "164d0925f78aa99e9221cb34d656de93",
+              "modeltype" : "PSAPPDEVIEW"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -7292,9 +7583,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "408426da56d4bbb2a56850df5520e018"
+    "modelid" : "408426da56d4bbb2a56850df5520e018",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "EditView",
+  "getPSDEViewId" : "a1cdc4674654d7ab7cbae7b81a71a092",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW_STYLE2",
@@ -7315,5 +7608,6 @@
   "enableDP" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
-  "modelid" : "fb9f2a7e4789eb949b4277e2602bb947"
+  "modelid" : "fb9f2a7e4789eb949b4277e2602bb947",
+  "modeltype" : "PSAPPDEVIEW"
 }

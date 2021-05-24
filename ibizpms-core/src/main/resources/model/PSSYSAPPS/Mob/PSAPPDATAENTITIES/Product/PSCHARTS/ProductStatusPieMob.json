@@ -98,5 +98,6 @@
     "pluginCode" : "NEW"
   },
   "readOnly" : true,
-  "modelid" : "65b2321bc4fa58c171c618c70127164c"
+  "modelid" : "65b2321bc4fa58c171c618c70127164c",
+  "modeltype" : "PSDECHART"
 }

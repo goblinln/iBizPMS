@@ -720,7 +720,8 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "608f8c50286d25edbd57acff441dda8e"
+    "modelid" : "608f8c50286d25edbd57acff441dda8e",
+    "modeltype" : "PSDEFORM_EDITFORM"
   }, {
     "codeName" : "NewMobEditViewrighttoolbar",
     "controlType" : "TOOLBAR",
@@ -781,9 +782,11 @@
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBBOTTOMMENU",
-    "modelid" : "c798012a3dda52e17ac452776aa498f0"
+    "modelid" : "c798012a3dda52e17ac452776aa498f0",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "NewMobEditView",
+  "getPSDEViewId" : "604c6cc3493b185538b4ab3d606bb08a",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBEDITVIEW",
@@ -806,6 +809,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "cc714fa2ec6a1c8704c4778860526f21",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProductPlans",

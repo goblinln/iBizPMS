@@ -53,6 +53,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMainInfoMobTabExpView.json",
+          "viewType" : "DEMOBTABEXPVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMainInfoMobTabExpView.json",
+          "viewType" : "DEMOBTABEXPVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -71,7 +95,8 @@
           "viewType" : "DEMOBTABEXPVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -258,9 +283,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "6be938c7b820d80f5490e5fce24875fa"
+    "modelid" : "6be938c7b820d80f5490e5fce24875fa",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "MySubmitMobMDView",
+  "getPSDEViewId" : "4b3828614208663747d621ce8bb0b09c",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBMDVIEW",
@@ -283,5 +310,6 @@
   "enablePullDownRefresh" : false,
   "enableQuickSearch" : true,
   "showCaptionBar" : true,
-  "modelid" : "9a8a63b0cc234c40dab763a62cea2012"
+  "modelid" : "9a8a63b0cc234c40dab763a62cea2012",
+  "modeltype" : "PSAPPDEVIEW"
 }

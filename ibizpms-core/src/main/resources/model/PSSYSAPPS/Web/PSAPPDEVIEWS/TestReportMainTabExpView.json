@@ -118,6 +118,7 @@
         "id" : "TABVIEWPANEL"
       },
       "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabviewpanel",
+      "modeltype" : "PSVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "accUserMode" : 2,
         "caption" : "测试报告",
@@ -1086,11 +1087,22 @@
                     }, {
                       "logicTrigger" : "CUSTOM",
                       "logicType" : "SYSUILOGIC",
+                      "name" : "editdata",
+                      "getPSAppUILogic" : {
+                        "logicType" : "PREDEFINED",
+                        "name" : "编辑数据",
+                        "viewLogicType" : "APP_OPENDATA",
+                        "editMode" : true
+                      }
+                    }, {
+                      "logicTrigger" : "CUSTOM",
+                      "logicType" : "SYSUILOGIC",
                       "name" : "opendata",
                       "getPSAppUILogic" : {
                         "logicType" : "PREDEFINED",
                         "name" : "打开数据",
-                        "viewLogicType" : "APP_OPENDATA"
+                        "viewLogicType" : "APP_OPENDATA",
+                        "editMode" : false
                       }
                     } ],
                     "getPSAppViewNavParams" : [ {
@@ -1240,9 +1252,11 @@
                       "noSort" : false,
                       "showHeader" : true,
                       "name" : "list",
-                      "modelid" : "835d0e318f958e732332eceda335286e"
+                      "modelid" : "835d0e318f958e732332eceda335286e",
+                      "modeltype" : "PSDELIST"
                     } ],
                     "getPSDEViewCodeName" : "ListView9",
+                    "getPSDEViewId" : "439cdaa85f61d5b761754a37aee0aee6",
                     "getPSViewLayoutPanel" : {
                       "codeName" : "Layoutpanel",
                       "controlStyle" : "APPDELISTVIEW9_STYLE2",
@@ -1263,7 +1277,8 @@
                     "enableDP" : true,
                     "enableFilter" : false,
                     "showCaptionBar" : false,
-                    "modelid" : "d940bfd96f6087050755b99a3b6bab0a"
+                    "modelid" : "d940bfd96f6087050755b99a3b6bab0a",
+                    "modeltype" : "PSAPPDEVIEW"
                   },
                   "getPSLayoutPos" : {
                     "colMD" : 24,
@@ -1324,9 +1339,11 @@
           "readOnly" : false,
           "showFormNavBar" : false,
           "name" : "form",
-          "modelid" : "ea1237a9b37ed96743f273df189f13e0"
+          "modelid" : "ea1237a9b37ed96743f273df189f13e0",
+          "modeltype" : "PSDEFORM_EDITFORM"
         } ],
         "getPSDEViewCodeName" : "MainInfoView",
+        "getPSDEViewId" : "fe0e3da81def846f63a8836a644daa83",
         "getPSSysImage" : {
           "glyph" : "xf0f6@FontAwesome",
           "cssClass" : "fa fa-file-text-o"
@@ -1352,6 +1369,7 @@
         "showCaptionBar" : false,
         "showDataInfoBar" : true,
         "modelid" : "d876490f0254c8897bbdc3b0eb56a42e",
+        "modeltype" : "PSAPPDEVIEW",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "TestReports",
@@ -1421,7 +1439,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL2"
       },
-      "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabviewpanel2"
+      "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabviewpanel2",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "测试轮次",
       "codeName" : "MainTabExpViewtabviewpanel4",
@@ -1439,7 +1458,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL4"
       },
-      "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabviewpanel4"
+      "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabviewpanel4",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "关联的用例",
       "codeName" : "MainTabExpViewtabviewpanel5",
@@ -1457,7 +1477,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL5"
       },
-      "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabviewpanel5"
+      "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabviewpanel5",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "遗留的Bug",
       "codeName" : "MainTabExpViewtabviewpanel6",
@@ -1475,7 +1496,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL6"
       },
-      "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabviewpanel6"
+      "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabviewpanel6",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "报告",
       "codeName" : "MainTabExpViewtabviewpanel8",
@@ -1493,7 +1515,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL8"
       },
-      "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabviewpanel8"
+      "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabviewpanel8",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "总结",
       "codeName" : "MainTabExpViewtabviewpanel3",
@@ -1511,7 +1534,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL3"
       },
-      "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabviewpanel3"
+      "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabviewpanel3",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "历史记录",
       "codeName" : "MainTabExpViewtabviewpanel7",
@@ -1529,7 +1553,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL7"
       },
-      "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabviewpanel7"
+      "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabviewpanel7",
+      "modeltype" : "PSVIEWPANEL"
     } ],
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel"
@@ -1549,9 +1574,11 @@
       "name" : "tabviewpanel7"
     } ],
     "tabLayout" : "TOP",
-    "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabexppanel"
+    "modelid" : "75ed4f97abd716a65004e1e71eba3071_tabexppanel",
+    "modeltype" : "PSTABEXPPANEL"
   } ],
   "getPSDEViewCodeName" : "MainTabExpView",
+  "getPSDEViewId" : "fe8e255cef6b9ca03446fc0cc7b46ddc",
   "getPSSysImage" : {
     "glyph" : "xf0f6@FontAwesome",
     "cssClass" : "fa fa-file-text-o"
@@ -1581,6 +1608,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "75ed4f97abd716a65004e1e71eba3071",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestReports",

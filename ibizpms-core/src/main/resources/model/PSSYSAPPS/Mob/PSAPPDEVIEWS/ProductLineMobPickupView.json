@@ -172,9 +172,11 @@
         "noSort" : false,
         "showHeader" : true,
         "name" : "mdctrl",
-        "modelid" : "21449bab13cd206448a549eaf5f81705"
+        "modelid" : "21449bab13cd206448a549eaf5f81705",
+        "modeltype" : "PSDELIST"
       } ],
       "getPSDEViewCodeName" : "MobPickupMDView",
+      "getPSDEViewId" : "d79987b765cd0b22eaf025ca2e6217f4",
       "getPSViewLayoutPanel" : {
         "codeName" : "Layoutpanel",
         "controlStyle" : "APPDEMOBPICKUPMDVIEW",
@@ -197,7 +199,8 @@
       "enablePullDownRefresh" : false,
       "expandSearchForm" : true,
       "showCaptionBar" : true,
-      "modelid" : "431a4408823b4f48bc98092a2b4fd8ec"
+      "modelid" : "431a4408823b4f48bc98092a2b4fd8ec",
+      "modeltype" : "PSAPPDEVIEW"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
     "name" : "pickupviewpanel",
@@ -210,6 +213,7 @@
     }
   } ],
   "getPSDEViewCodeName" : "MobPickupView",
+  "getPSDEViewId" : "a72178ef8ad0eaa1122f15734bcb749b",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBPICKUPVIEW",
@@ -229,5 +233,6 @@
   "enableDP" : true,
   "enablePullDownRefresh" : false,
   "showCaptionBar" : false,
-  "modelid" : "25918e82eaf8d32d324e194605e38fee"
+  "modelid" : "25918e82eaf8d32d324e194605e38fee",
+  "modeltype" : "PSAPPDEVIEW"
 }

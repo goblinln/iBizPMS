@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"getInvokeCtrl","desc":"调用部件","order":1000},{"name":"getInvokeParam","desc":"调用参数","order":1000},{"name":"invokeMethod","desc":"调用方法","order":1000}]}]

@@ -392,6 +392,7 @@
   "enableUIActions" : 15,
   "logicName" : "汇报角色配置",
   "name" : "IBZ_REPORT_ROLE_CONFIG",
+  "getPSDEName" : "IBZ_REPORT_ROLE_CONFIG",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportRoleConfig/PSDESERVICEAPIS/IbzReportRoleConfig.json"

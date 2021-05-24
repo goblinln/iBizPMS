@@ -1102,6 +1102,7 @@
   "enableUIActions" : 15,
   "logicName" : "文档库分类",
   "name" : "IBZ_DOCLIBMODULE",
+  "getPSDEName" : "IBZ_DOCLIBMODULE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDESERVICEAPIS/DocLibModule.json"

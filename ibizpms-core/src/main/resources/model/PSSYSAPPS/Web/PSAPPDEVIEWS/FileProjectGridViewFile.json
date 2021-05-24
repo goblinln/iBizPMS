@@ -162,7 +162,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "c81e19117fe7f489d7a2872c176bfda4"
+    "modelid" : "c81e19117fe7f489d7a2872c176bfda4",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "NONE",
     "codeName" : "DocLibL",
@@ -684,6 +685,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -694,7 +696,8 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "2850e1e47847abff459057a2c099509c"
+    "modelid" : "2850e1e47847abff459057a2c099509c",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
@@ -771,9 +774,11 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "c95b13341abf1b7a8f37e3ca51127a4e"
+    "modelid" : "c95b13341abf1b7a8f37e3ca51127a4e",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "ProjectGridViewFile",
+  "getPSDEViewId" : "4eb0a6a975dfb2f4d1ca63eea06f1a22",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -800,5 +805,6 @@
   "enableSearch" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
-  "modelid" : "7ef300c01cce979e53218b74c8243d2a"
+  "modelid" : "7ef300c01cce979e53218b74c8243d2a",
+  "modeltype" : "PSAPPDEVIEW"
 }

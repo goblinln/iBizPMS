@@ -374,6 +374,7 @@
   "enableUIActions" : 15,
   "logicName" : "岗位",
   "name" : "SYS_POST",
+  "getPSDEName" : "SYS_POST",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDESERVICEAPIS/SysPost.json"

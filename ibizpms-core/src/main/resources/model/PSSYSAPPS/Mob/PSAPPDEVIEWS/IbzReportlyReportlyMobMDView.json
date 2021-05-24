@@ -50,6 +50,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzReportlyMainInfoMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzReportlyMainInfoMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -68,7 +92,8 @@
           "viewType" : "DEMOBEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavContexts" : [ {
@@ -283,7 +308,8 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "091c2f2ec7f6f59f8752245802e496e8"
+    "modelid" : "091c2f2ec7f6f59f8752245802e496e8",
+    "modeltype" : "PSDELIST"
   }, {
     "codeName" : "ReportlyMobMDViewrighttoolbar",
     "controlType" : "TOOLBAR",
@@ -343,9 +369,11 @@
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBBOTTOMMENU",
-    "modelid" : "d51cb789063c995009a3f9b322cd2d6f"
+    "modelid" : "d51cb789063c995009a3f9b322cd2d6f",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "ReportlyMobMDView",
+  "getPSDEViewId" : "33524542e90f48b440bbaf224d6086a4",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBMDVIEW",
@@ -368,5 +396,6 @@
   "enablePullDownRefresh" : false,
   "enableQuickSearch" : true,
   "showCaptionBar" : true,
-  "modelid" : "25f6b39e343546cfa39d055c489d93d2"
+  "modelid" : "25f6b39e343546cfa39d055c489d93d2",
+  "modeltype" : "PSAPPDEVIEW"
 }

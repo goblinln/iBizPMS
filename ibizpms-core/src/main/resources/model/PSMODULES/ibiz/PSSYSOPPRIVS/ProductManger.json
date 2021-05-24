@@ -104,5 +104,6 @@
   } ],
   "roleTag" : "ProductManger",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "LEFT_CASE_MENU", "PRODUCTLEFT", "PROD_CREATE_BUT", "LEFT_PROJECT_MENU" ]
+  "uniResTags" : [ "LEFT_CASE_MENU", "PRODUCTLEFT", "PROD_CREATE_BUT", "LEFT_PROJECT_MENU" ],
+  "globalRole" : true
 }

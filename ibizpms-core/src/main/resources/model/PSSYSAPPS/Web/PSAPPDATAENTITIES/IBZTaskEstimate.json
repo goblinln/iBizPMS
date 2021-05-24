@@ -978,6 +978,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "IBZ_TASKESTIMATE",
+  "getPSDEName" : "ZT_TASKESTIMATE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDESERVICEAPIS/IBZTaskEstimate.json"

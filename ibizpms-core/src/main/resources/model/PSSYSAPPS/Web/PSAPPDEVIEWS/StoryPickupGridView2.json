@@ -524,6 +524,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -534,9 +535,11 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "3a7d94149dd32ce4f2091f7f35fc18fa"
+    "modelid" : "3a7d94149dd32ce4f2091f7f35fc18fa",
+    "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "PickupGridView2",
+  "getPSDEViewId" : "2ffbba49c23da4a60eaf1eddaaefc61b",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -568,6 +571,7 @@
   "rowEditDefault" : false,
   "showCaptionBar" : false,
   "modelid" : "a589d1134a8833b43471339d131a329b",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

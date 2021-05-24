@@ -464,7 +464,8 @@
       "showCaption" : false,
       "showIcon" : true
     } ],
-    "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37"
+    "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "CustomDocLibChildTreeViewmodule_cm",
     "controlType" : "CONTEXTMENU",
@@ -695,7 +696,8 @@
       "showCaption" : false,
       "showIcon" : true
     } ],
-    "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a"
+    "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
@@ -998,7 +1000,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37"
+      "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37",
+      "modeltype" : "PSDETOOLBAR"
     },
     "textFormat" : "文档",
     "getTextPSAppDEField" : {
@@ -1270,7 +1273,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a"
+      "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a",
+      "modeltype" : "PSDETOOLBAR"
     },
     "getTextPSAppDEField" : {
       "name" : "NAME",
@@ -1335,5 +1339,6 @@
   "enableSearchDefault" : false,
   "outputIconDefault" : true,
   "rootVisible" : false,
-  "modelid" : "1f4958483bf311ef1bbe4a79e113423b"
+  "modelid" : "1f4958483bf311ef1bbe4a79e113423b",
+  "modeltype" : "PSDETREEVIEW"
 }

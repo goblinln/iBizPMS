@@ -33,11 +33,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSControls" : [ {
@@ -293,7 +304,8 @@
           "showCaption" : true,
           "showIcon" : true
         } ],
-        "modelid" : "73d873a18f44409189c177ef1f7f601c"
+        "modelid" : "73d873a18f44409189c177ef1f7f601c",
+        "modeltype" : "PSDETOOLBAR"
       } ],
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
@@ -459,7 +471,8 @@
             "showCaption" : true,
             "showIcon" : true
           } ],
-          "modelid" : "73d873a18f44409189c177ef1f7f601c"
+          "modelid" : "73d873a18f44409189c177ef1f7f601c",
+          "modeltype" : "PSDETOOLBAR"
         },
         "text" : "所有产品",
         "treeNodeType" : "STATIC",
@@ -517,15 +530,18 @@
       "outputIconDefault" : false,
       "rootVisible" : false,
       "name" : "treeexpbar_tree",
-      "modelid" : "58a6bc35a54c08ece53da63c10681191"
+      "modelid" : "58a6bc35a54c08ece53da63c10681191",
+      "modeltype" : "PSDETREEVIEW"
     } ],
     "xDataControlName" : "treeexpbar_tree",
     "enableCounter" : true,
     "enableSearch" : false,
     "showTitleBar" : false,
-    "modelid" : "7bc0775a369022d32b5cc9ffc603c54e_treeexpbar"
+    "modelid" : "7bc0775a369022d32b5cc9ffc603c54e_treeexpbar",
+    "modeltype" : "PSEXPBAR"
   } ],
   "getPSDEViewCodeName" : "TreeExpView",
+  "getPSDEViewId" : "9028c2a4dd8b7ec453ff0be5f7d5bdfa",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
@@ -547,5 +563,6 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "7bc0775a369022d32b5cc9ffc603c54e"
+  "modelid" : "7bc0775a369022d32b5cc9ffc603c54e",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -73,11 +73,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewUIActions" : [ {
@@ -250,7 +261,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "24ddc68b1717d44d1ea610d438f930f6"
+    "modelid" : "24ddc68b1717d44d1ea610d438f930f6",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "PAGE",
     "codeName" : "StoryTaskGroup",
@@ -1600,6 +1612,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : true,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -1610,7 +1623,8 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "312158a7ccb521122cc7f5caff46bdb2"
+    "modelid" : "312158a7ccb521122cc7f5caff46bdb2",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "Custom",
     "controlType" : "SEARCHBAR",
@@ -2766,9 +2780,11 @@
     "enableQuickSearch" : true,
     "mobileSearchBar" : false,
     "name" : "searchbar",
-    "modelid" : "f48f6753b28b83cbb139774abd86cc6c"
+    "modelid" : "f48f6753b28b83cbb139774abd86cc6c",
+    "modeltype" : "PSSYSSEARCHBAR"
   } ],
   "getPSDEViewCodeName" : "StoryTaskGroupGridView",
+  "getPSDEViewId" : "272c1ceb939c05566b0efd7045fd799d",
   "getPSSysImage" : {
     "glyph" : "xf0ae@FontAwesome",
     "cssClass" : "fa fa-tasks"
@@ -2800,6 +2816,7 @@
   "rowEditDefault" : false,
   "showCaptionBar" : true,
   "modelid" : "e648566cac4a7df484196995a17af08c",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

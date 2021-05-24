@@ -113,5 +113,6 @@
     },
     "showCaption" : true
   } ],
-  "modelid" : "0eea64a68b5d47cce96bc1efbc9e8066"
+  "modelid" : "0eea64a68b5d47cce96bc1efbc9e8066",
+  "modeltype" : "PSSYSVIEWPANEL"
 }

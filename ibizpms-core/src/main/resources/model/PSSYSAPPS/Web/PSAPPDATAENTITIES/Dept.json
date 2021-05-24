@@ -524,6 +524,7 @@
   "enableUIActions" : 15,
   "logicName" : "部门",
   "name" : "ZT_DEPT",
+  "getPSDEName" : "ZT_DEPT",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept/PSDESERVICEAPIS/Dept.json"

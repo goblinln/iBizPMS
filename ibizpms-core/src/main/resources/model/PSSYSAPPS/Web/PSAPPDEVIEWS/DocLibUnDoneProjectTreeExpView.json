@@ -33,11 +33,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSControls" : [ {
@@ -615,15 +626,18 @@
       "outputIconDefault" : true,
       "rootVisible" : false,
       "name" : "treeexpbar_tree",
-      "modelid" : "42e202e3f7f2a2e4b45a3ab1414e6158"
+      "modelid" : "42e202e3f7f2a2e4b45a3ab1414e6158",
+      "modeltype" : "PSDETREEVIEW"
     } ],
     "xDataControlName" : "treeexpbar_tree",
     "enableCounter" : true,
     "enableSearch" : false,
     "showTitleBar" : false,
-    "modelid" : "268235f326128db6498eb299243b47df_treeexpbar"
+    "modelid" : "268235f326128db6498eb299243b47df_treeexpbar",
+    "modeltype" : "PSEXPBAR"
   } ],
   "getPSDEViewCodeName" : "UnDoneProjectTreeExpView",
+  "getPSDEViewId" : "025e45aa6912b00cf926480e786f084f",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
@@ -645,5 +659,6 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "268235f326128db6498eb299243b47df"
+  "modelid" : "268235f326128db6498eb299243b47df",
+  "modeltype" : "PSAPPDEVIEW"
 }

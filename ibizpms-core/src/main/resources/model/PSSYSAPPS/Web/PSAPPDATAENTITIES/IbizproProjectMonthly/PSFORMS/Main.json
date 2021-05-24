@@ -454,6 +454,30 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "getOpenDataPSAppView" : {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              },
+              "getPSAppUILogicRefViews" : [ {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              } ],
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
@@ -472,7 +496,8 @@
                   "viewType" : "DEEDITVIEW"
                 }
               } ],
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -954,6 +979,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -964,9 +990,11 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "1117faecf83670d7c29a46c31c3296fb"
+            "modelid" : "1117faecf83670d7c29a46c31c3296fb",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "MonthlyGridView",
+          "getPSDEViewId" : "091233e8f6146aec28beb36a4d1413d2",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -991,7 +1019,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "24ce025eb657fc73083eae8a15f9ad32"
+          "modelid" : "24ce025eb657fc73083eae8a15f9ad32",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -1117,6 +1146,30 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "getOpenDataPSAppView" : {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              },
+              "getPSAppUILogicRefViews" : [ {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              } ],
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
@@ -1135,7 +1188,8 @@
                   "viewType" : "DEEDITVIEW"
                 }
               } ],
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -1617,6 +1671,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -1627,9 +1682,11 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "1117faecf83670d7c29a46c31c3296fb"
+            "modelid" : "1117faecf83670d7c29a46c31c3296fb",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "MonthlyGridView",
+          "getPSDEViewId" : "091233e8f6146aec28beb36a4d1413d2",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -1654,7 +1711,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "24ce025eb657fc73083eae8a15f9ad32"
+          "modelid" : "24ce025eb657fc73083eae8a15f9ad32",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -1779,6 +1837,30 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "getOpenDataPSAppView" : {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              },
+              "getPSAppUILogicRefViews" : [ {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              } ],
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
@@ -1797,7 +1879,8 @@
                   "viewType" : "DEEDITVIEW"
                 }
               } ],
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -2279,6 +2362,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -2289,9 +2373,11 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "1117faecf83670d7c29a46c31c3296fb"
+            "modelid" : "1117faecf83670d7c29a46c31c3296fb",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "MonthlyGridView",
+          "getPSDEViewId" : "091233e8f6146aec28beb36a4d1413d2",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -2316,7 +2402,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "24ce025eb657fc73083eae8a15f9ad32"
+          "modelid" : "24ce025eb657fc73083eae8a15f9ad32",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -2442,6 +2529,30 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "getOpenDataPSAppView" : {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              },
+              "getPSAppUILogicRefViews" : [ {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              } ],
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
@@ -2460,7 +2571,8 @@
                   "viewType" : "DEEDITVIEW"
                 }
               } ],
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -2942,6 +3054,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -2952,9 +3065,11 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "1117faecf83670d7c29a46c31c3296fb"
+            "modelid" : "1117faecf83670d7c29a46c31c3296fb",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "MonthlyGridView",
+          "getPSDEViewId" : "091233e8f6146aec28beb36a4d1413d2",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -2979,7 +3094,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "24ce025eb657fc73083eae8a15f9ad32"
+          "modelid" : "24ce025eb657fc73083eae8a15f9ad32",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -3105,6 +3221,30 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "getOpenDataPSAppView" : {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              },
+              "getPSAppUILogicRefViews" : [ {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              } ],
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
@@ -3123,7 +3263,8 @@
                   "viewType" : "DEEDITVIEW"
                 }
               } ],
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -3605,6 +3746,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -3615,9 +3757,11 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "1117faecf83670d7c29a46c31c3296fb"
+            "modelid" : "1117faecf83670d7c29a46c31c3296fb",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "MonthlyGridView",
+          "getPSDEViewId" : "091233e8f6146aec28beb36a4d1413d2",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -3642,7 +3786,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "24ce025eb657fc73083eae8a15f9ad32"
+          "modelid" : "24ce025eb657fc73083eae8a15f9ad32",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -3768,6 +3913,30 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "getOpenDataPSAppView" : {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              },
+              "getPSAppUILogicRefViews" : [ {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              } ],
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
@@ -3786,7 +3955,8 @@
                   "viewType" : "DEEDITVIEW"
                 }
               } ],
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -4268,6 +4438,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -4278,9 +4449,11 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "1117faecf83670d7c29a46c31c3296fb"
+            "modelid" : "1117faecf83670d7c29a46c31c3296fb",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "MonthlyGridView",
+          "getPSDEViewId" : "091233e8f6146aec28beb36a4d1413d2",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -4305,7 +4478,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "24ce025eb657fc73083eae8a15f9ad32"
+          "modelid" : "24ce025eb657fc73083eae8a15f9ad32",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -4431,6 +4605,30 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "getOpenDataPSAppView" : {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              },
+              "getPSAppUILogicRefViews" : [ {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              } ],
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
@@ -4449,7 +4647,8 @@
                   "viewType" : "DEEDITVIEW"
                 }
               } ],
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -4931,6 +5130,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -4941,9 +5141,11 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "1117faecf83670d7c29a46c31c3296fb"
+            "modelid" : "1117faecf83670d7c29a46c31c3296fb",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "MonthlyGridView",
+          "getPSDEViewId" : "091233e8f6146aec28beb36a4d1413d2",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -4968,7 +5170,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "24ce025eb657fc73083eae8a15f9ad32"
+          "modelid" : "24ce025eb657fc73083eae8a15f9ad32",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -5094,6 +5297,30 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "getOpenDataPSAppView" : {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              },
+              "getPSAppUILogicRefViews" : [ {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              } ],
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
@@ -5112,7 +5339,8 @@
                   "viewType" : "DEEDITVIEW"
                 }
               } ],
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -5594,6 +5822,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -5604,9 +5833,11 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "1117faecf83670d7c29a46c31c3296fb"
+            "modelid" : "1117faecf83670d7c29a46c31c3296fb",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "MonthlyGridView",
+          "getPSDEViewId" : "091233e8f6146aec28beb36a4d1413d2",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -5631,7 +5862,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "24ce025eb657fc73083eae8a15f9ad32"
+          "modelid" : "24ce025eb657fc73083eae8a15f9ad32",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -5757,6 +5989,30 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "getOpenDataPSAppView" : {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              },
+              "getPSAppUILogicRefViews" : [ {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproProjectUserTaskEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              } ],
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
@@ -5775,7 +6031,8 @@
                   "viewType" : "DEEDITVIEW"
                 }
               } ],
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -6257,6 +6514,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -6267,9 +6525,11 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "1117faecf83670d7c29a46c31c3296fb"
+            "modelid" : "1117faecf83670d7c29a46c31c3296fb",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "MonthlyGridView",
+          "getPSDEViewId" : "091233e8f6146aec28beb36a4d1413d2",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -6294,7 +6554,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "24ce025eb657fc73083eae8a15f9ad32"
+          "modelid" : "24ce025eb657fc73083eae8a15f9ad32",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -6409,6 +6670,30 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "getOpenDataPSAppView" : {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyMonthlyMainMsgEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              },
+              "getPSAppUILogicRefViews" : [ {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyMonthlyMainMsgEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              } ],
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
@@ -6427,7 +6712,8 @@
                   "viewType" : "DEEDITVIEW"
                 }
               } ],
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -6776,6 +7062,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -6786,7 +7073,8 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "c57a97e3a4afa41f2195aa9d87550d8b"
+            "modelid" : "c57a97e3a4afa41f2195aa9d87550d8b",
+            "modeltype" : "PSDEGRID"
           }, {
             "codeName" : "Default",
             "controlType" : "SEARCHFORM",
@@ -6863,9 +7151,11 @@
             "enableFilterSave" : false,
             "noTabHeader" : true,
             "name" : "searchform",
-            "modelid" : "d68eaacb6504941ac21941e396fb02be"
+            "modelid" : "d68eaacb6504941ac21941e396fb02be",
+            "modeltype" : "PSDEFORM_SEARCHFORM"
           } ],
           "getPSDEViewCodeName" : "ProjectMonthlyGridView_",
+          "getPSDEViewId" : "ef17e5610776de8f217c10d3222dd5a8",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -6892,7 +7182,8 @@
           "enableSearch" : true,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "8cce08a0293cb9a5eb3b1df32a85c340"
+          "modelid" : "8cce08a0293cb9a5eb3b1df32a85c340",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -6965,5 +7256,6 @@
   "noTabHeader" : true,
   "readOnly" : false,
   "showFormNavBar" : false,
-  "modelid" : "dcb3c81c9ae3bc8207125d0648915ff4"
+  "modelid" : "dcb3c81c9ae3bc8207125d0648915ff4",
+  "modeltype" : "PSDEFORM_EDITFORM"
 }

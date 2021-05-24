@@ -68,6 +68,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -86,7 +110,8 @@
           "viewType" : "DEEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -175,7 +200,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "a367f1c87484ad35865184abea15eece"
+    "modelid" : "a367f1c87484ad35865184abea15eece",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "PAGE",
     "codeName" : "ProjectStoryStageStats",
@@ -662,6 +688,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : false,
     "enableRowEdit" : false,
@@ -672,7 +699,8 @@
     "noSort" : false,
     "singleSelect" : true,
     "name" : "grid",
-    "modelid" : "0ca36d357f99c5690a9174c54a10ffda"
+    "modelid" : "0ca36d357f99c5690a9174c54a10ffda",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "ProjectStoryStats",
     "controlType" : "SEARCHFORM",
@@ -797,9 +825,11 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "a68ca214bdd67b0f293221ea411522ef"
+    "modelid" : "a68ca214bdd67b0f293221ea411522ef",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "ProjectStoryStageStatusGridView",
+  "getPSDEViewId" : "1a5a89a0c4fb32c50c433d34884aa908",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -826,5 +856,6 @@
   "expandSearchForm" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
-  "modelid" : "4996bbd9b7bd9c0e80dfdf952308bf9c"
+  "modelid" : "4996bbd9b7bd9c0e80dfdf952308bf9c",
+  "modeltype" : "PSAPPDEVIEW"
 }

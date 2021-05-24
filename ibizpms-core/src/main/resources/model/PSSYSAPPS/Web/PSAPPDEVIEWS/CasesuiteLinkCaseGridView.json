@@ -80,6 +80,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -98,7 +122,8 @@
           "viewType" : "DEEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavContexts" : [ {
@@ -306,7 +331,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "5ad21b662e43fd5724b41620471178d8"
+    "modelid" : "5ad21b662e43fd5724b41620471178d8",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "NONE",
     "codeName" : "MainLinkTest",
@@ -952,6 +978,7 @@
     },
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : true,
@@ -962,7 +989,8 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "897161b2e0512eb46c733401e009c79a"
+    "modelid" : "897161b2e0512eb46c733401e009c79a",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "Custom",
     "controlType" : "SEARCHBAR",
@@ -1822,7 +1850,8 @@
     "enableQuickSearch" : true,
     "mobileSearchBar" : false,
     "name" : "searchbar",
-    "modelid" : "479b5c0d8f5952ae7ade4e1e0b0223d6"
+    "modelid" : "479b5c0d8f5952ae7ade4e1e0b0223d6",
+    "modeltype" : "PSSYSSEARCHBAR"
   }, {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
@@ -1899,9 +1928,11 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "7fc4746a586eeb6df64865504bca1f09"
+    "modelid" : "7fc4746a586eeb6df64865504bca1f09",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "suiteLinkCaseGridView",
+  "getPSDEViewId" : "64f51a429095a98eafc08394f652cc7c",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -1933,6 +1964,7 @@
   "rowEditDefault" : true,
   "showCaptionBar" : true,
   "modelid" : "947384eec213c6134ff26412515d0938",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

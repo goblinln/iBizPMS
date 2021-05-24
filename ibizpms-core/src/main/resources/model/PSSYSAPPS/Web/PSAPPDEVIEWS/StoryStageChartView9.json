@@ -191,12 +191,14 @@
     "readOnly" : true,
     "name" : "chart",
     "modelid" : "c90b74e360af0b39214b0aaa1ce800b4",
+    "modeltype" : "PSDECHART",
     "getUserParam" : {
       "EC.legend" : "{show:false}",
       "EC.color" : "[\"#CAAC32\",\"#0075A9\",\"#22AC38\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
     }
   } ],
   "getPSDEViewCodeName" : "StageChartView9",
+  "getPSDEViewId" : "8ec940812d8141904f34ba0342251abb",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -225,6 +227,7 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "modelid" : "0dcfe598ebb18a6e0f3adb9ddc0b40c9",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

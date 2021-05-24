@@ -663,6 +663,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "IBZPLANTEMPLETDETAIL",
+  "getPSDEName" : "IBZ_PLANTEMPLETDETAIL",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail/PSDESERVICEAPIS/PlanTempletDetail.json"

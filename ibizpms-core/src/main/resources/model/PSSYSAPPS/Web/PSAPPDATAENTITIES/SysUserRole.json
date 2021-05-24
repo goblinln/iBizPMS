@@ -404,6 +404,7 @@
   "enableUIActions" : 15,
   "logicName" : "用户角色关系",
   "name" : "SYS_USER_ROLE",
+  "getPSDEName" : "SYS_USER_ROLE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDESERVICEAPIS/SysUserRole.json"

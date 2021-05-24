@@ -56,6 +56,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -74,7 +98,8 @@
           "viewType" : "DEMOBEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavParams" : [ {
@@ -425,7 +450,8 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "d27933bd5df40048f9148e9e5e1904f9"
+    "modelid" : "d27933bd5df40048f9148e9e5e1904f9",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   }, {
     "codeName" : "Mob_My",
     "controlStyle" : "LISTVIEW",
@@ -684,7 +710,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",
-      "modelid" : "15ac73e6dfc7a5d8c85fcba439f3ac38"
+      "modelid" : "15ac73e6dfc7a5d8c85fcba439f3ac38",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "MOB_My",
     "minorSortDir" : "DESC",
@@ -1277,9 +1304,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "5a4b70d710cb2807793519592c2c0bec"
+    "modelid" : "5a4b70d710cb2807793519592c2c0bec",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "AssMoreMobMDView",
+  "getPSDEViewId" : "43c25c89a885f825dde9715d59bff555",
   "getPSSysImage" : {
     "glyph" : "xf188@FontAwesome",
     "cssClass" : "fa fa-bug"
@@ -1308,6 +1337,7 @@
   "enableSearch" : true,
   "showCaptionBar" : true,
   "modelid" : "f0d71bf02dcc9b277354148e72ddfdec",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

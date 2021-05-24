@@ -56,6 +56,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductMobTabExpView.json",
+          "viewType" : "DEMOBTABEXPVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductMobTabExpView.json",
+          "viewType" : "DEMOBTABEXPVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -74,7 +98,8 @@
           "viewType" : "DEMOBTABEXPVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -295,7 +320,8 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "eb0a1353b9b4a55e2441e6edb532eb43"
+    "modelid" : "eb0a1353b9b4a55e2441e6edb532eb43",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   }, {
     "codeName" : "Mob",
     "controlStyle" : "LISTVIEW",
@@ -477,7 +503,8 @@
         "showCaption" : true,
         "showIcon" : true
       } ],
-      "modelid" : "dc72839424ae81886458969764aad35c"
+      "modelid" : "dc72839424ae81886458969764aad35c",
+      "modeltype" : "PSDETOOLBAR"
     } ],
     "getPSDEListDataItems" : [ {
       "dataType" : 25,
@@ -539,9 +566,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "367d445821a484a912a99a012f155a76"
+    "modelid" : "367d445821a484a912a99a012f155a76",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "TestMobMDView",
+  "getPSDEViewId" : "7de08aca5577cf96402fce7e69e551ab",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBMDVIEW",
@@ -565,5 +594,6 @@
   "enableQuickSearch" : true,
   "enableSearch" : true,
   "showCaptionBar" : true,
-  "modelid" : "064a8e203568a5929ea303ec7acb2945"
+  "modelid" : "064a8e203568a5929ea303ec7acb2945",
+  "modeltype" : "PSAPPDEVIEW"
 }

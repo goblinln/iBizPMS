@@ -56,6 +56,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -74,7 +98,8 @@
           "viewType" : "DEMOBEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavParams" : [ {
@@ -302,7 +327,8 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "6034ddf3d51d3ed410d3bbe84cda2756"
+    "modelid" : "6034ddf3d51d3ed410d3bbe84cda2756",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   }, {
     "codeName" : "AssMOBDASHBOARD",
     "controlStyle" : "LISTVIEW",
@@ -856,9 +882,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "bfddf6abb2979620d22f513e2bed976c"
+    "modelid" : "bfddf6abb2979620d22f513e2bed976c",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "AssMobMDView",
+  "getPSDEViewId" : "08139b720355a2c04e5cbd35cadd2201",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -886,6 +914,7 @@
   "enableSearch" : true,
   "showCaptionBar" : false,
   "modelid" : "f2ff9fc103492662975cb3fc89cc486d",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

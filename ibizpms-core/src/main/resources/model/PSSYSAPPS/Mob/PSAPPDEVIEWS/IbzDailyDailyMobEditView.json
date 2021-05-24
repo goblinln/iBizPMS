@@ -97,7 +97,8 @@
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBBOTTOMMENU",
-    "modelid" : "c798012a3dda52e17ac452776aa498f0"
+    "modelid" : "c798012a3dda52e17ac452776aa498f0",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "MobDailyEdit",
     "controlType" : "FORM",
@@ -912,9 +913,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "668ad1792e35f7690bcbf5a5942c28e0"
+    "modelid" : "668ad1792e35f7690bcbf5a5942c28e0",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "DailyMobEditView",
+  "getPSDEViewId" : "5cffef82cb494c983e5075652573f1ef",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBEDITVIEW",
@@ -936,5 +939,6 @@
   "enablePullDownRefresh" : false,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
-  "modelid" : "3a7982dee8370fb090f97c14ed9fe641"
+  "modelid" : "3a7982dee8370fb090f97c14ed9fe641",
+  "modeltype" : "PSAPPDEVIEW"
 }

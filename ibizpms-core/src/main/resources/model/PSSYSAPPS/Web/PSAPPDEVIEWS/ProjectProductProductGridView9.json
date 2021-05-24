@@ -40,11 +40,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -297,6 +308,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : false,
     "enableRowEdit" : false,
@@ -307,9 +319,11 @@
     "noSort" : false,
     "singleSelect" : true,
     "name" : "grid",
-    "modelid" : "8e4fab9a9c723fb2bbf2cbc7f82bb810"
+    "modelid" : "8e4fab9a9c723fb2bbf2cbc7f82bb810",
+    "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "ProductGridView9",
+  "getPSDEViewId" : "8BA45C38-B127-42FE-9BA0-AED5E7E9FFD9",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -335,6 +349,7 @@
   "rowEditDefault" : false,
   "showCaptionBar" : false,
   "modelid" : "e82ad51f06733f38e6085d96e6b182b6",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectProducts",

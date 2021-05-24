@@ -959,7 +959,8 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "486e9e019a5353060503efa567c9cf43"
+    "modelid" : "486e9e019a5353060503efa567c9cf43",
+    "modeltype" : "PSDEFORM_EDITFORM"
   }, {
     "codeName" : "NewMobEditViewrighttoolbar",
     "controlType" : "TOOLBAR",
@@ -1020,9 +1021,11 @@
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBBOTTOMMENU",
-    "modelid" : "c798012a3dda52e17ac452776aa498f0"
+    "modelid" : "c798012a3dda52e17ac452776aa498f0",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "NewMobEditView",
+  "getPSDEViewId" : "617bae91dd0a31076ad5941340d613be",
   "getPSSysImage" : {
     "glyph" : "xf0ea@FontAwesome",
     "cssClass" : "fa fa-clipboard"
@@ -1049,6 +1052,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "352790aae7f30a14bc4a51e4c784d57a",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestTasks",

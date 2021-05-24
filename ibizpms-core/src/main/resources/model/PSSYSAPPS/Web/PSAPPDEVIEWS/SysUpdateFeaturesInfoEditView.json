@@ -665,9 +665,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "83e4aae8562c9de3db10bf88aa1cf2f0"
+    "modelid" : "83e4aae8562c9de3db10bf88aa1cf2f0",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "InfoEditView",
+  "getPSDEViewId" : "236091e2ff85e88affba4328fd2ae795",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW_STYLE2",
@@ -689,6 +691,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "69f603bbdaf1463452fe56bbd20aefcc",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "sysUpdateLog",

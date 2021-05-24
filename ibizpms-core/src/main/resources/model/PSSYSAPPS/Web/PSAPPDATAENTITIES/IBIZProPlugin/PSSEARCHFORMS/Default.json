@@ -30,5 +30,6 @@
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
   "noTabHeader" : true,
-  "modelid" : "f5361cc136ba39b5f83a498b206300b6"
+  "modelid" : "f5361cc136ba39b5f83a498b206300b6",
+  "modeltype" : "PSDEFORM_SEARCHFORM"
 }

@@ -368,6 +368,7 @@
   "enableUIActions" : 15,
   "logicName" : "组",
   "name" : "SYS_TEAM",
+  "getPSDEName" : "SYS_TEAM",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeam/PSDESERVICEAPIS/SysTeam.json"

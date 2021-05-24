@@ -464,6 +464,30 @@
         }, {
           "logicTrigger" : "CUSTOM",
           "logicType" : "SYSUILOGIC",
+          "name" : "editdata",
+          "getPSAppUILogic" : {
+            "logicType" : "PREDEFINED",
+            "name" : "编辑数据",
+            "getOpenDataPSAppView" : {
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+                "viewType" : "DEPORTALVIEW"
+              }
+            },
+            "getPSAppUILogicRefViews" : [ {
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+                "viewType" : "DEPORTALVIEW"
+              }
+            } ],
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : true
+          }
+        }, {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "SYSUILOGIC",
           "name" : "opendata",
           "getPSAppUILogic" : {
             "logicType" : "PREDEFINED",
@@ -482,7 +506,8 @@
                 "viewType" : "DEPORTALVIEW"
               }
             } ],
-            "viewLogicType" : "APP_OPENDATA"
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : false
           }
         } ],
         "getPSAppViewNavContexts" : [ {
@@ -851,6 +876,7 @@
           "sortMode" : "REMOTE",
           "hasWFDataItems" : false,
           "enableColFilter" : false,
+          "enableCustomized" : true,
           "enableGroup" : false,
           "enablePagingBar" : true,
           "enableRowEdit" : false,
@@ -861,9 +887,11 @@
           "noSort" : false,
           "singleSelect" : true,
           "name" : "grid",
-          "modelid" : "4bb6fbe4d5a69c25964735bd45b7b111"
+          "modelid" : "4bb6fbe4d5a69c25964735bd45b7b111",
+          "modeltype" : "PSDEGRID"
         } ],
         "getPSDEViewCodeName" : "GridView9_TaskRelated",
+        "getPSDEViewId" : "1d5fa1834ef4c387c8bbb0e0450e9f5e",
         "getPSSysImage" : {
           "glyph" : "xf188@FontAwesome",
           "cssClass" : "fa fa-bug"
@@ -893,6 +921,7 @@
         "rowEditDefault" : false,
         "showCaptionBar" : true,
         "modelid" : "3da1f37a9dc628fb6755d3d9c03fc112",
+        "modeltype" : "PSAPPDEVIEW",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -1056,5 +1085,6 @@
   "noTabHeader" : false,
   "readOnly" : false,
   "showFormNavBar" : false,
-  "modelid" : "3e7755632653be6b4c8af99ad1c280d0"
+  "modelid" : "3e7755632653be6b4c8af99ad1c280d0",
+  "modeltype" : "PSDEFORM_EDITFORM"
 }

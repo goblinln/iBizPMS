@@ -132,7 +132,8 @@
           "showBusyIndicator" : true
         },
         "enableCustomize" : false,
-        "modelid" : "0a451faac36c785cff2734e6a0743e3d"
+        "modelid" : "0a451faac36c785cff2734e6a0743e3d",
+        "modeltype" : "PSAPPMENU"
       } ],
       "getPSLayoutPos" : {
         "colMD" : 24,
@@ -141,7 +142,8 @@
       "portletType" : "APPMENU",
       "title" : "我的地盘",
       "showTitleBar" : true,
-      "modelid" : "0a451faac36c785cff2734e6a0743e3d"
+      "modelid" : "0a451faac36c785cff2734e6a0743e3d",
+      "modeltype" : "PSSYSDBPART"
     }, {
       "aMListStyle" : "ICONVIEW",
       "codeName" : "reportNew",
@@ -345,7 +347,8 @@
           "showBusyIndicator" : true
         },
         "enableCustomize" : false,
-        "modelid" : "952bf575ce64bb548f99b83834b283c0"
+        "modelid" : "952bf575ce64bb548f99b83834b283c0",
+        "modeltype" : "PSAPPMENU"
       } ],
       "getPSLayoutPos" : {
         "colMD" : 24,
@@ -354,10 +357,12 @@
       "portletType" : "APPMENU",
       "title" : "汇报",
       "showTitleBar" : true,
-      "modelid" : "952bf575ce64bb548f99b83834b283c0"
+      "modelid" : "952bf575ce64bb548f99b83834b283c0",
+      "modeltype" : "PSSYSDBPART"
     } ],
     "enableCustomized" : false,
-    "modelid" : "fef4d4f067fe339a72b2ff7265ac3854"
+    "modelid" : "fef4d4f067fe339a72b2ff7265ac3854",
+    "modeltype" : "PSSYSDASHBOARD"
   } ],
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
@@ -372,5 +377,6 @@
   "viewStyle" : "DEFAULT",
   "viewType" : "APPPORTALVIEW",
   "enableDP" : true,
-  "modelid" : "fef4d4f067fe339a72b2ff7265ac3854"
+  "modelid" : "fef4d4f067fe339a72b2ff7265ac3854",
+  "modeltype" : "PSAPPPORTALVIEW"
 }

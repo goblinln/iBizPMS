@@ -192,7 +192,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",
-      "modelid" : "cec0e54ef7a39d4b2a01d28a84db6685"
+      "modelid" : "cec0e54ef7a39d4b2a01d28a84db6685",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "TrendsMobMore",
     "minorSortDir" : "DESC",
@@ -370,9 +371,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "23201c3527a859988da5f4226b733bd4"
+    "modelid" : "23201c3527a859988da5f4226b733bd4",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "MoreMobMDView",
+  "getPSDEViewId" : "c43515f9735054cd39c13a8796bab6bd",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBMDVIEW",
@@ -394,5 +397,6 @@
   "enableFilter" : false,
   "enablePullDownRefresh" : true,
   "showCaptionBar" : true,
-  "modelid" : "77ae4c350a661dfc26495a21b7fa9c67"
+  "modelid" : "77ae4c350a661dfc26495a21b7fa9c67",
+  "modeltype" : "PSAPPDEVIEW"
 }

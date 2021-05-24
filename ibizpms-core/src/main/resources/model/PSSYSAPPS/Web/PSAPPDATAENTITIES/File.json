@@ -815,6 +815,7 @@
   "enableUIActions" : 15,
   "logicName" : "附件",
   "name" : "ZT_FILE",
+  "getPSDEName" : "ZT_FILE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDESERVICEAPIS/File.json"

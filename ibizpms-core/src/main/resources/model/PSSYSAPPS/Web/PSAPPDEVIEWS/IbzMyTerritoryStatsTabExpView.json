@@ -76,6 +76,7 @@
         "id" : "TABVIEWPANEL3"
       },
       "modelid" : "b4989339e1dc575a45c15699a325122a_tabviewpanel3",
+      "modeltype" : "PSVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "accUserMode" : 2,
         "caption" : "产品汇总表",
@@ -111,11 +112,22 @@
         }, {
           "logicTrigger" : "CUSTOM",
           "logicType" : "SYSUILOGIC",
+          "name" : "editdata",
+          "getPSAppUILogic" : {
+            "logicType" : "PREDEFINED",
+            "name" : "编辑数据",
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : true
+          }
+        }, {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "SYSUILOGIC",
           "name" : "opendata",
           "getPSAppUILogic" : {
             "logicType" : "PREDEFINED",
             "name" : "打开数据",
-            "viewLogicType" : "APP_OPENDATA"
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : false
           }
         } ],
         "getPSControls" : [ {
@@ -625,15 +637,18 @@
             "outputIconDefault" : true,
             "rootVisible" : false,
             "name" : "treeexpbar_tree",
-            "modelid" : "4769507c03b0cb4c3c566bd2af6f9eed"
+            "modelid" : "4769507c03b0cb4c3c566bd2af6f9eed",
+            "modeltype" : "PSDETREEVIEW"
           } ],
           "xDataControlName" : "treeexpbar_tree",
           "enableCounter" : true,
           "enableSearch" : false,
           "showTitleBar" : false,
-          "modelid" : "34f29e60d90fbc39195bdcb82bb0b87b_treeexpbar"
+          "modelid" : "34f29e60d90fbc39195bdcb82bb0b87b_treeexpbar",
+          "modeltype" : "PSEXPBAR"
         } ],
         "getPSDEViewCodeName" : "ProductSumTreeExpView",
+        "getPSDEViewId" : "8ee159b38be611eeae0ae157b682feff",
         "getPSViewLayoutPanel" : {
           "codeName" : "Layoutpanel",
           "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
@@ -655,7 +670,8 @@
         "enableQuickSearch" : true,
         "showCaptionBar" : false,
         "showDataInfoBar" : true,
-        "modelid" : "34f29e60d90fbc39195bdcb82bb0b87b"
+        "modelid" : "34f29e60d90fbc39195bdcb82bb0b87b",
+        "modeltype" : "PSAPPDEVIEW"
       }
     }, {
       "caption" : "项目",
@@ -674,7 +690,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL5"
       },
-      "modelid" : "b4989339e1dc575a45c15699a325122a_tabviewpanel5"
+      "modelid" : "b4989339e1dc575a45c15699a325122a_tabviewpanel5",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "测试",
       "codeName" : "StatsTabExpViewtabviewpanel",
@@ -692,7 +709,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL"
       },
-      "modelid" : "b4989339e1dc575a45c15699a325122a_tabviewpanel"
+      "modelid" : "b4989339e1dc575a45c15699a325122a_tabviewpanel",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "组织",
       "codeName" : "StatsTabExpViewtabviewpanel2",
@@ -710,7 +728,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL2"
       },
-      "modelid" : "b4989339e1dc575a45c15699a325122a_tabviewpanel2"
+      "modelid" : "b4989339e1dc575a45c15699a325122a_tabviewpanel2",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "用户",
       "codeName" : "StatsTabExpViewtabviewpanel6",
@@ -728,7 +747,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL6"
       },
-      "modelid" : "b4989339e1dc575a45c15699a325122a_tabviewpanel6"
+      "modelid" : "b4989339e1dc575a45c15699a325122a_tabviewpanel6",
+      "modeltype" : "PSVIEWPANEL"
     } ],
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel3"
@@ -742,9 +762,11 @@
       "name" : "tabviewpanel6"
     } ],
     "tabLayout" : "TOP",
-    "modelid" : "b4989339e1dc575a45c15699a325122a_tabexppanel"
+    "modelid" : "b4989339e1dc575a45c15699a325122a_tabexppanel",
+    "modeltype" : "PSTABEXPPANEL"
   } ],
   "getPSDEViewCodeName" : "StatsTabExpView",
+  "getPSDEViewId" : "94600d9f4a64f71728bd449ce4ae07f3",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETABEXPVIEW_STYLE2",
@@ -769,5 +791,6 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "b4989339e1dc575a45c15699a325122a"
+  "modelid" : "b4989339e1dc575a45c15699a325122a",
+  "modeltype" : "PSAPPDEVIEW"
 }

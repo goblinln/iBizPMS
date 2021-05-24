@@ -545,6 +545,7 @@
   "enableUIActions" : 15,
   "logicName" : "项目汇报用户任务",
   "name" : "IBIZPRO_PROJECTUSERTASK",
+  "getPSDEName" : "IBIZPRO_PROJECTUSERTASK",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproProjectUserTask/PSDESERVICEAPIS/IbzproProjectUserTask.json"

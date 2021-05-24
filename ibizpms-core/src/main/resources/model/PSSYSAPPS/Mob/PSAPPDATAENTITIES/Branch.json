@@ -491,6 +491,7 @@
     "name" : "CREATE"
   }, {
     "logicName" : "Product_Create",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -503,6 +504,7 @@
     "name" : "DELETE"
   }, {
     "logicName" : "Product_Delete",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "DELETE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -512,6 +514,7 @@
     "id" : "ZTProduct__DELETE"
   }, {
     "logicName" : "Product_Manage",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -527,6 +530,7 @@
     "name" : "READ"
   }, {
     "logicName" : "Product_Read",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -536,6 +540,7 @@
     "id" : "ZTProduct__READ"
   }, {
     "logicName" : "Product_Update",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -580,6 +585,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "ZT_BRANCH",
+  "getPSDEName" : "ZT_BRANCH",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch/PSDESERVICEAPIS/Branch.json"

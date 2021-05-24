@@ -97,6 +97,7 @@
         "cssClass" : "fa fa-bug"
       },
       "modelid" : "005b0ba30f9e9e982e087961bd50c681_tabviewpanel2",
+      "modeltype" : "PSVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "accUserMode" : 2,
         "caption" : "产品",
@@ -132,11 +133,22 @@
         }, {
           "logicTrigger" : "CUSTOM",
           "logicType" : "SYSUILOGIC",
+          "name" : "editdata",
+          "getPSAppUILogic" : {
+            "logicType" : "PREDEFINED",
+            "name" : "编辑数据",
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : true
+          }
+        }, {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "SYSUILOGIC",
           "name" : "opendata",
           "getPSAppUILogic" : {
             "logicType" : "PREDEFINED",
             "name" : "打开数据",
-            "viewLogicType" : "APP_OPENDATA"
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : false
           }
         } ],
         "getPSControls" : [ {
@@ -608,15 +620,18 @@
             "outputIconDefault" : false,
             "rootVisible" : false,
             "name" : "treeexpbar_tree",
-            "modelid" : "0aa3f2c95faa19b07f18e9cc1f16ee4b"
+            "modelid" : "0aa3f2c95faa19b07f18e9cc1f16ee4b",
+            "modeltype" : "PSDETREEVIEW"
           } ],
           "xDataControlName" : "treeexpbar_tree",
           "enableCounter" : true,
           "enableSearch" : true,
           "showTitleBar" : false,
-          "modelid" : "f78c94cb0a20d7f459753a4070f8f3e7_treeexpbar"
+          "modelid" : "f78c94cb0a20d7f459753a4070f8f3e7_treeexpbar",
+          "modeltype" : "PSEXPBAR"
         } ],
         "getPSDEViewCodeName" : "BugTreeExpView",
+        "getPSDEViewId" : "7709b98a53901610e4a4092d56d117be",
         "getPSViewLayoutPanel" : {
           "codeName" : "Layoutpanel",
           "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
@@ -638,7 +653,8 @@
         "enableQuickSearch" : true,
         "showCaptionBar" : false,
         "showDataInfoBar" : true,
-        "modelid" : "f78c94cb0a20d7f459753a4070f8f3e7"
+        "modelid" : "f78c94cb0a20d7f459753a4070f8f3e7",
+        "modeltype" : "PSAPPDEVIEW"
       }
     }, {
       "caption" : "看板",
@@ -662,7 +678,8 @@
         "glyph" : "xf181@FontAwesome",
         "cssClass" : "fa fa-trello"
       },
-      "modelid" : "005b0ba30f9e9e982e087961bd50c681_tabviewpanel8"
+      "modelid" : "005b0ba30f9e9e982e087961bd50c681_tabviewpanel8",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "功能测试",
       "codeName" : "TestTabExpViewtabviewpanel3",
@@ -685,7 +702,8 @@
         "glyph" : "xf0f1@FontAwesome",
         "cssClass" : "fa fa-stethoscope"
       },
-      "modelid" : "005b0ba30f9e9e982e087961bd50c681_tabviewpanel3"
+      "modelid" : "005b0ba30f9e9e982e087961bd50c681_tabviewpanel3",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "测试单",
       "codeName" : "TestTabExpViewtabviewpanel4",
@@ -708,7 +726,8 @@
         "glyph" : "xf0ea@FontAwesome",
         "cssClass" : "fa fa-clipboard"
       },
-      "modelid" : "005b0ba30f9e9e982e087961bd50c681_tabviewpanel4"
+      "modelid" : "005b0ba30f9e9e982e087961bd50c681_tabviewpanel4",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "报告",
       "codeName" : "TestTabExpViewtabviewpanel5",
@@ -731,7 +750,8 @@
         "glyph" : "xf0f6@FontAwesome",
         "cssClass" : "fa fa-file-text-o"
       },
-      "modelid" : "005b0ba30f9e9e982e087961bd50c681_tabviewpanel5"
+      "modelid" : "005b0ba30f9e9e982e087961bd50c681_tabviewpanel5",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "套件",
       "codeName" : "TestTabExpViewtabviewpanel6",
@@ -754,7 +774,8 @@
         "glyph" : "xf0f2@FontAwesome",
         "cssClass" : "fa fa-suitcase"
       },
-      "modelid" : "005b0ba30f9e9e982e087961bd50c681_tabviewpanel6"
+      "modelid" : "005b0ba30f9e9e982e087961bd50c681_tabviewpanel6",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "模块",
       "codeName" : "TestTabExpViewtabviewpanel7",
@@ -772,7 +793,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL7"
       },
-      "modelid" : "005b0ba30f9e9e982e087961bd50c681_tabviewpanel7"
+      "modelid" : "005b0ba30f9e9e982e087961bd50c681_tabviewpanel7",
+      "modeltype" : "PSVIEWPANEL"
     } ],
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel2"
@@ -790,9 +812,11 @@
       "name" : "tabviewpanel7"
     } ],
     "tabLayout" : "TOP",
-    "modelid" : "005b0ba30f9e9e982e087961bd50c681_tabexppanel"
+    "modelid" : "005b0ba30f9e9e982e087961bd50c681_tabexppanel",
+    "modeltype" : "PSTABEXPPANEL"
   } ],
   "getPSDEViewCodeName" : "TestTabExpView",
+  "getPSDEViewId" : "b7c61966deeb739a1052aee6fb99a9d2",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETABEXPVIEW_STYLE2",
@@ -817,5 +841,6 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "005b0ba30f9e9e982e087961bd50c681"
+  "modelid" : "005b0ba30f9e9e982e087961bd50c681",
+  "modeltype" : "PSAPPDEVIEW"
 }

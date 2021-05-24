@@ -195,7 +195,8 @@
     },
     "readOnly" : true,
     "name" : "chart",
-    "modelid" : "65b2321bc4fa58c171c618c70127164c"
+    "modelid" : "65b2321bc4fa58c171c618c70127164c",
+    "modeltype" : "PSDECHART"
   }, {
     "codeName" : "MobDef",
     "controlType" : "SEARCHFORM",
@@ -396,9 +397,11 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "eb0a1353b9b4a55e2441e6edb532eb43"
+    "modelid" : "eb0a1353b9b4a55e2441e6edb532eb43",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "MobChartView9",
+  "getPSDEViewId" : "15a2f0a6044c259c5a1c3b03ed0e7396",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBCHARTVIEW9",
@@ -423,5 +426,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : true,
-  "modelid" : "fe6c9c463956fb2fd60d1a9564deb280"
+  "modelid" : "fe6c9c463956fb2fd60d1a9564deb280",
+  "modeltype" : "PSAPPDEVIEW"
 }

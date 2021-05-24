@@ -603,6 +603,7 @@
         "sortMode" : "REMOTE",
         "hasWFDataItems" : false,
         "enableColFilter" : false,
+        "enableCustomized" : true,
         "enableGroup" : false,
         "enablePagingBar" : true,
         "enableRowEdit" : false,
@@ -613,7 +614,8 @@
         "noSort" : false,
         "singleSelect" : false,
         "name" : "grid",
-        "modelid" : "8a2e059862ede341d722856e5b90fb67"
+        "modelid" : "8a2e059862ede341d722856e5b90fb67",
+        "modeltype" : "PSDEGRID"
       }, {
         "codeName" : "Default",
         "controlType" : "SEARCHFORM",
@@ -690,9 +692,11 @@
         "enableFilterSave" : false,
         "noTabHeader" : true,
         "name" : "searchform",
-        "modelid" : "ada34eb64f198967f428276915d7a84a"
+        "modelid" : "ada34eb64f198967f428276915d7a84a",
+        "modeltype" : "PSDEFORM_SEARCHFORM"
       } ],
       "getPSDEViewCodeName" : "PickupGridView",
+      "getPSDEViewId" : "1e2e992ddc406bc8892c52e0fa908dd6",
       "getPSViewLayoutPanel" : {
         "codeName" : "Layoutpanel",
         "controlStyle" : "APPDEPICKUPGRIDVIEW_STYLE2",
@@ -720,7 +724,8 @@
       "pickupMode" : true,
       "rowEditDefault" : false,
       "showCaptionBar" : true,
-      "modelid" : "55bd8c58b38da929d22edff6aa724ca0"
+      "modelid" : "55bd8c58b38da929d22edff6aa724ca0",
+      "modeltype" : "PSAPPDEVIEW"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
     "name" : "pickupviewpanel",
@@ -733,6 +738,7 @@
     }
   } ],
   "getPSDEViewCodeName" : "PickupView",
+  "getPSDEViewId" : "52069d46a7463e9623a30e5dd7253647",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPICKUPVIEW_STYLE2",
@@ -751,5 +757,6 @@
   "viewType" : "DEPICKUPVIEW",
   "enableDP" : true,
   "showCaptionBar" : false,
-  "modelid" : "25452e386e72c70f03641cc650c1b979"
+  "modelid" : "25452e386e72c70f03641cc650c1b979",
+  "modeltype" : "PSAPPDEVIEW"
 }

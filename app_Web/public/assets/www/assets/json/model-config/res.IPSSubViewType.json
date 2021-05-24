@@ -1,0 +1,1 @@
+[{"group":"基本","order":10,"methods":[{"name":"codeName","desc":"代码标识","order":1000}]},{"group":"其它","order":100,"methods":[{"name":"nameMode","desc":"视图命名模式","order":1000},{"name":"typeCode","desc":"类型代码","order":1000}]}]

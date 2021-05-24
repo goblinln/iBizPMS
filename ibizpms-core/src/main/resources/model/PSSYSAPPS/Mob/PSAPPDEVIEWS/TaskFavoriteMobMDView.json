@@ -56,6 +56,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -74,7 +98,8 @@
           "viewType" : "DEMOBEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -361,7 +386,8 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "688525aeddf3ee62b32ef0636a35de03"
+    "modelid" : "688525aeddf3ee62b32ef0636a35de03",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   }, {
     "codeName" : "FavoriteMOBDas",
     "controlStyle" : "LISTVIEW",
@@ -611,7 +637,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",
-      "modelid" : "881c273f0a3edb62a7fded4f04b338fe"
+      "modelid" : "881c273f0a3edb62a7fded4f04b338fe",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "FavoriteMOBDas",
     "minorSortDir" : "DESC",
@@ -926,9 +953,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "e242dcfa7eb8714c964460d855ab2e2d"
+    "modelid" : "e242dcfa7eb8714c964460d855ab2e2d",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "FavoriteMobMDView",
+  "getPSDEViewId" : "bcf940430a07a10e5a42b3da2d873acd",
   "getPSSysImage" : {
     "glyph" : "xf0ae@FontAwesome",
     "cssClass" : "fa fa-tasks"
@@ -956,6 +985,7 @@
   "enableSearch" : true,
   "showCaptionBar" : false,
   "modelid" : "3369f6947c7dd032cf3f25bdafb998f2",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

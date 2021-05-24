@@ -168,9 +168,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "6ab19bf864b18b430685ee9d7a242373"
+    "modelid" : "6ab19bf864b18b430685ee9d7a242373",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "MobPickupMDView",
+  "getPSDEViewId" : "6d0e700aa70a8d87962b0439b30f6ee2",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBPICKUPMDVIEW",
@@ -193,5 +195,6 @@
   "enablePullDownRefresh" : false,
   "expandSearchForm" : true,
   "showCaptionBar" : true,
-  "modelid" : "21e60eb55849e63e7b7b86c6f6c3dfb4"
+  "modelid" : "21e60eb55849e63e7b7b86c6f6c3dfb4",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -128,6 +128,101 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
+          "viewType" : "DEREDIRECTVIEW"
+        }
+      },
+      "getOpenDataPSAppViews" : [ {
+        "refMode" : "product",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      }, {
+        "refMode" : "case",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      }, {
+        "refMode" : "project",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      }, {
+        "refMode" : "story",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      }, {
+        "refMode" : "bug",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
+          "viewType" : "DEREDIRECTVIEW"
+        }
+      }, {
+        "refMode" : "product",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      }, {
+        "refMode" : "case",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      }, {
+        "refMode" : "project",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      }, {
+        "refMode" : "story",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      }, {
+        "refMode" : "bug",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -217,7 +312,8 @@
           "viewType" : "DEEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -511,7 +607,8 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "list",
-    "modelid" : "3d749efd9d96f3330022d35dfcdaaf60"
+    "modelid" : "3d749efd9d96f3330022d35dfcdaaf60",
+    "modeltype" : "PSDELIST"
   }, {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
@@ -588,9 +685,11 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "edab1390abda9ac712f0a21d02c0b0e4"
+    "modelid" : "edab1390abda9ac712f0a21d02c0b0e4",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "ListView",
+  "getPSDEViewId" : "f239b1e812cf7a2418baebc5ff643ede",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDELISTVIEW_STYLE2",
@@ -613,5 +712,6 @@
   "enableQuickSearch" : true,
   "enableSearch" : true,
   "showCaptionBar" : true,
-  "modelid" : "50f82495ceeaf8439cd7626c264176a4"
+  "modelid" : "50f82495ceeaf8439cd7626c264176a4",
+  "modeltype" : "PSAPPDEVIEW"
 }

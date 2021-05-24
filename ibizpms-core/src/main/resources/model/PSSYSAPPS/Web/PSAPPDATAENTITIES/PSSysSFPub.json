@@ -589,6 +589,7 @@
   "enableUIActions" : 15,
   "logicName" : "后台服务架构",
   "name" : "PSSYSSFPUB",
+  "getPSDEName" : "PSSYSSFPUB",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysSFPub/PSDESERVICEAPIS/PSSysSFPub.json"

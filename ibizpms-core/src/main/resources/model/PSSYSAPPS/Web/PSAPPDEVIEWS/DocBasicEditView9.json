@@ -614,9 +614,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "e78f77d63646dcb876ddfb0f7afe4f5f"
+    "modelid" : "e78f77d63646dcb876ddfb0f7afe4f5f",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "BasicEditView9",
+  "getPSDEViewId" : "293f3dda8c7a5154243520d1b9211c2b",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW9_STYLE2",
@@ -637,5 +639,6 @@
   "enableDP" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : false,
-  "modelid" : "00d6c7c0b8629ec81c0016d542d0f097"
+  "modelid" : "00d6c7c0b8629ec81c0016d542d0f097",
+  "modeltype" : "PSAPPDEVIEW"
 }

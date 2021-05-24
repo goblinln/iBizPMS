@@ -94,5 +94,6 @@
   } ],
   "roleTag" : "ProjectManger",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "PROJ_CREATE_BUT", "PRODUCTLEFT", "LEFT_CASE_MENU", "LEFT_PROJECT_MENU" ]
+  "uniResTags" : [ "PROJ_CREATE_BUT", "PRODUCTLEFT", "LEFT_CASE_MENU", "LEFT_PROJECT_MENU" ],
+  "globalRole" : true
 }

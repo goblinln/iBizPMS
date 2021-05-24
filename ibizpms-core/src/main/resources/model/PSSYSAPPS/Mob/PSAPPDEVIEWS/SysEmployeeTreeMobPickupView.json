@@ -1071,9 +1071,11 @@
         "outputIconDefault" : true,
         "rootVisible" : false,
         "name" : "tree",
-        "modelid" : "07f834096cf711a44a5ee76e4bb8b7e2"
+        "modelid" : "07f834096cf711a44a5ee76e4bb8b7e2",
+        "modeltype" : "PSDETREEVIEW"
       } ],
       "getPSDEViewCodeName" : "MobPickupTreeView",
+      "getPSDEViewId" : "d3be36a00b66451b07325b025ccc582a",
       "getPSViewLayoutPanel" : {
         "codeName" : "Layoutpanel",
         "controlStyle" : "APPDEMOBPICKUPTREEVIEW",
@@ -1096,7 +1098,8 @@
       "enablePullDownRefresh" : false,
       "expandSearchForm" : true,
       "showCaptionBar" : true,
-      "modelid" : "2cf923585c1c9225d28bb40901d16265"
+      "modelid" : "2cf923585c1c9225d28bb40901d16265",
+      "modeltype" : "PSAPPDEVIEW"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
     "name" : "pickupviewpanel",
@@ -1109,6 +1112,7 @@
     }
   } ],
   "getPSDEViewCodeName" : "TreeMobPickupView",
+  "getPSDEViewId" : "ba99bd6fd101b38d43956a4a2c946b8e",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBPICKUPVIEW",
@@ -1128,5 +1132,6 @@
   "enableDP" : true,
   "enablePullDownRefresh" : false,
   "showCaptionBar" : true,
-  "modelid" : "21f0361e9c1ef6861286d9c398d556b6"
+  "modelid" : "21f0361e9c1ef6861286d9c398d556b6",
+  "modeltype" : "PSAPPDEVIEW"
 }

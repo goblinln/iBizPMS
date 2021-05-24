@@ -80,5 +80,6 @@
   } ],
   "enableCustomize" : false,
   "name" : "listmenu",
-  "modelid" : "12bcd5021f1866e8bb83fc2fd44344fd"
+  "modelid" : "12bcd5021f1866e8bb83fc2fd44344fd",
+  "modeltype" : "PSAPPMENU"
 }

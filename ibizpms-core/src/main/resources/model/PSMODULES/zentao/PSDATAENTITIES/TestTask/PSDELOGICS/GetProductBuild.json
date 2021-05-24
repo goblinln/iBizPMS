@@ -54,6 +54,7 @@
       "getPSDELogicLinkGroupCond" : {
         "groupOP" : "AND",
         "logicType" : "GROUP",
+        "name" : "连接条件组",
         "getPSDELogicLinkConds" : [ {
           "condOP" : "ISNOTNULL",
           "dstFieldName" : "PROJECT",
@@ -63,9 +64,7 @@
           },
           "logicType" : "SINGLE",
           "name" : "Default[PROJECT] 值不为空(NotNil)"
-        } ],
-        "notMode" : false,
-        "id" : "93f29fcb7b8d8879a736aa4f3fd12b74"
+        } ]
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,
@@ -91,6 +90,7 @@
       "getPSDELogicLinkGroupCond" : {
         "groupOP" : "AND",
         "logicType" : "GROUP",
+        "name" : "连接条件组",
         "getPSDELogicLinkConds" : [ {
           "condOP" : "ISNOTNULL",
           "dstFieldName" : "PRODUCT",
@@ -100,9 +100,7 @@
           },
           "logicType" : "SINGLE",
           "name" : "Default[PRODUCT] 值不为空(NotNil)"
-        } ],
-        "notMode" : false,
-        "id" : "e0f209fcf722233e93942c5e38899e33"
+        } ]
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,

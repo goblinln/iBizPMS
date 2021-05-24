@@ -143,7 +143,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "73d873a18f44409189c177ef1f7f601c"
+    "modelid" : "73d873a18f44409189c177ef1f7f601c",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
@@ -309,7 +310,8 @@
         "showCaption" : true,
         "showIcon" : true
       } ],
-      "modelid" : "73d873a18f44409189c177ef1f7f601c"
+      "modelid" : "73d873a18f44409189c177ef1f7f601c",
+      "modeltype" : "PSDETOOLBAR"
     },
     "text" : "所有产品",
     "treeNodeType" : "STATIC",
@@ -366,5 +368,6 @@
   "enableSearchDefault" : true,
   "outputIconDefault" : false,
   "rootVisible" : false,
-  "modelid" : "58a6bc35a54c08ece53da63c10681191"
+  "modelid" : "58a6bc35a54c08ece53da63c10681191",
+  "modeltype" : "PSDETREEVIEW"
 }

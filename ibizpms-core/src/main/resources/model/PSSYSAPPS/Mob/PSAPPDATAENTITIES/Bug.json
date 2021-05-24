@@ -5576,6 +5576,7 @@
     "name" : "CONFIRM"
   }, {
     "logicName" : "Product_Create",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -5585,6 +5586,7 @@
     "id" : "ZTProduct__CREATE"
   }, {
     "logicName" : "Project_Create",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -5600,6 +5602,7 @@
     "name" : "DELETE"
   }, {
     "logicName" : "Project_Delete",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "DELETE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -5609,6 +5612,7 @@
     "id" : "ZTProject__DELETE"
   }, {
     "logicName" : "Product_Delete",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "DELETE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -5621,6 +5625,7 @@
     "name" : "FAVORITES"
   }, {
     "logicName" : "Project_Manage",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -5633,6 +5638,7 @@
     "name" : "MANAGE"
   }, {
     "logicName" : "Product_Manage",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -5648,6 +5654,7 @@
     "name" : "PLANLINK"
   }, {
     "logicName" : "Product_Read",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -5657,6 +5664,7 @@
     "id" : "ZTProduct__READ"
   }, {
     "logicName" : "Product_Read",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -5678,6 +5686,7 @@
     "name" : "TOSTORY"
   }, {
     "logicName" : "转需求-产品",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -5687,6 +5696,7 @@
     "id" : "ZTProduct__TOSTORY"
   }, {
     "logicName" : "Project_Update",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -5699,6 +5709,7 @@
     "name" : "UPDATE"
   }, {
     "logicName" : "Product_Update",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -5790,6 +5801,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "ZT_BUG",
+  "getPSDEName" : "ZT_BUG",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDESERVICEAPIS/Bug.json"

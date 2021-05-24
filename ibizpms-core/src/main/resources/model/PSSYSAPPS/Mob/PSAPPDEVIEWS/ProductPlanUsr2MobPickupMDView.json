@@ -176,7 +176,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",
-      "modelid" : "129261a5f30d22096096b8791b3147be"
+      "modelid" : "129261a5f30d22096096b8791b3147be",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "MOB_ProjectLinkStory",
     "minorSortDir" : "DESC",
@@ -337,9 +338,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "9616ba2ccad15c44a6a2ea90bae50564"
+    "modelid" : "9616ba2ccad15c44a6a2ea90bae50564",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "Usr2MobPickupMDView",
+  "getPSDEViewId" : "4b933650db21964ceea3fdca2ec047d3",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBPICKUPMDVIEW",
@@ -363,6 +366,7 @@
   "expandSearchForm" : true,
   "showCaptionBar" : true,
   "modelid" : "cd3de302854113986e8b74870ec9ad94",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProductPlans",

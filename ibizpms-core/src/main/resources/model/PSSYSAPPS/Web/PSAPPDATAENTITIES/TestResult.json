@@ -659,6 +659,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "ZT_TESTRESULT",
+  "getPSDEName" : "ZT_TESTRESULT",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult/PSDESERVICEAPIS/TestResult.json"

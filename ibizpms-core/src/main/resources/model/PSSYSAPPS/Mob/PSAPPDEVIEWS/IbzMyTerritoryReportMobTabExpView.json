@@ -44,6 +44,7 @@
         "id" : "TABVIEWPANEL"
       },
       "modelid" : "bfdfb2e7993a7287aeec992e21319c46_tabviewpanel",
+      "modeltype" : "PSVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "accUserMode" : 2,
         "caption" : "我的地盘",
@@ -106,6 +107,7 @@
               "id" : "TABVIEWPANEL3"
             },
             "modelid" : "904b990dc0451cc9f3d7bc232fa8f6ca_tabviewpanel3",
+            "modeltype" : "PSVIEWPANEL",
             "getEmbeddedPSAppDEView" : {
               "accUserMode" : 2,
               "caption" : "任务",
@@ -161,6 +163,30 @@
               }, {
                 "logicTrigger" : "CUSTOM",
                 "logicType" : "SYSUILOGIC",
+                "name" : "editdata",
+                "getPSAppUILogic" : {
+                  "logicType" : "PREDEFINED",
+                  "name" : "编辑数据",
+                  "getOpenDataPSAppView" : {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobEditView.json",
+                      "viewType" : "DEMOBEDITVIEW"
+                    }
+                  },
+                  "getPSAppUILogicRefViews" : [ {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobEditView.json",
+                      "viewType" : "DEMOBEDITVIEW"
+                    }
+                  } ],
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : true
+                }
+              }, {
+                "logicTrigger" : "CUSTOM",
+                "logicType" : "SYSUILOGIC",
                 "name" : "opendata",
                 "getPSAppUILogic" : {
                   "logicType" : "PREDEFINED",
@@ -179,7 +205,8 @@
                       "viewType" : "DEMOBEDITVIEW"
                     }
                   } ],
-                  "viewLogicType" : "APP_OPENDATA"
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : false
                 }
               } ],
               "getPSAppViewRefs" : [ {
@@ -448,7 +475,8 @@
                   } ],
                   "mobilePanel" : true,
                   "name" : "mdctrl_itempanel",
-                  "modelid" : "881c273f0a3edb62a7fded4f04b338fe"
+                  "modelid" : "881c273f0a3edb62a7fded4f04b338fe",
+                  "modeltype" : "PSSYSVIEWPANEL"
                 },
                 "logicName" : "MyPlansTomorrowTaskMob",
                 "mobListStyle" : "LISTVIEW",
@@ -661,7 +689,8 @@
                 "noSort" : false,
                 "showHeader" : true,
                 "name" : "mdctrl",
-                "modelid" : "d3c8f76c6529bd3e00ca72581c3190a5"
+                "modelid" : "d3c8f76c6529bd3e00ca72581c3190a5",
+                "modeltype" : "PSDELIST"
               }, {
                 "codeName" : "MyPlansTomorrowTaskMobMDViewrighttoolbar",
                 "controlType" : "TOOLBAR",
@@ -674,9 +703,11 @@
                   "id" : "RIGHTTOOLBAR"
                 },
                 "toolbarStyle" : "MOBNAVRIGHTMENU",
-                "modelid" : "dcbb42adab23d063267294b5dc59fd5c_righttoolbar"
+                "modelid" : "dcbb42adab23d063267294b5dc59fd5c_righttoolbar",
+                "modeltype" : "PSDETOOLBAR"
               } ],
               "getPSDEViewCodeName" : "MyPlansTomorrowTaskMobMDView",
+              "getPSDEViewId" : "698137345cddb204ac22620a5c648aaa",
               "getPSSysImage" : {
                 "glyph" : "xf0ae@FontAwesome",
                 "cssClass" : "fa fa-tasks"
@@ -704,6 +735,7 @@
               "enableQuickSearch" : true,
               "showCaptionBar" : false,
               "modelid" : "dcbb42adab23d063267294b5dc59fd5c",
+              "modeltype" : "PSAPPDEVIEW",
               "getPSAppDERSPaths" : [ [ {
                 "actionRSMode" : 1,
                 "codeName" : "ProjectModules",
@@ -973,7 +1005,8 @@
             "getPSControlParam" : {
               "id" : "TABVIEWPANEL"
             },
-            "modelid" : "904b990dc0451cc9f3d7bc232fa8f6ca_tabviewpanel"
+            "modelid" : "904b990dc0451cc9f3d7bc232fa8f6ca_tabviewpanel",
+            "modeltype" : "PSVIEWPANEL"
           }, {
             "caption" : "完成任务",
             "codeName" : "DailyMobTabExpViewtabviewpanel2",
@@ -991,7 +1024,8 @@
             "getPSControlParam" : {
               "id" : "TABVIEWPANEL2"
             },
-            "modelid" : "904b990dc0451cc9f3d7bc232fa8f6ca_tabviewpanel2"
+            "modelid" : "904b990dc0451cc9f3d7bc232fa8f6ca_tabviewpanel2",
+            "modeltype" : "PSVIEWPANEL"
           } ],
           "getPSTabExpPages" : [ {
             "name" : "tabviewpanel3"
@@ -1001,9 +1035,11 @@
             "name" : "tabviewpanel2"
           } ],
           "tabLayout" : "TOP",
-          "modelid" : "904b990dc0451cc9f3d7bc232fa8f6ca_tabexppanel"
+          "modelid" : "904b990dc0451cc9f3d7bc232fa8f6ca_tabexppanel",
+          "modeltype" : "PSTABEXPPANEL"
         } ],
         "getPSDEViewCodeName" : "DailyMobTabExpView",
+        "getPSDEViewId" : "51a7d9553026eecdef5bac9fb34c9561",
         "getPSViewLayoutPanel" : {
           "codeName" : "Layoutpanel",
           "controlStyle" : "APPDEMOBTABEXPVIEW",
@@ -1029,16 +1065,19 @@
         "loadDefault" : true,
         "showCaptionBar" : false,
         "showDataInfoBar" : true,
-        "modelid" : "904b990dc0451cc9f3d7bc232fa8f6ca"
+        "modelid" : "904b990dc0451cc9f3d7bc232fa8f6ca",
+        "modeltype" : "PSAPPDEVIEW"
       }
     } ],
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel"
     } ],
     "tabLayout" : "TOP",
-    "modelid" : "bfdfb2e7993a7287aeec992e21319c46_tabexppanel"
+    "modelid" : "bfdfb2e7993a7287aeec992e21319c46_tabexppanel",
+    "modeltype" : "PSTABEXPPANEL"
   } ],
   "getPSDEViewCodeName" : "ReportMobTabExpView",
+  "getPSDEViewId" : "a80f13d5836a5b88b76072072cfbf747",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBTABEXPVIEW",
@@ -1064,5 +1103,6 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "bfdfb2e7993a7287aeec992e21319c46"
+  "modelid" : "bfdfb2e7993a7287aeec992e21319c46",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -64,6 +64,114 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getPSNavigateContexts" : [ {
+          "key" : "THISWEEKTASK",
+          "name" : "THISWEEKTASK",
+          "value" : "thisweektask",
+          "rawValue" : false
+        }, {
+          "key" : "NEXTWEEKTASK",
+          "name" : "NEXTWEEKTASK",
+          "value" : "nextweektask",
+          "rawValue" : false
+        }, {
+          "key" : "OBJECTTYPE",
+          "name" : "OBJECTTYPE",
+          "value" : "weekly",
+          "rawValue" : true
+        }, {
+          "key" : "SRFPARENTKEY",
+          "name" : "SRFPARENTKEY",
+          "value" : "ibzweekly",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
+          "value" : "ibzweekly",
+          "rawValue" : false
+        }, {
+          "key" : "objecttype",
+          "name" : "objecttype",
+          "value" : "weekly",
+          "rawValue" : true
+        }, {
+          "key" : "thisweektask",
+          "name" : "thisweektask",
+          "value" : "thisweektask",
+          "rawValue" : false
+        }, {
+          "key" : "nextweektask",
+          "name" : "nextweektask",
+          "value" : "nextweektask",
+          "rawValue" : false
+        } ],
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzWeeklyUsr2MobTabExpView.json",
+          "viewType" : "DEMOBTABEXPVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getPSNavigateContexts" : [ {
+          "key" : "THISWEEKTASK",
+          "name" : "THISWEEKTASK",
+          "value" : "thisweektask",
+          "rawValue" : false
+        }, {
+          "key" : "NEXTWEEKTASK",
+          "name" : "NEXTWEEKTASK",
+          "value" : "nextweektask",
+          "rawValue" : false
+        }, {
+          "key" : "OBJECTTYPE",
+          "name" : "OBJECTTYPE",
+          "value" : "weekly",
+          "rawValue" : true
+        }, {
+          "key" : "SRFPARENTKEY",
+          "name" : "SRFPARENTKEY",
+          "value" : "ibzweekly",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
+          "value" : "ibzweekly",
+          "rawValue" : false
+        }, {
+          "key" : "objecttype",
+          "name" : "objecttype",
+          "value" : "weekly",
+          "rawValue" : true
+        }, {
+          "key" : "thisweektask",
+          "name" : "thisweektask",
+          "value" : "thisweektask",
+          "rawValue" : false
+        }, {
+          "key" : "nextweektask",
+          "name" : "nextweektask",
+          "value" : "nextweektask",
+          "rawValue" : false
+        } ],
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzWeeklyUsr2MobTabExpView.json",
+          "viewType" : "DEMOBTABEXPVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -166,7 +274,8 @@
           "viewType" : "DEMOBTABEXPVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavParams" : [ {
@@ -396,7 +505,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",
-      "modelid" : "ad2d891314af2b22e87d9aff8d22ad10"
+      "modelid" : "ad2d891314af2b22e87d9aff8d22ad10",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "MyWeekly",
     "mobListStyle" : "LISTVIEW",
@@ -639,7 +749,8 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "ad2d891314af2b22e87d9aff8d22ad10"
+    "modelid" : "ad2d891314af2b22e87d9aff8d22ad10",
+    "modeltype" : "PSDELIST"
   }, {
     "codeName" : "Usr2MobMDViewrighttoolbar",
     "controlType" : "TOOLBAR",
@@ -696,9 +807,11 @@
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBBOTTOMMENU",
-    "modelid" : "0f4ddc7b9b703365023e82526ffa91fc"
+    "modelid" : "0f4ddc7b9b703365023e82526ffa91fc",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "Usr2MobMDView",
+  "getPSDEViewId" : "27b3efa5edae8e173fb7f3d2af1ca7eb",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBMDVIEW",
@@ -721,5 +834,6 @@
   "enablePullDownRefresh" : false,
   "enableQuickSearch" : true,
   "showCaptionBar" : true,
-  "modelid" : "af4a1687de32b0769c7e0b867b4dd759"
+  "modelid" : "af4a1687de32b0769c7e0b867b4dd759",
+  "modeltype" : "PSAPPDEVIEW"
 }

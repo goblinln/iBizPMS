@@ -113,7 +113,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
+    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "ProjectNew",
     "controlType" : "FORM",
@@ -1185,9 +1186,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "2e870e4ca3186cb96d6fe114a48432cb"
+    "modelid" : "2e870e4ca3186cb96d6fe114a48432cb",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "ProjectNewEditView",
+  "getPSDEViewId" : "8bb8d74e7f5cc6fdf193f0a53cb9f00b",
   "getPSSysImage" : {
     "glyph" : "xf0ea@FontAwesome",
     "cssClass" : "fa fa-clipboard"
@@ -1213,6 +1216,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "6f5b8ebffda0c9f3f83f5f59b5b80d81",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestTasks",

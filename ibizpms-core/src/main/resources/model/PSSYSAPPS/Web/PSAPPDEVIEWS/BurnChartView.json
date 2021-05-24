@@ -163,7 +163,8 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "quicksearchform",
-    "modelid" : "555ae2b9f6e1ae1745806b2a02774351"
+    "modelid" : "555ae2b9f6e1ae1745806b2a02774351",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   }, {
     "codeName" : "ChartViewtoolbar",
     "controlType" : "TOOLBAR",
@@ -228,7 +229,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "5ad21b662e43fd5724b41620471178d8"
+    "modelid" : "5ad21b662e43fd5724b41620471178d8",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "BurnDown2",
     "controlType" : "CHART",
@@ -519,9 +521,11 @@
     },
     "readOnly" : true,
     "name" : "chart",
-    "modelid" : "dde39a9842220d96c7f2a9bc8e0559ad"
+    "modelid" : "dde39a9842220d96c7f2a9bc8e0559ad",
+    "modeltype" : "PSDECHART"
   } ],
   "getPSDEViewCodeName" : "ChartView",
+  "getPSDEViewId" : "377aca07970ece76d71fe26c1a053df0",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDECHARTVIEW_STYLE2",
@@ -550,6 +554,7 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "modelid" : "bba3204a7f64b5eafe512a6b63658910",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Burns",

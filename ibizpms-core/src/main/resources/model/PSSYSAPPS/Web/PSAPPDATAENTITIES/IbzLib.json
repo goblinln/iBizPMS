@@ -539,6 +539,7 @@
   "enableUIActions" : 15,
   "logicName" : "用例库",
   "name" : "IBZ_LIB",
+  "getPSDEName" : "IBZ_LIB",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLib/PSDESERVICEAPIS/IbzLib.json"

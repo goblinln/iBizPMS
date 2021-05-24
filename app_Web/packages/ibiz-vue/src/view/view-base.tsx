@@ -329,7 +329,7 @@ export class ViewBase extends Vue {
      * @type {boolean}
      * @memberof ControlBase
      */
-     public hasViewMounted: boolean = false;
+    public hasViewMounted: boolean = false;
 
     /**
      * 初始化挂载状态集合
@@ -357,7 +357,7 @@ export class ViewBase extends Vue {
         this.mountedMap.set(name, true);
         if ([...this.mountedMap.values()].indexOf(false) == -1) {
             // 执行viewMounted
-            if(!this.hasViewMounted){
+            if (!this.hasViewMounted) {
                 this.$nextTick(() => {
                     this.viewMounted();
                 })
@@ -426,38 +426,38 @@ export class ViewBase extends Vue {
      *
      * @memberof ViewBase
      */
-    public async initModelService(){
+    public async initModelService() {
         let _this: any = this;
-        let tempContext:any = {};
+        let tempContext: any = {};
         if (AppServiceBase.getInstance()) {
             this.mergeAppData(AppServiceBase.getInstance().getAppStore().getters.getAppData());
         }
         if (!_this.viewDefaultUsage && _this.viewdata && !Object.is(_this.viewdata, '')) {
             if (typeof _this.viewdata == 'string') {
                 Object.assign(tempContext, JSON.parse(_this.viewdata));
-            }else{
+            } else {
                 tempContext = Util.deepCopy(_this.viewdata);
             }
-        }else{
+        } else {
             const path = (_this.$route.matched[_this.$route.matched.length - 1]).path;
             const keys: Array<any> = [];
             const curReg = _this.$pathToRegExp.pathToRegexp(path, keys);
             const matchArray = curReg.exec(_this.$route.path);
             let tempValue: Object = {};
             keys.forEach((item: any, index: number) => {
-                if(matchArray[index + 1]){
+                if (matchArray[index + 1]) {
                     Object.defineProperty(tempValue, item.name, {
                         enumerable: true,
                         value: decodeURIComponent(matchArray[index + 1])
                     });
                 }
             });
-            ViewTool.formatRouteParams(tempValue, _this.$route,tempContext, _this.viewparams);
+            ViewTool.formatRouteParams(tempValue, _this.$route, tempContext, _this.viewparams);
             if (_this.viewparams && _this.viewparams.srfdynainstid) {
                 Object.assign(tempContext, { srfdynainstid: this.viewparams.srfdynainstid });
             }
             if (_this.viewparams.srfinsttag && _this.viewparams.srfinsttag2) {
-                Object.assign(tempContext,{ instTag: _this.viewparams.srfinsttag, instTag2: _this.viewparams.srfinsttag2 });
+                Object.assign(tempContext, { instTag: _this.viewparams.srfinsttag, instTag2: _this.viewparams.srfinsttag2 });
             }
             // 补充沙箱实例参数（路由）
             if (_this.viewparams && _this.viewparams.hasOwnProperty('srfsandboxtag')) {
@@ -477,7 +477,7 @@ export class ViewBase extends Vue {
      *
      * @memberof ViewBase
      */
-     public async initSandBoxInst(args: any) {
+    public async initSandBoxInst(args: any) {
         if (args && args.srfsandboxtag) {
             const tempSandboxInst: SandboxInstance = new SandboxInstance(args);
             await tempSandboxInst.initSandBox();
@@ -546,7 +546,7 @@ export class ViewBase extends Vue {
                 const path = counterRef.getPSAppCounter?.()?.modelPath;
                 if (path) {
                     const targetCounterService: any = await CounterServiceRegister.getInstance().getService({ context: this.context, viewparams: this.viewparams }, path);
-                    const tempData: any = { id: counterRef.id, path:path, service: targetCounterService };
+                    const tempData: any = { id: counterRef.id, path: path, service: targetCounterService };
                     this.counterServiceArray.push(tempData);
                 }
             }
@@ -564,11 +564,11 @@ export class ViewBase extends Vue {
             return;
         }
         this.model = { dataInfo: '' };
-        if(this.context && this.context.srfdynainstid){
+        if (this.context && this.context.srfdynainstid) {
             this.model.srfCaption = this.viewInstance.caption;
             this.model.srfTitle = this.viewInstance.title;
             this.model.srfSubTitle = this.viewInstance.subCaption;
-        }else{
+        } else {
             if (view?.getPSAppDataEntity()) {
                 this.model.srfCaption = `entities.${ModelTool.getViewAppEntityCodeName(this.viewInstance)?.toLowerCase()}.views.${(view as IPSAppDEView).getPSDEViewCodeName()?.toLowerCase()}.caption`;
                 this.model.srfTitle = `entities.${ModelTool.getViewAppEntityCodeName(this.viewInstance)?.toLowerCase()}.views.${(view as IPSAppDEView).getPSDEViewCodeName()?.toLowerCase()}.title`;
@@ -627,7 +627,7 @@ export class ViewBase extends Vue {
                 if (Object.is(action, 'save')) {
                     if (_this?.viewInstance) {
                         if (_this.viewInstance.xDataControlName) {
-                            _this.viewState.next({ tag: _this?.viewInstance?.xDataControlName, action: action, data: Object.assign(_this.viewparams, { showResultInfo: false })});
+                            _this.viewState.next({ tag: _this?.viewInstance?.xDataControlName, action: action, data: Object.assign(_this.viewparams, { showResultInfo: false }) });
                         } else {
                             _this.$emit('view-event', { viewName: this.viewCodeName, action: 'drdatasaved', data: {} });
                         }
@@ -660,7 +660,7 @@ export class ViewBase extends Vue {
         // 设置挂载状态
         _this.hasViewMounted = true;
         _this.$emit('view-event', { viewname: this.viewInstance.name, action: 'viewIsMounted', data: true })
-        
+
         if (_this.engine) {
             _this.engineInit();
         }
@@ -755,7 +755,7 @@ export class ViewBase extends Vue {
         const matchArray = curReg.exec(_this.$route.path);
         let tempValue: Object = {};
         keys.forEach((item: any, index: number) => {
-            if(matchArray[index + 1]){
+            if (matchArray[index + 1]) {
                 Object.defineProperty(tempValue, item.name, {
                     enumerable: true,
                     value: decodeURIComponent(matchArray[index + 1])
@@ -776,8 +776,8 @@ export class ViewBase extends Vue {
         if (_this.viewparams && _this.viewparams.srfdynainstid) {
             Object.assign(_this.context, { srfdynainstid: this.viewparams.srfdynainstid });
         }
-         // 补充沙箱实例参数（路由）
-         if (_this.viewparams && _this.viewparams.hasOwnProperty('srfsandboxtag')) {
+        // 补充沙箱实例参数（路由）
+        if (_this.viewparams && _this.viewparams.hasOwnProperty('srfsandboxtag')) {
             Object.assign(_this.context, { 'srfsandboxtag': _this.viewparams.srfsandboxtag });
         }
         _this.handleCustomViewData();
@@ -818,7 +818,7 @@ export class ViewBase extends Vue {
         let appEnvironment = AppServiceBase.getInstance().getAppEnvironment();
         if (appEnvironment.bDynamic && this.modelService) {
             let dynainstParam: DynamicInstanceConfig = this.modelService.getDynaInsConfig();
-            if(dynainstParam){
+            if (dynainstParam) {
                 Object.assign(this.viewparams, { srfinsttag: dynainstParam.instTag, srfinsttag2: dynainstParam.instTag2 });
             }
         }
@@ -1141,7 +1141,7 @@ export class ViewBase extends Vue {
      *
      * @memberof ViewBase
      */
-     public renderCaptionBar() {
+    public renderCaptionBar() {
         const captionBar: any = ModelTool.findPSControlByName('captionbar', this.viewInstance.getPSControls());
         return (
             <div slot="captionBar" class="app-captionbar-container">
@@ -1187,10 +1187,13 @@ export class ViewBase extends Vue {
         if (action == 'controlIsMounted') {
             _this.setIsMounted(controlname)
         } else {
-            if (_this.engine) {
-                _this.engine.onCtrlEvent(controlname, action, data);
+            if (Object.is(action, 'authlimit')) {
+                this.renderShade();
+            } else {
+                if (_this.engine) {
+                    _this.engine.onCtrlEvent(controlname, action, data);
+                }
             }
-
         }
     }
 
@@ -1200,5 +1203,21 @@ export class ViewBase extends Vue {
      * @memberof ViewBase
      */
     public renderContent() { }
+
+    /**
+     * 绘制遮罩
+     *
+     * @memberof ViewBase
+     */
+    public renderShade() {
+        const currentViewKey = `${this.viewInstance.codeName}`;
+        const el: any = currentViewKey ? document.getElementById(currentViewKey) : null;
+        if (el) {
+            el.setAttribute('class', 'no-authority-shade');
+            const shade = document.createElement('div');
+            shade.setAttribute('class', 'no-authority-shade-child');
+            el.appendChild(shade);
+        }
+    }
 
 }

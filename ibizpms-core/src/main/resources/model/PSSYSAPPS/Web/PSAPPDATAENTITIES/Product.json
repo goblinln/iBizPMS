@@ -2041,6 +2041,7 @@
   "enableUIActions" : 15,
   "logicName" : "产品",
   "name" : "ZT_PRODUCT",
+  "getPSDEName" : "ZT_PRODUCT",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDESERVICEAPIS/Product.json"

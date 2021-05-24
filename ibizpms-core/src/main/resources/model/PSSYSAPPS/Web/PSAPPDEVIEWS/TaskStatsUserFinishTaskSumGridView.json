@@ -43,11 +43,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -341,6 +352,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : false,
     "enableRowEdit" : false,
@@ -351,7 +363,8 @@
     "noSort" : true,
     "singleSelect" : true,
     "name" : "grid",
-    "modelid" : "bfbf7ed10147c563862d93a5cea9edcf"
+    "modelid" : "bfbf7ed10147c563862d93a5cea9edcf",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "UserFinishTask",
     "controlType" : "SEARCHFORM",
@@ -518,9 +531,11 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "205c9492eddb50fba1ddeaca9789575e"
+    "modelid" : "205c9492eddb50fba1ddeaca9789575e",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "UserFinishTaskSumGridView",
+  "getPSDEViewId" : "81d08278164ebb08c3ab68d4650787e0",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -547,5 +562,6 @@
   "expandSearchForm" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
-  "modelid" : "9c718f75d8c130ae7c44ba1c18edcc62"
+  "modelid" : "9c718f75d8c130ae7c44ba1c18edcc62",
+  "modeltype" : "PSAPPDEVIEW"
 }

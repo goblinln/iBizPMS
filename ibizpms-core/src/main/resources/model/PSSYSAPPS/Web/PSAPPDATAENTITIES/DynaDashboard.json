@@ -404,6 +404,7 @@
   "enableUIActions" : 15,
   "logicName" : "动态数据看板",
   "name" : "DYNADASHBOARD",
+  "getPSDEName" : "DYNADASHBOARD",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard/PSDESERVICEAPIS/DynaDashboard.json"

@@ -620,6 +620,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -630,7 +631,8 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "c444efd4bde3ed28e7ad077365789251"
+    "modelid" : "c444efd4bde3ed28e7ad077365789251",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
@@ -707,9 +709,11 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "ae5d19407805ec124456c7ad2798a2d5"
+    "modelid" : "ae5d19407805ec124456c7ad2798a2d5",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "reportPickupGridView",
+  "getPSDEViewId" : "a3dfadd383f34a9cdaf750cbb8ffedb5",
   "getPSSysImage" : {
     "glyph" : "xf0ae@FontAwesome",
     "cssClass" : "fa fa-tasks"
@@ -742,6 +746,7 @@
   "rowEditDefault" : false,
   "showCaptionBar" : true,
   "modelid" : "3937d373f94911ff7173162fa6731b8d",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

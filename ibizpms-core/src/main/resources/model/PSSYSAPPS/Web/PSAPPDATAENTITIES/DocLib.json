@@ -1422,6 +1422,7 @@
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "Project_Create",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1434,6 +1435,7 @@
     "name" : "CREATE"
   }, {
     "logicName" : "Product_Create",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1443,6 +1445,7 @@
     "id" : "Zt_product__CREATE"
   }, {
     "logicName" : "Project_Delete",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "DELETE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1455,6 +1458,7 @@
     "name" : "DELETE"
   }, {
     "logicName" : "Product_Delete",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "DELETE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1464,6 +1468,7 @@
     "id" : "Zt_product__DELETE"
   }, {
     "logicName" : "Project_Manage",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1476,6 +1481,7 @@
     "name" : "MANAGE"
   }, {
     "logicName" : "Product_Manage",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1488,6 +1494,7 @@
     "name" : "READ"
   }, {
     "logicName" : "Product_Read",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1497,6 +1504,7 @@
     "id" : "Zt_product__READ"
   }, {
     "logicName" : "Project_Read",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1506,6 +1514,7 @@
     "id" : "Zt_project__READ"
   }, {
     "logicName" : "Product_Update",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1518,6 +1527,7 @@
     "name" : "UPDATE"
   }, {
     "logicName" : "Project_Update",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1533,6 +1543,7 @@
   "enableUIActions" : 15,
   "logicName" : "文档库",
   "name" : "ZT_DOCLIB",
+  "getPSDEName" : "ZT_DOCLIB",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDESERVICEAPIS/DocLib.json"

@@ -1534,9 +1534,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "bfa78187a05893d0320e80a36dd25245"
+    "modelid" : "bfa78187a05893d0320e80a36dd25245",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "TodoEditView",
+  "getPSDEViewId" : "6cf0674fa6b7d94c203d6cdf1ca5707a",
   "getPSSysImage" : {
     "glyph" : "xf188@FontAwesome",
     "cssClass" : "fa fa-bug"
@@ -1562,6 +1564,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "c0c12f14e7745eda77a80da04527a26e",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

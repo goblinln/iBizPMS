@@ -84,6 +84,7 @@
   },
   "readOnly" : true,
   "modelid" : "273b4c306ff899b963ec7c426513b751",
+  "modeltype" : "PSDECHART",
   "getUserParam" : {
     "EC.color" : "[\"#F500F7\",\"#FF1744\",\"#00A9FC\",\"#FF5D5D\",'#FDC137','#00DA88','#7EC5FF','#8666B8','#BD7B46']"
   }

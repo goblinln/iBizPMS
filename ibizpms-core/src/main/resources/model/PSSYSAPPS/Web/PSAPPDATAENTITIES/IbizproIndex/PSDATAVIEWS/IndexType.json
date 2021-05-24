@@ -54,5 +54,6 @@
   "enablePagingBar" : false,
   "noSort" : false,
   "singleSelect" : false,
-  "modelid" : "b7809a0eed51ac1fa8687a2372b44e57"
+  "modelid" : "b7809a0eed51ac1fa8687a2372b44e57",
+  "modeltype" : "PSDEDATAVIEW"
 }

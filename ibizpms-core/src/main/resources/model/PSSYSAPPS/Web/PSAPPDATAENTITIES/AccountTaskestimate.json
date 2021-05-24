@@ -902,6 +902,7 @@
   "enableUIActions" : 15,
   "logicName" : "用户工时统计",
   "name" : "ACCOUNTTASKESTIMATE",
+  "getPSDEName" : "ACCOUNTTASKESTIMATE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/AccountTaskestimate/PSDESERVICEAPIS/AccountTaskestimate.json"

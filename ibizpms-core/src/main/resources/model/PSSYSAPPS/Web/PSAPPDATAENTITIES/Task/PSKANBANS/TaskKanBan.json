@@ -728,7 +728,8 @@
       "showCaption" : true
     } ],
     "name" : "itemlayoutpanel",
-    "modelid" : "87f08dbe9b7bb8d4ff1c6c7c9bde37c6"
+    "modelid" : "87f08dbe9b7bb8d4ff1c6c7c9bde37c6",
+    "modeltype" : "PSSYSVIEWPANEL"
   },
   "logicName" : "任务看板",
   "minorSortDir" : "DESC",
@@ -1225,5 +1226,6 @@
   "enablePagingBar" : true,
   "noSort" : false,
   "singleSelect" : false,
-  "modelid" : "87f08dbe9b7bb8d4ff1c6c7c9bde37c6"
+  "modelid" : "87f08dbe9b7bb8d4ff1c6c7c9bde37c6",
+  "modeltype" : "PSDEKANBAN"
 }

@@ -1226,6 +1226,7 @@
     "name" : "CREATE"
   }, {
     "logicName" : "建立",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1235,6 +1236,7 @@
     "id" : "ZTProject__CREATE"
   }, {
     "logicName" : "Product_Create",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1247,6 +1249,7 @@
     "name" : "DELETE"
   }, {
     "logicName" : "删除",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1256,6 +1259,7 @@
     "id" : "ZTProject__DELETE"
   }, {
     "logicName" : "Product_Delete",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "DELETE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1265,6 +1269,7 @@
     "id" : "ZTProduct__DELETE"
   }, {
     "logicName" : "Product_Manage",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1274,6 +1279,7 @@
     "id" : "ZTProduct__MANAGE"
   }, {
     "logicName" : "Product_Read",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1286,6 +1292,7 @@
     "name" : "READ"
   }, {
     "logicName" : "读取",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1298,6 +1305,7 @@
     "name" : "UPDATE"
   }, {
     "logicName" : "更新",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -1307,6 +1315,7 @@
     "id" : "ZTProject__UPDATE"
   }, {
     "logicName" : "Product_Update",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,

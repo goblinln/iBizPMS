@@ -53,6 +53,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -71,7 +95,8 @@
           "viewType" : "DEMOBEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -340,7 +365,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",
-      "modelid" : "881c273f0a3edb62a7fded4f04b338fe"
+      "modelid" : "881c273f0a3edb62a7fded4f04b338fe",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "MyPlansTomorrowTaskMob",
     "mobListStyle" : "LISTVIEW",
@@ -553,7 +579,8 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "d3c8f76c6529bd3e00ca72581c3190a5"
+    "modelid" : "d3c8f76c6529bd3e00ca72581c3190a5",
+    "modeltype" : "PSDELIST"
   }, {
     "codeName" : "DailyPlansTomorrowTaskMobMDViewrighttoolbar",
     "controlType" : "TOOLBAR",
@@ -566,9 +593,11 @@
       "id" : "RIGHTTOOLBAR"
     },
     "toolbarStyle" : "MOBNAVRIGHTMENU",
-    "modelid" : "cd2e93717f88c801f63047cbf77d68cf_righttoolbar"
+    "modelid" : "cd2e93717f88c801f63047cbf77d68cf_righttoolbar",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "DailyPlansTomorrowTaskMobMDView",
+  "getPSDEViewId" : "d345cf282e7d6e5da83544277085ef1c",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBMDVIEW",
@@ -591,5 +620,6 @@
   "enablePullDownRefresh" : false,
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
-  "modelid" : "cd2e93717f88c801f63047cbf77d68cf"
+  "modelid" : "cd2e93717f88c801f63047cbf77d68cf",
+  "modeltype" : "PSAPPDEVIEW"
 }

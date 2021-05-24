@@ -865,6 +865,7 @@
   "enableUIActions" : 15,
   "logicName" : "汇报",
   "name" : "IBZ_REPORTLY",
+  "getPSDEName" : "IBZ_REPORTLY",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDESERVICEAPIS/IbzReportly.json"

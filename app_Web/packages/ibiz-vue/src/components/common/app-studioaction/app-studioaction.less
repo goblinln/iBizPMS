@@ -1,213 +1,37 @@
-.app-studioaction {
-    .studio-config-preview {
-        z-index: 106;
-        height: 72px;
-        border-radius: 4px;
-        background-color: rgba(0, 0, 0, 0.44);
-        width: 240px;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 10px;
-        right: 30px;
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        .preview-container {
-            z-index: auto;
-            width: 240px;
-            height: 72px;
-            display: flex;
-            flex-direction: column;
-            .title {
-                z-index: auto;
-                width: 240px;
-                height: 32px;
-                flex-direction: row;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                span {
-                    margin-left: 12px;
-                    z-index: 116;
-                    display: block;
-                    overflow-wrap: break-word;
-                    color: rgba(255, 255, 255, 1);
-                    font-size: 14px;
-                    line-height: 20px;
-                    text-align: left;
-                }
-                .el-icon-arrow-right {
-                    margin-top: 4px;
-                    color: #fff;
-                }
-            }
-            .title.is-expand {
-                background: #4B9FF5;
-                border-radius: 2px;
-            }
-            .split {
-                z-index: 107;
-                width: 216px;
-                height: 1px;
-                background-color: rgba(185, 185, 185, 0.4);
-                align-self: center;
-                display: flex;
-                flex-direction: column;
-                box-sizing: border-box;
-            }
-            .actions {
-                z-index: auto;
-                width: 240px;
-                height: 39px;
-                margin-top: 7px;
-                flex-direction: row;
-                display: flex;
-                justify-content: space-between;
-                .action-item {
-                    z-index: 110;
-                    margin-right: 12px;
-                    height: 24px;
-                    border-radius: 4px;
-                    border-color: rgba(185, 185, 184, 1);
-                    border-width: 1px;
-                    border-style: solid;
-                    justify-content: center;
-                    align-items: center;
-                    display: flex;
-                    flex-direction: column;
-                    box-sizing: border-box;
-                    span {
-                        z-index: 114;
-                        display: block;
-                        overflow-wrap: break-word;
-                        color: rgba(255, 255, 255, 1);
-                        font-size: 12px;
-                        line-height: 17px;
-                        text-align: left;
-                    }
-                }
-                .action-item:first-child {
-                    margin-left: 12px;
-                    margin-right: 0;
-                }
-            }
+.app-studio-debug-bar {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    z-index: 10;
+    padding: 3px 6px;
+    border-radius: 5px;
+    background-color: rgba(96, 98, 102, 0.8);
+    color: white;
+    display: flex;
+    align-items: center;
+
+    .app-studio-debug-info {
+        cursor: pointer;
+        flex-shrink: 0;
+        padding: 0px 3px;
+        font-size: 12px;
+    }
+
+    .app-studio-debug-actions {
+        padding-left: 6px;
+
+        >.ivu-btn {
+            margin: 0;
         }
     }
 }
-.studio-config-details.el-popover.el-popper {
-    color: #fff;
-    z-index: 20;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.44);
-    width: 240px;
-    justify-content: flex-start;
-    padding-top: 13px;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: 0;
-    .details-container {
-        padding: 13px 0 0 13px;
-        width: 240px;
-        display: flex;
-        flex-direction: column;
-        .info {
-            height: 17px;
-            display: block;
-            font-size: 14px;
-            line-height: 17px;
-        }
-        .copy-info {
-            cursor: pointer;
-            -moz-user-select: all; /*火狐*/
-            -webkit-user-select: all; /*webkit浏览器*/
-            -ms-user-select: all; /*IE10*/
-            -khtml-user-select: all; /*早期浏览器*/
-            user-select: all;
-        }
-        .message {
-            display: flex;
-            flex-direction: column;
-            align-self: center;
-            justify-content: center;
-            align-items: flex-start;
-            font-size: 14px;
-            font-weight: 600;
-            height: 28px;
-            .info {
-                height: 20px;
-                line-height: 20px;
-            }
-        }
-        .view-context, .view-viewparams, .control-details {
-            width: 240px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            > .message {
-                width: 240px;
-                align-items: center;
-                flex-direction: row;
-                justify-content: space-between;
-                i {
-                    margin-top: 4px;
-                    margin-right: 20px;
-                }
-            }
-        }
-        .title, .codename, .control-type{
-            display: flex;
-            align-items: center;
-            height: 24px;
-        }
-        .entity-deitals, .control-details, .view-context {
-            margin-top: 20px;
-        }
-        .view-details .info, .view-context .context-item, .view-viewparams .viewparams-item{
-            width: 220px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        .view-details .info {
-            width: 180px;
-        }
-        .control-details {
-            > div, > button {
-                width: 240px;
-            }
-            .control-split {
-                width: 207px;
-                height: 1px;
-                background-color: #fff;
-                opacity: 0.45;
-                margin: 10px 0;
-            }
-            .open-config {
-                height: 24px;
-                align-self: center;
-                width: 200px;
-                justify-content: center;
-                align-items: flex-end;
-                padding-right: 26px;
-                display: flex;
-                flex-direction: column;
-                box-sizing: border-box;
-                background-color: rgba(0, 0, 0, 0);
-                border: 0;
-                cursor: pointer;
-                span {
-                    width: 48px;
-                    display: block;
-                    overflow-wrap: break-word;
-                    color: rgba(75, 159, 245, 1);
-                    font-size: 12px;
-                    line-height: 17px;
-                    text-align: left;
-                }
-            }
+
+.view-container {
+
+    >.view-container {
+
+        .app-studio-debug-bar {
+            top: 50px;
         }
     }
 }

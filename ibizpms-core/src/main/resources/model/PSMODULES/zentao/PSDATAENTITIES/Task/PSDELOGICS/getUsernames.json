@@ -36,6 +36,7 @@
       "getPSDELogicLinkGroupCond" : {
         "groupOP" : "AND",
         "logicType" : "GROUP",
+        "name" : "连接条件组",
         "getPSDELogicLinkConds" : [ {
           "condOP" : "EQ",
           "dstFieldName" : "MULTIPLE",
@@ -46,9 +47,7 @@
           "logicType" : "SINGLE",
           "name" : "Default[MULTIPLE] 等于(=) (1)",
           "paramValue" : "1"
-        } ],
-        "notMode" : false,
-        "id" : "c2f12771558192af8aaa4a9f60e7df25"
+        } ]
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,
@@ -64,6 +63,7 @@
       "getPSDELogicLinkGroupCond" : {
         "groupOP" : "AND",
         "logicType" : "GROUP",
+        "name" : "连接条件组",
         "getPSDELogicLinkConds" : [ {
           "condOP" : "NOTEQ",
           "dstFieldName" : "MULTIPLE",
@@ -74,9 +74,7 @@
           "logicType" : "SINGLE",
           "name" : "Default[MULTIPLE] 不等于(<>) (1)",
           "paramValue" : "1"
-        } ],
-        "notMode" : false,
-        "id" : "e0be4bbb734801f10bff44f63df51f69"
+        } ]
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,

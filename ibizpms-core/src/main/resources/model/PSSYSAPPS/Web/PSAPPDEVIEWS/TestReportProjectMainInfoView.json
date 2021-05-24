@@ -966,11 +966,22 @@
               }, {
                 "logicTrigger" : "CUSTOM",
                 "logicType" : "SYSUILOGIC",
+                "name" : "editdata",
+                "getPSAppUILogic" : {
+                  "logicType" : "PREDEFINED",
+                  "name" : "编辑数据",
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : true
+                }
+              }, {
+                "logicTrigger" : "CUSTOM",
+                "logicType" : "SYSUILOGIC",
                 "name" : "opendata",
                 "getPSAppUILogic" : {
                   "logicType" : "PREDEFINED",
                   "name" : "打开数据",
-                  "viewLogicType" : "APP_OPENDATA"
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : false
                 }
               } ],
               "getPSAppViewNavParams" : [ {
@@ -1120,9 +1131,11 @@
                 "noSort" : false,
                 "showHeader" : true,
                 "name" : "list",
-                "modelid" : "835d0e318f958e732332eceda335286e"
+                "modelid" : "835d0e318f958e732332eceda335286e",
+                "modeltype" : "PSDELIST"
               } ],
               "getPSDEViewCodeName" : "ListView9",
+              "getPSDEViewId" : "439cdaa85f61d5b761754a37aee0aee6",
               "getPSViewLayoutPanel" : {
                 "codeName" : "Layoutpanel",
                 "controlStyle" : "APPDELISTVIEW9_STYLE2",
@@ -1143,7 +1156,8 @@
               "enableDP" : true,
               "enableFilter" : false,
               "showCaptionBar" : false,
-              "modelid" : "d940bfd96f6087050755b99a3b6bab0a"
+              "modelid" : "d940bfd96f6087050755b99a3b6bab0a",
+              "modeltype" : "PSAPPDEVIEW"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -1204,9 +1218,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "ea1237a9b37ed96743f273df189f13e0"
+    "modelid" : "ea1237a9b37ed96743f273df189f13e0",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "ProjectMainInfoView",
+  "getPSDEViewId" : "09823aef8181da94043347f917ad73e2",
   "getPSSysImage" : {
     "glyph" : "xf0f6@FontAwesome",
     "cssClass" : "fa fa-file-text-o"
@@ -1232,6 +1248,7 @@
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
   "modelid" : "fc13cdf6e0efbfda27195989dba8b0ab",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestReports",

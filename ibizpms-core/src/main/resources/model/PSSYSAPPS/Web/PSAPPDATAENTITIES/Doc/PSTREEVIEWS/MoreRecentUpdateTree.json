@@ -372,7 +372,8 @@
       "showCaption" : false,
       "showIcon" : true
     } ],
-    "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37"
+    "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
@@ -667,7 +668,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37"
+      "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37",
+      "modeltype" : "PSDETOOLBAR"
     },
     "textFormat" : "文档",
     "getTextPSAppDEField" : {
@@ -710,5 +712,6 @@
   "enableSearchDefault" : false,
   "outputIconDefault" : true,
   "rootVisible" : false,
-  "modelid" : "f477d31100a79e05017e6cf3f9c38ea2"
+  "modelid" : "f477d31100a79e05017e6cf3f9c38ea2",
+  "modeltype" : "PSDETREEVIEW"
 }

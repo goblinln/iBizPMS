@@ -887,6 +887,7 @@
   "enableUIActions" : 15,
   "logicName" : "用户年度工作内容统计",
   "name" : "IBZ_USERYEARWORKSTATS",
+  "getPSDEName" : "IBZ_USERYEARWORKSTATS",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDESERVICEAPIS/UserYearWorkStats.json"

@@ -951,6 +951,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "IBZ_CASE",
+  "getPSDEName" : "IBZ_CASE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzCase/PSDESERVICEAPIS/IbzCase.json"

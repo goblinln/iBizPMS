@@ -1403,6 +1403,7 @@
   "enableUIActions" : 15,
   "logicName" : "日报",
   "name" : "IBZ_DAILY",
+  "getPSDEName" : "IBZ_DAILY",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDESERVICEAPIS/IbzDaily.json"

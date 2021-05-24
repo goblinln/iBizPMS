@@ -52,6 +52,7 @@
         "id" : "TABVIEWPANEL"
       },
       "modelid" : "c02fd7282430ea240e80829edd7f7898_tabviewpanel",
+      "modeltype" : "PSVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "accUserMode" : 2,
         "caption" : "更新日志",
@@ -687,9 +688,11 @@
           "readOnly" : false,
           "showFormNavBar" : false,
           "name" : "form",
-          "modelid" : "bad1cbf135a42778d7bd335994c6983f"
+          "modelid" : "bad1cbf135a42778d7bd335994c6983f",
+          "modeltype" : "PSDEFORM_EDITFORM"
         } ],
         "getPSDEViewCodeName" : "InfoEditView",
+        "getPSDEViewId" : "b0d30e81e2c9b84868ff4986e14381f3",
         "getPSViewLayoutPanel" : {
           "codeName" : "Layoutpanel",
           "controlStyle" : "APPDEEDITVIEW_STYLE2",
@@ -710,7 +713,8 @@
         "enableDP" : true,
         "showCaptionBar" : true,
         "showDataInfoBar" : true,
-        "modelid" : "f05b112ce6c2ef73ca7d15ad98a0f689"
+        "modelid" : "f05b112ce6c2ef73ca7d15ad98a0f689",
+        "modeltype" : "PSAPPDEVIEW"
       }
     }, {
       "caption" : "更新功能",
@@ -729,7 +733,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL2"
       },
-      "modelid" : "c02fd7282430ea240e80829edd7f7898_tabviewpanel2"
+      "modelid" : "c02fd7282430ea240e80829edd7f7898_tabviewpanel2",
+      "modeltype" : "PSVIEWPANEL"
     } ],
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel"
@@ -737,9 +742,11 @@
       "name" : "tabviewpanel2"
     } ],
     "tabLayout" : "TOP",
-    "modelid" : "c02fd7282430ea240e80829edd7f7898_tabexppanel"
+    "modelid" : "c02fd7282430ea240e80829edd7f7898_tabexppanel",
+    "modeltype" : "PSTABEXPPANEL"
   } ],
   "getPSDEViewCodeName" : "TabExpView",
+  "getPSDEViewId" : "51fab2cee458d3fb0a3763b88ff56a51",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETABEXPVIEW_STYLE2",
@@ -764,5 +771,6 @@
   "loadDefault" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
-  "modelid" : "c02fd7282430ea240e80829edd7f7898"
+  "modelid" : "c02fd7282430ea240e80829edd7f7898",
+  "modeltype" : "PSAPPDEVIEW"
 }

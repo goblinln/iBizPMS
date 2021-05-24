@@ -212,5 +212,6 @@
     "pluginCode" : "NEW"
   },
   "readOnly" : true,
-  "modelid" : "d66223de54fcf5e7b4a0aeb6acc93a87"
+  "modelid" : "d66223de54fcf5e7b4a0aeb6acc93a87",
+  "modeltype" : "PSDECHART"
 }

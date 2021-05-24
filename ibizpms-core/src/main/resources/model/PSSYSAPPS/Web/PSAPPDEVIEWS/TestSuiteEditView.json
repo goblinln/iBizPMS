@@ -114,7 +114,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
+    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "Main",
     "controlType" : "FORM",
@@ -450,9 +451,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "461f2726d577f1a7d0d2a871b028bfc3"
+    "modelid" : "461f2726d577f1a7d0d2a871b028bfc3",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "EditView",
+  "getPSDEViewId" : "ae6c5a1e3e903057bdb2c4a82bbfdf60",
   "getPSSysImage" : {
     "glyph" : "xf0f2@FontAwesome",
     "cssClass" : "fa fa-suitcase"
@@ -478,6 +481,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "7a983ef690626958a9897f58efe15e58",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestSuites",

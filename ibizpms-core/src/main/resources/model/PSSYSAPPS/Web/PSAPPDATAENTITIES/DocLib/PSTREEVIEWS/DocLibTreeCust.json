@@ -763,7 +763,8 @@
       "showCaption" : false,
       "showIcon" : true
     } ],
-    "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37"
+    "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "ProductTreeViewCustdoclib_cm",
     "controlType" : "CONTEXTMENU",
@@ -995,7 +996,8 @@
       "showCaption" : false,
       "showIcon" : true
     } ],
-    "modelid" : "282914f7c04998d26bfae35beb08d9e2"
+    "modelid" : "282914f7c04998d26bfae35beb08d9e2",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "ProductTreeViewCustmodule_cm",
     "controlType" : "CONTEXTMENU",
@@ -1226,7 +1228,8 @@
       "showCaption" : false,
       "showIcon" : true
     } ],
-    "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a"
+    "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "ProductTreeViewCustrootmodule_cm",
     "controlType" : "CONTEXTMENU",
@@ -1457,7 +1460,8 @@
       "showCaption" : false,
       "showIcon" : true
     } ],
-    "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a"
+    "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "ProductTreeViewCustmoduledoc_cm",
     "controlType" : "CONTEXTMENU",
@@ -1693,7 +1697,8 @@
       "showCaption" : false,
       "showIcon" : true
     } ],
-    "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37"
+    "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
@@ -2165,7 +2170,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "282914f7c04998d26bfae35beb08d9e2"
+      "modelid" : "282914f7c04998d26bfae35beb08d9e2",
+      "modeltype" : "PSDETOOLBAR"
     },
     "textFormat" : "文档库",
     "getTextPSAppDEField" : {
@@ -2460,7 +2466,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a"
+      "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a",
+      "modeltype" : "PSDETOOLBAR"
     },
     "textFormat" : "根目录",
     "getTextPSAppDEField" : {
@@ -2737,7 +2744,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37"
+      "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37",
+      "modeltype" : "PSDETOOLBAR"
     },
     "textFormat" : "文档",
     "getTextPSAppDEField" : {
@@ -3009,7 +3017,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a"
+      "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a",
+      "modeltype" : "PSDETOOLBAR"
     },
     "getTextPSAppDEField" : {
       "name" : "NAME",
@@ -3285,7 +3294,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37"
+      "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37",
+      "modeltype" : "PSDETOOLBAR"
     },
     "textFormat" : "分类文档",
     "getTextPSAppDEField" : {
@@ -3328,5 +3338,6 @@
   "enableSearchDefault" : false,
   "outputIconDefault" : true,
   "rootVisible" : false,
-  "modelid" : "8071b33c37da23c51d261237ed2d0eff"
+  "modelid" : "8071b33c37da23c51d261237ed2d0eff",
+  "modeltype" : "PSDETREEVIEW"
 }

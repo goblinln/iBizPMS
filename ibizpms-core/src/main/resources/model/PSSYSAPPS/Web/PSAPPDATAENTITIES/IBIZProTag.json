@@ -350,6 +350,7 @@
   "enableUIActions" : 15,
   "logicName" : "标签",
   "name" : "IBIZPRO_TAG",
+  "getPSDEName" : "IBIZPRO_TAG",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProTag/PSDESERVICEAPIS/IBIZProTag.json"

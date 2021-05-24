@@ -602,7 +602,8 @@
       "showBusyIndicator" : true
     },
     "enableCustomize" : false,
-    "modelid" : "0a4e485b6222864606f7d7e77325ee2d"
+    "modelid" : "0a4e485b6222864606f7d7e77325ee2d",
+    "modeltype" : "PSAPPMENU"
   } ],
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
@@ -620,5 +621,6 @@
   "defaultPage" : true,
   "enableAppSwitch" : true,
   "enableDP" : true,
-  "modelid" : "09b9ef8ce803717761b940cf3fd0173f"
+  "modelid" : "09b9ef8ce803717761b940cf3fd0173f",
+  "modeltype" : "PSAPPINDEXVIEW"
 }

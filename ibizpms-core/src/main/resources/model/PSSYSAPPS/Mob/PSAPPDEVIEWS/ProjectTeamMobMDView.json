@@ -131,7 +131,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",
-      "modelid" : "7f1e8cfe65f600cd812168d377dfae3e"
+      "modelid" : "7f1e8cfe65f600cd812168d377dfae3e",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "MOB",
     "minorSortDir" : "DESC",
@@ -360,7 +361,8 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "7f1e8cfe65f600cd812168d377dfae3e"
+    "modelid" : "7f1e8cfe65f600cd812168d377dfae3e",
+    "modeltype" : "PSDELIST"
   }, {
     "codeName" : "MobMDViewrighttoolbar",
     "controlType" : "TOOLBAR",
@@ -374,9 +376,11 @@
       "id" : "RIGHTTOOLBAR"
     },
     "toolbarStyle" : "MOBNAVRIGHTMENU",
-    "modelid" : "77b54f92fc40bd153eee443ab18a9cd7"
+    "modelid" : "77b54f92fc40bd153eee443ab18a9cd7",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "MobMDView",
+  "getPSDEViewId" : "f5f1b7cff4207bd4d2bab3d353f89f55",
   "getPSSysImage" : {
     "glyph" : "xf0c0@FontAwesome",
     "cssClass" : "fa fa-users"
@@ -404,6 +408,7 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "modelid" : "57bae62b35d8bdb33e99b7a73f406e22",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectTeams",

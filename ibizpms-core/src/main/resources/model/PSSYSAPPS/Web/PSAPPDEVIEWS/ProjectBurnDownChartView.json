@@ -246,9 +246,11 @@
     },
     "readOnly" : true,
     "name" : "chart",
-    "modelid" : "b09f35e51d613eb6892615d2cdbeb77d"
+    "modelid" : "b09f35e51d613eb6892615d2cdbeb77d",
+    "modeltype" : "PSDECHART"
   } ],
   "getPSDEViewCodeName" : "BurnDownChartView",
+  "getPSDEViewId" : "6179d5e028ce81650a0a4ece41a12b8e",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDECHARTVIEW_STYLE2",
@@ -272,5 +274,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : false,
-  "modelid" : "3aa4c66089ff40194c7f4ecaf627acb5"
+  "modelid" : "3aa4c66089ff40194c7f4ecaf627acb5",
+  "modeltype" : "PSAPPDEVIEW"
 }

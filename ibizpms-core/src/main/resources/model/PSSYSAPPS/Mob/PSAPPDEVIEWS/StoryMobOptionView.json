@@ -423,9 +423,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "6fd993f055e4c53b4e7c106e1faea8f5"
+    "modelid" : "6fd993f055e4c53b4e7c106e1faea8f5",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "MobOptionView",
+  "getPSDEViewId" : "932002848badfeb5b5838895c3effae4",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -452,6 +454,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "ea064acc0eb5ae3dcc58ec2dc6933df1",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

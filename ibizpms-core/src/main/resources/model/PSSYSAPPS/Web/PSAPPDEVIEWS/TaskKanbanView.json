@@ -84,6 +84,161 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      },
+      "getOpenDataPSAppViews" : [ {
+        "getPSNavigateParams" : [ {
+          "key" : "id",
+          "name" : "id",
+          "value" : "srfkey",
+          "rawValue" : false
+        } ],
+        "refMode" : "CANCEL",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCancelTaskView.json",
+          "viewType" : "DEOPTVIEW"
+        }
+      }, {
+        "getPSNavigateParams" : [ {
+          "key" : "id",
+          "name" : "id",
+          "value" : "srfkey",
+          "rawValue" : false
+        } ],
+        "refMode" : "PAUSE",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPauseTaskView.json",
+          "viewType" : "DEOPTVIEW"
+        }
+      }, {
+        "getPSNavigateParams" : [ {
+          "key" : "id",
+          "name" : "id",
+          "value" : "srfkey",
+          "rawValue" : false
+        } ],
+        "refMode" : "DONE",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskDoneTaskView.json",
+          "viewType" : "DEOPTVIEW"
+        }
+      }, {
+        "getPSNavigateParams" : [ {
+          "key" : "id",
+          "name" : "id",
+          "value" : "srfkey",
+          "rawValue" : false
+        } ],
+        "refMode" : "CLOSED",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCloseTaskView.json",
+          "viewType" : "DEOPTVIEW"
+        }
+      }, {
+        "getPSNavigateParams" : [ {
+          "key" : "id",
+          "name" : "id",
+          "value" : "srfkey",
+          "rawValue" : false
+        } ],
+        "refMode" : "DOING",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskOpenTaskView.json",
+          "viewType" : "DEOPTVIEW"
+        }
+      } ],
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      }, {
+        "getPSNavigateParams" : [ {
+          "key" : "id",
+          "name" : "id",
+          "value" : "srfkey",
+          "rawValue" : false
+        } ],
+        "refMode" : "CANCEL",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCancelTaskView.json",
+          "viewType" : "DEOPTVIEW"
+        }
+      }, {
+        "getPSNavigateParams" : [ {
+          "key" : "id",
+          "name" : "id",
+          "value" : "srfkey",
+          "rawValue" : false
+        } ],
+        "refMode" : "PAUSE",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPauseTaskView.json",
+          "viewType" : "DEOPTVIEW"
+        }
+      }, {
+        "getPSNavigateParams" : [ {
+          "key" : "id",
+          "name" : "id",
+          "value" : "srfkey",
+          "rawValue" : false
+        } ],
+        "refMode" : "DONE",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskDoneTaskView.json",
+          "viewType" : "DEOPTVIEW"
+        }
+      }, {
+        "getPSNavigateParams" : [ {
+          "key" : "id",
+          "name" : "id",
+          "value" : "srfkey",
+          "rawValue" : false
+        } ],
+        "refMode" : "CLOSED",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCloseTaskView.json",
+          "viewType" : "DEOPTVIEW"
+        }
+      }, {
+        "getPSNavigateParams" : [ {
+          "key" : "id",
+          "name" : "id",
+          "value" : "srfkey",
+          "rawValue" : false
+        } ],
+        "refMode" : "DOING",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskOpenTaskView.json",
+          "viewType" : "DEOPTVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -233,7 +388,8 @@
           "viewType" : "DEOPTVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavParams" : [ {
@@ -451,7 +607,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b"
+    "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "TaskKanBan",
     "controlType" : "KANBAN",
@@ -1182,7 +1339,8 @@
         "showCaption" : true
       } ],
       "name" : "itemlayoutpanel",
-      "modelid" : "87f08dbe9b7bb8d4ff1c6c7c9bde37c6"
+      "modelid" : "87f08dbe9b7bb8d4ff1c6c7c9bde37c6",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "任务看板",
     "minorSortDir" : "DESC",
@@ -1766,9 +1924,11 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "kanban",
-    "modelid" : "87f08dbe9b7bb8d4ff1c6c7c9bde37c6"
+    "modelid" : "87f08dbe9b7bb8d4ff1c6c7c9bde37c6",
+    "modeltype" : "PSDEKANBAN"
   } ],
   "getPSDEViewCodeName" : "KanbanView",
+  "getPSDEViewId" : "be387f4ec20991396adfd1675059b3e6",
   "getPSSysImage" : {
     "glyph" : "xf0ae@FontAwesome",
     "cssClass" : "fa fa-tasks"
@@ -1794,6 +1954,7 @@
   "enableFilter" : false,
   "showCaptionBar" : true,
   "modelid" : "d617e99633b9426aa8bd3ea293f91c6c",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

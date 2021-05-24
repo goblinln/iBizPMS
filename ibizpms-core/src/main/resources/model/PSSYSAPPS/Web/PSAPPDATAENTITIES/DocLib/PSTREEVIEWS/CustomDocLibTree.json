@@ -267,7 +267,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "32c526ed4f9dec64c320511e681e4efb"
+    "modelid" : "32c526ed4f9dec64c320511e681e4efb",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "CustomTreeExpViewall_cm",
     "controlType" : "CONTEXTMENU",
@@ -313,7 +314,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "022f0111597cba0a05a1d53d48a8cb04"
+    "modelid" : "022f0111597cba0a05a1d53d48a8cb04",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
@@ -708,7 +710,8 @@
         "showCaption" : true,
         "showIcon" : true
       } ],
-      "modelid" : "32c526ed4f9dec64c320511e681e4efb"
+      "modelid" : "32c526ed4f9dec64c320511e681e4efb",
+      "modeltype" : "PSDETOOLBAR"
     },
     "getPSSysImage" : {
       "glyph" : "xf114@FontAwesome",
@@ -795,7 +798,8 @@
         "showCaption" : true,
         "showIcon" : true
       } ],
-      "modelid" : "022f0111597cba0a05a1d53d48a8cb04"
+      "modelid" : "022f0111597cba0a05a1d53d48a8cb04",
+      "modeltype" : "PSDETOOLBAR"
     },
     "text" : "所有文档库",
     "treeNodeType" : "STATIC",
@@ -900,5 +904,6 @@
   "enableSearchDefault" : false,
   "outputIconDefault" : true,
   "rootVisible" : false,
-  "modelid" : "36f03a5f448b1ed7c71d294d2c4dfa4e"
+  "modelid" : "36f03a5f448b1ed7c71d294d2c4dfa4e",
+  "modeltype" : "PSDETREEVIEW"
 }

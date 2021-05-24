@@ -473,7 +473,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37"
+      "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37",
+      "modeltype" : "PSDETOOLBAR"
     } ],
     "getPSDETreeNodeRSs" : [ {
       "getChildPSDETreeNode" : {
@@ -768,7 +769,8 @@
           "showCaption" : false,
           "showIcon" : true
         } ],
-        "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37"
+        "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37",
+        "modeltype" : "PSDETOOLBAR"
       },
       "textFormat" : "文档",
       "getTextPSAppDEField" : {
@@ -812,9 +814,11 @@
     "outputIconDefault" : true,
     "rootVisible" : false,
     "name" : "tree",
-    "modelid" : "b3d06274c6ccd901b80f02223245120b"
+    "modelid" : "b3d06274c6ccd901b80f02223245120b",
+    "modeltype" : "PSDETREEVIEW"
   } ],
   "getPSDEViewCodeName" : "MoreMyDocTreeView",
+  "getPSDEViewId" : "b601aa72c5a2d4de3299ddc9c2f464ff",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETREEVIEW_STYLE2",
@@ -835,5 +839,6 @@
   "enableDP" : true,
   "enableFilter" : false,
   "showCaptionBar" : false,
-  "modelid" : "d5f2e9a6f7a981823a3327cba1c0b9d4"
+  "modelid" : "d5f2e9a6f7a981823a3327cba1c0b9d4",
+  "modeltype" : "PSAPPDEVIEW"
 }

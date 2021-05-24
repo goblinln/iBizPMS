@@ -108,7 +108,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
+    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "QuickCreate",
     "controlType" : "FORM",
@@ -772,9 +773,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "cb65cd72bc660117833f95ab6993f09c"
+    "modelid" : "cb65cd72bc660117833f95ab6993f09c",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "EditView",
+  "getPSDEViewId" : "ce243c7c0742fb05f1ea424fec95a8fd",
   "getPSSysImage" : {
     "glyph" : "xf126@FontAwesome",
     "cssClass" : "fa fa-code-fork"
@@ -800,6 +803,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "e9d61d4506a28dec9a6f1d7b9e1fff6a",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Builds",

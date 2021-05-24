@@ -400,6 +400,7 @@
     "name" : "READ"
   }, {
     "logicName" : "Product_Read",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -412,6 +413,7 @@
     "name" : "UPDATE"
   }, {
     "logicName" : "Product_Update",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -427,6 +429,7 @@
   "enableUIActions" : 15,
   "logicName" : "套件用例",
   "name" : "ZT_SUITECASE",
+  "getPSDEName" : "ZT_SUITECASE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDESERVICEAPIS/SuiteCase.json"

@@ -458,11 +458,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -872,6 +883,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -882,9 +894,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "558e5635b903a94e6a928d31a836964e"
+            "modelid" : "558e5635b903a94e6a928d31a836964e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductMonthlyPartGridView",
+          "getPSDEViewId" : "9942cb77f9057691bbafeef6dcca25a4",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -909,7 +923,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b79e544c576248b65fc915ac23b2b960"
+          "modelid" : "b79e544c576248b65fc915ac23b2b960",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -1020,11 +1035,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -1434,6 +1460,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -1444,9 +1471,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "558e5635b903a94e6a928d31a836964e"
+            "modelid" : "558e5635b903a94e6a928d31a836964e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductMonthlyPartGridView",
+          "getPSDEViewId" : "9942cb77f9057691bbafeef6dcca25a4",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -1471,7 +1500,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b79e544c576248b65fc915ac23b2b960"
+          "modelid" : "b79e544c576248b65fc915ac23b2b960",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -1582,11 +1612,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -1996,6 +2037,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -2006,9 +2048,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "558e5635b903a94e6a928d31a836964e"
+            "modelid" : "558e5635b903a94e6a928d31a836964e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductMonthlyPartGridView",
+          "getPSDEViewId" : "9942cb77f9057691bbafeef6dcca25a4",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -2033,7 +2077,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b79e544c576248b65fc915ac23b2b960"
+          "modelid" : "b79e544c576248b65fc915ac23b2b960",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -2144,11 +2189,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -2558,6 +2614,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -2568,9 +2625,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "558e5635b903a94e6a928d31a836964e"
+            "modelid" : "558e5635b903a94e6a928d31a836964e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductMonthlyPartGridView",
+          "getPSDEViewId" : "9942cb77f9057691bbafeef6dcca25a4",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -2595,7 +2654,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b79e544c576248b65fc915ac23b2b960"
+          "modelid" : "b79e544c576248b65fc915ac23b2b960",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -2706,11 +2766,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -3120,6 +3191,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -3130,9 +3202,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "558e5635b903a94e6a928d31a836964e"
+            "modelid" : "558e5635b903a94e6a928d31a836964e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductMonthlyPartGridView",
+          "getPSDEViewId" : "9942cb77f9057691bbafeef6dcca25a4",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -3157,7 +3231,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b79e544c576248b65fc915ac23b2b960"
+          "modelid" : "b79e544c576248b65fc915ac23b2b960",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -3268,11 +3343,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -3682,6 +3768,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -3692,9 +3779,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "558e5635b903a94e6a928d31a836964e"
+            "modelid" : "558e5635b903a94e6a928d31a836964e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductMonthlyPartGridView",
+          "getPSDEViewId" : "9942cb77f9057691bbafeef6dcca25a4",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -3719,7 +3808,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b79e544c576248b65fc915ac23b2b960"
+          "modelid" : "b79e544c576248b65fc915ac23b2b960",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -3830,11 +3920,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -4244,6 +4345,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -4254,9 +4356,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "558e5635b903a94e6a928d31a836964e"
+            "modelid" : "558e5635b903a94e6a928d31a836964e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductMonthlyPartGridView",
+          "getPSDEViewId" : "9942cb77f9057691bbafeef6dcca25a4",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -4281,7 +4385,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b79e544c576248b65fc915ac23b2b960"
+          "modelid" : "b79e544c576248b65fc915ac23b2b960",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -4392,11 +4497,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -4806,6 +4922,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -4816,9 +4933,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "558e5635b903a94e6a928d31a836964e"
+            "modelid" : "558e5635b903a94e6a928d31a836964e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductMonthlyPartGridView",
+          "getPSDEViewId" : "9942cb77f9057691bbafeef6dcca25a4",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -4843,7 +4962,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b79e544c576248b65fc915ac23b2b960"
+          "modelid" : "b79e544c576248b65fc915ac23b2b960",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -4954,11 +5074,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -5368,6 +5499,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -5378,9 +5510,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "558e5635b903a94e6a928d31a836964e"
+            "modelid" : "558e5635b903a94e6a928d31a836964e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductMonthlyPartGridView",
+          "getPSDEViewId" : "9942cb77f9057691bbafeef6dcca25a4",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -5405,7 +5539,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b79e544c576248b65fc915ac23b2b960"
+          "modelid" : "b79e544c576248b65fc915ac23b2b960",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -5516,6 +5651,30 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "getOpenDataPSAppView" : {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyMonthlyMainMsgEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              },
+              "getPSAppUILogicRefViews" : [ {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyMonthlyMainMsgEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              } ],
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
@@ -5534,7 +5693,8 @@
                   "viewType" : "DEEDITVIEW"
                 }
               } ],
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -5883,6 +6043,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -5893,9 +6054,11 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "20a5623eaef55b125286fe9dc2d8a9dd"
+            "modelid" : "20a5623eaef55b125286fe9dc2d8a9dd",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductMonthlyGridView",
+          "getPSDEViewId" : "18484c61e5d26f08f478c13e88329d9c",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -5920,7 +6083,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "dd53ef67c3ff17f64635741f5216b38a"
+          "modelid" : "dd53ef67c3ff17f64635741f5216b38a",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -5992,5 +6156,6 @@
   "noTabHeader" : true,
   "readOnly" : false,
   "showFormNavBar" : false,
-  "modelid" : "d70a5dbf8c2ff5830a796d6f43a524dd"
+  "modelid" : "d70a5dbf8c2ff5830a796d6f43a524dd",
+  "modeltype" : "PSDEFORM_EDITFORM"
 }

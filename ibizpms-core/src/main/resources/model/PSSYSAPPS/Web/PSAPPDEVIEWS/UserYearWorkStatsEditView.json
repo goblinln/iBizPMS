@@ -797,12 +797,14 @@
                   "readOnly" : true,
                   "name" : "chart",
                   "modelid" : "3ac8297cb629de3b538b053ea7f40855",
+                  "modeltype" : "PSDECHART",
                   "getUserParam" : {
                     "EC.legend" : "{show:false}",
                     "EC.color" : "[\"#0068B7\",\"#1aa1e6\",\"#81cef2\",\"#FF5D5D\",'#FDC137','#00DA88','#7ECFF','#8666B8','#BD7B46']"
                   }
                 } ],
                 "getPSDEViewCodeName" : "PoChartView9",
+                "getPSDEViewId" : "794ccefcfcb7e9a72ae90e1a2080795b",
                 "getPSViewLayoutPanel" : {
                   "codeName" : "Layoutpanel",
                   "controlStyle" : "APPDECHARTVIEW9_STYLE2",
@@ -826,7 +828,8 @@
                 "expandSearchForm" : false,
                 "loadDefault" : true,
                 "showCaptionBar" : false,
-                "modelid" : "0f46f0ff90c7191fa3d01a2c6989a4ca"
+                "modelid" : "0f46f0ff90c7191fa3d01a2c6989a4ca",
+                "modeltype" : "PSAPPDEVIEW"
               },
               "getPSLayoutPos" : {
                 "colMD" : 24,
@@ -1090,12 +1093,14 @@
                   "readOnly" : true,
                   "name" : "chart",
                   "modelid" : "e37961cc37e96752f436ef141b9d80c1",
+                  "modeltype" : "PSDECHART",
                   "getUserParam" : {
                     "EC.legend" : "{show:false}",
                     "EC.color" : "[\"#0068B7\",\"#1aa1e6\",\"#81cef2\",\"#FF5D5D\",'#FDC137','#00DA88','#7ECFF','#8666B8','#BD7B46']"
                   }
                 } ],
                 "getPSDEViewCodeName" : "QaChartView9",
+                "getPSDEViewId" : "de55bee3f59ba61802aca862f584f211",
                 "getPSViewLayoutPanel" : {
                   "codeName" : "Layoutpanel",
                   "controlStyle" : "APPDECHARTVIEW9_STYLE2",
@@ -1119,7 +1124,8 @@
                 "expandSearchForm" : false,
                 "loadDefault" : true,
                 "showCaptionBar" : false,
-                "modelid" : "2e1e24a39d1f1969f411b507d49fc640"
+                "modelid" : "2e1e24a39d1f1969f411b507d49fc640",
+                "modeltype" : "PSAPPDEVIEW"
               },
               "getPSLayoutPos" : {
                 "colMD" : 24,
@@ -1393,12 +1399,14 @@
                   "readOnly" : true,
                   "name" : "chart",
                   "modelid" : "40d18c30ac5ff684513990fe3b683a29",
+                  "modeltype" : "PSDECHART",
                   "getUserParam" : {
                     "EC.legend" : "{show:false}",
                     "EC.color" : "[\"#0068B7\",\"#1aa1e6\",\"#81cef2\",\"#FF5D5D\",'#FDC137','#00DA88','#7ECFF','#8666B8','#BD7B46']"
                   }
                 } ],
                 "getPSDEViewCodeName" : "ChartView9",
+                "getPSDEViewId" : "c879c0bbf1f414b3e83a92cecdedc996",
                 "getPSViewLayoutPanel" : {
                   "codeName" : "Layoutpanel",
                   "controlStyle" : "APPDECHARTVIEW9_STYLE2",
@@ -1422,7 +1430,8 @@
                 "expandSearchForm" : false,
                 "loadDefault" : true,
                 "showCaptionBar" : false,
-                "modelid" : "d3faf41f12df89727a6f18eca8b7a117"
+                "modelid" : "d3faf41f12df89727a6f18eca8b7a117",
+                "modeltype" : "PSAPPDEVIEW"
               },
               "getPSLayoutPos" : {
                 "colMD" : 24,
@@ -1564,6 +1573,30 @@
                 }, {
                   "logicTrigger" : "CUSTOM",
                   "logicType" : "SYSUILOGIC",
+                  "name" : "editdata",
+                  "getPSAppUILogic" : {
+                    "logicType" : "PREDEFINED",
+                    "name" : "编辑数据",
+                    "getOpenDataPSAppView" : {
+                      "getRefPSAppView" : {
+                        "modelref" : true,
+                        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
+                        "viewType" : "DEEDITVIEW"
+                      }
+                    },
+                    "getPSAppUILogicRefViews" : [ {
+                      "getRefPSAppView" : {
+                        "modelref" : true,
+                        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
+                        "viewType" : "DEEDITVIEW"
+                      }
+                    } ],
+                    "viewLogicType" : "APP_OPENDATA",
+                    "editMode" : true
+                  }
+                }, {
+                  "logicTrigger" : "CUSTOM",
+                  "logicType" : "SYSUILOGIC",
                   "name" : "opendata",
                   "getPSAppUILogic" : {
                     "logicType" : "PREDEFINED",
@@ -1582,7 +1615,8 @@
                         "viewType" : "DEEDITVIEW"
                       }
                     } ],
-                    "viewLogicType" : "APP_OPENDATA"
+                    "viewLogicType" : "APP_OPENDATA",
+                    "editMode" : false
                   }
                 } ],
                 "getPSAppViewNavContexts" : [ {
@@ -1898,6 +1932,7 @@
                   "sortMode" : "REMOTE",
                   "hasWFDataItems" : false,
                   "enableColFilter" : false,
+                  "enableCustomized" : true,
                   "enableGroup" : false,
                   "enablePagingBar" : false,
                   "enableRowEdit" : false,
@@ -1908,9 +1943,11 @@
                   "noSort" : true,
                   "singleSelect" : true,
                   "name" : "grid",
-                  "modelid" : "012858fcacde5f5489c84e65b98132d0"
+                  "modelid" : "012858fcacde5f5489c84e65b98132d0",
+                  "modeltype" : "PSDEGRID"
                 } ],
                 "getPSDEViewCodeName" : "GridView9",
+                "getPSDEViewId" : "513dc1f86b1f4fc85437227b08abe162",
                 "getPSViewLayoutPanel" : {
                   "codeName" : "Layoutpanel",
                   "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -1935,7 +1972,8 @@
                 "enableRowEdit" : false,
                 "rowEditDefault" : false,
                 "showCaptionBar" : false,
-                "modelid" : "6c2a0306865904de97c8482291e72235"
+                "modelid" : "6c2a0306865904de97c8482291e72235",
+                "modeltype" : "PSAPPDEVIEW"
               },
               "getPSLayoutPos" : {
                 "colMD" : 24,
@@ -2058,6 +2096,30 @@
                 }, {
                   "logicTrigger" : "CUSTOM",
                   "logicType" : "SYSUILOGIC",
+                  "name" : "editdata",
+                  "getPSAppUILogic" : {
+                    "logicType" : "PREDEFINED",
+                    "name" : "编辑数据",
+                    "getOpenDataPSAppView" : {
+                      "getRefPSAppView" : {
+                        "modelref" : true,
+                        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumEditView.json",
+                        "viewType" : "DEEDITVIEW"
+                      }
+                    },
+                    "getPSAppUILogicRefViews" : [ {
+                      "getRefPSAppView" : {
+                        "modelref" : true,
+                        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumEditView.json",
+                        "viewType" : "DEEDITVIEW"
+                      }
+                    } ],
+                    "viewLogicType" : "APP_OPENDATA",
+                    "editMode" : true
+                  }
+                }, {
+                  "logicTrigger" : "CUSTOM",
+                  "logicType" : "SYSUILOGIC",
                   "name" : "opendata",
                   "getPSAppUILogic" : {
                     "logicType" : "PREDEFINED",
@@ -2076,7 +2138,8 @@
                         "viewType" : "DEEDITVIEW"
                       }
                     } ],
-                    "viewLogicType" : "APP_OPENDATA"
+                    "viewLogicType" : "APP_OPENDATA",
+                    "editMode" : false
                   }
                 } ],
                 "getPSAppViewNavContexts" : [ {
@@ -2342,6 +2405,7 @@
                   "sortMode" : "REMOTE",
                   "hasWFDataItems" : false,
                   "enableColFilter" : false,
+                  "enableCustomized" : true,
                   "enableGroup" : false,
                   "enablePagingBar" : false,
                   "enableRowEdit" : false,
@@ -2352,9 +2416,11 @@
                   "noSort" : true,
                   "singleSelect" : true,
                   "name" : "grid",
-                  "modelid" : "ae82a7ec8ca547511933021ad3546e27"
+                  "modelid" : "ae82a7ec8ca547511933021ad3546e27",
+                  "modeltype" : "PSDEGRID"
                 } ],
                 "getPSDEViewCodeName" : "Usr2GridView",
+                "getPSDEViewId" : "b7c0b46f71bf42b166128d9b61d8c8f4",
                 "getPSViewLayoutPanel" : {
                   "codeName" : "Layoutpanel",
                   "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -2379,7 +2445,8 @@
                 "enableRowEdit" : false,
                 "rowEditDefault" : false,
                 "showCaptionBar" : false,
-                "modelid" : "219b52b980e0926e5cc97a911560ba38"
+                "modelid" : "219b52b980e0926e5cc97a911560ba38",
+                "modeltype" : "PSAPPDEVIEW"
               },
               "getPSLayoutPos" : {
                 "colMD" : 24,
@@ -2502,6 +2569,30 @@
                 }, {
                   "logicTrigger" : "CUSTOM",
                   "logicType" : "SYSUILOGIC",
+                  "name" : "editdata",
+                  "getPSAppUILogic" : {
+                    "logicType" : "PREDEFINED",
+                    "name" : "编辑数据",
+                    "getOpenDataPSAppView" : {
+                      "getRefPSAppView" : {
+                        "modelref" : true,
+                        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumEditView.json",
+                        "viewType" : "DEEDITVIEW"
+                      }
+                    },
+                    "getPSAppUILogicRefViews" : [ {
+                      "getRefPSAppView" : {
+                        "modelref" : true,
+                        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumEditView.json",
+                        "viewType" : "DEEDITVIEW"
+                      }
+                    } ],
+                    "viewLogicType" : "APP_OPENDATA",
+                    "editMode" : true
+                  }
+                }, {
+                  "logicTrigger" : "CUSTOM",
+                  "logicType" : "SYSUILOGIC",
                   "name" : "opendata",
                   "getPSAppUILogic" : {
                     "logicType" : "PREDEFINED",
@@ -2520,7 +2611,8 @@
                         "viewType" : "DEEDITVIEW"
                       }
                     } ],
-                    "viewLogicType" : "APP_OPENDATA"
+                    "viewLogicType" : "APP_OPENDATA",
+                    "editMode" : false
                   }
                 } ],
                 "getPSAppViewNavContexts" : [ {
@@ -2762,6 +2854,7 @@
                   "sortMode" : "REMOTE",
                   "hasWFDataItems" : false,
                   "enableColFilter" : false,
+                  "enableCustomized" : true,
                   "enableGroup" : false,
                   "enablePagingBar" : false,
                   "enableRowEdit" : false,
@@ -2772,9 +2865,11 @@
                   "noSort" : true,
                   "singleSelect" : true,
                   "name" : "grid",
-                  "modelid" : "e37961cc37e96752f436ef141b9d80c1"
+                  "modelid" : "e37961cc37e96752f436ef141b9d80c1",
+                  "modeltype" : "PSDEGRID"
                 } ],
                 "getPSDEViewCodeName" : "Usr3GridView",
+                "getPSDEViewId" : "abee3b88a176ffce22fc14f90202895f",
                 "getPSViewLayoutPanel" : {
                   "codeName" : "Layoutpanel",
                   "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -2799,7 +2894,8 @@
                 "enableRowEdit" : false,
                 "rowEditDefault" : false,
                 "showCaptionBar" : false,
-                "modelid" : "2ce171ae2b8f5fb2ee16e8f176347f23"
+                "modelid" : "2ce171ae2b8f5fb2ee16e8f176347f23",
+                "modeltype" : "PSAPPDEVIEW"
               },
               "getPSLayoutPos" : {
                 "colMD" : 24,
@@ -3184,6 +3280,7 @@
                       "readOnly" : true,
                       "name" : "dashboard_sysportlet3_chart",
                       "modelid" : "a182b142d83d08eab8fb43e1bdcd0150",
+                      "modeltype" : "PSDECHART",
                       "getUserParam" : {
                         "EC.legend" : "{show:false}",
                         "EC.color" : "[\"#CAAC32\",\"#0075A9\",\"#22AC38\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
@@ -3198,7 +3295,8 @@
                     "portletType" : "CHART",
                     "title" : "完成的任务",
                     "showTitleBar" : false,
-                    "modelid" : "8e0229cd3791ade7bf1a00994c31c5e0"
+                    "modelid" : "8e0229cd3791ade7bf1a00994c31c5e0",
+                    "modeltype" : "PSSYSDBPART"
                   }, {
                     "codeName" : "CurUserResolveBug",
                     "getContentPSControl" : {
@@ -3388,6 +3486,7 @@
                       "readOnly" : true,
                       "name" : "dashboard_sysportlet4_chart",
                       "modelid" : "1d4451e6a31305f54bf7644de1075592",
+                      "modeltype" : "PSDECHART",
                       "getUserParam" : {
                         "EC.legend" : "{show:false}",
                         "EC.color" : "[\"#CAAC32\",\"#0075A9\",\"#22AC38\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
@@ -3402,7 +3501,8 @@
                     "portletType" : "CHART",
                     "title" : "解决的Bug",
                     "showTitleBar" : false,
-                    "modelid" : "91a8d4ab8f3898e615a559ab995ddc13"
+                    "modelid" : "91a8d4ab8f3898e615a559ab995ddc13",
+                    "modeltype" : "PSSYSDBPART"
                   } ],
                   "portletType" : "CONTAINER",
                   "title" : "完成任务数和解决Bug数",
@@ -3794,6 +3894,7 @@
                       "readOnly" : true,
                       "name" : "dashboard_sysportlet5_chart",
                       "modelid" : "8993ef48b185bc2433a52f2b3ccd5235",
+                      "modeltype" : "PSDECHART",
                       "getUserParam" : {
                         "EC.color" : "[\"#76FF03\",\"#2979FF\",\"#00B0FF\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
                       }
@@ -3806,7 +3907,8 @@
                     "portletType" : "CHART",
                     "title" : "月完成任务数及累计工时和解决Bug数",
                     "showTitleBar" : false,
-                    "modelid" : "fc795c604763892b6b243b4db6b133ef"
+                    "modelid" : "fc795c604763892b6b243b4db6b133ef",
+                    "modeltype" : "PSSYSDBPART"
                   } ],
                   "portletType" : "CONTAINER",
                   "title" : "月完成任务数及累计工时和解决Bug数",
@@ -3817,9 +3919,11 @@
               } ],
               "enableCustomized" : false,
               "name" : "dashboard",
-              "modelid" : "35452fdae20ad8f9a786c708744662b4"
+              "modelid" : "35452fdae20ad8f9a786c708744662b4",
+              "modeltype" : "PSSYSDASHBOARD"
             } ],
             "getPSDEViewCodeName" : "DashboardView",
+            "getPSDEViewId" : "0cafed8a7b2f2febe9850de80b6e4b72",
             "getPSViewLayoutPanel" : {
               "codeName" : "Layoutpanel",
               "controlStyle" : "APPDEPORTALVIEW_STYLE2",
@@ -3844,7 +3948,8 @@
             "loadDefault" : true,
             "showCaptionBar" : false,
             "showDataInfoBar" : true,
-            "modelid" : "35452fdae20ad8f9a786c708744662b4"
+            "modelid" : "35452fdae20ad8f9a786c708744662b4",
+            "modeltype" : "PSAPPDEVIEW"
           },
           "getPSLayoutPos" : {
             "colMD" : 24,
@@ -4237,6 +4342,7 @@
                         "readOnly" : true,
                         "name" : "dashboard_sysportlet4_chart",
                         "modelid" : "534e561f7a0e57fe4e6dee579ae16779",
+                        "modeltype" : "PSDECHART",
                         "getUserParam" : {
                           "EC.legend" : "{show:false}",
                           "EC.color" : "[\"#CAAC32\",\"#0075A9\",\"#22AC38\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
@@ -4250,7 +4356,8 @@
                       "portletType" : "CHART",
                       "title" : "累计创建的Bug",
                       "showTitleBar" : false,
-                      "modelid" : "67b81d2df4e2708ad21a8f64c35fe088"
+                      "modelid" : "67b81d2df4e2708ad21a8f64c35fe088",
+                      "modeltype" : "PSSYSDBPART"
                     } ],
                     "portletType" : "CONTAINER",
                     "showTitleBar" : true
@@ -4474,6 +4581,7 @@
                         "readOnly" : true,
                         "name" : "dashboard_sysportlet5_chart",
                         "modelid" : "5b60ad4bb21c7faf9c631c8c13e42149",
+                        "modeltype" : "PSDECHART",
                         "getUserParam" : {
                           "EC.legend" : "{show:false}",
                           "EC.color" : "[\"#00FF99\",\"#00CCFF\",\"#aa00ff\",\"#884bff\",'#00ffa9','#85B3FF','#A1FFFF']"
@@ -4487,7 +4595,8 @@
                       "portletType" : "CHART",
                       "title" : "累计创建用例",
                       "showTitleBar" : false,
-                      "modelid" : "3374038650d1bfc992f420b76f6f8fb5"
+                      "modelid" : "3374038650d1bfc992f420b76f6f8fb5",
+                      "modeltype" : "PSSYSDBPART"
                     } ],
                     "portletType" : "CONTAINER",
                     "showTitleBar" : true
@@ -4830,6 +4939,7 @@
                       "readOnly" : true,
                       "name" : "dashboard_sysportlet3_chart",
                       "modelid" : "419cfd8e4688bd7a4d507d481bb24879",
+                      "modeltype" : "PSDECHART",
                       "getUserParam" : {
                         "EC.color" : "[\"#76FF03\",\"#2979FF\",\"#00B0FF\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
                       }
@@ -4842,7 +4952,8 @@
                     "portletType" : "CHART",
                     "title" : "月创建Bug数和创建用例数",
                     "showTitleBar" : false,
-                    "modelid" : "7e897d7840c7fbca7bb954f13d8dbeb3"
+                    "modelid" : "7e897d7840c7fbca7bb954f13d8dbeb3",
+                    "modeltype" : "PSSYSDBPART"
                   } ],
                   "portletType" : "CONTAINER",
                   "title" : "月创建Bug数和创建用例数",
@@ -4853,9 +4964,11 @@
               } ],
               "enableCustomized" : false,
               "name" : "dashboard",
-              "modelid" : "73c630ad73ee5b10d79c36c91df91b39"
+              "modelid" : "73c630ad73ee5b10d79c36c91df91b39",
+              "modeltype" : "PSSYSDASHBOARD"
             } ],
             "getPSDEViewCodeName" : "QADashboardView",
+            "getPSDEViewId" : "c564af75d6a4fc7212691f0ff4a47de8",
             "getPSViewLayoutPanel" : {
               "codeName" : "Layoutpanel",
               "controlStyle" : "APPDEPORTALVIEW_STYLE2",
@@ -4880,7 +4993,8 @@
             "loadDefault" : true,
             "showCaptionBar" : false,
             "showDataInfoBar" : true,
-            "modelid" : "73c630ad73ee5b10d79c36c91df91b39"
+            "modelid" : "73c630ad73ee5b10d79c36c91df91b39",
+            "modeltype" : "PSAPPDEVIEW"
           },
           "getPSLayoutPos" : {
             "colMD" : 24,
@@ -5271,6 +5385,7 @@
                         "readOnly" : true,
                         "name" : "dashboard_sysportlet6_chart",
                         "modelid" : "96894e73f66dfc1bf9d4cb2b2b6f52e3",
+                        "modeltype" : "PSDECHART",
                         "getUserParam" : {
                           "EC.legend" : "{show:false}",
                           "EC.color" : "[\"#CAAC32\",\"#0075A9\",\"#22AC38\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
@@ -5284,7 +5399,8 @@
                       "portletType" : "CHART",
                       "title" : "累计创建需求-优先级",
                       "showTitleBar" : false,
-                      "modelid" : "f95dde4138238d540065bb251aa84e6f"
+                      "modelid" : "f95dde4138238d540065bb251aa84e6f",
+                      "modeltype" : "PSSYSDBPART"
                     } ],
                     "portletType" : "CONTAINER",
                     "showTitleBar" : false
@@ -5508,6 +5624,7 @@
                         "readOnly" : true,
                         "name" : "dashboard_sysportlet7_chart",
                         "modelid" : "c90b74e360af0b39214b0aaa1ce800b4",
+                        "modeltype" : "PSDECHART",
                         "getUserParam" : {
                           "EC.legend" : "{show:false}",
                           "EC.color" : "[\"#CAAC32\",\"#0075A9\",\"#22AC38\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
@@ -5521,7 +5638,8 @@
                       "portletType" : "CHART",
                       "title" : "累计创建的需求-阶段",
                       "showTitleBar" : false,
-                      "modelid" : "c8c7597a820a89e52b2250906bd4c7fa"
+                      "modelid" : "c8c7597a820a89e52b2250906bd4c7fa",
+                      "modeltype" : "PSSYSDBPART"
                     } ],
                     "portletType" : "CONTAINER",
                     "showTitleBar" : false
@@ -5811,6 +5929,7 @@
                       "readOnly" : true,
                       "name" : "dashboard_sysportlet5_chart",
                       "modelid" : "2ad3d195a67cf63c7a1e78851643e2c1",
+                      "modeltype" : "PSDECHART",
                       "getUserParam" : {
                         "EC.color" : "[\"#76FF03\",\"#2979FF\",\"#00B0FF\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
                       }
@@ -5823,7 +5942,8 @@
                     "portletType" : "CHART",
                     "title" : "月累计需求数",
                     "showTitleBar" : false,
-                    "modelid" : "3f660fce6240a5ddac1e9c73555ae46d"
+                    "modelid" : "3f660fce6240a5ddac1e9c73555ae46d",
+                    "modeltype" : "PSSYSDBPART"
                   } ],
                   "portletType" : "CONTAINER",
                   "title" : "月创建需求数",
@@ -5834,9 +5954,11 @@
               } ],
               "enableCustomized" : false,
               "name" : "dashboard",
-              "modelid" : "6e0ad417e9fe2138d57f5e9e6a2e3b32"
+              "modelid" : "6e0ad417e9fe2138d57f5e9e6a2e3b32",
+              "modeltype" : "PSSYSDASHBOARD"
             } ],
             "getPSDEViewCodeName" : "PODashboardView",
+            "getPSDEViewId" : "001e417e92c1018c4e747eab08920bfb",
             "getPSViewLayoutPanel" : {
               "codeName" : "Layoutpanel",
               "controlStyle" : "APPDEPORTALVIEW_STYLE2",
@@ -5861,7 +5983,8 @@
             "loadDefault" : true,
             "showCaptionBar" : false,
             "showDataInfoBar" : true,
-            "modelid" : "6e0ad417e9fe2138d57f5e9e6a2e3b32"
+            "modelid" : "6e0ad417e9fe2138d57f5e9e6a2e3b32",
+            "modeltype" : "PSAPPDEVIEW"
           },
           "getPSLayoutPos" : {
             "colMD" : 24,
@@ -6301,9 +6424,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "40103bafe296c9a202de1117b470da29"
+    "modelid" : "40103bafe296c9a202de1117b470da29",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "EditView",
+  "getPSDEViewId" : "d373f70029b16477c800e74c134524c7",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW_STYLE2",
@@ -6324,5 +6449,6 @@
   "enableDP" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "92828782339ab18470626ac28292615a"
+  "modelid" : "92828782339ab18470626ac28292615a",
+  "modeltype" : "PSAPPDEVIEW"
 }

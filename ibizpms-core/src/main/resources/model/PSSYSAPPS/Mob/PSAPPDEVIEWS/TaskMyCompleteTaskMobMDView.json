@@ -53,6 +53,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -71,7 +95,8 @@
           "viewType" : "DEMOBEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -340,7 +365,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",
-      "modelid" : "881c273f0a3edb62a7fded4f04b338fe"
+      "modelid" : "881c273f0a3edb62a7fded4f04b338fe",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "MyCompleteTaskMob",
     "mobListStyle" : "LISTVIEW",
@@ -553,7 +579,8 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "041f6c884786b95e3505e11890a9cfbe"
+    "modelid" : "041f6c884786b95e3505e11890a9cfbe",
+    "modeltype" : "PSDELIST"
   }, {
     "codeName" : "MyCompleteTaskMobMDViewrighttoolbar",
     "controlType" : "TOOLBAR",
@@ -566,9 +593,11 @@
       "id" : "RIGHTTOOLBAR"
     },
     "toolbarStyle" : "MOBNAVRIGHTMENU",
-    "modelid" : "c5fb31c6e809b1bcfe21d0675694836c_righttoolbar"
+    "modelid" : "c5fb31c6e809b1bcfe21d0675694836c_righttoolbar",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "MyCompleteTaskMobMDView",
+  "getPSDEViewId" : "a1a90fb63d8d48069bde6abd279a8cd4",
   "getPSSysImage" : {
     "glyph" : "xf0ae@FontAwesome",
     "cssClass" : "fa fa-tasks"
@@ -596,6 +625,7 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : true,
   "modelid" : "c5fb31c6e809b1bcfe21d0675694836c",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

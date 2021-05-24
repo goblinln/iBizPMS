@@ -267,11 +267,13 @@
             "readOnly" : true,
             "name" : "chart",
             "modelid" : "ba6bbcbc9bd123eecfde7313a07c3117",
+            "modeltype" : "PSDECHART",
             "getUserParam" : {
               "EC.color" : "[\"#FF0000\",\"#FFCC33\",\"#aa00ff\",\"#884bff\",'#00ffa9','#85B3FF','#A1FFFF']"
             }
           } ],
           "getPSDEViewCodeName" : "RunResultChartView9",
+          "getPSDEViewId" : "0de4423ad438f39435a73617d06b486d",
           "getPSSysImage" : {
             "glyph" : "xf006@FontAwesome",
             "cssClass" : "fa fa-star-o"
@@ -300,6 +302,7 @@
           "loadDefault" : true,
           "showCaptionBar" : true,
           "modelid" : "eb0adb7cc6e13409cd3f91e0e36d7c45",
+          "modeltype" : "PSAPPDEVIEW",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "Stories",
@@ -741,6 +744,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : false,
             "enableRowEdit" : false,
@@ -751,9 +755,11 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "40098224913df106f7fcd9345b6d1612"
+            "modelid" : "40098224913df106f7fcd9345b6d1612",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "resultEntryGridView",
+          "getPSDEViewId" : "5e5b6fb43c55c75aa3847057458e586d",
           "getPSSysImage" : {
             "glyph" : "xf006@FontAwesome",
             "cssClass" : "fa fa-star-o"
@@ -783,6 +789,7 @@
           "rowEditDefault" : false,
           "showCaptionBar" : false,
           "modelid" : "7cf8a2ac77466f9315cc774713908630",
+          "modeltype" : "PSAPPDEVIEW",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "Stories",
@@ -933,5 +940,6 @@
   "noTabHeader" : true,
   "readOnly" : false,
   "showFormNavBar" : false,
-  "modelid" : "ac8ae04040cbcf1e0e53225efdd059e7"
+  "modelid" : "ac8ae04040cbcf1e0e53225efdd059e7",
+  "modeltype" : "PSDEFORM_EDITFORM"
 }

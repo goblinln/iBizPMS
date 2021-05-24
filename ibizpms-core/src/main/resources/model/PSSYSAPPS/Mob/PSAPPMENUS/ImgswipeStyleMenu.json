@@ -33,5 +33,6 @@
   } ],
   "enableCustomize" : false,
   "name" : "imgswipestylemenu",
-  "modelid" : "ecdacd068ea991f32b535f48d799605e"
+  "modelid" : "ecdacd068ea991f32b535f48d799605e",
+  "modeltype" : "PSAPPMENU"
 }

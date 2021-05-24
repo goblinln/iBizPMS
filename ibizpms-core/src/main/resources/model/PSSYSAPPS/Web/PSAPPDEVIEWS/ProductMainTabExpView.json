@@ -144,6 +144,7 @@
         "cssClass" : "fa fa-info-circle"
       },
       "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel",
+      "modeltype" : "PSVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "accUserMode" : 2,
         "caption" : "产品",
@@ -309,11 +310,22 @@
                   }, {
                     "logicTrigger" : "CUSTOM",
                     "logicType" : "SYSUILOGIC",
+                    "name" : "editdata",
+                    "getPSAppUILogic" : {
+                      "logicType" : "PREDEFINED",
+                      "name" : "编辑数据",
+                      "viewLogicType" : "APP_OPENDATA",
+                      "editMode" : true
+                    }
+                  }, {
+                    "logicTrigger" : "CUSTOM",
+                    "logicType" : "SYSUILOGIC",
                     "name" : "opendata",
                     "getPSAppUILogic" : {
                       "logicType" : "PREDEFINED",
                       "name" : "打开数据",
-                      "viewLogicType" : "APP_OPENDATA"
+                      "viewLogicType" : "APP_OPENDATA",
+                      "editMode" : false
                     }
                   } ],
                   "getPSAppViewNavParams" : [ {
@@ -483,7 +495,8 @@
                     "noSort" : false,
                     "showHeader" : true,
                     "name" : "list2",
-                    "modelid" : "c057777628758f32a5379205aca5e81c"
+                    "modelid" : "c057777628758f32a5379205aca5e81c",
+                    "modeltype" : "PSDELIST"
                   }, {
                     "codeName" : "GetRoadmapYearS",
                     "controlType" : "LIST",
@@ -645,9 +658,11 @@
                     "noSort" : false,
                     "showHeader" : true,
                     "name" : "list",
-                    "modelid" : "1f23a4ba710a8b45f1cf253adbfd3762"
+                    "modelid" : "1f23a4ba710a8b45f1cf253adbfd3762",
+                    "modeltype" : "PSDELIST"
                   } ],
                   "getPSDEViewCodeName" : "RoadMapSListView9",
+                  "getPSDEViewId" : "bd5e733df020ec62f2caa3c5af6b31ea",
                   "getPSViewLayoutPanel" : {
                     "codeName" : "Layoutpanel",
                     "controlStyle" : "APPDELISTVIEW9_STYLE2",
@@ -668,12 +683,14 @@
                   "enableDP" : true,
                   "enableFilter" : false,
                   "showCaptionBar" : false,
-                  "modelid" : "d1b3f6d9d0ca781020cf5e4665461fbf"
+                  "modelid" : "d1b3f6d9d0ca781020cf5e4665461fbf",
+                  "modeltype" : "PSAPPDEVIEW"
                 },
                 "portletType" : "VIEW",
                 "title" : "产品路线图",
                 "showTitleBar" : true,
-                "modelid" : "5fc486413b4b51dcf4e6753ce797b5e7"
+                "modelid" : "5fc486413b4b51dcf4e6753ce797b5e7",
+                "modeltype" : "PSSYSDBPART"
               }, {
                 "codeName" : "ProductTrendsTimeline",
                 "controlType" : "PORTLET",
@@ -754,6 +771,30 @@
                   }, {
                     "logicTrigger" : "CUSTOM",
                     "logicType" : "SYSUILOGIC",
+                    "name" : "editdata",
+                    "getPSAppUILogic" : {
+                      "logicType" : "PREDEFINED",
+                      "name" : "编辑数据",
+                      "getOpenDataPSAppView" : {
+                        "getRefPSAppView" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+                          "viewType" : "DEEDITVIEW"
+                        }
+                      },
+                      "getPSAppUILogicRefViews" : [ {
+                        "getRefPSAppView" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+                          "viewType" : "DEEDITVIEW"
+                        }
+                      } ],
+                      "viewLogicType" : "APP_OPENDATA",
+                      "editMode" : true
+                    }
+                  }, {
+                    "logicTrigger" : "CUSTOM",
+                    "logicType" : "SYSUILOGIC",
                     "name" : "opendata",
                     "getPSAppUILogic" : {
                       "logicType" : "PREDEFINED",
@@ -772,7 +813,8 @@
                           "viewType" : "DEEDITVIEW"
                         }
                       } ],
-                      "viewLogicType" : "APP_OPENDATA"
+                      "viewLogicType" : "APP_OPENDATA",
+                      "editMode" : false
                     }
                   } ],
                   "getPSAppViewRefs" : [ {
@@ -969,9 +1011,11 @@
                     "noSort" : false,
                     "showHeader" : true,
                     "name" : "list",
-                    "modelid" : "999d18662199bb9f2e4a888396b7e2ed"
+                    "modelid" : "999d18662199bb9f2e4a888396b7e2ed",
+                    "modeltype" : "PSDELIST"
                   } ],
                   "getPSDEViewCodeName" : "ProductTrendsListView9",
+                  "getPSDEViewId" : "573001171fa0dffa8162ea97a89feeb7",
                   "getPSViewLayoutPanel" : {
                     "codeName" : "Layoutpanel",
                     "controlStyle" : "APPDELISTVIEW9_STYLE2",
@@ -992,12 +1036,14 @@
                   "enableDP" : true,
                   "enableFilter" : false,
                   "showCaptionBar" : false,
-                  "modelid" : "97af408e6a6cb088c824cacd1807f353"
+                  "modelid" : "97af408e6a6cb088c824cacd1807f353",
+                  "modeltype" : "PSAPPDEVIEW"
                 },
                 "portletType" : "VIEW",
                 "title" : "最新动态",
                 "showTitleBar" : true,
-                "modelid" : "0c6215d819ac6f3ed16aa0cd11b365bd"
+                "modelid" : "0c6215d819ac6f3ed16aa0cd11b365bd",
+                "modeltype" : "PSSYSDBPART"
               }, {
                 "codeName" : "ActionHistory",
                 "controlType" : "PORTLET",
@@ -1091,6 +1137,30 @@
                   }, {
                     "logicTrigger" : "CUSTOM",
                     "logicType" : "SYSUILOGIC",
+                    "name" : "editdata",
+                    "getPSAppUILogic" : {
+                      "logicType" : "PREDEFINED",
+                      "name" : "编辑数据",
+                      "getOpenDataPSAppView" : {
+                        "getRefPSAppView" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+                          "viewType" : "DEEDITVIEW"
+                        }
+                      },
+                      "getPSAppUILogicRefViews" : [ {
+                        "getRefPSAppView" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+                          "viewType" : "DEEDITVIEW"
+                        }
+                      } ],
+                      "viewLogicType" : "APP_OPENDATA",
+                      "editMode" : true
+                    }
+                  }, {
+                    "logicTrigger" : "CUSTOM",
+                    "logicType" : "SYSUILOGIC",
                     "name" : "opendata",
                     "getPSAppUILogic" : {
                       "logicType" : "PREDEFINED",
@@ -1109,7 +1179,8 @@
                           "viewType" : "DEEDITVIEW"
                         }
                       } ],
-                      "viewLogicType" : "APP_OPENDATA"
+                      "viewLogicType" : "APP_OPENDATA",
+                      "editMode" : false
                     }
                   } ],
                   "getPSAppViewNavContexts" : [ {
@@ -1304,7 +1375,8 @@
                     "noSort" : false,
                     "showHeader" : true,
                     "name" : "history",
-                    "modelid" : "c3a36618c939852256c260861292987f"
+                    "modelid" : "c3a36618c939852256c260861292987f",
+                    "modeltype" : "PSDELIST"
                   }, {
                     "codeName" : "AddCommentHistoryListViewtoolbar",
                     "controlType" : "TOOLBAR",
@@ -1370,7 +1442,8 @@
                       "showCaption" : true,
                       "showIcon" : true
                     } ],
-                    "modelid" : "a3eda21b193077f1b51aed307ce96138"
+                    "modelid" : "a3eda21b193077f1b51aed307ce96138",
+                    "modeltype" : "PSDETOOLBAR"
                   }, {
                     "codeName" : "ClassifyByType",
                     "controlType" : "LIST",
@@ -1559,9 +1632,11 @@
                     "noSort" : false,
                     "showHeader" : true,
                     "name" : "list",
-                    "modelid" : "3b94c5ec8c0db8db6a5f36fa82c3ed3b"
+                    "modelid" : "3b94c5ec8c0db8db6a5f36fa82c3ed3b",
+                    "modeltype" : "PSDELIST"
                   } ],
                   "getPSDEViewCodeName" : "AddCommentHistoryListView",
+                  "getPSDEViewId" : "980a6d624690126294ea41f30b7150b8",
                   "getPSViewLayoutPanel" : {
                     "codeName" : "Layoutpanel",
                     "controlStyle" : "APPDELISTVIEW_STYLE2",
@@ -1582,12 +1657,14 @@
                   "enableDP" : true,
                   "enableFilter" : false,
                   "showCaptionBar" : false,
-                  "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b"
+                  "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b",
+                  "modeltype" : "PSAPPDEVIEW"
                 },
                 "portletType" : "VIEW",
                 "title" : "历史记录",
                 "showTitleBar" : false,
-                "modelid" : "4ea59943812a7db08d0a61ee7976943d"
+                "modelid" : "4ea59943812a7db08d0a61ee7976943d",
+                "modeltype" : "PSSYSDBPART"
               }, {
                 "codeName" : "MainDashboardViewdashboard_container4",
                 "controlType" : "PORTLET",
@@ -1820,7 +1897,8 @@
                   "portletType" : "ACTIONBAR",
                   "title" : "主数据操作栏",
                   "showTitleBar" : false,
-                  "modelid" : "f0f003f15bf443a61c50c862dee11d43"
+                  "modelid" : "f0f003f15bf443a61c50c862dee11d43",
+                  "modeltype" : "PSSYSDBPART"
                 } ],
                 "getPSSysCss" : {
                   "cssName" : "dashboard-footer-button-wrapper"
@@ -3186,9 +3264,11 @@
                     "readOnly" : false,
                     "showFormNavBar" : false,
                     "name" : "form",
-                    "modelid" : "0ca73a199f3fc2c96900422514c071d4"
+                    "modelid" : "0ca73a199f3fc2c96900422514c071d4",
+                    "modeltype" : "PSDEFORM_EDITFORM"
                   } ],
                   "getPSDEViewCodeName" : "DashboardInfoMainView9",
+                  "getPSDEViewId" : "fbb6480f0a71159d3a72f488528328d2",
                   "getPSViewLayoutPanel" : {
                     "codeName" : "Layoutpanel",
                     "controlStyle" : "APPDEEDITVIEW9_STYLE2",
@@ -3209,12 +3289,14 @@
                   "enableDP" : true,
                   "showCaptionBar" : true,
                   "showDataInfoBar" : false,
-                  "modelid" : "b5d2389c0dd12ae614b319090ecc2361"
+                  "modelid" : "b5d2389c0dd12ae614b319090ecc2361",
+                  "modeltype" : "PSAPPDEVIEW"
                 },
                 "portletType" : "VIEW",
                 "title" : "产品基本信息",
                 "showTitleBar" : false,
-                "modelid" : "8487d88326c8ae4bf9dfc611017d32ee"
+                "modelid" : "8487d88326c8ae4bf9dfc611017d32ee",
+                "modeltype" : "PSSYSDBPART"
               } ],
               "portletType" : "CONTAINER",
               "showTitleBar" : true
@@ -3224,9 +3306,11 @@
           } ],
           "enableCustomized" : false,
           "name" : "dashboard",
-          "modelid" : "bc36be2ee4a78e69c13665a8ad03ab6a"
+          "modelid" : "bc36be2ee4a78e69c13665a8ad03ab6a",
+          "modeltype" : "PSSYSDASHBOARD"
         } ],
         "getPSDEViewCodeName" : "MainDashboardView",
+        "getPSDEViewId" : "a8dea0724669eebee451548a6d428126",
         "getPSViewLayoutPanel" : {
           "codeName" : "Layoutpanel",
           "controlStyle" : "APPDEPORTALVIEW_STYLE2",
@@ -3251,7 +3335,8 @@
         "loadDefault" : true,
         "showCaptionBar" : false,
         "showDataInfoBar" : true,
-        "modelid" : "bc36be2ee4a78e69c13665a8ad03ab6a"
+        "modelid" : "bc36be2ee4a78e69c13665a8ad03ab6a",
+        "modeltype" : "PSAPPDEVIEW"
       }
     }, {
       "caption" : "需求",
@@ -3275,7 +3360,8 @@
         "glyph" : "xf006@FontAwesome",
         "cssClass" : "fa fa-star-o"
       },
-      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel2"
+      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel2",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "看板",
       "codeName" : "MainTabExpViewtabviewpanel11",
@@ -3298,7 +3384,8 @@
         "glyph" : "xf181@FontAwesome",
         "cssClass" : "fa fa-trello"
       },
-      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel11"
+      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel11",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "计划",
       "codeName" : "MainTabExpViewtabviewpanel3",
@@ -3321,7 +3408,8 @@
         "glyph" : "xf073@FontAwesome",
         "cssClass" : "fa fa-calendar"
       },
-      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel3"
+      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel3",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "发布",
       "codeName" : "MainTabExpViewtabviewpanel4",
@@ -3344,7 +3432,8 @@
         "glyph" : "xf11d@FontAwesome",
         "cssClass" : "fa fa-flag-o"
       },
-      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel4"
+      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel4",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "路线图",
       "codeName" : "MainTabExpViewtabviewpanel9",
@@ -3367,7 +3456,8 @@
         "glyph" : "xf00b@FontAwesome",
         "cssClass" : "fa fa-th-list"
       },
-      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel9"
+      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel9",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "项目",
       "codeName" : "MainTabExpViewtabviewpanel5",
@@ -3390,7 +3480,8 @@
         "glyph" : "xf18d@FontAwesome",
         "cssClass" : "fa fa-stack-exchange"
       },
-      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel5"
+      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel5",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "平台",
       "codeName" : "MainTabExpViewtabviewpanel8",
@@ -3413,7 +3504,8 @@
         "glyph" : "xf126@FontAwesome",
         "cssClass" : "fa fa-code-fork"
       },
-      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel8"
+      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel8",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "动态",
       "codeName" : "MainTabExpViewtabviewpanel7",
@@ -3436,7 +3528,8 @@
         "glyph" : "xf161@FontAwesome",
         "cssClass" : "fa fa-sort-amount-desc"
       },
-      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel7"
+      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel7",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "模块",
       "codeName" : "MainTabExpViewtabviewpanel6",
@@ -3454,7 +3547,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL6"
       },
-      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel6"
+      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel6",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "文档",
       "codeName" : "MainTabExpViewtabviewpanel10",
@@ -3472,7 +3566,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL10"
       },
-      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel10"
+      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel10",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "团队",
       "codeName" : "MainTabExpViewtabviewpanel12",
@@ -3490,7 +3585,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL12"
       },
-      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel12"
+      "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabviewpanel12",
+      "modeltype" : "PSVIEWPANEL"
     } ],
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel"
@@ -3518,9 +3614,11 @@
       "name" : "tabviewpanel12"
     } ],
     "tabLayout" : "TOP",
-    "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabexppanel"
+    "modelid" : "6c7b582273d0726bcf77214807cfe40c_tabexppanel",
+    "modeltype" : "PSTABEXPPANEL"
   } ],
   "getPSDEViewCodeName" : "MainTabExpView",
+  "getPSDEViewId" : "3e755fa107fce1e346df7355cc7c3d82",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETABEXPVIEW_STYLE2",
@@ -3546,5 +3644,6 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "6c7b582273d0726bcf77214807cfe40c"
+  "modelid" : "6c7b582273d0726bcf77214807cfe40c",
+  "modeltype" : "PSAPPDEVIEW"
 }

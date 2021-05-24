@@ -80,6 +80,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -98,7 +122,8 @@
           "viewType" : "DEEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavContexts" : [ {
@@ -226,7 +251,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "b4436ab59e95a5f1aeeb91ceb25249a4"
+    "modelid" : "b4436ab59e95a5f1aeeb91ceb25249a4",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "NONE",
     "codeName" : "ProductTeamEdit",
@@ -845,6 +871,7 @@
     },
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : false,
     "enableRowEdit" : true,
@@ -855,7 +882,8 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "2c47975c0fd89cd264cec6132cee6a15"
+    "modelid" : "2c47975c0fd89cd264cec6132cee6a15",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "ProductTeamSearchForm",
     "controlType" : "SEARCHFORM",
@@ -1022,9 +1050,11 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "e729b95cb3414e8254ca61ed95836719"
+    "modelid" : "e729b95cb3414e8254ca61ed95836719",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "Usr2GridView",
+  "getPSDEViewId" : "11d8a7d8c1459e0c8e95dc57f9a89305",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -1053,6 +1083,7 @@
   "rowEditDefault" : true,
   "showCaptionBar" : false,
   "modelid" : "0a884b42c2e735a2a4cf6a17cee587f4",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "PRODUCTTEAMs",

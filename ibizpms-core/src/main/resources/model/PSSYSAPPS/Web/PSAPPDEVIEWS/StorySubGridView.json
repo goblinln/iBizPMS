@@ -77,6 +77,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -95,7 +119,8 @@
           "viewType" : "DEEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavContexts" : [ {
@@ -225,7 +250,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "b4436ab59e95a5f1aeeb91ceb25249a4"
+    "modelid" : "b4436ab59e95a5f1aeeb91ceb25249a4",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "NONE",
     "codeName" : "SubStoryNew",
@@ -1042,6 +1068,7 @@
     },
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : false,
     "enableRowEdit" : true,
@@ -1052,9 +1079,11 @@
     "noSort" : true,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "37e6c28f2b4c788ddbb5787a6377cdd9"
+    "modelid" : "37e6c28f2b4c788ddbb5787a6377cdd9",
+    "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "SubGridView",
+  "getPSDEViewId" : "3002a1a685436f6b709a58191c28c7d6",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -1084,6 +1113,7 @@
   "rowEditDefault" : true,
   "showCaptionBar" : true,
   "modelid" : "85897eeca4e1fb9fd7e7fe5c4fa28fa0",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

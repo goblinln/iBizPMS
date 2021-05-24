@@ -420,11 +420,22 @@
               }, {
                 "logicTrigger" : "CUSTOM",
                 "logicType" : "SYSUILOGIC",
+                "name" : "editdata",
+                "getPSAppUILogic" : {
+                  "logicType" : "PREDEFINED",
+                  "name" : "编辑数据",
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : true
+                }
+              }, {
+                "logicTrigger" : "CUSTOM",
+                "logicType" : "SYSUILOGIC",
                 "name" : "opendata",
                 "getPSAppUILogic" : {
                   "logicType" : "PREDEFINED",
                   "name" : "打开数据",
-                  "viewLogicType" : "APP_OPENDATA"
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : false
                 }
               } ],
               "getPSAppViewNavParams" : [ {
@@ -574,9 +585,11 @@
                 "noSort" : false,
                 "showHeader" : true,
                 "name" : "list",
-                "modelid" : "835d0e318f958e732332eceda335286e"
+                "modelid" : "835d0e318f958e732332eceda335286e",
+                "modeltype" : "PSDELIST"
               } ],
               "getPSDEViewCodeName" : "ListView9",
+              "getPSDEViewId" : "439cdaa85f61d5b761754a37aee0aee6",
               "getPSViewLayoutPanel" : {
                 "codeName" : "Layoutpanel",
                 "controlStyle" : "APPDELISTVIEW9_STYLE2",
@@ -597,7 +610,8 @@
               "enableDP" : true,
               "enableFilter" : false,
               "showCaptionBar" : false,
-              "modelid" : "d940bfd96f6087050755b99a3b6bab0a"
+              "modelid" : "d940bfd96f6087050755b99a3b6bab0a",
+              "modeltype" : "PSAPPDEVIEW"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -664,9 +678,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "6ba419166164ca4fb3597819eba69f3e"
+    "modelid" : "6ba419166164ca4fb3597819eba69f3e",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "MianBEditView9",
+  "getPSDEViewId" : "23495973eeefc5d5230568e73d06c064",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW9_STYLE2",
@@ -687,5 +703,6 @@
   "enableDP" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : false,
-  "modelid" : "6524537caa86877c2028a06c2665617e"
+  "modelid" : "6524537caa86877c2028a06c2665617e",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -101,7 +101,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
+    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "QuickCreate",
     "controlType" : "FORM",
@@ -736,9 +737,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "9ace02a30ddc332e8d434e9a29c49f8f"
+    "modelid" : "9ace02a30ddc332e8d434e9a29c49f8f",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "QuickCreateView",
+  "getPSDEViewId" : "c929c92c48b23551cbf67b5e08f8c409",
   "getPSSysImage" : {
     "glyph" : "xf11d@FontAwesome",
     "cssClass" : "fa fa-flag-o"
@@ -765,6 +768,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "120a2786f83e79c901470f9f38c4cd7a",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Releases",

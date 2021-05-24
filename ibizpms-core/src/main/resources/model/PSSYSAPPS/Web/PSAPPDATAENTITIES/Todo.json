@@ -2018,6 +2018,7 @@
   "enableUIActions" : 15,
   "logicName" : "待办事宜表",
   "name" : "ZT_TODO",
+  "getPSDEName" : "ZT_TODO",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDESERVICEAPIS/Todo.json"

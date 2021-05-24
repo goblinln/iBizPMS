@@ -290,7 +290,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "buglayoutpanel",
-      "modelid" : "15ac73e6dfc7a5d8c85fcba439f3ac38"
+      "modelid" : "15ac73e6dfc7a5d8c85fcba439f3ac38",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "getTextPSAppDEField" : {
       "name" : "TITLE",
@@ -571,7 +572,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "tasklayoutpanel",
-      "modelid" : "881c273f0a3edb62a7fded4f04b338fe"
+      "modelid" : "881c273f0a3edb62a7fded4f04b338fe",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "getTextPSAppDEField" : {
       "name" : "NAME",
@@ -771,7 +773,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "todolayoutpanel",
-      "modelid" : "56cea33453c4faf6de453b9018cdbba3"
+      "modelid" : "56cea33453c4faf6de453b9018cdbba3",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "getTextPSAppDEField" : {
       "name" : "NAME",
@@ -1003,7 +1006,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "testtasklayoutpanel",
-      "modelid" : "7f1e8cfe65f600cd812168d377dfae3e"
+      "modelid" : "7f1e8cfe65f600cd812168d377dfae3e",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "getTextPSAppDEField" : {
       "name" : "NAME",
@@ -1066,5 +1070,6 @@
     "id" : "Story"
   } ],
   "enableGroup" : false,
-  "modelid" : "1c72d13c2b12a4d55b0bfc83756fb2c7"
+  "modelid" : "1c72d13c2b12a4d55b0bfc83756fb2c7",
+  "modeltype" : "PSSYSCALENDAR"
 }

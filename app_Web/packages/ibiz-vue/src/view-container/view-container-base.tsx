@@ -1,10 +1,9 @@
 import Vue from 'vue';
 import qs from 'qs';
-import axios from 'axios';
 import { DynamicInstanceConfig, IPSAppView } from '@ibiz/dynamic-model-api';
 import { AppServiceBase, GetModelService, SandboxInstance, Util } from 'ibiz-core';
 import { AppComponentService } from '../app-service';
-
+import { CommunicationService } from '@ibiz/model-location';
 
 /**
  * 视图容器基类
@@ -84,6 +83,43 @@ export class ViewContainerBase extends Vue {
      * @memberof ViewContainerBase
      */
     public context: any = {};
+
+    created(): void {
+        const env = AppServiceBase.getInstance().getAppEnvironment();
+        if (env.devMode) {
+            this.selfPreview = this.selfPreview.bind(this);
+            const m = CommunicationService.getInstance();
+            m.evt.on('preview-view', this.selfPreview);
+        }
+    }
+
+    destroyed(): void {
+        const env = AppServiceBase.getInstance().getAppEnvironment();
+        if (env.devMode) {
+            const m = CommunicationService.getInstance();
+            m.evt.off('preview-view', this.selfPreview);
+        }
+    }
+
+    protected async selfPreview(res: any): Promise<void> {
+        const model = res.model;
+        if (model.dynaModelFilePath === this.dynaModelFilePath) {
+            const s = await GetModelService(this.context);
+            s.store.modelObject.delete(model.dynaModelFilePath);
+            const view = await s.getPSAppView(model);
+            this.initViewContext({ modeldata: view });
+            this.viewContainerName = '';
+            setTimeout(() => {
+                this.viewContainerName = AppComponentService.getViewComponents(
+                    view?.viewType,
+                    view?.viewStyle,
+                    view?.getPSSysPFPlugin?.pluginCode,
+                );
+                this.$forceUpdate();
+            }, 100);
+            this.$forceUpdate();
+        }
+    }
 
     /**
      * 视图容器初始化

@@ -81,6 +81,7 @@
         "cssClass" : "briefcase"
       },
       "modelid" : "9293496d815c03841aff6c20bb36915d_tabviewpanel",
+      "modeltype" : "PSVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "accUserMode" : 2,
         "caption" : "产品",
@@ -999,11 +1000,22 @@
                     }, {
                       "logicTrigger" : "CUSTOM",
                       "logicType" : "SYSUILOGIC",
+                      "name" : "editdata",
+                      "getPSAppUILogic" : {
+                        "logicType" : "PREDEFINED",
+                        "name" : "编辑数据",
+                        "viewLogicType" : "APP_OPENDATA",
+                        "editMode" : true
+                      }
+                    }, {
+                      "logicTrigger" : "CUSTOM",
+                      "logicType" : "SYSUILOGIC",
                       "name" : "opendata",
                       "getPSAppUILogic" : {
                         "logicType" : "PREDEFINED",
                         "name" : "打开数据",
-                        "viewLogicType" : "APP_OPENDATA"
+                        "viewLogicType" : "APP_OPENDATA",
+                        "editMode" : false
                       }
                     } ],
                     "getPSAppViewNavParams" : [ {
@@ -1144,7 +1156,8 @@
                         } ],
                         "mobilePanel" : true,
                         "name" : "mdctrl_itempanel",
-                        "modelid" : "5696f0682d1f1aca90b60ec57e448fd7"
+                        "modelid" : "5696f0682d1f1aca90b60ec57e448fd7",
+                        "modeltype" : "PSSYSVIEWPANEL"
                       },
                       "logicName" : "MOB",
                       "minorSortDir" : "ASC",
@@ -1313,9 +1326,11 @@
                       "noSort" : false,
                       "showHeader" : true,
                       "name" : "mdctrl",
-                      "modelid" : "5696f0682d1f1aca90b60ec57e448fd7"
+                      "modelid" : "5696f0682d1f1aca90b60ec57e448fd7",
+                      "modeltype" : "PSDELIST"
                     } ],
                     "getPSDEViewCodeName" : "MobMDView9",
+                    "getPSDEViewId" : "f3501d3ab2bec5e2c06859c427de7161",
                     "getPSViewLayoutPanel" : {
                       "codeName" : "Layoutpanel",
                       "controlStyle" : "APPDEMOBMDVIEW9",
@@ -1338,7 +1353,8 @@
                     "enablePullDownRefresh" : false,
                     "enableQuickSearch" : true,
                     "showCaptionBar" : false,
-                    "modelid" : "1d9d30b890d34ecfebbb4f33eb5999ad"
+                    "modelid" : "1d9d30b890d34ecfebbb4f33eb5999ad",
+                    "modeltype" : "PSAPPDEVIEW"
                   },
                   "getPSLayoutPos" : {
                     "colMD" : 24,
@@ -1399,7 +1415,8 @@
           "readOnly" : false,
           "showFormNavBar" : false,
           "name" : "form",
-          "modelid" : "4d3c8320a990870dab02feca9c322949"
+          "modelid" : "4d3c8320a990870dab02feca9c322949",
+          "modeltype" : "PSDEFORM_EDITFORM"
         }, {
           "codeName" : "MobEditViewrighttoolbar",
           "controlType" : "TOOLBAR",
@@ -1515,9 +1532,11 @@
             "showIcon" : true
           } ],
           "toolbarStyle" : "MOBBOTTOMMENU",
-          "modelid" : "413af07658da3e9127930818c419fb4e"
+          "modelid" : "413af07658da3e9127930818c419fb4e",
+          "modeltype" : "PSDETOOLBAR"
         } ],
         "getPSDEViewCodeName" : "MobEditView",
+        "getPSDEViewId" : "7aef1c6fa377cd51ffd9a3446d23f02e",
         "getPSViewLayoutPanel" : {
           "codeName" : "Layoutpanel",
           "controlStyle" : "APPDEMOBEDITVIEW",
@@ -1539,7 +1558,8 @@
         "enablePullDownRefresh" : false,
         "showCaptionBar" : false,
         "showDataInfoBar" : true,
-        "modelid" : "625661332c629b6c3838af5746c4acd5"
+        "modelid" : "625661332c629b6c3838af5746c4acd5",
+        "modeltype" : "PSAPPDEVIEW"
       }
     }, {
       "caption" : "需求",
@@ -1562,7 +1582,8 @@
       "getPSSysImage" : {
         "cssClass" : "text"
       },
-      "modelid" : "9293496d815c03841aff6c20bb36915d_tabviewpanel2"
+      "modelid" : "9293496d815c03841aff6c20bb36915d_tabviewpanel2",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "计划",
       "codeName" : "MobTabExpViewtabviewpanel4",
@@ -1584,7 +1605,8 @@
       "getPSSysImage" : {
         "cssClass" : "reorder"
       },
-      "modelid" : "9293496d815c03841aff6c20bb36915d_tabviewpanel4"
+      "modelid" : "9293496d815c03841aff6c20bb36915d_tabviewpanel4",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "发布",
       "codeName" : "MobTabExpViewtabviewpanel5",
@@ -1602,7 +1624,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL5"
       },
-      "modelid" : "9293496d815c03841aff6c20bb36915d_tabviewpanel5"
+      "modelid" : "9293496d815c03841aff6c20bb36915d_tabviewpanel5",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "BUG",
       "codeName" : "MobTabExpViewtabviewpanel3",
@@ -1624,7 +1647,8 @@
       "getPSSysImage" : {
         "cssClass" : "bug"
       },
-      "modelid" : "9293496d815c03841aff6c20bb36915d_tabviewpanel3"
+      "modelid" : "9293496d815c03841aff6c20bb36915d_tabviewpanel3",
+      "modeltype" : "PSVIEWPANEL"
     } ],
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel"
@@ -1638,9 +1662,11 @@
       "name" : "tabviewpanel3"
     } ],
     "tabLayout" : "TOP",
-    "modelid" : "9293496d815c03841aff6c20bb36915d_tabexppanel"
+    "modelid" : "9293496d815c03841aff6c20bb36915d_tabexppanel",
+    "modeltype" : "PSTABEXPPANEL"
   } ],
   "getPSDEViewCodeName" : "MobTabExpView",
+  "getPSDEViewId" : "3b19cc33cc4110fe40984db3cee2c1a7",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBTABEXPVIEW",
@@ -1666,5 +1692,6 @@
   "loadDefault" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
-  "modelid" : "9293496d815c03841aff6c20bb36915d"
+  "modelid" : "9293496d815c03841aff6c20bb36915d",
+  "modeltype" : "PSAPPDEVIEW"
 }

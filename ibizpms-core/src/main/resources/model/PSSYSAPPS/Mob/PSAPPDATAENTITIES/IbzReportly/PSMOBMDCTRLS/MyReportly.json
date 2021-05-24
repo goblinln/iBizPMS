@@ -101,5 +101,6 @@
   "enableRowNew" : false,
   "noSort" : false,
   "showHeader" : true,
-  "modelid" : "091c2f2ec7f6f59f8752245802e496e8"
+  "modelid" : "091c2f2ec7f6f59f8752245802e496e8",
+  "modeltype" : "PSDELIST"
 }

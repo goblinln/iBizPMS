@@ -122,7 +122,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
+    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "BuildSUBMIT",
     "controlType" : "FORM",
@@ -1168,9 +1169,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "395ef082c347d4afac64e65ad5355a28"
+    "modelid" : "395ef082c347d4afac64e65ad5355a28",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "EditView_commitTest",
+  "getPSDEViewId" : "54f3d15e733a83785db67f67d7c16fec",
   "getPSSysImage" : {
     "glyph" : "xf0ea@FontAwesome",
     "cssClass" : "fa fa-clipboard"
@@ -1196,6 +1199,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "f9491d4c2ef8e5263adeb7c8be5b66f9",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestTasks",

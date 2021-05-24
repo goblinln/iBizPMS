@@ -510,6 +510,7 @@
   "enableUIActions" : 15,
   "logicName" : "产品汇报用户任务",
   "name" : "IBIZPRO_PRODUCTUSERTASK",
+  "getPSDEName" : "IBIZPRO_PRODUCTUSERTASK",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproProductUserTask/PSDESERVICEAPIS/IbzproProductUserTask.json"

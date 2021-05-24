@@ -16,31 +16,33 @@
                 font-size: 1.75em;
             }
         }
-        .ivu-btn{
-            background: var(--button-background-color);
-            color: var(--button-font-color);
-            border-color: var(--button-font-color-light) !important;
-            height: 28px;
-            width: 62px;
-            &:hover {
-              background: var(--button-background-color-bright);
-              color: var(--button-font-color-bright);
-              border-color: var(--button-background-color-bright);
+        .left, .right {
+            button.ivu-btn, button.ivu-btn.ivu-btn-primary{
+                background: var(--button-background-color);
+                color: var(--button-font-color);
+                border-color: var(--button-font-color-light);
+                height: 28px;
+                width: 62px;
+                &:hover {
+                  background: var(--button-background-color-bright);
+                  color: var(--button-font-color-bright);
+                  border-color: var(--button-font-color-bright);
+                }
+                &:disabled, &:disabled:hover {
+                  background: var(--button-background-color-light);
+                  color: var(--button-font-color-light);
+                  border-color: var(--button-font-color-light);
+                }
+                line-height: 0;
+                span {
+                  line-height: 0.7;
+                }
             }
-            &:disabled, &:disabled:hover {
-              background: var(--button-background-color-light);
-              color: var(--button-font-color-light);
-              border-color: var(--button-font-color-light);
+            button.ivu-btn.button-active-color{
+                background: var(--button-background-color-bright);
+                color: var(--button-font-color-bright);
+                border-color: var(--button-font-color-bright);
             }
-            line-height: 0;
-            span {
-              line-height: 0.7;
-            }
-        }
-        .button-active-color{
-            background: var(--button-background-color-bright);
-            color: var(--button-font-color-bright);
-            border-color: var(--button-background-color-bright);
         }
     }
     .container{

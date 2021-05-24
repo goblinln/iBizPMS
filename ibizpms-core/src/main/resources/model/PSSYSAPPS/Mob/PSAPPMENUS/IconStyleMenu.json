@@ -126,5 +126,6 @@
   } ],
   "enableCustomize" : false,
   "name" : "iconstylemenu",
-  "modelid" : "1996f53992ac18ec2ea606e10f96ab7c"
+  "modelid" : "1996f53992ac18ec2ea606e10f96ab7c",
+  "modeltype" : "PSAPPMENU"
 }

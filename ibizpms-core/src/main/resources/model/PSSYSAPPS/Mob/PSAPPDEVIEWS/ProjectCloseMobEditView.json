@@ -360,11 +360,22 @@
               }, {
                 "logicTrigger" : "CUSTOM",
                 "logicType" : "SYSUILOGIC",
+                "name" : "editdata",
+                "getPSAppUILogic" : {
+                  "logicType" : "PREDEFINED",
+                  "name" : "编辑数据",
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : true
+                }
+              }, {
+                "logicTrigger" : "CUSTOM",
+                "logicType" : "SYSUILOGIC",
                 "name" : "opendata",
                 "getPSAppUILogic" : {
                   "logicType" : "PREDEFINED",
                   "name" : "打开数据",
-                  "viewLogicType" : "APP_OPENDATA"
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : false
                 }
               } ],
               "getPSAppViewNavParams" : [ {
@@ -505,7 +516,8 @@
                   } ],
                   "mobilePanel" : true,
                   "name" : "mdctrl_itempanel",
-                  "modelid" : "5696f0682d1f1aca90b60ec57e448fd7"
+                  "modelid" : "5696f0682d1f1aca90b60ec57e448fd7",
+                  "modeltype" : "PSSYSVIEWPANEL"
                 },
                 "logicName" : "MOB",
                 "minorSortDir" : "ASC",
@@ -674,9 +686,11 @@
                 "noSort" : false,
                 "showHeader" : true,
                 "name" : "mdctrl",
-                "modelid" : "5696f0682d1f1aca90b60ec57e448fd7"
+                "modelid" : "5696f0682d1f1aca90b60ec57e448fd7",
+                "modeltype" : "PSDELIST"
               } ],
               "getPSDEViewCodeName" : "MobMDView9",
+              "getPSDEViewId" : "f3501d3ab2bec5e2c06859c427de7161",
               "getPSViewLayoutPanel" : {
                 "codeName" : "Layoutpanel",
                 "controlStyle" : "APPDEMOBMDVIEW9",
@@ -699,7 +713,8 @@
               "enablePullDownRefresh" : false,
               "enableQuickSearch" : true,
               "showCaptionBar" : false,
-              "modelid" : "1d9d30b890d34ecfebbb4f33eb5999ad"
+              "modelid" : "1d9d30b890d34ecfebbb4f33eb5999ad",
+              "modeltype" : "PSAPPDEVIEW"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -760,7 +775,8 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "d03883e4cbea2e3a018c7344554db8a9"
+    "modelid" : "d03883e4cbea2e3a018c7344554db8a9",
+    "modeltype" : "PSDEFORM_EDITFORM"
   }, {
     "codeName" : "CloseMobEditViewrighttoolbar",
     "controlType" : "TOOLBAR",
@@ -821,9 +837,11 @@
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBBOTTOMMENU",
-    "modelid" : "c798012a3dda52e17ac452776aa498f0"
+    "modelid" : "c798012a3dda52e17ac452776aa498f0",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "CloseMobEditView",
+  "getPSDEViewId" : "9cb2cf6aec5e18308df02c9fc74875e7",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBEDITVIEW",
@@ -845,5 +863,6 @@
   "enablePullDownRefresh" : false,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
-  "modelid" : "b750a3b281b1c24016679b8f9c258b11"
+  "modelid" : "b750a3b281b1c24016679b8f9c258b11",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -525,6 +525,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "IBZ_LIBMODULE",
+  "getPSDEName" : "IBZ_LIBMODULE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule/PSDESERVICEAPIS/IbzLibModule.json"

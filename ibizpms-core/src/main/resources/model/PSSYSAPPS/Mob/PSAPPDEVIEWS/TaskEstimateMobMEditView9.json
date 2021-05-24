@@ -33,11 +33,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSControls" : [ {
@@ -534,6 +545,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -544,9 +556,11 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "meditviewpanel",
-    "modelid" : "6796831e2f83bf0954848155004b3698"
+    "modelid" : "6796831e2f83bf0954848155004b3698",
+    "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "MobMEditView9",
+  "getPSDEViewId" : "9eb526bb11f99b85b1bf816397cae226",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBMEDITVIEW9",
@@ -570,6 +584,7 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : true,
   "modelid" : "8664834aa506f4703df1ae2da090c167",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

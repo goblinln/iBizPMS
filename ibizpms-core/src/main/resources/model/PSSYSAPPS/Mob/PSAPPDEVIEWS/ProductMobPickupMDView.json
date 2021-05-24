@@ -216,7 +216,8 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "eb0a1353b9b4a55e2441e6edb532eb43"
+    "modelid" : "eb0a1353b9b4a55e2441e6edb532eb43",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   }, {
     "codeName" : "Mob",
     "controlStyle" : "LISTVIEW",
@@ -350,7 +351,8 @@
       "getPSControlParam" : {
         "id" : "mdctrl_batchtoolbar"
       },
-      "modelid" : "dc72839424ae81886458969764aad35c"
+      "modelid" : "dc72839424ae81886458969764aad35c",
+      "modeltype" : "PSDETOOLBAR"
     } ],
     "getPSDEListDataItems" : [ {
       "dataType" : 25,
@@ -412,9 +414,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "367d445821a484a912a99a012f155a76"
+    "modelid" : "367d445821a484a912a99a012f155a76",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "MobPickupMDView",
+  "getPSDEViewId" : "673127bf5e38835fd3aaec58c106d027",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBPICKUPMDVIEW",
@@ -438,5 +442,6 @@
   "enableSearch" : true,
   "expandSearchForm" : true,
   "showCaptionBar" : true,
-  "modelid" : "daa5f26f738336ecc2a5e3c95685ddbf"
+  "modelid" : "daa5f26f738336ecc2a5e3c95685ddbf",
+  "modeltype" : "PSAPPDEVIEW"
 }

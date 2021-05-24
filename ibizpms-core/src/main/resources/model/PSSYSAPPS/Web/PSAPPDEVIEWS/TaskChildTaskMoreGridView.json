@@ -109,6 +109,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -127,7 +151,8 @@
           "viewType" : "DEPORTALVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavContexts" : [ {
@@ -1363,7 +1388,8 @@
     "enableQuickSearch" : true,
     "mobileSearchBar" : false,
     "name" : "searchbar",
-    "modelid" : "f48f6753b28b83cbb139774abd86cc6c"
+    "modelid" : "f48f6753b28b83cbb139774abd86cc6c",
+    "modeltype" : "PSSYSSEARCHBAR"
   }, {
     "codeName" : "ChildTaskMoreGridViewtoolbar",
     "controlType" : "TOOLBAR",
@@ -1613,7 +1639,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "fabf7f1d3c7e790a7cde8db06d1ff66f"
+    "modelid" : "fabf7f1d3c7e790a7cde8db06d1ff66f",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "NONE",
     "codeName" : "ChildMain",
@@ -3009,6 +3036,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -3019,9 +3047,11 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "b52f1b39245cb4a70176035ab56f9901"
+    "modelid" : "b52f1b39245cb4a70176035ab56f9901",
+    "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "ChildTaskMoreGridView",
+  "getPSDEViewId" : "9D8B82FE-BC12-4C06-8F9D-C4646FCABA8F",
   "getPSSysImage" : {
     "glyph" : "xf0ae@FontAwesome",
     "cssClass" : "fa fa-tasks"
@@ -3053,6 +3083,7 @@
   "rowEditDefault" : false,
   "showCaptionBar" : true,
   "modelid" : "cda21542f04c1b12e11fdffb5d08c4fe",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

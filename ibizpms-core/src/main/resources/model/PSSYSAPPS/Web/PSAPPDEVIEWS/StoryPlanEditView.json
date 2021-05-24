@@ -113,7 +113,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
+    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "PlanNew",
     "controlType" : "FORM",
@@ -1499,9 +1500,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "9468eecb18756cc3605d0f96930032f2"
+    "modelid" : "9468eecb18756cc3605d0f96930032f2",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "PlanEditView",
+  "getPSDEViewId" : "d011c8ea5b8e8acdc0290a2b57236867",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -1527,6 +1530,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "978f3a4696f6fb43bd590afaa9fa8b90",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

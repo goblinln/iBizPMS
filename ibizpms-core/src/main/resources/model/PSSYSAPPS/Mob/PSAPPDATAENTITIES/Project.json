@@ -4167,6 +4167,7 @@
   "enableUIActions" : 15,
   "logicName" : "项目",
   "name" : "ZT_PROJECT",
+  "getPSDEName" : "ZT_PROJECT",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDESERVICEAPIS/Project.json"

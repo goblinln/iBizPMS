@@ -697,6 +697,7 @@
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "Task_Create",
+    "mapPSDEName" : "ZT_TASK",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -712,6 +713,7 @@
     "name" : "DELETE"
   }, {
     "logicName" : "Task_Delete",
+    "mapPSDEName" : "ZT_TASK",
     "mapPSDEOPPrivName" : "DELETE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -724,6 +726,7 @@
     "name" : "READ"
   }, {
     "logicName" : "Task_Read",
+    "mapPSDEName" : "ZT_TASK",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -733,6 +736,7 @@
     "id" : "TaskTeam__READ"
   }, {
     "logicName" : "Task_Update",
+    "mapPSDEName" : "ZT_TASK",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -778,6 +782,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "ZT_TASKTEAM",
+  "getPSDEName" : "IBZ_TASKTEAM",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDESERVICEAPIS/TaskTeam.json"

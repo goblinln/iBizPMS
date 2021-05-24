@@ -107,7 +107,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
+    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "Main_NewMode",
     "controlType" : "FORM",
@@ -1468,9 +1469,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "70c04327b96cfb43af665ec346854eb4"
+    "modelid" : "70c04327b96cfb43af665ec346854eb4",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "ReleaseSubEditView",
+  "getPSDEViewId" : "8d1e19d5b9c7a6d42307c3a63500ff63",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -1496,6 +1499,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "c0f0cf52489e90899fc76ed262ed907b",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

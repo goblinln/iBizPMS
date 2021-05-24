@@ -46,6 +46,7 @@ export class AppViewShell extends ViewContainerBase {
      * @memberof AppViewShell
      */
     public created() {
+        super.created();
         this.ViewContainerInit();
     }
 
@@ -62,6 +63,9 @@ export class AppViewShell extends ViewContainerBase {
             props: { dynamicProps: this.dynamicProps, staticProps: this.viewContext },
             on: {
                 'view-event': this.handleViewEvent.bind(this)
+            },
+            domProps: {
+                id: `${this.modeldata?.codeName}`
             }
         })
     }

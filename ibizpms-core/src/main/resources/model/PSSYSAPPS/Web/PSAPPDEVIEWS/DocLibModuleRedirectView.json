@@ -10,6 +10,7 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
   },
   "getPSDEViewCodeName" : "RedirectView",
+  "getPSDEViewId" : "da5e8fb0d66e4f34ef357566863b65cd",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEREDIRECTVIEW_STYLE2",
@@ -48,5 +49,6 @@
   "enableWorkflow" : true,
   "redirectView" : true,
   "showCaptionBar" : true,
-  "modelid" : "38a5f8d860b44f4196b6c47ee47d3ca3"
+  "modelid" : "38a5f8d860b44f4196b6c47ee47d3ca3",
+  "modeltype" : "PSAPPDEVIEW"
 }

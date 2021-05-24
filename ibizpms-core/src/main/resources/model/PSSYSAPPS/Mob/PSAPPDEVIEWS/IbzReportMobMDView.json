@@ -43,11 +43,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavParams" : [ {
@@ -177,7 +188,8 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "fa664c22a3d7e3552eab2d71fce62a45"
+    "modelid" : "fa664c22a3d7e3552eab2d71fce62a45",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   }, {
     "codeName" : "MySubmit",
     "controlStyle" : "LISTVIEW",
@@ -624,9 +636,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "b8c465d621ad8098363ffc3bb5327845"
+    "modelid" : "b8c465d621ad8098363ffc3bb5327845",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "MobMDView",
+  "getPSDEViewId" : "e4bdfd23f4ffc407daf0d35ff7e5ca65",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBMDVIEW",
@@ -650,5 +664,6 @@
   "enableQuickSearch" : true,
   "enableSearch" : true,
   "showCaptionBar" : true,
-  "modelid" : "c9195460622eb24b2fdad1f86946e544"
+  "modelid" : "c9195460622eb24b2fdad1f86946e544",
+  "modeltype" : "PSAPPDEVIEW"
 }

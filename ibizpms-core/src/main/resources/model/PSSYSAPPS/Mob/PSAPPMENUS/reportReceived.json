@@ -36,5 +36,6 @@
   } ],
   "enableCustomize" : false,
   "name" : "reportreceived",
-  "modelid" : "ec4483319d328278126dc0a21f0b77d7"
+  "modelid" : "ec4483319d328278126dc0a21f0b77d7",
+  "modeltype" : "PSAPPMENU"
 }

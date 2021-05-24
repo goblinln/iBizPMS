@@ -387,11 +387,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -513,7 +524,8 @@
               "showCaption" : true,
               "showIcon" : true
             } ],
-            "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b"
+            "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b",
+            "modeltype" : "PSDETOOLBAR"
           }, {
             "aggMode" : "NONE",
             "codeName" : "Main",
@@ -846,6 +858,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : false,
             "enableRowEdit" : false,
@@ -856,9 +869,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "952c997d60e0e6fd90fab210c4b77ff2"
+            "modelid" : "952c997d60e0e6fd90fab210c4b77ff2",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "MainGridView9",
+          "getPSDEViewId" : "a87f486edeb2cc0167cc1e9832b3c1fe",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -885,6 +900,7 @@
           "rowEditDefault" : false,
           "showCaptionBar" : true,
           "modelid" : "f69bb8c09dbc7ce369c3c3806007b1d1",
+          "modeltype" : "PSAPPDEVIEW",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "Stories",
@@ -1166,11 +1182,22 @@
             }, {
               "logicTrigger" : "CUSTOM",
               "logicType" : "SYSUILOGIC",
+              "name" : "editdata",
+              "getPSAppUILogic" : {
+                "logicType" : "PREDEFINED",
+                "name" : "编辑数据",
+                "viewLogicType" : "APP_OPENDATA",
+                "editMode" : true
+              }
+            }, {
+              "logicTrigger" : "CUSTOM",
+              "logicType" : "SYSUILOGIC",
               "name" : "opendata",
               "getPSAppUILogic" : {
                 "logicType" : "PREDEFINED",
                 "name" : "打开数据",
-                "viewLogicType" : "APP_OPENDATA"
+                "viewLogicType" : "APP_OPENDATA",
+                "editMode" : false
               }
             } ],
             "getPSAppViewNavParams" : [ {
@@ -1320,9 +1347,11 @@
               "noSort" : false,
               "showHeader" : true,
               "name" : "list",
-              "modelid" : "835d0e318f958e732332eceda335286e"
+              "modelid" : "835d0e318f958e732332eceda335286e",
+              "modeltype" : "PSDELIST"
             } ],
             "getPSDEViewCodeName" : "ListView9",
+            "getPSDEViewId" : "439cdaa85f61d5b761754a37aee0aee6",
             "getPSViewLayoutPanel" : {
               "codeName" : "Layoutpanel",
               "controlStyle" : "APPDELISTVIEW9_STYLE2",
@@ -1343,7 +1372,8 @@
             "enableDP" : true,
             "enableFilter" : false,
             "showCaptionBar" : false,
-            "modelid" : "d940bfd96f6087050755b99a3b6bab0a"
+            "modelid" : "d940bfd96f6087050755b99a3b6bab0a",
+            "modeltype" : "PSAPPDEVIEW"
           },
           "getPSLayoutPos" : {
             "colMD" : 24,
@@ -1415,5 +1445,6 @@
   "noTabHeader" : true,
   "readOnly" : false,
   "showFormNavBar" : false,
-  "modelid" : "b48539879b7236a8f7424071c7ba8b45"
+  "modelid" : "b48539879b7236a8f7424071c7ba8b45",
+  "modeltype" : "PSDEFORM_EDITFORM"
 }

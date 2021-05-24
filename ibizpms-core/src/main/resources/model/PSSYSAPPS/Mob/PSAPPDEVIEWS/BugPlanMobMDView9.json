@@ -53,6 +53,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -71,7 +95,8 @@
           "viewType" : "DEMOBEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavContexts" : [ {
@@ -437,7 +462,8 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "d27933bd5df40048f9148e9e5e1904f9"
+    "modelid" : "d27933bd5df40048f9148e9e5e1904f9",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   }, {
     "codeName" : "Mob_Plan",
     "controlStyle" : "LISTVIEW",
@@ -696,7 +722,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",
-      "modelid" : "15ac73e6dfc7a5d8c85fcba439f3ac38"
+      "modelid" : "15ac73e6dfc7a5d8c85fcba439f3ac38",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "MOB_Plan",
     "minorSortDir" : "DESC",
@@ -1030,7 +1057,8 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "fd4bd29c626097298019e9b3a410b4de"
+    "modelid" : "fd4bd29c626097298019e9b3a410b4de",
+    "modeltype" : "PSDELIST"
   }, {
     "codeName" : "PlanMobMDView9righttoolbar",
     "controlType" : "TOOLBAR",
@@ -1044,9 +1072,11 @@
       "id" : "RIGHTTOOLBAR"
     },
     "toolbarStyle" : "MOBNAVRIGHTMENU",
-    "modelid" : "77b54f92fc40bd153eee443ab18a9cd7"
+    "modelid" : "77b54f92fc40bd153eee443ab18a9cd7",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "PlanMobMDView9",
+  "getPSDEViewId" : "ce4ba223aa48151b670d4fe646d949e7",
   "getPSSysImage" : {
     "glyph" : "xf188@FontAwesome",
     "cssClass" : "fa fa-bug"
@@ -1075,6 +1105,7 @@
   "enableSearch" : true,
   "showCaptionBar" : false,
   "modelid" : "bdb851b6f2553c85de8417af05b29e49",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

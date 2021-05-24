@@ -76,6 +76,7 @@
     }
   } ],
   "getPSDEViewCodeName" : "RedirectView",
+  "getPSDEViewId" : "a0eb6ddcf26326b34f52fb731298d888",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEREDIRECTVIEW_STYLE2",
@@ -163,5 +164,6 @@
   "enableWorkflow" : true,
   "redirectView" : true,
   "showCaptionBar" : true,
-  "modelid" : "7d853e570eb4eba3bc754fa77bf75844"
+  "modelid" : "7d853e570eb4eba3bc754fa77bf75844",
+  "modeltype" : "PSAPPDEVIEW"
 }

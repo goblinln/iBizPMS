@@ -41,6 +41,7 @@
       "getPSDELogicLinkGroupCond" : {
         "groupOP" : "AND",
         "logicType" : "GROUP",
+        "name" : "连接条件组",
         "getPSDELogicLinkConds" : [ {
           "condOP" : "EQ",
           "dstFieldName" : "BEGINSTR",
@@ -51,9 +52,7 @@
           "logicType" : "SINGLE",
           "name" : "Default[BEGINSTR] 等于(=) (待定)",
           "paramValue" : "待定"
-        } ],
-        "notMode" : false,
-        "id" : "5ea56445c43b5d2525d3b1d5d363529b"
+        } ]
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,

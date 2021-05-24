@@ -293,6 +293,7 @@
             "readOnly" : true,
             "name" : "dashboard_sysportlet3_chart",
             "modelid" : "a182b142d83d08eab8fb43e1bdcd0150",
+            "modeltype" : "PSDECHART",
             "getUserParam" : {
               "EC.legend" : "{show:false}",
               "EC.color" : "[\"#CAAC32\",\"#0075A9\",\"#22AC38\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
@@ -307,7 +308,8 @@
           "portletType" : "CHART",
           "title" : "完成的任务",
           "showTitleBar" : false,
-          "modelid" : "8e0229cd3791ade7bf1a00994c31c5e0"
+          "modelid" : "8e0229cd3791ade7bf1a00994c31c5e0",
+          "modeltype" : "PSSYSDBPART"
         }, {
           "codeName" : "CurUserResolveBug",
           "getContentPSControl" : {
@@ -497,6 +499,7 @@
             "readOnly" : true,
             "name" : "dashboard_sysportlet4_chart",
             "modelid" : "1d4451e6a31305f54bf7644de1075592",
+            "modeltype" : "PSDECHART",
             "getUserParam" : {
               "EC.legend" : "{show:false}",
               "EC.color" : "[\"#CAAC32\",\"#0075A9\",\"#22AC38\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
@@ -511,7 +514,8 @@
           "portletType" : "CHART",
           "title" : "解决的Bug",
           "showTitleBar" : false,
-          "modelid" : "91a8d4ab8f3898e615a559ab995ddc13"
+          "modelid" : "91a8d4ab8f3898e615a559ab995ddc13",
+          "modeltype" : "PSSYSDBPART"
         } ],
         "portletType" : "CONTAINER",
         "title" : "完成任务数和解决Bug数",
@@ -903,6 +907,7 @@
             "readOnly" : true,
             "name" : "dashboard_sysportlet5_chart",
             "modelid" : "8993ef48b185bc2433a52f2b3ccd5235",
+            "modeltype" : "PSDECHART",
             "getUserParam" : {
               "EC.color" : "[\"#76FF03\",\"#2979FF\",\"#00B0FF\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
             }
@@ -915,7 +920,8 @@
           "portletType" : "CHART",
           "title" : "月完成任务数及累计工时和解决Bug数",
           "showTitleBar" : false,
-          "modelid" : "fc795c604763892b6b243b4db6b133ef"
+          "modelid" : "fc795c604763892b6b243b4db6b133ef",
+          "modeltype" : "PSSYSDBPART"
         } ],
         "portletType" : "CONTAINER",
         "title" : "月完成任务数及累计工时和解决Bug数",
@@ -926,9 +932,11 @@
     } ],
     "enableCustomized" : false,
     "name" : "dashboard",
-    "modelid" : "35452fdae20ad8f9a786c708744662b4"
+    "modelid" : "35452fdae20ad8f9a786c708744662b4",
+    "modeltype" : "PSSYSDASHBOARD"
   } ],
   "getPSDEViewCodeName" : "DashboardView",
+  "getPSDEViewId" : "0cafed8a7b2f2febe9850de80b6e4b72",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPORTALVIEW_STYLE2",
@@ -953,5 +961,6 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "35452fdae20ad8f9a786c708744662b4"
+  "modelid" : "35452fdae20ad8f9a786c708744662b4",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -912,6 +912,7 @@
   "enableUIActions" : 15,
   "logicName" : "人员",
   "name" : "IBZEMP",
+  "getPSDEName" : "IBZEMP",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDESERVICEAPIS/SysEmployee.json"

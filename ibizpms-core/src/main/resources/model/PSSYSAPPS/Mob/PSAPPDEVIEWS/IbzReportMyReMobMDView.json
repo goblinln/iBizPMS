@@ -42,11 +42,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSControls" : [ {
@@ -170,7 +181,8 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "fa664c22a3d7e3552eab2d71fce62a45"
+    "modelid" : "fa664c22a3d7e3552eab2d71fce62a45",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   }, {
     "codeName" : "MyRe",
     "controlStyle" : "LISTVIEW",
@@ -402,7 +414,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",
-      "modelid" : "b8c465d621ad8098363ffc3bb5327845"
+      "modelid" : "b8c465d621ad8098363ffc3bb5327845",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "MyRe",
     "minorSortDir" : "DESC",
@@ -809,9 +822,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "06a7a6599f24777a7257d41585bd4df3"
+    "modelid" : "06a7a6599f24777a7257d41585bd4df3",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "MyReMobMDView",
+  "getPSDEViewId" : "77e57ca67add22aff8f82446d90f30a7",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBMDVIEW",
@@ -835,5 +850,6 @@
   "enableQuickSearch" : true,
   "enableSearch" : true,
   "showCaptionBar" : true,
-  "modelid" : "ff87986d8fb9e05715dfab560e55e144"
+  "modelid" : "ff87986d8fb9e05715dfab560e55e144",
+  "modeltype" : "PSAPPDEVIEW"
 }

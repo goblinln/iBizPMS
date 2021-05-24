@@ -54,11 +54,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -135,7 +146,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "a367f1c87484ad35865184abea15eece"
+    "modelid" : "a367f1c87484ad35865184abea15eece",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "PAGE",
     "codeName" : "TestCaseStats",
@@ -485,6 +497,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : false,
     "enableRowEdit" : false,
@@ -495,7 +508,8 @@
     "noSort" : false,
     "singleSelect" : true,
     "name" : "grid",
-    "modelid" : "a856b2b57e47d4d2896ab1e2902eb136"
+    "modelid" : "a856b2b57e47d4d2896ab1e2902eb136",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "TestCaseStats",
     "controlType" : "SEARCHFORM",
@@ -617,9 +631,11 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "a856b2b57e47d4d2896ab1e2902eb136"
+    "modelid" : "a856b2b57e47d4d2896ab1e2902eb136",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "TestCaseStatsGridView",
+  "getPSDEViewId" : "67fa5382cc3f7f1099ca3f42c3e9f57c",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -646,5 +662,6 @@
   "expandSearchForm" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
-  "modelid" : "551947ec5cc35c89fa33deeac4fd3696"
+  "modelid" : "551947ec5cc35c89fa33deeac4fd3696",
+  "modeltype" : "PSAPPDEVIEW"
 }

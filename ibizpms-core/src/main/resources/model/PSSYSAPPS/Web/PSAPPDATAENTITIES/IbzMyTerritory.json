@@ -1008,6 +1008,7 @@
   "enableUIActions" : 15,
   "logicName" : "我的地盘",
   "name" : "IBZ_MYTERRITORY",
+  "getPSDEName" : "IBZ_MYTERRITORY",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDESERVICEAPIS/IbzMyTerritory.json"

@@ -3,5 +3,6 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/VisitorC.json",
   "name" : "访客（C端）",
   "roleTag" : "VisitorC",
-  "roleType" : "CUSTOM"
+  "roleType" : "CUSTOM",
+  "globalRole" : true
 }

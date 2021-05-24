@@ -108,9 +108,11 @@
     } ],
     "enableCustomized" : false,
     "name" : "dashboard",
-    "modelid" : "7e14015af219d302f7d81ff40cdcc418"
+    "modelid" : "7e14015af219d302f7d81ff40cdcc418",
+    "modeltype" : "PSSYSDASHBOARD"
   } ],
   "getPSDEViewCodeName" : "MainView_EditMode",
+  "getPSDEViewId" : "10ec75d34c4f6eba50c564edbfba18ea",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -140,6 +142,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "7e14015af219d302f7d81ff40cdcc418",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

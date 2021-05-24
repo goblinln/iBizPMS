@@ -155,7 +155,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "b4436ab59e95a5f1aeeb91ceb25249a4"
+    "modelid" : "b4436ab59e95a5f1aeeb91ceb25249a4",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "NONE",
     "codeName" : "Main",
@@ -639,6 +640,7 @@
     },
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : true,
@@ -649,9 +651,11 @@
     "noSort" : false,
     "singleSelect" : true,
     "name" : "grid",
-    "modelid" : "9dd72c13e58da536d77cbcf360e46cbf"
+    "modelid" : "9dd72c13e58da536d77cbcf360e46cbf",
+    "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "Usr2GridView",
+  "getPSDEViewId" : "dc25b3e226ad5b8187dc46717ff989b4",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -676,5 +680,6 @@
   "enableRowEdit" : true,
   "rowEditDefault" : true,
   "showCaptionBar" : false,
-  "modelid" : "1f58c36b426313948746ac301e8716b1"
+  "modelid" : "1f58c36b426313948746ac301e8716b1",
+  "modeltype" : "PSAPPDEVIEW"
 }

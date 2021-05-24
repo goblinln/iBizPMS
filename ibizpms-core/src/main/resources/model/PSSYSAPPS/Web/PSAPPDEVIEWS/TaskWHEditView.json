@@ -102,7 +102,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
+    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "TaskEstimate",
     "controlType" : "FORM",
@@ -444,11 +445,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewNavContexts" : [ {
@@ -765,6 +777,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : false,
             "enableRowEdit" : false,
@@ -775,9 +788,11 @@
             "noSort" : true,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "99c4014f02ef7bf945e87807e9a3c895"
+            "modelid" : "99c4014f02ef7bf945e87807e9a3c895",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "LookGridView9",
+          "getPSDEViewId" : "d07eed9fd32c24b8483212ea3151c265",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -803,6 +818,7 @@
           "rowEditDefault" : false,
           "showCaptionBar" : false,
           "modelid" : "53ea134a9cd9328191b62e355f47c173",
+          "modeltype" : "PSAPPDEVIEW",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "ProjectModules",
@@ -1360,11 +1376,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -1813,6 +1840,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : false,
             "enableRowEdit" : false,
@@ -1823,9 +1851,11 @@
             "noSort" : true,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "77eb03b77b8ab3d9188fb872349e2fa6"
+            "modelid" : "77eb03b77b8ab3d9188fb872349e2fa6",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "EditGridView9",
+          "getPSDEViewId" : "71840e8fb4b8bd5260ab19df2623a45f",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -1851,6 +1881,7 @@
           "rowEditDefault" : false,
           "showCaptionBar" : false,
           "modelid" : "85f2ffedf65fdd109559fbbbb33badd6",
+          "modeltype" : "PSAPPDEVIEW",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "ProjectModules",
@@ -2406,11 +2437,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -2966,6 +3008,7 @@
             },
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : true,
@@ -2976,9 +3019,11 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "6796831e2f83bf0954848155004b3698"
+            "modelid" : "6796831e2f83bf0954848155004b3698",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "GridView9",
+          "getPSDEViewId" : "b67550e07e2f8952299b4c995b7a7599",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -3004,6 +3049,7 @@
           "rowEditDefault" : true,
           "showCaptionBar" : false,
           "modelid" : "214650149c1d7b82e6897e6915b0e2b5",
+          "modeltype" : "PSAPPDEVIEW",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "ProjectModules",
@@ -3566,9 +3612,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "0dfcafb78a552b9fa07ea02219771d6f"
+    "modelid" : "0dfcafb78a552b9fa07ea02219771d6f",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "WHEditView",
+  "getPSDEViewId" : "e09686c598e5988caece7403dc93f77e",
   "getPSSysImage" : {
     "glyph" : "xf0ae@FontAwesome",
     "cssClass" : "fa fa-tasks"
@@ -3595,6 +3643,7 @@
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
   "modelid" : "1be718d3ac721ec43429bf88c4c4646b",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

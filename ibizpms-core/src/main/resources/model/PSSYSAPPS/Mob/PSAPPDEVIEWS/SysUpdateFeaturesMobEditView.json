@@ -468,7 +468,8 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "67a699f7ae5a1b5994d6cbe13e2dd400"
+    "modelid" : "67a699f7ae5a1b5994d6cbe13e2dd400",
+    "modeltype" : "PSDEFORM_EDITFORM"
   }, {
     "codeName" : "MobEditViewrighttoolbar",
     "controlType" : "TOOLBAR",
@@ -529,9 +530,11 @@
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBNAVRIGHTMENU",
-    "modelid" : "c798012a3dda52e17ac452776aa498f0"
+    "modelid" : "c798012a3dda52e17ac452776aa498f0",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "MobEditView",
+  "getPSDEViewId" : "6e209b0eed257ce67569264edef901b4",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBEDITVIEW",
@@ -554,6 +557,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "7022d10a801eca629c6b811b6e4d39ec",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "sysUpdateLog",

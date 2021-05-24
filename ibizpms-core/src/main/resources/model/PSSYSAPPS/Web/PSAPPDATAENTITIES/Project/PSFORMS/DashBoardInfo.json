@@ -530,11 +530,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -787,6 +798,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : false,
             "enableRowEdit" : false,
@@ -797,9 +809,11 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "8e4fab9a9c723fb2bbf2cbc7f82bb810"
+            "modelid" : "8e4fab9a9c723fb2bbf2cbc7f82bb810",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductGridView9",
+          "getPSDEViewId" : "8BA45C38-B127-42FE-9BA0-AED5E7E9FFD9",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -825,6 +839,7 @@
           "rowEditDefault" : false,
           "showCaptionBar" : false,
           "modelid" : "e82ad51f06733f38e6085d96e6b182b6",
+          "modeltype" : "PSAPPDEVIEW",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "ProjectProducts",
@@ -965,11 +980,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -1198,6 +1224,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : false,
             "enableRowEdit" : false,
@@ -1208,9 +1235,11 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "0e840365227936c6ef963ef9c2f3860c"
+            "modelid" : "0e840365227936c6ef963ef9c2f3860c",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "PlanGridView9",
+          "getPSDEViewId" : "E747EA68-A4D4-4F4A-AD2E-0431E80399A1",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -1236,6 +1265,7 @@
           "rowEditDefault" : false,
           "showCaptionBar" : false,
           "modelid" : "4989b1b0c87b14b4e52b78c6bc03cd0b",
+          "modeltype" : "PSAPPDEVIEW",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "ProjectProducts",
@@ -1912,5 +1942,6 @@
   "noTabHeader" : true,
   "readOnly" : false,
   "showFormNavBar" : false,
-  "modelid" : "ea277494671823514b5c830961e81bb6"
+  "modelid" : "ea277494671823514b5c830961e81bb6",
+  "modeltype" : "PSDEFORM_EDITFORM"
 }

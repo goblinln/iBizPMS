@@ -705,6 +705,7 @@
   "enableUIActions" : 15,
   "logicName" : "计划模板详情",
   "name" : "IBZ_PLANTEMPLETDETAIL",
+  "getPSDEName" : "IBZ_PLANTEMPLETDETAIL",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail/PSDESERVICEAPIS/IbzPlanTempletDetail.json"

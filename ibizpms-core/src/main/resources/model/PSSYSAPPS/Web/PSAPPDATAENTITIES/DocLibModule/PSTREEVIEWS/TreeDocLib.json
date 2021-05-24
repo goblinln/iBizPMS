@@ -85,7 +85,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "022f0111597cba0a05a1d53d48a8cb04"
+    "modelid" : "022f0111597cba0a05a1d53d48a8cb04",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
@@ -283,7 +284,8 @@
         "showCaption" : true,
         "showIcon" : true
       } ],
-      "modelid" : "022f0111597cba0a05a1d53d48a8cb04"
+      "modelid" : "022f0111597cba0a05a1d53d48a8cb04",
+      "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateParams" : [ {
       "key" : "n_root_eq",
@@ -438,5 +440,6 @@
   "enableSearchDefault" : false,
   "outputIconDefault" : true,
   "rootVisible" : false,
-  "modelid" : "79533934b210571ef8b0945194a91cbf"
+  "modelid" : "79533934b210571ef8b0945194a91cbf",
+  "modeltype" : "PSDETREEVIEW"
 }

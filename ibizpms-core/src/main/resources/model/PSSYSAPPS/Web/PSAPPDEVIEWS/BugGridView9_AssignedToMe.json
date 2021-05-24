@@ -54,6 +54,74 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getPSNavigateContexts" : [ {
+          "key" : "PTOJECT",
+          "name" : "PTOJECT",
+          "value" : "project",
+          "rawValue" : false
+        }, {
+          "key" : "PRODUCT",
+          "name" : "PRODUCT",
+          "value" : "product",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "product",
+          "name" : "product",
+          "value" : "product",
+          "rawValue" : false
+        }, {
+          "key" : "project",
+          "name" : "project",
+          "value" : "project",
+          "rawValue" : false
+        } ],
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getPSNavigateContexts" : [ {
+          "key" : "PTOJECT",
+          "name" : "PTOJECT",
+          "value" : "project",
+          "rawValue" : false
+        }, {
+          "key" : "PRODUCT",
+          "name" : "PRODUCT",
+          "value" : "product",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "product",
+          "name" : "product",
+          "value" : "product",
+          "rawValue" : false
+        }, {
+          "key" : "project",
+          "name" : "project",
+          "value" : "project",
+          "rawValue" : false
+        } ],
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -116,7 +184,8 @@
           "viewType" : "DEPORTALVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavParams" : [ {
@@ -557,6 +626,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : false,
     "enableRowEdit" : false,
@@ -567,9 +637,11 @@
     "noSort" : false,
     "singleSelect" : true,
     "name" : "grid",
-    "modelid" : "9d54365c504bcc4f129c56c3b1afe368"
+    "modelid" : "9d54365c504bcc4f129c56c3b1afe368",
+    "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "GridView9_AssignedToMe",
+  "getPSDEViewId" : "63b250a69aba185578c81e67dfa158e4",
   "getPSSysImage" : {
     "glyph" : "xf188@FontAwesome",
     "cssClass" : "fa fa-bug"
@@ -599,6 +671,7 @@
   "rowEditDefault" : false,
   "showCaptionBar" : false,
   "modelid" : "e38188ce3545b9a17d4f2e0df5b755e3",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

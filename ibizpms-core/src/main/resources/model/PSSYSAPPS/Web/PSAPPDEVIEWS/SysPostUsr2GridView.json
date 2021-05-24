@@ -57,6 +57,54 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getPSNavigateContexts" : [ {
+          "key" : "POSTID",
+          "name" : "POSTID",
+          "value" : "syspost",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "postid",
+          "name" : "postid",
+          "value" : "syspost",
+          "rawValue" : false
+        } ],
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberUsr2GridViewPostMembers.json",
+          "viewType" : "DEGRIDVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getPSNavigateContexts" : [ {
+          "key" : "POSTID",
+          "name" : "POSTID",
+          "value" : "syspost",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "postid",
+          "name" : "postid",
+          "value" : "syspost",
+          "rawValue" : false
+        } ],
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberUsr2GridViewPostMembers.json",
+          "viewType" : "DEGRIDVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -99,7 +147,8 @@
           "viewType" : "DEGRIDVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -370,6 +419,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -380,7 +430,8 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "1ac682e00da4bb031bc351e60d9b3b8e"
+    "modelid" : "1ac682e00da4bb031bc351e60d9b3b8e",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
@@ -457,9 +508,11 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "1e50a52393f5727623913e4be2f98a32"
+    "modelid" : "1e50a52393f5727623913e4be2f98a32",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "Usr2GridView",
+  "getPSDEViewId" : "b619bd9afff505d79896079a65fb8661",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -486,5 +539,6 @@
   "enableSearch" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
-  "modelid" : "732b44cbc53ba765decbfa3866f1751b"
+  "modelid" : "732b44cbc53ba765decbfa3866f1751b",
+  "modeltype" : "PSAPPDEVIEW"
 }

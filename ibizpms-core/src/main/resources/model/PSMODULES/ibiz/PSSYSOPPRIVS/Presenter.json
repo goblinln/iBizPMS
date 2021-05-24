@@ -3,5 +3,6 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/Presenter.json",
   "name" : "演示用户",
   "roleTag" : "Presenter",
-  "roleType" : "CUSTOM"
+  "roleType" : "CUSTOM",
+  "globalRole" : true
 }

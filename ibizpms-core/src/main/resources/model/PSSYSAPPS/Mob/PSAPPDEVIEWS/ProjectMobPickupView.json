@@ -191,7 +191,8 @@
           "getPSControlParam" : {
             "id" : "mdctrl_batchtoolbar"
           },
-          "modelid" : "dc72839424ae81886458969764aad35c"
+          "modelid" : "dc72839424ae81886458969764aad35c",
+          "modeltype" : "PSDETOOLBAR"
         }, {
           "codeName" : "MobPickupMDViewmdctrl_quicktoolbar",
           "controlType" : "TOOLBAR",
@@ -205,7 +206,8 @@
           "getPSControlParam" : {
             "id" : "mdctrl_quicktoolbar"
           },
-          "modelid" : "b5f265a97376e60ddeef17447557883a"
+          "modelid" : "b5f265a97376e60ddeef17447557883a",
+          "modeltype" : "PSDETOOLBAR"
         } ],
         "getPSDEListDataItems" : [ {
           "dataType" : 9,
@@ -267,9 +269,11 @@
         "noSort" : false,
         "showHeader" : true,
         "name" : "mdctrl",
-        "modelid" : "92361e7f29a940f4732c579aea047807"
+        "modelid" : "92361e7f29a940f4732c579aea047807",
+        "modeltype" : "PSDELIST"
       } ],
       "getPSDEViewCodeName" : "MobPickupMDView",
+      "getPSDEViewId" : "0fcfff5743784db307fbd0c1b42d8032",
       "getPSViewLayoutPanel" : {
         "codeName" : "Layoutpanel",
         "controlStyle" : "APPDEMOBPICKUPMDVIEW",
@@ -292,7 +296,8 @@
       "enablePullDownRefresh" : false,
       "expandSearchForm" : true,
       "showCaptionBar" : true,
-      "modelid" : "f9cd2bec44b69f73aecbda48ae51ca87"
+      "modelid" : "f9cd2bec44b69f73aecbda48ae51ca87",
+      "modeltype" : "PSAPPDEVIEW"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
     "name" : "pickupviewpanel",
@@ -305,6 +310,7 @@
     }
   } ],
   "getPSDEViewCodeName" : "MobPickupView",
+  "getPSDEViewId" : "4b0fa1d14be99010bbbb4fb7de77d8cc",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBPICKUPVIEW",
@@ -324,5 +330,6 @@
   "enableDP" : true,
   "enablePullDownRefresh" : false,
   "showCaptionBar" : false,
-  "modelid" : "1e4e95416f6ad3614a107303d3fe1cd3"
+  "modelid" : "1e4e95416f6ad3614a107303d3fe1cd3",
+  "modeltype" : "PSAPPDEVIEW"
 }

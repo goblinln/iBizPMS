@@ -413,6 +413,7 @@
   "enableUIActions" : 15,
   "logicName" : "单位",
   "name" : "SYS_ORG",
+  "getPSDEName" : "SYS_ORG",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization/PSDESERVICEAPIS/SysOrganization.json"

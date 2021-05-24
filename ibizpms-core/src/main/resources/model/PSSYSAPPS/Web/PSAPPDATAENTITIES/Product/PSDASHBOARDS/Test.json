@@ -13,5 +13,6 @@
     "layout" : "TABLE_24COL"
   },
   "enableCustomized" : false,
-  "modelid" : "1884d01229cee824d7577705da288043"
+  "modelid" : "1884d01229cee824d7577705da288043",
+  "modeltype" : "PSSYSDASHBOARD"
 }

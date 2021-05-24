@@ -102,7 +102,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
+    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "Main",
     "controlType" : "FORM",
@@ -449,11 +450,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewUIActions" : [ {
@@ -509,7 +521,8 @@
               "showCaption" : true,
               "showIcon" : true
             } ],
-            "modelid" : "a5cf3f211750844db193707184d135a6"
+            "modelid" : "a5cf3f211750844db193707184d135a6",
+            "modeltype" : "PSDETOOLBAR"
           }, {
             "aggMode" : "NONE",
             "codeName" : "Main_Edit",
@@ -934,6 +947,7 @@
             },
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : false,
             "enableRowEdit" : true,
@@ -944,9 +958,11 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "7a427031b62885759a7284ed9d89f536"
+            "modelid" : "7a427031b62885759a7284ed9d89f536",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "GridView9",
+          "getPSDEViewId" : "b41e52c91793048d949a648e64814290",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -973,6 +989,7 @@
           "rowEditDefault" : true,
           "showCaptionBar" : false,
           "modelid" : "323665023d61b39a6173f364869fd214",
+          "modeltype" : "PSAPPDEVIEW",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "PlanTempletDetails",
@@ -1102,9 +1119,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "2d7b0cbca66ad197036a53386c256530"
+    "modelid" : "2d7b0cbca66ad197036a53386c256530",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "EditView",
+  "getPSDEViewId" : "b881047a6250df4c2fd2700a84a292cc",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW_STYLE2",
@@ -1126,5 +1145,6 @@
   "enableDP" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
-  "modelid" : "69072c07c875fb2f422378235b85ba69"
+  "modelid" : "69072c07c875fb2f422378235b85ba69",
+  "modeltype" : "PSAPPDEVIEW"
 }

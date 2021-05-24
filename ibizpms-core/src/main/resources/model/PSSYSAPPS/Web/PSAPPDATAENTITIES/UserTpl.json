@@ -473,6 +473,7 @@
   "enableUIActions" : 15,
   "logicName" : "用户模板",
   "name" : "ZT_USERTPL",
+  "getPSDEName" : "ZT_USERTPL",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDESERVICEAPIS/UserTpl.json"

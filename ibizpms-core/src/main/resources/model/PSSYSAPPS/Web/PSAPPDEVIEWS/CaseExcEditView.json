@@ -539,11 +539,22 @@
                 }, {
                   "logicTrigger" : "CUSTOM",
                   "logicType" : "SYSUILOGIC",
+                  "name" : "editdata",
+                  "getPSAppUILogic" : {
+                    "logicType" : "PREDEFINED",
+                    "name" : "编辑数据",
+                    "viewLogicType" : "APP_OPENDATA",
+                    "editMode" : true
+                  }
+                }, {
+                  "logicTrigger" : "CUSTOM",
+                  "logicType" : "SYSUILOGIC",
                   "name" : "opendata",
                   "getPSAppUILogic" : {
                     "logicType" : "PREDEFINED",
                     "name" : "打开数据",
-                    "viewLogicType" : "APP_OPENDATA"
+                    "viewLogicType" : "APP_OPENDATA",
+                    "editMode" : false
                   }
                 } ],
                 "getPSControls" : [ {
@@ -848,6 +859,7 @@
                   "sortMode" : "REMOTE",
                   "hasWFDataItems" : false,
                   "enableColFilter" : false,
+                  "enableCustomized" : true,
                   "enableGroup" : false,
                   "enablePagingBar" : false,
                   "enableRowEdit" : false,
@@ -858,9 +870,11 @@
                   "noSort" : false,
                   "singleSelect" : false,
                   "name" : "meditviewpanel",
-                  "modelid" : "2eff032f1e0b2ed1312c5f5c126ded6e"
+                  "modelid" : "2eff032f1e0b2ed1312c5f5c126ded6e",
+                  "modeltype" : "PSDEGRID"
                 } ],
                 "getPSDEViewCodeName" : "MEditView9",
+                "getPSDEViewId" : "3293c8041cb64d29acbd3495e2c7c368",
                 "getPSViewLayoutPanel" : {
                   "codeName" : "Layoutpanel",
                   "controlStyle" : "APPDEMEDITVIEW9_STYLE2",
@@ -882,6 +896,7 @@
                 "enableQuickSearch" : true,
                 "showCaptionBar" : false,
                 "modelid" : "e01d5c7f0080afdcf4e9c9ee9924abef",
+                "modeltype" : "PSAPPDEVIEW",
                 "getPSAppDERSPaths" : [ [ {
                   "actionRSMode" : 1,
                   "codeName" : "Stories",
@@ -1160,9 +1175,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "1ff79caf3f3c77f1f52d3bb6f0cfebca"
+    "modelid" : "1ff79caf3f3c77f1f52d3bb6f0cfebca",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "ExcEditView",
+  "getPSDEViewId" : "c354d03c600a26c34f773e67f9446c6c",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -1188,6 +1205,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "41f6cc75f6e3b4419a448eebe69aa6ac",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

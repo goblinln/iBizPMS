@@ -109,7 +109,8 @@
           "showBusyIndicator" : true
         },
         "enableCustomize" : false,
-        "modelid" : "ecdacd068ea991f32b535f48d799605e"
+        "modelid" : "ecdacd068ea991f32b535f48d799605e",
+        "modeltype" : "PSAPPMENU"
       } ],
       "getPSLayoutPos" : {
         "colMD" : 24,
@@ -118,7 +119,8 @@
       "portletType" : "APPMENU",
       "title" : "图片滑动",
       "showTitleBar" : true,
-      "modelid" : "ecdacd068ea991f32b535f48d799605e"
+      "modelid" : "ecdacd068ea991f32b535f48d799605e",
+      "modeltype" : "PSSYSDBPART"
     }, {
       "aMListStyle" : "ICONVIEW",
       "codeName" : "IconStyleMenu",
@@ -369,7 +371,8 @@
           "showBusyIndicator" : true
         },
         "enableCustomize" : false,
-        "modelid" : "1996f53992ac18ec2ea606e10f96ab7c"
+        "modelid" : "1996f53992ac18ec2ea606e10f96ab7c",
+        "modeltype" : "PSAPPMENU"
       } ],
       "getPSLayoutPos" : {
         "colMD" : 24,
@@ -378,7 +381,8 @@
       "portletType" : "APPMENU",
       "title" : "图标",
       "showTitleBar" : true,
-      "modelid" : "1996f53992ac18ec2ea606e10f96ab7c"
+      "modelid" : "1996f53992ac18ec2ea606e10f96ab7c",
+      "modeltype" : "PSSYSDBPART"
     }, {
       "aMListStyle" : "LISTVIEW",
       "codeName" : "ListMenu",
@@ -551,7 +555,8 @@
           "showBusyIndicator" : true
         },
         "enableCustomize" : false,
-        "modelid" : "12bcd5021f1866e8bb83fc2fd44344fd"
+        "modelid" : "12bcd5021f1866e8bb83fc2fd44344fd",
+        "modeltype" : "PSAPPMENU"
       } ],
       "getPSLayoutPos" : {
         "colMD" : 24,
@@ -560,10 +565,12 @@
       "portletType" : "APPMENU",
       "title" : "列表",
       "showTitleBar" : true,
-      "modelid" : "12bcd5021f1866e8bb83fc2fd44344fd"
+      "modelid" : "12bcd5021f1866e8bb83fc2fd44344fd",
+      "modeltype" : "PSSYSDBPART"
     } ],
     "enableCustomized" : false,
-    "modelid" : "57fa709c88c2c3f67d526db0bc5aee87"
+    "modelid" : "57fa709c88c2c3f67d526db0bc5aee87",
+    "modeltype" : "PSSYSDASHBOARD"
   } ],
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
@@ -578,5 +585,6 @@
   "viewStyle" : "DEFAULT",
   "viewType" : "APPPORTALVIEW",
   "enableDP" : true,
-  "modelid" : "57fa709c88c2c3f67d526db0bc5aee87"
+  "modelid" : "57fa709c88c2c3f67d526db0bc5aee87",
+  "modeltype" : "PSAPPPORTALVIEW"
 }

@@ -415,6 +415,30 @@
               }, {
                 "logicTrigger" : "CUSTOM",
                 "logicType" : "SYSUILOGIC",
+                "name" : "editdata",
+                "getPSAppUILogic" : {
+                  "logicType" : "PREDEFINED",
+                  "name" : "编辑数据",
+                  "getOpenDataPSAppView" : {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  },
+                  "getPSAppUILogicRefViews" : [ {
+                    "getRefPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+                      "viewType" : "DEEDITVIEW"
+                    }
+                  } ],
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : true
+                }
+              }, {
+                "logicTrigger" : "CUSTOM",
+                "logicType" : "SYSUILOGIC",
                 "name" : "opendata",
                 "getPSAppUILogic" : {
                   "logicType" : "PREDEFINED",
@@ -433,7 +457,8 @@
                       "viewType" : "DEEDITVIEW"
                     }
                   } ],
-                  "viewLogicType" : "APP_OPENDATA"
+                  "viewLogicType" : "APP_OPENDATA",
+                  "editMode" : false
                 }
               } ],
               "getPSAppViewNavContexts" : [ {
@@ -610,7 +635,8 @@
                 "noSort" : false,
                 "showHeader" : true,
                 "name" : "history",
-                "modelid" : "c3a36618c939852256c260861292987f"
+                "modelid" : "c3a36618c939852256c260861292987f",
+                "modeltype" : "PSDELIST"
               }, {
                 "codeName" : "ClassifyByType",
                 "controlType" : "LIST",
@@ -799,9 +825,11 @@
                 "noSort" : false,
                 "showHeader" : true,
                 "name" : "list",
-                "modelid" : "3b94c5ec8c0db8db6a5f36fa82c3ed3b"
+                "modelid" : "3b94c5ec8c0db8db6a5f36fa82c3ed3b",
+                "modeltype" : "PSDELIST"
               } ],
               "getPSDEViewCodeName" : "HistoryListView",
+              "getPSDEViewId" : "5935ac98547dd7e654dd72f687b9e859",
               "getPSViewLayoutPanel" : {
                 "codeName" : "Layoutpanel",
                 "controlStyle" : "APPDELISTVIEW_STYLE2",
@@ -822,7 +850,8 @@
               "enableDP" : true,
               "enableFilter" : false,
               "showCaptionBar" : false,
-              "modelid" : "63a73a2e80dc47c05dd3ead4f03ae3c3"
+              "modelid" : "63a73a2e80dc47c05dd3ead4f03ae3c3",
+              "modeltype" : "PSAPPDEVIEW"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -883,9 +912,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "c0d92b927a620025ca879feeb845ed7b"
+    "modelid" : "c0d92b927a620025ca879feeb845ed7b",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "ActiviteView",
+  "getPSDEViewId" : "cca449c353a96a327b888f58bb5148dd",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -912,6 +943,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "9fb9c6b9baf7e8e9647041b8d7e13dd4",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

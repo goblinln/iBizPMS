@@ -165,11 +165,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSControls" : [ {
@@ -571,6 +582,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : false,
             "enableRowEdit" : false,
@@ -581,9 +593,11 @@
             "noSort" : true,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "2c59609507856b9280b29340dde40383"
+            "modelid" : "2c59609507856b9280b29340dde40383",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "GridView9_Project",
+          "getPSDEViewId" : "72f2723d7c3143d8304f185e0e462b58",
           "getPSSysImage" : {
             "glyph" : "xf0ae@FontAwesome",
             "cssClass" : "fa fa-tasks"
@@ -613,6 +627,7 @@
           "rowEditDefault" : false,
           "showCaptionBar" : false,
           "modelid" : "fb38be2889b3a1d842fdae62e2228c24",
+          "modeltype" : "PSAPPDEVIEW",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "ProjectModules",
@@ -915,5 +930,6 @@
   "noTabHeader" : true,
   "readOnly" : false,
   "showFormNavBar" : false,
-  "modelid" : "e00060fd204a43b006e68ef157d6cbdb"
+  "modelid" : "e00060fd204a43b006e68ef157d6cbdb",
+  "modeltype" : "PSDEFORM_EDITFORM"
 }

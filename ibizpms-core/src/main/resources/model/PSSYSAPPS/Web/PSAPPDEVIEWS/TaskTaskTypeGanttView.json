@@ -67,7 +67,8 @@
             "viewType" : "DEPORTALVIEW"
           }
         } ],
-        "viewLogicType" : "APP_OPENDATA"
+        "viewLogicType" : "APP_OPENDATA",
+        "editMode" : true
       }
     }, {
       "logicTrigger" : "CUSTOM",
@@ -90,7 +91,8 @@
             "viewType" : "DEPORTALVIEW"
           }
         } ],
-        "viewLogicType" : "APP_OPENDATA"
+        "viewLogicType" : "APP_OPENDATA",
+        "editMode" : true
       }
     } ],
     "getPSControlHandler" : {
@@ -531,9 +533,11 @@
     "outputIconDefault" : false,
     "rootVisible" : false,
     "name" : "gantt",
-    "modelid" : "9a6cae3896699f86c265d4a4a65b2aa5"
+    "modelid" : "9a6cae3896699f86c265d4a4a65b2aa5",
+    "modeltype" : "PSDEGANTT"
   } ],
   "getPSDEViewCodeName" : "TaskTypeGanttView",
+  "getPSDEViewId" : "572c476265832c8b90b7f9344e427eda",
   "getPSSysImage" : {
     "glyph" : "xf0ae@FontAwesome",
     "cssClass" : "fa fa-tasks"
@@ -559,6 +563,7 @@
   "enableFilter" : false,
   "showCaptionBar" : false,
   "modelid" : "5ef23f01b2cffa48351b3272dfeeaf14",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

@@ -981,6 +981,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "ZT_CASESTEP",
+  "getPSDEName" : "ZT_CASESTEP",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDESERVICEAPIS/CaseStep.json"

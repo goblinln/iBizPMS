@@ -338,6 +338,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -348,7 +349,8 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "e4a47cb6ae2070016f57c5aec5944868"
+    "modelid" : "e4a47cb6ae2070016f57c5aec5944868",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
@@ -425,9 +427,11 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "e076e747e15a9646ed4f177cf2817588"
+    "modelid" : "e076e747e15a9646ed4f177cf2817588",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "PickupGridView",
+  "getPSDEViewId" : "4d11c1adf581338670d700524b6abc00",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPICKUPGRIDVIEW_STYLE2",
@@ -455,5 +459,6 @@
   "pickupMode" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
-  "modelid" : "3b346aee2b79b7b6b59bc870b4c67f72"
+  "modelid" : "3b346aee2b79b7b6b59bc870b4c67f72",
+  "modeltype" : "PSAPPDEVIEW"
 }

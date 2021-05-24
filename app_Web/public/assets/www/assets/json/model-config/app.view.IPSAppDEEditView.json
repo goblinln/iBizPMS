@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"hideEditForm","desc":"隐藏编辑表单","order":1000},{"name":"multiFormMode","desc":"内置多表单模式","order":1000},{"name":"showDataInfoBar","desc":"显示信息栏","order":1000}]}]

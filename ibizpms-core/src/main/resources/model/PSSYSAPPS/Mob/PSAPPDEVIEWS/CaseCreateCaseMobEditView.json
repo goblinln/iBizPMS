@@ -513,7 +513,8 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "6dabb16012d5b2f19fa468ff4e68441c"
+    "modelid" : "6dabb16012d5b2f19fa468ff4e68441c",
+    "modeltype" : "PSDEFORM_EDITFORM"
   }, {
     "codeName" : "CreateCaseMobEditViewrighttoolbar",
     "controlType" : "TOOLBAR",
@@ -574,9 +575,11 @@
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBBOTTOMMENU",
-    "modelid" : "c798012a3dda52e17ac452776aa498f0"
+    "modelid" : "c798012a3dda52e17ac452776aa498f0",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "CreateCaseMobEditView",
+  "getPSDEViewId" : "6a3e63a295f7a66c7541d5e08ec36325",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -603,6 +606,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "53be26699068bb1f9e2f0316c47463c7",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

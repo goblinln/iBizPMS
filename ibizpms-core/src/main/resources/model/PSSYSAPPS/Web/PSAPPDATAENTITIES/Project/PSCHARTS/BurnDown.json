@@ -152,5 +152,6 @@
     "id" : "0"
   },
   "readOnly" : true,
-  "modelid" : "b09f35e51d613eb6892615d2cdbeb77d"
+  "modelid" : "b09f35e51d613eb6892615d2cdbeb77d",
+  "modeltype" : "PSDECHART"
 }

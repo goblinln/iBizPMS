@@ -448,6 +448,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "ZT_HISTORY",
+  "getPSDEName" : "ZT_HISTORY",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDESERVICEAPIS/History.json"

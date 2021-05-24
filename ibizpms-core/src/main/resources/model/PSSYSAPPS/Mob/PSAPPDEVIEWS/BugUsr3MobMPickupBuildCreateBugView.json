@@ -380,7 +380,8 @@
         "enableFilterSave" : false,
         "noTabHeader" : true,
         "name" : "searchform",
-        "modelid" : "d27933bd5df40048f9148e9e5e1904f9"
+        "modelid" : "d27933bd5df40048f9148e9e5e1904f9",
+        "modeltype" : "PSDEFORM_SEARCHFORM"
       }, {
         "codeName" : "MOB_BuildLink_Bug",
         "controlStyle" : "LISTVIEW",
@@ -709,9 +710,11 @@
         "noSort" : false,
         "showHeader" : true,
         "name" : "mdctrl",
-        "modelid" : "ae6085122ae82c53e3e8dbf979e4de23"
+        "modelid" : "ae6085122ae82c53e3e8dbf979e4de23",
+        "modeltype" : "PSDELIST"
       } ],
       "getPSDEViewCodeName" : "Usr3MobPickupBuildResolvedMDView",
+      "getPSDEViewId" : "992f6cdfb4917f5619fcb10cb2fdeb7c",
       "getPSSysImage" : {
         "glyph" : "xf188@FontAwesome",
         "cssClass" : "fa fa-bug"
@@ -740,6 +743,7 @@
       "expandSearchForm" : true,
       "showCaptionBar" : true,
       "modelid" : "318823b2dad1bfe2062d1bcf1aa83cf3",
+      "modeltype" : "PSAPPDEVIEW",
       "getPSAppDERSPaths" : [ [ {
         "actionRSMode" : 1,
         "codeName" : "Stories",
@@ -878,6 +882,7 @@
     }
   } ],
   "getPSDEViewCodeName" : "Usr3MobMPickupBuildCreateBugView",
+  "getPSDEViewId" : "a6ff74b40e55372d2913fcc69dfa003b",
   "getPSSysImage" : {
     "glyph" : "xf188@FontAwesome",
     "cssClass" : "fa fa-bug"
@@ -902,6 +907,7 @@
   "enablePullDownRefresh" : false,
   "showCaptionBar" : false,
   "modelid" : "c7d346953b067b41590254c201bab871",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

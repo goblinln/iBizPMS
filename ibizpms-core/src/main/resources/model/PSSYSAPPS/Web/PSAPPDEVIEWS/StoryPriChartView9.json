@@ -191,12 +191,14 @@
     "readOnly" : true,
     "name" : "chart",
     "modelid" : "96894e73f66dfc1bf9d4cb2b2b6f52e3",
+    "modeltype" : "PSDECHART",
     "getUserParam" : {
       "EC.legend" : "{show:false}",
       "EC.color" : "[\"#CAAC32\",\"#0075A9\",\"#22AC38\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
     }
   } ],
   "getPSDEViewCodeName" : "PriChartView9",
+  "getPSDEViewId" : "dd13276d2480e8f7f3f9a13c45ed1a12",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -225,6 +227,7 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "modelid" : "32f6d43e76a7aef929dcfc5a7e261537",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

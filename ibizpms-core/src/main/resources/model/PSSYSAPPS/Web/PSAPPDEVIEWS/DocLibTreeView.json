@@ -549,7 +549,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a"
+      "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a",
+      "modeltype" : "PSDETOOLBAR"
     }, {
       "codeName" : "TreeViewmoduledoc_cm",
       "controlType" : "CONTEXTMENU",
@@ -785,7 +786,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37"
+      "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37",
+      "modeltype" : "PSDETOOLBAR"
     } ],
     "getPSDETreeNodeRSs" : [ {
       "getChildPSDETreeNode" : {
@@ -1140,7 +1142,8 @@
           "showCaption" : false,
           "showIcon" : true
         } ],
-        "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a"
+        "modelid" : "b1a02bd90b21ffe6d60e80495a93c98a",
+        "modeltype" : "PSDETOOLBAR"
       },
       "textFormat" : "子目录文档库分类",
       "getTextPSAppDEField" : {
@@ -1417,7 +1420,8 @@
           "showCaption" : false,
           "showIcon" : true
         } ],
-        "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37"
+        "modelid" : "19cdd9d2699eac32abbdfeeaa4dfbb37",
+        "modeltype" : "PSDETOOLBAR"
       },
       "textFormat" : "子目录文档",
       "getTextPSAppDEField" : {
@@ -1461,9 +1465,11 @@
     "outputIconDefault" : true,
     "rootVisible" : false,
     "name" : "tree",
-    "modelid" : "cd3bb2b5a160f3fad5b4e8b01bcdbaa8"
+    "modelid" : "cd3bb2b5a160f3fad5b4e8b01bcdbaa8",
+    "modeltype" : "PSDETREEVIEW"
   } ],
   "getPSDEViewCodeName" : "TreeView",
+  "getPSDEViewId" : "f794eee6a1af5043eed582015ac672a1",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETREEVIEW_STYLE2",
@@ -1484,5 +1490,6 @@
   "enableDP" : true,
   "enableFilter" : false,
   "showCaptionBar" : false,
-  "modelid" : "9bbb63a4a36369d6d14471da8a742eb9"
+  "modelid" : "9bbb63a4a36369d6d14471da8a742eb9",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -486,6 +486,7 @@
   },
   "hasWFDataItems" : false,
   "enableColFilter" : false,
+  "enableCustomized" : true,
   "enableGroup" : false,
   "enablePagingBar" : false,
   "enableRowEdit" : true,
@@ -495,5 +496,6 @@
   "hideHeader" : false,
   "noSort" : false,
   "singleSelect" : true,
-  "modelid" : "737c04e4d11256b8f27d524795e3d27b"
+  "modelid" : "737c04e4d11256b8f27d524795e3d27b",
+  "modeltype" : "PSDEGRID"
 }

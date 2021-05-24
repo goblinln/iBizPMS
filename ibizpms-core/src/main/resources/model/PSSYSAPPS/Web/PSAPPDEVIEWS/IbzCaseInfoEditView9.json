@@ -552,9 +552,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "d0dbbd73d48f2c563cec7a32b8163afa"
+    "modelid" : "d0dbbd73d48f2c563cec7a32b8163afa",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "InfoEditView9",
+  "getPSDEViewId" : "cb9a9ea542a3afdd63310497905aabc0",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW9_STYLE2",
@@ -576,6 +578,7 @@
   "showCaptionBar" : false,
   "showDataInfoBar" : false,
   "modelid" : "c3ffc5a78a56f5f422921c92d687e02e",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "IbzCases",

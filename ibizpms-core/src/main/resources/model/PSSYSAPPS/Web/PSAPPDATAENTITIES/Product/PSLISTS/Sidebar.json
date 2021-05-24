@@ -182,7 +182,8 @@
       "showCaption" : false,
       "showIcon" : true
     } ],
-    "modelid" : "2bbbfd2a1ef498c53008a8d4cad76fc4"
+    "modelid" : "2bbbfd2a1ef498c53008a8d4cad76fc4",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEListDataItems" : [ {
     "dataType" : 9,
@@ -271,5 +272,6 @@
   "enableRowNew" : false,
   "noSort" : false,
   "showHeader" : true,
-  "modelid" : "5f8c55109d59db220896a1d9de0eeb15"
+  "modelid" : "5f8c55109d59db220896a1d9de0eeb15",
+  "modeltype" : "PSDELIST"
 }

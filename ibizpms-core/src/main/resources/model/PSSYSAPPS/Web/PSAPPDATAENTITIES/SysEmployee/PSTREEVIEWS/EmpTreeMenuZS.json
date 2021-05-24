@@ -1097,5 +1097,6 @@
   "enableSearchDefault" : false,
   "outputIconDefault" : true,
   "rootVisible" : false,
-  "modelid" : "cda9b697b43d94308c921e3bfe80504d"
+  "modelid" : "cda9b697b43d94308c921e3bfe80504d",
+  "modeltype" : "PSDETREEVIEW"
 }

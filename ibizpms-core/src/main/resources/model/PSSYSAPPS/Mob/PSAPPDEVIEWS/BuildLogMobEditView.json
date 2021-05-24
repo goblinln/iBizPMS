@@ -299,6 +299,30 @@
             }, {
               "logicTrigger" : "CUSTOM",
               "logicType" : "SYSUILOGIC",
+              "name" : "editdata",
+              "getPSAppUILogic" : {
+                "logicType" : "PREDEFINED",
+                "name" : "编辑数据",
+                "getOpenDataPSAppView" : {
+                  "getRefPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobEditView.json",
+                    "viewType" : "DEMOBEDITVIEW"
+                  }
+                },
+                "getPSAppUILogicRefViews" : [ {
+                  "getRefPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobEditView.json",
+                    "viewType" : "DEMOBEDITVIEW"
+                  }
+                } ],
+                "viewLogicType" : "APP_OPENDATA",
+                "editMode" : true
+              }
+            }, {
+              "logicTrigger" : "CUSTOM",
+              "logicType" : "SYSUILOGIC",
               "name" : "opendata",
               "getPSAppUILogic" : {
                 "logicType" : "PREDEFINED",
@@ -317,7 +341,8 @@
                     "viewType" : "DEMOBEDITVIEW"
                   }
                 } ],
-                "viewLogicType" : "APP_OPENDATA"
+                "viewLogicType" : "APP_OPENDATA",
+                "editMode" : false
               }
             } ],
             "getPSAppViewRefs" : [ {
@@ -563,9 +588,11 @@
               "noSort" : false,
               "showHeader" : true,
               "name" : "mdctrl",
-              "modelid" : "a213c5e9d2988b1842b01c4d07fecf80"
+              "modelid" : "a213c5e9d2988b1842b01c4d07fecf80",
+              "modeltype" : "PSDELIST"
             } ],
             "getPSDEViewCodeName" : "LogMobMDView9",
+            "getPSDEViewId" : "6d8b397e5c30b63f6502759ab2db6c55",
             "getPSSysImage" : {
               "glyph" : "xf006@FontAwesome",
               "cssClass" : "fa fa-star-o"
@@ -593,6 +620,7 @@
             "enableQuickSearch" : true,
             "showCaptionBar" : true,
             "modelid" : "963b139c17c5832ed2cd93ce0ff90a2a",
+            "modeltype" : "PSAPPDEVIEW",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -709,6 +737,30 @@
             }, {
               "logicTrigger" : "CUSTOM",
               "logicType" : "SYSUILOGIC",
+              "name" : "editdata",
+              "getPSAppUILogic" : {
+                "logicType" : "PREDEFINED",
+                "name" : "编辑数据",
+                "getOpenDataPSAppView" : {
+                  "getRefPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugMobEditView.json",
+                    "viewType" : "DEMOBEDITVIEW"
+                  }
+                },
+                "getPSAppUILogicRefViews" : [ {
+                  "getRefPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugMobEditView.json",
+                    "viewType" : "DEMOBEDITVIEW"
+                  }
+                } ],
+                "viewLogicType" : "APP_OPENDATA",
+                "editMode" : true
+              }
+            }, {
+              "logicTrigger" : "CUSTOM",
+              "logicType" : "SYSUILOGIC",
               "name" : "opendata",
               "getPSAppUILogic" : {
                 "logicType" : "PREDEFINED",
@@ -727,7 +779,8 @@
                     "viewType" : "DEMOBEDITVIEW"
                   }
                 } ],
-                "viewLogicType" : "APP_OPENDATA"
+                "viewLogicType" : "APP_OPENDATA",
+                "editMode" : false
               }
             } ],
             "getPSAppViewNavParams" : [ {
@@ -1084,9 +1137,11 @@
               "noSort" : false,
               "showHeader" : true,
               "name" : "mdctrl",
-              "modelid" : "1c289f6ce132e26efeef63ee85df8a67"
+              "modelid" : "1c289f6ce132e26efeef63ee85df8a67",
+              "modeltype" : "PSDELIST"
             } ],
             "getPSDEViewCodeName" : "LogMobMDView9",
+            "getPSDEViewId" : "38db0075a847fc16cbe67e72b4b2b48c",
             "getPSSysImage" : {
               "glyph" : "xf188@FontAwesome",
               "cssClass" : "fa fa-bug"
@@ -1114,6 +1169,7 @@
             "enableQuickSearch" : true,
             "showCaptionBar" : true,
             "modelid" : "fd416097dcc82ca31da5a2f203b5c264",
+            "modeltype" : "PSAPPDEVIEW",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -1289,9 +1345,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "6717dcc4bfa5900d9e03dca0fe750162"
+    "modelid" : "6717dcc4bfa5900d9e03dca0fe750162",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "LogMobEditView",
+  "getPSDEViewId" : "cd69dd7b72a4b080cee2833011ba28a9",
   "getPSSysImage" : {
     "glyph" : "xf126@FontAwesome",
     "cssClass" : "fa fa-code-fork"
@@ -1318,6 +1376,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "225787e6f0d07418225a6967c648cdf4",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Builds",

@@ -570,6 +570,7 @@
   "enableUIActions" : 15,
   "logicName" : "系统数据库",
   "name" : "PSSYSTEMDBCFG",
+  "getPSDEName" : "PSSYSTEMDBCFG",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSystemDBCfg/PSDESERVICEAPIS/PSSystemDBCfg.json"

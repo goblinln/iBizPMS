@@ -514,6 +514,7 @@
     "name" : "CREATE"
   }, {
     "logicName" : "Project_Create",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -526,6 +527,7 @@
     "name" : "DELETE"
   }, {
     "logicName" : "Project_Delete",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "DELETE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -535,6 +537,7 @@
     "id" : "ZTProject__DELETE"
   }, {
     "logicName" : "Project_Manage",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -547,6 +550,7 @@
     "name" : "READ"
   }, {
     "logicName" : "Project_Read",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -556,6 +560,7 @@
     "id" : "ZTProject__READ"
   }, {
     "logicName" : "Project_Update",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -600,6 +605,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "ZT_BURN",
+  "getPSDEName" : "ZT_BURN",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDESERVICEAPIS/Burn.json"

@@ -2154,6 +2154,7 @@
         "getPSDELogicLinkGroupCond" : {
           "groupOP" : "AND",
           "logicType" : "GROUP",
+          "name" : "连接条件组",
           "getPSDELogicLinkConds" : [ {
             "condOP" : "NOTEQ",
             "dstFieldName" : "TYPE",
@@ -2164,9 +2165,7 @@
             "logicType" : "SINGLE",
             "name" : "Default[TYPE] 不等于(<>) (custom)",
             "paramValue" : "custom"
-          } ],
-          "notMode" : false,
-          "id" : "9090e7a9bdbbbbc6bddc6cf2748a778c"
+          } ]
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,

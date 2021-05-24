@@ -425,9 +425,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "5e4e491a9ae37b7441b9c011a0abec07"
+    "modelid" : "5e4e491a9ae37b7441b9c011a0abec07",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "ProjectPlanView",
+  "getPSDEViewId" : "3b5e99b1b5a62005d2d606daa5ec84ab",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -454,6 +456,7 @@
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
   "modelid" : "48cbb418a5d2a5597a66cd72581bd32c",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

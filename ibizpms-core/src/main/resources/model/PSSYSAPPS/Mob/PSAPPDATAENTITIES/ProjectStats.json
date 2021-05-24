@@ -1195,6 +1195,7 @@
   "enableUIActions" : 15,
   "logicName" : "项目统计",
   "name" : "IBZ_PROJECTSTATS",
+  "getPSDEName" : "IBZ_PROJECTSTATS",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDESERVICEAPIS/ProjectStats.json"

@@ -474,11 +474,22 @@
                       }, {
                         "logicTrigger" : "CUSTOM",
                         "logicType" : "SYSUILOGIC",
+                        "name" : "editdata",
+                        "getPSAppUILogic" : {
+                          "logicType" : "PREDEFINED",
+                          "name" : "编辑数据",
+                          "viewLogicType" : "APP_OPENDATA",
+                          "editMode" : true
+                        }
+                      }, {
+                        "logicTrigger" : "CUSTOM",
+                        "logicType" : "SYSUILOGIC",
                         "name" : "opendata",
                         "getPSAppUILogic" : {
                           "logicType" : "PREDEFINED",
                           "name" : "打开数据",
-                          "viewLogicType" : "APP_OPENDATA"
+                          "viewLogicType" : "APP_OPENDATA",
+                          "editMode" : false
                         }
                       } ],
                       "getPSAppViewNavParams" : [ {
@@ -628,9 +639,11 @@
                         "noSort" : false,
                         "showHeader" : true,
                         "name" : "list",
-                        "modelid" : "835d0e318f958e732332eceda335286e"
+                        "modelid" : "835d0e318f958e732332eceda335286e",
+                        "modeltype" : "PSDELIST"
                       } ],
                       "getPSDEViewCodeName" : "ListView9",
+                      "getPSDEViewId" : "439cdaa85f61d5b761754a37aee0aee6",
                       "getPSViewLayoutPanel" : {
                         "codeName" : "Layoutpanel",
                         "controlStyle" : "APPDELISTVIEW9_STYLE2",
@@ -651,7 +664,8 @@
                       "enableDP" : true,
                       "enableFilter" : false,
                       "showCaptionBar" : false,
-                      "modelid" : "d940bfd96f6087050755b99a3b6bab0a"
+                      "modelid" : "d940bfd96f6087050755b99a3b6bab0a",
+                      "modeltype" : "PSAPPDEVIEW"
                     },
                     "getPSLayoutPos" : {
                       "colMD" : 24,
@@ -741,9 +755,11 @@
             "readOnly" : false,
             "showFormNavBar" : false,
             "name" : "form",
-            "modelid" : "4c36f1754d831c0bf65c7bb332a1288c"
+            "modelid" : "4c36f1754d831c0bf65c7bb332a1288c",
+            "modeltype" : "PSDEFORM_EDITFORM"
           } ],
           "getPSDEViewCodeName" : "StepsInfoEditView",
+          "getPSDEViewId" : "fe8b11e3c711001dcf8b26f69f948493",
           "getPSSysImage" : {
             "glyph" : "xf188@FontAwesome",
             "cssClass" : "fa fa-bug"
@@ -769,6 +785,7 @@
           "showCaptionBar" : false,
           "showDataInfoBar" : true,
           "modelid" : "64c5e35f0b058ff8108bbbbd22efc684",
+          "modeltype" : "PSAPPDEVIEW",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "Stories",
@@ -899,7 +916,8 @@
         "portletType" : "VIEW",
         "title" : "重现步骤",
         "showTitleBar" : true,
-        "modelid" : "e32a4f42fb03ff5c975b88d4da097b77"
+        "modelid" : "e32a4f42fb03ff5c975b88d4da097b77",
+        "modeltype" : "PSSYSDBPART"
       }, {
         "codeName" : "ActionHistoryList",
         "controlType" : "PORTLET",
@@ -990,6 +1008,30 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "getOpenDataPSAppView" : {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              },
+              "getPSAppUILogicRefViews" : [ {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              } ],
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
@@ -1008,7 +1050,8 @@
                   "viewType" : "DEEDITVIEW"
                 }
               } ],
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewNavContexts" : [ {
@@ -1203,7 +1246,8 @@
             "noSort" : false,
             "showHeader" : true,
             "name" : "history",
-            "modelid" : "c3a36618c939852256c260861292987f"
+            "modelid" : "c3a36618c939852256c260861292987f",
+            "modeltype" : "PSDELIST"
           }, {
             "codeName" : "AddCommentHistoryListViewtoolbar",
             "controlType" : "TOOLBAR",
@@ -1269,7 +1313,8 @@
               "showCaption" : true,
               "showIcon" : true
             } ],
-            "modelid" : "a3eda21b193077f1b51aed307ce96138"
+            "modelid" : "a3eda21b193077f1b51aed307ce96138",
+            "modeltype" : "PSDETOOLBAR"
           }, {
             "codeName" : "ClassifyByType",
             "controlType" : "LIST",
@@ -1458,9 +1503,11 @@
             "noSort" : false,
             "showHeader" : true,
             "name" : "list",
-            "modelid" : "3b94c5ec8c0db8db6a5f36fa82c3ed3b"
+            "modelid" : "3b94c5ec8c0db8db6a5f36fa82c3ed3b",
+            "modeltype" : "PSDELIST"
           } ],
           "getPSDEViewCodeName" : "AddCommentHistoryListView",
+          "getPSDEViewId" : "980a6d624690126294ea41f30b7150b8",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDELISTVIEW_STYLE2",
@@ -1481,12 +1528,14 @@
           "enableDP" : true,
           "enableFilter" : false,
           "showCaptionBar" : false,
-          "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b"
+          "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "portletType" : "VIEW",
         "title" : "历史记录",
         "showTitleBar" : false,
-        "modelid" : "d2bce1dcf31282fecc4ce986b6c283fb"
+        "modelid" : "d2bce1dcf31282fecc4ce986b6c283fb",
+        "modeltype" : "PSSYSDBPART"
       }, {
         "codeName" : "MainDashboardViewdashboard_container4",
         "controlType" : "PORTLET",
@@ -2132,7 +2181,8 @@
           "portletType" : "ACTIONBAR",
           "title" : "操作栏",
           "showTitleBar" : false,
-          "modelid" : "eab7e9117c071bb4a830151f035f01ec"
+          "modelid" : "eab7e9117c071bb4a830151f035f01ec",
+          "modeltype" : "PSSYSDBPART"
         } ],
         "getPSSysCss" : {
           "cssName" : "dashboard-footer-button-wrapper"
@@ -3874,9 +3924,11 @@
             "readOnly" : false,
             "showFormNavBar" : false,
             "name" : "form",
-            "modelid" : "2c131c72778975c3325f207932041d16"
+            "modelid" : "2c131c72778975c3325f207932041d16",
+            "modeltype" : "PSDEFORM_EDITFORM"
           } ],
           "getPSDEViewCodeName" : "DashboardMainEditView9",
+          "getPSDEViewId" : "fb306bc201627502b862086da223c3b2",
           "getPSSysImage" : {
             "glyph" : "xf188@FontAwesome",
             "cssClass" : "fa fa-bug"
@@ -3902,6 +3954,7 @@
           "showCaptionBar" : false,
           "showDataInfoBar" : false,
           "modelid" : "b95339c9dec370542f978bcd17224d48",
+          "modeltype" : "PSAPPDEVIEW",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "Stories",
@@ -4032,7 +4085,8 @@
         "portletType" : "VIEW",
         "title" : "基本信息",
         "showTitleBar" : false,
-        "modelid" : "9402515b8ca22e32acb1d8d6095460e7"
+        "modelid" : "9402515b8ca22e32acb1d8d6095460e7",
+        "modeltype" : "PSSYSDBPART"
       }, {
         "codeName" : "DashboardBugLife",
         "controlType" : "PORTLET",
@@ -5195,9 +5249,11 @@
             "readOnly" : false,
             "showFormNavBar" : false,
             "name" : "form",
-            "modelid" : "2e47ec728d91e504aaa65400f1ae814b"
+            "modelid" : "2e47ec728d91e504aaa65400f1ae814b",
+            "modeltype" : "PSDEFORM_EDITFORM"
           } ],
           "getPSDEViewCodeName" : "BugLifeEditView9",
+          "getPSDEViewId" : "484f40897ab57467834e68ca3ac74a65",
           "getPSSysImage" : {
             "glyph" : "xf188@FontAwesome",
             "cssClass" : "fa fa-bug"
@@ -5223,6 +5279,7 @@
           "showCaptionBar" : false,
           "showDataInfoBar" : false,
           "modelid" : "114241c3104f51fe267e9708ba41fe29",
+          "modeltype" : "PSAPPDEVIEW",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "Stories",
@@ -5353,7 +5410,8 @@
         "portletType" : "VIEW",
         "title" : "Bug的一生",
         "showTitleBar" : false,
-        "modelid" : "f0a4acaba2faa459fb7617244ec52a67"
+        "modelid" : "f0a4acaba2faa459fb7617244ec52a67",
+        "modeltype" : "PSSYSDBPART"
       } ],
       "portletType" : "CONTAINER",
       "showTitleBar" : true
@@ -5362,5 +5420,6 @@
     "showTitleBar" : true
   } ],
   "enableCustomized" : false,
-  "modelid" : "1540523a668e920d831510cfbec2c5e2"
+  "modelid" : "1540523a668e920d831510cfbec2c5e2",
+  "modeltype" : "PSSYSDASHBOARD"
 }

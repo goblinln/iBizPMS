@@ -86,6 +86,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -104,7 +128,8 @@
           "viewType" : "DEMOBEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavContexts" : [ {
@@ -429,7 +454,8 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "8461cee8a8b1bc815ac8715ddfac555a"
+    "modelid" : "8461cee8a8b1bc815ac8715ddfac555a",
+    "modeltype" : "PSDELIST"
   }, {
     "codeName" : "Usr2MobMDViewrighttoolbar",
     "controlType" : "TOOLBAR",
@@ -617,9 +643,11 @@
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBNAVRIGHTMENU",
-    "modelid" : "78d20e3e3d8c266873f71562df95b27f"
+    "modelid" : "78d20e3e3d8c266873f71562df95b27f",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "Usr2MobMDView",
+  "getPSDEViewId" : "71fba086496576b1712d2c3585a6b055",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -647,6 +675,7 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : true,
   "modelid" : "e20233f51e3734e3c458e705ffa2a4c0",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

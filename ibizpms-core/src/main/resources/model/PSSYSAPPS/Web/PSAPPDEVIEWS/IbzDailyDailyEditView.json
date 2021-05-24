@@ -101,7 +101,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
+    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "CreateDailyEditForm",
     "controlType" : "FORM",
@@ -854,9 +855,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "4da2a4e6b5e0d8ddba95447b65d76717"
+    "modelid" : "4da2a4e6b5e0d8ddba95447b65d76717",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "DailyEditView",
+  "getPSDEViewId" : "4dbd01633928212dbd5f61f1bfa31e14",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW_STYLE2",
@@ -877,5 +880,6 @@
   "enableDP" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
-  "modelid" : "83de2f22eaa4faf59cf7f38e7c448bf9"
+  "modelid" : "83de2f22eaa4faf59cf7f38e7c448bf9",
+  "modeltype" : "PSAPPDEVIEW"
 }

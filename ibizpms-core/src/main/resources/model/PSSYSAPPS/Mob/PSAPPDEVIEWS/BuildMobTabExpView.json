@@ -90,6 +90,7 @@
         "id" : "TABVIEWPANEL2"
       },
       "modelid" : "6e2a4646b4d37a03f7b86daff50fd677_tabviewpanel2",
+      "modeltype" : "PSVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "accUserMode" : 2,
         "caption" : "需求",
@@ -156,6 +157,30 @@
         }, {
           "logicTrigger" : "CUSTOM",
           "logicType" : "SYSUILOGIC",
+          "name" : "editdata",
+          "getPSAppUILogic" : {
+            "logicType" : "PREDEFINED",
+            "name" : "编辑数据",
+            "getOpenDataPSAppView" : {
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobEditView.json",
+                "viewType" : "DEMOBEDITVIEW"
+              }
+            },
+            "getPSAppUILogicRefViews" : [ {
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobEditView.json",
+                "viewType" : "DEMOBEDITVIEW"
+              }
+            } ],
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : true
+          }
+        }, {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "SYSUILOGIC",
           "name" : "opendata",
           "getPSAppUILogic" : {
             "logicType" : "PREDEFINED",
@@ -174,7 +199,8 @@
                 "viewType" : "DEMOBEDITVIEW"
               }
             } ],
-            "viewLogicType" : "APP_OPENDATA"
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : false
           }
         } ],
         "getPSAppViewNavContexts" : [ {
@@ -525,7 +551,8 @@
           "noSort" : false,
           "showHeader" : true,
           "name" : "mdctrl",
-          "modelid" : "a237bc812b636994d29020de8035b8aa"
+          "modelid" : "a237bc812b636994d29020de8035b8aa",
+          "modeltype" : "PSDELIST"
         }, {
           "codeName" : "Usr4MobMDViewrighttoolbar",
           "controlType" : "TOOLBAR",
@@ -611,9 +638,11 @@
             "showIcon" : true
           } ],
           "toolbarStyle" : "MOBBOTTOMMENU",
-          "modelid" : "1bdba2d2e38c0f51b1c93b02a87e2c92"
+          "modelid" : "1bdba2d2e38c0f51b1c93b02a87e2c92",
+          "modeltype" : "PSDETOOLBAR"
         } ],
         "getPSDEViewCodeName" : "Usr4MobMDView",
+        "getPSDEViewId" : "7c1148d839de1c29525d43f259df90dd",
         "getPSSysImage" : {
           "glyph" : "xf006@FontAwesome",
           "cssClass" : "fa fa-star-o"
@@ -641,6 +670,7 @@
         "enableQuickSearch" : true,
         "showCaptionBar" : false,
         "modelid" : "afd88bd0bb782136533db7ae8cf596d8",
+        "modeltype" : "PSAPPDEVIEW",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -685,7 +715,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL4"
       },
-      "modelid" : "6e2a4646b4d37a03f7b86daff50fd677_tabviewpanel4"
+      "modelid" : "6e2a4646b4d37a03f7b86daff50fd677_tabviewpanel4",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "产生的bug",
       "codeName" : "MobTabExpViewtabviewpanel3",
@@ -703,7 +734,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL3"
       },
-      "modelid" : "6e2a4646b4d37a03f7b86daff50fd677_tabviewpanel3"
+      "modelid" : "6e2a4646b4d37a03f7b86daff50fd677_tabviewpanel3",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "详情",
       "codeName" : "MobTabExpViewtabviewpanel5",
@@ -721,7 +753,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL5"
       },
-      "modelid" : "6e2a4646b4d37a03f7b86daff50fd677_tabviewpanel5"
+      "modelid" : "6e2a4646b4d37a03f7b86daff50fd677_tabviewpanel5",
+      "modeltype" : "PSVIEWPANEL"
     } ],
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel2"
@@ -733,9 +766,11 @@
       "name" : "tabviewpanel5"
     } ],
     "tabLayout" : "TOP",
-    "modelid" : "6e2a4646b4d37a03f7b86daff50fd677_tabexppanel"
+    "modelid" : "6e2a4646b4d37a03f7b86daff50fd677_tabexppanel",
+    "modeltype" : "PSTABEXPPANEL"
   } ],
   "getPSDEViewCodeName" : "MobTabExpView",
+  "getPSDEViewId" : "dd77bf4b8511e4a07ee432de8259dd84",
   "getPSSysImage" : {
     "glyph" : "xf126@FontAwesome",
     "cssClass" : "fa fa-code-fork"
@@ -766,6 +801,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "6e2a4646b4d37a03f7b86daff50fd677",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Builds",

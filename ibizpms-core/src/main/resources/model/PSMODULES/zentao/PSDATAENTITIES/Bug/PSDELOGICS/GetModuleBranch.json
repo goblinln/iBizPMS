@@ -78,6 +78,7 @@
       "getPSDELogicLinkGroupCond" : {
         "groupOP" : "AND",
         "logicType" : "GROUP",
+        "name" : "连接条件组",
         "getPSDELogicLinkConds" : [ {
           "condOP" : "ISNOTNULL",
           "dstFieldName" : "MODULE",
@@ -87,9 +88,7 @@
           },
           "logicType" : "SINGLE",
           "name" : "Default[MODULE] 值不为空(NotNil)"
-        } ],
-        "notMode" : false,
-        "id" : "c19c2f022669422b2be014b4966838d5"
+        } ]
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,

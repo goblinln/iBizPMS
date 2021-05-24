@@ -414,6 +414,7 @@
   "enableUIActions" : 15,
   "logicName" : "产品线",
   "name" : "IBZPRO_PRODUCTLINE",
+  "getPSDEName" : "IBZPRO_PRODUCTLINE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDESERVICEAPIS/IBZProProductLine.json"

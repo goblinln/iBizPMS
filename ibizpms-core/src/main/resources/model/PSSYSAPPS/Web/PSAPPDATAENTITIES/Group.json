@@ -378,6 +378,7 @@
   "enableUIActions" : 15,
   "logicName" : "群组",
   "name" : "ZT_GROUP",
+  "getPSDEName" : "ZT_GROUP",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Group/PSDESERVICEAPIS/Group.json"

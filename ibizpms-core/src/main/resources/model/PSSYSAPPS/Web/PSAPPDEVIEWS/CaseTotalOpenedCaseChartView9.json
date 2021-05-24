@@ -191,12 +191,14 @@
     "readOnly" : true,
     "name" : "chart",
     "modelid" : "5b60ad4bb21c7faf9c631c8c13e42149",
+    "modeltype" : "PSDECHART",
     "getUserParam" : {
       "EC.legend" : "{show:false}",
       "EC.color" : "[\"#00FF99\",\"#00CCFF\",\"#aa00ff\",\"#884bff\",'#00ffa9','#85B3FF','#A1FFFF']"
     }
   } ],
   "getPSDEViewCodeName" : "TotalOpenedCaseChartView9",
+  "getPSDEViewId" : "88030fd828c02e2dd50c1e68121ed199",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -225,6 +227,7 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "modelid" : "d5147e02b1784ad744560cee3bc97c25",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

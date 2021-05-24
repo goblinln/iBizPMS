@@ -547,7 +547,8 @@
         "showCaption" : true
       } ],
       "name" : "list_itempanel",
-      "modelid" : "497dee1fab50ba3fcac6f261fed935cc"
+      "modelid" : "497dee1fab50ba3fcac6f261fed935cc",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "MyWork",
     "getPSAppDataEntity" : {
@@ -691,9 +692,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "list",
-    "modelid" : "58dafe87c750d665463bd6357f644c98"
+    "modelid" : "58dafe87c750d665463bd6357f644c98",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "MyWork",
+  "getPSDEViewId" : "58dafe87c750d665463bd6357f644c98",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDELISTVIEW_STYLE2",
@@ -714,5 +717,6 @@
   "enableDP" : true,
   "enableFilter" : false,
   "showCaptionBar" : false,
-  "modelid" : "f2fb92cfa58f754045d11085cb9c46a9"
+  "modelid" : "f2fb92cfa58f754045d11085cb9c46a9",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -89,6 +89,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -107,7 +131,8 @@
           "viewType" : "DEMOBEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavContexts" : [ {
@@ -378,7 +403,8 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "6034ddf3d51d3ed410d3bbe84cda2756"
+    "modelid" : "6034ddf3d51d3ed410d3bbe84cda2756",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   }, {
     "codeName" : "MOBPorject",
     "controlStyle" : "LISTVIEW",
@@ -687,7 +713,8 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "2991ba3f539b1aa53efbef904529cfe4"
+    "modelid" : "2991ba3f539b1aa53efbef904529cfe4",
+    "modeltype" : "PSDELIST"
   }, {
     "codeName" : "MobMDViewCurProjectrighttoolbar",
     "controlType" : "TOOLBAR",
@@ -875,9 +902,11 @@
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBBOTTOMMENU",
-    "modelid" : "78d20e3e3d8c266873f71562df95b27f"
+    "modelid" : "78d20e3e3d8c266873f71562df95b27f",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "MobMDViewCurProject",
+  "getPSDEViewId" : "3bb311770fc17126cfe6346f782b24ba",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -906,6 +935,7 @@
   "enableSearch" : true,
   "showCaptionBar" : false,
   "modelid" : "89921997eb2af05e449025b36455f7a5",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

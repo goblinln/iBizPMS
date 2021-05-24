@@ -192,9 +192,11 @@
     },
     "readOnly" : true,
     "name" : "chart",
-    "modelid" : "65b2321bc4fa58c171c618c70127164c"
+    "modelid" : "65b2321bc4fa58c171c618c70127164c",
+    "modeltype" : "PSDECHART"
   } ],
   "getPSDEViewCodeName" : "MobChartView",
+  "getPSDEViewId" : "53c7e0e053a4771ca36afa28f16c489c",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBCHARTVIEW",
@@ -219,5 +221,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : true,
-  "modelid" : "ec93866d550363a2bfb857df6cb545af"
+  "modelid" : "ec93866d550363a2bfb857df6cb545af",
+  "modeltype" : "PSAPPDEVIEW"
 }

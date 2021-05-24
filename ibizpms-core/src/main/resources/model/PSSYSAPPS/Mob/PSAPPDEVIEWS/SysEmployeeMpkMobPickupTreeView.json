@@ -1067,9 +1067,11 @@
     "outputIconDefault" : true,
     "rootVisible" : false,
     "name" : "tree",
-    "modelid" : "869b8f25de02a872b2466456111481f4"
+    "modelid" : "869b8f25de02a872b2466456111481f4",
+    "modeltype" : "PSDETREEVIEW"
   } ],
   "getPSDEViewCodeName" : "MpkMobPickupTreeView",
+  "getPSDEViewId" : "a4db2545834e6f4196e9a6fc2d2b5280",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBPICKUPTREEVIEW",
@@ -1092,5 +1094,6 @@
   "enablePullDownRefresh" : false,
   "expandSearchForm" : true,
   "showCaptionBar" : true,
-  "modelid" : "1a751e1ea3ea708cb3801956556e16e2"
+  "modelid" : "1a751e1ea3ea708cb3801956556e16e2",
+  "modeltype" : "PSAPPDEVIEW"
 }

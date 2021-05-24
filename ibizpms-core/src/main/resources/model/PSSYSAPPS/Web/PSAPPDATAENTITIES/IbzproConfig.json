@@ -442,6 +442,7 @@
   "enableUIActions" : 15,
   "logicName" : "系统配置表",
   "name" : "IBZPRO_CONFIG",
+  "getPSDEName" : "IBZPRO_CONFIG",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig/PSDESERVICEAPIS/IbzproConfig.json"

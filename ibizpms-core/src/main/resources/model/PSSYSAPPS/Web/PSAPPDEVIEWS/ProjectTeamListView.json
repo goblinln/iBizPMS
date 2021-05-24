@@ -194,7 +194,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b"
+    "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "ProjectTeamPc",
     "controlType" : "LIST",
@@ -733,7 +734,8 @@
         "showCaption" : true
       } ],
       "name" : "list_itempanel",
-      "modelid" : "5b593e04311d89e113cb62c983f879c2"
+      "modelid" : "5b593e04311d89e113cb62c983f879c2",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "ProjectTeamPc",
     "getPSAppDataEntity" : {
@@ -892,9 +894,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "list",
-    "modelid" : "5b593e04311d89e113cb62c983f879c2"
+    "modelid" : "5b593e04311d89e113cb62c983f879c2",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "ListView",
+  "getPSDEViewId" : "13ff9dd6d338d51f3681a37625cf54f6",
   "getPSSysCss" : {
     "cssName" : "team-card"
   },
@@ -924,6 +928,7 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : true,
   "modelid" : "753d59ea09ed63ba3e2aebe7d463abe7",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectTeams",

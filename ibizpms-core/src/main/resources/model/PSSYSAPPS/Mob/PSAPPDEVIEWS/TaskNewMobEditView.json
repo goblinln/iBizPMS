@@ -921,11 +921,22 @@
             }, {
               "logicTrigger" : "CUSTOM",
               "logicType" : "SYSUILOGIC",
+              "name" : "editdata",
+              "getPSAppUILogic" : {
+                "logicType" : "PREDEFINED",
+                "name" : "编辑数据",
+                "viewLogicType" : "APP_OPENDATA",
+                "editMode" : true
+              }
+            }, {
+              "logicTrigger" : "CUSTOM",
+              "logicType" : "SYSUILOGIC",
               "name" : "opendata",
               "getPSAppUILogic" : {
                 "logicType" : "PREDEFINED",
                 "name" : "打开数据",
-                "viewLogicType" : "APP_OPENDATA"
+                "viewLogicType" : "APP_OPENDATA",
+                "editMode" : false
               }
             } ],
             "getPSControls" : [ {
@@ -1208,6 +1219,7 @@
               "sortMode" : "REMOTE",
               "hasWFDataItems" : false,
               "enableColFilter" : false,
+              "enableCustomized" : true,
               "enableGroup" : false,
               "enablePagingBar" : false,
               "enableRowEdit" : false,
@@ -1218,9 +1230,11 @@
               "noSort" : false,
               "singleSelect" : false,
               "name" : "meditviewpanel",
-              "modelid" : "ec35d9cbe2de19b349490d0899565a8c"
+              "modelid" : "ec35d9cbe2de19b349490d0899565a8c",
+              "modeltype" : "PSDEGRID"
             } ],
             "getPSDEViewCodeName" : "MobMEditView9",
+            "getPSDEViewId" : "6fed84c198ae6d029e61ba7862bce039",
             "getPSViewLayoutPanel" : {
               "codeName" : "Layoutpanel",
               "controlStyle" : "APPDEMOBMEDITVIEW9",
@@ -1244,6 +1258,7 @@
             "enableQuickSearch" : true,
             "showCaptionBar" : true,
             "modelid" : "4bc49227ec9547eb6fa613706771da38",
+            "modeltype" : "PSAPPDEVIEW",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "ProjectModules",
@@ -2260,7 +2275,8 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "68b1050477454fdcd5ca79011242292a"
+    "modelid" : "68b1050477454fdcd5ca79011242292a",
+    "modeltype" : "PSDEFORM_EDITFORM"
   }, {
     "codeName" : "NewMobEditViewrighttoolbar",
     "controlType" : "TOOLBAR",
@@ -2321,9 +2337,11 @@
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBBOTTOMMENU",
-    "modelid" : "c798012a3dda52e17ac452776aa498f0"
+    "modelid" : "c798012a3dda52e17ac452776aa498f0",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "NewMobEditView",
+  "getPSDEViewId" : "ce0ecf36488d7a2e125c50d8aaf8666d",
   "getPSSysImage" : {
     "glyph" : "xf0ae@FontAwesome",
     "cssClass" : "fa fa-tasks"
@@ -2351,6 +2369,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "4d4f590fbdfe15c5900c807d99adcf9c",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

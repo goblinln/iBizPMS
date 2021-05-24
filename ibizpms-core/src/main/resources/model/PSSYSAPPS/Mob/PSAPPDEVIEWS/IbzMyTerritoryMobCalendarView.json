@@ -34,11 +34,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -370,7 +381,8 @@
         } ],
         "mobilePanel" : true,
         "name" : "buglayoutpanel",
-        "modelid" : "15ac73e6dfc7a5d8c85fcba439f3ac38"
+        "modelid" : "15ac73e6dfc7a5d8c85fcba439f3ac38",
+        "modeltype" : "PSSYSVIEWPANEL"
       },
       "getTextPSAppDEField" : {
         "name" : "TITLE",
@@ -646,7 +658,8 @@
         } ],
         "mobilePanel" : true,
         "name" : "tasklayoutpanel",
-        "modelid" : "881c273f0a3edb62a7fded4f04b338fe"
+        "modelid" : "881c273f0a3edb62a7fded4f04b338fe",
+        "modeltype" : "PSSYSVIEWPANEL"
       },
       "getTextPSAppDEField" : {
         "name" : "NAME",
@@ -841,7 +854,8 @@
         } ],
         "mobilePanel" : true,
         "name" : "todolayoutpanel",
-        "modelid" : "56cea33453c4faf6de453b9018cdbba3"
+        "modelid" : "56cea33453c4faf6de453b9018cdbba3",
+        "modeltype" : "PSSYSVIEWPANEL"
       },
       "getTextPSAppDEField" : {
         "name" : "NAME",
@@ -960,7 +974,8 @@
         } ],
         "mobilePanel" : true,
         "name" : "dailylayoutpanel",
-        "modelid" : "4d78ace183b45e7e6ff6b2ec6be25d9a"
+        "modelid" : "4d78ace183b45e7e6ff6b2ec6be25d9a",
+        "modeltype" : "PSSYSVIEWPANEL"
       },
       "getTextPSAppDEField" : {
         "name" : "IBZ_DAILYNAME",
@@ -971,9 +986,11 @@
     } ],
     "enableGroup" : false,
     "name" : "calendar",
-    "modelid" : "58dafe87c750d665463bd6357f644c98"
+    "modelid" : "58dafe87c750d665463bd6357f644c98",
+    "modeltype" : "PSSYSCALENDAR"
   } ],
   "getPSDEViewCodeName" : "MobCalendarView",
+  "getPSDEViewId" : "a853207e8b2b112fd5f595308211d915",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBCALENDARVIEW",
@@ -995,5 +1012,6 @@
   "enableFilter" : false,
   "enablePullDownRefresh" : false,
   "showCaptionBar" : true,
-  "modelid" : "b515371dad6b1f2619ede640d4481ecb"
+  "modelid" : "b515371dad6b1f2619ede640d4481ecb",
+  "modeltype" : "PSAPPDEVIEW"
 }

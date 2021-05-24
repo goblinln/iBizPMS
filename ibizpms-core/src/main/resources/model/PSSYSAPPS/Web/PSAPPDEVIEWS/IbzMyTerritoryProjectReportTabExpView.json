@@ -61,6 +61,7 @@
         "id" : "TABVIEWPANEL"
       },
       "modelid" : "5c9989624fec0b4edbf2619f3692cbcc_tabviewpanel",
+      "modeltype" : "PSVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "accUserMode" : 2,
         "caption" : "项目日报",
@@ -165,6 +166,30 @@
         }, {
           "logicTrigger" : "CUSTOM",
           "logicType" : "SYSUILOGIC",
+          "name" : "editdata",
+          "getPSAppUILogic" : {
+            "logicType" : "PREDEFINED",
+            "name" : "编辑数据",
+            "getOpenDataPSAppView" : {
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProjectDailyEditView.json",
+                "viewType" : "DEEDITVIEW"
+              }
+            },
+            "getPSAppUILogicRefViews" : [ {
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProjectDailyEditView.json",
+                "viewType" : "DEEDITVIEW"
+              }
+            } ],
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : true
+          }
+        }, {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "SYSUILOGIC",
           "name" : "opendata",
           "getPSAppUILogic" : {
             "logicType" : "PREDEFINED",
@@ -183,7 +208,8 @@
                 "viewType" : "DEEDITVIEW"
               }
             } ],
-            "viewLogicType" : "APP_OPENDATA"
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : false
           }
         } ],
         "getPSAppViewNavParams" : [ {
@@ -441,7 +467,8 @@
             "showCaption" : true,
             "showIcon" : true
           } ],
-          "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b"
+          "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b",
+          "modeltype" : "PSDETOOLBAR"
         }, {
           "aggMode" : "NONE",
           "codeName" : "Main",
@@ -804,6 +831,7 @@
           "sortMode" : "REMOTE",
           "hasWFDataItems" : false,
           "enableColFilter" : false,
+          "enableCustomized" : true,
           "enableGroup" : false,
           "enablePagingBar" : true,
           "enableRowEdit" : false,
@@ -814,7 +842,8 @@
           "noSort" : false,
           "singleSelect" : false,
           "name" : "grid",
-          "modelid" : "4073952481b2a0ca4cdba0ec4c4ffb3f"
+          "modelid" : "4073952481b2a0ca4cdba0ec4c4ffb3f",
+          "modeltype" : "PSDEGRID"
         }, {
           "codeName" : "Default",
           "controlType" : "SEARCHFORM",
@@ -891,9 +920,11 @@
           "enableFilterSave" : false,
           "noTabHeader" : true,
           "name" : "searchform",
-          "modelid" : "a80ebdca36d5f3473e2ecad00c8f0a25"
+          "modelid" : "a80ebdca36d5f3473e2ecad00c8f0a25",
+          "modeltype" : "PSDEFORM_SEARCHFORM"
         } ],
         "getPSDEViewCodeName" : "GridView",
+        "getPSDEViewId" : "25ebe7a80820e321e0fa1c695a1f2814",
         "getPSViewLayoutPanel" : {
           "codeName" : "Layoutpanel",
           "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -920,7 +951,8 @@
         "enableSearch" : true,
         "rowEditDefault" : false,
         "showCaptionBar" : true,
-        "modelid" : "9682c1d45f5c4aa7868b241dc74f0e0b"
+        "modelid" : "9682c1d45f5c4aa7868b241dc74f0e0b",
+        "modeltype" : "PSAPPDEVIEW"
       }
     }, {
       "caption" : "项目周报",
@@ -939,7 +971,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL2"
       },
-      "modelid" : "5c9989624fec0b4edbf2619f3692cbcc_tabviewpanel2"
+      "modelid" : "5c9989624fec0b4edbf2619f3692cbcc_tabviewpanel2",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "项目月报",
       "codeName" : "ProjectReportTabExpViewtabviewpanel3",
@@ -957,7 +990,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL3"
       },
-      "modelid" : "5c9989624fec0b4edbf2619f3692cbcc_tabviewpanel3"
+      "modelid" : "5c9989624fec0b4edbf2619f3692cbcc_tabviewpanel3",
+      "modeltype" : "PSVIEWPANEL"
     } ],
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel"
@@ -967,9 +1001,11 @@
       "name" : "tabviewpanel3"
     } ],
     "tabLayout" : "TOP",
-    "modelid" : "5c9989624fec0b4edbf2619f3692cbcc_tabexppanel"
+    "modelid" : "5c9989624fec0b4edbf2619f3692cbcc_tabexppanel",
+    "modeltype" : "PSTABEXPPANEL"
   } ],
   "getPSDEViewCodeName" : "ProjectReportTabExpView",
+  "getPSDEViewId" : "2386d0d2d4eae6092eae5767534536b9",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETABEXPVIEW_STYLE2",
@@ -994,5 +1030,6 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "5c9989624fec0b4edbf2619f3692cbcc"
+  "modelid" : "5c9989624fec0b4edbf2619f3692cbcc",
+  "modeltype" : "PSAPPDEVIEW"
 }

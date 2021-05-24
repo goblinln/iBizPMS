@@ -221,7 +221,8 @@
       "showBusyIndicator" : true
     },
     "enableCustomize" : false,
-    "modelid" : "f23beaed85fa4c2edc21e98e3b4711fc"
+    "modelid" : "f23beaed85fa4c2edc21e98e3b4711fc",
+    "modeltype" : "PSAPPMENU"
   } ],
   "getPSSysPFPlugin" : {
     "pluginType" : "VIEW_CUSTOM",
@@ -244,5 +245,6 @@
   "defaultPage" : true,
   "enableAppSwitch" : false,
   "enableDP" : true,
-  "modelid" : "7f305e69fef591271653071c641ce82c"
+  "modelid" : "7f305e69fef591271653071c641ce82c",
+  "modeltype" : "PSAPPINDEXVIEW"
 }

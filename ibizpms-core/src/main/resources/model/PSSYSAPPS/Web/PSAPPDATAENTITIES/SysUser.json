@@ -577,6 +577,7 @@
   "enableUIActions" : 15,
   "logicName" : "系统用户",
   "name" : "SYS_USER",
+  "getPSDEName" : "SYS_USER",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDESERVICEAPIS/SysUser.json"

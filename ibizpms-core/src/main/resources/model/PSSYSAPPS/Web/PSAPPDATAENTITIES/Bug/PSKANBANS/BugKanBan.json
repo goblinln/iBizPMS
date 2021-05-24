@@ -890,7 +890,8 @@
       "showCaption" : true
     } ],
     "name" : "itemlayoutpanel",
-    "modelid" : "58b1827950ea09784b503890c2bb0044"
+    "modelid" : "58b1827950ea09784b503890c2bb0044",
+    "modeltype" : "PSSYSVIEWPANEL"
   },
   "logicName" : "Bug看板",
   "minorSortDir" : "DESC",
@@ -1446,5 +1447,6 @@
   "enablePagingBar" : true,
   "noSort" : false,
   "singleSelect" : false,
-  "modelid" : "58b1827950ea09784b503890c2bb0044"
+  "modelid" : "58b1827950ea09784b503890c2bb0044",
+  "modeltype" : "PSDEKANBAN"
 }

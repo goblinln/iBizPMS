@@ -404,6 +404,7 @@
   "enableUIActions" : 15,
   "logicName" : "组成员",
   "name" : "SYS_TEAMMEMBER",
+  "getPSDEName" : "SYS_TEAMMEMBER",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDESERVICEAPIS/SysTeamMember.json"

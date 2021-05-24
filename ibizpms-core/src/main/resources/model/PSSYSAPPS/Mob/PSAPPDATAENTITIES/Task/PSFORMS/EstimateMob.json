@@ -208,11 +208,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSControls" : [ {
@@ -351,7 +362,8 @@
                 "showCaption" : true
               } ],
               "name" : "mdctrl_itempanel",
-              "modelid" : "0eea64a68b5d47cce96bc1efbc9e8066"
+              "modelid" : "0eea64a68b5d47cce96bc1efbc9e8066",
+              "modeltype" : "PSSYSVIEWPANEL"
             },
             "logicName" : "MOB",
             "mobListStyle" : "LISTVIEW",
@@ -600,9 +612,11 @@
             "noSort" : false,
             "showHeader" : true,
             "name" : "mdctrl",
-            "modelid" : "fe3a541c54722a54b9848a6294daeaa4"
+            "modelid" : "fe3a541c54722a54b9848a6294daeaa4",
+            "modeltype" : "PSDELIST"
           } ],
           "getPSDEViewCodeName" : "MobMDView9",
+          "getPSDEViewId" : "d042a18aec0fbf19b05838510177cc6a",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEMOBMDVIEW9",
@@ -626,6 +640,7 @@
           "enableQuickSearch" : true,
           "showCaptionBar" : false,
           "modelid" : "b32237a5f8c8246577934d7872801a81",
+          "modeltype" : "PSAPPDEVIEW",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "ProjectModules",
@@ -1151,11 +1166,22 @@
         }, {
           "logicTrigger" : "CUSTOM",
           "logicType" : "SYSUILOGIC",
+          "name" : "editdata",
+          "getPSAppUILogic" : {
+            "logicType" : "PREDEFINED",
+            "name" : "编辑数据",
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : true
+          }
+        }, {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "SYSUILOGIC",
           "name" : "opendata",
           "getPSAppUILogic" : {
             "logicType" : "PREDEFINED",
             "name" : "打开数据",
-            "viewLogicType" : "APP_OPENDATA"
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : false
           }
         } ],
         "getPSControls" : [ {
@@ -1652,6 +1678,7 @@
           "sortMode" : "REMOTE",
           "hasWFDataItems" : false,
           "enableColFilter" : false,
+          "enableCustomized" : true,
           "enableGroup" : false,
           "enablePagingBar" : true,
           "enableRowEdit" : false,
@@ -1662,9 +1689,11 @@
           "noSort" : false,
           "singleSelect" : false,
           "name" : "meditviewpanel",
-          "modelid" : "6796831e2f83bf0954848155004b3698"
+          "modelid" : "6796831e2f83bf0954848155004b3698",
+          "modeltype" : "PSDEGRID"
         } ],
         "getPSDEViewCodeName" : "MobMEditView9",
+        "getPSDEViewId" : "9eb526bb11f99b85b1bf816397cae226",
         "getPSViewLayoutPanel" : {
           "codeName" : "Layoutpanel",
           "controlStyle" : "APPDEMOBMEDITVIEW9",
@@ -1688,6 +1717,7 @@
         "enableQuickSearch" : true,
         "showCaptionBar" : true,
         "modelid" : "8664834aa506f4703df1ae2da090c167",
+        "modeltype" : "PSAPPDEVIEW",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "ProjectModules",
@@ -2187,5 +2217,6 @@
   "noTabHeader" : true,
   "readOnly" : false,
   "showFormNavBar" : false,
-  "modelid" : "d1f33eb045ca0b2cff87b55dd1424971"
+  "modelid" : "d1f33eb045ca0b2cff87b55dd1424971",
+  "modeltype" : "PSDEFORM_EDITFORM"
 }

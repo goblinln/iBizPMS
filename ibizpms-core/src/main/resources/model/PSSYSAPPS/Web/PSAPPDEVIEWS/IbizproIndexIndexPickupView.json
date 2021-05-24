@@ -163,9 +163,11 @@
         "noSort" : false,
         "singleSelect" : false,
         "name" : "dataview",
-        "modelid" : "b7809a0eed51ac1fa8687a2372b44e57"
+        "modelid" : "b7809a0eed51ac1fa8687a2372b44e57",
+        "modeltype" : "PSDEDATAVIEW"
       } ],
       "getPSDEViewCodeName" : "IndexPickupDataView",
+      "getPSDEViewId" : "17f6c4d04147b3902318f85eb76c0a5d",
       "getPSViewLayoutPanel" : {
         "codeName" : "Layoutpanel",
         "controlStyle" : "APPDEINDEXPICKUPDATAVIEW_STYLE2",
@@ -188,7 +190,8 @@
       "expandSearchForm" : true,
       "pickupMode" : true,
       "showCaptionBar" : true,
-      "modelid" : "b73c533bd0b7c0813dc5fa85f2b3549f"
+      "modelid" : "b73c533bd0b7c0813dc5fa85f2b3549f",
+      "modeltype" : "PSAPPDEVIEW"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
     "name" : "pickupviewpanel",
@@ -201,6 +204,7 @@
     }
   } ],
   "getPSDEViewCodeName" : "IndexPickupView",
+  "getPSDEViewId" : "09c5964f08fd6ef6e3575872c837f062",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPICKUPVIEW_STYLE2",
@@ -219,5 +223,6 @@
   "viewType" : "DEPICKUPVIEW",
   "enableDP" : true,
   "showCaptionBar" : false,
-  "modelid" : "6dec69ecabb41af1b4fffe82c077724a"
+  "modelid" : "6dec69ecabb41af1b4fffe82c077724a",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -219,6 +219,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -229,7 +230,8 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "1f3c94aa6bf739b1dc411f77aaf96ee6"
+    "modelid" : "1f3c94aa6bf739b1dc411f77aaf96ee6",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
@@ -306,9 +308,11 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "124dd098eb9374dc7174b9e5141f86bc"
+    "modelid" : "124dd098eb9374dc7174b9e5141f86bc",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "PickupGridView",
+  "getPSDEViewId" : "657e812203abe8a1b9f52118fefe22a6",
   "getPSSysImage" : {
     "glyph" : "xf126@FontAwesome",
     "cssClass" : "fa fa-code-fork"
@@ -341,6 +345,7 @@
   "rowEditDefault" : false,
   "showCaptionBar" : true,
   "modelid" : "fa64e271c22e6aaa89873d2556edf529",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Branches",

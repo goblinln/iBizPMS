@@ -486,6 +486,7 @@
   "enableUIActions" : 15,
   "logicName" : "索引检索",
   "name" : "IBIZPRO_INDEX",
+  "getPSDEName" : "IBIZPRO_INDEX",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDESERVICEAPIS/IbizproIndex.json"

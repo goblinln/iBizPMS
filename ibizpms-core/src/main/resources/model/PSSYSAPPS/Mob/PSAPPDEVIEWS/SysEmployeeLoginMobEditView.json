@@ -654,9 +654,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "ebeaec29b58c0e23aa54dff661df32d2"
+    "modelid" : "ebeaec29b58c0e23aa54dff661df32d2",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "LoginMobEditView",
+  "getPSDEViewId" : "800e56111185095bb441bcf2a4f0bc1f",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBEDITVIEW",
@@ -678,5 +680,6 @@
   "enablePullDownRefresh" : false,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
-  "modelid" : "c47f239e594f70b036aaa6a7e6ea56e2"
+  "modelid" : "c47f239e594f70b036aaa6a7e6ea56e2",
+  "modeltype" : "PSAPPDEVIEW"
 }

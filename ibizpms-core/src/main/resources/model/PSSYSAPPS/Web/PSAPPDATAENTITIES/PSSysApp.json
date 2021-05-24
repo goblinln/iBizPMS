@@ -723,6 +723,7 @@
   "enableUIActions" : 15,
   "logicName" : "系统应用",
   "name" : "PSSYSAPP",
+  "getPSDEName" : "PSSYSAPP",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp/PSDESERVICEAPIS/PSSysApp.json"

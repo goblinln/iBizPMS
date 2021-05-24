@@ -843,6 +843,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "IBZ_CASESTEP",
+  "getPSDEName" : "ZT_CASESTEP",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDESERVICEAPIS/IBZCaseStep.json"

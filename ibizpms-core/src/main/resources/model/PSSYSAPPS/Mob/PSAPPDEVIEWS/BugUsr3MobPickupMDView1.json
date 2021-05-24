@@ -352,7 +352,8 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "d27933bd5df40048f9148e9e5e1904f9"
+    "modelid" : "d27933bd5df40048f9148e9e5e1904f9",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   }, {
     "codeName" : "MOB_ReleaseLink_LeftBug",
     "controlStyle" : "LISTVIEW",
@@ -684,9 +685,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "e3c77b237b2c202c94d671a92e70fc87"
+    "modelid" : "e3c77b237b2c202c94d671a92e70fc87",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "Usr3MobPickupMDView1",
+  "getPSDEViewId" : "8f58c678947fb1ce7b89398a8ef122d0",
   "getPSSysImage" : {
     "glyph" : "xf188@FontAwesome",
     "cssClass" : "fa fa-bug"
@@ -715,6 +718,7 @@
   "expandSearchForm" : true,
   "showCaptionBar" : true,
   "modelid" : "cfecea6fab6eba6155bd550ef64019d1",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

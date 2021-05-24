@@ -536,7 +536,8 @@
       "showCaption" : true
     } ],
     "name" : "list_itempanel",
-    "modelid" : "15be549f61f1836de62de98217a2766a"
+    "modelid" : "15be549f61f1836de62de98217a2766a",
+    "modeltype" : "PSSYSVIEWPANEL"
   },
   "logicName" : "ProductTeam",
   "getPSAppDataEntity" : {
@@ -620,5 +621,6 @@
   "enableRowNew" : false,
   "noSort" : false,
   "showHeader" : true,
-  "modelid" : "67016a59d567665bda8727456cd145da"
+  "modelid" : "67016a59d567665bda8727456cd145da",
+  "modeltype" : "PSDELIST"
 }

@@ -312,11 +312,22 @@
             }, {
               "logicTrigger" : "CUSTOM",
               "logicType" : "SYSUILOGIC",
+              "name" : "editdata",
+              "getPSAppUILogic" : {
+                "logicType" : "PREDEFINED",
+                "name" : "编辑数据",
+                "viewLogicType" : "APP_OPENDATA",
+                "editMode" : true
+              }
+            }, {
+              "logicTrigger" : "CUSTOM",
+              "logicType" : "SYSUILOGIC",
               "name" : "opendata",
               "getPSAppUILogic" : {
                 "logicType" : "PREDEFINED",
                 "name" : "打开数据",
-                "viewLogicType" : "APP_OPENDATA"
+                "viewLogicType" : "APP_OPENDATA",
+                "editMode" : false
               }
             } ],
             "getPSAppViewNavContexts" : [ {
@@ -633,6 +644,7 @@
               "sortMode" : "REMOTE",
               "hasWFDataItems" : false,
               "enableColFilter" : false,
+              "enableCustomized" : true,
               "enableGroup" : false,
               "enablePagingBar" : false,
               "enableRowEdit" : false,
@@ -643,9 +655,11 @@
               "noSort" : false,
               "singleSelect" : false,
               "name" : "meditviewpanel",
-              "modelid" : "2eff032f1e0b2ed1312c5f5c126ded6e"
+              "modelid" : "2eff032f1e0b2ed1312c5f5c126ded6e",
+              "modeltype" : "PSDEGRID"
             } ],
             "getPSDEViewCodeName" : "TestTaskMEditView9",
+            "getPSDEViewId" : "dea880e1c7354aa76b35617d8f5eeea1",
             "getPSViewLayoutPanel" : {
               "codeName" : "Layoutpanel",
               "controlStyle" : "APPDEMEDITVIEW9_STYLE2",
@@ -667,6 +681,7 @@
             "enableQuickSearch" : true,
             "showCaptionBar" : false,
             "modelid" : "a2162c6851a15e4ca36932de99bce8ad",
+            "modeltype" : "PSAPPDEVIEW",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -945,5 +960,6 @@
   "noTabHeader" : true,
   "readOnly" : false,
   "showFormNavBar" : false,
-  "modelid" : "8cfef6d15052f0c0df90db4e72e66201"
+  "modelid" : "8cfef6d15052f0c0df90db4e72e66201",
+  "modeltype" : "PSDEFORM_EDITFORM"
 }

@@ -33,11 +33,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSControls" : [ {
@@ -509,15 +520,18 @@
       "outputIconDefault" : false,
       "rootVisible" : false,
       "name" : "treeexpbar_tree",
-      "modelid" : "0aa3f2c95faa19b07f18e9cc1f16ee4b"
+      "modelid" : "0aa3f2c95faa19b07f18e9cc1f16ee4b",
+      "modeltype" : "PSDETREEVIEW"
     } ],
     "xDataControlName" : "treeexpbar_tree",
     "enableCounter" : true,
     "enableSearch" : true,
     "showTitleBar" : false,
-    "modelid" : "f78c94cb0a20d7f459753a4070f8f3e7_treeexpbar"
+    "modelid" : "f78c94cb0a20d7f459753a4070f8f3e7_treeexpbar",
+    "modeltype" : "PSEXPBAR"
   } ],
   "getPSDEViewCodeName" : "BugTreeExpView",
+  "getPSDEViewId" : "7709b98a53901610e4a4092d56d117be",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
@@ -539,5 +553,6 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "f78c94cb0a20d7f459753a4070f8f3e7"
+  "modelid" : "f78c94cb0a20d7f459753a4070f8f3e7",
+  "modeltype" : "PSAPPDEVIEW"
 }

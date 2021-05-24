@@ -153,7 +153,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
+    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "NewPlan",
     "controlType" : "FORM",
@@ -1092,9 +1093,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "16d9aacbaad9aecc749dafabde914f77"
+    "modelid" : "16d9aacbaad9aecc749dafabde914f77",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "PlanAddEditView",
+  "getPSDEViewId" : "fbbb1c386e6f9ab5c2944ca9382eadd6",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW_STYLE2",
@@ -1115,5 +1118,6 @@
   "enableDP" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
-  "modelid" : "610615b622efc779ffad42a385633be9"
+  "modelid" : "610615b622efc779ffad42a385633be9",
+  "modeltype" : "PSAPPDEVIEW"
 }

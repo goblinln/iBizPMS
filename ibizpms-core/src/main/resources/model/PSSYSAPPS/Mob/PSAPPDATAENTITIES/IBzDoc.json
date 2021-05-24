@@ -377,6 +377,7 @@
   "enableUIActions" : 15,
   "logicName" : "文档",
   "name" : "IBZ_DOC",
+  "getPSDEName" : "IBZ_DOC",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBzDoc/PSDESERVICEAPIS/IBzDoc.json"

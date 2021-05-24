@@ -34,11 +34,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -103,9 +114,11 @@
       "enableQuickCreate" : false
     } ],
     "name" : "map",
-    "modelid" : "2590d6e8d044be3afd093079a6368404"
+    "modelid" : "2590d6e8d044be3afd093079a6368404",
+    "modeltype" : "PSSYSMAPVIEW"
   } ],
   "getPSDEViewCodeName" : "MobMapView",
+  "getPSDEViewId" : "a2ebfed2942c84b444c66802eaf20edd",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBMAPVIEW",
@@ -127,5 +140,6 @@
   "enableFilter" : false,
   "enablePullDownRefresh" : false,
   "showCaptionBar" : true,
-  "modelid" : "d51cddc777fcf4f78f512f5b9e0538ea"
+  "modelid" : "d51cddc777fcf4f78f512f5b9e0538ea",
+  "modeltype" : "PSAPPDEVIEW"
 }

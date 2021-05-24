@@ -76,6 +76,7 @@
         "id" : "TABVIEWPANEL3"
       },
       "modelid" : "2c8070e362fc4f281f56faebc194f57e_tabviewpanel3",
+      "modeltype" : "PSVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "accUserMode" : 2,
         "caption" : "需求",
@@ -142,6 +143,30 @@
         }, {
           "logicTrigger" : "CUSTOM",
           "logicType" : "SYSUILOGIC",
+          "name" : "editdata",
+          "getPSAppUILogic" : {
+            "logicType" : "PREDEFINED",
+            "name" : "编辑数据",
+            "getOpenDataPSAppView" : {
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobEditView.json",
+                "viewType" : "DEMOBEDITVIEW"
+              }
+            },
+            "getPSAppUILogicRefViews" : [ {
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobEditView.json",
+                "viewType" : "DEMOBEDITVIEW"
+              }
+            } ],
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : true
+          }
+        }, {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "SYSUILOGIC",
           "name" : "opendata",
           "getPSAppUILogic" : {
             "logicType" : "PREDEFINED",
@@ -160,7 +185,8 @@
                 "viewType" : "DEMOBEDITVIEW"
               }
             } ],
-            "viewLogicType" : "APP_OPENDATA"
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : false
           }
         } ],
         "getPSAppViewNavContexts" : [ {
@@ -517,7 +543,8 @@
           "noSort" : false,
           "showHeader" : true,
           "name" : "mdctrl",
-          "modelid" : "4c97d6f12097547ef1970dafe7237843"
+          "modelid" : "4c97d6f12097547ef1970dafe7237843",
+          "modeltype" : "PSDELIST"
         }, {
           "codeName" : "Usr2MobMDView_5219righttoolbar",
           "controlType" : "TOOLBAR",
@@ -604,9 +631,11 @@
             "showIcon" : true
           } ],
           "toolbarStyle" : "MOBBOTTOMMENU",
-          "modelid" : "cc8ccd1a6d557ee04d58e1dae3074d7e"
+          "modelid" : "cc8ccd1a6d557ee04d58e1dae3074d7e",
+          "modeltype" : "PSDETOOLBAR"
         } ],
         "getPSDEViewCodeName" : "Usr2MobMDView_5219",
+        "getPSDEViewId" : "87284a8ffb9394a89ea2a23bfd1ee8ed",
         "getPSSysImage" : {
           "glyph" : "xf006@FontAwesome",
           "cssClass" : "fa fa-star-o"
@@ -634,6 +663,7 @@
         "enableQuickSearch" : true,
         "showCaptionBar" : false,
         "modelid" : "1a16912af4d68075be9437c5684d4f48",
+        "modeltype" : "PSAPPDEVIEW",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -683,7 +713,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL2"
       },
-      "modelid" : "2c8070e362fc4f281f56faebc194f57e_tabviewpanel2"
+      "modelid" : "2c8070e362fc4f281f56faebc194f57e_tabviewpanel2",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "计划详情",
       "codeName" : "MobTabExpViewtabviewpanel4",
@@ -701,7 +732,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL4"
       },
-      "modelid" : "2c8070e362fc4f281f56faebc194f57e_tabviewpanel4"
+      "modelid" : "2c8070e362fc4f281f56faebc194f57e_tabviewpanel4",
+      "modeltype" : "PSVIEWPANEL"
     } ],
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel3"
@@ -711,9 +743,11 @@
       "name" : "tabviewpanel4"
     } ],
     "tabLayout" : "TOP",
-    "modelid" : "2c8070e362fc4f281f56faebc194f57e_tabexppanel"
+    "modelid" : "2c8070e362fc4f281f56faebc194f57e_tabexppanel",
+    "modeltype" : "PSTABEXPPANEL"
   } ],
   "getPSDEViewCodeName" : "MobTabExpView",
+  "getPSDEViewId" : "50ed2b5e6364538070c604631bd65589",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBTABEXPVIEW",
@@ -740,6 +774,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "2c8070e362fc4f281f56faebc194f57e",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProductPlans",

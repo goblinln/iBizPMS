@@ -24,11 +24,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSControls" : [ {
@@ -348,6 +359,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -358,9 +370,11 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "meditviewpanel",
-    "modelid" : "e4a47cb6ae2070016f57c5aec5944868"
+    "modelid" : "e4a47cb6ae2070016f57c5aec5944868",
+    "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "StoryMEditView9",
+  "getPSDEViewId" : "564a2ddce0aa59aeac47f523fd0e49e0",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMEDITVIEW9_STYLE2",
@@ -381,5 +395,6 @@
   "enableFilter" : false,
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
-  "modelid" : "3cecaa21816a751af38ce2ff1aac25ba"
+  "modelid" : "3cecaa21816a751af38ce2ff1aac25ba",
+  "modeltype" : "PSAPPDEVIEW"
 }

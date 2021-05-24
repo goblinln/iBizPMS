@@ -67,5 +67,6 @@
     "showTitleBar" : true
   } ],
   "enableCustomized" : false,
-  "modelid" : "7e14015af219d302f7d81ff40cdcc418"
+  "modelid" : "7e14015af219d302f7d81ff40cdcc418",
+  "modeltype" : "PSSYSDASHBOARD"
 }

@@ -111,5 +111,6 @@
   } ],
   "roleTag" : "ProductSupervisor",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "PROD_CREATE_BUT", "LEFT_CASE_MENU", "LEFT_PROJECT_MENU", "PRODUCTLIN_BUT", "PRODUCTLEFT" ]
+  "uniResTags" : [ "PROD_CREATE_BUT", "LEFT_CASE_MENU", "LEFT_PROJECT_MENU", "PRODUCTLIN_BUT", "PRODUCTLEFT" ],
+  "globalRole" : true
 }

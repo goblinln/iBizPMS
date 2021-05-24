@@ -755,6 +755,7 @@
   "enableUIActions" : 15,
   "logicName" : "产品汇总表",
   "name" : "IBZ_PRODUCTSUM",
+  "getPSDEName" : "IBZ_PRODUCTSUM",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDESERVICEAPIS/ProductSum.json"

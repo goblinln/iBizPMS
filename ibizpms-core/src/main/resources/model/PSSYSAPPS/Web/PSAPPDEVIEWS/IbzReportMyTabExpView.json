@@ -96,6 +96,7 @@
         "id" : "TABVIEWPANEL"
       },
       "modelid" : "faea7e2d2427080c2bd6683de726ad8d_tabviewpanel",
+      "modeltype" : "PSVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "accUserMode" : 2,
         "caption" : "日报",
@@ -138,6 +139,30 @@
         }, {
           "logicTrigger" : "CUSTOM",
           "logicType" : "SYSUILOGIC",
+          "name" : "editdata",
+          "getPSAppUILogic" : {
+            "logicType" : "PREDEFINED",
+            "name" : "编辑数据",
+            "getOpenDataPSAppView" : {
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyMymainEditView.json",
+                "viewType" : "DEEDITVIEW"
+              }
+            },
+            "getPSAppUILogicRefViews" : [ {
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyMymainEditView.json",
+                "viewType" : "DEEDITVIEW"
+              }
+            } ],
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : true
+          }
+        }, {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "SYSUILOGIC",
           "name" : "opendata",
           "getPSAppUILogic" : {
             "logicType" : "PREDEFINED",
@@ -156,7 +181,8 @@
                 "viewType" : "DEEDITVIEW"
               }
             } ],
-            "viewLogicType" : "APP_OPENDATA"
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : false
           }
         } ],
         "getPSAppViewRefs" : [ {
@@ -548,6 +574,7 @@
           "sortMode" : "REMOTE",
           "hasWFDataItems" : false,
           "enableColFilter" : false,
+          "enableCustomized" : true,
           "enableGroup" : false,
           "enablePagingBar" : true,
           "enableRowEdit" : false,
@@ -558,9 +585,11 @@
           "noSort" : false,
           "singleSelect" : false,
           "name" : "grid",
-          "modelid" : "e3b37c6142eba0d750f2763a364e4643"
+          "modelid" : "e3b37c6142eba0d750f2763a364e4643",
+          "modeltype" : "PSDEGRID"
         } ],
         "getPSDEViewCodeName" : "MyDailyGridView",
+        "getPSDEViewId" : "333eb8eaeec6c8cde5f40516761f631c",
         "getPSViewLayoutPanel" : {
           "codeName" : "Layoutpanel",
           "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -586,7 +615,8 @@
         "enableRowEdit" : false,
         "rowEditDefault" : false,
         "showCaptionBar" : false,
-        "modelid" : "a302ac33e3faf1f7a735721d5a96f738"
+        "modelid" : "a302ac33e3faf1f7a735721d5a96f738",
+        "modeltype" : "PSAPPDEVIEW"
       }
     }, {
       "caption" : "周报",
@@ -610,7 +640,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL2"
       },
-      "modelid" : "faea7e2d2427080c2bd6683de726ad8d_tabviewpanel2"
+      "modelid" : "faea7e2d2427080c2bd6683de726ad8d_tabviewpanel2",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "月报",
       "codeName" : "MyTabExpViewtabviewpanel3",
@@ -633,7 +664,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL3"
       },
-      "modelid" : "faea7e2d2427080c2bd6683de726ad8d_tabviewpanel3"
+      "modelid" : "faea7e2d2427080c2bd6683de726ad8d_tabviewpanel3",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "汇报",
       "codeName" : "MyTabExpViewtabviewpanel4",
@@ -656,7 +688,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL4"
       },
-      "modelid" : "faea7e2d2427080c2bd6683de726ad8d_tabviewpanel4"
+      "modelid" : "faea7e2d2427080c2bd6683de726ad8d_tabviewpanel4",
+      "modeltype" : "PSVIEWPANEL"
     } ],
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel"
@@ -668,9 +701,11 @@
       "name" : "tabviewpanel4"
     } ],
     "tabLayout" : "TOP",
-    "modelid" : "faea7e2d2427080c2bd6683de726ad8d_tabexppanel"
+    "modelid" : "faea7e2d2427080c2bd6683de726ad8d_tabexppanel",
+    "modeltype" : "PSTABEXPPANEL"
   } ],
   "getPSDEViewCodeName" : "MyTabExpView",
+  "getPSDEViewId" : "d340e0890aa01ae913e9d0e1f4feb934",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETABEXPVIEW_STYLE2",
@@ -695,5 +730,6 @@
   "loadDefault" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
-  "modelid" : "faea7e2d2427080c2bd6683de726ad8d"
+  "modelid" : "faea7e2d2427080c2bd6683de726ad8d",
+  "modeltype" : "PSAPPDEVIEW"
 }

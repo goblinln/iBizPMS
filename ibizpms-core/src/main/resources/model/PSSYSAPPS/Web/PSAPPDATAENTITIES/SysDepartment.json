@@ -455,6 +455,7 @@
   "enableUIActions" : 15,
   "logicName" : "部门",
   "name" : "SYS_DEPT",
+  "getPSDEName" : "SYS_DEPT",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDESERVICEAPIS/SysDepartment.json"

@@ -424,6 +424,7 @@
   "enableUIActions" : 15,
   "logicName" : "系统插件",
   "name" : "IBIZPRO_PLUGIN",
+  "getPSDEName" : "IBIZPRO_PLUGIN",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProPlugin/PSDESERVICEAPIS/IBIZProPlugin.json"

@@ -642,6 +642,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "IBZ_LIBCASESTEPSTMP",
+  "getPSDEName" : "IBZ_LIBCASESTEPS",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDESERVICEAPIS/IbzLibCaseStepTmp.json"

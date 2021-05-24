@@ -45,5 +45,6 @@
     },
     "enableQuickCreate" : false
   } ],
-  "modelid" : "2590d6e8d044be3afd093079a6368404"
+  "modelid" : "2590d6e8d044be3afd093079a6368404",
+  "modeltype" : "PSSYSMAPVIEW"
 }

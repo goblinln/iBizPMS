@@ -953,6 +953,7 @@
   "enableUIActions" : 15,
   "logicName" : "产品统计",
   "name" : "IBZ_PRODUCTSTATS",
+  "getPSDEName" : "IBZ_PRODUCTSTATS",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDESERVICEAPIS/ProductStats.json"

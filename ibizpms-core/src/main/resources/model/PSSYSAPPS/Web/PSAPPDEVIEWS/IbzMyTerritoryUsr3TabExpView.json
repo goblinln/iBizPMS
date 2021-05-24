@@ -64,7 +64,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL3"
       },
-      "modelid" : "9322aeb3d46b7e14022de0e611088cae_tabviewpanel3"
+      "modelid" : "9322aeb3d46b7e14022de0e611088cae_tabviewpanel3",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "关键字",
       "codeName" : "Usr3TabExpViewtabviewpanel2",
@@ -78,6 +79,7 @@
         "id" : "TABVIEWPANEL2"
       },
       "modelid" : "9322aeb3d46b7e14022de0e611088cae_tabviewpanel2",
+      "modeltype" : "PSVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "accUserMode" : 2,
         "caption" : "关键字",
@@ -281,6 +283,30 @@
         }, {
           "logicTrigger" : "CUSTOM",
           "logicType" : "SYSUILOGIC",
+          "name" : "editdata",
+          "getPSAppUILogic" : {
+            "logicType" : "PREDEFINED",
+            "name" : "编辑数据",
+            "getOpenDataPSAppView" : {
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBIZProKeywordEditView.json",
+                "viewType" : "DEEDITVIEW"
+              }
+            },
+            "getPSAppUILogicRefViews" : [ {
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBIZProKeywordEditView.json",
+                "viewType" : "DEEDITVIEW"
+              }
+            } ],
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : true
+          }
+        }, {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "SYSUILOGIC",
           "name" : "opendata",
           "getPSAppUILogic" : {
             "logicType" : "PREDEFINED",
@@ -299,7 +325,8 @@
                 "viewType" : "DEEDITVIEW"
               }
             } ],
-            "viewLogicType" : "APP_OPENDATA"
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : false
           }
         } ],
         "getPSAppViewRefs" : [ {
@@ -860,7 +887,8 @@
             "showCaption" : true,
             "showIcon" : true
           } ],
-          "modelid" : "f41d31cabfd45aa26034f1c0b03986d1"
+          "modelid" : "f41d31cabfd45aa26034f1c0b03986d1",
+          "modeltype" : "PSDETOOLBAR"
         }, {
           "aggMode" : "NONE",
           "codeName" : "Main",
@@ -1022,6 +1050,7 @@
           "sortMode" : "REMOTE",
           "hasWFDataItems" : false,
           "enableColFilter" : false,
+          "enableCustomized" : true,
           "enableGroup" : false,
           "enablePagingBar" : true,
           "enableRowEdit" : false,
@@ -1032,7 +1061,8 @@
           "noSort" : false,
           "singleSelect" : false,
           "name" : "grid",
-          "modelid" : "0dc6b18fcd5450b32724c862d940f880"
+          "modelid" : "0dc6b18fcd5450b32724c862d940f880",
+          "modeltype" : "PSDEGRID"
         }, {
           "codeName" : "Default",
           "controlType" : "SEARCHFORM",
@@ -1109,9 +1139,11 @@
           "enableFilterSave" : false,
           "noTabHeader" : true,
           "name" : "searchform",
-          "modelid" : "99267bc738bb2fd31548cf7cb649ed85"
+          "modelid" : "99267bc738bb2fd31548cf7cb649ed85",
+          "modeltype" : "PSDEFORM_SEARCHFORM"
         } ],
         "getPSDEViewCodeName" : "GridView",
+        "getPSDEViewId" : "cad590a5249f170499430af803a650be",
         "getPSViewLayoutPanel" : {
           "codeName" : "Layoutpanel",
           "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -1138,7 +1170,8 @@
         "enableSearch" : true,
         "rowEditDefault" : false,
         "showCaptionBar" : true,
-        "modelid" : "031f322348f44c7fd48538bd1b66cd28"
+        "modelid" : "031f322348f44c7fd48538bd1b66cd28",
+        "modeltype" : "PSAPPDEVIEW"
       }
     }, {
       "caption" : "插件管理",
@@ -1157,7 +1190,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL"
       },
-      "modelid" : "9322aeb3d46b7e14022de0e611088cae_tabviewpanel"
+      "modelid" : "9322aeb3d46b7e14022de0e611088cae_tabviewpanel",
+      "modeltype" : "PSVIEWPANEL"
     } ],
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel2"
@@ -1167,9 +1201,11 @@
       "name" : "tabviewpanel"
     } ],
     "tabLayout" : "TOP",
-    "modelid" : "9322aeb3d46b7e14022de0e611088cae_tabexppanel"
+    "modelid" : "9322aeb3d46b7e14022de0e611088cae_tabexppanel",
+    "modeltype" : "PSTABEXPPANEL"
   } ],
   "getPSDEViewCodeName" : "Usr3TabExpView",
+  "getPSDEViewId" : "3f959a49e78a4dc9f7249c4c66f7dc10",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETABEXPVIEW_STYLE2",
@@ -1194,5 +1230,6 @@
   "loadDefault" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
-  "modelid" : "9322aeb3d46b7e14022de0e611088cae"
+  "modelid" : "9322aeb3d46b7e14022de0e611088cae",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -40,11 +40,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavParams" : [ {
@@ -214,7 +225,8 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "list2",
-    "modelid" : "c057777628758f32a5379205aca5e81c"
+    "modelid" : "c057777628758f32a5379205aca5e81c",
+    "modeltype" : "PSDELIST"
   }, {
     "codeName" : "GetRoadmapYearS",
     "controlType" : "LIST",
@@ -376,9 +388,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "list",
-    "modelid" : "1f23a4ba710a8b45f1cf253adbfd3762"
+    "modelid" : "1f23a4ba710a8b45f1cf253adbfd3762",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "RoadMapSListView9",
+  "getPSDEViewId" : "bd5e733df020ec62f2caa3c5af6b31ea",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDELISTVIEW9_STYLE2",
@@ -399,5 +413,6 @@
   "enableDP" : true,
   "enableFilter" : false,
   "showCaptionBar" : false,
-  "modelid" : "d1b3f6d9d0ca781020cf5e4665461fbf"
+  "modelid" : "d1b3f6d9d0ca781020cf5e4665461fbf",
+  "modeltype" : "PSAPPDEVIEW"
 }

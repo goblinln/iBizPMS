@@ -690,6 +690,7 @@
   "enableUIActions" : 15,
   "logicName" : "项目相关成员",
   "name" : "IBZ_PROJECTMEMBER",
+  "getPSDEName" : "IBZ_PROJECTMEMBER",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDESERVICEAPIS/IbzProjectMember.json"

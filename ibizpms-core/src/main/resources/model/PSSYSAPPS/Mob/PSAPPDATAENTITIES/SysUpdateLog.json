@@ -441,6 +441,7 @@
   "enableUIActions" : 15,
   "logicName" : "系统更新日志",
   "name" : "SYS_UPDATE_LOG",
+  "getPSDEName" : "SYS_UPDATE_LOG",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDESERVICEAPIS/SysUpdateLog.json"

@@ -252,9 +252,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "ea0be066a66ffd26ed12db324d2b06fe"
+    "modelid" : "ea0be066a66ffd26ed12db324d2b06fe",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "OptionView",
+  "getPSDEViewId" : "a5ac344a4ce98a079ca0e2515d893d1e",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEOPTVIEW_STYLE2",
@@ -277,6 +279,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "3a8c3a9bd689ed17ac4d40e679d383d2",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProductPlans",

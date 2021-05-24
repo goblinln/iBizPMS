@@ -725,9 +725,11 @@
             "readOnly" : false,
             "showFormNavBar" : false,
             "name" : "form",
-            "modelid" : "d4024738aee090615e905dbcdac178b3"
+            "modelid" : "d4024738aee090615e905dbcdac178b3",
+            "modeltype" : "PSDEFORM_EDITFORM"
           } ],
           "getPSDEViewCodeName" : "EditViewBasicInfo",
+          "getPSDEViewId" : "bcb861b892a8bec1230a4983ae1340ca",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEEDITVIEW_STYLE2",
@@ -748,12 +750,14 @@
           "enableDP" : true,
           "showCaptionBar" : false,
           "showDataInfoBar" : true,
-          "modelid" : "4eec8bab9a7a03f86c72ec576cc7a70a"
+          "modelid" : "4eec8bab9a7a03f86c72ec576cc7a70a",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "portletType" : "VIEW",
         "title" : "基本资料",
         "showTitleBar" : false,
-        "modelid" : "e5802f27be19d00c7f113f00b3610a8a"
+        "modelid" : "e5802f27be19d00c7f113f00b3610a8a",
+        "modeltype" : "PSSYSDBPART"
       } ],
       "portletType" : "CONTAINER",
       "showTitleBar" : true
@@ -1221,7 +1225,8 @@
                 "showCaption" : true
               } ],
               "name" : "list_itempanel",
-              "modelid" : "c6bb9e7ace35f2d2ef0a9cf787f4fbd7"
+              "modelid" : "c6bb9e7ace35f2d2ef0a9cf787f4fbd7",
+              "modeltype" : "PSSYSVIEWPANEL"
             },
             "logicName" : "PersonInfoMyWork",
             "getPSAppDataEntity" : {
@@ -1350,9 +1355,11 @@
             "noSort" : false,
             "showHeader" : true,
             "name" : "list",
-            "modelid" : "4dd517f089050019617f247c2be7bb2b"
+            "modelid" : "4dd517f089050019617f247c2be7bb2b",
+            "modeltype" : "PSDELIST"
           } ],
           "getPSDEViewCodeName" : "ListView9PersonInfo",
+          "getPSDEViewId" : "41e5517fbc9cd429c0b589e36d353d43",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDELISTVIEW9_STYLE2",
@@ -1373,12 +1380,14 @@
           "enableDP" : true,
           "enableFilter" : false,
           "showCaptionBar" : false,
-          "modelid" : "12b93621cdf2d44e4bf3d664c17adb44"
+          "modelid" : "12b93621cdf2d44e4bf3d664c17adb44",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "portletType" : "VIEW",
         "title" : "个人贡献",
         "showTitleBar" : false,
-        "modelid" : "6c8e6485b0f84161a5de90a6873838dc"
+        "modelid" : "6c8e6485b0f84161a5de90a6873838dc",
+        "modeltype" : "PSSYSDBPART"
       } ],
       "portletType" : "CONTAINER",
       "showTitleBar" : true
@@ -1387,5 +1396,6 @@
     "showTitleBar" : true
   } ],
   "enableCustomized" : false,
-  "modelid" : "e1d5f010f5462cd529bf9d820bc3d518"
+  "modelid" : "e1d5f010f5462cd529bf9d820bc3d518",
+  "modeltype" : "PSSYSDASHBOARD"
 }

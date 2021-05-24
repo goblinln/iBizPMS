@@ -477,6 +477,7 @@
   "enableUIActions" : 15,
   "logicName" : "产品生命周期",
   "name" : "IBZ_PRODUCTLIFE",
+  "getPSDEName" : "IBZ_PRODUCTLIFE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDESERVICEAPIS/ProductLife.json"

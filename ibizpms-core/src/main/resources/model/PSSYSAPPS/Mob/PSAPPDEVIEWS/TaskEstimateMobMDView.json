@@ -40,6 +40,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskEstimateMobOptionView.json",
+          "viewType" : "DEMOBOPTVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskEstimateMobOptionView.json",
+          "viewType" : "DEMOBOPTVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -58,7 +82,8 @@
           "viewType" : "DEMOBOPTVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -206,7 +231,8 @@
         "showCaption" : true
       } ],
       "name" : "mdctrl_itempanel",
-      "modelid" : "0eea64a68b5d47cce96bc1efbc9e8066"
+      "modelid" : "0eea64a68b5d47cce96bc1efbc9e8066",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "MOB",
     "mobListStyle" : "LISTVIEW",
@@ -455,9 +481,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "fe3a541c54722a54b9848a6294daeaa4"
+    "modelid" : "fe3a541c54722a54b9848a6294daeaa4",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "MobMDView",
+  "getPSDEViewId" : "7d98eee9788d282e012bf887eb3f1fe9",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBMDVIEW",
@@ -481,6 +509,7 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : true,
   "modelid" : "4a2f002b2b5aa1501bbc9bb1ae438a87",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

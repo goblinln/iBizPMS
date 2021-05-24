@@ -438,6 +438,7 @@
   "enableUIActions" : 15,
   "logicName" : "公司",
   "name" : "ZT_COMPANY",
+  "getPSDEName" : "ZT_COMPANY",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDESERVICEAPIS/Company.json"

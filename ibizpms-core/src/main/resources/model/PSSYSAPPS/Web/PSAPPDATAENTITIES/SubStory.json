@@ -9400,6 +9400,7 @@
     "name" : "ASSIGNTO"
   }, {
     "logicName" : "版本关联",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -9421,6 +9422,7 @@
     "name" : "CREATE"
   }, {
     "logicName" : "Product_Create",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -9433,6 +9435,7 @@
     "name" : "DELETE"
   }, {
     "logicName" : "Product_Delete",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "DELETE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -9448,6 +9451,7 @@
     "name" : "ISCHILD"
   }, {
     "logicName" : "Product_Manage",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -9463,6 +9467,7 @@
     "name" : "NFAVORITES"
   }, {
     "logicName" : "计划关联",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -9472,6 +9477,7 @@
     "id" : "ZTProduct__PLANLINK"
   }, {
     "logicName" : "项目关联",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -9481,6 +9487,7 @@
     "id" : "ZTProduct__PROJECTLINK"
   }, {
     "logicName" : "Product_Read",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -9493,6 +9500,7 @@
     "name" : "READ"
   }, {
     "logicName" : "发布关联",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -9511,6 +9519,7 @@
     "name" : "UPDATE"
   }, {
     "logicName" : "Product_Update",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -9552,6 +9561,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "IBZ_SUBSTORY",
+  "getPSDEName" : "ZT_STORY",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDESERVICEAPIS/SubStory.json"

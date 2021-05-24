@@ -229,7 +229,8 @@
     } ],
     "mobilePanel" : true,
     "name" : "mdctrl_itempanel",
-    "modelid" : "b8c465d621ad8098363ffc3bb5327845"
+    "modelid" : "b8c465d621ad8098363ffc3bb5327845",
+    "modeltype" : "PSSYSVIEWPANEL"
   },
   "logicName" : "MyRe",
   "minorSortDir" : "DESC",
@@ -561,5 +562,6 @@
   "enableRowNew" : false,
   "noSort" : false,
   "showHeader" : true,
-  "modelid" : "06a7a6599f24777a7257d41585bd4df3"
+  "modelid" : "06a7a6599f24777a7257d41585bd4df3",
+  "modeltype" : "PSDELIST"
 }

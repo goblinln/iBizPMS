@@ -394,7 +394,8 @@
       "showCaption" : true
     } ],
     "name" : "list_itempanel",
-    "modelid" : "c6bb9e7ace35f2d2ef0a9cf787f4fbd7"
+    "modelid" : "c6bb9e7ace35f2d2ef0a9cf787f4fbd7",
+    "modeltype" : "PSSYSVIEWPANEL"
   },
   "logicName" : "PersonInfoMyWork",
   "getPSAppDataEntity" : {
@@ -448,5 +449,6 @@
   "enableRowNew" : false,
   "noSort" : false,
   "showHeader" : true,
-  "modelid" : "4dd517f089050019617f247c2be7bb2b"
+  "modelid" : "4dd517f089050019617f247c2be7bb2b",
+  "modeltype" : "PSDELIST"
 }

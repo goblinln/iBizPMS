@@ -33,11 +33,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSControls" : [ {
@@ -220,16 +231,19 @@
       "noSort" : false,
       "showHeader" : true,
       "name" : "listexpbar_list",
-      "modelid" : "2117568b84525320ec8ad1b8481bc912"
+      "modelid" : "2117568b84525320ec8ad1b8481bc912",
+      "modeltype" : "PSDELIST"
     } ],
     "width" : 200.0,
     "xDataControlName" : "listexpbar_list",
     "enableCounter" : true,
     "enableSearch" : true,
     "showTitleBar" : false,
-    "modelid" : "d1de7b1c3f0c14ee93de65e6b1045786_listexpbar"
+    "modelid" : "d1de7b1c3f0c14ee93de65e6b1045786_listexpbar",
+    "modeltype" : "PSEXPBAR"
   } ],
   "getPSDEViewCodeName" : "ListExpView",
+  "getPSDEViewId" : "8bd5ff0ac97cdf2bb8c4fb23b8a91d29",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDELISTEXPVIEW_STYLE2",
@@ -252,5 +266,6 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "d1de7b1c3f0c14ee93de65e6b1045786"
+  "modelid" : "d1de7b1c3f0c14ee93de65e6b1045786",
+  "modeltype" : "PSAPPDEVIEW"
 }

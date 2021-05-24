@@ -53,6 +53,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -71,7 +95,8 @@
           "viewType" : "DEMOBEDITVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavParams" : [ {
@@ -363,7 +388,8 @@
     "enableFilterSave" : false,
     "noTabHeader" : true,
     "name" : "searchform",
-    "modelid" : "688525aeddf3ee62b32ef0636a35de03"
+    "modelid" : "688525aeddf3ee62b32ef0636a35de03",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
   }, {
     "codeName" : "AssMobDASHBOARD",
     "controlStyle" : "LISTVIEW",
@@ -617,7 +643,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",
-      "modelid" : "881c273f0a3edb62a7fded4f04b338fe"
+      "modelid" : "881c273f0a3edb62a7fded4f04b338fe",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "AssMOBDASHBOARD",
     "minorSortDir" : "DESC",
@@ -905,7 +932,8 @@
         "showCaption" : false,
         "showIcon" : true
       } ],
-      "modelid" : "c4038aa54c2649f60a6ea2120a87a85f"
+      "modelid" : "c4038aa54c2649f60a6ea2120a87a85f",
+      "modeltype" : "PSDETOOLBAR"
     } ],
     "getPSDEListDataItems" : [ {
       "dataType" : 9,
@@ -1260,9 +1288,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "9a9a8497a9a0e0d0ee6f34b2c4cb4785"
+    "modelid" : "9a9a8497a9a0e0d0ee6f34b2c4cb4785",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "AssMobMDView9",
+  "getPSDEViewId" : "af4eaea1c5905751adeb3cca296c11f9",
   "getPSSysImage" : {
     "glyph" : "xf0ae@FontAwesome",
     "cssClass" : "fa fa-tasks"
@@ -1290,6 +1320,7 @@
   "enableSearch" : true,
   "showCaptionBar" : false,
   "modelid" : "222046153c11a0c0be0a7bb91fb8669f",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

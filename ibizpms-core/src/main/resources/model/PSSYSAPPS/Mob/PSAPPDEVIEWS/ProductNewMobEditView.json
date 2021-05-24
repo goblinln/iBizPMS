@@ -891,7 +891,8 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "642025988f84dda1c1d7f056aac48777"
+    "modelid" : "642025988f84dda1c1d7f056aac48777",
+    "modeltype" : "PSDEFORM_EDITFORM"
   }, {
     "codeName" : "NewMobEditViewrighttoolbar",
     "controlType" : "TOOLBAR",
@@ -952,9 +953,11 @@
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBBOTTOMMENU",
-    "modelid" : "c798012a3dda52e17ac452776aa498f0"
+    "modelid" : "c798012a3dda52e17ac452776aa498f0",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "NewMobEditView",
+  "getPSDEViewId" : "d4a2f7be40f941ae46a7ddfca3155306",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBEDITVIEW",
@@ -976,5 +979,6 @@
   "enablePullDownRefresh" : false,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
-  "modelid" : "da0f5f6d0ddfe5ce55ee98ac0baef6f1"
+  "modelid" : "da0f5f6d0ddfe5ce55ee98ac0baef6f1",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -15,6 +15,7 @@
     "name" : "engine"
   } ],
   "getPSDEViewCodeName" : "HtmlView",
+  "getPSDEViewId" : "d709dc50b38d85d6890218fbbe9409b3",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEHTMLVIEW_STYLE2",
@@ -34,5 +35,6 @@
   "enableDP" : true,
   "loadDefault" : true,
   "showCaptionBar" : false,
-  "modelid" : "b6969f6aea9c131d0c2144d88472ba6a"
+  "modelid" : "b6969f6aea9c131d0c2144d88472ba6a",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -539,11 +539,22 @@
             }, {
               "logicTrigger" : "CUSTOM",
               "logicType" : "SYSUILOGIC",
+              "name" : "editdata",
+              "getPSAppUILogic" : {
+                "logicType" : "PREDEFINED",
+                "name" : "编辑数据",
+                "viewLogicType" : "APP_OPENDATA",
+                "editMode" : true
+              }
+            }, {
+              "logicTrigger" : "CUSTOM",
+              "logicType" : "SYSUILOGIC",
               "name" : "opendata",
               "getPSAppUILogic" : {
                 "logicType" : "PREDEFINED",
                 "name" : "打开数据",
-                "viewLogicType" : "APP_OPENDATA"
+                "viewLogicType" : "APP_OPENDATA",
+                "editMode" : false
               }
             } ],
             "getPSAppViewNavContexts" : [ {
@@ -921,6 +932,7 @@
               "sortMode" : "REMOTE",
               "hasWFDataItems" : false,
               "enableColFilter" : false,
+              "enableCustomized" : true,
               "enableGroup" : false,
               "enablePagingBar" : false,
               "enableRowEdit" : false,
@@ -931,9 +943,11 @@
               "noSort" : true,
               "singleSelect" : true,
               "name" : "grid",
-              "modelid" : "97e7f2b1b29c2e57b2550b37bbcdabe6"
+              "modelid" : "97e7f2b1b29c2e57b2550b37bbcdabe6",
+              "modeltype" : "PSDEGRID"
             } ],
             "getPSDEViewCodeName" : "GridView9",
+            "getPSDEViewId" : "158ec2d4ab12bea22bedc3d52402c29e",
             "getPSViewLayoutPanel" : {
               "codeName" : "Layoutpanel",
               "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -960,6 +974,7 @@
             "rowEditDefault" : false,
             "showCaptionBar" : false,
             "modelid" : "21c4e5c64f8c35ef32192c3a1c27259d",
+            "modeltype" : "PSAPPDEVIEW",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -1623,9 +1638,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "2eff032f1e0b2ed1312c5f5c126ded6e"
+    "modelid" : "2eff032f1e0b2ed1312c5f5c126ded6e",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "EditView",
+  "getPSDEViewId" : "bdd255a69063a6ae7bd05353c5809207",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW_STYLE2",
@@ -1647,6 +1664,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "0946cbeb1bf3dc832384ec4ee62310e8",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

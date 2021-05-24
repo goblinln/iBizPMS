@@ -61,6 +61,7 @@
         "id" : "TABVIEWPANEL"
       },
       "modelid" : "56d37c4b5c3583dd1197209e46f06873_tabviewpanel",
+      "modeltype" : "PSVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "accUserMode" : 2,
         "caption" : "产品日报",
@@ -162,6 +163,30 @@
         }, {
           "logicTrigger" : "CUSTOM",
           "logicType" : "SYSUILOGIC",
+          "name" : "editdata",
+          "getPSAppUILogic" : {
+            "logicType" : "PREDEFINED",
+            "name" : "编辑数据",
+            "getOpenDataPSAppView" : {
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProductDailyEditView.json",
+                "viewType" : "DEEDITVIEW"
+              }
+            },
+            "getPSAppUILogicRefViews" : [ {
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProductDailyEditView.json",
+                "viewType" : "DEEDITVIEW"
+              }
+            } ],
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : true
+          }
+        }, {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "SYSUILOGIC",
           "name" : "opendata",
           "getPSAppUILogic" : {
             "logicType" : "PREDEFINED",
@@ -180,7 +205,8 @@
                 "viewType" : "DEEDITVIEW"
               }
             } ],
-            "viewLogicType" : "APP_OPENDATA"
+            "viewLogicType" : "APP_OPENDATA",
+            "editMode" : false
           }
         } ],
         "getPSAppViewNavParams" : [ {
@@ -383,7 +409,8 @@
             "showCaption" : true,
             "showIcon" : true
           } ],
-          "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b"
+          "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b",
+          "modeltype" : "PSDETOOLBAR"
         }, {
           "aggMode" : "NONE",
           "codeName" : "Main",
@@ -746,6 +773,7 @@
           "sortMode" : "REMOTE",
           "hasWFDataItems" : false,
           "enableColFilter" : false,
+          "enableCustomized" : true,
           "enableGroup" : false,
           "enablePagingBar" : true,
           "enableRowEdit" : false,
@@ -756,9 +784,11 @@
           "noSort" : false,
           "singleSelect" : false,
           "name" : "grid",
-          "modelid" : "0c948fd869511f24ecb10d4d21cc500c"
+          "modelid" : "0c948fd869511f24ecb10d4d21cc500c",
+          "modeltype" : "PSDEGRID"
         } ],
         "getPSDEViewCodeName" : "GridView",
+        "getPSDEViewId" : "78afcdf0f0a58895055e9321a4805d33",
         "getPSViewLayoutPanel" : {
           "codeName" : "Layoutpanel",
           "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -784,7 +814,8 @@
         "enableRowEdit" : false,
         "rowEditDefault" : false,
         "showCaptionBar" : true,
-        "modelid" : "8a56ab62d6ae84149615df43ea132fcb"
+        "modelid" : "8a56ab62d6ae84149615df43ea132fcb",
+        "modeltype" : "PSAPPDEVIEW"
       }
     }, {
       "caption" : "产品周报",
@@ -803,7 +834,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL2"
       },
-      "modelid" : "56d37c4b5c3583dd1197209e46f06873_tabviewpanel2"
+      "modelid" : "56d37c4b5c3583dd1197209e46f06873_tabviewpanel2",
+      "modeltype" : "PSVIEWPANEL"
     }, {
       "caption" : "产品月报",
       "codeName" : "ProductReportTabExpViewtabviewpanel3",
@@ -821,7 +853,8 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL3"
       },
-      "modelid" : "56d37c4b5c3583dd1197209e46f06873_tabviewpanel3"
+      "modelid" : "56d37c4b5c3583dd1197209e46f06873_tabviewpanel3",
+      "modeltype" : "PSVIEWPANEL"
     } ],
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel"
@@ -831,9 +864,11 @@
       "name" : "tabviewpanel3"
     } ],
     "tabLayout" : "TOP",
-    "modelid" : "56d37c4b5c3583dd1197209e46f06873_tabexppanel"
+    "modelid" : "56d37c4b5c3583dd1197209e46f06873_tabexppanel",
+    "modeltype" : "PSTABEXPPANEL"
   } ],
   "getPSDEViewCodeName" : "ProductReportTabExpView",
+  "getPSDEViewId" : "2c75202cf0cc958dfa31026c4bc7965c",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETABEXPVIEW_STYLE2",
@@ -858,5 +893,6 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "56d37c4b5c3583dd1197209e46f06873"
+  "modelid" : "56d37c4b5c3583dd1197209e46f06873",
+  "modeltype" : "PSAPPDEVIEW"
 }

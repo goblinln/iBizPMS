@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"getCreatePSAppDEAction","desc":"建立应用实体行为","order":1000},{"name":"getUpdatePSAppDEAction","desc":"更新应用实体行为","order":1000}]}]

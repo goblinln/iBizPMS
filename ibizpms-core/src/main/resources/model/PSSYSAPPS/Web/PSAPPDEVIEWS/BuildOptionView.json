@@ -424,9 +424,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "75ab11acbae64a0a9be66f5ab6e9dca8"
+    "modelid" : "75ab11acbae64a0a9be66f5ab6e9dca8",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "OptionView",
+  "getPSDEViewId" : "f7727799335a04fe58d93747780b8435",
   "getPSSysImage" : {
     "glyph" : "xf126@FontAwesome",
     "cssClass" : "fa fa-code-fork"
@@ -452,6 +454,7 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "447425cc12894f89203d0e693baf3ee7",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Builds",

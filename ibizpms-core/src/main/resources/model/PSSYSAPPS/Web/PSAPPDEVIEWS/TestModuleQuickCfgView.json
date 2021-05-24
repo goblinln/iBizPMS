@@ -644,9 +644,11 @@
     "readOnly" : false,
     "showFormNavBar" : false,
     "name" : "form",
-    "modelid" : "a0e4cd0e098c9028cd9ef7c71cd9424b"
+    "modelid" : "a0e4cd0e098c9028cd9ef7c71cd9424b",
+    "modeltype" : "PSDEFORM_EDITFORM"
   } ],
   "getPSDEViewCodeName" : "QuickCfgView",
+  "getPSDEViewId" : "db6b7431346730def79246c3c44f6997",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEOPTVIEW_STYLE2",
@@ -669,6 +671,7 @@
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
   "modelid" : "d337f5c3c125dc2641321f2d93b65476",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestModules",

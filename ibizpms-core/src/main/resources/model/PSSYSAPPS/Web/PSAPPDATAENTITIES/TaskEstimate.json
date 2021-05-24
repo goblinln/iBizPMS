@@ -1160,6 +1160,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "ZT_TASKESTIMATE",
+  "getPSDEName" : "ZT_TASKESTIMATE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDESERVICEAPIS/TaskEstimate.json"

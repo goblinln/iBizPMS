@@ -80,6 +80,7 @@
       "getPSDELogicLinkGroupCond" : {
         "groupOP" : "AND",
         "logicType" : "GROUP",
+        "name" : "连接条件组",
         "getPSDELogicLinkConds" : [ {
           "condOP" : "EQ",
           "dstFieldName" : "JUDGEROLE",
@@ -90,9 +91,7 @@
           "logicType" : "SINGLE",
           "name" : "Default[JUDGEROLE] 等于(=) (dev)",
           "paramValue" : "dev"
-        } ],
-        "notMode" : false,
-        "id" : "b091f5cc9f61c7bfc74a732350f47472"
+        } ]
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,
@@ -108,6 +107,7 @@
       "getPSDELogicLinkGroupCond" : {
         "groupOP" : "AND",
         "logicType" : "GROUP",
+        "name" : "连接条件组",
         "getPSDELogicLinkConds" : [ {
           "condOP" : "EQ",
           "dstFieldName" : "JUDGEROLE",
@@ -118,9 +118,7 @@
           "logicType" : "SINGLE",
           "name" : "Default[JUDGEROLE] 等于(=) (po)",
           "paramValue" : "po"
-        } ],
-        "notMode" : false,
-        "id" : "b6de7ae2d7e9d4cea649f353f48d3b33"
+        } ]
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,
@@ -136,6 +134,7 @@
       "getPSDELogicLinkGroupCond" : {
         "groupOP" : "AND",
         "logicType" : "GROUP",
+        "name" : "连接条件组",
         "getPSDELogicLinkConds" : [ {
           "condOP" : "EQ",
           "dstFieldName" : "JUDGEROLE",
@@ -146,9 +145,7 @@
           "logicType" : "SINGLE",
           "name" : "Default[JUDGEROLE] 等于(=) (qa)",
           "paramValue" : "qa"
-        } ],
-        "notMode" : false,
-        "id" : "e4c4322cd868260d927a3800329dccc0"
+        } ]
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,

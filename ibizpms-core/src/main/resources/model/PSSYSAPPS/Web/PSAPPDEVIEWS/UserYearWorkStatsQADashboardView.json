@@ -327,6 +327,7 @@
               "readOnly" : true,
               "name" : "dashboard_sysportlet4_chart",
               "modelid" : "534e561f7a0e57fe4e6dee579ae16779",
+              "modeltype" : "PSDECHART",
               "getUserParam" : {
                 "EC.legend" : "{show:false}",
                 "EC.color" : "[\"#CAAC32\",\"#0075A9\",\"#22AC38\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
@@ -340,7 +341,8 @@
             "portletType" : "CHART",
             "title" : "累计创建的Bug",
             "showTitleBar" : false,
-            "modelid" : "67b81d2df4e2708ad21a8f64c35fe088"
+            "modelid" : "67b81d2df4e2708ad21a8f64c35fe088",
+            "modeltype" : "PSSYSDBPART"
           } ],
           "portletType" : "CONTAINER",
           "showTitleBar" : true
@@ -564,6 +566,7 @@
               "readOnly" : true,
               "name" : "dashboard_sysportlet5_chart",
               "modelid" : "5b60ad4bb21c7faf9c631c8c13e42149",
+              "modeltype" : "PSDECHART",
               "getUserParam" : {
                 "EC.legend" : "{show:false}",
                 "EC.color" : "[\"#00FF99\",\"#00CCFF\",\"#aa00ff\",\"#884bff\",'#00ffa9','#85B3FF','#A1FFFF']"
@@ -577,7 +580,8 @@
             "portletType" : "CHART",
             "title" : "累计创建用例",
             "showTitleBar" : false,
-            "modelid" : "3374038650d1bfc992f420b76f6f8fb5"
+            "modelid" : "3374038650d1bfc992f420b76f6f8fb5",
+            "modeltype" : "PSSYSDBPART"
           } ],
           "portletType" : "CONTAINER",
           "showTitleBar" : true
@@ -920,6 +924,7 @@
             "readOnly" : true,
             "name" : "dashboard_sysportlet3_chart",
             "modelid" : "419cfd8e4688bd7a4d507d481bb24879",
+            "modeltype" : "PSDECHART",
             "getUserParam" : {
               "EC.color" : "[\"#76FF03\",\"#2979FF\",\"#00B0FF\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
             }
@@ -932,7 +937,8 @@
           "portletType" : "CHART",
           "title" : "月创建Bug数和创建用例数",
           "showTitleBar" : false,
-          "modelid" : "7e897d7840c7fbca7bb954f13d8dbeb3"
+          "modelid" : "7e897d7840c7fbca7bb954f13d8dbeb3",
+          "modeltype" : "PSSYSDBPART"
         } ],
         "portletType" : "CONTAINER",
         "title" : "月创建Bug数和创建用例数",
@@ -943,9 +949,11 @@
     } ],
     "enableCustomized" : false,
     "name" : "dashboard",
-    "modelid" : "73c630ad73ee5b10d79c36c91df91b39"
+    "modelid" : "73c630ad73ee5b10d79c36c91df91b39",
+    "modeltype" : "PSSYSDASHBOARD"
   } ],
   "getPSDEViewCodeName" : "QADashboardView",
+  "getPSDEViewId" : "c564af75d6a4fc7212691f0ff4a47de8",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPORTALVIEW_STYLE2",
@@ -970,5 +978,6 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "73c630ad73ee5b10d79c36c91df91b39"
+  "modelid" : "73c630ad73ee5b10d79c36c91df91b39",
+  "modeltype" : "PSAPPDEVIEW"
 }

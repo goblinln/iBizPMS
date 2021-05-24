@@ -107,5 +107,6 @@
   } ],
   "enableCustomize" : false,
   "name" : "reportnew",
-  "modelid" : "952bf575ce64bb548f99b83834b283c0"
+  "modelid" : "952bf575ce64bb548f99b83834b283c0",
+  "modeltype" : "PSAPPMENU"
 }

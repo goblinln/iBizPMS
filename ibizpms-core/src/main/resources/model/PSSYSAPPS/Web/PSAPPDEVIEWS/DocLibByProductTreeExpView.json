@@ -33,11 +33,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewNavContexts" : [ {
@@ -268,7 +279,8 @@
           "showCaption" : true,
           "showIcon" : true
         } ],
-        "modelid" : "022f0111597cba0a05a1d53d48a8cb04"
+        "modelid" : "022f0111597cba0a05a1d53d48a8cb04",
+        "modeltype" : "PSDETOOLBAR"
       } ],
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
@@ -524,7 +536,8 @@
             "showCaption" : true,
             "showIcon" : true
           } ],
-          "modelid" : "022f0111597cba0a05a1d53d48a8cb04"
+          "modelid" : "022f0111597cba0a05a1d53d48a8cb04",
+          "modeltype" : "PSDETOOLBAR"
         },
         "text" : "所有文档库",
         "treeNodeType" : "STATIC",
@@ -745,15 +758,18 @@
       "outputIconDefault" : true,
       "rootVisible" : false,
       "name" : "treeexpbar_tree",
-      "modelid" : "839b27437390247619ca33d856b6a783"
+      "modelid" : "839b27437390247619ca33d856b6a783",
+      "modeltype" : "PSDETREEVIEW"
     } ],
     "xDataControlName" : "treeexpbar_tree",
     "enableCounter" : true,
     "enableSearch" : false,
     "showTitleBar" : false,
-    "modelid" : "f1d15d6af90bb0d83c07c6dca5b4d61e_treeexpbar"
+    "modelid" : "f1d15d6af90bb0d83c07c6dca5b4d61e_treeexpbar",
+    "modeltype" : "PSEXPBAR"
   } ],
   "getPSDEViewCodeName" : "ByProductTreeExpView",
+  "getPSDEViewId" : "f2fa17903946977f6cf6544b2fb5d0ee",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
@@ -775,5 +791,6 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
-  "modelid" : "f1d15d6af90bb0d83c07c6dca5b4d61e"
+  "modelid" : "f1d15d6af90bb0d83c07c6dca5b4d61e",
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -98,6 +98,30 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
@@ -116,7 +140,8 @@
           "viewType" : "DEPORTALVIEW"
         }
       } ],
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -411,7 +436,8 @@
       "showCaption" : false,
       "showIcon" : true
     } ],
-    "modelid" : "a67d8306620f625fcb2d11d0b93e7193"
+    "modelid" : "a67d8306620f625fcb2d11d0b93e7193",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "StoryKanBan",
     "controlType" : "KANBAN",
@@ -798,7 +824,8 @@
         "showCaption" : true
       } ],
       "name" : "itemlayoutpanel",
-      "modelid" : "01eb7f8c78faa3f61224f186420f29c2"
+      "modelid" : "01eb7f8c78faa3f61224f186420f29c2",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "需求看板（项目需求阶段）",
     "minorSortDir" : "DESC",
@@ -1149,9 +1176,11 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "kanban",
-    "modelid" : "01eb7f8c78faa3f61224f186420f29c2"
+    "modelid" : "01eb7f8c78faa3f61224f186420f29c2",
+    "modeltype" : "PSDEKANBAN"
   } ],
   "getPSDEViewCodeName" : "KanbanView",
+  "getPSDEViewId" : "f9b6b13f17e16131ce34707f24c2ec51",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -1177,6 +1206,7 @@
   "enableFilter" : false,
   "showCaptionBar" : false,
   "modelid" : "f43e50ecf07b9c17a3a78139b17163f6",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

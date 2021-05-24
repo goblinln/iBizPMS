@@ -251,7 +251,8 @@
     } ],
     "mobilePanel" : true,
     "name" : "mdctrl_itempanel",
-    "modelid" : "881c273f0a3edb62a7fded4f04b338fe"
+    "modelid" : "881c273f0a3edb62a7fded4f04b338fe",
+    "modeltype" : "PSSYSVIEWPANEL"
   },
   "logicName" : "AssMOBDASHBOARD",
   "minorSortDir" : "DESC",
@@ -465,7 +466,8 @@
       "showCaption" : false,
       "showIcon" : true
     } ],
-    "modelid" : "c4038aa54c2649f60a6ea2120a87a85f"
+    "modelid" : "c4038aa54c2649f60a6ea2120a87a85f",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEListDataItems" : [ {
     "dataType" : 9,
@@ -819,5 +821,6 @@
   "enableRowNew" : false,
   "noSort" : false,
   "showHeader" : true,
-  "modelid" : "9a9a8497a9a0e0d0ee6f34b2c4cb4785"
+  "modelid" : "9a9a8497a9a0e0d0ee6f34b2c4cb4785",
+  "modeltype" : "PSDELIST"
 }

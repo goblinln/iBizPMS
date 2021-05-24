@@ -33,11 +33,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSControls" : [ {
@@ -363,6 +374,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -373,9 +385,11 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "meditviewpanel",
-    "modelid" : "56e2ec74bb2426017d48573217654889"
+    "modelid" : "56e2ec74bb2426017d48573217654889",
+    "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "ProjectTeamMobMEditView",
+  "getPSDEViewId" : "a7d1ae46f6c2a28d41e950e71eb0edbe",
   "getPSSysImage" : {
     "glyph" : "xf0c0@FontAwesome",
     "cssClass" : "fa fa-users"
@@ -403,6 +417,7 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : true,
   "modelid" : "dc69896e4d56c06462144f45aa208b8d",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "IBZPROJECTTEAMs",

@@ -444,6 +444,7 @@
   "enableUIActions" : 15,
   "logicName" : "公司动态汇总",
   "name" : "IBZ_COMPANYSTATS",
+  "getPSDEName" : "IBZ_COMPANYSTATS",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats/PSDESERVICEAPIS/CompanyStats.json"

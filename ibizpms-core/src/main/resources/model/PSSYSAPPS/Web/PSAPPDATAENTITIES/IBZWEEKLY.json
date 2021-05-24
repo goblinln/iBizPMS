@@ -1222,6 +1222,7 @@
   "enableUIActions" : 15,
   "logicName" : "周报",
   "name" : "IBZ_WEEKLY",
+  "getPSDEName" : "IBZ_WEEKLY",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDESERVICEAPIS/IbzWeekly.json"

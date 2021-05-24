@@ -159,7 +159,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "b4436ab59e95a5f1aeeb91ceb25249a4"
+    "modelid" : "b4436ab59e95a5f1aeeb91ceb25249a4",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "NONE",
     "codeName" : "MainBranch",
@@ -687,6 +688,7 @@
     },
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : false,
     "enableRowEdit" : true,
@@ -697,9 +699,11 @@
     "noSort" : false,
     "singleSelect" : true,
     "name" : "grid",
-    "modelid" : "e80438b2150fca89d445e6c56fadd18d"
+    "modelid" : "e80438b2150fca89d445e6c56fadd18d",
+    "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "GridViewBranch",
+  "getPSDEViewId" : "3cbfbe500957da286ff2b45098e7da79",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -725,6 +729,7 @@
   "rowEditDefault" : true,
   "showCaptionBar" : false,
   "modelid" : "65129e5f76f96cbb1d2d1c9e9bb2afed",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestModules",

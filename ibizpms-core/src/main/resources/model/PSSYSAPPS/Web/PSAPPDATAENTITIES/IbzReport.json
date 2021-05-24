@@ -848,6 +848,7 @@
   "enableUIActions" : 15,
   "logicName" : "汇报",
   "name" : "IBZ_REPORT",
+  "getPSDEName" : "IBZ_REPORT",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDESERVICEAPIS/IbzReport.json"

@@ -284,6 +284,7 @@
             "readOnly" : true,
             "name" : "dashboard_sysportlet6_chart",
             "modelid" : "96894e73f66dfc1bf9d4cb2b2b6f52e3",
+            "modeltype" : "PSDECHART",
             "getUserParam" : {
               "EC.legend" : "{show:false}",
               "EC.color" : "[\"#CAAC32\",\"#0075A9\",\"#22AC38\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
@@ -297,7 +298,8 @@
           "portletType" : "CHART",
           "title" : "累计创建需求-优先级",
           "showTitleBar" : false,
-          "modelid" : "f95dde4138238d540065bb251aa84e6f"
+          "modelid" : "f95dde4138238d540065bb251aa84e6f",
+          "modeltype" : "PSSYSDBPART"
         } ],
         "portletType" : "CONTAINER",
         "showTitleBar" : false
@@ -521,6 +523,7 @@
             "readOnly" : true,
             "name" : "dashboard_sysportlet7_chart",
             "modelid" : "c90b74e360af0b39214b0aaa1ce800b4",
+            "modeltype" : "PSDECHART",
             "getUserParam" : {
               "EC.legend" : "{show:false}",
               "EC.color" : "[\"#CAAC32\",\"#0075A9\",\"#22AC38\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
@@ -534,7 +537,8 @@
           "portletType" : "CHART",
           "title" : "累计创建的需求-阶段",
           "showTitleBar" : false,
-          "modelid" : "c8c7597a820a89e52b2250906bd4c7fa"
+          "modelid" : "c8c7597a820a89e52b2250906bd4c7fa",
+          "modeltype" : "PSSYSDBPART"
         } ],
         "portletType" : "CONTAINER",
         "showTitleBar" : false
@@ -824,6 +828,7 @@
           "readOnly" : true,
           "name" : "dashboard_sysportlet5_chart",
           "modelid" : "2ad3d195a67cf63c7a1e78851643e2c1",
+          "modeltype" : "PSDECHART",
           "getUserParam" : {
             "EC.color" : "[\"#76FF03\",\"#2979FF\",\"#00B0FF\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
           }
@@ -836,7 +841,8 @@
         "portletType" : "CHART",
         "title" : "月累计需求数",
         "showTitleBar" : false,
-        "modelid" : "3f660fce6240a5ddac1e9c73555ae46d"
+        "modelid" : "3f660fce6240a5ddac1e9c73555ae46d",
+        "modeltype" : "PSSYSDBPART"
       } ],
       "portletType" : "CONTAINER",
       "title" : "月创建需求数",
@@ -846,5 +852,6 @@
     "showTitleBar" : true
   } ],
   "enableCustomized" : false,
-  "modelid" : "6e0ad417e9fe2138d57f5e9e6a2e3b32"
+  "modelid" : "6e0ad417e9fe2138d57f5e9e6a2e3b32",
+  "modeltype" : "PSSYSDASHBOARD"
 }

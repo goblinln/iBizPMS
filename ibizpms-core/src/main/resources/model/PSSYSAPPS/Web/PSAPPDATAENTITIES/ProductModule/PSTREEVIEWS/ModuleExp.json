@@ -244,7 +244,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9"
+    "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "TreeExpViewall_cm",
     "controlType" : "CONTEXTMENU",
@@ -290,7 +291,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "022f0111597cba0a05a1d53d48a8cb04"
+    "modelid" : "022f0111597cba0a05a1d53d48a8cb04",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "TreeExpViewmodule_cm",
     "controlType" : "CONTEXTMENU",
@@ -381,7 +383,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "f842b635803663de702a36939ed73d01"
+    "modelid" : "f842b635803663de702a36939ed73d01",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "TreeExpViewrootmodule_cm",
     "controlType" : "CONTEXTMENU",
@@ -472,7 +475,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "f842b635803663de702a36939ed73d01"
+    "modelid" : "f842b635803663de702a36939ed73d01",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "TreeExpViewroot_nobranch_cm",
     "controlType" : "CONTEXTMENU",
@@ -563,7 +567,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "f842b635803663de702a36939ed73d01"
+    "modelid" : "f842b635803663de702a36939ed73d01",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "TreeExpViewbranch_cm",
     "controlType" : "CONTEXTMENU",
@@ -609,7 +614,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9"
+    "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9",
+    "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
@@ -863,7 +869,8 @@
         "showCaption" : true,
         "showIcon" : true
       } ],
-      "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9"
+      "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9",
+      "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
       "key" : "SRFPARENTKEY",
@@ -976,7 +983,8 @@
         "showCaption" : true,
         "showIcon" : true
       } ],
-      "modelid" : "022f0111597cba0a05a1d53d48a8cb04"
+      "modelid" : "022f0111597cba0a05a1d53d48a8cb04",
+      "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
       "key" : "SRFPARENTKEY",
@@ -1135,7 +1143,8 @@
         "showCaption" : true,
         "showIcon" : true
       } ],
-      "modelid" : "f842b635803663de702a36939ed73d01"
+      "modelid" : "f842b635803663de702a36939ed73d01",
+      "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
       "key" : "BRANCH",
@@ -1288,7 +1297,8 @@
         "showCaption" : true,
         "showIcon" : true
       } ],
-      "modelid" : "f842b635803663de702a36939ed73d01"
+      "modelid" : "f842b635803663de702a36939ed73d01",
+      "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
       "key" : "BRANCH",
@@ -1392,7 +1402,8 @@
         "showCaption" : true,
         "showIcon" : true
       } ],
-      "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9"
+      "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9",
+      "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
       "key" : "SRFPARENTKEY",
@@ -1550,7 +1561,8 @@
         "showCaption" : true,
         "showIcon" : true
       } ],
-      "modelid" : "f842b635803663de702a36939ed73d01"
+      "modelid" : "f842b635803663de702a36939ed73d01",
+      "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
       "key" : "BRANCH",
@@ -1600,5 +1612,6 @@
   "enableSearchDefault" : true,
   "outputIconDefault" : false,
   "rootVisible" : false,
-  "modelid" : "4edd6263fd8d1443b94d9da4b9d51ca0"
+  "modelid" : "4edd6263fd8d1443b94d9da4b9d51ca0",
+  "modeltype" : "PSDETREEVIEW"
 }

@@ -212,7 +212,8 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b"
+    "modelid" : "3ec13bc5587c6596dc9d5d629b815d3b",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "ProductTeam",
     "controlType" : "LIST",
@@ -751,7 +752,8 @@
         "showCaption" : true
       } ],
       "name" : "list_itempanel",
-      "modelid" : "15be549f61f1836de62de98217a2766a"
+      "modelid" : "15be549f61f1836de62de98217a2766a",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "ProductTeam",
     "getPSAppDataEntity" : {
@@ -910,9 +912,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "list",
-    "modelid" : "67016a59d567665bda8727456cd145da"
+    "modelid" : "67016a59d567665bda8727456cd145da",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "ProductTeamListView",
+  "getPSDEViewId" : "1748efdcdc85d3e82f2cc1af4e16c645",
   "getPSSysCss" : {
     "cssName" : "team-card"
   },
@@ -938,6 +942,7 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : true,
   "modelid" : "256de1139e8adce86805c471e5de2db0",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "PRODUCTTEAMs",

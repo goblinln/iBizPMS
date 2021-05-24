@@ -3,5 +3,6 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/Maintainer.json",
   "name" : "运维人员",
   "roleTag" : "Maintainer",
-  "roleType" : "CUSTOM"
+  "roleType" : "CUSTOM",
+  "globalRole" : true
 }

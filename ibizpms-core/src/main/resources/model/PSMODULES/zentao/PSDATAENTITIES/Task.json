@@ -6812,6 +6812,7 @@
         "getPSDELogicLinkGroupCond" : {
           "groupOP" : "AND",
           "logicType" : "GROUP",
+          "name" : "连接条件组",
           "getPSDELogicLinkConds" : [ {
             "condOP" : "ISNOTNULL",
             "dstFieldName" : "STORY",
@@ -6831,9 +6832,7 @@
             "logicType" : "SINGLE",
             "name" : "Default[STORY] 不等于(<>) (0)",
             "paramValue" : "0"
-          } ],
-          "notMode" : false,
-          "id" : "0a09b63b73dee80a075a78f6c337af71"
+          } ]
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,
@@ -6849,6 +6848,7 @@
         "getPSDELogicLinkGroupCond" : {
           "groupOP" : "AND",
           "logicType" : "GROUP",
+          "name" : "连接条件组",
           "getPSDELogicLinkConds" : [ {
             "groupOP" : "OR",
             "logicType" : "GROUP",
@@ -6872,11 +6872,8 @@
               },
               "logicType" : "SINGLE",
               "name" : "Default[STORY] 值为空(Nil)"
-            } ],
-            "notMode" : false
-          } ],
-          "notMode" : false,
-          "id" : "518635eba6c1df271042c7db1ed96eb0"
+            } ]
+          } ]
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,
@@ -6954,6 +6951,7 @@
         "getPSDELogicLinkGroupCond" : {
           "groupOP" : "AND",
           "logicType" : "GROUP",
+          "name" : "连接条件组",
           "getPSDELogicLinkConds" : [ {
             "condOP" : "ISNULL",
             "dstFieldName" : "PLAN",
@@ -6972,9 +6970,7 @@
             },
             "logicType" : "SINGLE",
             "name" : "Default[STORY] 值为空(Nil)"
-          } ],
-          "notMode" : false,
-          "id" : "b144e45691fa2f6055df0ad7be5cb69f"
+          } ]
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,
@@ -6990,6 +6986,7 @@
         "getPSDELogicLinkGroupCond" : {
           "groupOP" : "AND",
           "logicType" : "GROUP",
+          "name" : "连接条件组",
           "getPSDELogicLinkConds" : [ {
             "condOP" : "ISNOTNULL",
             "dstFieldName" : "STORY",
@@ -6999,9 +6996,7 @@
             },
             "logicType" : "SINGLE",
             "name" : "Default[STORY] 值不为空(NotNil)"
-          } ],
-          "notMode" : false,
-          "id" : "8ae44fc58f799afaabab755da4102b87"
+          } ]
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,
@@ -7017,6 +7012,7 @@
         "getPSDELogicLinkGroupCond" : {
           "groupOP" : "AND",
           "logicType" : "GROUP",
+          "name" : "连接条件组",
           "getPSDELogicLinkConds" : [ {
             "condOP" : "ISNOTNULL",
             "dstFieldName" : "PLAN",
@@ -7026,9 +7022,7 @@
             },
             "logicType" : "SINGLE",
             "name" : "Default[PLAN] 值不为空(NotNil)"
-          } ],
-          "notMode" : false,
-          "id" : "f7c670bc2f813e45946d48e220a7c6d0"
+          } ]
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,
@@ -7133,6 +7127,7 @@
         "getPSDELogicLinkGroupCond" : {
           "groupOP" : "AND",
           "logicType" : "GROUP",
+          "name" : "连接条件组",
           "getPSDELogicLinkConds" : [ {
             "condOP" : "EQ",
             "dstFieldName" : "MULTIPLE",
@@ -7143,9 +7138,7 @@
             "logicType" : "SINGLE",
             "name" : "Default[MULTIPLE] 等于(=) (1)",
             "paramValue" : "1"
-          } ],
-          "notMode" : false,
-          "id" : "c2f12771558192af8aaa4a9f60e7df25"
+          } ]
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,
@@ -7161,6 +7154,7 @@
         "getPSDELogicLinkGroupCond" : {
           "groupOP" : "AND",
           "logicType" : "GROUP",
+          "name" : "连接条件组",
           "getPSDELogicLinkConds" : [ {
             "condOP" : "NOTEQ",
             "dstFieldName" : "MULTIPLE",
@@ -7171,9 +7165,7 @@
             "logicType" : "SINGLE",
             "name" : "Default[MULTIPLE] 不等于(<>) (1)",
             "paramValue" : "1"
-          } ],
-          "notMode" : false,
-          "id" : "e0be4bbb734801f10bff44f63df51f69"
+          } ]
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,
@@ -10298,6 +10290,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -11529,6 +11522,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -12607,6 +12601,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -14952,6 +14947,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -16071,6 +16067,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -17229,6 +17226,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -18453,6 +18451,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -19690,6 +19689,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -22176,6 +22176,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -23382,6 +23383,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
+        "mapPSDEName" : "ZT_PROJECT",
         "mapPSDEOPPrivName" : "DELETE",
         "getMapPSDER" : {
           "modelref" : true,
@@ -23943,6 +23945,7 @@
     "name" : "CONSUM"
   }, {
     "logicName" : "建立",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -23955,6 +23958,7 @@
     "name" : "CREATE"
   }, {
     "logicName" : "ProjectModule_Create",
+    "mapPSDEName" : "IBZ_PROJECTMODULE",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -23967,6 +23971,7 @@
     "name" : "DELETE"
   }, {
     "logicName" : "删除",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "DELETE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -23976,6 +23981,7 @@
     "id" : "ZTProject__DELETE"
   }, {
     "logicName" : "ProjectModule_Delete",
+    "mapPSDEName" : "IBZ_PROJECTMODULE",
     "mapPSDEOPPrivName" : "DELETE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -23997,6 +24003,7 @@
     "name" : "FORWARD"
   }, {
     "logicName" : "管理",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -24006,6 +24013,7 @@
     "id" : "ZTProject__MANAGE"
   }, {
     "logicName" : "ProjectModule_Manage",
+    "mapPSDEName" : "IBZ_PROJECTMODULE",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -24021,6 +24029,7 @@
     "name" : "PAUSE"
   }, {
     "logicName" : "Story_Read",
+    "mapPSDEName" : "ZT_STORY",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -24030,6 +24039,7 @@
     "id" : "ZTStory__READ"
   }, {
     "logicName" : "ProjectModule_Read",
+    "mapPSDEName" : "IBZ_PROJECTMODULE",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -24039,6 +24049,7 @@
     "id" : "ProjectModule__READ"
   }, {
     "logicName" : "读取",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
@@ -24066,6 +24077,7 @@
     "name" : "UPDATE"
   }, {
     "logicName" : "更新",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
@@ -24075,6 +24087,7 @@
     "id" : "ZTProject__UPDATE"
   }, {
     "logicName" : "ProjectModule_Update",
+    "mapPSDEName" : "IBZ_PROJECTMODULE",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,

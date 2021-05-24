@@ -3,5 +3,6 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/GeneralManager.json",
   "name" : "总经理",
   "roleTag" : "GeneralManager",
-  "roleType" : "CUSTOM"
+  "roleType" : "CUSTOM",
+  "globalRole" : true
 }

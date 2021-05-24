@@ -561,6 +561,7 @@
         "sortMode" : "REMOTE",
         "hasWFDataItems" : false,
         "enableColFilter" : false,
+        "enableCustomized" : true,
         "enableGroup" : false,
         "enablePagingBar" : true,
         "enableRowEdit" : false,
@@ -571,9 +572,11 @@
         "noSort" : false,
         "singleSelect" : false,
         "name" : "grid",
-        "modelid" : "3a7d94149dd32ce4f2091f7f35fc18fa"
+        "modelid" : "3a7d94149dd32ce4f2091f7f35fc18fa",
+        "modeltype" : "PSDEGRID"
       } ],
       "getPSDEViewCodeName" : "PickupGridView",
+      "getPSDEViewId" : "bb1172640f76b9297ca267601b3ef924",
       "getPSSysImage" : {
         "glyph" : "xf006@FontAwesome",
         "cssClass" : "fa fa-star-o"
@@ -605,6 +608,7 @@
       "rowEditDefault" : false,
       "showCaptionBar" : false,
       "modelid" : "569cd532c6b545ffc53cf5fb93427028",
+      "modeltype" : "PSAPPDEVIEW",
       "getPSAppDERSPaths" : [ [ {
         "actionRSMode" : 1,
         "codeName" : "Stories",
@@ -643,6 +647,7 @@
     }
   } ],
   "getPSDEViewCodeName" : "MPickupView",
+  "getPSDEViewId" : "bc1283fa17782d5995e642c433539632",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -666,6 +671,7 @@
   "enableDP" : true,
   "showCaptionBar" : false,
   "modelid" : "b9bdfc0e33d333ade00934745d9dc0ad",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

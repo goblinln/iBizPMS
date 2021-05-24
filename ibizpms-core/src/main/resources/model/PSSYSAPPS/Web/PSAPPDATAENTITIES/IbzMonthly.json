@@ -1229,6 +1229,7 @@
   "enableUIActions" : 15,
   "logicName" : "月报",
   "name" : "IBZ_MONTHLY",
+  "getPSDEName" : "IBZ_MONTHLY",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDESERVICEAPIS/IbzMonthly.json"

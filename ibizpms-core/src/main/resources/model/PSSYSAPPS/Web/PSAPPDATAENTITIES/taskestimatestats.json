@@ -487,6 +487,7 @@
   "enableUIActions" : 15,
   "logicName" : "任务工时统计",
   "name" : "TASKESTIMATESTATS",
+  "getPSDEName" : "TASKESTIMATESTATS",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimateStats/PSDESERVICEAPIS/taskestimatestats.json"

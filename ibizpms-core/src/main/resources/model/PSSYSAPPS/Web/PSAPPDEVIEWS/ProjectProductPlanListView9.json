@@ -40,11 +40,22 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
+    "name" : "editdata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "编辑数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
-      "viewLogicType" : "APP_OPENDATA"
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : false
     }
   } ],
   "getPSAppViewRefs" : [ {
@@ -175,9 +186,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "list",
-    "modelid" : "ed7b1fa3c40c0986f3e219ccd0ce947e"
+    "modelid" : "ed7b1fa3c40c0986f3e219ccd0ce947e",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "PlanListView9",
+  "getPSDEViewId" : "c04267813e04a1fe76c2f46b9b38eab3",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDELISTVIEW9_STYLE2",
@@ -199,6 +212,7 @@
   "enableFilter" : false,
   "showCaptionBar" : false,
   "modelid" : "03c110360a714011ed9c30b8207d3703",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectProducts",

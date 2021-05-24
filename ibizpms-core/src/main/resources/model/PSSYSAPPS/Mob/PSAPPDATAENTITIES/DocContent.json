@@ -488,6 +488,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "ZT_DOCCONTENT",
+  "getPSDEName" : "ZT_DOCCONTENT",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent/PSDESERVICEAPIS/DocContent.json"

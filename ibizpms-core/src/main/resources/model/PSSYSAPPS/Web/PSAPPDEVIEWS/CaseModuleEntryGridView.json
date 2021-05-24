@@ -320,6 +320,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : false,
     "enableRowEdit" : false,
@@ -330,9 +331,11 @@
     "noSort" : false,
     "singleSelect" : true,
     "name" : "grid",
-    "modelid" : "40098224913df106f7fcd9345b6d1612"
+    "modelid" : "40098224913df106f7fcd9345b6d1612",
+    "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "ModuleEntryGridView",
+  "getPSDEViewId" : "92222ef7734bed9ced1d926dcc899ccd",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -362,6 +365,7 @@
   "rowEditDefault" : false,
   "showCaptionBar" : false,
   "modelid" : "33fb1d2864a2772bec03c78bae553908",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

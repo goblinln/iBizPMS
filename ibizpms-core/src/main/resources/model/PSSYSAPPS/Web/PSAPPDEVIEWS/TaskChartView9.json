@@ -196,12 +196,14 @@
     "readOnly" : true,
     "name" : "chart",
     "modelid" : "a182b142d83d08eab8fb43e1bdcd0150",
+    "modeltype" : "PSDECHART",
     "getUserParam" : {
       "EC.legend" : "{show:false}",
       "EC.color" : "[\"#CAAC32\",\"#0075A9\",\"#22AC38\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
     }
   } ],
   "getPSDEViewCodeName" : "ChartView9",
+  "getPSDEViewId" : "e659f87ec8b1b631d2d68e4441a43aba",
   "getPSSysImage" : {
     "glyph" : "xf0ae@FontAwesome",
     "cssClass" : "fa fa-tasks"
@@ -230,6 +232,7 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "modelid" : "20becaa9cbc1b01d68aca88855917f79",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

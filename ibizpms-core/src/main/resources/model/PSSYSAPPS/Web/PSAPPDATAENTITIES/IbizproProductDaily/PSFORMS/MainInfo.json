@@ -512,11 +512,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -926,6 +937,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -936,9 +948,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "45eb6ddf51e9cf574a28137b314f464e"
+            "modelid" : "45eb6ddf51e9cf574a28137b314f464e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductDailyPartGridView",
+          "getPSDEViewId" : "2bb25cc3daa0b271f451603371389cde",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -963,7 +977,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008"
+          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -1084,11 +1099,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -1498,6 +1524,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -1508,9 +1535,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "45eb6ddf51e9cf574a28137b314f464e"
+            "modelid" : "45eb6ddf51e9cf574a28137b314f464e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductDailyPartGridView",
+          "getPSDEViewId" : "2bb25cc3daa0b271f451603371389cde",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -1535,7 +1564,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008"
+          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -1656,11 +1686,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -2070,6 +2111,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -2080,9 +2122,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "45eb6ddf51e9cf574a28137b314f464e"
+            "modelid" : "45eb6ddf51e9cf574a28137b314f464e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductDailyPartGridView",
+          "getPSDEViewId" : "2bb25cc3daa0b271f451603371389cde",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -2107,7 +2151,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008"
+          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -2228,11 +2273,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -2642,6 +2698,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -2652,9 +2709,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "45eb6ddf51e9cf574a28137b314f464e"
+            "modelid" : "45eb6ddf51e9cf574a28137b314f464e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductDailyPartGridView",
+          "getPSDEViewId" : "2bb25cc3daa0b271f451603371389cde",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -2679,7 +2738,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008"
+          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -2800,11 +2860,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -3214,6 +3285,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -3224,9 +3296,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "45eb6ddf51e9cf574a28137b314f464e"
+            "modelid" : "45eb6ddf51e9cf574a28137b314f464e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductDailyPartGridView",
+          "getPSDEViewId" : "2bb25cc3daa0b271f451603371389cde",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -3251,7 +3325,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008"
+          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -3372,11 +3447,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -3786,6 +3872,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -3796,9 +3883,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "45eb6ddf51e9cf574a28137b314f464e"
+            "modelid" : "45eb6ddf51e9cf574a28137b314f464e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductDailyPartGridView",
+          "getPSDEViewId" : "2bb25cc3daa0b271f451603371389cde",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -3823,7 +3912,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008"
+          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -3944,11 +4034,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -4358,6 +4459,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -4368,9 +4470,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "45eb6ddf51e9cf574a28137b314f464e"
+            "modelid" : "45eb6ddf51e9cf574a28137b314f464e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductDailyPartGridView",
+          "getPSDEViewId" : "2bb25cc3daa0b271f451603371389cde",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -4395,7 +4499,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008"
+          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -4516,11 +4621,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -4930,6 +5046,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -4940,9 +5057,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "45eb6ddf51e9cf574a28137b314f464e"
+            "modelid" : "45eb6ddf51e9cf574a28137b314f464e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductDailyPartGridView",
+          "getPSDEViewId" : "2bb25cc3daa0b271f451603371389cde",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -4967,7 +5086,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008"
+          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -5088,11 +5208,22 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -5502,6 +5633,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : true,
             "enableRowEdit" : false,
@@ -5512,9 +5644,11 @@
             "noSort" : false,
             "singleSelect" : false,
             "name" : "grid",
-            "modelid" : "45eb6ddf51e9cf574a28137b314f464e"
+            "modelid" : "45eb6ddf51e9cf574a28137b314f464e",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductDailyPartGridView",
+          "getPSDEViewId" : "2bb25cc3daa0b271f451603371389cde",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW9_STYLE2",
@@ -5539,7 +5673,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008"
+          "modelid" : "b3328135c614fd3d2a68b8eb01d3e008",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -5660,6 +5795,30 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
+            "name" : "editdata",
+            "getPSAppUILogic" : {
+              "logicType" : "PREDEFINED",
+              "name" : "编辑数据",
+              "getOpenDataPSAppView" : {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyInfoEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              },
+              "getPSAppUILogicRefViews" : [ {
+                "getRefPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyInfoEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                }
+              } ],
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : true
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
@@ -5678,7 +5837,8 @@
                   "viewType" : "DEEDITVIEW"
                 }
               } ],
-              "viewLogicType" : "APP_OPENDATA"
+              "viewLogicType" : "APP_OPENDATA",
+              "editMode" : false
             }
           } ],
           "getPSAppViewRefs" : [ {
@@ -5988,6 +6148,7 @@
             "sortMode" : "REMOTE",
             "hasWFDataItems" : false,
             "enableColFilter" : false,
+            "enableCustomized" : true,
             "enableGroup" : false,
             "enablePagingBar" : false,
             "enableRowEdit" : false,
@@ -5998,9 +6159,11 @@
             "noSort" : false,
             "singleSelect" : true,
             "name" : "grid",
-            "modelid" : "9d65b1b62e7a9c88e42ffc751fbe6549"
+            "modelid" : "9d65b1b62e7a9c88e42ffc751fbe6549",
+            "modeltype" : "PSDEGRID"
           } ],
           "getPSDEViewCodeName" : "ProductDailyGridView",
+          "getPSDEViewId" : "57facca489882b1de6a54b4d92aaa9ef",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -6025,7 +6188,8 @@
           "enableRowEdit" : false,
           "rowEditDefault" : false,
           "showCaptionBar" : false,
-          "modelid" : "bc70c3a504112ece6f376e5bf942ff06"
+          "modelid" : "bc70c3a504112ece6f376e5bf942ff06",
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -6097,5 +6261,6 @@
   "noTabHeader" : true,
   "readOnly" : false,
   "showFormNavBar" : false,
-  "modelid" : "55f04e7e85536fd9aef31d825cf527b6"
+  "modelid" : "55f04e7e85536fd9aef31d825cf527b6",
+  "modeltype" : "PSDEFORM_EDITFORM"
 }

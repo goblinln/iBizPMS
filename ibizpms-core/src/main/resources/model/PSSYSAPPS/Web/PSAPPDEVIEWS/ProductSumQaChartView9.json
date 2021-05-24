@@ -195,12 +195,14 @@
     "readOnly" : true,
     "name" : "chart",
     "modelid" : "e37961cc37e96752f436ef141b9d80c1",
+    "modeltype" : "PSDECHART",
     "getUserParam" : {
       "EC.legend" : "{show:false}",
       "EC.color" : "[\"#0068B7\",\"#1aa1e6\",\"#81cef2\",\"#FF5D5D\",'#FDC137','#00DA88','#7ECFF','#8666B8','#BD7B46']"
     }
   } ],
   "getPSDEViewCodeName" : "QaChartView9",
+  "getPSDEViewId" : "de55bee3f59ba61802aca862f584f211",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDECHARTVIEW9_STYLE2",
@@ -224,5 +226,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : false,
-  "modelid" : "2e1e24a39d1f1969f411b507d49fc640"
+  "modelid" : "2e1e24a39d1f1969f411b507d49fc640",
+  "modeltype" : "PSAPPDEVIEW"
 }

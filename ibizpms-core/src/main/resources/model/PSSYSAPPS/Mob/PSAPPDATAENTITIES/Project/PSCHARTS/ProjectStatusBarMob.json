@@ -165,6 +165,7 @@
   },
   "readOnly" : true,
   "modelid" : "cdfeac5598e322329cbf846d75eeb69a",
+  "modeltype" : "PSDECHART",
   "getUserParam" : {
     "EC.barWidth" : "20",
     "EC.yAxis" : "[{gridIndex:0,position:\"top\",type:'value',name:'',show:false } ]",

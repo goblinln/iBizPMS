@@ -562,5 +562,6 @@
   "enableGroup" : false,
   "enableQuickSearch" : true,
   "mobileSearchBar" : false,
-  "modelid" : "4cbc385c5b8f4ba42049d423374d92c4"
+  "modelid" : "4cbc385c5b8f4ba42049d423374d92c4",
+  "modeltype" : "PSSYSSEARCHBAR"
 }

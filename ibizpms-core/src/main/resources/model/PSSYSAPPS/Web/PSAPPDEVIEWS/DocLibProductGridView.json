@@ -131,7 +131,8 @@
       "showIcon" : true,
       "valid" : false
     } ],
-    "modelid" : "5ad21b662e43fd5724b41620471178d8"
+    "modelid" : "5ad21b662e43fd5724b41620471178d8",
+    "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "NONE",
     "codeName" : "ProductMain",
@@ -701,6 +702,7 @@
     "sortMode" : "REMOTE",
     "hasWFDataItems" : false,
     "enableColFilter" : false,
+    "enableCustomized" : true,
     "enableGroup" : false,
     "enablePagingBar" : true,
     "enableRowEdit" : false,
@@ -711,7 +713,8 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "8ca6f615eb114bdc34a8d1cdd6724fa9"
+    "modelid" : "8ca6f615eb114bdc34a8d1cdd6724fa9",
+    "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "Custom",
     "controlType" : "SEARCHBAR",
@@ -1087,9 +1090,11 @@
     "enableQuickSearch" : true,
     "mobileSearchBar" : false,
     "name" : "searchbar",
-    "modelid" : "29a60976ecd724b3a40bbb2f38a011f8"
+    "modelid" : "29a60976ecd724b3a40bbb2f38a011f8",
+    "modeltype" : "PSSYSSEARCHBAR"
   } ],
   "getPSDEViewCodeName" : "ProductGridView",
+  "getPSDEViewId" : "f5a1c0f1bbfd46fce21fd682aa9151a6",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -1116,5 +1121,6 @@
   "enableSearch" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
-  "modelid" : "9b2c4bc59d56b5abf9cf7df794591bf3"
+  "modelid" : "9b2c4bc59d56b5abf9cf7df794591bf3",
+  "modeltype" : "PSAPPDEVIEW"
 }

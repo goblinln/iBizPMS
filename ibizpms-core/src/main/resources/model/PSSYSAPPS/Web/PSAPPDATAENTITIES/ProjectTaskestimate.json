@@ -912,6 +912,7 @@
   "enableUIActions" : 15,
   "logicName" : "项目工时统计",
   "name" : "PROJECTTASKESTIMATE",
+  "getPSDEName" : "PROJECTTASKESTIMATE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDESERVICEAPIS/ProjectTaskestimate.json"

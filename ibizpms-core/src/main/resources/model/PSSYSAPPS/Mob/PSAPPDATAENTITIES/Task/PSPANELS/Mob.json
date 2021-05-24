@@ -226,5 +226,6 @@
     "showCaption" : true
   } ],
   "mobilePanel" : true,
-  "modelid" : "881c273f0a3edb62a7fded4f04b338fe"
+  "modelid" : "881c273f0a3edb62a7fded4f04b338fe",
+  "modeltype" : "PSSYSVIEWPANEL"
 }

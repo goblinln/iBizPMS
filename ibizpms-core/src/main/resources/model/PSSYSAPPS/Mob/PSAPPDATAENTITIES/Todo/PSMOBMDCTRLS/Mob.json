@@ -178,7 +178,8 @@
     } ],
     "mobilePanel" : true,
     "name" : "mdctrl_itempanel",
-    "modelid" : "56cea33453c4faf6de453b9018cdbba3"
+    "modelid" : "56cea33453c4faf6de453b9018cdbba3",
+    "modeltype" : "PSSYSVIEWPANEL"
   },
   "logicName" : "MOB",
   "mobListStyle" : "LISTVIEW",
@@ -584,5 +585,6 @@
   "enableRowNew" : false,
   "noSort" : false,
   "showHeader" : true,
-  "modelid" : "56cea33453c4faf6de453b9018cdbba3"
+  "modelid" : "56cea33453c4faf6de453b9018cdbba3",
+  "modeltype" : "PSDELIST"
 }

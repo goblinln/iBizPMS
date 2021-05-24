@@ -508,6 +508,7 @@
   "enableUIActions" : 15,
   "logicName" : "需求模块",
   "name" : "IBZPRO_STORYMODULE",
+  "getPSDEName" : "IBZPRO_STORYMODULE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDESERVICEAPIS/IBZProStoryModule.json"

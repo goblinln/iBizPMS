@@ -464,6 +464,7 @@
     "enableUpdateDataRS" : false
   } ],
   "name" : "ZT_TESTRUN",
+  "getPSDEName" : "ZT_TESTRUN",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDESERVICEAPIS/TestRun.json"

@@ -454,6 +454,7 @@
   "enableUIActions" : 15,
   "logicName" : "代理",
   "name" : "IBZ_AGENT",
+  "getPSDEName" : "IBZ_AGENT",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDESERVICEAPIS/IbzAgent.json"

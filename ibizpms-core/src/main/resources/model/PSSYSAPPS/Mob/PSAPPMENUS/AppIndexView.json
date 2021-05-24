@@ -119,5 +119,6 @@
   } ],
   "enableCustomize" : false,
   "name" : "appindexview",
-  "modelid" : "f23beaed85fa4c2edc21e98e3b4711fc"
+  "modelid" : "f23beaed85fa4c2edc21e98e3b4711fc",
+  "modeltype" : "PSAPPMENU"
 }

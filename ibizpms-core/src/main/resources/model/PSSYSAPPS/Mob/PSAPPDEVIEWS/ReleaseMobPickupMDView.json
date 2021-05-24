@@ -266,7 +266,8 @@
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",
-      "modelid" : "0f199ea4f30a97099dc97273edc8ca0c"
+      "modelid" : "0f199ea4f30a97099dc97273edc8ca0c",
+      "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "MOB_9442",
     "minorSortDir" : "DESC",
@@ -434,9 +435,11 @@
     "noSort" : false,
     "showHeader" : true,
     "name" : "mdctrl",
-    "modelid" : "dafa50b0da1f7b380c16936b2235b5c9"
+    "modelid" : "dafa50b0da1f7b380c16936b2235b5c9",
+    "modeltype" : "PSDELIST"
   } ],
   "getPSDEViewCodeName" : "MobPickupMDView",
+  "getPSDEViewId" : "27a6a07ae604d79111bdada42580b214",
   "getPSSysImage" : {
     "glyph" : "xf11d@FontAwesome",
     "cssClass" : "fa fa-flag-o"
@@ -464,6 +467,7 @@
   "expandSearchForm" : true,
   "showCaptionBar" : true,
   "modelid" : "5247f8199f62c5180748b60c67d3726c",
+  "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Releases",
