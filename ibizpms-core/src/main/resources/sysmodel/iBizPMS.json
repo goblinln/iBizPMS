@@ -13392,6 +13392,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"PROJECT" ,
+    "codename":"Project",
+    "field_logic_name":"项目",
+    "entity_name":"IBZPRO_RELEASEACTION",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[

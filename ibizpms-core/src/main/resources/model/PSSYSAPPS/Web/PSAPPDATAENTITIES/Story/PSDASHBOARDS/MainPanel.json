@@ -416,6 +416,7 @@
                       },
                       "getPSLayoutPos" : {
                         "colLG" : 2,
+                        "colLGOffset" : 6,
                         "colMD" : 24,
                         "layout" : "TABLE_24COL",
                         "width" : 70
@@ -437,7 +438,7 @@
                       "enableCond" : 3,
                       "ignoreInput" : 0,
                       "labelPos" : "LEFT",
-                      "labelWidth" : 1,
+                      "labelWidth" : 100,
                       "name" : "title",
                       "noPrivDisplayMode" : 1,
                       "getPSAppDEField" : {
@@ -459,7 +460,7 @@
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
-                        "colLG" : 18,
+                        "colLG" : 6,
                         "colMD" : 24,
                         "layout" : "TABLE_24COL"
                       },
@@ -480,7 +481,7 @@
                       "enableCond" : 3,
                       "ignoreInput" : 0,
                       "labelPos" : "LEFT",
-                      "labelWidth" : 1,
+                      "labelWidth" : 100,
                       "name" : "version",
                       "noPrivDisplayMode" : 1,
                       "getPSAppDEField" : {

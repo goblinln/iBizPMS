@@ -304,6 +304,16 @@ public class IBZProReleaseActionDTO extends DTOBase implements Serializable {
     @ApiModelProperty("ID")
     private Long objectid;
 
+    /**
+     * 属性 [PROJECT]
+     *
+     */
+    @JSONField(name = "project")
+    @JsonProperty("project")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("项目")
+    private Long project;
+
 
     /**
      * 设置 [ACTION]
@@ -375,6 +385,14 @@ public class IBZProReleaseActionDTO extends DTOBase implements Serializable {
     public void setObjectid(Long  objectid){
         this.objectid = objectid ;
         this.modify("objectid",objectid);
+    }
+
+    /**
+     * 设置 [PROJECT]
+     */
+    public void setProject(Long  project){
+        this.project = project ;
+        this.modify("project",project);
     }
 
 

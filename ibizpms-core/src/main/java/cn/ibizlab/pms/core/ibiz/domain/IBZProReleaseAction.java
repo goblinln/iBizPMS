@@ -270,6 +270,14 @@ public class IBZProReleaseAction extends EntityMP implements Serializable {
     @JsonProperty("objectid")
     @ApiModelProperty("ID")
     private Long objectid;
+    /**
+     * 项目
+     */
+    @TableField(value = "`PROJECT`")
+    @JSONField(name = "project")
+    @JsonProperty("project")
+    @ApiModelProperty("项目")
+    private Long project;
 
     /**
      * 
@@ -359,6 +367,14 @@ public class IBZProReleaseAction extends EntityMP implements Serializable {
     public void setObjectid(Long objectid) {
         this.objectid = objectid;
         this.modify("objectid", objectid);
+    }
+
+    /**
+     * 设置 [项目]
+     */
+    public void setProject(Long project) {
+        this.project = project;
+        this.modify("project", project);
     }
 
 
