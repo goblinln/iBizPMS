@@ -221,6 +221,9 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportHistory.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestSuitHistory.json"
   }, {
     "modelref" : true,
@@ -267,6 +270,9 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProMonthlyAction.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProMonthlyHistory.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProReportlyAction.json"

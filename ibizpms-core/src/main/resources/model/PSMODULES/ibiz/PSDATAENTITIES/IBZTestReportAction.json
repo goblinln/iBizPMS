@@ -1587,6 +1587,31 @@
   "enableViewLevel" : 0,
   "extendMode" : 0,
   "logicName" : "报告日志",
+  "getMajorPSDERs" : [ {
+    "codeName" : "TestReportAction",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportHistory/PSDERS/DER1N_IBZPRO_TESTREPORTHISTORY_IBZPRO_TESTREPROTACTION_ACTION.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 12,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportHistory.json"
+    },
+    "name" : "DER1N_IBZPRO_TESTREPORTHISTORY_IBZPRO_TESTREPROTACTION_ACTION",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "ACTION",
+      "codeName" : "Action"
+    },
+    "pickupDEFName" : "ACTION",
+    "removeActionType" : -1,
+    "removeOrder" : 0,
+    "nestedRS" : true
+  } ],
   "getMinorPSDERs" : [ {
     "codeName" : "IbzProTestReport",
     "dERType" : "DER1N",

@@ -54,6 +54,9 @@ public class IBZTestReportActionServiceImpl extends ServiceImpl<IBZTestReportAct
 
     @Autowired
     @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIBZTestReportHistoryService ibztestreporthistoryService;
+    @Autowired
+    @Lazy
     protected cn.ibizlab.pms.core.zentao.service.ITestReportService testreportService;
 
     protected int batchSize = 500;
@@ -70,6 +73,9 @@ public class IBZTestReportActionServiceImpl extends ServiceImpl<IBZTestReportAct
     public boolean create(IBZTestReportAction et) {
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
+        }
+        if(!ibztestreportactionRuntime.isRtmodel()){
+            ibztestreporthistoryService.saveByAction(et.getId(), et.getIbztestreporthistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -91,6 +97,9 @@ public class IBZTestReportActionServiceImpl extends ServiceImpl<IBZTestReportAct
     public boolean update(IBZTestReportAction et) {
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
+        }
+        if(!ibztestreportactionRuntime.isRtmodel()){
+            ibztestreporthistoryService.saveByAction(et.getId(), et.getIbztestreporthistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -121,6 +130,7 @@ public class IBZTestReportActionServiceImpl extends ServiceImpl<IBZTestReportAct
     @Transactional
     public boolean remove(Long key) {
         if(!ibztestreportactionRuntime.isRtmodel()){
+            ibztestreporthistoryService.removeByAction(key) ;
         }
         boolean result = removeById(key);
         return result ;
@@ -146,6 +156,7 @@ public class IBZTestReportActionServiceImpl extends ServiceImpl<IBZTestReportAct
         }
         else {
             if(!ibztestreportactionRuntime.isRtmodel()){
+                et.setIbztestreporthistory(ibztestreporthistoryService.selectByAction(key));
             }
         }
         return et;

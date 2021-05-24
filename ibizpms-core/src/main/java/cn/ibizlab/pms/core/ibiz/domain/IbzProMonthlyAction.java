@@ -288,6 +288,14 @@ public class IbzProMonthlyAction extends EntityMP implements Serializable {
     private cn.ibizlab.pms.core.report.domain.IbzMonthly ibzpromonthlyaction;
 
 
+    /**
+     * 月报操作历史
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private List<cn.ibizlab.pms.core.ibiz.domain.IbzProMonthlyHistory> ibzpromonthlyhistory;
+
 
     /**
      * 设置 [动作]

@@ -17,7 +17,7 @@ public class UAADEAuthority extends UAAGrantedAuthority {
     private String deptbc;
     private boolean dataset;
     private String bscope;
-    private List<Map<String,String>> deAction;
+    private List<Map<String,String>> deAction = new ArrayList<>();
 
     public UAADEAuthority(){
         this.setType("OPPRIV");
