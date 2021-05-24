@@ -85,7 +85,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "( t1.`OBJECTID` = ${srfdatacontext('srfparentkey','{\"defname\":\"OBJECTID\",\"dename\":\"ZT_ACTION\"}')}  AND  t1.`OBJECTTYPE` =  'weekly' )",
+        "customCond" : "t1.`OBJECTTYPE` =  'weekly'",
         "name" : "查询条件"
       } ]
     } ],
