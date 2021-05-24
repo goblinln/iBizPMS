@@ -62,6 +62,8 @@ public class IbzReportRoleConfigResource {
         if(!ibzreportroleconfigRuntime.test(domain.getIbzreportroleconfigid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzReportRoleConfigDTO dto = ibzreportroleconfigMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(domain.getIbzreportroleconfigid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class IbzReportRoleConfigResource {
         if(!ibzreportroleconfigRuntime.test(ibzreportroleconfig_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzReportRoleConfigDTO dto = ibzreportroleconfigMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(ibzreportroleconfig_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -140,7 +144,10 @@ public class IbzReportRoleConfigResource {
     public ResponseEntity<IbzReportRoleConfigDTO> save(@RequestBody IbzReportRoleConfigDTO ibzreportroleconfigdto) {
         IbzReportRoleConfig domain = ibzreportroleconfigMapping.toDomain(ibzreportroleconfigdto);
         ibzreportroleconfigService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigMapping.toDto(domain));
+        IbzReportRoleConfigDTO dto = ibzreportroleconfigMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(domain.getIbzreportroleconfigid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存汇报角色配置", tags = {"汇报角色配置" },  notes = "批量保存汇报角色配置")

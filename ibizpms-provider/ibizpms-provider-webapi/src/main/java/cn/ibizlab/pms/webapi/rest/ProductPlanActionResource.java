@@ -62,6 +62,8 @@ public class ProductPlanActionResource {
         if(!productplanactionRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProductPlanActionDTO dto = productplanactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = productplanactionRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class ProductPlanActionResource {
         if(!productplanactionRuntime.test(productplanaction_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProductPlanActionDTO dto = productplanactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = productplanactionRuntime.getOPPrivs(productplanaction_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class ProductPlanActionResource {
     public ResponseEntity<ProductPlanActionDTO> save(@RequestBody ProductPlanActionDTO productplanactiondto) {
         ProductPlanAction domain = productplanactionMapping.toDomain(productplanactiondto);
         productplanactionService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productplanactionMapping.toDto(domain));
+        ProductPlanActionDTO dto = productplanactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = productplanactionRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存产品计划日志", tags = {"产品计划日志" },  notes = "批量保存产品计划日志")

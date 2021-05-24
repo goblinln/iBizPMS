@@ -66,4 +66,6 @@ public interface IBZTaskHistoryMapper extends BaseMapper<IBZTaskHistory> {
     @Delete("${sql}")
     boolean deleteBySQL(@Param("sql") String sql, @Param("et")Map param);
 
+    List<IBZTaskHistory> selectByAction(@Param("id") Serializable id);
+
 }

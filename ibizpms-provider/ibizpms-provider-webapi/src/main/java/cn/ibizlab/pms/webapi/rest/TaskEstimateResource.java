@@ -62,6 +62,8 @@ public class TaskEstimateResource {
         if(!taskestimateRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskestimateRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class TaskEstimateResource {
         if(!taskestimateRuntime.test(taskestimate_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskestimateRuntime.getOPPrivs(taskestimate_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -142,6 +146,8 @@ public class TaskEstimateResource {
         domain.setId(taskestimate_id);
         domain = taskestimateService.pMEvaluation(domain);
         taskestimatedto = taskestimateMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskestimateRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatedto);
     }
     @ApiOperation(value = "批量处理[项目经理评估]", tags = {"任务预计" },  notes = "批量处理[项目经理评估]")
@@ -157,7 +163,10 @@ public class TaskEstimateResource {
     public ResponseEntity<TaskEstimateDTO> save(@RequestBody TaskEstimateDTO taskestimatedto) {
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
         taskestimateService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(taskestimateMapping.toDto(domain));
+        TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskestimateRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存任务预计", tags = {"任务预计" },  notes = "批量保存任务预计")

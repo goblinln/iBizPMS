@@ -62,6 +62,8 @@ public class ProductStatsResource {
         if(!productstatsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProductStatsDTO dto = productstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = productstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class ProductStatsResource {
         if(!productstatsRuntime.test(productstats_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProductStatsDTO dto = productstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = productstatsRuntime.getOPPrivs(productstats_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -140,6 +144,8 @@ public class ProductStatsResource {
         domain.setId(productstats_id);
         domain = productstatsService.getTestStats(domain);
         productstatsdto = productstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = productstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productstatsdto);
     }
 
@@ -148,7 +154,10 @@ public class ProductStatsResource {
     public ResponseEntity<ProductStatsDTO> save(@RequestBody ProductStatsDTO productstatsdto) {
         ProductStats domain = productstatsMapping.toDomain(productstatsdto);
         productstatsService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productstatsMapping.toDto(domain));
+        ProductStatsDTO dto = productstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = productstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存产品统计", tags = {"产品统计" },  notes = "批量保存产品统计")

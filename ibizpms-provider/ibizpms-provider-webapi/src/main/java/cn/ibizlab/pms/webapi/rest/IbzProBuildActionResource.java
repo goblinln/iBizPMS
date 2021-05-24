@@ -62,6 +62,8 @@ public class IbzProBuildActionResource {
         if(!ibzprobuildactionRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzProBuildActionDTO dto = ibzprobuildactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprobuildactionRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class IbzProBuildActionResource {
         if(!ibzprobuildactionRuntime.test(ibzprobuildaction_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzProBuildActionDTO dto = ibzprobuildactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprobuildactionRuntime.getOPPrivs(ibzprobuildaction_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class IbzProBuildActionResource {
     public ResponseEntity<IbzProBuildActionDTO> save(@RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {
         IbzProBuildAction domain = ibzprobuildactionMapping.toDomain(ibzprobuildactiondto);
         ibzprobuildactionService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzprobuildactionMapping.toDto(domain));
+        IbzProBuildActionDTO dto = ibzprobuildactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprobuildactionRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存版本日志", tags = {"版本日志" },  notes = "批量保存版本日志")
@@ -153,7 +160,6 @@ public class IbzProBuildActionResource {
 	@ApiOperation(value = "获取数据集", tags = {"版本日志" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprobuildactions/fetchdefault")
 	public ResponseEntity<List<IbzProBuildActionDTO>> fetchdefault(@RequestBody IbzProBuildActionSearchContext context) {
-        ibzprobuildactionRuntime.addAuthorityConditions(context,"READ");
         Page<IbzProBuildAction> domains = ibzprobuildactionService.searchDefault(context) ;
         List<IbzProBuildActionDTO> list = ibzprobuildactionMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -167,7 +173,6 @@ public class IbzProBuildActionResource {
 	@ApiOperation(value = "查询数据集", tags = {"版本日志" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprobuildactions/searchdefault")
 	public ResponseEntity<Page<IbzProBuildActionDTO>> searchDefault(@RequestBody IbzProBuildActionSearchContext context) {
-        ibzprobuildactionRuntime.addAuthorityConditions(context,"READ");
         Page<IbzProBuildAction> domains = ibzprobuildactionService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzprobuildactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

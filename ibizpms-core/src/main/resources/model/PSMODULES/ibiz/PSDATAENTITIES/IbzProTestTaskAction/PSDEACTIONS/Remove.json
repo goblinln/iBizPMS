@@ -1,0 +1,10 @@
+{
+  "actionMode" : "DELETE",
+  "actionType" : "BUILTIN",
+  "codeName" : "Remove",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDEACTIONS/Remove.json",
+  "logicName" : "Remove",
+  "name" : "Remove",
+  "orderValue" : 21,
+  "builtinAction" : true
+}

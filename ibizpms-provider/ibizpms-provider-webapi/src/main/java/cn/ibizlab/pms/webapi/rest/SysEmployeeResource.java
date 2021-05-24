@@ -124,7 +124,8 @@ public class SysEmployeeResource {
     public ResponseEntity<SysEmployeeDTO> save(@RequestBody SysEmployeeDTO sysemployeedto) {
         SysEmployee domain = sysemployeeMapping.toDomain(sysemployeedto);
         sysemployeeService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(sysemployeeMapping.toDto(domain));
+        SysEmployeeDTO dto = sysemployeeMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存人员", tags = {"人员" },  notes = "批量保存人员")

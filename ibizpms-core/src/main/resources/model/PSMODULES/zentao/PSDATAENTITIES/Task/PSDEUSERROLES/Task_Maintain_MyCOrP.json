@@ -1,6 +1,6 @@
 {
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain_MyCOrP.json",
-  "name" : "任务维护（我创建或参与）（默认角色）",
+  "name" : "任务维护（我创建或参与）（跟随角色）",
   "getPSDEDataSet" : {
     "modelref" : true,
     "id" : "MyCreateOrPartake"
@@ -21,6 +21,6 @@
     }
   } ],
   "roleTag" : "Task_Maintain_MyCOrP",
-  "userDRAction" : "READ",
-  "defaultMode" : true
+  "userCat" : "CAT1",
+  "userDRAction" : "READ"
 }

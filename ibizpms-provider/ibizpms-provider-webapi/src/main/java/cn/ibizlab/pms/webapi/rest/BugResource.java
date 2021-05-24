@@ -62,6 +62,8 @@ public class BugResource {
         if(!bugRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         BugDTO dto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class BugResource {
         if(!bugRuntime.test(bug_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		BugDTO dto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(bug_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -137,6 +141,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.activate(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[激活]", tags = {"Bug" },  notes = "批量处理[激活]")
@@ -155,6 +161,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.assignTo(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[指派]", tags = {"Bug" },  notes = "批量处理[指派]")
@@ -172,6 +180,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.batchUnlinkBug(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[批量解除关联Bug]", tags = {"Bug" },  notes = "批量处理[批量解除关联Bug]")
@@ -190,6 +200,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.bugFavorites(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
@@ -201,6 +213,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.bugNFavorites(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
@@ -211,6 +225,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.buildBatchUnlinkBug(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[版本批量解除关联Bug]", tags = {"Bug" },  notes = "批量处理[版本批量解除关联Bug]")
@@ -229,6 +245,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.buildLinkBug(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[版本关联Bug]", tags = {"Bug" },  notes = "批量处理[版本关联Bug]")
@@ -247,6 +265,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.buildUnlinkBug(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[版本解除关联Bug]", tags = {"Bug" },  notes = "批量处理[版本解除关联Bug]")
@@ -271,6 +291,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.close(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[关闭]", tags = {"Bug" },  notes = "批量处理[关闭]")
@@ -289,6 +311,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.confirm(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[确认]", tags = {"Bug" },  notes = "批量处理[确认]")
@@ -307,6 +331,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.linkBug(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[关联Bug]", tags = {"Bug" },  notes = "批量处理[关联Bug]")
@@ -325,6 +351,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.releaaseBatchUnlinkBug(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[批量解除关联Bug]", tags = {"Bug" },  notes = "批量处理[批量解除关联Bug]")
@@ -343,6 +371,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.releaseLinkBugbyBug(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[关联Bug（解决Bug）]", tags = {"Bug" },  notes = "批量处理[关联Bug（解决Bug）]")
@@ -361,6 +391,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.releaseLinkBugbyLeftBug(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[关联Bug（遗留Bug）]", tags = {"Bug" },  notes = "批量处理[关联Bug（遗留Bug）]")
@@ -379,6 +411,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.releaseUnLinkBugbyLeftBug(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[移除关联Bug（遗留Bug）]", tags = {"Bug" },  notes = "批量处理[移除关联Bug（遗留Bug）]")
@@ -397,6 +431,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.releaseUnlinkBug(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[解除关联Bug]", tags = {"Bug" },  notes = "批量处理[解除关联Bug]")
@@ -415,6 +451,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.resolve(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[解决]", tags = {"Bug" },  notes = "批量处理[解决]")
@@ -430,7 +468,10 @@ public class BugResource {
     public ResponseEntity<BugDTO> save(@RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         bugService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(domain));
+        BugDTO dto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存Bug", tags = {"Bug" },  notes = "批量保存Bug")
@@ -447,6 +488,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.sendMessage(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[行为]", tags = {"Bug" },  notes = "批量处理[行为]")
@@ -464,6 +507,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.sendMsgPreProcess(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[发送消息前置处理]", tags = {"Bug" },  notes = "批量处理[发送消息前置处理]")
@@ -481,6 +526,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.testScript(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
@@ -492,6 +539,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.toStory(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[转需求]", tags = {"Bug" },  notes = "批量处理[转需求]")
@@ -510,6 +559,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.unlinkBug(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
     @ApiOperation(value = "批量处理[解除关联Bug]", tags = {"Bug" },  notes = "批量处理[解除关联Bug]")
@@ -528,6 +579,8 @@ public class BugResource {
         domain.setId(bug_id);
         domain = bugService.updateStoryVersion(domain);
         bugdto = bugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 

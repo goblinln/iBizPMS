@@ -123,7 +123,8 @@ public class SysTeamMemberResource {
     public ResponseEntity<SysTeamMemberDTO> save(@RequestBody SysTeamMemberDTO systeammemberdto) {
         SysTeamMember domain = systeammemberMapping.toDomain(systeammemberdto);
         systeammemberService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(systeammemberMapping.toDto(domain));
+        SysTeamMemberDTO dto = systeammemberMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存组成员", tags = {"组成员" },  notes = "批量保存组成员")

@@ -62,6 +62,8 @@ public class ProjectModuleResource {
         if(!projectmoduleRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class ProjectModuleResource {
         if(!projectmoduleRuntime.test(projectmodule_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectmoduleRuntime.getOPPrivs(projectmodule_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -141,6 +145,8 @@ public class ProjectModuleResource {
         domain.setId(projectmodule_id);
         domain = projectmoduleService.fix(domain);
         projectmoduledto = projectmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduledto);
     }
 
@@ -152,6 +158,8 @@ public class ProjectModuleResource {
         domain.setId(projectmodule_id);
         domain = projectmoduleService.removeModule(domain);
         projectmoduledto = projectmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduledto);
     }
 
@@ -160,7 +168,10 @@ public class ProjectModuleResource {
     public ResponseEntity<ProjectModuleDTO> save(@RequestBody ProjectModuleDTO projectmoduledto) {
         ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
         projectmoduleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(domain));
+        ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存任务模块", tags = {"任务模块" },  notes = "批量保存任务模块")

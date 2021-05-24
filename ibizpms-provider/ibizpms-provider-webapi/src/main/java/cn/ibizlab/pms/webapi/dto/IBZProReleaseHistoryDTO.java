@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Data
 @ApiModel("发布操作历史")
-//@JsonFilter(value = "dtofieldfilter")
+@JsonFilter(value = "dtofieldfilter")
 public class IBZProReleaseHistoryDTO extends DTOBase implements Serializable {
 
 	private static final long serialVersionUID = 1L;

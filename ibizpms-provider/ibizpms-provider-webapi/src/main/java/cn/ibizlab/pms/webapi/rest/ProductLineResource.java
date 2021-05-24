@@ -62,6 +62,8 @@ public class ProductLineResource {
         if(!productlineRuntime.test(domain.getProductlineid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProductLineDTO dto = productlineMapping.toDto(domain);
+        Map<String,Integer> opprivs = productlineRuntime.getOPPrivs(domain.getProductlineid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class ProductLineResource {
         if(!productlineRuntime.test(productline_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProductLineDTO dto = productlineMapping.toDto(domain);
+        Map<String,Integer> opprivs = productlineRuntime.getOPPrivs(productline_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -140,7 +144,10 @@ public class ProductLineResource {
     public ResponseEntity<ProductLineDTO> save(@RequestBody ProductLineDTO productlinedto) {
         ProductLine domain = productlineMapping.toDomain(productlinedto);
         productlineService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productlineMapping.toDto(domain));
+        ProductLineDTO dto = productlineMapping.toDto(domain);
+        Map<String,Integer> opprivs = productlineRuntime.getOPPrivs(domain.getProductlineid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存产品线（废弃）", tags = {"产品线（废弃）" },  notes = "批量保存产品线（废弃）")

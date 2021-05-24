@@ -123,7 +123,8 @@ public class SysPostResource {
     public ResponseEntity<SysPostDTO> save(@RequestBody SysPostDTO syspostdto) {
         SysPost domain = syspostMapping.toDomain(syspostdto);
         syspostService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(syspostMapping.toDto(domain));
+        SysPostDTO dto = syspostMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存岗位", tags = {"岗位" },  notes = "批量保存岗位")

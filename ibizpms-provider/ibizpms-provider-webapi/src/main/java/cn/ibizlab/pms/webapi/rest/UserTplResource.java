@@ -62,6 +62,8 @@ public class UserTplResource {
         if(!usertplRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         UserTplDTO dto = usertplMapping.toDto(domain);
+        Map<String,Integer> opprivs = usertplRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class UserTplResource {
         if(!usertplRuntime.test(usertpl_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		UserTplDTO dto = usertplMapping.toDto(domain);
+        Map<String,Integer> opprivs = usertplRuntime.getOPPrivs(usertpl_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -141,6 +145,8 @@ public class UserTplResource {
         domain.setId(usertpl_id);
         domain = usertplService.hasDeleted(domain);
         usertpldto = usertplMapping.toDto(domain);
+        Map<String,Integer> opprivs = usertplRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(usertpldto);
     }
     @ApiOperation(value = "批量处理[删除]", tags = {"用户模板" },  notes = "批量处理[删除]")
@@ -156,7 +162,10 @@ public class UserTplResource {
     public ResponseEntity<UserTplDTO> save(@RequestBody UserTplDTO usertpldto) {
         UserTpl domain = usertplMapping.toDomain(usertpldto);
         usertplService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(usertplMapping.toDto(domain));
+        UserTplDTO dto = usertplMapping.toDto(domain);
+        Map<String,Integer> opprivs = usertplRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存用户模板", tags = {"用户模板" },  notes = "批量保存用户模板")

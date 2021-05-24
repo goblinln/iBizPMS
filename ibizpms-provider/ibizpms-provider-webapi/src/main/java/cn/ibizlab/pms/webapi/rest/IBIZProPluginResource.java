@@ -124,7 +124,8 @@ public class IBIZProPluginResource {
     public ResponseEntity<IBIZProPluginDTO> save(@RequestBody IBIZProPluginDTO ibizproplugindto) {
         IBIZProPlugin domain = ibizpropluginMapping.toDomain(ibizproplugindto);
         ibizpropluginService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibizpropluginMapping.toDto(domain));
+        IBIZProPluginDTO dto = ibizpropluginMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存系统插件", tags = {"系统插件" },  notes = "批量保存系统插件")

@@ -41,7 +41,7 @@ public class WFCallbackDeamonJobHandler implements IJobsHandler {
         try {
             IDataEntityRuntime callBackDERuntime = systemRuntime.getDataEntityRuntime(deName);
             IEntity entity = (IEntity) callBackDERuntime.deserializeEntity(data);
-            entity.set(callBackDERuntime.getKeyPSDEField().getCodeName(), entity.get("businessKey"));
+            // entity.set(callBackDERuntime.getKeyPSDEField().getCodeName(), entity.get("businessKey"));
             Map map = new HashMap(16);
             if ("Default".equals(action) || "ALLDATA".equals(action)) {
                 callBackDERuntime.getPSDataEntity().getAllPSDEDataSets().forEach(ipsdeDataSet -> {

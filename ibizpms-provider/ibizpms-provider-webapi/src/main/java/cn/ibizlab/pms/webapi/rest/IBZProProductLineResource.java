@@ -62,6 +62,8 @@ public class IBZProProductLineResource {
         if(!ibzproproductlineRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IBZProProductLineDTO dto = ibzproproductlineMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproproductlineRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class IBZProProductLineResource {
         if(!ibzproproductlineRuntime.test(ibzproproductline_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IBZProProductLineDTO dto = ibzproproductlineMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproproductlineRuntime.getOPPrivs(ibzproproductline_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class IBZProProductLineResource {
     public ResponseEntity<IBZProProductLineDTO> save(@RequestBody IBZProProductLineDTO ibzproproductlinedto) {
         IBZProProductLine domain = ibzproproductlineMapping.toDomain(ibzproproductlinedto);
         ibzproproductlineService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzproproductlineMapping.toDto(domain));
+        IBZProProductLineDTO dto = ibzproproductlineMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproproductlineRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存产品线", tags = {"产品线" },  notes = "批量保存产品线")

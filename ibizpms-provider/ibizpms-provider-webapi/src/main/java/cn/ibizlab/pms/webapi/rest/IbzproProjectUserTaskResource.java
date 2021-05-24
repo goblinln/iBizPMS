@@ -62,6 +62,8 @@ public class IbzproProjectUserTaskResource {
         if(!ibzproprojectusertaskRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzproProjectUserTaskDTO dto = ibzproprojectusertaskMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproprojectusertaskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class IbzproProjectUserTaskResource {
         if(!ibzproprojectusertaskRuntime.test(ibzproprojectusertask_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzproProjectUserTaskDTO dto = ibzproprojectusertaskMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproprojectusertaskRuntime.getOPPrivs(ibzproprojectusertask_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class IbzproProjectUserTaskResource {
     public ResponseEntity<IbzproProjectUserTaskDTO> save(@RequestBody IbzproProjectUserTaskDTO ibzproprojectusertaskdto) {
         IbzproProjectUserTask domain = ibzproprojectusertaskMapping.toDomain(ibzproprojectusertaskdto);
         ibzproprojectusertaskService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskMapping.toDto(domain));
+        IbzproProjectUserTaskDTO dto = ibzproprojectusertaskMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproprojectusertaskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "批量保存项目汇报用户任务")

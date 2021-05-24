@@ -60,6 +60,8 @@ public class TestReportResource {
         domain.setId(testreport_id);
         domain = testreportService.getInfoTestTask(domain);
         testreportdto = testreportMapping.toDto(domain);
+        Map<String,Integer> opprivs = testreportRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
@@ -73,6 +75,8 @@ public class TestReportResource {
         if(!testreportRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         TestReportDTO dto = testreportMapping.toDto(domain);
+        Map<String,Integer> opprivs = testreportRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -95,6 +99,8 @@ public class TestReportResource {
         if(!testreportRuntime.test(testreport_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		TestReportDTO dto = testreportMapping.toDto(domain);
+        Map<String,Integer> opprivs = testreportRuntime.getOPPrivs(testreport_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -153,6 +159,8 @@ public class TestReportResource {
         domain.setId(testreport_id);
         domain = testreportService.getInfoTaskOvByTime(domain);
         testreportdto = testreportMapping.toDto(domain);
+        Map<String,Integer> opprivs = testreportRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
@@ -164,6 +172,8 @@ public class TestReportResource {
         domain.setId(testreport_id);
         domain = testreportService.getInfoTestTaskOvProject(domain);
         testreportdto = testreportMapping.toDto(domain);
+        Map<String,Integer> opprivs = testreportRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
@@ -175,6 +185,8 @@ public class TestReportResource {
         domain.setId(testreport_id);
         domain = testreportService.getInfoTestTaskProject(domain);
         testreportdto = testreportMapping.toDto(domain);
+        Map<String,Integer> opprivs = testreportRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
@@ -186,6 +198,8 @@ public class TestReportResource {
         domain.setId(testreport_id);
         domain = testreportService.getInfoTestTaskR(domain);
         testreportdto = testreportMapping.toDto(domain);
+        Map<String,Integer> opprivs = testreportRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
@@ -197,6 +211,8 @@ public class TestReportResource {
         domain.setId(testreport_id);
         domain = testreportService.getInfoTestTaskS(domain);
         testreportdto = testreportMapping.toDto(domain);
+        Map<String,Integer> opprivs = testreportRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
@@ -208,6 +224,8 @@ public class TestReportResource {
         domain.setId(testreport_id);
         domain = testreportService.getTestReportBasicInfo(domain);
         testreportdto = testreportMapping.toDto(domain);
+        Map<String,Integer> opprivs = testreportRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
@@ -219,6 +237,8 @@ public class TestReportResource {
         domain.setId(testreport_id);
         domain = testreportService.getTestReportProject(domain);
         testreportdto = testreportMapping.toDto(domain);
+        Map<String,Integer> opprivs = testreportRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
@@ -227,7 +247,10 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> save(@RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         testreportService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testreportMapping.toDto(domain));
+        TestReportDTO dto = testreportMapping.toDto(domain);
+        Map<String,Integer> opprivs = testreportRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存测试报告", tags = {"测试报告" },  notes = "批量保存测试报告")

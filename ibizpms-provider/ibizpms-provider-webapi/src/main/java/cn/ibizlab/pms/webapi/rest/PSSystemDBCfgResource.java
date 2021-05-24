@@ -124,7 +124,8 @@ public class PSSystemDBCfgResource {
     public ResponseEntity<PSSystemDBCfgDTO> save(@RequestBody PSSystemDBCfgDTO pssystemdbcfgdto) {
         PSSystemDBCfg domain = pssystemdbcfgMapping.toDomain(pssystemdbcfgdto);
         pssystemdbcfgService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgMapping.toDto(domain));
+        PSSystemDBCfgDTO dto = pssystemdbcfgMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存系统数据库", tags = {"系统数据库" },  notes = "批量保存系统数据库")

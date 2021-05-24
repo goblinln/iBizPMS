@@ -62,6 +62,8 @@ public class PRODUCTTEAMResource {
         if(!productteamRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         PRODUCTTEAMDTO dto = productteamMapping.toDto(domain);
+        Map<String,Integer> opprivs = productteamRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class PRODUCTTEAMResource {
         if(!productteamRuntime.test(productteam_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		PRODUCTTEAMDTO dto = productteamMapping.toDto(domain);
+        Map<String,Integer> opprivs = productteamRuntime.getOPPrivs(productteam_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -141,6 +145,8 @@ public class PRODUCTTEAMResource {
         domain.setId(productteam_id);
         domain = productteamService.productTeamGuoLv(domain);
         productteamdto = productteamMapping.toDto(domain);
+        Map<String,Integer> opprivs = productteamRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productteamdto);
     }
     @ApiOperation(value = "批量处理[PmsEe团队管理过滤]", tags = {"产品团队" },  notes = "批量处理[PmsEe团队管理过滤]")
@@ -157,7 +163,10 @@ public class PRODUCTTEAMResource {
     public ResponseEntity<PRODUCTTEAMDTO> save(@RequestBody PRODUCTTEAMDTO productteamdto) {
         PRODUCTTEAM domain = productteamMapping.toDomain(productteamdto);
         productteamService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productteamMapping.toDto(domain));
+        PRODUCTTEAMDTO dto = productteamMapping.toDto(domain);
+        Map<String,Integer> opprivs = productteamRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @PreAuthorize("@PRODUCTTEAMRuntime.quickTest('CREATE')")

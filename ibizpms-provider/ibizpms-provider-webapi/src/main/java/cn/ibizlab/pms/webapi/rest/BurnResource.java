@@ -62,6 +62,8 @@ public class BurnResource {
         if(!burnRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         BurnDTO dto = burnMapping.toDto(domain);
+        Map<String,Integer> opprivs = burnRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class BurnResource {
         if(!burnRuntime.test(burn_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		BurnDTO dto = burnMapping.toDto(domain);
+        Map<String,Integer> opprivs = burnRuntime.getOPPrivs(burn_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -141,6 +145,8 @@ public class BurnResource {
         domain.setId(burn_id);
         domain = burnService.computeBurn(domain);
         burndto = burnMapping.toDto(domain);
+        Map<String,Integer> opprivs = burnRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(burndto);
     }
     @ApiOperation(value = "批量处理[更新燃尽图]", tags = {"burn" },  notes = "批量处理[更新燃尽图]")
@@ -156,7 +162,10 @@ public class BurnResource {
     public ResponseEntity<BurnDTO> save(@RequestBody BurnDTO burndto) {
         Burn domain = burnMapping.toDomain(burndto);
         burnService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(burnMapping.toDto(domain));
+        BurnDTO dto = burnMapping.toDto(domain);
+        Map<String,Integer> opprivs = burnRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存burn", tags = {"burn" },  notes = "批量保存burn")

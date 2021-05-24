@@ -113,6 +113,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     }
   }, {
+    "name" : "产品主管-ZT_STORY[需求维护（我创建或参与）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_MyCOrP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    }
+  }, {
     "name" : "产品主管-ZT_PRODUCT[产品查看（创建者或更新者）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,

@@ -62,6 +62,8 @@ public class DynaDashboardResource {
         if(!dynadashboardRuntime.test(domain.getDynadashboardid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         DynaDashboardDTO dto = dynadashboardMapping.toDto(domain);
+        Map<String,Integer> opprivs = dynadashboardRuntime.getOPPrivs(domain.getDynadashboardid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class DynaDashboardResource {
         if(!dynadashboardRuntime.test(dynadashboard_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		DynaDashboardDTO dto = dynadashboardMapping.toDto(domain);
+        Map<String,Integer> opprivs = dynadashboardRuntime.getOPPrivs(dynadashboard_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -140,7 +144,10 @@ public class DynaDashboardResource {
     public ResponseEntity<DynaDashboardDTO> save(@RequestBody DynaDashboardDTO dynadashboarddto) {
         DynaDashboard domain = dynadashboardMapping.toDomain(dynadashboarddto);
         dynadashboardService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dynadashboardMapping.toDto(domain));
+        DynaDashboardDTO dto = dynadashboardMapping.toDto(domain);
+        Map<String,Integer> opprivs = dynadashboardRuntime.getOPPrivs(domain.getDynadashboardid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存动态数据看板", tags = {"动态数据看板" },  notes = "批量保存动态数据看板")

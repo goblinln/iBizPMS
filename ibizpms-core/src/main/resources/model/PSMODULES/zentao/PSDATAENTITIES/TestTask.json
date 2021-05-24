@@ -3057,6 +3057,29 @@
     "codeName" : "Status"
   } ],
   "getMajorPSDERs" : [ {
+    "codeName" : "IBZProTestTaskAction",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDERS/DER1N_IBZPRO_TESTTASKACTION_ZT_TESTTASK_OBJECTID.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 4,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction.json"
+    },
+    "name" : "DER1N_IBZPRO_TESTTASKACTION_ZT_TESTTASK_OBJECTID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "pickupDEFName" : "OBJECTID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
+  }, {
     "codeName" : "ZTTestTask",
     "dERType" : "DER1N",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_TESTTASK_TESTTASK.json",

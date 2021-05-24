@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Data
 @ApiModel("后台服务架构")
-//@JsonFilter(value = "dtofieldfilter")
+@JsonFilter(value = "dtofieldfilter")
 public class PSSysSFPubDTO extends DTOClient implements Serializable {
 
 	private static final long serialVersionUID = 1L;

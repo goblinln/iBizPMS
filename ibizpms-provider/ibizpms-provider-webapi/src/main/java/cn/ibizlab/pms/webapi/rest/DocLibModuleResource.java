@@ -62,6 +62,8 @@ public class DocLibModuleResource {
         if(!doclibmoduleRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = doclibmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class DocLibModuleResource {
         if(!doclibmoduleRuntime.test(doclibmodule_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = doclibmoduleRuntime.getOPPrivs(doclibmodule_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -141,6 +145,8 @@ public class DocLibModuleResource {
         domain.setId(doclibmodule_id);
         domain = doclibmoduleService.collect(domain);
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = doclibmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
     @ApiOperation(value = "批量处理[收藏]", tags = {"文档库分类" },  notes = "批量处理[收藏]")
@@ -158,6 +164,8 @@ public class DocLibModuleResource {
         domain.setId(doclibmodule_id);
         domain = doclibmoduleService.docLibModuleNFavorite(domain);
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = doclibmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
@@ -168,6 +176,8 @@ public class DocLibModuleResource {
         domain.setId(doclibmodule_id);
         domain = doclibmoduleService.doclibModuleFavorite(domain);
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = doclibmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
@@ -178,6 +188,8 @@ public class DocLibModuleResource {
         domain.setId(doclibmodule_id);
         domain = doclibmoduleService.fix(domain);
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = doclibmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
@@ -186,7 +198,10 @@ public class DocLibModuleResource {
     public ResponseEntity<DocLibModuleDTO> save(@RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
         doclibmoduleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleMapping.toDto(domain));
+        DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = doclibmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存文档库分类", tags = {"文档库分类" },  notes = "批量保存文档库分类")
@@ -203,6 +218,8 @@ public class DocLibModuleResource {
         domain.setId(doclibmodule_id);
         domain = doclibmoduleService.unCollect(domain);
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = doclibmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
     @ApiOperation(value = "批量处理[取消收藏]", tags = {"文档库分类" },  notes = "批量处理[取消收藏]")

@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Data
 @ApiModel("用户年度工作内容统计")
-//@JsonFilter(value = "dtofieldfilter")
+@JsonFilter(value = "dtofieldfilter")
 public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
 
 	private static final long serialVersionUID = 1L;

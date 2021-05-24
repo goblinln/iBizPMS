@@ -124,7 +124,8 @@ public class SysRoleResource {
     public ResponseEntity<SysRoleDTO> save(@RequestBody SysRoleDTO sysroledto) {
         SysRole domain = sysroleMapping.toDomain(sysroledto);
         sysroleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(sysroleMapping.toDto(domain));
+        SysRoleDTO dto = sysroleMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存系统角色", tags = {"系统角色" },  notes = "批量保存系统角色")

@@ -124,7 +124,8 @@ public class SysOrganizationResource {
     public ResponseEntity<SysOrganizationDTO> save(@RequestBody SysOrganizationDTO sysorganizationdto) {
         SysOrganization domain = sysorganizationMapping.toDomain(sysorganizationdto);
         sysorganizationService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(sysorganizationMapping.toDto(domain));
+        SysOrganizationDTO dto = sysorganizationMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存单位", tags = {"单位" },  notes = "批量保存单位")

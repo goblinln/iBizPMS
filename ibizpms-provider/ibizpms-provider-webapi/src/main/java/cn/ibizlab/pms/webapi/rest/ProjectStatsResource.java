@@ -62,6 +62,8 @@ public class ProjectStatsResource {
         if(!projectstatsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProjectStatsDTO dto = projectstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class ProjectStatsResource {
         if(!projectstatsRuntime.test(projectstats_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProjectStatsDTO dto = projectstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectstatsRuntime.getOPPrivs(projectstats_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -140,6 +144,8 @@ public class ProjectStatsResource {
         domain.setId(projectstats_id);
         domain = projectstatsService.projectQualitySum(domain);
         projectstatsdto = projectstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectstatsdto);
     }
 
@@ -148,7 +154,10 @@ public class ProjectStatsResource {
     public ResponseEntity<ProjectStatsDTO> save(@RequestBody ProjectStatsDTO projectstatsdto) {
         ProjectStats domain = projectstatsMapping.toDomain(projectstatsdto);
         projectstatsService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectstatsMapping.toDto(domain));
+        ProjectStatsDTO dto = projectstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存项目统计", tags = {"项目统计" },  notes = "批量保存项目统计")

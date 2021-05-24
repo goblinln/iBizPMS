@@ -62,6 +62,8 @@ public class IbzReportResource {
         if(!ibzreportRuntime.test(domain.getIbzdailyid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzReportDTO dto = ibzreportMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzreportRuntime.getOPPrivs(domain.getIbzdailyid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class IbzReportResource {
         if(!ibzreportRuntime.test(ibzreport_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzReportDTO dto = ibzreportMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzreportRuntime.getOPPrivs(ibzreport_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -141,6 +145,8 @@ public class IbzReportResource {
         domain.setIbzdailyid(ibzreport_id);
         domain = ibzreportService.myReportINotSubmit(domain);
         ibzreportdto = ibzreportMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzreportRuntime.getOPPrivs(domain.getIbzdailyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportdto);
     }
 
@@ -151,6 +157,8 @@ public class IbzReportResource {
         domain.setIbzdailyid(ibzreport_id);
         domain = ibzreportService.reportIReceived(domain);
         ibzreportdto = ibzreportMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzreportRuntime.getOPPrivs(domain.getIbzdailyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportdto);
     }
 
@@ -159,7 +167,10 @@ public class IbzReportResource {
     public ResponseEntity<IbzReportDTO> save(@RequestBody IbzReportDTO ibzreportdto) {
         IbzReport domain = ibzreportMapping.toDomain(ibzreportdto);
         ibzreportService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzreportMapping.toDto(domain));
+        IbzReportDTO dto = ibzreportMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzreportRuntime.getOPPrivs(domain.getIbzdailyid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存汇报汇总", tags = {"汇报汇总" },  notes = "批量保存汇报汇总")

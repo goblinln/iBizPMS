@@ -62,6 +62,8 @@ public class IBZStoryActionResource {
         if(!ibzstoryactionRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IBZStoryActionDTO dto = ibzstoryactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzstoryactionRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class IBZStoryActionResource {
         if(!ibzstoryactionRuntime.test(ibzstoryaction_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IBZStoryActionDTO dto = ibzstoryactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzstoryactionRuntime.getOPPrivs(ibzstoryaction_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class IBZStoryActionResource {
     public ResponseEntity<IBZStoryActionDTO> save(@RequestBody IBZStoryActionDTO ibzstoryactiondto) {
         IBZStoryAction domain = ibzstoryactionMapping.toDomain(ibzstoryactiondto);
         ibzstoryactionService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzstoryactionMapping.toDto(domain));
+        IBZStoryActionDTO dto = ibzstoryactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzstoryactionRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存需求日志", tags = {"需求日志" },  notes = "批量保存需求日志")

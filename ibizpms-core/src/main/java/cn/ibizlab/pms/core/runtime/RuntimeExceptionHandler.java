@@ -44,8 +44,8 @@ public class RuntimeExceptionHandler {
         return ResponseEntity.badRequest().body(out);
     }
 
-    @ExceptionHandler(value = RuntimeException.class)
-    @ResponseBody
+    //@ExceptionHandler(value = RuntimeException.class)
+    //@ResponseBody
     public ResponseEntity handlerException(RuntimeException runtimeException) {
         JSONObject out = new JSONObject();
         out.put("type", "RuntimeException");

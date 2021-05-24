@@ -44,6 +44,9 @@ public interface IIBZTaskHistoryService extends IService<IBZTaskHistory> {
     List<IBZTaskHistory> selectView(IBZTaskHistorySearchContext context);
 
     Page<IBZTaskHistory> searchDefault(IBZTaskHistorySearchContext context);
+    List<IBZTaskHistory> selectByAction(Long id);
+    void removeByAction(Long id);
+    void saveByAction(Long id, List<IBZTaskHistory> list) ;
     IBZTaskHistory dynamicCall(Long key, String action, IBZTaskHistory et);
     /**
      *自定义查询SQL

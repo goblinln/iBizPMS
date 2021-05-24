@@ -1410,6 +1410,41 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "PROJECT",
+      "dBType" : "MYSQL5",
+      "name" : "PROJECT",
+      "queryCodeExp" : "t1.`PROJECT`",
+      "standardColumnName" : "`PROJECT`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Project",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "项目",
+    "name" : "PROJECT",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "添加备注",
@@ -1537,7 +1572,7 @@
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -1551,6 +1586,31 @@
   "enableViewLevel" : 0,
   "extendMode" : 0,
   "logicName" : "版本日志",
+  "getMajorPSDERs" : [ {
+    "codeName" : "IbzProBuildHistory",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildHistory/PSDERS/DER1N_IBZPRO_BUILDHISTORY_IBZPRO_BUILDACTION_ACTION.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildAction.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 12,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildHistory.json"
+    },
+    "name" : "DER1N_IBZPRO_BUILDHISTORY_IBZPRO_BUILDACTION_ACTION",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "ACTION",
+      "codeName" : "Action"
+    },
+    "pickupDEFName" : "ACTION",
+    "removeActionType" : -1,
+    "removeOrder" : 0,
+    "nestedRS" : true
+  } ],
   "getMinorPSDERs" : [ {
     "codeName" : "IbzProBuild",
     "dERType" : "DER1N",

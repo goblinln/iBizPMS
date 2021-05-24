@@ -62,6 +62,8 @@ public class BranchResource {
         if(!branchRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         BranchDTO dto = branchMapping.toDto(domain);
+        Map<String,Integer> opprivs = branchRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class BranchResource {
         if(!branchRuntime.test(branch_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		BranchDTO dto = branchMapping.toDto(domain);
+        Map<String,Integer> opprivs = branchRuntime.getOPPrivs(branch_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class BranchResource {
     public ResponseEntity<BranchDTO> save(@RequestBody BranchDTO branchdto) {
         Branch domain = branchMapping.toDomain(branchdto);
         branchService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(branchMapping.toDto(domain));
+        BranchDTO dto = branchMapping.toDto(domain);
+        Map<String,Integer> opprivs = branchRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "批量保存产品的分支和平台信息")
@@ -156,6 +163,8 @@ public class BranchResource {
         domain.setId(branch_id);
         domain = branchService.sort(domain);
         branchdto = branchMapping.toDto(domain);
+        Map<String,Integer> opprivs = branchRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(branchdto);
     }
     @ApiOperation(value = "批量处理[排序]", tags = {"产品的分支和平台信息" },  notes = "批量处理[排序]")

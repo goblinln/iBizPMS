@@ -62,6 +62,8 @@ public class BuildResource {
         if(!buildRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         BuildDTO dto = buildMapping.toDto(domain);
+        Map<String,Integer> opprivs = buildRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class BuildResource {
         if(!buildRuntime.test(build_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		BuildDTO dto = buildMapping.toDto(domain);
+        Map<String,Integer> opprivs = buildRuntime.getOPPrivs(build_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -142,6 +146,8 @@ public class BuildResource {
         domain.setId(build_id);
         domain = buildService.linkBug(domain);
         builddto = buildMapping.toDto(domain);
+        Map<String,Integer> opprivs = buildRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
     @ApiOperation(value = "批量处理[关联Bug]", tags = {"版本" },  notes = "批量处理[关联Bug]")
@@ -159,6 +165,8 @@ public class BuildResource {
         domain.setId(build_id);
         domain = buildService.linkStory(domain);
         builddto = buildMapping.toDto(domain);
+        Map<String,Integer> opprivs = buildRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
     @ApiOperation(value = "批量处理[关联需求]", tags = {"版本" },  notes = "批量处理[关联需求]")
@@ -176,6 +184,8 @@ public class BuildResource {
         domain.setId(build_id);
         domain = buildService.mobProjectBuildCounter(domain);
         builddto = buildMapping.toDto(domain);
+        Map<String,Integer> opprivs = buildRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
@@ -186,6 +196,8 @@ public class BuildResource {
         domain.setId(build_id);
         domain = buildService.oneClickRelease(domain);
         builddto = buildMapping.toDto(domain);
+        Map<String,Integer> opprivs = buildRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
     @ApiOperation(value = "批量处理[一键发布]", tags = {"版本" },  notes = "批量处理[一键发布]")
@@ -201,7 +213,10 @@ public class BuildResource {
     public ResponseEntity<BuildDTO> save(@RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
         buildService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(buildMapping.toDto(domain));
+        BuildDTO dto = buildMapping.toDto(domain);
+        Map<String,Integer> opprivs = buildRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存版本", tags = {"版本" },  notes = "批量保存版本")
@@ -218,6 +233,8 @@ public class BuildResource {
         domain.setId(build_id);
         domain = buildService.unlinkBug(domain);
         builddto = buildMapping.toDto(domain);
+        Map<String,Integer> opprivs = buildRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
     @ApiOperation(value = "批量处理[移除Bug关联]", tags = {"版本" },  notes = "批量处理[移除Bug关联]")
@@ -235,6 +252,8 @@ public class BuildResource {
         domain.setId(build_id);
         domain = buildService.unlinkStory(domain);
         builddto = buildMapping.toDto(domain);
+        Map<String,Integer> opprivs = buildRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
     @ApiOperation(value = "批量处理[移除关联需求]", tags = {"版本" },  notes = "批量处理[移除关联需求]")

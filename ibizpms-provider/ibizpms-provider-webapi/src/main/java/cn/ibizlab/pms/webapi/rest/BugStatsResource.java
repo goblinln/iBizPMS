@@ -62,6 +62,8 @@ public class BugStatsResource {
         if(!bugstatsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         BugStatsDTO dto = bugstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class BugStatsResource {
         if(!bugstatsRuntime.test(bugstats_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		BugStatsDTO dto = bugstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugstatsRuntime.getOPPrivs(bugstats_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class BugStatsResource {
     public ResponseEntity<BugStatsDTO> save(@RequestBody BugStatsDTO bugstatsdto) {
         BugStats domain = bugstatsMapping.toDomain(bugstatsdto);
         bugstatsService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(bugstatsMapping.toDto(domain));
+        BugStatsDTO dto = bugstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存Bug统计", tags = {"Bug统计" },  notes = "批量保存Bug统计")

@@ -270,6 +270,14 @@ public class IbzProBuildAction extends EntityMP implements Serializable {
     @JsonProperty("objectid")
     @ApiModelProperty("id")
     private Long objectid;
+    /**
+     * 项目
+     */
+    @TableField(value = "`PROJECT`")
+    @JSONField(name = "project")
+    @JsonProperty("project")
+    @ApiModelProperty("项目")
+    private Long project;
 
     /**
      * 
@@ -279,6 +287,14 @@ public class IbzProBuildAction extends EntityMP implements Serializable {
     @TableField(exist = false)
     private cn.ibizlab.pms.core.zentao.domain.Build ibzprobuild;
 
+
+    /**
+     * 版本操作历史
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private List<cn.ibizlab.pms.core.ibiz.domain.IbzProBuildHistory> ibzprobuildhistory;
 
 
     /**
@@ -351,6 +367,14 @@ public class IbzProBuildAction extends EntityMP implements Serializable {
     public void setObjectid(Long objectid) {
         this.objectid = objectid;
         this.modify("objectid", objectid);
+    }
+
+    /**
+     * 设置 [项目]
+     */
+    public void setProject(Long project) {
+        this.project = project;
+        this.modify("project", project);
     }
 
 

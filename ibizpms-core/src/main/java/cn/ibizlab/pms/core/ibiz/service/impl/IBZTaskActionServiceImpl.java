@@ -54,6 +54,9 @@ public class IBZTaskActionServiceImpl extends ServiceImpl<IBZTaskActionMapper, I
 
     @Autowired
     @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIBZTaskHistoryService ibztaskhistoryService;
+    @Autowired
+    @Lazy
     protected cn.ibizlab.pms.core.zentao.service.ITaskService taskService;
 
     protected int batchSize = 500;
@@ -70,6 +73,9 @@ public class IBZTaskActionServiceImpl extends ServiceImpl<IBZTaskActionMapper, I
     public boolean create(IBZTaskAction et) {
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
+        }
+        if(!ibztaskactionRuntime.isRtmodel()){
+            ibztaskhistoryService.saveByAction(et.getId(), et.getIbztaskhistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -91,6 +97,9 @@ public class IBZTaskActionServiceImpl extends ServiceImpl<IBZTaskActionMapper, I
     public boolean update(IBZTaskAction et) {
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
+        }
+        if(!ibztaskactionRuntime.isRtmodel()){
+            ibztaskhistoryService.saveByAction(et.getId(), et.getIbztaskhistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -121,6 +130,7 @@ public class IBZTaskActionServiceImpl extends ServiceImpl<IBZTaskActionMapper, I
     @Transactional
     public boolean remove(Long key) {
         if(!ibztaskactionRuntime.isRtmodel()){
+            ibztaskhistoryService.removeByAction(key) ;
         }
         boolean result = removeById(key);
         return result ;
@@ -146,6 +156,7 @@ public class IBZTaskActionServiceImpl extends ServiceImpl<IBZTaskActionMapper, I
         }
         else {
             if(!ibztaskactionRuntime.isRtmodel()){
+                et.setIbztaskhistory(ibztaskhistoryService.selectByAction(key));
             }
         }
         return et;

@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Data
 @ApiModel("公司动态汇总")
-//@JsonFilter(value = "dtofieldfilter")
+@JsonFilter(value = "dtofieldfilter")
 public class CompanyStatsDTO extends DTOBase implements Serializable {
 
 	private static final long serialVersionUID = 1L;

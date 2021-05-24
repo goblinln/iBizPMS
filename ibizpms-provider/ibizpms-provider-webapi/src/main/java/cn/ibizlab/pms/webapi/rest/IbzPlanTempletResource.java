@@ -68,6 +68,8 @@ public class IbzPlanTempletResource {
         if(!ibzplantempletRuntime.test(domain.getIbzplantempletid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzPlanTempletDTO dto = ibzplantempletMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzplantempletRuntime.getOPPrivs(domain.getIbzplantempletid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -91,6 +93,8 @@ public class IbzPlanTempletResource {
         if(!ibzplantempletRuntime.test(ibzplantemplet_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzPlanTempletDTO dto = ibzplantempletMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzplantempletRuntime.getOPPrivs(ibzplantemplet_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -149,6 +153,8 @@ public class IbzPlanTempletResource {
         domain.setIbzplantempletid(ibzplantemplet_id);
         domain = ibzplantempletService.getPlan(domain);
         ibzplantempletdto = ibzplantempletMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzplantempletRuntime.getOPPrivs(domain.getIbzplantempletid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletdto);
     }
     @PreAuthorize("@IbzPlanTempletRuntime.test('READ')")
@@ -165,7 +171,10 @@ public class IbzPlanTempletResource {
     public ResponseEntity<IbzPlanTempletDTO> save(@RequestBody IbzPlanTempletDTO ibzplantempletdto) {
         IbzPlanTemplet domain = ibzplantempletMapping.toDomain(ibzplantempletdto);
         ibzplantempletService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletMapping.toDto(domain));
+        IbzPlanTempletDTO dto = ibzplantempletMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzplantempletRuntime.getOPPrivs(domain.getIbzplantempletid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存计划模板", tags = {"计划模板" },  notes = "批量保存计划模板")

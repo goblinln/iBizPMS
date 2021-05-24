@@ -62,6 +62,8 @@ public class UserResource {
         if(!userRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         UserDTO dto = userMapping.toDto(domain);
+        Map<String,Integer> opprivs = userRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class UserResource {
         if(!userRuntime.test(user_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		UserDTO dto = userMapping.toDto(domain);
+        Map<String,Integer> opprivs = userRuntime.getOPPrivs(user_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -142,6 +146,8 @@ public class UserResource {
         domain.setId(user_id);
         domain = userService.getByCommiter(domain);
         userdto = userMapping.toDto(domain);
+        Map<String,Integer> opprivs = userRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(userdto);
     }
 
@@ -150,7 +156,10 @@ public class UserResource {
     public ResponseEntity<UserDTO> save(@RequestBody UserDTO userdto) {
         User domain = userMapping.toDomain(userdto);
         userService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(userMapping.toDto(domain));
+        UserDTO dto = userMapping.toDto(domain);
+        Map<String,Integer> opprivs = userRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存用户", tags = {"用户" },  notes = "批量保存用户")
@@ -167,6 +176,8 @@ public class UserResource {
         domain.setId(user_id);
         domain = userService.syncAccount(domain);
         userdto = userMapping.toDto(domain);
+        Map<String,Integer> opprivs = userRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(userdto);
     }
     @ApiOperation(value = "批量处理[同步账号]", tags = {"用户" },  notes = "批量处理[同步账号]")

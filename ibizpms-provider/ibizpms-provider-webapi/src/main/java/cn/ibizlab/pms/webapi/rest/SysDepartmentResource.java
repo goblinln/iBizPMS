@@ -124,7 +124,8 @@ public class SysDepartmentResource {
     public ResponseEntity<SysDepartmentDTO> save(@RequestBody SysDepartmentDTO sysdepartmentdto) {
         SysDepartment domain = sysdepartmentMapping.toDomain(sysdepartmentdto);
         sysdepartmentService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(sysdepartmentMapping.toDto(domain));
+        SysDepartmentDTO dto = sysdepartmentMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存部门", tags = {"部门" },  notes = "批量保存部门")

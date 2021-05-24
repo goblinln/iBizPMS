@@ -62,6 +62,8 @@ public class CompanyStatsResource {
         if(!companystatsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         CompanyStatsDTO dto = companystatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = companystatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class CompanyStatsResource {
         if(!companystatsRuntime.test(companystats_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		CompanyStatsDTO dto = companystatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = companystatsRuntime.getOPPrivs(companystats_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class CompanyStatsResource {
     public ResponseEntity<CompanyStatsDTO> save(@RequestBody CompanyStatsDTO companystatsdto) {
         CompanyStats domain = companystatsMapping.toDomain(companystatsdto);
         companystatsService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(companystatsMapping.toDto(domain));
+        CompanyStatsDTO dto = companystatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = companystatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存公司动态汇总", tags = {"公司动态汇总" },  notes = "批量保存公司动态汇总")

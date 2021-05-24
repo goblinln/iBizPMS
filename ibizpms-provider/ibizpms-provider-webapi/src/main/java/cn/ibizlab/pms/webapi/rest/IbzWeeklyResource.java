@@ -59,6 +59,8 @@ public class IbzWeeklyResource {
         IbzWeekly domain = ibzweeklyMapping.toDomain(ibzweeklydto);
 		ibzweeklyService.create(domain);
         IbzWeeklyDTO dto = ibzweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -78,6 +80,8 @@ public class IbzWeeklyResource {
         domain.setIbzweeklyid(ibzweekly_id);
 		ibzweeklyService.update(domain );
 		IbzWeeklyDTO dto = ibzweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(ibzweekly_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -131,6 +135,8 @@ public class IbzWeeklyResource {
         domain.setIbzweeklyid(ibzweekly_id);
         domain = ibzweeklyService.createEveryWeekReport(domain);
         ibzweeklydto = ibzweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
     @ApiOperation(value = "批量处理[定时生成每周周报]", tags = {"周报" },  notes = "批量处理[定时生成每周周报]")
@@ -148,6 +154,8 @@ public class IbzWeeklyResource {
         domain.setIbzweeklyid(ibzweekly_id);
         domain = ibzweeklyService.createGetLastWeekPlanAndWork(domain);
         ibzweeklydto = ibzweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
     @ApiOperation(value = "批量处理[获取上周周报的下周计划]", tags = {"周报" },  notes = "批量处理[获取上周周报的下周计划]")
@@ -165,6 +173,8 @@ public class IbzWeeklyResource {
         domain.setIbzweeklyid(ibzweekly_id);
         domain = ibzweeklyService.editGetLastWeekTaskAndComTask(domain);
         ibzweeklydto = ibzweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
     @ApiOperation(value = "批量处理[编辑获取上周计划完成任务和本周已完成任务]", tags = {"周报" },  notes = "批量处理[编辑获取上周计划完成任务和本周已完成任务]")
@@ -182,6 +192,8 @@ public class IbzWeeklyResource {
         domain.setIbzweeklyid(ibzweekly_id);
         domain = ibzweeklyService.haveRead(domain);
         ibzweeklydto = ibzweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
     @ApiOperation(value = "批量处理[已读]", tags = {"周报" },  notes = "批量处理[已读]")
@@ -199,6 +211,8 @@ public class IbzWeeklyResource {
         domain.setIbzweeklyid(ibzweekly_id);
         domain = ibzweeklyService.jugThisWeekCreateWeekly(domain);
         ibzweeklydto = ibzweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
     @ApiOperation(value = "批量处理[判断本周是否创建过周报]", tags = {"周报" },  notes = "批量处理[判断本周是否创建过周报]")
@@ -216,6 +230,8 @@ public class IbzWeeklyResource {
         domain.setIbzweeklyid(ibzweekly_id);
         domain = ibzweeklyService.pushUserWeekly(domain);
         ibzweeklydto = ibzweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
     @ApiOperation(value = "批量处理[定时推送待阅提醒用户周报提交]", tags = {"周报" },  notes = "批量处理[定时推送待阅提醒用户周报提交]")
@@ -231,7 +247,10 @@ public class IbzWeeklyResource {
     public ResponseEntity<IbzWeeklyDTO> save(@RequestBody IbzWeeklyDTO ibzweeklydto) {
         IbzWeekly domain = ibzweeklyMapping.toDomain(ibzweeklydto);
         ibzweeklyService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzweeklyMapping.toDto(domain));
+        IbzWeeklyDTO dto = ibzweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存周报", tags = {"周报" },  notes = "批量保存周报")
@@ -248,6 +267,8 @@ public class IbzWeeklyResource {
         domain.setIbzweeklyid(ibzweekly_id);
         domain = ibzweeklyService.submit(domain);
         ibzweeklydto = ibzweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
     @ApiOperation(value = "批量处理[提交]", tags = {"周报" },  notes = "批量处理[提交]")

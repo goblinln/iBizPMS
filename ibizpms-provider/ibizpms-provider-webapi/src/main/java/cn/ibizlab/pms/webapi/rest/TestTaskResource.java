@@ -62,6 +62,8 @@ public class TestTaskResource {
         if(!testtaskRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         TestTaskDTO dto = testtaskMapping.toDto(domain);
+        Map<String,Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class TestTaskResource {
         if(!testtaskRuntime.test(testtask_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		TestTaskDTO dto = testtaskMapping.toDto(domain);
+        Map<String,Integer> opprivs = testtaskRuntime.getOPPrivs(testtask_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -136,6 +140,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.activate(domain);
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String,Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
     @ApiOperation(value = "批量处理[激活]", tags = {"测试版本" },  notes = "批量处理[激活]")
@@ -153,6 +159,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.block(domain);
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String,Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
     @ApiOperation(value = "批量处理[阻塞]", tags = {"测试版本" },  notes = "批量处理[阻塞]")
@@ -176,6 +184,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.close(domain);
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String,Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
     @ApiOperation(value = "批量处理[关闭]", tags = {"测试版本" },  notes = "批量处理[关闭]")
@@ -193,6 +203,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.linkCase(domain);
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String,Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
     @ApiOperation(value = "批量处理[关联测试用例]", tags = {"测试版本" },  notes = "批量处理[关联测试用例]")
@@ -210,6 +222,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.mobTestTaskCounter(domain);
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String,Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -218,7 +232,10 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> save(@RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         testtaskService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testtaskMapping.toDto(domain));
+        TestTaskDTO dto = testtaskMapping.toDto(domain);
+        Map<String,Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存测试版本", tags = {"测试版本" },  notes = "批量保存测试版本")
@@ -235,6 +252,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.start(domain);
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String,Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
     @ApiOperation(value = "批量处理[开始]", tags = {"测试版本" },  notes = "批量处理[开始]")
@@ -252,6 +271,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.unlinkCase(domain);
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String,Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
     @ApiOperation(value = "批量处理[关联测试用例]", tags = {"测试版本" },  notes = "批量处理[关联测试用例]")

@@ -123,7 +123,8 @@ public class IBIZProKeywordResource {
     public ResponseEntity<IBIZProKeywordDTO> save(@RequestBody IBIZProKeywordDTO ibizprokeyworddto) {
         IBIZProKeyword domain = ibizprokeywordMapping.toDomain(ibizprokeyworddto);
         ibizprokeywordService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibizprokeywordMapping.toDto(domain));
+        IBIZProKeywordDTO dto = ibizprokeywordMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存关键字", tags = {"关键字" },  notes = "批量保存关键字")

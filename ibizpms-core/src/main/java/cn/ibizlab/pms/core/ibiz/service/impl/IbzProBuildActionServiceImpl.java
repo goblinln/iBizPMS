@@ -54,6 +54,9 @@ public class IbzProBuildActionServiceImpl extends ServiceImpl<IbzProBuildActionM
 
     @Autowired
     @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIbzProBuildHistoryService ibzprobuildhistoryService;
+    @Autowired
+    @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IBuildService buildService;
 
     protected int batchSize = 500;
@@ -70,6 +73,9 @@ public class IbzProBuildActionServiceImpl extends ServiceImpl<IbzProBuildActionM
     public boolean create(IbzProBuildAction et) {
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
+        }
+        if(!ibzprobuildactionRuntime.isRtmodel()){
+            ibzprobuildhistoryService.saveByAction(et.getId(), et.getIbzprobuildhistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -91,6 +97,9 @@ public class IbzProBuildActionServiceImpl extends ServiceImpl<IbzProBuildActionM
     public boolean update(IbzProBuildAction et) {
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
+        }
+        if(!ibzprobuildactionRuntime.isRtmodel()){
+            ibzprobuildhistoryService.saveByAction(et.getId(), et.getIbzprobuildhistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -121,6 +130,7 @@ public class IbzProBuildActionServiceImpl extends ServiceImpl<IbzProBuildActionM
     @Transactional
     public boolean remove(Long key) {
         if(!ibzprobuildactionRuntime.isRtmodel()){
+            ibzprobuildhistoryService.removeByAction(key) ;
         }
         boolean result = removeById(key);
         return result ;
@@ -146,6 +156,7 @@ public class IbzProBuildActionServiceImpl extends ServiceImpl<IbzProBuildActionM
         }
         else {
             if(!ibzprobuildactionRuntime.isRtmodel()){
+                et.setIbzprobuildhistory(ibzprobuildhistoryService.selectByAction(key));
             }
         }
         return et;

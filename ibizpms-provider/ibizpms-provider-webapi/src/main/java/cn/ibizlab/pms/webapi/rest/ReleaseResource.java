@@ -62,6 +62,8 @@ public class ReleaseResource {
         if(!releaseRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ReleaseDTO dto = releaseMapping.toDto(domain);
+        Map<String,Integer> opprivs = releaseRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class ReleaseResource {
         if(!releaseRuntime.test(release_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ReleaseDTO dto = releaseMapping.toDto(domain);
+        Map<String,Integer> opprivs = releaseRuntime.getOPPrivs(release_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -136,6 +140,8 @@ public class ReleaseResource {
         domain.setId(release_id);
         domain = releaseService.activate(domain);
         releasedto = releaseMapping.toDto(domain);
+        Map<String,Integer> opprivs = releaseRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
     @ApiOperation(value = "批量处理[状态变更（激活）]", tags = {"发布" },  notes = "批量处理[状态变更（激活）]")
@@ -154,6 +160,8 @@ public class ReleaseResource {
         domain.setId(release_id);
         domain = releaseService.batchUnlinkBug(domain);
         releasedto = releaseMapping.toDto(domain);
+        Map<String,Integer> opprivs = releaseRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
     @ApiOperation(value = "批量处理[批量解除关联Bug]", tags = {"发布" },  notes = "批量处理[批量解除关联Bug]")
@@ -172,6 +180,8 @@ public class ReleaseResource {
         domain.setId(release_id);
         domain = releaseService.changeStatus(domain);
         releasedto = releaseMapping.toDto(domain);
+        Map<String,Integer> opprivs = releaseRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
     @ApiOperation(value = "批量处理[状态变更]", tags = {"发布" },  notes = "批量处理[状态变更]")
@@ -196,6 +206,8 @@ public class ReleaseResource {
         domain.setId(release_id);
         domain = releaseService.linkBug(domain);
         releasedto = releaseMapping.toDto(domain);
+        Map<String,Integer> opprivs = releaseRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
     @ApiOperation(value = "批量处理[关联Bug]", tags = {"发布" },  notes = "批量处理[关联Bug]")
@@ -214,6 +226,8 @@ public class ReleaseResource {
         domain.setId(release_id);
         domain = releaseService.linkBugbyBug(domain);
         releasedto = releaseMapping.toDto(domain);
+        Map<String,Integer> opprivs = releaseRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
     @ApiOperation(value = "批量处理[关联Bug（解决Bug）]", tags = {"发布" },  notes = "批量处理[关联Bug（解决Bug）]")
@@ -232,6 +246,8 @@ public class ReleaseResource {
         domain.setId(release_id);
         domain = releaseService.linkBugbyLeftBug(domain);
         releasedto = releaseMapping.toDto(domain);
+        Map<String,Integer> opprivs = releaseRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
     @ApiOperation(value = "批量处理[关联Bug（遗留Bug）]", tags = {"发布" },  notes = "批量处理[关联Bug（遗留Bug）]")
@@ -250,6 +266,8 @@ public class ReleaseResource {
         domain.setId(release_id);
         domain = releaseService.linkStory(domain);
         releasedto = releaseMapping.toDto(domain);
+        Map<String,Integer> opprivs = releaseRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
     @ApiOperation(value = "批量处理[关联需求]", tags = {"发布" },  notes = "批量处理[关联需求]")
@@ -267,6 +285,8 @@ public class ReleaseResource {
         domain.setId(release_id);
         domain = releaseService.mobReleaseCounter(domain);
         releasedto = releaseMapping.toDto(domain);
+        Map<String,Integer> opprivs = releaseRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 
@@ -277,6 +297,8 @@ public class ReleaseResource {
         domain.setId(release_id);
         domain = releaseService.oneClickRelease(domain);
         releasedto = releaseMapping.toDto(domain);
+        Map<String,Integer> opprivs = releaseRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
     @ApiOperation(value = "批量处理[一键发布]", tags = {"发布" },  notes = "批量处理[一键发布]")
@@ -292,7 +314,10 @@ public class ReleaseResource {
     public ResponseEntity<ReleaseDTO> save(@RequestBody ReleaseDTO releasedto) {
         Release domain = releaseMapping.toDomain(releasedto);
         releaseService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(releaseMapping.toDto(domain));
+        ReleaseDTO dto = releaseMapping.toDto(domain);
+        Map<String,Integer> opprivs = releaseRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存发布", tags = {"发布" },  notes = "批量保存发布")
@@ -310,6 +335,8 @@ public class ReleaseResource {
         domain.setId(release_id);
         domain = releaseService.terminate(domain);
         releasedto = releaseMapping.toDto(domain);
+        Map<String,Integer> opprivs = releaseRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
     @ApiOperation(value = "批量处理[状态变更（停止维护）]", tags = {"发布" },  notes = "批量处理[状态变更（停止维护）]")
@@ -328,6 +355,8 @@ public class ReleaseResource {
         domain.setId(release_id);
         domain = releaseService.unlinkBug(domain);
         releasedto = releaseMapping.toDto(domain);
+        Map<String,Integer> opprivs = releaseRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
     @ApiOperation(value = "批量处理[解除关联Bug]", tags = {"发布" },  notes = "批量处理[解除关联Bug]")

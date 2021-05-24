@@ -62,6 +62,8 @@ public class IbzFavoritesResource {
         if(!ibzfavoritesRuntime.test(domain.getIbzfavoritesid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzFavoritesDTO dto = ibzfavoritesMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzfavoritesRuntime.getOPPrivs(domain.getIbzfavoritesid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class IbzFavoritesResource {
         if(!ibzfavoritesRuntime.test(ibzfavorites_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzFavoritesDTO dto = ibzfavoritesMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzfavoritesRuntime.getOPPrivs(ibzfavorites_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -140,7 +144,10 @@ public class IbzFavoritesResource {
     public ResponseEntity<IbzFavoritesDTO> save(@RequestBody IbzFavoritesDTO ibzfavoritesdto) {
         IbzFavorites domain = ibzfavoritesMapping.toDomain(ibzfavoritesdto);
         ibzfavoritesService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzfavoritesMapping.toDto(domain));
+        IbzFavoritesDTO dto = ibzfavoritesMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzfavoritesRuntime.getOPPrivs(domain.getIbzfavoritesid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存收藏", tags = {"收藏" },  notes = "批量保存收藏")

@@ -62,6 +62,8 @@ public class GroupResource {
         if(!groupRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         GroupDTO dto = groupMapping.toDto(domain);
+        Map<String,Integer> opprivs = groupRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class GroupResource {
         if(!groupRuntime.test(group_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		GroupDTO dto = groupMapping.toDto(domain);
+        Map<String,Integer> opprivs = groupRuntime.getOPPrivs(group_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class GroupResource {
     public ResponseEntity<GroupDTO> save(@RequestBody GroupDTO groupdto) {
         Group domain = groupMapping.toDomain(groupdto);
         groupService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(groupMapping.toDto(domain));
+        GroupDTO dto = groupMapping.toDto(domain);
+        Map<String,Integer> opprivs = groupRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存群组", tags = {"群组" },  notes = "批量保存群组")

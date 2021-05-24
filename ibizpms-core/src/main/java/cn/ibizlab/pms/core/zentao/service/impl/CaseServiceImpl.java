@@ -54,6 +54,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
 
     @Autowired
     @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIBZCaseActionService ibzcaseactionService;
+    @Autowired
+    @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IBugService bugService;
     @Autowired
     @Lazy

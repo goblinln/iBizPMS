@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Data
 @ApiModel("任务日志")
-//@JsonFilter(value = "dtofieldfilter")
+@JsonFilter(value = "dtofieldfilter")
 public class IBZTaskActionDTO extends DTOBase implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -304,6 +304,16 @@ public class IBZTaskActionDTO extends DTOBase implements Serializable {
     @ApiModelProperty("编号")
     private Long objectid;
 
+    /**
+     * 属性 [PROJECT]
+     *
+     */
+    @JSONField(name = "project")
+    @JsonProperty("project")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("项目")
+    private Long project;
+
 
     /**
      * 设置 [EXTRA]
@@ -375,6 +385,14 @@ public class IBZTaskActionDTO extends DTOBase implements Serializable {
     public void setObjectid(Long  objectid){
         this.objectid = objectid ;
         this.modify("objectid",objectid);
+    }
+
+    /**
+     * 设置 [PROJECT]
+     */
+    public void setProject(Long  project){
+        this.project = project ;
+        this.modify("project",project);
     }
 
 

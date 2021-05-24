@@ -62,6 +62,8 @@ public class CaseStepResource {
         if(!casestepRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         CaseStepDTO dto = casestepMapping.toDto(domain);
+        Map<String,Integer> opprivs = casestepRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class CaseStepResource {
         if(!casestepRuntime.test(casestep_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		CaseStepDTO dto = casestepMapping.toDto(domain);
+        Map<String,Integer> opprivs = casestepRuntime.getOPPrivs(casestep_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class CaseStepResource {
     public ResponseEntity<CaseStepDTO> save(@RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
         casestepService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(casestepMapping.toDto(domain));
+        CaseStepDTO dto = casestepMapping.toDto(domain);
+        Map<String,Integer> opprivs = casestepRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存用例步骤", tags = {"用例步骤" },  notes = "批量保存用例步骤")

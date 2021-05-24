@@ -66,4 +66,6 @@ public interface IbzProBuildHistoryMapper extends BaseMapper<IbzProBuildHistory>
     @Delete("${sql}")
     boolean deleteBySQL(@Param("sql") String sql, @Param("et")Map param);
 
+    List<IbzProBuildHistory> selectByAction(@Param("id") Serializable id);
+
 }

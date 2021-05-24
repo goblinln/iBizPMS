@@ -59,6 +59,8 @@ public class ProjectTeamResource {
         domain.setId(projectteam_id);
         domain = projectteamService.getUserRole(domain);
         projectteamdto = projectteamMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectteamRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectteamdto);
     }
     @ApiOperation(value = "批量处理[获取成员角色]", tags = {"项目团队" },  notes = "批量处理[获取成员角色]")
@@ -79,6 +81,8 @@ public class ProjectTeamResource {
         if(!projectteamRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProjectTeamDTO dto = projectteamMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectteamRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -101,6 +105,8 @@ public class ProjectTeamResource {
         if(!projectteamRuntime.test(projectteam_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProjectTeamDTO dto = projectteamMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectteamRuntime.getOPPrivs(projectteam_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -157,7 +163,10 @@ public class ProjectTeamResource {
     public ResponseEntity<ProjectTeamDTO> save(@RequestBody ProjectTeamDTO projectteamdto) {
         ProjectTeam domain = projectteamMapping.toDomain(projectteamdto);
         projectteamService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(domain));
+        ProjectTeamDTO dto = projectteamMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectteamRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")

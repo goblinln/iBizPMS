@@ -62,6 +62,8 @@ public class IbzProjectMemberResource {
         if(!ibzprojectmemberRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzProjectMemberDTO dto = ibzprojectmemberMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprojectmemberRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class IbzProjectMemberResource {
         if(!ibzprojectmemberRuntime.test(ibzprojectmember_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzProjectMemberDTO dto = ibzprojectmemberMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprojectmemberRuntime.getOPPrivs(ibzprojectmember_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -138,7 +142,10 @@ public class IbzProjectMemberResource {
     public ResponseEntity<IbzProjectMemberDTO> save(@RequestBody IbzProjectMemberDTO ibzprojectmemberdto) {
         IbzProjectMember domain = ibzprojectmemberMapping.toDomain(ibzprojectmemberdto);
         ibzprojectmemberService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzprojectmemberMapping.toDto(domain));
+        IbzProjectMemberDTO dto = ibzprojectmemberMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprojectmemberRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存项目相关成员", tags = {"项目相关成员" },  notes = "批量保存项目相关成员")

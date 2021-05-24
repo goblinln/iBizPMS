@@ -62,6 +62,8 @@ public class IbzMyTerritoryResource {
         if(!ibzmyterritoryRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzMyTerritoryDTO dto = ibzmyterritoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmyterritoryRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class IbzMyTerritoryResource {
         if(!ibzmyterritoryRuntime.test(ibzmyterritory_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzMyTerritoryDTO dto = ibzmyterritoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmyterritoryRuntime.getOPPrivs(ibzmyterritory_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -166,7 +170,10 @@ public class IbzMyTerritoryResource {
     public ResponseEntity<IbzMyTerritoryDTO> save(@RequestBody IbzMyTerritoryDTO ibzmyterritorydto) {
         IbzMyTerritory domain = ibzmyterritoryMapping.toDomain(ibzmyterritorydto);
         ibzmyterritoryService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzmyterritoryMapping.toDto(domain));
+        IbzMyTerritoryDTO dto = ibzmyterritoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmyterritoryRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存我的地盘", tags = {"我的地盘" },  notes = "批量保存我的地盘")

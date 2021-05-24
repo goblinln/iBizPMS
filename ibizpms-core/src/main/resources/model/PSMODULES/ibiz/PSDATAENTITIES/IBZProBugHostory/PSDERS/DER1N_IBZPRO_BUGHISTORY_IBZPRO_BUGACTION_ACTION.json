@@ -1,0 +1,25 @@
+{
+  "codeName" : "IbzProBugHistory",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProBugHostory/PSDERS/DER1N_IBZPRO_BUGHISTORY_IBZPRO_BUGACTION_ACTION.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBugAction.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 12,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProBugHostory.json"
+  },
+  "name" : "DER1N_IBZPRO_BUGHISTORY_IBZPRO_BUGACTION_ACTION",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "ACTION",
+    "codeName" : "Action"
+  },
+  "pickupDEFName" : "ACTION",
+  "removeActionType" : -1,
+  "removeOrder" : 0,
+  "nestedRS" : true
+}

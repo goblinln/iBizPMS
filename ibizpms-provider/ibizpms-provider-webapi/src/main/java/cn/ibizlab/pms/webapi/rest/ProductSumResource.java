@@ -62,6 +62,8 @@ public class ProductSumResource {
         if(!productsumRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProductSumDTO dto = productsumMapping.toDto(domain);
+        Map<String,Integer> opprivs = productsumRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class ProductSumResource {
         if(!productsumRuntime.test(productsum_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProductSumDTO dto = productsumMapping.toDto(domain);
+        Map<String,Integer> opprivs = productsumRuntime.getOPPrivs(productsum_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class ProductSumResource {
     public ResponseEntity<ProductSumDTO> save(@RequestBody ProductSumDTO productsumdto) {
         ProductSum domain = productsumMapping.toDomain(productsumdto);
         productsumService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productsumMapping.toDto(domain));
+        ProductSumDTO dto = productsumMapping.toDto(domain);
+        Map<String,Integer> opprivs = productsumRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存产品汇总表", tags = {"产品汇总表" },  notes = "批量保存产品汇总表")

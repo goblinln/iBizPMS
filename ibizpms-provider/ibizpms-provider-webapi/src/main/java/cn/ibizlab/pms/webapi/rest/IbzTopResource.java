@@ -62,6 +62,8 @@ public class IbzTopResource {
         if(!ibztopRuntime.test(domain.getIbztopid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzTopDTO dto = ibztopMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibztopRuntime.getOPPrivs(domain.getIbztopid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class IbzTopResource {
         if(!ibztopRuntime.test(ibztop_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzTopDTO dto = ibztopMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibztopRuntime.getOPPrivs(ibztop_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -140,7 +144,10 @@ public class IbzTopResource {
     public ResponseEntity<IbzTopDTO> save(@RequestBody IbzTopDTO ibztopdto) {
         IbzTop domain = ibztopMapping.toDomain(ibztopdto);
         ibztopService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibztopMapping.toDto(domain));
+        IbzTopDTO dto = ibztopMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibztopRuntime.getOPPrivs(domain.getIbztopid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存置顶", tags = {"置顶" },  notes = "批量保存置顶")

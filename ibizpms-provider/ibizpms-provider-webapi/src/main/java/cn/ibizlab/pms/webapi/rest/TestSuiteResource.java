@@ -62,6 +62,8 @@ public class TestSuiteResource {
         if(!testsuiteRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         TestSuiteDTO dto = testsuiteMapping.toDto(domain);
+        Map<String,Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class TestSuiteResource {
         if(!testsuiteRuntime.test(testsuite_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		TestSuiteDTO dto = testsuiteMapping.toDto(domain);
+        Map<String,Integer> opprivs = testsuiteRuntime.getOPPrivs(testsuite_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -142,6 +146,8 @@ public class TestSuiteResource {
         domain.setId(testsuite_id);
         domain = testsuiteService.linkCase(domain);
         testsuitedto = testsuiteMapping.toDto(domain);
+        Map<String,Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
     @ApiOperation(value = "批量处理[关联测试]", tags = {"测试套件" },  notes = "批量处理[关联测试]")
@@ -159,6 +165,8 @@ public class TestSuiteResource {
         domain.setId(testsuite_id);
         domain = testsuiteService.mobTestSuiteCount(domain);
         testsuitedto = testsuiteMapping.toDto(domain);
+        Map<String,Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
 
@@ -167,7 +175,10 @@ public class TestSuiteResource {
     public ResponseEntity<TestSuiteDTO> save(@RequestBody TestSuiteDTO testsuitedto) {
         TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
         testsuiteService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testsuiteMapping.toDto(domain));
+        TestSuiteDTO dto = testsuiteMapping.toDto(domain);
+        Map<String,Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存测试套件", tags = {"测试套件" },  notes = "批量保存测试套件")
@@ -184,6 +195,8 @@ public class TestSuiteResource {
         domain.setId(testsuite_id);
         domain = testsuiteService.unlinkCase(domain);
         testsuitedto = testsuiteMapping.toDto(domain);
+        Map<String,Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
     @ApiOperation(value = "批量处理[未关联测试]", tags = {"测试套件" },  notes = "批量处理[未关联测试]")

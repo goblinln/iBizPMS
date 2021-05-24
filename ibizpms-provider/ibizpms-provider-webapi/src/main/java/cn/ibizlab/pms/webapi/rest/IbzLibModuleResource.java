@@ -62,6 +62,8 @@ public class IbzLibModuleResource {
         if(!ibzlibmoduleRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzLibModuleDTO dto = ibzlibmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class IbzLibModuleResource {
         if(!ibzlibmoduleRuntime.test(ibzlibmodule_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzLibModuleDTO dto = ibzlibmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(ibzlibmodule_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class IbzLibModuleResource {
     public ResponseEntity<IbzLibModuleDTO> save(@RequestBody IbzLibModuleDTO ibzlibmoduledto) {
         IbzLibModule domain = ibzlibmoduleMapping.toDomain(ibzlibmoduledto);
         ibzlibmoduleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleMapping.toDto(domain));
+        IbzLibModuleDTO dto = ibzlibmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存用例库模块", tags = {"用例库模块" },  notes = "批量保存用例库模块")

@@ -62,6 +62,8 @@ public class HistoryResource {
         if(!historyRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         HistoryDTO dto = historyMapping.toDto(domain);
+        Map<String,Integer> opprivs = historyRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class HistoryResource {
         if(!historyRuntime.test(history_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		HistoryDTO dto = historyMapping.toDto(domain);
+        Map<String,Integer> opprivs = historyRuntime.getOPPrivs(history_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class HistoryResource {
     public ResponseEntity<HistoryDTO> save(@RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
         historyService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(historyMapping.toDto(domain));
+        HistoryDTO dto = historyMapping.toDto(domain);
+        Map<String,Integer> opprivs = historyRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存操作历史", tags = {"操作历史" },  notes = "批量保存操作历史")

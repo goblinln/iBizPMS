@@ -58,7 +58,10 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> save(@RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         taskService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(domain));
+        SubTaskDTO dto = subtaskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @PreAuthorize("@TaskRuntime.quickTest('CREATE')")

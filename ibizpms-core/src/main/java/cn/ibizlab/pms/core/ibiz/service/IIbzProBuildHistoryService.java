@@ -44,6 +44,9 @@ public interface IIbzProBuildHistoryService extends IService<IbzProBuildHistory>
     List<IbzProBuildHistory> selectView(IbzProBuildHistorySearchContext context);
 
     Page<IbzProBuildHistory> searchDefault(IbzProBuildHistorySearchContext context);
+    List<IbzProBuildHistory> selectByAction(Long id);
+    void removeByAction(Long id);
+    void saveByAction(Long id, List<IbzProBuildHistory> list) ;
     IbzProBuildHistory dynamicCall(Long key, String action, IbzProBuildHistory et);
     /**
      *自定义查询SQL

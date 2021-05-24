@@ -62,6 +62,8 @@ public class ProductResource {
         if(!productRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProductDTO dto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class ProductResource {
         if(!productRuntime.test(product_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProductDTO dto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(product_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -137,6 +141,8 @@ public class ProductResource {
         domain.setId(product_id);
         domain = productService.cancelProductTop(domain);
         productdto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
 
@@ -154,6 +160,8 @@ public class ProductResource {
         domain.setId(product_id);
         domain = productService.close(domain);
         productdto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
     @PreAuthorize("@ProductRuntime.test('MANAGE')")
@@ -172,6 +180,8 @@ public class ProductResource {
         domain.setId(product_id);
         domain = productService.mobProductCounter(domain);
         productdto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
 
@@ -182,6 +192,8 @@ public class ProductResource {
         domain.setId(product_id);
         domain = productService.mobProductTestCounter(domain);
         productdto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
 
@@ -193,6 +205,8 @@ public class ProductResource {
         domain.setId(product_id);
         domain = productService.productTop(domain);
         productdto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
 
@@ -201,7 +215,10 @@ public class ProductResource {
     public ResponseEntity<ProductDTO> save(@RequestBody ProductDTO productdto) {
         Product domain = productMapping.toDomain(productdto);
         productService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productMapping.toDto(domain));
+        ProductDTO dto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存产品", tags = {"产品" },  notes = "批量保存产品")

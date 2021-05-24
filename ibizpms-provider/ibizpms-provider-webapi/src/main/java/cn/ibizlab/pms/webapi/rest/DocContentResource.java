@@ -62,6 +62,8 @@ public class DocContentResource {
         if(!doccontentRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         DocContentDTO dto = doccontentMapping.toDto(domain);
+        Map<String,Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class DocContentResource {
         if(!doccontentRuntime.test(doccontent_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		DocContentDTO dto = doccontentMapping.toDto(domain);
+        Map<String,Integer> opprivs = doccontentRuntime.getOPPrivs(doccontent_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class DocContentResource {
     public ResponseEntity<DocContentDTO> save(@RequestBody DocContentDTO doccontentdto) {
         DocContent domain = doccontentMapping.toDomain(doccontentdto);
         doccontentService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(doccontentMapping.toDto(domain));
+        DocContentDTO dto = doccontentMapping.toDto(domain);
+        Map<String,Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存文档内容", tags = {"文档内容" },  notes = "批量保存文档内容")

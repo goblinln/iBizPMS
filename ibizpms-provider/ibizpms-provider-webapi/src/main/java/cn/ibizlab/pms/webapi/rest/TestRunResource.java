@@ -62,6 +62,8 @@ public class TestRunResource {
         if(!testrunRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         TestRunDTO dto = testrunMapping.toDto(domain);
+        Map<String,Integer> opprivs = testrunRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class TestRunResource {
         if(!testrunRuntime.test(testrun_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		TestRunDTO dto = testrunMapping.toDto(domain);
+        Map<String,Integer> opprivs = testrunRuntime.getOPPrivs(testrun_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class TestRunResource {
     public ResponseEntity<TestRunDTO> save(@RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
         testrunService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testrunMapping.toDto(domain));
+        TestRunDTO dto = testrunMapping.toDto(domain);
+        Map<String,Integer> opprivs = testrunRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存测试运行", tags = {"测试运行" },  notes = "批量保存测试运行")

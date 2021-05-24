@@ -1,0 +1,10 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "BUILTIN",
+  "codeName" : "Get",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBugAction/PSDEACTIONS/Get.json",
+  "logicName" : "Get",
+  "name" : "Get",
+  "orderValue" : 31,
+  "builtinAction" : true
+}

@@ -62,6 +62,8 @@ public class IBZProStoryModuleResource {
         if(!ibzprostorymoduleRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IBZProStoryModuleDTO dto = ibzprostorymoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class IBZProStoryModuleResource {
         if(!ibzprostorymoduleRuntime.test(ibzprostorymodule_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IBZProStoryModuleDTO dto = ibzprostorymoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs(ibzprostorymodule_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class IBZProStoryModuleResource {
     public ResponseEntity<IBZProStoryModuleDTO> save(@RequestBody IBZProStoryModuleDTO ibzprostorymoduledto) {
         IBZProStoryModule domain = ibzprostorymoduleMapping.toDomain(ibzprostorymoduledto);
         ibzprostorymoduleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzprostorymoduleMapping.toDto(domain));
+        IBZProStoryModuleDTO dto = ibzprostorymoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存需求模块", tags = {"需求模块" },  notes = "批量保存需求模块")
@@ -156,6 +163,8 @@ public class IBZProStoryModuleResource {
         domain.setId(ibzprostorymodule_id);
         domain = ibzprostorymoduleService.syncFromIBIZ(domain);
         ibzprostorymoduledto = ibzprostorymoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzprostorymoduledto);
     }
     @ApiOperation(value = "批量处理[同步Ibz平台模块]", tags = {"需求模块" },  notes = "批量处理[同步Ibz平台模块]")

@@ -62,6 +62,8 @@ public class IBZProStoryResource {
         if(!ibzprostoryRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IBZProStoryDTO dto = ibzprostoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprostoryRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class IBZProStoryResource {
         if(!ibzprostoryRuntime.test(ibzprostory_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IBZProStoryDTO dto = ibzprostoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprostoryRuntime.getOPPrivs(ibzprostory_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class IBZProStoryResource {
     public ResponseEntity<IBZProStoryDTO> save(@RequestBody IBZProStoryDTO ibzprostorydto) {
         IBZProStory domain = ibzprostoryMapping.toDomain(ibzprostorydto);
         ibzprostoryService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzprostoryMapping.toDto(domain));
+        IBZProStoryDTO dto = ibzprostoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprostoryRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存需求", tags = {"需求" },  notes = "批量保存需求")
@@ -156,6 +163,8 @@ public class IBZProStoryResource {
         domain.setId(ibzprostory_id);
         domain = ibzprostoryService.syncFromIBIZ(domain);
         ibzprostorydto = ibzprostoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprostoryRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzprostorydto);
     }
     @ApiOperation(value = "批量处理[同步Ibz平台需求]", tags = {"需求" },  notes = "批量处理[同步Ibz平台需求]")

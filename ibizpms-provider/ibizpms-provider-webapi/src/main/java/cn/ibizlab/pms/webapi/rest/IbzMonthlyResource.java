@@ -59,6 +59,8 @@ public class IbzMonthlyResource {
         IbzMonthly domain = ibzmonthlyMapping.toDomain(ibzmonthlydto);
 		ibzmonthlyService.create(domain);
         IbzMonthlyDTO dto = ibzmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -78,6 +80,8 @@ public class IbzMonthlyResource {
         domain.setIbzmonthlyid(ibzmonthly_id);
 		ibzmonthlyService.update(domain );
 		IbzMonthlyDTO dto = ibzmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(ibzmonthly_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -131,6 +135,8 @@ public class IbzMonthlyResource {
         domain.setIbzmonthlyid(ibzmonthly_id);
         domain = ibzmonthlyService.createGetInfo(domain);
         ibzmonthlydto = ibzmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlydto);
     }
     @ApiOperation(value = "批量处理[新建时获取信息]", tags = {"月报" },  notes = "批量处理[新建时获取信息]")
@@ -148,6 +154,8 @@ public class IbzMonthlyResource {
         domain.setIbzmonthlyid(ibzmonthly_id);
         domain = ibzmonthlyService.createUserMonthly(domain);
         ibzmonthlydto = ibzmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlydto);
     }
     @ApiOperation(value = "批量处理[定时生成用户月报]", tags = {"月报" },  notes = "批量处理[定时生成用户月报]")
@@ -165,6 +173,8 @@ public class IbzMonthlyResource {
         domain.setIbzmonthlyid(ibzmonthly_id);
         domain = ibzmonthlyService.editGetCompleteTask(domain);
         ibzmonthlydto = ibzmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlydto);
     }
     @ApiOperation(value = "批量处理[编辑时获取完成任务]", tags = {"月报" },  notes = "批量处理[编辑时获取完成任务]")
@@ -182,6 +192,8 @@ public class IbzMonthlyResource {
         domain.setIbzmonthlyid(ibzmonthly_id);
         domain = ibzmonthlyService.haveRead(domain);
         ibzmonthlydto = ibzmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlydto);
     }
     @ApiOperation(value = "批量处理[已读]", tags = {"月报" },  notes = "批量处理[已读]")
@@ -199,6 +211,8 @@ public class IbzMonthlyResource {
         domain.setIbzmonthlyid(ibzmonthly_id);
         domain = ibzmonthlyService.pushUserMonthly(domain);
         ibzmonthlydto = ibzmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlydto);
     }
     @ApiOperation(value = "批量处理[定时推送待阅提醒用户月报]", tags = {"月报" },  notes = "批量处理[定时推送待阅提醒用户月报]")
@@ -214,7 +228,10 @@ public class IbzMonthlyResource {
     public ResponseEntity<IbzMonthlyDTO> save(@RequestBody IbzMonthlyDTO ibzmonthlydto) {
         IbzMonthly domain = ibzmonthlyMapping.toDomain(ibzmonthlydto);
         ibzmonthlyService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlyMapping.toDto(domain));
+        IbzMonthlyDTO dto = ibzmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存月报", tags = {"月报" },  notes = "批量保存月报")
@@ -231,6 +248,8 @@ public class IbzMonthlyResource {
         domain.setIbzmonthlyid(ibzmonthly_id);
         domain = ibzmonthlyService.submit(domain);
         ibzmonthlydto = ibzmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlydto);
     }
     @ApiOperation(value = "批量处理[提交]", tags = {"月报" },  notes = "批量处理[提交]")

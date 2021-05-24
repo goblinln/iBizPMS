@@ -62,6 +62,8 @@ public class TaskStatsResource {
         if(!taskstatsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         TaskStatsDTO dto = taskstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class TaskStatsResource {
         if(!taskstatsRuntime.test(taskstats_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		TaskStatsDTO dto = taskstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskstatsRuntime.getOPPrivs(taskstats_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class TaskStatsResource {
     public ResponseEntity<TaskStatsDTO> save(@RequestBody TaskStatsDTO taskstatsdto) {
         TaskStats domain = taskstatsMapping.toDomain(taskstatsdto);
         taskstatsService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(taskstatsMapping.toDto(domain));
+        TaskStatsDTO dto = taskstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存任务统计", tags = {"任务统计" },  notes = "批量保存任务统计")

@@ -74,6 +74,8 @@ public class TaskResource {
         if(!taskRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         TaskDTO dto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -97,6 +99,8 @@ public class TaskResource {
         if(!taskRuntime.test(task_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		TaskDTO dto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(task_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -149,6 +153,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.activate(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[激活]", tags = {"任务" },  notes = "批量处理[激活]")
@@ -167,6 +173,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.assignTo(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[指派/转交]", tags = {"任务" },  notes = "批量处理[指派/转交]")
@@ -185,6 +193,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.cancel(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[取消]", tags = {"任务" },  notes = "批量处理[取消]")
@@ -209,6 +219,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.close(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[关闭]", tags = {"任务" },  notes = "批量处理[关闭]")
@@ -226,6 +238,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.computeBeginAndEnd(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[计算开始时间和完成时间]", tags = {"任务" },  notes = "批量处理[计算开始时间和完成时间]")
@@ -243,6 +257,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.computeHours4Multiple(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[更新父任务时间]", tags = {"任务" },  notes = "批量处理[更新父任务时间]")
@@ -260,6 +276,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.computeWorkingHours(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[更新工作时间]", tags = {"任务" },  notes = "批量处理[更新工作时间]")
@@ -277,6 +295,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.confirmStoryChange(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[需求变更确认]", tags = {"任务" },  notes = "批量处理[需求变更确认]")
@@ -295,6 +315,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.createByCycle(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[创建周期任务]", tags = {"任务" },  notes = "批量处理[创建周期任务]")
@@ -313,6 +335,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.createCycleTasks(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[创建周期任务]", tags = {"任务" },  notes = "批量处理[创建周期任务]")
@@ -330,6 +354,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.delete(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[删除任务]", tags = {"任务" },  notes = "批量处理[删除任务]")
@@ -347,6 +373,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.deleteEstimate(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[删除工时]", tags = {"任务" },  notes = "批量处理[删除工时]")
@@ -364,6 +392,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.editEstimate(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[编辑工时]", tags = {"任务" },  notes = "批量处理[编辑工时]")
@@ -382,6 +412,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.finish(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[完成]", tags = {"任务" },  notes = "批量处理[完成]")
@@ -400,6 +432,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.getNextTeamUser(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[获取下一个团队成员(完成)]", tags = {"任务" },  notes = "批量处理[获取下一个团队成员(完成)]")
@@ -418,6 +452,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.getTeamUserLeftActivity(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[获取团队成员剩余工时（激活）]", tags = {"任务" },  notes = "批量处理[获取团队成员剩余工时（激活）]")
@@ -436,6 +472,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.getTeamUserLeftStart(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[获取团队成员剩余工时（开始或继续）]", tags = {"任务" },  notes = "批量处理[获取团队成员剩余工时（开始或继续）]")
@@ -454,6 +492,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.getUsernames(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
@@ -464,6 +504,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.linkPlan(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[关联计划]", tags = {"任务" },  notes = "批量处理[关联计划]")
@@ -482,6 +524,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.otherUpdate(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[其他更新]", tags = {"任务" },  notes = "批量处理[其他更新]")
@@ -500,6 +544,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.pause(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[暂停]", tags = {"任务" },  notes = "批量处理[暂停]")
@@ -518,6 +564,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.recordEstimate(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[工时录入]", tags = {"任务" },  notes = "批量处理[工时录入]")
@@ -535,6 +583,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.recordTimZeroLeftAfterContinue(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[继续任务时填入预计剩余为0设置为进行中]", tags = {"任务" },  notes = "批量处理[继续任务时填入预计剩余为0设置为进行中]")
@@ -552,6 +602,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.recordTimateZeroLeft(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[预计剩余为0进行中]", tags = {"任务" },  notes = "批量处理[预计剩余为0进行中]")
@@ -569,6 +621,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.recordTimateZeroLeftAfterStart(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[开始任务时填入预计剩余为0设为进行中]", tags = {"任务" },  notes = "批量处理[开始任务时填入预计剩余为0设为进行中]")
@@ -587,6 +641,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.restart(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[继续]", tags = {"任务" },  notes = "批量处理[继续]")
@@ -603,7 +659,10 @@ public class TaskResource {
     public ResponseEntity<TaskDTO> save(@RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
         taskService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(domain));
+        TaskDTO dto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
@@ -621,6 +680,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.sendMessage(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[行为]", tags = {"任务" },  notes = "批量处理[行为]")
@@ -638,6 +699,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.sendMsgPreProcess(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[发送消息前置处理]", tags = {"任务" },  notes = "批量处理[发送消息前置处理]")
@@ -656,6 +719,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.start(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[开始]", tags = {"任务" },  notes = "批量处理[开始]")
@@ -673,6 +738,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.taskFavorites(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
@@ -683,6 +750,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.taskForward(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[检查多人任务操作权限]", tags = {"任务" },  notes = "批量处理[检查多人任务操作权限]")
@@ -700,6 +769,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.taskNFavorites(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
@@ -711,6 +782,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.updateParentStatus(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[更新父任务状态]", tags = {"任务" },  notes = "批量处理[更新父任务状态]")
@@ -729,6 +802,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.updateRelatedPlanStatus(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
     @ApiOperation(value = "批量处理[更新父任务计划状态]", tags = {"任务" },  notes = "批量处理[更新父任务计划状态]")
@@ -747,6 +822,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.updateStoryVersion(domain);
         taskdto = taskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 

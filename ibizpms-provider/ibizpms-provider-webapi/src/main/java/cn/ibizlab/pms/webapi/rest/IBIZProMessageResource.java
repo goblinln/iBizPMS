@@ -157,7 +157,8 @@ public class IBIZProMessageResource {
     public ResponseEntity<IBIZProMessageDTO> save(@RequestBody IBIZProMessageDTO ibizpromessagedto) {
         IBIZProMessage domain = ibizpromessageMapping.toDomain(ibizpromessagedto);
         ibizpromessageService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibizpromessageMapping.toDto(domain));
+        IBIZProMessageDTO dto = ibizpromessageMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存消息", tags = {"消息" },  notes = "批量保存消息")

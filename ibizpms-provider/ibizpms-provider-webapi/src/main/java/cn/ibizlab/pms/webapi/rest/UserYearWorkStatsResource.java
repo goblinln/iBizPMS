@@ -62,6 +62,8 @@ public class UserYearWorkStatsResource {
         if(!useryearworkstatsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         UserYearWorkStatsDTO dto = useryearworkstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class UserYearWorkStatsResource {
         if(!useryearworkstatsRuntime.test(useryearworkstats_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		UserYearWorkStatsDTO dto = useryearworkstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(useryearworkstats_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -142,6 +146,8 @@ public class UserYearWorkStatsResource {
         domain.setId(useryearworkstats_id);
         domain = useryearworkstatsService.getDevInfomation(domain);
         useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
 
@@ -153,6 +159,8 @@ public class UserYearWorkStatsResource {
         domain.setId(useryearworkstats_id);
         domain = useryearworkstatsService.getPoInfomation(domain);
         useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
 
@@ -164,6 +172,8 @@ public class UserYearWorkStatsResource {
         domain.setId(useryearworkstats_id);
         domain = useryearworkstatsService.getQaInfomation(domain);
         useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
 
@@ -175,6 +185,8 @@ public class UserYearWorkStatsResource {
         domain.setId(useryearworkstats_id);
         domain = useryearworkstatsService.getUserYearAction(domain);
         useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
     @PreAuthorize("@UserYearWorkStatsRuntime.test('READ')")
@@ -191,7 +203,10 @@ public class UserYearWorkStatsResource {
     public ResponseEntity<UserYearWorkStatsDTO> save(@RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {
         UserYearWorkStats domain = useryearworkstatsMapping.toDomain(useryearworkstatsdto);
         useryearworkstatsService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsMapping.toDto(domain));
+        UserYearWorkStatsDTO dto = useryearworkstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "批量保存用户年度工作内容统计")
@@ -209,6 +224,8 @@ public class UserYearWorkStatsResource {
         domain.setId(useryearworkstats_id);
         domain = useryearworkstatsService.updateTitleByYear(domain);
         useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
     @PreAuthorize("@UserYearWorkStatsRuntime.test('READ')")

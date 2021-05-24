@@ -62,6 +62,8 @@ public class CompanyResource {
         if(!companyRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         CompanyDTO dto = companyMapping.toDto(domain);
+        Map<String,Integer> opprivs = companyRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class CompanyResource {
         if(!companyRuntime.test(company_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		CompanyDTO dto = companyMapping.toDto(domain);
+        Map<String,Integer> opprivs = companyRuntime.getOPPrivs(company_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class CompanyResource {
     public ResponseEntity<CompanyDTO> save(@RequestBody CompanyDTO companydto) {
         Company domain = companyMapping.toDomain(companydto);
         companyService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(companyMapping.toDto(domain));
+        CompanyDTO dto = companyMapping.toDto(domain);
+        Map<String,Integer> opprivs = companyRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存公司", tags = {"公司" },  notes = "批量保存公司")

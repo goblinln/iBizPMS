@@ -62,6 +62,8 @@ public class CaseStatsResource {
         if(!casestatsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         CaseStatsDTO dto = casestatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = casestatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class CaseStatsResource {
         if(!casestatsRuntime.test(casestats_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		CaseStatsDTO dto = casestatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = casestatsRuntime.getOPPrivs(casestats_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class CaseStatsResource {
     public ResponseEntity<CaseStatsDTO> save(@RequestBody CaseStatsDTO casestatsdto) {
         CaseStats domain = casestatsMapping.toDomain(casestatsdto);
         casestatsService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(casestatsMapping.toDto(domain));
+        CaseStatsDTO dto = casestatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = casestatsRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存测试用例统计", tags = {"测试用例统计" },  notes = "批量保存测试用例统计")

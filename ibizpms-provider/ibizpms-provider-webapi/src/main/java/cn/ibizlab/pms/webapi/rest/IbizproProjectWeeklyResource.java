@@ -59,6 +59,8 @@ public class IbizproProjectWeeklyResource {
         IbizproProjectWeekly domain = ibizproprojectweeklyMapping.toDomain(ibizproprojectweeklydto);
 		ibizproprojectweeklyService.create(domain);
         IbizproProjectWeeklyDTO dto = ibizproprojectweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproprojectweeklyRuntime.getOPPrivs(domain.getProjectweeklyid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -78,6 +80,8 @@ public class IbizproProjectWeeklyResource {
         domain.setProjectweeklyid(ibizproprojectweekly_id);
 		ibizproprojectweeklyService.update(domain );
 		IbizproProjectWeeklyDTO dto = ibizproprojectweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproprojectweeklyRuntime.getOPPrivs(ibizproprojectweekly_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -131,6 +135,8 @@ public class IbizproProjectWeeklyResource {
         domain.setProjectweeklyid(ibizproprojectweekly_id);
         domain = ibizproprojectweeklyService.pushSumProjectWeekly(domain);
         ibizproprojectweeklydto = ibizproprojectweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproprojectweeklyRuntime.getOPPrivs(domain.getProjectweeklyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklydto);
     }
     @ApiOperation(value = "批量处理[定时推送项目周报]", tags = {"项目周报" },  notes = "批量处理[定时推送项目周报]")
@@ -146,7 +152,10 @@ public class IbizproProjectWeeklyResource {
     public ResponseEntity<IbizproProjectWeeklyDTO> save(@RequestBody IbizproProjectWeeklyDTO ibizproprojectweeklydto) {
         IbizproProjectWeekly domain = ibizproprojectweeklyMapping.toDomain(ibizproprojectweeklydto);
         ibizproprojectweeklyService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklyMapping.toDto(domain));
+        IbizproProjectWeeklyDTO dto = ibizproprojectweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproprojectweeklyRuntime.getOPPrivs(domain.getProjectweeklyid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存项目周报", tags = {"项目周报" },  notes = "批量保存项目周报")

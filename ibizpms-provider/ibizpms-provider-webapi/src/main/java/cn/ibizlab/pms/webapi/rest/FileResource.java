@@ -62,6 +62,8 @@ public class FileResource {
         if(!fileRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         FileDTO dto = fileMapping.toDto(domain);
+        Map<String,Integer> opprivs = fileRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class FileResource {
         if(!fileRuntime.test(file_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		FileDTO dto = fileMapping.toDto(domain);
+        Map<String,Integer> opprivs = fileRuntime.getOPPrivs(file_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class FileResource {
     public ResponseEntity<FileDTO> save(@RequestBody FileDTO filedto) {
         File domain = fileMapping.toDomain(filedto);
         fileService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(fileMapping.toDto(domain));
+        FileDTO dto = fileMapping.toDto(domain);
+        Map<String,Integer> opprivs = fileRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存附件", tags = {"附件" },  notes = "批量保存附件")
@@ -157,6 +164,8 @@ public class FileResource {
         domain.setId(file_id);
         domain = fileService.updateObjectID(domain);
         filedto = fileMapping.toDto(domain);
+        Map<String,Integer> opprivs = fileRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(filedto);
     }
     @PreAuthorize("@FileRuntime.test('UPDATE')")
@@ -176,6 +185,8 @@ public class FileResource {
         domain.setId(file_id);
         domain = fileService.updateObjectIDForPmsEe(domain);
         filedto = fileMapping.toDto(domain);
+        Map<String,Integer> opprivs = fileRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(filedto);
     }
     @PreAuthorize("@FileRuntime.test('UPDATE')")

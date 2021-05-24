@@ -62,6 +62,8 @@ public class TodoResource {
         if(!todoRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         TodoDTO dto = todoMapping.toDto(domain);
+        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class TodoResource {
         if(!todoRuntime.test(todo_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		TodoDTO dto = todoMapping.toDto(domain);
+        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(todo_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -136,6 +140,8 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.activate(domain);
         tododto = todoMapping.toDto(domain);
+        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
     @PreAuthorize("@TodoRuntime.test('MANAGE')")
@@ -155,6 +161,8 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.assignTo(domain);
         tododto = todoMapping.toDto(domain);
+        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
     @PreAuthorize("@TodoRuntime.test('MANAGE')")
@@ -180,6 +188,8 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.close(domain);
         tododto = todoMapping.toDto(domain);
+        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
     @PreAuthorize("@TodoRuntime.test('MANAGE')")
@@ -199,6 +209,8 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.createCycle(domain);
         tododto = todoMapping.toDto(domain);
+        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
     @PreAuthorize("@TodoRuntime.test('READ')")
@@ -218,6 +230,8 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.finish(domain);
         tododto = todoMapping.toDto(domain);
+        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
     @PreAuthorize("@TodoRuntime.test('MANAGE')")
@@ -234,7 +248,10 @@ public class TodoResource {
     public ResponseEntity<TodoDTO> save(@RequestBody TodoDTO tododto) {
         Todo domain = todoMapping.toDomain(tododto);
         todoService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(todoMapping.toDto(domain));
+        TodoDTO dto = todoMapping.toDto(domain);
+        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存待办", tags = {"待办" },  notes = "批量保存待办")
@@ -252,6 +269,8 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.sendMessage(domain);
         tododto = todoMapping.toDto(domain);
+        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
     @PreAuthorize("@TodoRuntime.test('MANAGE')")
@@ -271,6 +290,8 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.sendMsgPreProcess(domain);
         tododto = todoMapping.toDto(domain);
+        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
     @PreAuthorize("@TodoRuntime.test('MANAGE')")

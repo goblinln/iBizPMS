@@ -62,6 +62,8 @@ public class ProjectProductResource {
         if(!projectproductRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProjectProductDTO dto = projectproductMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectproductRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class ProjectProductResource {
         if(!projectproductRuntime.test(projectproduct_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProjectProductDTO dto = projectproductMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectproductRuntime.getOPPrivs(projectproduct_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -140,7 +144,10 @@ public class ProjectProductResource {
     public ResponseEntity<ProjectProductDTO> save(@RequestBody ProjectProductDTO projectproductdto) {
         ProjectProduct domain = projectproductMapping.toDomain(projectproductdto);
         projectproductService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectproductMapping.toDto(domain));
+        ProjectProductDTO dto = projectproductMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectproductRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存项目产品", tags = {"项目产品" },  notes = "批量保存项目产品")

@@ -4,10 +4,10 @@
   "orgDR" : 1,
   "getPSDEUserRoleOPPrivs" : [ {
     "dataAccessAction" : "CREATE",
-    "name" : "CURORG_C_CREATE",
+    "name" : "CURORG_C_Create",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__CREATE"
+      "id" : "CREATE"
     }
   } ],
   "roleTag" : "CURORG_C",

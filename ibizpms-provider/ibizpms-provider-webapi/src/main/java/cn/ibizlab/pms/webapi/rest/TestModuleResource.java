@@ -62,6 +62,8 @@ public class TestModuleResource {
         if(!testmoduleRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         TestModuleDTO dto = testmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = testmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class TestModuleResource {
         if(!testmoduleRuntime.test(testmodule_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		TestModuleDTO dto = testmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = testmoduleRuntime.getOPPrivs(testmodule_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -141,6 +145,8 @@ public class TestModuleResource {
         domain.setId(testmodule_id);
         domain = testmoduleService.fix(domain);
         testmoduledto = testmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = testmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
 
@@ -152,6 +158,8 @@ public class TestModuleResource {
         domain.setId(testmodule_id);
         domain = testmoduleService.removeModule(domain);
         testmoduledto = testmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = testmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
 
@@ -160,7 +168,10 @@ public class TestModuleResource {
     public ResponseEntity<TestModuleDTO> save(@RequestBody TestModuleDTO testmoduledto) {
         TestModule domain = testmoduleMapping.toDomain(testmoduledto);
         testmoduleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testmoduleMapping.toDto(domain));
+        TestModuleDTO dto = testmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = testmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存测试模块", tags = {"测试模块" },  notes = "批量保存测试模块")

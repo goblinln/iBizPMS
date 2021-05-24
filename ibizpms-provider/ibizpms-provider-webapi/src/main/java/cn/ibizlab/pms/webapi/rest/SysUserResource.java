@@ -140,7 +140,8 @@ public class SysUserResource {
     public ResponseEntity<SysUserDTO> save(@RequestBody SysUserDTO sysuserdto) {
         SysUser domain = sysuserMapping.toDomain(sysuserdto);
         sysuserService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(sysuserMapping.toDto(domain));
+        SysUserDTO dto = sysuserMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存系统用户", tags = {"系统用户" },  notes = "批量保存系统用户")

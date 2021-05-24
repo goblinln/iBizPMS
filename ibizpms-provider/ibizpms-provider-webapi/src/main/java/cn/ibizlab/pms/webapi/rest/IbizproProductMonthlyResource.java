@@ -59,6 +59,8 @@ public class IbizproProductMonthlyResource {
         IbizproProductMonthly domain = ibizproproductmonthlyMapping.toDomain(ibizproproductmonthlydto);
 		ibizproproductmonthlyService.create(domain);
         IbizproProductMonthlyDTO dto = ibizproproductmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(domain.getIbizproproductmonthlyid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -78,6 +80,8 @@ public class IbizproProductMonthlyResource {
         domain.setIbizproproductmonthlyid(ibizproproductmonthly_id);
 		ibizproproductmonthlyService.update(domain );
 		IbizproProductMonthlyDTO dto = ibizproproductmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(ibizproproductmonthly_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -131,6 +135,8 @@ public class IbizproProductMonthlyResource {
         domain.setIbizproproductmonthlyid(ibizproproductmonthly_id);
         domain = ibizproproductmonthlyService.manualCreateMonthly(domain);
         ibizproproductmonthlydto = ibizproproductmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(domain.getIbizproproductmonthlyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlydto);
     }
     @ApiOperation(value = "批量处理[手动生成产品月报]", tags = {"产品月报" },  notes = "批量处理[手动生成产品月报]")
@@ -146,7 +152,10 @@ public class IbizproProductMonthlyResource {
     public ResponseEntity<IbizproProductMonthlyDTO> save(@RequestBody IbizproProductMonthlyDTO ibizproproductmonthlydto) {
         IbizproProductMonthly domain = ibizproproductmonthlyMapping.toDomain(ibizproproductmonthlydto);
         ibizproproductmonthlyService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlyMapping.toDto(domain));
+        IbizproProductMonthlyDTO dto = ibizproproductmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(domain.getIbizproproductmonthlyid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存产品月报", tags = {"产品月报" },  notes = "批量保存产品月报")
@@ -163,6 +172,8 @@ public class IbizproProductMonthlyResource {
         domain.setIbizproproductmonthlyid(ibizproproductmonthly_id);
         domain = ibizproproductmonthlyService.statsProductMonthly(domain);
         ibizproproductmonthlydto = ibizproproductmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(domain.getIbizproproductmonthlyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlydto);
     }
     @ApiOperation(value = "批量处理[汇总产品月报]", tags = {"产品月报" },  notes = "批量处理[汇总产品月报]")

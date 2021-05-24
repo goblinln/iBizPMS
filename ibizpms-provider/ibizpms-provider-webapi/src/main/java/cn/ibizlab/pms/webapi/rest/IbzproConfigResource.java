@@ -62,6 +62,8 @@ public class IbzproConfigResource {
         if(!ibzproconfigRuntime.test(domain.getIbzproconfigid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzproConfigDTO dto = ibzproconfigMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproconfigRuntime.getOPPrivs(domain.getIbzproconfigid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class IbzproConfigResource {
         if(!ibzproconfigRuntime.test(ibzproconfig_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzproConfigDTO dto = ibzproconfigMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproconfigRuntime.getOPPrivs(ibzproconfig_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -143,6 +147,8 @@ public class IbzproConfigResource {
         domain.setIbzproconfigid(ibzproconfig_id);
         domain = ibzproconfigService.getSystemConfig(domain);
         ibzproconfigdto = ibzproconfigMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproconfigRuntime.getOPPrivs(domain.getIbzproconfigid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproconfigdto);
     }
     @PreAuthorize("@IbzproConfigRuntime.test('READ')")
@@ -159,7 +165,10 @@ public class IbzproConfigResource {
     public ResponseEntity<IbzproConfigDTO> save(@RequestBody IbzproConfigDTO ibzproconfigdto) {
         IbzproConfig domain = ibzproconfigMapping.toDomain(ibzproconfigdto);
         ibzproconfigService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzproconfigMapping.toDto(domain));
+        IbzproConfigDTO dto = ibzproconfigMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproconfigRuntime.getOPPrivs(domain.getIbzproconfigid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存系统配置表", tags = {"系统配置表" },  notes = "批量保存系统配置表")

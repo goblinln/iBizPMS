@@ -62,6 +62,8 @@ public class ProductModuleResource {
         if(!productmoduleRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProductModuleDTO dto = productmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class ProductModuleResource {
         if(!productmoduleRuntime.test(productmodule_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProductModuleDTO dto = productmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(productmodule_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -141,6 +145,8 @@ public class ProductModuleResource {
         domain.setId(productmodule_id);
         domain = productmoduleService.fix(domain);
         productmoduledto = productmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);
     }
 
@@ -152,6 +158,8 @@ public class ProductModuleResource {
         domain.setId(productmodule_id);
         domain = productmoduleService.removeModule(domain);
         productmoduledto = productmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);
     }
 
@@ -160,7 +168,10 @@ public class ProductModuleResource {
     public ResponseEntity<ProductModuleDTO> save(@RequestBody ProductModuleDTO productmoduledto) {
         ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
         productmoduleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productmoduleMapping.toDto(domain));
+        ProductModuleDTO dto = productmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存需求模块", tags = {"需求模块" },  notes = "批量保存需求模块")
@@ -177,6 +188,8 @@ public class ProductModuleResource {
         domain.setId(productmodule_id);
         domain = productmoduleService.syncFromIBIZ(domain);
         productmoduledto = productmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);
     }
     @ApiOperation(value = "批量处理[同步Ibz平台模块]", tags = {"需求模块" },  notes = "批量处理[同步Ibz平台模块]")

@@ -62,6 +62,8 @@ public class IbizproProjectDailyResource {
         if(!ibizproprojectdailyRuntime.test(domain.getIbizproprojectdailyid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbizproProjectDailyDTO dto = ibizproprojectdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(domain.getIbizproprojectdailyid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class IbizproProjectDailyResource {
         if(!ibizproprojectdailyRuntime.test(ibizproprojectdaily_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbizproProjectDailyDTO dto = ibizproprojectdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(ibizproprojectdaily_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class IbizproProjectDailyResource {
     public ResponseEntity<IbizproProjectDailyDTO> save(@RequestBody IbizproProjectDailyDTO ibizproprojectdailydto) {
         IbizproProjectDaily domain = ibizproprojectdailyMapping.toDomain(ibizproprojectdailydto);
         ibizproprojectdailyService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailyMapping.toDto(domain));
+        IbizproProjectDailyDTO dto = ibizproprojectdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(domain.getIbizproprojectdailyid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存项目日报", tags = {"项目日报" },  notes = "批量保存项目日报")
@@ -156,6 +163,8 @@ public class IbizproProjectDailyResource {
         domain.setIbizproprojectdailyid(ibizproprojectdaily_id);
         domain = ibizproprojectdailyService.sumProjectDaily(domain);
         ibizproprojectdailydto = ibizproprojectdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(domain.getIbizproprojectdailyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailydto);
     }
     @ApiOperation(value = "批量处理[汇总项目日报]", tags = {"项目日报" },  notes = "批量处理[汇总项目日报]")

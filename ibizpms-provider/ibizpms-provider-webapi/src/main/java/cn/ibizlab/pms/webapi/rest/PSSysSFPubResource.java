@@ -124,7 +124,8 @@ public class PSSysSFPubResource {
     public ResponseEntity<PSSysSFPubDTO> save(@RequestBody PSSysSFPubDTO pssyssfpubdto) {
         PSSysSFPub domain = pssyssfpubMapping.toDomain(pssyssfpubdto);
         pssyssfpubService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(pssyssfpubMapping.toDto(domain));
+        PSSysSFPubDTO dto = pssyssfpubMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存后台服务架构", tags = {"后台服务架构" },  notes = "批量保存后台服务架构")

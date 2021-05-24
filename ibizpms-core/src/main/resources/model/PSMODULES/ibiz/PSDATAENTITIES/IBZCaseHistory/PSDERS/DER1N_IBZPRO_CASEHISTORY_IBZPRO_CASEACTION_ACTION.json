@@ -1,0 +1,25 @@
+{
+  "codeName" : "CaseAction",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZCaseHistory/PSDERS/DER1N_IBZPRO_CASEHISTORY_IBZPRO_CASEACTION_ACTION.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZCaseAction.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 12,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZCaseHistory.json"
+  },
+  "name" : "DER1N_IBZPRO_CASEHISTORY_IBZPRO_CASEACTION_ACTION",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "ACTION",
+    "codeName" : "Action"
+  },
+  "pickupDEFName" : "ACTION",
+  "removeActionType" : -1,
+  "removeOrder" : 0,
+  "nestedRS" : true
+}

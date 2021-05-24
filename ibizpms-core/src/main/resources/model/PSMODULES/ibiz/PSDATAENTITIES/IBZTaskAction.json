@@ -1411,13 +1411,68 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "PROJECT",
+      "dBType" : "MYSQL5",
+      "name" : "PROJECT",
+      "queryCodeExp" : "t1.`PROJECT`",
+      "standardColumnName" : "`PROJECT`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Project",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 9,
+    "logicName" : "项目",
+    "name" : "PROJECT",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
+    "logicName" : "添加备注",
+    "mapPSDEName" : "ZT_TASK",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskAction/PSDERS/DER1N_IBZPRO_TASKACTION_ZT_TASK_OBJECTID.json"
+    },
+    "name" : "CREATE",
+    "id" : "IbzProTask__CREATE"
+  }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "管理",
+    "mapPSDEName" : "ZT_TASK",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskAction/PSDERS/DER1N_IBZPRO_TASKACTION_ZT_TASK_OBJECTID.json"
+    },
+    "name" : "MANAGE",
+    "id" : "IbzProTask__MANAGE"
   }, {
     "logicName" : "读取",
     "name" : "READ"
@@ -1518,7 +1573,7 @@
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -1532,6 +1587,31 @@
   "enableViewLevel" : 0,
   "extendMode" : 0,
   "logicName" : "任务日志",
+  "getMajorPSDERs" : [ {
+    "codeName" : "TaskAction",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskHistory/PSDERS/DER1N_IBZPRO_TASKHISTORY_IBZPRO_TASKACTION_ACTION.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskAction.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 12,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskHistory.json"
+    },
+    "name" : "DER1N_IBZPRO_TASKHISTORY_IBZPRO_TASKACTION_ACTION",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "ACTION",
+      "codeName" : "Action"
+    },
+    "pickupDEFName" : "ACTION",
+    "removeActionType" : -1,
+    "removeOrder" : 0,
+    "nestedRS" : true
+  } ],
   "getMinorPSDERs" : [ {
     "codeName" : "IbzProTask",
     "dERType" : "DER1N",

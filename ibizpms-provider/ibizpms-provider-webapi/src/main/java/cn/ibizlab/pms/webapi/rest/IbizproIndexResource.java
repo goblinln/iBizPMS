@@ -62,6 +62,8 @@ public class IbizproIndexResource {
         if(!ibizproindexRuntime.test(domain.getIndexid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbizproIndexDTO dto = ibizproindexMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproindexRuntime.getOPPrivs(domain.getIndexid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class IbizproIndexResource {
         if(!ibizproindexRuntime.test(ibizproindex_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbizproIndexDTO dto = ibizproindexMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproindexRuntime.getOPPrivs(ibizproindex_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class IbizproIndexResource {
     public ResponseEntity<IbizproIndexDTO> save(@RequestBody IbizproIndexDTO ibizproindexdto) {
         IbizproIndex domain = ibizproindexMapping.toDomain(ibizproindexdto);
         ibizproindexService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibizproindexMapping.toDto(domain));
+        IbizproIndexDTO dto = ibizproindexMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproindexRuntime.getOPPrivs(domain.getIndexid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存索引检索", tags = {"索引检索" },  notes = "批量保存索引检索")

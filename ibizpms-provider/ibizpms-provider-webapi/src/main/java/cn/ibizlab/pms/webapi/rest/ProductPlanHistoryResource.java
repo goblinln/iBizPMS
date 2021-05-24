@@ -62,6 +62,8 @@ public class ProductPlanHistoryResource {
         if(!productplanhistoryRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProductPlanHistoryDTO dto = productplanhistoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = productplanhistoryRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class ProductPlanHistoryResource {
         if(!productplanhistoryRuntime.test(productplanhistory_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProductPlanHistoryDTO dto = productplanhistoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = productplanhistoryRuntime.getOPPrivs(productplanhistory_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class ProductPlanHistoryResource {
     public ResponseEntity<ProductPlanHistoryDTO> save(@RequestBody ProductPlanHistoryDTO productplanhistorydto) {
         ProductPlanHistory domain = productplanhistoryMapping.toDomain(productplanhistorydto);
         productplanhistoryService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productplanhistoryMapping.toDto(domain));
+        ProductPlanHistoryDTO dto = productplanhistoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = productplanhistoryRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存产品计划历史", tags = {"产品计划历史" },  notes = "批量保存产品计划历史")

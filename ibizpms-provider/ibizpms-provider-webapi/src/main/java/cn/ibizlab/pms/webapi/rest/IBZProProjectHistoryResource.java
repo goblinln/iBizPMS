@@ -62,6 +62,8 @@ public class IBZProProjectHistoryResource {
         if(!ibzproprojecthistoryRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IBZProProjectHistoryDTO dto = ibzproprojecthistoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproprojecthistoryRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class IBZProProjectHistoryResource {
         if(!ibzproprojecthistoryRuntime.test(ibzproprojecthistory_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IBZProProjectHistoryDTO dto = ibzproprojecthistoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproprojecthistoryRuntime.getOPPrivs(ibzproprojecthistory_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class IBZProProjectHistoryResource {
     public ResponseEntity<IBZProProjectHistoryDTO> save(@RequestBody IBZProProjectHistoryDTO ibzproprojecthistorydto) {
         IBZProProjectHistory domain = ibzproprojecthistoryMapping.toDomain(ibzproprojecthistorydto);
         ibzproprojecthistoryService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzproprojecthistoryMapping.toDto(domain));
+        IBZProProjectHistoryDTO dto = ibzproprojecthistoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproprojecthistoryRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存项目操作历史", tags = {"项目操作历史" },  notes = "批量保存项目操作历史")

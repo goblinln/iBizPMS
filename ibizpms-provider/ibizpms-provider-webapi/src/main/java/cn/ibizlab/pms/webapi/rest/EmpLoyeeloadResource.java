@@ -62,6 +62,8 @@ public class EmpLoyeeloadResource {
         if(!employeeloadRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         EmpLoyeeloadDTO dto = employeeloadMapping.toDto(domain);
+        Map<String,Integer> opprivs = employeeloadRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class EmpLoyeeloadResource {
         if(!employeeloadRuntime.test(employeeload_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		EmpLoyeeloadDTO dto = employeeloadMapping.toDto(domain);
+        Map<String,Integer> opprivs = employeeloadRuntime.getOPPrivs(employeeload_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class EmpLoyeeloadResource {
     public ResponseEntity<EmpLoyeeloadDTO> save(@RequestBody EmpLoyeeloadDTO employeeloaddto) {
         EmpLoyeeload domain = employeeloadMapping.toDomain(employeeloaddto);
         employeeloadService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(employeeloadMapping.toDto(domain));
+        EmpLoyeeloadDTO dto = employeeloadMapping.toDto(domain);
+        Map<String,Integer> opprivs = employeeloadRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存员工负载表", tags = {"员工负载表" },  notes = "批量保存员工负载表")

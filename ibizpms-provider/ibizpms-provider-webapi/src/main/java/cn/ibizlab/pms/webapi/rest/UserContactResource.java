@@ -59,6 +59,8 @@ public class UserContactResource {
         UserContact domain = usercontactMapping.toDomain(usercontactdto);
 		usercontactService.create(domain);
         UserContactDTO dto = usercontactMapping.toDto(domain);
+        Map<String,Integer> opprivs = usercontactRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -77,6 +79,8 @@ public class UserContactResource {
         domain.setId(usercontact_id);
 		usercontactService.update(domain );
 		UserContactDTO dto = usercontactMapping.toDto(domain);
+        Map<String,Integer> opprivs = usercontactRuntime.getOPPrivs(usercontact_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -128,7 +132,10 @@ public class UserContactResource {
     public ResponseEntity<UserContactDTO> save(@RequestBody UserContactDTO usercontactdto) {
         UserContact domain = usercontactMapping.toDomain(usercontactdto);
         usercontactService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(usercontactMapping.toDto(domain));
+        UserContactDTO dto = usercontactMapping.toDto(domain);
+        Map<String,Integer> opprivs = usercontactRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存用户联系方式", tags = {"用户联系方式" },  notes = "批量保存用户联系方式")

@@ -62,6 +62,8 @@ public class ModuleResource {
         if(!moduleRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ModuleDTO dto = moduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = moduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class ModuleResource {
         if(!moduleRuntime.test(module_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ModuleDTO dto = moduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = moduleRuntime.getOPPrivs(module_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -141,6 +145,8 @@ public class ModuleResource {
         domain.setId(module_id);
         domain = moduleService.fix(domain);
         moduledto = moduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = moduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(moduledto);
     }
     @ApiOperation(value = "批量处理[重建模块路径]", tags = {"模块" },  notes = "批量处理[重建模块路径]")
@@ -156,7 +162,10 @@ public class ModuleResource {
     public ResponseEntity<ModuleDTO> save(@RequestBody ModuleDTO moduledto) {
         Module domain = moduleMapping.toDomain(moduledto);
         moduleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(moduleMapping.toDto(domain));
+        ModuleDTO dto = moduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = moduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存模块", tags = {"模块" },  notes = "批量保存模块")

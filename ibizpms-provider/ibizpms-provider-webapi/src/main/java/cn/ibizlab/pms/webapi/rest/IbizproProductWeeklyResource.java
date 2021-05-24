@@ -59,6 +59,8 @@ public class IbizproProductWeeklyResource {
         IbizproProductWeekly domain = ibizproproductweeklyMapping.toDomain(ibizproproductweeklydto);
 		ibizproproductweeklyService.create(domain);
         IbizproProductWeeklyDTO dto = ibizproproductweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(domain.getIbizproProductweeklyid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -78,6 +80,8 @@ public class IbizproProductWeeklyResource {
         domain.setIbizproProductweeklyid(ibizproproductweekly_id);
 		ibizproproductweeklyService.update(domain );
 		IbizproProductWeeklyDTO dto = ibizproproductweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(ibizproproductweekly_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -129,7 +133,10 @@ public class IbizproProductWeeklyResource {
     public ResponseEntity<IbizproProductWeeklyDTO> save(@RequestBody IbizproProductWeeklyDTO ibizproproductweeklydto) {
         IbizproProductWeekly domain = ibizproproductweeklyMapping.toDomain(ibizproproductweeklydto);
         ibizproproductweeklyService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklyMapping.toDto(domain));
+        IbizproProductWeeklyDTO dto = ibizproproductweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(domain.getIbizproProductweeklyid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存产品周报", tags = {"产品周报" },  notes = "批量保存产品周报")
@@ -146,6 +153,8 @@ public class IbizproProductWeeklyResource {
         domain.setIbizproProductweeklyid(ibizproproductweekly_id);
         domain = ibizproproductweeklyService.sumProductWeekly(domain);
         ibizproproductweeklydto = ibizproproductweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(domain.getIbizproProductweeklyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklydto);
     }
     @ApiOperation(value = "批量处理[统计产品周报]", tags = {"产品周报" },  notes = "批量处理[统计产品周报]")

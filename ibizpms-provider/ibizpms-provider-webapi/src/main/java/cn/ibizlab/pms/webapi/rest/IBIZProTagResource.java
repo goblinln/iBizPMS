@@ -123,7 +123,8 @@ public class IBIZProTagResource {
     public ResponseEntity<IBIZProTagDTO> save(@RequestBody IBIZProTagDTO ibizprotagdto) {
         IBIZProTag domain = ibizprotagMapping.toDomain(ibizprotagdto);
         ibizprotagService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibizprotagMapping.toDto(domain));
+        IBIZProTagDTO dto = ibizprotagMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存标签", tags = {"标签" },  notes = "批量保存标签")

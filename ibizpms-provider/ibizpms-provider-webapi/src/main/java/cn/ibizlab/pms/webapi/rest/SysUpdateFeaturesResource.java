@@ -62,6 +62,8 @@ public class SysUpdateFeaturesResource {
         if(!sysupdatefeaturesRuntime.test(domain.getSysupdatefeaturesid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         SysUpdateFeaturesDTO dto = sysupdatefeaturesMapping.toDto(domain);
+        Map<String,Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs(domain.getSysupdatefeaturesid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class SysUpdateFeaturesResource {
         if(!sysupdatefeaturesRuntime.test(sysupdatefeatures_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		SysUpdateFeaturesDTO dto = sysupdatefeaturesMapping.toDto(domain);
+        Map<String,Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs(sysupdatefeatures_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -140,7 +144,10 @@ public class SysUpdateFeaturesResource {
     public ResponseEntity<SysUpdateFeaturesDTO> save(@RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {
         SysUpdateFeatures domain = sysupdatefeaturesMapping.toDomain(sysupdatefeaturesdto);
         sysupdatefeaturesService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesMapping.toDto(domain));
+        SysUpdateFeaturesDTO dto = sysupdatefeaturesMapping.toDto(domain);
+        Map<String,Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs(domain.getSysupdatefeaturesid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存系统更新功能", tags = {"系统更新功能" },  notes = "批量保存系统更新功能")

@@ -62,6 +62,8 @@ public class SysUpdateLogResource {
         if(!sysupdatelogRuntime.test(domain.getSysupdatelogid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         SysUpdateLogDTO dto = sysupdatelogMapping.toDto(domain);
+        Map<String,Integer> opprivs = sysupdatelogRuntime.getOPPrivs(domain.getSysupdatelogid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class SysUpdateLogResource {
         if(!sysupdatelogRuntime.test(sysupdatelog_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		SysUpdateLogDTO dto = sysupdatelogMapping.toDto(domain);
+        Map<String,Integer> opprivs = sysupdatelogRuntime.getOPPrivs(sysupdatelog_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -143,6 +147,8 @@ public class SysUpdateLogResource {
         domain.setSysupdatelogid(sysupdatelog_id);
         domain = sysupdatelogService.getLastUpdateInfo(domain);
         sysupdatelogdto = sysupdatelogMapping.toDto(domain);
+        Map<String,Integer> opprivs = sysupdatelogRuntime.getOPPrivs(domain.getSysupdatelogid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogdto);
     }
     @PreAuthorize("@SysUpdateLogRuntime.test('READ')")
@@ -159,7 +165,10 @@ public class SysUpdateLogResource {
     public ResponseEntity<SysUpdateLogDTO> save(@RequestBody SysUpdateLogDTO sysupdatelogdto) {
         SysUpdateLog domain = sysupdatelogMapping.toDomain(sysupdatelogdto);
         sysupdatelogService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogMapping.toDto(domain));
+        SysUpdateLogDTO dto = sysupdatelogMapping.toDto(domain);
+        Map<String,Integer> opprivs = sysupdatelogRuntime.getOPPrivs(domain.getSysupdatelogid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存更新日志", tags = {"更新日志" },  notes = "批量保存更新日志")

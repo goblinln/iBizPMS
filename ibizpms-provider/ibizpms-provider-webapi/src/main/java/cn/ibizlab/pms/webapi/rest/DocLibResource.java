@@ -62,6 +62,8 @@ public class DocLibResource {
         if(!doclibRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         DocLibDTO dto = doclibMapping.toDto(domain);
+        Map<String,Integer> opprivs = doclibRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class DocLibResource {
         if(!doclibRuntime.test(doclib_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		DocLibDTO dto = doclibMapping.toDto(domain);
+        Map<String,Integer> opprivs = doclibRuntime.getOPPrivs(doclib_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -141,6 +145,8 @@ public class DocLibResource {
         domain.setId(doclib_id);
         domain = doclibService.collect(domain);
         doclibdto = doclibMapping.toDto(domain);
+        Map<String,Integer> opprivs = doclibRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
     @ApiOperation(value = "批量处理[收藏]", tags = {"文档库" },  notes = "批量处理[收藏]")
@@ -156,7 +162,10 @@ public class DocLibResource {
     public ResponseEntity<DocLibDTO> save(@RequestBody DocLibDTO doclibdto) {
         DocLib domain = doclibMapping.toDomain(doclibdto);
         doclibService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(doclibMapping.toDto(domain));
+        DocLibDTO dto = doclibMapping.toDto(domain);
+        Map<String,Integer> opprivs = doclibRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存文档库", tags = {"文档库" },  notes = "批量保存文档库")
@@ -173,6 +182,8 @@ public class DocLibResource {
         domain.setId(doclib_id);
         domain = doclibService.unCollect(domain);
         doclibdto = doclibMapping.toDto(domain);
+        Map<String,Integer> opprivs = doclibRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
     @ApiOperation(value = "批量处理[取消收藏]", tags = {"文档库" },  notes = "批量处理[取消收藏]")

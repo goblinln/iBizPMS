@@ -62,6 +62,8 @@ public class IbzAgentResource {
         if(!ibzagentRuntime.test(domain.getIbzagentid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzAgentDTO dto = ibzagentMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzagentRuntime.getOPPrivs(domain.getIbzagentid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -85,6 +87,8 @@ public class IbzAgentResource {
         if(!ibzagentRuntime.test(ibzagent_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzAgentDTO dto = ibzagentMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzagentRuntime.getOPPrivs(ibzagent_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -140,7 +144,10 @@ public class IbzAgentResource {
     public ResponseEntity<IbzAgentDTO> save(@RequestBody IbzAgentDTO ibzagentdto) {
         IbzAgent domain = ibzagentMapping.toDomain(ibzagentdto);
         ibzagentService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzagentMapping.toDto(domain));
+        IbzAgentDTO dto = ibzagentMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzagentRuntime.getOPPrivs(domain.getIbzagentid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存代理", tags = {"代理" },  notes = "批量保存代理")

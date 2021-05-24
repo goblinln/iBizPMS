@@ -176,6 +176,15 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZCaseAction.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZCaseHistory.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProBugHostory.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductAction.json"
   }, {
     "modelref" : true,
@@ -197,6 +206,9 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProStoryHistory.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProTestTaskHistory.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction.json"
   }, {
     "modelref" : true,
@@ -204,6 +216,12 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskHistory.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestSuitHistory.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestSuiteAction.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBzDoc.json"
@@ -236,10 +254,19 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBugAction.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildAction.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildHistory.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProReportlyAction.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"

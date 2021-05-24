@@ -62,6 +62,8 @@ public class IBZTaskActionResource {
         if(!ibztaskactionRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IBZTaskActionDTO dto = ibztaskactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibztaskactionRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class IBZTaskActionResource {
         if(!ibztaskactionRuntime.test(ibztaskaction_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IBZTaskActionDTO dto = ibztaskactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibztaskactionRuntime.getOPPrivs(ibztaskaction_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class IBZTaskActionResource {
     public ResponseEntity<IBZTaskActionDTO> save(@RequestBody IBZTaskActionDTO ibztaskactiondto) {
         IBZTaskAction domain = ibztaskactionMapping.toDomain(ibztaskactiondto);
         ibztaskactionService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibztaskactionMapping.toDto(domain));
+        IBZTaskActionDTO dto = ibztaskactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibztaskactionRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存任务日志", tags = {"任务日志" },  notes = "批量保存任务日志")
@@ -153,7 +160,6 @@ public class IBZTaskActionResource {
 	@ApiOperation(value = "获取数据集", tags = {"任务日志" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibztaskactions/fetchdefault")
 	public ResponseEntity<List<IBZTaskActionDTO>> fetchdefault(@RequestBody IBZTaskActionSearchContext context) {
-        ibztaskactionRuntime.addAuthorityConditions(context,"READ");
         Page<IBZTaskAction> domains = ibztaskactionService.searchDefault(context) ;
         List<IBZTaskActionDTO> list = ibztaskactionMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -167,7 +173,6 @@ public class IBZTaskActionResource {
 	@ApiOperation(value = "查询数据集", tags = {"任务日志" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibztaskactions/searchdefault")
 	public ResponseEntity<Page<IBZTaskActionDTO>> searchDefault(@RequestBody IBZTaskActionSearchContext context) {
-        ibztaskactionRuntime.addAuthorityConditions(context,"READ");
         Page<IBZTaskAction> domains = ibztaskactionService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibztaskactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

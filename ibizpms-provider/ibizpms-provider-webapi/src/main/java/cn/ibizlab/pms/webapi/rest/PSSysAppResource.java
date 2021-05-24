@@ -124,7 +124,8 @@ public class PSSysAppResource {
     public ResponseEntity<PSSysAppDTO> save(@RequestBody PSSysAppDTO pssysappdto) {
         PSSysApp domain = pssysappMapping.toDomain(pssysappdto);
         pssysappService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(pssysappMapping.toDto(domain));
+        PSSysAppDTO dto = pssysappMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存系统应用", tags = {"系统应用" },  notes = "批量保存系统应用")

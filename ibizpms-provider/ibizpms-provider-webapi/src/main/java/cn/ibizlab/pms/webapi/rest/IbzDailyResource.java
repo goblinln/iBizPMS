@@ -59,6 +59,8 @@ public class IbzDailyResource {
         IbzDaily domain = ibzdailyMapping.toDomain(ibzdailydto);
 		ibzdailyService.create(domain);
         IbzDailyDTO dto = ibzdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -78,6 +80,8 @@ public class IbzDailyResource {
         domain.setIbzdailyid(ibzdaily_id);
 		ibzdailyService.update(domain );
 		IbzDailyDTO dto = ibzdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(ibzdaily_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -131,6 +135,8 @@ public class IbzDailyResource {
         domain.setIbzdailyid(ibzdaily_id);
         domain = ibzdailyService.createUserDaily(domain);
         ibzdailydto = ibzdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailydto);
     }
     @ApiOperation(value = "批量处理[定时生成用户日报]", tags = {"日报" },  notes = "批量处理[定时生成用户日报]")
@@ -148,6 +154,8 @@ public class IbzDailyResource {
         domain.setIbzdailyid(ibzdaily_id);
         domain = ibzdailyService.getYeaterdayDailyPlansTaskEdit(domain);
         ibzdailydto = ibzdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailydto);
     }
     @ApiOperation(value = "批量处理[获取前一天日报计划参与任务（编辑）]", tags = {"日报" },  notes = "批量处理[获取前一天日报计划参与任务（编辑）]")
@@ -165,6 +173,8 @@ public class IbzDailyResource {
         domain.setIbzdailyid(ibzdaily_id);
         domain = ibzdailyService.getYesterdayDailyPlansTask(domain);
         ibzdailydto = ibzdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailydto);
     }
     @ApiOperation(value = "批量处理[获取前一天日报计划参与任务（新建）]", tags = {"日报" },  notes = "批量处理[获取前一天日报计划参与任务（新建）]")
@@ -182,6 +192,8 @@ public class IbzDailyResource {
         domain.setIbzdailyid(ibzdaily_id);
         domain = ibzdailyService.haveRead(domain);
         ibzdailydto = ibzdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailydto);
     }
     @ApiOperation(value = "批量处理[已读]", tags = {"日报" },  notes = "批量处理[已读]")
@@ -199,6 +211,8 @@ public class IbzDailyResource {
         domain.setIbzdailyid(ibzdaily_id);
         domain = ibzdailyService.linkCompleteTask(domain);
         ibzdailydto = ibzdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailydto);
     }
     @ApiOperation(value = "批量处理[关联完成任务]", tags = {"日报" },  notes = "批量处理[关联完成任务]")
@@ -216,6 +230,8 @@ public class IbzDailyResource {
         domain.setIbzdailyid(ibzdaily_id);
         domain = ibzdailyService.pushUserDaily(domain);
         ibzdailydto = ibzdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailydto);
     }
     @ApiOperation(value = "批量处理[定时推送待阅提醒用户日报]", tags = {"日报" },  notes = "批量处理[定时推送待阅提醒用户日报]")
@@ -231,7 +247,10 @@ public class IbzDailyResource {
     public ResponseEntity<IbzDailyDTO> save(@RequestBody IbzDailyDTO ibzdailydto) {
         IbzDaily domain = ibzdailyMapping.toDomain(ibzdailydto);
         ibzdailyService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzdailyMapping.toDto(domain));
+        IbzDailyDTO dto = ibzdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存日报", tags = {"日报" },  notes = "批量保存日报")
@@ -248,6 +267,8 @@ public class IbzDailyResource {
         domain.setIbzdailyid(ibzdaily_id);
         domain = ibzdailyService.submit(domain);
         ibzdailydto = ibzdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailydto);
     }
     @ApiOperation(value = "批量处理[提交]", tags = {"日报" },  notes = "批量处理[提交]")

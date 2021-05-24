@@ -62,6 +62,8 @@ public class DeptResource {
         if(!deptRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         DeptDTO dto = deptMapping.toDto(domain);
+        Map<String,Integer> opprivs = deptRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class DeptResource {
         if(!deptRuntime.test(dept_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		DeptDTO dto = deptMapping.toDto(domain);
+        Map<String,Integer> opprivs = deptRuntime.getOPPrivs(dept_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class DeptResource {
     public ResponseEntity<DeptDTO> save(@RequestBody DeptDTO deptdto) {
         Dept domain = deptMapping.toDomain(deptdto);
         deptService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(deptMapping.toDto(domain));
+        DeptDTO dto = deptMapping.toDto(domain);
+        Map<String,Integer> opprivs = deptRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存部门", tags = {"部门" },  notes = "批量保存部门")

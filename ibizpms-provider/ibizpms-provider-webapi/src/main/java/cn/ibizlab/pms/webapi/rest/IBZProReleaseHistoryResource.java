@@ -62,6 +62,8 @@ public class IBZProReleaseHistoryResource {
         if(!ibzproreleasehistoryRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IBZProReleaseHistoryDTO dto = ibzproreleasehistoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproreleasehistoryRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -84,6 +86,8 @@ public class IBZProReleaseHistoryResource {
         if(!ibzproreleasehistoryRuntime.test(ibzproreleasehistory_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IBZProReleaseHistoryDTO dto = ibzproreleasehistoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproreleasehistoryRuntime.getOPPrivs(ibzproreleasehistory_id);
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,7 +143,10 @@ public class IBZProReleaseHistoryResource {
     public ResponseEntity<IBZProReleaseHistoryDTO> save(@RequestBody IBZProReleaseHistoryDTO ibzproreleasehistorydto) {
         IBZProReleaseHistory domain = ibzproreleasehistoryMapping.toDomain(ibzproreleasehistorydto);
         ibzproreleasehistoryService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzproreleasehistoryMapping.toDto(domain));
+        IBZProReleaseHistoryDTO dto = ibzproreleasehistoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproreleasehistoryRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @ApiOperation(value = "批量保存发布操作历史", tags = {"发布操作历史" },  notes = "批量保存发布操作历史")
