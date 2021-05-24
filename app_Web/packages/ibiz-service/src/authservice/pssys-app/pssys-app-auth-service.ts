@@ -46,7 +46,7 @@ export default class PSSysAppAuthService extends PSSysAppAuthServiceBase {
      */
      public static getInstance(context: any): PSSysAppAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new PSSysAppAuthService();
+            this.basicUIServiceInstance = new PSSysAppAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

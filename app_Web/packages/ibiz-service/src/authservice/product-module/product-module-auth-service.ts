@@ -46,7 +46,7 @@ export default class ProductModuleAuthService extends ProductModuleAuthServiceBa
      */
      public static getInstance(context: any): ProductModuleAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ProductModuleAuthService();
+            this.basicUIServiceInstance = new ProductModuleAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

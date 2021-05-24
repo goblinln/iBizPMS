@@ -46,7 +46,7 @@ export default class UserContactAuthService extends UserContactAuthServiceBase {
      */
      public static getInstance(context: any): UserContactAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new UserContactAuthService();
+            this.basicUIServiceInstance = new UserContactAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

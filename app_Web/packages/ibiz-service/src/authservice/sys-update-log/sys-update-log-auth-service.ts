@@ -46,7 +46,7 @@ export default class SysUpdateLogAuthService extends SysUpdateLogAuthServiceBase
      */
      public static getInstance(context: any): SysUpdateLogAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysUpdateLogAuthService();
+            this.basicUIServiceInstance = new SysUpdateLogAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -46,7 +46,7 @@ export default class IbzFavoritesAuthService extends IbzFavoritesAuthServiceBase
      */
      public static getInstance(context: any): IbzFavoritesAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzFavoritesAuthService();
+            this.basicUIServiceInstance = new IbzFavoritesAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

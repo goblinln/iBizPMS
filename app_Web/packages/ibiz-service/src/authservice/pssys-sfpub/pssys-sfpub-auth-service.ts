@@ -46,7 +46,7 @@ export default class PSSysSFPubAuthService extends PSSysSFPubAuthServiceBase {
      */
      public static getInstance(context: any): PSSysSFPubAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new PSSysSFPubAuthService();
+            this.basicUIServiceInstance = new PSSysSFPubAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -46,7 +46,7 @@ export default class IBZWEEKLYAuthService extends IBZWEEKLYAuthServiceBase {
      */
      public static getInstance(context: any): IBZWEEKLYAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBZWEEKLYAuthService();
+            this.basicUIServiceInstance = new IBZWEEKLYAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

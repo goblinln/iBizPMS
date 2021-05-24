@@ -46,7 +46,7 @@ export default class BurnAuthService extends BurnAuthServiceBase {
      */
      public static getInstance(context: any): BurnAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new BurnAuthService();
+            this.basicUIServiceInstance = new BurnAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

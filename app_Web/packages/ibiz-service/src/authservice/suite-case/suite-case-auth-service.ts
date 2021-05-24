@@ -46,7 +46,7 @@ export default class SuiteCaseAuthService extends SuiteCaseAuthServiceBase {
      */
      public static getInstance(context: any): SuiteCaseAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SuiteCaseAuthService();
+            this.basicUIServiceInstance = new SuiteCaseAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

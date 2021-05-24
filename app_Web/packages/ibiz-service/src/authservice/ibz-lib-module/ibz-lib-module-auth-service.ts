@@ -46,7 +46,7 @@ export default class IbzLibModuleAuthService extends IbzLibModuleAuthServiceBase
      */
      public static getInstance(context: any): IbzLibModuleAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzLibModuleAuthService();
+            this.basicUIServiceInstance = new IbzLibModuleAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

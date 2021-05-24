@@ -46,7 +46,7 @@ export default class SysTeamMemberAuthService extends SysTeamMemberAuthServiceBa
      */
      public static getInstance(context: any): SysTeamMemberAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysTeamMemberAuthService();
+            this.basicUIServiceInstance = new SysTeamMemberAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

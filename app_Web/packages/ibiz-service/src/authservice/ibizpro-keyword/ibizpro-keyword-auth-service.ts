@@ -46,7 +46,7 @@ export default class IBIZProKeywordAuthService extends IBIZProKeywordAuthService
      */
      public static getInstance(context: any): IBIZProKeywordAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBIZProKeywordAuthService();
+            this.basicUIServiceInstance = new IBIZProKeywordAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

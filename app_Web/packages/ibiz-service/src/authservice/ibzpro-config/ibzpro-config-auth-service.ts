@@ -46,7 +46,7 @@ export default class IbzproConfigAuthService extends IbzproConfigAuthServiceBase
      */
      public static getInstance(context: any): IbzproConfigAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzproConfigAuthService();
+            this.basicUIServiceInstance = new IbzproConfigAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

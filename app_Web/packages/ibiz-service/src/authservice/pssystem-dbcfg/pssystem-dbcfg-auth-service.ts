@@ -46,7 +46,7 @@ export default class PSSystemDBCfgAuthService extends PSSystemDBCfgAuthServiceBa
      */
      public static getInstance(context: any): PSSystemDBCfgAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new PSSystemDBCfgAuthService();
+            this.basicUIServiceInstance = new PSSystemDBCfgAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

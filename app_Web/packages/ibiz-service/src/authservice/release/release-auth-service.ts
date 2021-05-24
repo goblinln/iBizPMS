@@ -46,7 +46,7 @@ export default class ReleaseAuthService extends ReleaseAuthServiceBase {
      */
      public static getInstance(context: any): ReleaseAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ReleaseAuthService();
+            this.basicUIServiceInstance = new ReleaseAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

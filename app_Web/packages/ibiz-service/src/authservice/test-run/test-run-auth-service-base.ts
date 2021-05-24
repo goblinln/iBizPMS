@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class TestRunAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof TestRunAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestRun.json";
+
+    /**
      * Creates an instance of  TestRunAuthServiceBase.
      * 
      * @param {*} [opts={}]

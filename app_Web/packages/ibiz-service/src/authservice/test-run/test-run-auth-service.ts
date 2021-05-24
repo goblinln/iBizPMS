@@ -46,7 +46,7 @@ export default class TestRunAuthService extends TestRunAuthServiceBase {
      */
      public static getInstance(context: any): TestRunAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TestRunAuthService();
+            this.basicUIServiceInstance = new TestRunAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

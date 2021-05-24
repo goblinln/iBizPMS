@@ -46,7 +46,7 @@ export default class ProductSumAuthService extends ProductSumAuthServiceBase {
      */
      public static getInstance(context: any): ProductSumAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ProductSumAuthService();
+            this.basicUIServiceInstance = new ProductSumAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -46,7 +46,7 @@ export default class TodoAuthService extends TodoAuthServiceBase {
      */
      public static getInstance(context: any): TodoAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TodoAuthService();
+            this.basicUIServiceInstance = new TodoAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

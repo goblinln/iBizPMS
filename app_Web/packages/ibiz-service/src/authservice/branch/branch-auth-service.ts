@@ -46,7 +46,7 @@ export default class BranchAuthService extends BranchAuthServiceBase {
      */
      public static getInstance(context: any): BranchAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new BranchAuthService();
+            this.basicUIServiceInstance = new BranchAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

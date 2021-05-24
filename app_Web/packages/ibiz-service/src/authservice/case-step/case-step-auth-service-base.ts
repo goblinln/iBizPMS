@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class CaseStepAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof CaseStepAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json";
+
+    /**
      * Creates an instance of  CaseStepAuthServiceBase.
      * 
      * @param {*} [opts={}]

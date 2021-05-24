@@ -46,7 +46,7 @@ export default class DynaDashboardAuthService extends DynaDashboardAuthServiceBa
      */
      public static getInstance(context: any): DynaDashboardAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new DynaDashboardAuthService();
+            this.basicUIServiceInstance = new DynaDashboardAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

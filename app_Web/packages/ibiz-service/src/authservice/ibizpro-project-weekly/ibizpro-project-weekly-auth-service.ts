@@ -46,7 +46,7 @@ export default class IbizproProjectWeeklyAuthService extends IbizproProjectWeekl
      */
      public static getInstance(context: any): IbizproProjectWeeklyAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbizproProjectWeeklyAuthService();
+            this.basicUIServiceInstance = new IbizproProjectWeeklyAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

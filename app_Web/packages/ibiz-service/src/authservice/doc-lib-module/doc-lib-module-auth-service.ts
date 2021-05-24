@@ -46,7 +46,7 @@ export default class DocLibModuleAuthService extends DocLibModuleAuthServiceBase
      */
      public static getInstance(context: any): DocLibModuleAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new DocLibModuleAuthService();
+            this.basicUIServiceInstance = new DocLibModuleAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

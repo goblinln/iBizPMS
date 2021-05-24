@@ -46,7 +46,7 @@ export default class SysOrganizationAuthService extends SysOrganizationAuthServi
      */
      public static getInstance(context: any): SysOrganizationAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysOrganizationAuthService();
+            this.basicUIServiceInstance = new SysOrganizationAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

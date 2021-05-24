@@ -46,7 +46,7 @@ export default class IBZProProductHistoryAuthService extends IBZProProductHistor
      */
      public static getInstance(context: any): IBZProProductHistoryAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBZProProductHistoryAuthService();
+            this.basicUIServiceInstance = new IBZProProductHistoryAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -46,7 +46,7 @@ export default class IbzMonthlyAuthService extends IbzMonthlyAuthServiceBase {
      */
      public static getInstance(context: any): IbzMonthlyAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzMonthlyAuthService();
+            this.basicUIServiceInstance = new IbzMonthlyAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

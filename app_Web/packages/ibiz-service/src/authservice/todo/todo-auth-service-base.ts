@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class TodoAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof TodoAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json";
+
+    /**
      * Creates an instance of  TodoAuthServiceBase.
      * 
      * @param {*} [opts={}]

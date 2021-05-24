@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class UserTplAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof UserTplAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserTpl.json";
+
+    /**
      * Creates an instance of  UserTplAuthServiceBase.
      * 
      * @param {*} [opts={}]

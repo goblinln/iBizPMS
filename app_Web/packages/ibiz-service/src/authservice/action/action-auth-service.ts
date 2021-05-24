@@ -46,7 +46,7 @@ export default class ActionAuthService extends ActionAuthServiceBase {
      */
      public static getInstance(context: any): ActionAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ActionAuthService();
+            this.basicUIServiceInstance = new ActionAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

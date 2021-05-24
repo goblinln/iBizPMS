@@ -46,7 +46,7 @@ export default class FileAuthService extends FileAuthServiceBase {
      */
      public static getInstance(context: any): FileAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new FileAuthService();
+            this.basicUIServiceInstance = new FileAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

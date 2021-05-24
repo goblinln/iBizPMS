@@ -46,7 +46,7 @@ export default class EmpLoyeeloadAuthService extends EmpLoyeeloadAuthServiceBase
      */
      public static getInstance(context: any): EmpLoyeeloadAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new EmpLoyeeloadAuthService();
+            this.basicUIServiceInstance = new EmpLoyeeloadAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

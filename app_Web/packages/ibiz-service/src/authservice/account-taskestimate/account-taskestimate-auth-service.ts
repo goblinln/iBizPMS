@@ -46,7 +46,7 @@ export default class AccountTaskestimateAuthService extends AccountTaskestimateA
      */
      public static getInstance(context: any): AccountTaskestimateAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new AccountTaskestimateAuthService();
+            this.basicUIServiceInstance = new AccountTaskestimateAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

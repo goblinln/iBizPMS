@@ -46,7 +46,7 @@ export default class DocAuthService extends DocAuthServiceBase {
      */
      public static getInstance(context: any): DocAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new DocAuthService();
+            this.basicUIServiceInstance = new DocAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

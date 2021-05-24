@@ -46,7 +46,7 @@ export default class ProjectAuthService extends ProjectAuthServiceBase {
      */
      public static getInstance(context: any): ProjectAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ProjectAuthService();
+            this.basicUIServiceInstance = new ProjectAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

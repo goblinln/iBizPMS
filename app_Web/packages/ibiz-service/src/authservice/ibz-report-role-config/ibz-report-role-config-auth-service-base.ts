@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class IbzReportRoleConfigAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof IbzReportRoleConfigAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportRoleConfig.json";
+
+    /**
      * Creates an instance of  IbzReportRoleConfigAuthServiceBase.
      * 
      * @param {*} [opts={}]

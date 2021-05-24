@@ -46,7 +46,7 @@ export default class GroupAuthService extends GroupAuthServiceBase {
      */
      public static getInstance(context: any): GroupAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new GroupAuthService();
+            this.basicUIServiceInstance = new GroupAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

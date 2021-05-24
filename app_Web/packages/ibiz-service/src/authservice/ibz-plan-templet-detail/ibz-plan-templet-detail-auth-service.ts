@@ -46,7 +46,7 @@ export default class IbzPlanTempletDetailAuthService extends IbzPlanTempletDetai
      */
      public static getInstance(context: any): IbzPlanTempletDetailAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzPlanTempletDetailAuthService();
+            this.basicUIServiceInstance = new IbzPlanTempletDetailAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

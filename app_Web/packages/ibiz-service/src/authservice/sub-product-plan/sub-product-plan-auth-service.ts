@@ -46,7 +46,7 @@ export default class SubProductPlanAuthService extends SubProductPlanAuthService
      */
      public static getInstance(context: any): SubProductPlanAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SubProductPlanAuthService();
+            this.basicUIServiceInstance = new SubProductPlanAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

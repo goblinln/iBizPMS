@@ -46,7 +46,7 @@ export default class CompanyAuthService extends CompanyAuthServiceBase {
      */
      public static getInstance(context: any): CompanyAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new CompanyAuthService();
+            this.basicUIServiceInstance = new CompanyAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

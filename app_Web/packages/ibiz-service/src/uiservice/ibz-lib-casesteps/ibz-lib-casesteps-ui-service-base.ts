@@ -40,6 +40,7 @@ export class IbzLibCasestepsUIServiceBase extends UIServiceBase {
         await super.loaded();
         this.authService = await AuthServiceRegister.getInstance().getService(this.context,`${this.entityModel?.codeName.toLowerCase()}`);
         this.dataService = await new GlobalService().getService(`${this.entityModel?.codeName}`);
+        await this.authService.loaded();
     }
 
     /**

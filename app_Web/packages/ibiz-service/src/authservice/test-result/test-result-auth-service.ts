@@ -46,7 +46,7 @@ export default class TestResultAuthService extends TestResultAuthServiceBase {
      */
      public static getInstance(context: any): TestResultAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TestResultAuthService();
+            this.basicUIServiceInstance = new TestResultAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

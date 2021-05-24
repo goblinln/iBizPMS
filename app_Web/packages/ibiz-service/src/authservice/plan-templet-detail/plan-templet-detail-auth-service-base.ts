@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class PlanTempletDetailAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof PlanTempletDetailAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/PlanTempletDetail.json";
+
+    /**
      * Creates an instance of  PlanTempletDetailAuthServiceBase.
      * 
      * @param {*} [opts={}]

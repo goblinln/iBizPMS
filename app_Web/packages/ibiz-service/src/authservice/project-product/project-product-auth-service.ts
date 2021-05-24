@@ -46,7 +46,7 @@ export default class ProjectProductAuthService extends ProjectProductAuthService
      */
      public static getInstance(context: any): ProjectProductAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ProjectProductAuthService();
+            this.basicUIServiceInstance = new ProjectProductAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

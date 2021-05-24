@@ -46,7 +46,7 @@ export default class TaskestimatestatsAuthService extends TaskestimatestatsAuthS
      */
      public static getInstance(context: any): TaskestimatestatsAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TaskestimatestatsAuthService();
+            this.basicUIServiceInstance = new TaskestimatestatsAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class SysUserRoleAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof SysUserRoleAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUserRole.json";
+
+    /**
      * Creates an instance of  SysUserRoleAuthServiceBase.
      * 
      * @param {*} [opts={}]

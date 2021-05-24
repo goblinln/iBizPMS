@@ -46,7 +46,7 @@ export default class StoryAuthService extends StoryAuthServiceBase {
      */
      public static getInstance(context: any): StoryAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new StoryAuthService();
+            this.basicUIServiceInstance = new StoryAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

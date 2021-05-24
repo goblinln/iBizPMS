@@ -46,7 +46,7 @@ export default class ProjectTeamAuthService extends ProjectTeamAuthServiceBase {
      */
      public static getInstance(context: any): ProjectTeamAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ProjectTeamAuthService();
+            this.basicUIServiceInstance = new ProjectTeamAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

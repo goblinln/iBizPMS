@@ -46,7 +46,7 @@ export default class IBZCaseStepAuthService extends IBZCaseStepAuthServiceBase {
      */
      public static getInstance(context: any): IBZCaseStepAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBZCaseStepAuthService();
+            this.basicUIServiceInstance = new IBZCaseStepAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

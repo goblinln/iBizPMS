@@ -46,7 +46,7 @@ export default class IbzProjectMemberAuthService extends IbzProjectMemberAuthSer
      */
      public static getInstance(context: any): IbzProjectMemberAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzProjectMemberAuthService();
+            this.basicUIServiceInstance = new IbzProjectMemberAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

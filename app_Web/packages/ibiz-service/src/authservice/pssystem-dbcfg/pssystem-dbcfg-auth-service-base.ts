@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class PSSystemDBCfgAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof PSSystemDBCfgAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/PSSystemDBCfg.json";
+
+    /**
      * Creates an instance of  PSSystemDBCfgAuthServiceBase.
      * 
      * @param {*} [opts={}]

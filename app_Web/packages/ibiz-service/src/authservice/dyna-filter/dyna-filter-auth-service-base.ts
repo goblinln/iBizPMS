@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class DynaFilterAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof DynaFilterAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/DynaFilter.json";
+
+    /**
      * Creates an instance of  DynaFilterAuthServiceBase.
      * 
      * @param {*} [opts={}]

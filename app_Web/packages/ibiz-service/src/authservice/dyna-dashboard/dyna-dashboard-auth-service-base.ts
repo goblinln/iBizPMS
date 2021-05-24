@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class DynaDashboardAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof DynaDashboardAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/DynaDashboard.json";
+
+    /**
      * Creates an instance of  DynaDashboardAuthServiceBase.
      * 
      * @param {*} [opts={}]

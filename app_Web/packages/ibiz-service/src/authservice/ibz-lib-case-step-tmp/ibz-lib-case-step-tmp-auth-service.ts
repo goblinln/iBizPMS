@@ -46,7 +46,7 @@ export default class IbzLibCaseStepTmpAuthService extends IbzLibCaseStepTmpAuthS
      */
      public static getInstance(context: any): IbzLibCaseStepTmpAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzLibCaseStepTmpAuthService();
+            this.basicUIServiceInstance = new IbzLibCaseStepTmpAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

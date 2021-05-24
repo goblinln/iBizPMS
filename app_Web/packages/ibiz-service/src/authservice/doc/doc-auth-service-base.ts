@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class DocAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof DocAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json";
+
+    /**
      * Creates an instance of  DocAuthServiceBase.
      * 
      * @param {*} [opts={}]

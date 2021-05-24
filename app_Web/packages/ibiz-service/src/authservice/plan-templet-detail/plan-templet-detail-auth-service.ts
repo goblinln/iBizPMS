@@ -46,7 +46,7 @@ export default class PlanTempletDetailAuthService extends PlanTempletDetailAuthS
      */
      public static getInstance(context: any): PlanTempletDetailAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new PlanTempletDetailAuthService();
+            this.basicUIServiceInstance = new PlanTempletDetailAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

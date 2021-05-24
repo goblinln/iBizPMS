@@ -46,7 +46,7 @@ export default class SubStoryAuthService extends SubStoryAuthServiceBase {
      */
      public static getInstance(context: any): SubStoryAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SubStoryAuthService();
+            this.basicUIServiceInstance = new SubStoryAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

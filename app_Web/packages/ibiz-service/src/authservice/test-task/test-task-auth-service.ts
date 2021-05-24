@@ -46,7 +46,7 @@ export default class TestTaskAuthService extends TestTaskAuthServiceBase {
      */
      public static getInstance(context: any): TestTaskAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TestTaskAuthService();
+            this.basicUIServiceInstance = new TestTaskAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

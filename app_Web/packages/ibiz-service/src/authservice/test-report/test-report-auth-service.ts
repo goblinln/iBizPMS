@@ -46,7 +46,7 @@ export default class TestReportAuthService extends TestReportAuthServiceBase {
      */
      public static getInstance(context: any): TestReportAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TestReportAuthService();
+            this.basicUIServiceInstance = new TestReportAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

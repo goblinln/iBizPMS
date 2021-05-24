@@ -46,7 +46,7 @@ export default class SysPostAuthService extends SysPostAuthServiceBase {
      */
      public static getInstance(context: any): SysPostAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysPostAuthService();
+            this.basicUIServiceInstance = new SysPostAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

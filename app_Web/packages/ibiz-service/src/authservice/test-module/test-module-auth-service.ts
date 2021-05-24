@@ -46,7 +46,7 @@ export default class TestModuleAuthService extends TestModuleAuthServiceBase {
      */
      public static getInstance(context: any): TestModuleAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TestModuleAuthService();
+            this.basicUIServiceInstance = new TestModuleAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

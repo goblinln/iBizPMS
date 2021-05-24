@@ -46,7 +46,7 @@ export default class IbizproProductDailyAuthService extends IbizproProductDailyA
      */
      public static getInstance(context: any): IbizproProductDailyAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbizproProductDailyAuthService();
+            this.basicUIServiceInstance = new IbizproProductDailyAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

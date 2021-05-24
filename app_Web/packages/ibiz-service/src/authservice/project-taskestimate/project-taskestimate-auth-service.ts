@@ -46,7 +46,7 @@ export default class ProjectTaskestimateAuthService extends ProjectTaskestimateA
      */
      public static getInstance(context: any): ProjectTaskestimateAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ProjectTaskestimateAuthService();
+            this.basicUIServiceInstance = new ProjectTaskestimateAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

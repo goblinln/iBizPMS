@@ -46,7 +46,7 @@ export default class IBZStoryActionAuthService extends IBZStoryActionAuthService
      */
      public static getInstance(context: any): IBZStoryActionAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBZStoryActionAuthService();
+            this.basicUIServiceInstance = new IBZStoryActionAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -46,7 +46,7 @@ export default class ModuleAuthService extends ModuleAuthServiceBase {
      */
      public static getInstance(context: any): ModuleAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ModuleAuthService();
+            this.basicUIServiceInstance = new ModuleAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -46,7 +46,7 @@ export default class IBIZProTagAuthService extends IBIZProTagAuthServiceBase {
      */
      public static getInstance(context: any): IBIZProTagAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBIZProTagAuthService();
+            this.basicUIServiceInstance = new IBIZProTagAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -46,7 +46,7 @@ export default class SysDepartmentAuthService extends SysDepartmentAuthServiceBa
      */
      public static getInstance(context: any): SysDepartmentAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysDepartmentAuthService();
+            this.basicUIServiceInstance = new SysDepartmentAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -46,7 +46,7 @@ export default class BuildAuthService extends BuildAuthServiceBase {
      */
      public static getInstance(context: any): BuildAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new BuildAuthService();
+            this.basicUIServiceInstance = new BuildAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

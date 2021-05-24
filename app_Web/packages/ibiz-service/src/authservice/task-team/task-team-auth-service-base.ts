@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class TaskTeamAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof TaskTeamAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeam.json";
+
+    /**
      * Creates an instance of  TaskTeamAuthServiceBase.
      * 
      * @param {*} [opts={}]

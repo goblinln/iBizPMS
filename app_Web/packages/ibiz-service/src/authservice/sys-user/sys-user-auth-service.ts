@@ -46,7 +46,7 @@ export default class SysUserAuthService extends SysUserAuthServiceBase {
      */
      public static getInstance(context: any): SysUserAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysUserAuthService();
+            this.basicUIServiceInstance = new SysUserAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

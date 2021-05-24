@@ -46,7 +46,7 @@ export default class IbzLibCasestepsAuthService extends IbzLibCasestepsAuthServi
      */
      public static getInstance(context: any): IbzLibCasestepsAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzLibCasestepsAuthService();
+            this.basicUIServiceInstance = new IbzLibCasestepsAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

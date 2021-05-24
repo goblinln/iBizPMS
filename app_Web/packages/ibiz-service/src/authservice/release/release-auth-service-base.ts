@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class ReleaseAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof ReleaseAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json";
+
+    /**
      * Creates an instance of  ReleaseAuthServiceBase.
      * 
      * @param {*} [opts={}]

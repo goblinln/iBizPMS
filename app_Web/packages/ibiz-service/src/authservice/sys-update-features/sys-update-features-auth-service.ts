@@ -46,7 +46,7 @@ export default class SysUpdateFeaturesAuthService extends SysUpdateFeaturesAuthS
      */
      public static getInstance(context: any): SysUpdateFeaturesAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysUpdateFeaturesAuthService();
+            this.basicUIServiceInstance = new SysUpdateFeaturesAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

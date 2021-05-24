@@ -46,7 +46,7 @@ export default class IBIZProPluginAuthService extends IBIZProPluginAuthServiceBa
      */
      public static getInstance(context: any): IBIZProPluginAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBIZProPluginAuthService();
+            this.basicUIServiceInstance = new IBIZProPluginAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

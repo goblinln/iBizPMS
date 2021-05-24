@@ -46,7 +46,7 @@ export default class UserAuthService extends UserAuthServiceBase {
      */
      public static getInstance(context: any): UserAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new UserAuthService();
+            this.basicUIServiceInstance = new UserAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

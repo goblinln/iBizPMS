@@ -46,7 +46,7 @@ export default class TaskTeamAuthService extends TaskTeamAuthServiceBase {
      */
      public static getInstance(context: any): TaskTeamAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TaskTeamAuthService();
+            this.basicUIServiceInstance = new TaskTeamAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

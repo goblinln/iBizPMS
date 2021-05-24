@@ -46,7 +46,7 @@ export default class ProductLifeAuthService extends ProductLifeAuthServiceBase {
      */
      public static getInstance(context: any): ProductLifeAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ProductLifeAuthService();
+            this.basicUIServiceInstance = new ProductLifeAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -46,7 +46,7 @@ export default class IBZProStoryModuleAuthService extends IBZProStoryModuleAuthS
      */
      public static getInstance(context: any): IBZProStoryModuleAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBZProStoryModuleAuthService();
+            this.basicUIServiceInstance = new IBZProStoryModuleAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

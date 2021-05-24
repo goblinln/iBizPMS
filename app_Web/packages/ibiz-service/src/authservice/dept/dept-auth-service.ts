@@ -46,7 +46,7 @@ export default class DeptAuthService extends DeptAuthServiceBase {
      */
      public static getInstance(context: any): DeptAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new DeptAuthService();
+            this.basicUIServiceInstance = new DeptAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

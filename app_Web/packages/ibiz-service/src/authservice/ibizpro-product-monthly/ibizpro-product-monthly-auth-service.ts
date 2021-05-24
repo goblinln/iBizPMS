@@ -46,7 +46,7 @@ export default class IbizproProductMonthlyAuthService extends IbizproProductMont
      */
      public static getInstance(context: any): IbizproProductMonthlyAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbizproProductMonthlyAuthService();
+            this.basicUIServiceInstance = new IbizproProductMonthlyAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -46,7 +46,7 @@ export default class TaskEstimateAuthService extends TaskEstimateAuthServiceBase
      */
      public static getInstance(context: any): TaskEstimateAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TaskEstimateAuthService();
+            this.basicUIServiceInstance = new TaskEstimateAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

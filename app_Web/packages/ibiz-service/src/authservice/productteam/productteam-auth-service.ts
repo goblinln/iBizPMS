@@ -46,7 +46,7 @@ export default class PRODUCTTEAMAuthService extends PRODUCTTEAMAuthServiceBase {
      */
      public static getInstance(context: any): PRODUCTTEAMAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new PRODUCTTEAMAuthService();
+            this.basicUIServiceInstance = new PRODUCTTEAMAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

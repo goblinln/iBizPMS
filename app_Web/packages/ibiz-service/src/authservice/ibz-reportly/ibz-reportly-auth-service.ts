@@ -46,7 +46,7 @@ export default class IbzReportlyAuthService extends IbzReportlyAuthServiceBase {
      */
      public static getInstance(context: any): IbzReportlyAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzReportlyAuthService();
+            this.basicUIServiceInstance = new IbzReportlyAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

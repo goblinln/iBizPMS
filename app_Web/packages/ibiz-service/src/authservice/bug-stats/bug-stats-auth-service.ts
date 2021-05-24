@@ -46,7 +46,7 @@ export default class BugStatsAuthService extends BugStatsAuthServiceBase {
      */
      public static getInstance(context: any): BugStatsAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new BugStatsAuthService();
+            this.basicUIServiceInstance = new BugStatsAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

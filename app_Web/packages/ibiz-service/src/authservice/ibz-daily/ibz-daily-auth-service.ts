@@ -46,7 +46,7 @@ export default class IbzDailyAuthService extends IbzDailyAuthServiceBase {
      */
      public static getInstance(context: any): IbzDailyAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzDailyAuthService();
+            this.basicUIServiceInstance = new IbzDailyAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

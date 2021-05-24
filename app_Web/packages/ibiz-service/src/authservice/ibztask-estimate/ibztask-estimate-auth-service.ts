@@ -46,7 +46,7 @@ export default class IBZTaskEstimateAuthService extends IBZTaskEstimateAuthServi
      */
      public static getInstance(context: any): IBZTaskEstimateAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBZTaskEstimateAuthService();
+            this.basicUIServiceInstance = new IBZTaskEstimateAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

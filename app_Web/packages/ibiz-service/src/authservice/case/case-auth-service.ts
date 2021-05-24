@@ -46,7 +46,7 @@ export default class CaseAuthService extends CaseAuthServiceBase {
      */
      public static getInstance(context: any): CaseAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new CaseAuthService();
+            this.basicUIServiceInstance = new CaseAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

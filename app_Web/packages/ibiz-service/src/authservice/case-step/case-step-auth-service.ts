@@ -46,7 +46,7 @@ export default class CaseStepAuthService extends CaseStepAuthServiceBase {
      */
      public static getInstance(context: any): CaseStepAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new CaseStepAuthService();
+            this.basicUIServiceInstance = new CaseStepAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

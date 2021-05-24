@@ -46,7 +46,7 @@ export default class IBZProProductLineAuthService extends IBZProProductLineAuthS
      */
      public static getInstance(context: any): IBZProProductLineAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBZProProductLineAuthService();
+            this.basicUIServiceInstance = new IBZProProductLineAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class BugStatsAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof BugStatsAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json";
+
+    /**
      * Creates an instance of  BugStatsAuthServiceBase.
      * 
      * @param {*} [opts={}]

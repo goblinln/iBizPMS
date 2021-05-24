@@ -46,7 +46,7 @@ export default class SysEmployeeAuthService extends SysEmployeeAuthServiceBase {
      */
      public static getInstance(context: any): SysEmployeeAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysEmployeeAuthService();
+            this.basicUIServiceInstance = new SysEmployeeAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -46,7 +46,7 @@ export default class UserTplAuthService extends UserTplAuthServiceBase {
      */
      public static getInstance(context: any): UserTplAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new UserTplAuthService();
+            this.basicUIServiceInstance = new UserTplAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class IbzReportlyAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof IbzReportlyAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json";
+
+    /**
      * Creates an instance of  IbzReportlyAuthServiceBase.
      * 
      * @param {*} [opts={}]

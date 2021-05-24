@@ -46,7 +46,7 @@ export default class SubTaskAuthService extends SubTaskAuthServiceBase {
      */
      public static getInstance(context: any): SubTaskAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SubTaskAuthService();
+            this.basicUIServiceInstance = new SubTaskAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

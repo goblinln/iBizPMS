@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class GroupAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof GroupAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json";
+
+    /**
      * Creates an instance of  GroupAuthServiceBase.
      * 
      * @param {*} [opts={}]

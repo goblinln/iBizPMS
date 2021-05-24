@@ -46,7 +46,7 @@ export default class DocContentAuthService extends DocContentAuthServiceBase {
      */
      public static getInstance(context: any): DocContentAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new DocContentAuthService();
+            this.basicUIServiceInstance = new DocContentAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

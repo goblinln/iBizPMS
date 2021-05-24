@@ -46,7 +46,7 @@ export default class IBZTaskTeamAuthService extends IBZTaskTeamAuthServiceBase {
      */
      public static getInstance(context: any): IBZTaskTeamAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBZTaskTeamAuthService();
+            this.basicUIServiceInstance = new IBZTaskTeamAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

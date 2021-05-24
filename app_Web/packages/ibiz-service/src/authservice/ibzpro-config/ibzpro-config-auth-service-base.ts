@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class IbzproConfigAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof IbzproConfigAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproConfig.json";
+
+    /**
      * Creates an instance of  IbzproConfigAuthServiceBase.
      * 
      * @param {*} [opts={}]

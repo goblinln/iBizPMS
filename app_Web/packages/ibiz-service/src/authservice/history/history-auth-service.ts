@@ -46,7 +46,7 @@ export default class HistoryAuthService extends HistoryAuthServiceBase {
      */
      public static getInstance(context: any): HistoryAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new HistoryAuthService();
+            this.basicUIServiceInstance = new HistoryAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

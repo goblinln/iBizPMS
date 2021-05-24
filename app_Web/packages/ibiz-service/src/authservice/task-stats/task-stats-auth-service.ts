@@ -46,7 +46,7 @@ export default class TaskStatsAuthService extends TaskStatsAuthServiceBase {
      */
      public static getInstance(context: any): TaskStatsAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TaskStatsAuthService();
+            this.basicUIServiceInstance = new TaskStatsAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

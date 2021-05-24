@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class FileAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof FileAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json";
+
+    /**
      * Creates an instance of  FileAuthServiceBase.
      * 
      * @param {*} [opts={}]

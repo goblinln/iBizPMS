@@ -46,7 +46,7 @@ export default class SysRoleAuthService extends SysRoleAuthServiceBase {
      */
      public static getInstance(context: any): SysRoleAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysRoleAuthService();
+            this.basicUIServiceInstance = new SysRoleAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

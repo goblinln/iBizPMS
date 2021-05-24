@@ -46,7 +46,7 @@ export default class IbzMyTerritoryAuthService extends IbzMyTerritoryAuthService
      */
      public static getInstance(context: any): IbzMyTerritoryAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzMyTerritoryAuthService();
+            this.basicUIServiceInstance = new IbzMyTerritoryAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -46,7 +46,7 @@ export default class IbzproProductUserTaskAuthService extends IbzproProductUserT
      */
      public static getInstance(context: any): IbzproProductUserTaskAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzproProductUserTaskAuthService();
+            this.basicUIServiceInstance = new IbzproProductUserTaskAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

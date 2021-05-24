@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class ProjectStatsAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof ProjectStatsAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json";
+
+    /**
      * Creates an instance of  ProjectStatsAuthServiceBase.
      * 
      * @param {*} [opts={}]

@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class BuildAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof BuildAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json";
+
+    /**
      * Creates an instance of  BuildAuthServiceBase.
      * 
      * @param {*} [opts={}]

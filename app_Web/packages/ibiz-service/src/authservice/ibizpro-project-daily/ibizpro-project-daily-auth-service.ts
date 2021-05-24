@@ -46,7 +46,7 @@ export default class IbizproProjectDailyAuthService extends IbizproProjectDailyA
      */
      public static getInstance(context: any): IbizproProjectDailyAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbizproProjectDailyAuthService();
+            this.basicUIServiceInstance = new IbizproProjectDailyAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

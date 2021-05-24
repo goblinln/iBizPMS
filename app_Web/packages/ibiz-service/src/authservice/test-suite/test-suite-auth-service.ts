@@ -46,7 +46,7 @@ export default class TestSuiteAuthService extends TestSuiteAuthServiceBase {
      */
      public static getInstance(context: any): TestSuiteAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TestSuiteAuthService();
+            this.basicUIServiceInstance = new TestSuiteAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

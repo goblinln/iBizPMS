@@ -46,7 +46,7 @@ export default class BugAuthService extends BugAuthServiceBase {
      */
      public static getInstance(context: any): BugAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new BugAuthService();
+            this.basicUIServiceInstance = new BugAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

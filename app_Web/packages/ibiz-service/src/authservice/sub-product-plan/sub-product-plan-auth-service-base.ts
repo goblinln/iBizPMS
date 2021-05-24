@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class SubProductPlanAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof SubProductPlanAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan.json";
+
+    /**
      * Creates an instance of  SubProductPlanAuthServiceBase.
      * 
      * @param {*} [opts={}]

@@ -46,7 +46,7 @@ export default class ProjectStatsAuthService extends ProjectStatsAuthServiceBase
      */
      public static getInstance(context: any): ProjectStatsAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ProjectStatsAuthService();
+            this.basicUIServiceInstance = new ProjectStatsAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -46,7 +46,7 @@ export default class IbizproIndexAuthService extends IbizproIndexAuthServiceBase
      */
      public static getInstance(context: any): IbizproIndexAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbizproIndexAuthService();
+            this.basicUIServiceInstance = new IbizproIndexAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

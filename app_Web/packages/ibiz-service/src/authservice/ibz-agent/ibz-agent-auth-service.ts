@@ -46,7 +46,7 @@ export default class IbzAgentAuthService extends IbzAgentAuthServiceBase {
      */
      public static getInstance(context: any): IbzAgentAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzAgentAuthService();
+            this.basicUIServiceInstance = new IbzAgentAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

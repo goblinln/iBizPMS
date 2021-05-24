@@ -46,7 +46,7 @@ export default class DynaFilterAuthService extends DynaFilterAuthServiceBase {
      */
      public static getInstance(context: any): DynaFilterAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new DynaFilterAuthService();
+            this.basicUIServiceInstance = new DynaFilterAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

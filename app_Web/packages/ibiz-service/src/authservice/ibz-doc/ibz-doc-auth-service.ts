@@ -46,7 +46,7 @@ export default class IBzDocAuthService extends IBzDocAuthServiceBase {
      */
      public static getInstance(context: any): IBzDocAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBzDocAuthService();
+            this.basicUIServiceInstance = new IBzDocAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

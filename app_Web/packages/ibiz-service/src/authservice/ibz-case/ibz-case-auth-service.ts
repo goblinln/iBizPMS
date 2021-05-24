@@ -46,7 +46,7 @@ export default class IbzCaseAuthService extends IbzCaseAuthServiceBase {
      */
      public static getInstance(context: any): IbzCaseAuthService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzCaseAuthService();
+            this.basicUIServiceInstance = new IbzCaseAuthService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

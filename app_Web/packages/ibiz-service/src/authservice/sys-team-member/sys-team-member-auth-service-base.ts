@@ -10,6 +10,15 @@ import { AuthService } from '../auth-service';
 export class SysTeamMemberAuthServiceBase extends AuthService {
 
     /**
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof SysTeamMemberAuthServiceBase
+     */
+     protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json";
+
+    /**
      * Creates an instance of  SysTeamMemberAuthServiceBase.
      * 
      * @param {*} [opts={}]
