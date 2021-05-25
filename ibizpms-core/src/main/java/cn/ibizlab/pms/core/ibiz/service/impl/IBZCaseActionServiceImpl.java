@@ -187,6 +187,66 @@ public class IBZCaseActionServiceImpl extends ServiceImpl<IBZCaseActionMapper, I
     }
     @Override
     @Transactional
+    public IBZCaseAction comment(IBZCaseAction et) {
+         return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean commentBatch(List<IBZCaseAction> etList) {
+        for(IBZCaseAction et : etList) {
+            comment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZCaseAction createHis(IBZCaseAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean createHisBatch(List<IBZCaseAction> etList) {
+        for(IBZCaseAction et : etList) {
+            createHis(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZCaseAction editComment(IBZCaseAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean editCommentBatch(List<IBZCaseAction> etList) {
+        for(IBZCaseAction et : etList) {
+            editComment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZCaseAction managePmsEe(IBZCaseAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean managePmsEeBatch(List<IBZCaseAction> etList) {
+        for(IBZCaseAction et : etList) {
+            managePmsEe(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean save(IBZCaseAction et) {
         if(!saveOrUpdate(et)) {
             return false;
@@ -243,6 +303,51 @@ public class IBZCaseActionServiceImpl extends ServiceImpl<IBZCaseActionMapper, I
         if (update.size() > 0) {
             getProxyService().updateBatch(update);
         }
+    }
+
+    @Override
+    @Transactional
+    public IBZCaseAction sendMarkDone(IBZCaseAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendMarkDoneBatch(List<IBZCaseAction> etList) {
+        for(IBZCaseAction et : etList) {
+            sendMarkDone(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZCaseAction sendTodo(IBZCaseAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendTodoBatch(List<IBZCaseAction> etList) {
+        for(IBZCaseAction et : etList) {
+            sendTodo(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZCaseAction sendToread(IBZCaseAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendToreadBatch(List<IBZCaseAction> etList) {
+        for(IBZCaseAction et : etList) {
+            sendToread(et);
+        }
+        return true;
     }
 
 

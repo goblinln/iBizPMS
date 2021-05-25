@@ -40,6 +40,8 @@ public interface IProductPlanActionService extends IService<ProductPlanAction> {
     boolean commentBatch(List<ProductPlanAction> etList);
     ProductPlanAction createHis(ProductPlanAction et);
     boolean createHisBatch(List<ProductPlanAction> etList);
+    ProductPlanAction editComment(ProductPlanAction et);
+    boolean editCommentBatch(List<ProductPlanAction> etList);
     ProductPlanAction managePmsEe(ProductPlanAction et);
     boolean managePmsEeBatch(List<ProductPlanAction> etList);
     boolean save(ProductPlanAction et);

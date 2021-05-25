@@ -217,6 +217,21 @@ public class ProductPlanActionServiceImpl extends ServiceImpl<ProductPlanActionM
 
     @Override
     @Transactional
+    public ProductPlanAction editComment(ProductPlanAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean editCommentBatch(List<ProductPlanAction> etList) {
+        for(ProductPlanAction et : etList) {
+            editComment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public ProductPlanAction managePmsEe(ProductPlanAction et) {
         //自定义代码
         return et;

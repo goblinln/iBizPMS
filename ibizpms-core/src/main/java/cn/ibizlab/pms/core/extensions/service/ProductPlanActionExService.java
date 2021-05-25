@@ -32,6 +32,16 @@ public class ProductPlanActionExService extends ProductPlanActionServiceImpl {
         return super.createHis(et);
     }
     /**
+     * [EditComment:编辑备注信息] 行为扩展
+     * @param et
+     * @return
+     */
+    @Override
+    @Transactional
+    public ProductPlanAction editComment(ProductPlanAction et) {
+        return super.editComment(et);
+    }
+    /**
      * [ManagePmsEe:Pms企业专用] 行为扩展
      * @param et
      * @return

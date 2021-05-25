@@ -172,6 +172,27 @@ public class ProductPlanActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'MANAGE')")
+    @ApiOperation(value = "编辑备注信息", tags = {"产品计划日志" },  notes = "编辑备注信息")
+	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/{productplanaction_id}/editcomment")
+    public ResponseEntity<ProductPlanActionDTO> editComment(@PathVariable("productplanaction_id") Long productplanaction_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
+        ProductPlanAction domain = productplanactionMapping.toDomain(productplanactiondto);
+        domain.setId(productplanaction_id);
+        domain = productplanactionService.editComment(domain);
+        productplanactiondto = productplanactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = productplanactionRuntime.getOPPrivs(domain.getId());
+        productplanactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(productplanactiondto);
+    }
+    @PreAuthorize("@ProductPlanActionRuntime.test('MANAGE')")
+    @ApiOperation(value = "批量处理[编辑备注信息]", tags = {"产品计划日志" },  notes = "批量处理[编辑备注信息]")
+	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/editcommentbatch")
+    public ResponseEntity<Boolean> editCommentBatch(@RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
+        List<ProductPlanAction> domains = productplanactionMapping.toDomain(productplanactiondtos);
+        boolean result = productplanactionService.editCommentBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @ApiOperation(value = "Pms企业专用", tags = {"产品计划日志" },  notes = "Pms企业专用")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/{productplanaction_id}/managepmsee")
     public ResponseEntity<ProductPlanActionDTO> managePmsEe(@PathVariable("productplanaction_id") Long productplanaction_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
@@ -436,6 +457,24 @@ public class ProductPlanActionResource {
         boolean result = productplanactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'MANAGE')")
+    @ApiOperation(value = "根据产品计划产品计划日志", tags = {"产品计划日志" },  notes = "根据产品计划产品计划日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/productplanactions/{productplanaction_id}/editcomment")
+    public ResponseEntity<ProductPlanActionDTO> editCommentByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("productplanaction_id") Long productplanaction_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
+        ProductPlanAction domain = productplanactionMapping.toDomain(productplanactiondto);
+        domain.setObjectid(productplan_id);
+        domain.setId(productplanaction_id);
+        domain = productplanactionService.editComment(domain) ;
+        productplanactiondto = productplanactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productplanactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品计划产品计划日志]", tags = {"产品计划日志" },  notes = "批量处理[根据产品计划产品计划日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/productplanactions/editcommentbatch")
+    public ResponseEntity<Boolean> editCommentByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
+        List<ProductPlanAction> domains = productplanactionMapping.toDomain(productplanactiondtos);
+        boolean result = productplanactionService.editCommentBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @ApiOperation(value = "根据产品计划产品计划日志", tags = {"产品计划日志" },  notes = "根据产品计划产品计划日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/productplanactions/{productplanaction_id}/managepmsee")
     public ResponseEntity<ProductPlanActionDTO> managePmsEeByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("productplanaction_id") Long productplanaction_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
@@ -686,6 +725,24 @@ public class ProductPlanActionResource {
     public ResponseEntity<Boolean> createHisByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
         List<ProductPlanAction> domains = productplanactionMapping.toDomain(productplanactiondtos);
         boolean result = productplanactionService.createHisBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'MANAGE')")
+    @ApiOperation(value = "根据产品产品计划产品计划日志", tags = {"产品计划日志" },  notes = "根据产品产品计划产品计划日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/productplanactions/{productplanaction_id}/editcomment")
+    public ResponseEntity<ProductPlanActionDTO> editCommentByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("productplanaction_id") Long productplanaction_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
+        ProductPlanAction domain = productplanactionMapping.toDomain(productplanactiondto);
+        domain.setObjectid(productplan_id);
+        domain.setId(productplanaction_id);
+        domain = productplanactionService.editComment(domain) ;
+        productplanactiondto = productplanactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productplanactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品产品计划产品计划日志]", tags = {"产品计划日志" },  notes = "批量处理[根据产品产品计划产品计划日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/productplanactions/editcommentbatch")
+    public ResponseEntity<Boolean> editCommentByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
+        List<ProductPlanAction> domains = productplanactionMapping.toDomain(productplanactiondtos);
+        boolean result = productplanactionService.editCommentBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @ApiOperation(value = "根据产品产品计划产品计划日志", tags = {"产品计划日志" },  notes = "根据产品产品计划产品计划日志")

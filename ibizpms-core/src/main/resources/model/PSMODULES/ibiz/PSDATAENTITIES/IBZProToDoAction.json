@@ -53,6 +53,40 @@
     "name" : "CheckKey",
     "builtinAction" : true
   }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "DELOGIC",
+    "codeName" : "Comment",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction/PSDEACTIONS/Comment.json",
+    "logicName" : "添加备注",
+    "name" : "Comment",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction/PSDELOGICS/Comment.json"
+    }
+  }, {
+    "actionMode" : "CREATE",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "CreateHis",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction/PSDEACTIONS/CreateHis.json",
+    "logicName" : "创建历史日志",
+    "name" : "CreateHis"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "EditComment",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction/PSDEACTIONS/EditComment.json",
+    "logicName" : "编辑备注信息",
+    "name" : "editComment",
+    "userCat" : "CAT1"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "ManagePmsEe",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction/PSDEACTIONS/ManagePmsEe.json",
+    "logicName" : "Pms企业专用",
+    "name" : "ManagePmsEe",
+    "userCat" : "CAT1"
+  }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
     "codeName" : "Save",
@@ -60,6 +94,27 @@
     "logicName" : "Save",
     "name" : "Save",
     "builtinAction" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "SendMarkDone",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction/PSDEACTIONS/SendMarkDone.json",
+    "logicName" : "已读",
+    "name" : "sendMarkDone"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "SendTodo",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction/PSDEACTIONS/SendTodo.json",
+    "logicName" : "发送待办",
+    "name" : "sendTodo"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "SendToread",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction/PSDEACTIONS/SendToread.json",
+    "logicName" : "发送待阅",
+    "name" : "sendToread"
   } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1470,6 +1525,110 @@
     "name" : "PROJECT",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
+  } ],
+  "getAllPSDELogics" : [ {
+    "codeName" : "Comment",
+    "defaultParamName" : "Default",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction/PSDELOGICS/Comment.json",
+    "logicName" : "Comment",
+    "name" : "Comment",
+    "getPSDELogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接6740",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Prepareparam1",
+      "logicNodeType" : "PREPAREPARAM",
+      "name" : "设置默认参数",
+      "getPSDELogicNodeParams" : [ {
+        "dstFieldName" : "ACTOR",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "name" : "用户全局对象[srfloginname] ==> Default[ACTOR]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      }, {
+        "dstFieldName" : "PRODUCT",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "name" : "直接值[0] ==> Default[PRODUCT]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcValue" : "0",
+        "srcValueType" : "SRCVALUE"
+      }, {
+        "dstFieldName" : "PROJECT",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "name" : "直接值[0] ==> Default[PROJECT]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcValue" : "0",
+        "srcValueType" : "SRCVALUE"
+      }, {
+        "dstFieldName" : "READ",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "name" : "直接值[0] ==> Default[READ]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcValue" : "0",
+        "srcValueType" : "SRCVALUE"
+      }, {
+        "dstFieldName" : "ACTION",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "name" : "直接值[commented] ==> Default[ACTION]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcValue" : "commented",
+        "srcValueType" : "SRCVALUE"
+      }, {
+        "dstFieldName" : "EXTRA",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "name" : "直接值[null] ==> Default[EXTRA]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcValueType" : "SRCVALUE"
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDELogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true,
+      "envParam" : false,
+      "lastParam" : false,
+      "sessionParam" : false
+    } ],
+    "getStartPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "enableBackend" : true,
+    "enableFront" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

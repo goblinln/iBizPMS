@@ -187,6 +187,66 @@ public class IBZTestReportActionServiceImpl extends ServiceImpl<IBZTestReportAct
     }
     @Override
     @Transactional
+    public IBZTestReportAction comment(IBZTestReportAction et) {
+         return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean commentBatch(List<IBZTestReportAction> etList) {
+        for(IBZTestReportAction et : etList) {
+            comment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZTestReportAction createHis(IBZTestReportAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean createHisBatch(List<IBZTestReportAction> etList) {
+        for(IBZTestReportAction et : etList) {
+            createHis(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZTestReportAction editComment(IBZTestReportAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean editCommentBatch(List<IBZTestReportAction> etList) {
+        for(IBZTestReportAction et : etList) {
+            editComment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZTestReportAction managePmsEe(IBZTestReportAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean managePmsEeBatch(List<IBZTestReportAction> etList) {
+        for(IBZTestReportAction et : etList) {
+            managePmsEe(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean save(IBZTestReportAction et) {
         if(!saveOrUpdate(et)) {
             return false;
@@ -243,6 +303,51 @@ public class IBZTestReportActionServiceImpl extends ServiceImpl<IBZTestReportAct
         if (update.size() > 0) {
             getProxyService().updateBatch(update);
         }
+    }
+
+    @Override
+    @Transactional
+    public IBZTestReportAction sendMarkDone(IBZTestReportAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendMarkDoneBatch(List<IBZTestReportAction> etList) {
+        for(IBZTestReportAction et : etList) {
+            sendMarkDone(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZTestReportAction sendTodo(IBZTestReportAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendTodoBatch(List<IBZTestReportAction> etList) {
+        for(IBZTestReportAction et : etList) {
+            sendTodo(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZTestReportAction sendToread(IBZTestReportAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendToreadBatch(List<IBZTestReportAction> etList) {
+        for(IBZTestReportAction et : etList) {
+            sendToread(et);
+        }
+        return true;
     }
 
 

@@ -138,6 +138,78 @@ public class IBZProToDoActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactionService.checkKey(ibzprotodoactionMapping.toDomain(ibzprotodoactiondto)));
     }
 
+    @PreAuthorize("@IBZProToDoActionRuntime.test(#ibzprotodoaction_id,'MANAGE')")
+    @ApiOperation(value = "添加备注", tags = {"ToDo日志" },  notes = "添加备注")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/{ibzprotodoaction_id}/comment")
+    public ResponseEntity<IBZProToDoActionDTO> comment(@PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
+        IBZProToDoAction domain = ibzprotodoactionMapping.toDomain(ibzprotodoactiondto);
+        domain.setId(ibzprotodoaction_id);
+        domain = ibzprotodoactionService.comment(domain);
+        ibzprotodoactiondto = ibzprotodoactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprotodoactionRuntime.getOPPrivs(domain.getId());
+        ibzprotodoactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactiondto);
+    }
+
+    @PreAuthorize("@IBZProToDoActionRuntime.test(#ibzprotodoaction_id,'CREATE')")
+    @ApiOperation(value = "创建历史日志", tags = {"ToDo日志" },  notes = "创建历史日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/{ibzprotodoaction_id}/createhis")
+    public ResponseEntity<IBZProToDoActionDTO> createHis(@PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
+        IBZProToDoAction domain = ibzprotodoactionMapping.toDomain(ibzprotodoactiondto);
+        domain.setId(ibzprotodoaction_id);
+        domain = ibzprotodoactionService.createHis(domain);
+        ibzprotodoactiondto = ibzprotodoactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprotodoactionRuntime.getOPPrivs(domain.getId());
+        ibzprotodoactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactiondto);
+    }
+    @ApiOperation(value = "批量处理[创建历史日志]", tags = {"ToDo日志" },  notes = "批量处理[创建历史日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/createhisbatch")
+    public ResponseEntity<Boolean> createHisBatch(@RequestBody List<IBZProToDoActionDTO> ibzprotodoactiondtos) {
+        List<IBZProToDoAction> domains = ibzprotodoactionMapping.toDomain(ibzprotodoactiondtos);
+        boolean result = ibzprotodoactionService.createHisBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @PreAuthorize("@IBZProToDoActionRuntime.test(#ibzprotodoaction_id,'MANAGE')")
+    @ApiOperation(value = "编辑备注信息", tags = {"ToDo日志" },  notes = "编辑备注信息")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/{ibzprotodoaction_id}/editcomment")
+    public ResponseEntity<IBZProToDoActionDTO> editComment(@PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
+        IBZProToDoAction domain = ibzprotodoactionMapping.toDomain(ibzprotodoactiondto);
+        domain.setId(ibzprotodoaction_id);
+        domain = ibzprotodoactionService.editComment(domain);
+        ibzprotodoactiondto = ibzprotodoactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprotodoactionRuntime.getOPPrivs(domain.getId());
+        ibzprotodoactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactiondto);
+    }
+    @ApiOperation(value = "批量处理[编辑备注信息]", tags = {"ToDo日志" },  notes = "批量处理[编辑备注信息]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/editcommentbatch")
+    public ResponseEntity<Boolean> editCommentBatch(@RequestBody List<IBZProToDoActionDTO> ibzprotodoactiondtos) {
+        List<IBZProToDoAction> domains = ibzprotodoactionMapping.toDomain(ibzprotodoactiondtos);
+        boolean result = ibzprotodoactionService.editCommentBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "Pms企业专用", tags = {"ToDo日志" },  notes = "Pms企业专用")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/{ibzprotodoaction_id}/managepmsee")
+    public ResponseEntity<IBZProToDoActionDTO> managePmsEe(@PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
+        IBZProToDoAction domain = ibzprotodoactionMapping.toDomain(ibzprotodoactiondto);
+        domain.setId(ibzprotodoaction_id);
+        domain = ibzprotodoactionService.managePmsEe(domain);
+        ibzprotodoactiondto = ibzprotodoactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprotodoactionRuntime.getOPPrivs(domain.getId());
+        ibzprotodoactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactiondto);
+    }
+    @ApiOperation(value = "批量处理[Pms企业专用]", tags = {"ToDo日志" },  notes = "批量处理[Pms企业专用]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/managepmseebatch")
+    public ResponseEntity<Boolean> managePmsEeBatch(@RequestBody List<IBZProToDoActionDTO> ibzprotodoactiondtos) {
+        List<IBZProToDoAction> domains = ibzprotodoactionMapping.toDomain(ibzprotodoactiondtos);
+        boolean result = ibzprotodoactionService.managePmsEeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @ApiOperation(value = "保存ToDo日志", tags = {"ToDo日志" },  notes = "保存ToDo日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/save")
     public ResponseEntity<IBZProToDoActionDTO> save(@RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
@@ -154,6 +226,63 @@ public class IBZProToDoActionResource {
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBZProToDoActionDTO> ibzprotodoactiondtos) {
         ibzprotodoactionService.saveBatch(ibzprotodoactionMapping.toDomain(ibzprotodoactiondtos));
         return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @ApiOperation(value = "已读", tags = {"ToDo日志" },  notes = "已读")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/{ibzprotodoaction_id}/sendmarkdone")
+    public ResponseEntity<IBZProToDoActionDTO> sendMarkDone(@PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
+        IBZProToDoAction domain = ibzprotodoactionMapping.toDomain(ibzprotodoactiondto);
+        domain.setId(ibzprotodoaction_id);
+        domain = ibzprotodoactionService.sendMarkDone(domain);
+        ibzprotodoactiondto = ibzprotodoactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprotodoactionRuntime.getOPPrivs(domain.getId());
+        ibzprotodoactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactiondto);
+    }
+    @ApiOperation(value = "批量处理[已读]", tags = {"ToDo日志" },  notes = "批量处理[已读]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/sendmarkdonebatch")
+    public ResponseEntity<Boolean> sendMarkDoneBatch(@RequestBody List<IBZProToDoActionDTO> ibzprotodoactiondtos) {
+        List<IBZProToDoAction> domains = ibzprotodoactionMapping.toDomain(ibzprotodoactiondtos);
+        boolean result = ibzprotodoactionService.sendMarkDoneBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "发送待办", tags = {"ToDo日志" },  notes = "发送待办")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/{ibzprotodoaction_id}/sendtodo")
+    public ResponseEntity<IBZProToDoActionDTO> sendTodo(@PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
+        IBZProToDoAction domain = ibzprotodoactionMapping.toDomain(ibzprotodoactiondto);
+        domain.setId(ibzprotodoaction_id);
+        domain = ibzprotodoactionService.sendTodo(domain);
+        ibzprotodoactiondto = ibzprotodoactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprotodoactionRuntime.getOPPrivs(domain.getId());
+        ibzprotodoactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactiondto);
+    }
+    @ApiOperation(value = "批量处理[发送待办]", tags = {"ToDo日志" },  notes = "批量处理[发送待办]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/sendtodobatch")
+    public ResponseEntity<Boolean> sendTodoBatch(@RequestBody List<IBZProToDoActionDTO> ibzprotodoactiondtos) {
+        List<IBZProToDoAction> domains = ibzprotodoactionMapping.toDomain(ibzprotodoactiondtos);
+        boolean result = ibzprotodoactionService.sendTodoBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "发送待阅", tags = {"ToDo日志" },  notes = "发送待阅")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/{ibzprotodoaction_id}/sendtoread")
+    public ResponseEntity<IBZProToDoActionDTO> sendToread(@PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
+        IBZProToDoAction domain = ibzprotodoactionMapping.toDomain(ibzprotodoactiondto);
+        domain.setId(ibzprotodoaction_id);
+        domain = ibzprotodoactionService.sendToread(domain);
+        ibzprotodoactiondto = ibzprotodoactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprotodoactionRuntime.getOPPrivs(domain.getId());
+        ibzprotodoactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactiondto);
+    }
+    @ApiOperation(value = "批量处理[发送待阅]", tags = {"ToDo日志" },  notes = "批量处理[发送待阅]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/sendtoreadbatch")
+    public ResponseEntity<Boolean> sendToreadBatch(@RequestBody List<IBZProToDoActionDTO> ibzprotodoactiondtos) {
+        List<IBZProToDoAction> domains = ibzprotodoactionMapping.toDomain(ibzprotodoactiondtos);
+        boolean result = ibzprotodoactionService.sendToreadBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
     @PreAuthorize("@IBZProToDoActionRuntime.quickTest('READ')")
@@ -293,6 +422,70 @@ public class IBZProToDoActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactionService.checkKey(ibzprotodoactionMapping.toDomain(ibzprotodoactiondto)));
     }
 
+    @PreAuthorize("@TodoRuntime.test(#todo_id,'MANAGE')")
+    @ApiOperation(value = "根据待办ToDo日志", tags = {"ToDo日志" },  notes = "根据待办ToDo日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/ibzprotodoactions/{ibzprotodoaction_id}/comment")
+    public ResponseEntity<IBZProToDoActionDTO> commentByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
+        IBZProToDoAction domain = ibzprotodoactionMapping.toDomain(ibzprotodoactiondto);
+        domain.setObjectid(todo_id);
+        domain.setId(ibzprotodoaction_id);
+        domain = ibzprotodoactionService.comment(domain) ;
+        ibzprotodoactiondto = ibzprotodoactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactiondto);
+    }
+    @PreAuthorize("@TodoRuntime.test(#todo_id,'CREATE')")
+    @ApiOperation(value = "根据待办ToDo日志", tags = {"ToDo日志" },  notes = "根据待办ToDo日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/ibzprotodoactions/{ibzprotodoaction_id}/createhis")
+    public ResponseEntity<IBZProToDoActionDTO> createHisByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
+        IBZProToDoAction domain = ibzprotodoactionMapping.toDomain(ibzprotodoactiondto);
+        domain.setObjectid(todo_id);
+        domain.setId(ibzprotodoaction_id);
+        domain = ibzprotodoactionService.createHis(domain) ;
+        ibzprotodoactiondto = ibzprotodoactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据待办ToDo日志]", tags = {"ToDo日志" },  notes = "批量处理[根据待办ToDo日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/ibzprotodoactions/createhisbatch")
+    public ResponseEntity<Boolean> createHisByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody List<IBZProToDoActionDTO> ibzprotodoactiondtos) {
+        List<IBZProToDoAction> domains = ibzprotodoactionMapping.toDomain(ibzprotodoactiondtos);
+        boolean result = ibzprotodoactionService.createHisBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@TodoRuntime.test(#todo_id,'MANAGE')")
+    @ApiOperation(value = "根据待办ToDo日志", tags = {"ToDo日志" },  notes = "根据待办ToDo日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/ibzprotodoactions/{ibzprotodoaction_id}/editcomment")
+    public ResponseEntity<IBZProToDoActionDTO> editCommentByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
+        IBZProToDoAction domain = ibzprotodoactionMapping.toDomain(ibzprotodoactiondto);
+        domain.setObjectid(todo_id);
+        domain.setId(ibzprotodoaction_id);
+        domain = ibzprotodoactionService.editComment(domain) ;
+        ibzprotodoactiondto = ibzprotodoactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据待办ToDo日志]", tags = {"ToDo日志" },  notes = "批量处理[根据待办ToDo日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/ibzprotodoactions/editcommentbatch")
+    public ResponseEntity<Boolean> editCommentByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody List<IBZProToDoActionDTO> ibzprotodoactiondtos) {
+        List<IBZProToDoAction> domains = ibzprotodoactionMapping.toDomain(ibzprotodoactiondtos);
+        boolean result = ibzprotodoactionService.editCommentBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据待办ToDo日志", tags = {"ToDo日志" },  notes = "根据待办ToDo日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/ibzprotodoactions/{ibzprotodoaction_id}/managepmsee")
+    public ResponseEntity<IBZProToDoActionDTO> managePmsEeByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
+        IBZProToDoAction domain = ibzprotodoactionMapping.toDomain(ibzprotodoactiondto);
+        domain.setObjectid(todo_id);
+        domain.setId(ibzprotodoaction_id);
+        domain = ibzprotodoactionService.managePmsEe(domain) ;
+        ibzprotodoactiondto = ibzprotodoactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据待办ToDo日志]", tags = {"ToDo日志" },  notes = "批量处理[根据待办ToDo日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/ibzprotodoactions/managepmseebatch")
+    public ResponseEntity<Boolean> managePmsEeByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody List<IBZProToDoActionDTO> ibzprotodoactiondtos) {
+        List<IBZProToDoAction> domains = ibzprotodoactionMapping.toDomain(ibzprotodoactiondtos);
+        boolean result = ibzprotodoactionService.managePmsEeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @ApiOperation(value = "根据待办保存ToDo日志", tags = {"ToDo日志" },  notes = "根据待办保存ToDo日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/ibzprotodoactions/save")
     public ResponseEntity<IBZProToDoActionDTO> saveByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
@@ -313,6 +506,57 @@ public class IBZProToDoActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @ApiOperation(value = "根据待办ToDo日志", tags = {"ToDo日志" },  notes = "根据待办ToDo日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/ibzprotodoactions/{ibzprotodoaction_id}/sendmarkdone")
+    public ResponseEntity<IBZProToDoActionDTO> sendMarkDoneByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
+        IBZProToDoAction domain = ibzprotodoactionMapping.toDomain(ibzprotodoactiondto);
+        domain.setObjectid(todo_id);
+        domain.setId(ibzprotodoaction_id);
+        domain = ibzprotodoactionService.sendMarkDone(domain) ;
+        ibzprotodoactiondto = ibzprotodoactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据待办ToDo日志]", tags = {"ToDo日志" },  notes = "批量处理[根据待办ToDo日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/ibzprotodoactions/sendmarkdonebatch")
+    public ResponseEntity<Boolean> sendMarkDoneByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody List<IBZProToDoActionDTO> ibzprotodoactiondtos) {
+        List<IBZProToDoAction> domains = ibzprotodoactionMapping.toDomain(ibzprotodoactiondtos);
+        boolean result = ibzprotodoactionService.sendMarkDoneBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据待办ToDo日志", tags = {"ToDo日志" },  notes = "根据待办ToDo日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/ibzprotodoactions/{ibzprotodoaction_id}/sendtodo")
+    public ResponseEntity<IBZProToDoActionDTO> sendTodoByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
+        IBZProToDoAction domain = ibzprotodoactionMapping.toDomain(ibzprotodoactiondto);
+        domain.setObjectid(todo_id);
+        domain.setId(ibzprotodoaction_id);
+        domain = ibzprotodoactionService.sendTodo(domain) ;
+        ibzprotodoactiondto = ibzprotodoactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据待办ToDo日志]", tags = {"ToDo日志" },  notes = "批量处理[根据待办ToDo日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/ibzprotodoactions/sendtodobatch")
+    public ResponseEntity<Boolean> sendTodoByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody List<IBZProToDoActionDTO> ibzprotodoactiondtos) {
+        List<IBZProToDoAction> domains = ibzprotodoactionMapping.toDomain(ibzprotodoactiondtos);
+        boolean result = ibzprotodoactionService.sendTodoBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据待办ToDo日志", tags = {"ToDo日志" },  notes = "根据待办ToDo日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/ibzprotodoactions/{ibzprotodoaction_id}/sendtoread")
+    public ResponseEntity<IBZProToDoActionDTO> sendToreadByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
+        IBZProToDoAction domain = ibzprotodoactionMapping.toDomain(ibzprotodoactiondto);
+        domain.setObjectid(todo_id);
+        domain.setId(ibzprotodoaction_id);
+        domain = ibzprotodoactionService.sendToread(domain) ;
+        ibzprotodoactiondto = ibzprotodoactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据待办ToDo日志]", tags = {"ToDo日志" },  notes = "批量处理[根据待办ToDo日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/ibzprotodoactions/sendtoreadbatch")
+    public ResponseEntity<Boolean> sendToreadByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody List<IBZProToDoActionDTO> ibzprotodoactiondtos) {
+        List<IBZProToDoAction> domains = ibzprotodoactionMapping.toDomain(ibzprotodoactiondtos);
+        boolean result = ibzprotodoactionService.sendToreadBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @PreAuthorize("@TodoRuntime.test(#todo_id,'READ')")
 	@ApiOperation(value = "根据待办获取数据集", tags = {"ToDo日志" } ,notes = "根据待办获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/ibzprotodoactions/fetchdefault")

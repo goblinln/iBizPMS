@@ -73,6 +73,14 @@
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
+    "codeName" : "EditComment",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductPlanAction/PSDEACTIONS/EditComment.json",
+    "logicName" : "编辑备注信息",
+    "name" : "editComment",
+    "userCat" : "CAT1"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ManagePmsEe",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductPlanAction/PSDEACTIONS/ManagePmsEe.json",
     "logicName" : "Pms企业专用",

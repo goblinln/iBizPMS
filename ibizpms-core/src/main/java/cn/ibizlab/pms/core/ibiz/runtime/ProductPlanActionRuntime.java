@@ -187,6 +187,9 @@ public class ProductPlanActionRuntime extends cn.ibizlab.pms.core.runtime.System
             else if (iPSDEAction.getName().equals("CreateHis")) {
                 return productplanactionService.createHis((ProductPlanAction) args[0]);
             }
+            else if (iPSDEAction.getName().equals("editComment")) {
+                return productplanactionService.editComment((ProductPlanAction) args[0]);
+            }
             else if (iPSDEAction.getName().equals("ManagePmsEe")) {
                 return productplanactionService.managePmsEe((ProductPlanAction) args[0]);
             }
@@ -317,6 +320,9 @@ public class ProductPlanActionRuntime extends cn.ibizlab.pms.core.runtime.System
         }
         else if (action.equals("createHis")) {
             return aroundAction("CreateHis", point);
+        }
+        else if (action.equals("editComment")) {
+            return aroundAction("editComment", point);
         }
         else if (action.equals("managePmsEe")) {
             return aroundAction("ManagePmsEe", point);

@@ -53,6 +53,39 @@
     "name" : "CheckKey",
     "builtinAction" : true
   }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "DELOGIC",
+    "codeName" : "Comment",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction/PSDEACTIONS/Comment.json",
+    "logicName" : "添加备注",
+    "name" : "Comment",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction/PSDELOGICS/Comment.json"
+    }
+  }, {
+    "actionMode" : "CREATE",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "CreateHis",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction/PSDEACTIONS/CreateHis.json",
+    "logicName" : "创建历史日志",
+    "name" : "CreateHis"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "EditComment",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction/PSDEACTIONS/EditComment.json",
+    "logicName" : "编辑备注信息",
+    "name" : "editComment"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "ManagePmsEe",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction/PSDEACTIONS/ManagePmsEe.json",
+    "logicName" : "Pms企业专用",
+    "name" : "ManagePmsEe",
+    "userCat" : "CAT1"
+  }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
     "codeName" : "Save",
@@ -60,6 +93,27 @@
     "logicName" : "Save",
     "name" : "Save",
     "builtinAction" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "SendMarkDone",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction/PSDEACTIONS/SendMarkDone.json",
+    "logicName" : "已读",
+    "name" : "sendMarkDone"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "SendTodo",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction/PSDEACTIONS/SendTodo.json",
+    "logicName" : "发送待办",
+    "name" : "sendTodo"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "SendToread",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction/PSDEACTIONS/SendToread.json",
+    "logicName" : "发送待阅",
+    "name" : "sendToread"
   } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
