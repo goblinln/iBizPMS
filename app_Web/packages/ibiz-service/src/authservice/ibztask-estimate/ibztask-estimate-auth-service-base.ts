@@ -38,22 +38,21 @@ export class IBZTaskEstimateAuthServiceBase extends AuthService {
      * @memberof IBZTaskEstimateAuthServiceBase
      */
     public getOPPrivs(activeKey: string,dataaccaction:string, mainSateOPPrivs: any): any {
-        let curDefaultOPPrivs:any = this.getSysOPPrivs();
-        let copyDefaultOPPrivs:any = JSON.parse(JSON.stringify(curDefaultOPPrivs));
-        if(mainSateOPPrivs){
-            Object.assign(curDefaultOPPrivs,mainSateOPPrivs);
+        let result: any = { [dataaccaction]: 1 };
+        const curDefaultOPPrivs: any = this.getSysOPPrivs();
+        // 统一资源权限
+        if (curDefaultOPPrivs && (Object.keys(curDefaultOPPrivs).length > 0) && curDefaultOPPrivs.hasOwnProperty(dataaccaction)) {
+            result[dataaccaction] = result[dataaccaction] && curDefaultOPPrivs[dataaccaction];
         }
-        // 统一资源优先
-        Object.keys(curDefaultOPPrivs).forEach((name:string) => {
-            if(this.sysOPPrivsMap.get(name) && copyDefaultOPPrivs[name] === 0){
-                curDefaultOPPrivs[name] = copyDefaultOPPrivs[name];
-            }
-        });
-        // 合并实体级权限数据
-        if(!this.getActivedDeOPPrivs(activeKey, dataaccaction)){
-            Object.assign(curDefaultOPPrivs, { [dataaccaction]: this.getActivedDeOPPrivs(activeKey, dataaccaction) });
+        // 主状态权限
+        if (mainSateOPPrivs && (Object.keys(mainSateOPPrivs).length > 0) && mainSateOPPrivs.hasOwnProperty(dataaccaction)) {
+            result[dataaccaction] = result[dataaccaction] && mainSateOPPrivs[dataaccaction];
         }
-        return curDefaultOPPrivs;
+        // 实体级权限
+         if (!this.getActivedDeOPPrivs(activeKey, dataaccaction)) {
+            result[dataaccaction] = 0;
+        }
+        return result;
     }
 
 }
