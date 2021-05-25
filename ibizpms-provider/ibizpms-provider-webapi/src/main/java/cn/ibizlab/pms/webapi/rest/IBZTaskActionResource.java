@@ -138,7 +138,6 @@ public class IBZTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztaskactionService.checkKey(ibztaskactionMapping.toDomain(ibztaskactiondto)));
     }
 
-    @PreAuthorize("@IBZTaskActionRuntime.test(#ibztaskaction_id,'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"任务日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztaskactions/{ibztaskaction_id}/comment")
     public ResponseEntity<IBZTaskActionDTO> comment(@PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -171,7 +170,6 @@ public class IBZTaskActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("@IBZTaskActionRuntime.test(#ibztaskaction_id,'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"任务日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztaskactions/{ibztaskaction_id}/editcomment")
     public ResponseEntity<IBZTaskActionDTO> editComment(@PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -422,7 +420,6 @@ public class IBZTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztaskactionService.checkKey(ibztaskactionMapping.toDomain(ibztaskactiondto)));
     }
 
-    @PreAuthorize("@TaskRuntime.test(#task_id,'MANAGE')")
     @ApiOperation(value = "根据任务任务日志", tags = {"任务日志" },  notes = "根据任务任务日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/ibztaskactions/{ibztaskaction_id}/comment")
     public ResponseEntity<IBZTaskActionDTO> commentByTask(@PathVariable("task_id") Long task_id, @PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -451,7 +448,6 @@ public class IBZTaskActionResource {
         boolean result = ibztaskactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.test(#task_id,'MANAGE')")
     @ApiOperation(value = "根据任务任务日志", tags = {"任务日志" },  notes = "根据任务任务日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/ibztaskactions/{ibztaskaction_id}/editcomment")
     public ResponseEntity<IBZTaskActionDTO> editCommentByTask(@PathVariable("task_id") Long task_id, @PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -688,7 +684,6 @@ public class IBZTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztaskactionService.checkKey(ibztaskactionMapping.toDomain(ibztaskactiondto)));
     }
 
-    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'MANAGE')")
     @ApiOperation(value = "根据任务模块任务任务日志", tags = {"任务日志" },  notes = "根据任务模块任务任务日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/ibztaskactions/{ibztaskaction_id}/comment")
     public ResponseEntity<IBZTaskActionDTO> commentByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -717,7 +712,6 @@ public class IBZTaskActionResource {
         boolean result = ibztaskactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'MANAGE')")
     @ApiOperation(value = "根据任务模块任务任务日志", tags = {"任务日志" },  notes = "根据任务模块任务任务日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/ibztaskactions/{ibztaskaction_id}/editcomment")
     public ResponseEntity<IBZTaskActionDTO> editCommentByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -954,7 +948,6 @@ public class IBZTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztaskactionService.checkKey(ibztaskactionMapping.toDomain(ibztaskactiondto)));
     }
 
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'MANAGE')")
     @ApiOperation(value = "根据产品计划任务任务日志", tags = {"任务日志" },  notes = "根据产品计划任务任务日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/ibztaskactions/{ibztaskaction_id}/comment")
     public ResponseEntity<IBZTaskActionDTO> commentByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -983,7 +976,6 @@ public class IBZTaskActionResource {
         boolean result = ibztaskactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'MANAGE')")
     @ApiOperation(value = "根据产品计划任务任务日志", tags = {"任务日志" },  notes = "根据产品计划任务任务日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/ibztaskactions/{ibztaskaction_id}/editcomment")
     public ResponseEntity<IBZTaskActionDTO> editCommentByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -1220,7 +1212,6 @@ public class IBZTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztaskactionService.checkKey(ibztaskactionMapping.toDomain(ibztaskactiondto)));
     }
 
-    @PreAuthorize("@StoryRuntime.test(#story_id,'MANAGE')")
     @ApiOperation(value = "根据需求任务任务日志", tags = {"任务日志" },  notes = "根据需求任务任务日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/ibztaskactions/{ibztaskaction_id}/comment")
     public ResponseEntity<IBZTaskActionDTO> commentByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -1249,7 +1240,6 @@ public class IBZTaskActionResource {
         boolean result = ibztaskactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@StoryRuntime.test(#story_id,'MANAGE')")
     @ApiOperation(value = "根据需求任务任务日志", tags = {"任务日志" },  notes = "根据需求任务任务日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/ibztaskactions/{ibztaskaction_id}/editcomment")
     public ResponseEntity<IBZTaskActionDTO> editCommentByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -1486,7 +1476,6 @@ public class IBZTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztaskactionService.checkKey(ibztaskactionMapping.toDomain(ibztaskactiondto)));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "根据项目任务任务日志", tags = {"任务日志" },  notes = "根据项目任务任务日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/ibztaskactions/{ibztaskaction_id}/comment")
     public ResponseEntity<IBZTaskActionDTO> commentByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -1515,7 +1504,6 @@ public class IBZTaskActionResource {
         boolean result = ibztaskactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "根据项目任务任务日志", tags = {"任务日志" },  notes = "根据项目任务任务日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/ibztaskactions/{ibztaskaction_id}/editcomment")
     public ResponseEntity<IBZTaskActionDTO> editCommentByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -1752,7 +1740,6 @@ public class IBZTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztaskactionService.checkKey(ibztaskactionMapping.toDomain(ibztaskactiondto)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品产品计划任务任务日志", tags = {"任务日志" },  notes = "根据产品产品计划任务任务日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/ibztaskactions/{ibztaskaction_id}/comment")
     public ResponseEntity<IBZTaskActionDTO> commentByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -1781,7 +1768,6 @@ public class IBZTaskActionResource {
         boolean result = ibztaskactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品产品计划任务任务日志", tags = {"任务日志" },  notes = "根据产品产品计划任务任务日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/ibztaskactions/{ibztaskaction_id}/editcomment")
     public ResponseEntity<IBZTaskActionDTO> editCommentByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -2018,7 +2004,6 @@ public class IBZTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztaskactionService.checkKey(ibztaskactionMapping.toDomain(ibztaskactiondto)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品需求任务任务日志", tags = {"任务日志" },  notes = "根据产品需求任务任务日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/ibztaskactions/{ibztaskaction_id}/comment")
     public ResponseEntity<IBZTaskActionDTO> commentByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -2047,7 +2032,6 @@ public class IBZTaskActionResource {
         boolean result = ibztaskactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品需求任务任务日志", tags = {"任务日志" },  notes = "根据产品需求任务任务日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/ibztaskactions/{ibztaskaction_id}/editcomment")
     public ResponseEntity<IBZTaskActionDTO> editCommentByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -2284,7 +2268,6 @@ public class IBZTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztaskactionService.checkKey(ibztaskactionMapping.toDomain(ibztaskactiondto)));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "根据项目任务模块任务任务日志", tags = {"任务日志" },  notes = "根据项目任务模块任务任务日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/ibztaskactions/{ibztaskaction_id}/comment")
     public ResponseEntity<IBZTaskActionDTO> commentByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {
@@ -2313,7 +2296,6 @@ public class IBZTaskActionResource {
         boolean result = ibztaskactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "根据项目任务模块任务任务日志", tags = {"任务日志" },  notes = "根据项目任务模块任务任务日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/ibztaskactions/{ibztaskaction_id}/editcomment")
     public ResponseEntity<IBZTaskActionDTO> editCommentByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("ibztaskaction_id") Long ibztaskaction_id, @RequestBody IBZTaskActionDTO ibztaskactiondto) {

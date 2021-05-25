@@ -1,6 +1,6 @@
 spring:
   profiles:
-    include: sys ,nacos, web-dev,mob-dev,  webapi-dev,  dev
+    include: sys ,nacos, web-dev,mob-dev,  standardapi-dev,webapi-dev,  dev
   application:
     name: ibizpms
   main:

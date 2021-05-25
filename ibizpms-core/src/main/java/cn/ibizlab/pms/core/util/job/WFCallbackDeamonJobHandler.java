@@ -46,6 +46,9 @@ public class WFCallbackDeamonJobHandler implements IJobsHandler {
                 Object objEntity = deruntime.deserializeEntity(data);
                 if(objEntity instanceof EntityBase){
                     EntityBase entity = (EntityBase) objEntity;
+                    if(!ObjectUtils.isEmpty(entity.get("businessKey"))){
+                        entity.set(deruntime.getKeyPSDEField().getCodeName(),entity.get("businessKey"));
+                    }
                     Object actionType = entity.get("actiontype");
                     Map callRS = new HashMap();
                     if (!ObjectUtils.isEmpty(actionType) && !ObjectUtils.isEmpty(action)) {

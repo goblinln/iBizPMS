@@ -69,6 +69,14 @@ export class WFDynaEditViewBase extends MainViewBase {
     public deDRTabPages: IPSDEDRTabPage[] | null = [];
 
     /**
+     * 是否可编辑
+     * 
+     * @type {boolean}
+     * @memberof WFDynaEditViewBase
+     */
+     public isEditable:boolean = true;
+
+    /**
      * 工作流附加功能类型映射关系对象
      * 
      * @memberof WFDynaEditViewBase                
@@ -211,7 +219,8 @@ export class WFDynaEditViewBase extends MainViewBase {
         }
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.editFormInstance);
         Object.assign(targetCtrlParam.staticProps, {
-            isautoload: true
+            isautoload: true,
+            iseditable: this.isEditable
         });
         return (
             this.$createElement(targetCtrlName, { slot: 'default', props: targetCtrlParam, ref: this.editFormInstance.name, on: targetCtrlEvent })
@@ -233,6 +242,7 @@ export class WFDynaEditViewBase extends MainViewBase {
             this.appEntityService.getWFStep(JSON.parse(JSON.stringify(this.context)), datas, true).then((response: any) => {
                 if (response && response.status === 200) {
                     const data = response.data;
+                    this.isEditable = data.iseditable === 'true';
                     if (data && data['process-form']) {
                         this.computeActivedForm(data['process-form']);
                     } else {

@@ -5,21 +5,6 @@
     "modelref" : true,
     "id" : "MyCreateOrPartake"
   },
-  "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "READ",
-    "name" : "Task_Maintain_MyCOrP_READ",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ProjectModule__READ"
-    }
-  }, {
-    "dataAccessAction" : "UPDATE",
-    "name" : "Task_Maintain_MyCOrP_UPDATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    }
-  } ],
   "roleTag" : "Task_Maintain_MyCOrP",
   "userCat" : "CAT1",
   "userDRAction" : "READ",

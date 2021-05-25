@@ -21,6 +21,11 @@
         </dependency>
         <dependency>
             <groupId>cn.ibizlab.pms</groupId>
+            <artifactId>ibizpms-provider-standardapi</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.ibizlab.pms</groupId>
             <artifactId>ibizpms-provider-webapi</artifactId>
             <version>${project.version}</version>
         </dependency>

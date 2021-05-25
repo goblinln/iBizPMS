@@ -2,7 +2,7 @@
   "codeName" : "AccessAdmin",
   "defaultUser" : "ACCESSADMIN",
   "dynaModelFilePath" : "PSSYSOPPRIVS/AccessAdmin.json",
-  "name" : "管理用户授权",
+  "name" : "管理用户",
   "roleTag" : "AccessAdmin",
   "roleType" : "CUSTOM"
 }

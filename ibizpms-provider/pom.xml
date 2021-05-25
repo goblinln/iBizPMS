@@ -15,6 +15,7 @@
     <description>Ibizpms Provider</description>
 
     <modules>
+        <module>ibizpms-provider-standardapi</module>
         <module>ibizpms-provider-webapi</module>
     </modules>
 

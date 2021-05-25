@@ -5,14 +5,6 @@
     "modelref" : true,
     "id" : "MyCreateOrPartake"
   },
-  "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "READ",
-    "name" : "Task_Read_MyCOrP_Read",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTStory__READ"
-    }
-  } ],
   "roleTag" : "Task_Read_MyCOrP",
   "userCat" : "CAT1",
   "userDRAction" : "READ",

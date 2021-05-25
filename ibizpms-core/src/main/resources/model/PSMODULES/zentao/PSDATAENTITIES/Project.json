@@ -6942,6 +6942,9 @@
     "logicName" : "挂起",
     "name" : "SUSPEND"
   }, {
+    "logicName" : "任务管理",
+    "name" : "TASKMANAGE"
+  }, {
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
@@ -7389,6 +7392,25 @@
       }
     } ],
     "roleTag" : "Project_Read_OpenBy",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_TaskManage.json",
+    "name" : "项目任务管理（公开）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "TASKMANAGE",
+      "name" : "Project_TaskManage_TaskManage",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "TASKMANAGE"
+      }
+    } ],
+    "roleTag" : "Project_TaskManage",
     "userCat" : "CAT1",
     "userDRAction" : "READ",
     "systemReserved" : true

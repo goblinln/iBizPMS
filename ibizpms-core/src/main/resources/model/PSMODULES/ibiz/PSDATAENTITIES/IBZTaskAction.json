@@ -1646,28 +1646,8 @@
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
-    "logicName" : "添加备注",
-    "mapPSDEName" : "ZT_TASK",
-    "mapPSDEOPPrivName" : "CREATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskAction/PSDERS/DER1N_IBZPRO_TASKACTION_ZT_TASK_OBJECTID.json"
-    },
-    "name" : "CREATE",
-    "id" : "IbzProTask__CREATE"
-  }, {
     "logicName" : "删除",
     "name" : "DELETE"
-  }, {
-    "logicName" : "管理",
-    "mapPSDEName" : "ZT_TASK",
-    "mapPSDEOPPrivName" : "MANAGE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskAction/PSDERS/DER1N_IBZPRO_TASKACTION_ZT_TASK_OBJECTID.json"
-    },
-    "name" : "MANAGE",
-    "id" : "IbzProTask__MANAGE"
   }, {
     "logicName" : "读取",
     "name" : "READ"

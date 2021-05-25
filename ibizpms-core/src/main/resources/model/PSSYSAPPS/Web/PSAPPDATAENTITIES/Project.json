@@ -4243,6 +4243,9 @@
     "logicName" : "挂起",
     "name" : "SUSPEND"
   }, {
+    "logicName" : "任务管理",
+    "name" : "TASKMANAGE"
+  }, {
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],

@@ -93,6 +93,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
     }
   }, {
+    "name" : "项目经理-ZT_PROJECT[项目任务管理（公开）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_TaskManage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
     "name" : "项目经理-ZT_PROJECT[项目管理（创建者或者更新者）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,

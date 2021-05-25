@@ -15,7 +15,6 @@ import { IPSAppDEUIAction, IPSDEEditForm, IPSDEEditFormItem, IPSDEFDCatGroupLogi
  */
 export class EditFormControlBase extends FormControlBase {
 
-
     /**
      * 表单的模型对象
      *
@@ -31,6 +30,14 @@ export class EditFormControlBase extends FormControlBase {
      * @memberof EditFormControlBase
      */
     public isAutoLoad?: any;
+
+    /**
+     * 是否可以编辑（主要用于工作流提交不需要先更新，直接提交数据）
+     *
+     * @type {*}
+     * @memberof EditFormControlBase
+     */
+    public isEditable?: any;
 
     /**
      * 是否默认保存
@@ -167,7 +174,8 @@ export class EditFormControlBase extends FormControlBase {
      * @memberof EditFormControlBase
      */
     public onStaticPropsChange(newVal: any, oldVal: any) {
-        this.isAutoLoad = this.staticProps.isAutoLoad;
+        this.isAutoLoad = this.staticProps.isautoload;
+        this.isEditable = this.staticProps.iseditable;
         super.onStaticPropsChange(newVal, oldVal);
     }
 
@@ -303,7 +311,7 @@ export class EditFormControlBase extends FormControlBase {
     public loadDraft(opt: any = {}): void {
         let callBack: any;
         if (!this.loaddraftAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.loaddraftaction') as string),'loadDraft');
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.loaddraftaction') as string), 'loadDraft');
             return;
         }
         this.createDefault();
@@ -318,7 +326,7 @@ export class EditFormControlBase extends FormControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                this.$throw(response,'loadDraft');
+                this.$throw(response, 'loadDraft');
                 return;
             }
 
@@ -353,7 +361,7 @@ export class EditFormControlBase extends FormControlBase {
             });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response,'loadDraft');
+            this.$throw(response, 'loadDraft');
         });
     }
 
@@ -374,7 +382,7 @@ export class EditFormControlBase extends FormControlBase {
         const action: any = Object.is(data.srfuf, '1') ? this.updateAction : this.createAction;
         if (!action) {
             let actionName: any = Object.is(data.srfuf, '1') ? "updateAction" : "createAction";
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string),'autoSave');
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string), 'autoSave');
             return;
         }
         Object.assign(arg, { viewparams: this.viewparams });
@@ -383,7 +391,7 @@ export class EditFormControlBase extends FormControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                this.$throw(response,'autoSave');
+                this.$throw(response, 'autoSave');
                 return;
             }
             const data = response.data;
@@ -414,21 +422,21 @@ export class EditFormControlBase extends FormControlBase {
                         let errorProp: string = response.data.message.match(/\[[a-zA-Z]*\]/)[0];
                         let name: string = this.service.getNameByProp(errorProp.substr(1, errorProp.length - 2));
                         if (name) {
-                            this.$throw(this.detailsModel[name].caption + " : " + arg[name] + (this.$t('app.commonWords.isExist') as string) + '!','autoSave');
+                            this.$throw(this.detailsModel[name].caption + " : " + arg[name] + (this.$t('app.commonWords.isExist') as string) + '!', 'autoSave');
                         } else {
-                            this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string),'autoSave');
+                            this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string), 'autoSave');
                         }
                     } else if (Object.is(response.data.errorKey, 'DuplicateKeyException')) {
-                        this.$throw(this.detailsModel[this.majorKeyItemName].caption + " : " + arg[this.majorKeyItemName] + (this.$t('app.commonWords.isExist') as string) + '!','autoSave');
+                        this.$throw(this.detailsModel[this.majorKeyItemName].caption + " : " + arg[this.majorKeyItemName] + (this.$t('app.commonWords.isExist') as string) + '!', 'autoSave');
                     } else {
-                        this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string),'autoSave');
+                        this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string), 'autoSave');
                     }
                 } else {
-                    this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string),'autoSave');
+                    this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string), 'autoSave');
                 }
                 return;
             } else {
-                this.$throw((this.$t('app.commonWords.sysException') as string),'autoSave');
+                this.$throw((this.$t('app.commonWords.sysException') as string), 'autoSave');
             }
         });
     }
@@ -450,9 +458,9 @@ export class EditFormControlBase extends FormControlBase {
                     this.errorMessages.forEach((message: any) => {
                         descMessage += message.error + '<br/>';
                     })
-                    this.$throw(descMessage,'save',{ dangerouslyUseHTMLString: true });
+                    this.$throw(descMessage, 'save', { dangerouslyUseHTMLString: true });
                 } else {
-                    this.$throw((this.$t('app.formpage.valuecheckex') as string),'save');
+                    this.$throw((this.$t('app.formpage.valuecheckex') as string), 'save');
                 }
                 return;
             }
@@ -474,7 +482,7 @@ export class EditFormControlBase extends FormControlBase {
             const action: any = Object.is(data.srfuf, '1') ? this.updateAction : this.createAction;
             if (!action) {
                 let actionName: any = Object.is(data.srfuf, '1') ? "updateAction" : "createAction";
-                this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string),'save');
+                this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string), 'save');
                 return;
             }
             Object.assign(arg, { viewparams: this.viewparams });
@@ -483,7 +491,7 @@ export class EditFormControlBase extends FormControlBase {
             post.then((response: any) => {
                 this.ctrlEndLoading();
                 if (!response.status || response.status !== 200) {
-                    this.$throw(response,'save');
+                    this.$throw(response, 'save');
                     return;
                 }
                 this.viewparams.copymode = false;
@@ -525,20 +533,20 @@ export class EditFormControlBase extends FormControlBase {
                             let errorProp: string = response.data.message.match(/\[[a-zA-Z]*\]/)[0];
                             let name: string = this.service.getNameByProp(errorProp.substr(1, errorProp.length - 2));
                             if (name) {
-                                this.$throw(this.detailsModel[name].caption + " : " + arg[name] + (this.$t('app.commonWords.isExist') as string) + '!','save');
+                                this.$throw(this.detailsModel[name].caption + " : " + arg[name] + (this.$t('app.commonWords.isExist') as string) + '!', 'save');
                             } else {
-                                this.$throw(response.data.message + appendErrors,'save');
+                                this.$throw(response.data.message + appendErrors, 'save');
                             }
                         } else {
-                            this.$throw(response.data.message + appendErrors,'save');
+                            this.$throw(response.data.message + appendErrors, 'save');
                         }
                     } else {
-                        this.$throw(response.data.message + appendErrors,'save');
+                        this.$throw(response.data.message + appendErrors, 'save');
                         reject(response);
                     }
                     return;
                 } else {
-                    this.$throw((this.$t('app.commonWords.sysException') as string),'save');
+                    this.$throw((this.$t('app.commonWords.sysException') as string), 'save');
                     reject(response);
                 }
                 reject(response);
@@ -556,7 +564,7 @@ export class EditFormControlBase extends FormControlBase {
     public async remove(opt: Array<any> = [], showResultInfo?: boolean): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
             if (!this.removeAction) {
-                this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.removeaction') as string),'remove');
+                this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.removeaction') as string), 'remove');
                 return;
             }
             const arg: any = opt[0];
@@ -574,13 +582,13 @@ export class EditFormControlBase extends FormControlBase {
                     });
                     this.formState.next({ type: 'remove', data: data });
                     this.data.ismodify = false;
-                    this.$success((data.srfmajortext ? data.srfmajortext : '') + (this.$t('app.formpage.deletesuccess') as string),'remove');
+                    this.$success((data.srfmajortext ? data.srfmajortext : '') + (this.$t('app.formpage.deletesuccess') as string), 'remove');
                     AppCenterService.notifyMessage({ name: this.controlInstance.getPSAppDataEntity()?.codeName || '', action: 'appRefresh', data: data });
                     resolve(response);
                 }
             }).catch((error: any) => {
                 this.ctrlEndLoading();
-                this.$throw(error,'remove');
+                this.$throw(error, 'remove');
                 reject(error);
             });
         });
@@ -634,7 +642,7 @@ export class EditFormControlBase extends FormControlBase {
                     if (copyViewParams.w) {
                         delete copyViewParams.w;
                     }
-                    if(this.appDeKeyFieldName && copyViewParams[this.appDeKeyFieldName.toLocaleLowerCase()]){
+                    if (this.appDeKeyFieldName && copyViewParams[this.appDeKeyFieldName.toLocaleLowerCase()]) {
                         delete copyViewParams[this.appDeKeyFieldName.toLocaleLowerCase()]
                     }
                     Object.assign(responseData, copyViewParams);
@@ -652,19 +660,19 @@ export class EditFormControlBase extends FormControlBase {
                 result.then((response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        this.$throw((this.$t('app.formpage.workflow.starterror') as string) + ', ' + response.data.message,'wfstart');
+                        this.$throw((this.$t('app.formpage.workflow.starterror') as string) + ', ' + response.data.message, 'wfstart');
                         return;
                     }
-                    this.$success((this.$t('app.formpage.workflow.startsuccess') as string),'wfstart');
+                    this.$success((this.$t('app.formpage.workflow.startsuccess') as string), 'wfstart');
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();
-                    this.$throw(response,'wfstart');
+                    this.$throw(response, 'wfstart');
                     reject(response);
                 });
             }).catch((response: any) => {
                 this.ctrlEndLoading();
-                this.$throw(response,'wfstart');
+                this.$throw(response, 'wfstart');
                 reject(response);
             })
         });
@@ -691,24 +699,7 @@ export class EditFormControlBase extends FormControlBase {
             if (!arg[this.appDeKeyFieldName.toLowerCase()]) {
                 return;
             }
-            const post: Promise<any> = Object.is(arg.srfuf, '1') ? this.service.update(this.updateAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator, true) : this.service.add(this.createAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator, true);
-            this.ctrlBeginLoading();
-            post.then((response: any) => {
-                this.ctrlEndLoading();
-                const responseData: any = response.data;
-                let tempResponseData: any = Util.deepCopy(response);
-                this.service.handleResponse('save', tempResponseData);
-                const arg: any = tempResponseData.data;
-                // 保存完成UI处理
-                this.onFormLoad(arg, 'save');
-                this.ctrlEvent({
-                    controlname: this.controlInstance.name,
-                    action: 'save',
-                    data: arg,
-                });
-                this.$nextTick(() => {
-                    this.formState.next({ type: 'save', data: arg });
-                });
+            const submitData:Function = (arg:any,responseData:any) =>{
                 // 准备工作流数据,填充未存库数据
                 let tempWFData: any = {};
                 if (copyData && Object.keys(copyData).length > 0) {
@@ -739,23 +730,48 @@ export class EditFormControlBase extends FormControlBase {
                 result.then((response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        this.$throw((this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message,'wfsubmit');
+                        this.$throw((this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message, 'wfsubmit');
                         return;
                     }
                     this.onFormLoad(arg, 'submit');
                     AppCenterService.notifyMessage({ name: this.controlInstance.getPSAppDataEntity()?.codeName || '', action: 'appRefresh', data: data });
-                    this.$success((this.$t('app.formpage.workflow.submitsuccess') as string),'wfsubmit');
+                    this.$success((this.$t('app.formpage.workflow.submitsuccess') as string), 'wfsubmit');
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();
-                    this.$throw(response,'wfsubmit');
+                    this.$throw(response, 'wfsubmit');
                     reject(response);
                 });
-            }).catch((response: any) => {
-                this.ctrlEndLoading();
-                this.$throw(response,'wfsubmit');
-                reject(response);
-            })
+            }
+            if(this.isEditable){
+                const post: Promise<any> = Object.is(arg.srfuf, '1') ? this.service.update(this.updateAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator, true) : this.service.add(this.createAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator, true);
+                this.ctrlBeginLoading();
+                post.then((response: any) => {
+                    this.ctrlEndLoading();
+                    const responseData: any = response.data;
+                    let tempResponseData: any = Util.deepCopy(response);
+                    this.service.handleResponse('save', tempResponseData);
+                    const arg: any = tempResponseData.data;
+                    // 保存完成UI处理
+                    this.onFormLoad(arg, 'save');
+                    this.ctrlEvent({
+                        controlname: this.controlInstance.name,
+                        action: 'save',
+                        data: arg,
+                    });
+                    this.$nextTick(() => {
+                        this.formState.next({ type: 'save', data: arg });
+                    });
+                    submitData(arg,responseData);
+                }).catch((response: any) => {
+                    this.ctrlEndLoading();
+                    this.$throw(response, 'wfsubmit');
+                    reject(response);
+                })
+            }else{
+                const responseData: any = this.getData();
+                submitData(arg,responseData);
+            }
         })
     }
 
@@ -801,7 +817,7 @@ export class EditFormControlBase extends FormControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                this.$throw(response,'panelAction');
+                this.$throw(response, 'panelAction');
                 return;
             }
             const data = response.data;
@@ -816,7 +832,7 @@ export class EditFormControlBase extends FormControlBase {
             });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response,'panelAction');
+            this.$throw(response, 'panelAction');
         });
     }
 
@@ -840,7 +856,7 @@ export class EditFormControlBase extends FormControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                this.$throw((this.$t('app.formpage.updateerror') as string),'updateFormItems');
+                this.$throw((this.$t('app.formpage.updateerror') as string), 'updateFormItems');
                 return;
             }
             const data = response.data;
@@ -860,7 +876,7 @@ export class EditFormControlBase extends FormControlBase {
             });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response,'updateFormItems');
+            this.$throw(response, 'updateFormItems');
         });
     }
 
@@ -1091,11 +1107,11 @@ export class EditFormControlBase extends FormControlBase {
                 const model = this.detailsModel[name];
                 if (model?.detailType == "BUTTON" && model.uiaction?.tag) {
                     // 更新detailsModel里的按钮的权限状态值
-                    if(Util.isEmpty(this.actionModel[model.uiaction.tag].dataActionResult)){
+                    if (Util.isEmpty(this.actionModel[model.uiaction.tag].dataActionResult)) {
                         this.detailsModel[name].isPower = true;
                         this.detailsModel[name].visible = true;
                         this.detailsModel[name].disabled = false;
-                    }else{
+                    } else {
                         this.detailsModel[name].visible = this.actionModel[model.uiaction.tag].visabled;
                         this.detailsModel[name].disabled = this.actionModel[model.uiaction.tag].disabled;
                         this.detailsModel[name].isPower = this.actionModel[model.uiaction.tag].dataActionResult === 1 ? true : false;
@@ -1320,7 +1336,7 @@ export class EditFormControlBase extends FormControlBase {
                             try {
                                 eval(sysRule.scriptCode);
                             } catch (error) {
-                                this.$throw(error,'initRules');
+                                this.$throw(error, 'initRules');
                             }
                             return true;
                         },
