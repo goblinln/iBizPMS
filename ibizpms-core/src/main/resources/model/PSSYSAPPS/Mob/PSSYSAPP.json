@@ -4428,6 +4428,9 @@
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductLine.json"
   }, {
     "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzProReportlyAction.json"
+  }, {
+    "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DynaFilter.json"
   } ],
   "getAllPSAppFuncs" : [ {
@@ -14333,6 +14336,12 @@
     "viewType" : "DEMOBEDITVIEW",
     "resource" : "Project",
     "view" : "ActiviteMobEditView"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzProReportlyActionOptionView.json",
+    "viewType" : "DEOPTVIEW",
+    "resource" : "IbzProReportlyAction",
+    "view" : "OptionView"
   }, {
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskFavoriteMobMDView.json",

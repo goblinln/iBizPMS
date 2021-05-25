@@ -275,6 +275,10 @@ zuul:
       path: /productlines/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
+    ibzpro_reportlyaction:
+      path: /ibzproreportlyactions/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
     dynafilter:
       path: /dynafilters/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
