@@ -75,6 +75,11 @@ public class IBZTPSFallback implements IBZTPSFeignClient {
     }
 
     @Override
+    public DataObj createSendCopyTask(SysTodo task) {
+        return null;
+    }
+
+    @Override
     public DataObj completeTask(String taskId, String userId) {
         return null;
     }
@@ -96,6 +101,16 @@ public class IBZTPSFallback implements IBZTPSFeignClient {
 
     @Override
     public DataObj reassignTask(String taskId, DataObj dataObj) {
+        return null;
+    }
+
+    @Override
+    public DataObj markReadTask(String taskId, String userId) {
+        return null;
+    }
+
+    @Override
+    public DataObj markReadSendCopyTask(String taskId, String userId) {
         return null;
     }
 

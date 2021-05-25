@@ -50,8 +50,8 @@ export class IbzproProjectUserTaskAuthServiceBase extends AuthService {
             }
         });
         // 合并实体级权限数据
-        if (this.getActivedDeOPPrivs(activeKey,dataaccaction)) {
-            Object.assign(curDefaultOPPrivs, this.getActivedDeOPPrivs(activeKey,dataaccaction));
+        if(!this.getActivedDeOPPrivs(activeKey, dataaccaction)){
+            Object.assign(curDefaultOPPrivs, { [dataaccaction]: this.getActivedDeOPPrivs(activeKey, dataaccaction) });
         }
         return curDefaultOPPrivs;
     }

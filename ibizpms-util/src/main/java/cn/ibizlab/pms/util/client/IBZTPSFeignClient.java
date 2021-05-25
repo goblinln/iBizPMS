@@ -52,6 +52,9 @@ public interface IBZTPSFeignClient {
     @RequestMapping(method = RequestMethod.POST, value = "/todo")
     DataObj createTask(@RequestBody SysTodo task);
 
+    @RequestMapping(method = RequestMethod.POST, value = "/carboncopy")
+    DataObj createSendCopyTask(@RequestBody SysTodo task);
+
     @RequestMapping(method = RequestMethod.GET, value = "/todo/wftask/{taskId}/complete/{userId}")
     DataObj completeTask(@PathVariable String taskId ,@PathVariable String userId);
 
@@ -66,5 +69,11 @@ public interface IBZTPSFeignClient {
 
     @RequestMapping(method = RequestMethod.POST, value = "/todo/wftask/{taskId}/reassign")
     DataObj reassignTask(@PathVariable String taskId, @RequestBody DataObj dataObj);
-	
+
+    @RequestMapping(method = RequestMethod.GET , value ="/todo/wftask/{taskId}/markread/{userId}")
+    DataObj markReadTask(@PathVariable String taskId, @PathVariable String userId);
+
+    @RequestMapping(method = RequestMethod.GET , value ="/carboncopy/wftask/{taskId}/markread/{userId}")
+    DataObj markReadSendCopyTask(@PathVariable String taskId, @PathVariable String userId);
+
 }

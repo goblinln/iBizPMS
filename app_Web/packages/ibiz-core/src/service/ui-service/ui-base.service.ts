@@ -550,7 +550,7 @@ export class UIServiceBase {
         if (!Environment.enablePermissionValid) {
             return 1;
         }
-        const curActiveKey: string = `${this.deName}-${data[this.appDeKeyFieldName?.toLowerCase()]}`;
+        const curActiveKey: string = `${data[this.appDeKeyFieldName?.toLowerCase()]}`;
         const result = this.authService.getOPPrivs(curActiveKey,dataaccaction,this.getDEMainStateOPPrivs(data));
         return result[dataaccaction];
     }

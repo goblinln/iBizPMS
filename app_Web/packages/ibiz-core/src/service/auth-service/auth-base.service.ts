@@ -37,13 +37,13 @@ export class AuthServiceBase {
      */
     public deOPPrivsMap: Map<string, any> = new Map();
 
-	/**
-	 * 实体数据访问控制方式
-	 * @description 值模式 [云实体数据访问控制方式] {0：无控制、 1：自控制、 2：附属主实体控制、 3：附属主实体控制（未映射自控） }
-	 * @type {( number | 0 | 1 | 2 | 3)} 
+    /**
+     * 实体数据访问控制方式
+     * @description 值模式 [云实体数据访问控制方式] {0：无控制、 1：自控制、 2：附属主实体控制、 3：附属主实体控制（未映射自控） }
+     * @type {( number | 0 | 1 | 2 | 3)} 
      * @memberof AuthServiceBase
-	 */
-    public dataAccCtrlMode:number = 0;
+     */
+    public dataAccCtrlMode: number = 0;
 
     /**
      * 应用上下文
@@ -52,7 +52,7 @@ export class AuthServiceBase {
      * @type {any}
      * @memberof AuthServiceBase
      */
-     protected context: any;
+    protected context: any;
 
     /**
      * 应用实体动态模型文件路径
@@ -79,7 +79,7 @@ export class AuthServiceBase {
      * @type {IBizEntityModel}
      * @memberof AuthServiceBase
      */
-     protected entityModel!: IPSAppDataEntity;
+    protected entityModel!: IPSAppDataEntity;
 
     /**
      * Creates an instance of AuthServiceBase.
@@ -99,9 +99,9 @@ export class AuthServiceBase {
      * @memberof  AuthServiceBase
      */
     protected async loaded() {
-        this.entityModel = await (await GetModelService(this.context)).getPSAppDataEntity(this.dynaModelFilePath);  
+        this.entityModel = await (await GetModelService(this.context)).getPSAppDataEntity(this.dynaModelFilePath);
         this.registerDEOPPrivs(this.entityModel);
-        this.dataAccCtrlMode =  this.entityModel.dataAccCtrlMode;
+        this.dataAccCtrlMode = this.entityModel.dataAccCtrlMode;
     }
 
     /**
@@ -109,10 +109,10 @@ export class AuthServiceBase {
      *
      * @memberof  AuthServiceBase
      */
-    public registerDEOPPrivs(opts:IPSAppDataEntity){
-        if(opts.getAllPSDEOPPrivs()){
-            opts.getAllPSDEOPPrivs()?.forEach((item:IPSDEOPPriv) =>{
-                this.deOPPrivsMap.set(item.name,item);
+    public registerDEOPPrivs(opts: IPSAppDataEntity) {
+        if (opts.getAllPSDEOPPrivs()) {
+            opts.getAllPSDEOPPrivs()?.forEach((item: IPSDEOPPriv) => {
+                this.deOPPrivsMap.set(item.name, item);
             })
         }
     }
@@ -125,6 +125,16 @@ export class AuthServiceBase {
      */
     public getStore(): any {
         return this.$store;
+    }
+
+    /**
+     * 应用实体映射实体名称
+     *
+     * @readonly
+     * @memberof AuthServiceBase
+     */
+    get deName() {
+        return (this.entityModel as any)?.getPSDEName() || '';
     }
 
     /**
@@ -162,8 +172,57 @@ export class AuthServiceBase {
      * @returns {any}
      * @memberof AuthServiceBase
      */
-    public getOPPrivs(activeKey: string,dataaccaction:string,mainSateOPPrivs: any): any {
+    public getOPPrivs(activeKey: string, dataaccaction: string, mainSateOPPrivs: any): any {
         return null;
+    }
+
+    /**
+     * 根据实体操作标识集合
+     *
+     * @param {*} key 实体权限数据缓存标识
+     * @returns {any}
+     * @memberof AuthServiceBase
+     */
+    public getCurDeOPPrivs(key: string) {
+        return this.getStore().getters['authresource/getSrfappdeData'](key);
+    }
+
+    /**
+     * 获取附属主实体权限
+     *
+     * @param {*} tempOPPriv 操作标识对象
+     * @param {*} dataaccaction 操作标识key
+     * @returns {any}
+     * @memberof AuthServiceBase
+     */
+    public getOPPsWithP(tempOPPriv: any, dataaccaction: string) {
+        if (tempOPPriv && tempOPPriv['mapPSDEName'] && tempOPPriv['mapPSDEOPPrivName']) {
+            return (this.getCurDeOPPrivs(`${this.deName}-${this.context['srfparentkey']}`)[dataaccaction] == 0) ? 0 : 1;
+        } else {
+            return 1;
+        }
+    }
+
+    /**
+     * 获取附属主实体控制（未映射自控）权限
+     *
+     * @param {*} tempOPPriv 操作标识对象
+     * @param {*} dataaccaction 操作标识key
+     * @param {*} key 数据主键key
+     * @returns {any}
+     * @memberof AuthServiceBase
+     */
+    public getOPPsWithPAO(tempOPPriv: any, dataaccaction: string, key: string) {
+        if (tempOPPriv && tempOPPriv['mapPSDEName'] && tempOPPriv['mapPSDEOPPrivName']) {
+            const parentOPPrivs: any = this.getCurDeOPPrivs(`${this.deName}-${this.context['srfparentkey']}`);
+            if (parentOPPrivs.hasOwnProperty(dataaccaction)) {
+                return (parentOPPrivs[dataaccaction] == 0) ? 0 : 1;
+            } else {
+                return (this.getCurDeOPPrivs(`${this.deName}-${key}`)[dataaccaction] == 0) ? 0 : 1;
+            }
+        } else {
+            return (this.getCurDeOPPrivs(`${this.deName}-${key}`)[dataaccaction] == 0) ? 0 : 1;
+        }
     }
 
     /**
@@ -174,14 +233,16 @@ export class AuthServiceBase {
      * @returns {}
      * @memberof AuthServiceBase
      */
-    public getActivedDeOPPrivs(key: string,dataaccaction:string) {
-        if(this.dataAccCtrlMode == 0){
-            return true;
-        }else if(this.dataAccCtrlMode == 1){
-            return this.getStore().getters['authresource/getSrfappdeData'](key);
-        }else {
-            // todo 
-            return this.getStore().getters['authresource/getSrfappdeData'](key);
+    public getActivedDeOPPrivs(key: string, dataaccaction: string) {
+        const tempOPPriv = this.deOPPrivsMap.get(dataaccaction);
+        if (this.dataAccCtrlMode == 0) {
+            return 1;
+        } else if (this.dataAccCtrlMode == 1) {
+            return (this.getCurDeOPPrivs(`${this.deName}-${key}`)[dataaccaction] == 0) ? 0 : 1;
+        } else if (this.dataAccCtrlMode == 2) {
+            return this.getOPPsWithP(tempOPPriv, dataaccaction);
+        } else {
+            return this.getOPPsWithPAO(tempOPPriv, dataaccaction, key);
         }
     }
 
