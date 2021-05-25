@@ -214,13 +214,13 @@ export class ViewEngine {
                             dataActionResult= _this.view.appUIService.getAllOPPrivs(data,_item['dataaccaction']);       
                         }
                     }else{
-                        dataActionResult = _this.view.appUIService.getResourceOPPrivs(_item['dataaccaction']);
+                        dataActionResult = _this.view.appUIService.getAllOPPrivs(undefined,_item['dataaccaction']);
                     }
                 }else{
                     if(data && Object.keys(data).length >0 && _this.view.appUIService.isEnableDEMainState){
                         dataActionResult= _this.view.appUIService.getAllOPPrivs(data,_item['dataaccaction']);       
                     }else{
-                        dataActionResult = _this.view.appUIService.getResourceOPPrivs(_item['dataaccaction']);
+                        dataActionResult = _this.view.appUIService.getAllOPPrivs(undefined,_item['dataaccaction']);
                     }
                 }
                 // 无权限:0;有权限:1

@@ -711,6 +711,35 @@
     "name" : "FILTERFETCH",
     "builtinMethod" : true
   } ],
+  "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "NONE",
+    "caption" : "添加备注",
+    "codeName" : "AddComment",
+    "dataAccessAction" : "CREATE",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanActionOptionView.json",
+      "viewType" : "DEOPTVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "ProductPlanAction_AddComment",
+    "name" : "添加备注",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlanAction.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf1e8@FontAwesome",
+      "cssClass" : "fa fa-twitch"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "AddComment",
+    "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
+    "id" : "AddComment@ProductPlanAction"
+  } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "新建",
     "mapPSDEName" : "ZT_PRODUCTPLAN",

@@ -37,9 +37,17 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("添加备注",null),
 				title: commonLogic.appcommonhandle("添加备注",null),
 			},
+			'addlistview': {
+				caption: commonLogic.appcommonhandle("添加备注",null),
+				title: commonLogic.appcommonhandle("产品计划日志列表视图（添加备注）",null),
+			},
 			'editview': {
 				caption: commonLogic.appcommonhandle("产品计划日志",null),
 				title: commonLogic.appcommonhandle("产品计划日志编辑视图",null),
+			},
+			'listview': {
+				caption: commonLogic.appcommonhandle("产品计划日志",null),
+				title: commonLogic.appcommonhandle("产品日志列表视图",null),
 			},
 		},
 		addcomment_form: {
@@ -79,6 +87,17 @@ function getLocaleResourceBase(){
 				'id': commonLogic.appcommonhandle("id",null), 
 			},
 			uiactions: {
+			},
+		},
+		classifybytype_list: {
+			nodata:commonLogic.appcommonhandle("",null),
+			uiactions: {
+			},
+		},
+		addlistviewtoolbar_toolbar: {
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("添加备注",null),
+				tip: commonLogic.appcommonhandle("添加备注",null),
 			},
 		},
 	};

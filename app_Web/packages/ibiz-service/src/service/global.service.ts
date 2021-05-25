@@ -998,6 +998,15 @@ export class GlobalService {
         return (await import('./product-plan-action/product-plan-action.service')).default.getInstance();
     }
     /**
+     * 版本日志服务
+     *
+     * @return {IbzProBuildAction}
+     * @memberof GlobalService
+     */
+    async getIbzProBuildActionService() {
+        return (await import('./ibz-pro-build-action/ibz-pro-build-action.service')).default.getInstance();
+    }
+    /**
      * 产品的分支和平台信息服务
      *
      * @return {Branch}
@@ -1005,6 +1014,15 @@ export class GlobalService {
      */
     async getBranchService() {
         return (await import('./branch/branch.service')).default.getInstance();
+    }
+    /**
+     * 项目日志服务
+     *
+     * @return {IBZProProjectAction}
+     * @memberof GlobalService
+     */
+    async getIBZProProjectActionService() {
+        return (await import('./ibzpro-project-action/ibzpro-project-action.service')).default.getInstance();
     }
     /**
      * 系统日志服务
@@ -1016,6 +1034,15 @@ export class GlobalService {
         return (await import('./action/action.service')).default.getInstance();
     }
     /**
+     * Bug日志服务
+     *
+     * @return {IbzProBugAction}
+     * @memberof GlobalService
+     */
+    async getIbzProBugActionService() {
+        return (await import('./ibz-pro-bug-action/ibz-pro-bug-action.service')).default.getInstance();
+    }
+    /**
      * 动态搜索栏服务
      *
      * @return {DynaFilter}
@@ -1023,6 +1050,24 @@ export class GlobalService {
      */
     async getDynaFilterService() {
         return (await import('./dyna-filter/dyna-filter.service')).default.getInstance();
+    }
+    /**
+     * 测试用例日志服务
+     *
+     * @return {IBZCaseAction}
+     * @memberof GlobalService
+     */
+    async getIBZCaseActionService() {
+        return (await import('./ibzcase-action/ibzcase-action.service')).default.getInstance();
+    }
+    /**
+     * 发布日志服务
+     *
+     * @return {IBZProReleaseAction}
+     * @memberof GlobalService
+     */
+    async getIBZProReleaseActionService() {
+        return (await import('./ibzpro-release-action/ibzpro-release-action.service')).default.getInstance();
     }
     /**
      * 操作历史服务
@@ -1043,6 +1088,15 @@ export class GlobalService {
         return (await import('./ibzpro-product-history/ibzpro-product-history.service')).default.getInstance();
     }
     /**
+     * 月报日志服务
+     *
+     * @return {IbzProMonthlyAction}
+     * @memberof GlobalService
+     */
+    async getIbzProMonthlyActionService() {
+        return (await import('./ibz-pro-monthly-action/ibz-pro-monthly-action.service')).default.getInstance();
+    }
+    /**
      * 需求日志服务
      *
      * @return {IBZStoryAction}
@@ -1061,6 +1115,24 @@ export class GlobalService {
         return (await import('./module/module.service')).default.getInstance();
     }
     /**
+     * 报告日志服务
+     *
+     * @return {IBZTestReportAction}
+     * @memberof GlobalService
+     */
+    async getIBZTestReportActionService() {
+        return (await import('./ibztest-report-action/ibztest-report-action.service')).default.getInstance();
+    }
+    /**
+     * ToDo日志服务
+     *
+     * @return {IBZProToDoAction}
+     * @memberof GlobalService
+     */
+    async getIBZProToDoActionService() {
+        return (await import('./ibzpro-to-do-action/ibzpro-to-do-action.service')).default.getInstance();
+    }
+    /**
      * 项目工时统计服务
      *
      * @return {ProjectTaskestimate}
@@ -1068,5 +1140,14 @@ export class GlobalService {
      */
     async getProjectTaskestimateService() {
         return (await import('./project-taskestimate/project-taskestimate.service')).default.getInstance();
+    }
+    /**
+     * 任务日志服务
+     *
+     * @return {IBZTaskAction}
+     * @memberof GlobalService
+     */
+    async getIBZTaskActionService() {
+        return (await import('./ibztask-action/ibztask-action.service')).default.getInstance();
     }
 }

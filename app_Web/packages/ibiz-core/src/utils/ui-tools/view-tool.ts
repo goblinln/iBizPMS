@@ -263,7 +263,7 @@ export class ViewTool {
             let dataActionResult: any;
             if (_item && _item['dataAccessAction']) {
                 if (Object.is(_item['actionTarget'], "NONE") || Object.is(_item['actionTarget'], "")) {
-                    dataActionResult = UIService.getResourceOPPrivs(_item['dataAccessAction']);
+                    dataActionResult = UIService.getAllOPPrivs(undefined,_item['dataAccessAction']);
                 } else {
                     if (data && Object.keys(data).length > 0) {
                         dataActionResult = UIService.getAllOPPrivs(data, _item['dataAccessAction']);
@@ -315,7 +315,7 @@ export class ViewTool {
             const _item = ActionModel[key];
             let dataActionResult: any;
             if (Object.is(_item['actiontarget'], "NONE") || Object.is(_item['actiontarget'], "")) {
-                dataActionResult = UIService.getResourceOPPrivs(_item['dataaccaction']);
+                dataActionResult = UIService.getAllOPPrivs(undefined,_item['dataaccaction']);
             } else {
                 if (_item && _item['dataaccaction'] && UIService.isEnableDEMainState) {
                     if (data && Object.keys(data).length > 0) {

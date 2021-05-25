@@ -549,8 +549,13 @@ export class UIServiceBase {
         if (!Environment.enablePermissionValid) {
             return 1;
         }
-        const curActiveKey: string = `${data[this.appDeKeyFieldName?.toLowerCase()]}`;
-        const result = this.authService.getOPPrivs(curActiveKey,dataaccaction,this.getDEMainStateOPPrivs(data));
-        return result[dataaccaction];
+        if(data && (Object.keys(data).length > 0)){
+            const curActiveKey: string = `${data[this.appDeKeyFieldName?.toLowerCase()]}`;
+            const result = this.authService.getOPPrivs(curActiveKey, dataaccaction,this.getDEMainStateOPPrivs(data));
+            return result[dataaccaction];
+        }else{
+            const result = this.authService.getOPPrivs(undefined, dataaccaction,undefined);
+            return result[dataaccaction];
+        }
     }
 }

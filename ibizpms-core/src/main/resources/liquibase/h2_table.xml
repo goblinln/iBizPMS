@@ -3593,16 +3593,16 @@
         <!--输出实体[ZT_HISTORY]外键关系 -->
         <!--输出实体[IBZPRO_CASEACTION]外键关系 -->
         <!--输出实体[IBZPRO_CASEHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_casehistory-26-167">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_casehistory-27-167">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_CASEHISTORY_IBZPR" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZPRO_DAILYACTION]外键关系 -->
         <!--输出实体[IBZPRO_DAILYHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_dailyhistory-28-168">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_dailyhistory-29-168">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_DAILYHISTORY_IBZP" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZPRO_BUGHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_bughistory-26-169">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_bughistory-27-169">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_BUGHISTORY_IBZPRO" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZPRO_PRODUCT]外键关系 -->
@@ -3614,30 +3614,30 @@
         <!--输出实体[IBZPRO_PRODUCTLINE]外键关系 -->
         <!--输出实体[IBZPRO_PROJECTACTION]外键关系 -->
         <!--输出实体[IBZPRO_PROJECTHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_projecthistory-26-171">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_projecthistory-27-171">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_PROJECTHISTORY_IB" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZPRO_RELEASEACTION]外键关系 -->
         <!--输出实体[IBZPRO_RELEASEHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_releasehistory-26-172">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_releasehistory-27-172">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_RELEASEHISTORY_IB" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZPRO_SEQUENCE]外键关系 -->
         <!--输出实体[IBZPRO_STORY]外键关系 -->
         <!--输出实体[IBZPRO_STORYHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_storyhistory-26-173">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_storyhistory-27-173">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_STORYHISTORY_IBZP" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZPRO_STORYMODULE]外键关系 -->
         <!--输出实体[IBZPRO_SYSTPL]外键关系 -->
         <!--输出实体[IBZPRO_SYSTEM]外键关系 -->
         <!--输出实体[IBZPRO_TESTTASKHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_testtaskhistory-26-174">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_testtaskhistory-27-174">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_TESTTASKHISTORY_I" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZPRO_TODOACTION]外键关系 -->
         <!--输出实体[IBZPRO_TODOHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_todohistory-26-175">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_todohistory-27-175">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_TODOHISTORY_IBZPR" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZPRO_TRANSLATOR]外键关系 -->
@@ -3645,16 +3645,16 @@
         <!--输出实体[IBZPRO_STORYACTION]外键关系 -->
         <!--输出实体[IBZPRO_TASKACTION]外键关系 -->
         <!--输出实体[IBZPRO_TASKHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_taskhistory-24-176">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_taskhistory-25-176">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_TASKHISTORY_IBZPR" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZPRO_TESTREPROTACTION]外键关系 -->
         <!--输出实体[IBZPRO_TESTREPORTHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_testreporthistory-26-177">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_testreporthistory-27-177">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_TESTREPORTHISTORY" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZPRO_TESTSUITHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_testsuithistory-28-178">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_testsuithistory-29-178">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_TESTSUITHISTORY_I" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZPRO_TESTSUITACTION]外键关系 -->
@@ -3681,22 +3681,22 @@
         <!--输出实体[IBZPRO_BUGACTION]外键关系 -->
         <!--输出实体[IBZPRO_BUILDACTION]外键关系 -->
         <!--输出实体[IBZPRO_BUILDHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_buildhistory-26-179">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_buildhistory-27-179">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_BUILDHISTORY_IBZP" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZPRO_MONTHLYACTION]外键关系 -->
         <!--输出实体[IBZPRO_MONTHLYHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_monthlyhistory-26-180">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_monthlyhistory-27-180">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_MONTHLYHISTORY_IB" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZPRO_REPORTLYACTION]外键关系 -->
         <!--输出实体[IBZPRO_REPORTLYHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_reportlyhistory-26-181">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_reportlyhistory-27-181">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_REPORTLYHISTORY_I" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZPRO_TESTTASKACTION]外键关系 -->
         <!--输出实体[IBZPRO_WEEKLYHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_weeklyhistory-26-182">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_weeklyhistory-27-182">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_WEEKLYHISTORY_IBZ" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZ_PROJECTMEMBER]外键关系 -->
@@ -3733,7 +3733,7 @@
         <!--输出实体[ZT_PRODUCTPLAN]外键关系 -->
         <!--输出实体[IBZPRO_PRODUCTPLANACTION]外键关系 -->
         <!--输出实体[IBZPRO_PRODUCTPLANHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_productplanhistory-28-184">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_productplanhistory-29-184">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_PRODUCTPLANHISTOR" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZ_PRODUCTSTATS]外键关系 -->
