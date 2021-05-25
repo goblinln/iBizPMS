@@ -85,7 +85,7 @@
           "layout" : "TABLE_24COL"
         },
         "getPSSysCss" : {
-          "cssName" : "story-spec-drawer-title"
+          "cssName" : "story-spec-drawer-portlet-title"
         },
         "getPortletPSAppView" : {
           "accUserMode" : 2,
@@ -598,6 +598,9 @@
                     "getPSLayoutPos" : {
                       "colMD" : 24,
                       "layout" : "TABLE_24COL"
+                    },
+                    "getPSSysCss" : {
+                      "cssName" : "story-spec-drawer-title"
                     },
                     "infoGroupMode" : true,
                     "showCaption" : false
