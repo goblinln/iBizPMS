@@ -31,7 +31,7 @@ export class ExpBarControlBase extends MainControlBase {
      * @memberof ExpBarControlBase
      */
     protected parentModel!: IPSAppDEMultiDataView;
-    
+
     /**
      * 数据部件名称
      *
@@ -234,7 +234,7 @@ export class ExpBarControlBase extends MainControlBase {
     public async ctrlModelInit(args?: any) {
         await super.ctrlModelInit();
         this.xDataControlName = this.controlInstance.xDataControlName;
-        this.$xDataControl = ModelTool.findPSControlByName(this.xDataControlName,this.controlInstance.getPSControls());
+        this.$xDataControl = ModelTool.findPSControlByName(this.xDataControlName, this.controlInstance.getPSControls());
         this.showMode = this.sideBarlayout && this.sideBarlayout == "LEFT" ? "horizontal" : "vertical";
         this.showBusyIndicator = this.controlInstance?.showBusyIndicator;
         this.ctrlWidth = this.controlInstance?.width;
@@ -496,7 +496,7 @@ export class ExpBarControlBase extends MainControlBase {
             fields.forEach((field: IPSAppDEField, index: number) => {
                 const _field = entity.findPSAppDEField(field.codeName);
                 if (_field) {
-                    placeholder += `${_field.logicName ? _field.logicName : ''} ${index === fields.length - 1 ? '' : ', '}`; 
+                    placeholder += `${_field.logicName ? _field.logicName : ''} ${index === fields.length - 1 ? '' : ', '}`;
                 }
             })
             return placeholder;
@@ -631,7 +631,7 @@ export class ExpBarControlBase extends MainControlBase {
             const appDataEntity: IPSAppDataEntity | null = this.$xDataControl?.getPSAppDataEntity();
             if (appDataEntity) {
                 Object.assign(tempContext, { [`${appDataEntity.codeName?.toLowerCase()}`]: arg[appDataEntity.codeName?.toLowerCase()] });
-                Object.assign(tempContext, { srfparentdename: appDataEntity.codeName, srfparentkey: arg[appDataEntity.codeName?.toLowerCase()] });
+                Object.assign(tempContext, { srfparentdename: appDataEntity.codeName, srfparentdemapname: (appDataEntity as any)?.getPSDEName(), srfparentkey: arg[appDataEntity.codeName?.toLowerCase()] });
                 if (this.navFilter && !Object.is(this.navFilter, "")) {
                     Object.assign(tempViewParam, { [this.navFilter]: arg[appDataEntity.codeName?.toLowerCase()] });
                 }
@@ -765,7 +765,7 @@ export class ExpBarControlBase extends MainControlBase {
         return [
             <div slot={this.sideBarlayout == "LEFT" ? "left" : "top"}>
                 {showTitleBar ? this.renderTitleBar() : null}
-                <div class={{'container-header': true, 'no-title': !showTitleBar ? true : false}}>
+                <div class={{ 'container-header': true, 'no-title': !showTitleBar ? true : false }}>
                     {enableQuickGroup && this.quickGroupModel?.length > 0 ? this.renderQuickGroup() : null}
                     {enableSearch ? this.renderSearch() : null}
                     {ModelTool.findPSControlByType('TOOLBAR', this.controlInstance.getPSControls() || []) ? this.renderToolbar() : null}

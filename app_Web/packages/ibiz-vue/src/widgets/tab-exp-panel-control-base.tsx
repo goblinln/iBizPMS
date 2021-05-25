@@ -95,7 +95,7 @@ export class TabExpPanelBase extends MainControlBase {
     public ctrlInit() {
         //设置分页导航srfparentdename和srfparentkey
         if (this.context[this.appDeCodeName.toLowerCase()]) {
-            Object.assign(this.context, { srfparentdename: this.appDeCodeName.toLowerCase(), srfparentkey: this.context[this.appDeCodeName.toLowerCase()] })
+            Object.assign(this.context, { srfparentdename: this.appDeCodeName.toLowerCase(),srfparentdemapname: this.deName,srfparentkey: this.context[this.appDeCodeName.toLowerCase()] })
         }
         if (this.viewState) {
             this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: { tag: string, action: string, data: any }) => {

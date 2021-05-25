@@ -110,6 +110,10 @@ export class TreeControlBase extends MDControlBase {
             Object.assign(tempContext, { srfparentdename: curNode.data.srfparentdename });
             Object.assign(tempViewParams, { srfparentdename: curNode.data.srfparentdename });
         }
+        if (curNode.data && curNode.data.srfparentdemapname) {
+            Object.assign(tempContext, { srfparentdemapname: curNode.data.srfparentdemapname });
+            Object.assign(tempViewParams, { srfparentdemapname: curNode.data.srfparentdemapname });
+        }
         if (curNode.data && curNode.data.srfparentkey) {
             Object.assign(tempContext, { srfparentkey: curNode.data.srfparentkey });
             Object.assign(tempViewParams, { srfparentkey: curNode.data.srfparentkey });

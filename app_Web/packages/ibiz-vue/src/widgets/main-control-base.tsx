@@ -122,17 +122,27 @@ export class MainControlBase extends ControlBase {
      * 应用实体codeName
      *
      * @readonly
-     * @memberof MainViewBase
+     * @memberof MainControlBase
      */
     get appDeCodeName() {
         return this.controlInstance?.getPSAppDataEntity?.()?.codeName || '';
     }
 
     /**
+     * 应用实体映射实体名称
+     *
+     * @readonly
+     * @memberof MainControlBase
+     */
+     get deName(){
+        return this.controlInstance?.getPSAppDataEntity()?.getPSDEName() || '';
+    }
+
+    /**
      * 应用实体主键属性codeName
      *
      * @readonly
-     * @memberof MainViewBase
+     * @memberof MainControlBase
      */
     get appDeKeyFieldName() {
         return (ModelTool.getAppEntityKeyField(this.controlInstance?.getPSAppDataEntity() as IPSAppDataEntity) as IPSAppDEField)?.codeName || '';
@@ -142,7 +152,7 @@ export class MainControlBase extends ControlBase {
      * 应用实体主信息属性codeName
      *
      * @readonly
-     * @memberof MainViewBase
+     * @memberof MainControlBase
      */
     get appDeMajorFieldName() {
         return (ModelTool.getAppEntityMajorField(this.controlInstance?.getPSAppDataEntity() as IPSAppDataEntity) as IPSAppDEField)?.codeName || '';

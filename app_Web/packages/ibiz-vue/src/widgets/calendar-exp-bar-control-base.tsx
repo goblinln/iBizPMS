@@ -197,7 +197,7 @@ export class CalendarExpBarControlBase extends ExpBarControlBase {
         const calendarItemEntity: IPSAppDataEntity | null | undefined = calendarItem?.getPSAppDataEntity();
         if (calendarItem && calendarItemEntity) {
             Object.assign(tempContext, { [calendarItemEntity.codeName?.toLowerCase()]: arg[calendarItemEntity.codeName?.toLowerCase()] });
-            Object.assign(tempContext, { srfparentdename: calendarItemEntity.codeName, srfparentkey: arg[calendarItemEntity.codeName?.toLowerCase()] });
+            Object.assign(tempContext, { srfparentdename: calendarItemEntity.codeName,srfparentdemapname:(calendarItemEntity as any)?.getPSDEName(), srfparentkey: arg[calendarItemEntity.codeName?.toLowerCase()] });
             if (this.navFilter && this.navFilter[arg.itemType] && !Object.is(this.navFilter[arg.itemType], "")) {
                 Object.assign(tempViewParam, { [this.navFilter[arg.itemType]]: arg[calendarItemEntity.codeName?.toLowerCase()] });
             }

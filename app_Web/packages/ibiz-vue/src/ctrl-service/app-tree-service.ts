@@ -1,5 +1,5 @@
 import { AppTreeModel } from 'ibiz-vue';
-import { ControlServiceBase,Util, ModelTool } from 'ibiz-core';
+import { ControlServiceBase, Util, ModelTool } from 'ibiz-core';
 import { CodeListService, GlobalService } from 'ibiz-service';
 import { IPSDETree, IPSDETreeNode, IPSDETreeNodeRS, IPSNavigateContext, IPSNavigateParam, IPSAppDataEntity, IPSAppDEField, IPSDETreeNodeDataItem, IPSDETreeNodeRSParam, IPSDETreeDataSetNode, IPSDETreeStaticNode, IPSDETreeCodeListNode, IPSAppCodeList } from '@ibiz/dynamic-model-api';
 /**
@@ -23,7 +23,7 @@ export class AppTreeService extends ControlServiceBase {
      * @memberof MainModel
      */
     public codeListService: CodeListService = new CodeListService();
-    
+
     /**
      * 全局实体服务
      *
@@ -78,7 +78,7 @@ export class AppTreeService extends ControlServiceBase {
         srfnodefilter = query ? query : srfnodefilter;
         let list: any[] = [];
         let filter: any = {};
-        const treeNodes =  this.controlInstance.getPSDETreeNodes() || [];
+        const treeNodes = this.controlInstance.getPSDETreeNodes() || [];
         const rootNode = treeNodes.find((node: IPSDETreeNode) => {
             return node.rootNode;
         }) as IPSDETreeNode;
@@ -178,7 +178,7 @@ export class AppTreeService extends ControlServiceBase {
                 // if (nodeRS?.getParentPSDETreeNode()?.id !== nodeJson.id) {
                 //     return false;
                 // }
-                if(nodeRS?.getParentPSDETreeNode()?.id !== nodeJson.id){
+                if (nodeRS?.getParentPSDETreeNode()?.id !== nodeJson.id) {
                     return false;
                 }
                 // 搜索模式 1 有搜索时启用， 2 无搜索时启用， 3 全部启用
@@ -200,8 +200,8 @@ export class AppTreeService extends ControlServiceBase {
                     let rsNavParams: any = this.getNavParams(nodeRSs[i]);
                     let rsParams: any = this.getParams(nodeRSs[i]);
                     // 根据节点标识填充节点
-                    const treeNodes =  this.controlInstance.getPSDETreeNodes() || [];
-                    let treeNode: any = treeNodes.find((_node:  IPSDETreeNode) => {
+                    const treeNodes = this.controlInstance.getPSDETreeNodes() || [];
+                    let treeNode: any = treeNodes.find((_node: IPSDETreeNode) => {
                         return nodeRSs[i]?.getChildPSDETreeNode()?.id == _node.id;
                     });
                     if (treeNode) {
@@ -322,8 +322,8 @@ export class AppTreeService extends ControlServiceBase {
                                     : noders.getParentPSDER1N() && noders.getParentPSAppDEField()
                                         ? noders.getParentPSAppDEField()?.name.toLowerCase() : "";
                             if (pickupfield && !Object.is(pickupfield, "")) {
-                                const treeNodes =  this.controlInstance.getPSDETreeNodes() || [];
-                                const tempNode = treeNodes.find((_node:  IPSDETreeNode) => {
+                                const treeNodes = this.controlInstance.getPSDETreeNodes() || [];
+                                const tempNode = treeNodes.find((_node: IPSDETreeNode) => {
                                     return noders?.getParentPSDETreeNode()?.id == _node.id;
                                 }) as IPSDETreeNode;
                                 if (Object.is(filter.strNodeType, tempNode.nodeType)) {
@@ -348,7 +348,7 @@ export class AppTreeService extends ControlServiceBase {
                                 // 设置实体主键属性
                                 let strId: string = '';
                                 if ((nodeJson as IPSDETreeDataSetNode)?.getIdPSAppDEField()) {
-                                    const codeName:any = (nodeJson as IPSDETreeDataSetNode).getIdPSAppDEField()?.codeName.toLowerCase();
+                                    const codeName: any = (nodeJson as IPSDETreeDataSetNode).getIdPSAppDEField()?.codeName.toLowerCase();
                                     strId = entity[codeName];
                                 } else {
                                     let keyField = ModelTool.getAppEntityKeyField(appDataEntity) as IPSAppDEField;
@@ -357,15 +357,15 @@ export class AppTreeService extends ControlServiceBase {
                                 // 设置实体主信息属性
                                 let strText: string = '';
                                 if ((nodeJson as IPSDETreeDataSetNode)?.getTextPSAppDEField()) {
-                                    const codeName:any = (nodeJson as IPSDETreeDataSetNode).getTextPSAppDEField()?.codeName.toLowerCase()
+                                    const codeName: any = (nodeJson as IPSDETreeDataSetNode).getTextPSAppDEField()?.codeName.toLowerCase()
                                     strText = entity[codeName];
                                 } else {
                                     let majorField = ModelTool.getAppEntityMajorField(appDataEntity) as IPSAppDEField;
                                     strText = entity[majorField?.codeName.toLowerCase()];
                                 }
-                                Object.assign(treeNode, { srfparentdename: deCodeName, srfparentkey: strId });
+                                Object.assign(treeNode, { srfparentdename: deCodeName, srfparentdemapname: appDataEntity?.getPSDEName(), srfparentkey: strId });
                                 let tempContext: any = JSON.parse(JSON.stringify(context));
-                                Object.assign(tempContext, { srfparentdename: deCodeName, srfparentkey: strId, [deCodeName.toLowerCase()]: strId });
+                                Object.assign(tempContext, { srfparentdename: deCodeName, srfparentdemapname: appDataEntity?.getPSDEName(), srfparentkey: strId, [deCodeName.toLowerCase()]: strId });
                                 Object.assign(treeNode, { srfappctx: tempContext });
                                 Object.assign(treeNode, { [deCodeName.toLowerCase()]: strId });
                                 Object.assign(treeNode, { srfkey: strId });
@@ -404,7 +404,7 @@ export class AppTreeService extends ControlServiceBase {
                                         }
                                     }
                                 }
-                                const nodeDataItems:any = nodeJson.getPSDETreeNodeDataItems() as IPSDETreeNodeDataItem[];
+                                const nodeDataItems: any = nodeJson.getPSDETreeNodeDataItems() as IPSDETreeNodeDataItem[];
                                 if (nodeDataItems?.length > 0) {
                                     nodeDataItems.forEach((item: IPSDETreeNodeDataItem) => {
                                         if (item?.getPSAppDEField()) {
@@ -739,8 +739,8 @@ export class AppTreeService extends ControlServiceBase {
      */
     public getNavContext(noders: IPSDETreeNodeRS) {
         let context: any = {};
-        let navcontext:any = noders.getPSNavigateContexts();
-        if(navcontext?.length>0) {
+        let navcontext: any = noders.getPSNavigateContexts();
+        if (navcontext?.length > 0) {
             navcontext.forEach((item: IPSNavigateContext) => {
                 context[item?.key] = {
                     isRawValue: item?.rawValue,
@@ -759,8 +759,8 @@ export class AppTreeService extends ControlServiceBase {
      */
     public getNavParams(noders: IPSDETreeNodeRS) {
         let params: any = {};
-        let navparams:any = noders.getPSNavigateParams();
-        if(navparams?.length>0) {
+        let navparams: any = noders.getPSNavigateParams();
+        if (navparams?.length > 0) {
             navparams.forEach((item: IPSNavigateParam) => {
                 params[item?.key] = {
                     isRawValue: item?.rawValue,
@@ -779,8 +779,8 @@ export class AppTreeService extends ControlServiceBase {
      */
     public getParams(noders: IPSDETreeNodeRS) {
         let params: any = {};
-        let reparams:any = noders?.getPSDETreeNodeRSParams();
-        if(reparams?.length>0) {
+        let reparams: any = noders?.getPSDETreeNodeRSParams();
+        if (reparams?.length > 0) {
             reparams.forEach((item: IPSDETreeNodeRSParam) => {
                 params[item?.key] = {
                     value: item.value

@@ -742,6 +742,9 @@ export class ViewBase extends Vue {
             if (_this.context && _this.context.srfparentdename) {
                 Object.assign(_this.viewparams, { srfparentdename: _this.context.srfparentdename });
             }
+            if (_this.context && _this.context.srfparentdemapname) {
+                Object.assign(_this.viewparams, { srfparentdemapname: _this.context.srfparentdemapname });
+            }
             if (_this.context && _this.context.srfparentkey) {
                 Object.assign(_this.viewparams, { srfparentkey: _this.context.srfparentkey });
             }

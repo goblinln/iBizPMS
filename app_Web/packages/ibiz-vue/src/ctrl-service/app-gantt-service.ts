@@ -557,11 +557,13 @@ export class AppGanttService extends ControlServiceBase {
                             let strText: string = getTextPSAppDEField ? entity[getTextPSAppDEField?.codeName.toLowerCase()] : entity[majorField?.codeName.toLowerCase()];
                             Object.assign(treeNode, {
                                 srfparentdename: appde?.codeName,
+                                srfparentdemapname:appde?.getPSDEName(),
                                 srfparentkey: getIdPSAppDEField ? entity[getIdPSAppDEField?.codeName.toLowerCase()] : entity[keyField?.codeName.toLowerCase()]
                             });
                             let tempContext: any = JSON.parse(JSON.stringify(context));
                             Object.assign(tempContext, {
                                 srfparentdename: appde?.codeName,
+                                srfparentdemapname:appde?.getPSDEName(),
                                 srfparentkey: getIdPSAppDEField ? entity[getIdPSAppDEField?.codeName.toLowerCase()] : entity[keyField?.codeName.toLowerCase()]
                             });
                             Object.assign(treeNode, {

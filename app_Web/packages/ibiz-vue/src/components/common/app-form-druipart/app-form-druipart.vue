@@ -176,6 +176,14 @@ export default class AppFormDRUIPart extends Vue {
     @Prop() public parentName!: string;
 
     /**
+     * 应用实体映射实体名称(区分大小写)
+     *
+     * @type {string}
+     * @memberof AppFormDRUIPart
+     */
+    @Prop() public parentDeName!: string;
+
+    /**
      * 用户标记
      *
      * @type {string}
@@ -324,10 +332,12 @@ export default class AppFormDRUIPart extends Vue {
         Object.assign(tempContext, this.context);
         Object.assign(tempContext, {
             srfparentdename: this.parentName,
+            srfparentdemapname: this.parentDeName,
             srfparentkey: _paramitem,
         });
         Object.assign(tempParam, {
             srfparentdename: this.parentName,
+            srfparentdemapname: this.parentDeName,
             srfparentkey: _paramitem,
         });
         // 设置局部上下文

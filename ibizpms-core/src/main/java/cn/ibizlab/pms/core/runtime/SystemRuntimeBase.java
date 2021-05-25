@@ -294,11 +294,13 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
     public List<UAADEAuthority> getRoleUAADEAuthority() {
         List<UAADEAuthority> roleUAADEAuthority = new ArrayList<>();
         AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
-        curUser.getAuthorities().stream()
-                .filter(f -> f instanceof UAARoleAuthority).forEach(r -> {
-            if (userRoleUAADEAuthorityMap.containsKey(((UAARoleAuthority) r).getRoleTag()))
-                roleUAADEAuthority.addAll(userRoleUAADEAuthorityMap.get(((UAARoleAuthority) r).getRoleTag()));
-        });
+        if (curUser.getAuthorities() != null) {
+            curUser.getAuthorities().stream()
+                    .filter(f -> f instanceof UAARoleAuthority).forEach(r -> {
+                if (userRoleUAADEAuthorityMap.containsKey(((UAARoleAuthority) r).getRoleTag()))
+                    roleUAADEAuthority.addAll(userRoleUAADEAuthorityMap.get(((UAARoleAuthority) r).getRoleTag()));
+            });
+        }
         return roleUAADEAuthority;
     }
 

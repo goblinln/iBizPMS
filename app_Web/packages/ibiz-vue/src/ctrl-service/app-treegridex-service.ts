@@ -323,9 +323,9 @@ export class AppTreeGridExService extends ControlServiceBase {
                                     let majorField = ModelTool.getAppEntityMajorField(appDataEntity) as IPSAppDEField;
                                     strText = entity[majorField?.codeName.toLowerCase()];
                                 }
-                                Object.assign(treeNode, { srfparentdename: deCodeName, srfparentkey: strId });
+                                Object.assign(treeNode, { srfparentdename: deCodeName,srfparentdemapname: appDataEntity?.getPSDEName(), srfparentkey: strId });
                                 let tempContext: any = JSON.parse(JSON.stringify(context));
-                                Object.assign(tempContext, { srfparentdename: deCodeName, srfparentkey: strId, [deCodeName.toLowerCase()]: strId });
+                                Object.assign(tempContext, { srfparentdename: deCodeName,srfparentdemapname: appDataEntity?.getPSDEName(), srfparentkey: strId, [deCodeName.toLowerCase()]: strId });
                                 Object.assign(treeNode, { srfappctx: tempContext });
                                 Object.assign(treeNode, { [deCodeName.toLowerCase()]: strId });
                                 Object.assign(treeNode, { srfkey: strId });

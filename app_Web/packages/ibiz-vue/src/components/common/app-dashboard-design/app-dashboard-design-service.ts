@@ -84,6 +84,7 @@ export default class AppDashboardDesignService {
                     type: 'app',
                     portletCodeName: portlet.codeName,
                     portletName: portlet.name,
+                    portletImage: portlet.M.getPSControl?.getPSSysImage?.cssClass,
                     groupCodeName: portletCat?.codeName || "",
                     groupName: portletCat?.name || "",
                     modelData: portlet?.getPSControl?.(),

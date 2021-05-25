@@ -298,6 +298,10 @@ export class GanttControlBase extends MDControlBase {
             Object.assign(tempContext,{ srfparentdename: curNode.srfparentdename });
             Object.assign(tempViewParams,{ srfparentdename: curNode.srfparentdename });
         }
+        if(curNode && curNode.srfparentdemapname) {
+            Object.assign(tempContext,{ srfparentdemapname: curNode.srfparentdemapname });
+            Object.assign(tempViewParams,{ srfparentdemapname: curNode.srfparentdemapname });
+        }
         if(curNode && curNode.srfparentkey) {
             Object.assign(tempContext,{ srfparentkey: curNode.srfparentkey });
             Object.assign(tempViewParams,{ srfparentkey: curNode.srfparentkey });

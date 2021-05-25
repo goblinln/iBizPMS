@@ -140,6 +140,9 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
         if (arg.srfparentdename) {
             Object.assign(tempContext, { srfparentdename: arg.srfparentdename });
         }
+        if (arg.srfparentdemapname) {
+            Object.assign(tempContext, { srfparentdemapname: arg.srfparentdemapname });
+        }
         if (arg.srfparentkey) {
             Object.assign(tempContext, { srfparentkey: arg.srfparentkey });
         }

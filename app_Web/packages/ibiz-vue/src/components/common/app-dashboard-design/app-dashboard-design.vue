@@ -15,7 +15,7 @@
                             <el-submenu :key="item2.type + index2" :index="item2.type + index2">
                                 <div slot="title">{{item2.name}}</div>
                                 <el-menu-item ref="dragDivItem" :class="{'drag-div-item': true, 'is-disable': isDisabled(item3)}" v-for="(item3, index3) of item2.children" :key="item3.type + index3" :index="item3.type + index3" :tag="item3.portletCodeName">
-                                    {{item3.portletName}}
+                                    <i :class="item2.portletImage"/>{{item3.portletName}}
                                 </el-menu-item>
                             </el-submenu>
                         </template>
@@ -28,7 +28,7 @@
                         <div slot="title">{{item.name}}</div>
                         <template v-for="item2 of item.children">
                             <el-menu-item ref="dragDivItem" :class="{'drag-div-item': true, 'is-disable': isDisabled(item2)}" :key="item2.portletCodeName" :index="item.portletCodeName" :tag="item2.portletCodeName">
-                                {{item2.portletName}}
+                                <i :class="item2.portletImage"/>{{item2.portletName}}
                             </el-menu-item>
                         </template>
                     </el-submenu>
