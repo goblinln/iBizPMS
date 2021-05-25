@@ -52,7 +52,6 @@ public class ActionResource {
     @Lazy
     public ActionMapping actionMapping;
 
-    @PreAuthorize("@ActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建系统日志", tags = {"系统日志" },  notes = "新建系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/actions")
     @Transactional
@@ -67,7 +66,6 @@ public class ActionResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建系统日志", tags = {"系统日志" },  notes = "批量新建系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/actions/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<ActionDTO> actiondtos) {
@@ -75,7 +73,6 @@ public class ActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ActionRuntime.test(#action_id,'UPDATE')")
     @ApiOperation(value = "更新系统日志", tags = {"系统日志" },  notes = "更新系统日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/actions/{action_id}")
     @Transactional
@@ -91,7 +88,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ActionRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新系统日志", tags = {"系统日志" },  notes = "批量更新系统日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/actions/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<ActionDTO> actiondtos) {
@@ -99,14 +95,12 @@ public class ActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ActionRuntime.test(#action_id,'DELETE')")
     @ApiOperation(value = "删除系统日志", tags = {"系统日志" },  notes = "删除系统日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/actions/{action_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("action_id") Long action_id) {
          return ResponseEntity.status(HttpStatus.OK).body(actionService.remove(action_id));
     }
 
-    @PreAuthorize("@ActionRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除系统日志", tags = {"系统日志" },  notes = "批量删除系统日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/actions/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -114,7 +108,6 @@ public class ActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ActionRuntime.test(#action_id,'READ')")
     @ApiOperation(value = "获取系统日志", tags = {"系统日志" },  notes = "获取系统日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/actions/{action_id}")
     public ResponseEntity<ActionDTO> get(@PathVariable("action_id") Long action_id) {
@@ -138,7 +131,6 @@ public class ActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(actionService.checkKey(actionMapping.toDomain(actiondto)));
     }
 
-    @PreAuthorize("@ActionRuntime.test(#action_id,'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"系统日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/actions/{action_id}/comment")
     public ResponseEntity<ActionDTO> comment(@PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
@@ -151,7 +143,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
 
-    @PreAuthorize("@ActionRuntime.test(#action_id,'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"系统日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/actions/{action_id}/createhis")
     public ResponseEntity<ActionDTO> createHis(@PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
@@ -171,7 +162,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("@ActionRuntime.test(#action_id,'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"系统日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/actions/{action_id}/editcomment")
     public ResponseEntity<ActionDTO> editComment(@PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
@@ -447,7 +437,6 @@ public class ActionResource {
         actiondto = actionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目建立系统日志", tags = {"系统日志" },  notes = "根据项目建立系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions")
     public ResponseEntity<ActionDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionDTO actiondto) {
@@ -458,7 +447,6 @@ public class ActionResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目批量建立系统日志", tags = {"系统日志" },  notes = "根据项目批量建立系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/batch")
     public ResponseEntity<Boolean> createBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ActionDTO> actiondtos) {
@@ -470,7 +458,6 @@ public class ActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目更新系统日志", tags = {"系统日志" },  notes = "根据项目更新系统日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/actions/{action_id}")
     public ResponseEntity<ActionDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
@@ -482,7 +469,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目批量更新系统日志", tags = {"系统日志" },  notes = "根据项目批量更新系统日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/actions/batch")
     public ResponseEntity<Boolean> updateBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ActionDTO> actiondtos) {
@@ -494,14 +480,12 @@ public class ActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目删除系统日志", tags = {"系统日志" },  notes = "根据项目删除系统日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/actions/{action_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(actionService.remove(action_id));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目批量删除系统日志", tags = {"系统日志" },  notes = "根据项目批量删除系统日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/actions/batch")
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
@@ -509,7 +493,6 @@ public class ActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目获取系统日志", tags = {"系统日志" },  notes = "根据项目获取系统日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/actions/{action_id}")
     public ResponseEntity<ActionDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id) {
@@ -532,7 +515,6 @@ public class ActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(actionService.checkKey(actionMapping.toDomain(actiondto)));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "根据项目系统日志", tags = {"系统日志" },  notes = "根据项目系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/{action_id}/comment")
     public ResponseEntity<ActionDTO> commentByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
@@ -543,7 +525,6 @@ public class ActionResource {
         actiondto = actionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目系统日志", tags = {"系统日志" },  notes = "根据项目系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/{action_id}/createhis")
     public ResponseEntity<ActionDTO> createHisByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
@@ -561,7 +542,6 @@ public class ActionResource {
         boolean result = actionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "根据项目系统日志", tags = {"系统日志" },  notes = "根据项目系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/{action_id}/editcomment")
     public ResponseEntity<ActionDTO> editCommentByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
@@ -667,7 +647,6 @@ public class ActionResource {
         boolean result = actionService.sendToreadBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"系统日志" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchdefault")
 	public ResponseEntity<List<ActionDTO>> fetchActionDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
@@ -681,7 +660,6 @@ public class ActionResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"系统日志" } ,notes = "根据项目查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/searchdefault")
 	public ResponseEntity<Page<ActionDTO>> searchActionDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionSearchContext context) {
@@ -690,7 +668,6 @@ public class ActionResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取MobType", tags = {"系统日志" } ,notes = "根据项目获取MobType")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchmobtype")
 	public ResponseEntity<List<ActionDTO>> fetchActionMobTypeByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
@@ -704,7 +681,6 @@ public class ActionResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询MobType", tags = {"系统日志" } ,notes = "根据项目查询MobType")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/searchmobtype")
 	public ResponseEntity<Page<ActionDTO>> searchActionMobTypeByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionSearchContext context) {
@@ -713,7 +689,6 @@ public class ActionResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目获取项目动态(我的)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchmytrends")
 	public ResponseEntity<List<ActionDTO>> fetchActionMyTrendsByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
@@ -727,7 +702,6 @@ public class ActionResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目查询项目动态(我的)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/searchmytrends")
 	public ResponseEntity<Page<ActionDTO>> searchActionMyTrendsByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionSearchContext context) {
@@ -736,7 +710,6 @@ public class ActionResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchproducttrends")
 	public ResponseEntity<List<ActionDTO>> fetchActionProductTrendsByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
@@ -750,7 +723,6 @@ public class ActionResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询ProductTrends", tags = {"系统日志" } ,notes = "根据项目查询ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/searchproducttrends")
 	public ResponseEntity<Page<ActionDTO>> searchActionProductTrendsByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionSearchContext context) {
@@ -759,7 +731,6 @@ public class ActionResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchprojecttrends")
 	public ResponseEntity<List<ActionDTO>> fetchActionProjectTrendsByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
@@ -773,7 +744,6 @@ public class ActionResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目查询项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/searchprojecttrends")
 	public ResponseEntity<Page<ActionDTO>> searchActionProjectTrendsByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionSearchContext context) {
@@ -782,7 +752,6 @@ public class ActionResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取查询用户使用年", tags = {"系统日志" } ,notes = "根据项目获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchqueryuseryear")
 	public ResponseEntity<List<ActionDTO>> fetchActionQueryUserYEARByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
@@ -796,7 +765,6 @@ public class ActionResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询查询用户使用年", tags = {"系统日志" } ,notes = "根据项目查询查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/searchqueryuseryear")
 	public ResponseEntity<Page<ActionDTO>> searchActionQueryUserYEARByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionSearchContext context) {
@@ -805,7 +773,6 @@ public class ActionResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取Type", tags = {"系统日志" } ,notes = "根据项目获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchtype")
 	public ResponseEntity<List<ActionDTO>> fetchActionTypeByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
@@ -819,7 +786,6 @@ public class ActionResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询Type", tags = {"系统日志" } ,notes = "根据项目查询Type")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/searchtype")
 	public ResponseEntity<Page<ActionDTO>> searchActionTypeByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionSearchContext context) {

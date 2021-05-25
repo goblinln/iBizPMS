@@ -804,11 +804,6 @@
     "reloadData" : true,
     "id" : "AddComment@IBZProProductAction"
   } ],
-  "getAllPSAppPortletCats" : [ {
-    "codeName" : "Ungroup",
-    "name" : "（未分类）",
-    "ungroup" : true
-  } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"

@@ -989,7 +989,7 @@
   } ],
   "codeName" : "Action",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 2,
+  "dataAccCtrlMode" : 0,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json",
   "enableUIActions" : 15,
   "logicName" : "系统日志",

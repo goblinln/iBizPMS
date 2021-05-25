@@ -50,6 +50,24 @@ function getLocaleResourceBase(){
 				title: commonLogic.appcommonhandle("产品日志编辑视图",null),
 			},
 		},
+		main_form: {
+			details: {
+				'group1': commonLogic.appcommonhandle("产品日志基本信息",null), 
+				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'group2': commonLogic.appcommonhandle("操作信息",null), 
+				'formpage2': commonLogic.appcommonhandle("其它",null), 
+				'srforikey': commonLogic.appcommonhandle("",null), 
+				'srfkey': commonLogic.appcommonhandle("id",null), 
+				'srfmajortext': commonLogic.appcommonhandle("备注",null), 
+				'srftempmode': commonLogic.appcommonhandle("",null), 
+				'srfuf': commonLogic.appcommonhandle("",null), 
+				'srfdeid': commonLogic.appcommonhandle("",null), 
+				'srfsourcekey': commonLogic.appcommonhandle("",null), 
+				'id': commonLogic.appcommonhandle("id",null), 
+			},
+			uiactions: {
+			},
+		},
 		addcomment_form: {
 			details: {
 				'grouppanel2': commonLogic.appcommonhandle("分组面板",null), 
@@ -72,33 +90,9 @@ function getLocaleResourceBase(){
 			uiactions: {
 			},
 		},
-		main_form: {
-			details: {
-				'group1': commonLogic.appcommonhandle("产品日志基本信息",null), 
-				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
-				'group2': commonLogic.appcommonhandle("操作信息",null), 
-				'formpage2': commonLogic.appcommonhandle("其它",null), 
-				'srforikey': commonLogic.appcommonhandle("",null), 
-				'srfkey': commonLogic.appcommonhandle("id",null), 
-				'srfmajortext': commonLogic.appcommonhandle("备注",null), 
-				'srftempmode': commonLogic.appcommonhandle("",null), 
-				'srfuf': commonLogic.appcommonhandle("",null), 
-				'srfdeid': commonLogic.appcommonhandle("",null), 
-				'srfsourcekey': commonLogic.appcommonhandle("",null), 
-				'id': commonLogic.appcommonhandle("id",null), 
-			},
-			uiactions: {
-			},
-		},
 		classifybytype_list: {
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
-			},
-		},
-		addlistviewtoolbar_toolbar: {
-			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("添加备注",null),
-				tip: commonLogic.appcommonhandle("添加备注",null),
 			},
 		},
 		editviewtoolbar_toolbar: {
@@ -117,6 +111,12 @@ function getLocaleResourceBase(){
 			'tbitem7': {
 				caption: commonLogic.appcommonhandle("Remove And Close",null),
 				tip: commonLogic.appcommonhandle("Remove And Close Window",null),
+			},
+		},
+		addlistviewtoolbar_toolbar: {
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("添加备注",null),
+				tip: commonLogic.appcommonhandle("添加备注",null),
 			},
 		},
 	};

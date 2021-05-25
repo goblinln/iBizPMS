@@ -160,14 +160,6 @@
     "psappsbitemid" : "f7c3d0c275f42d751064881f57abc171",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "IBZProProductActionOptionView",
-    "psappsbitemname" : "添加备注",
-    "itemtag2" : "c89600e26188f96ad20e7ecc364eac01",
-    "psappviewid" : "9ad9357b6bda64ef733e0c66214bd223",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProProductActionOptionView.json",
-    "psappsbitemid" : "365e9de1dce605810a6696e8995f8ba9",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "BranchPMInfoEditView",
     "psappsbitemname" : "平台管理",
     "itemtag2" : "8b34f5a86b365a5462deb664a38c9c36",
@@ -1103,14 +1095,6 @@
     "psappsbitemid" : "c32ebc5f3ed82bd5297e86c6f915350a",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "IBZProProductActionAddListView",
-    "psappsbitemname" : "产品日志列表视图（添加备注）",
-    "itemtag2" : "8F2116C7-9224-41E2-A82E-CC27921207FB",
-    "psappviewid" : "5c1eae17357b0aa44efcbcb0312013aa",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProProductActionAddListView.json",
-    "psappsbitemid" : "af7a1f283186337a01c32fb7bf74f3fa",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "DocLibModuleChildWeiHuiTreeExpView",
     "psappsbitemname" : "文档库分类树导航视图",
     "itemtag2" : "a92872ed16422c69c0cc293d4fd2c863",
@@ -1191,14 +1175,6 @@
     "psappsbitemid" : "65de40e85ca737a6c9c5b3dcb464e724",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TaskTeamGridView9",
-    "psappsbitemname" : "团队",
-    "itemtag2" : "e52237e2778b5000be8021cf70f81845",
-    "psappviewid" : "d1339f33d3d82d7b6993e510b20fddbe",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTeamGridView9.json",
-    "psappsbitemid" : "a93e45d9c1fd41dfa15c59578849c265",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "BugAssingToView",
     "psappsbitemname" : "指派Bug",
     "itemtag2" : "3bd5379287405c62080d23d92d1f68b5",
@@ -1213,6 +1189,14 @@
     "psappviewid" : "9702df74499bfcf7b127558ebe7f1779",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseProjectReportLinkGridView.json",
     "psappsbitemid" : "6ad9e6d66ec2ca992762162391e9055b",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskTeamGridView9",
+    "psappsbitemname" : "团队",
+    "itemtag2" : "e52237e2778b5000be8021cf70f81845",
+    "psappviewid" : "d1339f33d3d82d7b6993e510b20fddbe",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTeamGridView9.json",
+    "psappsbitemid" : "a93e45d9c1fd41dfa15c59578849c265",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TestTaskMyDGridView",
@@ -2806,20 +2790,20 @@
     "psappsbitemid" : "d3b5c2535d138ca66109aa4d7c64d10a",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TaskStoryNewEditView",
-    "psappsbitemname" : "任务编辑视图",
-    "itemtag2" : "870fcb8acebd3d6cac12ee1382dfa0b9",
-    "psappviewid" : "52a6a2a4e6961e9fe8c7f07df59309d0",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStoryNewEditView.json",
-    "psappsbitemid" : "656ecfc3053e95c5ff8f8665d926e011",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "TestTaskMainDashboardView",
     "psappsbitemname" : "测试版本数据看板视图",
     "itemtag2" : "e613f159f656bcab063c9ab64a9e8b02",
     "psappviewid" : "55a8c0becc39a06b6b107d1bb4dbdcb9",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainDashboardView.json",
     "psappsbitemid" : "f64d1b1d72163252dfbf7e363537f51a",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskStoryNewEditView",
+    "psappsbitemname" : "任务编辑视图",
+    "itemtag2" : "870fcb8acebd3d6cac12ee1382dfa0b9",
+    "psappviewid" : "52a6a2a4e6961e9fe8c7f07df59309d0",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStoryNewEditView.json",
+    "psappsbitemid" : "656ecfc3053e95c5ff8f8665d926e011",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ProjectStatsGridView9",
@@ -6397,39 +6381,11 @@
     "psappsbitemrsname" : "嵌入视图",
     "rstype" : "APPVIEWEMBED"
   }, {
-    "cpsappsbitemname" : "添加备注",
-    "psappsbitemrsid" : "ce0dfbdd8b125ace26359a618f2524c5",
-    "ppsappsbitemname" : "产品日志列表视图（添加备注）",
-    "rstag" : "FRONT",
-    "rstag2" : "前台调用",
-    "ppsappsbitemid" : "af7a1f283186337a01c32fb7bf74f3fa",
-    "cpsappsbitemid" : "365e9de1dce605810a6696e8995f8ba9",
-    "psappsbitemrsname" : "添加备注",
-    "rstype" : "UIACTION"
-  }, {
-    "cpsappsbitemname" : "产品日志编辑视图",
-    "psappsbitemrsid" : "d114c5d3f0ebe04792ebd18a2f0bf754",
-    "ppsappsbitemname" : "产品日志列表视图（添加备注）",
-    "rstag" : "NEWDATA",
-    "ppsappsbitemid" : "af7a1f283186337a01c32fb7bf74f3fa",
-    "cpsappsbitemid" : "6abbf99b8a34b6fdd937c7552fad37d8",
-    "psappsbitemrsname" : "新建视图",
-    "rstype" : "APPVIEWREF"
-  }, {
-    "cpsappsbitemname" : "产品日志编辑视图",
-    "psappsbitemrsid" : "7f3d6efb40815048ef71ba258e764e35",
-    "ppsappsbitemname" : "产品日志列表视图（添加备注）",
-    "rstag" : "EDITDATA",
-    "ppsappsbitemid" : "af7a1f283186337a01c32fb7bf74f3fa",
-    "cpsappsbitemid" : "6abbf99b8a34b6fdd937c7552fad37d8",
-    "psappsbitemrsname" : "编辑视图",
-    "rstype" : "APPVIEWREF"
-  }, {
-    "cpsappsbitemname" : "产品日志列表视图（添加备注）",
-    "psappsbitemrsid" : "8e26fa13743b14d469d4095c1f22cc82",
+    "cpsappsbitemname" : "历史记录",
+    "psappsbitemrsid" : "51e0616c047cb7ea8698c183f2bb36c0",
     "ppsappsbitemname" : "产品数据看板视图",
     "ppsappsbitemid" : "9dabc1d79ee138af50f7c4da063fff24",
-    "cpsappsbitemid" : "af7a1f283186337a01c32fb7bf74f3fa",
+    "cpsappsbitemid" : "71a0c4d3151f3a61e0ab826783494f72",
     "psappsbitemrsname" : "嵌入视图",
     "rstype" : "APPVIEWEMBED"
   }, {
