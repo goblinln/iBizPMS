@@ -78,5 +78,6 @@
   } ],
   "roleTag" : "Todo_Maintain_MyTodo",
   "userCat" : "CAT1",
-  "userDRAction" : "READ"
+  "userDRAction" : "READ",
+  "systemReserved" : true
 }

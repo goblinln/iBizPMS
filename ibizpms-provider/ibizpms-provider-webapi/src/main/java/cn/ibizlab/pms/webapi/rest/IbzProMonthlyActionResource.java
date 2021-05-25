@@ -138,6 +138,45 @@ public class IbzProMonthlyActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyactionService.checkKey(ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondto)));
     }
 
+    @PreAuthorize("@IbzProMonthlyActionRuntime.test(#ibzpromonthlyaction_id,'CREATE')")
+    @ApiOperation(value = "创建历史日志", tags = {"月报日志" },  notes = "创建历史日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/{ibzpromonthlyaction_id}/createhis")
+    public ResponseEntity<IbzProMonthlyActionDTO> createHis(@PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id, @RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
+        IbzProMonthlyAction domain = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondto);
+        domain.setId(ibzpromonthlyaction_id);
+        domain = ibzpromonthlyactionService.createHis(domain);
+        ibzpromonthlyactiondto = ibzpromonthlyactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzpromonthlyactionRuntime.getOPPrivs(domain.getId());
+        ibzpromonthlyactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyactiondto);
+    }
+    @ApiOperation(value = "批量处理[创建历史日志]", tags = {"月报日志" },  notes = "批量处理[创建历史日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/createhisbatch")
+    public ResponseEntity<Boolean> createHisBatch(@RequestBody List<IbzProMonthlyActionDTO> ibzpromonthlyactiondtos) {
+        List<IbzProMonthlyAction> domains = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondtos);
+        boolean result = ibzpromonthlyactionService.createHisBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "Pms企业专用", tags = {"月报日志" },  notes = "Pms企业专用")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/{ibzpromonthlyaction_id}/managepmsee")
+    public ResponseEntity<IbzProMonthlyActionDTO> managePmsEe(@PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id, @RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
+        IbzProMonthlyAction domain = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondto);
+        domain.setId(ibzpromonthlyaction_id);
+        domain = ibzpromonthlyactionService.managePmsEe(domain);
+        ibzpromonthlyactiondto = ibzpromonthlyactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzpromonthlyactionRuntime.getOPPrivs(domain.getId());
+        ibzpromonthlyactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyactiondto);
+    }
+    @ApiOperation(value = "批量处理[Pms企业专用]", tags = {"月报日志" },  notes = "批量处理[Pms企业专用]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/managepmseebatch")
+    public ResponseEntity<Boolean> managePmsEeBatch(@RequestBody List<IbzProMonthlyActionDTO> ibzpromonthlyactiondtos) {
+        List<IbzProMonthlyAction> domains = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondtos);
+        boolean result = ibzpromonthlyactionService.managePmsEeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @ApiOperation(value = "保存月报日志", tags = {"月报日志" },  notes = "保存月报日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/save")
     public ResponseEntity<IbzProMonthlyActionDTO> save(@RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
@@ -154,6 +193,63 @@ public class IbzProMonthlyActionResource {
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzProMonthlyActionDTO> ibzpromonthlyactiondtos) {
         ibzpromonthlyactionService.saveBatch(ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondtos));
         return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @ApiOperation(value = "已读", tags = {"月报日志" },  notes = "已读")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/{ibzpromonthlyaction_id}/sendmarkdone")
+    public ResponseEntity<IbzProMonthlyActionDTO> sendMarkDone(@PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id, @RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
+        IbzProMonthlyAction domain = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondto);
+        domain.setId(ibzpromonthlyaction_id);
+        domain = ibzpromonthlyactionService.sendMarkDone(domain);
+        ibzpromonthlyactiondto = ibzpromonthlyactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzpromonthlyactionRuntime.getOPPrivs(domain.getId());
+        ibzpromonthlyactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyactiondto);
+    }
+    @ApiOperation(value = "批量处理[已读]", tags = {"月报日志" },  notes = "批量处理[已读]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/sendmarkdonebatch")
+    public ResponseEntity<Boolean> sendMarkDoneBatch(@RequestBody List<IbzProMonthlyActionDTO> ibzpromonthlyactiondtos) {
+        List<IbzProMonthlyAction> domains = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondtos);
+        boolean result = ibzpromonthlyactionService.sendMarkDoneBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "发送待办", tags = {"月报日志" },  notes = "发送待办")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/{ibzpromonthlyaction_id}/sendtodo")
+    public ResponseEntity<IbzProMonthlyActionDTO> sendTodo(@PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id, @RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
+        IbzProMonthlyAction domain = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondto);
+        domain.setId(ibzpromonthlyaction_id);
+        domain = ibzpromonthlyactionService.sendTodo(domain);
+        ibzpromonthlyactiondto = ibzpromonthlyactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzpromonthlyactionRuntime.getOPPrivs(domain.getId());
+        ibzpromonthlyactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyactiondto);
+    }
+    @ApiOperation(value = "批量处理[发送待办]", tags = {"月报日志" },  notes = "批量处理[发送待办]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/sendtodobatch")
+    public ResponseEntity<Boolean> sendTodoBatch(@RequestBody List<IbzProMonthlyActionDTO> ibzpromonthlyactiondtos) {
+        List<IbzProMonthlyAction> domains = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondtos);
+        boolean result = ibzpromonthlyactionService.sendTodoBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "发送待阅", tags = {"月报日志" },  notes = "发送待阅")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/{ibzpromonthlyaction_id}/sendtoread")
+    public ResponseEntity<IbzProMonthlyActionDTO> sendToread(@PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id, @RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
+        IbzProMonthlyAction domain = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondto);
+        domain.setId(ibzpromonthlyaction_id);
+        domain = ibzpromonthlyactionService.sendToread(domain);
+        ibzpromonthlyactiondto = ibzpromonthlyactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzpromonthlyactionRuntime.getOPPrivs(domain.getId());
+        ibzpromonthlyactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyactiondto);
+    }
+    @ApiOperation(value = "批量处理[发送待阅]", tags = {"月报日志" },  notes = "批量处理[发送待阅]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/sendtoreadbatch")
+    public ResponseEntity<Boolean> sendToreadBatch(@RequestBody List<IbzProMonthlyActionDTO> ibzpromonthlyactiondtos) {
+        List<IbzProMonthlyAction> domains = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondtos);
+        boolean result = ibzpromonthlyactionService.sendToreadBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
     @PreAuthorize("@IbzProMonthlyActionRuntime.quickTest('READ')")
@@ -293,6 +389,41 @@ public class IbzProMonthlyActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyactionService.checkKey(ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondto)));
     }
 
+    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'CREATE')")
+    @ApiOperation(value = "根据月报月报日志", tags = {"月报日志" },  notes = "根据月报月报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/ibzpromonthlyactions/{ibzpromonthlyaction_id}/createhis")
+    public ResponseEntity<IbzProMonthlyActionDTO> createHisByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id, @RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
+        IbzProMonthlyAction domain = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondto);
+        domain.setObjectid(ibzmonthly_id);
+        domain.setId(ibzpromonthlyaction_id);
+        domain = ibzpromonthlyactionService.createHis(domain) ;
+        ibzpromonthlyactiondto = ibzpromonthlyactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据月报月报日志]", tags = {"月报日志" },  notes = "批量处理[根据月报月报日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/ibzpromonthlyactions/createhisbatch")
+    public ResponseEntity<Boolean> createHisByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody List<IbzProMonthlyActionDTO> ibzpromonthlyactiondtos) {
+        List<IbzProMonthlyAction> domains = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondtos);
+        boolean result = ibzpromonthlyactionService.createHisBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据月报月报日志", tags = {"月报日志" },  notes = "根据月报月报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/ibzpromonthlyactions/{ibzpromonthlyaction_id}/managepmsee")
+    public ResponseEntity<IbzProMonthlyActionDTO> managePmsEeByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id, @RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
+        IbzProMonthlyAction domain = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondto);
+        domain.setObjectid(ibzmonthly_id);
+        domain.setId(ibzpromonthlyaction_id);
+        domain = ibzpromonthlyactionService.managePmsEe(domain) ;
+        ibzpromonthlyactiondto = ibzpromonthlyactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据月报月报日志]", tags = {"月报日志" },  notes = "批量处理[根据月报月报日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/ibzpromonthlyactions/managepmseebatch")
+    public ResponseEntity<Boolean> managePmsEeByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody List<IbzProMonthlyActionDTO> ibzpromonthlyactiondtos) {
+        List<IbzProMonthlyAction> domains = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondtos);
+        boolean result = ibzpromonthlyactionService.managePmsEeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @ApiOperation(value = "根据月报保存月报日志", tags = {"月报日志" },  notes = "根据月报保存月报日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/ibzpromonthlyactions/save")
     public ResponseEntity<IbzProMonthlyActionDTO> saveByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
@@ -313,6 +444,57 @@ public class IbzProMonthlyActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @ApiOperation(value = "根据月报月报日志", tags = {"月报日志" },  notes = "根据月报月报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/ibzpromonthlyactions/{ibzpromonthlyaction_id}/sendmarkdone")
+    public ResponseEntity<IbzProMonthlyActionDTO> sendMarkDoneByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id, @RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
+        IbzProMonthlyAction domain = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondto);
+        domain.setObjectid(ibzmonthly_id);
+        domain.setId(ibzpromonthlyaction_id);
+        domain = ibzpromonthlyactionService.sendMarkDone(domain) ;
+        ibzpromonthlyactiondto = ibzpromonthlyactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据月报月报日志]", tags = {"月报日志" },  notes = "批量处理[根据月报月报日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/ibzpromonthlyactions/sendmarkdonebatch")
+    public ResponseEntity<Boolean> sendMarkDoneByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody List<IbzProMonthlyActionDTO> ibzpromonthlyactiondtos) {
+        List<IbzProMonthlyAction> domains = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondtos);
+        boolean result = ibzpromonthlyactionService.sendMarkDoneBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据月报月报日志", tags = {"月报日志" },  notes = "根据月报月报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/ibzpromonthlyactions/{ibzpromonthlyaction_id}/sendtodo")
+    public ResponseEntity<IbzProMonthlyActionDTO> sendTodoByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id, @RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
+        IbzProMonthlyAction domain = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondto);
+        domain.setObjectid(ibzmonthly_id);
+        domain.setId(ibzpromonthlyaction_id);
+        domain = ibzpromonthlyactionService.sendTodo(domain) ;
+        ibzpromonthlyactiondto = ibzpromonthlyactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据月报月报日志]", tags = {"月报日志" },  notes = "批量处理[根据月报月报日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/ibzpromonthlyactions/sendtodobatch")
+    public ResponseEntity<Boolean> sendTodoByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody List<IbzProMonthlyActionDTO> ibzpromonthlyactiondtos) {
+        List<IbzProMonthlyAction> domains = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondtos);
+        boolean result = ibzpromonthlyactionService.sendTodoBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据月报月报日志", tags = {"月报日志" },  notes = "根据月报月报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/ibzpromonthlyactions/{ibzpromonthlyaction_id}/sendtoread")
+    public ResponseEntity<IbzProMonthlyActionDTO> sendToreadByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id, @RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
+        IbzProMonthlyAction domain = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondto);
+        domain.setObjectid(ibzmonthly_id);
+        domain.setId(ibzpromonthlyaction_id);
+        domain = ibzpromonthlyactionService.sendToread(domain) ;
+        ibzpromonthlyactiondto = ibzpromonthlyactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据月报月报日志]", tags = {"月报日志" },  notes = "批量处理[根据月报月报日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/ibzpromonthlyactions/sendtoreadbatch")
+    public ResponseEntity<Boolean> sendToreadByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody List<IbzProMonthlyActionDTO> ibzpromonthlyactiondtos) {
+        List<IbzProMonthlyAction> domains = ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondtos);
+        boolean result = ibzpromonthlyactionService.sendToreadBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'READ')")
 	@ApiOperation(value = "根据月报获取数据集", tags = {"月报日志" } ,notes = "根据月报获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/{ibzmonthly_id}/ibzpromonthlyactions/fetchdefault")

@@ -2003,7 +2003,8 @@
     } ],
     "roleTag" : "Action_Read_MyAction",
     "userCat" : "CAT1",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "systemReserved" : true
   } ],
   "codeName" : "Action",
   "dEType" : 1,

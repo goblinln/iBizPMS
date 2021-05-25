@@ -87,7 +87,9 @@ public class IBZProReleaseActionServiceImpl extends ServiceImpl<IBZProReleaseAct
         if(ibzproreleaseactionRuntime.isRtmodel()){
             list.forEach(item -> getProxyService().create(item));
         }else{
-        this.saveBatch(list, batchSize);
+        for (IBZProReleaseAction et : list) {
+            getProxyService().save(et);
+        }
         }
         
     }
@@ -187,6 +189,66 @@ public class IBZProReleaseActionServiceImpl extends ServiceImpl<IBZProReleaseAct
     }
     @Override
     @Transactional
+    public IBZProReleaseAction comment(IBZProReleaseAction et) {
+         return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean commentBatch(List<IBZProReleaseAction> etList) {
+        for(IBZProReleaseAction et : etList) {
+            comment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZProReleaseAction createHis(IBZProReleaseAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean createHisBatch(List<IBZProReleaseAction> etList) {
+        for(IBZProReleaseAction et : etList) {
+            createHis(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZProReleaseAction editComment(IBZProReleaseAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean editCommentBatch(List<IBZProReleaseAction> etList) {
+        for(IBZProReleaseAction et : etList) {
+            editComment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZProReleaseAction managePmsEe(IBZProReleaseAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean managePmsEeBatch(List<IBZProReleaseAction> etList) {
+        for(IBZProReleaseAction et : etList) {
+            managePmsEe(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean save(IBZProReleaseAction et) {
         if(!saveOrUpdate(et)) {
             return false;
@@ -243,6 +305,51 @@ public class IBZProReleaseActionServiceImpl extends ServiceImpl<IBZProReleaseAct
         if (update.size() > 0) {
             getProxyService().updateBatch(update);
         }
+    }
+
+    @Override
+    @Transactional
+    public IBZProReleaseAction sendMarkDone(IBZProReleaseAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendMarkDoneBatch(List<IBZProReleaseAction> etList) {
+        for(IBZProReleaseAction et : etList) {
+            sendMarkDone(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZProReleaseAction sendTodo(IBZProReleaseAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendTodoBatch(List<IBZProReleaseAction> etList) {
+        for(IBZProReleaseAction et : etList) {
+            sendTodo(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZProReleaseAction sendToread(IBZProReleaseAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendToreadBatch(List<IBZProReleaseAction> etList) {
+        for(IBZProReleaseAction et : etList) {
+            sendToread(et);
+        }
+        return true;
     }
 
 

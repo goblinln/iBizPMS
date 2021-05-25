@@ -87,7 +87,9 @@ public class IBZTestReportActionServiceImpl extends ServiceImpl<IBZTestReportAct
         if(ibztestreportactionRuntime.isRtmodel()){
             list.forEach(item -> getProxyService().create(item));
         }else{
-        this.saveBatch(list, batchSize);
+        for (IBZTestReportAction et : list) {
+            getProxyService().save(et);
+        }
         }
         
     }

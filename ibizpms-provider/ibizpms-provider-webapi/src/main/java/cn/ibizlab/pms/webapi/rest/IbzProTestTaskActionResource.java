@@ -138,6 +138,78 @@ public class IbzProTestTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactionService.checkKey(ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto)));
     }
 
+    @PreAuthorize("@IbzProTestTaskActionRuntime.test(#ibzprotesttaskaction_id,'MANAGE')")
+    @ApiOperation(value = "添加备注", tags = {"测试单日志" },  notes = "添加备注")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}/comment")
+    public ResponseEntity<IbzProTestTaskActionDTO> comment(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.comment(domain);
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprotesttaskactionRuntime.getOPPrivs(domain.getId());
+        ibzprotesttaskactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+
+    @PreAuthorize("@IbzProTestTaskActionRuntime.test(#ibzprotesttaskaction_id,'CREATE')")
+    @ApiOperation(value = "创建历史日志", tags = {"测试单日志" },  notes = "创建历史日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}/createhis")
+    public ResponseEntity<IbzProTestTaskActionDTO> createHis(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.createHis(domain);
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprotesttaskactionRuntime.getOPPrivs(domain.getId());
+        ibzprotesttaskactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[创建历史日志]", tags = {"测试单日志" },  notes = "批量处理[创建历史日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/createhisbatch")
+    public ResponseEntity<Boolean> createHisBatch(@RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.createHisBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @PreAuthorize("@IbzProTestTaskActionRuntime.test(#ibzprotesttaskaction_id,'MANAGE')")
+    @ApiOperation(value = "编辑备注信息", tags = {"测试单日志" },  notes = "编辑备注信息")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}/editcomment")
+    public ResponseEntity<IbzProTestTaskActionDTO> editComment(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.editComment(domain);
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprotesttaskactionRuntime.getOPPrivs(domain.getId());
+        ibzprotesttaskactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[编辑备注信息]", tags = {"测试单日志" },  notes = "批量处理[编辑备注信息]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/editcommentbatch")
+    public ResponseEntity<Boolean> editCommentBatch(@RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.editCommentBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "Pms企业专用", tags = {"测试单日志" },  notes = "Pms企业专用")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}/managepmsee")
+    public ResponseEntity<IbzProTestTaskActionDTO> managePmsEe(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.managePmsEe(domain);
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprotesttaskactionRuntime.getOPPrivs(domain.getId());
+        ibzprotesttaskactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[Pms企业专用]", tags = {"测试单日志" },  notes = "批量处理[Pms企业专用]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/managepmseebatch")
+    public ResponseEntity<Boolean> managePmsEeBatch(@RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.managePmsEeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @ApiOperation(value = "保存测试单日志", tags = {"测试单日志" },  notes = "保存测试单日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/save")
     public ResponseEntity<IbzProTestTaskActionDTO> save(@RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -154,6 +226,63 @@ public class IbzProTestTaskActionResource {
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
         ibzprotesttaskactionService.saveBatch(ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos));
         return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @ApiOperation(value = "已读", tags = {"测试单日志" },  notes = "已读")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}/sendmarkdone")
+    public ResponseEntity<IbzProTestTaskActionDTO> sendMarkDone(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.sendMarkDone(domain);
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprotesttaskactionRuntime.getOPPrivs(domain.getId());
+        ibzprotesttaskactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[已读]", tags = {"测试单日志" },  notes = "批量处理[已读]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/sendmarkdonebatch")
+    public ResponseEntity<Boolean> sendMarkDoneBatch(@RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.sendMarkDoneBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "发送待办", tags = {"测试单日志" },  notes = "发送待办")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}/sendtodo")
+    public ResponseEntity<IbzProTestTaskActionDTO> sendTodo(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.sendTodo(domain);
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprotesttaskactionRuntime.getOPPrivs(domain.getId());
+        ibzprotesttaskactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[发送待办]", tags = {"测试单日志" },  notes = "批量处理[发送待办]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/sendtodobatch")
+    public ResponseEntity<Boolean> sendTodoBatch(@RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.sendTodoBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "发送待阅", tags = {"测试单日志" },  notes = "发送待阅")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}/sendtoread")
+    public ResponseEntity<IbzProTestTaskActionDTO> sendToread(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.sendToread(domain);
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprotesttaskactionRuntime.getOPPrivs(domain.getId());
+        ibzprotesttaskactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[发送待阅]", tags = {"测试单日志" },  notes = "批量处理[发送待阅]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/sendtoreadbatch")
+    public ResponseEntity<Boolean> sendToreadBatch(@RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.sendToreadBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
     @PreAuthorize("@IbzProTestTaskActionRuntime.quickTest('READ')")
@@ -293,6 +422,70 @@ public class IbzProTestTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactionService.checkKey(ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto)));
     }
 
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'MANAGE')")
+    @ApiOperation(value = "根据测试版本测试单日志", tags = {"测试单日志" },  notes = "根据测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/comment")
+    public ResponseEntity<IbzProTestTaskActionDTO> commentByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.comment(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'CREATE')")
+    @ApiOperation(value = "根据测试版本测试单日志", tags = {"测试单日志" },  notes = "根据测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/createhis")
+    public ResponseEntity<IbzProTestTaskActionDTO> createHisByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.createHis(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/ibzprotesttaskactions/createhisbatch")
+    public ResponseEntity<Boolean> createHisByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.createHisBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'MANAGE')")
+    @ApiOperation(value = "根据测试版本测试单日志", tags = {"测试单日志" },  notes = "根据测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/editcomment")
+    public ResponseEntity<IbzProTestTaskActionDTO> editCommentByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.editComment(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/ibzprotesttaskactions/editcommentbatch")
+    public ResponseEntity<Boolean> editCommentByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.editCommentBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据测试版本测试单日志", tags = {"测试单日志" },  notes = "根据测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/managepmsee")
+    public ResponseEntity<IbzProTestTaskActionDTO> managePmsEeByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.managePmsEe(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/ibzprotesttaskactions/managepmseebatch")
+    public ResponseEntity<Boolean> managePmsEeByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.managePmsEeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @ApiOperation(value = "根据测试版本保存测试单日志", tags = {"测试单日志" },  notes = "根据测试版本保存测试单日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/ibzprotesttaskactions/save")
     public ResponseEntity<IbzProTestTaskActionDTO> saveByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -313,6 +506,57 @@ public class IbzProTestTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @ApiOperation(value = "根据测试版本测试单日志", tags = {"测试单日志" },  notes = "根据测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/sendmarkdone")
+    public ResponseEntity<IbzProTestTaskActionDTO> sendMarkDoneByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.sendMarkDone(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/ibzprotesttaskactions/sendmarkdonebatch")
+    public ResponseEntity<Boolean> sendMarkDoneByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.sendMarkDoneBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据测试版本测试单日志", tags = {"测试单日志" },  notes = "根据测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/sendtodo")
+    public ResponseEntity<IbzProTestTaskActionDTO> sendTodoByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.sendTodo(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/ibzprotesttaskactions/sendtodobatch")
+    public ResponseEntity<Boolean> sendTodoByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.sendTodoBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据测试版本测试单日志", tags = {"测试单日志" },  notes = "根据测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/sendtoread")
+    public ResponseEntity<IbzProTestTaskActionDTO> sendToreadByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.sendToread(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/ibzprotesttaskactions/sendtoreadbatch")
+    public ResponseEntity<Boolean> sendToreadByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.sendToreadBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
 	@ApiOperation(value = "根据测试版本获取数据集", tags = {"测试单日志" } ,notes = "根据测试版本获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/ibzprotesttaskactions/fetchdefault")
@@ -444,6 +688,70 @@ public class IbzProTestTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactionService.checkKey(ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
+    @ApiOperation(value = "根据产品测试版本测试单日志", tags = {"测试单日志" },  notes = "根据产品测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/comment")
+    public ResponseEntity<IbzProTestTaskActionDTO> commentByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.comment(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品测试版本测试单日志", tags = {"测试单日志" },  notes = "根据产品测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/createhis")
+    public ResponseEntity<IbzProTestTaskActionDTO> createHisByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.createHis(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据产品测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/createhisbatch")
+    public ResponseEntity<Boolean> createHisByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.createHisBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
+    @ApiOperation(value = "根据产品测试版本测试单日志", tags = {"测试单日志" },  notes = "根据产品测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/editcomment")
+    public ResponseEntity<IbzProTestTaskActionDTO> editCommentByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.editComment(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据产品测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/editcommentbatch")
+    public ResponseEntity<Boolean> editCommentByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.editCommentBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据产品测试版本测试单日志", tags = {"测试单日志" },  notes = "根据产品测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/managepmsee")
+    public ResponseEntity<IbzProTestTaskActionDTO> managePmsEeByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.managePmsEe(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据产品测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/managepmseebatch")
+    public ResponseEntity<Boolean> managePmsEeByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.managePmsEeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @ApiOperation(value = "根据产品测试版本保存测试单日志", tags = {"测试单日志" },  notes = "根据产品测试版本保存测试单日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/save")
     public ResponseEntity<IbzProTestTaskActionDTO> saveByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -464,6 +772,57 @@ public class IbzProTestTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @ApiOperation(value = "根据产品测试版本测试单日志", tags = {"测试单日志" },  notes = "根据产品测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/sendmarkdone")
+    public ResponseEntity<IbzProTestTaskActionDTO> sendMarkDoneByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.sendMarkDone(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据产品测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/sendmarkdonebatch")
+    public ResponseEntity<Boolean> sendMarkDoneByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.sendMarkDoneBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据产品测试版本测试单日志", tags = {"测试单日志" },  notes = "根据产品测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/sendtodo")
+    public ResponseEntity<IbzProTestTaskActionDTO> sendTodoByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.sendTodo(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据产品测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/sendtodobatch")
+    public ResponseEntity<Boolean> sendTodoByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.sendTodoBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据产品测试版本测试单日志", tags = {"测试单日志" },  notes = "根据产品测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/sendtoread")
+    public ResponseEntity<IbzProTestTaskActionDTO> sendToreadByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.sendToread(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据产品测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/sendtoreadbatch")
+    public ResponseEntity<Boolean> sendToreadByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.sendToreadBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试版本获取数据集", tags = {"测试单日志" } ,notes = "根据产品测试版本获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/fetchdefault")
@@ -595,6 +954,70 @@ public class IbzProTestTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactionService.checkKey(ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
+    @ApiOperation(value = "根据项目测试版本测试单日志", tags = {"测试单日志" },  notes = "根据项目测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/comment")
+    public ResponseEntity<IbzProTestTaskActionDTO> commentByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.comment(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
+    @ApiOperation(value = "根据项目测试版本测试单日志", tags = {"测试单日志" },  notes = "根据项目测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/createhis")
+    public ResponseEntity<IbzProTestTaskActionDTO> createHisByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.createHis(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据项目测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据项目测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/createhisbatch")
+    public ResponseEntity<Boolean> createHisByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.createHisBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
+    @ApiOperation(value = "根据项目测试版本测试单日志", tags = {"测试单日志" },  notes = "根据项目测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/editcomment")
+    public ResponseEntity<IbzProTestTaskActionDTO> editCommentByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.editComment(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据项目测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据项目测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/editcommentbatch")
+    public ResponseEntity<Boolean> editCommentByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.editCommentBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据项目测试版本测试单日志", tags = {"测试单日志" },  notes = "根据项目测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/managepmsee")
+    public ResponseEntity<IbzProTestTaskActionDTO> managePmsEeByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.managePmsEe(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据项目测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据项目测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/managepmseebatch")
+    public ResponseEntity<Boolean> managePmsEeByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.managePmsEeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @ApiOperation(value = "根据项目测试版本保存测试单日志", tags = {"测试单日志" },  notes = "根据项目测试版本保存测试单日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/save")
     public ResponseEntity<IbzProTestTaskActionDTO> saveByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -615,6 +1038,57 @@ public class IbzProTestTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @ApiOperation(value = "根据项目测试版本测试单日志", tags = {"测试单日志" },  notes = "根据项目测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/sendmarkdone")
+    public ResponseEntity<IbzProTestTaskActionDTO> sendMarkDoneByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.sendMarkDone(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据项目测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据项目测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/sendmarkdonebatch")
+    public ResponseEntity<Boolean> sendMarkDoneByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.sendMarkDoneBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据项目测试版本测试单日志", tags = {"测试单日志" },  notes = "根据项目测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/sendtodo")
+    public ResponseEntity<IbzProTestTaskActionDTO> sendTodoByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.sendTodo(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据项目测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据项目测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/sendtodobatch")
+    public ResponseEntity<Boolean> sendTodoByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.sendTodoBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据项目测试版本测试单日志", tags = {"测试单日志" },  notes = "根据项目测试版本测试单日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/sendtoread")
+    public ResponseEntity<IbzProTestTaskActionDTO> sendToreadByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
+        IbzProTestTaskAction domain = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto);
+        domain.setObjectid(testtask_id);
+        domain.setId(ibzprotesttaskaction_id);
+        domain = ibzprotesttaskactionService.sendToread(domain) ;
+        ibzprotesttaskactiondto = ibzprotesttaskactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据项目测试版本测试单日志]", tags = {"测试单日志" },  notes = "批量处理[根据项目测试版本测试单日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/sendtoreadbatch")
+    public ResponseEntity<Boolean> sendToreadByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody List<IbzProTestTaskActionDTO> ibzprotesttaskactiondtos) {
+        List<IbzProTestTaskAction> domains = ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondtos);
+        boolean result = ibzprotesttaskactionService.sendToreadBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目测试版本获取数据集", tags = {"测试单日志" } ,notes = "根据项目测试版本获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/fetchdefault")

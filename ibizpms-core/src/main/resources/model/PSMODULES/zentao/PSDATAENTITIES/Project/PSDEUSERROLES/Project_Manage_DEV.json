@@ -43,5 +43,6 @@
   } ],
   "roleTag" : "Project_Manage_DEV",
   "userCat" : "CAT1",
-  "userDRAction" : "READ"
+  "userDRAction" : "READ",
+  "systemReserved" : true
 }

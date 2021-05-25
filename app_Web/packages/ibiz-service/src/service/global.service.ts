@@ -989,6 +989,15 @@ export class GlobalService {
         return (await import('./ibzpro-product-action/ibzpro-product-action.service')).default.getInstance();
     }
     /**
+     * 产品计划日志服务
+     *
+     * @return {ProductPlanAction}
+     * @memberof GlobalService
+     */
+    async getProductPlanActionService() {
+        return (await import('./product-plan-action/product-plan-action.service')).default.getInstance();
+    }
+    /**
      * 产品的分支和平台信息服务
      *
      * @return {Branch}

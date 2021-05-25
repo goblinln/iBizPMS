@@ -499,6 +499,10 @@ zuul:
       path: /ibzproproductactions/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
+    ibzpro_productplanaction:
+      path: /productplanactions/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
     zt_branch:
       path: /branches/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}

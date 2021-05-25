@@ -87,7 +87,9 @@ public class IbzProBuildActionServiceImpl extends ServiceImpl<IbzProBuildActionM
         if(ibzprobuildactionRuntime.isRtmodel()){
             list.forEach(item -> getProxyService().create(item));
         }else{
-        this.saveBatch(list, batchSize);
+        for (IbzProBuildAction et : list) {
+            getProxyService().save(et);
+        }
         }
         
     }
@@ -187,6 +189,66 @@ public class IbzProBuildActionServiceImpl extends ServiceImpl<IbzProBuildActionM
     }
     @Override
     @Transactional
+    public IbzProBuildAction comment(IbzProBuildAction et) {
+         return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean commentBatch(List<IbzProBuildAction> etList) {
+        for(IbzProBuildAction et : etList) {
+            comment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProBuildAction createHis(IbzProBuildAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean createHisBatch(List<IbzProBuildAction> etList) {
+        for(IbzProBuildAction et : etList) {
+            createHis(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProBuildAction editComment(IbzProBuildAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean editCommentBatch(List<IbzProBuildAction> etList) {
+        for(IbzProBuildAction et : etList) {
+            editComment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProBuildAction managePmsEe(IbzProBuildAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean managePmsEeBatch(List<IbzProBuildAction> etList) {
+        for(IbzProBuildAction et : etList) {
+            managePmsEe(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean save(IbzProBuildAction et) {
         if(!saveOrUpdate(et)) {
             return false;
@@ -243,6 +305,51 @@ public class IbzProBuildActionServiceImpl extends ServiceImpl<IbzProBuildActionM
         if (update.size() > 0) {
             getProxyService().updateBatch(update);
         }
+    }
+
+    @Override
+    @Transactional
+    public IbzProBuildAction sendMarkDone(IbzProBuildAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendMarkDoneBatch(List<IbzProBuildAction> etList) {
+        for(IbzProBuildAction et : etList) {
+            sendMarkDone(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProBuildAction sendTodo(IbzProBuildAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendTodoBatch(List<IbzProBuildAction> etList) {
+        for(IbzProBuildAction et : etList) {
+            sendTodo(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProBuildAction sendToread(IbzProBuildAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendToreadBatch(List<IbzProBuildAction> etList) {
+        for(IbzProBuildAction et : etList) {
+            sendToread(et);
+        }
+        return true;
     }
 
 

@@ -36,8 +36,18 @@ public interface IIbzProMonthlyActionService extends IService<IbzProMonthlyActio
     IbzProMonthlyAction sysGet(Long key);
     IbzProMonthlyAction getDraft(IbzProMonthlyAction et);
     boolean checkKey(IbzProMonthlyAction et);
+    IbzProMonthlyAction createHis(IbzProMonthlyAction et);
+    boolean createHisBatch(List<IbzProMonthlyAction> etList);
+    IbzProMonthlyAction managePmsEe(IbzProMonthlyAction et);
+    boolean managePmsEeBatch(List<IbzProMonthlyAction> etList);
     boolean save(IbzProMonthlyAction et);
     void saveBatch(List<IbzProMonthlyAction> list);
+    IbzProMonthlyAction sendMarkDone(IbzProMonthlyAction et);
+    boolean sendMarkDoneBatch(List<IbzProMonthlyAction> etList);
+    IbzProMonthlyAction sendTodo(IbzProMonthlyAction et);
+    boolean sendTodoBatch(List<IbzProMonthlyAction> etList);
+    IbzProMonthlyAction sendToread(IbzProMonthlyAction et);
+    boolean sendToreadBatch(List<IbzProMonthlyAction> etList);
     List<IbzProMonthlyAction> select(IbzProMonthlyActionSearchContext context);
     List<IbzProMonthlyAction> selectDefault(IbzProMonthlyActionSearchContext context);
     List<IbzProMonthlyAction> selectSimple(IbzProMonthlyActionSearchContext context);

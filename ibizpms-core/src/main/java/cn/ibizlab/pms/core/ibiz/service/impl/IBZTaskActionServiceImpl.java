@@ -87,7 +87,9 @@ public class IBZTaskActionServiceImpl extends ServiceImpl<IBZTaskActionMapper, I
         if(ibztaskactionRuntime.isRtmodel()){
             list.forEach(item -> getProxyService().create(item));
         }else{
-        this.saveBatch(list, batchSize);
+        for (IBZTaskAction et : list) {
+            getProxyService().save(et);
+        }
         }
         
     }
@@ -187,6 +189,66 @@ public class IBZTaskActionServiceImpl extends ServiceImpl<IBZTaskActionMapper, I
     }
     @Override
     @Transactional
+    public IBZTaskAction comment(IBZTaskAction et) {
+         return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean commentBatch(List<IBZTaskAction> etList) {
+        for(IBZTaskAction et : etList) {
+            comment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZTaskAction createHis(IBZTaskAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean createHisBatch(List<IBZTaskAction> etList) {
+        for(IBZTaskAction et : etList) {
+            createHis(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZTaskAction editComment(IBZTaskAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean editCommentBatch(List<IBZTaskAction> etList) {
+        for(IBZTaskAction et : etList) {
+            editComment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZTaskAction managePmsEe(IBZTaskAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean managePmsEeBatch(List<IBZTaskAction> etList) {
+        for(IBZTaskAction et : etList) {
+            managePmsEe(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean save(IBZTaskAction et) {
         if(!saveOrUpdate(et)) {
             return false;
@@ -243,6 +305,51 @@ public class IBZTaskActionServiceImpl extends ServiceImpl<IBZTaskActionMapper, I
         if (update.size() > 0) {
             getProxyService().updateBatch(update);
         }
+    }
+
+    @Override
+    @Transactional
+    public IBZTaskAction sendMarkDone(IBZTaskAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendMarkDoneBatch(List<IBZTaskAction> etList) {
+        for(IBZTaskAction et : etList) {
+            sendMarkDone(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZTaskAction sendTodo(IBZTaskAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendTodoBatch(List<IBZTaskAction> etList) {
+        for(IBZTaskAction et : etList) {
+            sendTodo(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZTaskAction sendToread(IBZTaskAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendToreadBatch(List<IBZTaskAction> etList) {
+        for(IBZTaskAction et : etList) {
+            sendToread(et);
+        }
+        return true;
     }
 
 

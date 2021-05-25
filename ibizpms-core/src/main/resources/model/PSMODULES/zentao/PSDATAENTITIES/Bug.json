@@ -8642,7 +8642,8 @@
     } ],
     "roleTag" : "Bug_Maintain_OpenBy",
     "userCat" : "CAT1",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "systemReserved" : true
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Read.json",

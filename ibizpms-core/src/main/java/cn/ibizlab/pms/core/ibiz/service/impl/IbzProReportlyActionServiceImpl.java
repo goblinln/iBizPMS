@@ -87,7 +87,9 @@ public class IbzProReportlyActionServiceImpl extends ServiceImpl<IbzProReportlyA
         if(ibzproreportlyactionRuntime.isRtmodel()){
             list.forEach(item -> getProxyService().create(item));
         }else{
-        this.saveBatch(list, batchSize);
+        for (IbzProReportlyAction et : list) {
+            getProxyService().save(et);
+        }
         }
         
     }
@@ -187,6 +189,36 @@ public class IbzProReportlyActionServiceImpl extends ServiceImpl<IbzProReportlyA
     }
     @Override
     @Transactional
+    public IbzProReportlyAction createHis(IbzProReportlyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean createHisBatch(List<IbzProReportlyAction> etList) {
+        for(IbzProReportlyAction et : etList) {
+            createHis(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProReportlyAction managePmsEe(IbzProReportlyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean managePmsEeBatch(List<IbzProReportlyAction> etList) {
+        for(IbzProReportlyAction et : etList) {
+            managePmsEe(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean save(IbzProReportlyAction et) {
         if(!saveOrUpdate(et)) {
             return false;
@@ -243,6 +275,51 @@ public class IbzProReportlyActionServiceImpl extends ServiceImpl<IbzProReportlyA
         if (update.size() > 0) {
             getProxyService().updateBatch(update);
         }
+    }
+
+    @Override
+    @Transactional
+    public IbzProReportlyAction sendMarkDone(IbzProReportlyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendMarkDoneBatch(List<IbzProReportlyAction> etList) {
+        for(IbzProReportlyAction et : etList) {
+            sendMarkDone(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProReportlyAction sendTodo(IbzProReportlyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendTodoBatch(List<IbzProReportlyAction> etList) {
+        for(IbzProReportlyAction et : etList) {
+            sendTodo(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProReportlyAction sendToread(IbzProReportlyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendToreadBatch(List<IbzProReportlyAction> etList) {
+        for(IbzProReportlyAction et : etList) {
+            sendToread(et);
+        }
+        return true;
     }
 
 

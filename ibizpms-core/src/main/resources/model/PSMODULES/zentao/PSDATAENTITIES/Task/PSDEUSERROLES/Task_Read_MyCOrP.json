@@ -15,5 +15,6 @@
   } ],
   "roleTag" : "Task_Read_MyCOrP",
   "userCat" : "CAT1",
-  "userDRAction" : "READ"
+  "userDRAction" : "READ",
+  "systemReserved" : true
 }

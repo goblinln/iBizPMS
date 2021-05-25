@@ -36,8 +36,18 @@ public interface IIBZProWeeklyActionService extends IService<IBZProWeeklyAction>
     IBZProWeeklyAction sysGet(Long key);
     IBZProWeeklyAction getDraft(IBZProWeeklyAction et);
     boolean checkKey(IBZProWeeklyAction et);
+    IBZProWeeklyAction createHis(IBZProWeeklyAction et);
+    boolean createHisBatch(List<IBZProWeeklyAction> etList);
+    IBZProWeeklyAction managePmsEe(IBZProWeeklyAction et);
+    boolean managePmsEeBatch(List<IBZProWeeklyAction> etList);
     boolean save(IBZProWeeklyAction et);
     void saveBatch(List<IBZProWeeklyAction> list);
+    IBZProWeeklyAction sendMarkDone(IBZProWeeklyAction et);
+    boolean sendMarkDoneBatch(List<IBZProWeeklyAction> etList);
+    IBZProWeeklyAction sendTodo(IBZProWeeklyAction et);
+    boolean sendTodoBatch(List<IBZProWeeklyAction> etList);
+    IBZProWeeklyAction sendToread(IBZProWeeklyAction et);
+    boolean sendToreadBatch(List<IBZProWeeklyAction> etList);
     List<IBZProWeeklyAction> select(IBZProWeeklyActionSearchContext context);
     List<IBZProWeeklyAction> selectDefault(IBZProWeeklyActionSearchContext context);
     List<IBZProWeeklyAction> selectSimple(IBZProWeeklyActionSearchContext context);

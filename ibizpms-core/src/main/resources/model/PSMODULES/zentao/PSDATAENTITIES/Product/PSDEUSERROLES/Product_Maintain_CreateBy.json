@@ -29,5 +29,6 @@
   } ],
   "roleTag" : "Product_Maintain_CreateBy",
   "userCat" : "CAT1",
-  "userDRAction" : "READ"
+  "userDRAction" : "READ",
+  "systemReserved" : true
 }

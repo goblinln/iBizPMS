@@ -87,7 +87,9 @@ public class IbzProTestTaskActionServiceImpl extends ServiceImpl<IbzProTestTaskA
         if(ibzprotesttaskactionRuntime.isRtmodel()){
             list.forEach(item -> getProxyService().create(item));
         }else{
-        this.saveBatch(list, batchSize);
+        for (IbzProTestTaskAction et : list) {
+            getProxyService().save(et);
+        }
         }
         
     }
@@ -187,6 +189,66 @@ public class IbzProTestTaskActionServiceImpl extends ServiceImpl<IbzProTestTaskA
     }
     @Override
     @Transactional
+    public IbzProTestTaskAction comment(IbzProTestTaskAction et) {
+         return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean commentBatch(List<IbzProTestTaskAction> etList) {
+        for(IbzProTestTaskAction et : etList) {
+            comment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProTestTaskAction createHis(IbzProTestTaskAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean createHisBatch(List<IbzProTestTaskAction> etList) {
+        for(IbzProTestTaskAction et : etList) {
+            createHis(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProTestTaskAction editComment(IbzProTestTaskAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean editCommentBatch(List<IbzProTestTaskAction> etList) {
+        for(IbzProTestTaskAction et : etList) {
+            editComment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProTestTaskAction managePmsEe(IbzProTestTaskAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean managePmsEeBatch(List<IbzProTestTaskAction> etList) {
+        for(IbzProTestTaskAction et : etList) {
+            managePmsEe(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean save(IbzProTestTaskAction et) {
         if(!saveOrUpdate(et)) {
             return false;
@@ -243,6 +305,51 @@ public class IbzProTestTaskActionServiceImpl extends ServiceImpl<IbzProTestTaskA
         if (update.size() > 0) {
             getProxyService().updateBatch(update);
         }
+    }
+
+    @Override
+    @Transactional
+    public IbzProTestTaskAction sendMarkDone(IbzProTestTaskAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendMarkDoneBatch(List<IbzProTestTaskAction> etList) {
+        for(IbzProTestTaskAction et : etList) {
+            sendMarkDone(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProTestTaskAction sendTodo(IbzProTestTaskAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendTodoBatch(List<IbzProTestTaskAction> etList) {
+        for(IbzProTestTaskAction et : etList) {
+            sendTodo(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProTestTaskAction sendToread(IbzProTestTaskAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendToreadBatch(List<IbzProTestTaskAction> etList) {
+        for(IbzProTestTaskAction et : etList) {
+            sendToread(et);
+        }
+        return true;
     }
 
 

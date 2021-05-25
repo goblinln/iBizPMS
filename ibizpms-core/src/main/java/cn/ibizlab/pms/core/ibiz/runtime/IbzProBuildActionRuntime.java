@@ -181,8 +181,29 @@ public class IbzProBuildActionRuntime extends cn.ibizlab.pms.core.runtime.System
             else if (iPSDEAction.getName().equals("CheckKey")) {
                 return ibzprobuildactionService.checkKey((IbzProBuildAction) args[0]);
             }
+            else if (iPSDEAction.getName().equals("Comment")) {
+                return ibzprobuildactionService.comment((IbzProBuildAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("CreateHis")) {
+                return ibzprobuildactionService.createHis((IbzProBuildAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("editComment")) {
+                return ibzprobuildactionService.editComment((IbzProBuildAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("ManagePmsEe")) {
+                return ibzprobuildactionService.managePmsEe((IbzProBuildAction) args[0]);
+            }
             else if (iPSDEAction.getName().equals("Save")) {
                 return ibzprobuildactionService.save((IbzProBuildAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("sendMarkDone")) {
+                return ibzprobuildactionService.sendMarkDone((IbzProBuildAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("sendTodo")) {
+                return ibzprobuildactionService.sendTodo((IbzProBuildAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("sendToread")) {
+                return ibzprobuildactionService.sendToread((IbzProBuildAction) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
             if (strActionName.equals(DEActions.CREATE)) {
@@ -294,8 +315,29 @@ public class IbzProBuildActionRuntime extends cn.ibizlab.pms.core.runtime.System
         else if (action.equals("checkKey")) {
             return aroundAction("CheckKey", point);
         }
+        else if (action.equals("comment")) {
+            return aroundAction("Comment", point);
+        }
+        else if (action.equals("createHis")) {
+            return aroundAction("CreateHis", point);
+        }
+        else if (action.equals("editComment")) {
+            return aroundAction("editComment", point);
+        }
+        else if (action.equals("managePmsEe")) {
+            return aroundAction("ManagePmsEe", point);
+        }
         else if (action.equals("save")) {
             return aroundAction("Save", point);
+        }
+        else if (action.equals("sendMarkDone")) {
+            return aroundAction("sendMarkDone", point);
+        }
+        else if (action.equals("sendTodo")) {
+            return aroundAction("sendTodo", point);
+        }
+        else if (action.equals("sendToread")) {
+            return aroundAction("sendToread", point);
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);

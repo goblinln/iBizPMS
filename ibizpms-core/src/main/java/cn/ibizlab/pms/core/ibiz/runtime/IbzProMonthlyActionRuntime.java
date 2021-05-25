@@ -181,8 +181,23 @@ public class IbzProMonthlyActionRuntime extends cn.ibizlab.pms.core.runtime.Syst
             else if (iPSDEAction.getName().equals("CheckKey")) {
                 return ibzpromonthlyactionService.checkKey((IbzProMonthlyAction) args[0]);
             }
+            else if (iPSDEAction.getName().equals("CreateHis")) {
+                return ibzpromonthlyactionService.createHis((IbzProMonthlyAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("ManagePmsEe")) {
+                return ibzpromonthlyactionService.managePmsEe((IbzProMonthlyAction) args[0]);
+            }
             else if (iPSDEAction.getName().equals("Save")) {
                 return ibzpromonthlyactionService.save((IbzProMonthlyAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("sendMarkDone")) {
+                return ibzpromonthlyactionService.sendMarkDone((IbzProMonthlyAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("sendTodo")) {
+                return ibzpromonthlyactionService.sendTodo((IbzProMonthlyAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("sendToread")) {
+                return ibzpromonthlyactionService.sendToread((IbzProMonthlyAction) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
             if (strActionName.equals(DEActions.CREATE)) {
@@ -294,8 +309,23 @@ public class IbzProMonthlyActionRuntime extends cn.ibizlab.pms.core.runtime.Syst
         else if (action.equals("checkKey")) {
             return aroundAction("CheckKey", point);
         }
+        else if (action.equals("createHis")) {
+            return aroundAction("CreateHis", point);
+        }
+        else if (action.equals("managePmsEe")) {
+            return aroundAction("ManagePmsEe", point);
+        }
         else if (action.equals("save")) {
             return aroundAction("Save", point);
+        }
+        else if (action.equals("sendMarkDone")) {
+            return aroundAction("sendMarkDone", point);
+        }
+        else if (action.equals("sendTodo")) {
+            return aroundAction("sendTodo", point);
+        }
+        else if (action.equals("sendToread")) {
+            return aroundAction("sendToread", point);
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);

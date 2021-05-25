@@ -161,6 +161,7 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('projectproduct', () => import('../authservice/project-product/project-product-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('accounttaskestimate', () => import('../authservice/account-taskestimate/account-taskestimate-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzproproductaction', () => import('../authservice/ibzpro-product-action/ibzpro-product-action-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('productplanaction', () => import('../authservice/product-plan-action/product-plan-action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('branch', () => import('../authservice/branch/branch-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('action', () => import('../authservice/action/action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('dynafilter', () => import('../authservice/dyna-filter/dyna-filter-auth-service'));

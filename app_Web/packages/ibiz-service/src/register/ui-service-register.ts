@@ -162,6 +162,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('projectproduct', () => import('../uiservice/project-product/project-product-ui-service'));
         UIServiceRegister.allUIServiceMap.set('accounttaskestimate', () => import('../uiservice/account-taskestimate/account-taskestimate-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzproproductaction', () => import('../uiservice/ibzpro-product-action/ibzpro-product-action-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('productplanaction', () => import('../uiservice/product-plan-action/product-plan-action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('branch', () => import('../uiservice/branch/branch-ui-service'));
         UIServiceRegister.allUIServiceMap.set('action', () => import('../uiservice/action/action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('dynafilter', () => import('../uiservice/dyna-filter/dyna-filter-ui-service'));

@@ -87,7 +87,9 @@ public class IBZProWeeklyActionServiceImpl extends ServiceImpl<IBZProWeeklyActio
         if(ibzproweeklyactionRuntime.isRtmodel()){
             list.forEach(item -> getProxyService().create(item));
         }else{
-        this.saveBatch(list, batchSize);
+        for (IBZProWeeklyAction et : list) {
+            getProxyService().save(et);
+        }
         }
         
     }
@@ -187,6 +189,36 @@ public class IBZProWeeklyActionServiceImpl extends ServiceImpl<IBZProWeeklyActio
     }
     @Override
     @Transactional
+    public IBZProWeeklyAction createHis(IBZProWeeklyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean createHisBatch(List<IBZProWeeklyAction> etList) {
+        for(IBZProWeeklyAction et : etList) {
+            createHis(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZProWeeklyAction managePmsEe(IBZProWeeklyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean managePmsEeBatch(List<IBZProWeeklyAction> etList) {
+        for(IBZProWeeklyAction et : etList) {
+            managePmsEe(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean save(IBZProWeeklyAction et) {
         if(!saveOrUpdate(et)) {
             return false;
@@ -243,6 +275,51 @@ public class IBZProWeeklyActionServiceImpl extends ServiceImpl<IBZProWeeklyActio
         if (update.size() > 0) {
             getProxyService().updateBatch(update);
         }
+    }
+
+    @Override
+    @Transactional
+    public IBZProWeeklyAction sendMarkDone(IBZProWeeklyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendMarkDoneBatch(List<IBZProWeeklyAction> etList) {
+        for(IBZProWeeklyAction et : etList) {
+            sendMarkDone(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZProWeeklyAction sendTodo(IBZProWeeklyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendTodoBatch(List<IBZProWeeklyAction> etList) {
+        for(IBZProWeeklyAction et : etList) {
+            sendTodo(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZProWeeklyAction sendToread(IBZProWeeklyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendToreadBatch(List<IBZProWeeklyAction> etList) {
+        for(IBZProWeeklyAction et : etList) {
+            sendToread(et);
+        }
+        return true;
     }
 
 

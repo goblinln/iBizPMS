@@ -1,6 +1,18 @@
 {
   "actionMode" : "CREATE",
   "actionType" : "BUILTIN",
+  "getAfterPSDEActionLogics" : [ {
+    "actionLogicType" : 1,
+    "attachMode" : "AFTER",
+    "name" : "附加逻辑",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction/PSDELOGICS/Comment.json"
+    },
+    "cloneParam" : false,
+    "ignoreException" : false,
+    "internalLogic" : true
+  } ],
   "codeName" : "Create",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction/PSDEACTIONS/Create.json",
   "logicName" : "Create",

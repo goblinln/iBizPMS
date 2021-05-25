@@ -87,7 +87,9 @@ public class IBZProToDoActionServiceImpl extends ServiceImpl<IBZProToDoActionMap
         if(ibzprotodoactionRuntime.isRtmodel()){
             list.forEach(item -> getProxyService().create(item));
         }else{
-        this.saveBatch(list, batchSize);
+        for (IBZProToDoAction et : list) {
+            getProxyService().save(et);
+        }
         }
         
     }

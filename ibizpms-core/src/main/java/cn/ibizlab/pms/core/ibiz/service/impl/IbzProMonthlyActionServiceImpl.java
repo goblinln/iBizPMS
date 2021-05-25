@@ -87,7 +87,9 @@ public class IbzProMonthlyActionServiceImpl extends ServiceImpl<IbzProMonthlyAct
         if(ibzpromonthlyactionRuntime.isRtmodel()){
             list.forEach(item -> getProxyService().create(item));
         }else{
-        this.saveBatch(list, batchSize);
+        for (IbzProMonthlyAction et : list) {
+            getProxyService().save(et);
+        }
         }
         
     }
@@ -187,6 +189,36 @@ public class IbzProMonthlyActionServiceImpl extends ServiceImpl<IbzProMonthlyAct
     }
     @Override
     @Transactional
+    public IbzProMonthlyAction createHis(IbzProMonthlyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean createHisBatch(List<IbzProMonthlyAction> etList) {
+        for(IbzProMonthlyAction et : etList) {
+            createHis(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProMonthlyAction managePmsEe(IbzProMonthlyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean managePmsEeBatch(List<IbzProMonthlyAction> etList) {
+        for(IbzProMonthlyAction et : etList) {
+            managePmsEe(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean save(IbzProMonthlyAction et) {
         if(!saveOrUpdate(et)) {
             return false;
@@ -243,6 +275,51 @@ public class IbzProMonthlyActionServiceImpl extends ServiceImpl<IbzProMonthlyAct
         if (update.size() > 0) {
             getProxyService().updateBatch(update);
         }
+    }
+
+    @Override
+    @Transactional
+    public IbzProMonthlyAction sendMarkDone(IbzProMonthlyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendMarkDoneBatch(List<IbzProMonthlyAction> etList) {
+        for(IbzProMonthlyAction et : etList) {
+            sendMarkDone(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProMonthlyAction sendTodo(IbzProMonthlyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendTodoBatch(List<IbzProMonthlyAction> etList) {
+        for(IbzProMonthlyAction et : etList) {
+            sendTodo(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProMonthlyAction sendToread(IbzProMonthlyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendToreadBatch(List<IbzProMonthlyAction> etList) {
+        for(IbzProMonthlyAction et : etList) {
+            sendToread(et);
+        }
+        return true;
     }
 
 

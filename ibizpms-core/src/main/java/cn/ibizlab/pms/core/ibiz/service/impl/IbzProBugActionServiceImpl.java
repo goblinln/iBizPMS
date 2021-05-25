@@ -87,7 +87,9 @@ public class IbzProBugActionServiceImpl extends ServiceImpl<IbzProBugActionMappe
         if(ibzprobugactionRuntime.isRtmodel()){
             list.forEach(item -> getProxyService().create(item));
         }else{
-        this.saveBatch(list, batchSize);
+        for (IbzProBugAction et : list) {
+            getProxyService().save(et);
+        }
         }
         
     }
@@ -187,6 +189,66 @@ public class IbzProBugActionServiceImpl extends ServiceImpl<IbzProBugActionMappe
     }
     @Override
     @Transactional
+    public IbzProBugAction comment(IbzProBugAction et) {
+         return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean commentBatch(List<IbzProBugAction> etList) {
+        for(IbzProBugAction et : etList) {
+            comment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProBugAction createHis(IbzProBugAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean createHisBatch(List<IbzProBugAction> etList) {
+        for(IbzProBugAction et : etList) {
+            createHis(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProBugAction editComment(IbzProBugAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean editCommentBatch(List<IbzProBugAction> etList) {
+        for(IbzProBugAction et : etList) {
+            editComment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProBugAction managePmsEe(IbzProBugAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean managePmsEeBatch(List<IbzProBugAction> etList) {
+        for(IbzProBugAction et : etList) {
+            managePmsEe(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean save(IbzProBugAction et) {
         if(!saveOrUpdate(et)) {
             return false;
@@ -243,6 +305,51 @@ public class IbzProBugActionServiceImpl extends ServiceImpl<IbzProBugActionMappe
         if (update.size() > 0) {
             getProxyService().updateBatch(update);
         }
+    }
+
+    @Override
+    @Transactional
+    public IbzProBugAction sendMarkDone(IbzProBugAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendMarkDoneBatch(List<IbzProBugAction> etList) {
+        for(IbzProBugAction et : etList) {
+            sendMarkDone(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProBugAction sendTodo(IbzProBugAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendTodoBatch(List<IbzProBugAction> etList) {
+        for(IbzProBugAction et : etList) {
+            sendTodo(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IbzProBugAction sendToread(IbzProBugAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendToreadBatch(List<IbzProBugAction> etList) {
+        for(IbzProBugAction et : etList) {
+            sendToread(et);
+        }
+        return true;
     }
 
 

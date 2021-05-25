@@ -106,6 +106,7 @@ export * from './iibzpro-product-line';
 export * from './iproject-product';
 export * from './iaccount-taskestimate';
 export * from './iibzpro-product-action';
+export * from './iproduct-plan-action';
 export * from './ibranch';
 export * from './iaction';
 export * from './idyna-filter';

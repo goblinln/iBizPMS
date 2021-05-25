@@ -87,7 +87,9 @@ public class IBZCaseActionServiceImpl extends ServiceImpl<IBZCaseActionMapper, I
         if(ibzcaseactionRuntime.isRtmodel()){
             list.forEach(item -> getProxyService().create(item));
         }else{
-        this.saveBatch(list, batchSize);
+        for (IBZCaseAction et : list) {
+            getProxyService().save(et);
+        }
         }
         
     }

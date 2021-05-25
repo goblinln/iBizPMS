@@ -107,6 +107,7 @@ export * from './ibzpro-product-line/ibzpro-product-line';
 export * from './project-product/project-product';
 export * from './account-taskestimate/account-taskestimate';
 export * from './ibzpro-product-action/ibzpro-product-action';
+export * from './product-plan-action/product-plan-action';
 export * from './branch/branch';
 export * from './action/action';
 export * from './dyna-filter/dyna-filter';

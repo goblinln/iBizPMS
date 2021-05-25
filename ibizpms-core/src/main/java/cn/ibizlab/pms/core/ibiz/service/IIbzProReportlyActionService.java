@@ -36,8 +36,18 @@ public interface IIbzProReportlyActionService extends IService<IbzProReportlyAct
     IbzProReportlyAction sysGet(Long key);
     IbzProReportlyAction getDraft(IbzProReportlyAction et);
     boolean checkKey(IbzProReportlyAction et);
+    IbzProReportlyAction createHis(IbzProReportlyAction et);
+    boolean createHisBatch(List<IbzProReportlyAction> etList);
+    IbzProReportlyAction managePmsEe(IbzProReportlyAction et);
+    boolean managePmsEeBatch(List<IbzProReportlyAction> etList);
     boolean save(IbzProReportlyAction et);
     void saveBatch(List<IbzProReportlyAction> list);
+    IbzProReportlyAction sendMarkDone(IbzProReportlyAction et);
+    boolean sendMarkDoneBatch(List<IbzProReportlyAction> etList);
+    IbzProReportlyAction sendTodo(IbzProReportlyAction et);
+    boolean sendTodoBatch(List<IbzProReportlyAction> etList);
+    IbzProReportlyAction sendToread(IbzProReportlyAction et);
+    boolean sendToreadBatch(List<IbzProReportlyAction> etList);
     List<IbzProReportlyAction> select(IbzProReportlyActionSearchContext context);
     List<IbzProReportlyAction> selectDefault(IbzProReportlyActionSearchContext context);
     List<IbzProReportlyAction> selectSimple(IbzProReportlyActionSearchContext context);

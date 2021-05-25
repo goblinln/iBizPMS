@@ -1,0 +1,9 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "EditComment",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskAction/PSDEACTIONS/EditComment.json",
+  "logicName" : "编辑备注信息",
+  "name" : "editComment",
+  "userCat" : "CAT1"
+}

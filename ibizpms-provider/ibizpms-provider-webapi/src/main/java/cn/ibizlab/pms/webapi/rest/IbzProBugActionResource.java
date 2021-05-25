@@ -138,6 +138,78 @@ public class IbzProBugActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprobugactionService.checkKey(ibzprobugactionMapping.toDomain(ibzprobugactiondto)));
     }
 
+    @PreAuthorize("@IbzProBugActionRuntime.test(#ibzprobugaction_id,'MANAGE')")
+    @ApiOperation(value = "添加备注", tags = {"Bug日志" },  notes = "添加备注")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/{ibzprobugaction_id}/comment")
+    public ResponseEntity<IbzProBugActionDTO> comment(@PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.comment(domain);
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprobugactionRuntime.getOPPrivs(domain.getId());
+        ibzprobugactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+
+    @PreAuthorize("@IbzProBugActionRuntime.test(#ibzprobugaction_id,'CREATE')")
+    @ApiOperation(value = "创建历史日志", tags = {"Bug日志" },  notes = "创建历史日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/{ibzprobugaction_id}/createhis")
+    public ResponseEntity<IbzProBugActionDTO> createHis(@PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.createHis(domain);
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprobugactionRuntime.getOPPrivs(domain.getId());
+        ibzprobugactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[创建历史日志]", tags = {"Bug日志" },  notes = "批量处理[创建历史日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/createhisbatch")
+    public ResponseEntity<Boolean> createHisBatch(@RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.createHisBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @PreAuthorize("@IbzProBugActionRuntime.test(#ibzprobugaction_id,'MANAGE')")
+    @ApiOperation(value = "编辑备注信息", tags = {"Bug日志" },  notes = "编辑备注信息")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/{ibzprobugaction_id}/editcomment")
+    public ResponseEntity<IbzProBugActionDTO> editComment(@PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.editComment(domain);
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprobugactionRuntime.getOPPrivs(domain.getId());
+        ibzprobugactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[编辑备注信息]", tags = {"Bug日志" },  notes = "批量处理[编辑备注信息]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/editcommentbatch")
+    public ResponseEntity<Boolean> editCommentBatch(@RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.editCommentBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "Pms企业专用", tags = {"Bug日志" },  notes = "Pms企业专用")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/{ibzprobugaction_id}/managepmsee")
+    public ResponseEntity<IbzProBugActionDTO> managePmsEe(@PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.managePmsEe(domain);
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprobugactionRuntime.getOPPrivs(domain.getId());
+        ibzprobugactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[Pms企业专用]", tags = {"Bug日志" },  notes = "批量处理[Pms企业专用]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/managepmseebatch")
+    public ResponseEntity<Boolean> managePmsEeBatch(@RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.managePmsEeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @ApiOperation(value = "保存Bug日志", tags = {"Bug日志" },  notes = "保存Bug日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/save")
     public ResponseEntity<IbzProBugActionDTO> save(@RequestBody IbzProBugActionDTO ibzprobugactiondto) {
@@ -154,6 +226,63 @@ public class IbzProBugActionResource {
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
         ibzprobugactionService.saveBatch(ibzprobugactionMapping.toDomain(ibzprobugactiondtos));
         return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @ApiOperation(value = "已读", tags = {"Bug日志" },  notes = "已读")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/{ibzprobugaction_id}/sendmarkdone")
+    public ResponseEntity<IbzProBugActionDTO> sendMarkDone(@PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendMarkDone(domain);
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprobugactionRuntime.getOPPrivs(domain.getId());
+        ibzprobugactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[已读]", tags = {"Bug日志" },  notes = "批量处理[已读]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/sendmarkdonebatch")
+    public ResponseEntity<Boolean> sendMarkDoneBatch(@RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendMarkDoneBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "发送待办", tags = {"Bug日志" },  notes = "发送待办")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/{ibzprobugaction_id}/sendtodo")
+    public ResponseEntity<IbzProBugActionDTO> sendTodo(@PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendTodo(domain);
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprobugactionRuntime.getOPPrivs(domain.getId());
+        ibzprobugactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[发送待办]", tags = {"Bug日志" },  notes = "批量处理[发送待办]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/sendtodobatch")
+    public ResponseEntity<Boolean> sendTodoBatch(@RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendTodoBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "发送待阅", tags = {"Bug日志" },  notes = "发送待阅")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/{ibzprobugaction_id}/sendtoread")
+    public ResponseEntity<IbzProBugActionDTO> sendToread(@PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendToread(domain);
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzprobugactionRuntime.getOPPrivs(domain.getId());
+        ibzprobugactiondto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[发送待阅]", tags = {"Bug日志" },  notes = "批量处理[发送待阅]")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/sendtoreadbatch")
+    public ResponseEntity<Boolean> sendToreadBatch(@RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendToreadBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
     @PreAuthorize("@IbzProBugActionRuntime.quickTest('READ')")
@@ -293,6 +422,70 @@ public class IbzProBugActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprobugactionService.checkKey(ibzprobugactionMapping.toDomain(ibzprobugactiondto)));
     }
 
+    @PreAuthorize("@BugRuntime.test(#bug_id,'MANAGE')")
+    @ApiOperation(value = "根据BugBug日志", tags = {"Bug日志" },  notes = "根据BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/comment")
+    public ResponseEntity<IbzProBugActionDTO> commentByBug(@PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.comment(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @PreAuthorize("@BugRuntime.test(#bug_id,'CREATE')")
+    @ApiOperation(value = "根据BugBug日志", tags = {"Bug日志" },  notes = "根据BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/createhis")
+    public ResponseEntity<IbzProBugActionDTO> createHisByBug(@PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.createHis(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/ibzprobugactions/createhisbatch")
+    public ResponseEntity<Boolean> createHisByBug(@PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.createHisBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@BugRuntime.test(#bug_id,'MANAGE')")
+    @ApiOperation(value = "根据BugBug日志", tags = {"Bug日志" },  notes = "根据BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/editcomment")
+    public ResponseEntity<IbzProBugActionDTO> editCommentByBug(@PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.editComment(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/ibzprobugactions/editcommentbatch")
+    public ResponseEntity<Boolean> editCommentByBug(@PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.editCommentBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据BugBug日志", tags = {"Bug日志" },  notes = "根据BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/managepmsee")
+    public ResponseEntity<IbzProBugActionDTO> managePmsEeByBug(@PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.managePmsEe(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/ibzprobugactions/managepmseebatch")
+    public ResponseEntity<Boolean> managePmsEeByBug(@PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.managePmsEeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @ApiOperation(value = "根据Bug保存Bug日志", tags = {"Bug日志" },  notes = "根据Bug保存Bug日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/ibzprobugactions/save")
     public ResponseEntity<IbzProBugActionDTO> saveByBug(@PathVariable("bug_id") Long bug_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
@@ -313,6 +506,57 @@ public class IbzProBugActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @ApiOperation(value = "根据BugBug日志", tags = {"Bug日志" },  notes = "根据BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/sendmarkdone")
+    public ResponseEntity<IbzProBugActionDTO> sendMarkDoneByBug(@PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendMarkDone(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/ibzprobugactions/sendmarkdonebatch")
+    public ResponseEntity<Boolean> sendMarkDoneByBug(@PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendMarkDoneBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据BugBug日志", tags = {"Bug日志" },  notes = "根据BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/sendtodo")
+    public ResponseEntity<IbzProBugActionDTO> sendTodoByBug(@PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendTodo(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/ibzprobugactions/sendtodobatch")
+    public ResponseEntity<Boolean> sendTodoByBug(@PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendTodoBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据BugBug日志", tags = {"Bug日志" },  notes = "根据BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/sendtoread")
+    public ResponseEntity<IbzProBugActionDTO> sendToreadByBug(@PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendToread(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/ibzprobugactions/sendtoreadbatch")
+    public ResponseEntity<Boolean> sendToreadByBug(@PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendToreadBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
 	@ApiOperation(value = "根据Bug获取数据集", tags = {"Bug日志" } ,notes = "根据Bug获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/{bug_id}/ibzprobugactions/fetchdefault")
@@ -444,6 +688,70 @@ public class IbzProBugActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprobugactionService.checkKey(ibzprobugactionMapping.toDomain(ibzprobugactiondto)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
+    @ApiOperation(value = "根据产品BugBug日志", tags = {"Bug日志" },  notes = "根据产品BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/comment")
+    public ResponseEntity<IbzProBugActionDTO> commentByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.comment(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品BugBug日志", tags = {"Bug日志" },  notes = "根据产品BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/createhis")
+    public ResponseEntity<IbzProBugActionDTO> createHisByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.createHis(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据产品BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/ibzprobugactions/createhisbatch")
+    public ResponseEntity<Boolean> createHisByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.createHisBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
+    @ApiOperation(value = "根据产品BugBug日志", tags = {"Bug日志" },  notes = "根据产品BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/editcomment")
+    public ResponseEntity<IbzProBugActionDTO> editCommentByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.editComment(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据产品BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/ibzprobugactions/editcommentbatch")
+    public ResponseEntity<Boolean> editCommentByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.editCommentBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据产品BugBug日志", tags = {"Bug日志" },  notes = "根据产品BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/managepmsee")
+    public ResponseEntity<IbzProBugActionDTO> managePmsEeByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.managePmsEe(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据产品BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/ibzprobugactions/managepmseebatch")
+    public ResponseEntity<Boolean> managePmsEeByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.managePmsEeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @ApiOperation(value = "根据产品Bug保存Bug日志", tags = {"Bug日志" },  notes = "根据产品Bug保存Bug日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/ibzprobugactions/save")
     public ResponseEntity<IbzProBugActionDTO> saveByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
@@ -464,6 +772,57 @@ public class IbzProBugActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @ApiOperation(value = "根据产品BugBug日志", tags = {"Bug日志" },  notes = "根据产品BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/sendmarkdone")
+    public ResponseEntity<IbzProBugActionDTO> sendMarkDoneByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendMarkDone(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据产品BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/ibzprobugactions/sendmarkdonebatch")
+    public ResponseEntity<Boolean> sendMarkDoneByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendMarkDoneBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据产品BugBug日志", tags = {"Bug日志" },  notes = "根据产品BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/sendtodo")
+    public ResponseEntity<IbzProBugActionDTO> sendTodoByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendTodo(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据产品BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/ibzprobugactions/sendtodobatch")
+    public ResponseEntity<Boolean> sendTodoByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendTodoBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据产品BugBug日志", tags = {"Bug日志" },  notes = "根据产品BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/sendtoread")
+    public ResponseEntity<IbzProBugActionDTO> sendToreadByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendToread(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据产品BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/ibzprobugactions/sendtoreadbatch")
+    public ResponseEntity<Boolean> sendToreadByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendToreadBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品Bug获取数据集", tags = {"Bug日志" } ,notes = "根据产品Bug获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/{bug_id}/ibzprobugactions/fetchdefault")
@@ -595,6 +954,70 @@ public class IbzProBugActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprobugactionService.checkKey(ibzprobugactionMapping.toDomain(ibzprobugactiondto)));
     }
 
+    @PreAuthorize("@StoryRuntime.test(#story_id,'MANAGE')")
+    @ApiOperation(value = "根据需求BugBug日志", tags = {"Bug日志" },  notes = "根据需求BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/comment")
+    public ResponseEntity<IbzProBugActionDTO> commentByStoryBug(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.comment(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
+    @ApiOperation(value = "根据需求BugBug日志", tags = {"Bug日志" },  notes = "根据需求BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/createhis")
+    public ResponseEntity<IbzProBugActionDTO> createHisByStoryBug(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.createHis(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据需求BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据需求BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/createhisbatch")
+    public ResponseEntity<Boolean> createHisByStoryBug(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.createHisBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@StoryRuntime.test(#story_id,'MANAGE')")
+    @ApiOperation(value = "根据需求BugBug日志", tags = {"Bug日志" },  notes = "根据需求BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/editcomment")
+    public ResponseEntity<IbzProBugActionDTO> editCommentByStoryBug(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.editComment(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据需求BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据需求BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/editcommentbatch")
+    public ResponseEntity<Boolean> editCommentByStoryBug(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.editCommentBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据需求BugBug日志", tags = {"Bug日志" },  notes = "根据需求BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/managepmsee")
+    public ResponseEntity<IbzProBugActionDTO> managePmsEeByStoryBug(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.managePmsEe(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据需求BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据需求BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/managepmseebatch")
+    public ResponseEntity<Boolean> managePmsEeByStoryBug(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.managePmsEeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @ApiOperation(value = "根据需求Bug保存Bug日志", tags = {"Bug日志" },  notes = "根据需求Bug保存Bug日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/save")
     public ResponseEntity<IbzProBugActionDTO> saveByStoryBug(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
@@ -615,6 +1038,57 @@ public class IbzProBugActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @ApiOperation(value = "根据需求BugBug日志", tags = {"Bug日志" },  notes = "根据需求BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/sendmarkdone")
+    public ResponseEntity<IbzProBugActionDTO> sendMarkDoneByStoryBug(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendMarkDone(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据需求BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据需求BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/sendmarkdonebatch")
+    public ResponseEntity<Boolean> sendMarkDoneByStoryBug(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendMarkDoneBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据需求BugBug日志", tags = {"Bug日志" },  notes = "根据需求BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/sendtodo")
+    public ResponseEntity<IbzProBugActionDTO> sendTodoByStoryBug(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendTodo(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据需求BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据需求BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/sendtodobatch")
+    public ResponseEntity<Boolean> sendTodoByStoryBug(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendTodoBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据需求BugBug日志", tags = {"Bug日志" },  notes = "根据需求BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/sendtoread")
+    public ResponseEntity<IbzProBugActionDTO> sendToreadByStoryBug(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendToread(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据需求BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据需求BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/sendtoreadbatch")
+    public ResponseEntity<Boolean> sendToreadByStoryBug(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendToreadBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求Bug获取数据集", tags = {"Bug日志" } ,notes = "根据需求Bug获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/fetchdefault")
@@ -746,6 +1220,70 @@ public class IbzProBugActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprobugactionService.checkKey(ibzprobugactionMapping.toDomain(ibzprobugactiondto)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
+    @ApiOperation(value = "根据项目BugBug日志", tags = {"Bug日志" },  notes = "根据项目BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/comment")
+    public ResponseEntity<IbzProBugActionDTO> commentByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.comment(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
+    @ApiOperation(value = "根据项目BugBug日志", tags = {"Bug日志" },  notes = "根据项目BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/createhis")
+    public ResponseEntity<IbzProBugActionDTO> createHisByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.createHis(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据项目BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据项目BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/ibzprobugactions/createhisbatch")
+    public ResponseEntity<Boolean> createHisByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.createHisBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
+    @ApiOperation(value = "根据项目BugBug日志", tags = {"Bug日志" },  notes = "根据项目BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/editcomment")
+    public ResponseEntity<IbzProBugActionDTO> editCommentByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.editComment(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据项目BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据项目BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/ibzprobugactions/editcommentbatch")
+    public ResponseEntity<Boolean> editCommentByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.editCommentBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据项目BugBug日志", tags = {"Bug日志" },  notes = "根据项目BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/managepmsee")
+    public ResponseEntity<IbzProBugActionDTO> managePmsEeByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.managePmsEe(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据项目BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据项目BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/ibzprobugactions/managepmseebatch")
+    public ResponseEntity<Boolean> managePmsEeByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.managePmsEeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @ApiOperation(value = "根据项目Bug保存Bug日志", tags = {"Bug日志" },  notes = "根据项目Bug保存Bug日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/ibzprobugactions/save")
     public ResponseEntity<IbzProBugActionDTO> saveByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
@@ -766,6 +1304,57 @@ public class IbzProBugActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @ApiOperation(value = "根据项目BugBug日志", tags = {"Bug日志" },  notes = "根据项目BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/sendmarkdone")
+    public ResponseEntity<IbzProBugActionDTO> sendMarkDoneByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendMarkDone(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据项目BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据项目BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/ibzprobugactions/sendmarkdonebatch")
+    public ResponseEntity<Boolean> sendMarkDoneByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendMarkDoneBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据项目BugBug日志", tags = {"Bug日志" },  notes = "根据项目BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/sendtodo")
+    public ResponseEntity<IbzProBugActionDTO> sendTodoByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendTodo(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据项目BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据项目BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/ibzprobugactions/sendtodobatch")
+    public ResponseEntity<Boolean> sendTodoByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendTodoBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据项目BugBug日志", tags = {"Bug日志" },  notes = "根据项目BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/sendtoread")
+    public ResponseEntity<IbzProBugActionDTO> sendToreadByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendToread(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据项目BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据项目BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/ibzprobugactions/sendtoreadbatch")
+    public ResponseEntity<Boolean> sendToreadByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendToreadBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目Bug获取数据集", tags = {"Bug日志" } ,notes = "根据项目Bug获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/{bug_id}/ibzprobugactions/fetchdefault")
@@ -897,6 +1486,70 @@ public class IbzProBugActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprobugactionService.checkKey(ibzprobugactionMapping.toDomain(ibzprobugactiondto)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
+    @ApiOperation(value = "根据产品需求BugBug日志", tags = {"Bug日志" },  notes = "根据产品需求BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/comment")
+    public ResponseEntity<IbzProBugActionDTO> commentByProductStoryBug(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.comment(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品需求BugBug日志", tags = {"Bug日志" },  notes = "根据产品需求BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/createhis")
+    public ResponseEntity<IbzProBugActionDTO> createHisByProductStoryBug(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.createHis(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品需求BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据产品需求BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/createhisbatch")
+    public ResponseEntity<Boolean> createHisByProductStoryBug(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.createHisBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
+    @ApiOperation(value = "根据产品需求BugBug日志", tags = {"Bug日志" },  notes = "根据产品需求BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/editcomment")
+    public ResponseEntity<IbzProBugActionDTO> editCommentByProductStoryBug(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.editComment(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品需求BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据产品需求BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/editcommentbatch")
+    public ResponseEntity<Boolean> editCommentByProductStoryBug(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.editCommentBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据产品需求BugBug日志", tags = {"Bug日志" },  notes = "根据产品需求BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/managepmsee")
+    public ResponseEntity<IbzProBugActionDTO> managePmsEeByProductStoryBug(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.managePmsEe(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品需求BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据产品需求BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/managepmseebatch")
+    public ResponseEntity<Boolean> managePmsEeByProductStoryBug(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.managePmsEeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @ApiOperation(value = "根据产品需求Bug保存Bug日志", tags = {"Bug日志" },  notes = "根据产品需求Bug保存Bug日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/save")
     public ResponseEntity<IbzProBugActionDTO> saveByProductStoryBug(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
@@ -917,6 +1570,57 @@ public class IbzProBugActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @ApiOperation(value = "根据产品需求BugBug日志", tags = {"Bug日志" },  notes = "根据产品需求BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/sendmarkdone")
+    public ResponseEntity<IbzProBugActionDTO> sendMarkDoneByProductStoryBug(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendMarkDone(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品需求BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据产品需求BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/sendmarkdonebatch")
+    public ResponseEntity<Boolean> sendMarkDoneByProductStoryBug(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendMarkDoneBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据产品需求BugBug日志", tags = {"Bug日志" },  notes = "根据产品需求BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/sendtodo")
+    public ResponseEntity<IbzProBugActionDTO> sendTodoByProductStoryBug(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendTodo(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品需求BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据产品需求BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/sendtodobatch")
+    public ResponseEntity<Boolean> sendTodoByProductStoryBug(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendTodoBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据产品需求BugBug日志", tags = {"Bug日志" },  notes = "根据产品需求BugBug日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/sendtoread")
+    public ResponseEntity<IbzProBugActionDTO> sendToreadByProductStoryBug(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
+        IbzProBugAction domain = ibzprobugactionMapping.toDomain(ibzprobugactiondto);
+        domain.setObjectid(bug_id);
+        domain.setId(ibzprobugaction_id);
+        domain = ibzprobugactionService.sendToread(domain) ;
+        ibzprobugactiondto = ibzprobugactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
+    }
+    @ApiOperation(value = "批量处理[根据产品需求BugBug日志]", tags = {"Bug日志" },  notes = "批量处理[根据产品需求BugBug日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/sendtoreadbatch")
+    public ResponseEntity<Boolean> sendToreadByProductStoryBug(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
+        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
+        boolean result = ibzprobugactionService.sendToreadBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求Bug获取数据集", tags = {"Bug日志" } ,notes = "根据产品需求Bug获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/bugs/{bug_id}/ibzprobugactions/fetchdefault")

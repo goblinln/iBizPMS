@@ -7047,7 +7047,8 @@
     } ],
     "roleTag" : "Project_Maintain_DEV",
     "userCat" : "CAT1",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "systemReserved" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Maintain_Open.json",
     "name" : "项目维护（公开项目）（跟随角色）",
@@ -7079,7 +7080,8 @@
     } ],
     "roleTag" : "Project_Maintain_Open",
     "userCat" : "CAT1",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "systemReserved" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Maintain_OpenBy.json",
     "name" : "项目维护（创建者或者更新者）（跟随角色）",
@@ -7111,7 +7113,8 @@
     } ],
     "roleTag" : "Project_Maintain_OpenBy",
     "userCat" : "CAT1",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "systemReserved" : true
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Manage_All.json",
@@ -7200,7 +7203,8 @@
     } ],
     "roleTag" : "Project_Manage_DEV",
     "userCat" : "CAT1",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "systemReserved" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Manage_Open.json",
     "name" : "项目管理（公开项目）（跟随角色）",
@@ -7246,7 +7250,8 @@
     } ],
     "roleTag" : "Project_Manage_Open",
     "userCat" : "CAT1",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "systemReserved" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Manage_OpenBy.json",
     "name" : "项目管理（创建者或者更新者）（跟随角色）",
@@ -7299,7 +7304,8 @@
     } ],
     "roleTag" : "Project_Manage_OpenBy",
     "userCat" : "CAT1",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "systemReserved" : true
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_All.json",
@@ -7346,7 +7352,8 @@
     } ],
     "roleTag" : "Project_Read_DEV",
     "userCat" : "CAT1",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "systemReserved" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_Open.json",
     "name" : "项目查看（公开项目）（跟随角色）",
@@ -7364,7 +7371,8 @@
     } ],
     "roleTag" : "Project_Read_Open",
     "userCat" : "CAT1",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "systemReserved" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_OpenBy.json",
     "name" : "项目查看（创建者或者更新者）（跟随角色）",
@@ -7382,7 +7390,8 @@
     } ],
     "roleTag" : "Project_Read_OpenBy",
     "userCat" : "CAT1",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "systemReserved" : true
   } ],
   "codeName" : "Project",
   "dEType" : 1,

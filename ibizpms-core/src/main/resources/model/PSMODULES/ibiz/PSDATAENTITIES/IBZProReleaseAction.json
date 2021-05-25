@@ -2,6 +2,18 @@
   "getAllPSDEActions" : [ {
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
+    "getAfterPSDEActionLogics" : [ {
+      "actionLogicType" : 1,
+      "attachMode" : "AFTER",
+      "name" : "附加逻辑",
+      "getPSDELogic" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction/PSDELOGICS/Comment.json"
+      },
+      "cloneParam" : false,
+      "ignoreException" : false,
+      "internalLogic" : true
+    } ],
     "codeName" : "Create",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction/PSDEACTIONS/Create.json",
     "logicName" : "Create",
@@ -53,6 +65,40 @@
     "name" : "CheckKey",
     "builtinAction" : true
   }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "DELOGIC",
+    "codeName" : "Comment",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction/PSDEACTIONS/Comment.json",
+    "logicName" : "添加备注",
+    "name" : "Comment",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction/PSDELOGICS/Comment.json"
+    }
+  }, {
+    "actionMode" : "CREATE",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "CreateHis",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction/PSDEACTIONS/CreateHis.json",
+    "logicName" : "创建历史日志",
+    "name" : "CreateHis"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "EditComment",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction/PSDEACTIONS/EditComment.json",
+    "logicName" : "编辑备注信息",
+    "name" : "editComment",
+    "userCat" : "CAT1"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "ManagePmsEe",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction/PSDEACTIONS/ManagePmsEe.json",
+    "logicName" : "Pms企业专用",
+    "name" : "ManagePmsEe",
+    "userCat" : "CAT1"
+  }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
     "codeName" : "Save",
@@ -60,6 +106,27 @@
     "logicName" : "Save",
     "name" : "Save",
     "builtinAction" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "SendMarkDone",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction/PSDEACTIONS/SendMarkDone.json",
+    "logicName" : "已读",
+    "name" : "sendMarkDone"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "SendTodo",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction/PSDEACTIONS/SendTodo.json",
+    "logicName" : "发送待办",
+    "name" : "sendTodo"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "SendToread",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction/PSDEACTIONS/SendToread.json",
+    "logicName" : "发送待阅",
+    "name" : "sendToread"
   } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {

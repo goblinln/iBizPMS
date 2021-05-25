@@ -15,5 +15,6 @@
   } ],
   "roleTag" : "Product_Read_DEV",
   "userCat" : "CAT1",
-  "userDRAction" : "READ"
+  "userDRAction" : "READ",
+  "systemReserved" : true
 }

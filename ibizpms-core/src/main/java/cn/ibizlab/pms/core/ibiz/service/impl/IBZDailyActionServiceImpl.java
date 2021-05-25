@@ -87,7 +87,9 @@ public class IBZDailyActionServiceImpl extends ServiceImpl<IBZDailyActionMapper,
         if(ibzdailyactionRuntime.isRtmodel()){
             list.forEach(item -> getProxyService().create(item));
         }else{
-        this.saveBatch(list, batchSize);
+        for (IBZDailyAction et : list) {
+            getProxyService().save(et);
+        }
         }
         
     }
@@ -187,6 +189,66 @@ public class IBZDailyActionServiceImpl extends ServiceImpl<IBZDailyActionMapper,
     }
     @Override
     @Transactional
+    public IBZDailyAction comment(IBZDailyAction et) {
+         return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean commentBatch(List<IBZDailyAction> etList) {
+        for(IBZDailyAction et : etList) {
+            comment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZDailyAction createHis(IBZDailyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean createHisBatch(List<IBZDailyAction> etList) {
+        for(IBZDailyAction et : etList) {
+            createHis(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZDailyAction editComment(IBZDailyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean editCommentBatch(List<IBZDailyAction> etList) {
+        for(IBZDailyAction et : etList) {
+            editComment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZDailyAction managePmsEe(IBZDailyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean managePmsEeBatch(List<IBZDailyAction> etList) {
+        for(IBZDailyAction et : etList) {
+            managePmsEe(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean save(IBZDailyAction et) {
         if(!saveOrUpdate(et)) {
             return false;
@@ -243,6 +305,51 @@ public class IBZDailyActionServiceImpl extends ServiceImpl<IBZDailyActionMapper,
         if (update.size() > 0) {
             getProxyService().updateBatch(update);
         }
+    }
+
+    @Override
+    @Transactional
+    public IBZDailyAction sendMarkDone(IBZDailyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendMarkDoneBatch(List<IBZDailyAction> etList) {
+        for(IBZDailyAction et : etList) {
+            sendMarkDone(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZDailyAction sendTodo(IBZDailyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendTodoBatch(List<IBZDailyAction> etList) {
+        for(IBZDailyAction et : etList) {
+            sendTodo(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZDailyAction sendToread(IBZDailyAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendToreadBatch(List<IBZDailyAction> etList) {
+        for(IBZDailyAction et : etList) {
+            sendToread(et);
+        }
+        return true;
     }
 
 

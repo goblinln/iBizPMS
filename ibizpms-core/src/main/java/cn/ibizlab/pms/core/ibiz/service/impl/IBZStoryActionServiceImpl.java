@@ -84,7 +84,9 @@ public class IBZStoryActionServiceImpl extends ServiceImpl<IBZStoryActionMapper,
         if(ibzstoryactionRuntime.isRtmodel()){
             list.forEach(item -> getProxyService().create(item));
         }else{
-        this.saveBatch(list, batchSize);
+        for (IBZStoryAction et : list) {
+            getProxyService().save(et);
+        }
         }
         
     }
@@ -179,6 +181,66 @@ public class IBZStoryActionServiceImpl extends ServiceImpl<IBZStoryActionMapper,
     }
     @Override
     @Transactional
+    public IBZStoryAction comment(IBZStoryAction et) {
+         return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean commentBatch(List<IBZStoryAction> etList) {
+        for(IBZStoryAction et : etList) {
+            comment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZStoryAction createHis(IBZStoryAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean createHisBatch(List<IBZStoryAction> etList) {
+        for(IBZStoryAction et : etList) {
+            createHis(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZStoryAction editComment(IBZStoryAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean editCommentBatch(List<IBZStoryAction> etList) {
+        for(IBZStoryAction et : etList) {
+            editComment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZStoryAction managePmsEe(IBZStoryAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean managePmsEeBatch(List<IBZStoryAction> etList) {
+        for(IBZStoryAction et : etList) {
+            managePmsEe(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean save(IBZStoryAction et) {
         if(!saveOrUpdate(et)) {
             return false;
@@ -235,6 +297,51 @@ public class IBZStoryActionServiceImpl extends ServiceImpl<IBZStoryActionMapper,
         if (update.size() > 0) {
             getProxyService().updateBatch(update);
         }
+    }
+
+    @Override
+    @Transactional
+    public IBZStoryAction sendMarkDone(IBZStoryAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendMarkDoneBatch(List<IBZStoryAction> etList) {
+        for(IBZStoryAction et : etList) {
+            sendMarkDone(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZStoryAction sendTodo(IBZStoryAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendTodoBatch(List<IBZStoryAction> etList) {
+        for(IBZStoryAction et : etList) {
+            sendTodo(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public IBZStoryAction sendToread(IBZStoryAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendToreadBatch(List<IBZStoryAction> etList) {
+        for(IBZStoryAction et : etList) {
+            sendToread(et);
+        }
+        return true;
     }
 
 

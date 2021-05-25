@@ -29,5 +29,6 @@
   } ],
   "roleTag" : "Project_Maintain_DEV",
   "userCat" : "CAT1",
-  "userDRAction" : "READ"
+  "userDRAction" : "READ",
+  "systemReserved" : true
 }

@@ -123,6 +123,66 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "Comment",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDEACTIONS/Comment.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DER1N_IBZPRO_STORYACTION_ZT_STORY_OBJECTID__MANAGE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Comment"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CreateHis",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDEACTIONS/CreateHis.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CreateHis"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "EditComment",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDEACTIONS/EditComment.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DER1N_IBZPRO_STORYACTION_ZT_STORY_OBJECTID__MANAGE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "EditComment"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ManagePmsEe",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDEACTIONS/ManagePmsEe.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ManagePmsEe"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -132,6 +192,42 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SendMarkDone",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDEACTIONS/SendMarkDone.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SendMarkDone"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SendTodo",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDEACTIONS/SendTodo.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SendTodo"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SendToread",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDEACTIONS/SendToread.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SendToread"
     },
     "builtinMethod" : false
   } ],
@@ -440,6 +536,66 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "Comment",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDEACTIONS/Comment.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DER1N_IBZPRO_STORYACTION_ZT_STORY_OBJECTID__MANAGE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Comment"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CreateHis",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDEACTIONS/CreateHis.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CreateHis"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "EditComment",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDEACTIONS/EditComment.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DER1N_IBZPRO_STORYACTION_ZT_STORY_OBJECTID__MANAGE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "EditComment"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ManagePmsEe",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDEACTIONS/ManagePmsEe.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ManagePmsEe"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -449,6 +605,42 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SendMarkDone",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDEACTIONS/SendMarkDone.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SendMarkDone"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SendTodo",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDEACTIONS/SendTodo.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SendTodo"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SendToread",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDEACTIONS/SendToread.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SendToread"
     },
     "builtinMethod" : false
   }, {

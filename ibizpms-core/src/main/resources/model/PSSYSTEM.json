@@ -2615,6 +2615,9 @@
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/Proxy.json"
   }, {
     "modelref" : true,
+    "path" : "PSSYSOPPRIVS/AccessAdmin.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/Agent.json"
   }, {
     "modelref" : true,
@@ -2631,6 +2634,9 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/VisitorB.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSOPPRIVS/AccessUser.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/VicePresident.json"

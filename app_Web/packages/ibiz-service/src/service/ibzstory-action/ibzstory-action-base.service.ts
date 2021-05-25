@@ -219,6 +219,139 @@ export class IBZStoryActionBaseService extends EntityBaseService<IIBZStoryAction
         return res;
     }
     /**
+     * Comment
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZStoryActionService
+     */
+    async Comment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.ibzstoryaction) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}/comment`, _data);
+        }
+        if (_context.story && _context.ibzstoryaction) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}/comment`, _data);
+        }
+        return this.http.post(`/ibzstoryactions/${_context.ibzstoryaction}/comment`, _data);
+    }
+    /**
+     * CreateHis
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZStoryActionService
+     */
+    async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.ibzstoryaction) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}/createhis`, _data);
+        }
+        if (_context.story && _context.ibzstoryaction) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}/createhis`, _data);
+        }
+        return this.http.post(`/ibzstoryactions/${_context.ibzstoryaction}/createhis`, _data);
+    }
+    /**
+     * EditComment
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZStoryActionService
+     */
+    async EditComment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.ibzstoryaction) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}/editcomment`, _data);
+        }
+        if (_context.story && _context.ibzstoryaction) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}/editcomment`, _data);
+        }
+        return this.http.post(`/ibzstoryactions/${_context.ibzstoryaction}/editcomment`, _data);
+    }
+    /**
+     * ManagePmsEe
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZStoryActionService
+     */
+    async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.ibzstoryaction) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}/managepmsee`, _data);
+        }
+        if (_context.story && _context.ibzstoryaction) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}/managepmsee`, _data);
+        }
+        return this.http.post(`/ibzstoryactions/${_context.ibzstoryaction}/managepmsee`, _data);
+    }
+    /**
+     * SendMarkDone
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZStoryActionService
+     */
+    async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.ibzstoryaction) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}/sendmarkdone`, _data);
+        }
+        if (_context.story && _context.ibzstoryaction) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}/sendmarkdone`, _data);
+        }
+        return this.http.post(`/ibzstoryactions/${_context.ibzstoryaction}/sendmarkdone`, _data);
+    }
+    /**
+     * SendTodo
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZStoryActionService
+     */
+    async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.ibzstoryaction) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}/sendtodo`, _data);
+        }
+        if (_context.story && _context.ibzstoryaction) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}/sendtodo`, _data);
+        }
+        return this.http.post(`/ibzstoryactions/${_context.ibzstoryaction}/sendtodo`, _data);
+    }
+    /**
+     * SendToread
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZStoryActionService
+     */
+    async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.ibzstoryaction) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}/sendtoread`, _data);
+        }
+        if (_context.story && _context.ibzstoryaction) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/ibzstoryactions/${_context.ibzstoryaction}/sendtoread`, _data);
+        }
+        return this.http.post(`/ibzstoryactions/${_context.ibzstoryaction}/sendtoread`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -251,5 +384,137 @@ export class IBZStoryActionBaseService extends EntityBaseService<IIBZStoryAction
             return this.http.post(`/stories/${_context.story}/ibzstoryactions/fetchtype`, _data);
         }
         return this.http.post(`/ibzstoryactions/fetchtype`, _data);
+    }
+
+    /**
+     * CreateHisBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IBZStoryActionServiceBase
+     */
+    public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/createhisbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/ibzstoryactions/createhisbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzstoryactions/createhisbatch`,_data);
+    }
+
+    /**
+     * EditCommentBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IBZStoryActionServiceBase
+     */
+    public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/editcommentbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/ibzstoryactions/editcommentbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzstoryactions/editcommentbatch`,_data);
+    }
+
+    /**
+     * ManagePmsEeBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IBZStoryActionServiceBase
+     */
+    public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/managepmseebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/ibzstoryactions/managepmseebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzstoryactions/managepmseebatch`,_data);
+    }
+
+    /**
+     * SendMarkDoneBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IBZStoryActionServiceBase
+     */
+    public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/sendmarkdonebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/ibzstoryactions/sendmarkdonebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzstoryactions/sendmarkdonebatch`,_data);
+    }
+
+    /**
+     * SendTodoBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IBZStoryActionServiceBase
+     */
+    public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/sendtodobatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/ibzstoryactions/sendtodobatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzstoryactions/sendtodobatch`,_data);
+    }
+
+    /**
+     * SendToreadBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IBZStoryActionServiceBase
+     */
+    public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/sendtoreadbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/ibzstoryactions/sendtoreadbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzstoryactions/sendtoreadbatch`,_data);
     }
 }

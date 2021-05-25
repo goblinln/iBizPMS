@@ -50,5 +50,6 @@
   } ],
   "roleTag" : "Project_Manage_OpenBy",
   "userCat" : "CAT1",
-  "userDRAction" : "READ"
+  "userDRAction" : "READ",
+  "systemReserved" : true
 }

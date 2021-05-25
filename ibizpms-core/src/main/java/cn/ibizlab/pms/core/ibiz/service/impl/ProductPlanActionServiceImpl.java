@@ -87,7 +87,9 @@ public class ProductPlanActionServiceImpl extends ServiceImpl<ProductPlanActionM
         if(productplanactionRuntime.isRtmodel()){
             list.forEach(item -> getProxyService().create(item));
         }else{
-        this.saveBatch(list, batchSize);
+        for (ProductPlanAction et : list) {
+            getProxyService().save(et);
+        }
         }
         
     }

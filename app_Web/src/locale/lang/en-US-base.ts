@@ -106,6 +106,7 @@ import ibzproproductline_en_US from '@locale/lanres/entities/ibzpro-product-line
 import projectproduct_en_US from '@locale/lanres/entities/project-product/project-product_en_US';
 import accounttaskestimate_en_US from '@locale/lanres/entities/account-taskestimate/account-taskestimate_en_US';
 import ibzproproductaction_en_US from '@locale/lanres/entities/ibzpro-product-action/ibzpro-product-action_en_US';
+import productplanaction_en_US from '@locale/lanres/entities/product-plan-action/product-plan-action_en_US';
 import branch_en_US from '@locale/lanres/entities/branch/branch_en_US';
 import action_en_US from '@locale/lanres/entities/action/action_en_US';
 import dynafilter_en_US from '@locale/lanres/entities/dyna-filter/dyna-filter_en_US';
@@ -487,6 +488,7 @@ function getAppLocale(){
             'projectproduct': projectproduct_en_US(),
             'accounttaskestimate': accounttaskestimate_en_US(),
             'ibzproproductaction': ibzproproductaction_en_US(),
+            'productplanaction': productplanaction_en_US(),
             'branch': branch_en_US(),
             'action': action_en_US(),
             'dynafilter': dynafilter_en_US(),
