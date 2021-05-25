@@ -29553,54 +29553,6 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productplans/:productplan?/productplanactions/:productplanaction?/views/mytrendslistview',
-                    meta: {
-                        caption: 'entities.productplanaction.views.mytrendslistview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productplans', parameterName: 'productplan' },
-                            { pathName: 'productplanactions', parameterName: 'productplanaction' },
-                            { pathName: 'views', parameterName: 'mytrendslistview' },
-                        ],
-                        resource:'productplanaction',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productplans/:productplan?/productplanactions/:productplanaction?/views/mytrendslistview',
-                    meta: {
-                        caption: 'entities.productplanaction.views.mytrendslistview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productplans', parameterName: 'productplan' },
-                            { pathName: 'productplanactions', parameterName: 'productplanaction' },
-                            { pathName: 'views', parameterName: 'mytrendslistview' },
-                        ],
-                        resource:'productplanaction',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productplanactions/:productplanaction?/views/mytrendslistview',
-                    meta: {
-                        caption: 'entities.productplanaction.views.mytrendslistview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productplanactions', parameterName: 'productplanaction' },
-                            { pathName: 'views', parameterName: 'mytrendslistview' },
-                        ],
-                        resource:'productplanaction',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
                     path: 'products/:product?/branches/:branch?/views/pmgridview',
                     meta: {
                         caption: 'entities.branch.views.pmgridview.caption',
@@ -39133,19 +39085,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'storygridview9_myassignedtome' },
-                        ],
-                        requireAuth: true,
-                    },
-                    component: AppViewShell,
-                },
-                {
-                    path: 'views/productplanactionmytrendslistview',
-                    meta: {
-                        caption: 'entities.productplanaction.views.mytrendslistview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'views', parameterName: 'productplanactionmytrendslistview' },
                         ],
                         requireAuth: true,
                     },

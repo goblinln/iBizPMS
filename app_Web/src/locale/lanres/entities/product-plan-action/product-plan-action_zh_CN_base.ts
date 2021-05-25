@@ -41,10 +41,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("产品计划日志",null),
 				title: commonLogic.appcommonhandle("产品计划日志编辑视图",null),
 			},
-			'mytrendslistview': {
-				caption: commonLogic.appcommonhandle("产品计划日志",null),
-				title: commonLogic.appcommonhandle("系统日志列表视图",null),
-			},
 		},
 		addcomment_form: {
 			details: {
@@ -82,11 +78,6 @@ function getLocaleResourceBase(){
 				'srfsourcekey': commonLogic.appcommonhandle("",null), 
 				'id': commonLogic.appcommonhandle("id",null), 
 			},
-			uiactions: {
-			},
-		},
-		list_list: {
-			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
 			},
 		},
