@@ -4077,6 +4077,9 @@
     "logicName" : "添加产品线",
     "name" : "ADDLINE"
   }, {
+    "logicName" : "Bug管理",
+    "name" : "BUGMANAGE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
@@ -4096,6 +4099,13 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/BUGMANAGE.json",
+    "name" : "产品Bug管理（公开）（跟随角色）",
+    "roleTag" : "BUGMANAGE",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_All.json",
     "name" : "产品维护（全部数据）",

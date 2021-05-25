@@ -1911,6 +1911,9 @@
     "logicName" : "添加产品线",
     "name" : "ADDLINE"
   }, {
+    "logicName" : "Bug管理",
+    "name" : "BUGMANAGE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
