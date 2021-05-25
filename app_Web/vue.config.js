@@ -72,12 +72,12 @@ module.exports = {
             // 最大进程数
             ForkTsCheckerPlugin.workersNumber = os.cpus().length > 4 ? 4 : os.cpus().length; // 会占用额外内存不释放，不建议开发阶段使用
             // 单个进程最大使用内存
-            ForkTsCheckerPlugin.memoryLimit = 4096;
+            ForkTsCheckerPlugin.memoryLimit = 8192;
         } else {
             // 最大进程数
             // ForkTsCheckerPlugin.workersNumber = os.cpus().length > 4 ? 4 : os.cpus().length; // 会占用额外内存不释放，不建议开发阶段使用
             // 单个进程最大使用内存
-            ForkTsCheckerPlugin.memoryLimit = 4096;
+            ForkTsCheckerPlugin.memoryLimit = 8192;
         }
     },
 }
