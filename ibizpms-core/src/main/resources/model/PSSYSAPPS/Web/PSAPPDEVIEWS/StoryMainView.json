@@ -2411,7 +2411,7 @@
           },
           "portletType" : "VIEW",
           "title" : "需求描述",
-          "showTitleBar" : false,
+          "showTitleBar" : true,
           "modelid" : "5c2dc72e2f85a610902fd39ae9345284",
           "modeltype" : "PSSYSDBPART"
         }, {

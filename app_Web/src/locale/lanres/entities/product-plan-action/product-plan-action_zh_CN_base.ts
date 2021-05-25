@@ -41,6 +41,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("产品计划日志",null),
 				title: commonLogic.appcommonhandle("产品计划日志编辑视图",null),
 			},
+			'mytrendslistview': {
+				caption: commonLogic.appcommonhandle("产品计划日志",null),
+				title: commonLogic.appcommonhandle("系统日志列表视图",null),
+			},
 		},
 		addcomment_form: {
 			details: {
@@ -81,22 +85,9 @@ function getLocaleResourceBase(){
 			uiactions: {
 			},
 		},
-		editviewtoolbar_toolbar: {
-			'tbitem3': {
-				caption: commonLogic.appcommonhandle("保存",null),
-				tip: commonLogic.appcommonhandle("保存",null),
-			},
-			'tbitem4': {
-				caption: commonLogic.appcommonhandle("保存并新建",null),
-				tip: commonLogic.appcommonhandle("保存并新建",null),
-			},
-			'tbitem5': {
-				caption: commonLogic.appcommonhandle("保存并关闭",null),
-				tip: commonLogic.appcommonhandle("保存并关闭",null),
-			},
-			'tbitem7': {
-				caption: commonLogic.appcommonhandle("删除",null),
-				tip: commonLogic.appcommonhandle("删除",null),
+		list_list: {
+			nodata:commonLogic.appcommonhandle("",null),
+			uiactions: {
 			},
 		},
 	};
