@@ -454,7 +454,7 @@ export class Util {
      * @returns {string}
      * @memberof Util
      */
-    public static dateFormat(date: any, fmt: string = 'YYYY-mm-dd HH:MM:SS'): string {
+    public static dateFormat(date: any, fmt: string = 'YYYY-MM-DD HH:mm:ss'): string {
         let ret;
         const opt: any = {
             'Y+': date.getFullYear().toString(), // 年
@@ -462,8 +462,10 @@ export class Util {
             'd+': date.getDate().toString(), // 日
             'D+': date.getDate().toString(), // 日
             'H+': date.getHours().toString(), // 时
+            'h+': date.getHours().toString(), // 时
             'm+': date.getMinutes().toString(), // 分
-            'S+': date.getSeconds().toString(), // 秒
+            's+': date.getSeconds().toString(), // 秒
+            'S+': date.getSeconds().toString()
             // 有其他格式化字符需求可以继续添加，必须转化成字符串
         };
         for (let k in opt) {
