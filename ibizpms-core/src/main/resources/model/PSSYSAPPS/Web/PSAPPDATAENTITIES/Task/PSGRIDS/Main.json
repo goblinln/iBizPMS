@@ -717,6 +717,7 @@
         "name" : "ucdca98c",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "确认",
           "codeName" : "confirmStoryChange",
           "dataAccessAction" : "XQCHANGE",
@@ -751,6 +752,7 @@
         "name" : "u8316814",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "开始",
           "codeName" : "MStartTaskDash1",
           "dataAccessAction" : "START",
@@ -798,6 +800,7 @@
         "name" : "ubd2fb06",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "关闭",
           "codeName" : "CloseTask",
           "dataAccessAction" : "CLOSE",
@@ -835,6 +838,7 @@
         "name" : "ubf934a0",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "完成",
           "codeName" : "done",
           "dataAccessAction" : "FINISH",
@@ -914,6 +918,7 @@
         "name" : "u7002282",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "子任务",
           "codeName" : "NewSubTask",
           "dataAccessAction" : "SUBTASKS",
@@ -968,6 +973,7 @@
         "name" : "ud67a065",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "getCapPSLanguageRes" : {
             "lanResTag" : "TBB.TEXT.*.COPY",
             "id" : "工具栏按钮文本[*.COPY]"
@@ -998,7 +1004,6 @@
         "name" : "u3eb01df",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "收藏",
           "codeName" : "TaskFavorites",
           "dataAccessAction" : "NFAVORITES",

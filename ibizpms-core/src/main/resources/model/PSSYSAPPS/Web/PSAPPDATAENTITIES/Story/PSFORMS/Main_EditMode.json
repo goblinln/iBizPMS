@@ -1724,6 +1724,7 @@
                     "name" : "u0f557af",
                     "getPSUIAction" : {
                       "actionTarget" : "SINGLEKEY",
+                      "noPrivDisplayMode" : 1,
                       "getCapPSLanguageRes" : {
                         "lanResTag" : "TBB.TEXT.*.COPY",
                         "id" : "工具栏按钮文本[*.COPY]"

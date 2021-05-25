@@ -1,0 +1,19 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Read_MyCOrP.json",
+  "name" : "任务查看（我创建或参与）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "MyCreateOrPartake"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "Task_Read_MyCOrP_Read",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTStory__READ"
+    }
+  } ],
+  "roleTag" : "Task_Read_MyCOrP",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ"
+}
