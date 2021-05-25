@@ -345,9 +345,6 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "getPSSysCss" : {
-            "cssName" : "story-spec-drawer-title"
-          },
           "infoGroupMode" : true,
           "showCaption" : false
         }, {
