@@ -6,7 +6,7 @@ window.Environment = {
     // 是否为pc端应用
     isAppMode:true,
     // 是否开启权限认证
-    enablePermissionValid:false,
+    enablePermissionValid:true,
     // 远端动态基础路径
     remoteDynaPath:'/dynamodel',
     // 实例配置地址
