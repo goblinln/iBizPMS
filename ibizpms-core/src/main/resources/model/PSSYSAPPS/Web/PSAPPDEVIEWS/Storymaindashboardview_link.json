@@ -325,6 +325,22 @@
                   "codeName" : "Parent"
                 }
               }, {
+                "id" : "color",
+                "hidden" : true,
+                "dataType" : 25,
+                "getPSAppDEField" : {
+                  "name" : "COLOR",
+                  "codeName" : "Color"
+                }
+              }, {
+                "id" : "formitem",
+                "hidden" : true,
+                "dataType" : 25,
+                "getPSAppDEField" : {
+                  "name" : "VERSIONC",
+                  "codeName" : "Versionc"
+                }
+              }, {
                 "id" : "id",
                 "dataType" : 1,
                 "getPSAppDEField" : {
@@ -344,22 +360,6 @@
                 "getPSAppDEField" : {
                   "name" : "VERSION",
                   "codeName" : "Version"
-                }
-              }, {
-                "id" : "color",
-                "hidden" : true,
-                "dataType" : 25,
-                "getPSAppDEField" : {
-                  "name" : "COLOR",
-                  "codeName" : "Color"
-                }
-              }, {
-                "id" : "formitem",
-                "hidden" : true,
-                "dataType" : 25,
-                "getPSAppDEField" : {
-                  "name" : "VERSIONC",
-                  "codeName" : "Versionc"
                 }
               }, {
                 "id" : "spec",
@@ -415,6 +415,64 @@
                       "getPSEditor" : {
                         "editorType" : "HIDDEN",
                         "name" : "parent"
+                      },
+                      "getPSLayoutPos" : {
+                        "colMD" : 24,
+                        "layout" : "TABLE_24COL"
+                      },
+                      "allowEmpty" : true,
+                      "emptyCaption" : false,
+                      "hidden" : true,
+                      "inputTipClosable" : false,
+                      "showCaption" : true
+                    }, {
+                      "caption" : "标题颜色",
+                      "codeName" : "color",
+                      "dataType" : 25,
+                      "detailStyle" : "DEFAULT",
+                      "detailType" : "FORMITEM",
+                      "enableCond" : 3,
+                      "ignoreInput" : 0,
+                      "labelPos" : "LEFT",
+                      "labelWidth" : 100,
+                      "name" : "color",
+                      "noPrivDisplayMode" : 1,
+                      "getPSAppDEField" : {
+                        "name" : "COLOR",
+                        "codeName" : "Color"
+                      },
+                      "getPSEditor" : {
+                        "editorType" : "HIDDEN",
+                        "name" : "color"
+                      },
+                      "getPSLayoutPos" : {
+                        "colMD" : 24,
+                        "layout" : "TABLE_24COL"
+                      },
+                      "allowEmpty" : true,
+                      "emptyCaption" : false,
+                      "hidden" : true,
+                      "inputTipClosable" : false,
+                      "showCaption" : true
+                    }, {
+                      "caption" : "版本号",
+                      "codeName" : "formitem",
+                      "dataType" : 25,
+                      "detailStyle" : "DEFAULT",
+                      "detailType" : "FORMITEM",
+                      "enableCond" : 3,
+                      "ignoreInput" : 0,
+                      "labelPos" : "LEFT",
+                      "labelWidth" : 100,
+                      "name" : "formitem",
+                      "noPrivDisplayMode" : 1,
+                      "getPSAppDEField" : {
+                        "name" : "VERSIONC",
+                        "codeName" : "Versionc"
+                      },
+                      "getPSEditor" : {
+                        "editorType" : "HIDDEN",
+                        "name" : "formitem"
                       },
                       "getPSLayoutPos" : {
                         "colMD" : 24,
@@ -580,64 +638,6 @@
                       },
                       "infoGroupMode" : true,
                       "showCaption" : false
-                    }, {
-                      "caption" : "标题颜色",
-                      "codeName" : "color",
-                      "dataType" : 25,
-                      "detailStyle" : "DEFAULT",
-                      "detailType" : "FORMITEM",
-                      "enableCond" : 3,
-                      "ignoreInput" : 0,
-                      "labelPos" : "LEFT",
-                      "labelWidth" : 100,
-                      "name" : "color",
-                      "noPrivDisplayMode" : 1,
-                      "getPSAppDEField" : {
-                        "name" : "COLOR",
-                        "codeName" : "Color"
-                      },
-                      "getPSEditor" : {
-                        "editorType" : "HIDDEN",
-                        "name" : "color"
-                      },
-                      "getPSLayoutPos" : {
-                        "colMD" : 24,
-                        "layout" : "TABLE_24COL"
-                      },
-                      "allowEmpty" : true,
-                      "emptyCaption" : false,
-                      "hidden" : true,
-                      "inputTipClosable" : false,
-                      "showCaption" : true
-                    }, {
-                      "caption" : "版本号",
-                      "codeName" : "formitem",
-                      "dataType" : 25,
-                      "detailStyle" : "DEFAULT",
-                      "detailType" : "FORMITEM",
-                      "enableCond" : 3,
-                      "ignoreInput" : 0,
-                      "labelPos" : "LEFT",
-                      "labelWidth" : 100,
-                      "name" : "formitem",
-                      "noPrivDisplayMode" : 1,
-                      "getPSAppDEField" : {
-                        "name" : "VERSIONC",
-                        "codeName" : "Versionc"
-                      },
-                      "getPSEditor" : {
-                        "editorType" : "HIDDEN",
-                        "name" : "formitem"
-                      },
-                      "getPSLayoutPos" : {
-                        "colMD" : 24,
-                        "layout" : "TABLE_24COL"
-                      },
-                      "allowEmpty" : true,
-                      "emptyCaption" : false,
-                      "hidden" : true,
-                      "inputTipClosable" : false,
-                      "showCaption" : true
                     }, {
                       "actionGroupExtractMode" : "ITEM",
                       "caption" : "需求描述",
