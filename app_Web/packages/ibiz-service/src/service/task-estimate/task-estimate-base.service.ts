@@ -143,26 +143,8 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.taskestimate) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/${_context.taskestimate}/select`);
-        }
-        if (_context.product && _context.story && _context.task && _context.taskestimate) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates/${_context.taskestimate}/select`);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.taskestimate) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/${_context.taskestimate}/select`);
-        }
         if (_context.project && _context.task && _context.taskestimate) {
             return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}/select`);
-        }
-        if (_context.story && _context.task && _context.taskestimate) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/taskestimates/${_context.taskestimate}/select`);
-        }
-        if (_context.productplan && _context.task && _context.taskestimate) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/${_context.taskestimate}/select`);
-        }
-        if (_context.projectmodule && _context.task && _context.taskestimate) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/${_context.taskestimate}/select`);
         }
         if (_context.task && _context.taskestimate) {
             return this.http.get(`/tasks/${_context.task}/taskestimates/${_context.taskestimate}/select`);
@@ -178,36 +160,6 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates`, _data);
-        }
-        if (_context.product && _context.story && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates`, _data);
-        }
         if (_context.project && _context.task && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -217,36 +169,6 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates`, _data);
-        }
-        if (_context.story && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/taskestimates`, _data);
-        }
-        if (_context.productplan && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates`, _data);
-        }
-        if (_context.projectmodule && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates`, _data);
         }
         if (_context.task && true) {
         _data = await this.obtainMinor(_context, _data);
@@ -276,33 +198,9 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.taskestimate) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
-        }
-        if (_context.product && _context.story && _context.task && _context.taskestimate) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.taskestimate) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
-        }
         if (_context.project && _context.task && _context.taskestimate) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
-        }
-        if (_context.story && _context.task && _context.taskestimate) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/stories/${_context.story}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
-        }
-        if (_context.productplan && _context.task && _context.taskestimate) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
-        }
-        if (_context.projectmodule && _context.task && _context.taskestimate) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
         }
         if (_context.task && _context.taskestimate) {
         _data = await this.obtainMinor(_context, _data);
@@ -320,26 +218,8 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.taskestimate) {
-            return this.http.delete(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-        }
-        if (_context.product && _context.story && _context.task && _context.taskestimate) {
-            return this.http.delete(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.taskestimate) {
-            return this.http.delete(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-        }
         if (_context.project && _context.task && _context.taskestimate) {
             return this.http.delete(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-        }
-        if (_context.story && _context.task && _context.taskestimate) {
-            return this.http.delete(`/stories/${_context.story}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-        }
-        if (_context.productplan && _context.task && _context.taskestimate) {
-            return this.http.delete(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-        }
-        if (_context.projectmodule && _context.task && _context.taskestimate) {
-            return this.http.delete(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
         }
         if (_context.task && _context.taskestimate) {
             return this.http.delete(`/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
@@ -355,32 +235,8 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.taskestimate) {
-            const res = await this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-            return res;
-        }
-        if (_context.product && _context.story && _context.task && _context.taskestimate) {
-            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-            return res;
-        }
-        if (_context.product && _context.productplan && _context.task && _context.taskestimate) {
-            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-            return res;
-        }
         if (_context.project && _context.task && _context.taskestimate) {
             const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-            return res;
-        }
-        if (_context.story && _context.task && _context.taskestimate) {
-            const res = await this.http.get(`/stories/${_context.story}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-            return res;
-        }
-        if (_context.productplan && _context.task && _context.taskestimate) {
-            const res = await this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-            return res;
-        }
-        if (_context.projectmodule && _context.task && _context.taskestimate) {
-            const res = await this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
             return res;
         }
         if (_context.task && _context.taskestimate) {
@@ -399,46 +255,10 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && _context.story && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && _context.productplan && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/getdraft`, _data);
-            return res;
-        }
         if (_context.project && _context.task && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/getdraft`, _data);
-            return res;
-        }
-        if (_context.story && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/stories/${_context.story}/tasks/${_context.task}/taskestimates/getdraft`, _data);
-            return res;
-        }
-        if (_context.productplan && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/getdraft`, _data);
-            return res;
-        }
-        if (_context.projectmodule && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/getdraft`, _data);
             return res;
         }
         if (_context.task && true) {
@@ -461,33 +281,9 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async PMEvaluation(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.taskestimate) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/${_context.taskestimate}/pmevaluation`, _data);
-        }
-        if (_context.product && _context.story && _context.task && _context.taskestimate) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates/${_context.taskestimate}/pmevaluation`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.taskestimate) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/${_context.taskestimate}/pmevaluation`, _data);
-        }
         if (_context.project && _context.task && _context.taskestimate) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}/pmevaluation`, _data);
-        }
-        if (_context.story && _context.task && _context.taskestimate) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/taskestimates/${_context.taskestimate}/pmevaluation`, _data);
-        }
-        if (_context.productplan && _context.task && _context.taskestimate) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/${_context.taskestimate}/pmevaluation`, _data);
-        }
-        if (_context.projectmodule && _context.task && _context.taskestimate) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/${_context.taskestimate}/pmevaluation`, _data);
         }
         if (_context.task && _context.taskestimate) {
         _data = await this.obtainMinor(_context, _data);
@@ -504,26 +300,8 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async FetchActionMonth(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/fetchactionmonth`, _data);
-        }
-        if (_context.product && _context.story && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates/fetchactionmonth`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/fetchactionmonth`, _data);
-        }
         if (_context.project && _context.task && true) {
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchactionmonth`, _data);
-        }
-        if (_context.story && _context.task && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/taskestimates/fetchactionmonth`, _data);
-        }
-        if (_context.productplan && _context.task && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/fetchactionmonth`, _data);
-        }
-        if (_context.projectmodule && _context.task && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/fetchactionmonth`, _data);
         }
         if (_context.task && true) {
             return this.http.post(`/tasks/${_context.task}/taskestimates/fetchactionmonth`, _data);
@@ -539,26 +317,8 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async FetchActionYear(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/fetchactionyear`, _data);
-        }
-        if (_context.product && _context.story && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates/fetchactionyear`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/fetchactionyear`, _data);
-        }
         if (_context.project && _context.task && true) {
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchactionyear`, _data);
-        }
-        if (_context.story && _context.task && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/taskestimates/fetchactionyear`, _data);
-        }
-        if (_context.productplan && _context.task && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/fetchactionyear`, _data);
-        }
-        if (_context.projectmodule && _context.task && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/fetchactionyear`, _data);
         }
         if (_context.task && true) {
             return this.http.post(`/tasks/${_context.task}/taskestimates/fetchactionyear`, _data);
@@ -574,26 +334,8 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
-        }
-        if (_context.product && _context.story && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
-        }
         if (_context.project && _context.task && true) {
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
-        }
-        if (_context.story && _context.task && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
-        }
-        if (_context.productplan && _context.task && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
-        }
-        if (_context.projectmodule && _context.task && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
         }
         if (_context.task && true) {
             return this.http.post(`/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
@@ -609,26 +351,8 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async FetchDefaults(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/fetchdefaults`, _data);
-        }
-        if (_context.product && _context.story && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates/fetchdefaults`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/fetchdefaults`, _data);
-        }
         if (_context.project && _context.task && true) {
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchdefaults`, _data);
-        }
-        if (_context.story && _context.task && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/taskestimates/fetchdefaults`, _data);
-        }
-        if (_context.productplan && _context.task && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/fetchdefaults`, _data);
-        }
-        if (_context.projectmodule && _context.task && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/fetchdefaults`, _data);
         }
         if (_context.task && true) {
             return this.http.post(`/tasks/${_context.task}/taskestimates/fetchdefaults`, _data);
@@ -644,26 +368,8 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async FetchProjectActionMonth(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/fetchprojectactionmonth`, _data);
-        }
-        if (_context.product && _context.story && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates/fetchprojectactionmonth`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/fetchprojectactionmonth`, _data);
-        }
         if (_context.project && _context.task && true) {
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchprojectactionmonth`, _data);
-        }
-        if (_context.story && _context.task && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/taskestimates/fetchprojectactionmonth`, _data);
-        }
-        if (_context.productplan && _context.task && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/fetchprojectactionmonth`, _data);
-        }
-        if (_context.projectmodule && _context.task && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/fetchprojectactionmonth`, _data);
         }
         if (_context.task && true) {
             return this.http.post(`/tasks/${_context.task}/taskestimates/fetchprojectactionmonth`, _data);
@@ -679,26 +385,8 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async FetchProjectActionYear(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/fetchprojectactionyear`, _data);
-        }
-        if (_context.product && _context.story && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates/fetchprojectactionyear`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/fetchprojectactionyear`, _data);
-        }
         if (_context.project && _context.task && true) {
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchprojectactionyear`, _data);
-        }
-        if (_context.story && _context.task && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/taskestimates/fetchprojectactionyear`, _data);
-        }
-        if (_context.productplan && _context.task && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/fetchprojectactionyear`, _data);
-        }
-        if (_context.projectmodule && _context.task && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/fetchprojectactionyear`, _data);
         }
         if (_context.task && true) {
             return this.http.post(`/tasks/${_context.task}/taskestimates/fetchprojectactionyear`, _data);
@@ -714,26 +402,8 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async FetchProjectTaskEstimate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/fetchprojecttaskestimate`, _data);
-        }
-        if (_context.product && _context.story && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates/fetchprojecttaskestimate`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/fetchprojecttaskestimate`, _data);
-        }
         if (_context.project && _context.task && true) {
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchprojecttaskestimate`, _data);
-        }
-        if (_context.story && _context.task && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/taskestimates/fetchprojecttaskestimate`, _data);
-        }
-        if (_context.productplan && _context.task && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/fetchprojecttaskestimate`, _data);
-        }
-        if (_context.projectmodule && _context.task && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/fetchprojecttaskestimate`, _data);
         }
         if (_context.task && true) {
             return this.http.post(`/tasks/${_context.task}/taskestimates/fetchprojecttaskestimate`, _data);
@@ -751,33 +421,9 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateServiceBase
      */
     public async PMEvaluationBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
-        }
-        if(_context.product && _context.story && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
-        }
-        if(_context.product && _context.productplan && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
-        }
         if(_context.project && _context.task && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
-        }
-        if(_context.story && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
-        }
-        if(_context.productplan && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
-        }
-        if(_context.projectmodule && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
         }
         if(_context.task && true){
         _data = await this.obtainMinor(_context, _data);

@@ -2037,6 +2037,9 @@
     "logicName" : "读取",
     "name" : "READ"
   }, {
+    "logicName" : "测试版本管理",
+    "name" : "TESTTASKMANAGE"
+  }, {
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],

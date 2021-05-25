@@ -89,26 +89,8 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.ibztaskaction) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/select`);
-        }
-        if (_context.product && _context.story && _context.task && _context.ibztaskaction) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/select`);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.ibztaskaction) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/select`);
-        }
         if (_context.project && _context.task && _context.ibztaskaction) {
             return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/select`);
-        }
-        if (_context.story && _context.task && _context.ibztaskaction) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/select`);
-        }
-        if (_context.productplan && _context.task && _context.ibztaskaction) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/select`);
-        }
-        if (_context.projectmodule && _context.task && _context.ibztaskaction) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/select`);
         }
         if (_context.task && _context.ibztaskaction) {
             return this.http.get(`/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/select`);
@@ -124,36 +106,6 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions`, _data);
-        }
-        if (_context.product && _context.story && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions`, _data);
-        }
         if (_context.project && _context.task && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -163,36 +115,6 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
                 delete _data.srffrontuf;
             }
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions`, _data);
-        }
-        if (_context.story && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions`, _data);
-        }
-        if (_context.productplan && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions`, _data);
-        }
-        if (_context.projectmodule && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions`, _data);
         }
         if (_context.task && true) {
         _data = await this.obtainMinor(_context, _data);
@@ -222,33 +144,9 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`, _data);
-        }
-        if (_context.product && _context.story && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`, _data);
-        }
         if (_context.project && _context.task && _context.ibztaskaction) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`, _data);
-        }
-        if (_context.story && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`, _data);
-        }
-        if (_context.productplan && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`, _data);
-        }
-        if (_context.projectmodule && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`, _data);
         }
         if (_context.task && _context.ibztaskaction) {
         _data = await this.obtainMinor(_context, _data);
@@ -266,26 +164,8 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.ibztaskaction) {
-            return this.http.delete(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`);
-        }
-        if (_context.product && _context.story && _context.task && _context.ibztaskaction) {
-            return this.http.delete(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.ibztaskaction) {
-            return this.http.delete(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`);
-        }
         if (_context.project && _context.task && _context.ibztaskaction) {
             return this.http.delete(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`);
-        }
-        if (_context.story && _context.task && _context.ibztaskaction) {
-            return this.http.delete(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`);
-        }
-        if (_context.productplan && _context.task && _context.ibztaskaction) {
-            return this.http.delete(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`);
-        }
-        if (_context.projectmodule && _context.task && _context.ibztaskaction) {
-            return this.http.delete(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`);
         }
         if (_context.task && _context.ibztaskaction) {
             return this.http.delete(`/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`);
@@ -301,32 +181,8 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.ibztaskaction) {
-            const res = await this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`);
-            return res;
-        }
-        if (_context.product && _context.story && _context.task && _context.ibztaskaction) {
-            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`);
-            return res;
-        }
-        if (_context.product && _context.productplan && _context.task && _context.ibztaskaction) {
-            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`);
-            return res;
-        }
         if (_context.project && _context.task && _context.ibztaskaction) {
             const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`);
-            return res;
-        }
-        if (_context.story && _context.task && _context.ibztaskaction) {
-            const res = await this.http.get(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`);
-            return res;
-        }
-        if (_context.productplan && _context.task && _context.ibztaskaction) {
-            const res = await this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`);
-            return res;
-        }
-        if (_context.projectmodule && _context.task && _context.ibztaskaction) {
-            const res = await this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}`);
             return res;
         }
         if (_context.task && _context.ibztaskaction) {
@@ -345,46 +201,10 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && _context.story && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && _context.productplan && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/getdraft`, _data);
-            return res;
-        }
         if (_context.project && _context.task && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/getdraft`, _data);
-            return res;
-        }
-        if (_context.story && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/getdraft`, _data);
-            return res;
-        }
-        if (_context.productplan && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/getdraft`, _data);
-            return res;
-        }
-        if (_context.projectmodule && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/getdraft`, _data);
             return res;
         }
         if (_context.task && true) {
@@ -407,33 +227,9 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionService
      */
     async Comment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/comment`, _data);
-        }
-        if (_context.product && _context.story && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/comment`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/comment`, _data);
-        }
         if (_context.project && _context.task && _context.ibztaskaction) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/comment`, _data);
-        }
-        if (_context.story && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/comment`, _data);
-        }
-        if (_context.productplan && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/comment`, _data);
-        }
-        if (_context.projectmodule && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/comment`, _data);
         }
         if (_context.task && _context.ibztaskaction) {
         _data = await this.obtainMinor(_context, _data);
@@ -450,33 +246,9 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionService
      */
     async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/createhis`, _data);
-        }
-        if (_context.product && _context.story && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/createhis`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/createhis`, _data);
-        }
         if (_context.project && _context.task && _context.ibztaskaction) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/createhis`, _data);
-        }
-        if (_context.story && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/createhis`, _data);
-        }
-        if (_context.productplan && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/createhis`, _data);
-        }
-        if (_context.projectmodule && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/createhis`, _data);
         }
         if (_context.task && _context.ibztaskaction) {
         _data = await this.obtainMinor(_context, _data);
@@ -493,33 +265,9 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionService
      */
     async EditComment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/editcomment`, _data);
-        }
-        if (_context.product && _context.story && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/editcomment`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/editcomment`, _data);
-        }
         if (_context.project && _context.task && _context.ibztaskaction) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/editcomment`, _data);
-        }
-        if (_context.story && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/editcomment`, _data);
-        }
-        if (_context.productplan && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/editcomment`, _data);
-        }
-        if (_context.projectmodule && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/editcomment`, _data);
         }
         if (_context.task && _context.ibztaskaction) {
         _data = await this.obtainMinor(_context, _data);
@@ -536,33 +284,9 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionService
      */
     async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/managepmsee`, _data);
-        }
-        if (_context.product && _context.story && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/managepmsee`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/managepmsee`, _data);
-        }
         if (_context.project && _context.task && _context.ibztaskaction) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/managepmsee`, _data);
-        }
-        if (_context.story && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/managepmsee`, _data);
-        }
-        if (_context.productplan && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/managepmsee`, _data);
-        }
-        if (_context.projectmodule && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/managepmsee`, _data);
         }
         if (_context.task && _context.ibztaskaction) {
         _data = await this.obtainMinor(_context, _data);
@@ -579,33 +303,9 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionService
      */
     async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendmarkdone`, _data);
-        }
-        if (_context.product && _context.story && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendmarkdone`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendmarkdone`, _data);
-        }
         if (_context.project && _context.task && _context.ibztaskaction) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendmarkdone`, _data);
-        }
-        if (_context.story && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendmarkdone`, _data);
-        }
-        if (_context.productplan && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendmarkdone`, _data);
-        }
-        if (_context.projectmodule && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendmarkdone`, _data);
         }
         if (_context.task && _context.ibztaskaction) {
         _data = await this.obtainMinor(_context, _data);
@@ -622,33 +322,9 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionService
      */
     async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendtodo`, _data);
-        }
-        if (_context.product && _context.story && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendtodo`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendtodo`, _data);
-        }
         if (_context.project && _context.task && _context.ibztaskaction) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendtodo`, _data);
-        }
-        if (_context.story && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendtodo`, _data);
-        }
-        if (_context.productplan && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendtodo`, _data);
-        }
-        if (_context.projectmodule && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendtodo`, _data);
         }
         if (_context.task && _context.ibztaskaction) {
         _data = await this.obtainMinor(_context, _data);
@@ -665,33 +341,9 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionService
      */
     async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendtoread`, _data);
-        }
-        if (_context.product && _context.story && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendtoread`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendtoread`, _data);
-        }
         if (_context.project && _context.task && _context.ibztaskaction) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendtoread`, _data);
-        }
-        if (_context.story && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendtoread`, _data);
-        }
-        if (_context.productplan && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendtoread`, _data);
-        }
-        if (_context.projectmodule && _context.task && _context.ibztaskaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/${_context.ibztaskaction}/sendtoread`, _data);
         }
         if (_context.task && _context.ibztaskaction) {
         _data = await this.obtainMinor(_context, _data);
@@ -708,26 +360,8 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/fetchdefault`, _data);
-        }
-        if (_context.product && _context.story && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/fetchdefault`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/fetchdefault`, _data);
-        }
         if (_context.project && _context.task && true) {
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/fetchdefault`, _data);
-        }
-        if (_context.story && _context.task && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/fetchdefault`, _data);
-        }
-        if (_context.productplan && _context.task && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/fetchdefault`, _data);
-        }
-        if (_context.projectmodule && _context.task && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/fetchdefault`, _data);
         }
         if (_context.task && true) {
             return this.http.post(`/tasks/${_context.task}/ibztaskactions/fetchdefault`, _data);
@@ -743,26 +377,8 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/fetchtype`, _data);
-        }
-        if (_context.product && _context.story && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/fetchtype`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/fetchtype`, _data);
-        }
         if (_context.project && _context.task && true) {
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/fetchtype`, _data);
-        }
-        if (_context.story && _context.task && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/fetchtype`, _data);
-        }
-        if (_context.productplan && _context.task && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/fetchtype`, _data);
-        }
-        if (_context.projectmodule && _context.task && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/fetchtype`, _data);
         }
         if (_context.task && true) {
             return this.http.post(`/tasks/${_context.task}/ibztaskactions/fetchtype`, _data);
@@ -780,33 +396,9 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionServiceBase
      */
     public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/createhisbatch`,_data);
-        }
-        if(_context.product && _context.story && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/createhisbatch`,_data);
-        }
-        if(_context.product && _context.productplan && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/createhisbatch`,_data);
-        }
         if(_context.project && _context.task && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/createhisbatch`,_data);
-        }
-        if(_context.story && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/createhisbatch`,_data);
-        }
-        if(_context.productplan && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/createhisbatch`,_data);
-        }
-        if(_context.projectmodule && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/createhisbatch`,_data);
         }
         if(_context.task && true){
         _data = await this.obtainMinor(_context, _data);
@@ -826,33 +418,9 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionServiceBase
      */
     public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/editcommentbatch`,_data);
-        }
-        if(_context.product && _context.story && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/editcommentbatch`,_data);
-        }
-        if(_context.product && _context.productplan && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/editcommentbatch`,_data);
-        }
         if(_context.project && _context.task && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/editcommentbatch`,_data);
-        }
-        if(_context.story && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/editcommentbatch`,_data);
-        }
-        if(_context.productplan && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/editcommentbatch`,_data);
-        }
-        if(_context.projectmodule && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/editcommentbatch`,_data);
         }
         if(_context.task && true){
         _data = await this.obtainMinor(_context, _data);
@@ -872,33 +440,9 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionServiceBase
      */
     public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/managepmseebatch`,_data);
-        }
-        if(_context.product && _context.story && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/managepmseebatch`,_data);
-        }
-        if(_context.product && _context.productplan && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/managepmseebatch`,_data);
-        }
         if(_context.project && _context.task && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/managepmseebatch`,_data);
-        }
-        if(_context.story && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/managepmseebatch`,_data);
-        }
-        if(_context.productplan && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/managepmseebatch`,_data);
-        }
-        if(_context.projectmodule && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/managepmseebatch`,_data);
         }
         if(_context.task && true){
         _data = await this.obtainMinor(_context, _data);
@@ -918,33 +462,9 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionServiceBase
      */
     public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/sendmarkdonebatch`,_data);
-        }
-        if(_context.product && _context.story && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/sendmarkdonebatch`,_data);
-        }
-        if(_context.product && _context.productplan && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/sendmarkdonebatch`,_data);
-        }
         if(_context.project && _context.task && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/sendmarkdonebatch`,_data);
-        }
-        if(_context.story && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/sendmarkdonebatch`,_data);
-        }
-        if(_context.productplan && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/sendmarkdonebatch`,_data);
-        }
-        if(_context.projectmodule && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/sendmarkdonebatch`,_data);
         }
         if(_context.task && true){
         _data = await this.obtainMinor(_context, _data);
@@ -964,33 +484,9 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionServiceBase
      */
     public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/sendtodobatch`,_data);
-        }
-        if(_context.product && _context.story && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/sendtodobatch`,_data);
-        }
-        if(_context.product && _context.productplan && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/sendtodobatch`,_data);
-        }
         if(_context.project && _context.task && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/sendtodobatch`,_data);
-        }
-        if(_context.story && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/sendtodobatch`,_data);
-        }
-        if(_context.productplan && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/sendtodobatch`,_data);
-        }
-        if(_context.projectmodule && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/sendtodobatch`,_data);
         }
         if(_context.task && true){
         _data = await this.obtainMinor(_context, _data);
@@ -1010,33 +506,9 @@ export class IBZTaskActionBaseService extends EntityBaseService<IIBZTaskAction> 
      * @memberof IBZTaskActionServiceBase
      */
     public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/sendtoreadbatch`,_data);
-        }
-        if(_context.product && _context.story && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/sendtoreadbatch`,_data);
-        }
-        if(_context.product && _context.productplan && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/sendtoreadbatch`,_data);
-        }
         if(_context.project && _context.task && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/ibztaskactions/sendtoreadbatch`,_data);
-        }
-        if(_context.story && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/ibztaskactions/sendtoreadbatch`,_data);
-        }
-        if(_context.productplan && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/ibztaskactions/sendtoreadbatch`,_data);
-        }
-        if(_context.projectmodule && _context.task && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/ibztaskactions/sendtoreadbatch`,_data);
         }
         if(_context.task && true){
         _data = await this.obtainMinor(_context, _data);
