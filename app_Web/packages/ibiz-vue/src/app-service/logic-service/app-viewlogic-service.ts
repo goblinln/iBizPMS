@@ -147,6 +147,7 @@ export class AppViewLogicService {
                 `${targetUIAction.getPSAppDataEntity()?.codeName.toLowerCase()}`,
             );
             await targetUIService.loaded();
+            Object.assign(contextJO, { srfparentdemapname: targetParentObject?.getPSAppDataEntity()?.getPSDEName() });
             targetUIService.excuteAction(
                 targetUIAction.uIActionTag,
                 datas,
@@ -162,6 +163,7 @@ export class AppViewLogicService {
                 const targetParentObject: IPSAppDEDataView | IPSControl = viewLogic.getParentPSModelObject() as
                     | IPSAppDEDataView
                     | IPSControl;
+                Object.assign(contextJO, { srfparentdemapname: targetParentObject?.getPSAppDataEntity()?.getPSDEName() });
                 (AppGlobalService.getInstance() as any).executeGlobalAction(
                     targetUIAction.uIActionTag,
                     datas,

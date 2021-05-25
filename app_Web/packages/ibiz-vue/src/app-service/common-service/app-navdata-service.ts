@@ -149,12 +149,16 @@ export class NavDataService {
             let tempIndex: number = this.navDataStack.findIndex((element: NavDataElement) => {
                 return Object.is(element.tag, tag);
             })
-            this.navDataStack[tempIndex].data = data;
-            if (isSingleMode && data.srfkey && data.srfmajortext) {
-                this.navDataStack[tempIndex].key = data.srfkey;
-                this.navDataStack[tempIndex].title = data.srfmajortext;
+            if(this.navDataStack[tempIndex]){
+                this.navDataStack[tempIndex].data = data;
+                if (isSingleMode && data.srfkey && data.srfmajortext) {
+                    this.navDataStack[tempIndex].key = data.srfkey;
+                    this.navDataStack[tempIndex].title = data.srfmajortext;
+                }
+                return this.navDataStack[tempIndex];
+            }else{
+                return null;
             }
-            return this.navDataStack[tempIndex];
         } else {
             return null;
         }
