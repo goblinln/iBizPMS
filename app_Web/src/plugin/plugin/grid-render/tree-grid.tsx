@@ -270,6 +270,7 @@ export class TreeGrid extends AppDefaultGrid {
             }
             this.totalRecord = response.total;
             this.items = JSON.parse(JSON.stringify(data));
+				this.isControlLoaded = true;
             // 清空selections,gridItemsModel
             this.selections = [];
             this.gridItemsModel = [];
