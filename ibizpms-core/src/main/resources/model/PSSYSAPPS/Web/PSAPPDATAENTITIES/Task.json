@@ -4728,6 +4728,7 @@
     "id" : "AssignTaskDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "收藏",
     "codeName" : "TaskFavorites",
     "dataAccessAction" : "NFAVORITES",
