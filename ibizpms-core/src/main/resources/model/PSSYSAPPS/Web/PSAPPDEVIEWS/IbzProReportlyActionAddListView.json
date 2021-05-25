@@ -1,0 +1,518 @@
+{
+  "accUserMode" : 2,
+  "caption" : "添加备注",
+  "codeName" : "IbzProReportlyActionAddListView",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzProReportlyActionAddListView.json",
+  "mDCtrlActiveMode" : 2,
+  "name" : "IbzProReportlyActionAddListView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProReportlyAction.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "ListView9",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "name" : "LIST",
+      "paramType" : "CTRL"
+    }, {
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
+    }, {
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction1"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "getNewDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzProReportlyActionEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzProReportlyActionEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzProReportlyActionEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzProReportlyActionEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSAppViewRefs" : [ {
+    "name" : "NEWDATA",
+    "realTitle" : "汇报日志编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzProReportlyActionEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA",
+    "realTitle" : "汇报日志编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzProReportlyActionEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "toolbar_deuiaction1",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProReportlyAction.json"
+      },
+      "modelref" : true,
+      "id" : "AddComment@IbzProReportlyAction"
+    },
+    "uIActionTarget" : "NONE",
+    "xDataControlName" : "list"
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "DEFAULT",
+    "controlType" : "LIST",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzProReportlyActionAddListView/PSLISTS/DEFAULT.json",
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "groupMode" : "NONE",
+    "logicName" : "DEFAULT",
+    "minorSortDir" : "DESC",
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update"
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove"
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load"
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create"
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "列表控件处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "HISTORY"
+    },
+    "getPSDEListDataItems" : [ {
+      "dataType" : 21,
+      "format" : "%1$s",
+      "name" : "old"
+    }, {
+      "dataType" : 1,
+      "format" : "%1$s",
+      "name" : "action"
+    }, {
+      "dataType" : 1,
+      "format" : "%1$s",
+      "name" : "id"
+    }, {
+      "dataType" : 25,
+      "name" : "ibiznew"
+    }, {
+      "dataType" : 25,
+      "format" : "%1$s",
+      "name" : "field"
+    }, {
+      "dataType" : 21,
+      "format" : "%1$s",
+      "name" : "diff"
+    } ],
+    "pagingSize" : 1000,
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "hasWFDataItems" : false,
+    "enableGroup" : false,
+    "enableRowEdit" : false,
+    "enableRowEditGroup" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "noSort" : false,
+    "showHeader" : true,
+    "name" : "history",
+    "modelid" : "9330af76bd8d6ac5bc956d31250abf3d",
+    "modeltype" : "PSDELIST"
+  }, {
+    "codeName" : "AddListViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "添加备注工具栏",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProReportlyAction.json"
+    },
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "添加备注",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf1e8@FontAwesome",
+        "cssClass" : "fa fa-twitch"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "NONE",
+        "caption" : "添加备注",
+        "codeName" : "AddComment",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzProReportlyActionOptionView.json",
+          "viewType" : "DEOPTVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "IbzProReportlyAction_AddComment",
+        "name" : "添加备注",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProReportlyAction.json"
+        },
+        "getPSNavigateContexts" : [ {
+          "key" : "OBJECTID",
+          "name" : "OBJECTID",
+          "value" : "objectid",
+          "rawValue" : false
+        } ],
+        "getPSSysImage" : {
+          "glyph" : "xf1e8@FontAwesome",
+          "cssClass" : "fa fa-twitch"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "AddComment",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "AddComment@IbzProReportlyAction"
+      },
+      "tooltip" : "添加备注",
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "427f278fd0b05ee77fa87e5b0524bde0",
+    "modeltype" : "PSDETOOLBAR"
+  }, {
+    "codeName" : "ClassifyByType",
+    "controlType" : "LIST",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProReportlyAction/PSLISTS/ClassifyByType.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "logicName" : "ClassifyByType",
+    "minorSortDir" : "ASC",
+    "getMinorSortPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProReportlyAction.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProReportlyAction.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchType"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProReportlyAction.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProReportlyAction.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProReportlyAction.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProReportlyAction.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "列表控件处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "LIST"
+    },
+    "getPSDEListDataItems" : [ {
+      "dataType" : 21,
+      "name" : "comment"
+    }, {
+      "dataType" : 5,
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "name" : "date"
+    }, {
+      "dataType" : 1,
+      "name" : "project"
+    }, {
+      "dataType" : 1,
+      "name" : "isactorss"
+    }, {
+      "dataType" : 21,
+      "name" : "extra"
+    }, {
+      "dataType" : 1,
+      "name" : "objectid"
+    }, {
+      "dataType" : 25,
+      "name" : "objecttype"
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ActionManner.json"
+      },
+      "name" : "actionmanner"
+    }, {
+      "dataType" : 25,
+      "name" : "product"
+    }, {
+      "dataType" : 25,
+      "name" : "actiontype",
+      "getPSAppDEField" : {
+        "name" : "ACTION",
+        "codeName" : "Action"
+      }
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+      },
+      "name" : "actor"
+    }, {
+      "dataType" : 1,
+      "name" : "id"
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "COMMENT",
+        "codeName" : "Comment"
+      }
+    } ],
+    "getPSSysPFPlugin" : {
+      "pluginType" : "CUSTOM",
+      "pluginCode" : "ActionHistory"
+    },
+    "pagingSize" : 1000,
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "hasWFDataItems" : false,
+    "enableGroup" : false,
+    "enableRowEdit" : false,
+    "enableRowEditGroup" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "noSort" : false,
+    "showHeader" : true,
+    "name" : "list",
+    "modelid" : "8bfddd17f22b5f18b89bf0c49e307399",
+    "modeltype" : "PSDELIST"
+  } ],
+  "getPSDEViewCodeName" : "AddListView",
+  "getPSDEViewId" : "eb1520b2022d194ab3a22d567eab2774",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDELISTVIEW9_STYLE2",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProReportlyAction.json"
+    },
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "汇报日志列表视图（添加备注）",
+  "viewStyle" : "STYLE2",
+  "viewType" : "DELISTVIEW9",
+  "xDataControlName" : "list",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "showCaptionBar" : false,
+  "modelid" : "340179c29df33deb05e3c2d534267bb1",
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "IbzProReportlyActions",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProReportlyAction.json"
+    },
+    "name" : "汇报-汇报日志",
+    "getParentPSAppDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ] ]
+}

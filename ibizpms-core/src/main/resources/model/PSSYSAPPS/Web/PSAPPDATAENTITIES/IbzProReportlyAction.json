@@ -647,6 +647,40 @@
     "name" : "FILTERFETCH",
     "builtinMethod" : true
   } ],
+  "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "NONE",
+    "caption" : "添加备注",
+    "codeName" : "AddComment",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzProReportlyActionOptionView.json",
+      "viewType" : "DEOPTVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "IbzProReportlyAction_AddComment",
+    "name" : "添加备注",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProReportlyAction.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "OBJECTID",
+      "name" : "OBJECTID",
+      "value" : "objectid",
+      "rawValue" : false
+    } ],
+    "getPSSysImage" : {
+      "glyph" : "xf1e8@FontAwesome",
+      "cssClass" : "fa fa-twitch"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "AddComment",
+    "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
+    "id" : "AddComment@IbzProReportlyAction"
+  } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "添加备注",
     "mapPSDEName" : "IBZ_REPORTLY",
