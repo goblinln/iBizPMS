@@ -4231,6 +4231,9 @@
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
+    "logicName" : "模块管理",
+    "name" : "MODULEMANAGE"
+  }, {
     "logicName" : "延期",
     "name" : "PUTOFF"
   }, {

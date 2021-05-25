@@ -10281,23 +10281,16 @@
         "name" : "PAUSE"
       }
     }, {
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "logicName" : "删除",
+        "name" : "DELETE"
+      }
+    }, {
       "name" : "CONSUM",
       "getPSDEOPPriv" : {
         "logicName" : "任务工时",
         "name" : "CONSUM"
-      }
-    }, {
-      "name" : "DELETE",
-      "getPSDEOPPriv" : {
-        "logicName" : "删除",
-        "mapPSDEName" : "ZT_PROJECT",
-        "mapPSDEOPPrivName" : "TASKMANAGE",
-        "getMapPSDER" : {
-          "modelref" : true,
-          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
-        },
-        "name" : "DELETE",
-        "id" : "ZTProject__DELETE"
       }
     }, {
       "name" : "FAVORITES",
@@ -11483,6 +11476,12 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "logicName" : "删除",
+        "name" : "DELETE"
+      }
+    }, {
       "name" : "FORWARD",
       "getPSDEOPPriv" : {
         "logicName" : "转交",
@@ -11517,19 +11516,6 @@
       "getPSDEOPPriv" : {
         "logicName" : "需求变更确认",
         "name" : "XQCHANGE"
-      }
-    }, {
-      "name" : "DELETE",
-      "getPSDEOPPriv" : {
-        "logicName" : "删除",
-        "mapPSDEName" : "ZT_PROJECT",
-        "mapPSDEOPPrivName" : "TASKMANAGE",
-        "getMapPSDER" : {
-          "modelref" : true,
-          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
-        },
-        "name" : "DELETE",
-        "id" : "ZTProject__DELETE"
       }
     }, {
       "name" : "ASSIGNTO",
@@ -12586,6 +12572,12 @@
         "name" : "RESTART"
       }
     }, {
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "logicName" : "删除",
+        "name" : "DELETE"
+      }
+    }, {
       "name" : "FINISH",
       "getPSDEOPPriv" : {
         "logicName" : "完成",
@@ -12596,19 +12588,6 @@
       "getPSDEOPPriv" : {
         "logicName" : "激活",
         "name" : "ACTIVATE"
-      }
-    }, {
-      "name" : "DELETE",
-      "getPSDEOPPriv" : {
-        "logicName" : "删除",
-        "mapPSDEName" : "ZT_PROJECT",
-        "mapPSDEOPPrivName" : "TASKMANAGE",
-        "getMapPSDER" : {
-          "modelref" : true,
-          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
-        },
-        "name" : "DELETE",
-        "id" : "ZTProject__DELETE"
       }
     }, {
       "name" : "CLOSE",
@@ -16045,6 +16024,12 @@
         "name" : "NFAVORITES"
       }
     }, {
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "logicName" : "删除",
+        "name" : "DELETE"
+      }
+    }, {
       "name" : "FJTASK",
       "getPSDEOPPriv" : {
         "logicName" : "分解任务",
@@ -16055,19 +16040,6 @@
       "getPSDEOPPriv" : {
         "logicName" : "任务工时",
         "name" : "CONSUM"
-      }
-    }, {
-      "name" : "DELETE",
-      "getPSDEOPPriv" : {
-        "logicName" : "删除",
-        "mapPSDEName" : "ZT_PROJECT",
-        "mapPSDEOPPrivName" : "TASKMANAGE",
-        "getMapPSDER" : {
-          "modelref" : true,
-          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
-        },
-        "name" : "DELETE",
-        "id" : "ZTProject__DELETE"
       }
     }, {
       "name" : "CLOSE",
@@ -17219,14 +17191,7 @@
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
-        "mapPSDEName" : "ZT_PROJECT",
-        "mapPSDEOPPrivName" : "TASKMANAGE",
-        "getMapPSDER" : {
-          "modelref" : true,
-          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
-        },
-        "name" : "DELETE",
-        "id" : "ZTProject__DELETE"
+        "name" : "DELETE"
       }
     }, {
       "name" : "FAVORITES",
@@ -18441,19 +18406,6 @@
         "name" : "START"
       }
     }, {
-      "name" : "DELETE",
-      "getPSDEOPPriv" : {
-        "logicName" : "删除",
-        "mapPSDEName" : "ZT_PROJECT",
-        "mapPSDEOPPrivName" : "TASKMANAGE",
-        "getMapPSDER" : {
-          "modelref" : true,
-          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
-        },
-        "name" : "DELETE",
-        "id" : "ZTProject__DELETE"
-      }
-    }, {
       "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
         "logicName" : "激活",
@@ -18494,6 +18446,12 @@
       "getPSDEOPPriv" : {
         "logicName" : "任务取消收藏",
         "name" : "NFAVORITES"
+      }
+    }, {
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "logicName" : "删除",
+        "name" : "DELETE"
       }
     }, {
       "name" : "XQCHANGE",
@@ -19649,6 +19607,12 @@
         "name" : "FAVORITES"
       }
     }, {
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "logicName" : "删除",
+        "name" : "DELETE"
+      }
+    }, {
       "name" : "FJTASK",
       "getPSDEOPPriv" : {
         "logicName" : "分解任务",
@@ -19677,19 +19641,6 @@
       "getPSDEOPPriv" : {
         "logicName" : "指派",
         "name" : "ASSIGNTO"
-      }
-    }, {
-      "name" : "DELETE",
-      "getPSDEOPPriv" : {
-        "logicName" : "删除",
-        "mapPSDEName" : "ZT_PROJECT",
-        "mapPSDEOPPrivName" : "TASKMANAGE",
-        "getMapPSDER" : {
-          "modelref" : true,
-          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
-        },
-        "name" : "DELETE",
-        "id" : "ZTProject__DELETE"
       }
     }, {
       "name" : "FORWARD",
@@ -23348,6 +23299,12 @@
         "name" : "NFAVORITES"
       }
     }, {
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "logicName" : "删除",
+        "name" : "DELETE"
+      }
+    }, {
       "name" : "ASSIGNTO",
       "getPSDEOPPriv" : {
         "logicName" : "指派",
@@ -23364,19 +23321,6 @@
       "getPSDEOPPriv" : {
         "logicName" : "任务工时",
         "name" : "CONSUM"
-      }
-    }, {
-      "name" : "DELETE",
-      "getPSDEOPPriv" : {
-        "logicName" : "删除",
-        "mapPSDEName" : "ZT_PROJECT",
-        "mapPSDEOPPrivName" : "TASKMANAGE",
-        "getMapPSDER" : {
-          "modelref" : true,
-          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
-        },
-        "name" : "DELETE",
-        "id" : "ZTProject__DELETE"
       }
     }, {
       "name" : "XQCHANGE",
@@ -23930,21 +23874,21 @@
     "logicName" : "任务工时",
     "name" : "CONSUM"
   }, {
-    "logicName" : "建立",
-    "name" : "CREATE"
-  }, {
-    "logicName" : "删除",
-    "name" : "DELETE"
-  }, {
-    "logicName" : "删除",
+    "logicName" : "项目创建",
     "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "TASKMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
     },
-    "name" : "DELETE",
-    "id" : "ZTProject__DELETE"
+    "name" : "CREATE",
+    "id" : "ZTProject__CREATE"
+  }, {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
   }, {
     "logicName" : "任务收藏",
     "name" : "FAVORITES"

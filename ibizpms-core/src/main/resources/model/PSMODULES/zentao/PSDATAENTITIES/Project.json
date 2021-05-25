@@ -6930,6 +6930,9 @@
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
+    "logicName" : "模块管理",
+    "name" : "MODULEMANAGE"
+  }, {
     "logicName" : "延期",
     "name" : "PUTOFF"
   }, {
@@ -7306,6 +7309,25 @@
       }
     } ],
     "roleTag" : "Project_Manage_OpenBy",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_ModuleManage.json",
+    "name" : "项目模块管理（公开）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "MODULEMANAGE",
+      "name" : "MODULEMANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MODULEMANAGE"
+      }
+    } ],
+    "roleTag" : "Project_ModuleManage",
     "userCat" : "CAT1",
     "userDRAction" : "READ",
     "systemReserved" : true

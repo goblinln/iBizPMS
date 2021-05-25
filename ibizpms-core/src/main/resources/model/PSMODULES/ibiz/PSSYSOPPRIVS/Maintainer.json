@@ -23,6 +23,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
     }
   }, {
+    "name" : "运维人员-ZT_PROJECT[项目模块管理（公开）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_ModuleManage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
     "name" : "运维人员-ZT_PROJECT[项目查看（参与者）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
