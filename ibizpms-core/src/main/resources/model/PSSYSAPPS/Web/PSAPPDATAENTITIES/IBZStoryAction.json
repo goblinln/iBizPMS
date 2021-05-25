@@ -711,6 +711,30 @@
     "name" : "FILTERFETCH",
     "builtinMethod" : true
   } ],
+  "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "NONE",
+    "caption" : "添加备注",
+    "codeName" : "AddComment",
+    "dataAccessAction" : "CREATE",
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "IBZStoryAction_AddComment",
+    "name" : "添加备注",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZStoryAction.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf1e8@FontAwesome",
+      "cssClass" : "fa fa-twitch"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "AddComment",
+    "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
+    "id" : "AddComment@IBZStoryAction"
+  } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "添加备注",
     "mapPSDEName" : "ZT_STORY",

@@ -81,7 +81,10 @@ export class IBZStoryActionUIServiceBase extends UIServiceBase {
      */  
     protected initViewFuncMap(){
         this.allViewFuncMap.set('MDATAVIEW:','MDATAVIEW');
+        this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set('EDITVIEW:','EDITVIEW');
+        this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set(':','');
     }
 
 }

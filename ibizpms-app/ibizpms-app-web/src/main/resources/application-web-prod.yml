@@ -511,6 +511,10 @@ zuul:
       path: /branches/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
+    ibzpro_projectaction:
+      path: /ibzproprojectactions/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
     zt_action:
       path: /actions/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
@@ -521,6 +525,10 @@ zuul:
       stripPrefix: false
     dynafilter:
       path: /dynafilters/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
+    ibzpro_weeklyaction:
+      path: /ibzproweeklyactions/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     ibzpro_caseaction:
@@ -551,8 +559,24 @@ zuul:
       path: /modules/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
+    ibzpro_testtaskaction:
+      path: /ibzprotesttaskactions/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
+    ibzpro_testsuitaction:
+      path: /ibztestsuiteactions/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
     ibzpro_testreprotaction:
       path: /ibztestreportactions/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
+    ibzpro_reportlyaction:
+      path: /ibzproreportlyactions/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
+    ibzpro_dailyaction:
+      path: /ibzdailyactions/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     ibzpro_todoaction:

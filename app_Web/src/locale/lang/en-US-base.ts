@@ -113,6 +113,7 @@ import ibzproprojectaction_en_US from '@locale/lanres/entities/ibzpro-project-ac
 import action_en_US from '@locale/lanres/entities/action/action_en_US';
 import ibzprobugaction_en_US from '@locale/lanres/entities/ibz-pro-bug-action/ibz-pro-bug-action_en_US';
 import dynafilter_en_US from '@locale/lanres/entities/dyna-filter/dyna-filter_en_US';
+import ibzproweeklyaction_en_US from '@locale/lanres/entities/ibzpro-weekly-action/ibzpro-weekly-action_en_US';
 import ibzcaseaction_en_US from '@locale/lanres/entities/ibzcase-action/ibzcase-action_en_US';
 import ibzproreleaseaction_en_US from '@locale/lanres/entities/ibzpro-release-action/ibzpro-release-action_en_US';
 import history_en_US from '@locale/lanres/entities/history/history_en_US';
@@ -120,7 +121,11 @@ import ibzproproducthistory_en_US from '@locale/lanres/entities/ibzpro-product-h
 import ibzpromonthlyaction_en_US from '@locale/lanres/entities/ibz-pro-monthly-action/ibz-pro-monthly-action_en_US';
 import ibzstoryaction_en_US from '@locale/lanres/entities/ibzstory-action/ibzstory-action_en_US';
 import module_en_US from '@locale/lanres/entities/module/module_en_US';
+import ibzprotesttaskaction_en_US from '@locale/lanres/entities/ibz-pro-test-task-action/ibz-pro-test-task-action_en_US';
+import ibztestsuiteaction_en_US from '@locale/lanres/entities/ibztest-suite-action/ibztest-suite-action_en_US';
 import ibztestreportaction_en_US from '@locale/lanres/entities/ibztest-report-action/ibztest-report-action_en_US';
+import ibzproreportlyaction_en_US from '@locale/lanres/entities/ibz-pro-reportly-action/ibz-pro-reportly-action_en_US';
+import ibzdailyaction_en_US from '@locale/lanres/entities/ibzdaily-action/ibzdaily-action_en_US';
 import ibzprotodoaction_en_US from '@locale/lanres/entities/ibzpro-to-do-action/ibzpro-to-do-action_en_US';
 import projecttaskestimate_en_US from '@locale/lanres/entities/project-taskestimate/project-taskestimate_en_US';
 import ibztaskaction_en_US from '@locale/lanres/entities/ibztask-action/ibztask-action_en_US';
@@ -504,6 +509,7 @@ function getAppLocale(){
             'action': action_en_US(),
             'ibzprobugaction': ibzprobugaction_en_US(),
             'dynafilter': dynafilter_en_US(),
+            'ibzproweeklyaction': ibzproweeklyaction_en_US(),
             'ibzcaseaction': ibzcaseaction_en_US(),
             'ibzproreleaseaction': ibzproreleaseaction_en_US(),
             'history': history_en_US(),
@@ -511,7 +517,11 @@ function getAppLocale(){
             'ibzpromonthlyaction': ibzpromonthlyaction_en_US(),
             'ibzstoryaction': ibzstoryaction_en_US(),
             'module': module_en_US(),
+            'ibzprotesttaskaction': ibzprotesttaskaction_en_US(),
+            'ibztestsuiteaction': ibztestsuiteaction_en_US(),
             'ibztestreportaction': ibztestreportaction_en_US(),
+            'ibzproreportlyaction': ibzproreportlyaction_en_US(),
+            'ibzdailyaction': ibzdailyaction_en_US(),
             'ibzprotodoaction': ibzprotodoaction_en_US(),
             'projecttaskestimate': projecttaskestimate_en_US(),
             'ibztaskaction': ibztaskaction_en_US(),

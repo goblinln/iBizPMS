@@ -168,6 +168,7 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('action', () => import('../authservice/action/action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzprobugaction', () => import('../authservice/ibz-pro-bug-action/ibz-pro-bug-action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('dynafilter', () => import('../authservice/dyna-filter/dyna-filter-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('ibzproweeklyaction', () => import('../authservice/ibzpro-weekly-action/ibzpro-weekly-action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzcaseaction', () => import('../authservice/ibzcase-action/ibzcase-action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzproreleaseaction', () => import('../authservice/ibzpro-release-action/ibzpro-release-action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('history', () => import('../authservice/history/history-auth-service'));
@@ -175,7 +176,11 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('ibzpromonthlyaction', () => import('../authservice/ibz-pro-monthly-action/ibz-pro-monthly-action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzstoryaction', () => import('../authservice/ibzstory-action/ibzstory-action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('module', () => import('../authservice/module/module-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('ibzprotesttaskaction', () => import('../authservice/ibz-pro-test-task-action/ibz-pro-test-task-action-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('ibztestsuiteaction', () => import('../authservice/ibztest-suite-action/ibztest-suite-action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibztestreportaction', () => import('../authservice/ibztest-report-action/ibztest-report-action-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('ibzproreportlyaction', () => import('../authservice/ibz-pro-reportly-action/ibz-pro-reportly-action-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('ibzdailyaction', () => import('../authservice/ibzdaily-action/ibzdaily-action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzprotodoaction', () => import('../authservice/ibzpro-to-do-action/ibzpro-to-do-action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projecttaskestimate', () => import('../authservice/project-taskestimate/project-taskestimate-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibztaskaction', () => import('../authservice/ibztask-action/ibztask-action-auth-service'));

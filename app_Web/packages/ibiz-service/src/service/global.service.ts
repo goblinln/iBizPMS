@@ -1052,6 +1052,15 @@ export class GlobalService {
         return (await import('./dyna-filter/dyna-filter.service')).default.getInstance();
     }
     /**
+     * 周报日志服务
+     *
+     * @return {IBZProWeeklyAction}
+     * @memberof GlobalService
+     */
+    async getIBZProWeeklyActionService() {
+        return (await import('./ibzpro-weekly-action/ibzpro-weekly-action.service')).default.getInstance();
+    }
+    /**
      * 测试用例日志服务
      *
      * @return {IBZCaseAction}
@@ -1115,6 +1124,24 @@ export class GlobalService {
         return (await import('./module/module.service')).default.getInstance();
     }
     /**
+     * 测试单日志服务
+     *
+     * @return {IbzProTestTaskAction}
+     * @memberof GlobalService
+     */
+    async getIbzProTestTaskActionService() {
+        return (await import('./ibz-pro-test-task-action/ibz-pro-test-task-action.service')).default.getInstance();
+    }
+    /**
+     * 套件日志服务
+     *
+     * @return {IBZTestSuiteAction}
+     * @memberof GlobalService
+     */
+    async getIBZTestSuiteActionService() {
+        return (await import('./ibztest-suite-action/ibztest-suite-action.service')).default.getInstance();
+    }
+    /**
      * 报告日志服务
      *
      * @return {IBZTestReportAction}
@@ -1122,6 +1149,24 @@ export class GlobalService {
      */
     async getIBZTestReportActionService() {
         return (await import('./ibztest-report-action/ibztest-report-action.service')).default.getInstance();
+    }
+    /**
+     * 汇报日志服务
+     *
+     * @return {IbzProReportlyAction}
+     * @memberof GlobalService
+     */
+    async getIbzProReportlyActionService() {
+        return (await import('./ibz-pro-reportly-action/ibz-pro-reportly-action.service')).default.getInstance();
+    }
+    /**
+     * 日报日志服务
+     *
+     * @return {IBZDailyAction}
+     * @memberof GlobalService
+     */
+    async getIBZDailyActionService() {
+        return (await import('./ibzdaily-action/ibzdaily-action.service')).default.getInstance();
     }
     /**
      * ToDo日志服务

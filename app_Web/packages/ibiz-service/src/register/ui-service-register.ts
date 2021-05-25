@@ -169,6 +169,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('action', () => import('../uiservice/action/action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzprobugaction', () => import('../uiservice/ibz-pro-bug-action/ibz-pro-bug-action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('dynafilter', () => import('../uiservice/dyna-filter/dyna-filter-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('ibzproweeklyaction', () => import('../uiservice/ibzpro-weekly-action/ibzpro-weekly-action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzcaseaction', () => import('../uiservice/ibzcase-action/ibzcase-action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzproreleaseaction', () => import('../uiservice/ibzpro-release-action/ibzpro-release-action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('history', () => import('../uiservice/history/history-ui-service'));
@@ -176,7 +177,11 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('ibzpromonthlyaction', () => import('../uiservice/ibz-pro-monthly-action/ibz-pro-monthly-action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzstoryaction', () => import('../uiservice/ibzstory-action/ibzstory-action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('module', () => import('../uiservice/module/module-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('ibzprotesttaskaction', () => import('../uiservice/ibz-pro-test-task-action/ibz-pro-test-task-action-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('ibztestsuiteaction', () => import('../uiservice/ibztest-suite-action/ibztest-suite-action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibztestreportaction', () => import('../uiservice/ibztest-report-action/ibztest-report-action-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('ibzproreportlyaction', () => import('../uiservice/ibz-pro-reportly-action/ibz-pro-reportly-action-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('ibzdailyaction', () => import('../uiservice/ibzdaily-action/ibzdaily-action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzprotodoaction', () => import('../uiservice/ibzpro-to-do-action/ibzpro-to-do-action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('projecttaskestimate', () => import('../uiservice/project-taskestimate/project-taskestimate-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibztaskaction', () => import('../uiservice/ibztask-action/ibztask-action-ui-service'));
