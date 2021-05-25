@@ -113,6 +113,16 @@
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
+  }, {
+    "codeName" : "Type",
+    "logicName" : "动态(根据类型过滤)",
+    "name" : "Type",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Type"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {

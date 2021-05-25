@@ -25,6 +25,7 @@ public interface IBZDailyActionMapper extends BaseMapper<IBZDailyAction> {
     List<IBZDailyAction> selectView(@Param("srf") IBZDailyActionSearchContext context, @Param("ew") Wrapper<IBZDailyAction> wrapper);
 
     Page<IBZDailyAction> searchDefault(IPage page, @Param("srf") IBZDailyActionSearchContext context, @Param("ew") Wrapper<IBZDailyAction> wrapper);
+    Page<IBZDailyAction> searchType(IPage page, @Param("srf") IBZDailyActionSearchContext context, @Param("ew") Wrapper<IBZDailyAction> wrapper);
     @Override
     IBZDailyAction selectById(Serializable id);
     @Override

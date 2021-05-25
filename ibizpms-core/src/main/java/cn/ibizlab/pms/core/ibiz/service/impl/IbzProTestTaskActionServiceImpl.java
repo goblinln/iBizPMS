@@ -279,6 +279,15 @@ public class IbzProTestTaskActionServiceImpl extends ServiceImpl<IbzProTestTaskA
         return new PageImpl<IbzProTestTaskAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
+    /**
+     * 查询集合 动态(根据类型过滤)
+     */
+    @Override
+    public Page<IbzProTestTaskAction> searchType(IbzProTestTaskActionSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzProTestTaskAction> pages=baseMapper.searchType(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IbzProTestTaskAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
 
 
 

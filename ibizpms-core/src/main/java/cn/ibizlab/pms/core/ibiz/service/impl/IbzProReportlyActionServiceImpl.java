@@ -279,6 +279,15 @@ public class IbzProReportlyActionServiceImpl extends ServiceImpl<IbzProReportlyA
         return new PageImpl<IbzProReportlyAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
+    /**
+     * 查询集合 动态(根据类型过滤)
+     */
+    @Override
+    public Page<IbzProReportlyAction> searchType(IbzProReportlyActionSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzProReportlyAction> pages=baseMapper.searchType(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IbzProReportlyAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
 
 
 

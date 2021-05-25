@@ -324,8 +324,7 @@ export class UIServiceBase {
         if (!Environment.enablePermissionValid) {
             return 1;
         }
-        const authService = new AuthServiceBase(this.getStore());
-        return authService.getResourcePermission(authService.sysOPPrivsMap.get(tag)) ? 1 : 0;
+        return this.authService.getResourcePermission(this.authService.sysOPPrivsMap.get(tag)) ? 1 : 0;
     }
 
     /**

@@ -178,6 +178,28 @@ public class IBZTestSuiteActionResource {
                 .body(new PageImpl(ibztestsuiteactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@IBZTestSuiteActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"套件日志" } ,notes = "获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibztestsuiteactions/fetchtype")
+	public ResponseEntity<List<IBZTestSuiteActionDTO>> fetchtype(@RequestBody IBZTestSuiteActionSearchContext context) {
+        Page<IBZTestSuiteAction> domains = ibztestsuiteactionService.searchType(context) ;
+        List<IBZTestSuiteActionDTO> list = ibztestsuiteactionMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IBZTestSuiteActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"套件日志" } ,notes = "查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibztestsuiteactions/searchtype")
+	public ResponseEntity<Page<IBZTestSuiteActionDTO>> searchType(@RequestBody IBZTestSuiteActionSearchContext context) {
+        Page<IBZTestSuiteAction> domains = ibztestsuiteactionService.searchType(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibztestsuiteactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibztestsuiteactions/{ibztestsuiteaction_id}/{action}")
@@ -314,6 +336,29 @@ public class IBZTestSuiteActionResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibztestsuiteactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
+	@ApiOperation(value = "根据测试套件获取动态(根据类型过滤)", tags = {"套件日志" } ,notes = "根据测试套件获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/ibztestsuiteactions/fetchtype")
+	public ResponseEntity<List<IBZTestSuiteActionDTO>> fetchIBZTestSuiteActionTypeByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody IBZTestSuiteActionSearchContext context) {
+        context.setN_objectid_eq(testsuite_id);
+        Page<IBZTestSuiteAction> domains = ibztestsuiteactionService.searchType(context) ;
+        List<IBZTestSuiteActionDTO> list = ibztestsuiteactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
+	@ApiOperation(value = "根据测试套件查询动态(根据类型过滤)", tags = {"套件日志" } ,notes = "根据测试套件查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/ibztestsuiteactions/searchtype")
+	public ResponseEntity<Page<IBZTestSuiteActionDTO>> searchIBZTestSuiteActionTypeByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody IBZTestSuiteActionSearchContext context) {
+        context.setN_objectid_eq(testsuite_id);
+        Page<IBZTestSuiteAction> domains = ibztestsuiteactionService.searchType(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibztestsuiteactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品测试套件建立套件日志", tags = {"套件日志" },  notes = "根据产品测试套件建立套件日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/ibztestsuiteactions")
@@ -439,6 +484,29 @@ public class IBZTestSuiteActionResource {
 	public ResponseEntity<Page<IBZTestSuiteActionDTO>> searchIBZTestSuiteActionDefaultByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody IBZTestSuiteActionSearchContext context) {
         context.setN_objectid_eq(testsuite_id);
         Page<IBZTestSuiteAction> domains = ibztestsuiteactionService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibztestsuiteactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品测试套件获取动态(根据类型过滤)", tags = {"套件日志" } ,notes = "根据产品测试套件获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/ibztestsuiteactions/fetchtype")
+	public ResponseEntity<List<IBZTestSuiteActionDTO>> fetchIBZTestSuiteActionTypeByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id,@RequestBody IBZTestSuiteActionSearchContext context) {
+        context.setN_objectid_eq(testsuite_id);
+        Page<IBZTestSuiteAction> domains = ibztestsuiteactionService.searchType(context) ;
+        List<IBZTestSuiteActionDTO> list = ibztestsuiteactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品测试套件查询动态(根据类型过滤)", tags = {"套件日志" } ,notes = "根据产品测试套件查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/ibztestsuiteactions/searchtype")
+	public ResponseEntity<Page<IBZTestSuiteActionDTO>> searchIBZTestSuiteActionTypeByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody IBZTestSuiteActionSearchContext context) {
+        context.setN_objectid_eq(testsuite_id);
+        Page<IBZTestSuiteAction> domains = ibztestsuiteactionService.searchType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibztestsuiteactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}

@@ -25,6 +25,7 @@ public interface IBZTestSuiteActionMapper extends BaseMapper<IBZTestSuiteAction>
     List<IBZTestSuiteAction> selectView(@Param("srf") IBZTestSuiteActionSearchContext context, @Param("ew") Wrapper<IBZTestSuiteAction> wrapper);
 
     Page<IBZTestSuiteAction> searchDefault(IPage page, @Param("srf") IBZTestSuiteActionSearchContext context, @Param("ew") Wrapper<IBZTestSuiteAction> wrapper);
+    Page<IBZTestSuiteAction> searchType(IPage page, @Param("srf") IBZTestSuiteActionSearchContext context, @Param("ew") Wrapper<IBZTestSuiteAction> wrapper);
     @Override
     IBZTestSuiteAction selectById(Serializable id);
     @Override

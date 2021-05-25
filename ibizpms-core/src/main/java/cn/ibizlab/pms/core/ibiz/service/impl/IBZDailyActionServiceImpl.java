@@ -279,6 +279,15 @@ public class IBZDailyActionServiceImpl extends ServiceImpl<IBZDailyActionMapper,
         return new PageImpl<IBZDailyAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
+    /**
+     * 查询集合 动态(根据类型过滤)
+     */
+    @Override
+    public Page<IBZDailyAction> searchType(IBZDailyActionSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZDailyAction> pages=baseMapper.searchType(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IBZDailyAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
 
 
 

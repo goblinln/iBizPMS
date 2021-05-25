@@ -178,6 +178,28 @@ public class IBZDailyActionResource {
                 .body(new PageImpl(ibzdailyactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@IBZDailyActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"日报日志" } ,notes = "获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzdailyactions/fetchtype")
+	public ResponseEntity<List<IBZDailyActionDTO>> fetchtype(@RequestBody IBZDailyActionSearchContext context) {
+        Page<IBZDailyAction> domains = ibzdailyactionService.searchType(context) ;
+        List<IBZDailyActionDTO> list = ibzdailyactionMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IBZDailyActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"日报日志" } ,notes = "查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzdailyactions/searchtype")
+	public ResponseEntity<Page<IBZDailyActionDTO>> searchType(@RequestBody IBZDailyActionSearchContext context) {
+        Page<IBZDailyAction> domains = ibzdailyactionService.searchType(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzdailyactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/{ibzdailyaction_id}/{action}")
@@ -311,6 +333,29 @@ public class IBZDailyActionResource {
 	public ResponseEntity<Page<IBZDailyActionDTO>> searchIBZDailyActionDefaultByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IBZDailyActionSearchContext context) {
         context.setN_objectid_eq(ibzdaily_id);
         Page<IBZDailyAction> domains = ibzdailyactionService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzdailyactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
+	@ApiOperation(value = "根据日报获取动态(根据类型过滤)", tags = {"日报日志" } ,notes = "根据日报获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/{ibzdaily_id}/ibzdailyactions/fetchtype")
+	public ResponseEntity<List<IBZDailyActionDTO>> fetchIBZDailyActionTypeByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody IBZDailyActionSearchContext context) {
+        context.setN_objectid_eq(ibzdaily_id);
+        Page<IBZDailyAction> domains = ibzdailyactionService.searchType(context) ;
+        List<IBZDailyActionDTO> list = ibzdailyactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
+	@ApiOperation(value = "根据日报查询动态(根据类型过滤)", tags = {"日报日志" } ,notes = "根据日报查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/{ibzdaily_id}/ibzdailyactions/searchtype")
+	public ResponseEntity<Page<IBZDailyActionDTO>> searchIBZDailyActionTypeByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IBZDailyActionSearchContext context) {
+        context.setN_objectid_eq(ibzdaily_id);
+        Page<IBZDailyAction> domains = ibzdailyactionService.searchType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzdailyactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}

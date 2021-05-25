@@ -25,6 +25,7 @@ public interface IBZStoryActionMapper extends BaseMapper<IBZStoryAction> {
     List<IBZStoryAction> selectView(@Param("srf") IBZStoryActionSearchContext context, @Param("ew") Wrapper<IBZStoryAction> wrapper);
 
     Page<IBZStoryAction> searchDefault(IPage page, @Param("srf") IBZStoryActionSearchContext context, @Param("ew") Wrapper<IBZStoryAction> wrapper);
+    Page<IBZStoryAction> searchType(IPage page, @Param("srf") IBZStoryActionSearchContext context, @Param("ew") Wrapper<IBZStoryAction> wrapper);
     @Override
     IBZStoryAction selectById(Serializable id);
     @Override

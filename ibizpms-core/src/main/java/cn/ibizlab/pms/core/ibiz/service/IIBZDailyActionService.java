@@ -45,6 +45,7 @@ public interface IIBZDailyActionService extends IService<IBZDailyAction> {
     List<IBZDailyAction> selectView(IBZDailyActionSearchContext context);
 
     Page<IBZDailyAction> searchDefault(IBZDailyActionSearchContext context);
+    Page<IBZDailyAction> searchType(IBZDailyActionSearchContext context);
     List<IBZDailyAction> selectByObjectid(Long ibzdailyid);
     void removeByObjectid(Long ibzdailyid);
     IBZDailyAction dynamicCall(Long key, String action, IBZDailyAction et);

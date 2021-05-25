@@ -129,6 +129,8 @@ public class IBZProWeeklyActionRuntime extends cn.ibizlab.pms.core.runtime.Syste
         IBZProWeeklyActionSearchContext searchContext = (IBZProWeeklyActionSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return ibzproweeklyactionService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("Type"))
+            return ibzproweeklyactionService.searchType(searchContext);    
         return null;
     }
 
@@ -297,6 +299,9 @@ public class IBZProWeeklyActionRuntime extends cn.ibizlab.pms.core.runtime.Syste
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
+        }
+        else if (action.equals("searchType")) {
+            return aroundDataSet("Type", point);
         }
         return point.proceed();
     }

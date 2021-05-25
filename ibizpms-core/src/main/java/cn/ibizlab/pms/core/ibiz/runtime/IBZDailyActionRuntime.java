@@ -129,6 +129,8 @@ public class IBZDailyActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
         IBZDailyActionSearchContext searchContext = (IBZDailyActionSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return ibzdailyactionService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("Type"))
+            return ibzdailyactionService.searchType(searchContext);    
         return null;
     }
 
@@ -297,6 +299,9 @@ public class IBZDailyActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
+        }
+        else if (action.equals("searchType")) {
+            return aroundDataSet("Type", point);
         }
         return point.proceed();
     }

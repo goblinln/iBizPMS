@@ -45,6 +45,7 @@ public interface IIbzProTestTaskActionService extends IService<IbzProTestTaskAct
     List<IbzProTestTaskAction> selectView(IbzProTestTaskActionSearchContext context);
 
     Page<IbzProTestTaskAction> searchDefault(IbzProTestTaskActionSearchContext context);
+    Page<IbzProTestTaskAction> searchType(IbzProTestTaskActionSearchContext context);
     List<IbzProTestTaskAction> selectByObjectid(Long id);
     void removeByObjectid(Long id);
     IbzProTestTaskAction dynamicCall(Long key, String action, IbzProTestTaskAction et);

@@ -45,6 +45,7 @@ public interface IIBZTestSuiteActionService extends IService<IBZTestSuiteAction>
     List<IBZTestSuiteAction> selectView(IBZTestSuiteActionSearchContext context);
 
     Page<IBZTestSuiteAction> searchDefault(IBZTestSuiteActionSearchContext context);
+    Page<IBZTestSuiteAction> searchType(IBZTestSuiteActionSearchContext context);
     List<IBZTestSuiteAction> selectByObjectid(Long id);
     void removeByObjectid(Long id);
     IBZTestSuiteAction dynamicCall(Long key, String action, IBZTestSuiteAction et);

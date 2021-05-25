@@ -178,6 +178,28 @@ public class IbzProReportlyActionResource {
                 .body(new PageImpl(ibzproreportlyactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@IbzProReportlyActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"汇报日志" } ,notes = "获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzproreportlyactions/fetchtype")
+	public ResponseEntity<List<IbzProReportlyActionDTO>> fetchtype(@RequestBody IbzProReportlyActionSearchContext context) {
+        Page<IbzProReportlyAction> domains = ibzproreportlyactionService.searchType(context) ;
+        List<IbzProReportlyActionDTO> list = ibzproreportlyactionMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IbzProReportlyActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"汇报日志" } ,notes = "查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzproreportlyactions/searchtype")
+	public ResponseEntity<Page<IbzProReportlyActionDTO>> searchType(@RequestBody IbzProReportlyActionSearchContext context) {
+        Page<IbzProReportlyAction> domains = ibzproreportlyactionService.searchType(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzproreportlyactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyactions/{ibzproreportlyaction_id}/{action}")
@@ -311,6 +333,29 @@ public class IbzProReportlyActionResource {
 	public ResponseEntity<Page<IbzProReportlyActionDTO>> searchIbzProReportlyActionDefaultByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody IbzProReportlyActionSearchContext context) {
         context.setN_objectid_eq(ibzreportly_id);
         Page<IbzProReportlyAction> domains = ibzproreportlyactionService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzproreportlyactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
+	@ApiOperation(value = "根据汇报获取动态(根据类型过滤)", tags = {"汇报日志" } ,notes = "根据汇报获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/{ibzreportly_id}/ibzproreportlyactions/fetchtype")
+	public ResponseEntity<List<IbzProReportlyActionDTO>> fetchIbzProReportlyActionTypeByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id,@RequestBody IbzProReportlyActionSearchContext context) {
+        context.setN_objectid_eq(ibzreportly_id);
+        Page<IbzProReportlyAction> domains = ibzproreportlyactionService.searchType(context) ;
+        List<IbzProReportlyActionDTO> list = ibzproreportlyactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
+	@ApiOperation(value = "根据汇报查询动态(根据类型过滤)", tags = {"汇报日志" } ,notes = "根据汇报查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/{ibzreportly_id}/ibzproreportlyactions/searchtype")
+	public ResponseEntity<Page<IbzProReportlyActionDTO>> searchIbzProReportlyActionTypeByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody IbzProReportlyActionSearchContext context) {
+        context.setN_objectid_eq(ibzreportly_id);
+        Page<IbzProReportlyAction> domains = ibzproreportlyactionService.searchType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproreportlyactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}

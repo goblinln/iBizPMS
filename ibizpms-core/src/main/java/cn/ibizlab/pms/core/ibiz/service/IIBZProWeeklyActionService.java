@@ -45,6 +45,7 @@ public interface IIBZProWeeklyActionService extends IService<IBZProWeeklyAction>
     List<IBZProWeeklyAction> selectView(IBZProWeeklyActionSearchContext context);
 
     Page<IBZProWeeklyAction> searchDefault(IBZProWeeklyActionSearchContext context);
+    Page<IBZProWeeklyAction> searchType(IBZProWeeklyActionSearchContext context);
     List<IBZProWeeklyAction> selectByObjectid(Long ibzweeklyid);
     void removeByObjectid(Long ibzweeklyid);
     IBZProWeeklyAction dynamicCall(Long key, String action, IBZProWeeklyAction et);

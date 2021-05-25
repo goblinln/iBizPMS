@@ -25,6 +25,7 @@ public interface IbzProReportlyActionMapper extends BaseMapper<IbzProReportlyAct
     List<IbzProReportlyAction> selectView(@Param("srf") IbzProReportlyActionSearchContext context, @Param("ew") Wrapper<IbzProReportlyAction> wrapper);
 
     Page<IbzProReportlyAction> searchDefault(IPage page, @Param("srf") IbzProReportlyActionSearchContext context, @Param("ew") Wrapper<IbzProReportlyAction> wrapper);
+    Page<IbzProReportlyAction> searchType(IPage page, @Param("srf") IbzProReportlyActionSearchContext context, @Param("ew") Wrapper<IbzProReportlyAction> wrapper);
     @Override
     IbzProReportlyAction selectById(Serializable id);
     @Override

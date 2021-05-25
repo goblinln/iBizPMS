@@ -303,6 +303,15 @@ public class IBZStoryActionServiceImpl extends ServiceImpl<IBZStoryActionMapper,
         return new PageImpl<IBZStoryAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
+    /**
+     * 查询集合 动态(根据类型过滤)
+     */
+    @Override
+    public Page<IBZStoryAction> searchType(IBZStoryActionSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZStoryAction> pages=baseMapper.searchType(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IBZStoryAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
 
 
 

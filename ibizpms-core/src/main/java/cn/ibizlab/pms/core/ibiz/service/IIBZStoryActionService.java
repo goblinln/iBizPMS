@@ -45,6 +45,7 @@ public interface IIBZStoryActionService extends IService<IBZStoryAction> {
     List<IBZStoryAction> selectView(IBZStoryActionSearchContext context);
 
     Page<IBZStoryAction> searchDefault(IBZStoryActionSearchContext context);
+    Page<IBZStoryAction> searchType(IBZStoryActionSearchContext context);
     List<IBZStoryAction> selectByObjectid(Long id);
     void removeByObjectid(Long id);
     void saveByObjectid(Long id, List<IBZStoryAction> list) ;

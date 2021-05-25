@@ -25,6 +25,7 @@ public interface IbzProTestTaskActionMapper extends BaseMapper<IbzProTestTaskAct
     List<IbzProTestTaskAction> selectView(@Param("srf") IbzProTestTaskActionSearchContext context, @Param("ew") Wrapper<IbzProTestTaskAction> wrapper);
 
     Page<IbzProTestTaskAction> searchDefault(IPage page, @Param("srf") IbzProTestTaskActionSearchContext context, @Param("ew") Wrapper<IbzProTestTaskAction> wrapper);
+    Page<IbzProTestTaskAction> searchType(IPage page, @Param("srf") IbzProTestTaskActionSearchContext context, @Param("ew") Wrapper<IbzProTestTaskAction> wrapper);
     @Override
     IbzProTestTaskAction selectById(Serializable id);
     @Override

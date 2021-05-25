@@ -178,6 +178,28 @@ public class IBZStoryActionResource {
                 .body(new PageImpl(ibzstoryactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@IBZStoryActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"需求日志" } ,notes = "获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzstoryactions/fetchtype")
+	public ResponseEntity<List<IBZStoryActionDTO>> fetchtype(@RequestBody IBZStoryActionSearchContext context) {
+        Page<IBZStoryAction> domains = ibzstoryactionService.searchType(context) ;
+        List<IBZStoryActionDTO> list = ibzstoryactionMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IBZStoryActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"需求日志" } ,notes = "查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzstoryactions/searchtype")
+	public ResponseEntity<Page<IBZStoryActionDTO>> searchType(@RequestBody IBZStoryActionSearchContext context) {
+        Page<IBZStoryAction> domains = ibzstoryactionService.searchType(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzstoryactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzstoryactions/{ibzstoryaction_id}/{action}")
@@ -314,6 +336,29 @@ public class IBZStoryActionResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzstoryactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
+	@ApiOperation(value = "根据需求获取动态(根据类型过滤)", tags = {"需求日志" } ,notes = "根据需求获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/ibzstoryactions/fetchtype")
+	public ResponseEntity<List<IBZStoryActionDTO>> fetchIBZStoryActionTypeByStory(@PathVariable("story_id") Long story_id,@RequestBody IBZStoryActionSearchContext context) {
+        context.setN_objectid_eq(story_id);
+        Page<IBZStoryAction> domains = ibzstoryactionService.searchType(context) ;
+        List<IBZStoryActionDTO> list = ibzstoryactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
+	@ApiOperation(value = "根据需求查询动态(根据类型过滤)", tags = {"需求日志" } ,notes = "根据需求查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/ibzstoryactions/searchtype")
+	public ResponseEntity<Page<IBZStoryActionDTO>> searchIBZStoryActionTypeByStory(@PathVariable("story_id") Long story_id, @RequestBody IBZStoryActionSearchContext context) {
+        context.setN_objectid_eq(story_id);
+        Page<IBZStoryAction> domains = ibzstoryactionService.searchType(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzstoryactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品需求建立需求日志", tags = {"需求日志" },  notes = "根据产品需求建立需求日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/ibzstoryactions")
@@ -439,6 +484,29 @@ public class IBZStoryActionResource {
 	public ResponseEntity<Page<IBZStoryActionDTO>> searchIBZStoryActionDefaultByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody IBZStoryActionSearchContext context) {
         context.setN_objectid_eq(story_id);
         Page<IBZStoryAction> domains = ibzstoryactionService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzstoryactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品需求获取动态(根据类型过滤)", tags = {"需求日志" } ,notes = "根据产品需求获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/ibzstoryactions/fetchtype")
+	public ResponseEntity<List<IBZStoryActionDTO>> fetchIBZStoryActionTypeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody IBZStoryActionSearchContext context) {
+        context.setN_objectid_eq(story_id);
+        Page<IBZStoryAction> domains = ibzstoryactionService.searchType(context) ;
+        List<IBZStoryActionDTO> list = ibzstoryactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品需求查询动态(根据类型过滤)", tags = {"需求日志" } ,notes = "根据产品需求查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/ibzstoryactions/searchtype")
+	public ResponseEntity<Page<IBZStoryActionDTO>> searchIBZStoryActionTypeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody IBZStoryActionSearchContext context) {
+        context.setN_objectid_eq(story_id);
+        Page<IBZStoryAction> domains = ibzstoryactionService.searchType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzstoryactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}

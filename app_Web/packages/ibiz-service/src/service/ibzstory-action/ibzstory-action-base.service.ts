@@ -235,4 +235,21 @@ export class IBZStoryActionBaseService extends EntityBaseService<IIBZStoryAction
         }
         return this.http.post(`/ibzstoryactions/fetchdefault`, _data);
     }
+    /**
+     * FetchType
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZStoryActionService
+     */
+    async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/ibzstoryactions/fetchtype`, _data);
+        }
+        if (_context.story && true) {
+            return this.http.post(`/stories/${_context.story}/ibzstoryactions/fetchtype`, _data);
+        }
+        return this.http.post(`/ibzstoryactions/fetchtype`, _data);
+    }
 }

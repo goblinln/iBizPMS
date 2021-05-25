@@ -129,6 +129,8 @@ public class IBZStoryActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
         IBZStoryActionSearchContext searchContext = (IBZStoryActionSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return ibzstoryactionService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("Type"))
+            return ibzstoryactionService.searchType(searchContext);    
         return null;
     }
 
@@ -297,6 +299,9 @@ public class IBZStoryActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
+        }
+        else if (action.equals("searchType")) {
+            return aroundDataSet("Type", point);
         }
         return point.proceed();
     }
