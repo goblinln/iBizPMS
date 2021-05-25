@@ -13,6 +13,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
     }
   }, {
+    "name" : "运维主管-ZT_PRODUCT[产品Bug管理（公开）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/BUGMANAGE.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
     "name" : "运维主管-ZT_PROJECT[项目查看（创建者或者更新者）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -157,6 +167,16 @@
     "getPSDEUserRole" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_DEV.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "运维主管-ZT_PRODUCT[产品版本管理（公开）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/BUILDMANAGE.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,

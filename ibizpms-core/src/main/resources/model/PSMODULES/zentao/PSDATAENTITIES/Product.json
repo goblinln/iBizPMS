@@ -4080,6 +4080,9 @@
     "logicName" : "Bug管理",
     "name" : "BUGMANAGE"
   }, {
+    "logicName" : "版本管理",
+    "name" : "BUILDMANAGE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
@@ -4101,10 +4104,31 @@
   "getAllPSDEUserRoles" : [ {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/BUGMANAGE.json",
     "name" : "产品Bug管理（公开）（跟随角色）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "BUGMANAGE",
+      "name" : "BUGMANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "BUGMANAGE"
+      }
+    } ],
     "roleTag" : "BUGMANAGE",
     "userCat" : "CAT1",
     "userDRAction" : "READ",
     "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/BUILDMANAGE.json",
+    "name" : "产品版本管理（公开）（跟随角色）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "BUILDMANAGE",
+      "name" : "BUILDMANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "BUILDMANAGE"
+      }
+    } ],
+    "roleTag" : "BUILDMANAGE",
+    "userDRAction" : "READ"
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_All.json",

@@ -1,6 +1,6 @@
 {
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_TaskManage.json",
-  "name" : "项目任务管理（公开）（跟随角色）",
+  "name" : "项目任务管理（公开项目）（跟随角色）",
   "getPSDEDataSet" : {
     "modelref" : true,
     "id" : "OpenQuery"

@@ -117,7 +117,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProject__UPDATE"
     },
     "userCat" : "CAT1",
     "userTag4" : "update",
@@ -132,7 +132,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProject__UPDATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -146,7 +146,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProject__UPDATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -160,7 +160,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ZTProject__DELETE"
     },
     "userCat" : "CAT1",
     "userTag4" : "remove",
@@ -175,7 +175,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ZTProject__DELETE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -189,7 +189,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ZTProject__DELETE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -589,7 +589,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProject__UPDATE"
     },
     "builtinMethod" : false
   } ],
@@ -1832,7 +1832,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProject__UPDATE"
     },
     "userCat" : "CAT1",
     "userTag4" : "update",
@@ -1847,7 +1847,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProject__UPDATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -1861,7 +1861,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProject__UPDATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -1875,7 +1875,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ZTProject__DELETE"
     },
     "userCat" : "CAT1",
     "userTag4" : "remove",
@@ -1890,7 +1890,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ZTProject__DELETE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -1904,7 +1904,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ZTProject__DELETE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -2304,7 +2304,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProject__UPDATE"
     },
     "builtinMethod" : false
   }, {
@@ -19706,22 +19706,72 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "项目-激活",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "ACTIVATE",
+    "id" : "ZTProject__ACTIVATE"
+  }, {
     "logicName" : "激活",
     "name" : "ACTIVATE"
   }, {
     "logicName" : "指派",
     "name" : "ASSIGNTO"
   }, {
+    "logicName" : "项目-指派",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "ASSIGNTO",
+    "id" : "ZTProject__ASSIGNTO"
+  }, {
+    "logicName" : "项目-取消",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "CANCEL",
+    "id" : "ZTProject__CANCEL"
+  }, {
     "logicName" : "取消",
     "name" : "CANCEL"
+  }, {
+    "logicName" : "项目-关闭",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "CLOSE",
+    "id" : "ZTProject__CLOSE"
   }, {
     "logicName" : "关闭",
     "name" : "CLOSE"
   }, {
+    "logicName" : "项目-任务工时",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "CONSUM",
+    "id" : "ZTProject__CONSUM"
+  }, {
     "logicName" : "任务工时",
     "name" : "CONSUM"
   }, {
-    "logicName" : "项目创建",
+    "logicName" : "项目-创建",
     "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "TASKMANAGE",
     "getMapPSDER" : {
@@ -19737,8 +19787,38 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "项目-删除",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "DELETE",
+    "id" : "ZTProject__DELETE"
+  }, {
     "logicName" : "任务收藏",
     "name" : "FAVORITES"
+  }, {
+    "logicName" : "项目-任务收藏",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "FAVORITES",
+    "id" : "ZTProject__FAVORITES"
+  }, {
+    "logicName" : "项目-完成",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "FINISH",
+    "id" : "ZTProject__FINISH"
   }, {
     "logicName" : "完成",
     "name" : "FINISH"
@@ -19746,17 +19826,77 @@
     "logicName" : "分解任务",
     "name" : "FJTASK"
   }, {
+    "logicName" : "项目-分解任务",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "FJTASK",
+    "id" : "ZTProject__FJTASK"
+  }, {
+    "logicName" : "项目-转交",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "FORWARD",
+    "id" : "ZTProject__FORWARD"
+  }, {
     "logicName" : "转交",
     "name" : "FORWARD"
   }, {
     "logicName" : "任务取消收藏",
     "name" : "NFAVORITES"
   }, {
+    "logicName" : "项目-任务取消收藏",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "NFAVORITES",
+    "id" : "ZTProject__NFAVORITES"
+  }, {
+    "logicName" : "项目-暂停",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "PAUSE",
+    "id" : "ZTProject__PAUSE"
+  }, {
     "logicName" : "暂停",
     "name" : "PAUSE"
   }, {
+    "logicName" : "项目-读取",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "READ",
+    "id" : "ZTProject__READ"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "项目-工时录入",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "RECORDESTIMATE",
+    "id" : "ZTProject__RECORDESTIMATE"
   }, {
     "logicName" : "工时录入",
     "name" : "RECORDESTIMATE"
@@ -19764,14 +19904,64 @@
     "logicName" : "继续",
     "name" : "RESTART"
   }, {
+    "logicName" : "项目-继续",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "RESTART",
+    "id" : "ZTProject__RESTART"
+  }, {
+    "logicName" : "项目-开始",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "START",
+    "id" : "ZTProject__START"
+  }, {
     "logicName" : "开始",
     "name" : "START"
+  }, {
+    "logicName" : "项目-任务子任务",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "SUBTASKS",
+    "id" : "ZTProject__SUBTASKS"
   }, {
     "logicName" : "任务子任务",
     "name" : "SUBTASKS"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  }, {
+    "logicName" : "项目-更新",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "ZTProject__UPDATE"
+  }, {
+    "logicName" : "项目-需求变更确认",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "XQCHANGE",
+    "id" : "ZTProject__XQCHANGE"
   }, {
     "logicName" : "需求变更确认",
     "name" : "XQCHANGE"

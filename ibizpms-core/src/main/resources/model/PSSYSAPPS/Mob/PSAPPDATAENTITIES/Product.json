@@ -1914,6 +1914,9 @@
     "logicName" : "Bug管理",
     "name" : "BUGMANAGE"
   }, {
+    "logicName" : "版本管理",
+    "name" : "BUILDMANAGE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {

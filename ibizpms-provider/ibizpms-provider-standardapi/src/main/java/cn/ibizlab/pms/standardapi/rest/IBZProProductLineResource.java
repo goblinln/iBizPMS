@@ -115,6 +115,24 @@ public class IBZProProductLineResource {
                 .body(new PageImpl(ibzproproductlineMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @ApiOperation(value = "保存产品线", tags = {"产品线" },  notes = "保存产品线")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductlines/save")
+    public ResponseEntity<IBZProProductLineDTO> save(@RequestBody IBZProProductLineDTO ibzproproductlinedto) {
+        IBZProProductLine domain = ibzproproductlineMapping.toDomain(ibzproproductlinedto);
+        ibzproproductlineService.save(domain);
+        IBZProProductLineDTO dto = ibzproproductlineMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproproductlineRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "批量保存产品线", tags = {"产品线" },  notes = "批量保存产品线")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductlines/savebatch")
+    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBZProProductLineDTO> ibzproproductlinedtos) {
+        ibzproproductlineService.saveBatch(ibzproproductlineMapping.toDomain(ibzproproductlinedtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("@IBZProProductLineRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建产品线", tags = {"产品线" },  notes = "新建产品线")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductlines")
