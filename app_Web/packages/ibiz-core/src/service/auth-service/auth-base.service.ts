@@ -112,7 +112,11 @@ export class AuthServiceBase {
     public registerDEOPPrivs(opts: IPSAppDataEntity) {
         if (opts.getAllPSDEOPPrivs()) {
             opts.getAllPSDEOPPrivs()?.forEach((item: IPSDEOPPriv) => {
-                this.deOPPrivsMap.set(item.name, item);
+                if (item.mapPSDEName && item.mapPSDEOPPrivName) {
+                    this.deOPPrivsMap.set(`${item.mapPSDEName}_${item.mapPSDEOPPrivName}`, item);
+                } else {
+                    this.deOPPrivsMap.set(item.name, item);
+                }
             })
         }
     }
@@ -234,7 +238,10 @@ export class AuthServiceBase {
      * @memberof AuthServiceBase
      */
     public getActivedDeOPPrivs(key: string, dataaccaction: string) {
-        const tempOPPriv = this.deOPPrivsMap.get(dataaccaction);
+        let tempOPPriv = this.deOPPrivsMap.get(dataaccaction);
+        if (this.context['srfparentdemapname']) {
+            tempOPPriv = this.deOPPrivsMap.get(`${this.context['srfparentdemapname']}_${dataaccaction}`);
+        }
         if (this.dataAccCtrlMode == 0) {
             return 1;
         } else if (this.dataAccCtrlMode == 1) {

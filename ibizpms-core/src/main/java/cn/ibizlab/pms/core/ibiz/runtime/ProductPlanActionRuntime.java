@@ -181,8 +181,26 @@ public class ProductPlanActionRuntime extends cn.ibizlab.pms.core.runtime.System
             else if (iPSDEAction.getName().equals("CheckKey")) {
                 return productplanactionService.checkKey((ProductPlanAction) args[0]);
             }
+            else if (iPSDEAction.getName().equals("Comment")) {
+                return productplanactionService.comment((ProductPlanAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("CreateHis")) {
+                return productplanactionService.createHis((ProductPlanAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("ManagePmsEe")) {
+                return productplanactionService.managePmsEe((ProductPlanAction) args[0]);
+            }
             else if (iPSDEAction.getName().equals("Save")) {
                 return productplanactionService.save((ProductPlanAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("sendMarkDone")) {
+                return productplanactionService.sendMarkDone((ProductPlanAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("sendTodo")) {
+                return productplanactionService.sendTodo((ProductPlanAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("sendToread")) {
+                return productplanactionService.sendToread((ProductPlanAction) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
             if (strActionName.equals(DEActions.CREATE)) {
@@ -294,8 +312,26 @@ public class ProductPlanActionRuntime extends cn.ibizlab.pms.core.runtime.System
         else if (action.equals("checkKey")) {
             return aroundAction("CheckKey", point);
         }
+        else if (action.equals("comment")) {
+            return aroundAction("Comment", point);
+        }
+        else if (action.equals("createHis")) {
+            return aroundAction("CreateHis", point);
+        }
+        else if (action.equals("managePmsEe")) {
+            return aroundAction("ManagePmsEe", point);
+        }
         else if (action.equals("save")) {
             return aroundAction("Save", point);
+        }
+        else if (action.equals("sendMarkDone")) {
+            return aroundAction("sendMarkDone", point);
+        }
+        else if (action.equals("sendTodo")) {
+            return aroundAction("sendTodo", point);
+        }
+        else if (action.equals("sendToread")) {
+            return aroundAction("sendToread", point);
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);

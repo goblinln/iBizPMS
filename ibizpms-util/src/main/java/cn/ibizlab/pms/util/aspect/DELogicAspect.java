@@ -692,6 +692,7 @@ public class DELogicAspect {
         validLogic.put("productplangetdraftafter.bpmn", 1);
         validLogic.put("productplangetoldplannameexec.bpmn", 1);
         validLogic.put("productplanmobproductplancounterexec.bpmn", 1);
+        validLogic.put("productplanactioncommentexec.bpmn", 1);
         validLogic.put("productstatsgetafter.bpmn", 1);
         validLogic.put("projectcancelprojecttopexec.bpmn", 1);
         validLogic.put("projectmobprojectcountexec.bpmn", 1);

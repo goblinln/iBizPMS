@@ -187,6 +187,51 @@ public class ProductPlanActionServiceImpl extends ServiceImpl<ProductPlanActionM
     }
     @Override
     @Transactional
+    public ProductPlanAction comment(ProductPlanAction et) {
+         return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean commentBatch(List<ProductPlanAction> etList) {
+        for(ProductPlanAction et : etList) {
+            comment(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public ProductPlanAction createHis(ProductPlanAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean createHisBatch(List<ProductPlanAction> etList) {
+        for(ProductPlanAction et : etList) {
+            createHis(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public ProductPlanAction managePmsEe(ProductPlanAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean managePmsEeBatch(List<ProductPlanAction> etList) {
+        for(ProductPlanAction et : etList) {
+            managePmsEe(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean save(ProductPlanAction et) {
         if(!saveOrUpdate(et)) {
             return false;
@@ -243,6 +288,51 @@ public class ProductPlanActionServiceImpl extends ServiceImpl<ProductPlanActionM
         if (update.size() > 0) {
             getProxyService().updateBatch(update);
         }
+    }
+
+    @Override
+    @Transactional
+    public ProductPlanAction sendMarkDone(ProductPlanAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendMarkDoneBatch(List<ProductPlanAction> etList) {
+        for(ProductPlanAction et : etList) {
+            sendMarkDone(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public ProductPlanAction sendTodo(ProductPlanAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendTodoBatch(List<ProductPlanAction> etList) {
+        for(ProductPlanAction et : etList) {
+            sendTodo(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public ProductPlanAction sendToread(ProductPlanAction et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendToreadBatch(List<ProductPlanAction> etList) {
+        for(ProductPlanAction et : etList) {
+            sendToread(et);
+        }
+        return true;
     }
 
 
