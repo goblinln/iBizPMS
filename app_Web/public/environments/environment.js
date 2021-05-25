@@ -31,4 +31,5 @@ window.Environment = {
     //loginUrl: 'http://ebsx.ibizee.cn/#/login',
     loginUrl: '',
     portalUrl: 'http://ebsx.ibizee.cn/',
+    dynamicConfigToolUrl: 'http://studio.ibizmodeling.cn/dynamictool/debug-bar/?origin=',
 }
