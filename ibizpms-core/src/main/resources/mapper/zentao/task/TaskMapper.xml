@@ -736,7 +736,7 @@
                 <![CDATA[ AND t1.DELETED = '0' ]]>
             </if>
 			<if test="true">
-                <![CDATA[ AND ((t1.storyVersion < t21.version and t21.`status` <>  'changed' and  (#{srf.n_status1_eq} is not null) or (#{srf.n_status1_eq} is null)) ]]>
+                <![CDATA[ AND (t1.storyVersion < t21.version and t21.`status` <>  'changed' and  (#{srf.n_status1_eq} is not null) or (#{srf.n_status1_eq} is null)) ]]>
             </if>
 			<include refid="searchMode" />
 		</trim>
