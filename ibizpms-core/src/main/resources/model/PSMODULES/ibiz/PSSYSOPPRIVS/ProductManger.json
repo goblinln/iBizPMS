@@ -153,6 +153,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     }
   }, {
+    "name" : "产品经理-ZT_DOCLIB[当前组织（读写）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/CURORG_RW.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+    }
+  }, {
     "name" : "产品经理-IBZPRO_PRODUCTLINE[当前组织（读）]",
     "getPSDEUserRole" : {
       "modelref" : true,

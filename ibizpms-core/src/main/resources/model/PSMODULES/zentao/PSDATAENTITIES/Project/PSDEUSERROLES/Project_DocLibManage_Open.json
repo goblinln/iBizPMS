@@ -5,6 +5,14 @@
     "modelref" : true,
     "id" : "OpenQuery"
   },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "DOCLIBMANAGE",
+    "name" : " Project_DocLibManage_DEV_DoclibManage",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DOCLIBMANAGE"
+    }
+  } ],
   "roleTag" : "Project_DocLibManage_Open",
   "userCat" : "CAT1",
   "userDRAction" : "READ",

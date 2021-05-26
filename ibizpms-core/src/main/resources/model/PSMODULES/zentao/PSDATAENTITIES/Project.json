@@ -6980,6 +6980,14 @@
       "modelref" : true,
       "id" : "OpenQuery"
     },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "DOCLIBMANAGE",
+      "name" : " Project_DocLibManage_DEV_DoclibManage",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DOCLIBMANAGE"
+      }
+    } ],
     "roleTag" : "Project_DocLibManage_Open",
     "userCat" : "CAT1",
     "userDRAction" : "READ",
@@ -7380,7 +7388,9 @@
       }
     } ],
     "roleTag" : "Project_ModuleManage_DEV",
-    "userDRAction" : "READ"
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_ModuleManage_Open.json",
     "name" : "项目模块管理（公开项目）（跟随角色）",
@@ -7416,7 +7426,9 @@
       }
     } ],
     "roleTag" : "Project_ModuleManage_OpenBy",
-    "userDRAction" : "READ"
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_All.json",
@@ -7555,7 +7567,9 @@
       }
     } ],
     "roleTag" : "Project_TaskManage_OpenBy",
-    "userDRAction" : "READ"
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
   } ],
   "codeName" : "Project",
   "dEType" : 1,

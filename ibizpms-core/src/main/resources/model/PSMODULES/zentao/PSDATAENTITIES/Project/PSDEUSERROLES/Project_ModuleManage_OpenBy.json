@@ -14,5 +14,7 @@
     }
   } ],
   "roleTag" : "Project_ModuleManage_OpenBy",
-  "userDRAction" : "READ"
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
 }

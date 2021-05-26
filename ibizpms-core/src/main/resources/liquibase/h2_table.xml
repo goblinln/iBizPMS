@@ -773,14 +773,6 @@
                 </column>
                 <column name="DOCLIBSN" remarks="" type="BIGINT">
                 </column>
-                <column name="CREATEMAN" remarks="" type="VARCHAR(60)">
-                </column>
-                <column name="UPDATEMAN" remarks="" type="VARCHAR(60)">
-                </column>
-                <column name="CREATEDATE" remarks="" type="DATETIME">
-                </column>
-                <column name="UPDATEDATE" remarks="" type="DATETIME">
-                </column>
         </createTable>
     </changeSet>
 

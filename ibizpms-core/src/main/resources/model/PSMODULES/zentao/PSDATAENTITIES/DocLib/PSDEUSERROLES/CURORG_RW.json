@@ -3,11 +3,32 @@
   "name" : "当前组织（读写）",
   "orgDR" : 1,
   "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "MANAGE",
+    "name" : "MANAGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "Zt_project__MANAGE"
+    }
+  }, {
+    "dataAccessAction" : "COLLECT",
+    "name" : "COLLECT",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "Zt_project__COLLECT"
+    }
+  }, {
     "dataAccessAction" : "DELETE",
     "name" : "DELETE",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
+    }
+  }, {
+    "dataAccessAction" : "UNCOLLECT",
+    "name" : "UNCOLLECT",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "Zt_project__UNCOLLECT"
     }
   }, {
     "dataAccessAction" : "READ",
@@ -22,6 +43,13 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "CREATE",
+    "name" : "CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "Zt_project__CREATE"
     }
   } ],
   "roleTag" : "CURORG_RW",

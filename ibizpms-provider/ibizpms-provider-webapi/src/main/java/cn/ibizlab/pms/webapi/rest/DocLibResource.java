@@ -75,7 +75,6 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @VersionCheck(entity = "doclib" , versionfield = "updatedate")
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'UPDATE')")
     @ApiOperation(value = "更新文档库", tags = {"文档库" },  notes = "更新文档库")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}")
@@ -139,6 +138,7 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doclibService.checkKey(doclibMapping.toDomain(doclibdto)));
     }
 
+    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'COLLECT')")
     @ApiOperation(value = "收藏", tags = {"文档库" },  notes = "收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/collect")
     public ResponseEntity<DocLibDTO> collect(@PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
@@ -176,6 +176,7 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'UNCOLLECT')")
     @ApiOperation(value = "取消收藏", tags = {"文档库" },  notes = "取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/uncollect")
     public ResponseEntity<DocLibDTO> unCollect(@PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
@@ -424,7 +425,6 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @VersionCheck(entity = "doclib" , versionfield = "updatedate")
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品更新文档库", tags = {"文档库" },  notes = "根据产品更新文档库")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}")
@@ -487,6 +487,7 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doclibService.checkKey(doclibMapping.toDomain(doclibdto)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品文档库", tags = {"文档库" },  notes = "根据产品文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/collect")
     public ResponseEntity<DocLibDTO> collectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
@@ -524,6 +525,7 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品文档库", tags = {"文档库" },  notes = "根据产品文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/uncollect")
     public ResponseEntity<DocLibDTO> unCollectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
@@ -771,7 +773,6 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @VersionCheck(entity = "doclib" , versionfield = "updatedate")
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目更新文档库", tags = {"文档库" },  notes = "根据项目更新文档库")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}")
@@ -834,6 +835,7 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doclibService.checkKey(doclibMapping.toDomain(doclibdto)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目文档库", tags = {"文档库" },  notes = "根据项目文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/collect")
     public ResponseEntity<DocLibDTO> collectByProject(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
@@ -871,6 +873,7 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目文档库", tags = {"文档库" },  notes = "根据项目文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/uncollect")
     public ResponseEntity<DocLibDTO> unCollectByProject(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
