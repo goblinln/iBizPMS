@@ -128,7 +128,7 @@ public class SysEmployeeExService extends SysEmployeeServiceImpl {
             if (!"".equals(account)){
                 context.setN_username_in(account);
             }
-            context.setN_username_notin(getAccounts(StaticDict.Team__type.PROJECT.getValue(), params.get("root"), params.get("account") != null ?  params.get("account").toString() : null));
+//            context.setN_username_notin(getAccounts(StaticDict.Team__type.PROJECT.getValue(), params.get("root"), params.get("account") != null ?  params.get("account").toString() : null));
         }
         return this.searchDefault(context);
     }
