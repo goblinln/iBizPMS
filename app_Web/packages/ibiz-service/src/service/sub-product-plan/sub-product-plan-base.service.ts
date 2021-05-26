@@ -169,6 +169,61 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         return this.condCache.get('view');
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubProductPlanService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productplan && _context.subproductplan) {
+            return this.http.delete(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/${_context.subproductplan}/remove`);
+        }
+        if (_context.productplan && _context.subproductplan) {
+            return this.http.delete(`/productplans/${_context.productplan}/subproductplans/${_context.subproductplan}/remove`);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubProductPlanService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productplan && _context.subproductplan) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/${_context.subproductplan}/update`, _data);
+        }
+        if (_context.productplan && _context.subproductplan) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/productplans/${_context.productplan}/subproductplans/${_context.subproductplan}/update`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubProductPlanService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productplan && _context.subproductplan) {
+            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/${_context.subproductplan}/get`);
+            return res;
+        }
+        if (_context.productplan && _context.subproductplan) {
+            const res = await this.http.get(`/productplans/${_context.productplan}/subproductplans/${_context.subproductplan}/get`);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -213,61 +268,6 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         }
         if (_context.productplan && true) {
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/fetchproductquery`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SubProductPlanService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && _context.subproductplan) {
-            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/${_context.subproductplan}/get`);
-            return res;
-        }
-        if (_context.productplan && _context.subproductplan) {
-            const res = await this.http.get(`/productplans/${_context.productplan}/subproductplans/${_context.subproductplan}/get`);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SubProductPlanService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && _context.subproductplan) {
-            return this.http.delete(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/${_context.subproductplan}/remove`);
-        }
-        if (_context.productplan && _context.subproductplan) {
-            return this.http.delete(`/productplans/${_context.productplan}/subproductplans/${_context.subproductplan}/remove`);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SubProductPlanService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && _context.subproductplan) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/${_context.subproductplan}/update`, _data);
-        }
-        if (_context.productplan && _context.subproductplan) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/productplans/${_context.productplan}/subproductplans/${_context.subproductplan}/update`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
