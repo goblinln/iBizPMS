@@ -138,7 +138,6 @@ public class IbzProBugActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprobugactionService.checkKey(ibzprobugactionMapping.toDomain(ibzprobugactiondto)));
     }
 
-    @PreAuthorize("@IbzProBugActionRuntime.test(#ibzprobugaction_id,'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"Bug日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/{ibzprobugaction_id}/comment")
     public ResponseEntity<IbzProBugActionDTO> comment(@PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
@@ -171,7 +170,6 @@ public class IbzProBugActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("@IbzProBugActionRuntime.test(#ibzprobugaction_id,'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"Bug日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/{ibzprobugaction_id}/editcomment")
     public ResponseEntity<IbzProBugActionDTO> editComment(@PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
@@ -422,7 +420,6 @@ public class IbzProBugActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprobugactionService.checkKey(ibzprobugactionMapping.toDomain(ibzprobugactiondto)));
     }
 
-    @PreAuthorize("@BugRuntime.test(#bug_id,'MANAGE')")
     @ApiOperation(value = "根据BugBug日志", tags = {"Bug日志" },  notes = "根据BugBug日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/comment")
     public ResponseEntity<IbzProBugActionDTO> commentByBug(@PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
@@ -451,7 +448,6 @@ public class IbzProBugActionResource {
         boolean result = ibzprobugactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@BugRuntime.test(#bug_id,'MANAGE')")
     @ApiOperation(value = "根据BugBug日志", tags = {"Bug日志" },  notes = "根据BugBug日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/editcomment")
     public ResponseEntity<IbzProBugActionDTO> editCommentByBug(@PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
@@ -688,7 +684,6 @@ public class IbzProBugActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprobugactionService.checkKey(ibzprobugactionMapping.toDomain(ibzprobugactiondto)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品BugBug日志", tags = {"Bug日志" },  notes = "根据产品BugBug日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/comment")
     public ResponseEntity<IbzProBugActionDTO> commentByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {
@@ -717,7 +712,6 @@ public class IbzProBugActionResource {
         boolean result = ibzprobugactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品BugBug日志", tags = {"Bug日志" },  notes = "根据产品BugBug日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/ibzprobugactions/{ibzprobugaction_id}/editcomment")
     public ResponseEntity<IbzProBugActionDTO> editCommentByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @PathVariable("ibzprobugaction_id") Long ibzprobugaction_id, @RequestBody IbzProBugActionDTO ibzprobugactiondto) {

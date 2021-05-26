@@ -16,7 +16,7 @@
     "name" : "项目成员-ZT_PROJECT[项目任务管理（公开）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_TaskManage.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_TaskManage_Open.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
@@ -136,7 +136,7 @@
     "name" : "项目成员-ZT_PROJECT[项目模块管理（公开）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_ModuleManage.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_ModuleManage_Open.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,

@@ -106,7 +106,7 @@
     "name" : "项目经理-ZT_PROJECT[项目任务管理（公开）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_TaskManage.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_TaskManage_Open.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
@@ -161,6 +161,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
+    "name" : "项目经理-ZT_PRODUCT[产品测试版本管理（公开）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/TESTTASKMANAGE.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     }
   }, {
     "name" : "项目经理-ZT_TASK[当前组织（创建）]",
@@ -236,7 +246,7 @@
     "name" : "项目经理-ZT_PROJECT[项目模块管理（公开）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_ModuleManage.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_ModuleManage_Open.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,

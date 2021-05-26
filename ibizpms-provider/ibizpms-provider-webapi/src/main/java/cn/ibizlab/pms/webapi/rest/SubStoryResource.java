@@ -3057,7 +3057,7 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(storyService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'ACTIVATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品需求需求", tags = {"需求" },  notes = "根据产品需求需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}/activate")
     public ResponseEntity<SubStoryDTO> activateByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -3093,7 +3093,7 @@ public class SubStoryResource {
         boolean result = storyService.allPushBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProductRuntime.test(#product_id,'ASSIGNTO')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品需求需求", tags = {"需求" },  notes = "根据产品需求需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}/assignto")
     public ResponseEntity<SubStoryDTO> assignToByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -3338,7 +3338,7 @@ public class SubStoryResource {
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CHANGE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品需求需求", tags = {"需求" },  notes = "根据产品需求需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}/change")
     public ResponseEntity<SubStoryDTO> changeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -3362,7 +3362,7 @@ public class SubStoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(storyService.checkKey(substoryMapping.toDomain(substorydto)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CLOSE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品需求需求", tags = {"需求" },  notes = "根据产品需求需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}/close")
     public ResponseEntity<SubStoryDTO> closeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -3618,7 +3618,7 @@ public class SubStoryResource {
         boolean result = storyService.resetReviewedByBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProductRuntime.test(#product_id,'REVIEW')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品需求需求", tags = {"需求" },  notes = "根据产品需求需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}/review")
     public ResponseEntity<SubStoryDTO> reviewByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -3711,7 +3711,7 @@ public class SubStoryResource {
         boolean result = storyService.setStageBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProductRuntime.test(#product_id,'FAVORITES')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品需求需求", tags = {"需求" },  notes = "根据产品需求需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}/storyfavorites")
     public ResponseEntity<SubStoryDTO> storyFavoritesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -3722,7 +3722,7 @@ public class SubStoryResource {
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
-    @PreAuthorize("@ProductRuntime.test(#product_id,'NFAVORITES')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品需求需求", tags = {"需求" },  notes = "根据产品需求需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}/storynfavorites")
     public ResponseEntity<SubStoryDTO> storyNFavoritesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {

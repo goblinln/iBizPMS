@@ -129,10 +129,6 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDEACTIONS/Comment.json"
     },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "IBZProTestTaskAction__MANAGE"
-    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Comment"
@@ -160,10 +156,6 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDEACTIONS/EditComment.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "IBZProTestTaskAction__MANAGE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -542,10 +534,6 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDEACTIONS/Comment.json"
     },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "IBZProTestTaskAction__MANAGE"
-    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Comment"
@@ -573,10 +561,6 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDEACTIONS/EditComment.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "IBZProTestTaskAction__MANAGE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,

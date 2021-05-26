@@ -138,7 +138,6 @@ public class IbzProTestTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactionService.checkKey(ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto)));
     }
 
-    @PreAuthorize("@IbzProTestTaskActionRuntime.test(#ibzprotesttaskaction_id,'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"测试单日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}/comment")
     public ResponseEntity<IbzProTestTaskActionDTO> comment(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -171,7 +170,6 @@ public class IbzProTestTaskActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("@IbzProTestTaskActionRuntime.test(#ibzprotesttaskaction_id,'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"测试单日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}/editcomment")
     public ResponseEntity<IbzProTestTaskActionDTO> editComment(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -422,7 +420,6 @@ public class IbzProTestTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactionService.checkKey(ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto)));
     }
 
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'MANAGE')")
     @ApiOperation(value = "根据测试版本测试单日志", tags = {"测试单日志" },  notes = "根据测试版本测试单日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/comment")
     public ResponseEntity<IbzProTestTaskActionDTO> commentByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -451,7 +448,6 @@ public class IbzProTestTaskActionResource {
         boolean result = ibzprotesttaskactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'MANAGE')")
     @ApiOperation(value = "根据测试版本测试单日志", tags = {"测试单日志" },  notes = "根据测试版本测试单日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/editcomment")
     public ResponseEntity<IbzProTestTaskActionDTO> editCommentByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -688,7 +684,6 @@ public class IbzProTestTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactionService.checkKey(ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品测试版本测试单日志", tags = {"测试单日志" },  notes = "根据产品测试版本测试单日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/comment")
     public ResponseEntity<IbzProTestTaskActionDTO> commentByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -717,7 +712,6 @@ public class IbzProTestTaskActionResource {
         boolean result = ibzprotesttaskactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品测试版本测试单日志", tags = {"测试单日志" },  notes = "根据产品测试版本测试单日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/editcomment")
     public ResponseEntity<IbzProTestTaskActionDTO> editCommentByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -954,7 +948,6 @@ public class IbzProTestTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactionService.checkKey(ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto)));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "根据项目测试版本测试单日志", tags = {"测试单日志" },  notes = "根据项目测试版本测试单日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/comment")
     public ResponseEntity<IbzProTestTaskActionDTO> commentByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -983,7 +976,6 @@ public class IbzProTestTaskActionResource {
         boolean result = ibzprotesttaskactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "根据项目测试版本测试单日志", tags = {"测试单日志" },  notes = "根据项目测试版本测试单日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/ibzprotesttaskactions/{ibzprotesttaskaction_id}/editcomment")
     public ResponseEntity<IbzProTestTaskActionDTO> editCommentByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {

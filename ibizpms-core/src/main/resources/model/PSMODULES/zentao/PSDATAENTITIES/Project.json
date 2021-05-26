@@ -7313,7 +7313,7 @@
     "userDRAction" : "READ",
     "systemReserved" : true
   }, {
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_ModuleManage.json",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_ModuleManage_Open.json",
     "name" : "项目模块管理（公开项目）（跟随角色）",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7327,7 +7327,7 @@
         "id" : "MODULEMANAGE"
       }
     } ],
-    "roleTag" : "Project_ModuleManage",
+    "roleTag" : "Project_ModuleManage_Open",
     "userCat" : "CAT1",
     "userDRAction" : "READ",
     "systemReserved" : true
@@ -7418,7 +7418,7 @@
     "userDRAction" : "READ",
     "systemReserved" : true
   }, {
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_TaskManage.json",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_TaskManage_Open.json",
     "name" : "项目任务管理（公开项目）（跟随角色）",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7432,7 +7432,7 @@
         "id" : "TASKMANAGE"
       }
     } ],
-    "roleTag" : "Project_TaskManage",
+    "roleTag" : "Project_TaskManage_Open",
     "userCat" : "CAT1",
     "userDRAction" : "READ",
     "systemReserved" : true

@@ -138,7 +138,6 @@ public class IbzProBuildActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprobuildactionService.checkKey(ibzprobuildactionMapping.toDomain(ibzprobuildactiondto)));
     }
 
-    @PreAuthorize("@IbzProBuildActionRuntime.test(#ibzprobuildaction_id,'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"版本日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobuildactions/{ibzprobuildaction_id}/comment")
     public ResponseEntity<IbzProBuildActionDTO> comment(@PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id, @RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {
@@ -171,7 +170,6 @@ public class IbzProBuildActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("@IbzProBuildActionRuntime.test(#ibzprobuildaction_id,'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"版本日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobuildactions/{ibzprobuildaction_id}/editcomment")
     public ResponseEntity<IbzProBuildActionDTO> editComment(@PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id, @RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {
@@ -422,7 +420,6 @@ public class IbzProBuildActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprobuildactionService.checkKey(ibzprobuildactionMapping.toDomain(ibzprobuildactiondto)));
     }
 
-    @PreAuthorize("@BuildRuntime.test(#build_id,'MANAGE')")
     @ApiOperation(value = "根据版本版本日志", tags = {"版本日志" },  notes = "根据版本版本日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/{build_id}/ibzprobuildactions/{ibzprobuildaction_id}/comment")
     public ResponseEntity<IbzProBuildActionDTO> commentByBuild(@PathVariable("build_id") Long build_id, @PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id, @RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {
@@ -451,7 +448,6 @@ public class IbzProBuildActionResource {
         boolean result = ibzprobuildactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@BuildRuntime.test(#build_id,'MANAGE')")
     @ApiOperation(value = "根据版本版本日志", tags = {"版本日志" },  notes = "根据版本版本日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/{build_id}/ibzprobuildactions/{ibzprobuildaction_id}/editcomment")
     public ResponseEntity<IbzProBuildActionDTO> editCommentByBuild(@PathVariable("build_id") Long build_id, @PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id, @RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {
@@ -688,7 +684,6 @@ public class IbzProBuildActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprobuildactionService.checkKey(ibzprobuildactionMapping.toDomain(ibzprobuildactiondto)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品版本版本日志", tags = {"版本日志" },  notes = "根据产品版本版本日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/ibzprobuildactions/{ibzprobuildaction_id}/comment")
     public ResponseEntity<IbzProBuildActionDTO> commentByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id, @RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {
@@ -717,7 +712,6 @@ public class IbzProBuildActionResource {
         boolean result = ibzprobuildactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品版本版本日志", tags = {"版本日志" },  notes = "根据产品版本版本日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/ibzprobuildactions/{ibzprobuildaction_id}/editcomment")
     public ResponseEntity<IbzProBuildActionDTO> editCommentByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id, @RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {
@@ -954,7 +948,6 @@ public class IbzProBuildActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprobuildactionService.checkKey(ibzprobuildactionMapping.toDomain(ibzprobuildactiondto)));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "根据项目版本版本日志", tags = {"版本日志" },  notes = "根据项目版本版本日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/ibzprobuildactions/{ibzprobuildaction_id}/comment")
     public ResponseEntity<IbzProBuildActionDTO> commentByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id, @RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {
@@ -983,7 +976,6 @@ public class IbzProBuildActionResource {
         boolean result = ibzprobuildactionService.createHisBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "根据项目版本版本日志", tags = {"版本日志" },  notes = "根据项目版本版本日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/ibzprobuildactions/{ibzprobuildaction_id}/editcomment")
     public ResponseEntity<IbzProBuildActionDTO> editCommentByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id, @RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {

@@ -13,13 +13,6 @@
       "id" : "UPDATE"
     }
   }, {
-    "dataAccessAction" : "READ",
-    "name" : "Bug_Maintain_OpenBy_Read",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__READ"
-    }
-  }, {
     "dataAccessAction" : "DELETE",
     "name" : "Bug_Maintain_OpenBy_DELETE",
     "getPSDEOPPriv" : {

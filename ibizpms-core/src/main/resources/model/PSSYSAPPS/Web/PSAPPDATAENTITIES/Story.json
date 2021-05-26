@@ -10809,6 +10809,26 @@
     "logicName" : "需求激活",
     "name" : "ACTIVATE"
   }, {
+    "logicName" : "需求激活",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "ACTIVATE",
+    "id" : "ZTProduct__ACTIVATE"
+  }, {
+    "logicName" : "需求指派",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "ASSIGNTO",
+    "id" : "ZTProduct__ASSIGNTO"
+  }, {
     "logicName" : "需求指派",
     "name" : "ASSIGNTO"
   }, {
@@ -10825,11 +10845,41 @@
     "logicName" : "建用例",
     "name" : "CCASE"
   }, {
+    "logicName" : "建用例",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CCASE",
+    "id" : "ZTProduct__CCASE"
+  }, {
+    "logicName" : "需求变更",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CHANGE",
+    "id" : "ZTProduct__CHANGE"
+  }, {
     "logicName" : "需求变更",
     "name" : "CHANGE"
   }, {
     "logicName" : "需求关闭",
     "name" : "CLOSE"
+  }, {
+    "logicName" : "需求关闭",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CLOSE",
+    "id" : "ZTProduct__CLOSE"
   }, {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -10860,6 +10910,26 @@
     "logicName" : "需求收藏",
     "name" : "FAVORITES"
   }, {
+    "logicName" : "需求收藏",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "FAVORITES",
+    "id" : "ZTProduct__FAVORITES"
+  }, {
+    "logicName" : "需求细分",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "ISCHILD",
+    "id" : "ZTProduct__ISCHILD"
+  }, {
     "logicName" : "需求细分",
     "name" : "ISCHILD"
   }, {
@@ -10875,6 +10945,16 @@
   }, {
     "logicName" : "管理",
     "name" : "MANAGE"
+  }, {
+    "logicName" : "取消收藏",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "NFAVORITES",
+    "id" : "ZTProduct__NFAVORITES"
   }, {
     "logicName" : "取消收藏",
     "name" : "NFAVORITES"
@@ -10924,6 +11004,26 @@
   }, {
     "logicName" : "需求评审",
     "name" : "REVIEW"
+  }, {
+    "logicName" : "需求评审",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "REVIEW",
+    "id" : "ZTProduct__REVIEW"
+  }, {
+    "logicName" : "提缺陷",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "TOBUG",
+    "id" : "ZTProduct__TOBUG"
   }, {
     "logicName" : "提缺陷",
     "name" : "TOBUG"
