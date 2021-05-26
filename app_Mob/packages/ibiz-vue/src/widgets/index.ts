@@ -17,4 +17,5 @@ export { MobMeditViewPanelControlBase } from './mob-medit-view-panel-control-bas
 export { MobPickUpViewPanelControlBase } from './mob-pick-up-view-panel-control-base';
 export { MobContextMenuControlBase } from './mob-contextmenu-control-base';
 export { MobPanelControlBase } from './mob-panel-control-base';
+export { MobDrtabControlBase } from './mob-drtab-control-base';
 export { AppControlBase } from './app-control-base';

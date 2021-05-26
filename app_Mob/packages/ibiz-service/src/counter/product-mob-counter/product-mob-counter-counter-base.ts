@@ -63,11 +63,6 @@ export class ProductMobCounterCounterServiceBase extends CounterService {
      * @memberof  ProductMobCounterCounterServiceBase
      */
     public async fetchCounterData(context:any,data:any){
-        let _appEntityService:any = await this.appEntityService.getService('Product');
-        if (_appEntityService['MobProductCounter'] && _appEntityService['MobProductCounter'] instanceof Function) {
-            let result = await _appEntityService['MobProductCounter'](context,data);
-            this.counterData = result.data;
-        }
     }
 
     /**

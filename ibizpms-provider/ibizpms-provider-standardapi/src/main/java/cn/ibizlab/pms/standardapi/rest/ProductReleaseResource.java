@@ -30,27 +30,27 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import cn.ibizlab.pms.standardapi.dto.*;
 import cn.ibizlab.pms.standardapi.mapping.*;
-import cn.ibizlab.pms.core.zentao.domain.Branch;
-import cn.ibizlab.pms.core.zentao.service.IBranchService;
-import cn.ibizlab.pms.core.zentao.filter.BranchSearchContext;
+import cn.ibizlab.pms.core.zentao.domain.Release;
+import cn.ibizlab.pms.core.zentao.service.IReleaseService;
+import cn.ibizlab.pms.core.zentao.filter.ReleaseSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
-import cn.ibizlab.pms.core.zentao.runtime.BranchRuntime;
+import cn.ibizlab.pms.core.zentao.runtime.ReleaseRuntime;
 
 @Slf4j
-@Api(tags = {"产品的分支和平台信息" })
-@RestController("StandardAPI-branch")
+@Api(tags = {"发布" })
+@RestController("StandardAPI-productrelease")
 @RequestMapping("")
-public class BranchResource {
+public class ProductReleaseResource {
 
     @Autowired
-    public IBranchService branchService;
+    public IReleaseService releaseService;
 
     @Autowired
-    public BranchRuntime branchRuntime;
+    public ReleaseRuntime releaseRuntime;
 
     @Autowired
     @Lazy
-    public BranchMapping branchMapping;
+    public ProductReleaseMapping productreleaseMapping;
 
 }
 

@@ -30,6 +30,9 @@ export default {
     actor:  commonLogic.appcommonhandle("操作者",null),
     project:  commonLogic.appcommonhandle("项目",null),
     actionsn:  commonLogic.appcommonhandle("系统日志编号",null),
+    createMan:  commonLogic.appcommonhandle("建立人",null),
+    updateDate:  commonLogic.appcommonhandle("更新时间",null),
+    updateMan:  commonLogic.appcommonhandle("更新人",null),
   },
 	views: {
 		mobmdview9: {

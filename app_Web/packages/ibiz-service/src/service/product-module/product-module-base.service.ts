@@ -161,6 +161,22 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
         return this.condCache.get('view');
     }
     /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductModuleService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productmodule) {
+            const res = await this.http.get(`/products/${_context.product}/productmodules/${_context.productmodule}/get`);
+            return res;
+        }
+        const res = await this.http.get(`/productmodules/${_context.productmodule}/get`);
+        return res;
+    }
+    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -197,20 +213,18 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
         return this.http.put(`/productmodules/${_context.productmodule}/update`, _data);
     }
     /**
-     * Get
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductModuleService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productmodule) {
-            const res = await this.http.get(`/products/${_context.product}/productmodules/${_context.productmodule}/get`);
-            return res;
+            return this.http.delete(`/products/${_context.product}/productmodules/${_context.productmodule}/remove`);
         }
-        const res = await this.http.get(`/productmodules/${_context.productmodule}/get`);
-        return res;
+        return this.http.delete(`/productmodules/${_context.productmodule}/remove`);
     }
     /**
      * FetchDefault
@@ -253,19 +267,5 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
             delete _data.srffrontuf;
         }
         return this.http.post(`/productmodules`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductModuleService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productmodule) {
-            return this.http.delete(`/products/${_context.product}/productmodules/${_context.productmodule}/remove`);
-        }
-        return this.http.delete(`/productmodules/${_context.productmodule}/remove`);
     }
 }

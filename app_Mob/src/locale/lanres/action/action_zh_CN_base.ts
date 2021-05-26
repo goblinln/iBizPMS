@@ -30,6 +30,9 @@ export default {
     actor: "操作者",
     project: "项目",
     actionsn: "系统日志编号",
+    createman: "建立人",
+    updatedate: "更新时间",
+    updateman: "更新人",
   },
 	views: {
 		mobmdview9: {

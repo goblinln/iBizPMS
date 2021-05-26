@@ -201,6 +201,7 @@
           "caption" : "修复",
           "codeName" : "Fix",
           "confirmMsg" : "执行修复模块路径",
+          "dataAccessAction" : "MANAGE",
           "fullCodeName" : "ProductModule_Fix",
           "name" : "修复路径",
           "getPSAppDataEntity" : {
@@ -654,6 +655,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "OpenQuickCfgView",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleQuickCfgView.json",
@@ -746,6 +748,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "OpenQuickCfgView",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleQuickCfgView.json",
@@ -838,6 +841,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "OpenQuickCfgView",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleQuickCfgView.json",
@@ -1414,6 +1418,7 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "编辑",
               "codeName" : "OpenQuickCfgView",
+              "dataAccessAction" : "UPDATE",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleQuickCfgView.json",
@@ -1568,6 +1573,7 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "编辑",
               "codeName" : "OpenQuickCfgView",
+              "dataAccessAction" : "UPDATE",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleQuickCfgView.json",
@@ -1832,6 +1838,7 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "编辑",
               "codeName" : "OpenQuickCfgView",
+              "dataAccessAction" : "UPDATE",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleQuickCfgView.json",

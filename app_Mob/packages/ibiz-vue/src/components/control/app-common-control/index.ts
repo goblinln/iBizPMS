@@ -13,4 +13,5 @@ export { AppMobPortletBase } from "./app-mob-portlet-base";
 export { AppMobSearchFormBase } from "./app-mob-searchform-base";
 export { AppMobTabExpPanelBase } from "./app-mob-tabexppanel-base";
 export { AppMobTabViewPanelBase } from "./app-mob-tabviewpanel-base";
+export { AppMobDrtabBase } from "./app-mob-drtab-base";
 export { AppMobTreeBase } from "./app-mob-tree-base";

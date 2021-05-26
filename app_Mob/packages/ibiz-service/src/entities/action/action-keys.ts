@@ -28,4 +28,7 @@ export default [
     'actor',
     'project',
     'actionsn',
+    'createman',
+    'updatedate',
+    'updateman',
 ];

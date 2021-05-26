@@ -132,4 +132,16 @@ export interface IAction extends IEntityBase {
      * 系统日志编号
      */
     actionsn?: any;
+    /**
+     * 建立人
+     */
+    createman?: any;
+    /**
+     * 更新时间
+     */
+    updatedate?: any;
+    /**
+     * 更新人
+     */
+    updateman?: any;
 }

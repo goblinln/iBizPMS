@@ -9,6 +9,7 @@ import { AppEmbedView } from '../components/common/app-embed-view/app-embed-view
 import { AppDefaultIndexView } from './view/app-default-indexview/app-default-indexview';
 import { AppDefaultMobMdView } from './view/app-default-mob-mdview/app-default-mob-mdview';
 import { AppDefaultMobEditView } from './view/app-default-mob-editview/app-default-mob-editview';
+import { AppDefaultMobEditView3 } from './view/app-default-mob-editview3/app-default-mob-editview3';
 import { AppDefaultMobPortalView } from './view/app-default-mob-portalview/app-default-mob-portalview';
 import { AppDefaultMobChartView } from './view/app-default-mob-chartview/app-default-mob-chartview';
 import { AppDefaultMobCalendarView } from './view/app-default-mob-calendarview/app-default-mob-calendarview';
@@ -25,7 +26,9 @@ import { AppDefaultMobPickUpTreeView } from './view/app-default-mob-pickuptreevi
 import { AppViewShell } from '../view-container/app-view-shell';
 import { AppDefaultMobWFDynaEditView } from './view/app-default-mob-wfdynaeditview/app-default-mob-wfdynaeditview';
 import { AppDefaultMobWFDynaActionView } from './view/app-default-mob-wfdynaactionview/app-default-mob-wfdynaactionview';
-import { AppDefaultWfDynaExpMDView } from './view/app-default-mob-wfdynaexpmdview/app-default-mob-wfdynaexpmdview';
+import { AppDefaultMobWfDynaExpMDView } from './view/app-default-mob-wfdynaexpmdview/app-default-mob-wfdynaexpmdview';
+import { AppDefaultMobWFDynaStartView } from './view/app-default-mob-wfdynastartview/app-default-mob-wfdynastartview';
+import { AppDedaultMobWFDynaEditView3 } from './view/app-default-mob-wfdynaeditview3/app-default-mob-wfdynaeditview3';
 import { AppDefaultMobDeRedirectView } from './view/app-default-mob-deredirectview/app-default-mob-deredirectview';
 import { AppDefaultNotSupportedView } from './view/app-default-notsupportedview';
 
@@ -49,6 +52,7 @@ import { AppDefaultMobTree } from './control/app-default-mob-tree/app-default-mo
 import { AppDefaultMobPickUpViewPanel } from './control/app-default-mob-pickupviewpanel/app-default-mob-pickupviewpanel';
 import { AppDefaultMobContextMenu } from './control/app-default-mob-contextmenu/app-default-mob-contextmenu';
 import { AppDefaultMobPanel } from './control/app-default-mob-panel/app-default-mob-panel';
+import { AppDefaultMobDrtab } from './control/app-default-mob-drtab/app-default-mob-drtab';
 import { AppDefaultNotSupportedControl } from './control/app-default-notsupportedcontrol/app-default-notsupportedcontrol';
 
 export const ComponentsRegister = {
@@ -205,6 +209,7 @@ export const ComponentsRegister = {
         v.component('app-default-mob-indexview', AppDefaultIndexView);
         v.component('app-default-mob-mdview', AppDefaultMobMdView);
         v.component('app-default-mob-editview', AppDefaultMobEditView);
+        v.component('app-default-mob-editview3', AppDefaultMobEditView3);
         v.component('app-default-mob-portalview', AppDefaultMobPortalView);
         v.component('app-default-mob-chartview', AppDefaultMobChartView);
         v.component('app-default-mob-calendarview', AppDefaultMobCalendarView);
@@ -220,7 +225,9 @@ export const ComponentsRegister = {
         v.component('app-default-mob-pickuptreeview', AppDefaultMobPickUpTreeView);
         v.component('app-default-mob-wfdynaeditview', AppDefaultMobWFDynaEditView);
         v.component('app-default-mob-wfdynaactionview', AppDefaultMobWFDynaActionView);
-        v.component('app-default-mob-wfdynaexpmdview', AppDefaultWfDynaExpMDView);
+        v.component('app-default-mob-wfdynaexpmdview', AppDefaultMobWfDynaExpMDView);
+        v.component('app-default-mob-wfdynastartview', AppDefaultMobWFDynaStartView);
+        v.component('app-default-mob-wfdynaeditview3', AppDedaultMobWFDynaEditView3);
         v.component('app-default-mob-deredirectview', AppDefaultMobDeRedirectView);
         v.component('app-default-notsupportedview', AppDefaultNotSupportedView);
         // 部件组件
@@ -242,6 +249,7 @@ export const ComponentsRegister = {
         v.component('app-default-mob-pickupviewpanel', AppDefaultMobPickUpViewPanel);
         v.component('app-default-mob-contextmenu', AppDefaultMobContextMenu);
         v.component('app-default-mob-panel', AppDefaultMobPanel);
+        v.component('app-default-mob-drtab', AppDefaultMobDrtab);
         v.component('app-default-notsupportedcontrol', AppDefaultNotSupportedControl);
     }
 }
