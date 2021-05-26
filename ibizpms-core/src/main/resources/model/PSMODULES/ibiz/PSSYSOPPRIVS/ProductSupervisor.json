@@ -83,6 +83,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
     }
   }, {
+    "name" : "产品主管-ZT_USERTPL[用户模板维护（我的模板或公开模板）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEUSERROLES/UserTpl_Maintain_My.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl.json"
+    }
+  }, {
     "name" : "产品主管-IBZPRO_PRODUCTLINE[当前组织（读写）]",
     "getPSDEUserRole" : {
       "modelref" : true,

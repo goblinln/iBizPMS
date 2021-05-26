@@ -2484,7 +2484,7 @@
 
 
     <!--输出实体[IBZ_PRODUCTTEAM]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_productteam-22-115">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_productteam-33-115">
         <createTable tableName="zt_team">
                 <column name="TEAMSTATUS" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2518,6 +2518,18 @@
                 <column name="ROLE" remarks="" type="VARCHAR(30)">
                 </column>
                 <column name="ROOT" remarks="" type="BIGINT">
+                </column>
+                <column name="DEPTNAME" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ORGNAME" remarks="" type="VARCHAR(100)">
                 </column>
         </createTable>
     </changeSet>
@@ -2766,7 +2778,7 @@
 
 
     <!--输出实体[ZT_RELEASE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_release-94-133">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_release-96-133">
         <createTable tableName="zt_release">
                 <column name="STORIES" remarks="" type="TEXT(65535)">
                 </column>
@@ -3479,7 +3491,7 @@
 
 
     <!--输出实体[ZT_USERTPL]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_usertpl-13-163">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_usertpl-25-163">
         <createTable tableName="zt_usertpl">
                 <column name="TITLE" remarks="" type="VARCHAR(150)">
                 </column>

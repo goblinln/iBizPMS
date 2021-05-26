@@ -1643,7 +1643,7 @@
     "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
     "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"ProductTeamInfo" , "name":"产品团队成员信息"},{"id":"ProjectApp" , "name":"项目立项"},{"id":"RowEditDefaultProductTeam" , "name":"产品团队管理"}],
     "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"ProductTeamGuoLv" , "name":"PmsEe团队管理过滤" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}]
+    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
     }
     ,    {
     "dename":"PSSysApp",
@@ -1787,7 +1787,7 @@
     "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
     "dedataset":[{"id":"Default" , "name":"DEFAULT"},{"id":"ProjectTeamPm" , "name":"项目成员（项目经理）"},{"id":"RowEditDefault" , "name":"行编辑查询"},{"id":"TaskCntEstimateConsumedLeft" , "name":"数据查询"}],
     "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"CreateTemp" , "name":"CreateTemp" , "type":"BUILTIN" },{"id":"CreateTempMajor" , "name":"CreateTempMajor" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"UpdateTemp" , "name":"UpdateTemp" , "type":"BUILTIN" },{"id":"UpdateTempMajor" , "name":"UpdateTempMajor" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"RemoveTemp" , "name":"RemoveTemp" , "type":"BUILTIN" },{"id":"RemoveTempMajor" , "name":"RemoveTempMajor" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetTemp" , "name":"GetTemp" , "type":"BUILTIN" },{"id":"GetTempMajor" , "name":"GetTempMajor" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"GetDraftTemp" , "name":"GetDraftTemp" , "type":"BUILTIN" },{"id":"GetDraftTempMajor" , "name":"GetDraftTempMajor" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"GetUserRole" , "name":"获取成员角色" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}]
+    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
     }
     ,    {
     "dename":"Release",
@@ -1939,7 +1939,7 @@
     "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
     "dedataset":[{"id":"Default" , "name":"DEFAULT"}],
     "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"CreateTemp" , "name":"CreateTemp" , "type":"BUILTIN" },{"id":"CreateTempMajor" , "name":"CreateTempMajor" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"UpdateTemp" , "name":"UpdateTemp" , "type":"BUILTIN" },{"id":"UpdateTempMajor" , "name":"UpdateTempMajor" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"RemoveTemp" , "name":"RemoveTemp" , "type":"BUILTIN" },{"id":"RemoveTempMajor" , "name":"RemoveTempMajor" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetTemp" , "name":"GetTemp" , "type":"BUILTIN" },{"id":"GetTempMajor" , "name":"GetTempMajor" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"GetDraftTemp" , "name":"GetDraftTemp" , "type":"BUILTIN" },{"id":"GetDraftTempMajor" , "name":"GetDraftTempMajor" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}]
+    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
     }
     ,    {
     "dename":"TestModule",
@@ -2017,7 +2017,7 @@
     "dename":"UserTpl",
     "delogicname":"用户模板",
     "sysmoudle":{"id":"ZENTAO","name":"基础管理模块"},
-    "dedataset":[{"id":"Default" , "name":"DEFAULT"},{"id":"MyUserTpl" , "name":"我的模板"}],
+    "dedataset":[{"id":"Default" , "name":"DEFAULT"},{"id":"MyUserTpl" , "name":"我的模板"},{"id":"MyUserTplQuery" , "name":"我的模板（权限）"}],
     "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"HasDeleted" , "name":"删除" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
     "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
     }

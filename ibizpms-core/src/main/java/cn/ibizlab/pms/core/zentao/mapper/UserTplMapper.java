@@ -21,10 +21,12 @@ public interface UserTplMapper extends BaseMapper<UserTpl> {
 
     List<UserTpl> selectDefault(@Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
     List<UserTpl> selectMyUserTpl(@Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
+    List<UserTpl> selectMyUserTplQuery(@Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
     List<UserTpl> selectView(@Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
 
     Page<UserTpl> searchDefault(IPage page, @Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
     Page<UserTpl> searchMyUserTpl(IPage page, @Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
+    Page<UserTpl> searchMyUserTplQuery(IPage page, @Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
     @Override
     UserTpl selectById(Serializable id);
     @Override

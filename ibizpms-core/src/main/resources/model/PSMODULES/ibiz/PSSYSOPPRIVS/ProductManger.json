@@ -143,6 +143,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
     }
   }, {
+    "name" : "产品经理-ZT_USERTPL[用户模板维护（我的模板或公开模板）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEUSERROLES/UserTpl_Maintain_My.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl.json"
+    }
+  }, {
     "name" : "产品经理-ZT_TODO[待办维护（我的待办）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,

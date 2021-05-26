@@ -2564,7 +2564,7 @@
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 2,
-  "serviceAPIMode" : 1,
+  "serviceAPIMode" : 0,
   "serviceCodeName" : "Release",
   "storageMode" : 1,
   "systemTag" : "iBizPMS",

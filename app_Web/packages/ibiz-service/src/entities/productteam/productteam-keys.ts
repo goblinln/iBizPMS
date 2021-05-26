@@ -18,4 +18,10 @@ export default [
     'order',
     'role',
     'root',
+    'deptname',
+    'dept',
+    'org',
+    'updateby',
+    'createby',
+    'orgname',
 ];

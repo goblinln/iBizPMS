@@ -100,6 +100,20 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USERTPL\"}')}  OR  t1.`PUBLIC` = '1' ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "MyUserTplQuery",
+    "logicName" : "我的模板（权限）",
+    "name" : "MyUserTplQuery",
+    "privQuery" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
       "name" : "MySQL5"
     } ],
     "codeName" : "View",
@@ -124,6 +138,16 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "MyUserTpl"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "MyUserTplQuery",
+    "logicName" : "我的模板（权限）",
+    "name" : "MyUserTplQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyUserTplQuery"
     } ],
     "enableBackend" : true,
     "enableFront" : true
@@ -818,6 +842,46 @@
     "roleTag" : "UserTpl_Maintain_CO",
     "userDRAction" : "READ",
     "enableOrgDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEUSERROLES/UserTpl_Maintain_My.json",
+    "name" : "用户模板维护（我的模板或公开模板）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyUserTplQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "CREATE",
+      "name" : "CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    } ],
+    "roleTag" : "UserTpl_Maintain_My",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEUSERROLES/UserTpl_Read.json",

@@ -673,7 +673,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "((t1.storyVersion < t21.version and t21.`status` <>  'changed' and  (#{srf.n_status1_eq} is not null) or ((#{srf.n_status1_eq} is null))",
+        "customCond" : "((t1.storyVersion < t21.version and t21.`status` <>  'changed' and  (#{srf.n_status1_eq} is not null) or (#{srf.n_status1_eq} is null))",
         "name" : "查询条件"
       } ]
     } ],

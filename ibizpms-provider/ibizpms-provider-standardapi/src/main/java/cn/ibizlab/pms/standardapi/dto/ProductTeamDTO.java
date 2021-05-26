@@ -1,4 +1,4 @@
-package cn.ibizlab.pms.webapi.dto;
+package cn.ibizlab.pms.standardapi.dto;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -25,12 +25,12 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * 服务DTO对象[PRODUCTTEAMDTO]
+ * 服务DTO对象[ProductTeamDTO]
  */
 @Data
 @ApiModel("产品团队")
 @JsonFilter(value = "dtofieldfilter")
-public class PRODUCTTEAMDTO extends DTOBase implements Serializable {
+public class ProductTeamDTO extends DTOBase implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

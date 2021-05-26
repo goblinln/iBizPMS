@@ -218,17 +218,6 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
     async FetchMyUserTpl(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/usertpls/fetchmyusertpl`, _data);
     }
-    /**
-     * FetchMyUserTplQuery
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserTplService
-     */
-    async FetchMyUserTplQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/usertpls/fetchmyusertplquery`, _data);
-    }
 
     /**
      * HasDeletedBatch接口方法
