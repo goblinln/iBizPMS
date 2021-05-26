@@ -98,51 +98,73 @@
 
 // 菜单收起后漂浮菜单样式
 .el-menu--vertical {
-  .el-menu {
-      .app-content-lef-nav-menu .el-menu;
-  }
-  > .el-menu , > .ivu-layout > .ivu-layout-sider .app-app-menu > .app-menu {
-    background: var(--menu-background-color-bright);
-    .el-menu-item:hover, .el-menu-item:hover,.el-menu-item.is-active {
-        background: var(--menu-background-color-bright) !important;
-        color: var(--menu-font-color-active) !important;
-        i {
-            color: var(--menu-font-color-active);
+    .el-menu {
+        .app-content-lef-nav-menu .el-menu;
+    }
+    > .el-menu,
+    > .ivu-layout > .ivu-layout-sider .app-app-menu > .app-menu {
+        background-color: var(--leftsidebar-background-color);
+        .el-menu-item:hover,
+        .el-menu-item:hover,
+        .el-menu-item.is-active {
+            background-color: var(--leftsidebar-background-color-bright);
+            i {
+                color: var(--leftsidebar-font-color-bright);
+            }
+            span {
+                color: var(--leftsidebar-font-color-bright);
+            }
+        }
+        .el-submenu__title:hover {
+            background-color: var(--leftsidebar-background-color-bright);
+            i {
+                color: var(--leftsidebar-font-color-bright);
+            }
+            span {
+                color: var(--leftsidebar-font-color-bright);
+            }
+        }
+        .el-menu-item.is-active {
+            background-color: var(--leftsidebar-background-color-bright);
+            i {
+                color: var(--leftsidebar-font-color-bright);
+            }
+            span {
+                color: var(--leftsidebar-font-color-bright);
+            }
+        }
+        .el-submenu.is-opened,
+        .el-submenu:hover {
+            > .el-submenu__title {
+                background: var(--leftsidebar-background-color-bright);
+            }
+        }
+        .el-submenu__title,
+        .el-menu-item {
+            i {
+                color: var(--leftsidebar-font-color);
+            }
+            span {
+                color: var(--leftsidebar-font-color);
+            }
+        }
+        .el-menu-item {
+            i {
+                color: var(--leftsidebar-font-color);
+            }
+            span {
+                color: var(--leftsidebar-font-color);
+            }
+            border-top: 1px solid var(--leftsidebar-background-color);
+            background: var(--leftsidebar-background-color);
+        }
+        .el-submenu {
+            border-top: 1px solid var(--leftsidebar-background-color);
+            background: var(--leftsidebar-background-color);
+            > .el-menu {
+                border-top: 1px solid var(--leftsidebar-background-color);
+                background: var(---leftsidebar-background-color);
+            }
         }
     }
-    .el-submenu__title:hover{
-        color: var(--menu-font-color-active) !important;
-        i {
-            color: var(--menu-font-color-active);
-        }
-    }
-    .el-menu-item.is-active{
-      border-left: 4px solid var(--menu-font-color-active);
-      background: var(--menu-background-color-bright) !important;
-    }
-    .el-submenu.is-opened, .el-submenu:hover{
-        > .el-submenu__title {
-            background: var(--menu-background-color-bright);
-        }
-    }
-    .el-submenu__title, .el-menu-item {
-        color: var(--menu-font-color-bright);
-        i {
-            color: var(--menu-font-color-bright);
-        }
-    }
-    .el-menu-item {
-        border-top: 1px solid var(--menu-background-color-bright);
-        background: var(--menu-background-color-bright);
-        border-left: 4px solid transparent;
-    }
-    .el-submenu {
-        border-top: 1px solid var(--menu-background-color-bright);
-        background: var(--menu-background-color-bright);
-        > .el-menu {
-            border-top: 1px solid var(--menu-background-color-bright);
-            background: var(--menu-background-color-bright);
-        }
-    }
-}
 }

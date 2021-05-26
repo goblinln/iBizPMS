@@ -335,7 +335,7 @@ public class TestTaskResource {
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'TESTTASKMANAGE')")
     @ApiOperation(value = "根据产品建立测试版本", tags = {"测试版本" },  notes = "根据产品建立测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks")
     public ResponseEntity<TestTaskDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -346,7 +346,7 @@ public class TestTaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'TESTTASKMANAGE')")
     @ApiOperation(value = "根据产品批量建立测试版本", tags = {"测试版本" },  notes = "根据产品批量建立测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/batch")
     public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestTaskDTO> testtaskdtos) {
@@ -359,7 +359,7 @@ public class TestTaskResource {
     }
 
     @VersionCheck(entity = "testtask" , versionfield = "updatedate")
-    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'TESTTASKMANAGE')")
     @ApiOperation(value = "根据产品更新测试版本", tags = {"测试版本" },  notes = "根据产品更新测试版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -371,7 +371,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'TESTTASKMANAGE')")
     @ApiOperation(value = "根据产品批量更新测试版本", tags = {"测试版本" },  notes = "根据产品批量更新测试版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testtasks/batch")
     public ResponseEntity<Boolean> updateBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestTaskDTO> testtaskdtos) {
@@ -383,14 +383,14 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'TESTTASKMANAGE')")
     @ApiOperation(value = "根据产品删除测试版本", tags = {"测试版本" },  notes = "根据产品删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(testtaskService.remove(testtask_id));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'TESTTASKMANAGE')")
     @ApiOperation(value = "根据产品批量删除测试版本", tags = {"测试版本" },  notes = "根据产品批量删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testtasks/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {

@@ -2971,7 +2971,7 @@
     "actionTarget" : "NONE",
     "caption" : "管理",
     "codeName" : "Manager",
-    "dataAccessAction" : "MANAGE",
+    "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectGridView.json",

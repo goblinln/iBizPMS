@@ -41,7 +41,7 @@ export class SubStoryAuthServiceBase extends AuthService {
         let result: any = { [dataaccaction]: 1 };
         const curDefaultOPPrivs: any = this.getSysOPPrivs();
         // 统一资源权限
-        if (curDefaultOPPrivs && (Object.keys(curDefaultOPPrivs).length > 0) && !curDefaultOPPrivs.hasOwnProperty(dataaccaction)) {
+        if (curDefaultOPPrivs && (Object.keys(curDefaultOPPrivs).length > 0) && (curDefaultOPPrivs[dataaccaction] === 0)) {
             result[dataaccaction] = 0;
         }
         // 主状态权限

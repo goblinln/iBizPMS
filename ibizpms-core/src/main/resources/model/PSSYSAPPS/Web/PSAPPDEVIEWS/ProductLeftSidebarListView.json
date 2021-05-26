@@ -190,7 +190,7 @@
         "actionTarget" : "NONE",
         "caption" : "管理",
         "codeName" : "Manager",
-        "dataAccessAction" : "MANAGE",
+        "dataAccessAction" : "SRFUR__PROD_CREATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsALLGridView.json",
