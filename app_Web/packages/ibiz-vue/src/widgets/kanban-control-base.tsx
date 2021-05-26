@@ -579,10 +579,10 @@ export class KanbanControlBase extends MDControlBase {
         }
         const arg: any = { ...opt };
         Object.assign(arg, { viewparams: this.viewparams });
-        if (this.controlInstance.getPSAppDataEntity()?.codeName) {
-            Object.assign(_context, { [(this.controlInstance.getPSAppDataEntity()?.codeName?.toLowerCase() as string)]: opt.srfkey });
-        }
         let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        if (this.controlInstance.getPSAppDataEntity()?.codeName) {
+            Object.assign(tempContext, { [(this.controlInstance.getPSAppDataEntity()?.codeName?.toLowerCase() as string)]: opt.srfkey });
+        }
         this.onControlRequset('updateData', tempContext, arg);
         const post: Promise<any> = this.service.update(this.updateGroupAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
