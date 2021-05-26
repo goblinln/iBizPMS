@@ -198,9 +198,6 @@ public class ProductModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
             else if (iPSDEAction.getName().equals("Fix")) {
                 return productmoduleService.fix((ProductModule) args[0]);
             }
-            else if (iPSDEAction.getName().equals("RemoveModule")) {
-                return productmoduleService.removeModule((ProductModule) args[0]);
-            }
             else if (iPSDEAction.getName().equals("Save")) {
                 return productmoduleService.save((ProductModule) args[0]);
             }
@@ -319,9 +316,6 @@ public class ProductModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
         }
         else if (action.equals("fix")) {
             return aroundAction("Fix", point);
-        }
-        else if (action.equals("removeModule")) {
-            return aroundAction("RemoveModule", point);
         }
         else if (action.equals("save")) {
             return aroundAction("Save", point);

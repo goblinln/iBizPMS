@@ -18,6 +18,9 @@ function getLocaleResourceBase(){
 		'name': commonLogic.appcommonhandle("项目名称",null),
 		'openedby': commonLogic.appcommonhandle("由谁创建",null),
 		'acl': commonLogic.appcommonhandle("访问控制",null),
+		'closedby': commonLogic.appcommonhandle("由谁关闭",null),
+		'canceledby': commonLogic.appcommonhandle("由谁取消",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 	},
 		views: {
 			'editview9': {

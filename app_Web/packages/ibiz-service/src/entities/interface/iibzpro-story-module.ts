@@ -1,7 +1,7 @@
 import { IEntityBase } from 'ibiz-core';
 
 /**
- * 需求模块
+ * 需求模块（iBizSys）
  *
  * @export
  * @interface IIBZProStoryModule

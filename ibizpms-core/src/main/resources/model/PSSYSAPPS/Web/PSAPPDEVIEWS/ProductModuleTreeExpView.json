@@ -203,10 +203,6 @@
           "confirmMsg" : "执行修复模块路径",
           "fullCodeName" : "ProductModule_Fix",
           "name" : "修复路径",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Fix"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"

@@ -34,14 +34,14 @@ import cn.ibizlab.pms.util.domain.EntityMP;
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 
 /**
- * 实体[需求模块]
+ * 实体[需求模块（iBizSys）]
  */
 @Getter
 @Setter
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_module", resultMap = "IBZProStoryModuleResultMap")
-@ApiModel("需求模块")
+@ApiModel("需求模块（iBizSys）")
 public class IBZProStoryModule extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;

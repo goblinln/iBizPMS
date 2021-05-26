@@ -1,7 +1,7 @@
 import { IBZProStoryModuleBase } from './ibzpro-story-module-base';
 
 /**
- * 需求模块
+ * 需求模块（iBizSys）
  *
  * @export
  * @class IBZProStoryModule

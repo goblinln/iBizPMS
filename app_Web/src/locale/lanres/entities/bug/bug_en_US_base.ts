@@ -140,6 +140,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("日历导航",null),
 				title: commonLogic.appcommonhandle("Bug编辑视图（日历导航）",null),
 			},
+			'bugprojectkanbanview': {
+				caption: commonLogic.appcommonhandle("Bug实体看板视图",null),
+				title: commonLogic.appcommonhandle("Bug看板视图",null),
+			},
 			'maineditview': {
 				caption: commonLogic.appcommonhandle("Bug编辑",null),
 				title: commonLogic.appcommonhandle("Bug编辑",null),
@@ -219,6 +223,10 @@ function getLocaleResourceBase(){
 			'gridview9_myassignedtome': {
 				caption: commonLogic.appcommonhandle("Bug",null),
 				title: commonLogic.appcommonhandle("Bug表格视图",null),
+			},
+			'projectneweditview': {
+				caption: commonLogic.appcommonhandle("Bug",null),
+				title: commonLogic.appcommonhandle("Bug",null),
 			},
 			'projectgridview': {
 				caption: commonLogic.appcommonhandle("项目",null),
@@ -1468,8 +1476,14 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("Save And Close Window",null),
 			},
 		},
+		projectneweditviewtoolbar_toolbar: {
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("Save And Close",null),
+				tip: commonLogic.appcommonhandle("Save And Close Window",null),
+			},
+		},
 		projectgridviewtoolbar_toolbar: {
-			'deuiaction3_create': {
+			'deuiaction3_projectcreate': {
 				caption: commonLogic.appcommonhandle("新建",null),
 				tip: commonLogic.appcommonhandle("新建",null),
 			},
@@ -1486,8 +1500,8 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("Filter",null),
 			},
 		},
-		bugkanbanviewtoolbar_toolbar: {
-			'deuiaction3_create': {
+		bugprojectkanbanviewtoolbar_toolbar: {
+			'deuiaction3_projectcreate': {
 				caption: commonLogic.appcommonhandle("新建",null),
 				tip: commonLogic.appcommonhandle("新建",null),
 			},
@@ -1602,6 +1616,16 @@ function getLocaleResourceBase(){
 			'deuiaction4': {
 				caption: commonLogic.appcommonhandle("Filter",null),
 				tip: commonLogic.appcommonhandle("Filter",null),
+			},
+		},
+		bugkanbanviewtoolbar_toolbar: {
+			'deuiaction3_create': {
+				caption: commonLogic.appcommonhandle("新建",null),
+				tip: commonLogic.appcommonhandle("新建",null),
+			},
+			'deuiaction2': {
+				caption: commonLogic.appcommonhandle("刷新",null),
+				tip: commonLogic.appcommonhandle("刷新",null),
 			},
 		},
 		testbugsgridviewtoolbar_toolbar: {

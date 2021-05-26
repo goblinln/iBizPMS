@@ -31654,6 +31654,9 @@
         "logicName" : "模块管理",
         "name" : "MODULEMANAGE"
       }, {
+        "logicName" : "项目团队管理",
+        "name" : "PROJECTTEAMMANAGE"
+      }, {
         "logicName" : "延期",
         "name" : "PUTOFF"
       }, {

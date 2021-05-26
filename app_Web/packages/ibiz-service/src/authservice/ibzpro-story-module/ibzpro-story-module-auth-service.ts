@@ -2,7 +2,7 @@ import { IBZProStoryModuleAuthServiceBase } from './ibzpro-story-module-auth-ser
 
 
 /**
- * 需求模块权限服务对象
+ * 需求模块（iBizSys）权限服务对象
  *
  * @export
  * @class IBZProStoryModuleAuthService

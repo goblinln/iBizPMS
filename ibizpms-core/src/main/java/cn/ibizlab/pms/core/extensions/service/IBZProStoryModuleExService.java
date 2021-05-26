@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Primary;
 import java.util.*;
 
 /**
- * 实体[需求模块] 自定义服务对象
+ * 实体[需求模块（iBizSys）] 自定义服务对象
  */
 @Slf4j
 @Primary

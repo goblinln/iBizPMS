@@ -1374,7 +1374,7 @@
   "enableUIActions" : 15,
   "enableViewLevel" : 0,
   "extendMode" : 0,
-  "logicName" : "需求模块",
+  "logicName" : "需求模块（iBizSys）",
   "getMajorPSDERs" : [ {
     "codeName" : "ParentModule",
     "dERType" : "DER1N",

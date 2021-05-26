@@ -26,7 +26,7 @@ function getLocaleResourceBase(){
 	},
 		views: {
 			'gridview': {
-				caption: commonLogic.appcommonhandle("需求模块",null),
+				caption: commonLogic.appcommonhandle("需求模块（iBizSys）",null),
 				title: commonLogic.appcommonhandle("需求模块表格视图",null),
 			},
 			'optionview': {
@@ -34,7 +34,7 @@ function getLocaleResourceBase(){
 				title: commonLogic.appcommonhandle("需求模块选项操作视图同步",null),
 			},
 			'editview': {
-				caption: commonLogic.appcommonhandle("需求模块",null),
+				caption: commonLogic.appcommonhandle("需求模块（iBizSys）",null),
 				title: commonLogic.appcommonhandle("需求模块编辑视图",null),
 			},
 		},

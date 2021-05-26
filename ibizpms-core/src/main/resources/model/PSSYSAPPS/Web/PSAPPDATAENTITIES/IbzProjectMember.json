@@ -271,6 +271,24 @@
     "name" : "ACL",
     "stdDataType" : 25,
     "stringLength" : 7
+  }, {
+    "codeName" : "ClosedBy",
+    "logicName" : "由谁关闭",
+    "name" : "CLOSEDBY",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "CanceledBy",
+    "logicName" : "由谁取消",
+    "name" : "CANCELEDBY",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "UpdateBy",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",
@@ -471,6 +489,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "团队管理",
     "codeName" : "TeamManagement",
+    "dataAccessAction" : "MANAGE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectTeamMainGridView_EditRow.json",

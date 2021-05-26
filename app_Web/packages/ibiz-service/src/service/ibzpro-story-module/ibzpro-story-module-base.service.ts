@@ -4,7 +4,7 @@ import { IIBZProStoryModule, IBZProStoryModule } from '../../entities';
 import keys from '../../entities/ibzpro-story-module/ibzpro-story-module-keys';
 
 /**
- * 需求模块服务对象基类
+ * 需求模块（iBizSys）服务对象基类
  *
  * @export
  * @class IBZProStoryModuleBaseService

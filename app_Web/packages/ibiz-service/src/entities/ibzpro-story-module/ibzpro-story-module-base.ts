@@ -2,7 +2,7 @@ import { EntityBase } from 'ibiz-core';
 import { IIBZProStoryModule } from '../interface';
 
 /**
- * 需求模块基类
+ * 需求模块（iBizSys）基类
  *
  * @export
  * @abstract

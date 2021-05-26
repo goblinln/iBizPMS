@@ -17804,6 +17804,41 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'products/:product?/bugs/:bug?/views/bugprojectkanbanview',
+                    meta: {
+                        caption: 'entities.bug.views.bugprojectkanbanview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'bugprojectkanbanview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'bugs/:bug?/views/bugprojectkanbanview',
+                    meta: {
+                        caption: 'entities.bug.views.bugprojectkanbanview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'bugprojectkanbanview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'products/:product?/bugs/:bug?/views/maineditview',
                     meta: {
                         caption: 'entities.bug.views.maineditview.caption',
@@ -18497,6 +18532,41 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_myassignedtome' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/projectneweditview',
+                    meta: {
+                        caption: 'entities.bug.views.projectneweditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'projectneweditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'bugs/:bug?/views/projectneweditview',
+                    meta: {
+                        caption: 'entities.bug.views.projectneweditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'projectneweditview' },
                         ],
                         resource:'bug',
                         requireAuth: true,
@@ -23885,6 +23955,21 @@ const router = new Router({
                     component: AppViewShell,
                 },
                 {
+                    path: 'views/bugbugprojectkanbanview',
+                    meta: {
+                        caption: 'entities.bug.views.bugprojectkanbanview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'bugbugprojectkanbanview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
                     path: 'views/testreportprojecttabexpview',
                     meta: {
                         caption: 'entities.testreport.views.projecttabexpview.caption',
@@ -28425,6 +28510,21 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'projectmodulemaingridview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/bugprojectneweditview',
+                    meta: {
+                        caption: 'entities.bug.views.projectneweditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'bugprojectneweditview' },
                         ],
                         requireAuth: true,
                     },

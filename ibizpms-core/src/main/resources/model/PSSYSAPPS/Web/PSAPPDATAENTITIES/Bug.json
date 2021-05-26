@@ -3018,6 +3018,40 @@
     "reloadData" : true,
     "id" : "createBugByBuild@Bug"
   }, {
+    "actionTarget" : "NONE",
+    "caption" : "新建",
+    "codeName" : "ProjectCreate",
+    "dataAccessAction" : "CREATE",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugProjectNewEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "Bug_ProjectCreate",
+    "name" : "新建（项目新建）",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    },
+    "getPSNavigateParams" : [ {
+      "key" : "project",
+      "name" : "project",
+      "value" : "project",
+      "rawValue" : false
+    } ],
+    "getPSSysImage" : {
+      "glyph" : "xf067@FontAwesome",
+      "cssClass" : "fa fa-plus"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "ProjectCreate",
+    "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
+    "id" : "ProjectCreate@Bug"
+  }, {
     "actionTarget" : "MULTIKEY",
     "caption" : "关联bug",
     "codeName" : "buildlinkbugs",

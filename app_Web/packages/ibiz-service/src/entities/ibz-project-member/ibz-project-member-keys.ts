@@ -14,4 +14,7 @@ export default [
     'name',
     'openedby',
     'acl',
+    'closedby',
+    'canceledby',
+    'updateby',
 ];

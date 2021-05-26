@@ -714,7 +714,6 @@ public class DELogicAspect {
         validLogic.put("productmodulecreateafter.bpmn", 1);
         validLogic.put("productmoduleupdateafter.bpmn", 1);
         validLogic.put("productmodulefixexec.bpmn", 1);
-        validLogic.put("productmoduleremovemoduleexec.bpmn", 1);
         validLogic.put("productplangetafter.bpmn", 1);
         validLogic.put("productplangetdraftafter.bpmn", 1);
         validLogic.put("productplangetoldplannameexec.bpmn", 1);

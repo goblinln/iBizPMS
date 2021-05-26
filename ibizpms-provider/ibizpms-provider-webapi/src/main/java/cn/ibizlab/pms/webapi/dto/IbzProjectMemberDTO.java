@@ -184,6 +184,36 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @ApiModelProperty("访问控制")
     private String acl;
 
+    /**
+     * 属性 [CLOSEDBY]
+     *
+     */
+    @JSONField(name = "closedby")
+    @JsonProperty("closedby")
+    @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
+    @ApiModelProperty("由谁关闭")
+    private String closedby;
+
+    /**
+     * 属性 [CANCELEDBY]
+     *
+     */
+    @JSONField(name = "canceledby")
+    @JsonProperty("canceledby")
+    @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
+    @ApiModelProperty("由谁取消")
+    private String canceledby;
+
+    /**
+     * 属性 [UPDATEBY]
+     *
+     */
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
+
 
     /**
      * 设置 [NAME]
@@ -199,6 +229,22 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     public void setAcl(String  acl){
         this.acl = acl ;
         this.modify("acl",acl);
+    }
+
+    /**
+     * 设置 [CLOSEDBY]
+     */
+    public void setClosedby(String  closedby){
+        this.closedby = closedby ;
+        this.modify("closedby",closedby);
+    }
+
+    /**
+     * 设置 [CANCELEDBY]
+     */
+    public void setCanceledby(String  canceledby){
+        this.canceledby = canceledby ;
+        this.modify("canceledby",canceledby);
     }
 
 

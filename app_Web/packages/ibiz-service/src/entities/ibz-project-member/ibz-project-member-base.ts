@@ -95,6 +95,18 @@ export abstract class IbzProjectMemberBase extends EntityBase implements IIbzPro
      * @type {('open' | 'private' | 'custom')} open: 默认设置(有项目视图权限，即可访问), private: 私有项目(只有项目团队成员才能访问), custom: 自定义白名单(团队成员和白名单的成员可以访问)
      */
     acl?: 'open' | 'private' | 'custom';
+    /**
+     * 由谁关闭
+     */
+    closedby?: any;
+    /**
+     * 由谁取消
+     */
+    canceledby?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
 
     /**
      * 重置实体数据

@@ -169,6 +169,33 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @JsonProperty("acl")
     @ApiModelProperty("访问控制")
     private String acl;
+    /**
+     * 由谁关闭
+     */
+    @DEField(defaultValue = "#EMPTY")
+    @TableField(value = "`CLOSEDBY`")
+    @JSONField(name = "closedby")
+    @JsonProperty("closedby")
+    @ApiModelProperty("由谁关闭")
+    private String closedby;
+    /**
+     * 由谁取消
+     */
+    @DEField(defaultValue = "#EMPTY")
+    @TableField(value = "`CANCELEDBY`")
+    @JSONField(name = "canceledby")
+    @JsonProperty("canceledby")
+    @ApiModelProperty("由谁取消")
+    private String canceledby;
+    /**
+     * 由谁更新
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @TableField(value = "`UPDATEBY`")
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
 
 
 
@@ -186,6 +213,22 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     public void setAcl(String acl) {
         this.acl = acl;
         this.modify("acl", acl);
+    }
+
+    /**
+     * 设置 [由谁关闭]
+     */
+    public void setClosedby(String closedby) {
+        this.closedby = closedby;
+        this.modify("closedby", closedby);
+    }
+
+    /**
+     * 设置 [由谁取消]
+     */
+    public void setCanceledby(String canceledby) {
+        this.canceledby = canceledby;
+        this.modify("canceledby", canceledby);
     }
 
 

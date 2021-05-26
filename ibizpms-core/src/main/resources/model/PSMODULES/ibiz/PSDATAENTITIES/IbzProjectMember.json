@@ -90,7 +90,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "( ( t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"IBZ_PROJECTMEMBER\"}')}  OR  t1.PM =  ${srfsessioncontext('srfloginname','{\"defname\":\"PM\",\"dename\":\"IBZ_PROJECTMEMBER\"}')}  OR  t1.RD =  ${srfsessioncontext('srfloginname','{\"defname\":\"RD\",\"dename\":\"IBZ_PROJECTMEMBER\"}')}  OR  t1.QD =  ${srfsessioncontext('srfloginname','{\"defname\":\"QD\",\"dename\":\"IBZ_PROJECTMEMBER\"}')}  OR  t1.PO =  ${srfsessioncontext('srfloginname','{\"defname\":\"PO\",\"dename\":\"IBZ_PROJECTMEMBER\"}')} )  AND  t1.`ACL` = 'private' )",
+        "customCond" : "( ( t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"IBZ_PROJECTMEMBER\"}')}  OR  t1.PM =  ${srfsessioncontext('srfloginname','{\"defname\":\"PM\",\"dename\":\"IBZ_PROJECTMEMBER\"}')}  OR  t1.RD =  ${srfsessioncontext('srfloginname','{\"defname\":\"RD\",\"dename\":\"IBZ_PROJECTMEMBER\"}')}  OR  t1.QD =  ${srfsessioncontext('srfloginname','{\"defname\":\"QD\",\"dename\":\"IBZ_PROJECTMEMBER\"}')}  OR  t1.PO =  ${srfsessioncontext('srfloginname','{\"defname\":\"PO\",\"dename\":\"IBZ_PROJECTMEMBER\"}')}  OR  t1.`CANCELEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CANCELEDBY\",\"dename\":\"IBZ_PROJECTMEMBER\"}')}  OR  t1.`CLOSEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CLOSEDBY\",\"dename\":\"IBZ_PROJECTMEMBER\"}')}  OR  t1.`UPDATEBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"UPDATEBY\",\"dename\":\"IBZ_PROJECTMEMBER\"}')} )  AND  t1.`ACL` = 'private' )",
         "name" : "查询条件"
       } ]
     } ],
@@ -951,6 +951,153 @@
     "stdDataType" : 25,
     "stringLength" : 7,
     "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CLOSEDBY",
+      "dBType" : "MYSQL5",
+      "name" : "CLOSEDBY",
+      "queryCodeExp" : "t1.`CLOSEDBY`",
+      "standardColumnName" : "`CLOSEDBY`",
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CLOSEDBY",
+          "maxValue" : 30,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[30]"
+      },
+      "getPSDEField" : {
+        "name" : "CLOSEDBY",
+        "codeName" : "ClosedBy"
+      },
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "ClosedBy",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "length" : 30,
+    "logicName" : "由谁关闭",
+    "name" : "CLOSEDBY",
+    "stdDataType" : 25,
+    "stringLength" : 30,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CANCELEDBY",
+      "dBType" : "MYSQL5",
+      "name" : "CANCELEDBY",
+      "queryCodeExp" : "t1.`CANCELEDBY`",
+      "standardColumnName" : "`CANCELEDBY`",
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CANCELEDBY",
+          "maxValue" : 30,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[30]"
+      },
+      "getPSDEField" : {
+        "name" : "CANCELEDBY",
+        "codeName" : "CanceledBy"
+      },
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CanceledBy",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "length" : 30,
+    "logicName" : "由谁取消",
+    "name" : "CANCELEDBY",
+    "stdDataType" : 25,
+    "stringLength" : 30,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEBY",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEBY",
+      "queryCodeExp" : "t1.`UPDATEBY`",
+      "standardColumnName" : "`UPDATEBY`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "UPDATEBY",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "getPSDEField" : {
+        "name" : "UPDATEBY",
+        "codeName" : "UpdateBy"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateBy",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "predefinedType" : "UPDATEMANNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s",
+    "systemReserver" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -969,8 +1116,46 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Manage_DEV.json",
+    "name" : "项目管理（参与者）（系统使用）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "MANAGE",
+      "name" : "MANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MANAGE"
+      }
+    } ],
+    "roleTag" : "Project_Manage_DEV",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Manage_Open.json",
+    "name" : "项目管理（公开项目）（系统使用）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "MANAGE",
+      "name" : "MANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MANAGE"
+      }
+    } ],
+    "roleTag" : "Project_Manage_Open",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Manage_OpenBy.json",
-    "name" : "项目管理（当前创建者）",
+    "name" : "项目管理（当前创建者）（系统使用）",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "OpenByQuery"
@@ -984,11 +1169,12 @@
       }
     } ],
     "roleTag" : "Project_Manage_OpenBy",
+    "userCat" : "CAT1",
     "userDRAction" : "READ",
-    "defaultMode" : true
+    "systemReserved" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Read_DEV.json",
-    "name" : "项目查看（成员）",
+    "name" : "项目查看（成员）（默认角色）",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "DeveloperQuery"
@@ -1006,7 +1192,7 @@
     "defaultMode" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Read_Open.json",
-    "name" : "项目查看（公开项目）",
+    "name" : "项目查看（公开项目）（默认角色）",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "OpenQuery"
@@ -1024,7 +1210,7 @@
     "defaultMode" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Read_OpenBy.json",
-    "name" : "项目查看（当前创建者）",
+    "name" : "项目查看（当前创建者）（默认角色）",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "OpenByQuery"

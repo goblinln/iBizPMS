@@ -211,21 +211,6 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
 
     @Override
     @Transactional
-    public ProductModule removeModule(ProductModule et) {
-         return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean removeModuleBatch(List<ProductModule> etList) {
-        for(ProductModule et : etList) {
-            removeModule(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public boolean save(ProductModule et) {
         if(!saveOrUpdate(et)) {
             return false;
@@ -458,6 +443,27 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
         return true;
     }
 
+    @Override
+    public List<ProductModule> getProductmoduleByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<ProductModule> getProductmoduleByEntities(List<ProductModule> entities) {
+        List ids =new ArrayList();
+        for(ProductModule entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IProductModuleService getProxyService() {

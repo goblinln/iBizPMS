@@ -25,14 +25,14 @@
     } ]
   } ],
   "getPSAppViewLogics" : [ {
-    "eventArg" : "deuiaction3_create",
+    "eventArg" : "deuiaction3_projectcreate",
     "eventNames" : "CLICK",
     "logicTrigger" : "CTRLEVENT",
     "logicType" : "APPVIEWUIACTION",
-    "name" : "toolbar_deuiaction3_create_click",
+    "name" : "toolbar_deuiaction3_projectcreate_click",
     "getPSAppViewUIAction" : {
       "modelref" : true,
-      "id" : "toolbar_deuiaction3_create"
+      "id" : "toolbar_deuiaction3_projectcreate"
     },
     "getPSViewCtrlName" : "toolbar"
   }, {
@@ -142,6 +142,17 @@
       "editMode" : true
     }
   } ],
+  "getPSAppViewNavParams" : [ {
+    "key" : "project",
+    "name" : "project",
+    "value" : "srfparentkey",
+    "rawValue" : false
+  }, {
+    "key" : "n_project_eq",
+    "name" : "n_project_eq",
+    "value" : "srfparentkey",
+    "rawValue" : false
+  } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
     "openMode" : "DRAWER_RIGHT",
@@ -174,14 +185,14 @@
     }
   } ],
   "getPSAppViewUIActions" : [ {
-    "name" : "toolbar_deuiaction3_create",
+    "name" : "toolbar_deuiaction3_projectcreate",
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
       },
       "modelref" : true,
-      "id" : "Create@Bug"
+      "id" : "ProjectCreate@Bug"
     },
     "uIActionTarget" : "NONE",
     "xDataControlName" : "grid"
@@ -224,11 +235,11 @@
       "caption" : "新建",
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
-      "name" : "deuiaction3_create",
+      "name" : "deuiaction3_projectcreate",
       "noPrivDisplayMode" : 2,
       "getPSAppViewUIAction" : {
         "modelref" : true,
-        "id" : "toolbar_deuiaction3_create"
+        "id" : "toolbar_deuiaction3_projectcreate"
       },
       "getPSSysImage" : {
         "glyph" : "xf067@FontAwesome",
@@ -237,20 +248,26 @@
       "getPSUIAction" : {
         "actionTarget" : "NONE",
         "caption" : "新建",
-        "codeName" : "Create",
+        "codeName" : "ProjectCreate",
         "dataAccessAction" : "CREATE",
         "getFrontPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugProjectNewEditView.json",
           "viewType" : "DEEDITVIEW"
         },
         "frontProcessType" : "WIZARD",
-        "fullCodeName" : "Bug_Create",
-        "name" : "新建",
+        "fullCodeName" : "Bug_ProjectCreate",
+        "name" : "新建（项目新建）",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
         },
+        "getPSNavigateParams" : [ {
+          "key" : "project",
+          "name" : "project",
+          "value" : "project",
+          "rawValue" : false
+        } ],
         "getPSSysImage" : {
           "glyph" : "xf067@FontAwesome",
           "cssClass" : "fa fa-plus"
@@ -258,10 +275,10 @@
         "refreshMode" : 1,
         "timeout" : 60000,
         "uIActionMode" : "FRONT",
-        "uIActionTag" : "Create",
+        "uIActionTag" : "ProjectCreate",
         "uIActionType" : "DEUIACTION",
         "reloadData" : true,
-        "id" : "Create@Bug"
+        "id" : "ProjectCreate@Bug"
       },
       "tooltip" : "新建",
       "showCaption" : true,

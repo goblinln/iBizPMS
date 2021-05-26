@@ -5,7 +5,7 @@ import { AuthServiceRegister } from '../../register';
 import { GlobalService } from '../../service';
 
 /**
- * 需求模块UI服务对象基类
+ * 需求模块（iBizSys）UI服务对象基类
  *
  * @export
  * @class IBZProStoryModuleUIServiceBase

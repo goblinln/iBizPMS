@@ -1,6 +1,6 @@
 {
   "accUserMode" : 2,
-  "caption" : "需求模块",
+  "caption" : "需求模块（iBizSys）",
   "codeName" : "IBZProStoryModuleEditView",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProStoryModuleEditView.json",
   "funcViewMode" : "EDITVIEW",

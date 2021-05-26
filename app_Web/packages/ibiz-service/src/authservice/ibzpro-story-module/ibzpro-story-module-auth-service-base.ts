@@ -1,7 +1,7 @@
 import { AuthService } from '../auth-service';
 
 /**
- * 需求模块权限服务对象基类
+ * 需求模块（iBizSys）权限服务对象基类
  *
  * @export
  * @class IBZProStoryModuleAuthServiceBase

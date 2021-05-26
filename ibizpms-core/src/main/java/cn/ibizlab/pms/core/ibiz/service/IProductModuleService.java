@@ -38,8 +38,6 @@ public interface IProductModuleService extends IService<ProductModule> {
     boolean checkKey(ProductModule et);
     ProductModule fix(ProductModule et);
     boolean fixBatch(List<ProductModule> etList);
-    ProductModule removeModule(ProductModule et);
-    boolean removeModuleBatch(List<ProductModule> etList);
     boolean save(ProductModule et);
     void saveBatch(List<ProductModule> list);
     ProductModule syncFromIBIZ(ProductModule et);
@@ -79,6 +77,8 @@ public interface IProductModuleService extends IService<ProductModule> {
      */
     boolean execute(String sql, Map param);
 
+    List<ProductModule> getProductmoduleByIds(List<Long> ids);
+    List<ProductModule> getProductmoduleByEntities(List<ProductModule> entities);
 }
 
 
