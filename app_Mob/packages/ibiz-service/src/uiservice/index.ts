@@ -50,4 +50,5 @@ export * from './ibz-weekly/ibz-weekly-ui-service';
 export * from './ibzprojectteam/ibzprojectteam-ui-service';
 export * from './story/story-ui-service';
 export * from './product-line/product-line-ui-service';
+export * from './ibz-pro-reportly-action/ibz-pro-reportly-action-ui-service';
 export * from './dyna-filter/dyna-filter-ui-service';

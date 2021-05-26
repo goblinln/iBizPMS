@@ -698,7 +698,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "noPrivDisplayMode" : 1,
               "caption" : "指派",
               "codeName" : "AssignToDash",
               "dataAccessAction" : "ASSIGNTO",
@@ -747,7 +746,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "noPrivDisplayMode" : 1,
               "caption" : "评审",
               "codeName" : "ReviewStoryDash",
               "dataAccessAction" : "REVIEW",
@@ -793,7 +791,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "noPrivDisplayMode" : 1,
               "caption" : "激活",
               "codeName" : "ActiviteDash",
               "dataAccessAction" : "ACTIVATE",
@@ -839,7 +836,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "noPrivDisplayMode" : 1,
               "caption" : "关闭",
               "codeName" : "CloseStoryDash",
               "dataAccessAction" : "CLOSE",
@@ -888,7 +884,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "noPrivDisplayMode" : 1,
               "caption" : "变更",
               "codeName" : "ChangeStoryDetailDash",
               "dataAccessAction" : "CHANGE",
@@ -934,7 +929,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "noPrivDisplayMode" : 1,
               "caption" : "细分",
               "codeName" : "SubStoryCz",
               "dataAccessAction" : "ISCHILD",
@@ -1005,6 +999,7 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "编辑",
               "codeName" : "OpenBaseInfoC",
+              "dataAccessAction" : "UPDATE",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_EditMode.json",

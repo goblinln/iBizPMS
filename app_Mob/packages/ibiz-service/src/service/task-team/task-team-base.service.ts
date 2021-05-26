@@ -107,26 +107,8 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
      * @memberof TaskTeamService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.taskteam) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskteams/${_context.taskteam}/select`);
-        }
-        if (_context.product && _context.story && _context.task && _context.taskteam) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskteams/${_context.taskteam}/select`);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.taskteam) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskteams/${_context.taskteam}/select`);
-        }
         if (_context.project && _context.task && _context.taskteam) {
             return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskteams/${_context.taskteam}/select`);
-        }
-        if (_context.story && _context.task && _context.taskteam) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/taskteams/${_context.taskteam}/select`);
-        }
-        if (_context.productplan && _context.task && _context.taskteam) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/taskteams/${_context.taskteam}/select`);
-        }
-        if (_context.projectmodule && _context.task && _context.taskteam) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskteams/${_context.taskteam}/select`);
         }
         if (_context.task && _context.taskteam) {
             return this.http.get(`/tasks/${_context.task}/taskteams/${_context.taskteam}/select`);
@@ -142,36 +124,6 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
      * @memberof TaskTeamService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskteams`, _data);
-        }
-        if (_context.product && _context.story && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskteams`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskteams`, _data);
-        }
         if (_context.project && _context.task && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -181,36 +133,6 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskteams`, _data);
-        }
-        if (_context.story && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/taskteams`, _data);
-        }
-        if (_context.productplan && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/taskteams`, _data);
-        }
-        if (_context.projectmodule && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskteams`, _data);
         }
         if (_context.task && true) {
         _data = await this.obtainMinor(_context, _data);
@@ -233,33 +155,9 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
      * @memberof TaskTeamService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.taskteam) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskteams/${_context.taskteam}`, _data);
-        }
-        if (_context.product && _context.story && _context.task && _context.taskteam) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskteams/${_context.taskteam}`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.taskteam) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskteams/${_context.taskteam}`, _data);
-        }
         if (_context.project && _context.task && _context.taskteam) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/taskteams/${_context.taskteam}`, _data);
-        }
-        if (_context.story && _context.task && _context.taskteam) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/stories/${_context.story}/tasks/${_context.task}/taskteams/${_context.taskteam}`, _data);
-        }
-        if (_context.productplan && _context.task && _context.taskteam) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/productplans/${_context.productplan}/tasks/${_context.task}/taskteams/${_context.taskteam}`, _data);
-        }
-        if (_context.projectmodule && _context.task && _context.taskteam) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskteams/${_context.taskteam}`, _data);
         }
         if (_context.task && _context.taskteam) {
         _data = await this.obtainMinor(_context, _data);
@@ -276,26 +174,8 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
      * @memberof TaskTeamService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.taskteam) {
-            return this.http.delete(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskteams/${_context.taskteam}`);
-        }
-        if (_context.product && _context.story && _context.task && _context.taskteam) {
-            return this.http.delete(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskteams/${_context.taskteam}`);
-        }
-        if (_context.product && _context.productplan && _context.task && _context.taskteam) {
-            return this.http.delete(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskteams/${_context.taskteam}`);
-        }
         if (_context.project && _context.task && _context.taskteam) {
             return this.http.delete(`/projects/${_context.project}/tasks/${_context.task}/taskteams/${_context.taskteam}`);
-        }
-        if (_context.story && _context.task && _context.taskteam) {
-            return this.http.delete(`/stories/${_context.story}/tasks/${_context.task}/taskteams/${_context.taskteam}`);
-        }
-        if (_context.productplan && _context.task && _context.taskteam) {
-            return this.http.delete(`/productplans/${_context.productplan}/tasks/${_context.task}/taskteams/${_context.taskteam}`);
-        }
-        if (_context.projectmodule && _context.task && _context.taskteam) {
-            return this.http.delete(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskteams/${_context.taskteam}`);
         }
         if (_context.task && _context.taskteam) {
             return this.http.delete(`/tasks/${_context.task}/taskteams/${_context.taskteam}`);
@@ -311,32 +191,8 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
      * @memberof TaskTeamService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && _context.taskteam) {
-            const res = await this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskteams/${_context.taskteam}`);
-            return res;
-        }
-        if (_context.product && _context.story && _context.task && _context.taskteam) {
-            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskteams/${_context.taskteam}`);
-            return res;
-        }
-        if (_context.product && _context.productplan && _context.task && _context.taskteam) {
-            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskteams/${_context.taskteam}`);
-            return res;
-        }
         if (_context.project && _context.task && _context.taskteam) {
             const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskteams/${_context.taskteam}`);
-            return res;
-        }
-        if (_context.story && _context.task && _context.taskteam) {
-            const res = await this.http.get(`/stories/${_context.story}/tasks/${_context.task}/taskteams/${_context.taskteam}`);
-            return res;
-        }
-        if (_context.productplan && _context.task && _context.taskteam) {
-            const res = await this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/taskteams/${_context.taskteam}`);
-            return res;
-        }
-        if (_context.projectmodule && _context.task && _context.taskteam) {
-            const res = await this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskteams/${_context.taskteam}`);
             return res;
         }
         if (_context.task && _context.taskteam) {
@@ -354,46 +210,10 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
      * @memberof TaskTeamService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskteams/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && _context.story && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskteams/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && _context.productplan && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskteams/getdraft`, _data);
-            return res;
-        }
         if (_context.project && _context.task && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskteams/getdraft`, _data);
-            return res;
-        }
-        if (_context.story && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/stories/${_context.story}/tasks/${_context.task}/taskteams/getdraft`, _data);
-            return res;
-        }
-        if (_context.productplan && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/taskteams/getdraft`, _data);
-            return res;
-        }
-        if (_context.projectmodule && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskteams/getdraft`, _data);
             return res;
         }
         if (_context.task && true) {
@@ -413,26 +233,8 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
      * @memberof TaskTeamService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
-        }
-        if (_context.product && _context.story && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
-        }
         if (_context.project && _context.task && true) {
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
-        }
-        if (_context.story && _context.task && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
-        }
-        if (_context.productplan && _context.task && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
-        }
-        if (_context.projectmodule && _context.task && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
         }
         if (_context.task && true) {
             return this.http.post(`/tasks/${_context.task}/taskteams/fetchdefault`, _data);

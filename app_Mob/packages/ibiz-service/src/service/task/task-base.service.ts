@@ -26,9 +26,6 @@ export class TaskBaseService extends EntityBaseService<ITask> {
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['id','name',];
     protected selectContextParam = {
-        projectmodule: 'module',
-        productplan: 'plan',
-        story: 'story',
         project: 'project',
     };
 
@@ -46,32 +43,6 @@ export class TaskBaseService extends EntityBaseService<ITask> {
 
     async getLocal(context: IContext, srfKey: string): Promise<ITask> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.module && entity.module !== '') {
-            const s = await ___ibz___.gs.getProjectModuleService();
-            const data = await s.getLocal2(context, entity.module);
-            if (data) {
-                entity.modulename = data.name;
-                entity.module = data.id;
-                entity.projectmodule = data;
-            }
-        }
-        if (entity && entity.plan && entity.plan !== '') {
-            const s = await ___ibz___.gs.getProductPlanService();
-            const data = await s.getLocal2(context, entity.plan);
-            if (data) {
-                entity.planname = data.title;
-                entity.plan = data.id;
-            }
-        }
-        if (entity && entity.story && entity.story !== '') {
-            const s = await ___ibz___.gs.getStoryService();
-            const data = await s.getLocal2(context, entity.story);
-            if (data) {
-                entity.storyname = data.title;
-                entity.story = data.id;
-                entity.story = data;
-            }
-        }
         if (entity && entity.project && entity.project !== '') {
             const s = await ___ibz___.gs.getProjectService();
             const data = await s.getLocal2(context, entity.project);
@@ -88,32 +59,6 @@ export class TaskBaseService extends EntityBaseService<ITask> {
     }
 
     async getDraftLocal(_context: IContext, entity: ITask = {}): Promise<ITask> {
-        if (_context.projectmodule && _context.projectmodule !== '') {
-            const s = await ___ibz___.gs.getProjectModuleService();
-            const data = await s.getLocal2(_context, _context.projectmodule);
-            if (data) {
-                entity.modulename = data.name;
-                entity.module = data.id;
-                entity.projectmodule = data;
-            }
-        }
-        if (_context.productplan && _context.productplan !== '') {
-            const s = await ___ibz___.gs.getProductPlanService();
-            const data = await s.getLocal2(_context, _context.productplan);
-            if (data) {
-                entity.planname = data.title;
-                entity.plan = data.id;
-            }
-        }
-        if (_context.story && _context.story !== '') {
-            const s = await ___ibz___.gs.getStoryService();
-            const data = await s.getLocal2(_context, _context.story);
-            if (data) {
-                entity.storyname = data.title;
-                entity.story = data.id;
-                entity.story = data;
-            }
-        }
         if (_context.project && _context.project !== '') {
             const s = await ___ibz___.gs.getProjectService();
             const data = await s.getLocal2(_context, _context.project);
@@ -400,26 +345,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/select`);
-        }
-        if (_context.product && _context.story && _context.task) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/select`);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/select`);
-        }
         if (_context.project && _context.task) {
             return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/select`);
-        }
-        if (_context.story && _context.task) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/select`);
-        }
-        if (_context.productplan && _context.task) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/select`);
-        }
-        if (_context.projectmodule && _context.task) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/select`);
         }
         return this.http.get(`/tasks/${_context.task}/select`);
     }
@@ -432,36 +359,6 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks`, _data);
-        }
-        if (_context.product && _context.story && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks`, _data);
-        }
         if (_context.project && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -471,36 +368,6 @@ export class TaskBaseService extends EntityBaseService<ITask> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/projects/${_context.project}/tasks`, _data);
-        }
-        if (_context.story && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/stories/${_context.story}/tasks`, _data);
-        }
-        if (_context.productplan && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/productplans/${_context.productplan}/tasks`, _data);
-        }
-        if (_context.projectmodule && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks`, _data);
         }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -520,33 +387,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/tasks/${_context.task}`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/stories/${_context.story}/tasks/${_context.task}`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/productplans/${_context.productplan}/tasks/${_context.task}`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}`, _data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/tasks/${_context.task}`, _data);
@@ -560,26 +403,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-            return this.http.delete(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}`);
-        }
-        if (_context.product && _context.story && _context.task) {
-            return this.http.delete(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}`);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-            return this.http.delete(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}`);
-        }
         if (_context.project && _context.task) {
             return this.http.delete(`/projects/${_context.project}/tasks/${_context.task}`);
-        }
-        if (_context.story && _context.task) {
-            return this.http.delete(`/stories/${_context.story}/tasks/${_context.task}`);
-        }
-        if (_context.productplan && _context.task) {
-            return this.http.delete(`/productplans/${_context.productplan}/tasks/${_context.task}`);
-        }
-        if (_context.projectmodule && _context.task) {
-            return this.http.delete(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}`);
         }
         return this.http.delete(`/tasks/${_context.task}`);
     }
@@ -592,50 +417,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-            const res = await this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}`);
-        if (res.ok && res.status === 200) {
-            await this.fillMinor(_context, res.data);
-        }
-            return res;
-        }
-        if (_context.product && _context.story && _context.task) {
-            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}`);
-        if (res.ok && res.status === 200) {
-            await this.fillMinor(_context, res.data);
-        }
-            return res;
-        }
-        if (_context.product && _context.productplan && _context.task) {
-            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}`);
-        if (res.ok && res.status === 200) {
-            await this.fillMinor(_context, res.data);
-        }
-            return res;
-        }
         if (_context.project && _context.task) {
             const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}`);
-        if (res.ok && res.status === 200) {
-            await this.fillMinor(_context, res.data);
-        }
-            return res;
-        }
-        if (_context.story && _context.task) {
-            const res = await this.http.get(`/stories/${_context.story}/tasks/${_context.task}`);
-        if (res.ok && res.status === 200) {
-            await this.fillMinor(_context, res.data);
-        }
-            return res;
-        }
-        if (_context.productplan && _context.task) {
-            const res = await this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}`);
-        if (res.ok && res.status === 200) {
-            await this.fillMinor(_context, res.data);
-        }
-            return res;
-        }
-        if (_context.projectmodule && _context.task) {
-            const res = await this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}`);
         if (res.ok && res.status === 200) {
             await this.fillMinor(_context, res.data);
         }
@@ -656,64 +439,10 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/getdraft`, _data);
-        if (res.ok && res.status === 200) {
-            await this.fillMinor(_context, res.data);
-        }
-            return res;
-        }
-        if (_context.product && _context.story && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/getdraft`, _data);
-        if (res.ok && res.status === 200) {
-            await this.fillMinor(_context, res.data);
-        }
-            return res;
-        }
-        if (_context.product && _context.productplan && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/getdraft`, _data);
-        if (res.ok && res.status === 200) {
-            await this.fillMinor(_context, res.data);
-        }
-            return res;
-        }
         if (_context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/projects/${_context.project}/tasks/getdraft`, _data);
-        if (res.ok && res.status === 200) {
-            await this.fillMinor(_context, res.data);
-        }
-            return res;
-        }
-        if (_context.story && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/stories/${_context.story}/tasks/getdraft`, _data);
-        if (res.ok && res.status === 200) {
-            await this.fillMinor(_context, res.data);
-        }
-            return res;
-        }
-        if (_context.productplan && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/productplans/${_context.productplan}/tasks/getdraft`, _data);
-        if (res.ok && res.status === 200) {
-            await this.fillMinor(_context, res.data);
-        }
-            return res;
-        }
-        if (_context.projectmodule && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projectmodules/${_context.projectmodule}/tasks/getdraft`, _data);
         if (res.ok && res.status === 200) {
             await this.fillMinor(_context, res.data);
         }
@@ -736,33 +465,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async Activate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/activate`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/activate`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/activate`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/activate`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/activate`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/activate`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/activate`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/activate`, _data);
     }
@@ -775,33 +480,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async AssignTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/assignto`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/assignto`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/assignto`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/assignto`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/assignto`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/assignto`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/assignto`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/assignto`, _data);
     }
@@ -814,33 +495,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async Cancel(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/cancel`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/cancel`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/cancel`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/cancel`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/cancel`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/cancel`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/cancel`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/cancel`, _data);
     }
@@ -853,33 +510,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/close`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/close`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/close`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/close`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/close`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/close`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/close`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/close`, _data);
     }
@@ -892,33 +525,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async ComputeBeginAndEnd(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/computebeginandend`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/computebeginandend`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/computebeginandend`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/computebeginandend`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/computebeginandend`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/computebeginandend`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/computebeginandend`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/computebeginandend`, _data);
     }
@@ -931,33 +540,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async ComputeHours4Multiple(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/computehours4multiple`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/computehours4multiple`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/computehours4multiple`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/computehours4multiple`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/computehours4multiple`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/computehours4multiple`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/computehours4multiple`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/computehours4multiple`, _data);
     }
@@ -970,33 +555,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async ComputeWorkingHours(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/computeworkinghours`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/computeworkinghours`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/computeworkinghours`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/computeworkinghours`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/computeworkinghours`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/computeworkinghours`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/computeworkinghours`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/computeworkinghours`, _data);
     }
@@ -1009,33 +570,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async ConfirmStoryChange(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/confirmstorychange`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/confirmstorychange`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/confirmstorychange`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/confirmstorychange`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/confirmstorychange`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/confirmstorychange`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/confirmstorychange`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/confirmstorychange`, _data);
     }
@@ -1048,33 +585,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async CreateByCycle(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/createbycycle`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/createbycycle`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/createbycycle`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/createbycycle`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/createbycycle`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/createbycycle`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/createbycycle`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/createbycycle`, _data);
     }
@@ -1087,33 +600,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async CreateCycleTasks(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/createcycletasks`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/createcycletasks`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/createcycletasks`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/createcycletasks`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/createcycletasks`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/createcycletasks`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/createcycletasks`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/createcycletasks`, _data);
     }
@@ -1126,33 +615,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async Delete(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/delete`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/delete`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/delete`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/delete`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/delete`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/delete`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/delete`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/delete`, _data);
     }
@@ -1165,33 +630,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async DeleteEstimate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/deleteestimate`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/deleteestimate`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/deleteestimate`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/deleteestimate`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/deleteestimate`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/deleteestimate`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/deleteestimate`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/deleteestimate`, _data);
     }
@@ -1204,33 +645,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async EditEstimate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/editestimate`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/editestimate`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/editestimate`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/editestimate`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/editestimate`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/editestimate`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/editestimate`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/editestimate`, _data);
     }
@@ -1243,33 +660,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async Finish(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/finish`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/finish`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/finish`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/finish`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/finish`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/finish`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/finish`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/finish`, _data);
     }
@@ -1282,33 +675,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async GetNextTeamUser(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/getnextteamuser`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/getnextteamuser`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/getnextteamuser`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/getnextteamuser`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/stories/${_context.story}/tasks/${_context.task}/getnextteamuser`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/productplans/${_context.productplan}/tasks/${_context.task}/getnextteamuser`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/getnextteamuser`, _data);
         }
         return this.http.put(`/tasks/${_context.task}/getnextteamuser`, _data);
     }
@@ -1321,33 +690,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async GetTeamUserLeftActivity(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/getteamuserleftactivity`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/getteamuserleftactivity`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/getteamuserleftactivity`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/getteamuserleftactivity`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/stories/${_context.story}/tasks/${_context.task}/getteamuserleftactivity`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/productplans/${_context.productplan}/tasks/${_context.task}/getteamuserleftactivity`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/getteamuserleftactivity`, _data);
         }
         return this.http.put(`/tasks/${_context.task}/getteamuserleftactivity`, _data);
     }
@@ -1360,33 +705,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async GetTeamUserLeftStart(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/getteamuserleftstart`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/getteamuserleftstart`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/getteamuserleftstart`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/getteamuserleftstart`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/stories/${_context.story}/tasks/${_context.task}/getteamuserleftstart`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/productplans/${_context.productplan}/tasks/${_context.task}/getteamuserleftstart`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/getteamuserleftstart`, _data);
         }
         return this.http.put(`/tasks/${_context.task}/getteamuserleftstart`, _data);
     }
@@ -1399,33 +720,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async GetUsernames(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/getusernames`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/getusernames`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/getusernames`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/getusernames`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/stories/${_context.story}/tasks/${_context.task}/getusernames`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/productplans/${_context.productplan}/tasks/${_context.task}/getusernames`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/getusernames`, _data);
         }
         return this.http.put(`/tasks/${_context.task}/getusernames`, _data);
     }
@@ -1438,33 +735,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async LinkPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/linkplan`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/linkplan`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/linkplan`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/linkplan`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/linkplan`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/linkplan`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/linkplan`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/linkplan`, _data);
     }
@@ -1477,33 +750,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async OtherUpdate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/otherupdate`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/otherupdate`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/otherupdate`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/otherupdate`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/stories/${_context.story}/tasks/${_context.task}/otherupdate`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/productplans/${_context.productplan}/tasks/${_context.task}/otherupdate`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/otherupdate`, _data);
         }
         return this.http.put(`/tasks/${_context.task}/otherupdate`, _data);
     }
@@ -1516,33 +765,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async Pause(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/pause`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/pause`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/pause`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/pause`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/pause`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/pause`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/pause`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/pause`, _data);
     }
@@ -1555,33 +780,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async RecordEstimate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/recordestimate`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/recordestimate`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/recordestimate`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/recordestimate`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/recordestimate`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/recordestimate`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/recordestimate`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/recordestimate`, _data);
     }
@@ -1594,33 +795,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async RecordTimZeroLeftAfterContinue(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/recordtimzeroleftaftercontinue`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/recordtimzeroleftaftercontinue`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/recordtimzeroleftaftercontinue`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/recordtimzeroleftaftercontinue`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/recordtimzeroleftaftercontinue`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/recordtimzeroleftaftercontinue`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/recordtimzeroleftaftercontinue`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/recordtimzeroleftaftercontinue`, _data);
     }
@@ -1633,33 +810,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async RecordTimateZeroLeft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/recordtimatezeroleft`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/recordtimatezeroleft`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/recordtimatezeroleft`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/recordtimatezeroleft`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/recordtimatezeroleft`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/recordtimatezeroleft`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/recordtimatezeroleft`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/recordtimatezeroleft`, _data);
     }
@@ -1672,33 +825,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async RecordTimateZeroLeftAfterStart(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/recordtimatezeroleftafterstart`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/recordtimatezeroleftafterstart`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/recordtimatezeroleftafterstart`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/recordtimatezeroleftafterstart`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/recordtimatezeroleftafterstart`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/recordtimatezeroleftafterstart`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/recordtimatezeroleftafterstart`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/recordtimatezeroleftafterstart`, _data);
     }
@@ -1711,33 +840,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async Restart(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/restart`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/restart`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/restart`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/restart`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/restart`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/restart`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/restart`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/restart`, _data);
     }
@@ -1750,33 +855,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async SendMessage(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/sendmessage`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/sendmessage`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/sendmessage`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/sendmessage`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/sendmessage`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/sendmessage`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/sendmessage`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/sendmessage`, _data);
     }
@@ -1789,33 +870,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async SendMsgPreProcess(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/sendmsgpreprocess`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/sendmsgpreprocess`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/sendmsgpreprocess`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/sendmsgpreprocess`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/sendmsgpreprocess`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/sendmsgpreprocess`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/sendmsgpreprocess`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/sendmsgpreprocess`, _data);
     }
@@ -1828,33 +885,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async Start(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/start`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/start`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/start`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/start`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/start`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/start`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/start`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/start`, _data);
     }
@@ -1867,33 +900,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async TaskFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskfavorites`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskfavorites`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskfavorites`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskfavorites`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/taskfavorites`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/taskfavorites`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskfavorites`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/taskfavorites`, _data);
     }
@@ -1906,33 +915,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async TaskForward(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskforward`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskforward`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskforward`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskforward`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/taskforward`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/taskforward`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskforward`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/taskforward`, _data);
     }
@@ -1945,33 +930,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async TaskNFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/tasknfavorites`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/tasknfavorites`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/tasknfavorites`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/tasknfavorites`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/tasknfavorites`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/tasknfavorites`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/tasknfavorites`, _data);
         }
         return this.http.post(`/tasks/${_context.task}/tasknfavorites`, _data);
     }
@@ -1984,33 +945,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async UpdateParentStatus(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/updateparentstatus`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/updateparentstatus`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/updateparentstatus`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/updateparentstatus`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/stories/${_context.story}/tasks/${_context.task}/updateparentstatus`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/productplans/${_context.productplan}/tasks/${_context.task}/updateparentstatus`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/updateparentstatus`, _data);
         }
         return this.http.put(`/tasks/${_context.task}/updateparentstatus`, _data);
     }
@@ -2023,33 +960,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async UpdateRelatedPlanStatus(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/updaterelatedplanstatus`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/updaterelatedplanstatus`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/updaterelatedplanstatus`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/updaterelatedplanstatus`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/stories/${_context.story}/tasks/${_context.task}/updaterelatedplanstatus`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/productplans/${_context.productplan}/tasks/${_context.task}/updaterelatedplanstatus`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/updaterelatedplanstatus`, _data);
         }
         return this.http.put(`/tasks/${_context.task}/updaterelatedplanstatus`, _data);
     }
@@ -2062,33 +975,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async UpdateStoryVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/updatestoryversion`, _data);
-        }
-        if (_context.product && _context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/updatestoryversion`, _data);
-        }
-        if (_context.product && _context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/updatestoryversion`, _data);
-        }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/updatestoryversion`, _data);
-        }
-        if (_context.story && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/stories/${_context.story}/tasks/${_context.task}/updatestoryversion`, _data);
-        }
-        if (_context.productplan && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/productplans/${_context.productplan}/tasks/${_context.task}/updatestoryversion`, _data);
-        }
-        if (_context.projectmodule && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/updatestoryversion`, _data);
         }
         return this.http.put(`/tasks/${_context.task}/updatestoryversion`, _data);
     }
@@ -2101,26 +990,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchAssignedToMyTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchassignedtomytask`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchassignedtomytask`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchassignedtomytask`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchassignedtomytask`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchassignedtomytask`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchassignedtomytask`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchassignedtomytask`, _data);
         }
         return this.http.post(`/tasks/fetchassignedtomytask`, _data);
     }
@@ -2133,26 +1004,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchAssignedToMyTaskPc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchassignedtomytaskpc`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchassignedtomytaskpc`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchassignedtomytaskpc`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchassignedtomytaskpc`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchassignedtomytaskpc`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchassignedtomytaskpc`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchassignedtomytaskpc`, _data);
         }
         return this.http.post(`/tasks/fetchassignedtomytaskpc`, _data);
     }
@@ -2165,26 +1018,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchBugTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchbugtask`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchbugtask`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchbugtask`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchbugtask`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchbugtask`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchbugtask`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchbugtask`, _data);
         }
         return this.http.post(`/tasks/fetchbugtask`, _data);
     }
@@ -2197,26 +1032,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchByModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchbymodule`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchbymodule`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchbymodule`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchbymodule`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchbymodule`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchbymodule`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchbymodule`, _data);
         }
         return this.http.post(`/tasks/fetchbymodule`, _data);
     }
@@ -2229,26 +1046,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchChildDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchchilddefault`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchchilddefault`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchchilddefault`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchchilddefault`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchchilddefault`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchchilddefault`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchchilddefault`, _data);
         }
         return this.http.post(`/tasks/fetchchilddefault`, _data);
     }
@@ -2261,26 +1060,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchChildDefaultMore(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchchilddefaultmore`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchchilddefaultmore`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchchilddefaultmore`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchchilddefaultmore`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchchilddefaultmore`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchchilddefaultmore`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchchilddefaultmore`, _data);
         }
         return this.http.post(`/tasks/fetchchilddefaultmore`, _data);
     }
@@ -2293,26 +1074,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchChildTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchchildtask`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchchildtask`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchchildtask`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchchildtask`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchchildtask`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchchildtask`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchchildtask`, _data);
         }
         return this.http.post(`/tasks/fetchchildtask`, _data);
     }
@@ -2325,26 +1088,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchChildTaskTree(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchchildtasktree`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchchildtasktree`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchchildtasktree`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchchildtasktree`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchchildtasktree`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchchildtasktree`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchchildtasktree`, _data);
         }
         return this.http.post(`/tasks/fetchchildtasktree`, _data);
     }
@@ -2357,26 +1102,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchCurFinishTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchcurfinishtask`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchcurfinishtask`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchcurfinishtask`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchcurfinishtask`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchcurfinishtask`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchcurfinishtask`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchcurfinishtask`, _data);
         }
         return this.http.post(`/tasks/fetchcurfinishtask`, _data);
     }
@@ -2389,26 +1116,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchCurProjectTaskQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchcurprojecttaskquery`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchcurprojecttaskquery`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchcurprojecttaskquery`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchcurprojecttaskquery`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchcurprojecttaskquery`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchcurprojecttaskquery`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchcurprojecttaskquery`, _data);
         }
         return this.http.post(`/tasks/fetchcurprojecttaskquery`, _data);
     }
@@ -2421,26 +1130,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchdefault`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchdefault`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchdefault`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchdefault`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchdefault`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchdefault`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchdefault`, _data);
         }
         return this.http.post(`/tasks/fetchdefault`, _data);
     }
@@ -2453,26 +1144,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchDefaultRow(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchdefaultrow`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchdefaultrow`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchdefaultrow`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchdefaultrow`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchdefaultrow`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchdefaultrow`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchdefaultrow`, _data);
         }
         return this.http.post(`/tasks/fetchdefaultrow`, _data);
     }
@@ -2485,26 +1158,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchESBulk(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchesbulk`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchesbulk`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchesbulk`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchesbulk`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchesbulk`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchesbulk`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchesbulk`, _data);
         }
         return this.http.post(`/tasks/fetchesbulk`, _data);
     }
@@ -2517,26 +1172,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchMyAgentTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchmyagenttask`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchmyagenttask`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchmyagenttask`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchmyagenttask`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchmyagenttask`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchmyagenttask`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchmyagenttask`, _data);
         }
         return this.http.post(`/tasks/fetchmyagenttask`, _data);
     }
@@ -2549,26 +1186,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchMyAllTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchmyalltask`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchmyalltask`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchmyalltask`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchmyalltask`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchmyalltask`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchmyalltask`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchmyalltask`, _data);
         }
         return this.http.post(`/tasks/fetchmyalltask`, _data);
     }
@@ -2581,26 +1200,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchMyCompleteTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchmycompletetask`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchmycompletetask`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchmycompletetask`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchmycompletetask`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchmycompletetask`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchmycompletetask`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchmycompletetask`, _data);
         }
         return this.http.post(`/tasks/fetchmycompletetask`, _data);
     }
@@ -2613,26 +1214,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchMyCompleteTaskMobDaily(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchmycompletetaskmobdaily`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchmycompletetaskmobdaily`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchmycompletetaskmobdaily`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchmycompletetaskmobdaily`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchmycompletetaskmobdaily`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchmycompletetaskmobdaily`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchmycompletetaskmobdaily`, _data);
         }
         return this.http.post(`/tasks/fetchmycompletetaskmobdaily`, _data);
     }
@@ -2645,26 +1228,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchMyCompleteTaskMobMonthly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchmycompletetaskmobmonthly`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchmycompletetaskmobmonthly`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchmycompletetaskmobmonthly`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchmycompletetaskmobmonthly`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchmycompletetaskmobmonthly`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchmycompletetaskmobmonthly`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchmycompletetaskmobmonthly`, _data);
         }
         return this.http.post(`/tasks/fetchmycompletetaskmobmonthly`, _data);
     }
@@ -2677,26 +1242,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchMyCompleteTaskMonthlyZS(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchmycompletetaskmonthlyzs`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchmycompletetaskmonthlyzs`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchmycompletetaskmonthlyzs`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchmycompletetaskmonthlyzs`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchmycompletetaskmonthlyzs`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchmycompletetaskmonthlyzs`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchmycompletetaskmonthlyzs`, _data);
         }
         return this.http.post(`/tasks/fetchmycompletetaskmonthlyzs`, _data);
     }
@@ -2709,26 +1256,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchMyCompleteTaskZS(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchmycompletetaskzs`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchmycompletetaskzs`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchmycompletetaskzs`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchmycompletetaskzs`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchmycompletetaskzs`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchmycompletetaskzs`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchmycompletetaskzs`, _data);
         }
         return this.http.post(`/tasks/fetchmycompletetaskzs`, _data);
     }
@@ -2741,26 +1270,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchMyFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchmyfavorites`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchmyfavorites`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchmyfavorites`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchmyfavorites`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchmyfavorites`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchmyfavorites`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchmyfavorites`, _data);
         }
         return this.http.post(`/tasks/fetchmyfavorites`, _data);
     }
@@ -2773,26 +1284,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchMyPlansTaskMobMonthly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchmyplanstaskmobmonthly`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchmyplanstaskmobmonthly`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchmyplanstaskmobmonthly`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchmyplanstaskmobmonthly`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchmyplanstaskmobmonthly`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchmyplanstaskmobmonthly`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchmyplanstaskmobmonthly`, _data);
         }
         return this.http.post(`/tasks/fetchmyplanstaskmobmonthly`, _data);
     }
@@ -2805,26 +1298,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchMyTomorrowPlanTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchmytomorrowplantask`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchmytomorrowplantask`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchmytomorrowplantask`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchmytomorrowplantask`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchmytomorrowplantask`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchmytomorrowplantask`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchmytomorrowplantask`, _data);
         }
         return this.http.post(`/tasks/fetchmytomorrowplantask`, _data);
     }
@@ -2837,26 +1312,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchMyTomorrowPlanTaskMobDaily(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchmytomorrowplantaskmobdaily`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchmytomorrowplantaskmobdaily`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchmytomorrowplantaskmobdaily`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchmytomorrowplantaskmobdaily`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchmytomorrowplantaskmobdaily`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchmytomorrowplantaskmobdaily`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchmytomorrowplantaskmobdaily`, _data);
         }
         return this.http.post(`/tasks/fetchmytomorrowplantaskmobdaily`, _data);
     }
@@ -2869,26 +1326,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchNextWeekCompleteTaskMobZS(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchnextweekcompletetaskmobzs`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchnextweekcompletetaskmobzs`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchnextweekcompletetaskmobzs`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchnextweekcompletetaskmobzs`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchnextweekcompletetaskmobzs`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchnextweekcompletetaskmobzs`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchnextweekcompletetaskmobzs`, _data);
         }
         return this.http.post(`/tasks/fetchnextweekcompletetaskmobzs`, _data);
     }
@@ -2901,26 +1340,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchNextWeekCompleteTaskZS(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchnextweekcompletetaskzs`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchnextweekcompletetaskzs`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchnextweekcompletetaskzs`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchnextweekcompletetaskzs`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchnextweekcompletetaskzs`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchnextweekcompletetaskzs`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchnextweekcompletetaskzs`, _data);
         }
         return this.http.post(`/tasks/fetchnextweekcompletetaskzs`, _data);
     }
@@ -2933,26 +1354,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchNextWeekPlanCompleteTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchnextweekplancompletetask`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchnextweekplancompletetask`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchnextweekplancompletetask`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchnextweekplancompletetask`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchnextweekplancompletetask`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchnextweekplancompletetask`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchnextweekplancompletetask`, _data);
         }
         return this.http.post(`/tasks/fetchnextweekplancompletetask`, _data);
     }
@@ -2965,26 +1368,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchPlanTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchplantask`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchplantask`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchplantask`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchplantask`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchplantask`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchplantask`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchplantask`, _data);
         }
         return this.http.post(`/tasks/fetchplantask`, _data);
     }
@@ -2997,26 +1382,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchProjectAppTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchprojectapptask`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchprojectapptask`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchprojectapptask`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchprojectapptask`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchprojectapptask`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchprojectapptask`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchprojectapptask`, _data);
         }
         return this.http.post(`/tasks/fetchprojectapptask`, _data);
     }
@@ -3029,26 +1396,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchProjectTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchprojecttask`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchprojecttask`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchprojecttask`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchprojecttask`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchprojecttask`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchprojecttask`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchprojecttask`, _data);
         }
         return this.http.post(`/tasks/fetchprojecttask`, _data);
     }
@@ -3061,26 +1410,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchRootTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchroottask`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchroottask`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchroottask`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchroottask`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchroottask`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchroottask`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchroottask`, _data);
         }
         return this.http.post(`/tasks/fetchroottask`, _data);
     }
@@ -3093,26 +1424,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchTaskLinkPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchtasklinkplan`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchtasklinkplan`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchtasklinkplan`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchtasklinkplan`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchtasklinkplan`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchtasklinkplan`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchtasklinkplan`, _data);
         }
         return this.http.post(`/tasks/fetchtasklinkplan`, _data);
     }
@@ -3125,26 +1438,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchThisMonthCompleteTaskChoice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchthismonthcompletetaskchoice`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchthismonthcompletetaskchoice`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchthismonthcompletetaskchoice`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchthismonthcompletetaskchoice`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchthismonthcompletetaskchoice`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchthismonthcompletetaskchoice`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchthismonthcompletetaskchoice`, _data);
         }
         return this.http.post(`/tasks/fetchthismonthcompletetaskchoice`, _data);
     }
@@ -3157,26 +1452,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchThisWeekCompleteTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchthisweekcompletetask`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchthisweekcompletetask`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchthisweekcompletetask`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchthisweekcompletetask`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchthisweekcompletetask`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchthisweekcompletetask`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchthisweekcompletetask`, _data);
         }
         return this.http.post(`/tasks/fetchthisweekcompletetask`, _data);
     }
@@ -3189,26 +1466,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchThisWeekCompleteTaskChoice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchthisweekcompletetaskchoice`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchthisweekcompletetaskchoice`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchthisweekcompletetaskchoice`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchthisweekcompletetaskchoice`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchthisweekcompletetaskchoice`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchthisweekcompletetaskchoice`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchthisweekcompletetaskchoice`, _data);
         }
         return this.http.post(`/tasks/fetchthisweekcompletetaskchoice`, _data);
     }
@@ -3221,26 +1480,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchThisWeekCompleteTaskMobZS(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchthisweekcompletetaskmobzs`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchthisweekcompletetaskmobzs`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchthisweekcompletetaskmobzs`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchthisweekcompletetaskmobzs`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchthisweekcompletetaskmobzs`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchthisweekcompletetaskmobzs`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchthisweekcompletetaskmobzs`, _data);
         }
         return this.http.post(`/tasks/fetchthisweekcompletetaskmobzs`, _data);
     }
@@ -3253,26 +1494,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchThisWeekCompleteTaskZS(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchthisweekcompletetaskzs`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchthisweekcompletetaskzs`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchthisweekcompletetaskzs`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchthisweekcompletetaskzs`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchthisweekcompletetaskzs`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchthisweekcompletetaskzs`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchthisweekcompletetaskzs`, _data);
         }
         return this.http.post(`/tasks/fetchthisweekcompletetaskzs`, _data);
     }
@@ -3285,26 +1508,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchTodoListTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchtodolisttask`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchtodolisttask`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchtodolisttask`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchtodolisttask`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchtodolisttask`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchtodolisttask`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchtodolisttask`, _data);
         }
         return this.http.post(`/tasks/fetchtodolisttask`, _data);
     }
@@ -3317,26 +1522,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchTypeGroup(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchtypegroup`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchtypegroup`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchtypegroup`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchtypegroup`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchtypegroup`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchtypegroup`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchtypegroup`, _data);
         }
         return this.http.post(`/tasks/fetchtypegroup`, _data);
     }
@@ -3349,26 +1536,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async FetchTypeGroupPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchtypegroupplan`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchtypegroupplan`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchtypegroupplan`, _data);
-        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/tasks/fetchtypegroupplan`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/tasks/fetchtypegroupplan`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchtypegroupplan`, _data);
-        }
-        if (_context.projectmodule && true) {
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchtypegroupplan`, _data);
         }
         return this.http.post(`/tasks/fetchtypegroupplan`, _data);
     }
@@ -3396,33 +1565,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/activatebatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/activatebatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/activatebatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/activatebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/activatebatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/activatebatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/activatebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/activatebatch`,_data);
@@ -3438,33 +1583,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async AssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/assigntobatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/assigntobatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/assigntobatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/assigntobatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/assigntobatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/assigntobatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/assigntobatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/assigntobatch`,_data);
@@ -3480,33 +1601,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async CancelBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/cancelbatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/cancelbatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/cancelbatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/cancelbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/cancelbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/cancelbatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/cancelbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/cancelbatch`,_data);
@@ -3522,33 +1619,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/closebatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/closebatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/closebatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/closebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/closebatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/closebatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/closebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/closebatch`,_data);
@@ -3564,33 +1637,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async ComputeBeginAndEndBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/computebeginandendbatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/computebeginandendbatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/computebeginandendbatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/computebeginandendbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/computebeginandendbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/computebeginandendbatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/computebeginandendbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/computebeginandendbatch`,_data);
@@ -3606,33 +1655,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async ComputeHours4MultipleBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/computehours4multiplebatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/computehours4multiplebatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/computehours4multiplebatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/computehours4multiplebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/computehours4multiplebatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/computehours4multiplebatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/computehours4multiplebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/computehours4multiplebatch`,_data);
@@ -3648,33 +1673,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async ComputeWorkingHoursBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/computeworkinghoursbatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/computeworkinghoursbatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/computeworkinghoursbatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/computeworkinghoursbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/computeworkinghoursbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/computeworkinghoursbatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/computeworkinghoursbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/computeworkinghoursbatch`,_data);
@@ -3690,33 +1691,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async ConfirmStoryChangeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/confirmstorychangebatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/confirmstorychangebatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/confirmstorychangebatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/confirmstorychangebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/confirmstorychangebatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/confirmstorychangebatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/confirmstorychangebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/confirmstorychangebatch`,_data);
@@ -3732,33 +1709,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async CreateByCycleBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/createbycyclebatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/createbycyclebatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/createbycyclebatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/createbycyclebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/createbycyclebatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/createbycyclebatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/createbycyclebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/createbycyclebatch`,_data);
@@ -3774,33 +1727,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async CreateCycleTasksBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/createcycletasksbatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/createcycletasksbatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/createcycletasksbatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/createcycletasksbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/createcycletasksbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/createcycletasksbatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/createcycletasksbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/createcycletasksbatch`,_data);
@@ -3816,33 +1745,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async DeleteBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/deletebatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/deletebatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/deletebatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/deletebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/deletebatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/deletebatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/deletebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/deletebatch`,_data);
@@ -3858,33 +1763,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async DeleteEstimateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/deleteestimatebatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/deleteestimatebatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/deleteestimatebatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/deleteestimatebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/deleteestimatebatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/deleteestimatebatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/deleteestimatebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/deleteestimatebatch`,_data);
@@ -3900,33 +1781,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async EditEstimateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/editestimatebatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/editestimatebatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/editestimatebatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/editestimatebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/editestimatebatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/editestimatebatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/editestimatebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/editestimatebatch`,_data);
@@ -3942,33 +1799,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async FinishBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/finishbatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/finishbatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/finishbatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/finishbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/finishbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/finishbatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/finishbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/finishbatch`,_data);
@@ -3984,33 +1817,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async GetNextTeamUserBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/getnextteamuserbatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/getnextteamuserbatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/getnextteamuserbatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/getnextteamuserbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/getnextteamuserbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/getnextteamuserbatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/getnextteamuserbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/getnextteamuserbatch`,_data);
@@ -4026,33 +1835,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async GetTeamUserLeftActivityBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/getteamuserleftactivitybatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/getteamuserleftactivitybatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/getteamuserleftactivitybatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/getteamuserleftactivitybatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/getteamuserleftactivitybatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/getteamuserleftactivitybatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/getteamuserleftactivitybatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/getteamuserleftactivitybatch`,_data);
@@ -4068,33 +1853,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async GetTeamUserLeftStartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/getteamuserleftstartbatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/getteamuserleftstartbatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/getteamuserleftstartbatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/getteamuserleftstartbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/getteamuserleftstartbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/getteamuserleftstartbatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/getteamuserleftstartbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/getteamuserleftstartbatch`,_data);
@@ -4110,33 +1871,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async LinkPlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/linkplanbatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/linkplanbatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/linkplanbatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/linkplanbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/linkplanbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/linkplanbatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/linkplanbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/linkplanbatch`,_data);
@@ -4152,33 +1889,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async OtherUpdateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/otherupdatebatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/otherupdatebatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/otherupdatebatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/otherupdatebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/otherupdatebatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/otherupdatebatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/otherupdatebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/otherupdatebatch`,_data);
@@ -4194,33 +1907,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async PauseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/pausebatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/pausebatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/pausebatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/pausebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/pausebatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/pausebatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/pausebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/pausebatch`,_data);
@@ -4236,33 +1925,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async RecordEstimateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/recordestimatebatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/recordestimatebatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/recordestimatebatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/recordestimatebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/recordestimatebatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/recordestimatebatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/recordestimatebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/recordestimatebatch`,_data);
@@ -4278,33 +1943,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async RecordTimZeroLeftAfterContinueBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/recordtimzeroleftaftercontinuebatch`,_data);
@@ -4320,33 +1961,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async RecordTimateZeroLeftBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/recordtimatezeroleftbatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/recordtimatezeroleftbatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/recordtimatezeroleftbatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/recordtimatezeroleftbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/recordtimatezeroleftbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/recordtimatezeroleftbatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/recordtimatezeroleftbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/recordtimatezeroleftbatch`,_data);
@@ -4362,33 +1979,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async RecordTimateZeroLeftAfterStartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/recordtimatezeroleftafterstartbatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/recordtimatezeroleftafterstartbatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/recordtimatezeroleftafterstartbatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/recordtimatezeroleftafterstartbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/recordtimatezeroleftafterstartbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/recordtimatezeroleftafterstartbatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/recordtimatezeroleftafterstartbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/recordtimatezeroleftafterstartbatch`,_data);
@@ -4404,33 +1997,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async RestartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/restartbatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/restartbatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/restartbatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/restartbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/restartbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/restartbatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/restartbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/restartbatch`,_data);
@@ -4446,33 +2015,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async SendMessageBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/sendmessagebatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/sendmessagebatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/sendmessagebatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/sendmessagebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/sendmessagebatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/sendmessagebatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/sendmessagebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/sendmessagebatch`,_data);
@@ -4488,33 +2033,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async SendMsgPreProcessBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/sendmsgpreprocessbatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/sendmsgpreprocessbatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/sendmsgpreprocessbatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/sendmsgpreprocessbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/sendmsgpreprocessbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/sendmsgpreprocessbatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/sendmsgpreprocessbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/sendmsgpreprocessbatch`,_data);
@@ -4530,33 +2051,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async StartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/startbatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/startbatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/startbatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/startbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/startbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/startbatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/startbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/startbatch`,_data);
@@ -4572,33 +2069,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async TaskForwardBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/taskforwardbatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/taskforwardbatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/taskforwardbatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/taskforwardbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/taskforwardbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/taskforwardbatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/taskforwardbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/taskforwardbatch`,_data);
@@ -4614,33 +2087,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async UpdateParentStatusBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/updateparentstatusbatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/updateparentstatusbatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/updateparentstatusbatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/updateparentstatusbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/updateparentstatusbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/updateparentstatusbatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/updateparentstatusbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/updateparentstatusbatch`,_data);
@@ -4656,33 +2105,9 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskServiceBase
      */
     public async UpdateRelatedPlanStatusBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/updaterelatedplanstatusbatch`,_data);
-        }
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/updaterelatedplanstatusbatch`,_data);
-        }
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/updaterelatedplanstatusbatch`,_data);
-        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/tasks/updaterelatedplanstatusbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/tasks/updaterelatedplanstatusbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/tasks/updaterelatedplanstatusbatch`,_data);
-        }
-        if(_context.projectmodule && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/updaterelatedplanstatusbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/tasks/updaterelatedplanstatusbatch`,_data);

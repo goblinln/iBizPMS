@@ -3018,6 +3018,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "ProjectEdit",
+    "dataAccessAction" : "UPDATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainView_Edit.json",

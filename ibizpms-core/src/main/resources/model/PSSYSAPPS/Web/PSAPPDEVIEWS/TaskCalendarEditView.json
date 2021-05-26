@@ -973,7 +973,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "noPrivDisplayMode" : 1,
                 "caption" : "指派",
                 "codeName" : "AssignTaskDash",
                 "dataAccessAction" : "ASSIGNTO",
@@ -1021,7 +1020,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "noPrivDisplayMode" : 1,
                 "caption" : "转交",
                 "codeName" : "checkForwardDash",
                 "dataAccessAction" : "FORWARD",
@@ -1083,7 +1081,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "noPrivDisplayMode" : 1,
                 "caption" : "开始",
                 "codeName" : "MStartTaskDash",
                 "dataAccessAction" : "START",
@@ -1143,7 +1140,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "noPrivDisplayMode" : 1,
                 "caption" : "完成",
                 "codeName" : "MDoneTask",
                 "dataAccessAction" : "FINISH",
@@ -1204,7 +1200,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "noPrivDisplayMode" : 1,
                 "caption" : "激活",
                 "codeName" : "ActivationDash",
                 "dataAccessAction" : "ACTIVATE",
@@ -1252,7 +1247,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "noPrivDisplayMode" : 1,
                 "caption" : "暂停",
                 "codeName" : "MPauseTask",
                 "dataAccessAction" : "PAUSE",
@@ -1316,6 +1310,7 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "取消",
                 "codeName" : "CancelTaskDash",
+                "dataAccessAction" : "CANCEL",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCancelTaskView.json",
@@ -1360,7 +1355,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "noPrivDisplayMode" : 1,
                 "caption" : "关闭",
                 "codeName" : "CloseTaskDash",
                 "dataAccessAction" : "CLOSE",
@@ -1412,7 +1406,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "noPrivDisplayMode" : 1,
                 "caption" : "子任务",
                 "codeName" : "NewSubTaskDash",
                 "dataAccessAction" : "SUBTASKS",
@@ -1478,6 +1471,7 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "编辑",
                 "codeName" : "MainEditDash",
+                "dataAccessAction" : "UPDATE",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainEditView.json",

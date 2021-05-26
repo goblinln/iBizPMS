@@ -53,7 +53,6 @@ export class ViewBase extends Vue {
      */
     public viewDefaultUsage!: string;
 
-
     /**
      * 手机返回事件
      *
@@ -133,6 +132,14 @@ export class ViewBase extends Vue {
      * @memberof ViewBase
      */
     public viewtag: string = '';
+
+    /**
+     * 跨应用重定向回调路径
+     *
+     * @type {string}
+     * @memberof ViewBase
+     */
+    public redirectURI: string = '';
 
     /**
      * 自定义视图导航上下文集合
@@ -754,13 +761,19 @@ export class ViewBase extends Vue {
         const keys: Array<any> = [];
         const curReg = _this.$pathToRegExp.pathToRegexp(path, keys);
         const matchArray = curReg.exec(_this.$route.path);
-        let tempValue: Object = {};
+        let tempValue: any = {};
         keys.forEach((item: any, index: number) => {
             Object.defineProperty(tempValue, item.name, {
                 enumerable: true,
                 value: matchArray[index + 1]
             });
         });
+        // 处理跨应用重定向回调路径
+        if(this.viewparams.redirect_uri){
+            this.redirectURI = decodeURIComponent(this.viewparams.redirect_uri)
+            delete this.viewparams.redirect_uri;
+        }
+
         ViewTool.formatRouteParams(tempValue, this.$route, this.context, this.viewparams);
         if (inputvalue && ModelTool.getViewAppEntityCodeName(this.viewInstance)) {
             Object.assign(_this.context, { [(ModelTool.getViewAppEntityCodeName(this.viewInstance) as string).toLowerCase()]: inputvalue });
@@ -903,7 +916,11 @@ export class ViewBase extends Vue {
         switch (this.viewDefaultUsage) {
             case 'routerView':
                 _view.$store.commit("deletePage", _view.$route.fullPath);
-                _view.$router.go(-1);
+                if(this.redirectURI){
+                    window.location.href = this.redirectURI;
+                }else{
+                    _view.$router.go(-1);
+                }
                 break;
             case 'includedView':
                 this.$emit('view-event', { viewName: this.viewInstance.codeName, action: 'close', data: null });

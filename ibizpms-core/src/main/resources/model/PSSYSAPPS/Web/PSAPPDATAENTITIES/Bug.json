@@ -55,7 +55,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProduct__UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -71,7 +71,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ZTProduct__DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -475,7 +475,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProduct__UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1761,7 +1761,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProduct__UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1777,7 +1777,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ZTProduct__DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2181,7 +2181,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProduct__UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2863,6 +2863,7 @@
     "id" : "releaseLinkLeftBug@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "确认",
     "codeName" : "ConfirmBug",
     "dataAccessAction" : "CONFIRM",
@@ -3151,7 +3152,6 @@
     "id" : "CloseBugDash@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "指派",
     "codeName" : "AssingToBugCz",
     "dataAccessAction" : "ASSIGNTO",
@@ -3237,6 +3237,7 @@
     "id" : "BugNFavorites@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "关闭",
     "codeName" : "CloseBug",
     "dataAccessAction" : "CLOSE",
@@ -3481,7 +3482,6 @@
     "id" : "UnlinkBug@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "MainEditDash",
     "dataAccessAction" : "UPDATE",
@@ -3534,7 +3534,6 @@
     "id" : "BuildUseCase@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "确认",
     "codeName" : "ConfirmBugDash",
     "dataAccessAction" : "CONFIRM",
@@ -3673,6 +3672,7 @@
     "id" : "Activation@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "解决",
     "codeName" : "ResolveBug",
     "dataAccessAction" : "RESOLVE",
@@ -3726,6 +3726,7 @@
     "id" : "BugFavorites@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "MainEdit",
     "dataAccessAction" : "UPDATE",
@@ -3827,7 +3828,6 @@
     "id" : "PlanRelationBug@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "解决",
     "codeName" : "ResolveBugDash",
     "dataAccessAction" : "RESOLVE",
@@ -6044,6 +6044,16 @@
     "logicName" : "版本关联",
     "name" : "BUILDLINK"
   }, {
+    "logicName" : "产品-版本关联",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "BUILDLINK",
+    "id" : "ZTProduct__BUILDLINK"
+  }, {
     "logicName" : "关闭",
     "name" : "CLOSE"
   }, {
@@ -6057,14 +6067,44 @@
     "name" : "CLOSE",
     "id" : "ZTProduct__CLOSE"
   }, {
+    "logicName" : "产品-确认",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CONFIRM",
+    "id" : "ZTProduct__CONFIRM"
+  }, {
     "logicName" : "确认",
     "name" : "CONFIRM"
+  }, {
+    "logicName" : "产品-建立",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CREATE",
+    "id" : "ZTProduct__CREATE"
   }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "产品-删除",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "DELETE",
+    "id" : "ZTProduct__DELETE"
   }, {
     "logicName" : "产品-Bug收藏",
     "mapPSDEName" : "ZT_PRODUCT",
@@ -6082,6 +6122,16 @@
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
+    "logicName" : "产品-管理",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "ZTProduct__MANAGE"
+  }, {
     "logicName" : "产品-Bug取消收藏",
     "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "BUGMANAGE",
@@ -6097,6 +6147,26 @@
   }, {
     "logicName" : "计划关联",
     "name" : "PLANLINK"
+  }, {
+    "logicName" : "产品-计划关联",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "PLANLINK",
+    "id" : "ZTProduct__PLANLINK"
+  }, {
+    "logicName" : "产品-读取",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "READ",
+    "id" : "ZTProduct__READ"
   }, {
     "logicName" : "读取",
     "name" : "READ"
@@ -6142,6 +6212,16 @@
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  }, {
+    "logicName" : "产品-更新",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "ZTProduct__UPDATE"
   } ],
   "codeName" : "Bug",
   "dataAccCtrlArch" : 1,

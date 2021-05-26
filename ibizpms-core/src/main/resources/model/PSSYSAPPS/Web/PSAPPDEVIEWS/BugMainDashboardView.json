@@ -1779,7 +1779,6 @@
                 "name" : "u0e69512",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "编辑",
                   "codeName" : "MainEditDash",
                   "dataAccessAction" : "UPDATE",
@@ -1851,7 +1850,6 @@
                 "name" : "u20733a7",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "解决",
                   "codeName" : "ResolveBugDash",
                   "dataAccessAction" : "RESOLVE",
@@ -1887,7 +1885,6 @@
                 "name" : "u038caad",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "指派",
                   "codeName" : "AssingToBugCz",
                   "dataAccessAction" : "ASSIGNTO",
@@ -1923,7 +1920,6 @@
                 "name" : "u69890c3",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "确认",
                   "codeName" : "ConfirmBugDash",
                   "dataAccessAction" : "CONFIRM",

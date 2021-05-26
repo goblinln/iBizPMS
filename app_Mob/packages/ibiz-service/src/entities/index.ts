@@ -50,6 +50,7 @@ export * from './ibz-weekly/ibz-weekly';
 export * from './ibzprojectteam/ibzprojectteam';
 export * from './story/story';
 export * from './product-line/product-line';
+export * from './ibz-pro-reportly-action/ibz-pro-reportly-action';
 export * from './dyna-filter/dyna-filter';
 
 export * from './interface';

@@ -1714,6 +1714,7 @@
                                 "name" : "u18f3a7b",
                                 "getPSUIAction" : {
                                   "actionTarget" : "SINGLEKEY",
+                                  "noPrivDisplayMode" : 1,
                                   "caption" : "变更",
                                   "codeName" : "ChangeStoryDetail",
                                   "dataAccessAction" : "CHANGE",
@@ -1747,6 +1748,7 @@
                                 "name" : "ud1a868b",
                                 "getPSUIAction" : {
                                   "actionTarget" : "SINGLEKEY",
+                                  "noPrivDisplayMode" : 1,
                                   "caption" : "评审",
                                   "codeName" : "ReviewStory",
                                   "dataAccessAction" : "REVIEW",
@@ -1780,6 +1782,7 @@
                                 "name" : "ud9ce680",
                                 "getPSUIAction" : {
                                   "actionTarget" : "SINGLEKEY",
+                                  "noPrivDisplayMode" : 1,
                                   "caption" : "关闭",
                                   "codeName" : "CloseStory",
                                   "dataAccessAction" : "CLOSE",
@@ -1872,6 +1875,7 @@
                                 "name" : "u60233af",
                                 "getPSUIAction" : {
                                   "actionTarget" : "SINGLEKEY",
+                                  "noPrivDisplayMode" : 1,
                                   "caption" : "需求细分",
                                   "codeName" : "SubStory",
                                   "dataAccessAction" : "ISCHILD",
@@ -1928,14 +1932,12 @@
                                 "name" : "u0f557af",
                                 "getPSUIAction" : {
                                   "actionTarget" : "SINGLEKEY",
-                                  "noPrivDisplayMode" : 1,
                                   "getCapPSLanguageRes" : {
                                     "lanResTag" : "TBB.TEXT.*.COPY",
                                     "id" : "工具栏按钮文本[*.COPY]"
                                   },
                                   "caption" : "拷贝",
                                   "codeName" : "Copy",
-                                  "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
                                   "fullCodeName" : "Copy",
                                   "name" : "表格界面_拷贝操作",
                                   "getPSSysImage" : {
@@ -3317,7 +3319,6 @@
                 "name" : "uab7aa69",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "激活",
                   "codeName" : "ActiviteDash",
                   "dataAccessAction" : "ACTIVATE",
@@ -3351,7 +3352,6 @@
                 "name" : "ubaacd59",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "变更",
                   "codeName" : "ChangeStoryDetailDash",
                   "dataAccessAction" : "CHANGE",
@@ -3385,7 +3385,6 @@
                 "name" : "u21f62f3",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "评审",
                   "codeName" : "ReviewStoryDash",
                   "dataAccessAction" : "REVIEW",
@@ -3419,7 +3418,6 @@
                 "name" : "u5886bad",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "指派",
                   "codeName" : "AssignToDash",
                   "dataAccessAction" : "ASSIGNTO",
@@ -3456,7 +3454,6 @@
                 "name" : "u0c488e2",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "关闭",
                   "codeName" : "CloseStoryDash",
                   "dataAccessAction" : "CLOSE",
@@ -3493,7 +3490,6 @@
                 "name" : "udabbc19",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "细分",
                   "codeName" : "SubStoryCz",
                   "dataAccessAction" : "ISCHILD",
@@ -3552,6 +3548,7 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "编辑",
                   "codeName" : "OpenBaseInfoC",
+                  "dataAccessAction" : "UPDATE",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_EditMode.json",

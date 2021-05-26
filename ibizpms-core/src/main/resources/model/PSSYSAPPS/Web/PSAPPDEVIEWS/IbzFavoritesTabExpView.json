@@ -888,6 +888,7 @@
                 "name" : "u42aa5b1",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
+                  "noPrivDisplayMode" : 1,
                   "caption" : "变更",
                   "codeName" : "ChangeStoryDetail",
                   "dataAccessAction" : "CHANGE",
@@ -921,6 +922,7 @@
                 "name" : "ud7566dc",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
+                  "noPrivDisplayMode" : 1,
                   "caption" : "评审",
                   "codeName" : "ReviewStory",
                   "dataAccessAction" : "REVIEW",
@@ -954,6 +956,7 @@
                 "name" : "u3724273",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
+                  "noPrivDisplayMode" : 1,
                   "caption" : "关闭",
                   "codeName" : "CloseStory",
                   "dataAccessAction" : "CLOSE",
@@ -1080,6 +1083,7 @@
                 "name" : "u99b8788",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
+                  "noPrivDisplayMode" : 1,
                   "caption" : "需求细分",
                   "codeName" : "SubStory",
                   "dataAccessAction" : "ISCHILD",

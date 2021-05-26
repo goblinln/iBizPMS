@@ -334,14 +334,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     }
 
     /**
-     * 设置 [OBJECTTYPE]
-     */
-    public void setObjecttype(String  objecttype){
-        this.objecttype = objecttype ;
-        this.modify("objecttype",objecttype);
-    }
-
-    /**
      * 设置 [COMMENT]
      */
     public void setComment(String  comment){
@@ -371,14 +363,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     public void setProduct(String  product){
         this.product = product ;
         this.modify("product",product);
-    }
-
-    /**
-     * 设置 [OBJECTID]
-     */
-    public void setObjectid(Long  objectid){
-        this.objectid = objectid ;
-        this.modify("objectid",objectid);
     }
 
     /**

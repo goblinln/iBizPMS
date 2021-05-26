@@ -50,6 +50,7 @@ import ibzweekly_en_US from '@locale/lanres/ibz-weekly/ibz-weekly_en_US';
 import ibzprojectteam_en_US from '@locale/lanres/ibzprojectteam/ibzprojectteam_en_US';
 import story_en_US from '@locale/lanres/story/story_en_US';
 import productline_en_US from '@locale/lanres/product-line/product-line_en_US';
+import ibzproreportlyaction_en_US from '@locale/lanres/ibz-pro-reportly-action/ibz-pro-reportly-action_en_US';
 import dynafilter_en_US from '@locale/lanres/dyna-filter/dyna-filter_en_US';
 import userCustom_en_US from '@locale/lanres/userCustom/userCustom_en_US';
 import codelist_en_US from '@locale/lanres/codelist/codelist_en_US';
@@ -389,6 +390,7 @@ export default {
     ibzprojectteam: ibzprojectteam_en_US,
     story: story_en_US,
     productline: productline_en_US,
+    ibzproreportlyaction: ibzproreportlyaction_en_US,
     dynafilter: dynafilter_en_US,
     codelist: codelist_en_US,
     userCustom: userCustom_en_US,

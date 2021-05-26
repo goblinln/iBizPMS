@@ -936,6 +936,7 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/Action__object_type.json"
     },
+    "predefinedType" : "PARENTTYPE",
     "stdDataType" : 25,
     "stringLength" : 30,
     "valueFormat" : "%1$s"
@@ -1620,6 +1621,7 @@
       "modelref" : true,
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
+    "predefinedType" : "PARENTID",
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s"
@@ -2007,7 +2009,7 @@
     "systemReserved" : true
   } ],
   "codeName" : "Action",
-  "dEType" : 1,
+  "dEType" : 4,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
   "dataAccCtrlMode" : 0,

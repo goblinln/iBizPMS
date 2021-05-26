@@ -66,6 +66,7 @@ export class AppComponentService {
         this.viewMap.set("DEMOBWFDYNAEDITVIEW_DEFAULT", 'app-default-mob-wfdynaeditview');
         this.viewMap.set("DEMOBWFDYNAACTIONVIEW_DEFAULT", 'app-default-mob-wfdynaactionview');
         this.viewMap.set("DEMOBWFDYNAEXPMDVIEW_DEFAULT", 'app-default-mob-wfdynaexpmdview');
+        this.viewMap.set("DEMOBREDIRECTVIEW_DEFAULT", 'app-default-mob-deredirectview');
         // 注册视图插件
         this.viewMap.set("UPDATELOGINDEXVIEW", 'app-view-custom-updatelogindexview');
         // 注册视图样式，无插件模式

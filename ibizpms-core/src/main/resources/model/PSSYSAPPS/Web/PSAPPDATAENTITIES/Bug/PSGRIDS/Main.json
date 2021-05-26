@@ -416,6 +416,7 @@
         "name" : "uaa2ed02",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "确认",
           "codeName" : "ConfirmBug",
           "dataAccessAction" : "CONFIRM",
@@ -450,6 +451,7 @@
         "name" : "ue1d68fc",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "解决",
           "codeName" : "ResolveBug",
           "dataAccessAction" : "RESOLVE",
@@ -483,6 +485,7 @@
         "name" : "u3cd3d7f",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "关闭",
           "codeName" : "CloseBug",
           "dataAccessAction" : "CLOSE",
@@ -516,6 +519,7 @@
         "name" : "u0e29832",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "编辑",
           "codeName" : "MainEdit",
           "dataAccessAction" : "UPDATE",
@@ -549,14 +553,12 @@
         "name" : "uf4572d8",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "getCapPSLanguageRes" : {
             "lanResTag" : "TBB.TEXT.*.COPY",
             "id" : "工具栏按钮文本[*.COPY]"
           },
           "caption" : "拷贝",
           "codeName" : "Copy",
-          "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
           "fullCodeName" : "Copy",
           "name" : "表格界面_拷贝操作",
           "getPSSysImage" : {

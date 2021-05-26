@@ -1,6 +1,6 @@
 <template>
     <div class="app-redirect-view">
-        <img src="@/assets/img/500.png" />
+        <img src="/assets/images/500.jpg" />
         <div class="context">跳转中......</div>
     </div>
 </template>
@@ -53,8 +53,8 @@ export default class AppRedirectView extends Vue {
     public executeRedirectLogic(viewparam:any){
         let tempViewParam:any = Util.deepCopy(viewparam);
         const {srfdename,srfindexname}:{srfdename:string,srfindexname:string} = viewparam;
-        if(!viewparam || !srfdename || !srfindexname){
-            this.$throw('跳转参数不足，无法完成跳转操作!','executeRedirectLogic');
+        if(!viewparam || !srfdename ){
+            this.$Notice.error('跳转参数不足，无法完成跳转操作!');
             return;
         }
         // 避免数据污染
@@ -62,10 +62,11 @@ export default class AppRedirectView extends Vue {
         delete tempViewParam['srfindexname'];
         delete tempViewParam[srfdename];
         // 计算路径
-        let viewPath:string = `/${srfindexname}/${Util.srfpluralize(srfdename)}/${viewparam[srfdename]}/views/redirectview`;
+        let viewPath:string = `${srfindexname ? '/'+ srfindexname : ''}/${Util.srfpluralize(srfdename)}/${viewparam[srfdename]}/views/mobredirectview`;
          if (Object.keys(tempViewParam).length > 0) {
             viewPath = `${viewPath}?${qs.stringify(tempViewParam, { delimiter: ';' })}`;
         }
+        console.log(viewPath)
         this.$router.push({ path: viewPath });
     }
 

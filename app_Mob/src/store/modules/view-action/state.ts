@@ -838,6 +838,15 @@ export const viewstate: any = {
             ],
         },
         {
+            viewtag: '331ea9c716c9f7a180cb211f5bc7fdea',
+            viewmodule: 'ibiz',
+            viewname: 'IbzProReportlyActionOptionView',
+            viewaction: '',
+            viewdatachange: false,
+            refviews: [
+            ],
+        },
+        {
             viewtag: '3369f6947c7dd032cf3f25bdafb998f2',
             viewmodule: 'ibiz',
             viewname: 'TaskFavoriteMobMDView',

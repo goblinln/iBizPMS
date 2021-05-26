@@ -26,6 +26,7 @@ import { AppViewShell } from '../view-container/app-view-shell';
 import { AppDefaultMobWFDynaEditView } from './view/app-default-mob-wfdynaeditview/app-default-mob-wfdynaeditview';
 import { AppDefaultMobWFDynaActionView } from './view/app-default-mob-wfdynaactionview/app-default-mob-wfdynaactionview';
 import { AppDefaultWfDynaExpMDView } from './view/app-default-mob-wfdynaexpmdview/app-default-mob-wfdynaexpmdview';
+import { AppDefaultMobDeRedirectView } from './view/app-default-mob-deredirectview/app-default-mob-deredirectview';
 import { AppDefaultNotSupportedView } from './view/app-default-notsupportedview';
 
 // 部件组件
@@ -220,6 +221,7 @@ export const ComponentsRegister = {
         v.component('app-default-mob-wfdynaeditview', AppDefaultMobWFDynaEditView);
         v.component('app-default-mob-wfdynaactionview', AppDefaultMobWFDynaActionView);
         v.component('app-default-mob-wfdynaexpmdview', AppDefaultWfDynaExpMDView);
+        v.component('app-default-mob-deredirectview', AppDefaultMobDeRedirectView);
         v.component('app-default-notsupportedview', AppDefaultNotSupportedView);
         // 部件组件
         v.component('app-default-mob-appmenu', AppDefaultMobAppMenu);

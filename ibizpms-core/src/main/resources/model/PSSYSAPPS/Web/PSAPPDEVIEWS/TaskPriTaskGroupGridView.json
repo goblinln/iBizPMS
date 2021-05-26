@@ -1221,8 +1221,10 @@
           "name" : "ud0d0133",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
+            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "MainEdit",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainEditView.json",
@@ -1308,14 +1310,12 @@
           "name" : "ud67a065",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "getCapPSLanguageRes" : {
               "lanResTag" : "TBB.TEXT.*.COPY",
               "id" : "工具栏按钮文本[*.COPY]"
             },
             "caption" : "拷贝",
             "codeName" : "Copy",
-            "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
             "fullCodeName" : "Copy",
             "name" : "表格界面_拷贝操作",
             "getPSSysImage" : {

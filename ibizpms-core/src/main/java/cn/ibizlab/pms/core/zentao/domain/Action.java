@@ -139,6 +139,7 @@ public class Action extends EntityMP implements Serializable {
     /**
      * 对象类型
      */
+    @DEField(preType = DEPredefinedFieldType.PARENTTYPE)
     @TableField(value = "`OBJECTTYPE`")
     @JSONField(name = "objecttype")
     @JsonProperty("objecttype")
@@ -257,7 +258,7 @@ public class Action extends EntityMP implements Serializable {
     /**
      * 对象ID
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", preType = DEPredefinedFieldType.PARENTID)
     @TableField(value = "`OBJECTID`")
     @JSONField(name = "objectid")
     @JsonProperty("objectid")
@@ -315,14 +316,6 @@ public class Action extends EntityMP implements Serializable {
     }
 
     /**
-     * 设置 [对象类型]
-     */
-    public void setObjecttype(String objecttype) {
-        this.objecttype = objecttype;
-        this.modify("objecttype", objecttype);
-    }
-
-    /**
      * 设置 [备注]
      */
     public void setComment(String comment) {
@@ -352,14 +345,6 @@ public class Action extends EntityMP implements Serializable {
     public void setProduct(String product) {
         this.product = product;
         this.modify("product", product);
-    }
-
-    /**
-     * 设置 [对象ID]
-     */
-    public void setObjectid(Long objectid) {
-        this.objectid = objectid;
-        this.modify("objectid", objectid);
     }
 
     /**

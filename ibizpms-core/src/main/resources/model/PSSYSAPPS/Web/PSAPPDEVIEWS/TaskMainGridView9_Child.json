@@ -693,8 +693,10 @@
           "name" : "u5f5e79b",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
+            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "MainEdit",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainEditView.json",

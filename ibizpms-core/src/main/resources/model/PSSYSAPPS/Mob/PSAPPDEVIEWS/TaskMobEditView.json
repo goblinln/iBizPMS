@@ -2626,7 +2626,7 @@
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
       "name" : "deuiaction1_confirmstorychangecz",
-      "noPrivDisplayMode" : 1,
+      "noPrivDisplayMode" : 2,
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "righttoolbar_deuiaction1_confirmstorychangecz"
@@ -2637,7 +2637,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
-        "noPrivDisplayMode" : 1,
         "caption" : "确认",
         "codeName" : "confirmStoryChangeCz",
         "dataAccessAction" : "XQCHANGE",
@@ -3210,14 +3209,12 @@
         "getPSSysImage" : {
           "cssClass" : "remove"
         },
-        "refreshMode" : 1,
         "successMsg" : "已删除",
         "timeout" : 60000,
         "uIActionMode" : "BACKEND",
         "uIActionTag" : "deleteMob",
         "uIActionType" : "DEUIACTION",
         "enableConfirm" : true,
-        "reloadData" : true,
         "id" : "deleteMob@Task"
       },
       "tooltip" : "删除",

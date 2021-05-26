@@ -3329,7 +3329,6 @@
     "id" : "BatchBreakdowntasks@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "关闭",
     "codeName" : "CloseStoryDash",
     "dataAccessAction" : "CLOSE",
@@ -3359,6 +3358,7 @@
     "id" : "CloseStoryDash@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "需求细分",
     "codeName" : "SubStory",
     "dataAccessAction" : "ISCHILD",
@@ -3517,6 +3517,7 @@
     "id" : "StoryToBug@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "变更",
     "codeName" : "ChangeStoryDetail",
     "dataAccessAction" : "CHANGE",
@@ -3543,7 +3544,6 @@
     "id" : "ChangeStoryDetail@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "激活",
     "codeName" : "ActiviteDash",
     "dataAccessAction" : "ACTIVATE",
@@ -3733,7 +3733,6 @@
     "id" : "buildLinkStories@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "指派",
     "codeName" : "AssignToDash",
     "dataAccessAction" : "ASSIGNTO",
@@ -3763,7 +3762,6 @@
     "id" : "AssignToDash@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "变更",
     "codeName" : "ChangeStoryDetailDash",
     "dataAccessAction" : "CHANGE",
@@ -3957,6 +3955,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "OpenBaseInfoC",
+    "dataAccessAction" : "UPDATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_EditMode.json",
@@ -4081,6 +4080,7 @@
     "id" : "CreatePlan@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "关闭",
     "codeName" : "CloseStory",
     "dataAccessAction" : "CLOSE",
@@ -4110,7 +4110,6 @@
     "id" : "CloseStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "评审",
     "codeName" : "ReviewStoryDash",
     "dataAccessAction" : "REVIEW",
@@ -4137,7 +4136,6 @@
     "id" : "ReviewStoryDash@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "细分",
     "codeName" : "SubStoryCz",
     "dataAccessAction" : "ISCHILD",
@@ -4492,6 +4490,7 @@
     "id" : "ProjectUnlinkStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "评审",
     "codeName" : "ReviewStory",
     "dataAccessAction" : "REVIEW",

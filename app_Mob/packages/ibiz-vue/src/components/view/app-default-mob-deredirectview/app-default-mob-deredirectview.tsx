@@ -1,6 +1,7 @@
 import { Component, Prop, Emit, Watch } from 'vue-property-decorator';
 import { AppLayoutService } from '../../../app-service';
 import { MobDeRedirectViewBase } from '../../../view/mob-deredirectview-base';
+import { Util } from 'ibiz-core';
 
 /**
  * 实体数据重定向视图

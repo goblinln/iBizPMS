@@ -455,7 +455,7 @@
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
       "name" : "tbitem6",
-      "noPrivDisplayMode" : 1,
+      "noPrivDisplayMode" : 2,
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "toolbar_tbitem6"
@@ -466,14 +466,12 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
-        "noPrivDisplayMode" : 1,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.COPY",
           "id" : "工具栏按钮文本[*.COPY]"
         },
         "caption" : "拷贝",
         "codeName" : "Copy",
-        "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
         "fullCodeName" : "Copy",
         "name" : "表格界面_拷贝操作",
         "getPSSysImage" : {

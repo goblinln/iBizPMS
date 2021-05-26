@@ -1116,7 +1116,6 @@
         "name" : "u3d0414f",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "确认",
           "codeName" : "confirmStoryChangeCz",
           "dataAccessAction" : "XQCHANGE",
@@ -1566,14 +1565,12 @@
           "getPSSysImage" : {
             "cssClass" : "remove"
           },
-          "refreshMode" : 1,
           "successMsg" : "已删除",
           "timeout" : 60000,
           "uIActionMode" : "BACKEND",
           "uIActionTag" : "deleteMob",
           "uIActionType" : "DEUIACTION",
           "enableConfirm" : true,
-          "reloadData" : true,
           "id" : "deleteMob@Task"
         },
         "addSeparator" : false,

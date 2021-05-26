@@ -489,6 +489,15 @@ export class GlobalService {
         return (await import('./product-line/product-line.service')).default.getInstance();
     }
     /**
+     * 汇报日志服务
+     *
+     * @return {IbzProReportlyAction}
+     * @memberof GlobalService
+     */
+    async getIbzProReportlyActionService() {
+        return (await import('./ibz-pro-reportly-action/ibz-pro-reportly-action.service')).default.getInstance();
+    }
+    /**
      * 动态搜索栏服务
      *
      * @return {DynaFilter}
