@@ -217,6 +217,9 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             else if (iPSDEAction.getName().equals("UnlinkBug")) {
                 return releaseService.unlinkBug((Release) args[0]);
             }
+            else if (iPSDEAction.getName().equals("UnlinkStory")) {
+                return releaseService.unlinkStory((Release) args[0]);
+            }
         }else if (StringUtils.isNotBlank(strActionName)) {
             if (strActionName.equals(DEActions.CREATE)) {
                 return releaseService.create((Release) args[0]);
@@ -362,6 +365,9 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         }
         else if (action.equals("unlinkBug")) {
             return aroundAction("UnlinkBug", point);
+        }
+        else if (action.equals("unlinkStory")) {
+            return aroundAction("UnlinkStory", point);
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);

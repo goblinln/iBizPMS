@@ -115,24 +115,34 @@ export class BranchBaseService extends EntityBaseService<IBranch> {
         return this.condCache.get('view');
     }
     /**
-     * GetDraft
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof BranchService
      */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/branches/getdraft`, _data);
-            return res;
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.branch) {
+            return this.http.delete(`/products/${_context.product}/branches/${_context.branch}/remove`);
         }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/branches/getdraft`, _data);
-        return res;
+        return this.http.delete(`/branches/${_context.branch}/remove`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BranchService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.branch) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/branches/${_context.branch}/update`, _data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/branches/${_context.branch}/update`, _data);
     }
     /**
      * Create
@@ -163,48 +173,20 @@ export class BranchBaseService extends EntityBaseService<IBranch> {
         return this.http.post(`/branches`, _data);
     }
     /**
-     * Update
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof BranchService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.branch) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/branches/${_context.branch}/update`, _data);
+            const res = await this.http.get(`/products/${_context.product}/branches/${_context.branch}/get`);
+            return res;
         }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/branches/${_context.branch}/update`, _data);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof BranchService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/branches/fetchdefault`, _data);
-        }
-        return this.http.post(`/branches/fetchdefault`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof BranchService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.branch) {
-            return this.http.delete(`/products/${_context.product}/branches/${_context.branch}/remove`);
-        }
-        return this.http.delete(`/branches/${_context.branch}/remove`);
+        const res = await this.http.get(`/branches/${_context.branch}/get`);
+        return res;
     }
     /**
      * FetchCurProduct
@@ -221,19 +203,37 @@ export class BranchBaseService extends EntityBaseService<IBranch> {
         return this.http.post(`/branches/fetchcurproduct`, _data);
     }
     /**
-     * Get
+     * FetchDefault
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof BranchService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.branch) {
-            const res = await this.http.get(`/products/${_context.product}/branches/${_context.branch}/get`);
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/branches/fetchdefault`, _data);
+        }
+        return this.http.post(`/branches/fetchdefault`, _data);
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BranchService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/branches/getdraft`, _data);
             return res;
         }
-        const res = await this.http.get(`/branches/${_context.branch}/get`);
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/branches/getdraft`, _data);
         return res;
     }
 }

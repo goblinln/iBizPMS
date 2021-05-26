@@ -49,6 +49,7 @@ public interface IReleaseService extends IService<Release> {
     void saveBatch(List<Release> list);
     Release terminate(Release et);
     Release unlinkBug(Release et);
+    Release unlinkStory(Release et);
     List<Release> select(ReleaseSearchContext context);
     List<Release> selectDefault(ReleaseSearchContext context);
     List<Release> selectGetList(ReleaseSearchContext context);
