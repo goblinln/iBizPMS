@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ITaskStatsService extends IService<TaskStats> {
 
     boolean create(TaskStats et);
+    void createBatch(List<TaskStats> list);
     boolean update(TaskStats et);
     boolean sysUpdate(TaskStats et);
+    void updateBatch(List<TaskStats> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     TaskStats get(Long key);
     TaskStats sysGet(Long key);
     TaskStats getDraft(TaskStats et);
     boolean checkKey(TaskStats et);
     boolean save(TaskStats et);
+    void saveBatch(List<TaskStats> list);
     List<TaskStats> select(TaskStatsSearchContext context);
     List<TaskStats> selectDefault(TaskStatsSearchContext context);
     List<TaskStats> selectTaskFinishHuiZong(TaskStatsSearchContext context);

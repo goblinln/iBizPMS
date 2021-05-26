@@ -26,15 +26,19 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IProductStatsService extends IService<ProductStats> {
 
     boolean create(ProductStats et);
+    void createBatch(List<ProductStats> list);
     boolean update(ProductStats et);
     boolean sysUpdate(ProductStats et);
+    void updateBatch(List<ProductStats> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     ProductStats get(Long key);
     ProductStats sysGet(Long key);
     ProductStats getDraft(ProductStats et);
     boolean checkKey(ProductStats et);
     ProductStats getTestStats(ProductStats et);
     boolean save(ProductStats et);
+    void saveBatch(List<ProductStats> list);
     List<ProductStats> select(ProductStatsSearchContext context);
     List<ProductStats> selectDefault(ProductStatsSearchContext context);
     List<ProductStats> selectNoOpenProduct(ProductStatsSearchContext context);

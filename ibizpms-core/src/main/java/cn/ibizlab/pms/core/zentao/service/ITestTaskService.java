@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ITestTaskService extends IService<TestTask> {
 
     boolean create(TestTask et);
+    void createBatch(List<TestTask> list);
     boolean update(TestTask et);
     boolean sysUpdate(TestTask et);
+    void updateBatch(List<TestTask> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     TestTask get(Long key);
     TestTask sysGet(Long key);
     TestTask getDraft(TestTask et);
@@ -39,6 +42,7 @@ public interface ITestTaskService extends IService<TestTask> {
     TestTask linkCase(TestTask et);
     TestTask mobTestTaskCounter(TestTask et);
     boolean save(TestTask et);
+    void saveBatch(List<TestTask> list);
     TestTask start(TestTask et);
     TestTask unlinkCase(TestTask et);
     List<TestTask> select(TestTaskSearchContext context);

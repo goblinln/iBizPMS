@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface INotifyService extends IService<Notify> {
 
     boolean create(Notify et);
+    void createBatch(List<Notify> list);
     boolean update(Notify et);
     boolean sysUpdate(Notify et);
+    void updateBatch(List<Notify> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Notify get(Long key);
     Notify sysGet(Long key);
     Notify getDraft(Notify et);
     boolean checkKey(Notify et);
     boolean save(Notify et);
+    void saveBatch(List<Notify> list);
     List<Notify> select(NotifySearchContext context);
     List<Notify> selectDefault(NotifySearchContext context);
     List<Notify> selectView(NotifySearchContext context);

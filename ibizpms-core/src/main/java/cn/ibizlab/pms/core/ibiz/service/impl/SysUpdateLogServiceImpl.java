@@ -75,6 +75,18 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<SysUpdateLog> list) {
+        if(sysupdatelogRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+        for (SysUpdateLog et : list) {
+            getProxyService().save(et);
+        }
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -86,6 +98,16 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<SysUpdateLog> list) {
+        if(sysupdatelogRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -107,6 +129,17 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<String> idList) {
+        if(sysupdatelogRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        sysupdatefeaturesService.removeBySysupdatelogid(idList);
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -171,6 +204,46 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<SysUpdateLog> list) {
+        List<SysUpdateLog> create = new ArrayList<>();
+        List<SysUpdateLog> update = new ArrayList<>();
+        for (SysUpdateLog et : list) {
+            if (ObjectUtils.isEmpty(et.getSysupdatelogid()) || ObjectUtils.isEmpty(getById(et.getSysupdatelogid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<SysUpdateLog> list) {
+        List<SysUpdateLog> create = new ArrayList<>();
+        List<SysUpdateLog> update = new ArrayList<>();
+        for (SysUpdateLog et : list) {
+            if (ObjectUtils.isEmpty(et.getSysupdatelogid()) || ObjectUtils.isEmpty(getById(et.getSysupdatelogid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
 
 

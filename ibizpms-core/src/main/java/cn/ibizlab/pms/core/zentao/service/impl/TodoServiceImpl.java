@@ -75,6 +75,16 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<Todo> list) {
+        if(todoRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -86,6 +96,16 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<Todo> list) {
+        if(todoRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -106,6 +126,16 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        if(todoRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -198,6 +228,46 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<Todo> list) {
+        List<Todo> create = new ArrayList<>();
+        List<Todo> update = new ArrayList<>();
+        for (Todo et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<Todo> list) {
+        List<Todo> create = new ArrayList<>();
+        List<Todo> update = new ArrayList<>();
+        for (Todo et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
     @Override
     @Transactional

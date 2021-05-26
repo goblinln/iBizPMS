@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IDynaDashboardService extends IService<DynaDashboard> {
 
     boolean create(DynaDashboard et);
+    void createBatch(List<DynaDashboard> list);
     boolean update(DynaDashboard et);
     boolean sysUpdate(DynaDashboard et);
+    void updateBatch(List<DynaDashboard> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     DynaDashboard get(String key);
     DynaDashboard sysGet(String key);
     DynaDashboard getDraft(DynaDashboard et);
     boolean checkKey(DynaDashboard et);
     boolean save(DynaDashboard et);
+    void saveBatch(List<DynaDashboard> list);
     List<DynaDashboard> select(DynaDashboardSearchContext context);
     List<DynaDashboard> selectDefault(DynaDashboardSearchContext context);
     List<DynaDashboard> selectView(DynaDashboardSearchContext context);

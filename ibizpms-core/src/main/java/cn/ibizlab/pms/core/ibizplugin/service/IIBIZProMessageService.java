@@ -25,9 +25,12 @@ import cn.ibizlab.pms.core.ibizplugin.filter.IBIZProMessageSearchContext;
 public interface IIBIZProMessageService {
 
     boolean create(IBIZProMessage et);
+    void createBatch(List<IBIZProMessage> list);
     boolean update(IBIZProMessage et);
     boolean sysUpdate(IBIZProMessage et);
+    void updateBatch(List<IBIZProMessage> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     IBIZProMessage get(String key);
     IBIZProMessage sysGet(String key);
     IBIZProMessage getDraft(IBIZProMessage et);
@@ -35,6 +38,7 @@ public interface IIBIZProMessageService {
     IBIZProMessage markDone(IBIZProMessage et);
     IBIZProMessage markRead(IBIZProMessage et);
     boolean save(IBIZProMessage et);
+    void saveBatch(List<IBIZProMessage> list);
     IBIZProMessage send(IBIZProMessage et);
 
     Page<IBIZProMessage> searchDefault(IBIZProMessageSearchContext context);

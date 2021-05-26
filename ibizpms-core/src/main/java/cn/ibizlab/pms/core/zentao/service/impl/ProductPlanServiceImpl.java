@@ -95,6 +95,17 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<ProductPlan> list) {
+        if(productplanRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+            list.forEach(item->fillParentData(item));
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -109,6 +120,17 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<ProductPlan> list) {
+        if(productplanRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+            list.forEach(item->fillParentData(item));
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -133,6 +155,20 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        if(productplanRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        if(!ObjectUtils.isEmpty(projectproductService.selectByPlan(idList)))
+            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[ProjectProduct]数据，无法删除!","","");
+        if(!ObjectUtils.isEmpty(productplanService.selectByParent(idList)))
+            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[ProductPlan]数据，无法删除!","","");
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -296,6 +332,52 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<ProductPlan> list) {
+        if(!productplanRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+        List<ProductPlan> create = new ArrayList<>();
+        List<ProductPlan> update = new ArrayList<>();
+        for (ProductPlan et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<ProductPlan> list) {
+        if(!productplanRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+        List<ProductPlan> create = new ArrayList<>();
+        List<ProductPlan> update = new ArrayList<>();
+        for (ProductPlan et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
     @Override
     @Transactional

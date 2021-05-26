@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ITaskService extends IService<Task> {
 
     boolean create(Task et);
+    void createBatch(List<Task> list);
     boolean update(Task et);
     boolean sysUpdate(Task et);
+    void updateBatch(List<Task> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Task get(Long key);
     Task sysGet(Long key);
     Task getDraft(Task et);

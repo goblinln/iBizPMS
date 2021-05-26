@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzProMonthlyHistoryService extends IService<IbzProMonthlyHistory> {
 
     boolean create(IbzProMonthlyHistory et);
+    void createBatch(List<IbzProMonthlyHistory> list);
     boolean update(IbzProMonthlyHistory et);
     boolean sysUpdate(IbzProMonthlyHistory et);
+    void updateBatch(List<IbzProMonthlyHistory> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     IbzProMonthlyHistory get(Long key);
     IbzProMonthlyHistory sysGet(Long key);
     IbzProMonthlyHistory getDraft(IbzProMonthlyHistory et);
     boolean checkKey(IbzProMonthlyHistory et);
     boolean save(IbzProMonthlyHistory et);
+    void saveBatch(List<IbzProMonthlyHistory> list);
     List<IbzProMonthlyHistory> select(IbzProMonthlyHistorySearchContext context);
     List<IbzProMonthlyHistory> selectDefault(IbzProMonthlyHistorySearchContext context);
     List<IbzProMonthlyHistory> selectSimple(IbzProMonthlyHistorySearchContext context);

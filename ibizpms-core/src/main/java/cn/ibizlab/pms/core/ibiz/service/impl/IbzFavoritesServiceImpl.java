@@ -72,6 +72,16 @@ public class IbzFavoritesServiceImpl extends ServiceImpl<IbzFavoritesMapper, Ibz
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<IbzFavorites> list) {
+        if(ibzfavoritesRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -83,6 +93,16 @@ public class IbzFavoritesServiceImpl extends ServiceImpl<IbzFavoritesMapper, Ibz
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<IbzFavorites> list) {
+        if(ibzfavoritesRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -103,6 +123,16 @@ public class IbzFavoritesServiceImpl extends ServiceImpl<IbzFavoritesMapper, Ibz
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<String> idList) {
+        if(ibzfavoritesRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -160,6 +190,46 @@ public class IbzFavoritesServiceImpl extends ServiceImpl<IbzFavoritesMapper, Ibz
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<IbzFavorites> list) {
+        List<IbzFavorites> create = new ArrayList<>();
+        List<IbzFavorites> update = new ArrayList<>();
+        for (IbzFavorites et : list) {
+            if (ObjectUtils.isEmpty(et.getIbzfavoritesid()) || ObjectUtils.isEmpty(getById(et.getIbzfavoritesid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<IbzFavorites> list) {
+        List<IbzFavorites> create = new ArrayList<>();
+        List<IbzFavorites> update = new ArrayList<>();
+        for (IbzFavorites et : list) {
+            if (ObjectUtils.isEmpty(et.getIbzfavoritesid()) || ObjectUtils.isEmpty(getById(et.getIbzfavoritesid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
 
 

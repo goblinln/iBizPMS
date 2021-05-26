@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IProductPlanHistoryService extends IService<ProductPlanHistory> {
 
     boolean create(ProductPlanHistory et);
+    void createBatch(List<ProductPlanHistory> list);
     boolean update(ProductPlanHistory et);
     boolean sysUpdate(ProductPlanHistory et);
+    void updateBatch(List<ProductPlanHistory> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     ProductPlanHistory get(Long key);
     ProductPlanHistory sysGet(Long key);
     ProductPlanHistory getDraft(ProductPlanHistory et);
     boolean checkKey(ProductPlanHistory et);
     boolean save(ProductPlanHistory et);
+    void saveBatch(List<ProductPlanHistory> list);
     List<ProductPlanHistory> select(ProductPlanHistorySearchContext context);
     List<ProductPlanHistory> selectDefault(ProductPlanHistorySearchContext context);
     List<ProductPlanHistory> selectSimple(ProductPlanHistorySearchContext context);

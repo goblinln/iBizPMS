@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IDocContentService extends IService<DocContent> {
 
     boolean create(DocContent et);
+    void createBatch(List<DocContent> list);
     boolean update(DocContent et);
     boolean sysUpdate(DocContent et);
+    void updateBatch(List<DocContent> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     DocContent get(Long key);
     DocContent sysGet(Long key);
     DocContent getDraft(DocContent et);
     boolean checkKey(DocContent et);
     boolean save(DocContent et);
+    void saveBatch(List<DocContent> list);
     List<DocContent> select(DocContentSearchContext context);
     List<DocContent> selectCurVersion(DocContentSearchContext context);
     List<DocContent> selectDefault(DocContentSearchContext context);

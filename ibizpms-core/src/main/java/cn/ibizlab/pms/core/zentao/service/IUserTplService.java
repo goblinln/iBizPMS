@@ -26,15 +26,19 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IUserTplService extends IService<UserTpl> {
 
     boolean create(UserTpl et);
+    void createBatch(List<UserTpl> list);
     boolean update(UserTpl et);
     boolean sysUpdate(UserTpl et);
+    void updateBatch(List<UserTpl> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     UserTpl get(Long key);
     UserTpl sysGet(Long key);
     UserTpl getDraft(UserTpl et);
     boolean checkKey(UserTpl et);
     UserTpl hasDeleted(UserTpl et);
     boolean save(UserTpl et);
+    void saveBatch(List<UserTpl> list);
     List<UserTpl> select(UserTplSearchContext context);
     List<UserTpl> selectDefault(UserTplSearchContext context);
     List<UserTpl> selectMyUserTpl(UserTplSearchContext context);

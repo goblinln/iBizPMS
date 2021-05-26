@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIBZProSysTplService extends IService<IBZProSysTpl> {
 
     boolean create(IBZProSysTpl et);
+    void createBatch(List<IBZProSysTpl> list);
     boolean update(IBZProSysTpl et);
     boolean sysUpdate(IBZProSysTpl et);
+    void updateBatch(List<IBZProSysTpl> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     IBZProSysTpl get(String key);
     IBZProSysTpl sysGet(String key);
     IBZProSysTpl getDraft(IBZProSysTpl et);
     boolean checkKey(IBZProSysTpl et);
     boolean save(IBZProSysTpl et);
+    void saveBatch(List<IBZProSysTpl> list);
     List<IBZProSysTpl> select(IBZProSysTplSearchContext context);
     List<IBZProSysTpl> selectDefault(IBZProSysTplSearchContext context);
     List<IBZProSysTpl> selectView(IBZProSysTplSearchContext context);

@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzWeeklyService extends IService<IbzWeekly> {
 
     boolean create(IbzWeekly et);
+    void createBatch(List<IbzWeekly> list);
     boolean update(IbzWeekly et);
     boolean sysUpdate(IbzWeekly et);
+    void updateBatch(List<IbzWeekly> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     IbzWeekly get(Long key);
     IbzWeekly sysGet(Long key);
     IbzWeekly getDraft(IbzWeekly et);
@@ -40,6 +43,7 @@ public interface IIbzWeeklyService extends IService<IbzWeekly> {
     IbzWeekly jugThisWeekCreateWeekly(IbzWeekly et);
     IbzWeekly pushUserWeekly(IbzWeekly et);
     boolean save(IbzWeekly et);
+    void saveBatch(List<IbzWeekly> list);
     IbzWeekly submit(IbzWeekly et);
     List<IbzWeekly> select(IbzWeeklySearchContext context);
     List<IbzWeekly> selectDefault(IbzWeeklySearchContext context);

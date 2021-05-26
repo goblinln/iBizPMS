@@ -78,6 +78,17 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<IbizproProjectDaily> list) {
+        if(ibizproprojectdailyRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+            list.forEach(item->fillParentData(item));
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -92,6 +103,17 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<IbizproProjectDaily> list) {
+        if(ibizproprojectdailyRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+            list.forEach(item->fillParentData(item));
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -112,6 +134,16 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<String> idList) {
+        if(ibizproprojectdailyRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -172,6 +204,52 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<IbizproProjectDaily> list) {
+        if(!ibizproprojectdailyRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+        List<IbizproProjectDaily> create = new ArrayList<>();
+        List<IbizproProjectDaily> update = new ArrayList<>();
+        for (IbizproProjectDaily et : list) {
+            if (ObjectUtils.isEmpty(et.getIbizproprojectdailyid()) || ObjectUtils.isEmpty(getById(et.getIbizproprojectdailyid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<IbizproProjectDaily> list) {
+        if(!ibizproprojectdailyRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+        List<IbizproProjectDaily> create = new ArrayList<>();
+        List<IbizproProjectDaily> update = new ArrayList<>();
+        for (IbizproProjectDaily et : list) {
+            if (ObjectUtils.isEmpty(et.getIbizproprojectdailyid()) || ObjectUtils.isEmpty(getById(et.getIbizproprojectdailyid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
     @Override
     @Transactional

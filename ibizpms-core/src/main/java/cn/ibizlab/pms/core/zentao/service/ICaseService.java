@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ICaseService extends IService<Case> {
 
     boolean create(Case et);
+    void createBatch(List<Case> list);
     boolean update(Case et);
     boolean sysUpdate(Case et);
+    void updateBatch(List<Case> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Case get(Long key);
     Case sysGet(Long key);
     Case getDraft(Case et);

@@ -113,6 +113,19 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<Bug> list) {
+        if(bugRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+            list.forEach(item->fillParentData(item));
+        for (Bug et : list) {
+            getProxyService().save(et);
+        }
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -127,6 +140,17 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<Bug> list) {
+        if(bugRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+            list.forEach(item->fillParentData(item));
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -147,6 +171,18 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        if(bugRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        for (Long id : idList) {
+            getProxyService().removeById(id);
+        }
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -324,6 +360,52 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<Bug> list) {
+        if(!bugRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+        List<Bug> create = new ArrayList<>();
+        List<Bug> update = new ArrayList<>();
+        for (Bug et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<Bug> list) {
+        if(!bugRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+        List<Bug> create = new ArrayList<>();
+        List<Bug> update = new ArrayList<>();
+        for (Bug et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
     @Override
     @Transactional

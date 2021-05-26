@@ -116,6 +116,17 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<Story> list) {
+        if(storyRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+            list.forEach(item->fillParentData(item));
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -139,6 +150,17 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<Story> list) {
+        if(storyRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+            list.forEach(item->fillParentData(item));
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -162,6 +184,16 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        if(storyRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional

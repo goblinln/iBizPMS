@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIBZDailyActionService extends IService<IBZDailyAction> {
 
     boolean create(IBZDailyAction et);
+    void createBatch(List<IBZDailyAction> list);
     boolean update(IBZDailyAction et);
     boolean sysUpdate(IBZDailyAction et);
+    void updateBatch(List<IBZDailyAction> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     IBZDailyAction get(Long key);
     IBZDailyAction sysGet(Long key);
     IBZDailyAction getDraft(IBZDailyAction et);
@@ -38,6 +41,7 @@ public interface IIBZDailyActionService extends IService<IBZDailyAction> {
     IBZDailyAction editComment(IBZDailyAction et);
     IBZDailyAction managePmsEe(IBZDailyAction et);
     boolean save(IBZDailyAction et);
+    void saveBatch(List<IBZDailyAction> list);
     IBZDailyAction sendMarkDone(IBZDailyAction et);
     IBZDailyAction sendTodo(IBZDailyAction et);
     IBZDailyAction sendToread(IBZDailyAction et);

@@ -78,6 +78,17 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<TaskEstimate> list) {
+        if(taskestimateRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+            list.forEach(item->fillParentData(item));
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -92,6 +103,17 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<TaskEstimate> list) {
+        if(taskestimateRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+            list.forEach(item->fillParentData(item));
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -112,6 +134,16 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        if(taskestimateRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -179,6 +211,52 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<TaskEstimate> list) {
+        if(!taskestimateRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+        List<TaskEstimate> create = new ArrayList<>();
+        List<TaskEstimate> update = new ArrayList<>();
+        for (TaskEstimate et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<TaskEstimate> list) {
+        if(!taskestimateRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+        List<TaskEstimate> create = new ArrayList<>();
+        List<TaskEstimate> update = new ArrayList<>();
+        for (TaskEstimate et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
 
 	@Override

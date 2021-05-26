@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ILangService extends IService<Lang> {
 
     boolean create(Lang et);
+    void createBatch(List<Lang> list);
     boolean update(Lang et);
     boolean sysUpdate(Lang et);
+    void updateBatch(List<Lang> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Lang get(Long key);
     Lang sysGet(Long key);
     Lang getDraft(Lang et);
     boolean checkKey(Lang et);
     boolean save(Lang et);
+    void saveBatch(List<Lang> list);
     List<Lang> select(LangSearchContext context);
     List<Lang> selectDefault(LangSearchContext context);
     List<Lang> selectView(LangSearchContext context);

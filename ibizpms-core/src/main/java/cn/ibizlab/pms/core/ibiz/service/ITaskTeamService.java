@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ITaskTeamService extends IService<TaskTeam> {
 
     boolean create(TaskTeam et);
+    void createBatch(List<TaskTeam> list);
     boolean update(TaskTeam et);
     boolean sysUpdate(TaskTeam et);
+    void updateBatch(List<TaskTeam> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     TaskTeam get(Long key);
     TaskTeam sysGet(Long key);
     TaskTeam getDraft(TaskTeam et);
     boolean checkKey(TaskTeam et);
     boolean save(TaskTeam et);
+    void saveBatch(List<TaskTeam> list);
     List<TaskTeam> select(TaskTeamSearchContext context);
     List<TaskTeam> selectDefault(TaskTeamSearchContext context);
     List<TaskTeam> selectView(TaskTeamSearchContext context);

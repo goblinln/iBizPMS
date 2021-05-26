@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIBZProWeeklyActionService extends IService<IBZProWeeklyAction> {
 
     boolean create(IBZProWeeklyAction et);
+    void createBatch(List<IBZProWeeklyAction> list);
     boolean update(IBZProWeeklyAction et);
     boolean sysUpdate(IBZProWeeklyAction et);
+    void updateBatch(List<IBZProWeeklyAction> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     IBZProWeeklyAction get(Long key);
     IBZProWeeklyAction sysGet(Long key);
     IBZProWeeklyAction getDraft(IBZProWeeklyAction et);
@@ -36,6 +39,7 @@ public interface IIBZProWeeklyActionService extends IService<IBZProWeeklyAction>
     IBZProWeeklyAction createHis(IBZProWeeklyAction et);
     IBZProWeeklyAction managePmsEe(IBZProWeeklyAction et);
     boolean save(IBZProWeeklyAction et);
+    void saveBatch(List<IBZProWeeklyAction> list);
     IBZProWeeklyAction sendMarkDone(IBZProWeeklyAction et);
     IBZProWeeklyAction sendTodo(IBZProWeeklyAction et);
     IBZProWeeklyAction sendToread(IBZProWeeklyAction et);

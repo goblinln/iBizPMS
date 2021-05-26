@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IPRODUCTTEAMService extends IService<PRODUCTTEAM> {
 
     boolean create(PRODUCTTEAM et);
+    void createBatch(List<PRODUCTTEAM> list);
     boolean update(PRODUCTTEAM et);
     boolean sysUpdate(PRODUCTTEAM et);
+    void updateBatch(List<PRODUCTTEAM> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     PRODUCTTEAM get(Long key);
     PRODUCTTEAM sysGet(Long key);
     PRODUCTTEAM getDraft(PRODUCTTEAM et);

@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IStoryService extends IService<Story> {
 
     boolean create(Story et);
+    void createBatch(List<Story> list);
     boolean update(Story et);
     boolean sysUpdate(Story et);
+    void updateBatch(List<Story> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Story get(Long key);
     Story sysGet(Long key);
     Story getDraft(Story et);

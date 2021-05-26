@@ -78,6 +78,17 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<IbizproProductWeekly> list) {
+        if(ibizproproductweeklyRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+            list.forEach(item->fillParentData(item));
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -92,6 +103,17 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<IbizproProductWeekly> list) {
+        if(ibizproproductweeklyRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+            list.forEach(item->fillParentData(item));
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -112,6 +134,16 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        if(ibizproproductweeklyRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -172,6 +204,52 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<IbizproProductWeekly> list) {
+        if(!ibizproproductweeklyRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+        List<IbizproProductWeekly> create = new ArrayList<>();
+        List<IbizproProductWeekly> update = new ArrayList<>();
+        for (IbizproProductWeekly et : list) {
+            if (ObjectUtils.isEmpty(et.getIbizproProductweeklyid()) || ObjectUtils.isEmpty(getById(et.getIbizproProductweeklyid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<IbizproProductWeekly> list) {
+        if(!ibizproproductweeklyRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+        List<IbizproProductWeekly> create = new ArrayList<>();
+        List<IbizproProductWeekly> update = new ArrayList<>();
+        for (IbizproProductWeekly et : list) {
+            if (ObjectUtils.isEmpty(et.getIbizproProductweeklyid()) || ObjectUtils.isEmpty(getById(et.getIbizproProductweeklyid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
     @Override
     @Transactional

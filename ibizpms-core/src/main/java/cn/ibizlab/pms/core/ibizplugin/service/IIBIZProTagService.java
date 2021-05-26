@@ -25,14 +25,18 @@ import cn.ibizlab.pms.core.ibizplugin.filter.IBIZProTagSearchContext;
 public interface IIBIZProTagService {
 
     boolean create(IBIZProTag et);
+    void createBatch(List<IBIZProTag> list);
     boolean update(IBIZProTag et);
     boolean sysUpdate(IBIZProTag et);
+    void updateBatch(List<IBIZProTag> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     IBIZProTag get(String key);
     IBIZProTag sysGet(String key);
     IBIZProTag getDraft(IBIZProTag et);
     boolean checkKey(IBIZProTag et);
     boolean save(IBIZProTag et);
+    void saveBatch(List<IBIZProTag> list);
 
     Page<IBIZProTag> searchDefault(IBIZProTagSearchContext context);
     IBIZProTag dynamicCall(String key, String action, IBIZProTag et);

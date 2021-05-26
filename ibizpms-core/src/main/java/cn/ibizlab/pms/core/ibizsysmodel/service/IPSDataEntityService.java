@@ -25,14 +25,18 @@ import cn.ibizlab.pms.core.ibizsysmodel.filter.PSDataEntitySearchContext;
 public interface IPSDataEntityService {
 
     boolean create(PSDataEntity et);
+    void createBatch(List<PSDataEntity> list);
     boolean update(PSDataEntity et);
     boolean sysUpdate(PSDataEntity et);
+    void updateBatch(List<PSDataEntity> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     PSDataEntity get(String key);
     PSDataEntity sysGet(String key);
     PSDataEntity getDraft(PSDataEntity et);
     boolean checkKey(PSDataEntity et);
     boolean save(PSDataEntity et);
+    void saveBatch(List<PSDataEntity> list);
 
     Page<PSDataEntity> searchDefault(PSDataEntitySearchContext context);
     List<PSDataEntity> selectByPsmoduleid(String psmoduleid);

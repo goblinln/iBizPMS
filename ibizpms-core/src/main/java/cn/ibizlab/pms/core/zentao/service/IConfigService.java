@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IConfigService extends IService<Config> {
 
     boolean create(Config et);
+    void createBatch(List<Config> list);
     boolean update(Config et);
     boolean sysUpdate(Config et);
+    void updateBatch(List<Config> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Config get(Long key);
     Config sysGet(Long key);
     Config getDraft(Config et);
     boolean checkKey(Config et);
     boolean save(Config et);
+    void saveBatch(List<Config> list);
     List<Config> select(ConfigSearchContext context);
     List<Config> selectDefault(ConfigSearchContext context);
     List<Config> selectView(ConfigSearchContext context);

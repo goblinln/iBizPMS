@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIBZCaseActionService extends IService<IBZCaseAction> {
 
     boolean create(IBZCaseAction et);
+    void createBatch(List<IBZCaseAction> list);
     boolean update(IBZCaseAction et);
     boolean sysUpdate(IBZCaseAction et);
+    void updateBatch(List<IBZCaseAction> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     IBZCaseAction get(Long key);
     IBZCaseAction sysGet(Long key);
     IBZCaseAction getDraft(IBZCaseAction et);
@@ -38,6 +41,7 @@ public interface IIBZCaseActionService extends IService<IBZCaseAction> {
     IBZCaseAction editComment(IBZCaseAction et);
     IBZCaseAction managePmsEe(IBZCaseAction et);
     boolean save(IBZCaseAction et);
+    void saveBatch(List<IBZCaseAction> list);
     IBZCaseAction sendMarkDone(IBZCaseAction et);
     IBZCaseAction sendTodo(IBZCaseAction et);
     IBZCaseAction sendToread(IBZCaseAction et);

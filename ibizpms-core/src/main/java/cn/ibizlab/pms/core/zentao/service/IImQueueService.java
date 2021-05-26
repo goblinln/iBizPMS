@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IImQueueService extends IService<ImQueue> {
 
     boolean create(ImQueue et);
+    void createBatch(List<ImQueue> list);
     boolean update(ImQueue et);
     boolean sysUpdate(ImQueue et);
+    void updateBatch(List<ImQueue> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     ImQueue get(Long key);
     ImQueue sysGet(Long key);
     ImQueue getDraft(ImQueue et);
     boolean checkKey(ImQueue et);
     boolean save(ImQueue et);
+    void saveBatch(List<ImQueue> list);
     List<ImQueue> select(ImQueueSearchContext context);
     List<ImQueue> selectDefault(ImQueueSearchContext context);
     List<ImQueue> selectView(ImQueueSearchContext context);

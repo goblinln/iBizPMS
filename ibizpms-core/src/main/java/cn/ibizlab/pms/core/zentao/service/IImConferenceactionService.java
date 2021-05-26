@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IImConferenceactionService extends IService<ImConferenceaction> {
 
     boolean create(ImConferenceaction et);
+    void createBatch(List<ImConferenceaction> list);
     boolean update(ImConferenceaction et);
     boolean sysUpdate(ImConferenceaction et);
+    void updateBatch(List<ImConferenceaction> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     ImConferenceaction get(Long key);
     ImConferenceaction sysGet(Long key);
     ImConferenceaction getDraft(ImConferenceaction et);
     boolean checkKey(ImConferenceaction et);
     boolean save(ImConferenceaction et);
+    void saveBatch(List<ImConferenceaction> list);
     List<ImConferenceaction> select(ImConferenceactionSearchContext context);
     List<ImConferenceaction> selectDefault(ImConferenceactionSearchContext context);
     List<ImConferenceaction> selectView(ImConferenceactionSearchContext context);

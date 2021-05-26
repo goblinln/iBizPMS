@@ -25,14 +25,18 @@ import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSysReqModuleSearchContext;
 public interface IPSSysReqModuleService {
 
     boolean create(PSSysReqModule et);
+    void createBatch(List<PSSysReqModule> list);
     boolean update(PSSysReqModule et);
     boolean sysUpdate(PSSysReqModule et);
+    void updateBatch(List<PSSysReqModule> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     PSSysReqModule get(String key);
     PSSysReqModule sysGet(String key);
     PSSysReqModule getDraft(PSSysReqModule et);
     boolean checkKey(PSSysReqModule et);
     boolean save(PSSysReqModule et);
+    void saveBatch(List<PSSysReqModule> list);
 
     Page<PSSysReqModule> searchDefault(PSSysReqModuleSearchContext context);
     List<PSSysReqModule> selectByPsmoduleid(String psmoduleid);

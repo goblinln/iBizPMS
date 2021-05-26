@@ -52,6 +52,14 @@ public class SubTaskResource {
     @Lazy
     public SubTaskMapping subtaskMapping;
 
+    @PreAuthorize("@TaskRuntime.test(#subtask_id,'CREATE')")
+    @ApiOperation(value = "获取任务草稿", tags = {"任务" },  notes = "获取任务草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/subtasks/getdraft")
+    public ResponseEntity<SubTaskDTO> getDraft(SubTaskDTO dto) {
+        Task domain = subtaskMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(taskService.getDraft(domain)));
+    }
+
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取子任务", tags = {"任务" } ,notes = "获取子任务")
     @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchchildtask")
@@ -94,14 +102,6 @@ public class SubTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.test(#subtask_id,'CREATE')")
-    @ApiOperation(value = "获取任务草稿", tags = {"任务" },  notes = "获取任务草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/subtasks/getdraft")
-    public ResponseEntity<SubTaskDTO> getDraft(SubTaskDTO dto) {
-        Task domain = subtaskMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(taskService.getDraft(domain)));
-    }
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/subtasks/{subtask_id}/{action}")
@@ -110,6 +110,14 @@ public class SubTaskResource {
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
+    @ApiOperation(value = "根据任务获取任务草稿", tags = {"任务" },  notes = "根据任务获取任务草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}/subtasks/getdraft")
+    public ResponseEntity<SubTaskDTO> getDraftByTask(@PathVariable("task_id") Long task_id, SubTaskDTO dto) {
+        Task domain = subtaskMapping.toDomain(dto);
+        domain.setParent(task_id);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(taskService.getDraft(domain)));
+    }
+
     @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
 	@ApiOperation(value = "根据任务获取子任务", tags = {"任务" } ,notes = "根据任务获取子任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchchildtask")
@@ -155,9 +163,9 @@ public class SubTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "根据任务获取任务草稿", tags = {"任务" },  notes = "根据任务获取任务草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}/subtasks/getdraft")
-    public ResponseEntity<SubTaskDTO> getDraftByTask(@PathVariable("task_id") Long task_id, SubTaskDTO dto) {
+    @ApiOperation(value = "根据项目任务获取任务草稿", tags = {"任务" },  notes = "根据项目任务获取任务草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/subtasks/getdraft")
+    public ResponseEntity<SubTaskDTO> getDraftByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, SubTaskDTO dto) {
         Task domain = subtaskMapping.toDomain(dto);
         domain.setParent(task_id);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(taskService.getDraft(domain)));
@@ -206,14 +214,6 @@ public class SubTaskResource {
         }
         taskService.saveBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @ApiOperation(value = "根据项目任务获取任务草稿", tags = {"任务" },  notes = "根据项目任务获取任务草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/subtasks/getdraft")
-    public ResponseEntity<SubTaskDTO> getDraftByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, SubTaskDTO dto) {
-        Task domain = subtaskMapping.toDomain(dto);
-        domain.setParent(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(taskService.getDraft(domain)));
     }
 
 }

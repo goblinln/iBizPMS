@@ -72,6 +72,16 @@ public class IbzReportServiceImpl extends ServiceImpl<IbzReportMapper, IbzReport
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<IbzReport> list) {
+        if(ibzreportRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -83,6 +93,16 @@ public class IbzReportServiceImpl extends ServiceImpl<IbzReportMapper, IbzReport
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<IbzReport> list) {
+        if(ibzreportRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -103,6 +123,16 @@ public class IbzReportServiceImpl extends ServiceImpl<IbzReportMapper, IbzReport
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        if(ibzreportRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -172,6 +202,46 @@ public class IbzReportServiceImpl extends ServiceImpl<IbzReportMapper, IbzReport
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<IbzReport> list) {
+        List<IbzReport> create = new ArrayList<>();
+        List<IbzReport> update = new ArrayList<>();
+        for (IbzReport et : list) {
+            if (ObjectUtils.isEmpty(et.getIbzdailyid()) || ObjectUtils.isEmpty(getById(et.getIbzdailyid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<IbzReport> list) {
+        List<IbzReport> create = new ArrayList<>();
+        List<IbzReport> update = new ArrayList<>();
+        for (IbzReport et : list) {
+            if (ObjectUtils.isEmpty(et.getIbzdailyid()) || ObjectUtils.isEmpty(getById(et.getIbzdailyid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
 
 

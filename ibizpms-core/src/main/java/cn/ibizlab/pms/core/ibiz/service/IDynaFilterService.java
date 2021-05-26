@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IDynaFilterService extends IService<DynaFilter> {
 
     boolean create(DynaFilter et);
+    void createBatch(List<DynaFilter> list);
     boolean update(DynaFilter et);
     boolean sysUpdate(DynaFilter et);
+    void updateBatch(List<DynaFilter> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     DynaFilter get(String key);
     DynaFilter sysGet(String key);
     DynaFilter getDraft(DynaFilter et);
     boolean checkKey(DynaFilter et);
     boolean save(DynaFilter et);
+    void saveBatch(List<DynaFilter> list);
     List<DynaFilter> select(DynaFilterSearchContext context);
     List<DynaFilter> selectDefault(DynaFilterSearchContext context);
     List<DynaFilter> selectSimple(DynaFilterSearchContext context);

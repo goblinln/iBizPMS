@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IRepoBranchService extends IService<RepoBranch> {
 
     boolean create(RepoBranch et);
+    void createBatch(List<RepoBranch> list);
     boolean update(RepoBranch et);
     boolean sysUpdate(RepoBranch et);
+    void updateBatch(List<RepoBranch> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     RepoBranch get(String key);
     RepoBranch sysGet(String key);
     RepoBranch getDraft(RepoBranch et);
     boolean checkKey(RepoBranch et);
     boolean save(RepoBranch et);
+    void saveBatch(List<RepoBranch> list);
     List<RepoBranch> select(RepoBranchSearchContext context);
     List<RepoBranch> selectDefault(RepoBranchSearchContext context);
     List<RepoBranch> selectView(RepoBranchSearchContext context);

@@ -25,14 +25,18 @@ import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSubSysSADESearchContext;
 public interface IPSSubSysSADEService {
 
     boolean create(PSSubSysSADE et);
+    void createBatch(List<PSSubSysSADE> list);
     boolean update(PSSubSysSADE et);
     boolean sysUpdate(PSSubSysSADE et);
+    void updateBatch(List<PSSubSysSADE> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     PSSubSysSADE get(String key);
     PSSubSysSADE sysGet(String key);
     PSSubSysSADE getDraft(PSSubSysSADE et);
     boolean checkKey(PSSubSysSADE et);
     boolean save(PSSubSysSADE et);
+    void saveBatch(List<PSSubSysSADE> list);
 
     Page<PSSubSysSADE> searchDefault(PSSubSysSADESearchContext context);
     List<PSSubSysSADE> selectByPssubsysserviceapiid(String pssubsysserviceapiid);

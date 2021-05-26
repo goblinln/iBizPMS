@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ICompanyService extends IService<Company> {
 
     boolean create(Company et);
+    void createBatch(List<Company> list);
     boolean update(Company et);
     boolean sysUpdate(Company et);
+    void updateBatch(List<Company> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Company get(Long key);
     Company sysGet(Long key);
     Company getDraft(Company et);
     boolean checkKey(Company et);
     boolean save(Company et);
+    void saveBatch(List<Company> list);
     List<Company> select(CompanySearchContext context);
     List<Company> selectDefault(CompanySearchContext context);
     List<Company> selectView(CompanySearchContext context);

@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzDailyService extends IService<IbzDaily> {
 
     boolean create(IbzDaily et);
+    void createBatch(List<IbzDaily> list);
     boolean update(IbzDaily et);
     boolean sysUpdate(IbzDaily et);
+    void updateBatch(List<IbzDaily> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     IbzDaily get(Long key);
     IbzDaily sysGet(Long key);
     IbzDaily getDraft(IbzDaily et);
@@ -40,6 +43,7 @@ public interface IIbzDailyService extends IService<IbzDaily> {
     IbzDaily linkCompleteTask(IbzDaily et);
     IbzDaily pushUserDaily(IbzDaily et);
     boolean save(IbzDaily et);
+    void saveBatch(List<IbzDaily> list);
     IbzDaily submit(IbzDaily et);
     List<IbzDaily> select(IbzDailySearchContext context);
     List<IbzDaily> selectDefault(IbzDailySearchContext context);

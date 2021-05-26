@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IBuildService extends IService<Build> {
 
     boolean create(Build et);
+    void createBatch(List<Build> list);
     boolean update(Build et);
     boolean sysUpdate(Build et);
+    void updateBatch(List<Build> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Build get(Long key);
     Build sysGet(Long key);
     Build getDraft(Build et);
@@ -38,6 +41,7 @@ public interface IBuildService extends IService<Build> {
     Build mobProjectBuildCounter(Build et);
     Build oneClickRelease(Build et);
     boolean save(Build et);
+    void saveBatch(List<Build> list);
     Build unlinkBug(Build et);
     Build unlinkStory(Build et);
     List<Build> select(BuildSearchContext context);

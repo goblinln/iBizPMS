@@ -81,6 +81,18 @@ public class IBZProWeeklyActionServiceImpl extends ServiceImpl<IBZProWeeklyActio
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<IBZProWeeklyAction> list) {
+        if(ibzproweeklyactionRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+        for (IBZProWeeklyAction et : list) {
+            getProxyService().save(et);
+        }
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -95,6 +107,16 @@ public class IBZProWeeklyActionServiceImpl extends ServiceImpl<IBZProWeeklyActio
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<IBZProWeeklyAction> list) {
+        if(ibzproweeklyactionRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -116,6 +138,16 @@ public class IBZProWeeklyActionServiceImpl extends ServiceImpl<IBZProWeeklyActio
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        if(ibzproweeklyactionRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -188,6 +220,46 @@ public class IBZProWeeklyActionServiceImpl extends ServiceImpl<IBZProWeeklyActio
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<IBZProWeeklyAction> list) {
+        List<IBZProWeeklyAction> create = new ArrayList<>();
+        List<IBZProWeeklyAction> update = new ArrayList<>();
+        for (IBZProWeeklyAction et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<IBZProWeeklyAction> list) {
+        List<IBZProWeeklyAction> create = new ArrayList<>();
+        List<IBZProWeeklyAction> update = new ArrayList<>();
+        for (IBZProWeeklyAction et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
     @Override
     @Transactional

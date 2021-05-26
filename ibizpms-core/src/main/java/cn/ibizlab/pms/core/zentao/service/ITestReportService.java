@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ITestReportService extends IService<TestReport> {
 
     boolean create(TestReport et);
+    void createBatch(List<TestReport> list);
     boolean update(TestReport et);
     boolean sysUpdate(TestReport et);
+    void updateBatch(List<TestReport> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     TestReport get(Long key);
     TestReport sysGet(Long key);
     TestReport getDraft(TestReport et);
@@ -42,6 +45,7 @@ public interface ITestReportService extends IService<TestReport> {
     TestReport getTestReportBasicInfo(TestReport et);
     TestReport getTestReportProject(TestReport et);
     boolean save(TestReport et);
+    void saveBatch(List<TestReport> list);
     List<TestReport> select(TestReportSearchContext context);
     List<TestReport> selectDefault(TestReportSearchContext context);
     List<TestReport> selectView(TestReportSearchContext context);

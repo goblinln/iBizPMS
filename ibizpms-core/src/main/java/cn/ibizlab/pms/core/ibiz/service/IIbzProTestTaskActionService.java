@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzProTestTaskActionService extends IService<IbzProTestTaskAction> {
 
     boolean create(IbzProTestTaskAction et);
+    void createBatch(List<IbzProTestTaskAction> list);
     boolean update(IbzProTestTaskAction et);
     boolean sysUpdate(IbzProTestTaskAction et);
+    void updateBatch(List<IbzProTestTaskAction> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     IbzProTestTaskAction get(Long key);
     IbzProTestTaskAction sysGet(Long key);
     IbzProTestTaskAction getDraft(IbzProTestTaskAction et);
@@ -38,6 +41,7 @@ public interface IIbzProTestTaskActionService extends IService<IbzProTestTaskAct
     IbzProTestTaskAction editComment(IbzProTestTaskAction et);
     IbzProTestTaskAction managePmsEe(IbzProTestTaskAction et);
     boolean save(IbzProTestTaskAction et);
+    void saveBatch(List<IbzProTestTaskAction> list);
     IbzProTestTaskAction sendMarkDone(IbzProTestTaskAction et);
     IbzProTestTaskAction sendTodo(IbzProTestTaskAction et);
     IbzProTestTaskAction sendToread(IbzProTestTaskAction et);

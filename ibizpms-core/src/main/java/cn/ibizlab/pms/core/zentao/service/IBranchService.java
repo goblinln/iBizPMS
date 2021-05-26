@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IBranchService extends IService<Branch> {
 
     boolean create(Branch et);
+    void createBatch(List<Branch> list);
     boolean update(Branch et);
     boolean sysUpdate(Branch et);
+    void updateBatch(List<Branch> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Branch get(Long key);
     Branch sysGet(Long key);
     Branch getDraft(Branch et);
     boolean checkKey(Branch et);
     boolean save(Branch et);
+    void saveBatch(List<Branch> list);
     Branch sort(Branch et);
     List<Branch> select(BranchSearchContext context);
     List<Branch> selectCurProduct(BranchSearchContext context);

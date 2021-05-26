@@ -26,15 +26,19 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ISysUpdateLogService extends IService<SysUpdateLog> {
 
     boolean create(SysUpdateLog et);
+    void createBatch(List<SysUpdateLog> list);
     boolean update(SysUpdateLog et);
     boolean sysUpdate(SysUpdateLog et);
+    void updateBatch(List<SysUpdateLog> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     SysUpdateLog get(String key);
     SysUpdateLog sysGet(String key);
     SysUpdateLog getDraft(SysUpdateLog et);
     boolean checkKey(SysUpdateLog et);
     SysUpdateLog getLastUpdateInfo(SysUpdateLog et);
     boolean save(SysUpdateLog et);
+    void saveBatch(List<SysUpdateLog> list);
     List<SysUpdateLog> select(SysUpdateLogSearchContext context);
     List<SysUpdateLog> selectDefault(SysUpdateLogSearchContext context);
     List<SysUpdateLog> selectView(SysUpdateLogSearchContext context);

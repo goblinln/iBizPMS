@@ -79,6 +79,16 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<IbzMonthly> list) {
+        if(ibzmonthlyRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -90,6 +100,16 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<IbzMonthly> list) {
+        if(ibzmonthlyRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -110,6 +130,16 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        if(ibzmonthlyRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -202,6 +232,46 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<IbzMonthly> list) {
+        List<IbzMonthly> create = new ArrayList<>();
+        List<IbzMonthly> update = new ArrayList<>();
+        for (IbzMonthly et : list) {
+            if (ObjectUtils.isEmpty(et.getIbzmonthlyid()) || ObjectUtils.isEmpty(getById(et.getIbzmonthlyid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<IbzMonthly> list) {
+        List<IbzMonthly> create = new ArrayList<>();
+        List<IbzMonthly> update = new ArrayList<>();
+        for (IbzMonthly et : list) {
+            if (ObjectUtils.isEmpty(et.getIbzmonthlyid()) || ObjectUtils.isEmpty(getById(et.getIbzmonthlyid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
     @Override
     @Transactional

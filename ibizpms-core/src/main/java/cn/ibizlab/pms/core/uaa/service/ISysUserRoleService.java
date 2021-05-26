@@ -25,14 +25,18 @@ import cn.ibizlab.pms.core.uaa.filter.SysUserRoleSearchContext;
 public interface ISysUserRoleService {
 
     boolean create(SysUserRole et);
+    void createBatch(List<SysUserRole> list);
     boolean update(SysUserRole et);
     boolean sysUpdate(SysUserRole et);
+    void updateBatch(List<SysUserRole> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     SysUserRole get(String key);
     SysUserRole sysGet(String key);
     SysUserRole getDraft(SysUserRole et);
     boolean checkKey(SysUserRole et);
     boolean save(SysUserRole et);
+    void saveBatch(List<SysUserRole> list);
 
     Page<SysUserRole> searchDefault(SysUserRoleSearchContext context);
     List<SysUserRole> selectByRoleid(String roleid);

@@ -25,14 +25,18 @@ import cn.ibizlab.pms.core.ou.filter.SysOrganizationSearchContext;
 public interface ISysOrganizationService {
 
     boolean create(SysOrganization et);
+    void createBatch(List<SysOrganization> list);
     boolean update(SysOrganization et);
     boolean sysUpdate(SysOrganization et);
+    void updateBatch(List<SysOrganization> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     SysOrganization get(String key);
     SysOrganization sysGet(String key);
     SysOrganization getDraft(SysOrganization et);
     boolean checkKey(SysOrganization et);
     boolean save(SysOrganization et);
+    void saveBatch(List<SysOrganization> list);
 
     Page<SysOrganization> searchDefault(SysOrganizationSearchContext context);
     List<SysOrganization> selectByParentorgid(String orgid);

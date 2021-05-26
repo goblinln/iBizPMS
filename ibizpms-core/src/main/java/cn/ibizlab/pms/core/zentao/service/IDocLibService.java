@@ -26,15 +26,19 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IDocLibService extends IService<DocLib> {
 
     boolean create(DocLib et);
+    void createBatch(List<DocLib> list);
     boolean update(DocLib et);
     boolean sysUpdate(DocLib et);
+    void updateBatch(List<DocLib> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     DocLib get(Long key);
     DocLib sysGet(Long key);
     DocLib getDraft(DocLib et);
     boolean checkKey(DocLib et);
     DocLib collect(DocLib et);
     boolean save(DocLib et);
+    void saveBatch(List<DocLib> list);
     DocLib unCollect(DocLib et);
     List<DocLib> select(DocLibSearchContext context);
     List<DocLib> selectByCustom(DocLibSearchContext context);

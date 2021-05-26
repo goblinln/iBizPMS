@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ICaseStatsService extends IService<CaseStats> {
 
     boolean create(CaseStats et);
+    void createBatch(List<CaseStats> list);
     boolean update(CaseStats et);
     boolean sysUpdate(CaseStats et);
+    void updateBatch(List<CaseStats> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     CaseStats get(Long key);
     CaseStats sysGet(Long key);
     CaseStats getDraft(CaseStats et);
     boolean checkKey(CaseStats et);
     boolean save(CaseStats et);
+    void saveBatch(List<CaseStats> list);
     List<CaseStats> select(CaseStatsSearchContext context);
     List<CaseStats> selectDefault(CaseStatsSearchContext context);
     List<CaseStats> selectTestCaseStats(CaseStatsSearchContext context);

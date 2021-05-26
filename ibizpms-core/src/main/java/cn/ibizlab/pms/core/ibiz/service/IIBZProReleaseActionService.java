@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIBZProReleaseActionService extends IService<IBZProReleaseAction> {
 
     boolean create(IBZProReleaseAction et);
+    void createBatch(List<IBZProReleaseAction> list);
     boolean update(IBZProReleaseAction et);
     boolean sysUpdate(IBZProReleaseAction et);
+    void updateBatch(List<IBZProReleaseAction> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     IBZProReleaseAction get(Long key);
     IBZProReleaseAction sysGet(Long key);
     IBZProReleaseAction getDraft(IBZProReleaseAction et);
@@ -38,6 +41,7 @@ public interface IIBZProReleaseActionService extends IService<IBZProReleaseActio
     IBZProReleaseAction editComment(IBZProReleaseAction et);
     IBZProReleaseAction managePmsEe(IBZProReleaseAction et);
     boolean save(IBZProReleaseAction et);
+    void saveBatch(List<IBZProReleaseAction> list);
     IBZProReleaseAction sendMarkDone(IBZProReleaseAction et);
     IBZProReleaseAction sendTodo(IBZProReleaseAction et);
     IBZProReleaseAction sendToread(IBZProReleaseAction et);

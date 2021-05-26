@@ -72,6 +72,16 @@ public class NotifyServiceImpl extends ServiceImpl<NotifyMapper, Notify> impleme
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<Notify> list) {
+        if(notifyRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -83,6 +93,16 @@ public class NotifyServiceImpl extends ServiceImpl<NotifyMapper, Notify> impleme
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<Notify> list) {
+        if(notifyRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -103,6 +123,16 @@ public class NotifyServiceImpl extends ServiceImpl<NotifyMapper, Notify> impleme
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        if(notifyRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -160,6 +190,46 @@ public class NotifyServiceImpl extends ServiceImpl<NotifyMapper, Notify> impleme
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<Notify> list) {
+        List<Notify> create = new ArrayList<>();
+        List<Notify> update = new ArrayList<>();
+        for (Notify et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<Notify> list) {
+        List<Notify> create = new ArrayList<>();
+        List<Notify> update = new ArrayList<>();
+        for (Notify et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
 
 

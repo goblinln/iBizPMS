@@ -52,14 +52,6 @@ public class ProductPlanResource {
     @Lazy
     public ProductPlanMapping productplanMapping;
 
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'CREATE')")
-    @ApiOperation(value = "获取产品计划草稿", tags = {"产品计划" },  notes = "获取产品计划草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/productplans/getdraft")
-    public ResponseEntity<ProductPlanDTO> getDraft(ProductPlanDTO dto) {
-        ProductPlan domain = productplanMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(productplanMapping.toDto(productplanService.getDraft(domain)));
-    }
-
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品默认查询", tags = {"产品计划" } ,notes = "获取产品默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchproductquery")
@@ -133,6 +125,14 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'CREATE')")
+    @ApiOperation(value = "获取产品计划草稿", tags = {"产品计划" },  notes = "获取产品计划草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/productplans/getdraft")
+    public ResponseEntity<ProductPlanDTO> getDraft(ProductPlanDTO dto) {
+        ProductPlan domain = productplanMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(productplanMapping.toDto(productplanService.getDraft(domain)));
+    }
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/{action}")
@@ -141,14 +141,6 @@ public class ProductPlanResource {
         productplandto = productplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
-    @ApiOperation(value = "根据产品获取产品计划草稿", tags = {"产品计划" },  notes = "根据产品获取产品计划草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/getdraft")
-    public ResponseEntity<ProductPlanDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductPlanDTO dto) {
-        ProductPlan domain = productplanMapping.toDomain(dto);
-        domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(productplanMapping.toDto(productplanService.getDraft(domain)));
-    }
-
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取产品默认查询", tags = {"产品计划" } ,notes = "根据产品获取产品默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchproductquery")
@@ -212,6 +204,14 @@ public class ProductPlanResource {
         ProductPlan domain = productplanService.get(productplan_id);
         ProductPlanDTO dto = productplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据产品获取产品计划草稿", tags = {"产品计划" },  notes = "根据产品获取产品计划草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/getdraft")
+    public ResponseEntity<ProductPlanDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductPlanDTO dto) {
+        ProductPlan domain = productplanMapping.toDomain(dto);
+        domain.setProduct(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(productplanMapping.toDto(productplanService.getDraft(domain)));
     }
 
 }

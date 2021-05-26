@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ISuiteCaseService extends IService<SuiteCase> {
 
     boolean create(SuiteCase et);
+    void createBatch(List<SuiteCase> list);
     boolean update(SuiteCase et);
     boolean sysUpdate(SuiteCase et);
+    void updateBatch(List<SuiteCase> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     SuiteCase get(String key);
     SuiteCase sysGet(String key);
     SuiteCase getDraft(SuiteCase et);
     boolean checkKey(SuiteCase et);
     boolean save(SuiteCase et);
+    void saveBatch(List<SuiteCase> list);
     List<SuiteCase> select(SuiteCaseSearchContext context);
     List<SuiteCase> selectDefault(SuiteCaseSearchContext context);
     List<SuiteCase> selectView(SuiteCaseSearchContext context);

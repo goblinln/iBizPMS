@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IEmpLoyeeloadService extends IService<EmpLoyeeload> {
 
     boolean create(EmpLoyeeload et);
+    void createBatch(List<EmpLoyeeload> list);
     boolean update(EmpLoyeeload et);
     boolean sysUpdate(EmpLoyeeload et);
+    void updateBatch(List<EmpLoyeeload> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     EmpLoyeeload get(Long key);
     EmpLoyeeload sysGet(Long key);
     EmpLoyeeload getDraft(EmpLoyeeload et);
     boolean checkKey(EmpLoyeeload et);
     boolean save(EmpLoyeeload et);
+    void saveBatch(List<EmpLoyeeload> list);
     List<EmpLoyeeload> select(EmpLoyeeloadSearchContext context);
     List<EmpLoyeeload> selectDefault(EmpLoyeeloadSearchContext context);
     List<EmpLoyeeload> selectGETWOERKLOAD(EmpLoyeeloadSearchContext context);

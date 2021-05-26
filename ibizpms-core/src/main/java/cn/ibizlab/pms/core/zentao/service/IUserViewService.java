@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IUserViewService extends IService<UserView> {
 
     boolean create(UserView et);
+    void createBatch(List<UserView> list);
     boolean update(UserView et);
     boolean sysUpdate(UserView et);
+    void updateBatch(List<UserView> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     UserView get(String key);
     UserView sysGet(String key);
     UserView getDraft(UserView et);
     boolean checkKey(UserView et);
     boolean save(UserView et);
+    void saveBatch(List<UserView> list);
     List<UserView> select(UserViewSearchContext context);
     List<UserView> selectDefault(UserViewSearchContext context);
     List<UserView> selectView(UserViewSearchContext context);

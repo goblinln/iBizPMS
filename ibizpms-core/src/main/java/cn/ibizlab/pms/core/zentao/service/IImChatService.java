@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IImChatService extends IService<ImChat> {
 
     boolean create(ImChat et);
+    void createBatch(List<ImChat> list);
     boolean update(ImChat et);
     boolean sysUpdate(ImChat et);
+    void updateBatch(List<ImChat> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     ImChat get(Long key);
     ImChat sysGet(Long key);
     ImChat getDraft(ImChat et);
     boolean checkKey(ImChat et);
     boolean save(ImChat et);
+    void saveBatch(List<ImChat> list);
     List<ImChat> select(ImChatSearchContext context);
     List<ImChat> selectDefault(ImChatSearchContext context);
     List<ImChat> selectView(ImChatSearchContext context);

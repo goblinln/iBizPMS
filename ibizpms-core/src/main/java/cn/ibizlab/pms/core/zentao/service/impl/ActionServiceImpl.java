@@ -81,6 +81,18 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<Action> list) {
+        if(actionRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+        for (Action et : list) {
+            getProxyService().save(et);
+        }
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -95,6 +107,16 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<Action> list) {
+        if(actionRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -116,6 +138,16 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        if(actionRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -201,6 +233,46 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<Action> list) {
+        List<Action> create = new ArrayList<>();
+        List<Action> update = new ArrayList<>();
+        for (Action et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<Action> list) {
+        List<Action> create = new ArrayList<>();
+        List<Action> update = new ArrayList<>();
+        for (Action et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
     @Override
     @Transactional

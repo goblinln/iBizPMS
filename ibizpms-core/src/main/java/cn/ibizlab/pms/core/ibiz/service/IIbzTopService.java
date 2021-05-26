@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzTopService extends IService<IbzTop> {
 
     boolean create(IbzTop et);
+    void createBatch(List<IbzTop> list);
     boolean update(IbzTop et);
     boolean sysUpdate(IbzTop et);
+    void updateBatch(List<IbzTop> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     IbzTop get(String key);
     IbzTop sysGet(String key);
     IbzTop getDraft(IbzTop et);
     boolean checkKey(IbzTop et);
     boolean save(IbzTop et);
+    void saveBatch(List<IbzTop> list);
     List<IbzTop> select(IbzTopSearchContext context);
     List<IbzTop> selectDefault(IbzTopSearchContext context);
     List<IbzTop> selectView(IbzTopSearchContext context);

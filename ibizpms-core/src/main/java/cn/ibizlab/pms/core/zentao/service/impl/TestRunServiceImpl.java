@@ -84,6 +84,16 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<TestRun> list) {
+        if(testrunRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -98,6 +108,16 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<TestRun> list) {
+        if(testrunRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -119,6 +139,16 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        if(testrunRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -177,6 +207,46 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<TestRun> list) {
+        List<TestRun> create = new ArrayList<>();
+        List<TestRun> update = new ArrayList<>();
+        for (TestRun et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<TestRun> list) {
+        List<TestRun> create = new ArrayList<>();
+        List<TestRun> update = new ArrayList<>();
+        for (TestRun et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
 
 	@Override

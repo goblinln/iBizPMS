@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzFavoritesService extends IService<IbzFavorites> {
 
     boolean create(IbzFavorites et);
+    void createBatch(List<IbzFavorites> list);
     boolean update(IbzFavorites et);
     boolean sysUpdate(IbzFavorites et);
+    void updateBatch(List<IbzFavorites> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     IbzFavorites get(String key);
     IbzFavorites sysGet(String key);
     IbzFavorites getDraft(IbzFavorites et);
     boolean checkKey(IbzFavorites et);
     boolean save(IbzFavorites et);
+    void saveBatch(List<IbzFavorites> list);
     List<IbzFavorites> select(IbzFavoritesSearchContext context);
     List<IbzFavorites> selectDefault(IbzFavoritesSearchContext context);
     List<IbzFavorites> selectView(IbzFavoritesSearchContext context);

@@ -26,15 +26,19 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ITaskEstimateService extends IService<TaskEstimate> {
 
     boolean create(TaskEstimate et);
+    void createBatch(List<TaskEstimate> list);
     boolean update(TaskEstimate et);
     boolean sysUpdate(TaskEstimate et);
+    void updateBatch(List<TaskEstimate> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     TaskEstimate get(Long key);
     TaskEstimate sysGet(Long key);
     TaskEstimate getDraft(TaskEstimate et);
     boolean checkKey(TaskEstimate et);
     TaskEstimate pMEvaluation(TaskEstimate et);
     boolean save(TaskEstimate et);
+    void saveBatch(List<TaskEstimate> list);
     List<TaskEstimate> select(TaskEstimateSearchContext context);
     List<TaskEstimate> selectActionMonth(TaskEstimateSearchContext context);
     List<TaskEstimate> selectActionYear(TaskEstimateSearchContext context);

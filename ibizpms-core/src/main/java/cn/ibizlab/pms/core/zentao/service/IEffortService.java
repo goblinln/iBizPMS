@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IEffortService extends IService<Effort> {
 
     boolean create(Effort et);
+    void createBatch(List<Effort> list);
     boolean update(Effort et);
     boolean sysUpdate(Effort et);
+    void updateBatch(List<Effort> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Effort get(Long key);
     Effort sysGet(Long key);
     Effort getDraft(Effort et);
     boolean checkKey(Effort et);
     boolean save(Effort et);
+    void saveBatch(List<Effort> list);
     List<Effort> select(EffortSearchContext context);
     List<Effort> selectDefault(EffortSearchContext context);
     List<Effort> selectView(EffortSearchContext context);

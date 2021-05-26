@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzProBuildActionService extends IService<IbzProBuildAction> {
 
     boolean create(IbzProBuildAction et);
+    void createBatch(List<IbzProBuildAction> list);
     boolean update(IbzProBuildAction et);
     boolean sysUpdate(IbzProBuildAction et);
+    void updateBatch(List<IbzProBuildAction> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     IbzProBuildAction get(Long key);
     IbzProBuildAction sysGet(Long key);
     IbzProBuildAction getDraft(IbzProBuildAction et);
@@ -38,6 +41,7 @@ public interface IIbzProBuildActionService extends IService<IbzProBuildAction> {
     IbzProBuildAction editComment(IbzProBuildAction et);
     IbzProBuildAction managePmsEe(IbzProBuildAction et);
     boolean save(IbzProBuildAction et);
+    void saveBatch(List<IbzProBuildAction> list);
     IbzProBuildAction sendMarkDone(IbzProBuildAction et);
     IbzProBuildAction sendTodo(IbzProBuildAction et);
     IbzProBuildAction sendToread(IbzProBuildAction et);

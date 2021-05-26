@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IProjectService extends IService<Project> {
 
     boolean create(Project et);
+    void createBatch(List<Project> list);
     boolean update(Project et);
     boolean sysUpdate(Project et);
+    void updateBatch(List<Project> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Project get(Long key);
     Project sysGet(Long key);
     Project getDraft(Project et);
@@ -47,6 +50,7 @@ public interface IProjectService extends IService<Project> {
     Project projectTop(Project et);
     Project putoff(Project et);
     boolean save(Project et);
+    void saveBatch(List<Project> list);
     Project start(Project et);
     Project suspend(Project et);
     Project unlinkMember(Project et);

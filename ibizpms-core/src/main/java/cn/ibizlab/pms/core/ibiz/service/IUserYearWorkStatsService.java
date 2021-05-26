@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IUserYearWorkStatsService extends IService<UserYearWorkStats> {
 
     boolean create(UserYearWorkStats et);
+    void createBatch(List<UserYearWorkStats> list);
     boolean update(UserYearWorkStats et);
     boolean sysUpdate(UserYearWorkStats et);
+    void updateBatch(List<UserYearWorkStats> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     UserYearWorkStats get(Long key);
     UserYearWorkStats sysGet(Long key);
     UserYearWorkStats getDraft(UserYearWorkStats et);
@@ -38,6 +41,7 @@ public interface IUserYearWorkStatsService extends IService<UserYearWorkStats> {
     UserYearWorkStats getQaInfomation(UserYearWorkStats et);
     UserYearWorkStats getUserYearAction(UserYearWorkStats et);
     boolean save(UserYearWorkStats et);
+    void saveBatch(List<UserYearWorkStats> list);
     UserYearWorkStats updateTitleByYear(UserYearWorkStats et);
     List<UserYearWorkStats> select(UserYearWorkStatsSearchContext context);
     List<UserYearWorkStats> selectDefault(UserYearWorkStatsSearchContext context);

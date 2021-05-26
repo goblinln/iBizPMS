@@ -26,15 +26,19 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbizproProjectMonthlyService extends IService<IbizproProjectMonthly> {
 
     boolean create(IbizproProjectMonthly et);
+    void createBatch(List<IbizproProjectMonthly> list);
     boolean update(IbizproProjectMonthly et);
     boolean sysUpdate(IbizproProjectMonthly et);
+    void updateBatch(List<IbizproProjectMonthly> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     IbizproProjectMonthly get(String key);
     IbizproProjectMonthly sysGet(String key);
     IbizproProjectMonthly getDraft(IbizproProjectMonthly et);
     boolean checkKey(IbizproProjectMonthly et);
     IbizproProjectMonthly manualCreateMonthly(IbizproProjectMonthly et);
     boolean save(IbizproProjectMonthly et);
+    void saveBatch(List<IbizproProjectMonthly> list);
     IbizproProjectMonthly sumProjectMonthly(IbizproProjectMonthly et);
     List<IbizproProjectMonthly> select(IbizproProjectMonthlySearchContext context);
     List<IbizproProjectMonthly> selectDefault(IbizproProjectMonthlySearchContext context);

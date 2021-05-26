@@ -25,14 +25,18 @@ import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSysServiceAPISearchContext;
 public interface IPSSysServiceAPIService {
 
     boolean create(PSSysServiceAPI et);
+    void createBatch(List<PSSysServiceAPI> list);
     boolean update(PSSysServiceAPI et);
     boolean sysUpdate(PSSysServiceAPI et);
+    void updateBatch(List<PSSysServiceAPI> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     PSSysServiceAPI get(String key);
     PSSysServiceAPI sysGet(String key);
     PSSysServiceAPI getDraft(PSSysServiceAPI et);
     boolean checkKey(PSSysServiceAPI et);
     boolean save(PSSysServiceAPI et);
+    void saveBatch(List<PSSysServiceAPI> list);
 
     Page<PSSysServiceAPI> searchDefault(PSSysServiceAPISearchContext context);
     List<PSSysServiceAPI> selectByPsmoduleid(String psmoduleid);

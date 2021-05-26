@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IProjectTaskestimateService extends IService<ProjectTaskestimate> {
 
     boolean create(ProjectTaskestimate et);
+    void createBatch(List<ProjectTaskestimate> list);
     boolean update(ProjectTaskestimate et);
     boolean sysUpdate(ProjectTaskestimate et);
+    void updateBatch(List<ProjectTaskestimate> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     ProjectTaskestimate get(String key);
     ProjectTaskestimate sysGet(String key);
     ProjectTaskestimate getDraft(ProjectTaskestimate et);
     boolean checkKey(ProjectTaskestimate et);
     boolean save(ProjectTaskestimate et);
+    void saveBatch(List<ProjectTaskestimate> list);
     List<ProjectTaskestimate> select(ProjectTaskestimateSearchContext context);
     List<ProjectTaskestimate> selectAccountDetail(ProjectTaskestimateSearchContext context);
     List<ProjectTaskestimate> selectDefault(ProjectTaskestimateSearchContext context);

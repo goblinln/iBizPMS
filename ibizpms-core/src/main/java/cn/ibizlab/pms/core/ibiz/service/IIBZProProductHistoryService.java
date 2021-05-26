@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIBZProProductHistoryService extends IService<IBZProProductHistory> {
 
     boolean create(IBZProProductHistory et);
+    void createBatch(List<IBZProProductHistory> list);
     boolean update(IBZProProductHistory et);
     boolean sysUpdate(IBZProProductHistory et);
+    void updateBatch(List<IBZProProductHistory> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     IBZProProductHistory get(Long key);
     IBZProProductHistory sysGet(Long key);
     IBZProProductHistory getDraft(IBZProProductHistory et);
     boolean checkKey(IBZProProductHistory et);
     boolean save(IBZProProductHistory et);
+    void saveBatch(List<IBZProProductHistory> list);
     List<IBZProProductHistory> select(IBZProProductHistorySearchContext context);
     List<IBZProProductHistory> selectDefault(IBZProProductHistorySearchContext context);
     List<IBZProProductHistory> selectSimple(IBZProProductHistorySearchContext context);

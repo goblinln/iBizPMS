@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbiLoginService extends IService<IbiLogin> {
 
     boolean create(IbiLogin et);
+    void createBatch(List<IbiLogin> list);
     boolean update(IbiLogin et);
     boolean sysUpdate(IbiLogin et);
+    void updateBatch(List<IbiLogin> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     IbiLogin get(Long key);
     IbiLogin sysGet(Long key);
     IbiLogin getUser(IbiLogin et);

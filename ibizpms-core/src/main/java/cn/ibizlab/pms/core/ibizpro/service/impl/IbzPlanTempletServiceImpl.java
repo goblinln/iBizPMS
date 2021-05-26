@@ -78,6 +78,16 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<IbzPlanTemplet> list) {
+        if(ibzplantempletRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -92,6 +102,16 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<IbzPlanTemplet> list) {
+        if(ibzplantempletRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -113,6 +133,16 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<String> idList) {
+        if(ibzplantempletRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -178,6 +208,46 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<IbzPlanTemplet> list) {
+        List<IbzPlanTemplet> create = new ArrayList<>();
+        List<IbzPlanTemplet> update = new ArrayList<>();
+        for (IbzPlanTemplet et : list) {
+            if (ObjectUtils.isEmpty(et.getIbzplantempletid()) || ObjectUtils.isEmpty(getById(et.getIbzplantempletid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<IbzPlanTemplet> list) {
+        List<IbzPlanTemplet> create = new ArrayList<>();
+        List<IbzPlanTemplet> update = new ArrayList<>();
+        for (IbzPlanTemplet et : list) {
+            if (ObjectUtils.isEmpty(et.getIbzplantempletid()) || ObjectUtils.isEmpty(getById(et.getIbzplantempletid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
 
 

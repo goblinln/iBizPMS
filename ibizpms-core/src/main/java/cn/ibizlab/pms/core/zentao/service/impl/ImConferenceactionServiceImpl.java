@@ -72,6 +72,16 @@ public class ImConferenceactionServiceImpl extends ServiceImpl<ImConferenceactio
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<ImConferenceaction> list) {
+        if(imconferenceactionRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -83,6 +93,16 @@ public class ImConferenceactionServiceImpl extends ServiceImpl<ImConferenceactio
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<ImConferenceaction> list) {
+        if(imconferenceactionRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -103,6 +123,16 @@ public class ImConferenceactionServiceImpl extends ServiceImpl<ImConferenceactio
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        if(imconferenceactionRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -160,6 +190,46 @@ public class ImConferenceactionServiceImpl extends ServiceImpl<ImConferenceactio
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<ImConferenceaction> list) {
+        List<ImConferenceaction> create = new ArrayList<>();
+        List<ImConferenceaction> update = new ArrayList<>();
+        for (ImConferenceaction et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<ImConferenceaction> list) {
+        List<ImConferenceaction> create = new ArrayList<>();
+        List<ImConferenceaction> update = new ArrayList<>();
+        for (ImConferenceaction et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
 
 

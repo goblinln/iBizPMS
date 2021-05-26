@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IProductPlanActionService extends IService<ProductPlanAction> {
 
     boolean create(ProductPlanAction et);
+    void createBatch(List<ProductPlanAction> list);
     boolean update(ProductPlanAction et);
     boolean sysUpdate(ProductPlanAction et);
+    void updateBatch(List<ProductPlanAction> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     ProductPlanAction get(Long key);
     ProductPlanAction sysGet(Long key);
     ProductPlanAction getDraft(ProductPlanAction et);
@@ -38,6 +41,7 @@ public interface IProductPlanActionService extends IService<ProductPlanAction> {
     ProductPlanAction editComment(ProductPlanAction et);
     ProductPlanAction managePmsEe(ProductPlanAction et);
     boolean save(ProductPlanAction et);
+    void saveBatch(List<ProductPlanAction> list);
     ProductPlanAction sendMarkDone(ProductPlanAction et);
     ProductPlanAction sendTodo(ProductPlanAction et);
     ProductPlanAction sendToread(ProductPlanAction et);

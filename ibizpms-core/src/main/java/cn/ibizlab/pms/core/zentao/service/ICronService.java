@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ICronService extends IService<Cron> {
 
     boolean create(Cron et);
+    void createBatch(List<Cron> list);
     boolean update(Cron et);
     boolean sysUpdate(Cron et);
+    void updateBatch(List<Cron> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Cron get(Long key);
     Cron sysGet(Long key);
     Cron getDraft(Cron et);
     boolean checkKey(Cron et);
     boolean save(Cron et);
+    void saveBatch(List<Cron> list);
     List<Cron> select(CronSearchContext context);
     List<Cron> selectDefault(CronSearchContext context);
     List<Cron> selectView(CronSearchContext context);

@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzProMonthlyActionService extends IService<IbzProMonthlyAction> {
 
     boolean create(IbzProMonthlyAction et);
+    void createBatch(List<IbzProMonthlyAction> list);
     boolean update(IbzProMonthlyAction et);
     boolean sysUpdate(IbzProMonthlyAction et);
+    void updateBatch(List<IbzProMonthlyAction> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     IbzProMonthlyAction get(Long key);
     IbzProMonthlyAction sysGet(Long key);
     IbzProMonthlyAction getDraft(IbzProMonthlyAction et);
@@ -36,6 +39,7 @@ public interface IIbzProMonthlyActionService extends IService<IbzProMonthlyActio
     IbzProMonthlyAction createHis(IbzProMonthlyAction et);
     IbzProMonthlyAction managePmsEe(IbzProMonthlyAction et);
     boolean save(IbzProMonthlyAction et);
+    void saveBatch(List<IbzProMonthlyAction> list);
     IbzProMonthlyAction sendMarkDone(IbzProMonthlyAction et);
     IbzProMonthlyAction sendTodo(IbzProMonthlyAction et);
     IbzProMonthlyAction sendToread(IbzProMonthlyAction et);

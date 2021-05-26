@@ -25,14 +25,18 @@ import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSysSFPubSearchContext;
 public interface IPSSysSFPubService {
 
     boolean create(PSSysSFPub et);
+    void createBatch(List<PSSysSFPub> list);
     boolean update(PSSysSFPub et);
     boolean sysUpdate(PSSysSFPub et);
+    void updateBatch(List<PSSysSFPub> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     PSSysSFPub get(String key);
     PSSysSFPub sysGet(String key);
     PSSysSFPub getDraft(PSSysSFPub et);
     boolean checkKey(PSSysSFPub et);
     boolean save(PSSysSFPub et);
+    void saveBatch(List<PSSysSFPub> list);
 
     Page<PSSysSFPub> searchBuild(PSSysSFPubSearchContext context);
     Page<PSSysSFPub> searchDefault(PSSysSFPubSearchContext context);

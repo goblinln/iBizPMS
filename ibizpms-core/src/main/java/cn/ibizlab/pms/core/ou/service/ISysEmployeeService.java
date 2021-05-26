@@ -25,14 +25,18 @@ import cn.ibizlab.pms.core.ou.filter.SysEmployeeSearchContext;
 public interface ISysEmployeeService {
 
     boolean create(SysEmployee et);
+    void createBatch(List<SysEmployee> list);
     boolean update(SysEmployee et);
     boolean sysUpdate(SysEmployee et);
+    void updateBatch(List<SysEmployee> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     SysEmployee get(String key);
     SysEmployee sysGet(String key);
     SysEmployee getDraft(SysEmployee et);
     boolean checkKey(SysEmployee et);
     boolean save(SysEmployee et);
+    void saveBatch(List<SysEmployee> list);
 
     Page<SysEmployee> searchBugUser(SysEmployeeSearchContext context);
     Page<SysEmployee> searchContActList(SysEmployeeSearchContext context);

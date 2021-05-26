@@ -26,15 +26,19 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ITeamService extends IService<Team> {
 
     boolean create(Team et);
+    void createBatch(List<Team> list);
     boolean update(Team et);
     boolean sysUpdate(Team et);
+    void updateBatch(List<Team> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Team get(Long key);
     Team sysGet(Long key);
     Team getDraft(Team et);
     boolean checkKey(Team et);
     Team managePorjectMembers(Team et);
     boolean save(Team et);
+    void saveBatch(List<Team> list);
     Team unlinkPorjectMember(Team et);
     List<Team> select(TeamSearchContext context);
     List<Team> selectDefault(TeamSearchContext context);

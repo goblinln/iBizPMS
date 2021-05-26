@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ITaskMsgRecordService extends IService<TaskMsgRecord> {
 
     boolean create(TaskMsgRecord et);
+    void createBatch(List<TaskMsgRecord> list);
     boolean update(TaskMsgRecord et);
     boolean sysUpdate(TaskMsgRecord et);
+    void updateBatch(List<TaskMsgRecord> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     TaskMsgRecord get(String key);
     TaskMsgRecord sysGet(String key);
     TaskMsgRecord getDraft(TaskMsgRecord et);
     boolean checkKey(TaskMsgRecord et);
     boolean save(TaskMsgRecord et);
+    void saveBatch(List<TaskMsgRecord> list);
     List<TaskMsgRecord> select(TaskMsgRecordSearchContext context);
     List<TaskMsgRecord> selectDefault(TaskMsgRecordSearchContext context);
     List<TaskMsgRecord> selectView(TaskMsgRecordSearchContext context);

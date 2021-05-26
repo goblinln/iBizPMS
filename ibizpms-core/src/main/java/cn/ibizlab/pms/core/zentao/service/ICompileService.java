@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ICompileService extends IService<Compile> {
 
     boolean create(Compile et);
+    void createBatch(List<Compile> list);
     boolean update(Compile et);
     boolean sysUpdate(Compile et);
+    void updateBatch(List<Compile> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Compile get(Long key);
     Compile sysGet(Long key);
     Compile getDraft(Compile et);
     boolean checkKey(Compile et);
     boolean save(Compile et);
+    void saveBatch(List<Compile> list);
     List<Compile> select(CompileSearchContext context);
     List<Compile> selectDefault(CompileSearchContext context);
     List<Compile> selectView(CompileSearchContext context);

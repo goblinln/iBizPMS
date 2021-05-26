@@ -72,6 +72,16 @@ public class ProductLineServiceImpl extends ServiceImpl<ProductLineMapper, Produ
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<ProductLine> list) {
+        if(productlineRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -83,6 +93,16 @@ public class ProductLineServiceImpl extends ServiceImpl<ProductLineMapper, Produ
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<ProductLine> list) {
+        if(productlineRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -103,6 +123,16 @@ public class ProductLineServiceImpl extends ServiceImpl<ProductLineMapper, Produ
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<String> idList) {
+        if(productlineRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -160,6 +190,46 @@ public class ProductLineServiceImpl extends ServiceImpl<ProductLineMapper, Produ
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<ProductLine> list) {
+        List<ProductLine> create = new ArrayList<>();
+        List<ProductLine> update = new ArrayList<>();
+        for (ProductLine et : list) {
+            if (ObjectUtils.isEmpty(et.getProductlineid()) || ObjectUtils.isEmpty(getById(et.getProductlineid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<ProductLine> list) {
+        List<ProductLine> create = new ArrayList<>();
+        List<ProductLine> update = new ArrayList<>();
+        for (ProductLine et : list) {
+            if (ObjectUtils.isEmpty(et.getProductlineid()) || ObjectUtils.isEmpty(getById(et.getProductlineid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
 
 

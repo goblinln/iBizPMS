@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IReleaseService extends IService<Release> {
 
     boolean create(Release et);
+    void createBatch(List<Release> list);
     boolean update(Release et);
     boolean sysUpdate(Release et);
+    void updateBatch(List<Release> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Release get(Long key);
     Release sysGet(Long key);
     Release getDraft(Release et);
@@ -43,6 +46,7 @@ public interface IReleaseService extends IService<Release> {
     Release mobReleaseCounter(Release et);
     Release oneClickRelease(Release et);
     boolean save(Release et);
+    void saveBatch(List<Release> list);
     Release terminate(Release et);
     Release unlinkBug(Release et);
     List<Release> select(ReleaseSearchContext context);

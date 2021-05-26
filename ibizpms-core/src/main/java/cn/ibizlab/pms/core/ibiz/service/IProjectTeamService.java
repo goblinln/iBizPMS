@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IProjectTeamService extends IService<ProjectTeam> {
 
     boolean create(ProjectTeam et);
+    void createBatch(List<ProjectTeam> list);
     boolean update(ProjectTeam et);
     boolean sysUpdate(ProjectTeam et);
+    void updateBatch(List<ProjectTeam> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     ProjectTeam get(Long key);
     ProjectTeam sysGet(Long key);
     ProjectTeam getDraft(ProjectTeam et);

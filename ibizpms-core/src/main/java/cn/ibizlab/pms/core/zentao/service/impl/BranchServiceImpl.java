@@ -102,6 +102,16 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<Branch> list) {
+        if(branchRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -113,6 +123,16 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<Branch> list) {
+        if(branchRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -135,6 +155,18 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        if(branchRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        if(!ObjectUtils.isEmpty(projectproductService.selectByBranch(idList)))
+            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[ProjectProduct]数据，无法删除!","","");
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -192,6 +224,46 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<Branch> list) {
+        List<Branch> create = new ArrayList<>();
+        List<Branch> update = new ArrayList<>();
+        for (Branch et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<Branch> list) {
+        List<Branch> create = new ArrayList<>();
+        List<Branch> update = new ArrayList<>();
+        for (Branch et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
     @Override
     @Transactional

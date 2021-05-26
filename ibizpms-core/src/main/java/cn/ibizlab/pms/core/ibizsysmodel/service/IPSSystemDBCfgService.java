@@ -25,14 +25,18 @@ import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSystemDBCfgSearchContext;
 public interface IPSSystemDBCfgService {
 
     boolean create(PSSystemDBCfg et);
+    void createBatch(List<PSSystemDBCfg> list);
     boolean update(PSSystemDBCfg et);
     boolean sysUpdate(PSSystemDBCfg et);
+    void updateBatch(List<PSSystemDBCfg> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     PSSystemDBCfg get(String key);
     PSSystemDBCfg sysGet(String key);
     PSSystemDBCfg getDraft(PSSystemDBCfg et);
     boolean checkKey(PSSystemDBCfg et);
     boolean save(PSSystemDBCfg et);
+    void saveBatch(List<PSSystemDBCfg> list);
 
     Page<PSSystemDBCfg> searchBuild(PSSystemDBCfgSearchContext context);
     Page<PSSystemDBCfg> searchDefault(PSSystemDBCfgSearchContext context);

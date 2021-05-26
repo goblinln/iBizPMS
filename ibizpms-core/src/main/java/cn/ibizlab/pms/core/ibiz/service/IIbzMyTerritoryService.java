@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzMyTerritoryService extends IService<IbzMyTerritory> {
 
     boolean create(IbzMyTerritory et);
+    void createBatch(List<IbzMyTerritory> list);
     boolean update(IbzMyTerritory et);
     boolean sysUpdate(IbzMyTerritory et);
+    void updateBatch(List<IbzMyTerritory> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     IbzMyTerritory get(Long key);
     IbzMyTerritory sysGet(Long key);
     IbzMyTerritory getDraft(IbzMyTerritory et);
@@ -37,6 +40,7 @@ public interface IIbzMyTerritoryService extends IService<IbzMyTerritory> {
     IbzMyTerritory myFavoriteCount(IbzMyTerritory et);
     IbzMyTerritory myTerritoryCount(IbzMyTerritory et);
     boolean save(IbzMyTerritory et);
+    void saveBatch(List<IbzMyTerritory> list);
     List<IbzMyTerritory> select(IbzMyTerritorySearchContext context);
     List<IbzMyTerritory> selectDefault(IbzMyTerritorySearchContext context);
     List<IbzMyTerritory> selectMyWork(IbzMyTerritorySearchContext context);

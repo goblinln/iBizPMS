@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IActionService extends IService<Action> {
 
     boolean create(Action et);
+    void createBatch(List<Action> list);
     boolean update(Action et);
     boolean sysUpdate(Action et);
+    void updateBatch(List<Action> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Action get(Long key);
     Action sysGet(Long key);
     Action getDraft(Action et);
@@ -38,6 +41,7 @@ public interface IActionService extends IService<Action> {
     Action editComment(Action et);
     Action managePmsEe(Action et);
     boolean save(Action et);
+    void saveBatch(List<Action> list);
     Action sendMarkDone(Action et);
     Action sendTodo(Action et);
     Action sendToread(Action et);

@@ -80,6 +80,19 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<DocLibModule> list) {
+        if(doclibmoduleRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+            list.forEach(item->fillParentData(item));
+        for (DocLibModule et : list) {
+            getProxyService().save(et);
+        }
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -94,6 +107,19 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<DocLibModule> list) {
+        if(doclibmoduleRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+            list.forEach(item->fillParentData(item));
+        for (DocLibModule et : list) {
+            getProxyService().update(et);
+        }
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -114,6 +140,16 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        if(doclibmoduleRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -199,6 +235,52 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<DocLibModule> list) {
+        if(!doclibmoduleRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+        List<DocLibModule> create = new ArrayList<>();
+        List<DocLibModule> update = new ArrayList<>();
+        for (DocLibModule et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<DocLibModule> list) {
+        if(!doclibmoduleRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+        List<DocLibModule> create = new ArrayList<>();
+        List<DocLibModule> update = new ArrayList<>();
+        for (DocLibModule et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
     @Override
     @Transactional

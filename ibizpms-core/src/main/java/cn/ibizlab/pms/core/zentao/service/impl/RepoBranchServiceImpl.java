@@ -72,6 +72,16 @@ public class RepoBranchServiceImpl extends ServiceImpl<RepoBranchMapper, RepoBra
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<RepoBranch> list) {
+        if(repobranchRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -83,6 +93,16 @@ public class RepoBranchServiceImpl extends ServiceImpl<RepoBranchMapper, RepoBra
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<RepoBranch> list) {
+        if(repobranchRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -103,6 +123,16 @@ public class RepoBranchServiceImpl extends ServiceImpl<RepoBranchMapper, RepoBra
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<String> idList) {
+        if(repobranchRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -160,6 +190,46 @@ public class RepoBranchServiceImpl extends ServiceImpl<RepoBranchMapper, RepoBra
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<RepoBranch> list) {
+        List<RepoBranch> create = new ArrayList<>();
+        List<RepoBranch> update = new ArrayList<>();
+        for (RepoBranch et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<RepoBranch> list) {
+        List<RepoBranch> create = new ArrayList<>();
+        List<RepoBranch> update = new ArrayList<>();
+        for (RepoBranch et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
 
 

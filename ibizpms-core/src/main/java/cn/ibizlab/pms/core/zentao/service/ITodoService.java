@@ -26,9 +26,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ITodoService extends IService<Todo> {
 
     boolean create(Todo et);
+    void createBatch(List<Todo> list);
     boolean update(Todo et);
     boolean sysUpdate(Todo et);
+    void updateBatch(List<Todo> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     Todo get(Long key);
     Todo sysGet(Long key);
     Todo getDraft(Todo et);
@@ -39,6 +42,7 @@ public interface ITodoService extends IService<Todo> {
     Todo createCycle(Todo et);
     Todo finish(Todo et);
     boolean save(Todo et);
+    void saveBatch(List<Todo> list);
     Todo sendMessage(Todo et);
     Todo sendMsgPreProcess(Todo et);
     List<Todo> select(TodoSearchContext context);

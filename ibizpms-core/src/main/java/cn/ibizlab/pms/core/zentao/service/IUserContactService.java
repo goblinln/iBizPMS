@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IUserContactService extends IService<UserContact> {
 
     boolean create(UserContact et);
+    void createBatch(List<UserContact> list);
     boolean update(UserContact et);
     boolean sysUpdate(UserContact et);
+    void updateBatch(List<UserContact> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     UserContact get(Long key);
     UserContact sysGet(Long key);
     UserContact getDraft(UserContact et);
     boolean checkKey(UserContact et);
     boolean save(UserContact et);
+    void saveBatch(List<UserContact> list);
     List<UserContact> select(UserContactSearchContext context);
     List<UserContact> selectCurUSERCONTACT(UserContactSearchContext context);
     List<UserContact> selectDefault(UserContactSearchContext context);

@@ -72,6 +72,16 @@ public class UserGroupServiceImpl extends ServiceImpl<UserGroupMapper, UserGroup
         return true;
     }
 
+    @Override
+    @Transactional
+    public void createBatch(List<UserGroup> list) {
+        if(usergroupRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -83,6 +93,16 @@ public class UserGroupServiceImpl extends ServiceImpl<UserGroupMapper, UserGroup
         return true;
     }
 
+    @Override
+    @Transactional
+    public void updateBatch(List<UserGroup> list) {
+        if(usergroupRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+        updateBatchById(list, batchSize);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -103,6 +123,16 @@ public class UserGroupServiceImpl extends ServiceImpl<UserGroupMapper, UserGroup
         return result ;
     }
 
+    @Override
+    @Transactional
+    public void removeBatch(Collection<String> idList) {
+        if(usergroupRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
 
     @Override
     @Transactional
@@ -160,6 +190,46 @@ public class UserGroupServiceImpl extends ServiceImpl<UserGroupMapper, UserGroup
         }
     }
 
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<UserGroup> list) {
+        List<UserGroup> create = new ArrayList<>();
+        List<UserGroup> update = new ArrayList<>();
+        for (UserGroup et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<UserGroup> list) {
+        List<UserGroup> create = new ArrayList<>();
+        List<UserGroup> update = new ArrayList<>();
+        for (UserGroup et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
 
 
 

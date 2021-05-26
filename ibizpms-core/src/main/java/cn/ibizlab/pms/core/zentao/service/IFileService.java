@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IFileService extends IService<File> {
 
     boolean create(File et);
+    void createBatch(List<File> list);
     boolean update(File et);
     boolean sysUpdate(File et);
+    void updateBatch(List<File> list);
     boolean remove(Long key);
+    void removeBatch(Collection<Long> idList);
     File get(Long key);
     File sysGet(Long key);
     File getDraft(File et);
     boolean checkKey(File et);
     boolean save(File et);
+    void saveBatch(List<File> list);
     File updateObjectID(File et);
     File updateObjectIDForPmsEe(File et);
     List<File> select(FileSearchContext context);

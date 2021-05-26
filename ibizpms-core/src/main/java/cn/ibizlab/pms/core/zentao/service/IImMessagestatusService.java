@@ -26,14 +26,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IImMessagestatusService extends IService<ImMessagestatus> {
 
     boolean create(ImMessagestatus et);
+    void createBatch(List<ImMessagestatus> list);
     boolean update(ImMessagestatus et);
     boolean sysUpdate(ImMessagestatus et);
+    void updateBatch(List<ImMessagestatus> list);
     boolean remove(String key);
+    void removeBatch(Collection<String> idList);
     ImMessagestatus get(String key);
     ImMessagestatus sysGet(String key);
     ImMessagestatus getDraft(ImMessagestatus et);
     boolean checkKey(ImMessagestatus et);
     boolean save(ImMessagestatus et);
+    void saveBatch(List<ImMessagestatus> list);
     List<ImMessagestatus> select(ImMessagestatusSearchContext context);
     List<ImMessagestatus> selectDefault(ImMessagestatusSearchContext context);
     List<ImMessagestatus> selectView(ImMessagestatusSearchContext context);
