@@ -83,6 +83,9 @@ export class MobEditViewBase extends MainViewBase {
      * @memberof MobEditViewBase
      */
     public renderMainContent() {
+        if (!this.editFormInstance) {
+            return null;
+        }
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.editFormInstance);
         return this.$createElement(targetCtrlName, { slot: 'default', props: targetCtrlParam, ref: this.editFormInstance.name, on: targetCtrlEvent });
     }

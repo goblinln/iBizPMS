@@ -48,6 +48,7 @@ export class AppComponentService {
         this.viewMap.set("APPINDEXVIEW_DEFAULT", 'app-default-mob-indexview');
         this.viewMap.set("DEMOBMDVIEW_DEFAULT", 'app-default-mob-mdview');
         this.viewMap.set("DEMOBEDITVIEW_DEFAULT", 'app-default-mob-editview');
+        this.viewMap.set("DEMOBEDITVIEW3_DEFAULT", 'app-default-mob-editview3');        
         this.viewMap.set("APPPORTALVIEW_DEFAULT", 'app-default-mob-portalview');
         this.viewMap.set("DEMOBCALENDARVIEW_DEFAULT", 'app-default-mob-calendarview');
         this.viewMap.set("DEMOBCHARTVIEW_DEFAULT", 'app-default-mob-chartview');
@@ -66,6 +67,8 @@ export class AppComponentService {
         this.viewMap.set("DEMOBWFDYNAEDITVIEW_DEFAULT", 'app-default-mob-wfdynaeditview');
         this.viewMap.set("DEMOBWFDYNAACTIONVIEW_DEFAULT", 'app-default-mob-wfdynaactionview');
         this.viewMap.set("DEMOBWFDYNAEXPMDVIEW_DEFAULT", 'app-default-mob-wfdynaexpmdview');
+        this.viewMap.set("DEMOBWFDYNASTARTVIEW_DEFAULT", 'app-default-mob-wfdynastartview');
+        this.viewMap.set("DEMOBWFDYNAEDITVIEW3_DEFAULT", 'app-default-mob-wfdynaeditview3');        
         this.viewMap.set("DEMOBREDIRECTVIEW_DEFAULT", 'app-default-mob-deredirectview');
         // 注册视图插件
         this.viewMap.set("UPDATELOGINDEXVIEW", 'app-view-custom-updatelogindexview');
@@ -115,6 +118,7 @@ export class AppComponentService {
         this.controlMap.set("PICKUPVIEWPANEL_DEFAULT", 'app-default-mob-pickupviewpanel');
         this.controlMap.set("SEARCHFORM_DEFAULT", 'app-default-mob-searchform');
         this.controlMap.set("PANEL_DEFAULT", 'app-default-mob-panel');
+        this.controlMap.set("DRTAB_DEFAULT", 'app-default-mob-drtab');        
         // 临时
         this.controlMap.set("PFPlugin", 'app-default-mob-mdctrl');
         // 注册部件插件标识

@@ -1,6 +1,7 @@
 import { AppDefaultIndexViewLayout } from "../../components/layout/app-default-layout/app-default-indexview-layout/app-default-indexview-layout";
 import { AppDefaultMobMdViewLayout } from "../../components/layout/app-default-layout/app-default-mob-mdview-layout/app-default-mob-mdview-layout";
 import { AppDefaultMobEditViewLayout } from "../../components/layout/app-default-layout/app-default-mob-editview-layout/app-default-mob-editview-layout";
+import { AppDefaultMobEditView3Layout } from "../../components/layout/app-default-layout/app-default-mob-editview3-layout/app-default-mob-editview3-layout";
 import { AppDefaultMobPortalViewLayout } from "../../components/layout/app-default-layout/app-default-mob-portalview-layout/app-default-mob-portalview-layout";
 import { AppDefaultMobCalendarViewLayout } from "../../components/layout/app-default-layout/app-default-mob-calendarview-layout/app-default-mob-calendarview-layout";
 import { AppDefaultMobChartViewLayout } from '../../components/layout/app-default-layout/app-default-mob-chartview-layout/app-default-mob-chartview-layout';
@@ -17,6 +18,8 @@ import { AppDefaultMobPickUpTreeViewLayout } from "../../components/layout/app-d
 import { AppDefaultMobWFDynaEditViewLayout } from "../../components/layout/app-default-layout/app-default-mob-wfdynaeditview-layout/app-default-mob-wfdynaeditview-layout";
 import { AppDefaultMobWFDynaActionViewLayout } from "../../components/layout/app-default-layout/app-default-mob-wfdynaactionview-layout/app-default-mob-wfdynaactionview-layout";
 import { AppDefaultMobWfDynaExpMdViewLayout } from "../../components/layout/app-default-layout/app-default-mob-wfdynaexpmdview-layout/app-default-mob-wfdynaexpmdview-layout";
+import { AppDefaultMobWFDynaEditView3Layout } from "../../components/layout/app-default-layout/app-default-mob-wfdynaeditview3-layout/app-default-mob-wfdynaeditview3-layout";
+import { AppDefaultMobWFDynaStartViewLayout } from "../../components/layout/app-default-layout/app-default-mob-wfdynastartview-layout/app-default-mob-wfdynastartview-layout";
 import { AppDefaultMobDeRedirectViewLayout } from "../../components/layout/app-default-layout/app-default-mob-deredirectview-layout/app-default-mob-deredirectview-layout";
 
 /**
@@ -43,6 +46,7 @@ export class AppLayoutService {
         this.layoutMap.set("DEMOBMDVIEW-DEFAULT", AppDefaultMobMdViewLayout);
         this.layoutMap.set("DEMOBMDVIEW9-DEFAULT", AppDefaultMobMdViewLayout);
         this.layoutMap.set("DEMOBEDITVIEW-DEFAULT", AppDefaultMobEditViewLayout);
+        this.layoutMap.set("DEMOBEDITVIEW3-DEFAULT", AppDefaultMobEditView3Layout);
         this.layoutMap.set("APPPORTALVIEW-DEFAULT", AppDefaultMobPortalViewLayout);
         this.layoutMap.set("DEMOBCALENDARVIEW-DEFAULT", AppDefaultMobCalendarViewLayout);
         this.layoutMap.set("DEMOBCHARTVIEW-DEFAULT", AppDefaultMobChartViewLayout);
@@ -60,6 +64,8 @@ export class AppLayoutService {
         this.layoutMap.set("DEMOBWFDYNAEDITVIEW-DEFAULT", AppDefaultMobWFDynaEditViewLayout);
         this.layoutMap.set("DEMOBWFDYNAACTIONVIEW-DEFAULT", AppDefaultMobWFDynaActionViewLayout);
         this.layoutMap.set("DEMOBWFDYNAEXPMDVIEW-DEFAULT", AppDefaultMobWfDynaExpMdViewLayout);
+        this.layoutMap.set("DEMOBWFDYNAEDITVIEW3-DEFAULT", AppDefaultMobWFDynaEditView3Layout);
+        this.layoutMap.set("DEMOBWFDYNASTARTVIEW-DEFAULT", AppDefaultMobWFDynaStartViewLayout);
         this.layoutMap.set("DEMOBREDIRECTVIEW-DEFAULT", AppDefaultMobDeRedirectViewLayout);
     }
 

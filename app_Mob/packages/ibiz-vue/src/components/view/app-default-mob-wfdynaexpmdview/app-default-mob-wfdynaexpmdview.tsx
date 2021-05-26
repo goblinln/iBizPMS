@@ -8,18 +8,18 @@ import { MobWFDynaExpMdViewBase } from '../../../view/mob-wf-dyna-exp-md-view-ba
  * 应用实体工作流动态导航表格视图
  *
  * @export
- * @class AppDefaultWfDynaExpGridView
- * @extends {AppWfDynaExpGridViewBase}
+ * @class AppDefaultMobWfDynaExpGridView
+ * @extends {MobWFDynaExpMdViewBase}
  */
 @Component({})
 @VueLifeCycleProcessing()
-export class AppDefaultWfDynaExpMDView extends MobWFDynaExpMdViewBase {
+export class AppDefaultMobWfDynaExpMDView extends MobWFDynaExpMdViewBase {
 
     /**
      * 传入视图上下文
      *
      * @type {string}
-     * @memberof AppWfDynaExpGridViewBase
+     * @memberof AppDefaultMobWfDynaExpMDView
      */
      @Prop() public staticProps!: any;
 
@@ -27,7 +27,7 @@ export class AppDefaultWfDynaExpMDView extends MobWFDynaExpMdViewBase {
       * 视图动态参数
       *
       * @type {string}
-      * @memberof AppWfDynaExpGridViewBase
+      * @memberof AppDefaultMobWfDynaExpMDView
       */
      @Prop() public dynamicProps!: any;
  
@@ -36,7 +36,7 @@ export class AppDefaultWfDynaExpMDView extends MobWFDynaExpMdViewBase {
       *
       * @param {*} newVal
       * @param {*} oldVal
-      * @memberof AppWfDynaExpGridViewBase
+      * @memberof AppDefaultMobWfDynaExpMDView
       */
      @Watch('dynamicProps',{
          immediate: true,
@@ -50,7 +50,7 @@ export class AppDefaultWfDynaExpMDView extends MobWFDynaExpMdViewBase {
      /**
       * 监听静态参数变化
       * 
-      * @memberof AppWfDynaExpGridViewBase
+      * @memberof AppDefaultMobWfDynaExpMDView
       */
      @Watch('staticProps', {
          immediate: true,
@@ -64,7 +64,7 @@ export class AppDefaultWfDynaExpMDView extends MobWFDynaExpMdViewBase {
      /**
       * 销毁视图回调
       *
-      * @memberof AppWfDynaExpGridViewBase
+      * @memberof AppDefaultMobWfDynaExpMDView
       */
      public destroyed(){
          this.viewDestroyed();
@@ -73,7 +73,7 @@ export class AppDefaultWfDynaExpMDView extends MobWFDynaExpMdViewBase {
      /**
       * 工作流动态表格导航视图渲染
       * 
-      * @memberof AppWfDynaExpGridViewBase
+      * @memberof AppDefaultMobWfDynaExpMDView
       */
      render(h: any) {
          if (!this.viewIsLoaded) {

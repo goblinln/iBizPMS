@@ -18,6 +18,12 @@ export default {
     parentname: "上级模块",
     root: "产品",
     parent: "id",
+    mdeptid: "部门标识",
+    mdeptname: "归属部门名",
+    orgid: "组织机构标识",
+    createby: "由谁创建",
+    orgname: "归属组织名",
+    updateby: "由谁更新",
   },
 	views: {
 		mobpickupview: {
