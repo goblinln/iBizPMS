@@ -1,7 +1,7 @@
 import { Subject, Subscription } from 'rxjs';
-import { ModelTool, Verify } from 'ibiz-core';
+import { ModelTool, Verify, AppErrorCode, EntityFieldErrorCode } from 'ibiz-core';
 import { MainControlBase } from './main-control-base';
-import { IPSDEEditFormItem, IPSDEForm } from '@ibiz/dynamic-model-api';
+import { IPSDEEditFormItem, IPSDEForm, IPSDEFormItem } from '@ibiz/dynamic-model-api';
 
 /**
  * 表单部件基类
@@ -544,4 +544,28 @@ export class FormControlBase extends MainControlBase {
         this.loadDraft({}, 'RESET');
     }
 
+    /**
+     * 处理部件UI响应
+     *
+     * @memberof FormControlBase
+     */
+    public onControlResponse(action: string, response: any){
+        super.onControlResponse(action, response);
+        if (response && response.status && response.status != 200 && response.data) {
+            const data: any = response.data;
+            if (data.code && Object.is(AppErrorCode.INPUTERROR, data.code) && data.details?.length > 0) {
+                const formItems: IPSDEEditFormItem[] = ModelTool.getAllFormItems(this.controlInstance);
+                data.details.forEach((detail: any) => {
+                    if (Object.is(EntityFieldErrorCode.ERROR_VALUERULE, detail.fielderrortype) && detail.fieldname) {
+                        formItems.forEach((formItem: IPSDEFormItem) => {
+                            if (Object.is(formItem.getPSAppDEField()?.name, detail.fieldname)) {
+                                Object.assign( this.detailsModel[formItem.name], { error: detail.fielderrorinfo } );
+                            }
+                        })
+                    }
+                })
+                this.$forceUpdate();
+            }
+        }
+    }
 }

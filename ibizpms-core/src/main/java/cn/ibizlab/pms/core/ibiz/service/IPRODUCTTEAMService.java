@@ -44,12 +44,14 @@ public interface IPRODUCTTEAMService extends IService<PRODUCTTEAM> {
     List<PRODUCTTEAM> selectProductTeamInfo(PRODUCTTEAMSearchContext context);
     List<PRODUCTTEAM> selectProjectApp(PRODUCTTEAMSearchContext context);
     List<PRODUCTTEAM> selectRowEditDefaultProductTeam(PRODUCTTEAMSearchContext context);
+    List<PRODUCTTEAM> selectSpecifyTeam(PRODUCTTEAMSearchContext context);
     List<PRODUCTTEAM> selectView(PRODUCTTEAMSearchContext context);
 
     Page<PRODUCTTEAM> searchDefault(PRODUCTTEAMSearchContext context);
     Page<PRODUCTTEAM> searchProductTeamInfo(PRODUCTTEAMSearchContext context);
     Page<PRODUCTTEAM> searchProjectApp(PRODUCTTEAMSearchContext context);
     Page<PRODUCTTEAM> searchRowEditDefaultProductTeam(PRODUCTTEAMSearchContext context);
+    Page<PRODUCTTEAM> searchSpecifyTeam(PRODUCTTEAMSearchContext context);
     List<PRODUCTTEAM> selectByRoot(Long id);
     void removeByRoot(Long id);
     void saveByRoot(Long id, List<PRODUCTTEAM> list) ;

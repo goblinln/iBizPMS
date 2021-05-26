@@ -60,7 +60,27 @@ export class SearchFormControlBase extends EditFormControlBase {
     public utilServiceName: string = "";
 
     /**
+     * 是否开启保存查询条件
+     * 
+     * @type {any}
+     * @memberof SearchFormControlBase
+     */
+    public enableSaveFilter: boolean = true;
+
+    /**
      * 监听静态参数变化
+     *
+     * @param {*} newVal
+     * @param {*} oldVal
+     * @memberof SearchFormControlBase
+     */
+    public onStaticPropsChange(newVal: any, oldVal: any) {
+        this.enableSaveFilter = newVal.enableSaveFilter === false ? false : true;
+        super.onStaticPropsChange(newVal, oldVal);
+    }
+
+    /**
+     * 监听动态参数变化
      *
      * @param {*} newVal
      * @param {*} oldVal

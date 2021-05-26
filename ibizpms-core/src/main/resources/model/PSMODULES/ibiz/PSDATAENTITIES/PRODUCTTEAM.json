@@ -122,8 +122,17 @@
       } ]
     } ],
     "codeName" : "RowEditDefaultProductTeam",
-    "logicName" : "产品团队管理",
+    "logicName" : "产品团队管理（废弃）",
     "name" : "RowEditDefaultProductTeam",
+    "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
+    "codeName" : "SpecifyTeam",
+    "logicName" : "指定团队部门",
+    "name" : "SpecifyTeam",
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -172,6 +181,16 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "RowEditDefaultProductTeam"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "SpecifyTeam",
+    "logicName" : "指定团队部门",
+    "name" : "SpecifyTeam",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "SpecifyTeam"
     } ],
     "enableBackend" : true,
     "enableFront" : true

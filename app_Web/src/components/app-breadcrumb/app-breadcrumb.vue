@@ -146,7 +146,7 @@ export default class Breadcrumb extends Vue {
             this.$router.push(item.path).catch(err => {
                 LogUtil.warn(err);
             });
-            this.navDataService.removeNavData(item.tag);
+            this.navDataService.skipNavData(item.tag);
         }
     }
 

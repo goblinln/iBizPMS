@@ -142,6 +142,24 @@ export class PickupGridViewBase extends MDViewBase {
     }
 
     /**
+     * 渲染搜索表单
+     * 
+     * @memberof PickupGridViewBase
+     */
+    public renderSearchForm() {
+        if (!this.searchFormInstance) {
+            return
+        }
+        let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.searchFormInstance);
+        Object.assign(targetCtrlParam.staticProps, { enableSaveFilter: false });
+        if (this.viewInstance?.viewStyle == "DEFAULT" && this.viewInstance?.enableQuickSearch) {
+            return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.searchFormInstance?.name, on: targetCtrlEvent });
+        } else {
+            return this.$createElement(targetCtrlName, { slot: 'searchForm', props: targetCtrlParam, ref: this.searchFormInstance?.name, on: targetCtrlEvent });
+        }
+    }
+
+    /**
      * 计算目标部件所需参数
      *
      * @param {string} [controlType]

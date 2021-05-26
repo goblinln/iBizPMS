@@ -531,6 +531,9 @@ export class AppSearchFormBase extends SearchFormControlBase {
         }
         const { controlClassNames } = this.renderOptions;
         let formId = this.appDeCodeName.toLowerCase() + this.controlInstance.codeName?.toLowerCase();
+        if (!this.controlInstance.getPSDEFormItems() || this.controlInstance.getPSDEFormItems()?.length == 0) {
+            return null;
+        }
         return (
             <i-form
                 props={{ model: this.data }}
@@ -541,14 +544,14 @@ export class AppSearchFormBase extends SearchFormControlBase {
             >
                 <input style='display:none;' />
                 <row>
-                    <i-col span="22" class="form-content">
+                    <i-col class="form-content">
                         <row>
                             {this.renderFormContent()}
                         </row>
                     </i-col>
                 </row>
                 {this.controlInstance.formStyle != 'SEARCHBAR' &&
-                    <i-col span="24" class="search-action-footer">
+                    <i-col class="search-action-footer">
                         {this.historyItems?.length>0 ? 
                         <el-select
                             size="small"
@@ -570,25 +573,26 @@ export class AppSearchFormBase extends SearchFormControlBase {
                                     )
                                 })}
                             </el-select> : null}
-                        {Object.keys(this.data).length > 0 && <row class="search-button">
+                        {Object.keys(this.data).length > 0 && <row class='search-button'>
                             <i-button class='search_reset' size='default' type='primary' on-click={this.onSearch.bind(this)}>{this.$t('app.searchButton.search')}</i-button>
-                            <i-button class='search_reset' size='default' on-click={this.onReset.bind(this)}>{this.$t('app.searchButton.reset')}</i-button>
-                            <poptip
-                                ref="propip"
-                                trigger="hover"
-                                placement="top-end"
-                                title="存储自定义查询"
-                                popper-class="searchform-poptip"
-                                on-on-popper-show={() => this.saveItemName = ''}>
-                                    <i-button><i class="fa fa-floppy-o" aria-hidden="true"></i></i-button>
-                                    <div slot="content">
-                                        <i-input v-model={this.saveItemName} placeholder=""></i-input>
-                                        <div class="save-action">
-                                            <i-button on-click={this.onCancel.bind(this)}>{this.$t('app.commonWords.cancel')}</i-button>
-                                            <i-button type="primary" on-click={this.onOk.bind(this)}>{this.$t('app.commonWords.save')}</i-button>
+                            <i-button class='search_reset reset' size='default' on-click={this.onReset.bind(this)}>{this.$t('app.searchButton.reset')}</i-button>
+                            {this.enableSaveFilter ?
+                                <poptip
+                                    ref="propip"
+                                    trigger="hover"
+                                    placement="top-end"
+                                    title="存储自定义查询"
+                                    popper-class="searchform-poptip"
+                                    on-on-popper-show={() => this.saveItemName = ''}>
+                                        <i-button><i class="fa fa-floppy-o" aria-hidden="true"></i></i-button>
+                                        <div slot="content">
+                                            <i-input v-model={this.saveItemName} placeholder=""></i-input>
+                                            <div class="save-action">
+                                                <i-button on-click={this.onCancel.bind(this)}>{this.$t('app.commonWords.cancel')}</i-button>
+                                                <i-button type="primary" on-click={this.onOk.bind(this)}>{this.$t('app.commonWords.save')}</i-button>
+                                            </div>
                                         </div>
-                                    </div>
-                            </poptip>
+                                </poptip> : null}
                         </row>}
                     </i-col>
                 }

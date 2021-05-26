@@ -6,7 +6,6 @@ import { AppServiceBase, StudioActionUtil, textCopy } from 'ibiz-core';
 
 @Component({})
 export default class AppStudioAction extends Vue {
-
     /**
      * 视图实例
      *
@@ -40,7 +39,7 @@ export default class AppStudioAction extends Vue {
      * @type {boolean}
      * @memberof AppStudioAction
      */
-    public isDevMode: boolean = false;
+    isDevMode: boolean = false;
 
     /**
      * 配置平台操作控制器
@@ -48,7 +47,9 @@ export default class AppStudioAction extends Vue {
      * @type {StudioActionUtil}
      * @memberof AppStudioAction
      */
-    public sdc: StudioActionUtil = StudioActionUtil.getInstance();
+    sdc: StudioActionUtil = StudioActionUtil.getInstance();
+    // 是否悬浮在此Debug栏
+    isSuspension: boolean = false;
 
     /**
      * 组件初始化
@@ -57,6 +58,8 @@ export default class AppStudioAction extends Vue {
      */
     created(): void {
         this.openPreview = this.openPreview.bind(this);
+        this.mouseenter = this.mouseenter.bind(this);
+        this.mouseleave = this.mouseleave.bind(this);
         let Environment: any = AppServiceBase.getInstance().getAppEnvironment();
         if (Environment) {
             this.isDevMode = Environment.devMode;
@@ -68,8 +71,9 @@ export default class AppStudioAction extends Vue {
      *
      * @memberof AppStudioAction
      */
-    async openPreview(): Promise<void> {
+    async openPreview(e: MouseEvent): Promise<void> {
         await modelTransferC.open(
+            e,
             this.viewInstance.getPSModelService(),
             this.viewInstance,
             this.context,
@@ -84,8 +88,30 @@ export default class AppStudioAction extends Vue {
      */
     copy() {
         if (textCopy.copy(this.viewInstance.name)) {
-            this.$success(this.$t('components.appStudioAction.success'));
+            this.$message.success('拷贝成功!');
         }
+    }
+
+    mouseenter(e: MouseEvent): void {
+        e.stopPropagation();
+        this.isSuspension = true;
+        this.showBorder();
+    }
+
+    mouseleave(e: MouseEvent): void {
+        e.stopPropagation();
+        this.isSuspension = false;
+        this.hiddenBorder();
+    }
+
+    showBorder(): void {
+        const ref = this.$refs.border as HTMLDivElement;
+        ref.style.display = 'block';
+    }
+
+    hiddenBorder(): void {
+        const ref = this.$refs.border as HTMLDivElement;
+        ref.style.display = 'none';
     }
 
     /**
@@ -97,14 +123,17 @@ export default class AppStudioAction extends Vue {
         const v = this.viewInstance;
         if (this.sdc.isShowTool && this.isDevMode) {
             return (
-                <div class='app-studio-debug-bar'>
-                    <div class='app-studio-debug-info' title={this.$t('components.appStudioAction.copyname')} on-click={() => this.copy()}>
-                        {v.title}（{v.name}）
-                    </div>
-                    <div class='app-studio-debug-actions'>
-                        <i-button type='text' ghost size='small' on-click={this.openPreview}>
-                            {this.$t('components.appStudioAction.view')}
-                        </i-button>
+                <div class='app-studio-debug-bar-container'>
+                    <div ref='border' class='app-studio-debug-bar-border'></div>
+                    <div class='app-studio-debug-bar' on-mouseenter={this.mouseenter} on-mouseleave={this.mouseleave}>
+                        <div class='app-studio-debug-info' title='点击拷贝视图名称' on-click={() => this.copy()}>
+                            {v.title}（{v.name}）
+                        </div>
+                        <div class='app-studio-debug-actions'>
+                            <i-button type='text' ghost size='small' on-click={this.openPreview}>
+                                查看
+                            </i-button>
+                        </div>
                     </div>
                 </div>
             );

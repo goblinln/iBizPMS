@@ -135,6 +135,8 @@ public class PRODUCTTEAMRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             return productteamService.searchProjectApp(searchContext);    
         if (iPSDEDataSet.getName().equals("RowEditDefaultProductTeam"))
             return productteamService.searchRowEditDefaultProductTeam(searchContext);    
+        if (iPSDEDataSet.getName().equals("SpecifyTeam"))
+            return productteamService.searchSpecifyTeam(searchContext);    
         return null;
     }
 
@@ -149,6 +151,8 @@ public class PRODUCTTEAMRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             return productteamService.selectProjectApp(searchContext);
         if (iPSDataQuery.getName().equals("RowEditDefaultProductTeam"))
             return productteamService.selectRowEditDefaultProductTeam(searchContext);
+        if (iPSDataQuery.getName().equals("SpecifyTeam"))
+            return productteamService.selectSpecifyTeam(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return productteamService.selectView(searchContext);
         return null;
@@ -320,6 +324,9 @@ public class PRODUCTTEAMRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
         }
         else if (action.equals("searchRowEditDefaultProductTeam")) {
             return aroundDataSet("RowEditDefaultProductTeam", point);
+        }
+        else if (action.equals("searchSpecifyTeam")) {
+            return aroundDataSet("SpecifyTeam", point);
         }
         return point.proceed();
     }

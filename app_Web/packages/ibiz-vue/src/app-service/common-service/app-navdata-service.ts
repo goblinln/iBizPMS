@@ -190,6 +190,22 @@ export class NavDataService {
     }
 
     /**
+     * 跳转到导航数据栈中指定数据
+     * 
+     * @memberof NavDataService
+     */
+     public skipNavData(tag: string) {
+      if ((this.navDataStack.length > 0) && tag) {
+          let tempIndex: number = this.navDataStack.findIndex((element: NavDataElement) => {
+              return Object.is(element.tag, tag);
+          })
+          if (tempIndex !== -1) {
+              this.navDataStack = this.navDataStack.slice(0, tempIndex + 1);
+          }
+      }
+    }
+
+    /**
      * 从导航数据栈中指定数据
      * 
      * @memberof NavDataService
@@ -200,7 +216,7 @@ export class NavDataService {
                 return Object.is(element.tag, tag);
             })
             if (tempIndex !== -1) {
-                this.navDataStack = this.navDataStack.slice(0, tempIndex + 1);
+                this.navDataStack = this.navDataStack.slice(0, tempIndex);
             }
         }
     }

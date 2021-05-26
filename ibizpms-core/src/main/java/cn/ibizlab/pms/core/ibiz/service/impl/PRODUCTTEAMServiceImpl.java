@@ -296,6 +296,9 @@ public class PRODUCTTEAMServiceImpl extends ServiceImpl<PRODUCTTEAMMapper, PRODU
     public List<PRODUCTTEAM> selectRowEditDefaultProductTeam(PRODUCTTEAMSearchContext context){
         return baseMapper.selectRowEditDefaultProductTeam(context, context.getSelectCond());
     }
+    public List<PRODUCTTEAM> selectSpecifyTeam(PRODUCTTEAMSearchContext context){
+        return baseMapper.selectSpecifyTeam(context, context.getSelectCond());
+    }
     public List<PRODUCTTEAM> selectView(PRODUCTTEAMSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }
@@ -334,6 +337,15 @@ public class PRODUCTTEAMServiceImpl extends ServiceImpl<PRODUCTTEAMMapper, PRODU
     @Override
     public Page<PRODUCTTEAM> searchRowEditDefaultProductTeam(PRODUCTTEAMSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<PRODUCTTEAM> pages=baseMapper.searchRowEditDefaultProductTeam(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<PRODUCTTEAM>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 指定团队部门
+     */
+    @Override
+    public Page<PRODUCTTEAM> searchSpecifyTeam(PRODUCTTEAMSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<PRODUCTTEAM> pages=baseMapper.searchSpecifyTeam(context.getPages(),context,context.getSelectCond());
         return new PageImpl<PRODUCTTEAM>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

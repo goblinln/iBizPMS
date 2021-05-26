@@ -115,6 +115,10 @@ export class PRODUCTTEAMBaseService extends EntityBaseService<IPRODUCTTEAM> {
         return this.condCache.get('rowEditDefaultProductTeam');
     }
 
+    protected getSpecifyTeamCond() {
+        return this.condCache.get('specifyTeam');
+    }
+
     protected getViewCond() {
         return this.condCache.get('view');
     }

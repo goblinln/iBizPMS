@@ -109,6 +109,13 @@
          )t1
      </select>
 
+    <!--数据集合[SpecifyTeam]-->
+	 <select id="searchSpecifyTeam"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext"  resultMap="PRODUCTTEAMResultMap">
+         select t1.* from (
+                <include refid="SpecifyTeam" />
+         )t1
+     </select>
+
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`CREATEBY`, t1.`DAYS`, t1.`DEPT`, t1.`DEPTNAME`, t1.`END`, t1.`ESTIMATE`, t1.`HOURS`, t1.`ID`, t1.`JOIN`, t1.`LEADINGCADRE`, t1.`LEFT`, t1.`LIMITED`, t1.`ORDER`, t1.`ORG`, t1.`ORGNAME`, t1.`ROLE`, t1.`ROOT`, t1.`TEAMSTATUS`, (t1.`DAYS` * t1.`HOURS`) AS `TOTAL`, t1.`TYPE`, t1.`UPDATEBY`, (select t.realname from zt_user t where t.account = t1.account) AS `USERNAME` FROM `zt_team` t1   ]]>
@@ -167,6 +174,18 @@
 	
 	<select id="selectRowEditDefaultProductTeam"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
 		<include refid="RowEditDefaultProductTeam" />
+	</select>
+
+    <!--数据查询[SpecifyTeam]-->
+    <sql id="SpecifyTeam" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectSpecifyTeam"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
+		<include refid="SpecifyTeam" />
 	</select>
 
     <!--数据查询[View]-->

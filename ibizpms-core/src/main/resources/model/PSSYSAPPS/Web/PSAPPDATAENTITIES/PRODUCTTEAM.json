@@ -163,6 +163,15 @@
       "id" : "RowEditDefaultProductTeam"
     },
     "builtinMethod" : false
+  }, {
+    "codeName" : "FetchSpecifyTeam",
+    "methodType" : "FETCH",
+    "name" : "SpecifyTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "SpecifyTeam"
+    },
+    "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "Teamstatus",
@@ -438,6 +447,15 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "RowEditDefaultProductTeam"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchSpecifyTeam",
+    "methodType" : "FETCH",
+    "name" : "SpecifyTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "SpecifyTeam"
     },
     "builtinMethod" : false
   }, {
