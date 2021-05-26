@@ -1328,6 +1328,9 @@
     "name" : "ACTIVATE",
     "id" : "ZTProduct__ACTIVATE"
   }, {
+    "logicName" : "激活",
+    "name" : "ACTIVATE"
+  }, {
     "logicName" : "Product_Create",
     "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "CREATE",
@@ -1355,6 +1358,9 @@
     "name" : "DELETE"
   }, {
     "logicName" : "关联Bug",
+    "name" : "LINKBUG"
+  }, {
+    "logicName" : "关联Bug",
     "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
@@ -1373,6 +1379,9 @@
     },
     "name" : "LINKSTORY",
     "id" : "ZTProduct__LINKSTORY"
+  }, {
+    "logicName" : "关联需求",
+    "name" : "LINKSTORY"
   }, {
     "logicName" : "管理",
     "name" : "MANAGE"
@@ -1409,6 +1418,9 @@
     },
     "name" : "TERMINATE",
     "id" : "ZTProduct__TERMINATE"
+  }, {
+    "logicName" : "停止",
+    "name" : "TERMINATE"
   }, {
     "logicName" : "Product_Update",
     "mapPSDEName" : "ZT_PRODUCT",

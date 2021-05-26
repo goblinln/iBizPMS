@@ -4633,6 +4633,25 @@
     "userDRAction" : "READ",
     "systemReserved" : true
   }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_ReportManage_CreateBy.json",
+    "name" : "产品测试报告管理（创建者或更新者）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductManagerQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "TESTREPORTMANAGE",
+      "name" : "TESTREPORTMANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "TESTREPORTMANAGE"
+      }
+    } ],
+    "roleTag" : "Product_ReportManage_CreateBy",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_TesTaskManage_CreateBy.json",
     "name" : "产品测试版本管理（创建者或更新者）（跟随角色）",
     "getPSDEDataSet" : {
@@ -4648,6 +4667,40 @@
       }
     } ],
     "roleTag" : "Product_TesTaskManage_CreateBy",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_TestReportManage_DEV.json",
+    "name" : "产品测试报告管理（参与者）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "TESTREPORTMANAGE",
+      "name" : "TESTREPORTMANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "TESTREPORTMANAGE"
+      }
+    } ],
+    "roleTag" : "Product_TestReportManage_DEV",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_TestReportManage_Open.json",
+    "name" : "产品测试报告管理（公开）（跟随角色）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "TESTREPORTMANAGE",
+      "name" : "TESTREPORTMANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "TESTREPORTMANAGE"
+      }
+    } ],
+    "roleTag" : "Product_TestReportManage_Open",
     "userCat" : "CAT1",
     "userDRAction" : "READ",
     "systemReserved" : true

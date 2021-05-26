@@ -11601,14 +11601,44 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "产品-测试用例（用例确认）",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CASECOF",
+    "id" : "ZTProduct__CASECOF"
+  }, {
     "logicName" : "测试用例（用例确认）",
     "name" : "CASECOF"
   }, {
     "logicName" : "测试用例编辑",
     "name" : "CASEEDIT"
   }, {
+    "logicName" : "产品-测试结果",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CASERESULT",
+    "id" : "ZTProduct__CASERESULT"
+  }, {
     "logicName" : "测试结果",
     "name" : "CASERESULT"
+  }, {
+    "logicName" : "产品-确认",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CONFIRM",
+    "id" : "ZTProduct__CONFIRM"
   }, {
     "logicName" : "确认",
     "name" : "CONFIRM"
@@ -11616,12 +11646,22 @@
     "logicName" : "确认变更",
     "name" : "CONFIRMCHANGE"
   }, {
+    "logicName" : "产品-确认变更",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CONFIRMCHANGE",
+    "id" : "ZTProduct__CONFIRMCHANGE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
     "logicName" : "Product_Create",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "CREATE",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
@@ -11631,7 +11671,7 @@
   }, {
     "logicName" : "Product_Delete",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "DELETE",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
@@ -11642,11 +11682,41 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "产品-套件编辑",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "EDITSUITE",
+    "id" : "ZTProduct__EDITSUITE"
+  }, {
     "logicName" : "套件编辑",
     "name" : "EDITSUITE"
   }, {
     "logicName" : "用例收藏",
     "name" : "FAVORITE"
+  }, {
+    "logicName" : "产品-用例收藏",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "FAVORITE",
+    "id" : "ZTProduct__FAVORITE"
+  }, {
+    "logicName" : "产品-关联用例",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "LINKCASE",
+    "id" : "ZTProduct__LINKCASE"
   }, {
     "logicName" : "关联用例",
     "name" : "LINKCASE"
@@ -11656,13 +11726,23 @@
   }, {
     "logicName" : "Product_Manage",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "MANAGE",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
     },
     "name" : "MANAGE",
     "id" : "ZTProduct__MANAGE"
+  }, {
+    "logicName" : "产品-取消收藏",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "NFAVORITE",
+    "id" : "ZTProduct__NFAVORITE"
   }, {
     "logicName" : "取消收藏",
     "name" : "NFAVORITE"
@@ -11683,20 +11763,90 @@
     "logicName" : "测试用例结果",
     "name" : "RESULT"
   }, {
+    "logicName" : "产品-测试用例结果",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "RESULT",
+    "id" : "ZTProduct__RESULT"
+  }, {
+    "logicName" : "产品-执行测试",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "RUNCASE",
+    "id" : "ZTProduct__RUNCASE"
+  }, {
     "logicName" : "执行测试",
     "name" : "RUNCASE"
   }, {
     "logicName" : "需求关联",
     "name" : "STORYLINK"
   }, {
+    "logicName" : "产品-需求关联",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "STORYLINK",
+    "id" : "ZTProduct__STORYLINK"
+  }, {
     "logicName" : "执行测试",
     "name" : "TESRUNCASE"
+  }, {
+    "logicName" : "产品-执行测试",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "TESRUNCASE",
+    "id" : "ZTProduct__TESRUNCASE"
   }, {
     "logicName" : "转Bug",
     "name" : "TOBUG"
   }, {
+    "logicName" : "产品-toBug",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "TOBUG",
+    "id" : "ZTProduct__TOBUG"
+  }, {
+    "logicName" : "产品-移除用例",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "UNLINKCASE",
+    "id" : "ZTProduct__UNLINKCASE"
+  }, {
     "logicName" : "移除用例",
     "name" : "UNLINKCASE"
+  }, {
+    "logicName" : "产品-移除用例",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "UNLINKSUITCASE",
+    "id" : "ZTProduct__UNLINKSUITCASE"
   }, {
     "logicName" : "移除用例",
     "name" : "UNLINKSUITCASE"
@@ -11706,7 +11856,7 @@
   }, {
     "logicName" : "Product_Update",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "UPDATE",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"

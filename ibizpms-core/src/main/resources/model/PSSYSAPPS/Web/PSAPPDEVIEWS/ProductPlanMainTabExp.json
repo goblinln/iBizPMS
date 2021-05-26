@@ -308,6 +308,7 @@
               "actionTarget" : "NONE",
               "caption" : "新建需求",
               "codeName" : "CreatePlan",
+              "dataAccessAction" : "CREATE",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryPlanEditView.json",
@@ -365,6 +366,7 @@
               "actionTarget" : "NONE",
               "caption" : "关联需求",
               "codeName" : "PlanRelationStory",
+              "dataAccessAction" : "PLANLINK",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView.json",

@@ -3572,6 +3572,7 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "PlanRelationStory",
+    "dataAccessAction" : "PLANLINK",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView.json",
@@ -3670,7 +3671,7 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "buildLinkStories",
-    "dataAccessAction" : "RELEASELINK",
+    "dataAccessAction" : "BUILDLINK",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView3.json",
@@ -4043,6 +4044,7 @@
     "actionTarget" : "NONE",
     "caption" : "新建需求",
     "codeName" : "CreatePlan",
+    "dataAccessAction" : "CREATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryPlanEditView.json",
@@ -4360,6 +4362,7 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "ProjectCreateView",
+    "dataAccessAction" : "CREATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectEditView.json",
@@ -10841,6 +10844,9 @@
     "name" : "BUILDLINK",
     "id" : "ZTProduct__BUILDLINK"
   }, {
+    "logicName" : "版本关联",
+    "name" : "BUILDLINK"
+  }, {
     "logicName" : "建用例",
     "name" : "CCASE"
   }, {
@@ -10959,6 +10965,9 @@
     "name" : "NFAVORITES"
   }, {
     "logicName" : "计划关联",
+    "name" : "PLANLINK"
+  }, {
+    "logicName" : "计划关联",
     "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
@@ -10967,6 +10976,9 @@
     },
     "name" : "PLANLINK",
     "id" : "ZTProduct__PLANLINK"
+  }, {
+    "logicName" : "项目关联",
+    "name" : "PROJECTLINK"
   }, {
     "logicName" : "项目关联",
     "mapPSDEName" : "ZT_PRODUCT",
@@ -11000,6 +11012,9 @@
     },
     "name" : "RELEASELINK",
     "id" : "ZTProduct__RELEASELINK"
+  }, {
+    "logicName" : "发布关联",
+    "name" : "RELEASELINK"
   }, {
     "logicName" : "需求评审",
     "name" : "REVIEW"

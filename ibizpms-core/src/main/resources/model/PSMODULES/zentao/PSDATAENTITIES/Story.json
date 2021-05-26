@@ -12139,6 +12139,9 @@
     "name" : "BUILDLINK",
     "id" : "ZTProduct__BUILDLINK"
   }, {
+    "logicName" : "版本关联",
+    "name" : "BUILDLINK"
+  }, {
     "logicName" : "建用例",
     "name" : "CCASE"
   }, {
@@ -12257,6 +12260,9 @@
     "name" : "NFAVORITES"
   }, {
     "logicName" : "计划关联",
+    "name" : "PLANLINK"
+  }, {
+    "logicName" : "计划关联",
     "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
@@ -12265,6 +12271,9 @@
     },
     "name" : "PLANLINK",
     "id" : "ZTProduct__PLANLINK"
+  }, {
+    "logicName" : "项目关联",
+    "name" : "PROJECTLINK"
   }, {
     "logicName" : "项目关联",
     "mapPSDEName" : "ZT_PRODUCT",
@@ -12298,6 +12307,9 @@
     },
     "name" : "RELEASELINK",
     "id" : "ZTProduct__RELEASELINK"
+  }, {
+    "logicName" : "发布关联",
+    "name" : "RELEASELINK"
   }, {
     "logicName" : "需求评审",
     "name" : "REVIEW"

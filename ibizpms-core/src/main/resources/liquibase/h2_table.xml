@@ -350,7 +350,7 @@
 
 
     <!--输出实体[ZT_CASE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_case-240-9">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_case-260-9">
         <createTable tableName="zt_case">
                 <column name="LASTEDITEDDATE" remarks="" type="DATETIME">
                 </column>
@@ -2766,7 +2766,7 @@
 
 
     <!--输出实体[ZT_RELEASE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_release-87-133">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_release-91-133">
         <createTable tableName="zt_release">
                 <column name="STORIES" remarks="" type="TEXT(65535)">
                 </column>
@@ -3736,7 +3736,7 @@
         <!--输出实体[ZT_NOTIFY]外键关系 -->
         <!--输出实体[IBZ_PRODUCTTEAM]外键关系 -->
         <!--输出实体[ZT_PRODUCT]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-zt_product-410-183">
+    <changeSet author="a_A_23e8aa361" id="fk-zt_product-422-183">
        <addForeignKeyConstraint baseColumnNames="LINE" baseTableName="zt_product" constraintName="DER1N_ZT_PRODUCT_IBZPRO_PRODUC" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_module" validate="true"/>
     </changeSet>
         <!--输出实体[IBZ_PRODUCTLIFE]外键关系 -->

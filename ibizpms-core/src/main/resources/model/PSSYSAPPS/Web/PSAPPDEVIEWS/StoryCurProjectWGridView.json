@@ -262,6 +262,7 @@
         "actionTarget" : "NONE",
         "caption" : "新建",
         "codeName" : "ProjectCreateView",
+        "dataAccessAction" : "CREATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectEditView.json",

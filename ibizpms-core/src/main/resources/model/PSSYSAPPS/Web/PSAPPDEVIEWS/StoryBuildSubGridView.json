@@ -190,7 +190,7 @@
         "actionTarget" : "NONE",
         "caption" : "关联需求",
         "codeName" : "buildLinkStories",
-        "dataAccessAction" : "RELEASELINK",
+        "dataAccessAction" : "BUILDLINK",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView3.json",

@@ -495,6 +495,13 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "批量保存任务", tags = {"任务" },  notes = "批量保存任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/tasks/savebatch")
+    public ResponseEntity<Boolean> saveBatch(@RequestBody List<TaskDTO> taskdtos) {
+        taskService.saveBatch(taskMapping.toDomain(taskdtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @ApiOperation(value = "行为", tags = {"任务" },  notes = "行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/sendmessage")
@@ -1869,6 +1876,17 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(domain));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
+    @ApiOperation(value = "根据项目批量保存任务", tags = {"任务" },  notes = "根据项目批量保存任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domainlist=taskMapping.toDomain(taskdtos);
+        for(Task domain:domainlist){
+             domain.setProject(project_id);
+        }
+        taskService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/sendmessage")

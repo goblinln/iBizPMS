@@ -133,6 +133,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
     }
   }, {
+    "name" : "测试主管-ZT_PRODUCT[产品测试报告管理（参与者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_TestReportManage_DEV.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
     "name" : "测试主管-ZT_PROJECT[项目任务管理（创建者或者更新者）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -253,6 +263,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     }
   }, {
+    "name" : "测试主管-ZT_PRODUCT[产品测试报告管理（公开）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_TestReportManage_Open.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
     "name" : "测试主管-ZT_PROJECT[项目模块管理（公开）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -287,6 +307,16 @@
     "getPSDEUserRole" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_BuildManage_CreateBy.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "测试主管-ZT_PRODUCT[产品测试报告管理（创建者或更新者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_ReportManage_CreateBy.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
