@@ -535,7 +535,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
     @ApiOperation(value = "获取需求描述", tags = {"需求" },  notes = "获取需求描述")
 	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/getstoryspecs")
-    public ResponseEntity<StoryDTO> getStorySpecs(@PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+    public ResponseEntity<StoryDTO> getStorySpecs(@PathVariable("story_id") Long story_id, StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setId(story_id);
         domain = storyService.getStorySpecs(domain);
@@ -1986,7 +1986,7 @@ public class StoryResource {
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品需求", tags = {"需求" },  notes = "根据产品需求")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/getstoryspecs")
-    public ResponseEntity<StoryDTO> getStorySpecsByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+    public ResponseEntity<StoryDTO> getStorySpecsByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
         domain.setId(story_id);

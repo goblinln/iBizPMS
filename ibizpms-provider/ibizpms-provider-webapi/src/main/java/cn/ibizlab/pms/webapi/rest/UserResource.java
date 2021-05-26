@@ -141,7 +141,7 @@ public class UserResource {
     @PreAuthorize("@UserRuntime.test(#user_id,'READ')")
     @ApiOperation(value = "根据代码账户查询用户信息", tags = {"用户" },  notes = "根据代码账户查询用户信息")
 	@RequestMapping(method = RequestMethod.GET, value = "/users/{user_id}/getbycommiter")
-    public ResponseEntity<UserDTO> getByCommiter(@PathVariable("user_id") Long user_id, @RequestBody UserDTO userdto) {
+    public ResponseEntity<UserDTO> getByCommiter(@PathVariable("user_id") Long user_id, UserDTO userdto) {
         User domain = userMapping.toDomain(userdto);
         domain.setId(user_id);
         domain = userService.getByCommiter(domain);

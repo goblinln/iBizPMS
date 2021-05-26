@@ -535,7 +535,7 @@ public class SubStoryResource {
     @PreAuthorize("@StoryRuntime.test(#substory_id,'READ')")
     @ApiOperation(value = "获取需求描述", tags = {"需求" },  notes = "获取需求描述")
 	@RequestMapping(method = RequestMethod.GET, value = "/substories/{substory_id}/getstoryspecs")
-    public ResponseEntity<SubStoryDTO> getStorySpecs(@PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
+    public ResponseEntity<SubStoryDTO> getStorySpecs(@PathVariable("substory_id") Long substory_id, SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setId(substory_id);
         domain = storyService.getStorySpecs(domain);
@@ -1986,7 +1986,7 @@ public class SubStoryResource {
     @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
     @ApiOperation(value = "根据需求需求", tags = {"需求" },  notes = "根据需求需求")
 	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/substories/{substory_id}/getstoryspecs")
-    public ResponseEntity<SubStoryDTO> getStorySpecsByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
+    public ResponseEntity<SubStoryDTO> getStorySpecsByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
         domain.setId(substory_id);
@@ -3419,7 +3419,7 @@ public class SubStoryResource {
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品需求需求", tags = {"需求" },  notes = "根据产品需求需求")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}/getstoryspecs")
-    public ResponseEntity<SubStoryDTO> getStorySpecsByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
+    public ResponseEntity<SubStoryDTO> getStorySpecsByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
         domain.setId(substory_id);

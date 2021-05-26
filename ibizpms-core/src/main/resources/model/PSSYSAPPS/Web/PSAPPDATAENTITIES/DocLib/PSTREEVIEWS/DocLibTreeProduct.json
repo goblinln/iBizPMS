@@ -605,6 +605,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑",
         "codeName" : "edit",
+        "dataAccessAction" : "UPDATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleEditViewMain.json",
@@ -648,6 +649,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "维护分类",
         "codeName" : "WeiHuFenLei",
+        "dataAccessAction" : "MANAGE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleChildWeiHuiTreeExpView.json",
@@ -733,6 +735,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "收藏",
         "codeName" : "Favorite",
+        "dataAccessAction" : "COLLECT",
         "fullCodeName" : "DocLibModule_Favorite",
         "name" : "收藏",
         "getPSAppDEMethod" : {
@@ -777,6 +780,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "取消收藏",
         "codeName" : "NFavorite",
+        "dataAccessAction" : "UNCOLLECT",
         "fullCodeName" : "DocLibModule_NFavorite",
         "name" : "取消收藏",
         "getPSAppDEMethod" : {
@@ -1309,6 +1313,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑",
         "codeName" : "edit",
+        "dataAccessAction" : "UPDATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleEditViewMain.json",
@@ -1352,6 +1357,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "维护分类",
         "codeName" : "WeiHuFenLei",
+        "dataAccessAction" : "MANAGE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleChildWeiHuiTreeExpView.json",
@@ -1437,6 +1443,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "收藏",
         "codeName" : "Favorite",
+        "dataAccessAction" : "COLLECT",
         "fullCodeName" : "DocLibModule_Favorite",
         "name" : "收藏",
         "getPSAppDEMethod" : {
@@ -1481,6 +1488,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "取消收藏",
         "codeName" : "NFavorite",
+        "dataAccessAction" : "UNCOLLECT",
         "fullCodeName" : "DocLibModule_NFavorite",
         "name" : "取消收藏",
         "getPSAppDEMethod" : {
@@ -2146,6 +2154,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "edit",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleEditViewMain.json",
@@ -2189,6 +2198,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "维护分类",
           "codeName" : "WeiHuFenLei",
+          "dataAccessAction" : "MANAGE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleChildWeiHuiTreeExpView.json",
@@ -2274,6 +2284,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "收藏",
           "codeName" : "Favorite",
+          "dataAccessAction" : "COLLECT",
           "fullCodeName" : "DocLibModule_Favorite",
           "name" : "收藏",
           "getPSAppDEMethod" : {
@@ -2318,6 +2329,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "取消收藏",
           "codeName" : "NFavorite",
+          "dataAccessAction" : "UNCOLLECT",
           "fullCodeName" : "DocLibModule_NFavorite",
           "name" : "取消收藏",
           "getPSAppDEMethod" : {
@@ -2721,6 +2733,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "edit",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleEditViewMain.json",
@@ -2764,6 +2777,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "维护分类",
           "codeName" : "WeiHuFenLei",
+          "dataAccessAction" : "MANAGE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleChildWeiHuiTreeExpView.json",
@@ -2849,6 +2863,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "收藏",
           "codeName" : "Favorite",
+          "dataAccessAction" : "COLLECT",
           "fullCodeName" : "DocLibModule_Favorite",
           "name" : "收藏",
           "getPSAppDEMethod" : {
@@ -2893,6 +2908,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "取消收藏",
           "codeName" : "NFavorite",
+          "dataAccessAction" : "UNCOLLECT",
           "fullCodeName" : "DocLibModule_NFavorite",
           "name" : "取消收藏",
           "getPSAppDEMethod" : {

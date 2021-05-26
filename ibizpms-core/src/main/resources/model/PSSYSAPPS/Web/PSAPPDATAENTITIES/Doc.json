@@ -1750,6 +1750,19 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "收藏",
+    "name" : "COLLECT"
+  }, {
+    "logicName" : "文档库-收藏",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
+    },
+    "name" : "COLLECT",
+    "id" : "Zt_doclib__COLLECT"
+  }, {
     "logicName" : "DocLib_Create",
     "mapPSDEName" : "ZT_DOCLIB",
     "mapPSDEOPPrivName" : "CREATE",
@@ -1789,6 +1802,32 @@
     "name" : "MANAGE",
     "id" : "Zt_doclib__MANAGE"
   }, {
+    "logicName" : "文档库-仅收藏文档",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
+    },
+    "name" : "OCD",
+    "id" : "Zt_doclib__OCD"
+  }, {
+    "logicName" : "仅收藏文档",
+    "name" : "OCD"
+  }, {
+    "logicName" : "文档库-仅取消收藏文档",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
+    },
+    "name" : "OUCD",
+    "id" : "Zt_doclib__OUCD"
+  }, {
+    "logicName" : "仅取消收藏文档",
+    "name" : "OUCD"
+  }, {
     "logicName" : "DocLib_Read",
     "mapPSDEName" : "ZT_DOCLIB",
     "mapPSDEOPPrivName" : "READ",
@@ -1801,6 +1840,19 @@
   }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "取消收藏",
+    "name" : "UNCOLLECT"
+  }, {
+    "logicName" : "文档库-取消收藏",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
+    },
+    "name" : "UNCOLLECT",
+    "id" : "Zt_doclib__UNCOLLECT"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"

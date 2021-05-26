@@ -141,7 +141,7 @@ public class UserYearWorkStatsResource {
     @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'READ')")
     @ApiOperation(value = "获取研发人员相关数据", tags = {"用户年度工作内容统计" },  notes = "获取研发人员相关数据")
 	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/{useryearworkstats_id}/getdevinfomation")
-    public ResponseEntity<UserYearWorkStatsDTO> getDevInfomation(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, @RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {
+    public ResponseEntity<UserYearWorkStatsDTO> getDevInfomation(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, UserYearWorkStatsDTO useryearworkstatsdto) {
         UserYearWorkStats domain = useryearworkstatsMapping.toDomain(useryearworkstatsdto);
         domain.setId(useryearworkstats_id);
         domain = useryearworkstatsService.getDevInfomation(domain);
@@ -154,7 +154,7 @@ public class UserYearWorkStatsResource {
     @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'READ')")
     @ApiOperation(value = "获取产品经理相关数据", tags = {"用户年度工作内容统计" },  notes = "获取产品经理相关数据")
 	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/{useryearworkstats_id}/getpoinfomation")
-    public ResponseEntity<UserYearWorkStatsDTO> getPoInfomation(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, @RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {
+    public ResponseEntity<UserYearWorkStatsDTO> getPoInfomation(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, UserYearWorkStatsDTO useryearworkstatsdto) {
         UserYearWorkStats domain = useryearworkstatsMapping.toDomain(useryearworkstatsdto);
         domain.setId(useryearworkstats_id);
         domain = useryearworkstatsService.getPoInfomation(domain);
@@ -167,7 +167,7 @@ public class UserYearWorkStatsResource {
     @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'READ')")
     @ApiOperation(value = "获取测试人员相关数据", tags = {"用户年度工作内容统计" },  notes = "获取测试人员相关数据")
 	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/{useryearworkstats_id}/getqainfomation")
-    public ResponseEntity<UserYearWorkStatsDTO> getQaInfomation(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, @RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {
+    public ResponseEntity<UserYearWorkStatsDTO> getQaInfomation(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, UserYearWorkStatsDTO useryearworkstatsdto) {
         UserYearWorkStats domain = useryearworkstatsMapping.toDomain(useryearworkstatsdto);
         domain.setId(useryearworkstats_id);
         domain = useryearworkstatsService.getQaInfomation(domain);

@@ -17,7 +17,7 @@
 
 
     <!--输出实体[ZT_ACTION]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_action-69-2">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_action-71-2">
         <createTable tableName="zt_action">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -634,7 +634,7 @@
 
 
     <!--输出实体[ZT_DOC]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_doc-68-18">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_doc-77-18">
         <createTable tableName="zt_doc">
                 <column name="GROUPS" remarks="" type="VARCHAR(255)">
                 </column>
@@ -730,7 +730,7 @@
 
 
     <!--输出实体[ZT_DOCLIB]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_doclib-60-20">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_doclib-72-20">
         <createTable tableName="zt_doclib">
                 <column name="TYPE" remarks="" type="VARCHAR(30)">
                 </column>
@@ -778,7 +778,7 @@
 
 
     <!--输出实体[IBZ_DOCLIBMODULE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_doclibmodule-18-21">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_doclibmodule-35-21">
         <createTable tableName="zt_module">
                 <column name="GRADE" remarks="" type="INT">
                 </column>
@@ -3724,7 +3724,7 @@
         <!--输出实体[ZT_NOTIFY]外键关系 -->
         <!--输出实体[IBZ_PRODUCTTEAM]外键关系 -->
         <!--输出实体[ZT_PRODUCT]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-zt_product-361-183">
+    <changeSet author="a_A_23e8aa361" id="fk-zt_product-387-183">
        <addForeignKeyConstraint baseColumnNames="LINE" baseTableName="zt_product" constraintName="DER1N_ZT_PRODUCT_IBZPRO_PRODUC" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_module" validate="true"/>
     </changeSet>
         <!--输出实体[IBZ_PRODUCTLIFE]外键关系 -->

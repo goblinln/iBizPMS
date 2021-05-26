@@ -425,6 +425,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "取消收藏",
           "codeName" : "NFavorite",
+          "dataAccessAction" : "UNCOLLECT",
           "fullCodeName" : "DocLibModule_NFavorite",
           "name" : "取消收藏",
           "getPSAppDEMethod" : {
@@ -468,6 +469,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "收藏",
           "codeName" : "Favorite",
+          "dataAccessAction" : "COLLECT",
           "fullCodeName" : "DocLibModule_Favorite",
           "name" : "收藏",
           "getPSAppDEMethod" : {
@@ -748,6 +750,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "取消收藏",
           "codeName" : "NFavorite",
+          "dataAccessAction" : "UNCOLLECT",
           "fullCodeName" : "DocLibModule_NFavorite",
           "name" : "取消收藏",
           "getPSAppDEMethod" : {
@@ -791,6 +794,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "收藏",
           "codeName" : "Favorite",
+          "dataAccessAction" : "COLLECT",
           "fullCodeName" : "DocLibModule_Favorite",
           "name" : "收藏",
           "getPSAppDEMethod" : {
@@ -1685,6 +1689,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "取消收藏",
             "codeName" : "NFavorite",
+            "dataAccessAction" : "UNCOLLECT",
             "fullCodeName" : "DocLibModule_NFavorite",
             "name" : "取消收藏",
             "getPSAppDEMethod" : {
@@ -1728,6 +1733,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "收藏",
             "codeName" : "Favorite",
+            "dataAccessAction" : "COLLECT",
             "fullCodeName" : "DocLibModule_Favorite",
             "name" : "收藏",
             "getPSAppDEMethod" : {
@@ -1973,6 +1979,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "取消收藏",
             "codeName" : "NFavorite",
+            "dataAccessAction" : "UNCOLLECT",
             "fullCodeName" : "DocLibModule_NFavorite",
             "name" : "取消收藏",
             "getPSAppDEMethod" : {
@@ -2016,6 +2023,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "收藏",
             "codeName" : "Favorite",
+            "dataAccessAction" : "COLLECT",
             "fullCodeName" : "DocLibModule_Favorite",
             "name" : "收藏",
             "getPSAppDEMethod" : {

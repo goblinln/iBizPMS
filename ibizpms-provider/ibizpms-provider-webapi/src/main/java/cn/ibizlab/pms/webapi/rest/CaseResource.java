@@ -213,7 +213,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
     @ApiOperation(value = "根据测试单获取或者状态", tags = {"测试用例" },  notes = "根据测试单获取或者状态")
 	@RequestMapping(method = RequestMethod.GET, value = "/cases/{case_id}/getbytesttask")
-    public ResponseEntity<CaseDTO> getByTestTask(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
+    public ResponseEntity<CaseDTO> getByTestTask(@PathVariable("case_id") Long case_id, CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setId(case_id);
         domain = caseService.getByTestTask(domain);
@@ -1096,7 +1096,7 @@ public class CaseResource {
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品测试用例", tags = {"测试用例" },  notes = "根据产品测试用例")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}/getbytesttask")
-    public ResponseEntity<CaseDTO> getByTestTaskByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
+    public ResponseEntity<CaseDTO> getByTestTaskByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
         domain.setId(case_id);

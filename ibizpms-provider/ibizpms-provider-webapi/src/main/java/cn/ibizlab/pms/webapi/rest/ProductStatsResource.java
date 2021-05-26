@@ -139,7 +139,7 @@ public class ProductStatsResource {
 
     @ApiOperation(value = "获取测试统计详情", tags = {"产品统计" },  notes = "获取测试统计详情")
 	@RequestMapping(method = RequestMethod.GET, value = "/productstats/{productstats_id}/getteststats")
-    public ResponseEntity<ProductStatsDTO> getTestStats(@PathVariable("productstats_id") Long productstats_id, @RequestBody ProductStatsDTO productstatsdto) {
+    public ResponseEntity<ProductStatsDTO> getTestStats(@PathVariable("productstats_id") Long productstats_id, ProductStatsDTO productstatsdto) {
         ProductStats domain = productstatsMapping.toDomain(productstatsdto);
         domain.setId(productstats_id);
         domain = productstatsService.getTestStats(domain);

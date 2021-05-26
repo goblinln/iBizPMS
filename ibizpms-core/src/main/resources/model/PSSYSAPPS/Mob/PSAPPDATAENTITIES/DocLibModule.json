@@ -39,7 +39,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "DocLib__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -103,7 +103,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "DocLib__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -128,6 +128,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Collect.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "COLLECT"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -188,6 +192,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/UnCollect.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UNCOLLECT"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -524,7 +532,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "DocLib__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -588,7 +596,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "DocLib__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -613,6 +621,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Collect.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "COLLECT"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -673,6 +685,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/UnCollect.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UNCOLLECT"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -879,6 +895,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "取消收藏",
     "codeName" : "NFavorite",
+    "dataAccessAction" : "UNCOLLECT",
     "fullCodeName" : "DocLibModule_NFavorite",
     "name" : "取消收藏",
     "getPSAppDEMethod" : {
@@ -905,6 +922,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "收藏",
     "codeName" : "Favorite",
+    "dataAccessAction" : "COLLECT",
     "fullCodeName" : "DocLibModule_Favorite",
     "name" : "收藏",
     "getPSAppDEMethod" : {
@@ -934,17 +952,47 @@
     "logicName" : "模块_未收藏",
     "mSTag" : "module__0",
     "name" : "模块_未收藏",
+    "getPSDEMainStateActions" : [ {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Save",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Save.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Collect",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Collect.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__DOCLIBMODULE_NFAVOUR_BUT",
+      "name" : "UNCOLLECT",
       "getPSDEOPPriv" : {
-        "logicName" : "取消收藏文档库分类",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__DOCLIBMODULE_NFAVOUR_BUT"
-        },
-        "mapSysUniResCode" : "DOCLIBMODULE_NFAVOUR_BUT",
-        "name" : "SRFUR__DOCLIBMODULE_NFAVOUR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "取消收藏",
+        "name" : "UNCOLLECT"
       }
     } ],
     "state2Value" : "0",
@@ -963,17 +1011,40 @@
     "logicName" : "模块_已收藏",
     "mSTag" : "module__1",
     "name" : "模块_已收藏",
+    "getPSDEMainStateActions" : [ {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "UnCollect",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/UnCollect.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__DOCLIBMODULE_FAVOUR_BUT",
+      "name" : "COLLECT",
       "getPSDEOPPriv" : {
-        "logicName" : "收藏文档库分类",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__DOCLIBMODULE_FAVOUR_BUT"
-        },
-        "mapSysUniResCode" : "DOCLIBMODULE_FAVOUR_BUT",
-        "name" : "SRFUR__DOCLIBMODULE_FAVOUR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "收藏",
+        "name" : "COLLECT"
       }
     } ],
     "state2Value" : "1",
@@ -988,8 +1059,41 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "文档库-收藏",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json"
+    },
+    "name" : "COLLECT",
+    "id" : "DocLib__COLLECT"
+  }, {
+    "logicName" : "收藏",
+    "name" : "COLLECT"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
+  }, {
+    "logicName" : "文档库-建立",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json"
+    },
+    "name" : "CREATE",
+    "id" : "DocLib__CREATE"
+  }, {
+    "logicName" : "文档库-删除",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json"
+    },
+    "name" : "DELETE",
+    "id" : "DocLib__DELETE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
@@ -997,8 +1101,51 @@
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
+    "logicName" : "文档库管理",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "DocLib__MANAGE"
+  }, {
+    "logicName" : "文档库-读取",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json"
+    },
+    "name" : "READ",
+    "id" : "DocLib__READ"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "取消收藏",
+    "name" : "UNCOLLECT"
+  }, {
+    "logicName" : "文档库-取消收藏",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json"
+    },
+    "name" : "UNCOLLECT",
+    "id" : "DocLib__UNCOLLECT"
+  }, {
+    "logicName" : "文档库-更新",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "DocLib__UPDATE"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"

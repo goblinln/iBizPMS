@@ -138,6 +138,7 @@ public class DocLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doclibmoduleService.checkKey(doclibmoduleMapping.toDomain(doclibmoduledto)));
     }
 
+    @PreAuthorize("@DocLibModuleRuntime.test(#doclibmodule_id,'COLLECT')")
     @ApiOperation(value = "收藏", tags = {"文档库分类" },  notes = "收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/{doclibmodule_id}/collect")
     public ResponseEntity<DocLibModuleDTO> collect(@PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -211,6 +212,7 @@ public class DocLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@DocLibModuleRuntime.test(#doclibmodule_id,'UNCOLLECT')")
     @ApiOperation(value = "取消收藏", tags = {"文档库分类" },  notes = "取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/{doclibmodule_id}/uncollect")
     public ResponseEntity<DocLibModuleDTO> unCollect(@PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -543,6 +545,7 @@ public class DocLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doclibmoduleService.checkKey(doclibmoduleMapping.toDomain(doclibmoduledto)));
     }
 
+    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'MANAGE')")
     @ApiOperation(value = "根据文档库文档库分类", tags = {"文档库分类" },  notes = "根据文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/collect")
     public ResponseEntity<DocLibModuleDTO> collectByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -610,6 +613,7 @@ public class DocLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'MANAGE')")
     @ApiOperation(value = "根据文档库文档库分类", tags = {"文档库分类" },  notes = "根据文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/uncollect")
     public ResponseEntity<DocLibModuleDTO> unCollectByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -942,6 +946,7 @@ public class DocLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doclibmoduleService.checkKey(doclibmoduleMapping.toDomain(doclibmoduledto)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'COLLECT')")
     @ApiOperation(value = "根据产品文档库文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/collect")
     public ResponseEntity<DocLibModuleDTO> collectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -1009,6 +1014,7 @@ public class DocLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UNCOLLECT')")
     @ApiOperation(value = "根据产品文档库文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/uncollect")
     public ResponseEntity<DocLibModuleDTO> unCollectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -1341,6 +1347,7 @@ public class DocLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doclibmoduleService.checkKey(doclibmoduleMapping.toDomain(doclibmoduledto)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'COLLECT')")
     @ApiOperation(value = "根据项目文档库文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/collect")
     public ResponseEntity<DocLibModuleDTO> collectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -1408,6 +1415,7 @@ public class DocLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UNCOLLECT')")
     @ApiOperation(value = "根据项目文档库文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/uncollect")
     public ResponseEntity<DocLibModuleDTO> unCollectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
