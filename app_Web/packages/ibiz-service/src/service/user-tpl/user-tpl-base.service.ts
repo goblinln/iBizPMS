@@ -92,6 +92,18 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
         return this.condCache.get('myUserTpl');
     }
 
+    protected getMyUserTplQueryCond() {
+        if (!this.condCache.has('myUserTplQuery')) {
+            const strCond: any[] = ['AND', ['OR', ['EQ', 'ACCOUNT',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'PUBLIC','1']]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('myUserTplQuery', cond);
+            }
+        }
+        return this.condCache.get('myUserTplQuery');
+    }
+
     protected getViewCond() {
         return this.condCache.get('view');
     }

@@ -1,4 +1,4 @@
-package cn.ibizlab.pms.webapi.rest;
+package cn.ibizlab.pms.standardapi.rest;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -28,37 +28,29 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import cn.ibizlab.pms.webapi.dto.*;
-import cn.ibizlab.pms.webapi.mapping.*;
-import cn.ibizlab.pms.core.zentao.domain.Release;
-import cn.ibizlab.pms.core.zentao.service.IReleaseService;
-import cn.ibizlab.pms.core.zentao.filter.ReleaseSearchContext;
+import cn.ibizlab.pms.standardapi.dto.*;
+import cn.ibizlab.pms.standardapi.mapping.*;
+import cn.ibizlab.pms.core.ibiz.domain.PRODUCTTEAM;
+import cn.ibizlab.pms.core.ibiz.service.IPRODUCTTEAMService;
+import cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
-import cn.ibizlab.pms.core.zentao.runtime.ReleaseRuntime;
+import cn.ibizlab.pms.core.ibiz.runtime.PRODUCTTEAMRuntime;
 
 @Slf4j
-@Api(tags = {"发布" })
-@RestController("WebApi-release")
+@Api(tags = {"产品团队" })
+@RestController("StandardAPI-productteam")
 @RequestMapping("")
-public class ReleaseResource {
+public class ProductTeamResource {
 
     @Autowired
-    public IReleaseService releaseService;
+    public IPRODUCTTEAMService productteamService;
 
     @Autowired
-    public ReleaseRuntime releaseRuntime;
+    public PRODUCTTEAMRuntime productteamRuntime;
 
     @Autowired
     @Lazy
-    public ReleaseMapping releaseMapping;
+    public ProductTeamMapping productteamMapping;
 
-
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/releases/{release_id}/{action}")
-    public ResponseEntity<ReleaseDTO> dynamicCall(@PathVariable("release_id") Long release_id , @PathVariable("action") String action , @RequestBody ReleaseDTO releasedto) {
-        Release domain = releaseService.dynamicCall(release_id, action, releaseMapping.toDomain(releasedto));
-        releasedto = releaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(releasedto);
-    }
 }
 

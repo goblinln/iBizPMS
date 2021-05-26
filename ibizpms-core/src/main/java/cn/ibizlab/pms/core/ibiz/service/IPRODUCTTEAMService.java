@@ -69,6 +69,8 @@ public interface IPRODUCTTEAMService extends IService<PRODUCTTEAM> {
      */
     boolean execute(String sql, Map param);
 
+    List<PRODUCTTEAM> getProductteamByIds(List<Long> ids);
+    List<PRODUCTTEAM> getProductteamByEntities(List<PRODUCTTEAM> entities);
 }
 
 

@@ -131,6 +131,8 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             return usertplService.searchDefault(searchContext);    
         if (iPSDEDataSet.getName().equals("MyUserTpl"))
             return usertplService.searchMyUserTpl(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyUserTplQuery"))
+            return usertplService.searchMyUserTplQuery(searchContext);    
         return null;
     }
 
@@ -141,6 +143,8 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             return usertplService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("MyUserTpl"))
             return usertplService.selectMyUserTpl(searchContext);
+        if (iPSDataQuery.getName().equals("MyUserTplQuery"))
+            return usertplService.selectMyUserTplQuery(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return usertplService.selectView(searchContext);
         return null;
@@ -306,6 +310,9 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         }
         else if (action.equals("searchMyUserTpl")) {
             return aroundDataSet("MyUserTpl", point);
+        }
+        else if (action.equals("searchMyUserTplQuery")) {
+            return aroundDataSet("MyUserTplQuery", point);
         }
         return point.proceed();
     }

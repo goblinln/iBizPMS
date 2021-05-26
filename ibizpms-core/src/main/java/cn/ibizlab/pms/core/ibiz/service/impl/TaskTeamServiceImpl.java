@@ -324,6 +324,27 @@ public class TaskTeamServiceImpl extends ServiceImpl<TaskTeamMapper, TaskTeam> i
         return true;
     }
 
+    @Override
+    public List<TaskTeam> getTaskteamByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<TaskTeam> getTaskteamByEntities(List<TaskTeam> entities) {
+        List ids =new ArrayList();
+        for(TaskTeam entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     @Override

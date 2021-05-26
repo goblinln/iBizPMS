@@ -336,6 +336,13 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
         return et;
     }
 
+    @Override
+    @Transactional
+    public Release unlinkStory(Release et) {
+        //自定义代码
+        return et;
+    }
+
 
 	@Override
     public List<Release> selectByBranch(Long id) {

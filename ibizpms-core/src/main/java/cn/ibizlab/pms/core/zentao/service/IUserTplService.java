@@ -42,10 +42,12 @@ public interface IUserTplService extends IService<UserTpl> {
     List<UserTpl> select(UserTplSearchContext context);
     List<UserTpl> selectDefault(UserTplSearchContext context);
     List<UserTpl> selectMyUserTpl(UserTplSearchContext context);
+    List<UserTpl> selectMyUserTplQuery(UserTplSearchContext context);
     List<UserTpl> selectView(UserTplSearchContext context);
 
     Page<UserTpl> searchDefault(UserTplSearchContext context);
     Page<UserTpl> searchMyUserTpl(UserTplSearchContext context);
+    Page<UserTpl> searchMyUserTplQuery(UserTplSearchContext context);
     UserTpl dynamicCall(Long key, String action, UserTpl et);
     /**
      *自定义查询SQL

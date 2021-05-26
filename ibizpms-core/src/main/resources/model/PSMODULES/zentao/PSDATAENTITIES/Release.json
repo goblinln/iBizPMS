@@ -153,6 +153,13 @@
     "logicName" : "解除关联Bug",
     "name" : "UnlinkBug",
     "userCat" : "CAT1"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "UnlinkStory",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/UnlinkStory.json",
+    "logicName" : "解除关联需求",
+    "name" : "UnlinkStory"
   } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
@@ -2557,7 +2564,7 @@
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 2,
-  "serviceAPIMode" : 1,
+  "serviceAPIMode" : 0,
   "serviceCodeName" : "Release",
   "storageMode" : 1,
   "systemTag" : "iBizPMS",

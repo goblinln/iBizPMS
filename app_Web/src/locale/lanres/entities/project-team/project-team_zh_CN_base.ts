@@ -22,6 +22,12 @@ function getLocaleResourceBase(){
 		'pm': commonLogic.appcommonhandle("项目经理",null),
 		'projectname': commonLogic.appcommonhandle("所属项目",null),
 		'root': commonLogic.appcommonhandle("项目编号",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
+		'createby': commonLogic.appcommonhandle("由谁创建",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'maingridview': {

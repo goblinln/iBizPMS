@@ -3,6 +3,16 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/Tester.json",
   "name" : "测试人员",
   "getPSSysUserRoleDatas" : [ {
+    "name" : "测试人员-ZT_USERTPL[用户模板维护（我的模板或公开模板）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEUSERROLES/UserTpl_Maintain_My.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl.json"
+    }
+  }, {
     "name" : "测试人员-ZT_TASK[当前组织（创建）]",
     "getPSDEUserRole" : {
       "modelref" : true,

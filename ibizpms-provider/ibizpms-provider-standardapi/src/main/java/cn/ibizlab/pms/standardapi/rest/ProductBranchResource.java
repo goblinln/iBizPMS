@@ -52,14 +52,13 @@ public class ProductBranchResource {
     @Lazy
     public ProductBranchMapping productbranchMapping;
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品获取产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品获取产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productbranches/{productbranch_id}")
-    public ResponseEntity<ProductBranchDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbranch_id") Long productbranch_id) {
-        Branch domain = branchService.get(productbranch_id);
-        ProductBranchDTO dto = productbranchMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @ApiOperation(value = "根据产品删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品删除产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productbranches/{productbranch_id}")
+    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbranch_id") Long productbranch_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(productbranch_id));
     }
+
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品更新产品的分支和平台信息")
@@ -71,16 +70,6 @@ public class ProductBranchResource {
 		branchService.update(domain);
         ProductBranchDTO dto = productbranchMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @ApiOperation(value = "根据产品保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品保存产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbranches/save")
-    public ResponseEntity<ProductBranchDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductBranchDTO productbranchdto) {
-        Branch domain = productbranchMapping.toDomain(productbranchdto);
-        domain.setProduct(product_id);
-        branchService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productbranchMapping.toDto(domain));
     }
 
 
@@ -101,14 +90,6 @@ public class ProductBranchResource {
 		branchService.create(domain);
         ProductBranchDTO dto = productbranchMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
-    @ApiOperation(value = "根据产品删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品删除产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productbranches/{productbranch_id}")
-    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbranch_id") Long productbranch_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(productbranch_id));
     }
 
 
@@ -135,5 +116,24 @@ public class ProductBranchResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productbranchMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @ApiOperation(value = "根据产品获取产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品获取产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productbranches/{productbranch_id}")
+    public ResponseEntity<ProductBranchDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbranch_id") Long productbranch_id) {
+        Branch domain = branchService.get(productbranch_id);
+        ProductBranchDTO dto = productbranchMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据产品保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品保存产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbranches/save")
+    public ResponseEntity<ProductBranchDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductBranchDTO productbranchdto) {
+        Branch domain = productbranchMapping.toDomain(productbranchdto);
+        domain.setProduct(product_id);
+        branchService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productbranchMapping.toDto(domain));
+    }
+
+
 }
 

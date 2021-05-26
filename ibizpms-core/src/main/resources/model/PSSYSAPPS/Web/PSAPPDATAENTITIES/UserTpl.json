@@ -179,6 +179,15 @@
       "id" : "FetchMyUserTpl"
     },
     "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyUserTplQuery",
+    "methodType" : "FETCH",
+    "name" : "MyUserTplQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyUserTplQuery"
+    },
+    "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "Title",
@@ -412,6 +421,15 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyUserTpl"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyUserTplQuery",
+    "methodType" : "FETCH",
+    "name" : "MyUserTplQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyUserTplQuery"
     },
     "builtinMethod" : false
   }, {

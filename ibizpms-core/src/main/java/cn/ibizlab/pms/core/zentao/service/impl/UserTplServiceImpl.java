@@ -246,6 +246,9 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
     public List<UserTpl> selectMyUserTpl(UserTplSearchContext context){
         return baseMapper.selectMyUserTpl(context, context.getSelectCond());
     }
+    public List<UserTpl> selectMyUserTplQuery(UserTplSearchContext context){
+        return baseMapper.selectMyUserTplQuery(context, context.getSelectCond());
+    }
     public List<UserTpl> selectView(UserTplSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }
@@ -266,6 +269,15 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
     @Override
     public Page<UserTpl> searchMyUserTpl(UserTplSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<UserTpl> pages=baseMapper.searchMyUserTpl(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<UserTpl>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我的模板（权限）
+     */
+    @Override
+    public Page<UserTpl> searchMyUserTplQuery(UserTplSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<UserTpl> pages=baseMapper.searchMyUserTplQuery(context.getPages(),context,context.getSelectCond());
         return new PageImpl<UserTpl>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

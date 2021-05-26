@@ -62,6 +62,8 @@ public interface ITaskTeamService extends IService<TaskTeam> {
      */
     boolean execute(String sql, Map param);
 
+    List<TaskTeam> getTaskteamByIds(List<Long> ids);
+    List<TaskTeam> getTaskteamByEntities(List<TaskTeam> entities);
 }
 
 

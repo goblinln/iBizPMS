@@ -1018,6 +1018,7 @@
           "name" : "ud7f4fc7",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
+            "noPrivDisplayMode" : 1,
             "caption" : "子计划",
             "codeName" : "NewSubPlan",
             "dataAccessAction" : "CHILDPLAN",
@@ -1080,6 +1081,7 @@
           "name" : "ub056033",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
+            "noPrivDisplayMode" : 1,
             "caption" : "删除",
             "codeName" : "Delete",
             "confirmMsg" : "您确认删除该计划吗？",
