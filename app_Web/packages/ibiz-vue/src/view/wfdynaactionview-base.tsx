@@ -100,7 +100,6 @@ export class WFDynaActionViewBase extends MainViewBase {
      */
     public async viewModelInit() {
         await super.viewModelInit();
-        this.editFormInstance = ModelTool.findPSControlByName('form',this.viewInstance.getPSControls()) as IPSDEForm;
     }
 
     /**

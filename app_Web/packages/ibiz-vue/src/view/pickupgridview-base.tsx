@@ -154,7 +154,7 @@ export class PickupGridViewBase extends MDViewBase {
             selectedData: this.selectedData,
         })
         Object.assign(targetCtrlParam.staticProps,{
-            gridRowActiveMode: this.viewInstance?.gridRowActiveMode,
+            gridRowActiveMode: 2,
             isSingleSelect: this.isSingleSelect,
         })
         return { targetCtrlName, targetCtrlParam, targetCtrlEvent };

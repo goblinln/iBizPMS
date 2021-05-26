@@ -219,7 +219,6 @@ export class WFDynaEditViewBase extends MainViewBase {
         }
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.editFormInstance);
         Object.assign(targetCtrlParam.staticProps, {
-            isautoload: true,
             iseditable: this.isEditable
         });
         return (

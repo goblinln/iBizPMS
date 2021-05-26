@@ -755,7 +755,7 @@ export class MainViewBase extends ViewBase {
                     batchAddPSAppViews.length == 0 ||
                     !this.context.srfparentdename ||
                     !minorPSAppDERSs ||
-                    minorPSAppDERSs.length !== 2
+                    minorPSAppDERSs.length < 2
                 ) {
                     this.$warning('批量添加需添加N:N关系','newdata');
                     return;

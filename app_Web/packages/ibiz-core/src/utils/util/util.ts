@@ -572,6 +572,22 @@ export class Util {
         })
     }
 
+    /**
+     * 改变数组的某个元素的位置，其他元素按顺序延后
+     *
+     * @static
+     * @param {*} arr 数组
+     * @param {number} oldIndex 改变之前在旧数组中索引
+     * @param {number} newIndex 改变之后再新数组中的索引
+     * @memberof Util
+     */
+    public static changeIndex(arr: any, oldIndex: number, newIndex: number){
+        // 移除原元素
+        let temp = arr.splice(oldIndex,1)[0];
+        // 插入新位置
+        arr.splice(newIndex,0,temp);
+    }
+
 }
 /**
  * 创建 UUID

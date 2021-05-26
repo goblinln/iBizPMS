@@ -480,11 +480,14 @@ export class AppGridBase extends GridControlBase {
                         : this.renderColumn(column, scope);
                 },
                 header: () => {
-                    return <span class='column-header'>{column.caption}</span>;
+                    this.allColumnsInstance; // 别删，触发表格头刷新用
+                    return <span class='column-header'>{caption}</span>;
                 },
             },
         });
     }
+
+
 
     /**
      * 绘制分页栏
@@ -562,21 +565,26 @@ export class AppGridBase extends GridControlBase {
             return <poptip transfer placement='bottom-end' class='page-column' popper-class="view-default">
                 <icon type="md-options" />
                 <div slot='content'>
-                    {this.allColumns.map((col: any) => {
-                        return (
-                            col.columnType != "UAGRIDCOLUMN" ?
-                            <div class='page-column-item'>
-                                <el-checkbox
-                                    key={col.name}
-                                    v-model={col.show}
-                                    on-change={this.onColChange.bind(this)}
-                                >
-                                    {col.label}
-                                </el-checkbox>
-                                <icon type="md-menu" />
-                            </div> : null
-                        );
-                    })}
+                    <draggable value={this.allColumns} animation={300} handle='.handle-icon' on-change={({ moved }: any) => {
+                        Util.changeIndex(this.allColumns,moved.oldIndex,moved.newIndex);
+                        Util.changeIndex(this.allColumnsInstance,moved.oldIndex,moved.newIndex);
+                    }}>
+                        {this.allColumns.map((col: any) => {
+                            return (
+                                col.columnType != "UAGRIDCOLUMN" ?
+                                <div class='page-column-item'>
+                                    <el-checkbox
+                                        key={col.name}
+                                        v-model={col.show}
+                                        on-change={this.onColChange.bind(this)}
+                                    >
+                                        {col.label}
+                                    </el-checkbox>
+                                    <icon type="md-menu handle-icon" />
+                                </div> : null
+                            );
+                        })}
+                    </draggable>
                 </div>
             </poptip>
         }

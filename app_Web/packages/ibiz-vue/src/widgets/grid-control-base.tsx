@@ -1639,6 +1639,7 @@ export class GridControlBase extends MDControlBase {
         }
         if (this.gridRowActiveMode == 1) {
             this.ctrlEvent({ controlname: this.name, action: "rowclick", data: Util.deepCopy($event) });
+            this.ctrlEvent({ controlname: this.name, action: "selectiondata", data: [Util.deepCopy($event)] });
         } else if (this.gridRowActiveMode == 2) {
             // 已选中则删除，没选中则添加
             const appDeCodeName = this.controlInstance.getPSAppDataEntity()?.codeName || '';

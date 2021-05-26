@@ -68,8 +68,11 @@
       border-left: none;
       font-size: 12px;
       color: #666666;
-      .el-table__header-wrapper{
+      .el-table__header-wrapper,.el-table__fixed-header-wrapper{
         background: #F6F6F6;
+        thead>tr th {
+          background: #F6F6F6;
+        }
       }
       tr{
         th{
@@ -172,6 +175,10 @@
         }
       }
       .el-table{
+        // 表格和固定列高度,滚动条对齐问题
+        .el-table__body-wrapper,.el-table__fixed-body-wrapper{
+          height: calc( 100% - 45px );
+        }
         // 选中和悬浮激活色
         .el-table__row.grid-selected-row,.el-table__row.hover-row{
           td{
@@ -222,6 +229,7 @@
     }
 }
 
+// 过滤项气泡
 .view-default.ivu-poptip-popper{
   min-width: 146px;
   .ivu-poptip-inner{
@@ -235,6 +243,12 @@
       color: #666666;
       font-size: 12px;
       padding-left: 6px;
+    }
+    .handle-icon{
+      margin-left: 10px;
+      &:hover{
+        cursor: move
+      };
     }
   }
 }

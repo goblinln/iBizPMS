@@ -52,7 +52,7 @@ export class DeRedirectViewBase extends MainViewBase {
       // 存在动态实例
       let splitArray: Array<any> = result.param.split(":");
       if (splitArray && (splitArray.length == 3)) {
-        let curDynaInst: DynamicInstanceConfig = (await GetModelService({ instTag: splitArray[2], instTag2: splitArray[1] })).getDynaInsConfig();
+        let curDynaInst: DynamicInstanceConfig = (await GetModelService({ instTag: splitArray[2], instTag2: splitArray[1] }))?.getDynaInsConfig();
         if (curDynaInst) {
           Object.assign(tempContext, { srfdynainstid: curDynaInst.id });
         }

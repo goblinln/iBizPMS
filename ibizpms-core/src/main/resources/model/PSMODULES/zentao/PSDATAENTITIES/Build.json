@@ -2218,7 +2218,7 @@
   }, {
     "logicName" : "Product_Create",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "CREATE",
+    "mapPSDEOPPrivName" : "BUILDMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDERS/DER1N_ZT_BUILD_ZT_PRODUCT_PRODUCT.json"
@@ -2238,7 +2238,7 @@
   }, {
     "logicName" : "Product_Delete",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "DELETE",
+    "mapPSDEOPPrivName" : "BUILDMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDERS/DER1N_ZT_BUILD_ZT_PRODUCT_PRODUCT.json"
@@ -2259,28 +2259,8 @@
     "name" : "DELETE",
     "id" : "ZTProject__DELETE"
   }, {
-    "logicName" : "Branch_Delete",
-    "mapPSDEName" : "ZT_BRANCH",
-    "mapPSDEOPPrivName" : "DELETE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDERS/DER1N_ZT_BUILD_ZT_BRANCH_BRANCH.json"
-    },
-    "name" : "DELETE",
-    "id" : "ZTBranch__DELETE"
-  }, {
     "logicName" : "管理",
     "name" : "MANAGE"
-  }, {
-    "logicName" : "Branch_Manage",
-    "mapPSDEName" : "ZT_BRANCH",
-    "mapPSDEOPPrivName" : "MANAGE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDERS/DER1N_ZT_BUILD_ZT_BRANCH_BRANCH.json"
-    },
-    "name" : "MANAGE",
-    "id" : "ZTBranch__MANAGE"
   }, {
     "logicName" : "Project_Manage",
     "mapPSDEName" : "ZT_PROJECT",
@@ -2294,7 +2274,7 @@
   }, {
     "logicName" : "Product_Manage",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "MANAGE",
+    "mapPSDEOPPrivName" : "BUILDMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDERS/DER1N_ZT_BUILD_ZT_PRODUCT_PRODUCT.json"
@@ -2311,16 +2291,6 @@
     },
     "name" : "READ",
     "id" : "ZTProduct__READ"
-  }, {
-    "logicName" : "Branch_Read",
-    "mapPSDEName" : "ZT_BRANCH",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDERS/DER1N_ZT_BUILD_ZT_BRANCH_BRANCH.json"
-    },
-    "name" : "READ",
-    "id" : "ZTBranch__READ"
   }, {
     "logicName" : "读取",
     "name" : "READ"
@@ -2340,7 +2310,7 @@
   }, {
     "logicName" : "Product_Update",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "UPDATE",
+    "mapPSDEOPPrivName" : "BUILDMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDERS/DER1N_ZT_BUILD_ZT_PRODUCT_PRODUCT.json"
@@ -2357,16 +2327,6 @@
     },
     "name" : "UPDATE",
     "id" : "ZTProject__UPDATE"
-  }, {
-    "logicName" : "Branch_Update",
-    "mapPSDEName" : "ZT_BRANCH",
-    "mapPSDEOPPrivName" : "UPDATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDERS/DER1N_ZT_BUILD_ZT_BRANCH_BRANCH.json"
-    },
-    "name" : "UPDATE",
-    "id" : "ZTBranch__UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
     "customCond" : "[ (1, '=', 1) ]",
