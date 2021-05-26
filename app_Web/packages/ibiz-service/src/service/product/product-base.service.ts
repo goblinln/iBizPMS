@@ -174,6 +174,17 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.condCache.get('view');
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/products/${_context.product}/remove`);
+    }
+    /**
      * CancelProductTop
      *
      * @param {*} [_context={}]
@@ -183,6 +194,42 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      */
     async CancelProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/products/${_context.product}/cancelproducttop`, _data);
+    }
+    /**
+     * FetchAllList
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchAllList(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchalllist`, _data);
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/products/getdraft`, _data);
+        return res;
+    }
+    /**
+     * ProductTop
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async ProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/${_context.product}/producttop`, _data);
     }
     /**
      * FetchCurDefault
@@ -226,42 +273,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return res;
     }
     /**
-     * FetchProductTeam
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async FetchProductTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/fetchproductteam`, _data);
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/products/getdraft`, _data);
-        return res;
-    }
-    /**
-     * ProductTop
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async ProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/${_context.product}/producttop`, _data);
-    }
-    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -272,17 +283,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/products/${_context.product}/update`, _data);
-    }
-    /**
-     * FetchAllList
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async FetchAllList(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/fetchalllist`, _data);
     }
     /**
      * Close
@@ -296,15 +296,15 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.http.post(`/products/${_context.product}/close`, _data);
     }
     /**
-     * Remove
+     * FetchProductTeam
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductService
      */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/products/${_context.product}/remove`);
+    async FetchProductTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchproductteam`, _data);
     }
     /**
      * Select
