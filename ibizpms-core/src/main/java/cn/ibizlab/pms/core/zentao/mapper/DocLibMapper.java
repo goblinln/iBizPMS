@@ -28,6 +28,7 @@ public interface DocLibMapper extends BaseMapper<DocLib> {
     List<DocLib> selectDefault(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
     List<DocLib> selectMyFavourites(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
     List<DocLib> selectRootModuleMuLu(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
+    List<DocLib> selectSimple(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
     List<DocLib> selectView(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
 
     Page<DocLib> searchByCustom(IPage page, @Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);

@@ -25,6 +25,14 @@
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
   },
   "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
     "id" : "srforikey",
     "hidden" : true,
     "dataType" : 25

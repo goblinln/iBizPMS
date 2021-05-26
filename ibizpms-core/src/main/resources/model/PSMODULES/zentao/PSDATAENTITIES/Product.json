@@ -4131,7 +4131,9 @@
       }
     } ],
     "roleTag" : "Product_BuildManage_Open",
-    "userDRAction" : "READ"
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_All.json",

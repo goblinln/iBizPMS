@@ -337,6 +337,9 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
     public List<DocLib> selectRootModuleMuLu(DocLibSearchContext context){
         return baseMapper.selectRootModuleMuLu(context, context.getSelectCond());
     }
+    public List<DocLib> selectSimple(DocLibSearchContext context){
+        return baseMapper.selectSimple(context, context.getSelectCond());
+    }
     public List<DocLib> selectView(DocLibSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }

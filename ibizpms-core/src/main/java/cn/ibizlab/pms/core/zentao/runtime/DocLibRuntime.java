@@ -169,6 +169,8 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
             return doclibService.selectMyFavourites(searchContext);
         if (iPSDataQuery.getName().equals("RootModuleMuLu"))
             return doclibService.selectRootModuleMuLu(searchContext);
+        if (iPSDataQuery.getName().equals("SIMPLE"))
+            return doclibService.selectSimple(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return doclibService.selectView(searchContext);
         return null;

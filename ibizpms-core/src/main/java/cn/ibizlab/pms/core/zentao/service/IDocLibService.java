@@ -52,6 +52,7 @@ public interface IDocLibService extends IService<DocLib> {
     List<DocLib> selectDefault(DocLibSearchContext context);
     List<DocLib> selectMyFavourites(DocLibSearchContext context);
     List<DocLib> selectRootModuleMuLu(DocLibSearchContext context);
+    List<DocLib> selectSimple(DocLibSearchContext context);
     List<DocLib> selectView(DocLibSearchContext context);
 
     Page<DocLib> searchByCustom(DocLibSearchContext context);

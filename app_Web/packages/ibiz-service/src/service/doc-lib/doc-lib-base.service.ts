@@ -170,6 +170,10 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         return this.condCache.get('rootModuleMuLu');
     }
 
+    protected getSimpleCond() {
+        return this.condCache.get('simple');
+    }
+
     protected getViewCond() {
         return this.condCache.get('view');
     }
