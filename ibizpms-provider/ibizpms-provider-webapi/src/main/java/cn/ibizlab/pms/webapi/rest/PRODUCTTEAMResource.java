@@ -66,7 +66,7 @@ public class PRODUCTTEAMResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@PRODUCTTEAMRuntime.test(#productteam_id,'UPDATE')")
     @ApiOperation(value = "更新产品团队", tags = {"产品团队" },  notes = "更新产品团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productteams/{productteam_id}")

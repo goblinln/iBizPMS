@@ -75,16 +75,6 @@ public class IBZTestReportHistoryServiceImpl extends ServiceImpl<IBZTestReportHi
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<IBZTestReportHistory> list) {
-        if(ibztestreporthistoryRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -96,16 +86,6 @@ public class IBZTestReportHistoryServiceImpl extends ServiceImpl<IBZTestReportHi
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<IBZTestReportHistory> list) {
-        if(ibztestreporthistoryRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -126,16 +106,6 @@ public class IBZTestReportHistoryServiceImpl extends ServiceImpl<IBZTestReportHi
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(ibztestreporthistoryRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -193,46 +163,6 @@ public class IBZTestReportHistoryServiceImpl extends ServiceImpl<IBZTestReportHi
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<IBZTestReportHistory> list) {
-        List<IBZTestReportHistory> create = new ArrayList<>();
-        List<IBZTestReportHistory> update = new ArrayList<>();
-        for (IBZTestReportHistory et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<IBZTestReportHistory> list) {
-        List<IBZTestReportHistory> create = new ArrayList<>();
-        List<IBZTestReportHistory> update = new ArrayList<>();
-        for (IBZTestReportHistory et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 	@Override

@@ -58,7 +58,7 @@ public class SysPostResource {
         SysPostDTO dto = syspostMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @ApiOperation(value = "更新岗位", tags = {"岗位" },  notes = "更新岗位")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysposts/{syspost_id}")
     @Transactional

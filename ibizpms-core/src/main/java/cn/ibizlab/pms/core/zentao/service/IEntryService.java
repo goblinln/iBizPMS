@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IEntryService extends IService<Entry> {
 
     boolean create(Entry et);
-    void createBatch(List<Entry> list);
     boolean update(Entry et);
     boolean sysUpdate(Entry et);
-    void updateBatch(List<Entry> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     Entry get(Long key);
     Entry sysGet(Long key);
     Entry getDraft(Entry et);
     boolean checkKey(Entry et);
     boolean save(Entry et);
-    void saveBatch(List<Entry> list);
     List<Entry> select(EntrySearchContext context);
     List<Entry> selectDefault(EntrySearchContext context);
     List<Entry> selectView(EntrySearchContext context);

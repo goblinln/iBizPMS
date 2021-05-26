@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IUserGroupService extends IService<UserGroup> {
 
     boolean create(UserGroup et);
-    void createBatch(List<UserGroup> list);
     boolean update(UserGroup et);
     boolean sysUpdate(UserGroup et);
-    void updateBatch(List<UserGroup> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     UserGroup get(String key);
     UserGroup sysGet(String key);
     UserGroup getDraft(UserGroup et);
     boolean checkKey(UserGroup et);
     boolean save(UserGroup et);
-    void saveBatch(List<UserGroup> list);
     List<UserGroup> select(UserGroupSearchContext context);
     List<UserGroup> selectDefault(UserGroupSearchContext context);
     List<UserGroup> selectView(UserGroupSearchContext context);

@@ -26,20 +26,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IBurnService extends IService<Burn> {
 
     boolean create(Burn et);
-    void createBatch(List<Burn> list);
     boolean update(Burn et);
     boolean sysUpdate(Burn et);
-    void updateBatch(List<Burn> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     Burn get(String key);
     Burn sysGet(String key);
     Burn getDraft(Burn et);
     boolean checkKey(Burn et);
     Burn computeBurn(Burn et);
-    boolean computeBurnBatch(List<Burn> etList);
     boolean save(Burn et);
-    void saveBatch(List<Burn> list);
     List<Burn> select(BurnSearchContext context);
     List<Burn> selectDefault(BurnSearchContext context);
     List<Burn> selectESTIMATEANDLEFT(BurnSearchContext context);

@@ -66,7 +66,7 @@ public class BranchResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@BranchRuntime.test(#branch_id,'UPDATE')")
     @ApiOperation(value = "更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "更新产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/branches/{branch_id}")

@@ -25,18 +25,14 @@ import cn.ibizlab.pms.core.ou.filter.SysDepartmentSearchContext;
 public interface ISysDepartmentService {
 
     boolean create(SysDepartment et);
-    void createBatch(List<SysDepartment> list);
     boolean update(SysDepartment et);
     boolean sysUpdate(SysDepartment et);
-    void updateBatch(List<SysDepartment> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     SysDepartment get(String key);
     SysDepartment sysGet(String key);
     SysDepartment getDraft(SysDepartment et);
     boolean checkKey(SysDepartment et);
     boolean save(SysDepartment et);
-    void saveBatch(List<SysDepartment> list);
 
     Page<SysDepartment> searchDefault(SysDepartmentSearchContext context);
     List<SysDepartment> selectByParentdeptid(String deptid);

@@ -95,17 +95,6 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<ProductPlan> list) {
-        if(productplanRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -120,17 +109,6 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<ProductPlan> list) {
-        if(productplanRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -155,20 +133,6 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(productplanRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        if(!ObjectUtils.isEmpty(projectproductService.selectByPlan(idList)))
-            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[ProjectProduct]数据，无法删除!","","");
-        if(!ObjectUtils.isEmpty(productplanService.selectByParent(idList)))
-            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[ProductPlan]数据，无法删除!","","");
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -212,28 +176,12 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean batchUnlinkBugBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            batchUnlinkBug(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public ProductPlan batchUnlinkStory(ProductPlan et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean batchUnlinkStoryBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            batchUnlinkStory(et);
-        }
-        return true;
     }
 
     @Override
@@ -246,28 +194,12 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean eeActivePlanBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            eeActivePlan(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public ProductPlan eeCancelPlan(ProductPlan et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean eeCancelPlanBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            eeCancelPlan(et);
-        }
-        return true;
     }
 
     @Override
@@ -276,28 +208,12 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean eeClosePlanBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            eeClosePlan(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public ProductPlan eeFinishPlan(ProductPlan et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean eeFinishPlanBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            eeFinishPlan(et);
-        }
-        return true;
     }
 
     @Override
@@ -306,14 +222,6 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean eePausePlanBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            eePausePlan(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -321,28 +229,12 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean eeRestartPlanBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            eeRestartPlan(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public ProductPlan eeStartPlan(ProductPlan et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean eeStartPlanBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            eeStartPlan(et);
-        }
-        return true;
     }
 
     @Override
@@ -353,26 +245,9 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
 
     @Override
     @Transactional
-    public boolean getOldPlanNameBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            getOldPlanName(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public ProductPlan importPlanTemplet(ProductPlan et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean importPlanTempletBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            importPlanTemplet(et);
-        }
-        return true;
     }
 
     @Override
@@ -381,28 +256,12 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean linkBugBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            linkBug(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public ProductPlan linkStory(ProductPlan et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean linkStoryBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            linkStory(et);
-        }
-        return true;
     }
 
     @Override
@@ -411,28 +270,11 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean linkTaskBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            linkTask(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public ProductPlan mobProductPlanCounter(ProductPlan et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean mobProductPlanCounterBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            mobProductPlanCounter(et);
-        }
-        return true;
     }
 
     @Override
@@ -454,52 +296,6 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<ProductPlan> list) {
-        if(!productplanRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<ProductPlan> create = new ArrayList<>();
-        List<ProductPlan> update = new ArrayList<>();
-        for (ProductPlan et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<ProductPlan> list) {
-        if(!productplanRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<ProductPlan> create = new ArrayList<>();
-        List<ProductPlan> update = new ArrayList<>();
-        for (ProductPlan et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
@@ -507,28 +303,12 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean unlinkBugBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            unlinkBug(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public ProductPlan unlinkStory(ProductPlan et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean unlinkStoryBatch(List<ProductPlan> etList) {
-        for(ProductPlan et : etList) {
-            unlinkStory(et);
-        }
-        return true;
     }
 
 

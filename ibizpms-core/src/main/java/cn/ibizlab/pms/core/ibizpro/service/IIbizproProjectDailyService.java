@@ -26,20 +26,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbizproProjectDailyService extends IService<IbizproProjectDaily> {
 
     boolean create(IbizproProjectDaily et);
-    void createBatch(List<IbizproProjectDaily> list);
     boolean update(IbizproProjectDaily et);
     boolean sysUpdate(IbizproProjectDaily et);
-    void updateBatch(List<IbizproProjectDaily> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     IbizproProjectDaily get(String key);
     IbizproProjectDaily sysGet(String key);
     IbizproProjectDaily getDraft(IbizproProjectDaily et);
     boolean checkKey(IbizproProjectDaily et);
     boolean save(IbizproProjectDaily et);
-    void saveBatch(List<IbizproProjectDaily> list);
     IbizproProjectDaily sumProjectDaily(IbizproProjectDaily et);
-    boolean sumProjectDailyBatch(List<IbizproProjectDaily> etList);
     List<IbizproProjectDaily> select(IbizproProjectDailySearchContext context);
     List<IbizproProjectDaily> selectDefault(IbizproProjectDailySearchContext context);
     List<IbizproProjectDaily> selectView(IbizproProjectDailySearchContext context);

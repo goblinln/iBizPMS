@@ -66,7 +66,7 @@ public class IbzProReportlyActionResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@IbzProReportlyActionRuntime.test(#ibzproreportlyaction_id,'UPDATE')")
     @ApiOperation(value = "更新汇报日志", tags = {"汇报日志" },  notes = "更新汇报日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproreportlyactions/{ibzproreportlyaction_id}")

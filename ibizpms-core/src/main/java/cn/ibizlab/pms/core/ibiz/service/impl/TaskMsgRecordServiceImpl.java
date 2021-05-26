@@ -72,16 +72,6 @@ public class TaskMsgRecordServiceImpl extends ServiceImpl<TaskMsgRecordMapper, T
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<TaskMsgRecord> list) {
-        if(taskmsgrecordRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -93,16 +83,6 @@ public class TaskMsgRecordServiceImpl extends ServiceImpl<TaskMsgRecordMapper, T
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<TaskMsgRecord> list) {
-        if(taskmsgrecordRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -123,16 +103,6 @@ public class TaskMsgRecordServiceImpl extends ServiceImpl<TaskMsgRecordMapper, T
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<String> idList) {
-        if(taskmsgrecordRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -190,46 +160,6 @@ public class TaskMsgRecordServiceImpl extends ServiceImpl<TaskMsgRecordMapper, T
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<TaskMsgRecord> list) {
-        List<TaskMsgRecord> create = new ArrayList<>();
-        List<TaskMsgRecord> update = new ArrayList<>();
-        for (TaskMsgRecord et : list) {
-            if (ObjectUtils.isEmpty(et.getTaskmsgrecordid()) || ObjectUtils.isEmpty(getById(et.getTaskmsgrecordid()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<TaskMsgRecord> list) {
-        List<TaskMsgRecord> create = new ArrayList<>();
-        List<TaskMsgRecord> update = new ArrayList<>();
-        for (TaskMsgRecord et : list) {
-            if (ObjectUtils.isEmpty(et.getTaskmsgrecordid()) || ObjectUtils.isEmpty(getById(et.getTaskmsgrecordid()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 

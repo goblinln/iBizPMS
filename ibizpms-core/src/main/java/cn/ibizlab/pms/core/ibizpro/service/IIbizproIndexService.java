@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbizproIndexService extends IService<IbizproIndex> {
 
     boolean create(IbizproIndex et);
-    void createBatch(List<IbizproIndex> list);
     boolean update(IbizproIndex et);
     boolean sysUpdate(IbizproIndex et);
-    void updateBatch(List<IbizproIndex> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     IbizproIndex get(Long key);
     IbizproIndex sysGet(Long key);
     IbizproIndex getDraft(IbizproIndex et);
     boolean checkKey(IbizproIndex et);
     boolean save(IbizproIndex et);
-    void saveBatch(List<IbizproIndex> list);
     List<IbizproIndex> select(IbizproIndexSearchContext context);
     List<IbizproIndex> selectDefault(IbizproIndexSearchContext context);
     List<IbizproIndex> selectView(IbizproIndexSearchContext context);

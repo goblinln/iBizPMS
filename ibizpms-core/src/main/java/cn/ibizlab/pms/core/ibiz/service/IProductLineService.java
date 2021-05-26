@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IProductLineService extends IService<ProductLine> {
 
     boolean create(ProductLine et);
-    void createBatch(List<ProductLine> list);
     boolean update(ProductLine et);
     boolean sysUpdate(ProductLine et);
-    void updateBatch(List<ProductLine> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     ProductLine get(String key);
     ProductLine sysGet(String key);
     ProductLine getDraft(ProductLine et);
     boolean checkKey(ProductLine et);
     boolean save(ProductLine et);
-    void saveBatch(List<ProductLine> list);
     List<ProductLine> select(ProductLineSearchContext context);
     List<ProductLine> selectDefault(ProductLineSearchContext context);
     List<ProductLine> selectView(ProductLineSearchContext context);

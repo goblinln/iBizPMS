@@ -92,17 +92,6 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Module> list) {
-        if(moduleRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -117,17 +106,6 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Module> list) {
-        if(moduleRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -148,16 +126,6 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(moduleRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -205,14 +173,6 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean fixBatch(List<Module> etList) {
-        for(Module et : etList) {
-            fix(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -233,52 +193,6 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<Module> list) {
-        if(!moduleRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<Module> create = new ArrayList<>();
-        List<Module> update = new ArrayList<>();
-        for (Module et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<Module> list) {
-        if(!moduleRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<Module> create = new ArrayList<>();
-        List<Module> update = new ArrayList<>();
-        for (Module et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 	@Override

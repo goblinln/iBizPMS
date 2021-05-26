@@ -66,7 +66,7 @@ public class IbzAgentResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "ibzagent" , versionfield = "updatedate")
     @PreAuthorize("@IbzAgentRuntime.test(#ibzagent_id,'UPDATE')")
     @ApiOperation(value = "更新代理", tags = {"代理" },  notes = "更新代理")

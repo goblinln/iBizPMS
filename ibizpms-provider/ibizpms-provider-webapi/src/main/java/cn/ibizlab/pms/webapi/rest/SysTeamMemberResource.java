@@ -58,7 +58,7 @@ public class SysTeamMemberResource {
         SysTeamMemberDTO dto = systeammemberMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @ApiOperation(value = "更新组成员", tags = {"组成员" },  notes = "更新组成员")
 	@RequestMapping(method = RequestMethod.PUT, value = "/systeammembers/{systeammember_id}")
     @Transactional

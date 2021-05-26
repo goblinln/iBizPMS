@@ -58,7 +58,7 @@ public class SysDepartmentResource {
         SysDepartmentDTO dto = sysdepartmentMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "sysdepartment" , versionfield = "updatedate")
     @ApiOperation(value = "更新部门", tags = {"部门" },  notes = "更新部门")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysdepartments/{sysdepartment_id}")

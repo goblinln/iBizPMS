@@ -66,7 +66,7 @@ public class BugStatsResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@BugStatsRuntime.test(#bugstats_id,'UPDATE')")
     @ApiOperation(value = "更新Bug统计", tags = {"Bug统计" },  notes = "更新Bug统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/bugstats/{bugstats_id}")

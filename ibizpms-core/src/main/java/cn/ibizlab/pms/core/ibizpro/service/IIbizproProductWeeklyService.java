@@ -26,20 +26,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbizproProductWeeklyService extends IService<IbizproProductWeekly> {
 
     boolean create(IbizproProductWeekly et);
-    void createBatch(List<IbizproProductWeekly> list);
     boolean update(IbizproProductWeekly et);
     boolean sysUpdate(IbizproProductWeekly et);
-    void updateBatch(List<IbizproProductWeekly> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     IbizproProductWeekly get(Long key);
     IbizproProductWeekly sysGet(Long key);
     IbizproProductWeekly getDraft(IbizproProductWeekly et);
     boolean checkKey(IbizproProductWeekly et);
     boolean save(IbizproProductWeekly et);
-    void saveBatch(List<IbizproProductWeekly> list);
     IbizproProductWeekly sumProductWeekly(IbizproProductWeekly et);
-    boolean sumProductWeeklyBatch(List<IbizproProductWeekly> etList);
     List<IbizproProductWeekly> select(IbizproProductWeeklySearchContext context);
     List<IbizproProductWeekly> selectDefault(IbizproProductWeeklySearchContext context);
     List<IbizproProductWeekly> selectView(IbizproProductWeeklySearchContext context);

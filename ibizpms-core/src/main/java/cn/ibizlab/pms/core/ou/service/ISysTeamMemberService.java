@@ -25,18 +25,14 @@ import cn.ibizlab.pms.core.ou.filter.SysTeamMemberSearchContext;
 public interface ISysTeamMemberService {
 
     boolean create(SysTeamMember et);
-    void createBatch(List<SysTeamMember> list);
     boolean update(SysTeamMember et);
     boolean sysUpdate(SysTeamMember et);
-    void updateBatch(List<SysTeamMember> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     SysTeamMember get(String key);
     SysTeamMember sysGet(String key);
     SysTeamMember getDraft(SysTeamMember et);
     boolean checkKey(SysTeamMember et);
     boolean save(SysTeamMember et);
-    void saveBatch(List<SysTeamMember> list);
 
     Page<SysTeamMember> searchDefault(SysTeamMemberSearchContext context);
     List<SysTeamMember> selectByUserid(String userid);

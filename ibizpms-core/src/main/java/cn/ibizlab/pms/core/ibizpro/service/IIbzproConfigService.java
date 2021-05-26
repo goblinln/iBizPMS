@@ -26,20 +26,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzproConfigService extends IService<IbzproConfig> {
 
     boolean create(IbzproConfig et);
-    void createBatch(List<IbzproConfig> list);
     boolean update(IbzproConfig et);
     boolean sysUpdate(IbzproConfig et);
-    void updateBatch(List<IbzproConfig> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     IbzproConfig get(String key);
     IbzproConfig sysGet(String key);
     IbzproConfig getDraft(IbzproConfig et);
     boolean checkKey(IbzproConfig et);
     IbzproConfig getSystemConfig(IbzproConfig et);
-    boolean getSystemConfigBatch(List<IbzproConfig> etList);
     boolean save(IbzproConfig et);
-    void saveBatch(List<IbzproConfig> list);
     List<IbzproConfig> select(IbzproConfigSearchContext context);
     List<IbzproConfig> selectDefault(IbzproConfigSearchContext context);
     List<IbzproConfig> selectView(IbzproConfigSearchContext context);

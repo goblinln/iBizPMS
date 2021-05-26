@@ -66,7 +66,7 @@ public class IbzReportRoleConfigResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "ibzreportroleconfig" , versionfield = "updatedate")
     @PreAuthorize("@IbzReportRoleConfigRuntime.test(#ibzreportroleconfig_id,'UPDATE')")
     @ApiOperation(value = "更新汇报角色配置", tags = {"汇报角色配置" },  notes = "更新汇报角色配置")

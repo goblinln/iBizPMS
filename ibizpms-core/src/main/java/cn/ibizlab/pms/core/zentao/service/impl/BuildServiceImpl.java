@@ -93,17 +93,6 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Build> list) {
-        if(buildRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -118,17 +107,6 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Build> list) {
-        if(buildRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -149,16 +127,6 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(buildRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -206,28 +174,12 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean linkBugBatch(List<Build> etList) {
-        for(Build et : etList) {
-            linkBug(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Build linkStory(Build et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean linkStoryBatch(List<Build> etList) {
-        for(Build et : etList) {
-            linkStory(et);
-        }
-        return true;
     }
 
     @Override
@@ -238,26 +190,9 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
 
     @Override
     @Transactional
-    public boolean mobProjectBuildCounterBatch(List<Build> etList) {
-        for(Build et : etList) {
-            mobProjectBuildCounter(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Build oneClickRelease(Build et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean oneClickReleaseBatch(List<Build> etList) {
-        for(Build et : etList) {
-            oneClickRelease(et);
-        }
-        return true;
     }
 
     @Override
@@ -279,52 +214,6 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<Build> list) {
-        if(!buildRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<Build> create = new ArrayList<>();
-        List<Build> update = new ArrayList<>();
-        for (Build et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<Build> list) {
-        if(!buildRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<Build> create = new ArrayList<>();
-        List<Build> update = new ArrayList<>();
-        for (Build et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
@@ -332,28 +221,12 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean unlinkBugBatch(List<Build> etList) {
-        for(Build et : etList) {
-            unlinkBug(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Build unlinkStory(Build et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean unlinkStoryBatch(List<Build> etList) {
-        for(Build et : etList) {
-            unlinkStory(et);
-        }
-        return true;
     }
 
 

@@ -58,7 +58,7 @@ public class SysUserRoleResource {
         SysUserRoleDTO dto = sysuserroleMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "sysuserrole" , versionfield = "updatedate")
     @ApiOperation(value = "更新用户角色关系", tags = {"用户角色关系" },  notes = "更新用户角色关系")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysuserroles/{sysuserrole_id}")

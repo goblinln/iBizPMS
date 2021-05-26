@@ -26,22 +26,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbizproProductDailyService extends IService<IbizproProductDaily> {
 
     boolean create(IbizproProductDaily et);
-    void createBatch(List<IbizproProductDaily> list);
     boolean update(IbizproProductDaily et);
     boolean sysUpdate(IbizproProductDaily et);
-    void updateBatch(List<IbizproProductDaily> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     IbizproProductDaily get(Long key);
     IbizproProductDaily sysGet(Long key);
     IbizproProductDaily getDraft(IbizproProductDaily et);
     boolean checkKey(IbizproProductDaily et);
     IbizproProductDaily manualCreateDaily(IbizproProductDaily et);
-    boolean manualCreateDailyBatch(List<IbizproProductDaily> etList);
     boolean save(IbizproProductDaily et);
-    void saveBatch(List<IbizproProductDaily> list);
     IbizproProductDaily statsProductDaily(IbizproProductDaily et);
-    boolean statsProductDailyBatch(List<IbizproProductDaily> etList);
     List<IbizproProductDaily> select(IbizproProductDailySearchContext context);
     List<IbizproProductDaily> selectDefault(IbizproProductDailySearchContext context);
     List<IbizproProductDaily> selectProductDaily(IbizproProductDailySearchContext context);

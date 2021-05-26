@@ -66,7 +66,7 @@ public class IbzReportResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "ibzreport" , versionfield = "updatedate")
     @PreAuthorize("@IbzReportRuntime.test(#ibzreport_id,'UPDATE')")
     @ApiOperation(value = "更新汇报汇总", tags = {"汇报汇总" },  notes = "更新汇报汇总")

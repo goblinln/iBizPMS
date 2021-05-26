@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IBlockService extends IService<Block> {
 
     boolean create(Block et);
-    void createBatch(List<Block> list);
     boolean update(Block et);
     boolean sysUpdate(Block et);
-    void updateBatch(List<Block> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     Block get(Long key);
     Block sysGet(Long key);
     Block getDraft(Block et);
     boolean checkKey(Block et);
     boolean save(Block et);
-    void saveBatch(List<Block> list);
     List<Block> select(BlockSearchContext context);
     List<Block> selectDefault(BlockSearchContext context);
     List<Block> selectView(BlockSearchContext context);

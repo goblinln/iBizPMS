@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzLibCaseStepsService extends IService<IbzLibCaseSteps> {
 
     boolean create(IbzLibCaseSteps et);
-    void createBatch(List<IbzLibCaseSteps> list);
     boolean update(IbzLibCaseSteps et);
     boolean sysUpdate(IbzLibCaseSteps et);
-    void updateBatch(List<IbzLibCaseSteps> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     IbzLibCaseSteps get(Long key);
     IbzLibCaseSteps sysGet(Long key);
     IbzLibCaseSteps getDraft(IbzLibCaseSteps et);
     boolean checkKey(IbzLibCaseSteps et);
     boolean save(IbzLibCaseSteps et);
-    void saveBatch(List<IbzLibCaseSteps> list);
     List<IbzLibCaseSteps> select(IbzLibCaseStepsSearchContext context);
     List<IbzLibCaseSteps> selectDefault(IbzLibCaseStepsSearchContext context);
     List<IbzLibCaseSteps> selectView(IbzLibCaseStepsSearchContext context);

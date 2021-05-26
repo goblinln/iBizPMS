@@ -80,7 +80,7 @@ public class TestReportResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'UPDATE')")
     @ApiOperation(value = "更新测试报告", tags = {"测试报告" },  notes = "更新测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testreports/{testreport_id}")

@@ -66,7 +66,7 @@ public class IbizproProductDailyResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "ibizproproductdaily" , versionfield = "updatedate")
     @PreAuthorize("@IbizproProductDailyRuntime.test(#ibizproproductdaily_id,'UPDATE')")
     @ApiOperation(value = "更新产品日报", tags = {"产品日报" },  notes = "更新产品日报")

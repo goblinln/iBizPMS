@@ -93,17 +93,6 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<TestTask> list) {
-        if(testtaskRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -118,17 +107,6 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<TestTask> list) {
-        if(testtaskRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -149,16 +127,6 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(testtaskRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -202,28 +170,12 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean activateBatch(List<TestTask> etList) {
-        for(TestTask et : etList) {
-            activate(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public TestTask block(TestTask et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean blockBatch(List<TestTask> etList) {
-        for(TestTask et : etList) {
-            block(et);
-        }
-        return true;
     }
 
     @Override
@@ -236,14 +188,6 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean closeBatch(List<TestTask> etList) {
-        for(TestTask et : etList) {
-            close(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -251,28 +195,11 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean linkCaseBatch(List<TestTask> etList) {
-        for(TestTask et : etList) {
-            linkCase(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public TestTask mobTestTaskCounter(TestTask et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean mobTestTaskCounterBatch(List<TestTask> etList) {
-        for(TestTask et : etList) {
-            mobTestTaskCounter(et);
-        }
-        return true;
     }
 
     @Override
@@ -294,52 +221,6 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<TestTask> list) {
-        if(!testtaskRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<TestTask> create = new ArrayList<>();
-        List<TestTask> update = new ArrayList<>();
-        for (TestTask et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<TestTask> list) {
-        if(!testtaskRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<TestTask> create = new ArrayList<>();
-        List<TestTask> update = new ArrayList<>();
-        for (TestTask et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
@@ -347,28 +228,12 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean startBatch(List<TestTask> etList) {
-        for(TestTask et : etList) {
-            start(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public TestTask unlinkCase(TestTask et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean unlinkCaseBatch(List<TestTask> etList) {
-        for(TestTask et : etList) {
-            unlinkCase(et);
-        }
-        return true;
     }
 
 

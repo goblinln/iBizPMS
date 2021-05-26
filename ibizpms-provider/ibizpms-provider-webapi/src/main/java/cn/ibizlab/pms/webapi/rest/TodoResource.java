@@ -66,7 +66,7 @@ public class TodoResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@TodoRuntime.test(#todo_id,'UPDATE')")
     @ApiOperation(value = "更新待办", tags = {"待办" },  notes = "更新待办")
 	@RequestMapping(method = RequestMethod.PUT, value = "/todos/{todo_id}")

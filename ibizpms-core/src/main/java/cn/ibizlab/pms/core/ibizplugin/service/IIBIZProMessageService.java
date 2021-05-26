@@ -25,24 +25,17 @@ import cn.ibizlab.pms.core.ibizplugin.filter.IBIZProMessageSearchContext;
 public interface IIBIZProMessageService {
 
     boolean create(IBIZProMessage et);
-    void createBatch(List<IBIZProMessage> list);
     boolean update(IBIZProMessage et);
     boolean sysUpdate(IBIZProMessage et);
-    void updateBatch(List<IBIZProMessage> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     IBIZProMessage get(String key);
     IBIZProMessage sysGet(String key);
     IBIZProMessage getDraft(IBIZProMessage et);
     boolean checkKey(IBIZProMessage et);
     IBIZProMessage markDone(IBIZProMessage et);
-    boolean markDoneBatch(List<IBIZProMessage> etList);
     IBIZProMessage markRead(IBIZProMessage et);
-    boolean markReadBatch(List<IBIZProMessage> etList);
     boolean save(IBIZProMessage et);
-    void saveBatch(List<IBIZProMessage> list);
     IBIZProMessage send(IBIZProMessage et);
-    boolean sendBatch(List<IBIZProMessage> etList);
 
     Page<IBIZProMessage> searchDefault(IBIZProMessageSearchContext context);
     Page<IBIZProMessage> searchUserAllMessages(IBIZProMessageSearchContext context);

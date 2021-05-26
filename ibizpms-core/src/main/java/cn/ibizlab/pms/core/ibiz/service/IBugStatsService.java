@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IBugStatsService extends IService<BugStats> {
 
     boolean create(BugStats et);
-    void createBatch(List<BugStats> list);
     boolean update(BugStats et);
     boolean sysUpdate(BugStats et);
-    void updateBatch(List<BugStats> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     BugStats get(Long key);
     BugStats sysGet(Long key);
     BugStats getDraft(BugStats et);
     boolean checkKey(BugStats et);
     boolean save(BugStats et);
-    void saveBatch(List<BugStats> list);
     List<BugStats> select(BugStatsSearchContext context);
     List<BugStats> selectBugCountInResolution(BugStatsSearchContext context);
     List<BugStats> selectBugResolvedBy(BugStatsSearchContext context);

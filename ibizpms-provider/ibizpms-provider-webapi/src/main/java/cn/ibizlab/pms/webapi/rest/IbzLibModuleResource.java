@@ -66,7 +66,7 @@ public class IbzLibModuleResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@IbzLibModuleRuntime.test(#ibzlibmodule_id,'UPDATE')")
     @ApiOperation(value = "更新用例库模块", tags = {"用例库模块" },  notes = "更新用例库模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibmodules/{ibzlibmodule_id}")
@@ -192,6 +192,8 @@ public class IbzLibModuleResource {
         IbzLibModule domain = ibzlibmoduleMapping.toDomain(ibzlibmoduledto);
         domain.setRoot(ibzlib_id);
 		ibzlibmoduleService.create(domain);
+        if(!ibzlibmoduleRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         IbzLibModuleDTO dto = ibzlibmoduleMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -205,6 +207,8 @@ public class IbzLibModuleResource {
         domain.setRoot(ibzlib_id);
         domain.setId(ibzlibmodule_id);
 		ibzlibmoduleService.update(domain);
+        if(!ibzlibmoduleRuntime.test(domain.getId(),"UPDATE"))
+            throw new RuntimeException("无权限操作");
         IbzLibModuleDTO dto = ibzlibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

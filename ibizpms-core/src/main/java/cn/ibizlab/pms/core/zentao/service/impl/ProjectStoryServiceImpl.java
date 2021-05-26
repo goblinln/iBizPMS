@@ -81,16 +81,6 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<ProjectStory> list) {
-        if(projectstoryRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -102,16 +92,6 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<ProjectStory> list) {
-        if(projectstoryRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -132,16 +112,6 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<String> idList) {
-        if(projectstoryRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -199,46 +169,6 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<ProjectStory> list) {
-        List<ProjectStory> create = new ArrayList<>();
-        List<ProjectStory> update = new ArrayList<>();
-        for (ProjectStory et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<ProjectStory> list) {
-        List<ProjectStory> create = new ArrayList<>();
-        List<ProjectStory> update = new ArrayList<>();
-        for (ProjectStory et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 	@Override

@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ISysUpdateFeaturesService extends IService<SysUpdateFeatures> {
 
     boolean create(SysUpdateFeatures et);
-    void createBatch(List<SysUpdateFeatures> list);
     boolean update(SysUpdateFeatures et);
     boolean sysUpdate(SysUpdateFeatures et);
-    void updateBatch(List<SysUpdateFeatures> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     SysUpdateFeatures get(String key);
     SysUpdateFeatures sysGet(String key);
     SysUpdateFeatures getDraft(SysUpdateFeatures et);
     boolean checkKey(SysUpdateFeatures et);
     boolean save(SysUpdateFeatures et);
-    void saveBatch(List<SysUpdateFeatures> list);
     List<SysUpdateFeatures> select(SysUpdateFeaturesSearchContext context);
     List<SysUpdateFeatures> selectDefault(SysUpdateFeaturesSearchContext context);
     List<SysUpdateFeatures> selectView(SysUpdateFeaturesSearchContext context);

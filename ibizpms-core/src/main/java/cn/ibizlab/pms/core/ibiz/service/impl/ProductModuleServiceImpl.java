@@ -83,19 +83,6 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<ProductModule> list) {
-        if(productmoduleRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        for (ProductModule et : list) {
-            getProxyService().save(et);
-        }
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -110,19 +97,6 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<ProductModule> list) {
-        if(productmoduleRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        for (ProductModule et : list) {
-            getProxyService().update(et);
-        }
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -143,16 +117,6 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(productmoduleRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -202,15 +166,6 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
 
     @Override
     @Transactional
-    public boolean fixBatch(List<ProductModule> etList) {
-        for(ProductModule et : etList) {
-            fix(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public boolean save(ProductModule et) {
         if(!saveOrUpdate(et)) {
             return false;
@@ -228,66 +183,12 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<ProductModule> list) {
-        if(!productmoduleRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<ProductModule> create = new ArrayList<>();
-        List<ProductModule> update = new ArrayList<>();
-        for (ProductModule et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<ProductModule> list) {
-        if(!productmoduleRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<ProductModule> create = new ArrayList<>();
-        List<ProductModule> update = new ArrayList<>();
-        for (ProductModule et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
     public ProductModule syncFromIBIZ(ProductModule et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean syncFromIBIZBatch(List<ProductModule> etList) {
-        for(ProductModule et : etList) {
-            syncFromIBIZ(et);
-        }
-        return true;
     }
 
 

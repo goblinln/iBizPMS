@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IGroupPrivService extends IService<GroupPriv> {
 
     boolean create(GroupPriv et);
-    void createBatch(List<GroupPriv> list);
     boolean update(GroupPriv et);
     boolean sysUpdate(GroupPriv et);
-    void updateBatch(List<GroupPriv> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     GroupPriv get(String key);
     GroupPriv sysGet(String key);
     GroupPriv getDraft(GroupPriv et);
     boolean checkKey(GroupPriv et);
     boolean save(GroupPriv et);
-    void saveBatch(List<GroupPriv> list);
     List<GroupPriv> select(GroupPrivSearchContext context);
     List<GroupPriv> selectDefault(GroupPrivSearchContext context);
     List<GroupPriv> selectView(GroupPrivSearchContext context);

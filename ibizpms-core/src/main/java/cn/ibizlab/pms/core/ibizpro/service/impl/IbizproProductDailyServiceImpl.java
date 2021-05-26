@@ -78,17 +78,6 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<IbizproProductDaily> list) {
-        if(ibizproproductdailyRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -103,17 +92,6 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<IbizproProductDaily> list) {
-        if(ibizproproductdailyRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -134,16 +112,6 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(ibizproproductdailyRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -191,14 +159,6 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean manualCreateDailyBatch(List<IbizproProductDaily> etList) {
-        for(IbizproProductDaily et : etList) {
-            manualCreateDaily(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -219,66 +179,12 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<IbizproProductDaily> list) {
-        if(!ibizproproductdailyRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<IbizproProductDaily> create = new ArrayList<>();
-        List<IbizproProductDaily> update = new ArrayList<>();
-        for (IbizproProductDaily et : list) {
-            if (ObjectUtils.isEmpty(et.getIbizproproductdailyid()) || ObjectUtils.isEmpty(getById(et.getIbizproproductdailyid()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<IbizproProductDaily> list) {
-        if(!ibizproproductdailyRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<IbizproProductDaily> create = new ArrayList<>();
-        List<IbizproProductDaily> update = new ArrayList<>();
-        for (IbizproProductDaily et : list) {
-            if (ObjectUtils.isEmpty(et.getIbizproproductdailyid()) || ObjectUtils.isEmpty(getById(et.getIbizproproductdailyid()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
     public IbizproProductDaily statsProductDaily(IbizproProductDaily et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean statsProductDailyBatch(List<IbizproProductDaily> etList) {
-        for(IbizproProductDaily et : etList) {
-            statsProductDaily(et);
-        }
-        return true;
     }
 
 

@@ -72,16 +72,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<User> list) {
-        if(userRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -93,16 +83,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<User> list) {
-        if(userRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -123,16 +103,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(userRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -197,60 +167,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<User> list) {
-        List<User> create = new ArrayList<>();
-        List<User> update = new ArrayList<>();
-        for (User et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<User> list) {
-        List<User> create = new ArrayList<>();
-        List<User> update = new ArrayList<>();
-        for (User et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
     public User syncAccount(User et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean syncAccountBatch(List<User> etList) {
-        for(User et : etList) {
-            syncAccount(et);
-        }
-        return true;
     }
 
 

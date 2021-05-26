@@ -58,7 +58,7 @@ public class PSSysSFPubResource {
         PSSysSFPubDTO dto = pssyssfpubMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "pssyssfpub" , versionfield = "updatedate")
     @ApiOperation(value = "更新后台服务架构", tags = {"后台服务架构" },  notes = "更新后台服务架构")
 	@RequestMapping(method = RequestMethod.PUT, value = "/pssyssfpubs/{pssyssfpub_id}")

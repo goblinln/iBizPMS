@@ -81,18 +81,6 @@ public class IBZProProjectActionServiceImpl extends ServiceImpl<IBZProProjectAct
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<IBZProProjectAction> list) {
-        if(ibzproprojectactionRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        for (IBZProProjectAction et : list) {
-            getProxyService().save(et);
-        }
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -107,16 +95,6 @@ public class IBZProProjectActionServiceImpl extends ServiceImpl<IBZProProjectAct
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<IBZProProjectAction> list) {
-        if(ibzproprojectactionRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -138,16 +116,6 @@ public class IBZProProjectActionServiceImpl extends ServiceImpl<IBZProProjectAct
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(ibzproprojectactionRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -195,26 +163,9 @@ public class IBZProProjectActionServiceImpl extends ServiceImpl<IBZProProjectAct
 
     @Override
     @Transactional
-    public boolean commentBatch(List<IBZProProjectAction> etList) {
-        for(IBZProProjectAction et : etList) {
-            comment(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public IBZProProjectAction createHis(IBZProProjectAction et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean createHisBatch(List<IBZProProjectAction> etList) {
-        for(IBZProProjectAction et : etList) {
-            createHis(et);
-        }
-        return true;
     }
 
     @Override
@@ -223,28 +174,12 @@ public class IBZProProjectActionServiceImpl extends ServiceImpl<IBZProProjectAct
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean editCommentBatch(List<IBZProProjectAction> etList) {
-        for(IBZProProjectAction et : etList) {
-            editComment(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public IBZProProjectAction managePmsEe(IBZProProjectAction et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean managePmsEeBatch(List<IBZProProjectAction> etList) {
-        for(IBZProProjectAction et : etList) {
-            managePmsEe(et);
-        }
-        return true;
     }
 
     @Override
@@ -266,60 +201,12 @@ public class IBZProProjectActionServiceImpl extends ServiceImpl<IBZProProjectAct
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<IBZProProjectAction> list) {
-        List<IBZProProjectAction> create = new ArrayList<>();
-        List<IBZProProjectAction> update = new ArrayList<>();
-        for (IBZProProjectAction et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<IBZProProjectAction> list) {
-        List<IBZProProjectAction> create = new ArrayList<>();
-        List<IBZProProjectAction> update = new ArrayList<>();
-        for (IBZProProjectAction et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
     public IBZProProjectAction sendMarkDone(IBZProProjectAction et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean sendMarkDoneBatch(List<IBZProProjectAction> etList) {
-        for(IBZProProjectAction et : etList) {
-            sendMarkDone(et);
-        }
-        return true;
     }
 
     @Override
@@ -328,28 +215,12 @@ public class IBZProProjectActionServiceImpl extends ServiceImpl<IBZProProjectAct
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean sendTodoBatch(List<IBZProProjectAction> etList) {
-        for(IBZProProjectAction et : etList) {
-            sendTodo(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public IBZProProjectAction sendToread(IBZProProjectAction et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean sendToreadBatch(List<IBZProProjectAction> etList) {
-        for(IBZProProjectAction et : etList) {
-            sendToread(et);
-        }
-        return true;
     }
 
 

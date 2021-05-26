@@ -66,7 +66,7 @@ public class ReleaseResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@ReleaseRuntime.test(#release_id,'UPDATE')")
     @ApiOperation(value = "更新发布", tags = {"发布" },  notes = "更新发布")
 	@RequestMapping(method = RequestMethod.PUT, value = "/releases/{release_id}")

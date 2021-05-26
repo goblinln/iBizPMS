@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IRepoService extends IService<Repo> {
 
     boolean create(Repo et);
-    void createBatch(List<Repo> list);
     boolean update(Repo et);
     boolean sysUpdate(Repo et);
-    void updateBatch(List<Repo> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     Repo get(Long key);
     Repo sysGet(Long key);
     Repo getDraft(Repo et);
     boolean checkKey(Repo et);
     boolean save(Repo et);
-    void saveBatch(List<Repo> list);
     List<Repo> select(RepoSearchContext context);
     List<Repo> selectDefault(RepoSearchContext context);
     List<Repo> selectView(RepoSearchContext context);

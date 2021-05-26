@@ -59,6 +59,8 @@ public class IbzLibCaseStepsResource {
         IbzLibCaseSteps domain = ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdto);
         domain.setIbizcase(ibzcase_id);
 		ibzlibcasestepsService.create(domain);
+        if(!ibzlibcasestepsRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         IbzLibCaseStepsDTO dto = ibzlibcasestepsMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -72,6 +74,8 @@ public class IbzLibCaseStepsResource {
         domain.setIbizcase(ibzcase_id);
         domain.setId(ibzlibcasesteps_id);
 		ibzlibcasestepsService.update(domain);
+        if(!ibzlibcasestepsRuntime.test(domain.getId(),"UPDATE"))
+            throw new RuntimeException("无权限操作");
         IbzLibCaseStepsDTO dto = ibzlibcasestepsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -150,6 +154,8 @@ public class IbzLibCaseStepsResource {
         IbzLibCaseSteps domain = ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdto);
         domain.setIbizcase(ibzcase_id);
 		ibzlibcasestepsService.create(domain);
+        if(!ibzlibcasestepsRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         IbzLibCaseStepsDTO dto = ibzlibcasestepsMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -163,6 +169,8 @@ public class IbzLibCaseStepsResource {
         domain.setIbizcase(ibzcase_id);
         domain.setId(ibzlibcasesteps_id);
 		ibzlibcasestepsService.update(domain);
+        if(!ibzlibcasestepsRuntime.test(domain.getId(),"UPDATE"))
+            throw new RuntimeException("无权限操作");
         IbzLibCaseStepsDTO dto = ibzlibcasestepsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

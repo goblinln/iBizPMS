@@ -26,22 +26,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbizproProductMonthlyService extends IService<IbizproProductMonthly> {
 
     boolean create(IbizproProductMonthly et);
-    void createBatch(List<IbizproProductMonthly> list);
     boolean update(IbizproProductMonthly et);
     boolean sysUpdate(IbizproProductMonthly et);
-    void updateBatch(List<IbizproProductMonthly> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     IbizproProductMonthly get(Long key);
     IbizproProductMonthly sysGet(Long key);
     IbizproProductMonthly getDraft(IbizproProductMonthly et);
     boolean checkKey(IbizproProductMonthly et);
     IbizproProductMonthly manualCreateMonthly(IbizproProductMonthly et);
-    boolean manualCreateMonthlyBatch(List<IbizproProductMonthly> etList);
     boolean save(IbizproProductMonthly et);
-    void saveBatch(List<IbizproProductMonthly> list);
     IbizproProductMonthly statsProductMonthly(IbizproProductMonthly et);
-    boolean statsProductMonthlyBatch(List<IbizproProductMonthly> etList);
     List<IbizproProductMonthly> select(IbizproProductMonthlySearchContext context);
     List<IbizproProductMonthly> selectDefault(IbizproProductMonthlySearchContext context);
     List<IbizproProductMonthly> selectView(IbizproProductMonthlySearchContext context);

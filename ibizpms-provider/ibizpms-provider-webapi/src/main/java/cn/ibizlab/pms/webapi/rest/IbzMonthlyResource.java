@@ -63,7 +63,7 @@ public class IbzMonthlyResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "ibzmonthly" , versionfield = "updatedate")
     @ApiOperation(value = "更新月报", tags = {"月报" },  notes = "更新月报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzmonthlies/{ibzmonthly_id}")

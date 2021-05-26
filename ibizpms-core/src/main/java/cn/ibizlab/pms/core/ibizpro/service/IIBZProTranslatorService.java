@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIBZProTranslatorService extends IService<IBZProTranslator> {
 
     boolean create(IBZProTranslator et);
-    void createBatch(List<IBZProTranslator> list);
     boolean update(IBZProTranslator et);
     boolean sysUpdate(IBZProTranslator et);
-    void updateBatch(List<IBZProTranslator> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     IBZProTranslator get(String key);
     IBZProTranslator sysGet(String key);
     IBZProTranslator getDraft(IBZProTranslator et);
     boolean checkKey(IBZProTranslator et);
     boolean save(IBZProTranslator et);
-    void saveBatch(List<IBZProTranslator> list);
     List<IBZProTranslator> select(IBZProTranslatorSearchContext context);
     List<IBZProTranslator> selectDefault(IBZProTranslatorSearchContext context);
     List<IBZProTranslator> selectSimple(IBZProTranslatorSearchContext context);

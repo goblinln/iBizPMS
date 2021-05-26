@@ -58,7 +58,7 @@ public class IBIZProTagResource {
         IBIZProTagDTO dto = ibizprotagMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @ApiOperation(value = "更新标签", tags = {"标签" },  notes = "更新标签")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizprotags/{ibizprotag_id}")
     @Transactional

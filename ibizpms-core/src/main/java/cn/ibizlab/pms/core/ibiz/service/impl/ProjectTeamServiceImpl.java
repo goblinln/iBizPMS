@@ -78,17 +78,6 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<ProjectTeam> list) {
-        if(projectteamRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -103,17 +92,6 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<ProjectTeam> list) {
-        if(projectteamRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -134,16 +112,6 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(projectteamRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -190,14 +158,6 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
     public ProjectTeam getUserRole(ProjectTeam et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean getUserRoleBatch(List<ProjectTeam> etList) {
-        for(ProjectTeam et : etList) {
-            getUserRole(et);
-        }
-        return true;
     }
 
     @Override

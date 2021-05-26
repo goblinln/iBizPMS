@@ -26,20 +26,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzPlanTempletService extends IService<IbzPlanTemplet> {
 
     boolean create(IbzPlanTemplet et);
-    void createBatch(List<IbzPlanTemplet> list);
     boolean update(IbzPlanTemplet et);
     boolean sysUpdate(IbzPlanTemplet et);
-    void updateBatch(List<IbzPlanTemplet> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     IbzPlanTemplet get(String key);
     IbzPlanTemplet sysGet(String key);
     IbzPlanTemplet getDraft(IbzPlanTemplet et);
     boolean checkKey(IbzPlanTemplet et);
     IbzPlanTemplet getPlan(IbzPlanTemplet et);
-    boolean getPlanBatch(List<IbzPlanTemplet> etList);
     boolean save(IbzPlanTemplet et);
-    void saveBatch(List<IbzPlanTemplet> list);
     List<IbzPlanTemplet> select(IbzPlanTempletSearchContext context);
     List<IbzPlanTemplet> selectCurUserTemplet(IbzPlanTempletSearchContext context);
     List<IbzPlanTemplet> selectDefault(IbzPlanTempletSearchContext context);

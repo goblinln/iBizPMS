@@ -58,7 +58,7 @@ public class IBIZProMessageResource {
         IBIZProMessageDTO dto = ibizpromessageMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @ApiOperation(value = "更新消息", tags = {"消息" },  notes = "更新消息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizpromessages/{ibizpromessage_id}")
     @Transactional

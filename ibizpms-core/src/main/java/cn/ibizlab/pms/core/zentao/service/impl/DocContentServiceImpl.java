@@ -75,16 +75,6 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<DocContent> list) {
-        if(doccontentRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -96,16 +86,6 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<DocContent> list) {
-        if(doccontentRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -126,16 +106,6 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(doccontentRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -193,46 +163,6 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<DocContent> list) {
-        List<DocContent> create = new ArrayList<>();
-        List<DocContent> update = new ArrayList<>();
-        for (DocContent et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<DocContent> list) {
-        List<DocContent> create = new ArrayList<>();
-        List<DocContent> update = new ArrayList<>();
-        for (DocContent et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 	@Override

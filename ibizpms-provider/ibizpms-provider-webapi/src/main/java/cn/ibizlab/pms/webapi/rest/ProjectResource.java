@@ -72,7 +72,7 @@ public class ProjectResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "更新项目", tags = {"项目" },  notes = "更新项目")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}")

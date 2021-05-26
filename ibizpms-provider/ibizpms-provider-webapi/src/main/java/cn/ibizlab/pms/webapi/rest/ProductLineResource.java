@@ -66,7 +66,7 @@ public class ProductLineResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "productline" , versionfield = "updatedate")
     @PreAuthorize("@ProductLineRuntime.test(#productline_id,'UPDATE')")
     @ApiOperation(value = "更新产品线（废弃）", tags = {"产品线（废弃）" },  notes = "更新产品线（废弃）")

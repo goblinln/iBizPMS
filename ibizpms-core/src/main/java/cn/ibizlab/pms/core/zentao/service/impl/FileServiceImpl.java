@@ -75,16 +75,6 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<File> list) {
-        if(fileRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -96,16 +86,6 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<File> list) {
-        if(fileRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -126,16 +106,6 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(fileRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -193,46 +163,6 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<File> list) {
-        List<File> create = new ArrayList<>();
-        List<File> update = new ArrayList<>();
-        for (File et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<File> list) {
-        List<File> create = new ArrayList<>();
-        List<File> update = new ArrayList<>();
-        for (File et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
@@ -240,28 +170,12 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean updateObjectIDBatch(List<File> etList) {
-        for(File et : etList) {
-            updateObjectID(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public File updateObjectIDForPmsEe(File et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean updateObjectIDForPmsEeBatch(List<File> etList) {
-        for(File et : etList) {
-            updateObjectIDForPmsEe(et);
-        }
-        return true;
     }
 
 

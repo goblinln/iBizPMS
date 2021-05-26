@@ -116,17 +116,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Story> list) {
-        if(storyRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -150,17 +139,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Story> list) {
-        if(storyRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -184,16 +162,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(storyRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -240,28 +208,12 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean activateBatch(List<Story> etList) {
-        for(Story et : etList) {
-            activate(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Story allPush(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean allPushBatch(List<Story> etList) {
-        for(Story et : etList) {
-            allPush(et);
-        }
-        return true;
     }
 
     @Override
@@ -270,28 +222,12 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean assignToBatch(List<Story> etList) {
-        for(Story et : etList) {
-            assignTo(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Story batchAssignTo(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean batchAssignToBatch(List<Story> etList) {
-        for(Story et : etList) {
-            batchAssignTo(et);
-        }
-        return true;
     }
 
     @Override
@@ -300,28 +236,12 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean batchChangeBranchBatch(List<Story> etList) {
-        for(Story et : etList) {
-            batchChangeBranch(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Story batchChangeModule(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean batchChangeModuleBatch(List<Story> etList) {
-        for(Story et : etList) {
-            batchChangeModule(et);
-        }
-        return true;
     }
 
     @Override
@@ -330,28 +250,12 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean batchChangePlanBatch(List<Story> etList) {
-        for(Story et : etList) {
-            batchChangePlan(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Story batchChangeStage(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean batchChangeStageBatch(List<Story> etList) {
-        for(Story et : etList) {
-            batchChangeStage(et);
-        }
-        return true;
     }
 
     @Override
@@ -360,28 +264,12 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean batchCloseBatch(List<Story> etList) {
-        for(Story et : etList) {
-            batchClose(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Story batchReview(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean batchReviewBatch(List<Story> etList) {
-        for(Story et : etList) {
-            batchReview(et);
-        }
-        return true;
     }
 
     @Override
@@ -390,28 +278,12 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean batchUnlinkStoryBatch(List<Story> etList) {
-        for(Story et : etList) {
-            batchUnlinkStory(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Story bugToStory(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean bugToStoryBatch(List<Story> etList) {
-        for(Story et : etList) {
-            bugToStory(et);
-        }
-        return true;
     }
 
     @Override
@@ -420,14 +292,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean buildBatchUnlinkStoryBatch(List<Story> etList) {
-        for(Story et : etList) {
-            buildBatchUnlinkStory(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -435,28 +299,12 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean buildLinkStoryBatch(List<Story> etList) {
-        for(Story et : etList) {
-            buildLinkStory(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Story buildUnlinkStory(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean buildUnlinkStoryBatch(List<Story> etList) {
-        for(Story et : etList) {
-            buildUnlinkStory(et);
-        }
-        return true;
     }
 
     @Override
@@ -467,26 +315,9 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
 
     @Override
     @Transactional
-    public boolean buildUnlinkStorysBatch(List<Story> etList) {
-        for(Story et : etList) {
-            buildUnlinkStorys(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Story change(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean changeBatch(List<Story> etList) {
-        for(Story et : etList) {
-            change(et);
-        }
-        return true;
     }
 
     @Override
@@ -499,14 +330,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean closeBatch(List<Story> etList) {
-        for(Story et : etList) {
-            close(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -514,28 +337,12 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean createTasksBatch(List<Story> etList) {
-        for(Story et : etList) {
-            createTasks(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Story getStorySpec(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean getStorySpecBatch(List<Story> etList) {
-        for(Story et : etList) {
-            getStorySpec(et);
-        }
-        return true;
     }
 
     @Override
@@ -546,26 +353,9 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
 
     @Override
     @Transactional
-    public boolean getStorySpecsBatch(List<Story> etList) {
-        for(Story et : etList) {
-            getStorySpecs(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Story importPlanStories(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean importPlanStoriesBatch(List<Story> etList) {
-        for(Story et : etList) {
-            importPlanStories(et);
-        }
-        return true;
     }
 
     @Override
@@ -574,28 +364,12 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean linkStoryBatch(List<Story> etList) {
-        for(Story et : etList) {
-            linkStory(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Story projectBatchUnlinkStory(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean projectBatchUnlinkStoryBatch(List<Story> etList) {
-        for(Story et : etList) {
-            projectBatchUnlinkStory(et);
-        }
-        return true;
     }
 
     @Override
@@ -604,28 +378,12 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean projectLinkStoryBatch(List<Story> etList) {
-        for(Story et : etList) {
-            projectLinkStory(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Story projectUnlinkStory(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean projectUnlinkStoryBatch(List<Story> etList) {
-        for(Story et : etList) {
-            projectUnlinkStory(et);
-        }
-        return true;
     }
 
     @Override
@@ -636,26 +394,9 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
 
     @Override
     @Transactional
-    public boolean projectUnlinkStorysBatch(List<Story> etList) {
-        for(Story et : etList) {
-            projectUnlinkStorys(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Story push(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean pushBatch(List<Story> etList) {
-        for(Story et : etList) {
-            push(et);
-        }
-        return true;
     }
 
     @Override
@@ -664,28 +405,12 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean releaseBatchUnlinkStoryBatch(List<Story> etList) {
-        for(Story et : etList) {
-            releaseBatchUnlinkStory(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Story releaseLinkStory(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean releaseLinkStoryBatch(List<Story> etList) {
-        for(Story et : etList) {
-            releaseLinkStory(et);
-        }
-        return true;
     }
 
     @Override
@@ -694,14 +419,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean releaseUnlinkStoryBatch(List<Story> etList) {
-        for(Story et : etList) {
-            releaseUnlinkStory(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -709,28 +426,12 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean resetReviewedByBatch(List<Story> etList) {
-        for(Story et : etList) {
-            resetReviewedBy(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Story review(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean reviewBatch(List<Story> etList) {
-        for(Story et : etList) {
-            review(et);
-        }
-        return true;
     }
 
     @Override
@@ -805,14 +506,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean sendMessageBatch(List<Story> etList) {
-        for(Story et : etList) {
-            sendMessage(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -820,28 +513,12 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean sendMsgPreProcessBatch(List<Story> etList) {
-        for(Story et : etList) {
-            sendMsgPreProcess(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Story setStage(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean setStageBatch(List<Story> etList) {
-        for(Story et : etList) {
-            setStage(et);
-        }
-        return true;
     }
 
     @Override
@@ -852,26 +529,8 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
 
     @Override
     @Transactional
-    public boolean storyFavoritesBatch(List<Story> etList) {
-        for(Story et : etList) {
-            storyFavorites(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Story storyNFavorites(Story et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean storyNFavoritesBatch(List<Story> etList) {
-        for(Story et : etList) {
-            storyNFavorites(et);
-        }
-        return true;
     }
 
     @Override
@@ -880,28 +539,12 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean syncFromIbizBatch(List<Story> etList) {
-        for(Story et : etList) {
-            syncFromIbiz(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Story unlinkStory(Story et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean unlinkStoryBatch(List<Story> etList) {
-        for(Story et : etList) {
-            unlinkStory(et);
-        }
-        return true;
     }
 
 

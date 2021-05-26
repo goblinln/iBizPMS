@@ -26,21 +26,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IUserService extends IService<User> {
 
     boolean create(User et);
-    void createBatch(List<User> list);
     boolean update(User et);
     boolean sysUpdate(User et);
-    void updateBatch(List<User> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     User get(Long key);
     User sysGet(Long key);
     User getDraft(User et);
     boolean checkKey(User et);
     User getByCommiter(User et);
     boolean save(User et);
-    void saveBatch(List<User> list);
     User syncAccount(User et);
-    boolean syncAccountBatch(List<User> etList);
     List<User> select(UserSearchContext context);
     List<User> selectBugUser(UserSearchContext context);
     List<User> selectDefault(UserSearchContext context);

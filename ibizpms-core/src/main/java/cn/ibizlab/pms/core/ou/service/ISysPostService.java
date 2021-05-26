@@ -25,18 +25,14 @@ import cn.ibizlab.pms.core.ou.filter.SysPostSearchContext;
 public interface ISysPostService {
 
     boolean create(SysPost et);
-    void createBatch(List<SysPost> list);
     boolean update(SysPost et);
     boolean sysUpdate(SysPost et);
-    void updateBatch(List<SysPost> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     SysPost get(String key);
     SysPost sysGet(String key);
     SysPost getDraft(SysPost et);
     boolean checkKey(SysPost et);
     boolean save(SysPost et);
-    void saveBatch(List<SysPost> list);
 
     Page<SysPost> searchDefault(SysPostSearchContext context);
     SysPost dynamicCall(String key, String action, SysPost et);

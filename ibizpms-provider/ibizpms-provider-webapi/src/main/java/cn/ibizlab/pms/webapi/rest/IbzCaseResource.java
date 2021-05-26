@@ -72,7 +72,7 @@ public class IbzCaseResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@IbzCaseRuntime.test(#ibzcase_id,'UPDATE')")
     @ApiOperation(value = "更新测试用例", tags = {"测试用例" },  notes = "更新测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcases/{ibzcase_id}")
@@ -174,6 +174,8 @@ public class IbzCaseResource {
         IbzCase domain = ibzcaseMapping.toDomain(ibzcasedto);
         domain.setLib(ibzlib_id);
 		ibzcaseService.create(domain);
+        if(!ibzcaseRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -187,6 +189,8 @@ public class IbzCaseResource {
         domain.setLib(ibzlib_id);
         domain.setId(ibzcase_id);
 		ibzcaseService.update(domain);
+        if(!ibzcaseRuntime.test(domain.getId(),"UPDATE"))
+            throw new RuntimeException("无权限操作");
         IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

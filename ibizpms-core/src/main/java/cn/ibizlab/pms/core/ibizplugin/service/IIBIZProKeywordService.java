@@ -25,18 +25,14 @@ import cn.ibizlab.pms.core.ibizplugin.filter.IBIZProKeywordSearchContext;
 public interface IIBIZProKeywordService {
 
     boolean create(IBIZProKeyword et);
-    void createBatch(List<IBIZProKeyword> list);
     boolean update(IBIZProKeyword et);
     boolean sysUpdate(IBIZProKeyword et);
-    void updateBatch(List<IBIZProKeyword> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     IBIZProKeyword get(String key);
     IBIZProKeyword sysGet(String key);
     IBIZProKeyword getDraft(IBIZProKeyword et);
     boolean checkKey(IBIZProKeyword et);
     boolean save(IBIZProKeyword et);
-    void saveBatch(List<IBIZProKeyword> list);
 
     Page<IBIZProKeyword> searchDefault(IBIZProKeywordSearchContext context);
     IBIZProKeyword dynamicCall(String key, String action, IBIZProKeyword et);

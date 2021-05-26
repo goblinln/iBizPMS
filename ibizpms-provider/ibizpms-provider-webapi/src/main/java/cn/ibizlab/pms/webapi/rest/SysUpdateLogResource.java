@@ -66,7 +66,7 @@ public class SysUpdateLogResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "sysupdatelog" , versionfield = "updatedate")
     @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id,'UPDATE')")
     @ApiOperation(value = "更新更新日志", tags = {"更新日志" },  notes = "更新更新日志")

@@ -110,17 +110,6 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Task> list) {
-        if(taskRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -141,17 +130,6 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Task> list) {
-        if(taskRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -175,17 +153,6 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(taskRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        taskService.removeByParent(idList);
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -231,14 +198,6 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean activateBatch(List<Task> etList) {
-        for(Task et : etList) {
-            activate(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -246,28 +205,12 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean assignToBatch(List<Task> etList) {
-        for(Task et : etList) {
-            assignTo(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Task cancel(Task et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean cancelBatch(List<Task> etList) {
-        for(Task et : etList) {
-            cancel(et);
-        }
-        return true;
     }
 
     @Override
@@ -280,28 +223,12 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean closeBatch(List<Task> etList) {
-        for(Task et : etList) {
-            close(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Task computeBeginAndEnd(Task et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean computeBeginAndEndBatch(List<Task> etList) {
-        for(Task et : etList) {
-            computeBeginAndEnd(et);
-        }
-        return true;
     }
 
     @Override
@@ -310,28 +237,12 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean computeHours4MultipleBatch(List<Task> etList) {
-        for(Task et : etList) {
-            computeHours4Multiple(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Task computeWorkingHours(Task et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean computeWorkingHoursBatch(List<Task> etList) {
-        for(Task et : etList) {
-            computeWorkingHours(et);
-        }
-        return true;
     }
 
     @Override
@@ -340,28 +251,12 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean confirmStoryChangeBatch(List<Task> etList) {
-        for(Task et : etList) {
-            confirmStoryChange(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Task createByCycle(Task et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean createByCycleBatch(List<Task> etList) {
-        for(Task et : etList) {
-            createByCycle(et);
-        }
-        return true;
     }
 
     @Override
@@ -370,28 +265,12 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean createCycleTasksBatch(List<Task> etList) {
-        for(Task et : etList) {
-            createCycleTasks(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Task delete(Task et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean deleteBatch(List<Task> etList) {
-        for(Task et : etList) {
-            delete(et);
-        }
-        return true;
     }
 
     @Override
@@ -400,28 +279,12 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean deleteEstimateBatch(List<Task> etList) {
-        for(Task et : etList) {
-            deleteEstimate(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Task editEstimate(Task et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean editEstimateBatch(List<Task> etList) {
-        for(Task et : etList) {
-            editEstimate(et);
-        }
-        return true;
     }
 
     @Override
@@ -430,28 +293,12 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean finishBatch(List<Task> etList) {
-        for(Task et : etList) {
-            finish(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Task getNextTeamUser(Task et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean getNextTeamUserBatch(List<Task> etList) {
-        for(Task et : etList) {
-            getNextTeamUser(et);
-        }
-        return true;
     }
 
     @Override
@@ -460,28 +307,12 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean getTeamUserLeftActivityBatch(List<Task> etList) {
-        for(Task et : etList) {
-            getTeamUserLeftActivity(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Task getTeamUserLeftStart(Task et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean getTeamUserLeftStartBatch(List<Task> etList) {
-        for(Task et : etList) {
-            getTeamUserLeftStart(et);
-        }
-        return true;
     }
 
     @Override
@@ -492,26 +323,9 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 
     @Override
     @Transactional
-    public boolean getUsernamesBatch(List<Task> etList) {
-        for(Task et : etList) {
-            getUsernames(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Task linkPlan(Task et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean linkPlanBatch(List<Task> etList) {
-        for(Task et : etList) {
-            linkPlan(et);
-        }
-        return true;
     }
 
     @Override
@@ -520,28 +334,12 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean otherUpdateBatch(List<Task> etList) {
-        for(Task et : etList) {
-            otherUpdate(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Task pause(Task et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean pauseBatch(List<Task> etList) {
-        for(Task et : etList) {
-            pause(et);
-        }
-        return true;
     }
 
     @Override
@@ -550,28 +348,12 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean recordEstimateBatch(List<Task> etList) {
-        for(Task et : etList) {
-            recordEstimate(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Task recordTimZeroLeftAfterContinue(Task et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean recordTimZeroLeftAfterContinueBatch(List<Task> etList) {
-        for(Task et : etList) {
-            recordTimZeroLeftAfterContinue(et);
-        }
-        return true;
     }
 
     @Override
@@ -580,14 +362,6 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean recordTimateZeroLeftBatch(List<Task> etList) {
-        for(Task et : etList) {
-            recordTimateZeroLeft(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -595,28 +369,12 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean recordTimateZeroLeftAfterStartBatch(List<Task> etList) {
-        for(Task et : etList) {
-            recordTimateZeroLeftAfterStart(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Task restart(Task et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean restartBatch(List<Task> etList) {
-        for(Task et : etList) {
-            restart(et);
-        }
-        return true;
     }
 
     @Override
@@ -691,14 +449,6 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean sendMessageBatch(List<Task> etList) {
-        for(Task et : etList) {
-            sendMessage(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -706,28 +456,12 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean sendMsgPreProcessBatch(List<Task> etList) {
-        for(Task et : etList) {
-            sendMsgPreProcess(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Task start(Task et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean startBatch(List<Task> etList) {
-        for(Task et : etList) {
-            start(et);
-        }
-        return true;
     }
 
     @Override
@@ -738,26 +472,9 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 
     @Override
     @Transactional
-    public boolean taskFavoritesBatch(List<Task> etList) {
-        for(Task et : etList) {
-            taskFavorites(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Task taskForward(Task et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean taskForwardBatch(List<Task> etList) {
-        for(Task et : etList) {
-            taskForward(et);
-        }
-        return true;
     }
 
     @Override
@@ -768,26 +485,9 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 
     @Override
     @Transactional
-    public boolean taskNFavoritesBatch(List<Task> etList) {
-        for(Task et : etList) {
-            taskNFavorites(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Task updateParentStatus(Task et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean updateParentStatusBatch(List<Task> etList) {
-        for(Task et : etList) {
-            updateParentStatus(et);
-        }
-        return true;
     }
 
     @Override
@@ -796,28 +496,11 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean updateRelatedPlanStatusBatch(List<Task> etList) {
-        for(Task et : etList) {
-            updateRelatedPlanStatus(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Task updateStoryVersion(Task et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean updateStoryVersionBatch(List<Task> etList) {
-        for(Task et : etList) {
-            updateStoryVersion(et);
-        }
-        return true;
     }
 
 

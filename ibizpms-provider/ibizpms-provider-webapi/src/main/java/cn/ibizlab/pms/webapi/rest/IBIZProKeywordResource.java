@@ -58,7 +58,7 @@ public class IBIZProKeywordResource {
         IBIZProKeywordDTO dto = ibizprokeywordMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @ApiOperation(value = "更新关键字", tags = {"关键字" },  notes = "更新关键字")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizprokeywords/{ibizprokeyword_id}")
     @Transactional

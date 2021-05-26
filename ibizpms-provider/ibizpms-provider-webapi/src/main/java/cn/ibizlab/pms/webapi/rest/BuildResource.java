@@ -66,7 +66,7 @@ public class BuildResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "build" , versionfield = "updatedate")
     @PreAuthorize("@BuildRuntime.test(#build_id,'UPDATE')")
     @ApiOperation(value = "更新版本", tags = {"版本" },  notes = "更新版本")

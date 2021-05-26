@@ -66,7 +66,7 @@ public class DocContentResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@DocContentRuntime.test(#doccontent_id,'UPDATE')")
     @ApiOperation(value = "更新文档内容", tags = {"文档内容" },  notes = "更新文档内容")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doccontents/{doccontent_id}")

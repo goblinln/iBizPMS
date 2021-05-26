@@ -58,7 +58,7 @@ public class IBIZProPluginResource {
         IBIZProPluginDTO dto = ibizpropluginMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "ibizproplugin" , versionfield = "updatedate")
     @ApiOperation(value = "更新系统插件", tags = {"系统插件" },  notes = "更新系统插件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproplugins/{ibizproplugin_id}")

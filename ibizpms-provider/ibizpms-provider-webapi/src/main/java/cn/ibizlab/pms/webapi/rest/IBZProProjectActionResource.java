@@ -66,7 +66,7 @@ public class IBZProProjectActionResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@IBZProProjectActionRuntime.test(#ibzproprojectaction_id,'UPDATE')")
     @ApiOperation(value = "更新项目日志", tags = {"项目日志" },  notes = "更新项目日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproprojectactions/{ibzproprojectaction_id}")

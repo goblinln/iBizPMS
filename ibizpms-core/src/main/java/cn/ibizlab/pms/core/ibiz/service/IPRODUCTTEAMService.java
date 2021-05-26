@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IPRODUCTTEAMService extends IService<PRODUCTTEAM> {
 
     boolean create(PRODUCTTEAM et);
-    void createBatch(List<PRODUCTTEAM> list);
     boolean update(PRODUCTTEAM et);
     boolean sysUpdate(PRODUCTTEAM et);
-    void updateBatch(List<PRODUCTTEAM> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     PRODUCTTEAM get(Long key);
     PRODUCTTEAM sysGet(Long key);
     PRODUCTTEAM getDraft(PRODUCTTEAM et);
     boolean checkKey(PRODUCTTEAM et);
     PRODUCTTEAM productTeamGuoLv(PRODUCTTEAM et);
-    boolean productTeamGuoLvBatch(List<PRODUCTTEAM> etList);
     boolean save(PRODUCTTEAM et);
     void saveBatch(List<PRODUCTTEAM> list);
     List<PRODUCTTEAM> select(PRODUCTTEAMSearchContext context);

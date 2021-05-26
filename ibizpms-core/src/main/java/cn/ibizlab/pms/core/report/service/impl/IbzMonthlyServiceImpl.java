@@ -79,16 +79,6 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<IbzMonthly> list) {
-        if(ibzmonthlyRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -100,16 +90,6 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<IbzMonthly> list) {
-        if(ibzmonthlyRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -130,16 +110,6 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(ibzmonthlyRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -184,28 +154,12 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean createGetInfoBatch(List<IbzMonthly> etList) {
-        for(IbzMonthly et : etList) {
-            createGetInfo(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public IbzMonthly createUserMonthly(IbzMonthly et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean createUserMonthlyBatch(List<IbzMonthly> etList) {
-        for(IbzMonthly et : etList) {
-            createUserMonthly(et);
-        }
-        return true;
     }
 
     @Override
@@ -214,14 +168,6 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean editGetCompleteTaskBatch(List<IbzMonthly> etList) {
-        for(IbzMonthly et : etList) {
-            editGetCompleteTask(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -229,28 +175,12 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean haveReadBatch(List<IbzMonthly> etList) {
-        for(IbzMonthly et : etList) {
-            haveRead(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public IbzMonthly pushUserMonthly(IbzMonthly et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean pushUserMonthlyBatch(List<IbzMonthly> etList) {
-        for(IbzMonthly et : etList) {
-            pushUserMonthly(et);
-        }
-        return true;
     }
 
     @Override
@@ -272,60 +202,12 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<IbzMonthly> list) {
-        List<IbzMonthly> create = new ArrayList<>();
-        List<IbzMonthly> update = new ArrayList<>();
-        for (IbzMonthly et : list) {
-            if (ObjectUtils.isEmpty(et.getIbzmonthlyid()) || ObjectUtils.isEmpty(getById(et.getIbzmonthlyid()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<IbzMonthly> list) {
-        List<IbzMonthly> create = new ArrayList<>();
-        List<IbzMonthly> update = new ArrayList<>();
-        for (IbzMonthly et : list) {
-            if (ObjectUtils.isEmpty(et.getIbzmonthlyid()) || ObjectUtils.isEmpty(getById(et.getIbzmonthlyid()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
     public IbzMonthly submit(IbzMonthly et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean submitBatch(List<IbzMonthly> etList) {
-        for(IbzMonthly et : etList) {
-            submit(et);
-        }
-        return true;
     }
 
 

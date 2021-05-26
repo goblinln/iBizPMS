@@ -66,7 +66,7 @@ public class ProductPlanHistoryResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@ProductPlanHistoryRuntime.test(#productplanhistory_id,'UPDATE')")
     @ApiOperation(value = "更新产品计划历史", tags = {"产品计划历史" },  notes = "更新产品计划历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplanhistories/{productplanhistory_id}")

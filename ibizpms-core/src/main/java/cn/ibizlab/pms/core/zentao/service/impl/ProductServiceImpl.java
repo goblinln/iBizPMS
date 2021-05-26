@@ -153,17 +153,6 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Product> list) {
-        if(productRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -181,17 +170,6 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Product> list) {
-        if(productRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -215,18 +193,6 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(productRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        if(!ObjectUtils.isEmpty(projectproductService.selectByProduct(idList)))
-            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[ProjectProduct]数据，无法删除!","","");
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -272,15 +238,6 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }
 
     @Override
-    @Transactional
-    public boolean cancelProductTopBatch(List<Product> etList) {
-        for(Product et : etList) {
-            cancelProductTop(et);
-        }
-        return true;
-    }
-
-    @Override
     public boolean checkKey(Product et) {
         return (!ObjectUtils.isEmpty(et.getId())) && (!Objects.isNull(this.getById(et.getId())));
     }
@@ -289,14 +246,6 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     public Product close(Product et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean closeBatch(List<Product> etList) {
-        for(Product et : etList) {
-            close(et);
-        }
-        return true;
     }
 
     @Override
@@ -307,41 +256,14 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 
     @Override
     @Transactional
-    public boolean mobProductCounterBatch(List<Product> etList) {
-        for(Product et : etList) {
-            mobProductCounter(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Product mobProductTestCounter(Product et) {
          return et ;
     }
 
     @Override
     @Transactional
-    public boolean mobProductTestCounterBatch(List<Product> etList) {
-        for(Product et : etList) {
-            mobProductTestCounter(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Product productTop(Product et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean productTopBatch(List<Product> etList) {
-        for(Product et : etList) {
-            productTop(et);
-        }
-        return true;
     }
 
     @Override
@@ -363,52 +285,6 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<Product> list) {
-        if(!productRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<Product> create = new ArrayList<>();
-        List<Product> update = new ArrayList<>();
-        for (Product et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<Product> list) {
-        if(!productRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<Product> create = new ArrayList<>();
-        List<Product> update = new ArrayList<>();
-        for (Product et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 	@Override

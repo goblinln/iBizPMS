@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IRelationService extends IService<Relation> {
 
     boolean create(Relation et);
-    void createBatch(List<Relation> list);
     boolean update(Relation et);
     boolean sysUpdate(Relation et);
-    void updateBatch(List<Relation> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     Relation get(Long key);
     Relation sysGet(Long key);
     Relation getDraft(Relation et);
     boolean checkKey(Relation et);
     boolean save(Relation et);
-    void saveBatch(List<Relation> list);
     List<Relation> select(RelationSearchContext context);
     List<Relation> selectDefault(RelationSearchContext context);
     List<Relation> selectView(RelationSearchContext context);

@@ -66,7 +66,7 @@ public class IbzproConfigResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "ibzproconfig" , versionfield = "updatedate")
     @PreAuthorize("@IbzproConfigRuntime.test(#ibzproconfig_id,'UPDATE')")
     @ApiOperation(value = "更新系统配置表", tags = {"系统配置表" },  notes = "更新系统配置表")

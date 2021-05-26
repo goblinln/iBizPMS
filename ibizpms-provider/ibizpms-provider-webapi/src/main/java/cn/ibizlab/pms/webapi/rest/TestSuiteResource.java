@@ -66,7 +66,7 @@ public class TestSuiteResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "testsuite" , versionfield = "lastediteddate")
     @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'UPDATE')")
     @ApiOperation(value = "更新测试套件", tags = {"测试套件" },  notes = "更新测试套件")

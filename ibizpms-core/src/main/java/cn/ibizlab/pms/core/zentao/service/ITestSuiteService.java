@@ -26,24 +26,17 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ITestSuiteService extends IService<TestSuite> {
 
     boolean create(TestSuite et);
-    void createBatch(List<TestSuite> list);
     boolean update(TestSuite et);
     boolean sysUpdate(TestSuite et);
-    void updateBatch(List<TestSuite> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     TestSuite get(Long key);
     TestSuite sysGet(Long key);
     TestSuite getDraft(TestSuite et);
     boolean checkKey(TestSuite et);
     TestSuite linkCase(TestSuite et);
-    boolean linkCaseBatch(List<TestSuite> etList);
     TestSuite mobTestSuiteCount(TestSuite et);
-    boolean mobTestSuiteCountBatch(List<TestSuite> etList);
     boolean save(TestSuite et);
-    void saveBatch(List<TestSuite> list);
     TestSuite unlinkCase(TestSuite et);
-    boolean unlinkCaseBatch(List<TestSuite> etList);
     List<TestSuite> select(TestSuiteSearchContext context);
     List<TestSuite> selectDefault(TestSuiteSearchContext context);
     List<TestSuite> selectPublicTestSuite(TestSuiteSearchContext context);

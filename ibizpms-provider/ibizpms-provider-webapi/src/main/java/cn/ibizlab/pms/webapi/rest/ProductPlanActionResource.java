@@ -66,7 +66,7 @@ public class ProductPlanActionResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'UPDATE')")
     @ApiOperation(value = "更新产品计划日志", tags = {"产品计划日志" },  notes = "更新产品计划日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplanactions/{productplanaction_id}")

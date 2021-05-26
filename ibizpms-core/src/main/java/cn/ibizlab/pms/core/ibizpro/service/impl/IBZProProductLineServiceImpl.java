@@ -75,16 +75,6 @@ public class IBZProProductLineServiceImpl extends ServiceImpl<IBZProProductLineM
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<IBZProProductLine> list) {
-        if(ibzproproductlineRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -96,16 +86,6 @@ public class IBZProProductLineServiceImpl extends ServiceImpl<IBZProProductLineM
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<IBZProProductLine> list) {
-        if(ibzproproductlineRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -128,18 +108,6 @@ public class IBZProProductLineServiceImpl extends ServiceImpl<IBZProProductLineM
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(ibzproproductlineRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        if(!ObjectUtils.isEmpty(productService.selectByLine(idList)))
-            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[Product]数据，无法删除!","","");
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -197,46 +165,6 @@ public class IBZProProductLineServiceImpl extends ServiceImpl<IBZProProductLineM
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<IBZProProductLine> list) {
-        List<IBZProProductLine> create = new ArrayList<>();
-        List<IBZProProductLine> update = new ArrayList<>();
-        for (IBZProProductLine et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<IBZProProductLine> list) {
-        List<IBZProProductLine> create = new ArrayList<>();
-        List<IBZProProductLine> update = new ArrayList<>();
-        for (IBZProProductLine et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 

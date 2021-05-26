@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzProWeeklyHistoryService extends IService<IbzProWeeklyHistory> {
 
     boolean create(IbzProWeeklyHistory et);
-    void createBatch(List<IbzProWeeklyHistory> list);
     boolean update(IbzProWeeklyHistory et);
     boolean sysUpdate(IbzProWeeklyHistory et);
-    void updateBatch(List<IbzProWeeklyHistory> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     IbzProWeeklyHistory get(Long key);
     IbzProWeeklyHistory sysGet(Long key);
     IbzProWeeklyHistory getDraft(IbzProWeeklyHistory et);
     boolean checkKey(IbzProWeeklyHistory et);
     boolean save(IbzProWeeklyHistory et);
-    void saveBatch(List<IbzProWeeklyHistory> list);
     List<IbzProWeeklyHistory> select(IbzProWeeklyHistorySearchContext context);
     List<IbzProWeeklyHistory> selectDefault(IbzProWeeklyHistorySearchContext context);
     List<IbzProWeeklyHistory> selectSimple(IbzProWeeklyHistorySearchContext context);

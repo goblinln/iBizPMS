@@ -75,16 +75,6 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Todo> list) {
-        if(todoRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -96,16 +86,6 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Todo> list) {
-        if(todoRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -126,16 +106,6 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(todoRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -176,28 +146,12 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean activateBatch(List<Todo> etList) {
-        for(Todo et : etList) {
-            activate(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Todo assignTo(Todo et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean assignToBatch(List<Todo> etList) {
-        for(Todo et : etList) {
-            assignTo(et);
-        }
-        return true;
     }
 
     @Override
@@ -210,14 +164,6 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean closeBatch(List<Todo> etList) {
-        for(Todo et : etList) {
-            close(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -225,28 +171,12 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean createCycleBatch(List<Todo> etList) {
-        for(Todo et : etList) {
-            createCycle(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Todo finish(Todo et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean finishBatch(List<Todo> etList) {
-        for(Todo et : etList) {
-            finish(et);
-        }
-        return true;
     }
 
     @Override
@@ -268,46 +198,6 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<Todo> list) {
-        List<Todo> create = new ArrayList<>();
-        List<Todo> update = new ArrayList<>();
-        for (Todo et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<Todo> list) {
-        List<Todo> create = new ArrayList<>();
-        List<Todo> update = new ArrayList<>();
-        for (Todo et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
@@ -315,28 +205,12 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean sendMessageBatch(List<Todo> etList) {
-        for(Todo et : etList) {
-            sendMessage(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Todo sendMsgPreProcess(Todo et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean sendMsgPreProcessBatch(List<Todo> etList) {
-        for(Todo et : etList) {
-            sendMsgPreProcess(et);
-        }
-        return true;
     }
 
 

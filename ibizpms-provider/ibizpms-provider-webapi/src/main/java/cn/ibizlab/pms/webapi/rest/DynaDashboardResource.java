@@ -66,7 +66,7 @@ public class DynaDashboardResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "dynadashboard" , versionfield = "updatedate")
     @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id,'UPDATE')")
     @ApiOperation(value = "更新动态数据看板", tags = {"动态数据看板" },  notes = "更新动态数据看板")

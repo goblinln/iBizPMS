@@ -58,7 +58,7 @@ public class PSSystemDBCfgResource {
         PSSystemDBCfgDTO dto = pssystemdbcfgMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "pssystemdbcfg" , versionfield = "updatedate")
     @ApiOperation(value = "更新系统数据库", tags = {"系统数据库" },  notes = "更新系统数据库")
 	@RequestMapping(method = RequestMethod.PUT, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")

@@ -25,18 +25,14 @@ import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSysReqItemSearchContext;
 public interface IPSSysReqItemService {
 
     boolean create(PSSysReqItem et);
-    void createBatch(List<PSSysReqItem> list);
     boolean update(PSSysReqItem et);
     boolean sysUpdate(PSSysReqItem et);
-    void updateBatch(List<PSSysReqItem> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     PSSysReqItem get(String key);
     PSSysReqItem sysGet(String key);
     PSSysReqItem getDraft(PSSysReqItem et);
     boolean checkKey(PSSysReqItem et);
     boolean save(PSSysReqItem et);
-    void saveBatch(List<PSSysReqItem> list);
 
     Page<PSSysReqItem> searchDefault(PSSysReqItemSearchContext context);
     List<PSSysReqItem> selectByPpssysreqitemid(String pssysreqitemid);

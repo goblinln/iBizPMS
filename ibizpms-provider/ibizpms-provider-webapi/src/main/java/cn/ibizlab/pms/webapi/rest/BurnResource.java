@@ -66,7 +66,7 @@ public class BurnResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@BurnRuntime.test(#burn_id,'UPDATE')")
     @ApiOperation(value = "更新burn", tags = {"burn" },  notes = "更新burn")
 	@RequestMapping(method = RequestMethod.PUT, value = "/burns/{burn_id}")

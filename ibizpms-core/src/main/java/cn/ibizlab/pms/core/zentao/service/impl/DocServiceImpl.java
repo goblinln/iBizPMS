@@ -93,17 +93,6 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Doc> list) {
-        if(docRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -121,17 +110,6 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Doc> list) {
-        if(docRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -153,16 +131,6 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(docRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -207,14 +175,6 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean byVersionUpdateContextBatch(List<Doc> etList) {
-        for(Doc et : etList) {
-            byVersionUpdateContext(et);
-        }
-        return true;
-    }
 
     @Override
     public boolean checkKey(Doc et) {
@@ -226,28 +186,12 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean collectBatch(List<Doc> etList) {
-        for(Doc et : etList) {
-            collect(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Doc getDocStatus(Doc et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean getDocStatusBatch(List<Doc> etList) {
-        for(Doc et : etList) {
-            getDocStatus(et);
-        }
-        return true;
     }
 
     @Override
@@ -256,28 +200,12 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean onlyCollectDocBatch(List<Doc> etList) {
-        for(Doc et : etList) {
-            onlyCollectDoc(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Doc onlyUnCollectDoc(Doc et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean onlyUnCollectDocBatch(List<Doc> etList) {
-        for(Doc et : etList) {
-            onlyUnCollectDoc(et);
-        }
-        return true;
     }
 
     @Override
@@ -299,66 +227,12 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<Doc> list) {
-        if(!docRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<Doc> create = new ArrayList<>();
-        List<Doc> update = new ArrayList<>();
-        for (Doc et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<Doc> list) {
-        if(!docRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<Doc> create = new ArrayList<>();
-        List<Doc> update = new ArrayList<>();
-        for (Doc et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
     public Doc unCollect(Doc et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean unCollectBatch(List<Doc> etList) {
-        for(Doc et : etList) {
-            unCollect(et);
-        }
-        return true;
     }
 
 

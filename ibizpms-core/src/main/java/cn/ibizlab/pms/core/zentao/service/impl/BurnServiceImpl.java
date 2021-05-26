@@ -78,16 +78,6 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Burn> list) {
-        if(burnRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -99,16 +89,6 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Burn> list) {
-        if(burnRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -129,16 +109,6 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<String> idList) {
-        if(burnRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -183,14 +153,6 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean computeBurnBatch(List<Burn> etList) {
-        for(Burn et : etList) {
-            computeBurn(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -211,46 +173,6 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<Burn> list) {
-        List<Burn> create = new ArrayList<>();
-        List<Burn> update = new ArrayList<>();
-        for (Burn et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<Burn> list) {
-        List<Burn> create = new ArrayList<>();
-        List<Burn> update = new ArrayList<>();
-        for (Burn et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 	@Override

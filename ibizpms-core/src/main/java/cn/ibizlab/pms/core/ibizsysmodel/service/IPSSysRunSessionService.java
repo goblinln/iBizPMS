@@ -25,18 +25,14 @@ import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSysRunSessionSearchContext;
 public interface IPSSysRunSessionService {
 
     boolean create(PSSysRunSession et);
-    void createBatch(List<PSSysRunSession> list);
     boolean update(PSSysRunSession et);
     boolean sysUpdate(PSSysRunSession et);
-    void updateBatch(List<PSSysRunSession> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     PSSysRunSession get(String key);
     PSSysRunSession sysGet(String key);
     PSSysRunSession getDraft(PSSysRunSession et);
     boolean checkKey(PSSysRunSession et);
     boolean save(PSSysRunSession et);
-    void saveBatch(List<PSSysRunSession> list);
 
     Page<PSSysRunSession> searchDefault(PSSysRunSessionSearchContext context);
     List<PSSysRunSession> selectByPssysappid(String pssysappid);

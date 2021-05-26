@@ -77,17 +77,6 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Dept> list) {
-        if(deptRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -102,17 +91,6 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Dept> list) {
-        if(deptRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -133,16 +111,6 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(deptRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -203,52 +171,6 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<Dept> list) {
-        if(!deptRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<Dept> create = new ArrayList<>();
-        List<Dept> update = new ArrayList<>();
-        for (Dept et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<Dept> list) {
-        if(!deptRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<Dept> create = new ArrayList<>();
-        List<Dept> update = new ArrayList<>();
-        for (Dept et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 	@Override

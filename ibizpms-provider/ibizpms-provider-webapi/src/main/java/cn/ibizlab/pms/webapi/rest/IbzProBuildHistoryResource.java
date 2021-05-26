@@ -66,7 +66,7 @@ public class IbzProBuildHistoryResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@IbzProBuildHistoryRuntime.test(#ibzprobuildhistory_id,'UPDATE')")
     @ApiOperation(value = "更新版本操作历史", tags = {"版本操作历史" },  notes = "更新版本操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprobuildhistories/{ibzprobuildhistory_id}")

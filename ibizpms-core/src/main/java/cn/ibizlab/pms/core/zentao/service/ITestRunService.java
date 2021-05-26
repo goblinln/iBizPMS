@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ITestRunService extends IService<TestRun> {
 
     boolean create(TestRun et);
-    void createBatch(List<TestRun> list);
     boolean update(TestRun et);
     boolean sysUpdate(TestRun et);
-    void updateBatch(List<TestRun> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     TestRun get(Long key);
     TestRun sysGet(Long key);
     TestRun getDraft(TestRun et);
     boolean checkKey(TestRun et);
     boolean save(TestRun et);
-    void saveBatch(List<TestRun> list);
     List<TestRun> select(TestRunSearchContext context);
     List<TestRun> selectDefault(TestRunSearchContext context);
     List<TestRun> selectView(TestRunSearchContext context);

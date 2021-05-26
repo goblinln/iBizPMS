@@ -79,16 +79,6 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<IbzWeekly> list) {
-        if(ibzweeklyRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -100,16 +90,6 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<IbzWeekly> list) {
-        if(ibzweeklyRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -130,16 +110,6 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(ibzweeklyRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -184,28 +154,12 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean createEveryWeekReportBatch(List<IbzWeekly> etList) {
-        for(IbzWeekly et : etList) {
-            createEveryWeekReport(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public IbzWeekly createGetLastWeekPlanAndWork(IbzWeekly et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean createGetLastWeekPlanAndWorkBatch(List<IbzWeekly> etList) {
-        for(IbzWeekly et : etList) {
-            createGetLastWeekPlanAndWork(et);
-        }
-        return true;
     }
 
     @Override
@@ -214,28 +168,12 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean editGetLastWeekTaskAndComTaskBatch(List<IbzWeekly> etList) {
-        for(IbzWeekly et : etList) {
-            editGetLastWeekTaskAndComTask(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public IbzWeekly haveRead(IbzWeekly et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean haveReadBatch(List<IbzWeekly> etList) {
-        for(IbzWeekly et : etList) {
-            haveRead(et);
-        }
-        return true;
     }
 
     @Override
@@ -244,28 +182,12 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean jugThisWeekCreateWeeklyBatch(List<IbzWeekly> etList) {
-        for(IbzWeekly et : etList) {
-            jugThisWeekCreateWeekly(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public IbzWeekly pushUserWeekly(IbzWeekly et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean pushUserWeeklyBatch(List<IbzWeekly> etList) {
-        for(IbzWeekly et : etList) {
-            pushUserWeekly(et);
-        }
-        return true;
     }
 
     @Override
@@ -287,60 +209,12 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<IbzWeekly> list) {
-        List<IbzWeekly> create = new ArrayList<>();
-        List<IbzWeekly> update = new ArrayList<>();
-        for (IbzWeekly et : list) {
-            if (ObjectUtils.isEmpty(et.getIbzweeklyid()) || ObjectUtils.isEmpty(getById(et.getIbzweeklyid()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<IbzWeekly> list) {
-        List<IbzWeekly> create = new ArrayList<>();
-        List<IbzWeekly> update = new ArrayList<>();
-        for (IbzWeekly et : list) {
-            if (ObjectUtils.isEmpty(et.getIbzweeklyid()) || ObjectUtils.isEmpty(getById(et.getIbzweeklyid()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
     public IbzWeekly submit(IbzWeekly et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean submitBatch(List<IbzWeekly> etList) {
-        for(IbzWeekly et : etList) {
-            submit(et);
-        }
-        return true;
     }
 
 

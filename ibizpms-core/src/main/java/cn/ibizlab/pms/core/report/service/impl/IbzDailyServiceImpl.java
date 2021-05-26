@@ -75,16 +75,6 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<IbzDaily> list) {
-        if(ibzdailyRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -96,16 +86,6 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<IbzDaily> list) {
-        if(ibzdailyRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -126,16 +106,6 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(ibzdailyRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -180,28 +150,12 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean createUserDailyBatch(List<IbzDaily> etList) {
-        for(IbzDaily et : etList) {
-            createUserDaily(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public IbzDaily getYeaterdayDailyPlansTaskEdit(IbzDaily et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean getYeaterdayDailyPlansTaskEditBatch(List<IbzDaily> etList) {
-        for(IbzDaily et : etList) {
-            getYeaterdayDailyPlansTaskEdit(et);
-        }
-        return true;
     }
 
     @Override
@@ -210,28 +164,12 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean getYesterdayDailyPlansTaskBatch(List<IbzDaily> etList) {
-        for(IbzDaily et : etList) {
-            getYesterdayDailyPlansTask(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public IbzDaily haveRead(IbzDaily et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean haveReadBatch(List<IbzDaily> etList) {
-        for(IbzDaily et : etList) {
-            haveRead(et);
-        }
-        return true;
     }
 
     @Override
@@ -240,28 +178,12 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean linkCompleteTaskBatch(List<IbzDaily> etList) {
-        for(IbzDaily et : etList) {
-            linkCompleteTask(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public IbzDaily pushUserDaily(IbzDaily et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean pushUserDailyBatch(List<IbzDaily> etList) {
-        for(IbzDaily et : etList) {
-            pushUserDaily(et);
-        }
-        return true;
     }
 
     @Override
@@ -283,60 +205,12 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<IbzDaily> list) {
-        List<IbzDaily> create = new ArrayList<>();
-        List<IbzDaily> update = new ArrayList<>();
-        for (IbzDaily et : list) {
-            if (ObjectUtils.isEmpty(et.getIbzdailyid()) || ObjectUtils.isEmpty(getById(et.getIbzdailyid()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<IbzDaily> list) {
-        List<IbzDaily> create = new ArrayList<>();
-        List<IbzDaily> update = new ArrayList<>();
-        for (IbzDaily et : list) {
-            if (ObjectUtils.isEmpty(et.getIbzdailyid()) || ObjectUtils.isEmpty(getById(et.getIbzdailyid()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
     public IbzDaily submit(IbzDaily et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean submitBatch(List<IbzDaily> etList) {
-        for(IbzDaily et : etList) {
-            submit(et);
-        }
-        return true;
     }
 
 

@@ -63,7 +63,7 @@ public class IbzWeeklyResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "ibzweekly" , versionfield = "updatedate")
     @ApiOperation(value = "更新周报", tags = {"周报" },  notes = "更新周报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzweeklies/{ibzweekly_id}")

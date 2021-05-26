@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IImClientService extends IService<ImClient> {
 
     boolean create(ImClient et);
-    void createBatch(List<ImClient> list);
     boolean update(ImClient et);
     boolean sysUpdate(ImClient et);
-    void updateBatch(List<ImClient> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     ImClient get(Long key);
     ImClient sysGet(Long key);
     ImClient getDraft(ImClient et);
     boolean checkKey(ImClient et);
     boolean save(ImClient et);
-    void saveBatch(List<ImClient> list);
     List<ImClient> select(ImClientSearchContext context);
     List<ImClient> selectDefault(ImClientSearchContext context);
     List<ImClient> selectView(ImClientSearchContext context);

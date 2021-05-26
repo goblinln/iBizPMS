@@ -66,7 +66,7 @@ public class CaseStepResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@CaseStepRuntime.test(#casestep_id,'UPDATE')")
     @ApiOperation(value = "更新用例步骤", tags = {"用例步骤" },  notes = "更新用例步骤")
 	@RequestMapping(method = RequestMethod.PUT, value = "/casesteps/{casestep_id}")

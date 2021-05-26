@@ -72,16 +72,6 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<UserTpl> list) {
-        if(usertplRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -93,16 +83,6 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<UserTpl> list) {
-        if(usertplRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -123,16 +103,6 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(usertplRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -177,14 +147,6 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean hasDeletedBatch(List<UserTpl> etList) {
-        for(UserTpl et : etList) {
-            hasDeleted(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -205,46 +167,6 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<UserTpl> list) {
-        List<UserTpl> create = new ArrayList<>();
-        List<UserTpl> update = new ArrayList<>();
-        for (UserTpl et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<UserTpl> list) {
-        List<UserTpl> create = new ArrayList<>();
-        List<UserTpl> update = new ArrayList<>();
-        for (UserTpl et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 

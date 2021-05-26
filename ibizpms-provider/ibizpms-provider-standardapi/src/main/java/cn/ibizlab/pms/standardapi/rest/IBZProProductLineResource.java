@@ -127,7 +127,7 @@ public class IBZProProductLineResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@IBZProProductLineRuntime.test(#ibzproproductline_id,'CREATE')")
     @ApiOperation(value = "获取产品线草稿", tags = {"产品线" },  notes = "获取产品线草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproproductlines/getdraft")

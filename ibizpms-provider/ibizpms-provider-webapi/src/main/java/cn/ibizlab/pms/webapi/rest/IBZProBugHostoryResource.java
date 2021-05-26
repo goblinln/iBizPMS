@@ -66,7 +66,7 @@ public class IBZProBugHostoryResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@IBZProBugHostoryRuntime.test(#ibzprobughostory_id,'UPDATE')")
     @ApiOperation(value = "更新Bug操作历史", tags = {"Bug操作历史" },  notes = "更新Bug操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprobughostories/{ibzprobughostory_id}")

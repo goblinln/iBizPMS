@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIBZProBugHostoryService extends IService<IBZProBugHostory> {
 
     boolean create(IBZProBugHostory et);
-    void createBatch(List<IBZProBugHostory> list);
     boolean update(IBZProBugHostory et);
     boolean sysUpdate(IBZProBugHostory et);
-    void updateBatch(List<IBZProBugHostory> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     IBZProBugHostory get(Long key);
     IBZProBugHostory sysGet(Long key);
     IBZProBugHostory getDraft(IBZProBugHostory et);
     boolean checkKey(IBZProBugHostory et);
     boolean save(IBZProBugHostory et);
-    void saveBatch(List<IBZProBugHostory> list);
     List<IBZProBugHostory> select(IBZProBugHostorySearchContext context);
     List<IBZProBugHostory> selectDefault(IBZProBugHostorySearchContext context);
     List<IBZProBugHostory> selectSimple(IBZProBugHostorySearchContext context);

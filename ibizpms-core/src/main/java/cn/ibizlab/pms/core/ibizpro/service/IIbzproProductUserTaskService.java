@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzproProductUserTaskService extends IService<IbzproProductUserTask> {
 
     boolean create(IbzproProductUserTask et);
-    void createBatch(List<IbzproProductUserTask> list);
     boolean update(IbzproProductUserTask et);
     boolean sysUpdate(IbzproProductUserTask et);
-    void updateBatch(List<IbzproProductUserTask> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     IbzproProductUserTask get(Long key);
     IbzproProductUserTask sysGet(Long key);
     IbzproProductUserTask getDraft(IbzproProductUserTask et);
     boolean checkKey(IbzproProductUserTask et);
     boolean save(IbzproProductUserTask et);
-    void saveBatch(List<IbzproProductUserTask> list);
     List<IbzproProductUserTask> select(IbzproProductUserTaskSearchContext context);
     List<IbzproProductUserTask> selectDefault(IbzproProductUserTaskSearchContext context);
     List<IbzproProductUserTask> selectProductDailyUserTaskStats(IbzproProductUserTaskSearchContext context);

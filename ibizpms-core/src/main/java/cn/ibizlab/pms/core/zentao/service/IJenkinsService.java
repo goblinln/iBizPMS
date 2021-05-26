@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IJenkinsService extends IService<Jenkins> {
 
     boolean create(Jenkins et);
-    void createBatch(List<Jenkins> list);
     boolean update(Jenkins et);
     boolean sysUpdate(Jenkins et);
-    void updateBatch(List<Jenkins> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     Jenkins get(Long key);
     Jenkins sysGet(Long key);
     Jenkins getDraft(Jenkins et);
     boolean checkKey(Jenkins et);
     boolean save(Jenkins et);
-    void saveBatch(List<Jenkins> list);
     List<Jenkins> select(JenkinsSearchContext context);
     List<Jenkins> selectDefault(JenkinsSearchContext context);
     List<Jenkins> selectView(JenkinsSearchContext context);

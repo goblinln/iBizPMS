@@ -66,7 +66,7 @@ public class SysUpdateFeaturesResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "sysupdatefeatures" , versionfield = "updatedate")
     @PreAuthorize("@SysUpdateFeaturesRuntime.test(#sysupdatefeatures_id,'UPDATE')")
     @ApiOperation(value = "更新系统更新功能", tags = {"系统更新功能" },  notes = "更新系统更新功能")

@@ -66,7 +66,7 @@ public class IBZCaseHistoryResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@IBZCaseHistoryRuntime.test(#ibzcasehistory_id,'UPDATE')")
     @ApiOperation(value = "更新测试操作历史", tags = {"测试操作历史" },  notes = "更新测试操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcasehistories/{ibzcasehistory_id}")

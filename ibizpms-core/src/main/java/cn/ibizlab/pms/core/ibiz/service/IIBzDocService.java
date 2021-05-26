@@ -25,18 +25,14 @@ import cn.ibizlab.pms.core.ibiz.filter.IBzDocSearchContext;
 public interface IIBzDocService {
 
     boolean create(IBzDoc et);
-    void createBatch(List<IBzDoc> list);
     boolean update(IBzDoc et);
     boolean sysUpdate(IBzDoc et);
-    void updateBatch(List<IBzDoc> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     IBzDoc get(String key);
     IBzDoc sysGet(String key);
     IBzDoc getDraft(IBzDoc et);
     boolean checkKey(IBzDoc et);
     boolean save(IBzDoc et);
-    void saveBatch(List<IBzDoc> list);
 
     Page<IBzDoc> searchDefault(IBzDocSearchContext context);
     IBzDoc dynamicCall(String key, String action, IBzDoc et);

@@ -72,16 +72,6 @@ public class BlockServiceImpl extends ServiceImpl<BlockMapper, Block> implements
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Block> list) {
-        if(blockRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -93,16 +83,6 @@ public class BlockServiceImpl extends ServiceImpl<BlockMapper, Block> implements
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Block> list) {
-        if(blockRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -123,16 +103,6 @@ public class BlockServiceImpl extends ServiceImpl<BlockMapper, Block> implements
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(blockRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -190,46 +160,6 @@ public class BlockServiceImpl extends ServiceImpl<BlockMapper, Block> implements
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<Block> list) {
-        List<Block> create = new ArrayList<>();
-        List<Block> update = new ArrayList<>();
-        for (Block et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<Block> list) {
-        List<Block> create = new ArrayList<>();
-        List<Block> update = new ArrayList<>();
-        for (Block et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 

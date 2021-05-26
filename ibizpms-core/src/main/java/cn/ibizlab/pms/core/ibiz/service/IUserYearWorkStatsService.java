@@ -26,28 +26,19 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IUserYearWorkStatsService extends IService<UserYearWorkStats> {
 
     boolean create(UserYearWorkStats et);
-    void createBatch(List<UserYearWorkStats> list);
     boolean update(UserYearWorkStats et);
     boolean sysUpdate(UserYearWorkStats et);
-    void updateBatch(List<UserYearWorkStats> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     UserYearWorkStats get(Long key);
     UserYearWorkStats sysGet(Long key);
     UserYearWorkStats getDraft(UserYearWorkStats et);
     boolean checkKey(UserYearWorkStats et);
     UserYearWorkStats getDevInfomation(UserYearWorkStats et);
-    boolean getDevInfomationBatch(List<UserYearWorkStats> etList);
     UserYearWorkStats getPoInfomation(UserYearWorkStats et);
-    boolean getPoInfomationBatch(List<UserYearWorkStats> etList);
     UserYearWorkStats getQaInfomation(UserYearWorkStats et);
-    boolean getQaInfomationBatch(List<UserYearWorkStats> etList);
     UserYearWorkStats getUserYearAction(UserYearWorkStats et);
-    boolean getUserYearActionBatch(List<UserYearWorkStats> etList);
     boolean save(UserYearWorkStats et);
-    void saveBatch(List<UserYearWorkStats> list);
     UserYearWorkStats updateTitleByYear(UserYearWorkStats et);
-    boolean updateTitleByYearBatch(List<UserYearWorkStats> etList);
     List<UserYearWorkStats> select(UserYearWorkStatsSearchContext context);
     List<UserYearWorkStats> selectDefault(UserYearWorkStatsSearchContext context);
     List<UserYearWorkStats> selectMonthFinishTaskAndBug(UserYearWorkStatsSearchContext context);

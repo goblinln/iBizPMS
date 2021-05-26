@@ -66,7 +66,7 @@ public class BugResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "bug" , versionfield = "lastediteddate")
     @PreAuthorize("@BugRuntime.test(#bug_id,'UPDATE')")
     @ApiOperation(value = "更新Bug", tags = {"Bug" },  notes = "更新Bug")
@@ -1250,6 +1250,8 @@ public class BugResource {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
 		bugService.create(domain);
+        if(!bugRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         BugDTO dto = bugMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -1264,6 +1266,8 @@ public class BugResource {
         domain.setProduct(product_id);
         domain.setId(bug_id);
 		bugService.update(domain);
+        if(!bugRuntime.test(domain.getId(),"UPDATE"))
+            throw new RuntimeException("无权限操作");
         BugDTO dto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

@@ -66,7 +66,7 @@ public class ProjectProductResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "projectproduct" , versionfield = "updatedate")
     @PreAuthorize("@ProjectProductRuntime.test(#projectproduct_id,'UPDATE')")
     @ApiOperation(value = "更新项目产品", tags = {"项目产品" },  notes = "更新项目产品")

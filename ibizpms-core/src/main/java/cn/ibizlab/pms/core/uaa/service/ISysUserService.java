@@ -25,20 +25,15 @@ import cn.ibizlab.pms.core.uaa.filter.SysUserSearchContext;
 public interface ISysUserService {
 
     boolean create(SysUser et);
-    void createBatch(List<SysUser> list);
     boolean update(SysUser et);
     boolean sysUpdate(SysUser et);
-    void updateBatch(List<SysUser> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     SysUser get(String key);
     SysUser sysGet(String key);
     SysUser getDraft(SysUser et);
     SysUser changePwd(SysUser et);
-    boolean changePwdBatch(List<SysUser> etList);
     boolean checkKey(SysUser et);
     boolean save(SysUser et);
-    void saveBatch(List<SysUser> list);
 
     Page<SysUser> searchDefault(SysUserSearchContext context);
     SysUser dynamicCall(String key, String action, SysUser et);

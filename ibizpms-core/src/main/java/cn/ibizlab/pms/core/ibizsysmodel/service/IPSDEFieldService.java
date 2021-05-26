@@ -25,18 +25,14 @@ import cn.ibizlab.pms.core.ibizsysmodel.filter.PSDEFieldSearchContext;
 public interface IPSDEFieldService {
 
     boolean create(PSDEField et);
-    void createBatch(List<PSDEField> list);
     boolean update(PSDEField et);
     boolean sysUpdate(PSDEField et);
-    void updateBatch(List<PSDEField> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     PSDEField get(String key);
     PSDEField sysGet(String key);
     PSDEField getDraft(PSDEField et);
     boolean checkKey(PSDEField et);
     boolean save(PSDEField et);
-    void saveBatch(List<PSDEField> list);
 
     Page<PSDEField> searchDefault(PSDEFieldSearchContext context);
     List<PSDEField> selectByPsdeid(String psdataentityid);

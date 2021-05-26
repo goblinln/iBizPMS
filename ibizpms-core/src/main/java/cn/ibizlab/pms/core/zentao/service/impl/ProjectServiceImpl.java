@@ -137,17 +137,6 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Project> list) {
-        if(projectRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -165,17 +154,6 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Project> list) {
-        if(projectRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -197,16 +175,6 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(projectRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -251,14 +219,6 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean activateBatch(List<Project> etList) {
-        for(Project et : etList) {
-            activate(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -266,28 +226,11 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean batchUnlinkStoryBatch(List<Project> etList) {
-        for(Project et : etList) {
-            batchUnlinkStory(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Project cancelProjectTop(Project et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean cancelProjectTopBatch(List<Project> etList) {
-        for(Project et : etList) {
-            cancelProjectTop(et);
-        }
-        return true;
     }
 
     @Override
@@ -300,28 +243,12 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean closeBatch(List<Project> etList) {
-        for(Project et : etList) {
-            close(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Project importPlanStories(Project et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean importPlanStoriesBatch(List<Project> etList) {
-        for(Project et : etList) {
-            importPlanStories(et);
-        }
-        return true;
     }
 
     @Override
@@ -330,28 +257,12 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean linkStoryBatch(List<Project> etList) {
-        for(Project et : etList) {
-            linkStory(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Project manageMembers(Project et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean manageMembersBatch(List<Project> etList) {
-        for(Project et : etList) {
-            manageMembers(et);
-        }
-        return true;
     }
 
     @Override
@@ -362,26 +273,9 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
 
     @Override
     @Transactional
-    public boolean mobProjectCountBatch(List<Project> etList) {
-        for(Project et : etList) {
-            mobProjectCount(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Project pmsEeProjectAllTaskCount(Project et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean pmsEeProjectAllTaskCountBatch(List<Project> etList) {
-        for(Project et : etList) {
-            pmsEeProjectAllTaskCount(et);
-        }
-        return true;
     }
 
     @Override
@@ -389,14 +283,6 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     public Project pmsEeProjectTodoTaskCount(Project et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean pmsEeProjectTodoTaskCountBatch(List<Project> etList) {
-        for(Project et : etList) {
-            pmsEeProjectTodoTaskCount(et);
-        }
-        return true;
     }
 
     @Override
@@ -407,26 +293,8 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
 
     @Override
     @Transactional
-    public boolean projectTaskQCntBatch(List<Project> etList) {
-        for(Project et : etList) {
-            projectTaskQCnt(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Project projectTop(Project et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean projectTopBatch(List<Project> etList) {
-        for(Project et : etList) {
-            projectTop(et);
-        }
-        return true;
     }
 
     @Override
@@ -434,14 +302,6 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     public Project putoff(Project et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean putoffBatch(List<Project> etList) {
-        for(Project et : etList) {
-            putoff(et);
-        }
-        return true;
     }
 
     @Override
@@ -463,66 +323,12 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<Project> list) {
-        if(!projectRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<Project> create = new ArrayList<>();
-        List<Project> update = new ArrayList<>();
-        for (Project et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<Project> list) {
-        if(!projectRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<Project> create = new ArrayList<>();
-        List<Project> update = new ArrayList<>();
-        for (Project et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
     public Project start(Project et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean startBatch(List<Project> etList) {
-        for(Project et : etList) {
-            start(et);
-        }
-        return true;
     }
 
     @Override
@@ -531,28 +337,12 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean suspendBatch(List<Project> etList) {
-        for(Project et : etList) {
-            suspend(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Project unlinkMember(Project et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean unlinkMemberBatch(List<Project> etList) {
-        for(Project et : etList) {
-            unlinkMember(et);
-        }
-        return true;
     }
 
     @Override
@@ -561,28 +351,12 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean unlinkStoryBatch(List<Project> etList) {
-        for(Project et : etList) {
-            unlinkStory(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Project updateOrder(Project et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean updateOrderBatch(List<Project> etList) {
-        for(Project et : etList) {
-            updateOrder(et);
-        }
-        return true;
     }
 
 

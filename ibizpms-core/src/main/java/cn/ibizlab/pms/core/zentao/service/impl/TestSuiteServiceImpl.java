@@ -84,16 +84,6 @@ public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<TestSuite> list) {
-        if(testsuiteRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -105,16 +95,6 @@ public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<TestSuite> list) {
-        if(testsuiteRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -135,16 +115,6 @@ public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(testsuiteRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -189,28 +159,11 @@ public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean linkCaseBatch(List<TestSuite> etList) {
-        for(TestSuite et : etList) {
-            linkCase(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public TestSuite mobTestSuiteCount(TestSuite et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean mobTestSuiteCountBatch(List<TestSuite> etList) {
-        for(TestSuite et : etList) {
-            mobTestSuiteCount(et);
-        }
-        return true;
     }
 
     @Override
@@ -232,60 +185,12 @@ public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<TestSuite> list) {
-        List<TestSuite> create = new ArrayList<>();
-        List<TestSuite> update = new ArrayList<>();
-        for (TestSuite et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<TestSuite> list) {
-        List<TestSuite> create = new ArrayList<>();
-        List<TestSuite> update = new ArrayList<>();
-        for (TestSuite et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
     public TestSuite unlinkCase(TestSuite et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean unlinkCaseBatch(List<TestSuite> etList) {
-        for(TestSuite et : etList) {
-            unlinkCase(et);
-        }
-        return true;
     }
 
 

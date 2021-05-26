@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ILogService extends IService<Log> {
 
     boolean create(Log et);
-    void createBatch(List<Log> list);
     boolean update(Log et);
     boolean sysUpdate(Log et);
-    void updateBatch(List<Log> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     Log get(Long key);
     Log sysGet(Long key);
     Log getDraft(Log et);
     boolean checkKey(Log et);
     boolean save(Log et);
-    void saveBatch(List<Log> list);
     List<Log> select(LogSearchContext context);
     List<Log> selectDefault(LogSearchContext context);
     List<Log> selectView(LogSearchContext context);

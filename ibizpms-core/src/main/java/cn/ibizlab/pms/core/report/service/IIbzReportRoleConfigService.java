@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzReportRoleConfigService extends IService<IbzReportRoleConfig> {
 
     boolean create(IbzReportRoleConfig et);
-    void createBatch(List<IbzReportRoleConfig> list);
     boolean update(IbzReportRoleConfig et);
     boolean sysUpdate(IbzReportRoleConfig et);
-    void updateBatch(List<IbzReportRoleConfig> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     IbzReportRoleConfig get(String key);
     IbzReportRoleConfig sysGet(String key);
     IbzReportRoleConfig getDraft(IbzReportRoleConfig et);
     boolean checkKey(IbzReportRoleConfig et);
     boolean save(IbzReportRoleConfig et);
-    void saveBatch(List<IbzReportRoleConfig> list);
     List<IbzReportRoleConfig> select(IbzReportRoleConfigSearchContext context);
     List<IbzReportRoleConfig> selectDefault(IbzReportRoleConfigSearchContext context);
     List<IbzReportRoleConfig> selectView(IbzReportRoleConfigSearchContext context);

@@ -58,7 +58,7 @@ public class SysEmployeeResource {
         SysEmployeeDTO dto = sysemployeeMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "sysemployee" , versionfield = "updatedate")
     @ApiOperation(value = "更新人员", tags = {"人员" },  notes = "更新人员")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysemployees/{sysemployee_id}")

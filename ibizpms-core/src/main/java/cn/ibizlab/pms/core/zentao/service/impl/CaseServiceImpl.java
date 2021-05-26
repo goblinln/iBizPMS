@@ -113,17 +113,6 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Case> list) {
-        if(caseRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -141,17 +130,6 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Case> list) {
-        if(caseRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -173,16 +151,6 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(caseRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -229,26 +197,8 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
 
     @Override
     @Transactional
-    public boolean caseFavoriteBatch(List<Case> etList) {
-        for(Case et : etList) {
-            caseFavorite(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Case caseNFavorite(Case et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean caseNFavoriteBatch(List<Case> etList) {
-        for(Case et : etList) {
-            caseNFavorite(et);
-        }
-        return true;
     }
 
     @Override
@@ -261,28 +211,12 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean confirmChangeBatch(List<Case> etList) {
-        for(Case et : etList) {
-            confirmChange(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Case confirmstorychange(Case et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean confirmstorychangeBatch(List<Case> etList) {
-        for(Case et : etList) {
-            confirmstorychange(et);
-        }
-        return true;
     }
 
     @Override
@@ -291,28 +225,12 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean getByTestTaskBatch(List<Case> etList) {
-        for(Case et : etList) {
-            getByTestTask(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Case getTestTaskCntRun(Case et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean getTestTaskCntRunBatch(List<Case> etList) {
-        for(Case et : etList) {
-            getTestTaskCntRun(et);
-        }
-        return true;
     }
 
     @Override
@@ -321,28 +239,12 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean linkCaseBatch(List<Case> etList) {
-        for(Case et : etList) {
-            linkCase(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Case mobLinkCase(Case et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean mobLinkCaseBatch(List<Case> etList) {
-        for(Case et : etList) {
-            mobLinkCase(et);
-        }
-        return true;
     }
 
     @Override
@@ -351,28 +253,11 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean runCaseBatch(List<Case> etList) {
-        for(Case et : etList) {
-            runCase(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Case runCases(Case et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean runCasesBatch(List<Case> etList) {
-        for(Case et : etList) {
-            runCases(et);
-        }
-        return true;
     }
 
     @Override
@@ -447,14 +332,6 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean testRunCaseBatch(List<Case> etList) {
-        for(Case et : etList) {
-            testRunCase(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -464,26 +341,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
 
     @Override
     @Transactional
-    public boolean testRunCasesBatch(List<Case> etList) {
-        for(Case et : etList) {
-            testRunCases(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Case testsuitelinkCase(Case et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean testsuitelinkCaseBatch(List<Case> etList) {
-        for(Case et : etList) {
-            testsuitelinkCase(et);
-        }
-        return true;
     }
 
     @Override
@@ -491,14 +351,6 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     public Case unlinkCase(Case et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean unlinkCaseBatch(List<Case> etList) {
-        for(Case et : etList) {
-            unlinkCase(et);
-        }
-        return true;
     }
 
     @Override
@@ -509,41 +361,15 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
 
     @Override
     @Transactional
-    public boolean unlinkCasesBatch(List<Case> etList) {
-        for(Case et : etList) {
-            unlinkCases(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Case unlinkSuiteCase(Case et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean unlinkSuiteCaseBatch(List<Case> etList) {
-        for(Case et : etList) {
-            unlinkSuiteCase(et);
-        }
-        return true;
     }
 
     @Override
     @Transactional
     public Case unlinkSuiteCases(Case et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean unlinkSuiteCasesBatch(List<Case> etList) {
-        for(Case et : etList) {
-            unlinkSuiteCases(et);
-        }
-        return true;
     }
 
 

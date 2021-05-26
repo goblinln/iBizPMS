@@ -66,7 +66,7 @@ public class IBZDailyActionResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id,'UPDATE')")
     @ApiOperation(value = "更新日报日志", tags = {"日报日志" },  notes = "更新日报日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailyactions/{ibzdailyaction_id}")

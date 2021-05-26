@@ -83,19 +83,6 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<IbzLibModule> list) {
-        if(ibzlibmoduleRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        for (IbzLibModule et : list) {
-            getProxyService().save(et);
-        }
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -110,19 +97,6 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<IbzLibModule> list) {
-        if(ibzlibmoduleRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        for (IbzLibModule et : list) {
-            getProxyService().update(et);
-        }
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -143,16 +117,6 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(ibzlibmoduleRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -213,52 +177,6 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<IbzLibModule> list) {
-        if(!ibzlibmoduleRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<IbzLibModule> create = new ArrayList<>();
-        List<IbzLibModule> update = new ArrayList<>();
-        for (IbzLibModule et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<IbzLibModule> list) {
-        if(!ibzlibmoduleRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<IbzLibModule> create = new ArrayList<>();
-        List<IbzLibModule> update = new ArrayList<>();
-        for (IbzLibModule et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 	@Override

@@ -58,7 +58,7 @@ public class SysOrganizationResource {
         SysOrganizationDTO dto = sysorganizationMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "sysorganization" , versionfield = "updatedate")
     @ApiOperation(value = "更新单位", tags = {"单位" },  notes = "更新单位")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysorganizations/{sysorganization_id}")

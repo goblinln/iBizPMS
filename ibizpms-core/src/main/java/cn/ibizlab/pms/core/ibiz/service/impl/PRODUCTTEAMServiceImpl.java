@@ -75,16 +75,6 @@ public class PRODUCTTEAMServiceImpl extends ServiceImpl<PRODUCTTEAMMapper, PRODU
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<PRODUCTTEAM> list) {
-        if(productteamRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -96,16 +86,6 @@ public class PRODUCTTEAMServiceImpl extends ServiceImpl<PRODUCTTEAMMapper, PRODU
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<PRODUCTTEAM> list) {
-        if(productteamRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -126,16 +106,6 @@ public class PRODUCTTEAMServiceImpl extends ServiceImpl<PRODUCTTEAMMapper, PRODU
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(productteamRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -179,14 +149,6 @@ public class PRODUCTTEAMServiceImpl extends ServiceImpl<PRODUCTTEAMMapper, PRODU
     public PRODUCTTEAM productTeamGuoLv(PRODUCTTEAM et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean productTeamGuoLvBatch(List<PRODUCTTEAM> etList) {
-        for(PRODUCTTEAM et : etList) {
-            productTeamGuoLv(et);
-        }
-        return true;
     }
 
     @Override

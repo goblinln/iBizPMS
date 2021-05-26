@@ -58,7 +58,7 @@ public class SysTeamResource {
         SysTeamDTO dto = systeamMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @ApiOperation(value = "更新组", tags = {"组" },  notes = "更新组")
 	@RequestMapping(method = RequestMethod.PUT, value = "/systeams/{systeam_id}")
     @Transactional

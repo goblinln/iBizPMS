@@ -84,17 +84,6 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<TestReport> list) {
-        if(testreportRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -109,17 +98,6 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<TestReport> list) {
-        if(testreportRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -140,16 +118,6 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(testreportRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -199,26 +167,8 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
 
     @Override
     @Transactional
-    public boolean getInfoTaskOvByTimeBatch(List<TestReport> etList) {
-        for(TestReport et : etList) {
-            getInfoTaskOvByTime(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public TestReport getInfoTestTask(TestReport et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean getInfoTestTaskBatch(List<TestReport> etList) {
-        for(TestReport et : etList) {
-            getInfoTestTask(et);
-        }
-        return true;
     }
 
     @Override
@@ -229,26 +179,8 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
 
     @Override
     @Transactional
-    public boolean getInfoTestTaskOvProjectBatch(List<TestReport> etList) {
-        for(TestReport et : etList) {
-            getInfoTestTaskOvProject(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public TestReport getInfoTestTaskProject(TestReport et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean getInfoTestTaskProjectBatch(List<TestReport> etList) {
-        for(TestReport et : etList) {
-            getInfoTestTaskProject(et);
-        }
-        return true;
     }
 
     @Override
@@ -259,26 +191,8 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
 
     @Override
     @Transactional
-    public boolean getInfoTestTaskRBatch(List<TestReport> etList) {
-        for(TestReport et : etList) {
-            getInfoTestTaskR(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public TestReport getInfoTestTaskS(TestReport et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean getInfoTestTaskSBatch(List<TestReport> etList) {
-        for(TestReport et : etList) {
-            getInfoTestTaskS(et);
-        }
-        return true;
     }
 
     @Override
@@ -289,26 +203,8 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
 
     @Override
     @Transactional
-    public boolean getTestReportBasicInfoBatch(List<TestReport> etList) {
-        for(TestReport et : etList) {
-            getTestReportBasicInfo(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public TestReport getTestReportProject(TestReport et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean getTestReportProjectBatch(List<TestReport> etList) {
-        for(TestReport et : etList) {
-            getTestReportProject(et);
-        }
-        return true;
     }
 
     @Override
@@ -330,52 +226,6 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<TestReport> list) {
-        if(!testreportRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<TestReport> create = new ArrayList<>();
-        List<TestReport> update = new ArrayList<>();
-        for (TestReport et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<TestReport> list) {
-        if(!testreportRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<TestReport> create = new ArrayList<>();
-        List<TestReport> update = new ArrayList<>();
-        for (TestReport et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 	@Override

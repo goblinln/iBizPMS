@@ -72,7 +72,7 @@ public class IbzPlanTempletResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "ibzplantemplet" , versionfield = "updatedate")
     @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id,'UPDATE')")
     @ApiOperation(value = "更新计划模板", tags = {"计划模板" },  notes = "更新计划模板")

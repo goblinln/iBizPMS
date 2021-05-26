@@ -58,7 +58,7 @@ public class PSSysAppResource {
         PSSysAppDTO dto = pssysappMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "pssysapp" , versionfield = "updatedate")
     @ApiOperation(value = "更新系统应用", tags = {"系统应用" },  notes = "更新系统应用")
 	@RequestMapping(method = RequestMethod.PUT, value = "/pssysapps/{pssysapp_id}")

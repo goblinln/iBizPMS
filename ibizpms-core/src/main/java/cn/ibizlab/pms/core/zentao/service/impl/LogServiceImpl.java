@@ -72,16 +72,6 @@ public class LogServiceImpl extends ServiceImpl<LogMapper, Log> implements ILogS
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Log> list) {
-        if(logRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -93,16 +83,6 @@ public class LogServiceImpl extends ServiceImpl<LogMapper, Log> implements ILogS
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Log> list) {
-        if(logRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -123,16 +103,6 @@ public class LogServiceImpl extends ServiceImpl<LogMapper, Log> implements ILogS
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(logRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -190,46 +160,6 @@ public class LogServiceImpl extends ServiceImpl<LogMapper, Log> implements ILogS
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<Log> list) {
-        List<Log> create = new ArrayList<>();
-        List<Log> update = new ArrayList<>();
-        for (Log et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<Log> list) {
-        List<Log> create = new ArrayList<>();
-        List<Log> update = new ArrayList<>();
-        for (Log et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 

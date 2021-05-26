@@ -113,19 +113,6 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Bug> list) {
-        if(bugRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        for (Bug et : list) {
-            getProxyService().save(et);
-        }
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -140,17 +127,6 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Bug> list) {
-        if(bugRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -171,18 +147,6 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(bugRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        for (Long id : idList) {
-            getProxyService().removeById(id);
-        }
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -226,14 +190,6 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean activateBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            activate(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -241,28 +197,12 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean assignToBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            assignTo(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Bug batchUnlinkBug(Bug et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean batchUnlinkBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            batchUnlinkBug(et);
-        }
-        return true;
     }
 
     @Override
@@ -273,26 +213,8 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
 
     @Override
     @Transactional
-    public boolean bugFavoritesBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            bugFavorites(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Bug bugNFavorites(Bug et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean bugNFavoritesBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            bugNFavorites(et);
-        }
-        return true;
     }
 
     @Override
@@ -301,14 +223,6 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean buildBatchUnlinkBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            buildBatchUnlinkBug(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -316,28 +230,12 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean buildLinkBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            buildLinkBug(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Bug buildUnlinkBug(Bug et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean buildUnlinkBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            buildUnlinkBug(et);
-        }
-        return true;
     }
 
     @Override
@@ -350,28 +248,12 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean closeBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            close(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Bug confirm(Bug et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean confirmBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            confirm(et);
-        }
-        return true;
     }
 
     @Override
@@ -380,28 +262,12 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean linkBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            linkBug(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Bug releaaseBatchUnlinkBug(Bug et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean releaaseBatchUnlinkBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            releaaseBatchUnlinkBug(et);
-        }
-        return true;
     }
 
     @Override
@@ -410,28 +276,12 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean releaseLinkBugbyBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            releaseLinkBugbyBug(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Bug releaseLinkBugbyLeftBug(Bug et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean releaseLinkBugbyLeftBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            releaseLinkBugbyLeftBug(et);
-        }
-        return true;
     }
 
     @Override
@@ -440,14 +290,6 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean releaseUnLinkBugbyLeftBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            releaseUnLinkBugbyLeftBug(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -455,28 +297,12 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean releaseUnlinkBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            releaseUnlinkBug(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Bug resolve(Bug et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean resolveBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            resolve(et);
-        }
-        return true;
     }
 
     @Override
@@ -498,52 +324,6 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<Bug> list) {
-        if(!bugRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<Bug> create = new ArrayList<>();
-        List<Bug> update = new ArrayList<>();
-        for (Bug et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<Bug> list) {
-        if(!bugRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<Bug> create = new ArrayList<>();
-        List<Bug> update = new ArrayList<>();
-        for (Bug et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
@@ -551,28 +331,12 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean sendMessageBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            sendMessage(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Bug sendMsgPreProcess(Bug et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean sendMsgPreProcessBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            sendMsgPreProcess(et);
-        }
-        return true;
     }
 
     @Override
@@ -588,14 +352,6 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean toStoryBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            toStory(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -603,28 +359,11 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean unlinkBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            unlinkBug(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Bug updateStoryVersion(Bug et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean updateStoryVersionBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            updateStoryVersion(et);
-        }
-        return true;
     }
 
 

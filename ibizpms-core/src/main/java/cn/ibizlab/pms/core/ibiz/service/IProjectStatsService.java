@@ -26,20 +26,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IProjectStatsService extends IService<ProjectStats> {
 
     boolean create(ProjectStats et);
-    void createBatch(List<ProjectStats> list);
     boolean update(ProjectStats et);
     boolean sysUpdate(ProjectStats et);
-    void updateBatch(List<ProjectStats> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     ProjectStats get(Long key);
     ProjectStats sysGet(Long key);
     ProjectStats getDraft(ProjectStats et);
     boolean checkKey(ProjectStats et);
     ProjectStats projectQualitySum(ProjectStats et);
-    boolean projectQualitySumBatch(List<ProjectStats> etList);
     boolean save(ProjectStats et);
-    void saveBatch(List<ProjectStats> list);
     List<ProjectStats> select(ProjectStatsSearchContext context);
     List<ProjectStats> selectDefault(ProjectStatsSearchContext context);
     List<ProjectStats> selectNoOpenProduct(ProjectStatsSearchContext context);

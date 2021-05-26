@@ -25,18 +25,14 @@ import cn.ibizlab.pms.core.ou.filter.SysTeamSearchContext;
 public interface ISysTeamService {
 
     boolean create(SysTeam et);
-    void createBatch(List<SysTeam> list);
     boolean update(SysTeam et);
     boolean sysUpdate(SysTeam et);
-    void updateBatch(List<SysTeam> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     SysTeam get(String key);
     SysTeam sysGet(String key);
     SysTeam getDraft(SysTeam et);
     boolean checkKey(SysTeam et);
     boolean save(SysTeam et);
-    void saveBatch(List<SysTeam> list);
 
     Page<SysTeam> searchDefault(SysTeamSearchContext context);
     SysTeam dynamicCall(String key, String action, SysTeam et);

@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIBZDailyHistoryService extends IService<IBZDailyHistory> {
 
     boolean create(IBZDailyHistory et);
-    void createBatch(List<IBZDailyHistory> list);
     boolean update(IBZDailyHistory et);
     boolean sysUpdate(IBZDailyHistory et);
-    void updateBatch(List<IBZDailyHistory> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     IBZDailyHistory get(Long key);
     IBZDailyHistory sysGet(Long key);
     IBZDailyHistory getDraft(IBZDailyHistory et);
     boolean checkKey(IBZDailyHistory et);
     boolean save(IBZDailyHistory et);
-    void saveBatch(List<IBZDailyHistory> list);
     List<IBZDailyHistory> select(IBZDailyHistorySearchContext context);
     List<IBZDailyHistory> selectDefault(IBZDailyHistorySearchContext context);
     List<IBZDailyHistory> selectSimple(IBZDailyHistorySearchContext context);

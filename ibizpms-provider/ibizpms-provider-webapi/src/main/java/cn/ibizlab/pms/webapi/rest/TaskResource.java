@@ -78,7 +78,7 @@ public class TaskResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
     @PreAuthorize("@TaskRuntime.test(#task_id,'UPDATE')")
     @ApiOperation(value = "更新任务", tags = {"任务" },  notes = "更新任务")

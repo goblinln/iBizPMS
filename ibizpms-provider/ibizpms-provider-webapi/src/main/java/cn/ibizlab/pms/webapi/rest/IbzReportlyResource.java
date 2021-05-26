@@ -63,7 +63,7 @@ public class IbzReportlyResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "ibzreportly" , versionfield = "updatedate")
     @ApiOperation(value = "更新汇报", tags = {"汇报" },  notes = "更新汇报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportlies/{ibzreportly_id}")

@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IJobService extends IService<Job> {
 
     boolean create(Job et);
-    void createBatch(List<Job> list);
     boolean update(Job et);
     boolean sysUpdate(Job et);
-    void updateBatch(List<Job> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     Job get(Long key);
     Job sysGet(Long key);
     Job getDraft(Job et);
     boolean checkKey(Job et);
     boolean save(Job et);
-    void saveBatch(List<Job> list);
     List<Job> select(JobSearchContext context);
     List<Job> selectDefault(JobSearchContext context);
     List<Job> selectView(JobSearchContext context);

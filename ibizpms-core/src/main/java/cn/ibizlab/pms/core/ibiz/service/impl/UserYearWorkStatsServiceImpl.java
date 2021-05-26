@@ -72,16 +72,6 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<UserYearWorkStats> list) {
-        if(useryearworkstatsRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -93,16 +83,6 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<UserYearWorkStats> list) {
-        if(useryearworkstatsRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -123,16 +103,6 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(useryearworkstatsRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -179,26 +149,8 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
 
     @Override
     @Transactional
-    public boolean getDevInfomationBatch(List<UserYearWorkStats> etList) {
-        for(UserYearWorkStats et : etList) {
-            getDevInfomation(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public UserYearWorkStats getPoInfomation(UserYearWorkStats et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean getPoInfomationBatch(List<UserYearWorkStats> etList) {
-        for(UserYearWorkStats et : etList) {
-            getPoInfomation(et);
-        }
-        return true;
     }
 
     @Override
@@ -209,26 +161,9 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
 
     @Override
     @Transactional
-    public boolean getQaInfomationBatch(List<UserYearWorkStats> etList) {
-        for(UserYearWorkStats et : etList) {
-            getQaInfomation(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public UserYearWorkStats getUserYearAction(UserYearWorkStats et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean getUserYearActionBatch(List<UserYearWorkStats> etList) {
-        for(UserYearWorkStats et : etList) {
-            getUserYearAction(et);
-        }
-        return true;
     }
 
     @Override
@@ -250,60 +185,12 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<UserYearWorkStats> list) {
-        List<UserYearWorkStats> create = new ArrayList<>();
-        List<UserYearWorkStats> update = new ArrayList<>();
-        for (UserYearWorkStats et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<UserYearWorkStats> list) {
-        List<UserYearWorkStats> create = new ArrayList<>();
-        List<UserYearWorkStats> update = new ArrayList<>();
-        for (UserYearWorkStats et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
     public UserYearWorkStats updateTitleByYear(UserYearWorkStats et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean updateTitleByYearBatch(List<UserYearWorkStats> etList) {
-        for(UserYearWorkStats et : etList) {
-            updateTitleByYear(et);
-        }
-        return true;
     }
 
 

@@ -87,17 +87,6 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Release> list) {
-        if(releaseRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -112,17 +101,6 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Release> list) {
-        if(releaseRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -143,16 +121,6 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(releaseRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -196,14 +164,6 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean activateBatch(List<Release> etList) {
-        for(Release et : etList) {
-            activate(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -211,28 +171,12 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean batchUnlinkBugBatch(List<Release> etList) {
-        for(Release et : etList) {
-            batchUnlinkBug(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Release changeStatus(Release et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean changeStatusBatch(List<Release> etList) {
-        for(Release et : etList) {
-            changeStatus(et);
-        }
-        return true;
     }
 
     @Override
@@ -245,28 +189,12 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean linkBugBatch(List<Release> etList) {
-        for(Release et : etList) {
-            linkBug(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Release linkBugbyBug(Release et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean linkBugbyBugBatch(List<Release> etList) {
-        for(Release et : etList) {
-            linkBugbyBug(et);
-        }
-        return true;
     }
 
     @Override
@@ -275,28 +203,12 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean linkBugbyLeftBugBatch(List<Release> etList) {
-        for(Release et : etList) {
-            linkBugbyLeftBug(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Release linkStory(Release et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean linkStoryBatch(List<Release> etList) {
-        for(Release et : etList) {
-            linkStory(et);
-        }
-        return true;
     }
 
     @Override
@@ -307,26 +219,9 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
 
     @Override
     @Transactional
-    public boolean mobReleaseCounterBatch(List<Release> etList) {
-        for(Release et : etList) {
-            mobReleaseCounter(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public Release oneClickRelease(Release et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean oneClickReleaseBatch(List<Release> etList) {
-        for(Release et : etList) {
-            oneClickRelease(et);
-        }
-        return true;
     }
 
     @Override
@@ -348,52 +243,6 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<Release> list) {
-        if(!releaseRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<Release> create = new ArrayList<>();
-        List<Release> update = new ArrayList<>();
-        for (Release et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<Release> list) {
-        if(!releaseRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<Release> create = new ArrayList<>();
-        List<Release> update = new ArrayList<>();
-        for (Release et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
@@ -401,28 +250,12 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean terminateBatch(List<Release> etList) {
-        for(Release et : etList) {
-            terminate(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public Release unlinkBug(Release et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean unlinkBugBatch(List<Release> etList) {
-        for(Release et : etList) {
-            unlinkBug(et);
-        }
-        return true;
     }
 
 

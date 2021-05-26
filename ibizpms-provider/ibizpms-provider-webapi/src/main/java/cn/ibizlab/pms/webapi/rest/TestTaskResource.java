@@ -66,7 +66,7 @@ public class TestTaskResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "testtask" , versionfield = "updatedate")
     @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'UPDATE')")
     @ApiOperation(value = "更新测试版本", tags = {"测试版本" },  notes = "更新测试版本")

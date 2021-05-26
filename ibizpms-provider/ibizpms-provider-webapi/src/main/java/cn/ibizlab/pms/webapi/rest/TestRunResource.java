@@ -66,7 +66,7 @@ public class TestRunResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@TestRunRuntime.test(#testrun_id,'UPDATE')")
     @ApiOperation(value = "更新测试运行", tags = {"测试运行" },  notes = "更新测试运行")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testruns/{testrun_id}")
@@ -168,6 +168,8 @@ public class TestRunResource {
         TestRun domain = testrunMapping.toDomain(testrundto);
         domain.setTask(testtask_id);
 		testrunService.create(domain);
+        if(!testrunRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         TestRunDTO dto = testrunMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -181,6 +183,8 @@ public class TestRunResource {
         domain.setTask(testtask_id);
         domain.setId(testrun_id);
 		testrunService.update(domain);
+        if(!testrunRuntime.test(domain.getId(),"UPDATE"))
+            throw new RuntimeException("无权限操作");
         TestRunDTO dto = testrunMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -259,6 +263,8 @@ public class TestRunResource {
         TestRun domain = testrunMapping.toDomain(testrundto);
         domain.setTask(testtask_id);
 		testrunService.create(domain);
+        if(!testrunRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         TestRunDTO dto = testrunMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -272,6 +278,8 @@ public class TestRunResource {
         domain.setTask(testtask_id);
         domain.setId(testrun_id);
 		testrunService.update(domain);
+        if(!testrunRuntime.test(domain.getId(),"UPDATE"))
+            throw new RuntimeException("无权限操作");
         TestRunDTO dto = testrunMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -350,6 +358,8 @@ public class TestRunResource {
         TestRun domain = testrunMapping.toDomain(testrundto);
         domain.setTask(testtask_id);
 		testrunService.create(domain);
+        if(!testrunRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         TestRunDTO dto = testrunMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -363,6 +373,8 @@ public class TestRunResource {
         domain.setTask(testtask_id);
         domain.setId(testrun_id);
 		testrunService.update(domain);
+        if(!testrunRuntime.test(domain.getId(),"UPDATE"))
+            throw new RuntimeException("无权限操作");
         TestRunDTO dto = testrunMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

@@ -66,7 +66,7 @@ public class IbzFavoritesResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @VersionCheck(entity = "ibzfavorites" , versionfield = "updatedate")
     @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id,'UPDATE')")
     @ApiOperation(value = "更新收藏", tags = {"收藏" },  notes = "更新收藏")

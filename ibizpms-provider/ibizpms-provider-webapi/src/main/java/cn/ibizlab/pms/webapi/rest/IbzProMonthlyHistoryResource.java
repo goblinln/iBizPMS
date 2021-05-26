@@ -66,7 +66,7 @@ public class IbzProMonthlyHistoryResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@IbzProMonthlyHistoryRuntime.test(#ibzpromonthlyhistory_id,'UPDATE')")
     @ApiOperation(value = "更新月报操作历史", tags = {"月报操作历史" },  notes = "更新月报操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzpromonthlyhistories/{ibzpromonthlyhistory_id}")

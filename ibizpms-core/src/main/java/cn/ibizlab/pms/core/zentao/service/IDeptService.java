@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IDeptService extends IService<Dept> {
 
     boolean create(Dept et);
-    void createBatch(List<Dept> list);
     boolean update(Dept et);
     boolean sysUpdate(Dept et);
-    void updateBatch(List<Dept> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     Dept get(Long key);
     Dept sysGet(Long key);
     Dept getDraft(Dept et);
     boolean checkKey(Dept et);
     boolean save(Dept et);
-    void saveBatch(List<Dept> list);
     List<Dept> select(DeptSearchContext context);
     List<Dept> selectDefault(DeptSearchContext context);
     List<Dept> selectRoot(DeptSearchContext context);

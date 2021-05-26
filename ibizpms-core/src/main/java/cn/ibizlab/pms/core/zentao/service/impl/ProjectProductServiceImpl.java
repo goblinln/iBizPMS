@@ -87,17 +87,6 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<ProjectProduct> list) {
-        if(projectproductRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -112,17 +101,6 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<ProjectProduct> list) {
-        if(projectproductRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-            list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -143,16 +121,6 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<String> idList) {
-        if(projectproductRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -213,52 +181,6 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<ProjectProduct> list) {
-        if(!projectproductRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<ProjectProduct> create = new ArrayList<>();
-        List<ProjectProduct> update = new ArrayList<>();
-        for (ProjectProduct et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<ProjectProduct> list) {
-        if(!projectproductRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        List<ProjectProduct> create = new ArrayList<>();
-        List<ProjectProduct> update = new ArrayList<>();
-        for (ProjectProduct et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 	@Override

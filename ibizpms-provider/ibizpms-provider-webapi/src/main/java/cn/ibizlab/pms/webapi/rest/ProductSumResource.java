@@ -66,7 +66,7 @@ public class ProductSumResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@ProductSumRuntime.test(#productsum_id,'UPDATE')")
     @ApiOperation(value = "更新产品汇总表", tags = {"产品汇总表" },  notes = "更新产品汇总表")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productsums/{productsum_id}")

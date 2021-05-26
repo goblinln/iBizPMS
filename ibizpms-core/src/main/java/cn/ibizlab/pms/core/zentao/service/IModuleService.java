@@ -26,20 +26,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IModuleService extends IService<Module> {
 
     boolean create(Module et);
-    void createBatch(List<Module> list);
     boolean update(Module et);
     boolean sysUpdate(Module et);
-    void updateBatch(List<Module> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     Module get(Long key);
     Module sysGet(Long key);
     Module getDraft(Module et);
     boolean checkKey(Module et);
     Module fix(Module et);
-    boolean fixBatch(List<Module> etList);
     boolean save(Module et);
-    void saveBatch(List<Module> list);
     List<Module> select(ModuleSearchContext context);
     List<Module> selectBugModule(ModuleSearchContext context);
     List<Module> selectBugModuleCodeList(ModuleSearchContext context);

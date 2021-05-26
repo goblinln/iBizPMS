@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIBZTestSuitHistoryService extends IService<IBZTestSuitHistory> {
 
     boolean create(IBZTestSuitHistory et);
-    void createBatch(List<IBZTestSuitHistory> list);
     boolean update(IBZTestSuitHistory et);
     boolean sysUpdate(IBZTestSuitHistory et);
-    void updateBatch(List<IBZTestSuitHistory> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     IBZTestSuitHistory get(Long key);
     IBZTestSuitHistory sysGet(Long key);
     IBZTestSuitHistory getDraft(IBZTestSuitHistory et);
     boolean checkKey(IBZTestSuitHistory et);
     boolean save(IBZTestSuitHistory et);
-    void saveBatch(List<IBZTestSuitHistory> list);
     List<IBZTestSuitHistory> select(IBZTestSuitHistorySearchContext context);
     List<IBZTestSuitHistory> selectDefault(IBZTestSuitHistorySearchContext context);
     List<IBZTestSuitHistory> selectSimple(IBZTestSuitHistorySearchContext context);

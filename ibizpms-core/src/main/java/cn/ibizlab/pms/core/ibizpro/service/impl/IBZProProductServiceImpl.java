@@ -78,16 +78,6 @@ public class IBZProProductServiceImpl extends ServiceImpl<IBZProProductMapper, I
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<IBZProProduct> list) {
-        if(ibzproproductRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -99,16 +89,6 @@ public class IBZProProductServiceImpl extends ServiceImpl<IBZProProductMapper, I
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<IBZProProduct> list) {
-        if(ibzproproductRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -129,16 +109,6 @@ public class IBZProProductServiceImpl extends ServiceImpl<IBZProProductMapper, I
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(ibzproproductRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -196,46 +166,6 @@ public class IBZProProductServiceImpl extends ServiceImpl<IBZProProductMapper, I
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<IBZProProduct> list) {
-        List<IBZProProduct> create = new ArrayList<>();
-        List<IBZProProduct> update = new ArrayList<>();
-        for (IBZProProduct et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<IBZProProduct> list) {
-        List<IBZProProduct> create = new ArrayList<>();
-        List<IBZProProduct> update = new ArrayList<>();
-        for (IBZProProduct et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 

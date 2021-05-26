@@ -72,16 +72,6 @@ public class RelationServiceImpl extends ServiceImpl<RelationMapper, Relation> i
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Relation> list) {
-        if(relationRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -93,16 +83,6 @@ public class RelationServiceImpl extends ServiceImpl<RelationMapper, Relation> i
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Relation> list) {
-        if(relationRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -123,16 +103,6 @@ public class RelationServiceImpl extends ServiceImpl<RelationMapper, Relation> i
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(relationRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -190,46 +160,6 @@ public class RelationServiceImpl extends ServiceImpl<RelationMapper, Relation> i
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<Relation> list) {
-        List<Relation> create = new ArrayList<>();
-        List<Relation> update = new ArrayList<>();
-        for (Relation et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<Relation> list) {
-        List<Relation> create = new ArrayList<>();
-        List<Relation> update = new ArrayList<>();
-        for (Relation et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 

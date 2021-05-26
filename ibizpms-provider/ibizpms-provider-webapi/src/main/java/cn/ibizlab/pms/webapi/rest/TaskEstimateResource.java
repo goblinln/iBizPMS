@@ -66,7 +66,7 @@ public class TaskEstimateResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@TaskEstimateRuntime.test(#taskestimate_id,'UPDATE')")
     @ApiOperation(value = "更新任务预计", tags = {"任务预计" },  notes = "更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/taskestimates/{taskestimate_id}")

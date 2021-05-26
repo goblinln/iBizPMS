@@ -26,28 +26,19 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIBZProWeeklyActionService extends IService<IBZProWeeklyAction> {
 
     boolean create(IBZProWeeklyAction et);
-    void createBatch(List<IBZProWeeklyAction> list);
     boolean update(IBZProWeeklyAction et);
     boolean sysUpdate(IBZProWeeklyAction et);
-    void updateBatch(List<IBZProWeeklyAction> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     IBZProWeeklyAction get(Long key);
     IBZProWeeklyAction sysGet(Long key);
     IBZProWeeklyAction getDraft(IBZProWeeklyAction et);
     boolean checkKey(IBZProWeeklyAction et);
     IBZProWeeklyAction createHis(IBZProWeeklyAction et);
-    boolean createHisBatch(List<IBZProWeeklyAction> etList);
     IBZProWeeklyAction managePmsEe(IBZProWeeklyAction et);
-    boolean managePmsEeBatch(List<IBZProWeeklyAction> etList);
     boolean save(IBZProWeeklyAction et);
-    void saveBatch(List<IBZProWeeklyAction> list);
     IBZProWeeklyAction sendMarkDone(IBZProWeeklyAction et);
-    boolean sendMarkDoneBatch(List<IBZProWeeklyAction> etList);
     IBZProWeeklyAction sendTodo(IBZProWeeklyAction et);
-    boolean sendTodoBatch(List<IBZProWeeklyAction> etList);
     IBZProWeeklyAction sendToread(IBZProWeeklyAction et);
-    boolean sendToreadBatch(List<IBZProWeeklyAction> etList);
     List<IBZProWeeklyAction> select(IBZProWeeklyActionSearchContext context);
     List<IBZProWeeklyAction> selectDefault(IBZProWeeklyActionSearchContext context);
     List<IBZProWeeklyAction> selectSimple(IBZProWeeklyActionSearchContext context);

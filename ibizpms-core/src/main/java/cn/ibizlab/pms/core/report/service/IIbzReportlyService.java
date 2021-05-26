@@ -26,22 +26,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzReportlyService extends IService<IbzReportly> {
 
     boolean create(IbzReportly et);
-    void createBatch(List<IbzReportly> list);
     boolean update(IbzReportly et);
     boolean sysUpdate(IbzReportly et);
-    void updateBatch(List<IbzReportly> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     IbzReportly get(Long key);
     IbzReportly sysGet(Long key);
     IbzReportly getDraft(IbzReportly et);
     boolean checkKey(IbzReportly et);
     IbzReportly haveRead(IbzReportly et);
-    boolean haveReadBatch(List<IbzReportly> etList);
     boolean save(IbzReportly et);
-    void saveBatch(List<IbzReportly> list);
     IbzReportly submit(IbzReportly et);
-    boolean submitBatch(List<IbzReportly> etList);
     List<IbzReportly> select(IbzReportlySearchContext context);
     List<IbzReportly> selectDefault(IbzReportlySearchContext context);
     List<IbzReportly> selectMyAllReportly(IbzReportlySearchContext context);

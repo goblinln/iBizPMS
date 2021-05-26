@@ -72,16 +72,6 @@ public class IbiLoginServiceImpl extends ServiceImpl<IbiLoginMapper, IbiLogin> i
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<IbiLogin> list) {
-        if(ibiloginRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -93,16 +83,6 @@ public class IbiLoginServiceImpl extends ServiceImpl<IbiLoginMapper, IbiLogin> i
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<IbiLogin> list) {
-        if(ibiloginRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -123,16 +103,6 @@ public class IbiLoginServiceImpl extends ServiceImpl<IbiLoginMapper, IbiLogin> i
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(ibiloginRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -167,25 +137,11 @@ public class IbiLoginServiceImpl extends ServiceImpl<IbiLoginMapper, IbiLogin> i
         //自定义代码
         return et;
     }
-    @Override
-    public boolean getUserBatch(List<IbiLogin> etList) {
-        for(IbiLogin et : etList) {
-            getUser(et);
-        }
-        return true;
-    }
 
     @Override
     public IbiLogin ztlogin(IbiLogin et) {
         //自定义代码
         return et;
-    }
-    @Override
-    public boolean ztloginBatch(List<IbiLogin> etList) {
-        for(IbiLogin et : etList) {
-            ztlogin(et);
-        }
-        return true;
     }
 
 

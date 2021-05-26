@@ -72,16 +72,6 @@ public class IbzMyTerritoryServiceImpl extends ServiceImpl<IbzMyTerritoryMapper,
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<IbzMyTerritory> list) {
-        if(ibzmyterritoryRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -93,16 +83,6 @@ public class IbzMyTerritoryServiceImpl extends ServiceImpl<IbzMyTerritoryMapper,
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<IbzMyTerritory> list) {
-        if(ibzmyterritoryRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -123,16 +103,6 @@ public class IbzMyTerritoryServiceImpl extends ServiceImpl<IbzMyTerritoryMapper,
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(ibzmyterritoryRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -179,41 +149,14 @@ public class IbzMyTerritoryServiceImpl extends ServiceImpl<IbzMyTerritoryMapper,
 
     @Override
     @Transactional
-    public boolean mobMenuCountBatch(List<IbzMyTerritory> etList) {
-        for(IbzMyTerritory et : etList) {
-            mobMenuCount(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public IbzMyTerritory myFavoriteCount(IbzMyTerritory et) {
          return et ;
     }
 
     @Override
     @Transactional
-    public boolean myFavoriteCountBatch(List<IbzMyTerritory> etList) {
-        for(IbzMyTerritory et : etList) {
-            myFavoriteCount(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public IbzMyTerritory myTerritoryCount(IbzMyTerritory et) {
          return et ;
-    }
-
-    @Override
-    @Transactional
-    public boolean myTerritoryCountBatch(List<IbzMyTerritory> etList) {
-        for(IbzMyTerritory et : etList) {
-            myTerritoryCount(et);
-        }
-        return true;
     }
 
     @Override
@@ -235,46 +178,6 @@ public class IbzMyTerritoryServiceImpl extends ServiceImpl<IbzMyTerritoryMapper,
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<IbzMyTerritory> list) {
-        List<IbzMyTerritory> create = new ArrayList<>();
-        List<IbzMyTerritory> update = new ArrayList<>();
-        for (IbzMyTerritory et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<IbzMyTerritory> list) {
-        List<IbzMyTerritory> create = new ArrayList<>();
-        List<IbzMyTerritory> update = new ArrayList<>();
-        for (IbzMyTerritory et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 

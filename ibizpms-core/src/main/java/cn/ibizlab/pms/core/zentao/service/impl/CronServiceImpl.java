@@ -72,16 +72,6 @@ public class CronServiceImpl extends ServiceImpl<CronMapper, Cron> implements IC
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<Cron> list) {
-        if(cronRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -93,16 +83,6 @@ public class CronServiceImpl extends ServiceImpl<CronMapper, Cron> implements IC
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<Cron> list) {
-        if(cronRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -123,16 +103,6 @@ public class CronServiceImpl extends ServiceImpl<CronMapper, Cron> implements IC
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(cronRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -190,46 +160,6 @@ public class CronServiceImpl extends ServiceImpl<CronMapper, Cron> implements IC
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<Cron> list) {
-        List<Cron> create = new ArrayList<>();
-        List<Cron> update = new ArrayList<>();
-        for (Cron et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<Cron> list) {
-        List<Cron> create = new ArrayList<>();
-        List<Cron> update = new ArrayList<>();
-        for (Cron et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 

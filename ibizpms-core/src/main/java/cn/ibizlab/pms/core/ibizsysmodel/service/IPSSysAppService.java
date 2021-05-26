@@ -25,18 +25,14 @@ import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSysAppSearchContext;
 public interface IPSSysAppService {
 
     boolean create(PSSysApp et);
-    void createBatch(List<PSSysApp> list);
     boolean update(PSSysApp et);
     boolean sysUpdate(PSSysApp et);
-    void updateBatch(List<PSSysApp> list);
     boolean remove(String key);
-    void removeBatch(Collection<String> idList);
     PSSysApp get(String key);
     PSSysApp sysGet(String key);
     PSSysApp getDraft(PSSysApp et);
     boolean checkKey(PSSysApp et);
     boolean save(PSSysApp et);
-    void saveBatch(List<PSSysApp> list);
 
     Page<PSSysApp> searchBuild(PSSysAppSearchContext context);
     Page<PSSysApp> searchDefault(PSSysAppSearchContext context);

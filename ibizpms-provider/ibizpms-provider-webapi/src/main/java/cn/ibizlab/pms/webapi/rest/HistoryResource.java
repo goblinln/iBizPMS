@@ -66,7 +66,7 @@ public class HistoryResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-    
+
     @PreAuthorize("@HistoryRuntime.test(#history_id,'UPDATE')")
     @ApiOperation(value = "更新操作历史", tags = {"操作历史" },  notes = "更新操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/histories/{history_id}")

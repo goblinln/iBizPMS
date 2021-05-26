@@ -72,16 +72,6 @@ public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<UserQuery> list) {
-        if(userqueryRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -93,16 +83,6 @@ public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<UserQuery> list) {
-        if(userqueryRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -123,16 +103,6 @@ public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(userqueryRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -190,46 +160,6 @@ public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<UserQuery> list) {
-        List<UserQuery> create = new ArrayList<>();
-        List<UserQuery> update = new ArrayList<>();
-        for (UserQuery et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<UserQuery> list) {
-        List<UserQuery> create = new ArrayList<>();
-        List<UserQuery> update = new ArrayList<>();
-        for (UserQuery et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 

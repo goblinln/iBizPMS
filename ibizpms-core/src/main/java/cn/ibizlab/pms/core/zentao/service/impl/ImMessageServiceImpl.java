@@ -72,16 +72,6 @@ public class ImMessageServiceImpl extends ServiceImpl<ImMessageMapper, ImMessage
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<ImMessage> list) {
-        if(immessageRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -93,16 +83,6 @@ public class ImMessageServiceImpl extends ServiceImpl<ImMessageMapper, ImMessage
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<ImMessage> list) {
-        if(immessageRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -123,16 +103,6 @@ public class ImMessageServiceImpl extends ServiceImpl<ImMessageMapper, ImMessage
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(immessageRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -190,46 +160,6 @@ public class ImMessageServiceImpl extends ServiceImpl<ImMessageMapper, ImMessage
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<ImMessage> list) {
-        List<ImMessage> create = new ArrayList<>();
-        List<ImMessage> update = new ArrayList<>();
-        for (ImMessage et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<ImMessage> list) {
-        List<ImMessage> create = new ArrayList<>();
-        List<ImMessage> update = new ArrayList<>();
-        for (ImMessage et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 

@@ -75,16 +75,6 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<IbzReportly> list) {
-        if(ibzreportlyRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -96,16 +86,6 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<IbzReportly> list) {
-        if(ibzreportlyRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -126,16 +106,6 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(ibzreportlyRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -180,14 +150,6 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean haveReadBatch(List<IbzReportly> etList) {
-        for(IbzReportly et : etList) {
-            haveRead(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
@@ -208,60 +170,12 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<IbzReportly> list) {
-        List<IbzReportly> create = new ArrayList<>();
-        List<IbzReportly> update = new ArrayList<>();
-        for (IbzReportly et : list) {
-            if (ObjectUtils.isEmpty(et.getIbzreportlyid()) || ObjectUtils.isEmpty(getById(et.getIbzreportlyid()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<IbzReportly> list) {
-        List<IbzReportly> create = new ArrayList<>();
-        List<IbzReportly> update = new ArrayList<>();
-        for (IbzReportly et : list) {
-            if (ObjectUtils.isEmpty(et.getIbzreportlyid()) || ObjectUtils.isEmpty(getById(et.getIbzreportlyid()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
     @Override
     @Transactional
     public IbzReportly submit(IbzReportly et) {
         //自定义代码
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean submitBatch(List<IbzReportly> etList) {
-        for(IbzReportly et : etList) {
-            submit(et);
-        }
-        return true;
     }
 
 

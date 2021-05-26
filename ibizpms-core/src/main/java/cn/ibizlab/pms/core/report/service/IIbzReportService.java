@@ -26,22 +26,16 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IIbzReportService extends IService<IbzReport> {
 
     boolean create(IbzReport et);
-    void createBatch(List<IbzReport> list);
     boolean update(IbzReport et);
     boolean sysUpdate(IbzReport et);
-    void updateBatch(List<IbzReport> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     IbzReport get(Long key);
     IbzReport sysGet(Long key);
     IbzReport getDraft(IbzReport et);
     boolean checkKey(IbzReport et);
     IbzReport myReportINotSubmit(IbzReport et);
-    boolean myReportINotSubmitBatch(List<IbzReport> etList);
     IbzReport reportIReceived(IbzReport et);
-    boolean reportIReceivedBatch(List<IbzReport> etList);
     boolean save(IbzReport et);
-    void saveBatch(List<IbzReport> list);
     List<IbzReport> select(IbzReportSearchContext context);
     List<IbzReport> selectAllReport(IbzReportSearchContext context);
     List<IbzReport> selectDefault(IbzReportSearchContext context);

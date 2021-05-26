@@ -26,18 +26,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IHistoryService extends IService<History> {
 
     boolean create(History et);
-    void createBatch(List<History> list);
     boolean update(History et);
     boolean sysUpdate(History et);
-    void updateBatch(List<History> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     History get(Long key);
     History sysGet(Long key);
     History getDraft(History et);
     boolean checkKey(History et);
     boolean save(History et);
-    void saveBatch(List<History> list);
     List<History> select(HistorySearchContext context);
     List<History> selectDefault(HistorySearchContext context);
     List<History> selectView(HistorySearchContext context);

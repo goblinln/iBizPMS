@@ -72,16 +72,6 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
         return true;
     }
 
-    @Override
-    @Transactional
-    public void createBatch(List<ProjectStats> list) {
-        if(projectstatsRuntime.isRtmodel()){
-            list.forEach(item -> getProxyService().create(item));
-        }else{
-        this.saveBatch(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -93,16 +83,6 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
         return true;
     }
 
-    @Override
-    @Transactional
-    public void updateBatch(List<ProjectStats> list) {
-        if(projectstatsRuntime.isRtmodel()){
-            list.forEach(item-> getProxyService().update(item));
-        }else{
-        updateBatchById(list, batchSize);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -123,16 +103,6 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
         return result ;
     }
 
-    @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        if(projectstatsRuntime.isRtmodel()){
-            idList.forEach(id->getProxyService().remove(id));
-        }else{
-        removeByIds(idList);
-        }
-        
-    }
 
     @Override
     @Transactional
@@ -179,15 +149,6 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
 
     @Override
     @Transactional
-    public boolean projectQualitySumBatch(List<ProjectStats> etList) {
-        for(ProjectStats et : etList) {
-            projectQualitySum(et);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
     public boolean save(ProjectStats et) {
         if(!saveOrUpdate(et)) {
             return false;
@@ -205,46 +166,6 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
         }
     }
 
-    @Override
-    @Transactional
-    public boolean saveBatch(Collection<ProjectStats> list) {
-        List<ProjectStats> create = new ArrayList<>();
-        List<ProjectStats> update = new ArrayList<>();
-        for (ProjectStats et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void saveBatch(List<ProjectStats> list) {
-        List<ProjectStats> create = new ArrayList<>();
-        List<ProjectStats> update = new ArrayList<>();
-        for (ProjectStats et : list) {
-            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
-                create.add(et);
-            } else {
-                update.add(et);
-            }
-        }
-        if (create.size() > 0) {
-            getProxyService().createBatch(create);
-        }
-        if (update.size() > 0) {
-            getProxyService().updateBatch(update);
-        }
-    }
 
 
 

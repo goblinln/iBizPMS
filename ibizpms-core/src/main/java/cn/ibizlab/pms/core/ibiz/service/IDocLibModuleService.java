@@ -26,28 +26,19 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IDocLibModuleService extends IService<DocLibModule> {
 
     boolean create(DocLibModule et);
-    void createBatch(List<DocLibModule> list);
     boolean update(DocLibModule et);
     boolean sysUpdate(DocLibModule et);
-    void updateBatch(List<DocLibModule> list);
     boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
     DocLibModule get(Long key);
     DocLibModule sysGet(Long key);
     DocLibModule getDraft(DocLibModule et);
     boolean checkKey(DocLibModule et);
     DocLibModule collect(DocLibModule et);
-    boolean collectBatch(List<DocLibModule> etList);
     DocLibModule docLibModuleNFavorite(DocLibModule et);
-    boolean docLibModuleNFavoriteBatch(List<DocLibModule> etList);
     DocLibModule doclibModuleFavorite(DocLibModule et);
-    boolean doclibModuleFavoriteBatch(List<DocLibModule> etList);
     DocLibModule fix(DocLibModule et);
-    boolean fixBatch(List<DocLibModule> etList);
     boolean save(DocLibModule et);
-    void saveBatch(List<DocLibModule> list);
     DocLibModule unCollect(DocLibModule et);
-    boolean unCollectBatch(List<DocLibModule> etList);
     List<DocLibModule> select(DocLibModuleSearchContext context);
     List<DocLibModule> selectAllDoclibModule_Custom(DocLibModuleSearchContext context);
     List<DocLibModule> selectChildModuleByParent(DocLibModuleSearchContext context);
