@@ -95,7 +95,7 @@ export class AppContentLeftNavMenu extends Vue {
         this.footerRenderItem = this.$footerRenderService.registerLeftItem((h: any) => {
             return (
                 <icon
-                    title={this.uiState.layoutState.leftNavMenuCollapse ? this.$t('app.components.content.open') : this.$t('app.components.content.close')}
+                    title={this.uiState.layoutState.leftNavMenuCollapse ? this.$t('components.content.open') : this.$t('components.content.close')}
                     type="md-menu"
                     style="font-size: 20px;vertical-align: -3px;"
                     on-click={() => this.uiState.leftNavMenuCollapseChange()}

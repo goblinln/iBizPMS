@@ -253,10 +253,10 @@ export class DashboardControlBase extends MainControlBase {
                         this.dashboardType = 'custom';
                         this.$forceUpdate();
                     }else{
-                        throw new Error(this.$t('app.dashBoard.dataError'));
+                      throw new Error(this.$t('app.dashBoard.dataError') as string);
                     }
                 }else{
-                    throw new Error(this.$t('app.dashBoard.serviceError'));
+                  throw new Error(this.$t('app.dashBoard.serviceError') as string);
                 }
             }
         } catch (error) {

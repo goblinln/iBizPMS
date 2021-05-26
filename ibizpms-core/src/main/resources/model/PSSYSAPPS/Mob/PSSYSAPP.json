@@ -24063,7 +24063,7 @@
       } ],
       "codeName" : "Action",
       "dataAccCtrlArch" : 1,
-      "dataAccCtrlMode" : 0,
+      "dataAccCtrlMode" : 2,
       "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json",
       "enableUIActions" : 15,
       "logicName" : "系统日志",
@@ -24106,7 +24106,7 @@
       "enableUIModify" : true,
       "enableUIRemove" : true,
       "enableWFActions" : false,
-      "major" : true
+      "major" : false
     }, {
       "getAllPSAppDEACModes" : [ {
         "codeName" : "Default",

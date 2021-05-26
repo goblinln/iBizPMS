@@ -523,7 +523,7 @@ export class ListControlBase extends MDControlBase {
             .replace(/[undefined]/g, '')
             .replace(/[ ]/g, '');
         this.$Modal.confirm({
-            title: this.$t('app.commonWords.warning'),
+            title: (this.$t('app.commonWords.warning') as string),
             content: this.$t('app.gridpage.confirmDel') + dataInfo + this.$t('app.gridpage.notRecoverable'),
             onOk: () => {
                 removeData();

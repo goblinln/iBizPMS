@@ -110,9 +110,6 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.product && _context.action && _context.history) {
             return this.http.get(`/products/${_context.product}/actions/${_context.action}/histories/${_context.history}/select`);
         }
-        if (_context.action && _context.history) {
-            return this.http.get(`/actions/${_context.action}/histories/${_context.history}/select`);
-        }
         return this.http.get(`/histories/${_context.history}/select`);
     }
     /**
@@ -133,16 +130,6 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/histories`, _data);
-        }
-        if (_context.action && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/actions/${_context.action}/histories`, _data);
         }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -166,10 +153,6 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/actions/${_context.action}/histories/${_context.history}`, _data);
         }
-        if (_context.action && _context.history) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/actions/${_context.action}/histories/${_context.history}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/histories/${_context.history}`, _data);
     }
@@ -185,9 +168,6 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.product && _context.action && _context.history) {
             return this.http.delete(`/products/${_context.product}/actions/${_context.action}/histories/${_context.history}`);
         }
-        if (_context.action && _context.history) {
-            return this.http.delete(`/actions/${_context.action}/histories/${_context.history}`);
-        }
         return this.http.delete(`/histories/${_context.history}`);
     }
     /**
@@ -201,10 +181,6 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.action && _context.history) {
             const res = await this.http.get(`/products/${_context.product}/actions/${_context.action}/histories/${_context.history}`);
-            return res;
-        }
-        if (_context.action && _context.history) {
-            const res = await this.http.get(`/actions/${_context.action}/histories/${_context.history}`);
             return res;
         }
         const res = await this.http.get(`/histories/${_context.history}`);
@@ -225,12 +201,6 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             const res = await this.http.get(`/products/${_context.product}/actions/${_context.action}/histories/getdraft`, _data);
             return res;
         }
-        if (_context.action && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/actions/${_context.action}/histories/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/histories/getdraft`, _data);
@@ -247,9 +217,6 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.action && true) {
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.action && true) {
-            return this.http.post(`/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         return this.http.post(`/histories/fetchdefault`, _data);
     }

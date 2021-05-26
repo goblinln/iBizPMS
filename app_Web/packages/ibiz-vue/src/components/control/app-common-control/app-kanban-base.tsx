@@ -107,7 +107,7 @@ export class AppKanbanBase extends KanbanControlBase {
                     !group.folding ?
                         <div class="dataview-group-folading-kanban" on-click={() => this.onClick(group, index)}>
                             <div class="unfold-icon">
-                                <i class="el-icon-s-unfold" title={this.$t('app.components.content.open')}></i>
+                                <i class="el-icon-s-unfold" title={this.$t('components.content.open')}></i>
                             </div>
                             <div class="dataview-group-folding">
                                 {this.getGroupText(group?.value)}{"(" + group?.items?.length + ")"}
@@ -177,7 +177,7 @@ export class AppKanbanBase extends KanbanControlBase {
                 <div class="dataview-group-content" style={groupStyle}>
                     <div class={["dataview-group-header", this.controlInstance?.getGroupPSSysCss()?.cssName]}>
                         <div class="fold-icon" on-click={() => this.onClick(group, index)}>
-                            <i class="el-icon-s-fold" title={this.$t('app.components.content.close')}></i>
+                            <i class="el-icon-s-fold" title={this.$t('components.content.close')}></i>
                         </div>
                         <span class="fold-text">
                             {this.getGroupText(group.value)}

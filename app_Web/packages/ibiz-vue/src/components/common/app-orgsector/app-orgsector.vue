@@ -207,7 +207,7 @@ export default class AppOrgSector extends Vue {
               }
           }).catch((error: any) => {
                 resolve(false);
-                this.$throw(this.$t('app.components.appOrgSelect.resetError'),'resetAppData');
+                this.$throw(this.$t('components.appOrgSelect.resetError'),'resetAppData');
           });
       });
   }

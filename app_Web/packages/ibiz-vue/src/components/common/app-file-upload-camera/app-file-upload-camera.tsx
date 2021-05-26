@@ -258,7 +258,7 @@ export default class AppFileUploadCamera extends Vue {
             <div class="file-upload-camera2">
                 <div class="camera-container">
                 <div class="camera-select">
-                    <span>{this.$t('app.components.camera.choose')}</span>
+                    <span>{this.$t('components.camera.choose')}</span>
                     {/* <el-radio-group v-model={this.videoSelect}>
                     {this.options ? this.options.map((items: any,index) => {
                         return <el-radio label={items.value} on-change={(event)=>{this.getStream()}}>{items.label}</el-radio>
@@ -277,10 +277,10 @@ export default class AppFileUploadCamera extends Vue {
                     </div>
                     <div class="action-container">
                     <div>
-                    <el-button size="small" class="elBtn" type="primary" on-click={()=>{this.leftRotate()}} icon="el-icon-refresh-left">{this.$t('app.components.camera.left')}</el-button>
-                    <el-button size="small" class="elBtn" type="primary" on-click={()=>{this.rightRotate()}} icon="el-icon-refresh-right">{this.$t('app.components.camera.right')}</el-button>
-                    <el-button size="small" class="elBtn" type="primary" on-click={()=>{this.takePicture()}} icon="el-icon-camera-solid">{this.$t('app.components.camera.photo')}</el-button>
-                    <el-button size="small" class="elBtn" type="primary" on-click={()=>{this.saveImg()}} icon="el-icon-document-checked">{this.$t('app.components.camera.save')}</el-button>
+                    <el-button size="small" class="elBtn" type="primary" on-click={()=>{this.leftRotate()}} icon="el-icon-refresh-left">{this.$t('components.camera.left')}</el-button>
+                    <el-button size="small" class="elBtn" type="primary" on-click={()=>{this.rightRotate()}} icon="el-icon-refresh-right">{this.$t('components.camera.right')}</el-button>
+                    <el-button size="small" class="elBtn" type="primary" on-click={()=>{this.takePicture()}} icon="el-icon-camera-solid">{this.$t('components.camera.photo')}</el-button>
+                    <el-button size="small" class="elBtn" type="primary" on-click={()=>{this.saveImg()}} icon="el-icon-document-checked">{this.$t('components.camera.save')}</el-button>
                     {/* <el-button size="small" class="elBtn" type="primary" on-click={()=>{this.parseBarcode()}}>识别条码</el-button> */}
                     </div>
                 </div>

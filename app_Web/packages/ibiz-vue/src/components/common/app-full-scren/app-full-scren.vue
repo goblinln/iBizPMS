@@ -1,7 +1,7 @@
 <template>
     <div class="fullscren">
         <span><Icon :type="fullScren == true ? 'ios-contract' : 'ios-expand'" size="15" @click="handleScreen"/></span>
-        <span class="title" @click="handleScreen">{{$t('app.components.scren.all')}}</span>
+        <span class="title" @click="handleScreen">{{$t('components.scren.all')}}</span>
     </div>
 </template>
 <script lang = 'ts'>

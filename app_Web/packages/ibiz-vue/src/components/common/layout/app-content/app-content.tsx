@@ -36,7 +36,7 @@ export class AppContent extends Vue {
             this.$footerRenderService.registerRightItem(() => {
                 return (
                     <div
-                        title={this.$t('app.components.content.title')}
+                        title={this.$t('components.content.title')}
                         class="action-item"
                         on-click={() => this.changeBottom()}
                     >

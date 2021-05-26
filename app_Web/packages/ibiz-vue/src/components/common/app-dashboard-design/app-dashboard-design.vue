@@ -10,7 +10,7 @@
             <el-menu v-show="!filterVal" :unique-opened="true">
                 <template v-for="(item, index) of list">
                     <el-submenu :key="item.type + index" :index="item.type + index">
-                        <div slot="title">{{Object.is(item.type, 'app') ? $t('app.components.appDashboardDesign.global') : item.name}}</div>
+                        <div slot="title">{{Object.is(item.type, 'app') ? $t('components.appDashboardDesign.global') : item.name}}</div>
                         <template v-for="(item2, index2) of item.children">
                             <el-submenu :key="item2.type + index2" :index="item2.type + index2">
                                 <div slot="title">{{item2.name}}</div>

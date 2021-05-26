@@ -435,7 +435,7 @@ export class AppmenuBase extends AppMenuControlBase {
                     <i-input
                         search={true}
                         class="index-search"
-                        placeholder={this.$t('app.components.search.holder')}
+                        placeholder={this.$t('components.search.holder')}
                         on-on-search={(value: any) => { this.onSearch(value); }}>
                     </i-input>
                     <div style={{ height: '100%' }}>
@@ -452,7 +452,7 @@ export class AppmenuBase extends AppMenuControlBase {
                     <i-input
                         search={true}
                         class="index-search"
-                        placeholder={this.$t('app.components.search.holder')}
+                        placeholder={this.$t('components.search.holder')}
                         on-on-search={(value: any) => { this.onSearch(value); }}>
                     </i-input>
                     <div style={{ height: '100%' }}>

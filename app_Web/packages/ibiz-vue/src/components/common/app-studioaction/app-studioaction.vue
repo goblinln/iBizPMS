@@ -84,7 +84,7 @@ export default class AppStudioAction extends Vue {
      */
     copy() {
         if (textCopy.copy(this.viewInstance.name)) {
-            this.$success(this.$t('app.components.appStudioAction.success'));
+            this.$success(this.$t('components.appStudioAction.success'));
         }
     }
 
@@ -98,12 +98,12 @@ export default class AppStudioAction extends Vue {
         if (this.sdc.isShowTool && this.isDevMode) {
             return (
                 <div class='app-studio-debug-bar'>
-                    <div class='app-studio-debug-info' title={this.$t('app.components.appStudioAction.copyname')} on-click={() => this.copy()}>
+                    <div class='app-studio-debug-info' title={this.$t('components.appStudioAction.copyname')} on-click={() => this.copy()}>
                         {v.title}（{v.name}）
                     </div>
                     <div class='app-studio-debug-actions'>
                         <i-button type='text' ghost size='small' on-click={this.openPreview}>
-                            {this.$t('app.components.appStudioAction.view')}
+                            {this.$t('components.appStudioAction.view')}
                         </i-button>
                     </div>
                 </div>

@@ -77,7 +77,7 @@ export default class DropDownList extends Vue {
                 this.loadData();
             }
         } catch (error) {
-            LogUtil.log(this.$t('app.components.dropDownList.valueError'));
+            LogUtil.log(this.$t('components.dropDownList.valueError'));
         }
     }
 
@@ -397,11 +397,11 @@ export default class DropDownList extends Vue {
                 this.items.push(item);
             });
             if(matching){
-                LogUtil.warn(`${ this.tag }${this.$t('app.components.appCheckBox.warn')}`);
+                LogUtil.warn(`${ this.tag }${this.$t('components.appCheckBox.warn')}`);
             }
             
         }catch(error){
-            LogUtil.warn(this.$t('app.components.appCheckBox.warn'));
+            LogUtil.warn(this.$t('components.appCheckBox.warn'));
         }
         this.handleLevelCodeList(Util.deepCopy(this.items));
     }

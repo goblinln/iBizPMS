@@ -289,6 +289,6 @@ export class MEditViewPanelControlBase extends MDControlBase {
      * @memberof MEditViewPanelControlBase
      */
     public viewload($event:any){
-        LogUtil.log(this.$t('app.components.appFormDRUIPart.loadComp'));
+        LogUtil.log(this.$t('components.appFormDRUIPart.loadComp'));
     }
 }

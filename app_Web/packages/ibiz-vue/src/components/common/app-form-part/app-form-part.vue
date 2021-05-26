@@ -218,10 +218,10 @@ export default class AppFormPart extends Vue {
                 let result:any = res.data;
                 resolve(result);
             }else{
-                LogUtil.warn(this.$t('app.components.part.error'));
+                LogUtil.warn(this.$t('components.part.error'));
             }
         }).catch((error:any) =>{
-            LogUtil.warn(this.$t('app.components.part.error'));
+            LogUtil.warn(this.$t('components.part.error'));
         })
     })
   }

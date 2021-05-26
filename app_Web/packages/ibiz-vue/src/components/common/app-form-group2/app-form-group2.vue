@@ -1,6 +1,6 @@
 
 <template>
-     <span>{{$t('app.components.group2.noreal')}}</span>
+     <span>{{$t('components.group2.noreal')}}</span>
 </template>
 <script lang="ts">
 import { Vue, Component, Prop, } from 'vue-property-decorator';

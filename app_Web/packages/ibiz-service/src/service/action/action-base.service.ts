@@ -143,7 +143,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.action) {
             return this.http.get(`/products/${_context.product}/actions/${_context.action}/select`);
         }
-        return this.http.get(`/actions/${_context.action}/select`);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Create
@@ -164,14 +164,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             }
             return this.http.post(`/products/${_context.product}/actions`, _data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/actions`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Update
@@ -186,8 +179,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/actions/${_context.action}`, _data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/actions/${_context.action}`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Remove
@@ -201,7 +193,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.action) {
             return this.http.delete(`/products/${_context.product}/actions/${_context.action}`);
         }
-        return this.http.delete(`/actions/${_context.action}`);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Get
@@ -216,8 +208,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/products/${_context.product}/actions/${_context.action}`);
             return res;
         }
-        const res = await this.http.get(`/actions/${_context.action}`);
-        return res;
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * GetDraft
@@ -234,10 +225,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/products/${_context.product}/actions/getdraft`, _data);
             return res;
         }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/actions/getdraft`, _data);
-        return res;
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Comment
@@ -252,7 +240,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/comment`, _data);
         }
-        return this.http.post(`/actions/${_context.action}/comment`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * CreateHis
@@ -267,7 +255,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/createhis`, _data);
         }
-        return this.http.post(`/actions/${_context.action}/createhis`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * EditComment
@@ -282,7 +270,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/editcomment`, _data);
         }
-        return this.http.post(`/actions/${_context.action}/editcomment`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * ManagePmsEe
@@ -297,7 +285,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/managepmsee`, _data);
         }
-        return this.http.post(`/actions/${_context.action}/managepmsee`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * SendMarkDone
@@ -312,7 +300,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/sendmarkdone`, _data);
         }
-        return this.http.post(`/actions/${_context.action}/sendmarkdone`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * SendTodo
@@ -327,7 +315,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/sendtodo`, _data);
         }
-        return this.http.post(`/actions/${_context.action}/sendtodo`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * SendToread
@@ -342,7 +330,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/sendtoread`, _data);
         }
-        return this.http.post(`/actions/${_context.action}/sendtoread`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchDefault
@@ -356,7 +344,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchdefault`, _data);
         }
-        return this.http.post(`/actions/fetchdefault`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchMobType
@@ -370,7 +358,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchmobtype`, _data);
         }
-        return this.http.post(`/actions/fetchmobtype`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchMyTrends
@@ -384,7 +372,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchmytrends`, _data);
         }
-        return this.http.post(`/actions/fetchmytrends`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchProductTrends
@@ -398,7 +386,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchproducttrends`, _data);
         }
-        return this.http.post(`/actions/fetchproducttrends`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchProjectTrends
@@ -412,7 +400,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchprojecttrends`, _data);
         }
-        return this.http.post(`/actions/fetchprojecttrends`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchQueryUserYEAR
@@ -426,7 +414,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchqueryuseryear`, _data);
         }
-        return this.http.post(`/actions/fetchqueryuseryear`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchType
@@ -440,7 +428,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchtype`, _data);
         }
-        return this.http.post(`/actions/fetchtype`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -457,8 +445,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/createhisbatch`,_data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/actions/createhisbatch`,_data);
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -475,8 +462,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/editcommentbatch`,_data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/actions/editcommentbatch`,_data);
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -493,8 +479,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/managepmseebatch`,_data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/actions/managepmseebatch`,_data);
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -511,8 +496,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/sendmarkdonebatch`,_data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/actions/sendmarkdonebatch`,_data);
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -529,8 +513,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/sendtodobatch`,_data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/actions/sendtodobatch`,_data);
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -547,7 +530,6 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/sendtoreadbatch`,_data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/actions/sendtoreadbatch`,_data);
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 }
