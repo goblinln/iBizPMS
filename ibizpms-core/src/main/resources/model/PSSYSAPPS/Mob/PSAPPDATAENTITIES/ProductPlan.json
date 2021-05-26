@@ -31,33 +31,22 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "Create",
+    "codeName" : "GetDraft",
     "methodType" : "DEACTION",
-    "name" : "Create",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Create.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/GetDraft.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
     },
-    "userCat" : "CAT1",
-    "builtinMethod" : true
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
+    "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Update.json"
+      "id" : "GetDraft"
     },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__UPDATE"
-    },
-    "userCat" : "CAT1",
-    "builtinMethod" : true
+    "builtinMethod" : false
   }, {
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -70,8 +59,45 @@
       "modelref" : true,
       "id" : "ZTProduct__DELETE"
     },
-    "userCat" : "CAT1",
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
@@ -84,20 +110,11 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "builtinMethod" : true
-  }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "getPSDEAction" : {
+    "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/GetDraft.json"
+      "id" : "Get"
     },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "builtinMethod" : true
+    "builtinMethod" : false
   }, {
     "codeName" : "BatchUnlinkBug",
     "methodType" : "DEACTION",
@@ -378,6 +395,23 @@
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchProductQuery",
+    "methodType" : "FETCH",
+    "name" : "FetchProductQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductQuery"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchChildPlan",
     "methodType" : "FETCH",
     "name" : "ChildPlan",
@@ -438,15 +472,6 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "PlanTasks"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProductQuery",
-    "methodType" : "FETCH",
-    "name" : "ProductQuery",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProductQuery"
     },
     "builtinMethod" : false
   }, {
@@ -719,15 +744,54 @@
     "enableQuickSearch" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Select",
-    "methodType" : "SELECT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProductQuery",
+    "methodType" : "FETCH",
+    "name" : "FetchProductQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductQuery"
+    },
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Select"
+      "id" : "FetchProductQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
     },
     "builtinMethod" : false
   }, {
@@ -742,8 +806,11 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "userCat" : "CAT1",
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
@@ -756,22 +823,11 @@
       "modelref" : true,
       "id" : "ZTProduct__UPDATE"
     },
-    "userCat" : "CAT1",
-    "builtinMethod" : true
-  }, {
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
+    "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Remove.json"
+      "id" : "Update"
     },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__DELETE"
-    },
-    "userCat" : "CAT1",
-    "builtinMethod" : true
+    "builtinMethod" : false
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
@@ -784,20 +840,23 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "builtinMethod" : true
-  }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "getPSDEAction" : {
+    "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/GetDraft.json"
+      "id" : "Get"
     },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Select",
+    "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "READ"
     },
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "BatchUnlinkBug",
     "methodType" : "DEACTION",
@@ -1051,15 +1110,6 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "PlanTasks"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProductQuery",
-    "methodType" : "FETCH",
-    "name" : "ProductQuery",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProductQuery"
     },
     "builtinMethod" : false
   }, {
