@@ -161,26 +161,6 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
         return this.condCache.get('view');
     }
     /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductModuleService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/productmodules/getdraft`, _data);
-            return res;
-        }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/productmodules/getdraft`, _data);
-        return res;
-    }
-    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -197,18 +177,20 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
         return res;
     }
     /**
-     * Remove
+     * Update
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductModuleService
      */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productmodule) {
-            return this.http.delete(`/products/${_context.product}/productmodules/${_context.productmodule}/remove`);
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/productmodules/${_context.productmodule}/update`, _data);
         }
-        return this.http.delete(`/productmodules/${_context.productmodule}/remove`);
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/productmodules/${_context.productmodule}/update`, _data);
     }
     /**
      * Create
@@ -239,20 +221,24 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
         return this.http.post(`/productmodules`, _data);
     }
     /**
-     * Update
+     * GetDraft
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductModuleService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productmodule) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productmodules/${_context.productmodule}/update`, _data);
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/productmodules/getdraft`, _data);
+            return res;
         }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productmodules/${_context.productmodule}/update`, _data);
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/productmodules/getdraft`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -267,5 +253,19 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
             return this.http.post(`/products/${_context.product}/productmodules/fetchdefault`, _data);
         }
         return this.http.post(`/productmodules/fetchdefault`, _data);
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductModuleService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productmodule) {
+            return this.http.delete(`/products/${_context.product}/productmodules/${_context.productmodule}/remove`);
+        }
+        return this.http.delete(`/productmodules/${_context.productmodule}/remove`);
     }
 }
