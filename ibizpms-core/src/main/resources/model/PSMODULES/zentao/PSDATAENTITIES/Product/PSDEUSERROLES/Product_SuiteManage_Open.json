@@ -1,0 +1,16 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_SuiteManage_Open.json",
+  "name" : "产品测试套件管理（公开）（跟随角色）",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "TESTSUITEMANAGE",
+    "name" : "TESTSUITEMANAGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "TESTSUITEMANAGE"
+    }
+  } ],
+  "roleTag" : "Product_SuiteManage_Open",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

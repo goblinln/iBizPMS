@@ -343,10 +343,11 @@ export class KanbanControlBase extends MDControlBase {
         let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
         Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
         Object.assign(arg, { viewparams: tempViewParams });
-        this.ctrlBeginLoading();
-        const post: Promise<any> = this.service.search(this.fetchAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('load', tempContext, arg);
+        const post: Promise<any> = this.service.search(this.fetchAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
             if (!response || response.status !== 200) {
                 this.$throw(response,'load');
                 return;
@@ -375,7 +376,7 @@ export class KanbanControlBase extends MDControlBase {
                 this.handleClick(this.items[0]);
             }
         }, (response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
             this.$throw(response,'load');
         });
     }
@@ -518,12 +519,15 @@ export class KanbanControlBase extends MDControlBase {
                 keys.push(data.srfkey);
             });
             let _removeAction = keys.length > 1 ? 'removeBatch' : this.removeAction;
-            const context: any = JSON.parse(JSON.stringify(this.context));
-            const post: Promise<any> = this.service.delete(_removeAction, Object.assign(context, { [(this.controlInstance?.getPSAppDataEntity as any)?.codeName?.toLowerCase()]: keys.join(';') }), Object.assign({ [(this.controlInstance.getPSAppDataEntity as any).codeName.toLowerCase()]: keys.join(';') }, { viewparams: this.viewparams }), this.showBusyIndicator);
+            let tempContext: any = JSON.parse(JSON.stringify(this.context));
+            Object.assign(tempContext, { [(this.controlInstance?.getPSAppDataEntity as any)?.codeName?.toLowerCase()]: keys.join(';') });
+            let arg: any = { [(this.controlInstance.getPSAppDataEntity as any).codeName.toLowerCase()]: keys.join(';') };
+            Object.assign(arg, { viewparams: this.viewparams });
+            this.onControlRequset('remove', tempContext, arg);
+            const post: Promise<any> = this.service.delete(_removeAction, tempContext, arg, this.showBusyIndicator);
             return new Promise((resolve: any, reject: any) => {
-                this.ctrlBeginLoading();
                 post.then((response: any) => {
-                    this.ctrlEndLoading();
+                    this.onControlResponse('remove', response);
                     if (!response || response.status !== 200) {
                         this.$throw((this.$t('app.commonWords.delDataFail') as string) + ',' + response.info,'remove');
                         return;
@@ -543,7 +547,7 @@ export class KanbanControlBase extends MDControlBase {
                     this.selections = [];
                     resolve(response);
                 }).catch((response: any) => {
-                    this.ctrlEndLoading();
+                    this.onControlResponse('remove', response);
                     this.$throw(response,'remove');
                     reject(response);
                 });
@@ -575,14 +579,14 @@ export class KanbanControlBase extends MDControlBase {
         }
         const arg: any = { ...opt };
         Object.assign(arg, { viewparams: this.viewparams });
-        let _context = JSON.parse(JSON.stringify(this.context));
         if (this.controlInstance.getPSAppDataEntity()?.codeName) {
             Object.assign(_context, { [(this.controlInstance.getPSAppDataEntity()?.codeName?.toLowerCase() as string)]: opt.srfkey });
         }
-        const post: Promise<any> = this.service.update(this.updateGroupAction, _context, arg, this.showBusyIndicator);
-        this.ctrlBeginLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('updateData', tempContext, arg);
+        const post: Promise<any> = this.service.update(this.updateGroupAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('updateData', response);
             if (!response.status || response.status !== 200) {
                 this.$throw(response,'updateData');
                 opt[this.groupField] = oldVal;
@@ -594,7 +598,7 @@ export class KanbanControlBase extends MDControlBase {
             this.setGroups();
             this.$emit("ctrl-event", { controlname: "kanban", action: "update", data: this.items });
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('updateData', response);
             opt[this.groupField] = oldVal;
             this.setGroups();
             this.$throw(response,'updateData');

@@ -12351,6 +12351,13 @@
     "id" : "ZTProduct__UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/CURORG_C.json",
+    "name" : "当前组织（写）",
+    "orgDR" : 1,
+    "roleTag" : "CURORG_C",
+    "userDRAction" : "READ",
+    "enableOrgDR" : true
+  }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain.json",
     "name" : "需求维护",

@@ -119,11 +119,11 @@ export class TreeControlBase extends MDControlBase {
             Object.assign(tempViewParams, { srfparentkey: curNode.data.srfparentkey });
         }
         Object.assign(params, { viewparams: tempViewParams });
-        this.ctrlBeginLoading();
+        this.onControlRequset('load', tempContext, params);
         this.service
             .getNodes(tempContext, params)
             .then((response: any) => {
-                this.ctrlEndLoading();
+                this.onControlResponse('load', response);
                 if (!response || response.status !== 200) {
                     this.$throw(response.info,'load');
                     resolve([]);
@@ -142,7 +142,7 @@ export class TreeControlBase extends MDControlBase {
                 });
             })
             .catch((response: any) => {
-                this.ctrlEndLoading();
+                this.onControlResponse('load', response);
                 resolve([]);
                 this.$throw(response,'load');
             });
@@ -372,10 +372,11 @@ export class TreeControlBase extends MDControlBase {
     public refresh_node(curContext: any, arg: any = {}, parentnode: boolean): void {
         const { srfnodeid: id } = arg;
         Object.assign(arg, { viewparams: this.viewparams });
-        const get: Promise<any> = this.service.getNodes(JSON.parse(JSON.stringify(curContext)), arg);
-        this.ctrlBeginLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(curContext));
+        this.onControlRequset('refresh_node', tempContext, arg);
+        const get: Promise<any> = this.service.getNodes(tempContext, arg);
         get.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('refresh_node', response);
             if (!response || response.status !== 200) {
                 this.$throw(response.info,'refresh_node');
                 return;
@@ -390,7 +391,7 @@ export class TreeControlBase extends MDControlBase {
             this.$forceUpdate();
             this.setDefaultSelection(_items);
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('refresh_node', response);
             this.$throw(response,'refresh_node');
         });
     }

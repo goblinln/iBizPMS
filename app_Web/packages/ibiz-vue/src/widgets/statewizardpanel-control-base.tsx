@@ -269,10 +269,11 @@ export class StateWizardPanelControlBase extends MainControlBase {
     public doInit(opt: any = {}) {
         const arg: any = { ...opt };
         Object.assign(arg, { viewparams: this.viewparams });
-        const post: Promise<any> = this.service.init(this.initAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);
-        this.ctrlBeginLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('doInit', tempContext, arg);
+        const post: Promise<any> = this.service.init(this.initAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('doInit', response);
             if (response && response.status === 200) {
                 this.formParam = response.data;
                 if (response.data[this.appDeCodeName.toLowerCase()]) {
@@ -281,7 +282,7 @@ export class StateWizardPanelControlBase extends MainControlBase {
                 this.computedActiveForm(this.formParam);
             }
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('doInit', response);
             this.$throw(response,'doInit');
         })
     }
@@ -306,10 +307,11 @@ export class StateWizardPanelControlBase extends MainControlBase {
         let arg: any = {};
         Object.assign(arg, this.formParam);
         Object.assign(arg, { viewparams: this.viewparams });
-        const post: Promise<any> = this.service.finish(this.finishAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);
-        this.ctrlBeginLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('doFinish', tempContext, arg);
+        const post: Promise<any> = this.service.finish(this.finishAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('doFinish', response);
             if (response && response.status === 200) {
                 const data = response.data;
                 this.$success(this.$t('app.commonWords.startsuccess') as string,'doFinish');
@@ -320,7 +322,7 @@ export class StateWizardPanelControlBase extends MainControlBase {
                 });
             }
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('doFinish', response);
             this.$throw(response,'doFinish');
         });
     }

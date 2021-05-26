@@ -526,13 +526,13 @@ export class ChartControlBase extends MDControlBase {
         if (this.controlInstance.minorSortDir && this.controlInstance.getMinorSortPSAppDEField()?.codeName) {
             Object.assign(arg, { sort: `${this.controlInstance.getMinorSortPSAppDEField()?.codeName?.toLowerCase()},${this.controlInstance.minorSortDir?.toLowerCase()}` });
         }
-        this.ctrlBeginLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('load', tempContext, arg);
         this.service
-            .search(this.fetchAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator)
+            .search(this.fetchAction, tempContext, arg, this.showBusyIndicator)
             .then(
                 (res: any) => {
-                    this.ctrlEndLoading();
-                    this.isControlLoaded = true;
+                    this.onControlResponse('load', res);
                     if (res) {
                         this.transformToBasicChartSetData(res.data, (codelist: any) => {
                             _this.drawCharts();
@@ -540,7 +540,7 @@ export class ChartControlBase extends MDControlBase {
                     }
                 },
                 (error: any) => {
-                    this.ctrlEndLoading();
+                    this.onControlResponse('load', error);
                     this.$throw(error,'load');
                 },
             );

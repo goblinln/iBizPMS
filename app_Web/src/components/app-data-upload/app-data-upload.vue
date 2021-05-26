@@ -399,6 +399,9 @@ export default class AppDataUploadView extends Vue {
             this.isUploading = false;
             this.uploadProgress = 100;
             console.error(error);
+            if(error?.data?.message){
+                this.$throw(error.data.message)
+            }
         }
         try{
             this.entityService.getService(this.viewparams.serviceName).then((service:any) =>{
@@ -470,7 +473,7 @@ export default class AppDataUploadView extends Vue {
        reader.onload = (e:any) => {
            let data = e.target.result;
            this.workBookData = XLSX.read(data, {type: 'binary'});
-           let xlsxData = XLSX.utils.sheet_to_json(this.workBookData.Sheets[this.workBookData.SheetNames[0]]);
+           let xlsxData = XLSX.utils.sheet_to_json(this.workBookData.Sheets[this.workBookData.SheetNames[0]],{raw: false});
            let list1 = this.getFirstRow(this.workBookData);
            xlsxData = this.AddXlsxData(xlsxData, list1);
            this.importDataArray = JSON.parse(JSON.stringify(xlsxData));

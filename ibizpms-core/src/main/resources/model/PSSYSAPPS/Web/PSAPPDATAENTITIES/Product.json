@@ -1701,6 +1701,9 @@
     "logicName" : "测试报告管理",
     "name" : "TESTREPORTMANAGE"
   }, {
+    "logicName" : "测试套件管理",
+    "name" : "TESTSUITEMANAGE"
+  }, {
     "logicName" : "测试版本管理",
     "name" : "TESTTASKMANAGE"
   }, {

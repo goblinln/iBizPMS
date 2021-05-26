@@ -435,16 +435,17 @@ export class DataViewControlBase extends MDControlBase {
         Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
         Object.assign(arg, { viewparams: tempViewParams }, opt);
         if (this.service) {
-            this.ctrlBeginLoading();
+            let tempContext:any = JSON.parse(JSON.stringify(this.context));
+            this.onControlRequset('load', tempContext, arg);
             const post: Promise<any> = this.service.search(
                 this.fetchAction,
-                JSON.parse(JSON.stringify(this.context)),
+                tempContext,
                 arg,
                 this.showBusyIndicator,
             );
             post.then(
                 (response: any) => {
-                    this.ctrlEndLoading();
+                    this.onControlResponse('load', response);
                     if (!response || response.status !== 200) {
                         this.$throw(response,'load');
                         return;
@@ -655,17 +656,15 @@ export class DataViewControlBase extends MDControlBase {
                 keys.push(data.srfkey);
             });
             let _removeAction = keys.length > 1 ? 'removeBatch' : this.removeAction;
-            const context: any = JSON.parse(JSON.stringify(this.context));
-            const post: Promise<any> = this.service.delete(
-                _removeAction,
-                Object.assign(context, { [this.appDeCodeName]: keys.join(';') }),
-                Object.assign({ [this.appDeCodeName]: keys.join(';') }, { viewparams: this.viewparams }),
-                this.showBusyIndicator,
-            );
+            const tempContext: any = JSON.parse(JSON.stringify(this.context));
+            Object.assign(tempContext, { [this.appDeCodeName]: keys.join(';') });
+            const arg = { [this.appDeCodeName]: keys.join(';') };
+            Object.assign(arg, { viewparams: this.viewparams }),
+            this.onControlRequset('remove', tempContext, arg);
+            const post: Promise<any> = this.service.delete(_removeAction, tempContext, arg, this.showBusyIndicator);
             return new Promise((resolve: any, reject: any) => {
-                this.ctrlBeginLoading();
                 post.then((response: any) => {
-                    this.ctrlEndLoading();
+                    this.onControlResponse('remove', response);
                     if (!response || response.status !== 200) {
                         this.$throw(response,'remove');
                         return;
@@ -688,7 +687,7 @@ export class DataViewControlBase extends MDControlBase {
                     this.selections = [];
                     resolve(response);
                 }).catch((response: any) => {
-                    this.ctrlEndLoading();
+                    this.onControlResponse('remove', response);
                     this.$throw(response,'remove');
                     reject(response);
                 });
@@ -734,14 +733,10 @@ export class DataViewControlBase extends MDControlBase {
                         this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.createAction') as string),'save');
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
-                        this.ctrlBeginLoading();
-                        let response = await this.service.add(
-                            this.createAction,
-                            JSON.parse(JSON.stringify(this.context)),
-                            item,
-                            this.showBusyIndicator,
-                        );
-                        this.ctrlEndLoading();
+                        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+                        this.onControlRequset('create', tempContext, item);
+                        let response = await this.service.add(this.createAction, tempContext, item, this.showBusyIndicator);
+                        this.onControlResponse('create', response);
                         successItems.push(JSON.parse(JSON.stringify(response.data)));
                     }
                 } else if (Object.is(item.rowDataState, 'update')) {
@@ -758,19 +753,15 @@ export class DataViewControlBase extends MDControlBase {
                         // if(de){
                         //     Object.assign(this.context,{de.getCodeName():item.de.getCodeName()})
                         // }
-                        this.ctrlBeginLoading();
-                        let response = await this.service.add(
-                            this.updateAction,
-                            JSON.parse(JSON.stringify(this.context)),
-                            item,
-                            this.showBusyIndicator,
-                        );
-                        this.ctrlEndLoading();
+                        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+                        this.onControlRequset('update', tempContext, item);
+                        let response = await this.service.add(this.updateAction, tempContext, item, this.showBusyIndicator);
+                        this.onControlResponse('update', response);
                         successItems.push(JSON.parse(JSON.stringify(response.data)));
                     }
                 }
             } catch (error) {
-                this.ctrlEndLoading();
+                this.onControlResponse('save', error);
                 errorItems.push(JSON.parse(JSON.stringify(item)));
                 errorMessage.push(error);
             }

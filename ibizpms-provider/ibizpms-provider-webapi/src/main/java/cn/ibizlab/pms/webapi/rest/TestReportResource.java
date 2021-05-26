@@ -283,7 +283,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'TESTREPORTMANAGE')")
     @ApiOperation(value = "根据产品建立测试报告", tags = {"测试报告" },  notes = "根据产品建立测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testreports")
     public ResponseEntity<TestReportDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestReportDTO testreportdto) {
@@ -295,7 +295,7 @@ public class TestReportResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'TESTREPORTMANAGE')")
     @ApiOperation(value = "根据产品更新测试报告", tags = {"测试报告" },  notes = "根据产品更新测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}")
     public ResponseEntity<TestReportDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
@@ -308,7 +308,7 @@ public class TestReportResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'TESTREPORTMANAGE')")
     @ApiOperation(value = "根据产品删除测试报告", tags = {"测试报告" },  notes = "根据产品删除测试报告")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testreports/{testreport_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id) {

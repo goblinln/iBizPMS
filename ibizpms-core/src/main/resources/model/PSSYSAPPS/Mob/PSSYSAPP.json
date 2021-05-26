@@ -27471,6 +27471,9 @@
         "logicName" : "测试报告管理",
         "name" : "TESTREPORTMANAGE"
       }, {
+        "logicName" : "测试套件管理",
+        "name" : "TESTSUITEMANAGE"
+      }, {
         "logicName" : "测试版本管理",
         "name" : "TESTTASKMANAGE"
       }, {
@@ -30627,18 +30630,6 @@
             "logicName" : "开始",
             "name" : "START"
           }
-        }, {
-          "name" : "SRFUR__PROJ_DELAY_BUT",
-          "getPSDEOPPriv" : {
-            "logicName" : "项目延期",
-            "getMapPSSysUniRes" : {
-              "modelref" : true,
-              "id" : "ibiz__PROJ_DELAY_BUT"
-            },
-            "mapSysUniResCode" : "PROJ_DELAY_BUT",
-            "name" : "SRFUR__PROJ_DELAY_BUT",
-            "mapSysUniRes" : true
-          }
         } ],
         "state2Value" : "0",
         "stateValue" : "closed",
@@ -30742,34 +30733,10 @@
           "allowMode" : true
         } ],
         "getPSDEMainStateOPPrivs" : [ {
-          "name" : "SRFUR__PROJ_SUSPEND_BUT",
-          "getPSDEOPPriv" : {
-            "logicName" : "项目挂起",
-            "getMapPSSysUniRes" : {
-              "modelref" : true,
-              "id" : "ibiz__PROJ_SUSPEND_BUT"
-            },
-            "mapSysUniResCode" : "PROJ_SUSPEND_BUT",
-            "name" : "SRFUR__PROJ_SUSPEND_BUT",
-            "mapSysUniRes" : true
-          }
-        }, {
           "name" : "CLOSE",
           "getPSDEOPPriv" : {
             "logicName" : "关闭",
             "name" : "CLOSE"
-          }
-        }, {
-          "name" : "SRFUR__PROJ_START_BUT",
-          "getPSDEOPPriv" : {
-            "logicName" : "项目开始",
-            "getMapPSSysUniRes" : {
-              "modelref" : true,
-              "id" : "ibiz__PROJ_START_BUT"
-            },
-            "mapSysUniResCode" : "PROJ_START_BUT",
-            "name" : "SRFUR__PROJ_START_BUT",
-            "mapSysUniRes" : true
           }
         }, {
           "name" : "SUSPEND",
@@ -30784,34 +30751,10 @@
             "name" : "START"
           }
         }, {
-          "name" : "SRFUR__PROJ_CLOSED_BUT",
-          "getPSDEOPPriv" : {
-            "logicName" : "项目关闭",
-            "getMapPSSysUniRes" : {
-              "modelref" : true,
-              "id" : "ibiz__PROJ_CLOSED_BUT"
-            },
-            "mapSysUniResCode" : "PROJ_CLOSED_BUT",
-            "name" : "SRFUR__PROJ_CLOSED_BUT",
-            "mapSysUniRes" : true
-          }
-        }, {
           "name" : "NOTOP",
           "getPSDEOPPriv" : {
             "logicName" : "未置顶",
             "name" : "NOTOP"
-          }
-        }, {
-          "name" : "SRFUR__PROJ_DELAY_BUT",
-          "getPSDEOPPriv" : {
-            "logicName" : "项目延期",
-            "getMapPSSysUniRes" : {
-              "modelref" : true,
-              "id" : "ibiz__PROJ_DELAY_BUT"
-            },
-            "mapSysUniResCode" : "PROJ_DELAY_BUT",
-            "name" : "SRFUR__PROJ_DELAY_BUT",
-            "mapSysUniRes" : true
           }
         } ],
         "state2Value" : "1",
@@ -31180,18 +31123,6 @@
             "logicName" : "开始",
             "name" : "START"
           }
-        }, {
-          "name" : "SRFUR__PROJ_DELAY_BUT",
-          "getPSDEOPPriv" : {
-            "logicName" : "项目延期",
-            "getMapPSSysUniRes" : {
-              "modelref" : true,
-              "id" : "ibiz__PROJ_DELAY_BUT"
-            },
-            "mapSysUniResCode" : "PROJ_DELAY_BUT",
-            "name" : "SRFUR__PROJ_DELAY_BUT",
-            "mapSysUniRes" : true
-          }
         } ],
         "state2Value" : "0",
         "stateValue" : "suspended",
@@ -31295,46 +31226,10 @@
           "allowMode" : true
         } ],
         "getPSDEMainStateOPPrivs" : [ {
-          "name" : "SRFUR__PROJ_START_BUT",
-          "getPSDEOPPriv" : {
-            "logicName" : "项目开始",
-            "getMapPSSysUniRes" : {
-              "modelref" : true,
-              "id" : "ibiz__PROJ_START_BUT"
-            },
-            "mapSysUniResCode" : "PROJ_START_BUT",
-            "name" : "SRFUR__PROJ_START_BUT",
-            "mapSysUniRes" : true
-          }
-        }, {
           "name" : "NOTOP",
           "getPSDEOPPriv" : {
             "logicName" : "未置顶",
             "name" : "NOTOP"
-          }
-        }, {
-          "name" : "SRFUR__PROJ_SUSPEND_BUT",
-          "getPSDEOPPriv" : {
-            "logicName" : "项目挂起",
-            "getMapPSSysUniRes" : {
-              "modelref" : true,
-              "id" : "ibiz__PROJ_SUSPEND_BUT"
-            },
-            "mapSysUniResCode" : "PROJ_SUSPEND_BUT",
-            "name" : "SRFUR__PROJ_SUSPEND_BUT",
-            "mapSysUniRes" : true
-          }
-        }, {
-          "name" : "SRFUR__PROJ_DELAY_BUT",
-          "getPSDEOPPriv" : {
-            "logicName" : "项目延期",
-            "getMapPSSysUniRes" : {
-              "modelref" : true,
-              "id" : "ibiz__PROJ_DELAY_BUT"
-            },
-            "mapSysUniResCode" : "PROJ_DELAY_BUT",
-            "name" : "SRFUR__PROJ_DELAY_BUT",
-            "mapSysUniRes" : true
           }
         }, {
           "name" : "SUSPEND",
@@ -31610,18 +31505,6 @@
           "getPSDEOPPriv" : {
             "logicName" : "激活",
             "name" : "ACTIVATE"
-          }
-        }, {
-          "name" : "SRFUR__PROJ_ACTIVATION_BUT",
-          "getPSDEOPPriv" : {
-            "logicName" : "项目激活",
-            "getMapPSSysUniRes" : {
-              "modelref" : true,
-              "id" : "ibiz__PROJ_ACTIVATION_BUT"
-            },
-            "mapSysUniResCode" : "PROJ_ACTIVATION_BUT",
-            "name" : "SRFUR__PROJ_ACTIVATION_BUT",
-            "mapSysUniRes" : true
           }
         } ],
         "state2Value" : "1",

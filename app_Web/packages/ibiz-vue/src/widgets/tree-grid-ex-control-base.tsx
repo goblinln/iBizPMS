@@ -157,9 +157,9 @@ export class TreeGridExControlBase extends MDControlBase {
             Object.assign(tempViewParams, { srfparentkey: curNode.srfparentkey });
         }
         Object.assign(params, { viewparams: tempViewParams });
-        this.ctrlBeginLoading();
+        this.onControlRequset('load', tempContext, params);
         this.service.getNodes(tempContext, params).then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
             if (!response || response.status !== 200) {
                 this.$throw(response.info,'load');
                 return;
@@ -181,7 +181,7 @@ export class TreeGridExControlBase extends MDControlBase {
             })
             this.ctrlEvent({ controlname: this.controlInstance.name, action: "load", data: this.items });
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
             this.$throw(response,'load');
         });
     }

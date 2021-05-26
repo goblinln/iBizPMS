@@ -480,7 +480,8 @@ export class AppGridBase extends GridControlBase {
                         : this.renderColumn(column, scope);
                 },
                 header: () => {
-                    return <span class='column-header'>{column.caption}</span>;
+                  this.allColumnsInstance; // 别删，触发表格头刷新用
+                  return <span class='column-header'>{caption}</span>;
                 },
             },
         });

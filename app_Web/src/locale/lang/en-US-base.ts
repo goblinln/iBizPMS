@@ -423,6 +423,7 @@ function getAppLocale(){
               layout: "This layout pattern is not currently supported",
               unopen: "This mode is not supported to open",
               unassign: "The relational view is not specified",
+              uncustom: "Custom not implemented"
             },
             warn: {
               nton: "Batch add need to add N:N relation",
@@ -434,7 +435,8 @@ function getAppLocale(){
               unopendata: "There is no opendata",
               unnewdata: "There is no newdata",
               unremove: "Don't remove",
-              unrefresh: "There is no refresh"
+              unrefresh: "There is no refresh",
+              unOpenView: "No open view"
             },
         },
         entities: {

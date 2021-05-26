@@ -367,16 +367,17 @@ export class SearchBarControlBase extends MDControlBase {
             utilServiceName: this.utilServiceName,
             ...this.viewparams
         });
-        let post = this.service.loadModel(this.utilServiceName, this.context, param);
-        this.ctrlBeginLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('load', tempContext, param);
+        let post = this.service.loadModel(this.utilServiceName, tempContext, param);
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
             if(response.status == 200) {
                 this.historyItems = response.data;
             }
             this.isControlLoaded = true;
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
             LogUtil.log(response);
         });
     }

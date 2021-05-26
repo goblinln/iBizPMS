@@ -321,10 +321,11 @@ export class EditFormControlBase extends FormControlBase {
         }
         const arg: any = { ...opt };
         let viewparamResult: any = Object.assign(arg, this.viewparams);
-        let post: Promise<any> = this.service.loadDraft(this.loaddraftAction, JSON.parse(JSON.stringify(this.context)), { viewparams: viewparamResult }, this.showBusyIndicator);
-        this.ctrlBeginLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('loadDraft', tempContext, viewparamResult);
+        let post: Promise<any> = this.service.loadDraft(this.loaddraftAction, tempContext, { viewparams: viewparamResult }, this.showBusyIndicator);
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('loadDraft',response);
             if (!response.status || response.status !== 200) {
                 this.$throw(response, 'loadDraft');
                 return;
@@ -360,7 +361,7 @@ export class EditFormControlBase extends FormControlBase {
                 }
             });
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('loadDraft',response);
             this.$throw(response, 'loadDraft');
         });
     }
@@ -386,10 +387,11 @@ export class EditFormControlBase extends FormControlBase {
             return;
         }
         Object.assign(arg, { viewparams: this.viewparams });
-        const post: Promise<any> = this.service.add(action, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);
-        this.ctrlBeginLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('autoSave', tempContext, arg);
+        const post: Promise<any> = this.service.add(action, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('autoSave',response);
             if (!response.status || response.status !== 200) {
                 this.$throw(response, 'autoSave');
                 return;
@@ -406,35 +408,9 @@ export class EditFormControlBase extends FormControlBase {
                 this.formState.next({ type: 'save', data: data });
             });
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('autoSave',response);
             if (response && response.status && response.data) {
-                if (response.data.errorKey) {
-                    if (Object.is(response.data.errorKey, "versionCheck")) {
-                        this.$Modal.confirm({
-                            title: (this.$t('app.formpage.saveerror') as string),
-                            content: (this.$t('app.formpage.savecontent') as string),
-                            onOk: () => {
-                                this.refresh([]);
-                            },
-                            onCancel: () => { }
-                        });
-                    } else if (Object.is(response.data.errorKey, 'DupCheck')) {
-                        let errorProp: string = response.data.message.match(/\[[a-zA-Z]*\]/)[0];
-                        let name: string = this.service.getNameByProp(errorProp.substr(1, errorProp.length - 2));
-                        if (name) {
-                            this.$throw(this.detailsModel[name].caption + " : " + arg[name] + (this.$t('app.commonWords.isExist') as string) + '!', 'autoSave');
-                        } else {
-                            this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string), 'autoSave');
-                        }
-                    } else if (Object.is(response.data.errorKey, 'DuplicateKeyException')) {
-                        this.$throw(this.detailsModel[this.majorKeyItemName].caption + " : " + arg[this.majorKeyItemName] + (this.$t('app.commonWords.isExist') as string) + '!', 'autoSave');
-                    } else {
-                        this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string), 'autoSave');
-                    }
-                } else {
-                    this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string), 'autoSave');
-                }
-                return;
+                this.$throw(response, 'autoSave', { dangerouslyUseHTMLString: true });
             } else {
                 this.$throw((this.$t('app.commonWords.sysException') as string), 'autoSave');
             }
@@ -486,10 +462,11 @@ export class EditFormControlBase extends FormControlBase {
                 return;
             }
             Object.assign(arg, { viewparams: this.viewparams });
-            const post: Promise<any> = Object.is(data.srfuf, '1') ? this.service.update(action, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator) : this.service.add(action, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);
-            this.ctrlBeginLoading();
+            let tempContext:any = JSON.parse(JSON.stringify(this.context));
+            this.onControlRequset('save', tempContext, arg);
+            const post: Promise<any> = Object.is(data.srfuf, '1') ? this.service.update(action, tempContext, arg, this.showBusyIndicator) : this.service.add(action, tempContext, arg, this.showBusyIndicator);
             post.then((response: any) => {
-                this.ctrlEndLoading();
+                this.onControlResponse('save',response);
                 if (!response.status || response.status !== 200) {
                     this.$throw(response, 'save');
                     return;
@@ -511,40 +488,10 @@ export class EditFormControlBase extends FormControlBase {
                 }
                 resolve(response);
             }).catch((response: any) => {
-                this.ctrlEndLoading();
+                this.onControlResponse('save',response);
                 if (response && response.status && response.data) {
-                    let appendErrors: string = ""; //附加提示信息
-                    if (response.data.parameters && response.data.parameters.fieldErrors) {
-                        (response.data.parameters.fieldErrors as Array<any>).forEach((item) => {
-                            appendErrors += item.messages ? "<br/>" + item.messages : "";
-                        })
-                    }
-                    if (response.data.errorKey) {
-                        if (Object.is(response.data.errorKey, "versionCheck")) {
-                            this.$Modal.confirm({
-                                title: (this.$t('app.formpage.saveerror') as string),
-                                content: (this.$t('app.formpage.savecontent') as string),
-                                onOk: () => {
-                                    this.refresh();
-                                },
-                                onCancel: () => { }
-                            });
-                        } else if (Object.is(response.data.errorKey, 'DupCheck')) {
-                            let errorProp: string = response.data.message.match(/\[[a-zA-Z]*\]/)[0];
-                            let name: string = this.service.getNameByProp(errorProp.substr(1, errorProp.length - 2));
-                            if (name) {
-                                this.$throw(this.detailsModel[name].caption + " : " + arg[name] + (this.$t('app.commonWords.isExist') as string) + '!', 'save');
-                            } else {
-                                this.$throw(response.data.message + appendErrors, 'save');
-                            }
-                        } else {
-                            this.$throw(response.data.message + appendErrors, 'save');
-                        }
-                    } else {
-                        this.$throw(response.data.message + appendErrors, 'save');
-                        reject(response);
-                    }
-                    return;
+                    this.$throw(response, 'save', { dangerouslyUseHTMLString: true });
+                    reject(response);
                 } else {
                     this.$throw((this.$t('app.commonWords.sysException') as string), 'save');
                     reject(response);
@@ -570,9 +517,10 @@ export class EditFormControlBase extends FormControlBase {
             const arg: any = opt[0];
             const _this: any = this;
             Object.assign(arg, { viewparams: this.viewparams });
-            this.ctrlBeginLoading();
-            this.service.delete(_this.removeAction, JSON.parse(JSON.stringify(this.context)), arg, showResultInfo).then((response: any) => {
-                this.ctrlEndLoading();
+            let tempContext:any = JSON.parse(JSON.stringify(this.context));
+            this.onControlRequset('remove', tempContext, arg);
+            this.service.delete(_this.removeAction, tempContext, arg, showResultInfo).then((response: any) => {
+                this.onControlResponse('remove', response);
                 if (response) {
                     const data = response.data;
                     this.ctrlEvent({
@@ -587,7 +535,7 @@ export class EditFormControlBase extends FormControlBase {
                     resolve(response);
                 }
             }).catch((error: any) => {
-                this.ctrlEndLoading();
+                this.onControlResponse('remove', error);
                 this.$throw(error, 'remove');
                 reject(error);
             });
@@ -611,10 +559,11 @@ export class EditFormControlBase extends FormControlBase {
             const formData: any = this.getData();
             const copyData: any = Util.deepCopy(data[0]);
             Object.assign(formData, { viewparams: copyData });
-            const post: Promise<any> = Object.is(formData.srfuf, '1') ? this.service.update(this.updateAction, JSON.parse(JSON.stringify(this.context)), formData, this.showBusyIndicator, true) : this.service.add(this.createAction, JSON.parse(JSON.stringify(this.context)), formData, this.showBusyIndicator, true);
-            this.ctrlBeginLoading();
+            let tempContext:any = JSON.parse(JSON.stringify(this.context));
+            this.onControlRequset('save', tempContext, formData);
+            const post: Promise<any> = Object.is(formData.srfuf, '1') ? this.service.update(this.updateAction, tempContext, formData, this.showBusyIndicator, true) : this.service.add(this.createAction, tempContext, formData, this.showBusyIndicator, true);
             post.then((response: any) => {
-                this.ctrlEndLoading();
+                this.onControlResponse('save', response);
                 const arg: any = response.data;
                 const responseData: any = Util.deepCopy(arg);
                 // 保存完成UI处理
@@ -655,10 +604,11 @@ export class EditFormControlBase extends FormControlBase {
                 if (copyData.srfwfmemo) {
                     Object.assign(arg, { srfwfmemo: copyData.srfwfmemo });
                 }
-                const result: Promise<any> = this.service.wfstart(_this.WFStartAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator, localdata);
-                this.ctrlBeginLoading();
+                let tempContext:any = JSON.parse(JSON.stringify(this.context));
+                this.onControlRequset('wfstart', tempContext, arg);
+                const result: Promise<any> = this.service.wfstart(_this.WFStartAction, tempContext, arg, this.showBusyIndicator, localdata);
                 result.then((response: any) => {
-                    this.ctrlEndLoading();
+                    this.onControlResponse('wfstart', response);
                     if (!response || response.status !== 200) {
                         this.$throw((this.$t('app.formpage.workflow.starterror') as string) + ', ' + response.data.message, 'wfstart');
                         return;
@@ -666,12 +616,12 @@ export class EditFormControlBase extends FormControlBase {
                     this.$success((this.$t('app.formpage.workflow.startsuccess') as string), 'wfstart');
                     resolve(response);
                 }).catch((response: any) => {
-                    this.ctrlEndLoading();
+                    this.onControlResponse('wfstart', response);
                     this.$throw(response, 'wfstart');
                     reject(response);
                 });
             }).catch((response: any) => {
-                this.ctrlEndLoading();
+                this.onControlResponse('wfstart', response);
                 this.$throw(response, 'wfstart');
                 reject(response);
             })
@@ -725,10 +675,11 @@ export class EditFormControlBase extends FormControlBase {
                 if (copyData.srfwfmemo) {
                     Object.assign(arg, { srfwfmemo: copyData.srfwfmemo });
                 }
-                const result: Promise<any> = this.service.wfsubmit(_this.WFSubmitAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator, localdata);
-                this.ctrlBeginLoading();
+                let tempContext:any = JSON.parse(JSON.stringify(this.context));
+                this.onControlRequset('wfsubmit', tempContext, arg);
+                const result: Promise<any> = this.service.wfsubmit(_this.WFSubmitAction, tempContext, arg, this.showBusyIndicator, localdata);
                 result.then((response: any) => {
-                    this.ctrlEndLoading();
+                    this.onControlResponse('wfsubmit', response);
                     if (!response || response.status !== 200) {
                         this.$throw((this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message, 'wfsubmit');
                         return;
@@ -738,16 +689,17 @@ export class EditFormControlBase extends FormControlBase {
                     this.$success((this.$t('app.formpage.workflow.submitsuccess') as string), 'wfsubmit');
                     resolve(response);
                 }).catch((response: any) => {
-                    this.ctrlEndLoading();
+                    this.onControlResponse('wfsubmit', response);
                     this.$throw(response, 'wfsubmit');
                     reject(response);
                 });
             }
             if(this.isEditable){
-                const post: Promise<any> = Object.is(arg.srfuf, '1') ? this.service.update(this.updateAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator, true) : this.service.add(this.createAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator, true);
-                this.ctrlBeginLoading();
+                let tempContext:any = JSON.parse(JSON.stringify(this.context));
+                this.onControlRequset('save', tempContext, arg);
+                const post: Promise<any> = Object.is(arg.srfuf, '1') ? this.service.update(this.updateAction, tempContext, arg, this.showBusyIndicator, true) : this.service.add(this.createAction, tempContext, arg, this.showBusyIndicator, true);
                 post.then((response: any) => {
-                    this.ctrlEndLoading();
+                    this.onControlResponse('save', response);
                     const responseData: any = response.data;
                     let tempResponseData: any = Util.deepCopy(response);
                     this.service.handleResponse('save', tempResponseData);
@@ -764,7 +716,7 @@ export class EditFormControlBase extends FormControlBase {
                     });
                     submitData(arg,responseData);
                 }).catch((response: any) => {
-                    this.ctrlEndLoading();
+                    this.onControlResponse('save', response);
                     this.$throw(response, 'wfsubmit');
                     reject(response);
                 })
@@ -812,10 +764,11 @@ export class EditFormControlBase extends FormControlBase {
         const formdata = this.getData();
         Object.assign(arg, formdata);
         Object.assign(arg, this.viewparams);
-        const post: Promise<any> = this.service.frontLogic(action, JSON.parse(JSON.stringify(this.context)), arg, showloading);
-        this.ctrlBeginLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('panelAction', tempContext, arg);
+        const post: Promise<any> = this.service.frontLogic(action, tempContext, arg, showloading);
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('panelAction', response);
             if (!response.status || response.status !== 200) {
                 this.$throw(response, 'panelAction');
                 return;
@@ -831,7 +784,7 @@ export class EditFormControlBase extends FormControlBase {
                 this.formState.next({ type: emitAction, data: data });
             });
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('panelAction', response);
             this.$throw(response, 'panelAction');
         });
     }
@@ -851,10 +804,11 @@ export class EditFormControlBase extends FormControlBase {
             return;
         }
         const arg: any = Object.assign(data, Util.deepCopy(this.viewparams));
-        const post: Promise<any> = this.service.frontLogic(mode, JSON.parse(JSON.stringify(this.context)), arg, showloading);
-        this.ctrlBeginLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('updateFormItems', tempContext, arg);
+        const post: Promise<any> = this.service.frontLogic(mode, tempContext, arg, showloading);
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('updateFormItems', response);
             if (!response || response.status !== 200) {
                 this.$throw((this.$t('app.formpage.updateerror') as string), 'updateFormItems');
                 return;
@@ -875,7 +829,7 @@ export class EditFormControlBase extends FormControlBase {
                 this.formState.next({ type: 'updateformitem', ufimode: arg.srfufimode, data: _data });
             });
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('updateFormItems', response);
             this.$throw(response, 'updateFormItems');
         });
     }

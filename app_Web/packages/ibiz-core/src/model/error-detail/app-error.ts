@@ -51,7 +51,7 @@ export enum AppErrorCode {
  * @class AppError
  * @extends {Error}
  */
-export class AppError{
+export class AppError {
 
     /**
      * 错误编码
@@ -64,8 +64,8 @@ export class AppError{
      * 错误信息
      *
      * @memberof AppError
-     */    
-    public message:string;
+     */
+    public message: string;
 
     /**
      * 错误详情
@@ -116,7 +116,7 @@ export class AppError{
         this.message = notNilEmpty(opts.message) ? opts.message : this.errorMapper[this.code];
         this.details = opts.details;
         this.type = opts.type;
-        this.handlePreError(opts.type);
+        this.handlePreError(opts);
     }
 
     /**
@@ -124,17 +124,41 @@ export class AppError{
      *
      * @memberof AppError
      */
-     public handlePreError(type:string){
-        switch (type) {
+    public handlePreError(opts: any) {
+        switch (opts.type) {
             case 'EntityException':
-                
+                this.handleEntityException(opts);
                 break;
             case 'DataEntityRuntimeException':
-
+                this.handleDataEntityRuntimeException(opts);
                 break;
             default:
                 break;
         }
+    }
+
+    /**
+     * 处理Entity类型预置错误
+     *
+     * @memberof AppError
+     */
+    public handleEntityException(opts: any) {
+        if (opts && opts.details && opts.details.length > 0) {
+            let errorMessage: string = '';
+            opts.details.forEach((detail: any) => {
+                errorMessage += `${detail.fieldlogicname}${detail.fielderrorinfo}<br/>`;
+            })
+            this.message = notNilEmpty(errorMessage) ? errorMessage : this.errorMapper[opts.code];
+        }
+    }
+
+    /**
+     * 处理DataEntityRuntime类型预置错误
+     *
+     * @memberof AppError
+     */
+    public handleDataEntityRuntimeException(opts: any) {
+
     }
 
 }

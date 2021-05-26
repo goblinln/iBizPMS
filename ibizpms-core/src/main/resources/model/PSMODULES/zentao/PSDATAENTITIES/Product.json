@@ -4097,6 +4097,9 @@
     "logicName" : "测试报告管理",
     "name" : "TESTREPORTMANAGE"
   }, {
+    "logicName" : "测试套件管理",
+    "name" : "TESTSUITEMANAGE"
+  }, {
     "logicName" : "测试版本管理",
     "name" : "TESTTASKMANAGE"
   }, {
@@ -4648,6 +4651,59 @@
       }
     } ],
     "roleTag" : "Product_ReportManage_CreateBy",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_SuiteManage_CreateBy.json",
+    "name" : "产品测试套件管理（创建者或更新者）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductManagerQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "TESTSUITEMANAGE",
+      "name" : "TESTSUITEMANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "TESTSUITEMANAGE"
+      }
+    } ],
+    "roleTag" : "Product_SuiteManage_CreateBy",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_SuiteManage_DEV.json",
+    "name" : "产品测试套件管理（参与者）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "TESTSUITEMANAGE",
+      "name" : "TESTSUITEMANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "TESTSUITEMANAGE"
+      }
+    } ],
+    "roleTag" : "Product_SuiteManage_DEV",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_SuiteManage_Open.json",
+    "name" : "产品测试套件管理（公开）（跟随角色）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "TESTSUITEMANAGE",
+      "name" : "TESTSUITEMANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "TESTSUITEMANAGE"
+      }
+    } ],
+    "roleTag" : "Product_SuiteManage_Open",
     "userCat" : "CAT1",
     "userDRAction" : "READ",
     "systemReserved" : true

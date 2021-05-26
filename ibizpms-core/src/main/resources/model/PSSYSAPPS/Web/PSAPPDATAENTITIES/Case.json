@@ -12298,6 +12298,16 @@
     "logicName" : "测试用例（用例确认）",
     "name" : "CASECOF"
   }, {
+    "logicName" : "产品-测试用例编辑",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CASEEDIT",
+    "id" : "ZTProduct__CASEEDIT"
+  }, {
     "logicName" : "测试用例编辑",
     "name" : "CASEEDIT"
   }, {

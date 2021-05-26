@@ -307,9 +307,9 @@ export class GanttControlBase extends MDControlBase {
             Object.assign(tempViewParams,{ srfparentkey: curNode.srfparentkey });
         }
         Object.assign(params,{ viewparams: tempViewParams });
-        this.ctrlBeginLoading();
+        this.onControlRequset('load', tempContext, params);
         this.service.getNodes(tempContext,params).then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
             if (!response || response.status !== 200) {
                 this.$throw(response,'load');
                 return;
@@ -323,7 +323,7 @@ export class GanttControlBase extends MDControlBase {
             })
             this.$emit("load", this.tasks);
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
             this.$throw(response,'load');
         });
     }

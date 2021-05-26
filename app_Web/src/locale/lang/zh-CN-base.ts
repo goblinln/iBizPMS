@@ -422,6 +422,7 @@ function getAppLocale(){
               layout: "暂未支持该布局模式",
               unopen: "不支持该模式打开",
               unassign: "未指定关系视图",
+              uncustom: "自定义未实现"
             },
             warn: {
               nton: "批量添加需添加N:N关系",
@@ -433,7 +434,8 @@ function getAppLocale(){
               unopendata: "没有opendata",
               unnewdata: "没有newdata",
               unremove: "没有remove",
-              unrefresh: "没有refresh"
+              unrefresh: "没有refresh",
+              unOpenView: "无打开视图"
             },
         },
         entities: {

@@ -199,10 +199,11 @@ export class MEditViewPanelControlBase extends MDControlBase {
         // 清空数据
         this.items = [];
         if (this.service) {
-            const promice: Promise<any> = this.service.get(this.fetchAction,JSON.parse(JSON.stringify(this.context)),arg, this.showBusyIndicator);
-            this.ctrlBeginLoading();
+            let tempContext:any = JSON.parse(JSON.stringify(this.context));
+            this.onControlRequset('load', tempContext, arg);
+            const promice: Promise<any> = this.service.get(this.fetchAction, tempContext, arg, this.showBusyIndicator);
             promice.then((response: any) => {
-                this.ctrlEndLoading();
+                this.onControlResponse('load', response);
                 if (!response.status || response.status !== 200) {
                     this.$throw(response,'load');
                     return;
@@ -214,7 +215,7 @@ export class MEditViewPanelControlBase extends MDControlBase {
                 this.isControlLoaded = true;
                 this.ctrlEvent({ controlname: this.controlInstance.name, action: "load", data: this.items });
             }).catch((response: any) => {
-                this.ctrlEndLoading();
+                this.onControlResponse('load', response);
                 this.$throw(response,'load');
             });
         }
@@ -233,10 +234,12 @@ export class MEditViewPanelControlBase extends MDControlBase {
             this.$throw(this.$t('app.multiEditView.notConfig.loaddraftAction'),'handleAdd');
             return;
         }
-        const promice: Promise<any> = this.service.loadDraft(this.loaddraftAction,JSON.parse(JSON.stringify(this.context)),{viewparams:this.viewparams}, this.showBusyIndicator);
-        this.ctrlBeginLoading();
+        let tempContext: any = JSON.parse(JSON.stringify(this.context));
+        let viewparams: any = JSON.parse(JSON.stringify(this.viewparams));
+        this.onControlRequset('handleAdd', tempContext, viewparams);
+        const promice: Promise<any> = this.service.loadDraft(this.loaddraftAction, tempContext, {viewparams: viewparams}, this.showBusyIndicator);
         promice.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('handleAdd', response);
             if (!response.status || response.status !== 200) {
                 this.$throw(response,'handleAdd');
                 return;
@@ -244,7 +247,7 @@ export class MEditViewPanelControlBase extends MDControlBase {
             const data: any = response.data;
             this.doItems([data]);
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('handleAdd', response);
             this.$throw(response,'handleAdd');
         });
     }

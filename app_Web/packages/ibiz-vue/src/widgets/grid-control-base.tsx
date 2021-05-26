@@ -758,10 +758,11 @@ export class GridControlBase extends MDControlBase {
             }
         }
         Object.assign(arg, { viewparams: tempViewParams });
-        this.ctrlBeginLoading();
-        const post: Promise<any> = this.service.search(this.fetchAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('load', tempContext, arg);
+        const post: Promise<any> = this.service.search(this.fetchAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
             if (!response.status || response.status !== 200) {
                 this.$throw(response,'load');
                 return;
@@ -827,7 +828,7 @@ export class GridControlBase extends MDControlBase {
                 this.group();
             }
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
             this.$throw(response,'load');
         });
     }
@@ -888,12 +889,15 @@ export class GridControlBase extends MDControlBase {
             });
             let _removeAction = keys.length > 1 ? 'removeBatch' : this.removeAction;
             let _keys = keys.length > 1 ? keys : keys[0];
-            const context: any = JSON.parse(JSON.stringify(this.context));
-            const post: Promise<any> = this.service.delete(_removeAction, Object.assign(context, { [this.appDeCodeName.toLowerCase()]: _keys }), Object.assign({ [this.appDeCodeName.toLowerCase()]: _keys }, { viewparams: this.viewparams }), this.showBusyIndicator);
+            let tempContext:any = JSON.parse(JSON.stringify(this.context));
+            Object.assign(tempContext, { [this.appDeCodeName.toLowerCase()]: _keys });
+            const arg = { [this.appDeCodeName.toLowerCase()]: _keys };
+            Object.assign(arg, { viewparams: this.viewparams });
+            this.onControlRequset('remove', tempContext, arg);
+            const post: Promise<any> = this.service.delete(_removeAction, tempContext, arg, this.showBusyIndicator);
             return new Promise((resolve: any, reject: any) => {
-                this.ctrlBeginLoading();
                 post.then((response: any) => {
-                    this.ctrlEndLoading();
+                    this.onControlResponse('remove', response);
                     if (!response || response.status !== 200) {
                         this.$throw((this.$t('app.gridpage.delDataFail') as string) + ',' + response.info,'remove');
                         return;
@@ -915,7 +919,7 @@ export class GridControlBase extends MDControlBase {
                     this.selections = [];
                     resolve(response);
                 }).catch((response: any) => {
-                    this.ctrlEndLoading();
+                    this.onControlResponse('remove', response);
                     this.$throw(response,'remove');
                     reject(response);
                 });
@@ -1068,12 +1072,13 @@ export class GridControlBase extends MDControlBase {
             }
         }
         Object.assign(arg, { viewparams: tempViewParams });
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('exportExcel', tempContext, arg);
         const post: Promise<any> = this.allExportColumns?.length > 0 ?
-            this.service.searchDEExportData(this.fetchAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator) :
-            this.service.search(this.fetchAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);
-        this.ctrlBeginLoading();
+            this.service.searchDEExportData(this.fetchAction, tempContext, arg, this.showBusyIndicator) :
+            this.service.search(this.fetchAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('exportExcel', response);
             if (!response || response.status !== 200) {
                 this.$throw((this.$t('app.gridpage.exportFail') as string) + ',' + response.info,'exportExcel');
                 return;
@@ -1084,7 +1089,7 @@ export class GridControlBase extends MDControlBase {
                 this.$throw(error,'exportExcel');
             }
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('exportExcel', response);
             this.$throw(response,'exportExcel');
         });
     }
@@ -1811,9 +1816,10 @@ export class GridControlBase extends MDControlBase {
      * @memberof GridControlBase
      */
     public getAggData() {
-        this.ctrlBeginLoading();
-        this.service.getAggData(this.aggAction, JSON.parse(JSON.stringify(this.context)), this.showBusyIndicator).then((response: any) => {
-            this.ctrlEndLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('getAggData', tempContext, {});
+        this.service.getAggData(this.aggAction, tempContext, this.showBusyIndicator).then((response: any) => {
+            this.onControlResponse('getAggData', response);
             if (!response.status || response.status !== 200) {
                 this.$throw(response,'getAggData');
                 return;
@@ -1821,7 +1827,7 @@ export class GridControlBase extends MDControlBase {
             this.remoteData = response.data;
             this.isDisplay = true;
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('getAggData', response);
             this.remoteData = {};
             this.isDisplay = true;
             this.$throw(response,'getAggData');
@@ -1922,9 +1928,10 @@ export class GridControlBase extends MDControlBase {
                         this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.createAction') as string),'save');
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
-                        this.ctrlBeginLoading();
-                        let response = await this.service.add(this.createAction, JSON.parse(JSON.stringify(this.context)), item, this.showBusyIndicator);
-                        this.ctrlEndLoading();
+                        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+                        this.onControlRequset('create', tempContext, item);
+                        let response = await this.service.add(this.createAction, tempContext, item, this.showBusyIndicator);
+                        this.onControlResponse('create', response);
                         successItems.push(JSON.parse(JSON.stringify(response.data)));
                     }
                 } else if (Object.is(item.rowDataState, 'update')) {
@@ -1935,14 +1942,15 @@ export class GridControlBase extends MDControlBase {
                         if (item[appDeCodeName?.toLowerCase()]) {
                             Object.assign(this.context, { [appDeCodeName?.toLowerCase()]: item[appDeCodeName?.toLowerCase()] });
                         }
-                        this.ctrlBeginLoading();
-                        let response = await this.service.update(this.updateAction, JSON.parse(JSON.stringify(this.context)), item, this.showBusyIndicator);
-                        this.ctrlEndLoading();
+                        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+                        this.onControlRequset('update', tempContext, item);
+                        let response = await this.service.update(this.updateAction, tempContext, item, this.showBusyIndicator);
+                        this.onControlResponse('update', response);
                         successItems.push(JSON.parse(JSON.stringify(response.data)));
                     }
                 }
             } catch (error) {
-                this.ctrlEndLoading();
+                this.onControlResponse('save', error);
                 errorItems.push(JSON.parse(JSON.stringify(item)));
                 errorMessage.push(error);
             }
@@ -2004,10 +2012,11 @@ export class GridControlBase extends MDControlBase {
         }
         let _this = this;
         Object.assign(args[0], { viewparams: this.viewparams });
-        let post: Promise<any> = this.service.loadDraft(this.loaddraftAction, JSON.parse(JSON.stringify(this.context)), args[0], this.showBusyIndicator);
-        this.ctrlBeginLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('newRow', tempContext, args[0]);
+        let post: Promise<any> = this.service.loadDraft(this.loaddraftAction, tempContext, args[0], this.showBusyIndicator);
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('newRow', response);
             if (!response.status || response.status !== 200) {
                 this.$throw(response,'newRow');
                 return;
@@ -2024,7 +2033,7 @@ export class GridControlBase extends MDControlBase {
             });
             _this.gridItemsModel.push(_this.getGridRowModel());
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('newRow', response);
             this.$throw(response,'newRow');
         });
     }
@@ -2114,10 +2123,10 @@ export class GridControlBase extends MDControlBase {
         }
         const arg: any = JSON.parse(JSON.stringify(data));
         Object.assign(arg, { viewparams: this.viewparams });
-        const post: Promise<any> = this.service.frontLogic(mode, JSON.parse(JSON.stringify(tempContext)), arg, showloading);
-        this.ctrlBeginLoading();
+        this.onControlRequset('updateGridEditItem', tempContext, arg);
+        const post: Promise<any> = this.service.frontLogic(mode, tempContext, arg, showloading);
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('updateGridEditItem', response);
             if (!response || response.status !== 200) {
                 this.$throw((this.$t('app.gridpage.formitemFailed') as string),'updateGridEditItem');
                 return;
@@ -2133,7 +2142,7 @@ export class GridControlBase extends MDControlBase {
                 data[name] = _data[name];
             });
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('updateGridEditItem', response);
             this.$throw(response,'updateGridEditItem');
         });
     }
@@ -2269,10 +2278,11 @@ export class GridControlBase extends MDControlBase {
         return new Promise((resolve: any, reject: any) => {
             const _this: any = this;
             const arg: any = data;
-            const result: Promise<any> = this.service.submitbatch(_this.WFSubmitAction, JSON.parse(JSON.stringify(this.context)), arg, localdata, this.showBusyIndicator);
-            this.ctrlBeginLoading();
+            let tempContext:any = JSON.parse(JSON.stringify(this.context));
+            this.onControlRequset('submitbatch', tempContext, arg);
+            const result: Promise<any> = this.service.submitbatch(_this.WFSubmitAction, tempContext, arg, localdata, this.showBusyIndicator);
             result.then((response: any) => {
-                this.ctrlEndLoading();
+                this.onControlResponse('submitbatch', response);
                 if (!response || response.status !== 200) {
                     this.$throw((this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message,'submitbatch');
                     return;
@@ -2280,7 +2290,7 @@ export class GridControlBase extends MDControlBase {
                 this.$success((this.$t('app.formpage.workflow.submitsuccess') as string),'submitbatch');
                 resolve(response);
             }).catch((response: any) => {
-                this.ctrlEndLoading();
+                this.onControlResponse('submitbatch', response);
                 this.$throw(response,'submitbatch');
                 reject(response);
             });

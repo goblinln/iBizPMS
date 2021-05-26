@@ -175,7 +175,7 @@ export class AppFrontAction {
             Object.is(this.actionModel.frontProcessType, 'WIZARD')
         ) {
             if (!this.actionModel.getFrontPSAppView()) {
-                actionContext.$warning(`${this.actionModel.caption}无打开视图`,'oPenView');
+                actionContext.$warning(`${this.actionModel.caption}${actionContext.warn.unOpenView}`,'oPenView');
                 return;
             }
             await frontPSAppView?.fill(true);
@@ -367,11 +367,11 @@ export class AppFrontAction {
                     return result.datas;
                 });
             } else {
-                actionContext.$warning(`${frontPSAppView.title}不支持该模式打开`,'oPenView');
+                actionContext.$warning(`${frontPSAppView.title}${actionContext.$t('app.nosupport.unopen')}`,'oPenView');
             }
             // 用户自定义
         } else {
-            actionContext.$warning(`${this.actionModel.caption}自定义未实现`,'oPenView');
+            actionContext.$warning(`${this.actionModel.caption}${actionContext.$t('app.nosupport.uncustom')}`,'oPenView');
         }
     }
 }

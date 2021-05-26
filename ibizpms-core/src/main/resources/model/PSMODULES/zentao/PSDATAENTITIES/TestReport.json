@@ -7154,7 +7154,7 @@
   }, {
     "logicName" : "Product_Create",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "CREATE",
+    "mapPSDEOPPrivName" : "TESTREPORTMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDERS/DER1N_ZT_TESTREPORT_ZT_PRODUCT_PRODUCT.json"
@@ -7167,7 +7167,7 @@
   }, {
     "logicName" : "Product_Delete",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "DELETE",
+    "mapPSDEOPPrivName" : "TESTREPORTMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDERS/DER1N_ZT_TESTREPORT_ZT_PRODUCT_PRODUCT.json"
@@ -7193,7 +7193,7 @@
   }, {
     "logicName" : "Product_Manage",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "MANAGE",
+    "mapPSDEOPPrivName" : "TESTREPORTMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDERS/DER1N_ZT_TESTREPORT_ZT_PRODUCT_PRODUCT.json"
@@ -7236,7 +7236,7 @@
   }, {
     "logicName" : "Product_Update",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "UPDATE",
+    "mapPSDEOPPrivName" : "TESTREPORTMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDERS/DER1N_ZT_TESTREPORT_ZT_PRODUCT_PRODUCT.json"

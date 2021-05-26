@@ -117,15 +117,16 @@ export class SearchFormControlBase extends EditFormControlBase {
             utilServiceName: this.utilServiceName,
             ...this.viewparams
         });
-        let post = this.service.loadModel(this.utilServiceName, this.context, param);
-        this.ctrlBeginLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('load', tempContext, param);
+        let post = this.service.loadModel(this.utilServiceName, tempContext, param);
 		post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
 			if(response.status == 200 && response.data) {
                 this.historyItems = response.data;
 			}
 		}).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
 			LogUtil.log(response);
 		});
     }
@@ -158,10 +159,11 @@ export class SearchFormControlBase extends EditFormControlBase {
         }
         const arg: any = { ...opt } ;
         Object.assign(arg,{viewparams:this.viewparams});
-        let post: Promise<any> = this.service.loadDraft(this.loaddraftAction,JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);
-        this.ctrlBeginLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('loadDraft', tempContext, arg);
+        let post: Promise<any> = this.service.loadDraft(this.loaddraftAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('loadDraft', response);
             if (!response.status || response.status !== 200) {
                 this.$throw(response,'loadDraft');
                 return;
@@ -194,7 +196,7 @@ export class SearchFormControlBase extends EditFormControlBase {
                 this.formState.next({ type: 'load', data: data });
             });
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('loadDraft', response);
             this.$throw(response,'loadDraft');
         });
     }

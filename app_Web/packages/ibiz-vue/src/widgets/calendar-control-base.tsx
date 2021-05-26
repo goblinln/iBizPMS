@@ -528,7 +528,8 @@ export class CalendarControlBase extends MDControlBase{
         }else{
             this.searchArgCache = arg;
         }
-        const post: Promise<any> = this.service.search(this.loadAction, JSON.parse(JSON.stringify(this.context?this.context:'')), arg, this.showBusyIndicator);
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        const post: Promise<any> = this.service.search(this.loadAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
             if (!response || response.status !== 200) {
                 this.$throw(response,'searchEvents');
@@ -688,16 +689,17 @@ export class CalendarControlBase extends MDControlBase{
             }
         }
         Object.assign(arg,{viewparams:this.viewparams});
-        const post: Promise<any> = this.service.update(itemType, JSON.parse(JSON.stringify(_context)), arg, this.showBusyIndicator);
-        this.ctrlBeginLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('onEventDrop', tempContext, arg);
+        const post: Promise<any> = this.service.update(itemType, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('onEventDrop', response);
             if (!response || response.status !== 200) {
                 this.$throw(response,'onEventDrop');
                 return;
             }
         }, (response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('onEventDrop', response);
             this.$throw(response,'onEventDrop');
         });
     }
