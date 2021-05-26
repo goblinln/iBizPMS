@@ -81,8 +81,9 @@
       } ]
     } ],
     "codeName" : "DeveloperQuery",
-    "logicName" : "研发人员（启用权限）",
-    "name" : "DeveloperQuery"
+    "logicName" : "参与者（启用权限）",
+    "name" : "DeveloperQuery",
+    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -94,8 +95,9 @@
       } ]
     } ],
     "codeName" : "OpenByQuery",
-    "logicName" : "当前创建者（启用权限）",
-    "name" : "OpenByQuery"
+    "logicName" : "当前创建或修改者（启用权限）",
+    "name" : "OpenByQuery",
+    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -108,7 +110,8 @@
     } ],
     "codeName" : "OpenQuery",
     "logicName" : "公开（启动权限）",
-    "name" : "OpenQuery"
+    "name" : "OpenQuery",
+    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -121,7 +124,8 @@
     } ],
     "codeName" : "PMQuery",
     "logicName" : "项目负责人（启用权限）",
-    "name" : "PMQuery"
+    "name" : "PMQuery",
+    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -134,7 +138,8 @@
     } ],
     "codeName" : "POQuery",
     "logicName" : "产品负责人（启用权限）",
-    "name" : "POQuery"
+    "name" : "POQuery",
+    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -147,7 +152,8 @@
     } ],
     "codeName" : "QDQuery",
     "logicName" : "测试负责人（启用权限)",
-    "name" : "QDQuery"
+    "name" : "QDQuery",
+    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -160,7 +166,8 @@
     } ],
     "codeName" : "RDQuery",
     "logicName" : "发布负责人（启用权限）",
-    "name" : "RDQuery"
+    "name" : "RDQuery",
+    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",

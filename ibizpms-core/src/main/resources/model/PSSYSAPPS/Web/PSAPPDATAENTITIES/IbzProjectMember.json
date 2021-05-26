@@ -154,113 +154,64 @@
   }, {
     "codeName" : "FetchDeveloperQuery",
     "methodType" : "FETCH",
+    "name" : "DeveloperQuery",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "DeveloperQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDeveloperQuery"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenByQuery",
     "methodType" : "FETCH",
+    "name" : "OpenByQuery",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "OpenByQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchOpenByQuery"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenQuery",
     "methodType" : "FETCH",
+    "name" : "OpenQuery",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "OpenQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchOpenQuery"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchPMQuery",
     "methodType" : "FETCH",
+    "name" : "PMQuery",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "PMQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchPMQuery"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchPOQuery",
     "methodType" : "FETCH",
+    "name" : "POQuery",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "POQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchPOQuery"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchQDQuery",
     "methodType" : "FETCH",
+    "name" : "QDQuery",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "QDQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchQDQuery"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRDQuery",
     "methodType" : "FETCH",
+    "name" : "RDQuery",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "RDQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRDQuery"
     },
     "builtinMethod" : false
   } ],
@@ -492,113 +443,64 @@
   }, {
     "codeName" : "FetchDeveloperQuery",
     "methodType" : "FETCH",
+    "name" : "DeveloperQuery",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "DeveloperQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDeveloperQuery"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenByQuery",
     "methodType" : "FETCH",
+    "name" : "OpenByQuery",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "OpenByQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchOpenByQuery"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenQuery",
     "methodType" : "FETCH",
+    "name" : "OpenQuery",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "OpenQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchOpenQuery"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchPMQuery",
     "methodType" : "FETCH",
+    "name" : "PMQuery",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "PMQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchPMQuery"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchPOQuery",
     "methodType" : "FETCH",
+    "name" : "POQuery",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "POQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchPOQuery"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchQDQuery",
     "methodType" : "FETCH",
+    "name" : "QDQuery",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "QDQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchQDQuery"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRDQuery",
     "methodType" : "FETCH",
+    "name" : "RDQuery",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "RDQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRDQuery"
     },
     "builtinMethod" : false
   }, {

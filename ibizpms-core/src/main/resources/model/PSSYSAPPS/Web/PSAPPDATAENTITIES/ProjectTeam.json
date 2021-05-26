@@ -982,6 +982,7 @@
     "caption" : "团队管理",
     "codeName" : "ManagerMember",
     "confirmMsg" : "您确定从该项目中移除该用户吗？",
+    "dataAccessAction" : "CREATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectTeamMainGridView_EditRow.json",

@@ -360,7 +360,7 @@ export class MDControlBase extends MainControlBase {
      */
     public renderLoadDataTip(){
         return <div class="empty-data-tip">
-            <img class="tip-img" src="./assets/img/load-data.svg" />
+            <img class="tip-img" src="./assets/img/load-data.gif" />
             <span class="tip-text">{this.$t('app.warn.load')}</span>
         </div>
     }
