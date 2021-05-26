@@ -1,6 +1,5 @@
 import { notNilEmpty } from "qx-util";
 
-
 /**
  * 错误类型申明
  *
@@ -117,5 +116,25 @@ export class AppError{
         this.message = notNilEmpty(opts.message) ? opts.message : this.errorMapper[this.code];
         this.details = opts.details;
         this.type = opts.type;
+        this.handlePreError(opts.type);
     }
+
+    /**
+     * 处理预置错误
+     *
+     * @memberof AppError
+     */
+     public handlePreError(type:string){
+        switch (type) {
+            case 'EntityException':
+                
+                break;
+            case 'DataEntityRuntimeException':
+
+                break;
+            default:
+                break;
+        }
+    }
+
 }

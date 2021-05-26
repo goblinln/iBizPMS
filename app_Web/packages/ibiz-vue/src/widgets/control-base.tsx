@@ -403,11 +403,18 @@ export class ControlBase extends Vue implements ControlInterface {
     }
 
     /**
+     * 处理部件UI请求
+     *
+     * @memberof ControlBase
+     */
+    public onControlRequset(action: string, context: any, viewparam: any) { }
+
+    /**
      * 处理部件UI响应
      *
      * @memberof ControlBase
      */
-    public handControlResponse(action: string, response: any) { }
+    public onControlResponse(action: string, response: any) { }
 
     /**
      * 部件模型数据初始化实例

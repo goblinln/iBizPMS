@@ -30175,6 +30175,7 @@
     "field_logic_name":"访问控制",
     "entity_name":"IBZ_PROJECTMEMBER",
     "field_type":"SSCODELIST",
+    "dict":"Project__acl",
     "nullable":1,
     "physical_field":1,
     "data_type":"VARCHAR",

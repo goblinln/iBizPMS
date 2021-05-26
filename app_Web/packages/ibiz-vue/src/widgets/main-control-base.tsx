@@ -74,22 +74,31 @@ export class MainControlBase extends ControlBase {
     }
 
     /**
+     * 处理部件UI请求
+     *
+     * @memberof MainControlBase
+     */
+    public onControlRequset(action:string,context:any,viewparam:any){
+        this.ctrlBeginLoading();
+    }
+
+    /**
      * 处理部件UI响应
      *
      * @memberof MainControlBase
      */
-    public handControlResponse(action: string, response: any) {
-        if(!action || !response){
-            return;
+     public onControlResponse(action:string,response:any){
+        this.ctrlEndLoading();
+        if(Object.is(action,'load')){
+            this.isControlLoaded = true;
         }
-        switch (action) {
-            case 'load':
-                if(response && response.status == 403){
-                    this.enableControlUIAuth = false;
-                }
-                break;
-            default:
-                break;
+        if(response && response.status && response.status == 403){
+            this.enableControlUIAuth = false;
+            this.ctrlEvent({
+                controlname: this.controlInstance.name,
+                action: 'authlimit',
+                data: response,
+            });
         }
     }
 

@@ -183,6 +183,27 @@ public class ProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(productMapping.toDto(productService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
+    @ApiOperation(value = "关闭", tags = {"产品" },  notes = "关闭")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/close")
+    public ResponseEntity<ProductDTO> close(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
+        Product domain = productMapping.toDomain(productdto);
+        domain.setId(product_id);
+        domain = productService.close(domain);
+        productdto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        productdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(productdto);
+    }
+    @PreAuthorize("@ProductRuntime.test('MANAGE')")
+    @ApiOperation(value = "批量处理[关闭]", tags = {"产品" },  notes = "批量处理[关闭]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/closebatch")
+    public ResponseEntity<Boolean> closeBatch(@RequestBody List<ProductDTO> productdtos) {
+        List<Product> domains = productMapping.toDomain(productdtos);
+        boolean result = productService.closeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/{action}")

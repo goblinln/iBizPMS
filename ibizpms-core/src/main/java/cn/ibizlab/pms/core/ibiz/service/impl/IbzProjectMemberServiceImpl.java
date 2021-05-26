@@ -245,18 +245,6 @@ public class IbzProjectMemberServiceImpl extends ServiceImpl<IbzProjectMemberMap
     public List<IbzProjectMember> selectOpenQuery(IbzProjectMemberSearchContext context){
         return baseMapper.selectOpenQuery(context, context.getSelectCond());
     }
-    public List<IbzProjectMember> selectPMQuery(IbzProjectMemberSearchContext context){
-        return baseMapper.selectPMQuery(context, context.getSelectCond());
-    }
-    public List<IbzProjectMember> selectPOQuery(IbzProjectMemberSearchContext context){
-        return baseMapper.selectPOQuery(context, context.getSelectCond());
-    }
-    public List<IbzProjectMember> selectQDQuery(IbzProjectMemberSearchContext context){
-        return baseMapper.selectQDQuery(context, context.getSelectCond());
-    }
-    public List<IbzProjectMember> selectRDQuery(IbzProjectMemberSearchContext context){
-        return baseMapper.selectRDQuery(context, context.getSelectCond());
-    }
     public List<IbzProjectMember> selectView(IbzProjectMemberSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }
@@ -295,42 +283,6 @@ public class IbzProjectMemberServiceImpl extends ServiceImpl<IbzProjectMemberMap
     @Override
     public Page<IbzProjectMember> searchOpenQuery(IbzProjectMemberSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzProjectMember> pages=baseMapper.searchOpenQuery(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<IbzProjectMember>(pages.getRecords(), context.getPageable(), pages.getTotal());
-    }
-
-    /**
-     * 查询集合 项目负责人（启用权限）
-     */
-    @Override
-    public Page<IbzProjectMember> searchPMQuery(IbzProjectMemberSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzProjectMember> pages=baseMapper.searchPMQuery(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<IbzProjectMember>(pages.getRecords(), context.getPageable(), pages.getTotal());
-    }
-
-    /**
-     * 查询集合 产品负责人（启用权限）
-     */
-    @Override
-    public Page<IbzProjectMember> searchPOQuery(IbzProjectMemberSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzProjectMember> pages=baseMapper.searchPOQuery(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<IbzProjectMember>(pages.getRecords(), context.getPageable(), pages.getTotal());
-    }
-
-    /**
-     * 查询集合 测试负责人（启用权限)
-     */
-    @Override
-    public Page<IbzProjectMember> searchQDQuery(IbzProjectMemberSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzProjectMember> pages=baseMapper.searchQDQuery(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<IbzProjectMember>(pages.getRecords(), context.getPageable(), pages.getTotal());
-    }
-
-    /**
-     * 查询集合 发布负责人（启用权限）
-     */
-    @Override
-    public Page<IbzProjectMember> searchRDQuery(IbzProjectMemberSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzProjectMember> pages=baseMapper.searchRDQuery(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzProjectMember>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

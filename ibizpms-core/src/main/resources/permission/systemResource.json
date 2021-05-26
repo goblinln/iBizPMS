@@ -1561,7 +1561,7 @@
     "dename":"IbzProjectMember",
     "delogicname":"项目相关成员",
     "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"DEFAULT"},{"id":"DeveloperQuery" , "name":"研发人员（启用权限）"},{"id":"OpenByQuery" , "name":"当前创建者（启用权限）"},{"id":"OpenQuery" , "name":"公开（启动权限）"},{"id":"PMQuery" , "name":"项目负责人（启用权限）"},{"id":"POQuery" , "name":"产品负责人（启用权限）"},{"id":"QDQuery" , "name":"测试负责人（启用权限)"},{"id":"RDQuery" , "name":"发布负责人（启用权限）"}],
+    "dedataset":[{"id":"Default" , "name":"DEFAULT"},{"id":"DeveloperQuery" , "name":"研发人员（启用权限）"},{"id":"OpenByQuery" , "name":"当前创建者（启用权限）"},{"id":"OpenQuery" , "name":"公开（启动权限）"}],
     "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
     "datascope":[{"id":"all","name":"全部数据"}]
     }

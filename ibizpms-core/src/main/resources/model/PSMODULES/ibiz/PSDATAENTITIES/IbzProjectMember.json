@@ -76,7 +76,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "( t1.id in (select t3.root from zt_team t3 where t3.account = #{srf.sessioncontext.srfloginname}  \nand t3.type = 'project') )",
+        "customCond" : "( t1.id in (select t3.root from zt_team t3 where t3.account = #{srf.sessioncontext.srfloginname}  \nand t3.type = 'project')  AND  t1.`ACL` = 'private' )",
         "name" : "查询条件"
       } ]
     } ],
@@ -90,7 +90,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "( t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"IBZ_PROJECTMEMBER\"}')} )",
+        "customCond" : "( ( t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"IBZ_PROJECTMEMBER\"}')}  OR  t1.PM =  ${srfsessioncontext('srfloginname','{\"defname\":\"PM\",\"dename\":\"IBZ_PROJECTMEMBER\"}')}  OR  t1.RD =  ${srfsessioncontext('srfloginname','{\"defname\":\"RD\",\"dename\":\"IBZ_PROJECTMEMBER\"}')}  OR  t1.QD =  ${srfsessioncontext('srfloginname','{\"defname\":\"QD\",\"dename\":\"IBZ_PROJECTMEMBER\"}')}  OR  t1.PO =  ${srfsessioncontext('srfloginname','{\"defname\":\"PO\",\"dename\":\"IBZ_PROJECTMEMBER\"}')} )  AND  t1.`ACL` = 'private' )",
         "name" : "查询条件"
       } ]
     } ],
@@ -111,62 +111,6 @@
     "codeName" : "OpenQuery",
     "logicName" : "公开（启动权限）",
     "name" : "OpenQuery",
-    "privQuery" : true
-  }, {
-    "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "( t1.PM =  ${srfsessioncontext('srfloginname','{\"defname\":\"PM\",\"dename\":\"IBZ_PROJECTMEMBER\"}')} )",
-        "name" : "查询条件"
-      } ]
-    } ],
-    "codeName" : "PMQuery",
-    "logicName" : "项目负责人（启用权限）",
-    "name" : "PMQuery",
-    "privQuery" : true
-  }, {
-    "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "( t1.PO =  ${srfsessioncontext('srfloginname','{\"defname\":\"PO\",\"dename\":\"IBZ_PROJECTMEMBER\"}')} )",
-        "name" : "查询条件"
-      } ]
-    } ],
-    "codeName" : "POQuery",
-    "logicName" : "产品负责人（启用权限）",
-    "name" : "POQuery",
-    "privQuery" : true
-  }, {
-    "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "( t1.QD =  ${srfsessioncontext('srfloginname','{\"defname\":\"QD\",\"dename\":\"IBZ_PROJECTMEMBER\"}')} )",
-        "name" : "查询条件"
-      } ]
-    } ],
-    "codeName" : "QDQuery",
-    "logicName" : "测试负责人（启用权限)",
-    "name" : "QDQuery",
-    "privQuery" : true
-  }, {
-    "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "( t1.RD =  ${srfsessioncontext('srfloginname','{\"defname\":\"RD\",\"dename\":\"IBZ_PROJECTMEMBER\"}')} )",
-        "name" : "查询条件"
-      } ]
-    } ],
-    "codeName" : "RDQuery",
-    "logicName" : "发布负责人（启用权限）",
-    "name" : "RDQuery",
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -215,46 +159,6 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "OpenQuery"
-    } ],
-    "enableBackend" : true,
-    "enableFront" : true
-  }, {
-    "codeName" : "PMQuery",
-    "logicName" : "项目负责人（启用权限）",
-    "name" : "PMQuery",
-    "getPSDEDataQueries" : [ {
-      "modelref" : true,
-      "id" : "PMQuery"
-    } ],
-    "enableBackend" : true,
-    "enableFront" : true
-  }, {
-    "codeName" : "POQuery",
-    "logicName" : "产品负责人（启用权限）",
-    "name" : "POQuery",
-    "getPSDEDataQueries" : [ {
-      "modelref" : true,
-      "id" : "POQuery"
-    } ],
-    "enableBackend" : true,
-    "enableFront" : true
-  }, {
-    "codeName" : "QDQuery",
-    "logicName" : "测试负责人（启用权限)",
-    "name" : "QDQuery",
-    "getPSDEDataQueries" : [ {
-      "modelref" : true,
-      "id" : "QDQuery"
-    } ],
-    "enableBackend" : true,
-    "enableFront" : true
-  }, {
-    "codeName" : "RDQuery",
-    "logicName" : "发布负责人（启用权限）",
-    "name" : "RDQuery",
-    "getPSDEDataQueries" : [ {
-      "modelref" : true,
-      "id" : "RDQuery"
     } ],
     "enableBackend" : true,
     "enableFront" : true
@@ -1040,6 +944,10 @@
     "length" : 7,
     "logicName" : "访问控制",
     "name" : "ACL",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/Project__acl.json"
+    },
     "stdDataType" : 25,
     "stringLength" : 7,
     "valueFormat" : "%1$s"
@@ -1051,6 +959,9 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "管理",
+    "name" : "MANAGE"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
@@ -1058,26 +969,20 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
-    "customCond" : "[ (1, '=', 1) ]",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/ProjectMember_Read.json",
-    "name" : "项目相关成员查看",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "ProjectMember_Read_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    } ],
-    "roleTag" : "ProjectMember_Read",
-    "userDRAction" : "READ"
-  }, {
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Manage_OpenBy.json",
     "name" : "项目管理（当前创建者）",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "OpenByQuery"
     },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "MANAGE",
+      "name" : "MANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MANAGE"
+      }
+    } ],
     "roleTag" : "Project_Manage_OpenBy",
     "userDRAction" : "READ",
     "defaultMode" : true
@@ -1133,78 +1038,6 @@
       }
     } ],
     "roleTag" : "Project_Read_OpenBy",
-    "userDRAction" : "READ",
-    "defaultMode" : true
-  }, {
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Read_PM.json",
-    "name" : "项目查看（项目负责人）",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "PMQuery"
-    },
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "Project_Read_PM_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    } ],
-    "roleTag" : "Project_Read_PM",
-    "userDRAction" : "READ",
-    "defaultMode" : true
-  }, {
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Read_PO.json",
-    "name" : "项目查看（产品负责人）",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "POQuery"
-    },
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "Project_Read_PO_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    } ],
-    "roleTag" : "Project_Read_PO",
-    "userDRAction" : "READ",
-    "defaultMode" : true
-  }, {
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Read_QD.json",
-    "name" : "项目查看（测试负责人）",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "QDQuery"
-    },
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "Project_Read_QD_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    } ],
-    "roleTag" : "Project_Read_QD",
-    "userDRAction" : "READ",
-    "defaultMode" : true
-  }, {
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Read_RD.json",
-    "name" : "项目查看（发布负责人）",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "RDQuery"
-    },
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "Project_Read_RD_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    } ],
-    "roleTag" : "Project_Read_RD",
     "userDRAction" : "READ",
     "defaultMode" : true
   } ],

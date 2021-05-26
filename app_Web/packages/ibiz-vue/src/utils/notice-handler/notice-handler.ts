@@ -67,7 +67,7 @@ export class NoticeHandler {
                     return this.createError({ code: AppErrorCode.SYSTEMERROR });
                 } else {
                     const errorInfo: any = error.data;
-                    if (errorInfo.code && errorInfo.message) {
+                    if (errorInfo.message) {
                         return this.createError(errorInfo);
                     } else {
                         return this.createError({ code: AppErrorCode.SYSTEMERROR });

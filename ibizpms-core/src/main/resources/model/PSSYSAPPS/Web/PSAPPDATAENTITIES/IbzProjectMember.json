@@ -178,42 +178,6 @@
       "id" : "OpenQuery"
     },
     "builtinMethod" : false
-  }, {
-    "codeName" : "FetchPMQuery",
-    "methodType" : "FETCH",
-    "name" : "PMQuery",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "PMQuery"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchPOQuery",
-    "methodType" : "FETCH",
-    "name" : "POQuery",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "POQuery"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchQDQuery",
-    "methodType" : "FETCH",
-    "name" : "QDQuery",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "QDQuery"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchRDQuery",
-    "methodType" : "FETCH",
-    "name" : "RDQuery",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "RDQuery"
-    },
-    "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "Secondmember",
@@ -468,42 +432,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchPMQuery",
-    "methodType" : "FETCH",
-    "name" : "PMQuery",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "PMQuery"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchPOQuery",
-    "methodType" : "FETCH",
-    "name" : "POQuery",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "POQuery"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchQDQuery",
-    "methodType" : "FETCH",
-    "name" : "QDQuery",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "QDQuery"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchRDQuery",
-    "methodType" : "FETCH",
-    "name" : "RDQuery",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "RDQuery"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FilterUpdate",
     "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE",
@@ -578,6 +506,9 @@
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "管理",
+    "name" : "MANAGE"
   }, {
     "logicName" : "读取",
     "name" : "READ"

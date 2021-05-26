@@ -5,6 +5,14 @@
     "modelref" : true,
     "id" : "OpenByQuery"
   },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "MANAGE",
+    "name" : "MANAGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    }
+  } ],
   "roleTag" : "Project_Manage_OpenBy",
   "userDRAction" : "READ",
   "defaultMode" : true

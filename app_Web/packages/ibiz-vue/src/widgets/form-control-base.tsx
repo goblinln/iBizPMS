@@ -419,12 +419,12 @@ export class FormControlBase extends MainControlBase {
             return;
         }
         const arg: any = { ...opt };
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
         let viewparamResult: any = Object.assign(arg, this.viewparams);
-        this.ctrlBeginLoading();
-        const get: Promise<any> = this.service.get(this.loadAction, JSON.parse(JSON.stringify(this.context)), { viewparams: viewparamResult }, this.showBusyIndicator);
+        this.onControlRequset('load',tempContext,viewparamResult);
+        const get: Promise<any> = this.service.get(this.loadAction, tempContext, { viewparams: viewparamResult }, this.showBusyIndicator);
         get.then((response: any) => {
-            this.ctrlEndLoading();
-            this.isControlLoaded = true;
+            this.onControlResponse('load',response);
             if (!response.status || response.status !== 200) {
                 this.$throw(response,'load');
                 return;
@@ -440,7 +440,7 @@ export class FormControlBase extends MainControlBase {
                 this.formState.next({ type: 'load', data: data });
             });
         }).catch((error: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load',error);
             this.$throw(error,'load');
         });
     }
@@ -458,10 +458,11 @@ export class FormControlBase extends MainControlBase {
         }
         const arg: any = { ...opt };
         Object.assign(arg, { viewparams: this.viewparams });
-        let post: Promise<any> = this.service.loadDraft(this.loaddraftAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);
-        this.ctrlBeginLoading();
+        const tempContext:any =  JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('loadDraft',tempContext,arg);
+        let post: Promise<any> = this.service.loadDraft(this.loaddraftAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('loadDraft',response);
             if (!response.status || response.status !== 200) {
                 this.$throw(response,'loadDraft');
                 return;
@@ -493,7 +494,7 @@ export class FormControlBase extends MainControlBase {
                 this.formState.next({ type: 'load', data: data });
             });
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('loadDraft',response);
             this.$throw(response,'loadDraft');
         });
     }

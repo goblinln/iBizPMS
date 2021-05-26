@@ -208,7 +208,7 @@ ruleflow-group "projectprojecttaskqcntrawsqlcall11"
     then
     Map param =new HashMap();
     param.put("param0",projectprojecttaskqcntdefault.get("id"));
-    String strSql="select count(t.id) as STORYCHANGECNT from zt_task t left join zt_story t21 on t.story = t21.id where t.deleted = '0'  and t.project = #{et.param0} and t.storyVersion < t21.version and t21.`status` <> 'changed'";
+    String strSql="select count(t.id) as STORYCHANGECNT from zt_task t left join zt_story t21 on t.story = t21.id where t.deleted = '0'  and t.project = #{et.param0} and t.storyVersion < t21.version and t21.`status` <> 'changed' and t.parent <= '0'";
     java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
     if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
         JSONObject entity=entities.get(0);
