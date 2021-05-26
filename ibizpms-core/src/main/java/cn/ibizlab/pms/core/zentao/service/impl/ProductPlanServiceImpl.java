@@ -208,6 +208,20 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
 
     @Override
     @Transactional
+    public ProductPlan batchLinkBug(ProductPlan et) {
+        //自定义代码
+        return et;
+    }
+
+    @Override
+    @Transactional
+    public ProductPlan batchLinkStory(ProductPlan et) {
+        //自定义代码
+        return et;
+    }
+
+    @Override
+    @Transactional
     public ProductPlan batchUnlinkBug(ProductPlan et) {
         //自定义代码
         return et;

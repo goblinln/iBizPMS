@@ -74,6 +74,20 @@
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
+    "codeName" : "BatchLinkBug",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/BatchLinkBug.json",
+    "logicName" : "批关联BUG",
+    "name" : "BatchLinkBug"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "BatchLinkStory",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/BatchLinkStory.json",
+    "logicName" : "批关联需求",
+    "name" : "BatchLinkStory"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchUnlinkBug",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/BatchUnlinkBug.json",
     "logicName" : "批量解除关联Bug",

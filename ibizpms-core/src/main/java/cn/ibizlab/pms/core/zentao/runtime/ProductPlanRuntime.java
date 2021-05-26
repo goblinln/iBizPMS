@@ -216,6 +216,12 @@ public class ProductPlanRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             else if (iPSDEAction.getName().equals("GetDraft")) {
                 return productplanService.getDraft((ProductPlan) args[0]);
             }
+            else if (iPSDEAction.getName().equals("BatchLinkBug")) {
+                return productplanService.batchLinkBug((ProductPlan) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("BatchLinkStory")) {
+                return productplanService.batchLinkStory((ProductPlan) args[0]);
+            }
             else if (iPSDEAction.getName().equals("BatchUnlinkBug")) {
                 return productplanService.batchUnlinkBug((ProductPlan) args[0]);
             }
@@ -381,6 +387,12 @@ public class ProductPlanRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
         }
         else if (action.equals("getDraft")) {
             return aroundAction("GetDraft", point);
+        }
+        else if (action.equals("batchLinkBug")) {
+            return aroundAction("BatchLinkBug", point);
+        }
+        else if (action.equals("batchLinkStory")) {
+            return aroundAction("BatchLinkStory", point);
         }
         else if (action.equals("batchUnlinkBug")) {
             return aroundAction("BatchUnlinkBug", point);

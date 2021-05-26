@@ -35,6 +35,8 @@ public interface IProductPlanService extends IService<ProductPlan> {
     ProductPlan get(Long key);
     ProductPlan sysGet(Long key);
     ProductPlan getDraft(ProductPlan et);
+    ProductPlan batchLinkBug(ProductPlan et);
+    ProductPlan batchLinkStory(ProductPlan et);
     ProductPlan batchUnlinkBug(ProductPlan et);
     ProductPlan batchUnlinkStory(ProductPlan et);
     boolean checkKey(ProductPlan et);
