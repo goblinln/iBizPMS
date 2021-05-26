@@ -66,15 +66,7 @@ public class BurnResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@BurnRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建burn", tags = {"burn" },  notes = "批量新建burn")
-	@RequestMapping(method = RequestMethod.POST, value = "/burns/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<BurnDTO> burndtos) {
-        burnService.createBatch(burnMapping.toDomain(burndtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@BurnRuntime.test(#burn_id,'UPDATE')")
     @ApiOperation(value = "更新burn", tags = {"burn" },  notes = "更新burn")
 	@RequestMapping(method = RequestMethod.PUT, value = "/burns/{burn_id}")
@@ -91,13 +83,6 @@ public class BurnResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@BurnRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新burn", tags = {"burn" },  notes = "批量更新burn")
-	@RequestMapping(method = RequestMethod.PUT, value = "/burns/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<BurnDTO> burndtos) {
-        burnService.updateBatch(burnMapping.toDomain(burndtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@BurnRuntime.test(#burn_id,'DELETE')")
     @ApiOperation(value = "删除burn", tags = {"burn" },  notes = "删除burn")
@@ -106,13 +91,6 @@ public class BurnResource {
          return ResponseEntity.status(HttpStatus.OK).body(burnService.remove(burn_id));
     }
 
-    @PreAuthorize("@BurnRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除burn", tags = {"burn" },  notes = "批量删除burn")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/burns/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        burnService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@BurnRuntime.test(#burn_id,'READ')")
     @ApiOperation(value = "获取burn", tags = {"burn" },  notes = "获取burn")
@@ -125,6 +103,7 @@ public class BurnResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@BurnRuntime.test(#burn_id,'CREATE')")
     @ApiOperation(value = "获取burn草稿", tags = {"burn" },  notes = "获取burn草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/burns/getdraft")
     public ResponseEntity<BurnDTO> getDraft(BurnDTO dto) {
@@ -149,13 +128,7 @@ public class BurnResource {
         burndto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(burndto);
     }
-    @ApiOperation(value = "批量处理[更新燃尽图]", tags = {"burn" },  notes = "批量处理[更新燃尽图]")
-	@RequestMapping(method = RequestMethod.POST, value = "/burns/computeburnbatch")
-    public ResponseEntity<Boolean> computeBurnBatch(@RequestBody List<BurnDTO> burndtos) {
-        List<Burn> domains = burnMapping.toDomain(burndtos);
-        boolean result = burnService.computeBurnBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存burn", tags = {"burn" },  notes = "保存burn")
 	@RequestMapping(method = RequestMethod.POST, value = "/burns/save")
@@ -168,12 +141,6 @@ public class BurnResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存burn", tags = {"burn" },  notes = "批量保存burn")
-	@RequestMapping(method = RequestMethod.POST, value = "/burns/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<BurnDTO> burndtos) {
-        burnService.saveBatch(burnMapping.toDomain(burndtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@BurnRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"burn" } ,notes = "获取DEFAULT")
@@ -238,17 +205,6 @@ public class BurnResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
-    @ApiOperation(value = "根据项目批量建立burn", tags = {"burn" },  notes = "根据项目批量建立burn")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/burns/batch")
-    public ResponseEntity<Boolean> createBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<BurnDTO> burndtos) {
-        List<Burn> domainlist=burnMapping.toDomain(burndtos);
-        for(Burn domain:domainlist){
-            domain.setProject(project_id);
-        }
-        burnService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目更新burn", tags = {"burn" },  notes = "根据项目更新burn")
@@ -262,17 +218,6 @@ public class BurnResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
-    @ApiOperation(value = "根据项目批量更新burn", tags = {"burn" },  notes = "根据项目批量更新burn")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/burns/batch")
-    public ResponseEntity<Boolean> updateBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<BurnDTO> burndtos) {
-        List<Burn> domainlist=burnMapping.toDomain(burndtos);
-        for(Burn domain:domainlist){
-            domain.setProject(project_id);
-        }
-        burnService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目删除burn", tags = {"burn" },  notes = "根据项目删除burn")
@@ -281,13 +226,6 @@ public class BurnResource {
 		return ResponseEntity.status(HttpStatus.OK).body(burnService.remove(burn_id));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
-    @ApiOperation(value = "根据项目批量删除burn", tags = {"burn" },  notes = "根据项目批量删除burn")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/burns/batch")
-    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<String> ids) {
-        burnService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目获取burn", tags = {"burn" },  notes = "根据项目获取burn")
@@ -322,13 +260,7 @@ public class BurnResource {
         burndto = burnMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(burndto);
     }
-    @ApiOperation(value = "批量处理[根据项目burn]", tags = {"burn" },  notes = "批量处理[根据项目burn]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/burns/computeburnbatch")
-    public ResponseEntity<Boolean> computeBurnByProject(@PathVariable("project_id") Long project_id, @RequestBody List<BurnDTO> burndtos) {
-        List<Burn> domains = burnMapping.toDomain(burndtos);
-        boolean result = burnService.computeBurnBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据项目保存burn", tags = {"burn" },  notes = "根据项目保存burn")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/burns/save")
     public ResponseEntity<BurnDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody BurnDTO burndto) {
@@ -338,16 +270,6 @@ public class BurnResource {
         return ResponseEntity.status(HttpStatus.OK).body(burnMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据项目批量保存burn", tags = {"burn" },  notes = "根据项目批量保存burn")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/burns/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<BurnDTO> burndtos) {
-        List<Burn> domainlist=burnMapping.toDomain(burndtos);
-        for(Burn domain:domainlist){
-             domain.setProject(project_id);
-        }
-        burnService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"burn" } ,notes = "根据项目获取DEFAULT")

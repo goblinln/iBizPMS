@@ -66,15 +66,7 @@ public class IbzLibResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbzLibRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建用例库", tags = {"用例库" },  notes = "批量新建用例库")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzLibDTO> ibzlibdtos) {
-        ibzlibService.createBatch(ibzlibMapping.toDomain(ibzlibdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "ibzlib" , versionfield = "lastediteddate")
     @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'UPDATE')")
     @ApiOperation(value = "更新用例库", tags = {"用例库" },  notes = "更新用例库")
@@ -92,13 +84,6 @@ public class IbzLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzLibRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新用例库", tags = {"用例库" },  notes = "批量更新用例库")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzLibDTO> ibzlibdtos) {
-        ibzlibService.updateBatch(ibzlibMapping.toDomain(ibzlibdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'DELETE')")
     @ApiOperation(value = "删除用例库", tags = {"用例库" },  notes = "删除用例库")
@@ -107,13 +92,6 @@ public class IbzLibResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzlibService.remove(ibzlib_id));
     }
 
-    @PreAuthorize("@IbzLibRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除用例库", tags = {"用例库" },  notes = "批量删除用例库")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzlibService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'READ')")
     @ApiOperation(value = "获取用例库", tags = {"用例库" },  notes = "获取用例库")
@@ -126,6 +104,7 @@ public class IbzLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'CREATE')")
     @ApiOperation(value = "获取用例库草稿", tags = {"用例库" },  notes = "获取用例库草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/getdraft")
     public ResponseEntity<IbzLibDTO> getDraft(IbzLibDTO dto) {
@@ -150,12 +129,6 @@ public class IbzLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存用例库", tags = {"用例库" },  notes = "批量保存用例库")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzLibDTO> ibzlibdtos) {
-        ibzlibService.saveBatch(ibzlibMapping.toDomain(ibzlibdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用例库" } ,notes = "获取DEFAULT")

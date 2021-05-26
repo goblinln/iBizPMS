@@ -66,15 +66,7 @@ public class IBZDailyActionResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IBZDailyActionRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建日报日志", tags = {"日报日志" },  notes = "批量新建日报日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IBZDailyActionDTO> ibzdailyactiondtos) {
-        ibzdailyactionService.createBatch(ibzdailyactionMapping.toDomain(ibzdailyactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id,'UPDATE')")
     @ApiOperation(value = "更新日报日志", tags = {"日报日志" },  notes = "更新日报日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailyactions/{ibzdailyaction_id}")
@@ -91,13 +83,6 @@ public class IBZDailyActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZDailyActionRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新日报日志", tags = {"日报日志" },  notes = "批量更新日报日志")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailyactions/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBZDailyActionDTO> ibzdailyactiondtos) {
-        ibzdailyactionService.updateBatch(ibzdailyactionMapping.toDomain(ibzdailyactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id,'DELETE')")
     @ApiOperation(value = "删除日报日志", tags = {"日报日志" },  notes = "删除日报日志")
@@ -106,13 +91,6 @@ public class IBZDailyActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzdailyactionService.remove(ibzdailyaction_id));
     }
 
-    @PreAuthorize("@IBZDailyActionRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除日报日志", tags = {"日报日志" },  notes = "批量删除日报日志")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailyactions/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzdailyactionService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id,'READ')")
     @ApiOperation(value = "获取日报日志", tags = {"日报日志" },  notes = "获取日报日志")
@@ -125,6 +103,7 @@ public class IBZDailyActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id,'CREATE')")
     @ApiOperation(value = "获取日报日志草稿", tags = {"日报日志" },  notes = "获取日报日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailyactions/getdraft")
     public ResponseEntity<IBZDailyActionDTO> getDraft(IBZDailyActionDTO dto) {
@@ -151,6 +130,7 @@ public class IBZDailyActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailyactiondto);
     }
 
+
     @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id,'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"日报日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/{ibzdailyaction_id}/createhis")
@@ -163,13 +143,7 @@ public class IBZDailyActionResource {
         ibzdailyactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailyactiondto);
     }
-    @ApiOperation(value = "批量处理[创建历史日志]", tags = {"日报日志" },  notes = "批量处理[创建历史日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/createhisbatch")
-    public ResponseEntity<Boolean> createHisBatch(@RequestBody List<IBZDailyActionDTO> ibzdailyactiondtos) {
-        List<IBZDailyAction> domains = ibzdailyactionMapping.toDomain(ibzdailyactiondtos);
-        boolean result = ibzdailyactionService.createHisBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id,'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"日报日志" },  notes = "编辑备注信息")
@@ -183,13 +157,7 @@ public class IBZDailyActionResource {
         ibzdailyactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailyactiondto);
     }
-    @ApiOperation(value = "批量处理[编辑备注信息]", tags = {"日报日志" },  notes = "批量处理[编辑备注信息]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/editcommentbatch")
-    public ResponseEntity<Boolean> editCommentBatch(@RequestBody List<IBZDailyActionDTO> ibzdailyactiondtos) {
-        List<IBZDailyAction> domains = ibzdailyactionMapping.toDomain(ibzdailyactiondtos);
-        boolean result = ibzdailyactionService.editCommentBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "Pms企业专用", tags = {"日报日志" },  notes = "Pms企业专用")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/{ibzdailyaction_id}/managepmsee")
@@ -202,13 +170,7 @@ public class IBZDailyActionResource {
         ibzdailyactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailyactiondto);
     }
-    @ApiOperation(value = "批量处理[Pms企业专用]", tags = {"日报日志" },  notes = "批量处理[Pms企业专用]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/managepmseebatch")
-    public ResponseEntity<Boolean> managePmsEeBatch(@RequestBody List<IBZDailyActionDTO> ibzdailyactiondtos) {
-        List<IBZDailyAction> domains = ibzdailyactionMapping.toDomain(ibzdailyactiondtos);
-        boolean result = ibzdailyactionService.managePmsEeBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存日报日志", tags = {"日报日志" },  notes = "保存日报日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/save")
@@ -221,12 +183,6 @@ public class IBZDailyActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存日报日志", tags = {"日报日志" },  notes = "批量保存日报日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBZDailyActionDTO> ibzdailyactiondtos) {
-        ibzdailyactionService.saveBatch(ibzdailyactionMapping.toDomain(ibzdailyactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "已读", tags = {"日报日志" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/{ibzdailyaction_id}/sendmarkdone")
@@ -239,13 +195,7 @@ public class IBZDailyActionResource {
         ibzdailyactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailyactiondto);
     }
-    @ApiOperation(value = "批量处理[已读]", tags = {"日报日志" },  notes = "批量处理[已读]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/sendmarkdonebatch")
-    public ResponseEntity<Boolean> sendMarkDoneBatch(@RequestBody List<IBZDailyActionDTO> ibzdailyactiondtos) {
-        List<IBZDailyAction> domains = ibzdailyactionMapping.toDomain(ibzdailyactiondtos);
-        boolean result = ibzdailyactionService.sendMarkDoneBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "发送待办", tags = {"日报日志" },  notes = "发送待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/{ibzdailyaction_id}/sendtodo")
@@ -258,13 +208,7 @@ public class IBZDailyActionResource {
         ibzdailyactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailyactiondto);
     }
-    @ApiOperation(value = "批量处理[发送待办]", tags = {"日报日志" },  notes = "批量处理[发送待办]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/sendtodobatch")
-    public ResponseEntity<Boolean> sendTodoBatch(@RequestBody List<IBZDailyActionDTO> ibzdailyactiondtos) {
-        List<IBZDailyAction> domains = ibzdailyactionMapping.toDomain(ibzdailyactiondtos);
-        boolean result = ibzdailyactionService.sendTodoBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "发送待阅", tags = {"日报日志" },  notes = "发送待阅")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/{ibzdailyaction_id}/sendtoread")
@@ -277,13 +221,7 @@ public class IBZDailyActionResource {
         ibzdailyactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailyactiondto);
     }
-    @ApiOperation(value = "批量处理[发送待阅]", tags = {"日报日志" },  notes = "批量处理[发送待阅]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/sendtoreadbatch")
-    public ResponseEntity<Boolean> sendToreadBatch(@RequestBody List<IBZDailyActionDTO> ibzdailyactiondtos) {
-        List<IBZDailyAction> domains = ibzdailyactionMapping.toDomain(ibzdailyactiondtos);
-        boolean result = ibzdailyactionService.sendToreadBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@IBZDailyActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"日报日志" } ,notes = "获取数据集")

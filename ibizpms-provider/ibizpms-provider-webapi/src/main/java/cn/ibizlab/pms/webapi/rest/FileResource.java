@@ -66,15 +66,7 @@ public class FileResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@FileRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建附件", tags = {"附件" },  notes = "批量新建附件")
-	@RequestMapping(method = RequestMethod.POST, value = "/files/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<FileDTO> filedtos) {
-        fileService.createBatch(fileMapping.toDomain(filedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@FileRuntime.test(#file_id,'UPDATE')")
     @ApiOperation(value = "更新附件", tags = {"附件" },  notes = "更新附件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/files/{file_id}")
@@ -91,13 +83,6 @@ public class FileResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@FileRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新附件", tags = {"附件" },  notes = "批量更新附件")
-	@RequestMapping(method = RequestMethod.PUT, value = "/files/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<FileDTO> filedtos) {
-        fileService.updateBatch(fileMapping.toDomain(filedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@FileRuntime.test(#file_id,'DELETE')")
     @ApiOperation(value = "删除附件", tags = {"附件" },  notes = "删除附件")
@@ -106,13 +91,6 @@ public class FileResource {
          return ResponseEntity.status(HttpStatus.OK).body(fileService.remove(file_id));
     }
 
-    @PreAuthorize("@FileRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除附件", tags = {"附件" },  notes = "批量删除附件")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/files/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        fileService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@FileRuntime.test(#file_id,'READ')")
     @ApiOperation(value = "获取附件", tags = {"附件" },  notes = "获取附件")
@@ -125,6 +103,7 @@ public class FileResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@FileRuntime.test(#file_id,'CREATE')")
     @ApiOperation(value = "获取附件草稿", tags = {"附件" },  notes = "获取附件草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/files/getdraft")
     public ResponseEntity<FileDTO> getDraft(FileDTO dto) {
@@ -149,12 +128,6 @@ public class FileResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存附件", tags = {"附件" },  notes = "批量保存附件")
-	@RequestMapping(method = RequestMethod.POST, value = "/files/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<FileDTO> filedtos) {
-        fileService.saveBatch(fileMapping.toDomain(filedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@FileRuntime.test(#file_id,'UPDATE')")
     @ApiOperation(value = "更新文件", tags = {"附件" },  notes = "更新文件")
@@ -168,14 +141,7 @@ public class FileResource {
         filedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(filedto);
     }
-    @PreAuthorize("@FileRuntime.test('UPDATE')")
-    @ApiOperation(value = "批量处理[更新文件]", tags = {"附件" },  notes = "批量处理[更新文件]")
-	@RequestMapping(method = RequestMethod.PUT, value = "/files/updateobjectidbatch")
-    public ResponseEntity<Boolean> updateObjectIDBatch(@RequestBody List<FileDTO> filedtos) {
-        List<File> domains = fileMapping.toDomain(filedtos);
-        boolean result = fileService.updateObjectIDBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@FileRuntime.test(#file_id,'UPDATE')")
     @ApiOperation(value = "保存附件", tags = {"附件" },  notes = "保存附件")
@@ -189,14 +155,7 @@ public class FileResource {
         filedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(filedto);
     }
-    @PreAuthorize("@FileRuntime.test('UPDATE')")
-    @ApiOperation(value = "批量处理[保存附件]", tags = {"附件" },  notes = "批量处理[保存附件]")
-	@RequestMapping(method = RequestMethod.PUT, value = "/files/updateobjectidforpmseebatch")
-    public ResponseEntity<Boolean> updateObjectIDForPmsEeBatch(@RequestBody List<FileDTO> filedtos) {
-        List<File> domains = fileMapping.toDomain(filedtos);
-        boolean result = fileService.updateObjectIDForPmsEeBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@FileRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"附件" } ,notes = "获取DEFAULT")

@@ -66,15 +66,7 @@ public class SysUpdateLogResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@SysUpdateLogRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建更新日志", tags = {"更新日志" },  notes = "批量新建更新日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<SysUpdateLogDTO> sysupdatelogdtos) {
-        sysupdatelogService.createBatch(sysupdatelogMapping.toDomain(sysupdatelogdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "sysupdatelog" , versionfield = "updatedate")
     @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id,'UPDATE')")
     @ApiOperation(value = "更新更新日志", tags = {"更新日志" },  notes = "更新更新日志")
@@ -92,13 +84,6 @@ public class SysUpdateLogResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@SysUpdateLogRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新更新日志", tags = {"更新日志" },  notes = "批量更新更新日志")
-	@RequestMapping(method = RequestMethod.PUT, value = "/sysupdatelogs/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysUpdateLogDTO> sysupdatelogdtos) {
-        sysupdatelogService.updateBatch(sysupdatelogMapping.toDomain(sysupdatelogdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id,'DELETE')")
     @ApiOperation(value = "删除更新日志", tags = {"更新日志" },  notes = "删除更新日志")
@@ -107,13 +92,6 @@ public class SysUpdateLogResource {
          return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogService.remove(sysupdatelog_id));
     }
 
-    @PreAuthorize("@SysUpdateLogRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除更新日志", tags = {"更新日志" },  notes = "批量删除更新日志")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatelogs/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        sysupdatelogService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id,'READ')")
     @ApiOperation(value = "获取更新日志", tags = {"更新日志" },  notes = "获取更新日志")
@@ -126,6 +104,7 @@ public class SysUpdateLogResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id,'CREATE')")
     @ApiOperation(value = "获取更新日志草稿", tags = {"更新日志" },  notes = "获取更新日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysupdatelogs/getdraft")
     public ResponseEntity<SysUpdateLogDTO> getDraft(SysUpdateLogDTO dto) {
@@ -151,14 +130,7 @@ public class SysUpdateLogResource {
         sysupdatelogdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogdto);
     }
-    @PreAuthorize("@SysUpdateLogRuntime.test('READ')")
-    @ApiOperation(value = "批量处理[获取最新更新信息]", tags = {"更新日志" },  notes = "批量处理[获取最新更新信息]")
-	@RequestMapping(method = RequestMethod.PUT, value = "/sysupdatelogs/getlastupdateinfobatch")
-    public ResponseEntity<Boolean> getLastUpdateInfoBatch(@RequestBody List<SysUpdateLogDTO> sysupdatelogdtos) {
-        List<SysUpdateLog> domains = sysupdatelogMapping.toDomain(sysupdatelogdtos);
-        boolean result = sysupdatelogService.getLastUpdateInfoBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存更新日志", tags = {"更新日志" },  notes = "保存更新日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/save")
@@ -171,12 +143,6 @@ public class SysUpdateLogResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存更新日志", tags = {"更新日志" },  notes = "批量保存更新日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysUpdateLogDTO> sysupdatelogdtos) {
-        sysupdatelogService.saveBatch(sysupdatelogMapping.toDomain(sysupdatelogdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取数据集", tags = {"更新日志" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysupdatelogs/fetchdefault")

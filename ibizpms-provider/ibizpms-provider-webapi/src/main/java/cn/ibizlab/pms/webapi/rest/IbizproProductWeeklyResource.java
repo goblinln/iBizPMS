@@ -63,14 +63,7 @@ public class IbizproProductWeeklyResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建产品周报", tags = {"产品周报" },  notes = "批量新建产品周报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductweeklies/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbizproProductWeeklyDTO> ibizproproductweeklydtos) {
-        ibizproproductweeklyService.createBatch(ibizproproductweeklyMapping.toDomain(ibizproproductweeklydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "ibizproproductweekly" , versionfield = "updatedate")
     @ApiOperation(value = "更新产品周报", tags = {"产品周报" },  notes = "更新产品周报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproproductweeklies/{ibizproproductweekly_id}")
@@ -85,12 +78,6 @@ public class IbizproProductWeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新产品周报", tags = {"产品周报" },  notes = "批量更新产品周报")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproproductweeklies/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbizproProductWeeklyDTO> ibizproproductweeklydtos) {
-        ibizproproductweeklyService.updateBatch(ibizproproductweeklyMapping.toDomain(ibizproproductweeklydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除产品周报", tags = {"产品周报" },  notes = "删除产品周报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductweeklies/{ibizproproductweekly_id}")
@@ -98,12 +85,6 @@ public class IbizproProductWeeklyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklyService.remove(ibizproproductweekly_id));
     }
 
-    @ApiOperation(value = "批量删除产品周报", tags = {"产品周报" },  notes = "批量删除产品周报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductweeklies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibizproproductweeklyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取产品周报", tags = {"产品周报" },  notes = "获取产品周报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproproductweeklies/{ibizproproductweekly_id}")
@@ -139,12 +120,6 @@ public class IbizproProductWeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存产品周报", tags = {"产品周报" },  notes = "批量保存产品周报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductweeklies/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbizproProductWeeklyDTO> ibizproproductweeklydtos) {
-        ibizproproductweeklyService.saveBatch(ibizproproductweeklyMapping.toDomain(ibizproproductweeklydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "统计产品周报", tags = {"产品周报" },  notes = "统计产品周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductweeklies/{ibizproproductweekly_id}/sumproductweekly")
@@ -157,13 +132,7 @@ public class IbizproProductWeeklyResource {
         ibizproproductweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklydto);
     }
-    @ApiOperation(value = "批量处理[统计产品周报]", tags = {"产品周报" },  notes = "批量处理[统计产品周报]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductweeklies/sumproductweeklybatch")
-    public ResponseEntity<Boolean> sumProductWeeklyBatch(@RequestBody List<IbizproProductWeeklyDTO> ibizproproductweeklydtos) {
-        List<IbizproProductWeekly> domains = ibizproproductweeklyMapping.toDomain(ibizproproductweeklydtos);
-        boolean result = ibizproproductweeklyService.sumProductWeeklyBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
 	@ApiOperation(value = "获取数据集", tags = {"产品周报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductweeklies/fetchdefault")

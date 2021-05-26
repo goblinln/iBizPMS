@@ -66,15 +66,7 @@ public class IBZProStoryModuleResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IBZProStoryModuleRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建需求模块（iBizSys）", tags = {"需求模块（iBizSys）" },  notes = "批量新建需求模块（iBizSys）")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostorymodules/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IBZProStoryModuleDTO> ibzprostorymoduledtos) {
-        ibzprostorymoduleService.createBatch(ibzprostorymoduleMapping.toDomain(ibzprostorymoduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IBZProStoryModuleRuntime.test(#ibzprostorymodule_id,'UPDATE')")
     @ApiOperation(value = "更新需求模块（iBizSys）", tags = {"需求模块（iBizSys）" },  notes = "更新需求模块（iBizSys）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprostorymodules/{ibzprostorymodule_id}")
@@ -91,13 +83,6 @@ public class IBZProStoryModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProStoryModuleRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新需求模块（iBizSys）", tags = {"需求模块（iBizSys）" },  notes = "批量更新需求模块（iBizSys）")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprostorymodules/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBZProStoryModuleDTO> ibzprostorymoduledtos) {
-        ibzprostorymoduleService.updateBatch(ibzprostorymoduleMapping.toDomain(ibzprostorymoduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZProStoryModuleRuntime.test(#ibzprostorymodule_id,'DELETE')")
     @ApiOperation(value = "删除需求模块（iBizSys）", tags = {"需求模块（iBizSys）" },  notes = "删除需求模块（iBizSys）")
@@ -106,13 +91,6 @@ public class IBZProStoryModuleResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprostorymoduleService.remove(ibzprostorymodule_id));
     }
 
-    @PreAuthorize("@IBZProStoryModuleRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除需求模块（iBizSys）", tags = {"需求模块（iBizSys）" },  notes = "批量删除需求模块（iBizSys）")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprostorymodules/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzprostorymoduleService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZProStoryModuleRuntime.test(#ibzprostorymodule_id,'READ')")
     @ApiOperation(value = "获取需求模块（iBizSys）", tags = {"需求模块（iBizSys）" },  notes = "获取需求模块（iBizSys）")
@@ -125,6 +103,7 @@ public class IBZProStoryModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IBZProStoryModuleRuntime.test(#ibzprostorymodule_id,'CREATE')")
     @ApiOperation(value = "获取需求模块（iBizSys）草稿", tags = {"需求模块（iBizSys）" },  notes = "获取需求模块（iBizSys）草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprostorymodules/getdraft")
     public ResponseEntity<IBZProStoryModuleDTO> getDraft(IBZProStoryModuleDTO dto) {
@@ -149,12 +128,6 @@ public class IBZProStoryModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存需求模块（iBizSys）", tags = {"需求模块（iBizSys）" },  notes = "批量保存需求模块（iBizSys）")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostorymodules/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBZProStoryModuleDTO> ibzprostorymoduledtos) {
-        ibzprostorymoduleService.saveBatch(ibzprostorymoduleMapping.toDomain(ibzprostorymoduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "同步Ibz平台模块", tags = {"需求模块（iBizSys）" },  notes = "同步Ibz平台模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostorymodules/{ibzprostorymodule_id}/syncfromibiz")
@@ -167,13 +140,7 @@ public class IBZProStoryModuleResource {
         ibzprostorymoduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzprostorymoduledto);
     }
-    @ApiOperation(value = "批量处理[同步Ibz平台模块]", tags = {"需求模块（iBizSys）" },  notes = "批量处理[同步Ibz平台模块]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostorymodules/syncfromibizbatch")
-    public ResponseEntity<Boolean> syncFromIBIZBatch(@RequestBody List<IBZProStoryModuleDTO> ibzprostorymoduledtos) {
-        List<IBZProStoryModule> domains = ibzprostorymoduleMapping.toDomain(ibzprostorymoduledtos);
-        boolean result = ibzprostorymoduleService.syncFromIBIZBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@IBZProStoryModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"需求模块（iBizSys）" } ,notes = "获取数据集")

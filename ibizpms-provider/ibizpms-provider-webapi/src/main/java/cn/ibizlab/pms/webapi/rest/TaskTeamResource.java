@@ -63,17 +63,6 @@ public class TaskTeamResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.test(#task_id,'CREATE')")
-    @ApiOperation(value = "根据任务批量建立任务团队", tags = {"任务团队" },  notes = "根据任务批量建立任务团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskteams/batch")
-    public ResponseEntity<Boolean> createBatchByTask(@PathVariable("task_id") Long task_id, @RequestBody List<TaskTeamDTO> taskteamdtos) {
-        List<TaskTeam> domainlist=taskteamMapping.toDomain(taskteamdtos);
-        for(TaskTeam domain:domainlist){
-            domain.setRoot(task_id);
-        }
-        taskteamService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@TaskRuntime.test(#task_id,'UPDATE')")
     @ApiOperation(value = "根据任务更新任务团队", tags = {"任务团队" },  notes = "根据任务更新任务团队")
@@ -87,17 +76,6 @@ public class TaskTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.test(#task_id,'UPDATE')")
-    @ApiOperation(value = "根据任务批量更新任务团队", tags = {"任务团队" },  notes = "根据任务批量更新任务团队")
-	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/taskteams/batch")
-    public ResponseEntity<Boolean> updateBatchByTask(@PathVariable("task_id") Long task_id, @RequestBody List<TaskTeamDTO> taskteamdtos) {
-        List<TaskTeam> domainlist=taskteamMapping.toDomain(taskteamdtos);
-        for(TaskTeam domain:domainlist){
-            domain.setRoot(task_id);
-        }
-        taskteamService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@TaskRuntime.test(#task_id,'DELETE')")
     @ApiOperation(value = "根据任务删除任务团队", tags = {"任务团队" },  notes = "根据任务删除任务团队")
@@ -106,13 +84,6 @@ public class TaskTeamResource {
 		return ResponseEntity.status(HttpStatus.OK).body(taskteamService.remove(taskteam_id));
     }
 
-    @PreAuthorize("@TaskRuntime.test(#task_id,'DELETE')")
-    @ApiOperation(value = "根据任务批量删除任务团队", tags = {"任务团队" },  notes = "根据任务批量删除任务团队")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/tasks/{task_id}/taskteams/batch")
-    public ResponseEntity<Boolean> removeBatchByTask(@RequestBody List<Long> ids) {
-        taskteamService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
     @ApiOperation(value = "根据任务获取任务团队", tags = {"任务团队" },  notes = "根据任务获取任务团队")
@@ -146,16 +117,6 @@ public class TaskTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskteamMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据任务批量保存任务团队", tags = {"任务团队" },  notes = "根据任务批量保存任务团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskteams/savebatch")
-    public ResponseEntity<Boolean> saveBatchByTask(@PathVariable("task_id") Long task_id, @RequestBody List<TaskTeamDTO> taskteamdtos) {
-        List<TaskTeam> domainlist=taskteamMapping.toDomain(taskteamdtos);
-        for(TaskTeam domain:domainlist){
-             domain.setRoot(task_id);
-        }
-        taskteamService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
 	@ApiOperation(value = "根据任务获取DEFAULT", tags = {"任务团队" } ,notes = "根据任务获取DEFAULT")
@@ -191,17 +152,6 @@ public class TaskTeamResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
-    @ApiOperation(value = "根据项目任务批量建立任务团队", tags = {"任务团队" },  notes = "根据项目任务批量建立任务团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskteams/batch")
-    public ResponseEntity<Boolean> createBatchByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskTeamDTO> taskteamdtos) {
-        List<TaskTeam> domainlist=taskteamMapping.toDomain(taskteamdtos);
-        for(TaskTeam domain:domainlist){
-            domain.setRoot(task_id);
-        }
-        taskteamService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目任务更新任务团队", tags = {"任务团队" },  notes = "根据项目任务更新任务团队")
@@ -215,17 +165,6 @@ public class TaskTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
-    @ApiOperation(value = "根据项目任务批量更新任务团队", tags = {"任务团队" },  notes = "根据项目任务批量更新任务团队")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/taskteams/batch")
-    public ResponseEntity<Boolean> updateBatchByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskTeamDTO> taskteamdtos) {
-        List<TaskTeam> domainlist=taskteamMapping.toDomain(taskteamdtos);
-        for(TaskTeam domain:domainlist){
-            domain.setRoot(task_id);
-        }
-        taskteamService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目任务删除任务团队", tags = {"任务团队" },  notes = "根据项目任务删除任务团队")
@@ -234,13 +173,6 @@ public class TaskTeamResource {
 		return ResponseEntity.status(HttpStatus.OK).body(taskteamService.remove(taskteam_id));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
-    @ApiOperation(value = "根据项目任务批量删除任务团队", tags = {"任务团队" },  notes = "根据项目任务批量删除任务团队")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}/taskteams/batch")
-    public ResponseEntity<Boolean> removeBatchByProjectTask(@RequestBody List<Long> ids) {
-        taskteamService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目任务获取任务团队", tags = {"任务团队" },  notes = "根据项目任务获取任务团队")
@@ -274,16 +206,6 @@ public class TaskTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskteamMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据项目任务批量保存任务团队", tags = {"任务团队" },  notes = "根据项目任务批量保存任务团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskteams/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskTeamDTO> taskteamdtos) {
-        List<TaskTeam> domainlist=taskteamMapping.toDomain(taskteamdtos);
-        for(TaskTeam domain:domainlist){
-             domain.setRoot(task_id);
-        }
-        taskteamService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务获取DEFAULT", tags = {"任务团队" } ,notes = "根据项目任务获取DEFAULT")

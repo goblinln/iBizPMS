@@ -58,14 +58,7 @@ public class PSSysAppResource {
         PSSysAppDTO dto = pssysappMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建系统应用", tags = {"系统应用" },  notes = "批量新建系统应用")
-	@RequestMapping(method = RequestMethod.POST, value = "/pssysapps/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<PSSysAppDTO> pssysappdtos) {
-        pssysappService.createBatch(pssysappMapping.toDomain(pssysappdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "pssysapp" , versionfield = "updatedate")
     @ApiOperation(value = "更新系统应用", tags = {"系统应用" },  notes = "更新系统应用")
 	@RequestMapping(method = RequestMethod.PUT, value = "/pssysapps/{pssysapp_id}")
@@ -78,12 +71,6 @@ public class PSSysAppResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新系统应用", tags = {"系统应用" },  notes = "批量更新系统应用")
-	@RequestMapping(method = RequestMethod.PUT, value = "/pssysapps/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<PSSysAppDTO> pssysappdtos) {
-        pssysappService.updateBatch(pssysappMapping.toDomain(pssysappdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除系统应用", tags = {"系统应用" },  notes = "删除系统应用")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/pssysapps/{pssysapp_id}")
@@ -91,12 +78,6 @@ public class PSSysAppResource {
          return ResponseEntity.status(HttpStatus.OK).body(pssysappService.remove(pssysapp_id));
     }
 
-    @ApiOperation(value = "批量删除系统应用", tags = {"系统应用" },  notes = "批量删除系统应用")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/pssysapps/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        pssysappService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取系统应用", tags = {"系统应用" },  notes = "获取系统应用")
 	@RequestMapping(method = RequestMethod.GET, value = "/pssysapps/{pssysapp_id}")
@@ -128,12 +109,6 @@ public class PSSysAppResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存系统应用", tags = {"系统应用" },  notes = "批量保存系统应用")
-	@RequestMapping(method = RequestMethod.POST, value = "/pssysapps/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<PSSysAppDTO> pssysappdtos) {
-        pssysappService.saveBatch(pssysappMapping.toDomain(pssysappdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取版本", tags = {"系统应用" } ,notes = "获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/pssysapps/fetchbuild")

@@ -58,14 +58,7 @@ public class SysUserRoleResource {
         SysUserRoleDTO dto = sysuserroleMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建用户角色关系", tags = {"用户角色关系" },  notes = "批量新建用户角色关系")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysuserroles/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<SysUserRoleDTO> sysuserroledtos) {
-        sysuserroleService.createBatch(sysuserroleMapping.toDomain(sysuserroledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "sysuserrole" , versionfield = "updatedate")
     @ApiOperation(value = "更新用户角色关系", tags = {"用户角色关系" },  notes = "更新用户角色关系")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysuserroles/{sysuserrole_id}")
@@ -78,12 +71,6 @@ public class SysUserRoleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新用户角色关系", tags = {"用户角色关系" },  notes = "批量更新用户角色关系")
-	@RequestMapping(method = RequestMethod.PUT, value = "/sysuserroles/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysUserRoleDTO> sysuserroledtos) {
-        sysuserroleService.updateBatch(sysuserroleMapping.toDomain(sysuserroledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除用户角色关系", tags = {"用户角色关系" },  notes = "删除用户角色关系")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysuserroles/{sysuserrole_id}")
@@ -91,12 +78,6 @@ public class SysUserRoleResource {
          return ResponseEntity.status(HttpStatus.OK).body(sysuserroleService.remove(sysuserrole_id));
     }
 
-    @ApiOperation(value = "批量删除用户角色关系", tags = {"用户角色关系" },  notes = "批量删除用户角色关系")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysuserroles/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        sysuserroleService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取用户角色关系", tags = {"用户角色关系" },  notes = "获取用户角色关系")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysuserroles/{sysuserrole_id}")
@@ -128,12 +109,6 @@ public class SysUserRoleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存用户角色关系", tags = {"用户角色关系" },  notes = "批量保存用户角色关系")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysuserroles/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysUserRoleDTO> sysuserroledtos) {
-        sysuserroleService.saveBatch(sysuserroleMapping.toDomain(sysuserroledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取数据集", tags = {"用户角色关系" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysuserroles/fetchdefault")

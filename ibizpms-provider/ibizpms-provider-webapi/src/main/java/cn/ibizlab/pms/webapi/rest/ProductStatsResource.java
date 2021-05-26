@@ -66,15 +66,7 @@ public class ProductStatsResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@ProductStatsRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建产品统计", tags = {"产品统计" },  notes = "批量新建产品统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/productstats/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<ProductStatsDTO> productstatsdtos) {
-        productstatsService.createBatch(productstatsMapping.toDomain(productstatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@ProductStatsRuntime.test(#productstats_id,'UPDATE')")
     @ApiOperation(value = "更新产品统计", tags = {"产品统计" },  notes = "更新产品统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productstats/{productstats_id}")
@@ -91,13 +83,6 @@ public class ProductStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductStatsRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新产品统计", tags = {"产品统计" },  notes = "批量更新产品统计")
-	@RequestMapping(method = RequestMethod.PUT, value = "/productstats/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProductStatsDTO> productstatsdtos) {
-        productstatsService.updateBatch(productstatsMapping.toDomain(productstatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductStatsRuntime.test(#productstats_id,'DELETE')")
     @ApiOperation(value = "删除产品统计", tags = {"产品统计" },  notes = "删除产品统计")
@@ -106,13 +91,6 @@ public class ProductStatsResource {
          return ResponseEntity.status(HttpStatus.OK).body(productstatsService.remove(productstats_id));
     }
 
-    @PreAuthorize("@ProductStatsRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除产品统计", tags = {"产品统计" },  notes = "批量删除产品统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productstats/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        productstatsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取产品统计", tags = {"产品统计" },  notes = "获取产品统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/productstats/{productstats_id}")
@@ -124,6 +102,7 @@ public class ProductStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductStatsRuntime.test(#productstats_id,'CREATE')")
     @ApiOperation(value = "获取产品统计草稿", tags = {"产品统计" },  notes = "获取产品统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/productstats/getdraft")
     public ResponseEntity<ProductStatsDTO> getDraft(ProductStatsDTO dto) {
@@ -149,6 +128,7 @@ public class ProductStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(productstatsdto);
     }
 
+
     @ApiOperation(value = "保存产品统计", tags = {"产品统计" },  notes = "保存产品统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/productstats/save")
     public ResponseEntity<ProductStatsDTO> save(@RequestBody ProductStatsDTO productstatsdto) {
@@ -160,12 +140,6 @@ public class ProductStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存产品统计", tags = {"产品统计" },  notes = "批量保存产品统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/productstats/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProductStatsDTO> productstatsdtos) {
-        productstatsService.saveBatch(productstatsMapping.toDomain(productstatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品统计" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchdefault")

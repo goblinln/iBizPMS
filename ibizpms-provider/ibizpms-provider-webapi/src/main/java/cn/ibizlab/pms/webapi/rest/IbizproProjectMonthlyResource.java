@@ -66,15 +66,7 @@ public class IbizproProjectMonthlyResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbizproProjectMonthlyRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建项目月报", tags = {"项目月报" },  notes = "批量新建项目月报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbizproProjectMonthlyDTO> ibizproprojectmonthlydtos) {
-        ibizproprojectmonthlyService.createBatch(ibizproprojectmonthlyMapping.toDomain(ibizproprojectmonthlydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "ibizproprojectmonthly" , versionfield = "updatedate")
     @PreAuthorize("@IbizproProjectMonthlyRuntime.test(#ibizproprojectmonthly_id,'UPDATE')")
     @ApiOperation(value = "更新项目月报", tags = {"项目月报" },  notes = "更新项目月报")
@@ -92,13 +84,6 @@ public class IbizproProjectMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbizproProjectMonthlyRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新项目月报", tags = {"项目月报" },  notes = "批量更新项目月报")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproprojectmonthlies/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbizproProjectMonthlyDTO> ibizproprojectmonthlydtos) {
-        ibizproprojectmonthlyService.updateBatch(ibizproprojectmonthlyMapping.toDomain(ibizproprojectmonthlydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbizproProjectMonthlyRuntime.test(#ibizproprojectmonthly_id,'DELETE')")
     @ApiOperation(value = "删除项目月报", tags = {"项目月报" },  notes = "删除项目月报")
@@ -107,13 +92,6 @@ public class IbizproProjectMonthlyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectmonthlyService.remove(ibizproprojectmonthly_id));
     }
 
-    @PreAuthorize("@IbizproProjectMonthlyRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除项目月报", tags = {"项目月报" },  notes = "批量删除项目月报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectmonthlies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibizproprojectmonthlyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取项目月报", tags = {"项目月报" },  notes = "获取项目月报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectmonthlies/{ibizproprojectmonthly_id}")
@@ -125,6 +103,7 @@ public class IbizproProjectMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbizproProjectMonthlyRuntime.test(#ibizproprojectmonthly_id,'CREATE')")
     @ApiOperation(value = "获取项目月报草稿", tags = {"项目月报" },  notes = "获取项目月报草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectmonthlies/getdraft")
     public ResponseEntity<IbizproProjectMonthlyDTO> getDraft(IbizproProjectMonthlyDTO dto) {
@@ -149,13 +128,7 @@ public class IbizproProjectMonthlyResource {
         ibizproprojectmonthlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectmonthlydto);
     }
-    @ApiOperation(value = "批量处理[手动生成项目月报]", tags = {"项目月报" },  notes = "批量处理[手动生成项目月报]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/manualcreatemonthlybatch")
-    public ResponseEntity<Boolean> manualCreateMonthlyBatch(@RequestBody List<IbizproProjectMonthlyDTO> ibizproprojectmonthlydtos) {
-        List<IbizproProjectMonthly> domains = ibizproprojectmonthlyMapping.toDomain(ibizproprojectmonthlydtos);
-        boolean result = ibizproprojectmonthlyService.manualCreateMonthlyBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存项目月报", tags = {"项目月报" },  notes = "保存项目月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/save")
@@ -168,12 +141,6 @@ public class IbizproProjectMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存项目月报", tags = {"项目月报" },  notes = "批量保存项目月报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbizproProjectMonthlyDTO> ibizproprojectmonthlydtos) {
-        ibizproprojectmonthlyService.saveBatch(ibizproprojectmonthlyMapping.toDomain(ibizproprojectmonthlydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "汇总项目月报", tags = {"项目月报" },  notes = "汇总项目月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/{ibizproprojectmonthly_id}/sumprojectmonthly")
@@ -186,13 +153,7 @@ public class IbizproProjectMonthlyResource {
         ibizproprojectmonthlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectmonthlydto);
     }
-    @ApiOperation(value = "批量处理[汇总项目月报]", tags = {"项目月报" },  notes = "批量处理[汇总项目月报]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/sumprojectmonthlybatch")
-    public ResponseEntity<Boolean> sumProjectMonthlyBatch(@RequestBody List<IbizproProjectMonthlyDTO> ibizproprojectmonthlydtos) {
-        List<IbizproProjectMonthly> domains = ibizproprojectmonthlyMapping.toDomain(ibizproprojectmonthlydtos);
-        boolean result = ibizproprojectmonthlyService.sumProjectMonthlyBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
 	@ApiOperation(value = "获取数据集", tags = {"项目月报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproprojectmonthlies/fetchdefault")

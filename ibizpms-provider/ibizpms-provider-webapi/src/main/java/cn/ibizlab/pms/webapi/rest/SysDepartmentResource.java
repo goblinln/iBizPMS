@@ -58,14 +58,7 @@ public class SysDepartmentResource {
         SysDepartmentDTO dto = sysdepartmentMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建部门", tags = {"部门" },  notes = "批量新建部门")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<SysDepartmentDTO> sysdepartmentdtos) {
-        sysdepartmentService.createBatch(sysdepartmentMapping.toDomain(sysdepartmentdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "sysdepartment" , versionfield = "updatedate")
     @ApiOperation(value = "更新部门", tags = {"部门" },  notes = "更新部门")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysdepartments/{sysdepartment_id}")
@@ -78,12 +71,6 @@ public class SysDepartmentResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新部门", tags = {"部门" },  notes = "批量更新部门")
-	@RequestMapping(method = RequestMethod.PUT, value = "/sysdepartments/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysDepartmentDTO> sysdepartmentdtos) {
-        sysdepartmentService.updateBatch(sysdepartmentMapping.toDomain(sysdepartmentdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除部门", tags = {"部门" },  notes = "删除部门")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysdepartments/{sysdepartment_id}")
@@ -91,12 +78,6 @@ public class SysDepartmentResource {
          return ResponseEntity.status(HttpStatus.OK).body(sysdepartmentService.remove(sysdepartment_id));
     }
 
-    @ApiOperation(value = "批量删除部门", tags = {"部门" },  notes = "批量删除部门")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysdepartments/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        sysdepartmentService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取部门", tags = {"部门" },  notes = "获取部门")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysdepartments/{sysdepartment_id}")
@@ -128,12 +109,6 @@ public class SysDepartmentResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存部门", tags = {"部门" },  notes = "批量保存部门")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysDepartmentDTO> sysdepartmentdtos) {
-        sysdepartmentService.saveBatch(sysdepartmentMapping.toDomain(sysdepartmentdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取数据集", tags = {"部门" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/sysdepartments/fetchdefault")

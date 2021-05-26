@@ -66,15 +66,7 @@ public class IbzProBugActionResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbzProBugActionRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建Bug日志", tags = {"Bug日志" },  notes = "批量新建Bug日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
-        ibzprobugactionService.createBatch(ibzprobugactionMapping.toDomain(ibzprobugactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IbzProBugActionRuntime.test(#ibzprobugaction_id,'UPDATE')")
     @ApiOperation(value = "更新Bug日志", tags = {"Bug日志" },  notes = "更新Bug日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprobugactions/{ibzprobugaction_id}")
@@ -91,13 +83,6 @@ public class IbzProBugActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProBugActionRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新Bug日志", tags = {"Bug日志" },  notes = "批量更新Bug日志")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprobugactions/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
-        ibzprobugactionService.updateBatch(ibzprobugactionMapping.toDomain(ibzprobugactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzProBugActionRuntime.test(#ibzprobugaction_id,'DELETE')")
     @ApiOperation(value = "删除Bug日志", tags = {"Bug日志" },  notes = "删除Bug日志")
@@ -106,13 +91,6 @@ public class IbzProBugActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactionService.remove(ibzprobugaction_id));
     }
 
-    @PreAuthorize("@IbzProBugActionRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除Bug日志", tags = {"Bug日志" },  notes = "批量删除Bug日志")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprobugactions/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzprobugactionService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzProBugActionRuntime.test(#ibzprobugaction_id,'READ')")
     @ApiOperation(value = "获取Bug日志", tags = {"Bug日志" },  notes = "获取Bug日志")
@@ -125,6 +103,7 @@ public class IbzProBugActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzProBugActionRuntime.test(#ibzprobugaction_id,'CREATE')")
     @ApiOperation(value = "获取Bug日志草稿", tags = {"Bug日志" },  notes = "获取Bug日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprobugactions/getdraft")
     public ResponseEntity<IbzProBugActionDTO> getDraft(IbzProBugActionDTO dto) {
@@ -150,6 +129,7 @@ public class IbzProBugActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
     }
 
+
     @PreAuthorize("@IbzProBugActionRuntime.test(#ibzprobugaction_id,'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"Bug日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/{ibzprobugaction_id}/createhis")
@@ -162,13 +142,7 @@ public class IbzProBugActionResource {
         ibzprobugactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
     }
-    @ApiOperation(value = "批量处理[创建历史日志]", tags = {"Bug日志" },  notes = "批量处理[创建历史日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/createhisbatch")
-    public ResponseEntity<Boolean> createHisBatch(@RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
-        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
-        boolean result = ibzprobugactionService.createHisBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "编辑备注信息", tags = {"Bug日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/{ibzprobugaction_id}/editcomment")
@@ -181,13 +155,7 @@ public class IbzProBugActionResource {
         ibzprobugactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
     }
-    @ApiOperation(value = "批量处理[编辑备注信息]", tags = {"Bug日志" },  notes = "批量处理[编辑备注信息]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/editcommentbatch")
-    public ResponseEntity<Boolean> editCommentBatch(@RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
-        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
-        boolean result = ibzprobugactionService.editCommentBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "Pms企业专用", tags = {"Bug日志" },  notes = "Pms企业专用")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/{ibzprobugaction_id}/managepmsee")
@@ -200,13 +168,7 @@ public class IbzProBugActionResource {
         ibzprobugactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
     }
-    @ApiOperation(value = "批量处理[Pms企业专用]", tags = {"Bug日志" },  notes = "批量处理[Pms企业专用]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/managepmseebatch")
-    public ResponseEntity<Boolean> managePmsEeBatch(@RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
-        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
-        boolean result = ibzprobugactionService.managePmsEeBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存Bug日志", tags = {"Bug日志" },  notes = "保存Bug日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/save")
@@ -219,12 +181,6 @@ public class IbzProBugActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存Bug日志", tags = {"Bug日志" },  notes = "批量保存Bug日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
-        ibzprobugactionService.saveBatch(ibzprobugactionMapping.toDomain(ibzprobugactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "已读", tags = {"Bug日志" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/{ibzprobugaction_id}/sendmarkdone")
@@ -237,13 +193,7 @@ public class IbzProBugActionResource {
         ibzprobugactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
     }
-    @ApiOperation(value = "批量处理[已读]", tags = {"Bug日志" },  notes = "批量处理[已读]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/sendmarkdonebatch")
-    public ResponseEntity<Boolean> sendMarkDoneBatch(@RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
-        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
-        boolean result = ibzprobugactionService.sendMarkDoneBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "发送待办", tags = {"Bug日志" },  notes = "发送待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/{ibzprobugaction_id}/sendtodo")
@@ -256,13 +206,7 @@ public class IbzProBugActionResource {
         ibzprobugactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
     }
-    @ApiOperation(value = "批量处理[发送待办]", tags = {"Bug日志" },  notes = "批量处理[发送待办]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/sendtodobatch")
-    public ResponseEntity<Boolean> sendTodoBatch(@RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
-        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
-        boolean result = ibzprobugactionService.sendTodoBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "发送待阅", tags = {"Bug日志" },  notes = "发送待阅")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/{ibzprobugaction_id}/sendtoread")
@@ -275,13 +219,7 @@ public class IbzProBugActionResource {
         ibzprobugactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactiondto);
     }
-    @ApiOperation(value = "批量处理[发送待阅]", tags = {"Bug日志" },  notes = "批量处理[发送待阅]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/sendtoreadbatch")
-    public ResponseEntity<Boolean> sendToreadBatch(@RequestBody List<IbzProBugActionDTO> ibzprobugactiondtos) {
-        List<IbzProBugAction> domains = ibzprobugactionMapping.toDomain(ibzprobugactiondtos);
-        boolean result = ibzprobugactionService.sendToreadBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@IbzProBugActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"Bug日志" } ,notes = "获取数据集")

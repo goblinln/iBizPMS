@@ -66,15 +66,7 @@ public class CaseStatsResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@CaseStatsRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建测试用例统计", tags = {"测试用例统计" },  notes = "批量新建测试用例统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/casestats/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<CaseStatsDTO> casestatsdtos) {
-        casestatsService.createBatch(casestatsMapping.toDomain(casestatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@CaseStatsRuntime.test(#casestats_id,'UPDATE')")
     @ApiOperation(value = "更新测试用例统计", tags = {"测试用例统计" },  notes = "更新测试用例统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/casestats/{casestats_id}")
@@ -91,13 +83,6 @@ public class CaseStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CaseStatsRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新测试用例统计", tags = {"测试用例统计" },  notes = "批量更新测试用例统计")
-	@RequestMapping(method = RequestMethod.PUT, value = "/casestats/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<CaseStatsDTO> casestatsdtos) {
-        casestatsService.updateBatch(casestatsMapping.toDomain(casestatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@CaseStatsRuntime.test(#casestats_id,'DELETE')")
     @ApiOperation(value = "删除测试用例统计", tags = {"测试用例统计" },  notes = "删除测试用例统计")
@@ -106,13 +91,6 @@ public class CaseStatsResource {
          return ResponseEntity.status(HttpStatus.OK).body(casestatsService.remove(casestats_id));
     }
 
-    @PreAuthorize("@CaseStatsRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除测试用例统计", tags = {"测试用例统计" },  notes = "批量删除测试用例统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/casestats/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        casestatsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@CaseStatsRuntime.test(#casestats_id,'READ')")
     @ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" },  notes = "获取测试用例统计")
@@ -125,6 +103,7 @@ public class CaseStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@CaseStatsRuntime.test(#casestats_id,'CREATE')")
     @ApiOperation(value = "获取测试用例统计草稿", tags = {"测试用例统计" },  notes = "获取测试用例统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/casestats/getdraft")
     public ResponseEntity<CaseStatsDTO> getDraft(CaseStatsDTO dto) {
@@ -149,12 +128,6 @@ public class CaseStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存测试用例统计", tags = {"测试用例统计" },  notes = "批量保存测试用例统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/casestats/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<CaseStatsDTO> casestatsdtos) {
-        casestatsService.saveBatch(casestatsMapping.toDomain(casestatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取数据集", tags = {"测试用例统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/fetchdefault")

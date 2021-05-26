@@ -66,15 +66,7 @@ public class IBZCaseHistoryResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IBZCaseHistoryRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建测试操作历史", tags = {"测试操作历史" },  notes = "批量新建测试操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzcasehistories/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
-        ibzcasehistoryService.createBatch(ibzcasehistoryMapping.toDomain(ibzcasehistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IBZCaseHistoryRuntime.test(#ibzcasehistory_id,'UPDATE')")
     @ApiOperation(value = "更新测试操作历史", tags = {"测试操作历史" },  notes = "更新测试操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcasehistories/{ibzcasehistory_id}")
@@ -91,13 +83,6 @@ public class IBZCaseHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZCaseHistoryRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新测试操作历史", tags = {"测试操作历史" },  notes = "批量更新测试操作历史")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcasehistories/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
-        ibzcasehistoryService.updateBatch(ibzcasehistoryMapping.toDomain(ibzcasehistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZCaseHistoryRuntime.test(#ibzcasehistory_id,'DELETE')")
     @ApiOperation(value = "删除测试操作历史", tags = {"测试操作历史" },  notes = "删除测试操作历史")
@@ -106,13 +91,6 @@ public class IBZCaseHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryService.remove(ibzcasehistory_id));
     }
 
-    @PreAuthorize("@IBZCaseHistoryRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除测试操作历史", tags = {"测试操作历史" },  notes = "批量删除测试操作历史")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcasehistories/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzcasehistoryService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZCaseHistoryRuntime.test(#ibzcasehistory_id,'READ')")
     @ApiOperation(value = "获取测试操作历史", tags = {"测试操作历史" },  notes = "获取测试操作历史")
@@ -125,6 +103,7 @@ public class IBZCaseHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IBZCaseHistoryRuntime.test(#ibzcasehistory_id,'CREATE')")
     @ApiOperation(value = "获取测试操作历史草稿", tags = {"测试操作历史" },  notes = "获取测试操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzcasehistories/getdraft")
     public ResponseEntity<IBZCaseHistoryDTO> getDraft(IBZCaseHistoryDTO dto) {
@@ -149,12 +128,6 @@ public class IBZCaseHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存测试操作历史", tags = {"测试操作历史" },  notes = "批量保存测试操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzcasehistories/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
-        ibzcasehistoryService.saveBatch(ibzcasehistoryMapping.toDomain(ibzcasehistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZCaseHistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"测试操作历史" } ,notes = "获取数据集")

@@ -66,15 +66,7 @@ public class ProductLineResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@ProductLineRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建产品线（废弃）", tags = {"产品线（废弃）" },  notes = "批量新建产品线（废弃）")
-	@RequestMapping(method = RequestMethod.POST, value = "/productlines/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<ProductLineDTO> productlinedtos) {
-        productlineService.createBatch(productlineMapping.toDomain(productlinedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "productline" , versionfield = "updatedate")
     @PreAuthorize("@ProductLineRuntime.test(#productline_id,'UPDATE')")
     @ApiOperation(value = "更新产品线（废弃）", tags = {"产品线（废弃）" },  notes = "更新产品线（废弃）")
@@ -92,13 +84,6 @@ public class ProductLineResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductLineRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新产品线（废弃）", tags = {"产品线（废弃）" },  notes = "批量更新产品线（废弃）")
-	@RequestMapping(method = RequestMethod.PUT, value = "/productlines/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProductLineDTO> productlinedtos) {
-        productlineService.updateBatch(productlineMapping.toDomain(productlinedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductLineRuntime.test(#productline_id,'DELETE')")
     @ApiOperation(value = "删除产品线（废弃）", tags = {"产品线（废弃）" },  notes = "删除产品线（废弃）")
@@ -107,13 +92,6 @@ public class ProductLineResource {
          return ResponseEntity.status(HttpStatus.OK).body(productlineService.remove(productline_id));
     }
 
-    @PreAuthorize("@ProductLineRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除产品线（废弃）", tags = {"产品线（废弃）" },  notes = "批量删除产品线（废弃）")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productlines/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        productlineService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductLineRuntime.test(#productline_id,'READ')")
     @ApiOperation(value = "获取产品线（废弃）", tags = {"产品线（废弃）" },  notes = "获取产品线（废弃）")
@@ -126,6 +104,7 @@ public class ProductLineResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductLineRuntime.test(#productline_id,'CREATE')")
     @ApiOperation(value = "获取产品线（废弃）草稿", tags = {"产品线（废弃）" },  notes = "获取产品线（废弃）草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/productlines/getdraft")
     public ResponseEntity<ProductLineDTO> getDraft(ProductLineDTO dto) {
@@ -150,12 +129,6 @@ public class ProductLineResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存产品线（废弃）", tags = {"产品线（废弃）" },  notes = "批量保存产品线（废弃）")
-	@RequestMapping(method = RequestMethod.POST, value = "/productlines/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProductLineDTO> productlinedtos) {
-        productlineService.saveBatch(productlineMapping.toDomain(productlinedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductLineRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品线（废弃）" } ,notes = "获取DEFAULT")

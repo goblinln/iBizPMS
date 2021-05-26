@@ -58,14 +58,7 @@ public class PSSysSFPubResource {
         PSSysSFPubDTO dto = pssyssfpubMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建后台服务架构", tags = {"后台服务架构" },  notes = "批量新建后台服务架构")
-	@RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<PSSysSFPubDTO> pssyssfpubdtos) {
-        pssyssfpubService.createBatch(pssyssfpubMapping.toDomain(pssyssfpubdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "pssyssfpub" , versionfield = "updatedate")
     @ApiOperation(value = "更新后台服务架构", tags = {"后台服务架构" },  notes = "更新后台服务架构")
 	@RequestMapping(method = RequestMethod.PUT, value = "/pssyssfpubs/{pssyssfpub_id}")
@@ -78,12 +71,6 @@ public class PSSysSFPubResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新后台服务架构", tags = {"后台服务架构" },  notes = "批量更新后台服务架构")
-	@RequestMapping(method = RequestMethod.PUT, value = "/pssyssfpubs/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<PSSysSFPubDTO> pssyssfpubdtos) {
-        pssyssfpubService.updateBatch(pssyssfpubMapping.toDomain(pssyssfpubdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除后台服务架构", tags = {"后台服务架构" },  notes = "删除后台服务架构")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/pssyssfpubs/{pssyssfpub_id}")
@@ -91,12 +78,6 @@ public class PSSysSFPubResource {
          return ResponseEntity.status(HttpStatus.OK).body(pssyssfpubService.remove(pssyssfpub_id));
     }
 
-    @ApiOperation(value = "批量删除后台服务架构", tags = {"后台服务架构" },  notes = "批量删除后台服务架构")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/pssyssfpubs/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        pssyssfpubService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取后台服务架构", tags = {"后台服务架构" },  notes = "获取后台服务架构")
 	@RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/{pssyssfpub_id}")
@@ -128,12 +109,6 @@ public class PSSysSFPubResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存后台服务架构", tags = {"后台服务架构" },  notes = "批量保存后台服务架构")
-	@RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<PSSysSFPubDTO> pssyssfpubdtos) {
-        pssyssfpubService.saveBatch(pssyssfpubMapping.toDomain(pssyssfpubdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取版本", tags = {"后台服务架构" } ,notes = "获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/pssyssfpubs/fetchbuild")

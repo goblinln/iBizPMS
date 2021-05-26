@@ -66,15 +66,7 @@ public class BuildResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@BuildRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建版本", tags = {"版本" },  notes = "批量新建版本")
-	@RequestMapping(method = RequestMethod.POST, value = "/builds/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<BuildDTO> builddtos) {
-        buildService.createBatch(buildMapping.toDomain(builddtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "build" , versionfield = "updatedate")
     @PreAuthorize("@BuildRuntime.test(#build_id,'UPDATE')")
     @ApiOperation(value = "更新版本", tags = {"版本" },  notes = "更新版本")
@@ -92,13 +84,6 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新版本", tags = {"版本" },  notes = "批量更新版本")
-	@RequestMapping(method = RequestMethod.PUT, value = "/builds/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<BuildDTO> builddtos) {
-        buildService.updateBatch(buildMapping.toDomain(builddtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@BuildRuntime.test(#build_id,'DELETE')")
     @ApiOperation(value = "删除版本", tags = {"版本" },  notes = "删除版本")
@@ -107,13 +92,6 @@ public class BuildResource {
          return ResponseEntity.status(HttpStatus.OK).body(buildService.remove(build_id));
     }
 
-    @PreAuthorize("@BuildRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除版本", tags = {"版本" },  notes = "批量删除版本")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/builds/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        buildService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@BuildRuntime.test(#build_id,'READ')")
     @ApiOperation(value = "获取版本", tags = {"版本" },  notes = "获取版本")
@@ -126,6 +104,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@BuildRuntime.test(#build_id,'CREATE')")
     @ApiOperation(value = "获取版本草稿", tags = {"版本" },  notes = "获取版本草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/builds/getdraft")
     public ResponseEntity<BuildDTO> getDraft(BuildDTO dto) {
@@ -150,13 +129,7 @@ public class BuildResource {
         builddto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-    @ApiOperation(value = "批量处理[关联Bug]", tags = {"版本" },  notes = "批量处理[关联Bug]")
-	@RequestMapping(method = RequestMethod.POST, value = "/builds/linkbugbatch")
-    public ResponseEntity<Boolean> linkBugBatch(@RequestBody List<BuildDTO> builddtos) {
-        List<Build> domains = buildMapping.toDomain(builddtos);
-        boolean result = buildService.linkBugBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "关联需求", tags = {"版本" },  notes = "关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/{build_id}/linkstory")
@@ -169,13 +142,7 @@ public class BuildResource {
         builddto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-    @ApiOperation(value = "批量处理[关联需求]", tags = {"版本" },  notes = "批量处理[关联需求]")
-	@RequestMapping(method = RequestMethod.POST, value = "/builds/linkstorybatch")
-    public ResponseEntity<Boolean> linkStoryBatch(@RequestBody List<BuildDTO> builddtos) {
-        List<Build> domains = buildMapping.toDomain(builddtos);
-        boolean result = buildService.linkStoryBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "移动端项目版本计数器", tags = {"版本" },  notes = "移动端项目版本计数器")
 	@RequestMapping(method = RequestMethod.PUT, value = "/builds/{build_id}/mobprojectbuildcounter")
@@ -189,6 +156,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
+
     @ApiOperation(value = "一键发布", tags = {"版本" },  notes = "一键发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/{build_id}/oneclickrelease")
     public ResponseEntity<BuildDTO> oneClickRelease(@PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -200,13 +168,7 @@ public class BuildResource {
         builddto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-    @ApiOperation(value = "批量处理[一键发布]", tags = {"版本" },  notes = "批量处理[一键发布]")
-	@RequestMapping(method = RequestMethod.POST, value = "/builds/oneclickreleasebatch")
-    public ResponseEntity<Boolean> oneClickReleaseBatch(@RequestBody List<BuildDTO> builddtos) {
-        List<Build> domains = buildMapping.toDomain(builddtos);
-        boolean result = buildService.oneClickReleaseBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存版本", tags = {"版本" },  notes = "保存版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/save")
@@ -219,12 +181,6 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存版本", tags = {"版本" },  notes = "批量保存版本")
-	@RequestMapping(method = RequestMethod.POST, value = "/builds/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<BuildDTO> builddtos) {
-        buildService.saveBatch(buildMapping.toDomain(builddtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "移除Bug关联", tags = {"版本" },  notes = "移除Bug关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/{build_id}/unlinkbug")
@@ -237,13 +193,7 @@ public class BuildResource {
         builddto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-    @ApiOperation(value = "批量处理[移除Bug关联]", tags = {"版本" },  notes = "批量处理[移除Bug关联]")
-	@RequestMapping(method = RequestMethod.POST, value = "/builds/unlinkbugbatch")
-    public ResponseEntity<Boolean> unlinkBugBatch(@RequestBody List<BuildDTO> builddtos) {
-        List<Build> domains = buildMapping.toDomain(builddtos);
-        boolean result = buildService.unlinkBugBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "移除关联需求", tags = {"版本" },  notes = "移除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/{build_id}/unlinkstory")
@@ -256,13 +206,7 @@ public class BuildResource {
         builddto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-    @ApiOperation(value = "批量处理[移除关联需求]", tags = {"版本" },  notes = "批量处理[移除关联需求]")
-	@RequestMapping(method = RequestMethod.POST, value = "/builds/unlinkstorybatch")
-    public ResponseEntity<Boolean> unlinkStoryBatch(@RequestBody List<BuildDTO> builddtos) {
-        List<Build> domains = buildMapping.toDomain(builddtos);
-        boolean result = buildService.unlinkStoryBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Bug产品版本", tags = {"版本" } ,notes = "获取Bug产品版本")
@@ -433,17 +377,6 @@ public class BuildResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'BUILDMANAGE')")
-    @ApiOperation(value = "根据产品批量建立版本", tags = {"版本" },  notes = "根据产品批量建立版本")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/batch")
-    public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<BuildDTO> builddtos) {
-        List<Build> domainlist=buildMapping.toDomain(builddtos);
-        for(Build domain:domainlist){
-            domain.setProduct(product_id);
-        }
-        buildService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @VersionCheck(entity = "build" , versionfield = "updatedate")
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUILDMANAGE')")
@@ -458,17 +391,6 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'BUILDMANAGE')")
-    @ApiOperation(value = "根据产品批量更新版本", tags = {"版本" },  notes = "根据产品批量更新版本")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/builds/batch")
-    public ResponseEntity<Boolean> updateBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<BuildDTO> builddtos) {
-        List<Build> domainlist=buildMapping.toDomain(builddtos);
-        for(Build domain:domainlist){
-            domain.setProduct(product_id);
-        }
-        buildService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUILDMANAGE')")
     @ApiOperation(value = "根据产品删除版本", tags = {"版本" },  notes = "根据产品删除版本")
@@ -477,13 +399,6 @@ public class BuildResource {
 		return ResponseEntity.status(HttpStatus.OK).body(buildService.remove(build_id));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'BUILDMANAGE')")
-    @ApiOperation(value = "根据产品批量删除版本", tags = {"版本" },  notes = "根据产品批量删除版本")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/builds/batch")
-    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
-        buildService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品获取版本", tags = {"版本" },  notes = "根据产品获取版本")
@@ -518,13 +433,7 @@ public class BuildResource {
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-    @ApiOperation(value = "批量处理[根据产品版本]", tags = {"版本" },  notes = "批量处理[根据产品版本]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/linkbugbatch")
-    public ResponseEntity<Boolean> linkBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<BuildDTO> builddtos) {
-        List<Build> domains = buildMapping.toDomain(builddtos);
-        boolean result = buildService.linkBugBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据产品版本", tags = {"版本" },  notes = "根据产品版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/linkstory")
     public ResponseEntity<BuildDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -535,13 +444,7 @@ public class BuildResource {
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-    @ApiOperation(value = "批量处理[根据产品版本]", tags = {"版本" },  notes = "批量处理[根据产品版本]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/linkstorybatch")
-    public ResponseEntity<Boolean> linkStoryByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<BuildDTO> builddtos) {
-        List<Build> domains = buildMapping.toDomain(builddtos);
-        boolean result = buildService.linkStoryBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据产品版本", tags = {"版本" },  notes = "根据产品版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/builds/{build_id}/mobprojectbuildcounter")
     public ResponseEntity<BuildDTO> mobProjectBuildCounterByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -552,6 +455,7 @@ public class BuildResource {
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
+
     @ApiOperation(value = "根据产品版本", tags = {"版本" },  notes = "根据产品版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/oneclickrelease")
     public ResponseEntity<BuildDTO> oneClickReleaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -562,13 +466,7 @@ public class BuildResource {
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-    @ApiOperation(value = "批量处理[根据产品版本]", tags = {"版本" },  notes = "批量处理[根据产品版本]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/oneclickreleasebatch")
-    public ResponseEntity<Boolean> oneClickReleaseByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<BuildDTO> builddtos) {
-        List<Build> domains = buildMapping.toDomain(builddtos);
-        boolean result = buildService.oneClickReleaseBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据产品保存版本", tags = {"版本" },  notes = "根据产品保存版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/save")
     public ResponseEntity<BuildDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildDTO builddto) {
@@ -578,16 +476,6 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(buildMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据产品批量保存版本", tags = {"版本" },  notes = "根据产品批量保存版本")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<BuildDTO> builddtos) {
-        List<Build> domainlist=buildMapping.toDomain(builddtos);
-        for(Build domain:domainlist){
-             domain.setProduct(product_id);
-        }
-        buildService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "根据产品版本", tags = {"版本" },  notes = "根据产品版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/unlinkbug")
@@ -599,13 +487,7 @@ public class BuildResource {
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-    @ApiOperation(value = "批量处理[根据产品版本]", tags = {"版本" },  notes = "批量处理[根据产品版本]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/unlinkbugbatch")
-    public ResponseEntity<Boolean> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<BuildDTO> builddtos) {
-        List<Build> domains = buildMapping.toDomain(builddtos);
-        boolean result = buildService.unlinkBugBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据产品版本", tags = {"版本" },  notes = "根据产品版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/unlinkstory")
     public ResponseEntity<BuildDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -616,13 +498,7 @@ public class BuildResource {
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-    @ApiOperation(value = "批量处理[根据产品版本]", tags = {"版本" },  notes = "批量处理[根据产品版本]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/unlinkstorybatch")
-    public ResponseEntity<Boolean> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<BuildDTO> builddtos) {
-        List<Build> domains = buildMapping.toDomain(builddtos);
-        boolean result = buildService.unlinkStoryBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Bug产品版本", tags = {"版本" } ,notes = "根据产品获取Bug产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchbugproductbuild")
@@ -791,17 +667,6 @@ public class BuildResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
-    @ApiOperation(value = "根据项目批量建立版本", tags = {"版本" },  notes = "根据项目批量建立版本")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/batch")
-    public ResponseEntity<Boolean> createBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<BuildDTO> builddtos) {
-        List<Build> domainlist=buildMapping.toDomain(builddtos);
-        for(Build domain:domainlist){
-            domain.setProject(project_id);
-        }
-        buildService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @VersionCheck(entity = "build" , versionfield = "updatedate")
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
@@ -816,17 +681,6 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
-    @ApiOperation(value = "根据项目批量更新版本", tags = {"版本" },  notes = "根据项目批量更新版本")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/builds/batch")
-    public ResponseEntity<Boolean> updateBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<BuildDTO> builddtos) {
-        List<Build> domainlist=buildMapping.toDomain(builddtos);
-        for(Build domain:domainlist){
-            domain.setProject(project_id);
-        }
-        buildService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目删除版本", tags = {"版本" },  notes = "根据项目删除版本")
@@ -835,13 +689,6 @@ public class BuildResource {
 		return ResponseEntity.status(HttpStatus.OK).body(buildService.remove(build_id));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
-    @ApiOperation(value = "根据项目批量删除版本", tags = {"版本" },  notes = "根据项目批量删除版本")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/builds/batch")
-    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
-        buildService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目获取版本", tags = {"版本" },  notes = "根据项目获取版本")
@@ -876,13 +723,7 @@ public class BuildResource {
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-    @ApiOperation(value = "批量处理[根据项目版本]", tags = {"版本" },  notes = "批量处理[根据项目版本]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/linkbugbatch")
-    public ResponseEntity<Boolean> linkBugByProject(@PathVariable("project_id") Long project_id, @RequestBody List<BuildDTO> builddtos) {
-        List<Build> domains = buildMapping.toDomain(builddtos);
-        boolean result = buildService.linkBugBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据项目版本", tags = {"版本" },  notes = "根据项目版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/linkstory")
     public ResponseEntity<BuildDTO> linkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -893,13 +734,7 @@ public class BuildResource {
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-    @ApiOperation(value = "批量处理[根据项目版本]", tags = {"版本" },  notes = "批量处理[根据项目版本]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/linkstorybatch")
-    public ResponseEntity<Boolean> linkStoryByProject(@PathVariable("project_id") Long project_id, @RequestBody List<BuildDTO> builddtos) {
-        List<Build> domains = buildMapping.toDomain(builddtos);
-        boolean result = buildService.linkStoryBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据项目版本", tags = {"版本" },  notes = "根据项目版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/builds/{build_id}/mobprojectbuildcounter")
     public ResponseEntity<BuildDTO> mobProjectBuildCounterByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -910,6 +745,7 @@ public class BuildResource {
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
+
     @ApiOperation(value = "根据项目版本", tags = {"版本" },  notes = "根据项目版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/oneclickrelease")
     public ResponseEntity<BuildDTO> oneClickReleaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -920,13 +756,7 @@ public class BuildResource {
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-    @ApiOperation(value = "批量处理[根据项目版本]", tags = {"版本" },  notes = "批量处理[根据项目版本]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/oneclickreleasebatch")
-    public ResponseEntity<Boolean> oneClickReleaseByProject(@PathVariable("project_id") Long project_id, @RequestBody List<BuildDTO> builddtos) {
-        List<Build> domains = buildMapping.toDomain(builddtos);
-        boolean result = buildService.oneClickReleaseBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据项目保存版本", tags = {"版本" },  notes = "根据项目保存版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/save")
     public ResponseEntity<BuildDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildDTO builddto) {
@@ -936,16 +766,6 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(buildMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据项目批量保存版本", tags = {"版本" },  notes = "根据项目批量保存版本")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<BuildDTO> builddtos) {
-        List<Build> domainlist=buildMapping.toDomain(builddtos);
-        for(Build domain:domainlist){
-             domain.setProject(project_id);
-        }
-        buildService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "根据项目版本", tags = {"版本" },  notes = "根据项目版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/unlinkbug")
@@ -957,13 +777,7 @@ public class BuildResource {
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-    @ApiOperation(value = "批量处理[根据项目版本]", tags = {"版本" },  notes = "批量处理[根据项目版本]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/unlinkbugbatch")
-    public ResponseEntity<Boolean> unlinkBugByProject(@PathVariable("project_id") Long project_id, @RequestBody List<BuildDTO> builddtos) {
-        List<Build> domains = buildMapping.toDomain(builddtos);
-        boolean result = buildService.unlinkBugBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据项目版本", tags = {"版本" },  notes = "根据项目版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/unlinkstory")
     public ResponseEntity<BuildDTO> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -974,13 +788,7 @@ public class BuildResource {
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-    @ApiOperation(value = "批量处理[根据项目版本]", tags = {"版本" },  notes = "批量处理[根据项目版本]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/unlinkstorybatch")
-    public ResponseEntity<Boolean> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @RequestBody List<BuildDTO> builddtos) {
-        List<Build> domains = buildMapping.toDomain(builddtos);
-        boolean result = buildService.unlinkStoryBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取Bug产品版本", tags = {"版本" } ,notes = "根据项目获取Bug产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchbugproductbuild")

@@ -66,15 +66,7 @@ public class GroupResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@GroupRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建群组", tags = {"群组" },  notes = "批量新建群组")
-	@RequestMapping(method = RequestMethod.POST, value = "/groups/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<GroupDTO> groupdtos) {
-        groupService.createBatch(groupMapping.toDomain(groupdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@GroupRuntime.test(#group_id,'UPDATE')")
     @ApiOperation(value = "更新群组", tags = {"群组" },  notes = "更新群组")
 	@RequestMapping(method = RequestMethod.PUT, value = "/groups/{group_id}")
@@ -91,13 +83,6 @@ public class GroupResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@GroupRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新群组", tags = {"群组" },  notes = "批量更新群组")
-	@RequestMapping(method = RequestMethod.PUT, value = "/groups/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<GroupDTO> groupdtos) {
-        groupService.updateBatch(groupMapping.toDomain(groupdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@GroupRuntime.test(#group_id,'DELETE')")
     @ApiOperation(value = "删除群组", tags = {"群组" },  notes = "删除群组")
@@ -106,13 +91,6 @@ public class GroupResource {
          return ResponseEntity.status(HttpStatus.OK).body(groupService.remove(group_id));
     }
 
-    @PreAuthorize("@GroupRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除群组", tags = {"群组" },  notes = "批量删除群组")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/groups/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        groupService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@GroupRuntime.test(#group_id,'READ')")
     @ApiOperation(value = "获取群组", tags = {"群组" },  notes = "获取群组")
@@ -125,6 +103,7 @@ public class GroupResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@GroupRuntime.test(#group_id,'CREATE')")
     @ApiOperation(value = "获取群组草稿", tags = {"群组" },  notes = "获取群组草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/groups/getdraft")
     public ResponseEntity<GroupDTO> getDraft(GroupDTO dto) {
@@ -149,12 +128,6 @@ public class GroupResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存群组", tags = {"群组" },  notes = "批量保存群组")
-	@RequestMapping(method = RequestMethod.POST, value = "/groups/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<GroupDTO> groupdtos) {
-        groupService.saveBatch(groupMapping.toDomain(groupdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@GroupRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"群组" } ,notes = "获取DEFAULT")

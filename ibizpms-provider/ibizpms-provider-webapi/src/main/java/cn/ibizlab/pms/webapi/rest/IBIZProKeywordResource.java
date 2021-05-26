@@ -58,14 +58,7 @@ public class IBIZProKeywordResource {
         IBIZProKeywordDTO dto = ibizprokeywordMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建关键字", tags = {"关键字" },  notes = "批量新建关键字")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IBIZProKeywordDTO> ibizprokeyworddtos) {
-        ibizprokeywordService.createBatch(ibizprokeywordMapping.toDomain(ibizprokeyworddtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @ApiOperation(value = "更新关键字", tags = {"关键字" },  notes = "更新关键字")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizprokeywords/{ibizprokeyword_id}")
     @Transactional
@@ -77,12 +70,6 @@ public class IBIZProKeywordResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新关键字", tags = {"关键字" },  notes = "批量更新关键字")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibizprokeywords/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBIZProKeywordDTO> ibizprokeyworddtos) {
-        ibizprokeywordService.updateBatch(ibizprokeywordMapping.toDomain(ibizprokeyworddtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除关键字", tags = {"关键字" },  notes = "删除关键字")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizprokeywords/{ibizprokeyword_id}")
@@ -90,12 +77,6 @@ public class IBIZProKeywordResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizprokeywordService.remove(ibizprokeyword_id));
     }
 
-    @ApiOperation(value = "批量删除关键字", tags = {"关键字" },  notes = "批量删除关键字")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizprokeywords/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibizprokeywordService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取关键字", tags = {"关键字" },  notes = "获取关键字")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/{ibizprokeyword_id}")
@@ -127,12 +108,6 @@ public class IBIZProKeywordResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存关键字", tags = {"关键字" },  notes = "批量保存关键字")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBIZProKeywordDTO> ibizprokeyworddtos) {
-        ibizprokeywordService.saveBatch(ibizprokeywordMapping.toDomain(ibizprokeyworddtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取数据集", tags = {"关键字" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizprokeywords/fetchdefault")

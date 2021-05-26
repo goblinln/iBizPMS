@@ -66,15 +66,7 @@ public class IbzProReportlyActionResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbzProReportlyActionRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建汇报日志", tags = {"汇报日志" },  notes = "批量新建汇报日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyactions/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzProReportlyActionDTO> ibzproreportlyactiondtos) {
-        ibzproreportlyactionService.createBatch(ibzproreportlyactionMapping.toDomain(ibzproreportlyactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IbzProReportlyActionRuntime.test(#ibzproreportlyaction_id,'UPDATE')")
     @ApiOperation(value = "更新汇报日志", tags = {"汇报日志" },  notes = "更新汇报日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproreportlyactions/{ibzproreportlyaction_id}")
@@ -91,13 +83,6 @@ public class IbzProReportlyActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProReportlyActionRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新汇报日志", tags = {"汇报日志" },  notes = "批量更新汇报日志")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproreportlyactions/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzProReportlyActionDTO> ibzproreportlyactiondtos) {
-        ibzproreportlyactionService.updateBatch(ibzproreportlyactionMapping.toDomain(ibzproreportlyactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzProReportlyActionRuntime.test(#ibzproreportlyaction_id,'DELETE')")
     @ApiOperation(value = "删除汇报日志", tags = {"汇报日志" },  notes = "删除汇报日志")
@@ -106,13 +91,6 @@ public class IbzProReportlyActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproreportlyactionService.remove(ibzproreportlyaction_id));
     }
 
-    @PreAuthorize("@IbzProReportlyActionRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除汇报日志", tags = {"汇报日志" },  notes = "批量删除汇报日志")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproreportlyactions/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzproreportlyactionService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzProReportlyActionRuntime.test(#ibzproreportlyaction_id,'READ')")
     @ApiOperation(value = "获取汇报日志", tags = {"汇报日志" },  notes = "获取汇报日志")
@@ -125,6 +103,7 @@ public class IbzProReportlyActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzProReportlyActionRuntime.test(#ibzproreportlyaction_id,'CREATE')")
     @ApiOperation(value = "获取汇报日志草稿", tags = {"汇报日志" },  notes = "获取汇报日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproreportlyactions/getdraft")
     public ResponseEntity<IbzProReportlyActionDTO> getDraft(IbzProReportlyActionDTO dto) {
@@ -150,13 +129,7 @@ public class IbzProReportlyActionResource {
         ibzproreportlyactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreportlyactiondto);
     }
-    @ApiOperation(value = "批量处理[创建历史日志]", tags = {"汇报日志" },  notes = "批量处理[创建历史日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyactions/createhisbatch")
-    public ResponseEntity<Boolean> createHisBatch(@RequestBody List<IbzProReportlyActionDTO> ibzproreportlyactiondtos) {
-        List<IbzProReportlyAction> domains = ibzproreportlyactionMapping.toDomain(ibzproreportlyactiondtos);
-        boolean result = ibzproreportlyactionService.createHisBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "Pms企业专用", tags = {"汇报日志" },  notes = "Pms企业专用")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyactions/{ibzproreportlyaction_id}/managepmsee")
@@ -169,13 +142,7 @@ public class IbzProReportlyActionResource {
         ibzproreportlyactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreportlyactiondto);
     }
-    @ApiOperation(value = "批量处理[Pms企业专用]", tags = {"汇报日志" },  notes = "批量处理[Pms企业专用]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyactions/managepmseebatch")
-    public ResponseEntity<Boolean> managePmsEeBatch(@RequestBody List<IbzProReportlyActionDTO> ibzproreportlyactiondtos) {
-        List<IbzProReportlyAction> domains = ibzproreportlyactionMapping.toDomain(ibzproreportlyactiondtos);
-        boolean result = ibzproreportlyactionService.managePmsEeBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存汇报日志", tags = {"汇报日志" },  notes = "保存汇报日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyactions/save")
@@ -188,12 +155,6 @@ public class IbzProReportlyActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存汇报日志", tags = {"汇报日志" },  notes = "批量保存汇报日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyactions/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzProReportlyActionDTO> ibzproreportlyactiondtos) {
-        ibzproreportlyactionService.saveBatch(ibzproreportlyactionMapping.toDomain(ibzproreportlyactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "已读", tags = {"汇报日志" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyactions/{ibzproreportlyaction_id}/sendmarkdone")
@@ -206,13 +167,7 @@ public class IbzProReportlyActionResource {
         ibzproreportlyactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreportlyactiondto);
     }
-    @ApiOperation(value = "批量处理[已读]", tags = {"汇报日志" },  notes = "批量处理[已读]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyactions/sendmarkdonebatch")
-    public ResponseEntity<Boolean> sendMarkDoneBatch(@RequestBody List<IbzProReportlyActionDTO> ibzproreportlyactiondtos) {
-        List<IbzProReportlyAction> domains = ibzproreportlyactionMapping.toDomain(ibzproreportlyactiondtos);
-        boolean result = ibzproreportlyactionService.sendMarkDoneBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "发送待办", tags = {"汇报日志" },  notes = "发送待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyactions/{ibzproreportlyaction_id}/sendtodo")
@@ -225,13 +180,7 @@ public class IbzProReportlyActionResource {
         ibzproreportlyactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreportlyactiondto);
     }
-    @ApiOperation(value = "批量处理[发送待办]", tags = {"汇报日志" },  notes = "批量处理[发送待办]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyactions/sendtodobatch")
-    public ResponseEntity<Boolean> sendTodoBatch(@RequestBody List<IbzProReportlyActionDTO> ibzproreportlyactiondtos) {
-        List<IbzProReportlyAction> domains = ibzproreportlyactionMapping.toDomain(ibzproreportlyactiondtos);
-        boolean result = ibzproreportlyactionService.sendTodoBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "发送待阅", tags = {"汇报日志" },  notes = "发送待阅")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyactions/{ibzproreportlyaction_id}/sendtoread")
@@ -244,13 +193,7 @@ public class IbzProReportlyActionResource {
         ibzproreportlyactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreportlyactiondto);
     }
-    @ApiOperation(value = "批量处理[发送待阅]", tags = {"汇报日志" },  notes = "批量处理[发送待阅]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyactions/sendtoreadbatch")
-    public ResponseEntity<Boolean> sendToreadBatch(@RequestBody List<IbzProReportlyActionDTO> ibzproreportlyactiondtos) {
-        List<IbzProReportlyAction> domains = ibzproreportlyactionMapping.toDomain(ibzproreportlyactiondtos);
-        boolean result = ibzproreportlyactionService.sendToreadBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@IbzProReportlyActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"汇报日志" } ,notes = "获取数据集")

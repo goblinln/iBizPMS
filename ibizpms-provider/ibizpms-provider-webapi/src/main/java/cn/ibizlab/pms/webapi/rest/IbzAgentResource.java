@@ -66,15 +66,7 @@ public class IbzAgentResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbzAgentRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建代理", tags = {"代理" },  notes = "批量新建代理")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzagents/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzAgentDTO> ibzagentdtos) {
-        ibzagentService.createBatch(ibzagentMapping.toDomain(ibzagentdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "ibzagent" , versionfield = "updatedate")
     @PreAuthorize("@IbzAgentRuntime.test(#ibzagent_id,'UPDATE')")
     @ApiOperation(value = "更新代理", tags = {"代理" },  notes = "更新代理")
@@ -92,13 +84,6 @@ public class IbzAgentResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzAgentRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新代理", tags = {"代理" },  notes = "批量更新代理")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzagents/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzAgentDTO> ibzagentdtos) {
-        ibzagentService.updateBatch(ibzagentMapping.toDomain(ibzagentdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzAgentRuntime.test(#ibzagent_id,'DELETE')")
     @ApiOperation(value = "删除代理", tags = {"代理" },  notes = "删除代理")
@@ -107,13 +92,6 @@ public class IbzAgentResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzagentService.remove(ibzagent_id));
     }
 
-    @PreAuthorize("@IbzAgentRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除代理", tags = {"代理" },  notes = "批量删除代理")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzagents/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzagentService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzAgentRuntime.test(#ibzagent_id,'READ')")
     @ApiOperation(value = "获取代理", tags = {"代理" },  notes = "获取代理")
@@ -126,6 +104,7 @@ public class IbzAgentResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzAgentRuntime.test(#ibzagent_id,'CREATE')")
     @ApiOperation(value = "获取代理草稿", tags = {"代理" },  notes = "获取代理草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzagents/getdraft")
     public ResponseEntity<IbzAgentDTO> getDraft(IbzAgentDTO dto) {
@@ -150,12 +129,6 @@ public class IbzAgentResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存代理", tags = {"代理" },  notes = "批量保存代理")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzagents/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzAgentDTO> ibzagentdtos) {
-        ibzagentService.saveBatch(ibzagentMapping.toDomain(ibzagentdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取数据集", tags = {"代理" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzagents/fetchdefault")

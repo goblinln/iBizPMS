@@ -66,15 +66,7 @@ public class DocLibModuleResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建文档库分类", tags = {"文档库分类" },  notes = "批量新建文档库分类")
-	@RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        doclibmoduleService.createBatch(doclibmoduleMapping.toDomain(doclibmoduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@DocLibModuleRuntime.test(#doclibmodule_id,'UPDATE')")
     @ApiOperation(value = "更新文档库分类", tags = {"文档库分类" },  notes = "更新文档库分类")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibmodules/{doclibmodule_id}")
@@ -91,13 +83,6 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新文档库分类", tags = {"文档库分类" },  notes = "批量更新文档库分类")
-	@RequestMapping(method = RequestMethod.PUT, value = "/doclibmodules/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        doclibmoduleService.updateBatch(doclibmoduleMapping.toDomain(doclibmoduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DocLibModuleRuntime.test(#doclibmodule_id,'DELETE')")
     @ApiOperation(value = "删除文档库分类", tags = {"文档库分类" },  notes = "删除文档库分类")
@@ -106,13 +91,6 @@ public class DocLibModuleResource {
          return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleService.remove(doclibmodule_id));
     }
 
-    @PreAuthorize("@DocLibModuleRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除文档库分类", tags = {"文档库分类" },  notes = "批量删除文档库分类")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/doclibmodules/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        doclibmoduleService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DocLibModuleRuntime.test(#doclibmodule_id,'READ')")
     @ApiOperation(value = "获取文档库分类", tags = {"文档库分类" },  notes = "获取文档库分类")
@@ -125,6 +103,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@DocLibModuleRuntime.test(#doclibmodule_id,'CREATE')")
     @ApiOperation(value = "获取文档库分类草稿", tags = {"文档库分类" },  notes = "获取文档库分类草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/doclibmodules/getdraft")
     public ResponseEntity<DocLibModuleDTO> getDraft(DocLibModuleDTO dto) {
@@ -150,13 +129,7 @@ public class DocLibModuleResource {
         doclibmoduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
-    @ApiOperation(value = "批量处理[收藏]", tags = {"文档库分类" },  notes = "批量处理[收藏]")
-	@RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/collectbatch")
-    public ResponseEntity<Boolean> collectBatch(@RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domains = doclibmoduleMapping.toDomain(doclibmoduledtos);
-        boolean result = doclibmoduleService.collectBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "取消收藏", tags = {"文档库分类" },  notes = "取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/{doclibmodule_id}/doclibmodulenfavorite")
@@ -170,6 +143,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
+
     @ApiOperation(value = "收藏", tags = {"文档库分类" },  notes = "收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/{doclibmodule_id}/doclibmodulefavorite")
     public ResponseEntity<DocLibModuleDTO> doclibModuleFavorite(@PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -181,6 +155,7 @@ public class DocLibModuleResource {
         doclibmoduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
+
 
     @ApiOperation(value = "重建模块路径", tags = {"文档库分类" },  notes = "重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/{doclibmodule_id}/fix")
@@ -194,6 +169,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
+
     @ApiOperation(value = "保存文档库分类", tags = {"文档库分类" },  notes = "保存文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/save")
     public ResponseEntity<DocLibModuleDTO> save(@RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -205,12 +181,6 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存文档库分类", tags = {"文档库分类" },  notes = "批量保存文档库分类")
-	@RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        doclibmoduleService.saveBatch(doclibmoduleMapping.toDomain(doclibmoduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DocLibModuleRuntime.test(#doclibmodule_id,'UNCOLLECT')")
     @ApiOperation(value = "取消收藏", tags = {"文档库分类" },  notes = "取消收藏")
@@ -224,13 +194,7 @@ public class DocLibModuleResource {
         doclibmoduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
-    @ApiOperation(value = "批量处理[取消收藏]", tags = {"文档库分类" },  notes = "批量处理[取消收藏]")
-	@RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/uncollectbatch")
-    public ResponseEntity<Boolean> unCollectBatch(@RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domains = doclibmoduleMapping.toDomain(doclibmoduledtos);
-        boolean result = doclibmoduleService.unCollectBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取自定义文档库的模块", tags = {"文档库分类" } ,notes = "获取自定义文档库的模块")
@@ -471,17 +435,6 @@ public class DocLibModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'CREATE')")
-    @ApiOperation(value = "根据文档库批量建立文档库分类", tags = {"文档库分类" },  notes = "根据文档库批量建立文档库分类")
-	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/batch")
-    public ResponseEntity<Boolean> createBatchByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domainlist=doclibmoduleMapping.toDomain(doclibmoduledtos);
-        for(DocLibModule domain:domainlist){
-            domain.setRoot(doclib_id);
-        }
-        doclibmoduleService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'UPDATE')")
     @ApiOperation(value = "根据文档库更新文档库分类", tags = {"文档库分类" },  notes = "根据文档库更新文档库分类")
@@ -495,17 +448,6 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'UPDATE')")
-    @ApiOperation(value = "根据文档库批量更新文档库分类", tags = {"文档库分类" },  notes = "根据文档库批量更新文档库分类")
-	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/doclibmodules/batch")
-    public ResponseEntity<Boolean> updateBatchByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domainlist=doclibmoduleMapping.toDomain(doclibmoduledtos);
-        for(DocLibModule domain:domainlist){
-            domain.setRoot(doclib_id);
-        }
-        doclibmoduleService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'DELETE')")
     @ApiOperation(value = "根据文档库删除文档库分类", tags = {"文档库分类" },  notes = "根据文档库删除文档库分类")
@@ -514,13 +456,6 @@ public class DocLibModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleService.remove(doclibmodule_id));
     }
 
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'DELETE')")
-    @ApiOperation(value = "根据文档库批量删除文档库分类", tags = {"文档库分类" },  notes = "根据文档库批量删除文档库分类")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/doclibs/{doclib_id}/doclibmodules/batch")
-    public ResponseEntity<Boolean> removeBatchByDocLib(@RequestBody List<Long> ids) {
-        doclibmoduleService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
     @ApiOperation(value = "根据文档库获取文档库分类", tags = {"文档库分类" },  notes = "根据文档库获取文档库分类")
@@ -556,13 +491,7 @@ public class DocLibModuleResource {
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
-    @ApiOperation(value = "批量处理[根据文档库文档库分类]", tags = {"文档库分类" },  notes = "批量处理[根据文档库文档库分类]")
-	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/collectbatch")
-    public ResponseEntity<Boolean> collectByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domains = doclibmoduleMapping.toDomain(doclibmoduledtos);
-        boolean result = doclibmoduleService.collectBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据文档库文档库分类", tags = {"文档库分类" },  notes = "根据文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulenfavorite")
     public ResponseEntity<DocLibModuleDTO> docLibModuleNFavoriteByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -573,6 +502,7 @@ public class DocLibModuleResource {
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
+
     @ApiOperation(value = "根据文档库文档库分类", tags = {"文档库分类" },  notes = "根据文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulefavorite")
     public ResponseEntity<DocLibModuleDTO> doclibModuleFavoriteByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -583,6 +513,7 @@ public class DocLibModuleResource {
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
+
     @ApiOperation(value = "根据文档库文档库分类", tags = {"文档库分类" },  notes = "根据文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/fix")
     public ResponseEntity<DocLibModuleDTO> fixByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -593,6 +524,7 @@ public class DocLibModuleResource {
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
+
     @ApiOperation(value = "根据文档库保存文档库分类", tags = {"文档库分类" },  notes = "根据文档库保存文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/save")
     public ResponseEntity<DocLibModuleDTO> saveByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -602,16 +534,6 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据文档库批量保存文档库分类", tags = {"文档库分类" },  notes = "根据文档库批量保存文档库分类")
-	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/savebatch")
-    public ResponseEntity<Boolean> saveBatchByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domainlist=doclibmoduleMapping.toDomain(doclibmoduledtos);
-        for(DocLibModule domain:domainlist){
-             domain.setRoot(doclib_id);
-        }
-        doclibmoduleService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'MANAGE')")
     @ApiOperation(value = "根据文档库文档库分类", tags = {"文档库分类" },  notes = "根据文档库文档库分类")
@@ -624,13 +546,7 @@ public class DocLibModuleResource {
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
-    @ApiOperation(value = "批量处理[根据文档库文档库分类]", tags = {"文档库分类" },  notes = "批量处理[根据文档库文档库分类]")
-	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/uncollectbatch")
-    public ResponseEntity<Boolean> unCollectByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domains = doclibmoduleMapping.toDomain(doclibmoduledtos);
-        boolean result = doclibmoduleService.unCollectBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库获取自定义文档库的模块", tags = {"文档库分类" } ,notes = "根据文档库获取自定义文档库的模块")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/doclibmodules/fetchalldoclibmodule_custom")
@@ -872,17 +788,6 @@ public class DocLibModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品文档库批量建立文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库批量建立文档库分类")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/batch")
-    public ResponseEntity<Boolean> createBatchByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domainlist=doclibmoduleMapping.toDomain(doclibmoduledtos);
-        for(DocLibModule domain:domainlist){
-            domain.setRoot(doclib_id);
-        }
-        doclibmoduleService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品文档库更新文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库更新文档库分类")
@@ -896,17 +801,6 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
-    @ApiOperation(value = "根据产品文档库批量更新文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库批量更新文档库分类")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/batch")
-    public ResponseEntity<Boolean> updateBatchByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domainlist=doclibmoduleMapping.toDomain(doclibmoduledtos);
-        for(DocLibModule domain:domainlist){
-            domain.setRoot(doclib_id);
-        }
-        doclibmoduleService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品文档库删除文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库删除文档库分类")
@@ -915,13 +809,6 @@ public class DocLibModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleService.remove(doclibmodule_id));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
-    @ApiOperation(value = "根据产品文档库批量删除文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库批量删除文档库分类")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/batch")
-    public ResponseEntity<Boolean> removeBatchByProductDocLib(@RequestBody List<Long> ids) {
-        doclibmoduleService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品文档库获取文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库获取文档库分类")
@@ -957,13 +844,7 @@ public class DocLibModuleResource {
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
-    @ApiOperation(value = "批量处理[根据产品文档库文档库分类]", tags = {"文档库分类" },  notes = "批量处理[根据产品文档库文档库分类]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/collectbatch")
-    public ResponseEntity<Boolean> collectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domains = doclibmoduleMapping.toDomain(doclibmoduledtos);
-        boolean result = doclibmoduleService.collectBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据产品文档库文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulenfavorite")
     public ResponseEntity<DocLibModuleDTO> docLibModuleNFavoriteByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -974,6 +855,7 @@ public class DocLibModuleResource {
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
+
     @ApiOperation(value = "根据产品文档库文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulefavorite")
     public ResponseEntity<DocLibModuleDTO> doclibModuleFavoriteByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -984,6 +866,7 @@ public class DocLibModuleResource {
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
+
     @ApiOperation(value = "根据产品文档库文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/fix")
     public ResponseEntity<DocLibModuleDTO> fixByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -994,6 +877,7 @@ public class DocLibModuleResource {
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
+
     @ApiOperation(value = "根据产品文档库保存文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库保存文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/save")
     public ResponseEntity<DocLibModuleDTO> saveByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -1003,16 +887,6 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据产品文档库批量保存文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库批量保存文档库分类")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domainlist=doclibmoduleMapping.toDomain(doclibmoduledtos);
-        for(DocLibModule domain:domainlist){
-             domain.setRoot(doclib_id);
-        }
-        doclibmoduleService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UNCOLLECT')")
     @ApiOperation(value = "根据产品文档库文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库文档库分类")
@@ -1025,13 +899,7 @@ public class DocLibModuleResource {
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
-    @ApiOperation(value = "批量处理[根据产品文档库文档库分类]", tags = {"文档库分类" },  notes = "批量处理[根据产品文档库文档库分类]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/uncollectbatch")
-    public ResponseEntity<Boolean> unCollectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domains = doclibmoduleMapping.toDomain(doclibmoduledtos);
-        boolean result = doclibmoduleService.unCollectBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库获取自定义文档库的模块", tags = {"文档库分类" } ,notes = "根据产品文档库获取自定义文档库的模块")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/doclibmodules/fetchalldoclibmodule_custom")
@@ -1273,17 +1141,6 @@ public class DocLibModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
-    @ApiOperation(value = "根据项目文档库批量建立文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库批量建立文档库分类")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/batch")
-    public ResponseEntity<Boolean> createBatchByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domainlist=doclibmoduleMapping.toDomain(doclibmoduledtos);
-        for(DocLibModule domain:domainlist){
-            domain.setRoot(doclib_id);
-        }
-        doclibmoduleService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目文档库更新文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库更新文档库分类")
@@ -1297,17 +1154,6 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
-    @ApiOperation(value = "根据项目文档库批量更新文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库批量更新文档库分类")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/batch")
-    public ResponseEntity<Boolean> updateBatchByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domainlist=doclibmoduleMapping.toDomain(doclibmoduledtos);
-        for(DocLibModule domain:domainlist){
-            domain.setRoot(doclib_id);
-        }
-        doclibmoduleService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目文档库删除文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库删除文档库分类")
@@ -1316,13 +1162,6 @@ public class DocLibModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleService.remove(doclibmodule_id));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
-    @ApiOperation(value = "根据项目文档库批量删除文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库批量删除文档库分类")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/batch")
-    public ResponseEntity<Boolean> removeBatchByProjectDocLib(@RequestBody List<Long> ids) {
-        doclibmoduleService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目文档库获取文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库获取文档库分类")
@@ -1358,13 +1197,7 @@ public class DocLibModuleResource {
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
-    @ApiOperation(value = "批量处理[根据项目文档库文档库分类]", tags = {"文档库分类" },  notes = "批量处理[根据项目文档库文档库分类]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/collectbatch")
-    public ResponseEntity<Boolean> collectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domains = doclibmoduleMapping.toDomain(doclibmoduledtos);
-        boolean result = doclibmoduleService.collectBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据项目文档库文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulenfavorite")
     public ResponseEntity<DocLibModuleDTO> docLibModuleNFavoriteByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -1375,6 +1208,7 @@ public class DocLibModuleResource {
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
+
     @ApiOperation(value = "根据项目文档库文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulefavorite")
     public ResponseEntity<DocLibModuleDTO> doclibModuleFavoriteByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -1385,6 +1219,7 @@ public class DocLibModuleResource {
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
+
     @ApiOperation(value = "根据项目文档库文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/fix")
     public ResponseEntity<DocLibModuleDTO> fixByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -1395,6 +1230,7 @@ public class DocLibModuleResource {
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
+
     @ApiOperation(value = "根据项目文档库保存文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库保存文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/save")
     public ResponseEntity<DocLibModuleDTO> saveByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -1404,16 +1240,6 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据项目文档库批量保存文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库批量保存文档库分类")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domainlist=doclibmoduleMapping.toDomain(doclibmoduledtos);
-        for(DocLibModule domain:domainlist){
-             domain.setRoot(doclib_id);
-        }
-        doclibmoduleService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UNCOLLECT')")
     @ApiOperation(value = "根据项目文档库文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库文档库分类")
@@ -1426,13 +1252,7 @@ public class DocLibModuleResource {
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
-    @ApiOperation(value = "批量处理[根据项目文档库文档库分类]", tags = {"文档库分类" },  notes = "批量处理[根据项目文档库文档库分类]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/uncollectbatch")
-    public ResponseEntity<Boolean> unCollectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        List<DocLibModule> domains = doclibmoduleMapping.toDomain(doclibmoduledtos);
-        boolean result = doclibmoduleService.unCollectBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库获取自定义文档库的模块", tags = {"文档库分类" } ,notes = "根据项目文档库获取自定义文档库的模块")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/fetchalldoclibmodule_custom")

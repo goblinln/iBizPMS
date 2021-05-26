@@ -64,14 +64,8 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量保存任务", tags = {"任务" },  notes = "批量保存任务")
-	@RequestMapping(method = RequestMethod.POST, value = "/subtasks/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<SubTaskDTO> subtaskdtos) {
-        taskService.saveBatch(subtaskMapping.toDomain(subtaskdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
+    @PreAuthorize("@TaskRuntime.test(#subtask_id,'CREATE')")
     @ApiOperation(value = "获取任务草稿", tags = {"任务" },  notes = "获取任务草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/subtasks/getdraft")
     public ResponseEntity<SubTaskDTO> getDraft(SubTaskDTO dto) {
@@ -119,17 +113,6 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(domain));
     }
 
-    @PreAuthorize("@TaskRuntime.test(#task_id,'CREATE')")
-    @ApiOperation(value = "根据任务批量保存任务", tags = {"任务" },  notes = "根据任务批量保存任务")
-	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/subtasks/savebatch")
-    public ResponseEntity<Boolean> saveBatchByTask(@PathVariable("task_id") Long task_id, @RequestBody List<SubTaskDTO> subtaskdtos) {
-        List<Task> domainlist=subtaskMapping.toDomain(subtaskdtos);
-        for(Task domain:domainlist){
-             domain.setParent(task_id);
-        }
-        taskService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "根据任务获取任务草稿", tags = {"任务" },  notes = "根据任务获取任务草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}/subtasks/getdraft")
@@ -172,17 +155,6 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskMapping.toDto(domain));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
-    @ApiOperation(value = "根据项目任务批量保存任务", tags = {"任务" },  notes = "根据项目任务批量保存任务")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/subtasks/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody List<SubTaskDTO> subtaskdtos) {
-        List<Task> domainlist=subtaskMapping.toDomain(subtaskdtos);
-        for(Task domain:domainlist){
-             domain.setParent(task_id);
-        }
-        taskService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "根据项目任务获取任务草稿", tags = {"任务" },  notes = "根据项目任务获取任务草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/subtasks/getdraft")

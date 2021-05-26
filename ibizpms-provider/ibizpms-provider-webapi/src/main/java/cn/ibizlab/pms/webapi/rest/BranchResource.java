@@ -66,15 +66,7 @@ public class BranchResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@BranchRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "批量新建产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/branches/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<BranchDTO> branchdtos) {
-        branchService.createBatch(branchMapping.toDomain(branchdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@BranchRuntime.test(#branch_id,'UPDATE')")
     @ApiOperation(value = "更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "更新产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/branches/{branch_id}")
@@ -91,13 +83,6 @@ public class BranchResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@BranchRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "批量更新产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.PUT, value = "/branches/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<BranchDTO> branchdtos) {
-        branchService.updateBatch(branchMapping.toDomain(branchdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@BranchRuntime.test(#branch_id,'DELETE')")
     @ApiOperation(value = "删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "删除产品的分支和平台信息")
@@ -106,13 +91,6 @@ public class BranchResource {
          return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(branch_id));
     }
 
-    @PreAuthorize("@BranchRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "批量删除产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/branches/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        branchService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@BranchRuntime.test(#branch_id,'READ')")
     @ApiOperation(value = "获取产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "获取产品的分支和平台信息")
@@ -125,6 +103,7 @@ public class BranchResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@BranchRuntime.test(#branch_id,'CREATE')")
     @ApiOperation(value = "获取产品的分支和平台信息草稿", tags = {"产品的分支和平台信息" },  notes = "获取产品的分支和平台信息草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/branches/getdraft")
     public ResponseEntity<BranchDTO> getDraft(BranchDTO dto) {
@@ -149,12 +128,6 @@ public class BranchResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "批量保存产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/branches/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<BranchDTO> branchdtos) {
-        branchService.saveBatch(branchMapping.toDomain(branchdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "排序", tags = {"产品的分支和平台信息" },  notes = "排序")
 	@RequestMapping(method = RequestMethod.POST, value = "/branches/{branch_id}/sort")
@@ -167,13 +140,7 @@ public class BranchResource {
         branchdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(branchdto);
     }
-    @ApiOperation(value = "批量处理[排序]", tags = {"产品的分支和平台信息" },  notes = "批量处理[排序]")
-	@RequestMapping(method = RequestMethod.POST, value = "/branches/sortbatch")
-    public ResponseEntity<Boolean> sortBatch(@RequestBody List<BranchDTO> branchdtos) {
-        List<Branch> domains = branchMapping.toDomain(branchdtos);
-        boolean result = branchService.sortBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@BranchRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取CurProduct", tags = {"产品的分支和平台信息" } ,notes = "获取CurProduct")
@@ -238,17 +205,6 @@ public class BranchResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品批量建立产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品批量建立产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/branches/batch")
-    public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<BranchDTO> branchdtos) {
-        List<Branch> domainlist=branchMapping.toDomain(branchdtos);
-        for(Branch domain:domainlist){
-            domain.setProduct(product_id);
-        }
-        branchService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品更新产品的分支和平台信息")
@@ -262,17 +218,6 @@ public class BranchResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
-    @ApiOperation(value = "根据产品批量更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品批量更新产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/branches/batch")
-    public ResponseEntity<Boolean> updateBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<BranchDTO> branchdtos) {
-        List<Branch> domainlist=branchMapping.toDomain(branchdtos);
-        for(Branch domain:domainlist){
-            domain.setProduct(product_id);
-        }
-        branchService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品删除产品的分支和平台信息")
@@ -281,13 +226,6 @@ public class BranchResource {
 		return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(branch_id));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
-    @ApiOperation(value = "根据产品批量删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品批量删除产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/branches/batch")
-    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
-        branchService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品获取产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品获取产品的分支和平台信息")
@@ -321,16 +259,6 @@ public class BranchResource {
         return ResponseEntity.status(HttpStatus.OK).body(branchMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据产品批量保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品批量保存产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/branches/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<BranchDTO> branchdtos) {
-        List<Branch> domainlist=branchMapping.toDomain(branchdtos);
-        for(Branch domain:domainlist){
-             domain.setProduct(product_id);
-        }
-        branchService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "根据产品产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/branches/{branch_id}/sort")
@@ -342,13 +270,7 @@ public class BranchResource {
         branchdto = branchMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(branchdto);
     }
-    @ApiOperation(value = "批量处理[根据产品产品的分支和平台信息]", tags = {"产品的分支和平台信息" },  notes = "批量处理[根据产品产品的分支和平台信息]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/branches/sortbatch")
-    public ResponseEntity<Boolean> sortByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<BranchDTO> branchdtos) {
-        List<Branch> domains = branchMapping.toDomain(branchdtos);
-        boolean result = branchService.sortBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取CurProduct", tags = {"产品的分支和平台信息" } ,notes = "根据产品获取CurProduct")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/branches/fetchcurproduct")

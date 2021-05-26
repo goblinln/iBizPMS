@@ -58,14 +58,7 @@ public class SysRoleResource {
         SysRoleDTO dto = sysroleMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建系统角色", tags = {"系统角色" },  notes = "批量新建系统角色")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysroles/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<SysRoleDTO> sysroledtos) {
-        sysroleService.createBatch(sysroleMapping.toDomain(sysroledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "sysrole" , versionfield = "updatedate")
     @ApiOperation(value = "更新系统角色", tags = {"系统角色" },  notes = "更新系统角色")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysroles/{sysrole_id}")
@@ -78,12 +71,6 @@ public class SysRoleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新系统角色", tags = {"系统角色" },  notes = "批量更新系统角色")
-	@RequestMapping(method = RequestMethod.PUT, value = "/sysroles/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysRoleDTO> sysroledtos) {
-        sysroleService.updateBatch(sysroleMapping.toDomain(sysroledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除系统角色", tags = {"系统角色" },  notes = "删除系统角色")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysroles/{sysrole_id}")
@@ -91,12 +78,6 @@ public class SysRoleResource {
          return ResponseEntity.status(HttpStatus.OK).body(sysroleService.remove(sysrole_id));
     }
 
-    @ApiOperation(value = "批量删除系统角色", tags = {"系统角色" },  notes = "批量删除系统角色")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysroles/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        sysroleService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取系统角色", tags = {"系统角色" },  notes = "获取系统角色")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysroles/{sysrole_id}")
@@ -128,12 +109,6 @@ public class SysRoleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存系统角色", tags = {"系统角色" },  notes = "批量保存系统角色")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysroles/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysRoleDTO> sysroledtos) {
-        sysroleService.saveBatch(sysroleMapping.toDomain(sysroledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取数据集", tags = {"系统角色" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysroles/fetchdefault")

@@ -66,15 +66,7 @@ public class DocResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@DocRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建文档", tags = {"文档" },  notes = "批量新建文档")
-	@RequestMapping(method = RequestMethod.POST, value = "/docs/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<DocDTO> docdtos) {
-        docService.createBatch(docMapping.toDomain(docdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@DocRuntime.test(#doc_id,'UPDATE')")
     @ApiOperation(value = "更新文档", tags = {"文档" },  notes = "更新文档")
 	@RequestMapping(method = RequestMethod.PUT, value = "/docs/{doc_id}")
@@ -91,13 +83,6 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新文档", tags = {"文档" },  notes = "批量更新文档")
-	@RequestMapping(method = RequestMethod.PUT, value = "/docs/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<DocDTO> docdtos) {
-        docService.updateBatch(docMapping.toDomain(docdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DocRuntime.test(#doc_id,'DELETE')")
     @ApiOperation(value = "删除文档", tags = {"文档" },  notes = "删除文档")
@@ -106,13 +91,6 @@ public class DocResource {
          return ResponseEntity.status(HttpStatus.OK).body(docService.remove(doc_id));
     }
 
-    @PreAuthorize("@DocRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除文档", tags = {"文档" },  notes = "批量删除文档")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/docs/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        docService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
     @ApiOperation(value = "获取文档", tags = {"文档" },  notes = "获取文档")
@@ -125,6 +103,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@DocRuntime.test(#doc_id,'CREATE')")
     @ApiOperation(value = "获取文档草稿", tags = {"文档" },  notes = "获取文档草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/docs/getdraft")
     public ResponseEntity<DocDTO> getDraft(DocDTO dto) {
@@ -144,13 +123,7 @@ public class DocResource {
         docdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据版本更新正文信息]", tags = {"文档" },  notes = "批量处理[根据版本更新正文信息]")
-	@RequestMapping(method = RequestMethod.PUT, value = "/docs/byversionupdatecontextbatch")
-    public ResponseEntity<Boolean> byVersionUpdateContextBatch(@RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.byVersionUpdateContextBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "检查文档", tags = {"文档" },  notes = "检查文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/checkkey")
@@ -170,13 +143,7 @@ public class DocResource {
         docdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[收藏]", tags = {"文档" },  notes = "批量处理[收藏]")
-	@RequestMapping(method = RequestMethod.POST, value = "/docs/collectbatch")
-    public ResponseEntity<Boolean> collectBatch(@RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.collectBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "行为", tags = {"文档" },  notes = "行为")
 	@RequestMapping(method = RequestMethod.PUT, value = "/docs/{doc_id}/getdocstatus")
@@ -189,13 +156,7 @@ public class DocResource {
         docdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[行为]", tags = {"文档" },  notes = "批量处理[行为]")
-	@RequestMapping(method = RequestMethod.PUT, value = "/docs/getdocstatusbatch")
-    public ResponseEntity<Boolean> getDocStatusBatch(@RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.getDocStatusBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
     @ApiOperation(value = "仅收藏文档", tags = {"文档" },  notes = "仅收藏文档")
@@ -209,13 +170,7 @@ public class DocResource {
         docdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[仅收藏文档]", tags = {"文档" },  notes = "批量处理[仅收藏文档]")
-	@RequestMapping(method = RequestMethod.POST, value = "/docs/onlycollectdocbatch")
-    public ResponseEntity<Boolean> onlyCollectDocBatch(@RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.onlyCollectDocBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
     @ApiOperation(value = "仅取消收藏文档", tags = {"文档" },  notes = "仅取消收藏文档")
@@ -229,13 +184,7 @@ public class DocResource {
         docdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[仅取消收藏文档]", tags = {"文档" },  notes = "批量处理[仅取消收藏文档]")
-	@RequestMapping(method = RequestMethod.POST, value = "/docs/onlyuncollectdocbatch")
-    public ResponseEntity<Boolean> onlyUnCollectDocBatch(@RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.onlyUnCollectDocBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存文档", tags = {"文档" },  notes = "保存文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/save")
@@ -248,12 +197,6 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存文档", tags = {"文档" },  notes = "批量保存文档")
-	@RequestMapping(method = RequestMethod.POST, value = "/docs/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<DocDTO> docdtos) {
-        docService.saveBatch(docMapping.toDomain(docdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
     @ApiOperation(value = "取消收藏", tags = {"文档" },  notes = "取消收藏")
@@ -267,13 +210,7 @@ public class DocResource {
         docdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[取消收藏]", tags = {"文档" },  notes = "批量处理[取消收藏]")
-	@RequestMapping(method = RequestMethod.POST, value = "/docs/uncollectbatch")
-    public ResponseEntity<Boolean> unCollectBatch(@RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.unCollectBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文档库文档（子库）", tags = {"文档" } ,notes = "获取文档库文档（子库）")
@@ -536,17 +473,6 @@ public class DocResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'CREATE')")
-    @ApiOperation(value = "根据文档库批量建立文档", tags = {"文档" },  notes = "根据文档库批量建立文档")
-	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/batch")
-    public ResponseEntity<Boolean> createBatchByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domainlist=docMapping.toDomain(docdtos);
-        for(Doc domain:domainlist){
-            domain.setLib(doclib_id);
-        }
-        docService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'UPDATE')")
     @ApiOperation(value = "根据文档库更新文档", tags = {"文档" },  notes = "根据文档库更新文档")
@@ -560,17 +486,6 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'UPDATE')")
-    @ApiOperation(value = "根据文档库批量更新文档", tags = {"文档" },  notes = "根据文档库批量更新文档")
-	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/docs/batch")
-    public ResponseEntity<Boolean> updateBatchByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domainlist=docMapping.toDomain(docdtos);
-        for(Doc domain:domainlist){
-            domain.setLib(doclib_id);
-        }
-        docService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'DELETE')")
     @ApiOperation(value = "根据文档库删除文档", tags = {"文档" },  notes = "根据文档库删除文档")
@@ -579,13 +494,6 @@ public class DocResource {
 		return ResponseEntity.status(HttpStatus.OK).body(docService.remove(doc_id));
     }
 
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'DELETE')")
-    @ApiOperation(value = "根据文档库批量删除文档", tags = {"文档" },  notes = "根据文档库批量删除文档")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/doclibs/{doclib_id}/docs/batch")
-    public ResponseEntity<Boolean> removeBatchByDocLib(@RequestBody List<Long> ids) {
-        docService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
     @ApiOperation(value = "根据文档库获取文档", tags = {"文档" },  notes = "根据文档库获取文档")
@@ -615,13 +523,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据文档库文档]", tags = {"文档" },  notes = "批量处理[根据文档库文档]")
-	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/docs/byversionupdatecontextbatch")
-    public ResponseEntity<Boolean> byVersionUpdateContextByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.byVersionUpdateContextBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据文档库检查文档", tags = {"文档" },  notes = "根据文档库检查文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/checkkey")
     public ResponseEntity<Boolean> checkKeyByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
@@ -639,13 +541,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据文档库文档]", tags = {"文档" },  notes = "批量处理[根据文档库文档]")
-	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/collectbatch")
-    public ResponseEntity<Boolean> collectByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.collectBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据文档库文档", tags = {"文档" },  notes = "根据文档库文档")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/docs/{doc_id}/getdocstatus")
     public ResponseEntity<DocDTO> getDocStatusByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -656,13 +552,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据文档库文档]", tags = {"文档" },  notes = "批量处理[根据文档库文档]")
-	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/docs/getdocstatusbatch")
-    public ResponseEntity<Boolean> getDocStatusByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.getDocStatusBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
     @ApiOperation(value = "根据文档库文档", tags = {"文档" },  notes = "根据文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/{doc_id}/onlycollectdoc")
@@ -674,13 +564,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据文档库文档]", tags = {"文档" },  notes = "批量处理[根据文档库文档]")
-	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/onlycollectdocbatch")
-    public ResponseEntity<Boolean> onlyCollectDocByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.onlyCollectDocBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
     @ApiOperation(value = "根据文档库文档", tags = {"文档" },  notes = "根据文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/{doc_id}/onlyuncollectdoc")
@@ -692,13 +576,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据文档库文档]", tags = {"文档" },  notes = "批量处理[根据文档库文档]")
-	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/onlyuncollectdocbatch")
-    public ResponseEntity<Boolean> onlyUnCollectDocByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.onlyUnCollectDocBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据文档库保存文档", tags = {"文档" },  notes = "根据文档库保存文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/save")
     public ResponseEntity<DocDTO> saveByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
@@ -708,16 +586,6 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据文档库批量保存文档", tags = {"文档" },  notes = "根据文档库批量保存文档")
-	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/savebatch")
-    public ResponseEntity<Boolean> saveBatchByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domainlist=docMapping.toDomain(docdtos);
-        for(Doc domain:domainlist){
-             domain.setLib(doclib_id);
-        }
-        docService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
     @ApiOperation(value = "根据文档库文档", tags = {"文档" },  notes = "根据文档库文档")
@@ -730,13 +598,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据文档库文档]", tags = {"文档" },  notes = "批量处理[根据文档库文档]")
-	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/uncollectbatch")
-    public ResponseEntity<Boolean> unCollectByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.unCollectBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库获取文档库文档（子库）", tags = {"文档" } ,notes = "根据文档库获取文档库文档（子库）")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchchilddoclibdoc")
@@ -1001,17 +863,6 @@ public class DocResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品文档库批量建立文档", tags = {"文档" },  notes = "根据产品文档库批量建立文档")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/batch")
-    public ResponseEntity<Boolean> createBatchByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domainlist=docMapping.toDomain(docdtos);
-        for(Doc domain:domainlist){
-            domain.setLib(doclib_id);
-        }
-        docService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品文档库更新文档", tags = {"文档" },  notes = "根据产品文档库更新文档")
@@ -1025,17 +876,6 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
-    @ApiOperation(value = "根据产品文档库批量更新文档", tags = {"文档" },  notes = "根据产品文档库批量更新文档")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/docs/batch")
-    public ResponseEntity<Boolean> updateBatchByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domainlist=docMapping.toDomain(docdtos);
-        for(Doc domain:domainlist){
-            domain.setLib(doclib_id);
-        }
-        docService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品文档库删除文档", tags = {"文档" },  notes = "根据产品文档库删除文档")
@@ -1044,13 +884,6 @@ public class DocResource {
 		return ResponseEntity.status(HttpStatus.OK).body(docService.remove(doc_id));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
-    @ApiOperation(value = "根据产品文档库批量删除文档", tags = {"文档" },  notes = "根据产品文档库批量删除文档")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/doclibs/{doclib_id}/docs/batch")
-    public ResponseEntity<Boolean> removeBatchByProductDocLib(@RequestBody List<Long> ids) {
-        docService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品文档库获取文档", tags = {"文档" },  notes = "根据产品文档库获取文档")
@@ -1080,13 +913,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据产品文档库文档]", tags = {"文档" },  notes = "批量处理[根据产品文档库文档]")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/docs/byversionupdatecontextbatch")
-    public ResponseEntity<Boolean> byVersionUpdateContextByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.byVersionUpdateContextBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据产品文档库检查文档", tags = {"文档" },  notes = "根据产品文档库检查文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/checkkey")
     public ResponseEntity<Boolean> checkKeyByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
@@ -1104,13 +931,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据产品文档库文档]", tags = {"文档" },  notes = "批量处理[根据产品文档库文档]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/collectbatch")
-    public ResponseEntity<Boolean> collectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.collectBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据产品文档库文档", tags = {"文档" },  notes = "根据产品文档库文档")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/getdocstatus")
     public ResponseEntity<DocDTO> getDocStatusByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -1121,13 +942,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据产品文档库文档]", tags = {"文档" },  notes = "批量处理[根据产品文档库文档]")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/docs/getdocstatusbatch")
-    public ResponseEntity<Boolean> getDocStatusByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.getDocStatusBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品文档库文档", tags = {"文档" },  notes = "根据产品文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/onlycollectdoc")
@@ -1139,13 +954,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据产品文档库文档]", tags = {"文档" },  notes = "批量处理[根据产品文档库文档]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/onlycollectdocbatch")
-    public ResponseEntity<Boolean> onlyCollectDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.onlyCollectDocBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品文档库文档", tags = {"文档" },  notes = "根据产品文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/onlyuncollectdoc")
@@ -1157,13 +966,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据产品文档库文档]", tags = {"文档" },  notes = "批量处理[根据产品文档库文档]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/onlyuncollectdocbatch")
-    public ResponseEntity<Boolean> onlyUnCollectDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.onlyUnCollectDocBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据产品文档库保存文档", tags = {"文档" },  notes = "根据产品文档库保存文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/save")
     public ResponseEntity<DocDTO> saveByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
@@ -1173,16 +976,6 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据产品文档库批量保存文档", tags = {"文档" },  notes = "根据产品文档库批量保存文档")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domainlist=docMapping.toDomain(docdtos);
-        for(Doc domain:domainlist){
-             domain.setLib(doclib_id);
-        }
-        docService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品文档库文档", tags = {"文档" },  notes = "根据产品文档库文档")
@@ -1195,13 +988,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据产品文档库文档]", tags = {"文档" },  notes = "批量处理[根据产品文档库文档]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/uncollectbatch")
-    public ResponseEntity<Boolean> unCollectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.unCollectBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库获取文档库文档（子库）", tags = {"文档" } ,notes = "根据产品文档库获取文档库文档（子库）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchchilddoclibdoc")
@@ -1466,17 +1253,6 @@ public class DocResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
-    @ApiOperation(value = "根据项目文档库批量建立文档", tags = {"文档" },  notes = "根据项目文档库批量建立文档")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/batch")
-    public ResponseEntity<Boolean> createBatchByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domainlist=docMapping.toDomain(docdtos);
-        for(Doc domain:domainlist){
-            domain.setLib(doclib_id);
-        }
-        docService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目文档库更新文档", tags = {"文档" },  notes = "根据项目文档库更新文档")
@@ -1490,17 +1266,6 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
-    @ApiOperation(value = "根据项目文档库批量更新文档", tags = {"文档" },  notes = "根据项目文档库批量更新文档")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/batch")
-    public ResponseEntity<Boolean> updateBatchByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domainlist=docMapping.toDomain(docdtos);
-        for(Doc domain:domainlist){
-            domain.setLib(doclib_id);
-        }
-        docService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目文档库删除文档", tags = {"文档" },  notes = "根据项目文档库删除文档")
@@ -1509,13 +1274,6 @@ public class DocResource {
 		return ResponseEntity.status(HttpStatus.OK).body(docService.remove(doc_id));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
-    @ApiOperation(value = "根据项目文档库批量删除文档", tags = {"文档" },  notes = "根据项目文档库批量删除文档")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/batch")
-    public ResponseEntity<Boolean> removeBatchByProjectDocLib(@RequestBody List<Long> ids) {
-        docService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目文档库获取文档", tags = {"文档" },  notes = "根据项目文档库获取文档")
@@ -1545,13 +1303,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据项目文档库文档]", tags = {"文档" },  notes = "批量处理[根据项目文档库文档]")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/byversionupdatecontextbatch")
-    public ResponseEntity<Boolean> byVersionUpdateContextByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.byVersionUpdateContextBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据项目文档库检查文档", tags = {"文档" },  notes = "根据项目文档库检查文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/checkkey")
     public ResponseEntity<Boolean> checkKeyByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
@@ -1569,13 +1321,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据项目文档库文档]", tags = {"文档" },  notes = "批量处理[根据项目文档库文档]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/collectbatch")
-    public ResponseEntity<Boolean> collectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.collectBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据项目文档库文档", tags = {"文档" },  notes = "根据项目文档库文档")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/getdocstatus")
     public ResponseEntity<DocDTO> getDocStatusByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -1586,13 +1332,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据项目文档库文档]", tags = {"文档" },  notes = "批量处理[根据项目文档库文档]")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/getdocstatusbatch")
-    public ResponseEntity<Boolean> getDocStatusByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.getDocStatusBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目文档库文档", tags = {"文档" },  notes = "根据项目文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/onlycollectdoc")
@@ -1604,13 +1344,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据项目文档库文档]", tags = {"文档" },  notes = "批量处理[根据项目文档库文档]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/onlycollectdocbatch")
-    public ResponseEntity<Boolean> onlyCollectDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.onlyCollectDocBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目文档库文档", tags = {"文档" },  notes = "根据项目文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/onlyuncollectdoc")
@@ -1622,13 +1356,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据项目文档库文档]", tags = {"文档" },  notes = "批量处理[根据项目文档库文档]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/onlyuncollectdocbatch")
-    public ResponseEntity<Boolean> onlyUnCollectDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.onlyUnCollectDocBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据项目文档库保存文档", tags = {"文档" },  notes = "根据项目文档库保存文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/save")
     public ResponseEntity<DocDTO> saveByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
@@ -1638,16 +1366,6 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据项目文档库批量保存文档", tags = {"文档" },  notes = "根据项目文档库批量保存文档")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domainlist=docMapping.toDomain(docdtos);
-        for(Doc domain:domainlist){
-             domain.setLib(doclib_id);
-        }
-        docService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目文档库文档", tags = {"文档" },  notes = "根据项目文档库文档")
@@ -1660,13 +1378,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @ApiOperation(value = "批量处理[根据项目文档库文档]", tags = {"文档" },  notes = "批量处理[根据项目文档库文档]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/uncollectbatch")
-    public ResponseEntity<Boolean> unCollectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocDTO> docdtos) {
-        List<Doc> domains = docMapping.toDomain(docdtos);
-        boolean result = docService.unCollectBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库获取文档库文档（子库）", tags = {"文档" } ,notes = "根据项目文档库获取文档库文档（子库）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchchilddoclibdoc")

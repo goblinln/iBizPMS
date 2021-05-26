@@ -66,15 +66,7 @@ public class IBZProProductActionResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IBZProProductActionRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建产品日志", tags = {"产品日志" },  notes = "批量新建产品日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IBZProProductActionDTO> ibzproproductactiondtos) {
-        ibzproproductactionService.createBatch(ibzproproductactionMapping.toDomain(ibzproproductactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IBZProProductActionRuntime.test(#ibzproproductaction_id,'UPDATE')")
     @ApiOperation(value = "更新产品日志", tags = {"产品日志" },  notes = "更新产品日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproproductactions/{ibzproproductaction_id}")
@@ -91,13 +83,6 @@ public class IBZProProductActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProProductActionRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新产品日志", tags = {"产品日志" },  notes = "批量更新产品日志")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproproductactions/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBZProProductActionDTO> ibzproproductactiondtos) {
-        ibzproproductactionService.updateBatch(ibzproproductactionMapping.toDomain(ibzproproductactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZProProductActionRuntime.test(#ibzproproductaction_id,'DELETE')")
     @ApiOperation(value = "删除产品日志", tags = {"产品日志" },  notes = "删除产品日志")
@@ -106,13 +91,6 @@ public class IBZProProductActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactionService.remove(ibzproproductaction_id));
     }
 
-    @PreAuthorize("@IBZProProductActionRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除产品日志", tags = {"产品日志" },  notes = "批量删除产品日志")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproductactions/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzproproductactionService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZProProductActionRuntime.test(#ibzproproductaction_id,'READ')")
     @ApiOperation(value = "获取产品日志", tags = {"产品日志" },  notes = "获取产品日志")
@@ -125,6 +103,7 @@ public class IBZProProductActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IBZProProductActionRuntime.test(#ibzproproductaction_id,'CREATE')")
     @ApiOperation(value = "获取产品日志草稿", tags = {"产品日志" },  notes = "获取产品日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproproductactions/getdraft")
     public ResponseEntity<IBZProProductActionDTO> getDraft(IBZProProductActionDTO dto) {
@@ -151,6 +130,7 @@ public class IBZProProductActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactiondto);
     }
 
+
     @PreAuthorize("@IBZProProductActionRuntime.test(#ibzproproductaction_id,'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"产品日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/{ibzproproductaction_id}/createhis")
@@ -163,13 +143,7 @@ public class IBZProProductActionResource {
         ibzproproductactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactiondto);
     }
-    @ApiOperation(value = "批量处理[创建历史日志]", tags = {"产品日志" },  notes = "批量处理[创建历史日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/createhisbatch")
-    public ResponseEntity<Boolean> createHisBatch(@RequestBody List<IBZProProductActionDTO> ibzproproductactiondtos) {
-        List<IBZProProductAction> domains = ibzproproductactionMapping.toDomain(ibzproproductactiondtos);
-        boolean result = ibzproproductactionService.createHisBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@IBZProProductActionRuntime.test(#ibzproproductaction_id,'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"产品日志" },  notes = "编辑备注信息")
@@ -183,13 +157,7 @@ public class IBZProProductActionResource {
         ibzproproductactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactiondto);
     }
-    @ApiOperation(value = "批量处理[编辑备注信息]", tags = {"产品日志" },  notes = "批量处理[编辑备注信息]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/editcommentbatch")
-    public ResponseEntity<Boolean> editCommentBatch(@RequestBody List<IBZProProductActionDTO> ibzproproductactiondtos) {
-        List<IBZProProductAction> domains = ibzproproductactionMapping.toDomain(ibzproproductactiondtos);
-        boolean result = ibzproproductactionService.editCommentBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "Pms企业专用", tags = {"产品日志" },  notes = "Pms企业专用")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/{ibzproproductaction_id}/managepmsee")
@@ -202,13 +170,7 @@ public class IBZProProductActionResource {
         ibzproproductactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactiondto);
     }
-    @ApiOperation(value = "批量处理[Pms企业专用]", tags = {"产品日志" },  notes = "批量处理[Pms企业专用]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/managepmseebatch")
-    public ResponseEntity<Boolean> managePmsEeBatch(@RequestBody List<IBZProProductActionDTO> ibzproproductactiondtos) {
-        List<IBZProProductAction> domains = ibzproproductactionMapping.toDomain(ibzproproductactiondtos);
-        boolean result = ibzproproductactionService.managePmsEeBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存产品日志", tags = {"产品日志" },  notes = "保存产品日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/save")
@@ -221,12 +183,6 @@ public class IBZProProductActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存产品日志", tags = {"产品日志" },  notes = "批量保存产品日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBZProProductActionDTO> ibzproproductactiondtos) {
-        ibzproproductactionService.saveBatch(ibzproproductactionMapping.toDomain(ibzproproductactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "已读", tags = {"产品日志" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/{ibzproproductaction_id}/sendmarkdone")
@@ -239,13 +195,7 @@ public class IBZProProductActionResource {
         ibzproproductactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactiondto);
     }
-    @ApiOperation(value = "批量处理[已读]", tags = {"产品日志" },  notes = "批量处理[已读]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/sendmarkdonebatch")
-    public ResponseEntity<Boolean> sendMarkDoneBatch(@RequestBody List<IBZProProductActionDTO> ibzproproductactiondtos) {
-        List<IBZProProductAction> domains = ibzproproductactionMapping.toDomain(ibzproproductactiondtos);
-        boolean result = ibzproproductactionService.sendMarkDoneBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "发送待办", tags = {"产品日志" },  notes = "发送待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/{ibzproproductaction_id}/sendtodo")
@@ -258,13 +208,7 @@ public class IBZProProductActionResource {
         ibzproproductactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactiondto);
     }
-    @ApiOperation(value = "批量处理[发送待办]", tags = {"产品日志" },  notes = "批量处理[发送待办]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/sendtodobatch")
-    public ResponseEntity<Boolean> sendTodoBatch(@RequestBody List<IBZProProductActionDTO> ibzproproductactiondtos) {
-        List<IBZProProductAction> domains = ibzproproductactionMapping.toDomain(ibzproproductactiondtos);
-        boolean result = ibzproproductactionService.sendTodoBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "发送待阅", tags = {"产品日志" },  notes = "发送待阅")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/{ibzproproductaction_id}/sendtoread")
@@ -277,13 +221,7 @@ public class IBZProProductActionResource {
         ibzproproductactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactiondto);
     }
-    @ApiOperation(value = "批量处理[发送待阅]", tags = {"产品日志" },  notes = "批量处理[发送待阅]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/sendtoreadbatch")
-    public ResponseEntity<Boolean> sendToreadBatch(@RequestBody List<IBZProProductActionDTO> ibzproproductactiondtos) {
-        List<IBZProProductAction> domains = ibzproproductactionMapping.toDomain(ibzproproductactiondtos);
-        boolean result = ibzproproductactionService.sendToreadBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@IBZProProductActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品日志" } ,notes = "获取数据集")

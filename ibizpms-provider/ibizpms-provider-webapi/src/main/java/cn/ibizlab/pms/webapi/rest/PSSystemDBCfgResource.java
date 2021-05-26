@@ -58,14 +58,7 @@ public class PSSystemDBCfgResource {
         PSSystemDBCfgDTO dto = pssystemdbcfgMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建系统数据库", tags = {"系统数据库" },  notes = "批量新建系统数据库")
-	@RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<PSSystemDBCfgDTO> pssystemdbcfgdtos) {
-        pssystemdbcfgService.createBatch(pssystemdbcfgMapping.toDomain(pssystemdbcfgdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "pssystemdbcfg" , versionfield = "updatedate")
     @ApiOperation(value = "更新系统数据库", tags = {"系统数据库" },  notes = "更新系统数据库")
 	@RequestMapping(method = RequestMethod.PUT, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
@@ -78,12 +71,6 @@ public class PSSystemDBCfgResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新系统数据库", tags = {"系统数据库" },  notes = "批量更新系统数据库")
-	@RequestMapping(method = RequestMethod.PUT, value = "/pssystemdbcfgs/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<PSSystemDBCfgDTO> pssystemdbcfgdtos) {
-        pssystemdbcfgService.updateBatch(pssystemdbcfgMapping.toDomain(pssystemdbcfgdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除系统数据库", tags = {"系统数据库" },  notes = "删除系统数据库")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
@@ -91,12 +78,6 @@ public class PSSystemDBCfgResource {
          return ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgService.remove(pssystemdbcfg_id));
     }
 
-    @ApiOperation(value = "批量删除系统数据库", tags = {"系统数据库" },  notes = "批量删除系统数据库")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        pssystemdbcfgService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取系统数据库", tags = {"系统数据库" },  notes = "获取系统数据库")
 	@RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
@@ -128,12 +109,6 @@ public class PSSystemDBCfgResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存系统数据库", tags = {"系统数据库" },  notes = "批量保存系统数据库")
-	@RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<PSSystemDBCfgDTO> pssystemdbcfgdtos) {
-        pssystemdbcfgService.saveBatch(pssystemdbcfgMapping.toDomain(pssystemdbcfgdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取版本", tags = {"系统数据库" } ,notes = "获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/pssystemdbcfgs/fetchbuild")

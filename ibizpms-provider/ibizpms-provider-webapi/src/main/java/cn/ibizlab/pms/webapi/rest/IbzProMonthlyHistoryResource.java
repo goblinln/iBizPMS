@@ -66,15 +66,7 @@ public class IbzProMonthlyHistoryResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbzProMonthlyHistoryRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建月报操作历史", tags = {"月报操作历史" },  notes = "批量新建月报操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyhistories/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzProMonthlyHistoryDTO> ibzpromonthlyhistorydtos) {
-        ibzpromonthlyhistoryService.createBatch(ibzpromonthlyhistoryMapping.toDomain(ibzpromonthlyhistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IbzProMonthlyHistoryRuntime.test(#ibzpromonthlyhistory_id,'UPDATE')")
     @ApiOperation(value = "更新月报操作历史", tags = {"月报操作历史" },  notes = "更新月报操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzpromonthlyhistories/{ibzpromonthlyhistory_id}")
@@ -91,13 +83,6 @@ public class IbzProMonthlyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProMonthlyHistoryRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新月报操作历史", tags = {"月报操作历史" },  notes = "批量更新月报操作历史")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzpromonthlyhistories/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzProMonthlyHistoryDTO> ibzpromonthlyhistorydtos) {
-        ibzpromonthlyhistoryService.updateBatch(ibzpromonthlyhistoryMapping.toDomain(ibzpromonthlyhistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzProMonthlyHistoryRuntime.test(#ibzpromonthlyhistory_id,'DELETE')")
     @ApiOperation(value = "删除月报操作历史", tags = {"月报操作历史" },  notes = "删除月报操作历史")
@@ -106,13 +91,6 @@ public class IbzProMonthlyHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyhistoryService.remove(ibzpromonthlyhistory_id));
     }
 
-    @PreAuthorize("@IbzProMonthlyHistoryRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除月报操作历史", tags = {"月报操作历史" },  notes = "批量删除月报操作历史")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzpromonthlyhistories/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzpromonthlyhistoryService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzProMonthlyHistoryRuntime.test(#ibzpromonthlyhistory_id,'READ')")
     @ApiOperation(value = "获取月报操作历史", tags = {"月报操作历史" },  notes = "获取月报操作历史")
@@ -125,6 +103,7 @@ public class IbzProMonthlyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzProMonthlyHistoryRuntime.test(#ibzpromonthlyhistory_id,'CREATE')")
     @ApiOperation(value = "获取月报操作历史草稿", tags = {"月报操作历史" },  notes = "获取月报操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzpromonthlyhistories/getdraft")
     public ResponseEntity<IbzProMonthlyHistoryDTO> getDraft(IbzProMonthlyHistoryDTO dto) {
@@ -149,12 +128,6 @@ public class IbzProMonthlyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存月报操作历史", tags = {"月报操作历史" },  notes = "批量保存月报操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyhistories/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzProMonthlyHistoryDTO> ibzpromonthlyhistorydtos) {
-        ibzpromonthlyhistoryService.saveBatch(ibzpromonthlyhistoryMapping.toDomain(ibzpromonthlyhistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzProMonthlyHistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"月报操作历史" } ,notes = "获取数据集")

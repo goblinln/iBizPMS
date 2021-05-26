@@ -66,15 +66,7 @@ public class CaseStepResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@CaseStepRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建用例步骤", tags = {"用例步骤" },  notes = "批量新建用例步骤")
-	@RequestMapping(method = RequestMethod.POST, value = "/casesteps/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<CaseStepDTO> casestepdtos) {
-        casestepService.createBatch(casestepMapping.toDomain(casestepdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@CaseStepRuntime.test(#casestep_id,'UPDATE')")
     @ApiOperation(value = "更新用例步骤", tags = {"用例步骤" },  notes = "更新用例步骤")
 	@RequestMapping(method = RequestMethod.PUT, value = "/casesteps/{casestep_id}")
@@ -91,13 +83,6 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CaseStepRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新用例步骤", tags = {"用例步骤" },  notes = "批量更新用例步骤")
-	@RequestMapping(method = RequestMethod.PUT, value = "/casesteps/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<CaseStepDTO> casestepdtos) {
-        casestepService.updateBatch(casestepMapping.toDomain(casestepdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@CaseStepRuntime.test(#casestep_id,'DELETE')")
     @ApiOperation(value = "删除用例步骤", tags = {"用例步骤" },  notes = "删除用例步骤")
@@ -106,13 +91,6 @@ public class CaseStepResource {
          return ResponseEntity.status(HttpStatus.OK).body(casestepService.remove(casestep_id));
     }
 
-    @PreAuthorize("@CaseStepRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除用例步骤", tags = {"用例步骤" },  notes = "批量删除用例步骤")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/casesteps/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        casestepService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@CaseStepRuntime.test(#casestep_id,'READ')")
     @ApiOperation(value = "获取用例步骤", tags = {"用例步骤" },  notes = "获取用例步骤")
@@ -125,6 +103,7 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@CaseStepRuntime.test(#casestep_id,'CREATE')")
     @ApiOperation(value = "获取用例步骤草稿", tags = {"用例步骤" },  notes = "获取用例步骤草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/casesteps/getdraft")
     public ResponseEntity<CaseStepDTO> getDraft(CaseStepDTO dto) {
@@ -149,12 +128,6 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存用例步骤", tags = {"用例步骤" },  notes = "批量保存用例步骤")
-	@RequestMapping(method = RequestMethod.POST, value = "/casesteps/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<CaseStepDTO> casestepdtos) {
-        casestepService.saveBatch(casestepMapping.toDomain(casestepdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前测试步骤", tags = {"用例步骤" } ,notes = "获取当前测试步骤")
@@ -307,17 +280,6 @@ public class CaseStepResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'CREATE')")
-    @ApiOperation(value = "根据测试用例批量建立用例步骤", tags = {"用例步骤" },  notes = "根据测试用例批量建立用例步骤")
-	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/casesteps/batch")
-    public ResponseEntity<Boolean> createBatchByCase(@PathVariable("case_id") Long case_id, @RequestBody List<CaseStepDTO> casestepdtos) {
-        List<CaseStep> domainlist=casestepMapping.toDomain(casestepdtos);
-        for(CaseStep domain:domainlist){
-            domain.setIbizcase(case_id);
-        }
-        casestepService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@CaseRuntime.test(#case_id,'UPDATE')")
     @ApiOperation(value = "根据测试用例更新用例步骤", tags = {"用例步骤" },  notes = "根据测试用例更新用例步骤")
@@ -331,17 +293,6 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'UPDATE')")
-    @ApiOperation(value = "根据测试用例批量更新用例步骤", tags = {"用例步骤" },  notes = "根据测试用例批量更新用例步骤")
-	@RequestMapping(method = RequestMethod.PUT, value = "/cases/{case_id}/casesteps/batch")
-    public ResponseEntity<Boolean> updateBatchByCase(@PathVariable("case_id") Long case_id, @RequestBody List<CaseStepDTO> casestepdtos) {
-        List<CaseStep> domainlist=casestepMapping.toDomain(casestepdtos);
-        for(CaseStep domain:domainlist){
-            domain.setIbizcase(case_id);
-        }
-        casestepService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@CaseRuntime.test(#case_id,'DELETE')")
     @ApiOperation(value = "根据测试用例删除用例步骤", tags = {"用例步骤" },  notes = "根据测试用例删除用例步骤")
@@ -350,13 +301,6 @@ public class CaseStepResource {
 		return ResponseEntity.status(HttpStatus.OK).body(casestepService.remove(casestep_id));
     }
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'DELETE')")
-    @ApiOperation(value = "根据测试用例批量删除用例步骤", tags = {"用例步骤" },  notes = "根据测试用例批量删除用例步骤")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/cases/{case_id}/casesteps/batch")
-    public ResponseEntity<Boolean> removeBatchByCase(@RequestBody List<Long> ids) {
-        casestepService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
     @ApiOperation(value = "根据测试用例获取用例步骤", tags = {"用例步骤" },  notes = "根据测试用例获取用例步骤")
@@ -390,16 +334,6 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(casestepMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据测试用例批量保存用例步骤", tags = {"用例步骤" },  notes = "根据测试用例批量保存用例步骤")
-	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/casesteps/savebatch")
-    public ResponseEntity<Boolean> saveBatchByCase(@PathVariable("case_id") Long case_id, @RequestBody List<CaseStepDTO> casestepdtos) {
-        List<CaseStep> domainlist=casestepMapping.toDomain(casestepdtos);
-        for(CaseStep domain:domainlist){
-             domain.setIbizcase(case_id);
-        }
-        casestepService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
 	@ApiOperation(value = "根据测试用例获取当前测试步骤", tags = {"用例步骤" } ,notes = "根据测试用例获取当前测试步骤")
@@ -550,17 +484,6 @@ public class CaseStepResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品测试用例批量建立用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例批量建立用例步骤")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/casesteps/batch")
-    public ResponseEntity<Boolean> createBatchByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody List<CaseStepDTO> casestepdtos) {
-        List<CaseStep> domainlist=casestepMapping.toDomain(casestepdtos);
-        for(CaseStep domain:domainlist){
-            domain.setIbizcase(case_id);
-        }
-        casestepService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品测试用例更新用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例更新用例步骤")
@@ -574,17 +497,6 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
-    @ApiOperation(value = "根据产品测试用例批量更新用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例批量更新用例步骤")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/cases/{case_id}/casesteps/batch")
-    public ResponseEntity<Boolean> updateBatchByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody List<CaseStepDTO> casestepdtos) {
-        List<CaseStep> domainlist=casestepMapping.toDomain(casestepdtos);
-        for(CaseStep domain:domainlist){
-            domain.setIbizcase(case_id);
-        }
-        casestepService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品测试用例删除用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例删除用例步骤")
@@ -593,13 +505,6 @@ public class CaseStepResource {
 		return ResponseEntity.status(HttpStatus.OK).body(casestepService.remove(casestep_id));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
-    @ApiOperation(value = "根据产品测试用例批量删除用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例批量删除用例步骤")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/cases/{case_id}/casesteps/batch")
-    public ResponseEntity<Boolean> removeBatchByProductCase(@RequestBody List<Long> ids) {
-        casestepService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品测试用例获取用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例获取用例步骤")
@@ -633,16 +538,6 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(casestepMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据产品测试用例批量保存用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例批量保存用例步骤")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/casesteps/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody List<CaseStepDTO> casestepdtos) {
-        List<CaseStep> domainlist=casestepMapping.toDomain(casestepdtos);
-        for(CaseStep domain:domainlist){
-             domain.setIbizcase(case_id);
-        }
-        casestepService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试用例获取当前测试步骤", tags = {"用例步骤" } ,notes = "根据产品测试用例获取当前测试步骤")

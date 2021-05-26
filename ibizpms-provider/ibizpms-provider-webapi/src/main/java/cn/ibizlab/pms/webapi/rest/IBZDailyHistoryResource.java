@@ -66,15 +66,7 @@ public class IBZDailyHistoryResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IBZDailyHistoryRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建日报操作历史", tags = {"日报操作历史" },  notes = "批量新建日报操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyhistories/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IBZDailyHistoryDTO> ibzdailyhistorydtos) {
-        ibzdailyhistoryService.createBatch(ibzdailyhistoryMapping.toDomain(ibzdailyhistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IBZDailyHistoryRuntime.test(#ibzdailyhistory_id,'UPDATE')")
     @ApiOperation(value = "更新日报操作历史", tags = {"日报操作历史" },  notes = "更新日报操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailyhistories/{ibzdailyhistory_id}")
@@ -91,13 +83,6 @@ public class IBZDailyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZDailyHistoryRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新日报操作历史", tags = {"日报操作历史" },  notes = "批量更新日报操作历史")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailyhistories/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBZDailyHistoryDTO> ibzdailyhistorydtos) {
-        ibzdailyhistoryService.updateBatch(ibzdailyhistoryMapping.toDomain(ibzdailyhistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZDailyHistoryRuntime.test(#ibzdailyhistory_id,'DELETE')")
     @ApiOperation(value = "删除日报操作历史", tags = {"日报操作历史" },  notes = "删除日报操作历史")
@@ -106,13 +91,6 @@ public class IBZDailyHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzdailyhistoryService.remove(ibzdailyhistory_id));
     }
 
-    @PreAuthorize("@IBZDailyHistoryRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除日报操作历史", tags = {"日报操作历史" },  notes = "批量删除日报操作历史")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailyhistories/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzdailyhistoryService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZDailyHistoryRuntime.test(#ibzdailyhistory_id,'READ')")
     @ApiOperation(value = "获取日报操作历史", tags = {"日报操作历史" },  notes = "获取日报操作历史")
@@ -125,6 +103,7 @@ public class IBZDailyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IBZDailyHistoryRuntime.test(#ibzdailyhistory_id,'CREATE')")
     @ApiOperation(value = "获取日报操作历史草稿", tags = {"日报操作历史" },  notes = "获取日报操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailyhistories/getdraft")
     public ResponseEntity<IBZDailyHistoryDTO> getDraft(IBZDailyHistoryDTO dto) {
@@ -149,12 +128,6 @@ public class IBZDailyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存日报操作历史", tags = {"日报操作历史" },  notes = "批量保存日报操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyhistories/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBZDailyHistoryDTO> ibzdailyhistorydtos) {
-        ibzdailyhistoryService.saveBatch(ibzdailyhistoryMapping.toDomain(ibzdailyhistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZDailyHistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"日报操作历史" } ,notes = "获取数据集")

@@ -63,17 +63,6 @@ public class ActionResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ActionRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "根据产品批量建立系统日志", tags = {"系统日志" },  notes = "根据产品批量建立系统日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/batch")
-    public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domainlist=actionMapping.toDomain(actiondtos);
-        for(Action domain:domainlist){
-            domain.setObjectid(product_id);domain.setObjecttype("product");
-        }
-        actionService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("@ActionRuntime.test(#action_id,'UPDATE')")
@@ -88,17 +77,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ActionRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "根据产品批量更新系统日志", tags = {"系统日志" },  notes = "根据产品批量更新系统日志")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/actions/batch")
-    public ResponseEntity<Boolean> updateBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domainlist=actionMapping.toDomain(actiondtos);
-        for(Action domain:domainlist){
-            domain.setObjectid(product_id);domain.setObjecttype("product");
-        }
-        actionService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ActionRuntime.test(#action_id,'DELETE')")
     @ApiOperation(value = "根据产品删除系统日志", tags = {"系统日志" },  notes = "根据产品删除系统日志")
@@ -107,13 +85,6 @@ public class ActionResource {
 		return ResponseEntity.status(HttpStatus.OK).body(actionService.remove(action_id));
     }
 
-    @PreAuthorize("@ActionRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据产品批量删除系统日志", tags = {"系统日志" },  notes = "根据产品批量删除系统日志")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/actions/batch")
-    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
-        actionService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ActionRuntime.test(#action_id,'READ')")
     @ApiOperation(value = "根据产品获取系统日志", tags = {"系统日志" },  notes = "根据产品获取系统日志")
@@ -149,6 +120,7 @@ public class ActionResource {
         actiondto = actionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
+
     @PreAuthorize("@ActionRuntime.test(#action_id,'CREATE')")
     @ApiOperation(value = "根据产品系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/createhis")
@@ -160,13 +132,7 @@ public class ActionResource {
         actiondto = actionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
-    @ApiOperation(value = "批量处理[根据产品系统日志]", tags = {"系统日志" },  notes = "批量处理[根据产品系统日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/createhisbatch")
-    public ResponseEntity<Boolean> createHisByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domains = actionMapping.toDomain(actiondtos);
-        boolean result = actionService.createHisBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@ActionRuntime.test(#action_id,'MANAGE')")
     @ApiOperation(value = "根据产品系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/editcomment")
@@ -178,13 +144,7 @@ public class ActionResource {
         actiondto = actionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
-    @ApiOperation(value = "批量处理[根据产品系统日志]", tags = {"系统日志" },  notes = "批量处理[根据产品系统日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/editcommentbatch")
-    public ResponseEntity<Boolean> editCommentByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domains = actionMapping.toDomain(actiondtos);
-        boolean result = actionService.editCommentBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据产品系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/managepmsee")
     public ResponseEntity<ActionDTO> managePmsEeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
@@ -195,13 +155,7 @@ public class ActionResource {
         actiondto = actionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
-    @ApiOperation(value = "批量处理[根据产品系统日志]", tags = {"系统日志" },  notes = "批量处理[根据产品系统日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/managepmseebatch")
-    public ResponseEntity<Boolean> managePmsEeByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domains = actionMapping.toDomain(actiondtos);
-        boolean result = actionService.managePmsEeBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据产品保存系统日志", tags = {"系统日志" },  notes = "根据产品保存系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/save")
     public ResponseEntity<ActionDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody ActionDTO actiondto) {
@@ -211,16 +165,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据产品批量保存系统日志", tags = {"系统日志" },  notes = "根据产品批量保存系统日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domainlist=actionMapping.toDomain(actiondtos);
-        for(Action domain:domainlist){
-             domain.setObjectid(product_id);domain.setObjecttype("product");
-        }
-        actionService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "根据产品系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/sendmarkdone")
@@ -232,13 +176,7 @@ public class ActionResource {
         actiondto = actionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
-    @ApiOperation(value = "批量处理[根据产品系统日志]", tags = {"系统日志" },  notes = "批量处理[根据产品系统日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/sendmarkdonebatch")
-    public ResponseEntity<Boolean> sendMarkDoneByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domains = actionMapping.toDomain(actiondtos);
-        boolean result = actionService.sendMarkDoneBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据产品系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/sendtodo")
     public ResponseEntity<ActionDTO> sendTodoByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
@@ -249,13 +187,7 @@ public class ActionResource {
         actiondto = actionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
-    @ApiOperation(value = "批量处理[根据产品系统日志]", tags = {"系统日志" },  notes = "批量处理[根据产品系统日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/sendtodobatch")
-    public ResponseEntity<Boolean> sendTodoByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domains = actionMapping.toDomain(actiondtos);
-        boolean result = actionService.sendTodoBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @ApiOperation(value = "根据产品系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/sendtoread")
     public ResponseEntity<ActionDTO> sendToreadByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
@@ -266,13 +198,7 @@ public class ActionResource {
         actiondto = actionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
-    @ApiOperation(value = "批量处理[根据产品系统日志]", tags = {"系统日志" },  notes = "批量处理[根据产品系统日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/sendtoreadbatch")
-    public ResponseEntity<Boolean> sendToreadByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domains = actionMapping.toDomain(actiondtos);
-        boolean result = actionService.sendToreadBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"系统日志" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchdefault")

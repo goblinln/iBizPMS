@@ -66,15 +66,7 @@ public class ProductPlanActionResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@ProductPlanActionRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建产品计划日志", tags = {"产品计划日志" },  notes = "批量新建产品计划日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
-        productplanactionService.createBatch(productplanactionMapping.toDomain(productplanactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'UPDATE')")
     @ApiOperation(value = "更新产品计划日志", tags = {"产品计划日志" },  notes = "更新产品计划日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplanactions/{productplanaction_id}")
@@ -91,13 +83,6 @@ public class ProductPlanActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductPlanActionRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新产品计划日志", tags = {"产品计划日志" },  notes = "批量更新产品计划日志")
-	@RequestMapping(method = RequestMethod.PUT, value = "/productplanactions/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
-        productplanactionService.updateBatch(productplanactionMapping.toDomain(productplanactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'DELETE')")
     @ApiOperation(value = "删除产品计划日志", tags = {"产品计划日志" },  notes = "删除产品计划日志")
@@ -106,13 +91,6 @@ public class ProductPlanActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(productplanactionService.remove(productplanaction_id));
     }
 
-    @PreAuthorize("@ProductPlanActionRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除产品计划日志", tags = {"产品计划日志" },  notes = "批量删除产品计划日志")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productplanactions/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        productplanactionService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'READ')")
     @ApiOperation(value = "获取产品计划日志", tags = {"产品计划日志" },  notes = "获取产品计划日志")
@@ -125,6 +103,7 @@ public class ProductPlanActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'CREATE')")
     @ApiOperation(value = "获取产品计划日志草稿", tags = {"产品计划日志" },  notes = "获取产品计划日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/productplanactions/getdraft")
     public ResponseEntity<ProductPlanActionDTO> getDraft(ProductPlanActionDTO dto) {
@@ -151,6 +130,7 @@ public class ProductPlanActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplanactiondto);
     }
 
+
     @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"产品计划日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/{productplanaction_id}/createhis")
@@ -163,14 +143,7 @@ public class ProductPlanActionResource {
         productplanactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplanactiondto);
     }
-    @PreAuthorize("@ProductPlanActionRuntime.test('CREATE')")
-    @ApiOperation(value = "批量处理[创建历史日志]", tags = {"产品计划日志" },  notes = "批量处理[创建历史日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/createhisbatch")
-    public ResponseEntity<Boolean> createHisBatch(@RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
-        List<ProductPlanAction> domains = productplanactionMapping.toDomain(productplanactiondtos);
-        boolean result = productplanactionService.createHisBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"产品计划日志" },  notes = "编辑备注信息")
@@ -184,14 +157,7 @@ public class ProductPlanActionResource {
         productplanactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplanactiondto);
     }
-    @PreAuthorize("@ProductPlanActionRuntime.test('MANAGE')")
-    @ApiOperation(value = "批量处理[编辑备注信息]", tags = {"产品计划日志" },  notes = "批量处理[编辑备注信息]")
-	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/editcommentbatch")
-    public ResponseEntity<Boolean> editCommentBatch(@RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
-        List<ProductPlanAction> domains = productplanactionMapping.toDomain(productplanactiondtos);
-        boolean result = productplanactionService.editCommentBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "Pms企业专用", tags = {"产品计划日志" },  notes = "Pms企业专用")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/{productplanaction_id}/managepmsee")
@@ -204,13 +170,7 @@ public class ProductPlanActionResource {
         productplanactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplanactiondto);
     }
-    @ApiOperation(value = "批量处理[Pms企业专用]", tags = {"产品计划日志" },  notes = "批量处理[Pms企业专用]")
-	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/managepmseebatch")
-    public ResponseEntity<Boolean> managePmsEeBatch(@RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
-        List<ProductPlanAction> domains = productplanactionMapping.toDomain(productplanactiondtos);
-        boolean result = productplanactionService.managePmsEeBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存产品计划日志", tags = {"产品计划日志" },  notes = "保存产品计划日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/save")
@@ -223,12 +183,6 @@ public class ProductPlanActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存产品计划日志", tags = {"产品计划日志" },  notes = "批量保存产品计划日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
-        productplanactionService.saveBatch(productplanactionMapping.toDomain(productplanactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "已读", tags = {"产品计划日志" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/{productplanaction_id}/sendmarkdone")
@@ -241,13 +195,7 @@ public class ProductPlanActionResource {
         productplanactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplanactiondto);
     }
-    @ApiOperation(value = "批量处理[已读]", tags = {"产品计划日志" },  notes = "批量处理[已读]")
-	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/sendmarkdonebatch")
-    public ResponseEntity<Boolean> sendMarkDoneBatch(@RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
-        List<ProductPlanAction> domains = productplanactionMapping.toDomain(productplanactiondtos);
-        boolean result = productplanactionService.sendMarkDoneBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "发送待办", tags = {"产品计划日志" },  notes = "发送待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/{productplanaction_id}/sendtodo")
@@ -260,13 +208,7 @@ public class ProductPlanActionResource {
         productplanactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplanactiondto);
     }
-    @ApiOperation(value = "批量处理[发送待办]", tags = {"产品计划日志" },  notes = "批量处理[发送待办]")
-	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/sendtodobatch")
-    public ResponseEntity<Boolean> sendTodoBatch(@RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
-        List<ProductPlanAction> domains = productplanactionMapping.toDomain(productplanactiondtos);
-        boolean result = productplanactionService.sendTodoBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "发送待阅", tags = {"产品计划日志" },  notes = "发送待阅")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/{productplanaction_id}/sendtoread")
@@ -279,13 +221,7 @@ public class ProductPlanActionResource {
         productplanactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplanactiondto);
     }
-    @ApiOperation(value = "批量处理[发送待阅]", tags = {"产品计划日志" },  notes = "批量处理[发送待阅]")
-	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/sendtoreadbatch")
-    public ResponseEntity<Boolean> sendToreadBatch(@RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
-        List<ProductPlanAction> domains = productplanactionMapping.toDomain(productplanactiondtos);
-        boolean result = productplanactionService.sendToreadBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@ProductPlanActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品计划日志" } ,notes = "获取数据集")

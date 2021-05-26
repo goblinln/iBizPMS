@@ -66,15 +66,7 @@ public class IbzproConfigResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbzproConfigRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建系统配置表", tags = {"系统配置表" },  notes = "批量新建系统配置表")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproconfigs/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzproConfigDTO> ibzproconfigdtos) {
-        ibzproconfigService.createBatch(ibzproconfigMapping.toDomain(ibzproconfigdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "ibzproconfig" , versionfield = "updatedate")
     @PreAuthorize("@IbzproConfigRuntime.test(#ibzproconfig_id,'UPDATE')")
     @ApiOperation(value = "更新系统配置表", tags = {"系统配置表" },  notes = "更新系统配置表")
@@ -92,13 +84,6 @@ public class IbzproConfigResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzproConfigRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新系统配置表", tags = {"系统配置表" },  notes = "批量更新系统配置表")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproconfigs/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzproConfigDTO> ibzproconfigdtos) {
-        ibzproconfigService.updateBatch(ibzproconfigMapping.toDomain(ibzproconfigdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzproConfigRuntime.test(#ibzproconfig_id,'DELETE')")
     @ApiOperation(value = "删除系统配置表", tags = {"系统配置表" },  notes = "删除系统配置表")
@@ -107,13 +92,6 @@ public class IbzproConfigResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproconfigService.remove(ibzproconfig_id));
     }
 
-    @PreAuthorize("@IbzproConfigRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除系统配置表", tags = {"系统配置表" },  notes = "批量删除系统配置表")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproconfigs/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibzproconfigService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzproConfigRuntime.test(#ibzproconfig_id,'READ')")
     @ApiOperation(value = "获取系统配置表", tags = {"系统配置表" },  notes = "获取系统配置表")
@@ -126,6 +104,7 @@ public class IbzproConfigResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzproConfigRuntime.test(#ibzproconfig_id,'CREATE')")
     @ApiOperation(value = "获取系统配置表草稿", tags = {"系统配置表" },  notes = "获取系统配置表草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproconfigs/getdraft")
     public ResponseEntity<IbzproConfigDTO> getDraft(IbzproConfigDTO dto) {
@@ -151,14 +130,7 @@ public class IbzproConfigResource {
         ibzproconfigdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproconfigdto);
     }
-    @PreAuthorize("@IbzproConfigRuntime.test('READ')")
-    @ApiOperation(value = "批量处理[获取系统配置]", tags = {"系统配置表" },  notes = "批量处理[获取系统配置]")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproconfigs/getsystemconfigbatch")
-    public ResponseEntity<Boolean> getSystemConfigBatch(@RequestBody List<IbzproConfigDTO> ibzproconfigdtos) {
-        List<IbzproConfig> domains = ibzproconfigMapping.toDomain(ibzproconfigdtos);
-        boolean result = ibzproconfigService.getSystemConfigBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存系统配置表", tags = {"系统配置表" },  notes = "保存系统配置表")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproconfigs/save")
@@ -171,12 +143,6 @@ public class IbzproConfigResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存系统配置表", tags = {"系统配置表" },  notes = "批量保存系统配置表")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproconfigs/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzproConfigDTO> ibzproconfigdtos) {
-        ibzproconfigService.saveBatch(ibzproconfigMapping.toDomain(ibzproconfigdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzproConfigRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"系统配置表" } ,notes = "获取数据集")

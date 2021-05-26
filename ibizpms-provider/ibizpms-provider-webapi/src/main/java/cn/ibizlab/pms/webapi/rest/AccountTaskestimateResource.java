@@ -66,15 +66,7 @@ public class AccountTaskestimateResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@AccountTaskestimateRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建用户工时统计", tags = {"用户工时统计" },  notes = "批量新建用户工时统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounttaskestimates/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<AccountTaskestimateDTO> accounttaskestimatedtos) {
-        accounttaskestimateService.createBatch(accounttaskestimateMapping.toDomain(accounttaskestimatedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@AccountTaskestimateRuntime.test(#accounttaskestimate_id,'UPDATE')")
     @ApiOperation(value = "更新用户工时统计", tags = {"用户工时统计" },  notes = "更新用户工时统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/accounttaskestimates/{accounttaskestimate_id}")
@@ -91,13 +83,6 @@ public class AccountTaskestimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@AccountTaskestimateRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新用户工时统计", tags = {"用户工时统计" },  notes = "批量更新用户工时统计")
-	@RequestMapping(method = RequestMethod.PUT, value = "/accounttaskestimates/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<AccountTaskestimateDTO> accounttaskestimatedtos) {
-        accounttaskestimateService.updateBatch(accounttaskestimateMapping.toDomain(accounttaskestimatedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@AccountTaskestimateRuntime.test(#accounttaskestimate_id,'DELETE')")
     @ApiOperation(value = "删除用户工时统计", tags = {"用户工时统计" },  notes = "删除用户工时统计")
@@ -106,13 +91,6 @@ public class AccountTaskestimateResource {
          return ResponseEntity.status(HttpStatus.OK).body(accounttaskestimateService.remove(accounttaskestimate_id));
     }
 
-    @PreAuthorize("@AccountTaskestimateRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除用户工时统计", tags = {"用户工时统计" },  notes = "批量删除用户工时统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/accounttaskestimates/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        accounttaskestimateService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@AccountTaskestimateRuntime.test(#accounttaskestimate_id,'READ')")
     @ApiOperation(value = "获取用户工时统计", tags = {"用户工时统计" },  notes = "获取用户工时统计")
@@ -125,6 +103,7 @@ public class AccountTaskestimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@AccountTaskestimateRuntime.test(#accounttaskestimate_id,'CREATE')")
     @ApiOperation(value = "获取用户工时统计草稿", tags = {"用户工时统计" },  notes = "获取用户工时统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/accounttaskestimates/getdraft")
     public ResponseEntity<AccountTaskestimateDTO> getDraft(AccountTaskestimateDTO dto) {
@@ -149,12 +128,6 @@ public class AccountTaskestimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存用户工时统计", tags = {"用户工时统计" },  notes = "批量保存用户工时统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounttaskestimates/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<AccountTaskestimateDTO> accounttaskestimatedtos) {
-        accounttaskestimateService.saveBatch(accounttaskestimateMapping.toDomain(accounttaskestimatedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@AccountTaskestimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取所有用户工时", tags = {"用户工时统计" } ,notes = "获取所有用户工时")

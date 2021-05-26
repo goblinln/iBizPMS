@@ -66,15 +66,7 @@ public class EmpLoyeeloadResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建员工负载表", tags = {"员工负载表" },  notes = "批量新建员工负载表")
-	@RequestMapping(method = RequestMethod.POST, value = "/employeeloads/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<EmpLoyeeloadDTO> employeeloaddtos) {
-        employeeloadService.createBatch(employeeloadMapping.toDomain(employeeloaddtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id,'UPDATE')")
     @ApiOperation(value = "更新员工负载表", tags = {"员工负载表" },  notes = "更新员工负载表")
 	@RequestMapping(method = RequestMethod.PUT, value = "/employeeloads/{employeeload_id}")
@@ -91,13 +83,6 @@ public class EmpLoyeeloadResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新员工负载表", tags = {"员工负载表" },  notes = "批量更新员工负载表")
-	@RequestMapping(method = RequestMethod.PUT, value = "/employeeloads/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<EmpLoyeeloadDTO> employeeloaddtos) {
-        employeeloadService.updateBatch(employeeloadMapping.toDomain(employeeloaddtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id,'DELETE')")
     @ApiOperation(value = "删除员工负载表", tags = {"员工负载表" },  notes = "删除员工负载表")
@@ -106,13 +91,6 @@ public class EmpLoyeeloadResource {
          return ResponseEntity.status(HttpStatus.OK).body(employeeloadService.remove(employeeload_id));
     }
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除员工负载表", tags = {"员工负载表" },  notes = "批量删除员工负载表")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/employeeloads/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        employeeloadService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id,'READ')")
     @ApiOperation(value = "获取员工负载表", tags = {"员工负载表" },  notes = "获取员工负载表")
@@ -125,6 +103,7 @@ public class EmpLoyeeloadResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id,'CREATE')")
     @ApiOperation(value = "获取员工负载表草稿", tags = {"员工负载表" },  notes = "获取员工负载表草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/employeeloads/getdraft")
     public ResponseEntity<EmpLoyeeloadDTO> getDraft(EmpLoyeeloadDTO dto) {
@@ -149,12 +128,6 @@ public class EmpLoyeeloadResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存员工负载表", tags = {"员工负载表" },  notes = "批量保存员工负载表")
-	@RequestMapping(method = RequestMethod.POST, value = "/employeeloads/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<EmpLoyeeloadDTO> employeeloaddtos) {
-        employeeloadService.saveBatch(employeeloadMapping.toDomain(employeeloaddtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取数据集", tags = {"员工负载表" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/employeeloads/fetchdefault")

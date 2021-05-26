@@ -63,14 +63,7 @@ public class IbzReportlyResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建汇报", tags = {"汇报" },  notes = "批量新建汇报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzReportlyDTO> ibzreportlydtos) {
-        ibzreportlyService.createBatch(ibzreportlyMapping.toDomain(ibzreportlydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "ibzreportly" , versionfield = "updatedate")
     @ApiOperation(value = "更新汇报", tags = {"汇报" },  notes = "更新汇报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportlies/{ibzreportly_id}")
@@ -85,12 +78,6 @@ public class IbzReportlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新汇报", tags = {"汇报" },  notes = "批量更新汇报")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportlies/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzReportlyDTO> ibzreportlydtos) {
-        ibzreportlyService.updateBatch(ibzreportlyMapping.toDomain(ibzreportlydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除汇报", tags = {"汇报" },  notes = "删除汇报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportlies/{ibzreportly_id}")
@@ -98,12 +85,6 @@ public class IbzReportlyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzreportlyService.remove(ibzreportly_id));
     }
 
-    @ApiOperation(value = "批量删除汇报", tags = {"汇报" },  notes = "批量删除汇报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportlies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzreportlyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取汇报", tags = {"汇报" },  notes = "获取汇报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzreportlies/{ibzreportly_id}")
@@ -115,6 +96,7 @@ public class IbzReportlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'CREATE')")
     @ApiOperation(value = "获取汇报草稿", tags = {"汇报" },  notes = "获取汇报草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzreportlies/getdraft")
     public ResponseEntity<IbzReportlyDTO> getDraft(IbzReportlyDTO dto) {
@@ -139,13 +121,7 @@ public class IbzReportlyResource {
         ibzreportlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportlydto);
     }
-    @ApiOperation(value = "批量处理[已读]", tags = {"汇报" },  notes = "批量处理[已读]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/havereadbatch")
-    public ResponseEntity<Boolean> haveReadBatch(@RequestBody List<IbzReportlyDTO> ibzreportlydtos) {
-        List<IbzReportly> domains = ibzreportlyMapping.toDomain(ibzreportlydtos);
-        boolean result = ibzreportlyService.haveReadBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存汇报", tags = {"汇报" },  notes = "保存汇报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/save")
@@ -158,12 +134,6 @@ public class IbzReportlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存汇报", tags = {"汇报" },  notes = "批量保存汇报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzReportlyDTO> ibzreportlydtos) {
-        ibzreportlyService.saveBatch(ibzreportlyMapping.toDomain(ibzreportlydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "提交", tags = {"汇报" },  notes = "提交")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportlies/{ibzreportly_id}/submit")
@@ -176,13 +146,7 @@ public class IbzReportlyResource {
         ibzreportlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportlydto);
     }
-    @ApiOperation(value = "批量处理[提交]", tags = {"汇报" },  notes = "批量处理[提交]")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportlies/submitbatch")
-    public ResponseEntity<Boolean> submitBatch(@RequestBody List<IbzReportlyDTO> ibzreportlydtos) {
-        List<IbzReportly> domains = ibzreportlyMapping.toDomain(ibzreportlydtos);
-        boolean result = ibzreportlyService.submitBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
 	@ApiOperation(value = "获取数据集", tags = {"汇报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchdefault")

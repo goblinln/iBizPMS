@@ -58,14 +58,7 @@ public class IBIZProMessageResource {
         IBIZProMessageDTO dto = ibizpromessageMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建消息", tags = {"消息" },  notes = "批量新建消息")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IBIZProMessageDTO> ibizpromessagedtos) {
-        ibizpromessageService.createBatch(ibizpromessageMapping.toDomain(ibizpromessagedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @ApiOperation(value = "更新消息", tags = {"消息" },  notes = "更新消息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizpromessages/{ibizpromessage_id}")
     @Transactional
@@ -77,12 +70,6 @@ public class IBIZProMessageResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新消息", tags = {"消息" },  notes = "批量更新消息")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibizpromessages/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBIZProMessageDTO> ibizpromessagedtos) {
-        ibizpromessageService.updateBatch(ibizpromessageMapping.toDomain(ibizpromessagedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除消息", tags = {"消息" },  notes = "删除消息")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/{ibizpromessage_id}")
@@ -90,12 +77,6 @@ public class IBIZProMessageResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizpromessageService.remove(ibizpromessage_id));
     }
 
-    @ApiOperation(value = "批量删除消息", tags = {"消息" },  notes = "批量删除消息")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibizpromessageService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取消息", tags = {"消息" },  notes = "获取消息")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/{ibizpromessage_id}")
@@ -127,13 +108,7 @@ public class IBIZProMessageResource {
         ibizpromessagedto = ibizpromessageMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibizpromessagedto);
     }
-    @ApiOperation(value = "批量处理[标记已完成]", tags = {"消息" },  notes = "批量处理[标记已完成]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/markdonebatch")
-    public ResponseEntity<Boolean> markDoneBatch(@RequestBody List<IBIZProMessageDTO> ibizpromessagedtos) {
-        List<IBIZProMessage> domains = ibizpromessageMapping.toDomain(ibizpromessagedtos);
-        boolean result = ibizpromessageService.markDoneBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "标记已读", tags = {"消息" },  notes = "标记已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/{ibizpromessage_id}/markread")
@@ -144,13 +119,7 @@ public class IBIZProMessageResource {
         ibizpromessagedto = ibizpromessageMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibizpromessagedto);
     }
-    @ApiOperation(value = "批量处理[标记已读]", tags = {"消息" },  notes = "批量处理[标记已读]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/markreadbatch")
-    public ResponseEntity<Boolean> markReadBatch(@RequestBody List<IBIZProMessageDTO> ibizpromessagedtos) {
-        List<IBIZProMessage> domains = ibizpromessageMapping.toDomain(ibizpromessagedtos);
-        boolean result = ibizpromessageService.markReadBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存消息", tags = {"消息" },  notes = "保存消息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/save")
@@ -161,12 +130,6 @@ public class IBIZProMessageResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存消息", tags = {"消息" },  notes = "批量保存消息")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBIZProMessageDTO> ibizpromessagedtos) {
-        ibizpromessageService.saveBatch(ibizpromessageMapping.toDomain(ibizpromessagedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "发送消息", tags = {"消息" },  notes = "发送消息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/{ibizpromessage_id}/send")
@@ -177,13 +140,7 @@ public class IBIZProMessageResource {
         ibizpromessagedto = ibizpromessageMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibizpromessagedto);
     }
-    @ApiOperation(value = "批量处理[发送消息]", tags = {"消息" },  notes = "批量处理[发送消息]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/sendbatch")
-    public ResponseEntity<Boolean> sendBatch(@RequestBody List<IBIZProMessageDTO> ibizpromessagedtos) {
-        List<IBIZProMessage> domains = ibizpromessageMapping.toDomain(ibizpromessagedtos);
-        boolean result = ibizpromessageService.sendBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
 	@ApiOperation(value = "获取数据集", tags = {"消息" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizpromessages/fetchdefault")

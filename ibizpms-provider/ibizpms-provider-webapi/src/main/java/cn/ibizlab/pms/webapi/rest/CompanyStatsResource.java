@@ -66,15 +66,7 @@ public class CompanyStatsResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@CompanyStatsRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建公司动态汇总", tags = {"公司动态汇总" },  notes = "批量新建公司动态汇总")
-	@RequestMapping(method = RequestMethod.POST, value = "/companystats/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<CompanyStatsDTO> companystatsdtos) {
-        companystatsService.createBatch(companystatsMapping.toDomain(companystatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@CompanyStatsRuntime.test(#companystats_id,'UPDATE')")
     @ApiOperation(value = "更新公司动态汇总", tags = {"公司动态汇总" },  notes = "更新公司动态汇总")
 	@RequestMapping(method = RequestMethod.PUT, value = "/companystats/{companystats_id}")
@@ -91,13 +83,6 @@ public class CompanyStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CompanyStatsRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新公司动态汇总", tags = {"公司动态汇总" },  notes = "批量更新公司动态汇总")
-	@RequestMapping(method = RequestMethod.PUT, value = "/companystats/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<CompanyStatsDTO> companystatsdtos) {
-        companystatsService.updateBatch(companystatsMapping.toDomain(companystatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@CompanyStatsRuntime.test(#companystats_id,'DELETE')")
     @ApiOperation(value = "删除公司动态汇总", tags = {"公司动态汇总" },  notes = "删除公司动态汇总")
@@ -106,13 +91,6 @@ public class CompanyStatsResource {
          return ResponseEntity.status(HttpStatus.OK).body(companystatsService.remove(companystats_id));
     }
 
-    @PreAuthorize("@CompanyStatsRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除公司动态汇总", tags = {"公司动态汇总" },  notes = "批量删除公司动态汇总")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/companystats/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        companystatsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@CompanyStatsRuntime.test(#companystats_id,'READ')")
     @ApiOperation(value = "获取公司动态汇总", tags = {"公司动态汇总" },  notes = "获取公司动态汇总")
@@ -125,6 +103,7 @@ public class CompanyStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@CompanyStatsRuntime.test(#companystats_id,'CREATE')")
     @ApiOperation(value = "获取公司动态汇总草稿", tags = {"公司动态汇总" },  notes = "获取公司动态汇总草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/companystats/getdraft")
     public ResponseEntity<CompanyStatsDTO> getDraft(CompanyStatsDTO dto) {
@@ -149,12 +128,6 @@ public class CompanyStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存公司动态汇总", tags = {"公司动态汇总" },  notes = "批量保存公司动态汇总")
-	@RequestMapping(method = RequestMethod.POST, value = "/companystats/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<CompanyStatsDTO> companystatsdtos) {
-        companystatsService.saveBatch(companystatsMapping.toDomain(companystatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取公司动态统计", tags = {"公司动态汇总" } ,notes = "获取公司动态统计")
     @RequestMapping(method= RequestMethod.POST , value="/companystats/fetchcompanydynamicstats")

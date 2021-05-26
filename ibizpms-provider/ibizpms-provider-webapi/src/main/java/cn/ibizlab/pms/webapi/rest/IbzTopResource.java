@@ -66,15 +66,7 @@ public class IbzTopResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbzTopRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建置顶", tags = {"置顶" },  notes = "批量新建置顶")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibztops/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzTopDTO> ibztopdtos) {
-        ibztopService.createBatch(ibztopMapping.toDomain(ibztopdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "ibztop" , versionfield = "updatedate")
     @PreAuthorize("@IbzTopRuntime.test(#ibztop_id,'UPDATE')")
     @ApiOperation(value = "更新置顶", tags = {"置顶" },  notes = "更新置顶")
@@ -92,13 +84,6 @@ public class IbzTopResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzTopRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新置顶", tags = {"置顶" },  notes = "批量更新置顶")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibztops/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzTopDTO> ibztopdtos) {
-        ibztopService.updateBatch(ibztopMapping.toDomain(ibztopdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzTopRuntime.test(#ibztop_id,'DELETE')")
     @ApiOperation(value = "删除置顶", tags = {"置顶" },  notes = "删除置顶")
@@ -107,13 +92,6 @@ public class IbzTopResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibztopService.remove(ibztop_id));
     }
 
-    @PreAuthorize("@IbzTopRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除置顶", tags = {"置顶" },  notes = "批量删除置顶")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztops/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibztopService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzTopRuntime.test(#ibztop_id,'READ')")
     @ApiOperation(value = "获取置顶", tags = {"置顶" },  notes = "获取置顶")
@@ -126,6 +104,7 @@ public class IbzTopResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzTopRuntime.test(#ibztop_id,'CREATE')")
     @ApiOperation(value = "获取置顶草稿", tags = {"置顶" },  notes = "获取置顶草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibztops/getdraft")
     public ResponseEntity<IbzTopDTO> getDraft(IbzTopDTO dto) {
@@ -150,12 +129,6 @@ public class IbzTopResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存置顶", tags = {"置顶" },  notes = "批量保存置顶")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibztops/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzTopDTO> ibztopdtos) {
-        ibztopService.saveBatch(ibztopMapping.toDomain(ibztopdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzTopRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"置顶" } ,notes = "获取数据集")

@@ -66,15 +66,7 @@ public class IbizproProjectDailyResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbizproProjectDailyRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建项目日报", tags = {"项目日报" },  notes = "批量新建项目日报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbizproProjectDailyDTO> ibizproprojectdailydtos) {
-        ibizproprojectdailyService.createBatch(ibizproprojectdailyMapping.toDomain(ibizproprojectdailydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "ibizproprojectdaily" , versionfield = "updatedate")
     @PreAuthorize("@IbizproProjectDailyRuntime.test(#ibizproprojectdaily_id,'UPDATE')")
     @ApiOperation(value = "更新项目日报", tags = {"项目日报" },  notes = "更新项目日报")
@@ -92,13 +84,6 @@ public class IbizproProjectDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbizproProjectDailyRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新项目日报", tags = {"项目日报" },  notes = "批量更新项目日报")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproprojectdailies/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbizproProjectDailyDTO> ibizproprojectdailydtos) {
-        ibizproprojectdailyService.updateBatch(ibizproprojectdailyMapping.toDomain(ibizproprojectdailydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbizproProjectDailyRuntime.test(#ibizproprojectdaily_id,'DELETE')")
     @ApiOperation(value = "删除项目日报", tags = {"项目日报" },  notes = "删除项目日报")
@@ -107,13 +92,6 @@ public class IbizproProjectDailyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailyService.remove(ibizproprojectdaily_id));
     }
 
-    @PreAuthorize("@IbizproProjectDailyRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除项目日报", tags = {"项目日报" },  notes = "批量删除项目日报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectdailies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibizproprojectdailyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取项目日报", tags = {"项目日报" },  notes = "获取项目日报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectdailies/{ibizproprojectdaily_id}")
@@ -125,6 +103,7 @@ public class IbizproProjectDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbizproProjectDailyRuntime.test(#ibizproprojectdaily_id,'CREATE')")
     @ApiOperation(value = "获取项目日报草稿", tags = {"项目日报" },  notes = "获取项目日报草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectdailies/getdraft")
     public ResponseEntity<IbizproProjectDailyDTO> getDraft(IbizproProjectDailyDTO dto) {
@@ -149,12 +128,6 @@ public class IbizproProjectDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存项目日报", tags = {"项目日报" },  notes = "批量保存项目日报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbizproProjectDailyDTO> ibizproprojectdailydtos) {
-        ibizproprojectdailyService.saveBatch(ibizproprojectdailyMapping.toDomain(ibizproprojectdailydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "汇总项目日报", tags = {"项目日报" },  notes = "汇总项目日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/{ibizproprojectdaily_id}/sumprojectdaily")
@@ -167,13 +140,7 @@ public class IbizproProjectDailyResource {
         ibizproprojectdailydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailydto);
     }
-    @ApiOperation(value = "批量处理[汇总项目日报]", tags = {"项目日报" },  notes = "批量处理[汇总项目日报]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/sumprojectdailybatch")
-    public ResponseEntity<Boolean> sumProjectDailyBatch(@RequestBody List<IbizproProjectDailyDTO> ibizproprojectdailydtos) {
-        List<IbizproProjectDaily> domains = ibizproprojectdailyMapping.toDomain(ibizproprojectdailydtos);
-        boolean result = ibizproprojectdailyService.sumProjectDailyBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
 	@ApiOperation(value = "获取数据集", tags = {"项目日报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproprojectdailies/fetchdefault")

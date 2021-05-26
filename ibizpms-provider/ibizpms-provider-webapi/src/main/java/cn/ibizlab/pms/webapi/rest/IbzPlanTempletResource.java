@@ -72,15 +72,7 @@ public class IbzPlanTempletResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建计划模板", tags = {"计划模板" },  notes = "批量新建计划模板")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzPlanTempletDTO> ibzplantempletdtos) {
-        ibzplantempletService.createBatch(ibzplantempletMapping.toDomain(ibzplantempletdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "ibzplantemplet" , versionfield = "updatedate")
     @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id,'UPDATE')")
     @ApiOperation(value = "更新计划模板", tags = {"计划模板" },  notes = "更新计划模板")
@@ -98,13 +90,6 @@ public class IbzPlanTempletResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新计划模板", tags = {"计划模板" },  notes = "批量更新计划模板")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzplantemplets/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzPlanTempletDTO> ibzplantempletdtos) {
-        ibzplantempletService.updateBatch(ibzplantempletMapping.toDomain(ibzplantempletdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id,'DELETE')")
     @ApiOperation(value = "删除计划模板", tags = {"计划模板" },  notes = "删除计划模板")
@@ -113,13 +98,6 @@ public class IbzPlanTempletResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletService.remove(ibzplantemplet_id));
     }
 
-    @PreAuthorize("@IbzPlanTempletRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除计划模板", tags = {"计划模板" },  notes = "批量删除计划模板")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzplantemplets/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibzplantempletService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id,'READ')")
     @ApiOperation(value = "获取计划模板", tags = {"计划模板" },  notes = "获取计划模板")
@@ -132,6 +110,7 @@ public class IbzPlanTempletResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id,'CREATE')")
     @ApiOperation(value = "获取计划模板草稿", tags = {"计划模板" },  notes = "获取计划模板草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzplantemplets/getdraft")
     public ResponseEntity<IbzPlanTempletDTO> getDraft(IbzPlanTempletDTO dto) {
@@ -157,14 +136,7 @@ public class IbzPlanTempletResource {
         ibzplantempletdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletdto);
     }
-    @PreAuthorize("@IbzPlanTempletRuntime.test('READ')")
-    @ApiOperation(value = "批量处理[获取计划]", tags = {"计划模板" },  notes = "批量处理[获取计划]")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzplantemplets/getplanbatch")
-    public ResponseEntity<Boolean> getPlanBatch(@RequestBody List<IbzPlanTempletDTO> ibzplantempletdtos) {
-        List<IbzPlanTemplet> domains = ibzplantempletMapping.toDomain(ibzplantempletdtos);
-        boolean result = ibzplantempletService.getPlanBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存计划模板", tags = {"计划模板" },  notes = "保存计划模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets/save")
@@ -177,12 +149,6 @@ public class IbzPlanTempletResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存计划模板", tags = {"计划模板" },  notes = "批量保存计划模板")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzPlanTempletDTO> ibzplantempletdtos) {
-        ibzplantempletService.saveBatch(ibzplantempletMapping.toDomain(ibzplantempletdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzPlanTempletRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取CurUserTemplet", tags = {"计划模板" } ,notes = "获取CurUserTemplet")

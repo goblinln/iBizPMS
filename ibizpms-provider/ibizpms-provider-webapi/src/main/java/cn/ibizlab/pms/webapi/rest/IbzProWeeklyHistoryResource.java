@@ -66,15 +66,7 @@ public class IbzProWeeklyHistoryResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbzProWeeklyHistoryRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建周报操作历史", tags = {"周报操作历史" },  notes = "批量新建周报操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyhistories/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzProWeeklyHistoryDTO> ibzproweeklyhistorydtos) {
-        ibzproweeklyhistoryService.createBatch(ibzproweeklyhistoryMapping.toDomain(ibzproweeklyhistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IbzProWeeklyHistoryRuntime.test(#ibzproweeklyhistory_id,'UPDATE')")
     @ApiOperation(value = "更新周报操作历史", tags = {"周报操作历史" },  notes = "更新周报操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproweeklyhistories/{ibzproweeklyhistory_id}")
@@ -91,13 +83,6 @@ public class IbzProWeeklyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProWeeklyHistoryRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新周报操作历史", tags = {"周报操作历史" },  notes = "批量更新周报操作历史")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproweeklyhistories/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzProWeeklyHistoryDTO> ibzproweeklyhistorydtos) {
-        ibzproweeklyhistoryService.updateBatch(ibzproweeklyhistoryMapping.toDomain(ibzproweeklyhistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzProWeeklyHistoryRuntime.test(#ibzproweeklyhistory_id,'DELETE')")
     @ApiOperation(value = "删除周报操作历史", tags = {"周报操作历史" },  notes = "删除周报操作历史")
@@ -106,13 +91,6 @@ public class IbzProWeeklyHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyhistoryService.remove(ibzproweeklyhistory_id));
     }
 
-    @PreAuthorize("@IbzProWeeklyHistoryRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除周报操作历史", tags = {"周报操作历史" },  notes = "批量删除周报操作历史")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproweeklyhistories/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzproweeklyhistoryService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzProWeeklyHistoryRuntime.test(#ibzproweeklyhistory_id,'READ')")
     @ApiOperation(value = "获取周报操作历史", tags = {"周报操作历史" },  notes = "获取周报操作历史")
@@ -125,6 +103,7 @@ public class IbzProWeeklyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzProWeeklyHistoryRuntime.test(#ibzproweeklyhistory_id,'CREATE')")
     @ApiOperation(value = "获取周报操作历史草稿", tags = {"周报操作历史" },  notes = "获取周报操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproweeklyhistories/getdraft")
     public ResponseEntity<IbzProWeeklyHistoryDTO> getDraft(IbzProWeeklyHistoryDTO dto) {
@@ -149,12 +128,6 @@ public class IbzProWeeklyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存周报操作历史", tags = {"周报操作历史" },  notes = "批量保存周报操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyhistories/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzProWeeklyHistoryDTO> ibzproweeklyhistorydtos) {
-        ibzproweeklyhistoryService.saveBatch(ibzproweeklyhistoryMapping.toDomain(ibzproweeklyhistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzProWeeklyHistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"周报操作历史" } ,notes = "获取数据集")

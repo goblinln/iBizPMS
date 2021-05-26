@@ -58,14 +58,7 @@ public class SysOrganizationResource {
         SysOrganizationDTO dto = sysorganizationMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建单位", tags = {"单位" },  notes = "批量新建单位")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<SysOrganizationDTO> sysorganizationdtos) {
-        sysorganizationService.createBatch(sysorganizationMapping.toDomain(sysorganizationdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "sysorganization" , versionfield = "updatedate")
     @ApiOperation(value = "更新单位", tags = {"单位" },  notes = "更新单位")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysorganizations/{sysorganization_id}")
@@ -78,12 +71,6 @@ public class SysOrganizationResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新单位", tags = {"单位" },  notes = "批量更新单位")
-	@RequestMapping(method = RequestMethod.PUT, value = "/sysorganizations/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysOrganizationDTO> sysorganizationdtos) {
-        sysorganizationService.updateBatch(sysorganizationMapping.toDomain(sysorganizationdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除单位", tags = {"单位" },  notes = "删除单位")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysorganizations/{sysorganization_id}")
@@ -91,12 +78,6 @@ public class SysOrganizationResource {
          return ResponseEntity.status(HttpStatus.OK).body(sysorganizationService.remove(sysorganization_id));
     }
 
-    @ApiOperation(value = "批量删除单位", tags = {"单位" },  notes = "批量删除单位")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysorganizations/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        sysorganizationService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取单位", tags = {"单位" },  notes = "获取单位")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/{sysorganization_id}")
@@ -128,12 +109,6 @@ public class SysOrganizationResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存单位", tags = {"单位" },  notes = "批量保存单位")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysOrganizationDTO> sysorganizationdtos) {
-        sysorganizationService.saveBatch(sysorganizationMapping.toDomain(sysorganizationdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取数据集", tags = {"单位" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/sysorganizations/fetchdefault")

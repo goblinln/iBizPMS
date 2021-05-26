@@ -58,14 +58,7 @@ public class IBIZProPluginResource {
         IBIZProPluginDTO dto = ibizpropluginMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建系统插件", tags = {"系统插件" },  notes = "批量新建系统插件")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IBIZProPluginDTO> ibizproplugindtos) {
-        ibizpropluginService.createBatch(ibizpropluginMapping.toDomain(ibizproplugindtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "ibizproplugin" , versionfield = "updatedate")
     @ApiOperation(value = "更新系统插件", tags = {"系统插件" },  notes = "更新系统插件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproplugins/{ibizproplugin_id}")
@@ -78,12 +71,6 @@ public class IBIZProPluginResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新系统插件", tags = {"系统插件" },  notes = "批量更新系统插件")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproplugins/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBIZProPluginDTO> ibizproplugindtos) {
-        ibizpropluginService.updateBatch(ibizpropluginMapping.toDomain(ibizproplugindtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除系统插件", tags = {"系统插件" },  notes = "删除系统插件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproplugins/{ibizproplugin_id}")
@@ -91,12 +78,6 @@ public class IBIZProPluginResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizpropluginService.remove(ibizproplugin_id));
     }
 
-    @ApiOperation(value = "批量删除系统插件", tags = {"系统插件" },  notes = "批量删除系统插件")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproplugins/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibizpropluginService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取系统插件", tags = {"系统插件" },  notes = "获取系统插件")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproplugins/{ibizproplugin_id}")
@@ -128,12 +109,6 @@ public class IBIZProPluginResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存系统插件", tags = {"系统插件" },  notes = "批量保存系统插件")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBIZProPluginDTO> ibizproplugindtos) {
-        ibizpropluginService.saveBatch(ibizpropluginMapping.toDomain(ibizproplugindtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取数据集", tags = {"系统插件" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproplugins/fetchdefault")

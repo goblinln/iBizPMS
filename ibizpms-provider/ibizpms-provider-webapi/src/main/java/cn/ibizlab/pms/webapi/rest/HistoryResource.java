@@ -66,15 +66,7 @@ public class HistoryResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@HistoryRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建操作历史", tags = {"操作历史" },  notes = "批量新建操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/histories/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<HistoryDTO> historydtos) {
-        historyService.createBatch(historyMapping.toDomain(historydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@HistoryRuntime.test(#history_id,'UPDATE')")
     @ApiOperation(value = "更新操作历史", tags = {"操作历史" },  notes = "更新操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/histories/{history_id}")
@@ -91,13 +83,6 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@HistoryRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新操作历史", tags = {"操作历史" },  notes = "批量更新操作历史")
-	@RequestMapping(method = RequestMethod.PUT, value = "/histories/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<HistoryDTO> historydtos) {
-        historyService.updateBatch(historyMapping.toDomain(historydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@HistoryRuntime.test(#history_id,'DELETE')")
     @ApiOperation(value = "删除操作历史", tags = {"操作历史" },  notes = "删除操作历史")
@@ -106,13 +91,6 @@ public class HistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(historyService.remove(history_id));
     }
 
-    @PreAuthorize("@HistoryRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除操作历史", tags = {"操作历史" },  notes = "批量删除操作历史")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/histories/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        historyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@HistoryRuntime.test(#history_id,'READ')")
     @ApiOperation(value = "获取操作历史", tags = {"操作历史" },  notes = "获取操作历史")
@@ -125,6 +103,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@HistoryRuntime.test(#history_id,'CREATE')")
     @ApiOperation(value = "获取操作历史草稿", tags = {"操作历史" },  notes = "获取操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/histories/getdraft")
     public ResponseEntity<HistoryDTO> getDraft(HistoryDTO dto) {
@@ -149,12 +128,6 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存操作历史", tags = {"操作历史" },  notes = "批量保存操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/histories/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<HistoryDTO> historydtos) {
-        historyService.saveBatch(historyMapping.toDomain(historydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@HistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"操作历史" } ,notes = "获取DEFAULT")
@@ -197,17 +170,6 @@ public class HistoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@HistoryRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "根据产品系统日志批量建立操作历史", tags = {"操作历史" },  notes = "根据产品系统日志批量建立操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/histories/batch")
-    public ResponseEntity<Boolean> createBatchByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody List<HistoryDTO> historydtos) {
-        List<History> domainlist=historyMapping.toDomain(historydtos);
-        for(History domain:domainlist){
-            domain.setAction(action_id);
-        }
-        historyService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@HistoryRuntime.test(#history_id,'UPDATE')")
     @ApiOperation(value = "根据产品系统日志更新操作历史", tags = {"操作历史" },  notes = "根据产品系统日志更新操作历史")
@@ -221,17 +183,6 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@HistoryRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "根据产品系统日志批量更新操作历史", tags = {"操作历史" },  notes = "根据产品系统日志批量更新操作历史")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/actions/{action_id}/histories/batch")
-    public ResponseEntity<Boolean> updateBatchByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody List<HistoryDTO> historydtos) {
-        List<History> domainlist=historyMapping.toDomain(historydtos);
-        for(History domain:domainlist){
-            domain.setAction(action_id);
-        }
-        historyService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@HistoryRuntime.test(#history_id,'DELETE')")
     @ApiOperation(value = "根据产品系统日志删除操作历史", tags = {"操作历史" },  notes = "根据产品系统日志删除操作历史")
@@ -240,13 +191,6 @@ public class HistoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(historyService.remove(history_id));
     }
 
-    @PreAuthorize("@HistoryRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据产品系统日志批量删除操作历史", tags = {"操作历史" },  notes = "根据产品系统日志批量删除操作历史")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/actions/{action_id}/histories/batch")
-    public ResponseEntity<Boolean> removeBatchByProductAction(@RequestBody List<Long> ids) {
-        historyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@HistoryRuntime.test(#history_id,'READ')")
     @ApiOperation(value = "根据产品系统日志获取操作历史", tags = {"操作历史" },  notes = "根据产品系统日志获取操作历史")
@@ -280,16 +224,6 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historyMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据产品系统日志批量保存操作历史", tags = {"操作历史" },  notes = "根据产品系统日志批量保存操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/histories/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody List<HistoryDTO> historydtos) {
-        List<History> domainlist=historyMapping.toDomain(historydtos);
-        for(History domain:domainlist){
-             domain.setAction(action_id);
-        }
-        historyService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@HistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品系统日志获取DEFAULT")

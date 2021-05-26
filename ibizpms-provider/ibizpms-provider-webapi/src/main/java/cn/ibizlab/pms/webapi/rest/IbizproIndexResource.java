@@ -66,15 +66,7 @@ public class IbizproIndexResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbizproIndexRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建索引检索", tags = {"索引检索" },  notes = "批量新建索引检索")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproindices/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbizproIndexDTO> ibizproindexdtos) {
-        ibizproindexService.createBatch(ibizproindexMapping.toDomain(ibizproindexdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IbizproIndexRuntime.test(#ibizproindex_id,'UPDATE')")
     @ApiOperation(value = "更新索引检索", tags = {"索引检索" },  notes = "更新索引检索")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproindices/{ibizproindex_id}")
@@ -91,13 +83,6 @@ public class IbizproIndexResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbizproIndexRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新索引检索", tags = {"索引检索" },  notes = "批量更新索引检索")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproindices/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbizproIndexDTO> ibizproindexdtos) {
-        ibizproindexService.updateBatch(ibizproindexMapping.toDomain(ibizproindexdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbizproIndexRuntime.test(#ibizproindex_id,'DELETE')")
     @ApiOperation(value = "删除索引检索", tags = {"索引检索" },  notes = "删除索引检索")
@@ -106,13 +91,6 @@ public class IbizproIndexResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproindexService.remove(ibizproindex_id));
     }
 
-    @PreAuthorize("@IbizproIndexRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除索引检索", tags = {"索引检索" },  notes = "批量删除索引检索")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproindices/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibizproindexService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbizproIndexRuntime.test(#ibizproindex_id,'READ')")
     @ApiOperation(value = "获取索引检索", tags = {"索引检索" },  notes = "获取索引检索")
@@ -125,6 +103,7 @@ public class IbizproIndexResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbizproIndexRuntime.test(#ibizproindex_id,'CREATE')")
     @ApiOperation(value = "获取索引检索草稿", tags = {"索引检索" },  notes = "获取索引检索草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproindices/getdraft")
     public ResponseEntity<IbizproIndexDTO> getDraft(IbizproIndexDTO dto) {
@@ -149,12 +128,6 @@ public class IbizproIndexResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存索引检索", tags = {"索引检索" },  notes = "批量保存索引检索")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproindices/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbizproIndexDTO> ibizproindexdtos) {
-        ibizproindexService.saveBatch(ibizproindexMapping.toDomain(ibizproindexdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbizproIndexRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"索引检索" } ,notes = "获取数据集")

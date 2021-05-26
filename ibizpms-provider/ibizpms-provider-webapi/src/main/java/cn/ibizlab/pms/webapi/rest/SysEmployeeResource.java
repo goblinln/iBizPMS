@@ -58,14 +58,7 @@ public class SysEmployeeResource {
         SysEmployeeDTO dto = sysemployeeMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建人员", tags = {"人员" },  notes = "批量新建人员")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysemployees/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<SysEmployeeDTO> sysemployeedtos) {
-        sysemployeeService.createBatch(sysemployeeMapping.toDomain(sysemployeedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "sysemployee" , versionfield = "updatedate")
     @ApiOperation(value = "更新人员", tags = {"人员" },  notes = "更新人员")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysemployees/{sysemployee_id}")
@@ -78,12 +71,6 @@ public class SysEmployeeResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新人员", tags = {"人员" },  notes = "批量更新人员")
-	@RequestMapping(method = RequestMethod.PUT, value = "/sysemployees/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysEmployeeDTO> sysemployeedtos) {
-        sysemployeeService.updateBatch(sysemployeeMapping.toDomain(sysemployeedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除人员", tags = {"人员" },  notes = "删除人员")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysemployees/{sysemployee_id}")
@@ -91,12 +78,6 @@ public class SysEmployeeResource {
          return ResponseEntity.status(HttpStatus.OK).body(sysemployeeService.remove(sysemployee_id));
     }
 
-    @ApiOperation(value = "批量删除人员", tags = {"人员" },  notes = "批量删除人员")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysemployees/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        sysemployeeService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取人员", tags = {"人员" },  notes = "获取人员")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysemployees/{sysemployee_id}")
@@ -128,12 +109,6 @@ public class SysEmployeeResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存人员", tags = {"人员" },  notes = "批量保存人员")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysemployees/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysEmployeeDTO> sysemployeedtos) {
-        sysemployeeService.saveBatch(sysemployeeMapping.toDomain(sysemployeedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取Bug用户", tags = {"人员" } ,notes = "获取Bug用户")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchbuguser")

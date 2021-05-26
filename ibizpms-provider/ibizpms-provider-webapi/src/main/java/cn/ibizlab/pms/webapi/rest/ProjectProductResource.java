@@ -66,15 +66,7 @@ public class ProjectProductResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@ProjectProductRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建项目产品", tags = {"项目产品" },  notes = "批量新建项目产品")
-	@RequestMapping(method = RequestMethod.POST, value = "/projectproducts/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<ProjectProductDTO> projectproductdtos) {
-        projectproductService.createBatch(projectproductMapping.toDomain(projectproductdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "projectproduct" , versionfield = "updatedate")
     @PreAuthorize("@ProjectProductRuntime.test(#projectproduct_id,'UPDATE')")
     @ApiOperation(value = "更新项目产品", tags = {"项目产品" },  notes = "更新项目产品")
@@ -92,13 +84,6 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectProductRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新项目产品", tags = {"项目产品" },  notes = "批量更新项目产品")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projectproducts/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProjectProductDTO> projectproductdtos) {
-        projectproductService.updateBatch(projectproductMapping.toDomain(projectproductdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectProductRuntime.test(#projectproduct_id,'DELETE')")
     @ApiOperation(value = "删除项目产品", tags = {"项目产品" },  notes = "删除项目产品")
@@ -107,13 +92,6 @@ public class ProjectProductResource {
          return ResponseEntity.status(HttpStatus.OK).body(projectproductService.remove(projectproduct_id));
     }
 
-    @PreAuthorize("@ProjectProductRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除项目产品", tags = {"项目产品" },  notes = "批量删除项目产品")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projectproducts/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        projectproductService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectProductRuntime.test(#projectproduct_id,'READ')")
     @ApiOperation(value = "获取项目产品", tags = {"项目产品" },  notes = "获取项目产品")
@@ -126,6 +104,7 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProjectProductRuntime.test(#projectproduct_id,'CREATE')")
     @ApiOperation(value = "获取项目产品草稿", tags = {"项目产品" },  notes = "获取项目产品草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectproducts/getdraft")
     public ResponseEntity<ProjectProductDTO> getDraft(ProjectProductDTO dto) {
@@ -150,12 +129,6 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存项目产品", tags = {"项目产品" },  notes = "批量保存项目产品")
-	@RequestMapping(method = RequestMethod.POST, value = "/projectproducts/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProjectProductDTO> projectproductdtos) {
-        projectproductService.saveBatch(projectproductMapping.toDomain(projectproductdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目产品" } ,notes = "获取DEFAULT")
@@ -220,17 +193,6 @@ public class ProjectProductResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品批量建立项目产品", tags = {"项目产品" },  notes = "根据产品批量建立项目产品")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projectproducts/batch")
-    public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ProjectProductDTO> projectproductdtos) {
-        List<ProjectProduct> domainlist=projectproductMapping.toDomain(projectproductdtos);
-        for(ProjectProduct domain:domainlist){
-            domain.setProduct(product_id);
-        }
-        projectproductService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @VersionCheck(entity = "projectproduct" , versionfield = "updatedate")
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
@@ -245,17 +207,6 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
-    @ApiOperation(value = "根据产品批量更新项目产品", tags = {"项目产品" },  notes = "根据产品批量更新项目产品")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projectproducts/batch")
-    public ResponseEntity<Boolean> updateBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ProjectProductDTO> projectproductdtos) {
-        List<ProjectProduct> domainlist=projectproductMapping.toDomain(projectproductdtos);
-        for(ProjectProduct domain:domainlist){
-            domain.setProduct(product_id);
-        }
-        projectproductService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品删除项目产品", tags = {"项目产品" },  notes = "根据产品删除项目产品")
@@ -264,13 +215,6 @@ public class ProjectProductResource {
 		return ResponseEntity.status(HttpStatus.OK).body(projectproductService.remove(projectproduct_id));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
-    @ApiOperation(value = "根据产品批量删除项目产品", tags = {"项目产品" },  notes = "根据产品批量删除项目产品")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projectproducts/batch")
-    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<String> ids) {
-        projectproductService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品获取项目产品", tags = {"项目产品" },  notes = "根据产品获取项目产品")
@@ -304,16 +248,6 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectproductMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据产品批量保存项目产品", tags = {"项目产品" },  notes = "根据产品批量保存项目产品")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projectproducts/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ProjectProductDTO> projectproductdtos) {
-        List<ProjectProduct> domainlist=projectproductMapping.toDomain(projectproductdtos);
-        for(ProjectProduct domain:domainlist){
-             domain.setProduct(product_id);
-        }
-        projectproductService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"项目产品" } ,notes = "根据产品获取DEFAULT")
@@ -372,17 +306,6 @@ public class ProjectProductResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
-    @ApiOperation(value = "根据项目批量建立项目产品", tags = {"项目产品" },  notes = "根据项目批量建立项目产品")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectproducts/batch")
-    public ResponseEntity<Boolean> createBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectProductDTO> projectproductdtos) {
-        List<ProjectProduct> domainlist=projectproductMapping.toDomain(projectproductdtos);
-        for(ProjectProduct domain:domainlist){
-            domain.setProject(project_id);
-        }
-        projectproductService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @VersionCheck(entity = "projectproduct" , versionfield = "updatedate")
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
@@ -397,17 +320,6 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
-    @ApiOperation(value = "根据项目批量更新项目产品", tags = {"项目产品" },  notes = "根据项目批量更新项目产品")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectproducts/batch")
-    public ResponseEntity<Boolean> updateBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectProductDTO> projectproductdtos) {
-        List<ProjectProduct> domainlist=projectproductMapping.toDomain(projectproductdtos);
-        for(ProjectProduct domain:domainlist){
-            domain.setProject(project_id);
-        }
-        projectproductService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目删除项目产品", tags = {"项目产品" },  notes = "根据项目删除项目产品")
@@ -416,13 +328,6 @@ public class ProjectProductResource {
 		return ResponseEntity.status(HttpStatus.OK).body(projectproductService.remove(projectproduct_id));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
-    @ApiOperation(value = "根据项目批量删除项目产品", tags = {"项目产品" },  notes = "根据项目批量删除项目产品")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectproducts/batch")
-    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<String> ids) {
-        projectproductService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目获取项目产品", tags = {"项目产品" },  notes = "根据项目获取项目产品")
@@ -456,16 +361,6 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectproductMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据项目批量保存项目产品", tags = {"项目产品" },  notes = "根据项目批量保存项目产品")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectproducts/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectProductDTO> projectproductdtos) {
-        List<ProjectProduct> domainlist=projectproductMapping.toDomain(projectproductdtos);
-        for(ProjectProduct domain:domainlist){
-             domain.setProject(project_id);
-        }
-        projectproductService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"项目产品" } ,notes = "根据项目获取DEFAULT")

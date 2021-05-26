@@ -27450,6 +27450,9 @@
         "logicName" : "版本管理",
         "name" : "BUILDMANAGE"
       }, {
+        "logicName" : "功能测试管理",
+        "name" : "CASEMANAGE"
+      }, {
         "logicName" : "建立",
         "name" : "CREATE"
       }, {
@@ -27464,6 +27467,9 @@
       }, {
         "logicName" : "读取",
         "name" : "READ"
+      }, {
+        "logicName" : "测试报告管理",
+        "name" : "TESTREPORTMANAGE"
       }, {
         "logicName" : "测试版本管理",
         "name" : "TESTTASKMANAGE"

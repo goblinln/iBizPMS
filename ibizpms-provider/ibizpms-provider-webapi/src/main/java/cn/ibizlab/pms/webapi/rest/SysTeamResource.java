@@ -58,14 +58,7 @@ public class SysTeamResource {
         SysTeamDTO dto = systeamMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建组", tags = {"组" },  notes = "批量新建组")
-	@RequestMapping(method = RequestMethod.POST, value = "/systeams/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<SysTeamDTO> systeamdtos) {
-        systeamService.createBatch(systeamMapping.toDomain(systeamdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @ApiOperation(value = "更新组", tags = {"组" },  notes = "更新组")
 	@RequestMapping(method = RequestMethod.PUT, value = "/systeams/{systeam_id}")
     @Transactional
@@ -77,12 +70,6 @@ public class SysTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新组", tags = {"组" },  notes = "批量更新组")
-	@RequestMapping(method = RequestMethod.PUT, value = "/systeams/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysTeamDTO> systeamdtos) {
-        systeamService.updateBatch(systeamMapping.toDomain(systeamdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除组", tags = {"组" },  notes = "删除组")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/systeams/{systeam_id}")
@@ -90,12 +77,6 @@ public class SysTeamResource {
          return ResponseEntity.status(HttpStatus.OK).body(systeamService.remove(systeam_id));
     }
 
-    @ApiOperation(value = "批量删除组", tags = {"组" },  notes = "批量删除组")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/systeams/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        systeamService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取组", tags = {"组" },  notes = "获取组")
 	@RequestMapping(method = RequestMethod.GET, value = "/systeams/{systeam_id}")
@@ -127,12 +108,6 @@ public class SysTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存组", tags = {"组" },  notes = "批量保存组")
-	@RequestMapping(method = RequestMethod.POST, value = "/systeams/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysTeamDTO> systeamdtos) {
-        systeamService.saveBatch(systeamMapping.toDomain(systeamdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取数据集", tags = {"组" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/systeams/fetchdefault")

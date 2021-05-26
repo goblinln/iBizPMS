@@ -66,15 +66,7 @@ public class DynaDashboardResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@DynaDashboardRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建动态数据看板", tags = {"动态数据看板" },  notes = "批量新建动态数据看板")
-	@RequestMapping(method = RequestMethod.POST, value = "/dynadashboards/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<DynaDashboardDTO> dynadashboarddtos) {
-        dynadashboardService.createBatch(dynadashboardMapping.toDomain(dynadashboarddtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "dynadashboard" , versionfield = "updatedate")
     @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id,'UPDATE')")
     @ApiOperation(value = "更新动态数据看板", tags = {"动态数据看板" },  notes = "更新动态数据看板")
@@ -92,13 +84,6 @@ public class DynaDashboardResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DynaDashboardRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新动态数据看板", tags = {"动态数据看板" },  notes = "批量更新动态数据看板")
-	@RequestMapping(method = RequestMethod.PUT, value = "/dynadashboards/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<DynaDashboardDTO> dynadashboarddtos) {
-        dynadashboardService.updateBatch(dynadashboardMapping.toDomain(dynadashboarddtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id,'DELETE')")
     @ApiOperation(value = "删除动态数据看板", tags = {"动态数据看板" },  notes = "删除动态数据看板")
@@ -107,13 +92,6 @@ public class DynaDashboardResource {
          return ResponseEntity.status(HttpStatus.OK).body(dynadashboardService.remove(dynadashboard_id));
     }
 
-    @PreAuthorize("@DynaDashboardRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除动态数据看板", tags = {"动态数据看板" },  notes = "批量删除动态数据看板")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/dynadashboards/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        dynadashboardService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id,'READ')")
     @ApiOperation(value = "获取动态数据看板", tags = {"动态数据看板" },  notes = "获取动态数据看板")
@@ -126,6 +104,7 @@ public class DynaDashboardResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id,'CREATE')")
     @ApiOperation(value = "获取动态数据看板草稿", tags = {"动态数据看板" },  notes = "获取动态数据看板草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/dynadashboards/getdraft")
     public ResponseEntity<DynaDashboardDTO> getDraft(DynaDashboardDTO dto) {
@@ -150,12 +129,6 @@ public class DynaDashboardResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存动态数据看板", tags = {"动态数据看板" },  notes = "批量保存动态数据看板")
-	@RequestMapping(method = RequestMethod.POST, value = "/dynadashboards/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<DynaDashboardDTO> dynadashboarddtos) {
-        dynadashboardService.saveBatch(dynadashboardMapping.toDomain(dynadashboarddtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DynaDashboardRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"动态数据看板" } ,notes = "获取DEFAULT")

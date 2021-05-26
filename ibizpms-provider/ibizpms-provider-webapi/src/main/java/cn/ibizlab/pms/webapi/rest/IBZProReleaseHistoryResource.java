@@ -66,15 +66,7 @@ public class IBZProReleaseHistoryResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IBZProReleaseHistoryRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建发布操作历史", tags = {"发布操作历史" },  notes = "批量新建发布操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleasehistories/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IBZProReleaseHistoryDTO> ibzproreleasehistorydtos) {
-        ibzproreleasehistoryService.createBatch(ibzproreleasehistoryMapping.toDomain(ibzproreleasehistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IBZProReleaseHistoryRuntime.test(#ibzproreleasehistory_id,'UPDATE')")
     @ApiOperation(value = "更新发布操作历史", tags = {"发布操作历史" },  notes = "更新发布操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproreleasehistories/{ibzproreleasehistory_id}")
@@ -91,13 +83,6 @@ public class IBZProReleaseHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProReleaseHistoryRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新发布操作历史", tags = {"发布操作历史" },  notes = "批量更新发布操作历史")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproreleasehistories/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBZProReleaseHistoryDTO> ibzproreleasehistorydtos) {
-        ibzproreleasehistoryService.updateBatch(ibzproreleasehistoryMapping.toDomain(ibzproreleasehistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZProReleaseHistoryRuntime.test(#ibzproreleasehistory_id,'DELETE')")
     @ApiOperation(value = "删除发布操作历史", tags = {"发布操作历史" },  notes = "删除发布操作历史")
@@ -106,13 +91,6 @@ public class IBZProReleaseHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproreleasehistoryService.remove(ibzproreleasehistory_id));
     }
 
-    @PreAuthorize("@IBZProReleaseHistoryRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除发布操作历史", tags = {"发布操作历史" },  notes = "批量删除发布操作历史")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproreleasehistories/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzproreleasehistoryService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZProReleaseHistoryRuntime.test(#ibzproreleasehistory_id,'READ')")
     @ApiOperation(value = "获取发布操作历史", tags = {"发布操作历史" },  notes = "获取发布操作历史")
@@ -125,6 +103,7 @@ public class IBZProReleaseHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IBZProReleaseHistoryRuntime.test(#ibzproreleasehistory_id,'CREATE')")
     @ApiOperation(value = "获取发布操作历史草稿", tags = {"发布操作历史" },  notes = "获取发布操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproreleasehistories/getdraft")
     public ResponseEntity<IBZProReleaseHistoryDTO> getDraft(IBZProReleaseHistoryDTO dto) {
@@ -149,12 +128,6 @@ public class IBZProReleaseHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存发布操作历史", tags = {"发布操作历史" },  notes = "批量保存发布操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleasehistories/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBZProReleaseHistoryDTO> ibzproreleasehistorydtos) {
-        ibzproreleasehistoryService.saveBatch(ibzproreleasehistoryMapping.toDomain(ibzproreleasehistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZProReleaseHistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"发布操作历史" } ,notes = "获取数据集")

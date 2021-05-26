@@ -66,15 +66,7 @@ public class CompanyResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@CompanyRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建公司", tags = {"公司" },  notes = "批量新建公司")
-	@RequestMapping(method = RequestMethod.POST, value = "/companies/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<CompanyDTO> companydtos) {
-        companyService.createBatch(companyMapping.toDomain(companydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@CompanyRuntime.test(#company_id,'UPDATE')")
     @ApiOperation(value = "更新公司", tags = {"公司" },  notes = "更新公司")
 	@RequestMapping(method = RequestMethod.PUT, value = "/companies/{company_id}")
@@ -91,13 +83,6 @@ public class CompanyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CompanyRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新公司", tags = {"公司" },  notes = "批量更新公司")
-	@RequestMapping(method = RequestMethod.PUT, value = "/companies/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<CompanyDTO> companydtos) {
-        companyService.updateBatch(companyMapping.toDomain(companydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@CompanyRuntime.test(#company_id,'DELETE')")
     @ApiOperation(value = "删除公司", tags = {"公司" },  notes = "删除公司")
@@ -106,13 +91,6 @@ public class CompanyResource {
          return ResponseEntity.status(HttpStatus.OK).body(companyService.remove(company_id));
     }
 
-    @PreAuthorize("@CompanyRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除公司", tags = {"公司" },  notes = "批量删除公司")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/companies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        companyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@CompanyRuntime.test(#company_id,'READ')")
     @ApiOperation(value = "获取公司", tags = {"公司" },  notes = "获取公司")
@@ -125,6 +103,7 @@ public class CompanyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@CompanyRuntime.test(#company_id,'CREATE')")
     @ApiOperation(value = "获取公司草稿", tags = {"公司" },  notes = "获取公司草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/companies/getdraft")
     public ResponseEntity<CompanyDTO> getDraft(CompanyDTO dto) {
@@ -149,12 +128,6 @@ public class CompanyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存公司", tags = {"公司" },  notes = "批量保存公司")
-	@RequestMapping(method = RequestMethod.POST, value = "/companies/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<CompanyDTO> companydtos) {
-        companyService.saveBatch(companyMapping.toDomain(companydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@CompanyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"公司" } ,notes = "获取DEFAULT")

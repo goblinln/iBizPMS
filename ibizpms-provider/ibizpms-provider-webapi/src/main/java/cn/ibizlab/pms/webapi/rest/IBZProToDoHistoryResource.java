@@ -66,15 +66,7 @@ public class IBZProToDoHistoryResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IBZProToDoHistoryRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建todo操作历史", tags = {"todo操作历史" },  notes = "批量新建todo操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodohistories/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IBZProToDoHistoryDTO> ibzprotodohistorydtos) {
-        ibzprotodohistoryService.createBatch(ibzprotodohistoryMapping.toDomain(ibzprotodohistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IBZProToDoHistoryRuntime.test(#ibzprotodohistory_id,'UPDATE')")
     @ApiOperation(value = "更新todo操作历史", tags = {"todo操作历史" },  notes = "更新todo操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprotodohistories/{ibzprotodohistory_id}")
@@ -91,13 +83,6 @@ public class IBZProToDoHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProToDoHistoryRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新todo操作历史", tags = {"todo操作历史" },  notes = "批量更新todo操作历史")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprotodohistories/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBZProToDoHistoryDTO> ibzprotodohistorydtos) {
-        ibzprotodohistoryService.updateBatch(ibzprotodohistoryMapping.toDomain(ibzprotodohistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZProToDoHistoryRuntime.test(#ibzprotodohistory_id,'DELETE')")
     @ApiOperation(value = "删除todo操作历史", tags = {"todo操作历史" },  notes = "删除todo操作历史")
@@ -106,13 +91,6 @@ public class IBZProToDoHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprotodohistoryService.remove(ibzprotodohistory_id));
     }
 
-    @PreAuthorize("@IBZProToDoHistoryRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除todo操作历史", tags = {"todo操作历史" },  notes = "批量删除todo操作历史")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprotodohistories/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzprotodohistoryService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZProToDoHistoryRuntime.test(#ibzprotodohistory_id,'READ')")
     @ApiOperation(value = "获取todo操作历史", tags = {"todo操作历史" },  notes = "获取todo操作历史")
@@ -125,6 +103,7 @@ public class IBZProToDoHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IBZProToDoHistoryRuntime.test(#ibzprotodohistory_id,'CREATE')")
     @ApiOperation(value = "获取todo操作历史草稿", tags = {"todo操作历史" },  notes = "获取todo操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprotodohistories/getdraft")
     public ResponseEntity<IBZProToDoHistoryDTO> getDraft(IBZProToDoHistoryDTO dto) {
@@ -149,12 +128,6 @@ public class IBZProToDoHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存todo操作历史", tags = {"todo操作历史" },  notes = "批量保存todo操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodohistories/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBZProToDoHistoryDTO> ibzprotodohistorydtos) {
-        ibzprotodohistoryService.saveBatch(ibzprotodohistoryMapping.toDomain(ibzprotodohistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZProToDoHistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"todo操作历史" } ,notes = "获取数据集")

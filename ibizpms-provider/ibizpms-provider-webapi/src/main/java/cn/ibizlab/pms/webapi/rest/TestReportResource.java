@@ -65,6 +65,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
+
     @PreAuthorize("@TestReportRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建测试报告", tags = {"测试报告" },  notes = "新建测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/testreports")
@@ -79,15 +80,7 @@ public class TestReportResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@TestReportRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建测试报告", tags = {"测试报告" },  notes = "批量新建测试报告")
-	@RequestMapping(method = RequestMethod.POST, value = "/testreports/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<TestReportDTO> testreportdtos) {
-        testreportService.createBatch(testreportMapping.toDomain(testreportdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'UPDATE')")
     @ApiOperation(value = "更新测试报告", tags = {"测试报告" },  notes = "更新测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testreports/{testreport_id}")
@@ -104,13 +97,6 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestReportRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新测试报告", tags = {"测试报告" },  notes = "批量更新测试报告")
-	@RequestMapping(method = RequestMethod.PUT, value = "/testreports/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<TestReportDTO> testreportdtos) {
-        testreportService.updateBatch(testreportMapping.toDomain(testreportdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'DELETE')")
     @ApiOperation(value = "删除测试报告", tags = {"测试报告" },  notes = "删除测试报告")
@@ -119,13 +105,6 @@ public class TestReportResource {
          return ResponseEntity.status(HttpStatus.OK).body(testreportService.remove(testreport_id));
     }
 
-    @PreAuthorize("@TestReportRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除测试报告", tags = {"测试报告" },  notes = "批量删除测试报告")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/testreports/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        testreportService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
     @ApiOperation(value = "获取测试报告", tags = {"测试报告" },  notes = "获取测试报告")
@@ -138,6 +117,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@TestReportRuntime.test(#testreport_id,'CREATE')")
     @ApiOperation(value = "获取测试报告草稿", tags = {"测试报告" },  notes = "获取测试报告草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/testreports/getdraft")
     public ResponseEntity<TestReportDTO> getDraft(TestReportDTO dto) {
@@ -164,6 +144,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
+
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
     @ApiOperation(value = "根据测试报告概况信息（项目报告）", tags = {"测试报告" },  notes = "根据测试报告概况信息（项目报告）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testreports/{testreport_id}/getinfotesttaskovproject")
@@ -176,6 +157,7 @@ public class TestReportResource {
         testreportdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
 
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
     @ApiOperation(value = "根据测试单获取相应信息（项目报告）", tags = {"测试报告" },  notes = "根据测试单获取相应信息（项目报告）")
@@ -190,6 +172,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
+
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
     @ApiOperation(value = "根据测试单获取相应信息（项目报告）（单测试）", tags = {"测试报告" },  notes = "根据测试单获取相应信息（项目报告）（单测试）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testreports/{testreport_id}/getinfotesttaskr")
@@ -202,6 +185,7 @@ public class TestReportResource {
         testreportdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
 
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
     @ApiOperation(value = "根据测试单获取相应信息（项目报告）（测试）", tags = {"测试报告" },  notes = "根据测试单获取相应信息（项目报告）（测试）")
@@ -216,6 +200,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
+
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
     @ApiOperation(value = "根据测试报告获取基本信息", tags = {"测试报告" },  notes = "根据测试报告获取基本信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testreports/{testreport_id}/gettestreportbasicinfo")
@@ -228,6 +213,7 @@ public class TestReportResource {
         testreportdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
 
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
     @ApiOperation(value = "根据测试报告获取基本信息（项目报告）", tags = {"测试报告" },  notes = "根据测试报告获取基本信息（项目报告）")
@@ -242,6 +228,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
+
     @ApiOperation(value = "保存测试报告", tags = {"测试报告" },  notes = "保存测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/testreports/save")
     public ResponseEntity<TestReportDTO> save(@RequestBody TestReportDTO testreportdto) {
@@ -253,12 +240,6 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存测试报告", tags = {"测试报告" },  notes = "批量保存测试报告")
-	@RequestMapping(method = RequestMethod.POST, value = "/testreports/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<TestReportDTO> testreportdtos) {
-        testreportService.saveBatch(testreportMapping.toDomain(testreportdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@TestReportRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试报告" } ,notes = "获取DEFAULT")
@@ -301,6 +282,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品建立测试报告", tags = {"测试报告" },  notes = "根据产品建立测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testreports")
@@ -312,17 +294,6 @@ public class TestReportResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品批量建立测试报告", tags = {"测试报告" },  notes = "根据产品批量建立测试报告")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testreports/batch")
-    public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestReportDTO> testreportdtos) {
-        List<TestReport> domainlist=testreportMapping.toDomain(testreportdtos);
-        for(TestReport domain:domainlist){
-            domain.setProduct(product_id);
-        }
-        testreportService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品更新测试报告", tags = {"测试报告" },  notes = "根据产品更新测试报告")
@@ -336,17 +307,6 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
-    @ApiOperation(value = "根据产品批量更新测试报告", tags = {"测试报告" },  notes = "根据产品批量更新测试报告")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/batch")
-    public ResponseEntity<Boolean> updateBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestReportDTO> testreportdtos) {
-        List<TestReport> domainlist=testreportMapping.toDomain(testreportdtos);
-        for(TestReport domain:domainlist){
-            domain.setProduct(product_id);
-        }
-        testreportService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品删除测试报告", tags = {"测试报告" },  notes = "根据产品删除测试报告")
@@ -355,13 +315,6 @@ public class TestReportResource {
 		return ResponseEntity.status(HttpStatus.OK).body(testreportService.remove(testreport_id));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
-    @ApiOperation(value = "根据产品批量删除测试报告", tags = {"测试报告" },  notes = "根据产品批量删除测试报告")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testreports/batch")
-    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
-        testreportService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品获取测试报告", tags = {"测试报告" },  notes = "根据产品获取测试报告")
@@ -397,6 +350,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品测试报告", tags = {"测试报告" },  notes = "根据产品测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}/getinfotesttaskovproject")
@@ -408,6 +362,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品测试报告", tags = {"测试报告" },  notes = "根据产品测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}/getinfotesttaskproject")
@@ -419,6 +374,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品测试报告", tags = {"测试报告" },  notes = "根据产品测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}/getinfotesttaskr")
@@ -430,6 +386,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品测试报告", tags = {"测试报告" },  notes = "根据产品测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}/getinfotesttasks")
@@ -441,6 +398,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品测试报告", tags = {"测试报告" },  notes = "根据产品测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}/gettestreportbasicinfo")
@@ -452,6 +410,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品测试报告", tags = {"测试报告" },  notes = "根据产品测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}/gettestreportproject")
@@ -463,6 +422,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @ApiOperation(value = "根据产品保存测试报告", tags = {"测试报告" },  notes = "根据产品保存测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testreports/save")
     public ResponseEntity<TestReportDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestReportDTO testreportdto) {
@@ -472,16 +432,6 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据产品批量保存测试报告", tags = {"测试报告" },  notes = "根据产品批量保存测试报告")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testreports/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestReportDTO> testreportdtos) {
-        List<TestReport> domainlist=testreportMapping.toDomain(testreportdtos);
-        for(TestReport domain:domainlist){
-             domain.setProduct(product_id);
-        }
-        testreportService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试报告" } ,notes = "根据产品获取DEFAULT")
@@ -517,6 +467,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目建立测试报告", tags = {"测试报告" },  notes = "根据项目建立测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports")
@@ -528,17 +479,6 @@ public class TestReportResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
-    @ApiOperation(value = "根据项目批量建立测试报告", tags = {"测试报告" },  notes = "根据项目批量建立测试报告")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/batch")
-    public ResponseEntity<Boolean> createBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TestReportDTO> testreportdtos) {
-        List<TestReport> domainlist=testreportMapping.toDomain(testreportdtos);
-        for(TestReport domain:domainlist){
-            domain.setProject(project_id);
-        }
-        testreportService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目更新测试报告", tags = {"测试报告" },  notes = "根据项目更新测试报告")
@@ -552,17 +492,6 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
-    @ApiOperation(value = "根据项目批量更新测试报告", tags = {"测试报告" },  notes = "根据项目批量更新测试报告")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/batch")
-    public ResponseEntity<Boolean> updateBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TestReportDTO> testreportdtos) {
-        List<TestReport> domainlist=testreportMapping.toDomain(testreportdtos);
-        for(TestReport domain:domainlist){
-            domain.setProject(project_id);
-        }
-        testreportService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目删除测试报告", tags = {"测试报告" },  notes = "根据项目删除测试报告")
@@ -571,13 +500,6 @@ public class TestReportResource {
 		return ResponseEntity.status(HttpStatus.OK).body(testreportService.remove(testreport_id));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
-    @ApiOperation(value = "根据项目批量删除测试报告", tags = {"测试报告" },  notes = "根据项目批量删除测试报告")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testreports/batch")
-    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
-        testreportService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目获取测试报告", tags = {"测试报告" },  notes = "根据项目获取测试报告")
@@ -613,6 +535,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目测试报告", tags = {"测试报告" },  notes = "根据项目测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttaskovproject")
@@ -624,6 +547,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目测试报告", tags = {"测试报告" },  notes = "根据项目测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttaskproject")
@@ -635,6 +559,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目测试报告", tags = {"测试报告" },  notes = "根据项目测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttaskr")
@@ -646,6 +571,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目测试报告", tags = {"测试报告" },  notes = "根据项目测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttasks")
@@ -657,6 +583,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目测试报告", tags = {"测试报告" },  notes = "根据项目测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}/gettestreportbasicinfo")
@@ -668,6 +595,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目测试报告", tags = {"测试报告" },  notes = "根据项目测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}/gettestreportproject")
@@ -679,6 +607,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @ApiOperation(value = "根据项目保存测试报告", tags = {"测试报告" },  notes = "根据项目保存测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/save")
     public ResponseEntity<TestReportDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody TestReportDTO testreportdto) {
@@ -688,16 +617,6 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据项目批量保存测试报告", tags = {"测试报告" },  notes = "根据项目批量保存测试报告")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TestReportDTO> testreportdtos) {
-        List<TestReport> domainlist=testreportMapping.toDomain(testreportdtos);
-        for(TestReport domain:domainlist){
-             domain.setProject(project_id);
-        }
-        testreportService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"测试报告" } ,notes = "根据项目获取DEFAULT")

@@ -63,17 +63,6 @@ public class IbzLibCaseStepsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "根据测试用例批量建立用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例批量建立用例库用例步骤")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/batch")
-    public ResponseEntity<Boolean> createBatchByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody List<IbzLibCaseStepsDTO> ibzlibcasestepsdtos) {
-        List<IbzLibCaseSteps> domainlist=ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdtos);
-        for(IbzLibCaseSteps domain:domainlist){
-            domain.setIbizcase(ibzcase_id);
-        }
-        ibzlibcasestepsService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzLibCaseStepsRuntime.test(#ibzlibcasesteps_id,'UPDATE')")
     @ApiOperation(value = "根据测试用例更新用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例更新用例库用例步骤")
@@ -87,17 +76,6 @@ public class IbzLibCaseStepsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "根据测试用例批量更新用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例批量更新用例库用例步骤")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/batch")
-    public ResponseEntity<Boolean> updateBatchByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody List<IbzLibCaseStepsDTO> ibzlibcasestepsdtos) {
-        List<IbzLibCaseSteps> domainlist=ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdtos);
-        for(IbzLibCaseSteps domain:domainlist){
-            domain.setIbizcase(ibzcase_id);
-        }
-        ibzlibcasestepsService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzLibCaseStepsRuntime.test(#ibzlibcasesteps_id,'DELETE')")
     @ApiOperation(value = "根据测试用例删除用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例删除用例库用例步骤")
@@ -106,13 +84,6 @@ public class IbzLibCaseStepsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsService.remove(ibzlibcasesteps_id));
     }
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据测试用例批量删除用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例批量删除用例库用例步骤")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/batch")
-    public ResponseEntity<Boolean> removeBatchByIbzCase(@RequestBody List<Long> ids) {
-        ibzlibcasestepsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzLibCaseStepsRuntime.test(#ibzlibcasesteps_id,'READ')")
     @ApiOperation(value = "根据测试用例获取用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例获取用例库用例步骤")
@@ -146,16 +117,6 @@ public class IbzLibCaseStepsResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据测试用例批量保存用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例批量保存用例库用例步骤")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/savebatch")
-    public ResponseEntity<Boolean> saveBatchByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody List<IbzLibCaseStepsDTO> ibzlibcasestepsdtos) {
-        List<IbzLibCaseSteps> domainlist=ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdtos);
-        for(IbzLibCaseSteps domain:domainlist){
-             domain.setIbizcase(ibzcase_id);
-        }
-        ibzlibcasestepsService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据测试用例获取DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据测试用例获取DEFAULT")
@@ -193,17 +154,6 @@ public class IbzLibCaseStepsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "根据用例库测试用例批量建立用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例批量建立用例库用例步骤")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/batch")
-    public ResponseEntity<Boolean> createBatchByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody List<IbzLibCaseStepsDTO> ibzlibcasestepsdtos) {
-        List<IbzLibCaseSteps> domainlist=ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdtos);
-        for(IbzLibCaseSteps domain:domainlist){
-            domain.setIbizcase(ibzcase_id);
-        }
-        ibzlibcasestepsService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzLibCaseStepsRuntime.test(#ibzlibcasesteps_id,'UPDATE')")
     @ApiOperation(value = "根据用例库测试用例更新用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例更新用例库用例步骤")
@@ -217,17 +167,6 @@ public class IbzLibCaseStepsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "根据用例库测试用例批量更新用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例批量更新用例库用例步骤")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/batch")
-    public ResponseEntity<Boolean> updateBatchByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody List<IbzLibCaseStepsDTO> ibzlibcasestepsdtos) {
-        List<IbzLibCaseSteps> domainlist=ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdtos);
-        for(IbzLibCaseSteps domain:domainlist){
-            domain.setIbizcase(ibzcase_id);
-        }
-        ibzlibcasestepsService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzLibCaseStepsRuntime.test(#ibzlibcasesteps_id,'DELETE')")
     @ApiOperation(value = "根据用例库测试用例删除用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例删除用例库用例步骤")
@@ -236,13 +175,6 @@ public class IbzLibCaseStepsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsService.remove(ibzlibcasesteps_id));
     }
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据用例库测试用例批量删除用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例批量删除用例库用例步骤")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/batch")
-    public ResponseEntity<Boolean> removeBatchByIbzLibIbzCase(@RequestBody List<Long> ids) {
-        ibzlibcasestepsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzLibCaseStepsRuntime.test(#ibzlibcasesteps_id,'READ')")
     @ApiOperation(value = "根据用例库测试用例获取用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例获取用例库用例步骤")
@@ -276,16 +208,6 @@ public class IbzLibCaseStepsResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据用例库测试用例批量保存用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例批量保存用例库用例步骤")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/savebatch")
-    public ResponseEntity<Boolean> saveBatchByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody List<IbzLibCaseStepsDTO> ibzlibcasestepsdtos) {
-        List<IbzLibCaseSteps> domainlist=ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdtos);
-        for(IbzLibCaseSteps domain:domainlist){
-             domain.setIbizcase(ibzcase_id);
-        }
-        ibzlibcasestepsService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据用例库测试用例获取DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据用例库测试用例获取DEFAULT")

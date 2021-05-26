@@ -66,15 +66,7 @@ public class UserYearWorkStatsResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "批量新建用户年度工作内容统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/useryearworkstats/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<UserYearWorkStatsDTO> useryearworkstatsdtos) {
-        useryearworkstatsService.createBatch(useryearworkstatsMapping.toDomain(useryearworkstatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'UPDATE')")
     @ApiOperation(value = "更新用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "更新用户年度工作内容统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/useryearworkstats/{useryearworkstats_id}")
@@ -91,13 +83,6 @@ public class UserYearWorkStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "批量更新用户年度工作内容统计")
-	@RequestMapping(method = RequestMethod.PUT, value = "/useryearworkstats/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<UserYearWorkStatsDTO> useryearworkstatsdtos) {
-        useryearworkstatsService.updateBatch(useryearworkstatsMapping.toDomain(useryearworkstatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'DELETE')")
     @ApiOperation(value = "删除用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "删除用户年度工作内容统计")
@@ -106,13 +91,6 @@ public class UserYearWorkStatsResource {
          return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsService.remove(useryearworkstats_id));
     }
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "批量删除用户年度工作内容统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/useryearworkstats/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        useryearworkstatsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'READ')")
     @ApiOperation(value = "获取用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "获取用户年度工作内容统计")
@@ -125,6 +103,7 @@ public class UserYearWorkStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'CREATE')")
     @ApiOperation(value = "获取用户年度工作内容统计草稿", tags = {"用户年度工作内容统计" },  notes = "获取用户年度工作内容统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/getdraft")
     public ResponseEntity<UserYearWorkStatsDTO> getDraft(UserYearWorkStatsDTO dto) {
@@ -151,6 +130,7 @@ public class UserYearWorkStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
 
+
     @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'READ')")
     @ApiOperation(value = "获取产品经理相关数据", tags = {"用户年度工作内容统计" },  notes = "获取产品经理相关数据")
 	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/{useryearworkstats_id}/getpoinfomation")
@@ -163,6 +143,7 @@ public class UserYearWorkStatsResource {
         useryearworkstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
+
 
     @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'READ')")
     @ApiOperation(value = "获取测试人员相关数据", tags = {"用户年度工作内容统计" },  notes = "获取测试人员相关数据")
@@ -177,6 +158,7 @@ public class UserYearWorkStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
 
+
     @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'READ')")
     @ApiOperation(value = "获取用户所选年度的动作", tags = {"用户年度工作内容统计" },  notes = "获取用户所选年度的动作")
 	@RequestMapping(method = RequestMethod.PUT, value = "/useryearworkstats/{useryearworkstats_id}/getuseryearaction")
@@ -189,14 +171,7 @@ public class UserYearWorkStatsResource {
         useryearworkstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
-    @PreAuthorize("@UserYearWorkStatsRuntime.test('READ')")
-    @ApiOperation(value = "批量处理[获取用户所选年度的动作]", tags = {"用户年度工作内容统计" },  notes = "批量处理[获取用户所选年度的动作]")
-	@RequestMapping(method = RequestMethod.PUT, value = "/useryearworkstats/getuseryearactionbatch")
-    public ResponseEntity<Boolean> getUserYearActionBatch(@RequestBody List<UserYearWorkStatsDTO> useryearworkstatsdtos) {
-        List<UserYearWorkStats> domains = useryearworkstatsMapping.toDomain(useryearworkstatsdtos);
-        boolean result = useryearworkstatsService.getUserYearActionBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "保存用户年度工作内容统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/useryearworkstats/save")
@@ -209,12 +184,6 @@ public class UserYearWorkStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "批量保存用户年度工作内容统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/useryearworkstats/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<UserYearWorkStatsDTO> useryearworkstatsdtos) {
-        useryearworkstatsService.saveBatch(useryearworkstatsMapping.toDomain(useryearworkstatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'READ')")
     @ApiOperation(value = "更新标题", tags = {"用户年度工作内容统计" },  notes = "更新标题")
@@ -228,14 +197,7 @@ public class UserYearWorkStatsResource {
         useryearworkstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
-    @PreAuthorize("@UserYearWorkStatsRuntime.test('READ')")
-    @ApiOperation(value = "批量处理[更新标题]", tags = {"用户年度工作内容统计" },  notes = "批量处理[更新标题]")
-	@RequestMapping(method = RequestMethod.PUT, value = "/useryearworkstats/updatetitlebyyearbatch")
-    public ResponseEntity<Boolean> updateTitleByYearBatch(@RequestBody List<UserYearWorkStatsDTO> useryearworkstatsdtos) {
-        List<UserYearWorkStats> domains = useryearworkstatsMapping.toDomain(useryearworkstatsdtos);
-        boolean result = useryearworkstatsService.updateTitleByYearBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"用户年度工作内容统计" } ,notes = "获取数据集")

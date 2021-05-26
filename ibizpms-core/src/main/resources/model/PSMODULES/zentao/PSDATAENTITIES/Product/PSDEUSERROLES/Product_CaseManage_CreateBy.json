@@ -1,0 +1,20 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_CaseManage_CreateBy.json",
+  "name" : "产品功能测试管理（创建者或更新者）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "ProductManagerQuery"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "CASEMANAGE",
+    "name" : "CASEMANAGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CASEMANAGE"
+    }
+  } ],
+  "roleTag" : "Product_CaseManage_CreateBy",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

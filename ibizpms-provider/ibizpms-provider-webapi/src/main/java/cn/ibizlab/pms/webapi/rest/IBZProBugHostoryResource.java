@@ -66,15 +66,7 @@ public class IBZProBugHostoryResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IBZProBugHostoryRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建Bug操作历史", tags = {"Bug操作历史" },  notes = "批量新建Bug操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobughostories/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IBZProBugHostoryDTO> ibzprobughostorydtos) {
-        ibzprobughostoryService.createBatch(ibzprobughostoryMapping.toDomain(ibzprobughostorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IBZProBugHostoryRuntime.test(#ibzprobughostory_id,'UPDATE')")
     @ApiOperation(value = "更新Bug操作历史", tags = {"Bug操作历史" },  notes = "更新Bug操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprobughostories/{ibzprobughostory_id}")
@@ -91,13 +83,6 @@ public class IBZProBugHostoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProBugHostoryRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新Bug操作历史", tags = {"Bug操作历史" },  notes = "批量更新Bug操作历史")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprobughostories/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBZProBugHostoryDTO> ibzprobughostorydtos) {
-        ibzprobughostoryService.updateBatch(ibzprobughostoryMapping.toDomain(ibzprobughostorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZProBugHostoryRuntime.test(#ibzprobughostory_id,'DELETE')")
     @ApiOperation(value = "删除Bug操作历史", tags = {"Bug操作历史" },  notes = "删除Bug操作历史")
@@ -106,13 +91,6 @@ public class IBZProBugHostoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprobughostoryService.remove(ibzprobughostory_id));
     }
 
-    @PreAuthorize("@IBZProBugHostoryRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除Bug操作历史", tags = {"Bug操作历史" },  notes = "批量删除Bug操作历史")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprobughostories/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzprobughostoryService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZProBugHostoryRuntime.test(#ibzprobughostory_id,'READ')")
     @ApiOperation(value = "获取Bug操作历史", tags = {"Bug操作历史" },  notes = "获取Bug操作历史")
@@ -125,6 +103,7 @@ public class IBZProBugHostoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IBZProBugHostoryRuntime.test(#ibzprobughostory_id,'CREATE')")
     @ApiOperation(value = "获取Bug操作历史草稿", tags = {"Bug操作历史" },  notes = "获取Bug操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprobughostories/getdraft")
     public ResponseEntity<IBZProBugHostoryDTO> getDraft(IBZProBugHostoryDTO dto) {
@@ -149,12 +128,6 @@ public class IBZProBugHostoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存Bug操作历史", tags = {"Bug操作历史" },  notes = "批量保存Bug操作历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobughostories/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBZProBugHostoryDTO> ibzprobughostorydtos) {
-        ibzprobughostoryService.saveBatch(ibzprobughostoryMapping.toDomain(ibzprobughostorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZProBugHostoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"Bug操作历史" } ,notes = "获取数据集")

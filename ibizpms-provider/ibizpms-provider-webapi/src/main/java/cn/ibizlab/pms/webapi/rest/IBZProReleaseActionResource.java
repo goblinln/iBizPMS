@@ -66,15 +66,7 @@ public class IBZProReleaseActionResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IBZProReleaseActionRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建发布日志", tags = {"发布日志" },  notes = "批量新建发布日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IBZProReleaseActionDTO> ibzproreleaseactiondtos) {
-        ibzproreleaseactionService.createBatch(ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IBZProReleaseActionRuntime.test(#ibzproreleaseaction_id,'UPDATE')")
     @ApiOperation(value = "更新发布日志", tags = {"发布日志" },  notes = "更新发布日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproreleaseactions/{ibzproreleaseaction_id}")
@@ -91,13 +83,6 @@ public class IBZProReleaseActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProReleaseActionRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新发布日志", tags = {"发布日志" },  notes = "批量更新发布日志")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproreleaseactions/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBZProReleaseActionDTO> ibzproreleaseactiondtos) {
-        ibzproreleaseactionService.updateBatch(ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZProReleaseActionRuntime.test(#ibzproreleaseaction_id,'DELETE')")
     @ApiOperation(value = "删除发布日志", tags = {"发布日志" },  notes = "删除发布日志")
@@ -106,13 +91,6 @@ public class IBZProReleaseActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactionService.remove(ibzproreleaseaction_id));
     }
 
-    @PreAuthorize("@IBZProReleaseActionRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除发布日志", tags = {"发布日志" },  notes = "批量删除发布日志")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproreleaseactions/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzproreleaseactionService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IBZProReleaseActionRuntime.test(#ibzproreleaseaction_id,'READ')")
     @ApiOperation(value = "获取发布日志", tags = {"发布日志" },  notes = "获取发布日志")
@@ -125,6 +103,7 @@ public class IBZProReleaseActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IBZProReleaseActionRuntime.test(#ibzproreleaseaction_id,'CREATE')")
     @ApiOperation(value = "获取发布日志草稿", tags = {"发布日志" },  notes = "获取发布日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproreleaseactions/getdraft")
     public ResponseEntity<IBZProReleaseActionDTO> getDraft(IBZProReleaseActionDTO dto) {
@@ -151,6 +130,7 @@ public class IBZProReleaseActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactiondto);
     }
 
+
     @PreAuthorize("@IBZProReleaseActionRuntime.test(#ibzproreleaseaction_id,'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"发布日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/{ibzproreleaseaction_id}/createhis")
@@ -163,13 +143,7 @@ public class IBZProReleaseActionResource {
         ibzproreleaseactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactiondto);
     }
-    @ApiOperation(value = "批量处理[创建历史日志]", tags = {"发布日志" },  notes = "批量处理[创建历史日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/createhisbatch")
-    public ResponseEntity<Boolean> createHisBatch(@RequestBody List<IBZProReleaseActionDTO> ibzproreleaseactiondtos) {
-        List<IBZProReleaseAction> domains = ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondtos);
-        boolean result = ibzproreleaseactionService.createHisBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@IBZProReleaseActionRuntime.test(#ibzproreleaseaction_id,'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"发布日志" },  notes = "编辑备注信息")
@@ -183,13 +157,7 @@ public class IBZProReleaseActionResource {
         ibzproreleaseactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactiondto);
     }
-    @ApiOperation(value = "批量处理[编辑备注信息]", tags = {"发布日志" },  notes = "批量处理[编辑备注信息]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/editcommentbatch")
-    public ResponseEntity<Boolean> editCommentBatch(@RequestBody List<IBZProReleaseActionDTO> ibzproreleaseactiondtos) {
-        List<IBZProReleaseAction> domains = ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondtos);
-        boolean result = ibzproreleaseactionService.editCommentBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "Pms企业专用", tags = {"发布日志" },  notes = "Pms企业专用")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/{ibzproreleaseaction_id}/managepmsee")
@@ -202,13 +170,7 @@ public class IBZProReleaseActionResource {
         ibzproreleaseactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactiondto);
     }
-    @ApiOperation(value = "批量处理[Pms企业专用]", tags = {"发布日志" },  notes = "批量处理[Pms企业专用]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/managepmseebatch")
-    public ResponseEntity<Boolean> managePmsEeBatch(@RequestBody List<IBZProReleaseActionDTO> ibzproreleaseactiondtos) {
-        List<IBZProReleaseAction> domains = ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondtos);
-        boolean result = ibzproreleaseactionService.managePmsEeBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存发布日志", tags = {"发布日志" },  notes = "保存发布日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/save")
@@ -221,12 +183,6 @@ public class IBZProReleaseActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存发布日志", tags = {"发布日志" },  notes = "批量保存发布日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBZProReleaseActionDTO> ibzproreleaseactiondtos) {
-        ibzproreleaseactionService.saveBatch(ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "已读", tags = {"发布日志" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/{ibzproreleaseaction_id}/sendmarkdone")
@@ -239,13 +195,7 @@ public class IBZProReleaseActionResource {
         ibzproreleaseactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactiondto);
     }
-    @ApiOperation(value = "批量处理[已读]", tags = {"发布日志" },  notes = "批量处理[已读]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/sendmarkdonebatch")
-    public ResponseEntity<Boolean> sendMarkDoneBatch(@RequestBody List<IBZProReleaseActionDTO> ibzproreleaseactiondtos) {
-        List<IBZProReleaseAction> domains = ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondtos);
-        boolean result = ibzproreleaseactionService.sendMarkDoneBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "发送待办", tags = {"发布日志" },  notes = "发送待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/{ibzproreleaseaction_id}/sendtodo")
@@ -258,13 +208,7 @@ public class IBZProReleaseActionResource {
         ibzproreleaseactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactiondto);
     }
-    @ApiOperation(value = "批量处理[发送待办]", tags = {"发布日志" },  notes = "批量处理[发送待办]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/sendtodobatch")
-    public ResponseEntity<Boolean> sendTodoBatch(@RequestBody List<IBZProReleaseActionDTO> ibzproreleaseactiondtos) {
-        List<IBZProReleaseAction> domains = ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondtos);
-        boolean result = ibzproreleaseactionService.sendTodoBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "发送待阅", tags = {"发布日志" },  notes = "发送待阅")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/{ibzproreleaseaction_id}/sendtoread")
@@ -277,13 +221,7 @@ public class IBZProReleaseActionResource {
         ibzproreleaseactiondto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactiondto);
     }
-    @ApiOperation(value = "批量处理[发送待阅]", tags = {"发布日志" },  notes = "批量处理[发送待阅]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/sendtoreadbatch")
-    public ResponseEntity<Boolean> sendToreadBatch(@RequestBody List<IBZProReleaseActionDTO> ibzproreleaseactiondtos) {
-        List<IBZProReleaseAction> domains = ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondtos);
-        boolean result = ibzproreleaseactionService.sendToreadBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@IBZProReleaseActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"发布日志" } ,notes = "获取数据集")

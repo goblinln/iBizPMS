@@ -58,14 +58,7 @@ public class SysUserResource {
         SysUserDTO dto = sysuserMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建系统用户", tags = {"系统用户" },  notes = "批量新建系统用户")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysusers/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<SysUserDTO> sysuserdtos) {
-        sysuserService.createBatch(sysuserMapping.toDomain(sysuserdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @ApiOperation(value = "更新系统用户", tags = {"系统用户" },  notes = "更新系统用户")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysusers/{sysuser_id}")
     @Transactional
@@ -77,12 +70,6 @@ public class SysUserResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新系统用户", tags = {"系统用户" },  notes = "批量更新系统用户")
-	@RequestMapping(method = RequestMethod.PUT, value = "/sysusers/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysUserDTO> sysuserdtos) {
-        sysuserService.updateBatch(sysuserMapping.toDomain(sysuserdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除系统用户", tags = {"系统用户" },  notes = "删除系统用户")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysusers/{sysuser_id}")
@@ -90,12 +77,6 @@ public class SysUserResource {
          return ResponseEntity.status(HttpStatus.OK).body(sysuserService.remove(sysuser_id));
     }
 
-    @ApiOperation(value = "批量删除系统用户", tags = {"系统用户" },  notes = "批量删除系统用户")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysusers/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        sysuserService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取系统用户", tags = {"系统用户" },  notes = "获取系统用户")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysusers/{sysuser_id}")
@@ -121,13 +102,7 @@ public class SysUserResource {
         sysuserdto = sysuserMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(sysuserdto);
     }
-    @ApiOperation(value = "批量处理[修改密码]", tags = {"系统用户" },  notes = "批量处理[修改密码]")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysusers/changepwdbatch")
-    public ResponseEntity<Boolean> changePwdBatch(@RequestBody List<SysUserDTO> sysuserdtos) {
-        List<SysUser> domains = sysuserMapping.toDomain(sysuserdtos);
-        boolean result = sysuserService.changePwdBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "检查系统用户", tags = {"系统用户" },  notes = "检查系统用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysusers/checkkey")
@@ -144,12 +119,6 @@ public class SysUserResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存系统用户", tags = {"系统用户" },  notes = "批量保存系统用户")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysusers/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysUserDTO> sysuserdtos) {
-        sysuserService.saveBatch(sysuserMapping.toDomain(sysuserdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取数据集", tags = {"系统用户" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysusers/fetchdefault")

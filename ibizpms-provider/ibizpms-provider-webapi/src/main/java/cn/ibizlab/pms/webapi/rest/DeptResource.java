@@ -66,15 +66,7 @@ public class DeptResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@DeptRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建部门", tags = {"部门" },  notes = "批量新建部门")
-	@RequestMapping(method = RequestMethod.POST, value = "/depts/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<DeptDTO> deptdtos) {
-        deptService.createBatch(deptMapping.toDomain(deptdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@DeptRuntime.test(#dept_id,'UPDATE')")
     @ApiOperation(value = "更新部门", tags = {"部门" },  notes = "更新部门")
 	@RequestMapping(method = RequestMethod.PUT, value = "/depts/{dept_id}")
@@ -91,13 +83,6 @@ public class DeptResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DeptRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新部门", tags = {"部门" },  notes = "批量更新部门")
-	@RequestMapping(method = RequestMethod.PUT, value = "/depts/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<DeptDTO> deptdtos) {
-        deptService.updateBatch(deptMapping.toDomain(deptdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DeptRuntime.test(#dept_id,'DELETE')")
     @ApiOperation(value = "删除部门", tags = {"部门" },  notes = "删除部门")
@@ -106,13 +91,6 @@ public class DeptResource {
          return ResponseEntity.status(HttpStatus.OK).body(deptService.remove(dept_id));
     }
 
-    @PreAuthorize("@DeptRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除部门", tags = {"部门" },  notes = "批量删除部门")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/depts/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        deptService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DeptRuntime.test(#dept_id,'READ')")
     @ApiOperation(value = "获取部门", tags = {"部门" },  notes = "获取部门")
@@ -125,6 +103,7 @@ public class DeptResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@DeptRuntime.test(#dept_id,'CREATE')")
     @ApiOperation(value = "获取部门草稿", tags = {"部门" },  notes = "获取部门草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/depts/getdraft")
     public ResponseEntity<DeptDTO> getDraft(DeptDTO dto) {
@@ -149,12 +128,6 @@ public class DeptResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存部门", tags = {"部门" },  notes = "批量保存部门")
-	@RequestMapping(method = RequestMethod.POST, value = "/depts/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<DeptDTO> deptdtos) {
-        deptService.saveBatch(deptMapping.toDomain(deptdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@DeptRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"部门" } ,notes = "获取DEFAULT")

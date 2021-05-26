@@ -66,15 +66,7 @@ public class IbzFavoritesResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbzFavoritesRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建收藏", tags = {"收藏" },  notes = "批量新建收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzfavorites/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzFavoritesDTO> ibzfavoritesdtos) {
-        ibzfavoritesService.createBatch(ibzfavoritesMapping.toDomain(ibzfavoritesdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "ibzfavorites" , versionfield = "updatedate")
     @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id,'UPDATE')")
     @ApiOperation(value = "更新收藏", tags = {"收藏" },  notes = "更新收藏")
@@ -92,13 +84,6 @@ public class IbzFavoritesResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzFavoritesRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新收藏", tags = {"收藏" },  notes = "批量更新收藏")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzfavorites/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzFavoritesDTO> ibzfavoritesdtos) {
-        ibzfavoritesService.updateBatch(ibzfavoritesMapping.toDomain(ibzfavoritesdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id,'DELETE')")
     @ApiOperation(value = "删除收藏", tags = {"收藏" },  notes = "删除收藏")
@@ -107,13 +92,6 @@ public class IbzFavoritesResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzfavoritesService.remove(ibzfavorites_id));
     }
 
-    @PreAuthorize("@IbzFavoritesRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除收藏", tags = {"收藏" },  notes = "批量删除收藏")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzfavorites/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibzfavoritesService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id,'READ')")
     @ApiOperation(value = "获取收藏", tags = {"收藏" },  notes = "获取收藏")
@@ -126,6 +104,7 @@ public class IbzFavoritesResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id,'CREATE')")
     @ApiOperation(value = "获取收藏草稿", tags = {"收藏" },  notes = "获取收藏草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzfavorites/getdraft")
     public ResponseEntity<IbzFavoritesDTO> getDraft(IbzFavoritesDTO dto) {
@@ -150,12 +129,6 @@ public class IbzFavoritesResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存收藏", tags = {"收藏" },  notes = "批量保存收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzfavorites/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzFavoritesDTO> ibzfavoritesdtos) {
-        ibzfavoritesService.saveBatch(ibzfavoritesMapping.toDomain(ibzfavoritesdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzFavoritesRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"收藏" } ,notes = "获取数据集")

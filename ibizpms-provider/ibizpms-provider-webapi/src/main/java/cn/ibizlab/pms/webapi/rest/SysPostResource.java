@@ -58,14 +58,7 @@ public class SysPostResource {
         SysPostDTO dto = syspostMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建岗位", tags = {"岗位" },  notes = "批量新建岗位")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysposts/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<SysPostDTO> syspostdtos) {
-        syspostService.createBatch(syspostMapping.toDomain(syspostdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @ApiOperation(value = "更新岗位", tags = {"岗位" },  notes = "更新岗位")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysposts/{syspost_id}")
     @Transactional
@@ -77,12 +70,6 @@ public class SysPostResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新岗位", tags = {"岗位" },  notes = "批量更新岗位")
-	@RequestMapping(method = RequestMethod.PUT, value = "/sysposts/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysPostDTO> syspostdtos) {
-        syspostService.updateBatch(syspostMapping.toDomain(syspostdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除岗位", tags = {"岗位" },  notes = "删除岗位")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysposts/{syspost_id}")
@@ -90,12 +77,6 @@ public class SysPostResource {
          return ResponseEntity.status(HttpStatus.OK).body(syspostService.remove(syspost_id));
     }
 
-    @ApiOperation(value = "批量删除岗位", tags = {"岗位" },  notes = "批量删除岗位")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysposts/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        syspostService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取岗位", tags = {"岗位" },  notes = "获取岗位")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysposts/{syspost_id}")
@@ -127,12 +108,6 @@ public class SysPostResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存岗位", tags = {"岗位" },  notes = "批量保存岗位")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysposts/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysPostDTO> syspostdtos) {
-        syspostService.saveBatch(syspostMapping.toDomain(syspostdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取数据集", tags = {"岗位" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysposts/fetchdefault")

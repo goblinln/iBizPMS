@@ -66,15 +66,7 @@ public class ProductPlanHistoryResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@ProductPlanHistoryRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建产品计划历史", tags = {"产品计划历史" },  notes = "批量新建产品计划历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/productplanhistories/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<ProductPlanHistoryDTO> productplanhistorydtos) {
-        productplanhistoryService.createBatch(productplanhistoryMapping.toDomain(productplanhistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@ProductPlanHistoryRuntime.test(#productplanhistory_id,'UPDATE')")
     @ApiOperation(value = "更新产品计划历史", tags = {"产品计划历史" },  notes = "更新产品计划历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplanhistories/{productplanhistory_id}")
@@ -91,13 +83,6 @@ public class ProductPlanHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductPlanHistoryRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新产品计划历史", tags = {"产品计划历史" },  notes = "批量更新产品计划历史")
-	@RequestMapping(method = RequestMethod.PUT, value = "/productplanhistories/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProductPlanHistoryDTO> productplanhistorydtos) {
-        productplanhistoryService.updateBatch(productplanhistoryMapping.toDomain(productplanhistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductPlanHistoryRuntime.test(#productplanhistory_id,'DELETE')")
     @ApiOperation(value = "删除产品计划历史", tags = {"产品计划历史" },  notes = "删除产品计划历史")
@@ -106,13 +91,6 @@ public class ProductPlanHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(productplanhistoryService.remove(productplanhistory_id));
     }
 
-    @PreAuthorize("@ProductPlanHistoryRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除产品计划历史", tags = {"产品计划历史" },  notes = "批量删除产品计划历史")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productplanhistories/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        productplanhistoryService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductPlanHistoryRuntime.test(#productplanhistory_id,'READ')")
     @ApiOperation(value = "获取产品计划历史", tags = {"产品计划历史" },  notes = "获取产品计划历史")
@@ -125,6 +103,7 @@ public class ProductPlanHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductPlanHistoryRuntime.test(#productplanhistory_id,'CREATE')")
     @ApiOperation(value = "获取产品计划历史草稿", tags = {"产品计划历史" },  notes = "获取产品计划历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/productplanhistories/getdraft")
     public ResponseEntity<ProductPlanHistoryDTO> getDraft(ProductPlanHistoryDTO dto) {
@@ -149,12 +128,6 @@ public class ProductPlanHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存产品计划历史", tags = {"产品计划历史" },  notes = "批量保存产品计划历史")
-	@RequestMapping(method = RequestMethod.POST, value = "/productplanhistories/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProductPlanHistoryDTO> productplanhistorydtos) {
-        productplanhistoryService.saveBatch(productplanhistoryMapping.toDomain(productplanhistorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductPlanHistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品计划历史" } ,notes = "获取数据集")

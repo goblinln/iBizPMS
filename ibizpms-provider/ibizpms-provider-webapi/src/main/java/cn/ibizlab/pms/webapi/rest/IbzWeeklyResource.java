@@ -63,14 +63,7 @@ public class IbzWeeklyResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建周报", tags = {"周报" },  notes = "批量新建周报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzWeeklyDTO> ibzweeklydtos) {
-        ibzweeklyService.createBatch(ibzweeklyMapping.toDomain(ibzweeklydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "ibzweekly" , versionfield = "updatedate")
     @ApiOperation(value = "更新周报", tags = {"周报" },  notes = "更新周报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzweeklies/{ibzweekly_id}")
@@ -85,12 +78,6 @@ public class IbzWeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新周报", tags = {"周报" },  notes = "批量更新周报")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzweeklies/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzWeeklyDTO> ibzweeklydtos) {
-        ibzweeklyService.updateBatch(ibzweeklyMapping.toDomain(ibzweeklydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除周报", tags = {"周报" },  notes = "删除周报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzweeklies/{ibzweekly_id}")
@@ -98,12 +85,6 @@ public class IbzWeeklyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzweeklyService.remove(ibzweekly_id));
     }
 
-    @ApiOperation(value = "批量删除周报", tags = {"周报" },  notes = "批量删除周报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzweeklies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzweeklyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取周报", tags = {"周报" },  notes = "获取周报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzweeklies/{ibzweekly_id}")
@@ -139,13 +120,7 @@ public class IbzWeeklyResource {
         ibzweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
-    @ApiOperation(value = "批量处理[定时生成每周周报]", tags = {"周报" },  notes = "批量处理[定时生成每周周报]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/createeveryweekreportbatch")
-    public ResponseEntity<Boolean> createEveryWeekReportBatch(@RequestBody List<IbzWeeklyDTO> ibzweeklydtos) {
-        List<IbzWeekly> domains = ibzweeklyMapping.toDomain(ibzweeklydtos);
-        boolean result = ibzweeklyService.createEveryWeekReportBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "获取上周周报的下周计划", tags = {"周报" },  notes = "获取上周周报的下周计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/creategetlastweekplanandwork")
@@ -158,13 +133,7 @@ public class IbzWeeklyResource {
         ibzweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
-    @ApiOperation(value = "批量处理[获取上周周报的下周计划]", tags = {"周报" },  notes = "批量处理[获取上周周报的下周计划]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/creategetlastweekplanandworkbatch")
-    public ResponseEntity<Boolean> createGetLastWeekPlanAndWorkBatch(@RequestBody List<IbzWeeklyDTO> ibzweeklydtos) {
-        List<IbzWeekly> domains = ibzweeklyMapping.toDomain(ibzweeklydtos);
-        boolean result = ibzweeklyService.createGetLastWeekPlanAndWorkBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "编辑获取上周计划完成任务和本周已完成任务", tags = {"周报" },  notes = "编辑获取上周计划完成任务和本周已完成任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/editgetlastweektaskandcomtask")
@@ -177,13 +146,7 @@ public class IbzWeeklyResource {
         ibzweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
-    @ApiOperation(value = "批量处理[编辑获取上周计划完成任务和本周已完成任务]", tags = {"周报" },  notes = "批量处理[编辑获取上周计划完成任务和本周已完成任务]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/editgetlastweektaskandcomtaskbatch")
-    public ResponseEntity<Boolean> editGetLastWeekTaskAndComTaskBatch(@RequestBody List<IbzWeeklyDTO> ibzweeklydtos) {
-        List<IbzWeekly> domains = ibzweeklyMapping.toDomain(ibzweeklydtos);
-        boolean result = ibzweeklyService.editGetLastWeekTaskAndComTaskBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "已读", tags = {"周报" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/haveread")
@@ -196,13 +159,7 @@ public class IbzWeeklyResource {
         ibzweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
-    @ApiOperation(value = "批量处理[已读]", tags = {"周报" },  notes = "批量处理[已读]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/havereadbatch")
-    public ResponseEntity<Boolean> haveReadBatch(@RequestBody List<IbzWeeklyDTO> ibzweeklydtos) {
-        List<IbzWeekly> domains = ibzweeklyMapping.toDomain(ibzweeklydtos);
-        boolean result = ibzweeklyService.haveReadBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "判断本周是否创建过周报", tags = {"周报" },  notes = "判断本周是否创建过周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/jugthisweekcreateweekly")
@@ -215,13 +172,7 @@ public class IbzWeeklyResource {
         ibzweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
-    @ApiOperation(value = "批量处理[判断本周是否创建过周报]", tags = {"周报" },  notes = "批量处理[判断本周是否创建过周报]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/jugthisweekcreateweeklybatch")
-    public ResponseEntity<Boolean> jugThisWeekCreateWeeklyBatch(@RequestBody List<IbzWeeklyDTO> ibzweeklydtos) {
-        List<IbzWeekly> domains = ibzweeklyMapping.toDomain(ibzweeklydtos);
-        boolean result = ibzweeklyService.jugThisWeekCreateWeeklyBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "定时推送待阅提醒用户周报提交", tags = {"周报" },  notes = "定时推送待阅提醒用户周报提交")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/pushuserweekly")
@@ -234,13 +185,7 @@ public class IbzWeeklyResource {
         ibzweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
-    @ApiOperation(value = "批量处理[定时推送待阅提醒用户周报提交]", tags = {"周报" },  notes = "批量处理[定时推送待阅提醒用户周报提交]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/pushuserweeklybatch")
-    public ResponseEntity<Boolean> pushUserWeeklyBatch(@RequestBody List<IbzWeeklyDTO> ibzweeklydtos) {
-        List<IbzWeekly> domains = ibzweeklyMapping.toDomain(ibzweeklydtos);
-        boolean result = ibzweeklyService.pushUserWeeklyBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存周报", tags = {"周报" },  notes = "保存周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/save")
@@ -253,12 +198,6 @@ public class IbzWeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存周报", tags = {"周报" },  notes = "批量保存周报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzWeeklyDTO> ibzweeklydtos) {
-        ibzweeklyService.saveBatch(ibzweeklyMapping.toDomain(ibzweeklydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "提交", tags = {"周报" },  notes = "提交")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/submit")
@@ -271,13 +210,7 @@ public class IbzWeeklyResource {
         ibzweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
-    @ApiOperation(value = "批量处理[提交]", tags = {"周报" },  notes = "批量处理[提交]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/submitbatch")
-    public ResponseEntity<Boolean> submitBatch(@RequestBody List<IbzWeeklyDTO> ibzweeklydtos) {
-        List<IbzWeekly> domains = ibzweeklyMapping.toDomain(ibzweeklydtos);
-        boolean result = ibzweeklyService.submitBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
 	@ApiOperation(value = "获取数据集", tags = {"周报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchdefault")

@@ -66,15 +66,7 @@ public class IbzReportResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbzReportRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建汇报汇总", tags = {"汇报汇总" },  notes = "批量新建汇报汇总")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzreports/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzReportDTO> ibzreportdtos) {
-        ibzreportService.createBatch(ibzreportMapping.toDomain(ibzreportdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "ibzreport" , versionfield = "updatedate")
     @PreAuthorize("@IbzReportRuntime.test(#ibzreport_id,'UPDATE')")
     @ApiOperation(value = "更新汇报汇总", tags = {"汇报汇总" },  notes = "更新汇报汇总")
@@ -92,13 +84,6 @@ public class IbzReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzReportRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新汇报汇总", tags = {"汇报汇总" },  notes = "批量更新汇报汇总")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreports/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzReportDTO> ibzreportdtos) {
-        ibzreportService.updateBatch(ibzreportMapping.toDomain(ibzreportdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzReportRuntime.test(#ibzreport_id,'DELETE')")
     @ApiOperation(value = "删除汇报汇总", tags = {"汇报汇总" },  notes = "删除汇报汇总")
@@ -107,13 +92,6 @@ public class IbzReportResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzreportService.remove(ibzreport_id));
     }
 
-    @PreAuthorize("@IbzReportRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除汇报汇总", tags = {"汇报汇总" },  notes = "批量删除汇报汇总")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreports/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzreportService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取汇报汇总", tags = {"汇报汇总" },  notes = "获取汇报汇总")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzreports/{ibzreport_id}")
@@ -125,6 +103,7 @@ public class IbzReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzReportRuntime.test(#ibzreport_id,'CREATE')")
     @ApiOperation(value = "获取汇报汇总草稿", tags = {"汇报汇总" },  notes = "获取汇报汇总草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzreports/getdraft")
     public ResponseEntity<IbzReportDTO> getDraft(IbzReportDTO dto) {
@@ -150,6 +129,7 @@ public class IbzReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportdto);
     }
 
+
     @ApiOperation(value = "我收到的汇报（计数器）", tags = {"汇报汇总" },  notes = "我收到的汇报（计数器）")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreports/{ibzreport_id}/reportireceived")
     public ResponseEntity<IbzReportDTO> reportIReceived(@PathVariable("ibzreport_id") Long ibzreport_id, @RequestBody IbzReportDTO ibzreportdto) {
@@ -162,6 +142,7 @@ public class IbzReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportdto);
     }
 
+
     @ApiOperation(value = "保存汇报汇总", tags = {"汇报汇总" },  notes = "保存汇报汇总")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreports/save")
     public ResponseEntity<IbzReportDTO> save(@RequestBody IbzReportDTO ibzreportdto) {
@@ -173,12 +154,6 @@ public class IbzReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存汇报汇总", tags = {"汇报汇总" },  notes = "批量保存汇报汇总")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzreports/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzReportDTO> ibzreportdtos) {
-        ibzreportService.saveBatch(ibzreportMapping.toDomain(ibzreportdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzReportRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取汇报汇总", tags = {"汇报汇总" } ,notes = "获取汇报汇总")

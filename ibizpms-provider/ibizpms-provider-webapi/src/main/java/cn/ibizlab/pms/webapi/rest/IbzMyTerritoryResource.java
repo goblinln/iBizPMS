@@ -66,15 +66,7 @@ public class IbzMyTerritoryResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建我的地盘", tags = {"我的地盘" },  notes = "批量新建我的地盘")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzmyterritories/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzMyTerritoryDTO> ibzmyterritorydtos) {
-        ibzmyterritoryService.createBatch(ibzmyterritoryMapping.toDomain(ibzmyterritorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IbzMyTerritoryRuntime.test(#ibzmyterritory_id,'UPDATE')")
     @ApiOperation(value = "更新我的地盘", tags = {"我的地盘" },  notes = "更新我的地盘")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzmyterritories/{ibzmyterritory_id}")
@@ -91,13 +83,6 @@ public class IbzMyTerritoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新我的地盘", tags = {"我的地盘" },  notes = "批量更新我的地盘")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzmyterritories/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzMyTerritoryDTO> ibzmyterritorydtos) {
-        ibzmyterritoryService.updateBatch(ibzmyterritoryMapping.toDomain(ibzmyterritorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzMyTerritoryRuntime.test(#ibzmyterritory_id,'DELETE')")
     @ApiOperation(value = "删除我的地盘", tags = {"我的地盘" },  notes = "删除我的地盘")
@@ -106,13 +91,6 @@ public class IbzMyTerritoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzmyterritoryService.remove(ibzmyterritory_id));
     }
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除我的地盘", tags = {"我的地盘" },  notes = "批量删除我的地盘")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzmyterritories/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzmyterritoryService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzMyTerritoryRuntime.test(#ibzmyterritory_id,'READ')")
     @ApiOperation(value = "获取我的地盘", tags = {"我的地盘" },  notes = "获取我的地盘")
@@ -125,6 +103,7 @@ public class IbzMyTerritoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzMyTerritoryRuntime.test(#ibzmyterritory_id,'CREATE')")
     @ApiOperation(value = "获取我的地盘草稿", tags = {"我的地盘" },  notes = "获取我的地盘草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzmyterritories/getdraft")
     public ResponseEntity<IbzMyTerritoryDTO> getDraft(IbzMyTerritoryDTO dto) {
@@ -147,6 +126,7 @@ public class IbzMyTerritoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzmyterritorydto);
     }
 
+
     @ApiOperation(value = "我的收藏计数器", tags = {"我的地盘" },  notes = "我的收藏计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmyterritories/myfavoritecount")
     public ResponseEntity<IbzMyTerritoryDTO> myFavoriteCount() {
@@ -156,6 +136,7 @@ public class IbzMyTerritoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzmyterritorydto);
     }
 
+
     @ApiOperation(value = "我的地盘移动端计数器", tags = {"我的地盘" },  notes = "我的地盘移动端计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmyterritories/myterritorycount")
     public ResponseEntity<IbzMyTerritoryDTO> myTerritoryCount() {
@@ -164,6 +145,7 @@ public class IbzMyTerritoryResource {
         IbzMyTerritoryDTO ibzmyterritorydto = ibzmyterritoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzmyterritorydto);
     }
+
 
     @ApiOperation(value = "保存我的地盘", tags = {"我的地盘" },  notes = "保存我的地盘")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmyterritories/save")
@@ -176,12 +158,6 @@ public class IbzMyTerritoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存我的地盘", tags = {"我的地盘" },  notes = "批量保存我的地盘")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzmyterritories/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzMyTerritoryDTO> ibzmyterritorydtos) {
-        ibzmyterritoryService.saveBatch(ibzmyterritoryMapping.toDomain(ibzmyterritorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取DEFAULT", tags = {"我的地盘" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchdefault")

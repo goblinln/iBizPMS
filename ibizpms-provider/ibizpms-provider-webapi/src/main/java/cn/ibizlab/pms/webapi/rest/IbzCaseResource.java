@@ -72,15 +72,7 @@ public class IbzCaseResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbzCaseRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建测试用例", tags = {"测试用例" },  notes = "批量新建测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzCaseDTO> ibzcasedtos) {
-        ibzcaseService.createBatch(ibzcaseMapping.toDomain(ibzcasedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IbzCaseRuntime.test(#ibzcase_id,'UPDATE')")
     @ApiOperation(value = "更新测试用例", tags = {"测试用例" },  notes = "更新测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcases/{ibzcase_id}")
@@ -97,13 +89,6 @@ public class IbzCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzCaseRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新测试用例", tags = {"测试用例" },  notes = "批量更新测试用例")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcases/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzCaseDTO> ibzcasedtos) {
-        ibzcaseService.updateBatch(ibzcaseMapping.toDomain(ibzcasedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzCaseRuntime.test(#ibzcase_id,'DELETE')")
     @ApiOperation(value = "删除测试用例", tags = {"测试用例" },  notes = "删除测试用例")
@@ -112,13 +97,6 @@ public class IbzCaseResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.remove(ibzcase_id));
     }
 
-    @PreAuthorize("@IbzCaseRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除测试用例", tags = {"测试用例" },  notes = "批量删除测试用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcases/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzcaseService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzCaseRuntime.test(#ibzcase_id,'READ')")
     @ApiOperation(value = "获取测试用例", tags = {"测试用例" },  notes = "获取测试用例")
@@ -131,6 +109,7 @@ public class IbzCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzCaseRuntime.test(#ibzcase_id,'CREATE')")
     @ApiOperation(value = "获取测试用例草稿", tags = {"测试用例" },  notes = "获取测试用例草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzcases/getdraft")
     public ResponseEntity<IbzCaseDTO> getDraft(IbzCaseDTO dto) {
@@ -155,12 +134,6 @@ public class IbzCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存测试用例", tags = {"测试用例" },  notes = "批量保存测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzCaseDTO> ibzcasedtos) {
-        ibzcaseService.saveBatch(ibzcaseMapping.toDomain(ibzcasedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzCaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试用例" } ,notes = "获取DEFAULT")
@@ -205,17 +178,6 @@ public class IbzCaseResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzCaseRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "根据用例库批量建立测试用例", tags = {"测试用例" },  notes = "根据用例库批量建立测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/batch")
-    public ResponseEntity<Boolean> createBatchByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody List<IbzCaseDTO> ibzcasedtos) {
-        List<IbzCase> domainlist=ibzcaseMapping.toDomain(ibzcasedtos);
-        for(IbzCase domain:domainlist){
-            domain.setLib(ibzlib_id);
-        }
-        ibzcaseService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzCaseRuntime.test(#ibzcase_id,'UPDATE')")
     @ApiOperation(value = "根据用例库更新测试用例", tags = {"测试用例" },  notes = "根据用例库更新测试用例")
@@ -229,17 +191,6 @@ public class IbzCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzCaseRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "根据用例库批量更新测试用例", tags = {"测试用例" },  notes = "根据用例库批量更新测试用例")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzcases/batch")
-    public ResponseEntity<Boolean> updateBatchByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody List<IbzCaseDTO> ibzcasedtos) {
-        List<IbzCase> domainlist=ibzcaseMapping.toDomain(ibzcasedtos);
-        for(IbzCase domain:domainlist){
-            domain.setLib(ibzlib_id);
-        }
-        ibzcaseService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzCaseRuntime.test(#ibzcase_id,'DELETE')")
     @ApiOperation(value = "根据用例库删除测试用例", tags = {"测试用例" },  notes = "根据用例库删除测试用例")
@@ -248,13 +199,6 @@ public class IbzCaseResource {
 		return ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.remove(ibzcase_id));
     }
 
-    @PreAuthorize("@IbzCaseRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据用例库批量删除测试用例", tags = {"测试用例" },  notes = "根据用例库批量删除测试用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzcases/batch")
-    public ResponseEntity<Boolean> removeBatchByIbzLib(@RequestBody List<Long> ids) {
-        ibzcaseService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzCaseRuntime.test(#ibzcase_id,'READ')")
     @ApiOperation(value = "根据用例库获取测试用例", tags = {"测试用例" },  notes = "根据用例库获取测试用例")
@@ -288,16 +232,6 @@ public class IbzCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzcaseMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据用例库批量保存测试用例", tags = {"测试用例" },  notes = "根据用例库批量保存测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/savebatch")
-    public ResponseEntity<Boolean> saveBatchByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody List<IbzCaseDTO> ibzcasedtos) {
-        List<IbzCase> domainlist=ibzcaseMapping.toDomain(ibzcasedtos);
-        for(IbzCase domain:domainlist){
-             domain.setLib(ibzlib_id);
-        }
-        ibzcaseService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzCaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据用例库获取DEFAULT", tags = {"测试用例" } ,notes = "根据用例库获取DEFAULT")

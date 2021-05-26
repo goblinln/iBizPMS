@@ -66,15 +66,7 @@ public class ModuleResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@ModuleRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建模块", tags = {"模块" },  notes = "批量新建模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/modules/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<ModuleDTO> moduledtos) {
-        moduleService.createBatch(moduleMapping.toDomain(moduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@ModuleRuntime.test(#module_id,'UPDATE')")
     @ApiOperation(value = "更新模块", tags = {"模块" },  notes = "更新模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/modules/{module_id}")
@@ -91,13 +83,6 @@ public class ModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ModuleRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新模块", tags = {"模块" },  notes = "批量更新模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/modules/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ModuleDTO> moduledtos) {
-        moduleService.updateBatch(moduleMapping.toDomain(moduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ModuleRuntime.test(#module_id,'DELETE')")
     @ApiOperation(value = "删除模块", tags = {"模块" },  notes = "删除模块")
@@ -106,13 +91,6 @@ public class ModuleResource {
          return ResponseEntity.status(HttpStatus.OK).body(moduleService.remove(module_id));
     }
 
-    @PreAuthorize("@ModuleRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除模块", tags = {"模块" },  notes = "批量删除模块")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/modules/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        moduleService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ModuleRuntime.test(#module_id,'READ')")
     @ApiOperation(value = "获取模块", tags = {"模块" },  notes = "获取模块")
@@ -125,6 +103,7 @@ public class ModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ModuleRuntime.test(#module_id,'CREATE')")
     @ApiOperation(value = "获取模块草稿", tags = {"模块" },  notes = "获取模块草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/modules/getdraft")
     public ResponseEntity<ModuleDTO> getDraft(ModuleDTO dto) {
@@ -149,13 +128,7 @@ public class ModuleResource {
         moduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(moduledto);
     }
-    @ApiOperation(value = "批量处理[重建模块路径]", tags = {"模块" },  notes = "批量处理[重建模块路径]")
-	@RequestMapping(method = RequestMethod.POST, value = "/modules/fixbatch")
-    public ResponseEntity<Boolean> fixBatch(@RequestBody List<ModuleDTO> moduledtos) {
-        List<Module> domains = moduleMapping.toDomain(moduledtos);
-        boolean result = moduleService.fixBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存模块", tags = {"模块" },  notes = "保存模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/modules/save")
@@ -168,12 +141,6 @@ public class ModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存模块", tags = {"模块" },  notes = "批量保存模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/modules/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<ModuleDTO> moduledtos) {
-        moduleService.saveBatch(moduleMapping.toDomain(moduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取BugModule", tags = {"模块" } ,notes = "获取BugModule")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchbugmodule")

@@ -66,15 +66,7 @@ public class TaskStatsResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@TaskStatsRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建任务统计", tags = {"任务统计" },  notes = "批量新建任务统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/taskstats/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<TaskStatsDTO> taskstatsdtos) {
-        taskstatsService.createBatch(taskstatsMapping.toDomain(taskstatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@TaskStatsRuntime.test(#taskstats_id,'UPDATE')")
     @ApiOperation(value = "更新任务统计", tags = {"任务统计" },  notes = "更新任务统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/taskstats/{taskstats_id}")
@@ -91,13 +83,6 @@ public class TaskStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskStatsRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新任务统计", tags = {"任务统计" },  notes = "批量更新任务统计")
-	@RequestMapping(method = RequestMethod.PUT, value = "/taskstats/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<TaskStatsDTO> taskstatsdtos) {
-        taskstatsService.updateBatch(taskstatsMapping.toDomain(taskstatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@TaskStatsRuntime.test(#taskstats_id,'DELETE')")
     @ApiOperation(value = "删除任务统计", tags = {"任务统计" },  notes = "删除任务统计")
@@ -106,13 +91,6 @@ public class TaskStatsResource {
          return ResponseEntity.status(HttpStatus.OK).body(taskstatsService.remove(taskstats_id));
     }
 
-    @PreAuthorize("@TaskStatsRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除任务统计", tags = {"任务统计" },  notes = "批量删除任务统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/taskstats/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        taskstatsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@TaskStatsRuntime.test(#taskstats_id,'READ')")
     @ApiOperation(value = "获取任务统计", tags = {"任务统计" },  notes = "获取任务统计")
@@ -125,6 +103,7 @@ public class TaskStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@TaskStatsRuntime.test(#taskstats_id,'CREATE')")
     @ApiOperation(value = "获取任务统计草稿", tags = {"任务统计" },  notes = "获取任务统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/taskstats/getdraft")
     public ResponseEntity<TaskStatsDTO> getDraft(TaskStatsDTO dto) {
@@ -149,12 +128,6 @@ public class TaskStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存任务统计", tags = {"任务统计" },  notes = "批量保存任务统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/taskstats/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<TaskStatsDTO> taskstatsdtos) {
-        taskstatsService.saveBatch(taskstatsMapping.toDomain(taskstatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取数据集", tags = {"任务统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/fetchdefault")

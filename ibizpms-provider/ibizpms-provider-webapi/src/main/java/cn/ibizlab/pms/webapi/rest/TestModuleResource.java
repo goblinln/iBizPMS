@@ -66,15 +66,7 @@ public class TestModuleResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@TestModuleRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建测试模块", tags = {"测试模块" },  notes = "批量新建测试模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/testmodules/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<TestModuleDTO> testmoduledtos) {
-        testmoduleService.createBatch(testmoduleMapping.toDomain(testmoduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@TestModuleRuntime.test(#testmodule_id,'UPDATE')")
     @ApiOperation(value = "更新测试模块", tags = {"测试模块" },  notes = "更新测试模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testmodules/{testmodule_id}")
@@ -91,13 +83,6 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestModuleRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新测试模块", tags = {"测试模块" },  notes = "批量更新测试模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/testmodules/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<TestModuleDTO> testmoduledtos) {
-        testmoduleService.updateBatch(testmoduleMapping.toDomain(testmoduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@TestModuleRuntime.test(#testmodule_id,'DELETE')")
     @ApiOperation(value = "删除测试模块", tags = {"测试模块" },  notes = "删除测试模块")
@@ -106,13 +91,6 @@ public class TestModuleResource {
          return ResponseEntity.status(HttpStatus.OK).body(testmoduleService.remove(testmodule_id));
     }
 
-    @PreAuthorize("@TestModuleRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除测试模块", tags = {"测试模块" },  notes = "批量删除测试模块")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/testmodules/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        testmoduleService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@TestModuleRuntime.test(#testmodule_id,'READ')")
     @ApiOperation(value = "获取测试模块", tags = {"测试模块" },  notes = "获取测试模块")
@@ -125,6 +103,7 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@TestModuleRuntime.test(#testmodule_id,'CREATE')")
     @ApiOperation(value = "获取测试模块草稿", tags = {"测试模块" },  notes = "获取测试模块草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/testmodules/getdraft")
     public ResponseEntity<TestModuleDTO> getDraft(TestModuleDTO dto) {
@@ -150,6 +129,7 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
 
+
     @PreAuthorize("@TestModuleRuntime.test(#testmodule_id,'DELETE')")
     @ApiOperation(value = "删除模块", tags = {"测试模块" },  notes = "删除模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testmodules/{testmodule_id}/removemodule")
@@ -163,6 +143,7 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
 
+
     @ApiOperation(value = "保存测试模块", tags = {"测试模块" },  notes = "保存测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/testmodules/save")
     public ResponseEntity<TestModuleDTO> save(@RequestBody TestModuleDTO testmoduledto) {
@@ -174,12 +155,6 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存测试模块", tags = {"测试模块" },  notes = "批量保存测试模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/testmodules/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<TestModuleDTO> testmoduledtos) {
-        testmoduleService.saveBatch(testmoduleMapping.toDomain(testmoduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取BYPATH", tags = {"测试模块" } ,notes = "获取BYPATH")
@@ -332,17 +307,6 @@ public class TestModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品批量建立测试模块", tags = {"测试模块" },  notes = "根据产品批量建立测试模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules/batch")
-    public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestModuleDTO> testmoduledtos) {
-        List<TestModule> domainlist=testmoduleMapping.toDomain(testmoduledtos);
-        for(TestModule domain:domainlist){
-            domain.setRoot(product_id);
-        }
-        testmoduleService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品更新测试模块", tags = {"测试模块" },  notes = "根据产品更新测试模块")
@@ -356,17 +320,6 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
-    @ApiOperation(value = "根据产品批量更新测试模块", tags = {"测试模块" },  notes = "根据产品批量更新测试模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testmodules/batch")
-    public ResponseEntity<Boolean> updateBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestModuleDTO> testmoduledtos) {
-        List<TestModule> domainlist=testmoduleMapping.toDomain(testmoduledtos);
-        for(TestModule domain:domainlist){
-            domain.setRoot(product_id);
-        }
-        testmoduleService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品删除测试模块", tags = {"测试模块" },  notes = "根据产品删除测试模块")
@@ -375,13 +328,6 @@ public class TestModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(testmoduleService.remove(testmodule_id));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
-    @ApiOperation(value = "根据产品批量删除测试模块", tags = {"测试模块" },  notes = "根据产品批量删除测试模块")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testmodules/batch")
-    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
-        testmoduleService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品获取测试模块", tags = {"测试模块" },  notes = "根据产品获取测试模块")
@@ -416,6 +362,7 @@ public class TestModuleResource {
         testmoduledto = testmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品测试模块", tags = {"测试模块" },  notes = "根据产品测试模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testmodules/{testmodule_id}/removemodule")
@@ -427,6 +374,7 @@ public class TestModuleResource {
         testmoduledto = testmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
+
     @ApiOperation(value = "根据产品保存测试模块", tags = {"测试模块" },  notes = "根据产品保存测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules/save")
     public ResponseEntity<TestModuleDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -436,16 +384,6 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(testmoduleMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据产品批量保存测试模块", tags = {"测试模块" },  notes = "根据产品批量保存测试模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestModuleDTO> testmoduledtos) {
-        List<TestModule> domainlist=testmoduleMapping.toDomain(testmoduledtos);
-        for(TestModule domain:domainlist){
-             domain.setRoot(product_id);
-        }
-        testmoduleService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取BYPATH", tags = {"测试模块" } ,notes = "根据产品获取BYPATH")

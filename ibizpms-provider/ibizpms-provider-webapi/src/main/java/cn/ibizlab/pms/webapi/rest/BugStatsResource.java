@@ -66,15 +66,7 @@ public class BugStatsResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@BugStatsRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建Bug统计", tags = {"Bug统计" },  notes = "批量新建Bug统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/bugstats/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<BugStatsDTO> bugstatsdtos) {
-        bugstatsService.createBatch(bugstatsMapping.toDomain(bugstatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@BugStatsRuntime.test(#bugstats_id,'UPDATE')")
     @ApiOperation(value = "更新Bug统计", tags = {"Bug统计" },  notes = "更新Bug统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/bugstats/{bugstats_id}")
@@ -91,13 +83,6 @@ public class BugStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@BugStatsRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新Bug统计", tags = {"Bug统计" },  notes = "批量更新Bug统计")
-	@RequestMapping(method = RequestMethod.PUT, value = "/bugstats/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<BugStatsDTO> bugstatsdtos) {
-        bugstatsService.updateBatch(bugstatsMapping.toDomain(bugstatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@BugStatsRuntime.test(#bugstats_id,'DELETE')")
     @ApiOperation(value = "删除Bug统计", tags = {"Bug统计" },  notes = "删除Bug统计")
@@ -106,13 +91,6 @@ public class BugStatsResource {
          return ResponseEntity.status(HttpStatus.OK).body(bugstatsService.remove(bugstats_id));
     }
 
-    @PreAuthorize("@BugStatsRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除Bug统计", tags = {"Bug统计" },  notes = "批量删除Bug统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/bugstats/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        bugstatsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@BugStatsRuntime.test(#bugstats_id,'READ')")
     @ApiOperation(value = "获取Bug统计", tags = {"Bug统计" },  notes = "获取Bug统计")
@@ -125,6 +103,7 @@ public class BugStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@BugStatsRuntime.test(#bugstats_id,'CREATE')")
     @ApiOperation(value = "获取Bug统计草稿", tags = {"Bug统计" },  notes = "获取Bug统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/bugstats/getdraft")
     public ResponseEntity<BugStatsDTO> getDraft(BugStatsDTO dto) {
@@ -149,12 +128,6 @@ public class BugStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存Bug统计", tags = {"Bug统计" },  notes = "批量保存Bug统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/bugstats/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<BugStatsDTO> bugstatsdtos) {
-        bugstatsService.saveBatch(bugstatsMapping.toDomain(bugstatsdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取Bug在每个解决方案的Bug数", tags = {"Bug统计" } ,notes = "获取Bug在每个解决方案的Bug数")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchbugcountinresolution")

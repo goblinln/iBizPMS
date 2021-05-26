@@ -58,14 +58,7 @@ public class IBIZProTagResource {
         IBIZProTagDTO dto = ibizprotagMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建标签", tags = {"标签" },  notes = "批量新建标签")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IBIZProTagDTO> ibizprotagdtos) {
-        ibizprotagService.createBatch(ibizprotagMapping.toDomain(ibizprotagdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @ApiOperation(value = "更新标签", tags = {"标签" },  notes = "更新标签")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizprotags/{ibizprotag_id}")
     @Transactional
@@ -77,12 +70,6 @@ public class IBIZProTagResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新标签", tags = {"标签" },  notes = "批量更新标签")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibizprotags/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBIZProTagDTO> ibizprotagdtos) {
-        ibizprotagService.updateBatch(ibizprotagMapping.toDomain(ibizprotagdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除标签", tags = {"标签" },  notes = "删除标签")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizprotags/{ibizprotag_id}")
@@ -90,12 +77,6 @@ public class IBIZProTagResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizprotagService.remove(ibizprotag_id));
     }
 
-    @ApiOperation(value = "批量删除标签", tags = {"标签" },  notes = "批量删除标签")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizprotags/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibizprotagService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取标签", tags = {"标签" },  notes = "获取标签")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/{ibizprotag_id}")
@@ -127,12 +108,6 @@ public class IBIZProTagResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存标签", tags = {"标签" },  notes = "批量保存标签")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBIZProTagDTO> ibizprotagdtos) {
-        ibizprotagService.saveBatch(ibizprotagMapping.toDomain(ibizprotagdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取数据集", tags = {"标签" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizprotags/fetchdefault")

@@ -72,15 +72,7 @@ public class ProjectResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@ProjectRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建项目", tags = {"项目" },  notes = "批量新建项目")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        projectService.createBatch(projectMapping.toDomain(projectdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "更新项目", tags = {"项目" },  notes = "更新项目")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}")
@@ -97,13 +89,6 @@ public class ProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新项目", tags = {"项目" },  notes = "批量更新项目")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        projectService.updateBatch(projectMapping.toDomain(projectdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "删除项目", tags = {"项目" },  notes = "删除项目")
@@ -112,13 +97,6 @@ public class ProjectResource {
          return ResponseEntity.status(HttpStatus.OK).body(projectService.remove(project_id));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除项目", tags = {"项目" },  notes = "批量删除项目")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        projectService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "获取项目", tags = {"项目" },  notes = "获取项目")
@@ -131,6 +109,7 @@ public class ProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "获取项目草稿", tags = {"项目" },  notes = "获取项目草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/getdraft")
     public ResponseEntity<ProjectDTO> getDraft(ProjectDTO dto) {
@@ -150,14 +129,7 @@ public class ProjectResource {
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
-    @PreAuthorize("@ProjectRuntime.test('ACTIVATE')")
-    @ApiOperation(value = "批量处理[激活]", tags = {"项目" },  notes = "批量处理[激活]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/activatebatch")
-    public ResponseEntity<Boolean> activateBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        List<Project> domains = projectMapping.toDomain(projectdtos);
-        boolean result = projectService.activateBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "批量解除关联需求", tags = {"项目" },  notes = "批量解除关联需求")
@@ -171,14 +143,7 @@ public class ProjectResource {
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
-    @PreAuthorize("@ProjectRuntime.test('MANAGE')")
-    @ApiOperation(value = "批量处理[批量解除关联需求]", tags = {"项目" },  notes = "批量处理[批量解除关联需求]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/batchunlinkstorybatch")
-    public ResponseEntity<Boolean> batchUnlinkStoryBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        List<Project> domains = projectMapping.toDomain(projectdtos);
-        boolean result = projectService.batchUnlinkStoryBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "取消置顶", tags = {"项目" },  notes = "取消置顶")
@@ -192,6 +157,7 @@ public class ProjectResource {
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
+
 
     @ApiOperation(value = "检查项目", tags = {"项目" },  notes = "检查项目")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/checkkey")
@@ -211,14 +177,7 @@ public class ProjectResource {
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
-    @PreAuthorize("@ProjectRuntime.test('CLOSE')")
-    @ApiOperation(value = "批量处理[关闭]", tags = {"项目" },  notes = "批量处理[关闭]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/closebatch")
-    public ResponseEntity<Boolean> closeBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        List<Project> domains = projectMapping.toDomain(projectdtos);
-        boolean result = projectService.closeBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "项目关联需求-按计划关联", tags = {"项目" },  notes = "项目关联需求-按计划关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/importplanstories")
@@ -231,13 +190,7 @@ public class ProjectResource {
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
-    @ApiOperation(value = "批量处理[项目关联需求-按计划关联]", tags = {"项目" },  notes = "批量处理[项目关联需求-按计划关联]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/importplanstoriesbatch")
-    public ResponseEntity<Boolean> importPlanStoriesBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        List<Project> domains = projectMapping.toDomain(projectdtos);
-        boolean result = projectService.importPlanStoriesBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "关联需求", tags = {"项目" },  notes = "关联需求")
@@ -251,14 +204,7 @@ public class ProjectResource {
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
-    @PreAuthorize("@ProjectRuntime.test('MANAGE')")
-    @ApiOperation(value = "批量处理[关联需求]", tags = {"项目" },  notes = "批量处理[关联需求]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/linkstorybatch")
-    public ResponseEntity<Boolean> linkStoryBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        List<Project> domains = projectMapping.toDomain(projectdtos);
-        boolean result = projectService.linkStoryBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "团队管理", tags = {"项目" },  notes = "团队管理")
@@ -272,14 +218,7 @@ public class ProjectResource {
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
-    @PreAuthorize("@ProjectRuntime.test('MANAGE')")
-    @ApiOperation(value = "批量处理[团队管理]", tags = {"项目" },  notes = "批量处理[团队管理]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/managemembersbatch")
-    public ResponseEntity<Boolean> manageMembersBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        List<Project> domains = projectMapping.toDomain(projectdtos);
-        boolean result = projectService.manageMembersBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "移动端项目计数器", tags = {"项目" },  notes = "移动端项目计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/mobprojectcount")
@@ -293,6 +232,7 @@ public class ProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
 
+
     @ApiOperation(value = "项目立项任务快速分组计数器", tags = {"项目" },  notes = "项目立项任务快速分组计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/pmseeprojectalltaskcount")
     public ResponseEntity<ProjectDTO> pmsEeProjectAllTaskCount(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -304,13 +244,7 @@ public class ProjectResource {
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
-    @ApiOperation(value = "批量处理[项目立项任务快速分组计数器]", tags = {"项目" },  notes = "批量处理[项目立项任务快速分组计数器]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/pmseeprojectalltaskcountbatch")
-    public ResponseEntity<Boolean> pmsEeProjectAllTaskCountBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        List<Project> domains = projectMapping.toDomain(projectdtos);
-        boolean result = projectService.pmsEeProjectAllTaskCountBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "项目立项待办任务快速分组计数器", tags = {"项目" },  notes = "项目立项待办任务快速分组计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/pmseeprojecttodotaskcount")
@@ -323,13 +257,7 @@ public class ProjectResource {
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
-    @ApiOperation(value = "批量处理[项目立项待办任务快速分组计数器]", tags = {"项目" },  notes = "批量处理[项目立项待办任务快速分组计数器]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/pmseeprojecttodotaskcountbatch")
-    public ResponseEntity<Boolean> pmsEeProjectTodoTaskCountBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        List<Project> domains = projectMapping.toDomain(projectdtos);
-        boolean result = projectService.pmsEeProjectTodoTaskCountBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "项目任务快速分组计数器", tags = {"项目" },  notes = "项目任务快速分组计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttaskqcnt")
@@ -342,6 +270,7 @@ public class ProjectResource {
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
+
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "置顶", tags = {"项目" },  notes = "置顶")
@@ -356,6 +285,7 @@ public class ProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
 
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'PUTOFF')")
     @ApiOperation(value = "延期", tags = {"项目" },  notes = "延期")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/putoff")
@@ -368,14 +298,7 @@ public class ProjectResource {
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
-    @PreAuthorize("@ProjectRuntime.test('PUTOFF')")
-    @ApiOperation(value = "批量处理[延期]", tags = {"项目" },  notes = "批量处理[延期]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/putoffbatch")
-    public ResponseEntity<Boolean> putoffBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        List<Project> domains = projectMapping.toDomain(projectdtos);
-        boolean result = projectService.putoffBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存项目", tags = {"项目" },  notes = "保存项目")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/save")
@@ -388,12 +311,6 @@ public class ProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存项目", tags = {"项目" },  notes = "批量保存项目")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        projectService.saveBatch(projectMapping.toDomain(projectdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'START')")
     @ApiOperation(value = "开始", tags = {"项目" },  notes = "开始")
@@ -407,14 +324,7 @@ public class ProjectResource {
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
-    @PreAuthorize("@ProjectRuntime.test('START')")
-    @ApiOperation(value = "批量处理[开始]", tags = {"项目" },  notes = "批量处理[开始]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/startbatch")
-    public ResponseEntity<Boolean> startBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        List<Project> domains = projectMapping.toDomain(projectdtos);
-        boolean result = projectService.startBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'SUSPEND')")
     @ApiOperation(value = "挂起", tags = {"项目" },  notes = "挂起")
@@ -428,14 +338,7 @@ public class ProjectResource {
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
-    @PreAuthorize("@ProjectRuntime.test('SUSPEND')")
-    @ApiOperation(value = "批量处理[挂起]", tags = {"项目" },  notes = "批量处理[挂起]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/suspendbatch")
-    public ResponseEntity<Boolean> suspendBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        List<Project> domains = projectMapping.toDomain(projectdtos);
-        boolean result = projectService.suspendBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "移除成员", tags = {"项目" },  notes = "移除成员")
@@ -449,14 +352,7 @@ public class ProjectResource {
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
-    @PreAuthorize("@ProjectRuntime.test('MANAGE')")
-    @ApiOperation(value = "批量处理[移除成员]", tags = {"项目" },  notes = "批量处理[移除成员]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/unlinkmemberbatch")
-    public ResponseEntity<Boolean> unlinkMemberBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        List<Project> domains = projectMapping.toDomain(projectdtos);
-        boolean result = projectService.unlinkMemberBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "解除关联需求", tags = {"项目" },  notes = "解除关联需求")
@@ -470,14 +366,7 @@ public class ProjectResource {
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
-    @PreAuthorize("@ProjectRuntime.test('MANAGE')")
-    @ApiOperation(value = "批量处理[解除关联需求]", tags = {"项目" },  notes = "批量处理[解除关联需求]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/unlinkstorybatch")
-    public ResponseEntity<Boolean> unlinkStoryBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        List<Project> domains = projectMapping.toDomain(projectdtos);
-        boolean result = projectService.unlinkStoryBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "排序", tags = {"项目" },  notes = "排序")
@@ -491,14 +380,7 @@ public class ProjectResource {
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
-    @PreAuthorize("@ProjectRuntime.test('MANAGE')")
-    @ApiOperation(value = "批量处理[排序]", tags = {"项目" },  notes = "批量处理[排序]")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/updateorderbatch")
-    public ResponseEntity<Boolean> updateOrderBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        List<Project> domains = projectMapping.toDomain(projectdtos);
-        boolean result = projectService.updateOrderBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
 	@ApiOperation(value = "获取BugProject", tags = {"项目" } ,notes = "获取BugProject")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchbugproject")

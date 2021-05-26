@@ -63,14 +63,7 @@ public class IbizproProductMonthlyResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建产品月报", tags = {"产品月报" },  notes = "批量新建产品月报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductmonthlies/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbizproProductMonthlyDTO> ibizproproductmonthlydtos) {
-        ibizproproductmonthlyService.createBatch(ibizproproductmonthlyMapping.toDomain(ibizproproductmonthlydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @VersionCheck(entity = "ibizproproductmonthly" , versionfield = "updatedate")
     @ApiOperation(value = "更新产品月报", tags = {"产品月报" },  notes = "更新产品月报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproproductmonthlies/{ibizproproductmonthly_id}")
@@ -85,12 +78,6 @@ public class IbizproProductMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新产品月报", tags = {"产品月报" },  notes = "批量更新产品月报")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproproductmonthlies/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbizproProductMonthlyDTO> ibizproproductmonthlydtos) {
-        ibizproproductmonthlyService.updateBatch(ibizproproductmonthlyMapping.toDomain(ibizproproductmonthlydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除产品月报", tags = {"产品月报" },  notes = "删除产品月报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductmonthlies/{ibizproproductmonthly_id}")
@@ -98,12 +85,6 @@ public class IbizproProductMonthlyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlyService.remove(ibizproproductmonthly_id));
     }
 
-    @ApiOperation(value = "批量删除产品月报", tags = {"产品月报" },  notes = "批量删除产品月报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductmonthlies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibizproproductmonthlyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取产品月报", tags = {"产品月报" },  notes = "获取产品月报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproproductmonthlies/{ibizproproductmonthly_id}")
@@ -139,13 +120,7 @@ public class IbizproProductMonthlyResource {
         ibizproproductmonthlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlydto);
     }
-    @ApiOperation(value = "批量处理[手动生成产品月报]", tags = {"产品月报" },  notes = "批量处理[手动生成产品月报]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductmonthlies/manualcreatemonthlybatch")
-    public ResponseEntity<Boolean> manualCreateMonthlyBatch(@RequestBody List<IbizproProductMonthlyDTO> ibizproproductmonthlydtos) {
-        List<IbizproProductMonthly> domains = ibizproproductmonthlyMapping.toDomain(ibizproproductmonthlydtos);
-        boolean result = ibizproproductmonthlyService.manualCreateMonthlyBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存产品月报", tags = {"产品月报" },  notes = "保存产品月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductmonthlies/save")
@@ -158,12 +133,6 @@ public class IbizproProductMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存产品月报", tags = {"产品月报" },  notes = "批量保存产品月报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductmonthlies/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbizproProductMonthlyDTO> ibizproproductmonthlydtos) {
-        ibizproproductmonthlyService.saveBatch(ibizproproductmonthlyMapping.toDomain(ibizproproductmonthlydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "汇总产品月报", tags = {"产品月报" },  notes = "汇总产品月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductmonthlies/{ibizproproductmonthly_id}/statsproductmonthly")
@@ -176,13 +145,7 @@ public class IbizproProductMonthlyResource {
         ibizproproductmonthlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlydto);
     }
-    @ApiOperation(value = "批量处理[汇总产品月报]", tags = {"产品月报" },  notes = "批量处理[汇总产品月报]")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductmonthlies/statsproductmonthlybatch")
-    public ResponseEntity<Boolean> statsProductMonthlyBatch(@RequestBody List<IbizproProductMonthlyDTO> ibizproproductmonthlydtos) {
-        List<IbizproProductMonthly> domains = ibizproproductmonthlyMapping.toDomain(ibizproproductmonthlydtos);
-        boolean result = ibizproproductmonthlyService.statsProductMonthlyBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
 	@ApiOperation(value = "获取数据集", tags = {"产品月报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductmonthlies/fetchdefault")

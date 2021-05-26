@@ -66,15 +66,7 @@ public class UserTplResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@UserTplRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建用户模板", tags = {"用户模板" },  notes = "批量新建用户模板")
-	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<UserTplDTO> usertpldtos) {
-        usertplService.createBatch(usertplMapping.toDomain(usertpldtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@UserTplRuntime.test(#usertpl_id,'UPDATE')")
     @ApiOperation(value = "更新用户模板", tags = {"用户模板" },  notes = "更新用户模板")
 	@RequestMapping(method = RequestMethod.PUT, value = "/usertpls/{usertpl_id}")
@@ -91,13 +83,6 @@ public class UserTplResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserTplRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新用户模板", tags = {"用户模板" },  notes = "批量更新用户模板")
-	@RequestMapping(method = RequestMethod.PUT, value = "/usertpls/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<UserTplDTO> usertpldtos) {
-        usertplService.updateBatch(usertplMapping.toDomain(usertpldtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@UserTplRuntime.test(#usertpl_id,'DELETE')")
     @ApiOperation(value = "删除用户模板", tags = {"用户模板" },  notes = "删除用户模板")
@@ -106,13 +91,6 @@ public class UserTplResource {
          return ResponseEntity.status(HttpStatus.OK).body(usertplService.remove(usertpl_id));
     }
 
-    @PreAuthorize("@UserTplRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除用户模板", tags = {"用户模板" },  notes = "批量删除用户模板")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/usertpls/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        usertplService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@UserTplRuntime.test(#usertpl_id,'READ')")
     @ApiOperation(value = "获取用户模板", tags = {"用户模板" },  notes = "获取用户模板")
@@ -125,6 +103,7 @@ public class UserTplResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@UserTplRuntime.test(#usertpl_id,'CREATE')")
     @ApiOperation(value = "获取用户模板草稿", tags = {"用户模板" },  notes = "获取用户模板草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/usertpls/getdraft")
     public ResponseEntity<UserTplDTO> getDraft(UserTplDTO dto) {
@@ -149,13 +128,7 @@ public class UserTplResource {
         usertpldto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(usertpldto);
     }
-    @ApiOperation(value = "批量处理[删除]", tags = {"用户模板" },  notes = "批量处理[删除]")
-	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/hasdeletedbatch")
-    public ResponseEntity<Boolean> hasDeletedBatch(@RequestBody List<UserTplDTO> usertpldtos) {
-        List<UserTpl> domains = usertplMapping.toDomain(usertpldtos);
-        boolean result = usertplService.hasDeletedBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @ApiOperation(value = "保存用户模板", tags = {"用户模板" },  notes = "保存用户模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/save")
@@ -168,12 +141,6 @@ public class UserTplResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存用户模板", tags = {"用户模板" },  notes = "批量保存用户模板")
-	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<UserTplDTO> usertpldtos) {
-        usertplService.saveBatch(usertplMapping.toDomain(usertpldtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@UserTplRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户模板" } ,notes = "获取DEFAULT")

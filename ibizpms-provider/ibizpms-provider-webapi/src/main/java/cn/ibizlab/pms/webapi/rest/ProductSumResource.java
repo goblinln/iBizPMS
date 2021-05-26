@@ -66,15 +66,7 @@ public class ProductSumResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@ProductSumRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建产品汇总表", tags = {"产品汇总表" },  notes = "批量新建产品汇总表")
-	@RequestMapping(method = RequestMethod.POST, value = "/productsums/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<ProductSumDTO> productsumdtos) {
-        productsumService.createBatch(productsumMapping.toDomain(productsumdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@ProductSumRuntime.test(#productsum_id,'UPDATE')")
     @ApiOperation(value = "更新产品汇总表", tags = {"产品汇总表" },  notes = "更新产品汇总表")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productsums/{productsum_id}")
@@ -91,13 +83,6 @@ public class ProductSumResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductSumRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新产品汇总表", tags = {"产品汇总表" },  notes = "批量更新产品汇总表")
-	@RequestMapping(method = RequestMethod.PUT, value = "/productsums/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProductSumDTO> productsumdtos) {
-        productsumService.updateBatch(productsumMapping.toDomain(productsumdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductSumRuntime.test(#productsum_id,'DELETE')")
     @ApiOperation(value = "删除产品汇总表", tags = {"产品汇总表" },  notes = "删除产品汇总表")
@@ -106,13 +91,6 @@ public class ProductSumResource {
          return ResponseEntity.status(HttpStatus.OK).body(productsumService.remove(productsum_id));
     }
 
-    @PreAuthorize("@ProductSumRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除产品汇总表", tags = {"产品汇总表" },  notes = "批量删除产品汇总表")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productsums/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        productsumService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductSumRuntime.test(#productsum_id,'READ')")
     @ApiOperation(value = "获取产品汇总表", tags = {"产品汇总表" },  notes = "获取产品汇总表")
@@ -125,6 +103,7 @@ public class ProductSumResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductSumRuntime.test(#productsum_id,'CREATE')")
     @ApiOperation(value = "获取产品汇总表草稿", tags = {"产品汇总表" },  notes = "获取产品汇总表草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/productsums/getdraft")
     public ResponseEntity<ProductSumDTO> getDraft(ProductSumDTO dto) {
@@ -149,12 +128,6 @@ public class ProductSumResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存产品汇总表", tags = {"产品汇总表" },  notes = "批量保存产品汇总表")
-	@RequestMapping(method = RequestMethod.POST, value = "/productsums/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProductSumDTO> productsumdtos) {
-        productsumService.saveBatch(productsumMapping.toDomain(productsumdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取数据集", tags = {"产品汇总表" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/productsums/fetchdefault")

@@ -63,14 +63,7 @@ public class UserContactResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @ApiOperation(value = "批量新建用户联系方式", tags = {"用户联系方式" },  notes = "批量新建用户联系方式")
-	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<UserContactDTO> usercontactdtos) {
-        usercontactService.createBatch(usercontactMapping.toDomain(usercontactdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @ApiOperation(value = "更新用户联系方式", tags = {"用户联系方式" },  notes = "更新用户联系方式")
 	@RequestMapping(method = RequestMethod.PUT, value = "/usercontacts/{usercontact_id}")
     @Transactional
@@ -84,12 +77,6 @@ public class UserContactResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量更新用户联系方式", tags = {"用户联系方式" },  notes = "批量更新用户联系方式")
-	@RequestMapping(method = RequestMethod.PUT, value = "/usercontacts/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<UserContactDTO> usercontactdtos) {
-        usercontactService.updateBatch(usercontactMapping.toDomain(usercontactdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "删除用户联系方式", tags = {"用户联系方式" },  notes = "删除用户联系方式")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/usercontacts/{usercontact_id}")
@@ -97,12 +84,6 @@ public class UserContactResource {
          return ResponseEntity.status(HttpStatus.OK).body(usercontactService.remove(usercontact_id));
     }
 
-    @ApiOperation(value = "批量删除用户联系方式", tags = {"用户联系方式" },  notes = "批量删除用户联系方式")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/usercontacts/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        usercontactService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取用户联系方式", tags = {"用户联系方式" },  notes = "获取用户联系方式")
 	@RequestMapping(method = RequestMethod.GET, value = "/usercontacts/{usercontact_id}")
@@ -114,6 +95,7 @@ public class UserContactResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@UserContactRuntime.test(#usercontact_id,'CREATE')")
     @ApiOperation(value = "获取用户联系方式草稿", tags = {"用户联系方式" },  notes = "获取用户联系方式草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/usercontacts/getdraft")
     public ResponseEntity<UserContactDTO> getDraft(UserContactDTO dto) {
@@ -138,12 +120,6 @@ public class UserContactResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存用户联系方式", tags = {"用户联系方式" },  notes = "批量保存用户联系方式")
-	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<UserContactDTO> usercontactdtos) {
-        usercontactService.saveBatch(usercontactMapping.toDomain(usercontactdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
 	@ApiOperation(value = "获取抄送联系人", tags = {"用户联系方式" } ,notes = "获取抄送联系人")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchcurusercontact")

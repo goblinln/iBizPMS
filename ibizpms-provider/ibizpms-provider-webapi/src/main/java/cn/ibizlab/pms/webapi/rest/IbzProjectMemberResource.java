@@ -66,15 +66,7 @@ public class IbzProjectMemberResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建项目相关成员", tags = {"项目相关成员" },  notes = "批量新建项目相关成员")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprojectmembers/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzProjectMemberDTO> ibzprojectmemberdtos) {
-        ibzprojectmemberService.createBatch(ibzprojectmemberMapping.toDomain(ibzprojectmemberdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id,'UPDATE')")
     @ApiOperation(value = "更新项目相关成员", tags = {"项目相关成员" },  notes = "更新项目相关成员")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprojectmembers/{ibzprojectmember_id}")
@@ -91,13 +83,6 @@ public class IbzProjectMemberResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新项目相关成员", tags = {"项目相关成员" },  notes = "批量更新项目相关成员")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprojectmembers/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzProjectMemberDTO> ibzprojectmemberdtos) {
-        ibzprojectmemberService.updateBatch(ibzprojectmemberMapping.toDomain(ibzprojectmemberdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id,'DELETE')")
     @ApiOperation(value = "删除项目相关成员", tags = {"项目相关成员" },  notes = "删除项目相关成员")
@@ -106,13 +91,6 @@ public class IbzProjectMemberResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprojectmemberService.remove(ibzprojectmember_id));
     }
 
-    @PreAuthorize("@IbzProjectMemberRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除项目相关成员", tags = {"项目相关成员" },  notes = "批量删除项目相关成员")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprojectmembers/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzprojectmemberService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "获取项目相关成员", tags = {"项目相关成员" },  notes = "获取项目相关成员")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprojectmembers/{ibzprojectmember_id}")
@@ -124,6 +102,7 @@ public class IbzProjectMemberResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id,'CREATE')")
     @ApiOperation(value = "获取项目相关成员草稿", tags = {"项目相关成员" },  notes = "获取项目相关成员草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprojectmembers/getdraft")
     public ResponseEntity<IbzProjectMemberDTO> getDraft(IbzProjectMemberDTO dto) {
@@ -148,12 +127,6 @@ public class IbzProjectMemberResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存项目相关成员", tags = {"项目相关成员" },  notes = "批量保存项目相关成员")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprojectmembers/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzProjectMemberDTO> ibzprojectmemberdtos) {
-        ibzprojectmemberService.saveBatch(ibzprojectmemberMapping.toDomain(ibzprojectmemberdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@IbzProjectMemberRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目相关成员" } ,notes = "获取DEFAULT")

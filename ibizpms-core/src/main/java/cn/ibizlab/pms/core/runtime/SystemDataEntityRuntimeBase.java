@@ -435,6 +435,12 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @return
      */
     public boolean quickTest(String action) {
+        if(DataAccessActions.DENY.equals(action)){
+            return false;
+        }
+        if(DataAccessActions.NONE.equals(action)){
+            return true;
+        }
         boolean check = true;
         this.prepare();
         if (this.getUserContext().isSuperuser())
@@ -462,6 +468,12 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      */
     @SneakyThrows
     public boolean test(Serializable key, String action) {
+        if(DataAccessActions.DENY.equals(action)){
+            return false;
+        }
+        if(DataAccessActions.NONE.equals(action)){
+            return true;
+        }
         boolean check = true;
         int accessMode;
         this.prepare();

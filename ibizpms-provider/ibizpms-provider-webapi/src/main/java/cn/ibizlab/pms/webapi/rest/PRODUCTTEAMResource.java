@@ -66,15 +66,7 @@ public class PRODUCTTEAMResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@PRODUCTTEAMRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建产品团队", tags = {"产品团队" },  notes = "批量新建产品团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/productteams/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<PRODUCTTEAMDTO> productteamdtos) {
-        productteamService.createBatch(productteamMapping.toDomain(productteamdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@PRODUCTTEAMRuntime.test(#productteam_id,'UPDATE')")
     @ApiOperation(value = "更新产品团队", tags = {"产品团队" },  notes = "更新产品团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productteams/{productteam_id}")
@@ -91,13 +83,6 @@ public class PRODUCTTEAMResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@PRODUCTTEAMRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新产品团队", tags = {"产品团队" },  notes = "批量更新产品团队")
-	@RequestMapping(method = RequestMethod.PUT, value = "/productteams/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<PRODUCTTEAMDTO> productteamdtos) {
-        productteamService.updateBatch(productteamMapping.toDomain(productteamdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@PRODUCTTEAMRuntime.test(#productteam_id,'DELETE')")
     @ApiOperation(value = "删除产品团队", tags = {"产品团队" },  notes = "删除产品团队")
@@ -106,13 +91,6 @@ public class PRODUCTTEAMResource {
          return ResponseEntity.status(HttpStatus.OK).body(productteamService.remove(productteam_id));
     }
 
-    @PreAuthorize("@PRODUCTTEAMRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除产品团队", tags = {"产品团队" },  notes = "批量删除产品团队")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productteams/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        productteamService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@PRODUCTTEAMRuntime.test(#productteam_id,'READ')")
     @ApiOperation(value = "获取产品团队", tags = {"产品团队" },  notes = "获取产品团队")
@@ -125,6 +103,7 @@ public class PRODUCTTEAMResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@PRODUCTTEAMRuntime.test(#productteam_id,'CREATE')")
     @ApiOperation(value = "获取产品团队草稿", tags = {"产品团队" },  notes = "获取产品团队草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/productteams/getdraft")
     public ResponseEntity<PRODUCTTEAMDTO> getDraft(PRODUCTTEAMDTO dto) {
@@ -149,13 +128,7 @@ public class PRODUCTTEAMResource {
         productteamdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productteamdto);
     }
-    @ApiOperation(value = "批量处理[PmsEe团队管理过滤]", tags = {"产品团队" },  notes = "批量处理[PmsEe团队管理过滤]")
-	@RequestMapping(method = RequestMethod.POST, value = "/productteams/productteamguolvbatch")
-    public ResponseEntity<Boolean> productTeamGuoLvBatch(@RequestBody List<PRODUCTTEAMDTO> productteamdtos) {
-        List<PRODUCTTEAM> domains = productteamMapping.toDomain(productteamdtos);
-        boolean result = productteamService.productTeamGuoLvBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@PRODUCTTEAMRuntime.quickTest('CREATE')")
     @ApiOperation(value = "保存产品团队", tags = {"产品团队" },  notes = "保存产品团队")
@@ -284,17 +257,6 @@ public class PRODUCTTEAMResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品批量建立产品团队", tags = {"产品团队" },  notes = "根据产品批量建立产品团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productteams/batch")
-    public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<PRODUCTTEAMDTO> productteamdtos) {
-        List<PRODUCTTEAM> domainlist=productteamMapping.toDomain(productteamdtos);
-        for(PRODUCTTEAM domain:domainlist){
-            domain.setRoot(product_id);
-        }
-        productteamService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品更新产品团队", tags = {"产品团队" },  notes = "根据产品更新产品团队")
@@ -308,17 +270,6 @@ public class PRODUCTTEAMResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
-    @ApiOperation(value = "根据产品批量更新产品团队", tags = {"产品团队" },  notes = "根据产品批量更新产品团队")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productteams/batch")
-    public ResponseEntity<Boolean> updateBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<PRODUCTTEAMDTO> productteamdtos) {
-        List<PRODUCTTEAM> domainlist=productteamMapping.toDomain(productteamdtos);
-        for(PRODUCTTEAM domain:domainlist){
-            domain.setRoot(product_id);
-        }
-        productteamService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品删除产品团队", tags = {"产品团队" },  notes = "根据产品删除产品团队")
@@ -327,13 +278,6 @@ public class PRODUCTTEAMResource {
 		return ResponseEntity.status(HttpStatus.OK).body(productteamService.remove(productteam_id));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
-    @ApiOperation(value = "根据产品批量删除产品团队", tags = {"产品团队" },  notes = "根据产品批量删除产品团队")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productteams/batch")
-    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
-        productteamService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品获取产品团队", tags = {"产品团队" },  notes = "根据产品获取产品团队")
@@ -368,13 +312,7 @@ public class PRODUCTTEAMResource {
         productteamdto = productteamMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(productteamdto);
     }
-    @ApiOperation(value = "批量处理[根据产品产品团队]", tags = {"产品团队" },  notes = "批量处理[根据产品产品团队]")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productteams/productteamguolvbatch")
-    public ResponseEntity<Boolean> productTeamGuoLvByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<PRODUCTTEAMDTO> productteamdtos) {
-        List<PRODUCTTEAM> domains = productteamMapping.toDomain(productteamdtos);
-        boolean result = productteamService.productTeamGuoLvBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品保存产品团队", tags = {"产品团队" },  notes = "根据产品保存产品团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productteams/save")

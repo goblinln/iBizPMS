@@ -66,15 +66,7 @@ public class UserResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@UserRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建用户", tags = {"用户" },  notes = "批量新建用户")
-	@RequestMapping(method = RequestMethod.POST, value = "/users/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<UserDTO> userdtos) {
-        userService.createBatch(userMapping.toDomain(userdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@UserRuntime.test(#user_id,'UPDATE')")
     @ApiOperation(value = "更新用户", tags = {"用户" },  notes = "更新用户")
 	@RequestMapping(method = RequestMethod.PUT, value = "/users/{user_id}")
@@ -91,13 +83,6 @@ public class UserResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新用户", tags = {"用户" },  notes = "批量更新用户")
-	@RequestMapping(method = RequestMethod.PUT, value = "/users/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<UserDTO> userdtos) {
-        userService.updateBatch(userMapping.toDomain(userdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@UserRuntime.test(#user_id,'DELETE')")
     @ApiOperation(value = "删除用户", tags = {"用户" },  notes = "删除用户")
@@ -106,13 +91,6 @@ public class UserResource {
          return ResponseEntity.status(HttpStatus.OK).body(userService.remove(user_id));
     }
 
-    @PreAuthorize("@UserRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除用户", tags = {"用户" },  notes = "批量删除用户")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/users/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        userService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@UserRuntime.test(#user_id,'READ')")
     @ApiOperation(value = "获取用户", tags = {"用户" },  notes = "获取用户")
@@ -125,6 +103,7 @@ public class UserResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@UserRuntime.test(#user_id,'CREATE')")
     @ApiOperation(value = "获取用户草稿", tags = {"用户" },  notes = "获取用户草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/users/getdraft")
     public ResponseEntity<UserDTO> getDraft(UserDTO dto) {
@@ -151,6 +130,7 @@ public class UserResource {
         return ResponseEntity.status(HttpStatus.OK).body(userdto);
     }
 
+
     @ApiOperation(value = "保存用户", tags = {"用户" },  notes = "保存用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/users/save")
     public ResponseEntity<UserDTO> save(@RequestBody UserDTO userdto) {
@@ -162,12 +142,6 @@ public class UserResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存用户", tags = {"用户" },  notes = "批量保存用户")
-	@RequestMapping(method = RequestMethod.POST, value = "/users/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<UserDTO> userdtos) {
-        userService.saveBatch(userMapping.toDomain(userdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @ApiOperation(value = "同步账号", tags = {"用户" },  notes = "同步账号")
 	@RequestMapping(method = RequestMethod.POST, value = "/users/{user_id}/syncaccount")
@@ -180,13 +154,7 @@ public class UserResource {
         userdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(userdto);
     }
-    @ApiOperation(value = "批量处理[同步账号]", tags = {"用户" },  notes = "批量处理[同步账号]")
-	@RequestMapping(method = RequestMethod.POST, value = "/users/syncaccountbatch")
-    public ResponseEntity<Boolean> syncAccountBatch(@RequestBody List<UserDTO> userdtos) {
-        List<User> domains = userMapping.toDomain(userdtos);
-        boolean result = userService.syncAccountBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
+
 
     @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Bug用户", tags = {"用户" } ,notes = "获取Bug用户")

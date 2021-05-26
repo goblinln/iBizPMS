@@ -66,15 +66,7 @@ public class SuiteCaseResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@SuiteCaseRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建套件用例", tags = {"套件用例" },  notes = "批量新建套件用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/suitecases/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<SuiteCaseDTO> suitecasedtos) {
-        suitecaseService.createBatch(suitecaseMapping.toDomain(suitecasedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@SuiteCaseRuntime.test(#suitecase_id,'UPDATE')")
     @ApiOperation(value = "更新套件用例", tags = {"套件用例" },  notes = "更新套件用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/suitecases/{suitecase_id}")
@@ -91,13 +83,6 @@ public class SuiteCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@SuiteCaseRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新套件用例", tags = {"套件用例" },  notes = "批量更新套件用例")
-	@RequestMapping(method = RequestMethod.PUT, value = "/suitecases/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<SuiteCaseDTO> suitecasedtos) {
-        suitecaseService.updateBatch(suitecaseMapping.toDomain(suitecasedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@SuiteCaseRuntime.test(#suitecase_id,'DELETE')")
     @ApiOperation(value = "删除套件用例", tags = {"套件用例" },  notes = "删除套件用例")
@@ -106,13 +91,6 @@ public class SuiteCaseResource {
          return ResponseEntity.status(HttpStatus.OK).body(suitecaseService.remove(suitecase_id));
     }
 
-    @PreAuthorize("@SuiteCaseRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除套件用例", tags = {"套件用例" },  notes = "批量删除套件用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/suitecases/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        suitecaseService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@SuiteCaseRuntime.test(#suitecase_id,'READ')")
     @ApiOperation(value = "获取套件用例", tags = {"套件用例" },  notes = "获取套件用例")
@@ -125,6 +103,7 @@ public class SuiteCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@SuiteCaseRuntime.test(#suitecase_id,'CREATE')")
     @ApiOperation(value = "获取套件用例草稿", tags = {"套件用例" },  notes = "获取套件用例草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/suitecases/getdraft")
     public ResponseEntity<SuiteCaseDTO> getDraft(SuiteCaseDTO dto) {
@@ -149,12 +128,6 @@ public class SuiteCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存套件用例", tags = {"套件用例" },  notes = "批量保存套件用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/suitecases/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<SuiteCaseDTO> suitecasedtos) {
-        suitecaseService.saveBatch(suitecaseMapping.toDomain(suitecasedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@SuiteCaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"套件用例" } ,notes = "获取DEFAULT")

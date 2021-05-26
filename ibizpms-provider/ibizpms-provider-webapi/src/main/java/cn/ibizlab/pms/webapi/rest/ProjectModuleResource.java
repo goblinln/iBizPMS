@@ -66,15 +66,7 @@ public class ProjectModuleResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建任务模块", tags = {"任务模块" },  notes = "批量新建任务模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/batch")
-    public ResponseEntity<Boolean> createBatch(@RequestBody List<ProjectModuleDTO> projectmoduledtos) {
-        projectmoduleService.createBatch(projectmoduleMapping.toDomain(projectmoduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
+    
     @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'UPDATE')")
     @ApiOperation(value = "更新任务模块", tags = {"任务模块" },  notes = "更新任务模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}")
@@ -91,13 +83,6 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新任务模块", tags = {"任务模块" },  notes = "批量更新任务模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProjectModuleDTO> projectmoduledtos) {
-        projectmoduleService.updateBatch(projectmoduleMapping.toDomain(projectmoduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'DELETE')")
     @ApiOperation(value = "删除任务模块", tags = {"任务模块" },  notes = "删除任务模块")
@@ -106,13 +91,6 @@ public class ProjectModuleResource {
          return ResponseEntity.status(HttpStatus.OK).body(projectmoduleService.remove(projectmodule_id));
     }
 
-    @PreAuthorize("@ProjectModuleRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除任务模块", tags = {"任务模块" },  notes = "批量删除任务模块")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projectmodules/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        projectmoduleService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
     @ApiOperation(value = "获取任务模块", tags = {"任务模块" },  notes = "获取任务模块")
@@ -125,6 +103,7 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'CREATE')")
     @ApiOperation(value = "获取任务模块草稿", tags = {"任务模块" },  notes = "获取任务模块草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectmodules/getdraft")
     public ResponseEntity<ProjectModuleDTO> getDraft(ProjectModuleDTO dto) {
@@ -150,6 +129,7 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduledto);
     }
 
+
     @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'DELETE')")
     @ApiOperation(value = "删除模块", tags = {"任务模块" },  notes = "删除模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/removemodule")
@@ -163,6 +143,7 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduledto);
     }
 
+
     @ApiOperation(value = "保存任务模块", tags = {"任务模块" },  notes = "保存任务模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/save")
     public ResponseEntity<ProjectModuleDTO> save(@RequestBody ProjectModuleDTO projectmoduledto) {
@@ -174,12 +155,6 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存任务模块", tags = {"任务模块" },  notes = "批量保存任务模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProjectModuleDTO> projectmoduledtos) {
-        projectmoduleService.saveBatch(projectmoduleMapping.toDomain(projectmoduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取BYPATH", tags = {"任务模块" } ,notes = "获取BYPATH")
@@ -352,17 +327,6 @@ public class ProjectModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
-    @ApiOperation(value = "根据项目批量建立任务模块", tags = {"任务模块" },  notes = "根据项目批量建立任务模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/batch")
-    public ResponseEntity<Boolean> createBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectModuleDTO> projectmoduledtos) {
-        List<ProjectModule> domainlist=projectmoduleMapping.toDomain(projectmoduledtos);
-        for(ProjectModule domain:domainlist){
-            domain.setRoot(project_id);
-        }
-        projectmoduleService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目更新任务模块", tags = {"任务模块" },  notes = "根据项目更新任务模块")
@@ -376,17 +340,6 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
-    @ApiOperation(value = "根据项目批量更新任务模块", tags = {"任务模块" },  notes = "根据项目批量更新任务模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/batch")
-    public ResponseEntity<Boolean> updateBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectModuleDTO> projectmoduledtos) {
-        List<ProjectModule> domainlist=projectmoduleMapping.toDomain(projectmoduledtos);
-        for(ProjectModule domain:domainlist){
-            domain.setRoot(project_id);
-        }
-        projectmoduleService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目删除任务模块", tags = {"任务模块" },  notes = "根据项目删除任务模块")
@@ -395,13 +348,6 @@ public class ProjectModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(projectmoduleService.remove(projectmodule_id));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
-    @ApiOperation(value = "根据项目批量删除任务模块", tags = {"任务模块" },  notes = "根据项目批量删除任务模块")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/batch")
-    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
-        projectmoduleService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目获取任务模块", tags = {"任务模块" },  notes = "根据项目获取任务模块")
@@ -436,6 +382,7 @@ public class ProjectModuleResource {
         projectmoduledto = projectmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduledto);
     }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目任务模块", tags = {"任务模块" },  notes = "根据项目任务模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/removemodule")
@@ -447,6 +394,7 @@ public class ProjectModuleResource {
         projectmoduledto = projectmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduledto);
     }
+
     @ApiOperation(value = "根据项目保存任务模块", tags = {"任务模块" },  notes = "根据项目保存任务模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/save")
     public ResponseEntity<ProjectModuleDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
@@ -456,16 +404,6 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(domain));
     }
 
-    @ApiOperation(value = "根据项目批量保存任务模块", tags = {"任务模块" },  notes = "根据项目批量保存任务模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectModuleDTO> projectmoduledtos) {
-        List<ProjectModule> domainlist=projectmoduleMapping.toDomain(projectmoduledtos);
-        for(ProjectModule domain:domainlist){
-             domain.setRoot(project_id);
-        }
-        projectmoduleService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取BYPATH", tags = {"任务模块" } ,notes = "根据项目获取BYPATH")
