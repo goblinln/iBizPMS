@@ -8598,15 +8598,15 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productteams/:productteam?/views/usr2gridview',
+                    path: 'products/:product?/productteams/:productteam?/views/roweditgridview',
                     meta: {
-                        caption: 'entities.productteam.views.usr2gridview.caption',
+                        caption: 'entities.productteam.views.roweditgridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productteams', parameterName: 'productteam' },
-                            { pathName: 'views', parameterName: 'usr2gridview' },
+                            { pathName: 'views', parameterName: 'roweditgridview' },
                         ],
                         resource:'productteam',
                         requireAuth: true,
@@ -8614,14 +8614,14 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'productteams/:productteam?/views/usr2gridview',
+                    path: 'productteams/:productteam?/views/roweditgridview',
                     meta: {
-                        caption: 'entities.productteam.views.usr2gridview.caption',
+                        caption: 'entities.productteam.views.roweditgridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'productteams', parameterName: 'productteam' },
-                            { pathName: 'views', parameterName: 'usr2gridview' },
+                            { pathName: 'views', parameterName: 'roweditgridview' },
                         ],
                         resource:'productteam',
                         requireAuth: true,
@@ -22649,13 +22649,13 @@ const router = new Router({
                     component: AppViewShell,
                 },
                 {
-                    path: 'views/productteamusr2gridview',
+                    path: 'views/productteamroweditgridview',
                     meta: {
-                        caption: 'entities.productteam.views.usr2gridview.caption',
+                        caption: 'entities.productteam.views.roweditgridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'views', parameterName: 'productteamusr2gridview' },
+                            { pathName: 'views', parameterName: 'productteamroweditgridview' },
                         ],
                         requireAuth: true,
                     },

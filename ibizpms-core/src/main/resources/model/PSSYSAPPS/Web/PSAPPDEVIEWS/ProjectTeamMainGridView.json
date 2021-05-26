@@ -611,6 +611,7 @@
             "caption" : "移除成员",
             "codeName" : "RemoveMember",
             "confirmMsg" : "您确定从该项目中移除该用户吗？",
+            "dataAccessAction" : "DELETE",
             "fullCodeName" : "ProjectTeam_RemoveMember",
             "name" : "移除成员",
             "getPSAppDEMethod" : {

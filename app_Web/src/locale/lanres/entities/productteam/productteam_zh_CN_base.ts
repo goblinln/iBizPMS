@@ -24,7 +24,7 @@ function getLocaleResourceBase(){
 		'root': commonLogic.appcommonhandle("产品编号",null),
 	},
 		views: {
-			'usr2gridview': {
+			'roweditgridview': {
 				caption: commonLogic.appcommonhandle("产品团队",null),
 				title: commonLogic.appcommonhandle("产品团队表格视图",null),
 			},
@@ -83,7 +83,7 @@ function getLocaleResourceBase(){
 			uiactions: {
 			},
 		},
-		usr2gridviewtoolbar_toolbar: {
+		roweditgridviewtoolbar_toolbar: {
 			'deuiaction2': {
 				caption: commonLogic.appcommonhandle("新建行",null),
 				tip: commonLogic.appcommonhandle("新建行",null),

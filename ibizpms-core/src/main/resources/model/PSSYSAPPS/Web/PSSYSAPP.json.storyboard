@@ -3005,11 +3005,11 @@
     "psappsbitemid" : "02adca4df41916907502b900001e09dc",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "PRODUCTTEAMUsr2GridView",
+    "psappviewname" : "PRODUCTTEAMRowEditGridView",
     "psappsbitemname" : "产品团队表格视图",
     "itemtag2" : "11d8a7d8c1459e0c8e95dc57f9a89305",
     "psappviewid" : "0a884b42c2e735a2a4cf6a17cee587f4",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMUsr2GridView.json",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMRowEditGridView.json",
     "psappsbitemid" : "a96bad467b4b0d17e6bbb4b703ba3b0d",
     "itemtype" : "APPVIEW"
   } ],
