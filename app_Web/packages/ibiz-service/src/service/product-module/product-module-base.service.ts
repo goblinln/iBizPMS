@@ -161,6 +161,20 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
         return this.condCache.get('view');
     }
     /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductModuleService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productmodules/fetchdefault`, _data);
+        }
+        return this.http.post(`/productmodules/fetchdefault`, _data);
+    }
+    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -205,22 +219,6 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
         return res;
     }
     /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductModuleService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productmodule) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productmodules/${_context.productmodule}/update`, _data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productmodules/${_context.productmodule}/update`, _data);
-    }
-    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -241,20 +239,6 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
         return res;
     }
     /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductModuleService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productmodules/fetchdefault`, _data);
-        }
-        return this.http.post(`/productmodules/fetchdefault`, _data);
-    }
-    /**
      * Remove
      *
      * @param {*} [_context={}]
@@ -267,5 +251,21 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
             return this.http.delete(`/products/${_context.product}/productmodules/${_context.productmodule}/remove`);
         }
         return this.http.delete(`/productmodules/${_context.productmodule}/remove`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductModuleService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productmodule) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/productmodules/${_context.productmodule}/update`, _data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/productmodules/${_context.productmodule}/update`, _data);
     }
 }

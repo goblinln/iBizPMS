@@ -98,15 +98,4 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
     async FetchGetRoadmap(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.get(`/productlives/fetchgetroadmap`, _data);
     }
-    /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLifeService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/productlives/${_context.productlife}/select`);
-    }
 }
