@@ -431,7 +431,21 @@ public class BugExService extends BugServiceImpl {
     @Override
     @Transactional
     public Bug releaseUnLinkBugbyLeftBug(Bug et) {
-        return super.releaseUnLinkBugbyLeftBug(et);
+        if(et.getId() == null &&  et.get(StaticDict.Action__object_type.RELEASE.getValue()) == null) {
+            return et;
+        }
+        Release release = iReleaseService.get(Long.parseLong(et.get(StaticDict.Action__object_type.RELEASE.getValue()).toString()));
+        Release releaseUpdate = new Release();
+        releaseUpdate.setId(release.getId());
+        String leftbugs = release.getLeftbugs();
+        // String bugs = release.getBugs();
+        leftbugs = ("," + leftbugs + ",").replace("," + String.valueOf(et.getId()) + ",", ",");
+        String regex = "^,*|,*$";
+        leftbugs = leftbugs.replaceAll(regex, "");
+        releaseUpdate.setLeftbugs(leftbugs);
+        iReleaseService.update(releaseUpdate);
+        ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.BUG.getValue(), null,   StaticDict.Action__type.UNLINKEDFROMRELEASE.getValue(), "",String.valueOf(release.getId()), AuthenticationUser.getAuthenticationUser().getUsername(), iActionService);
+        return et;
     }
     /**
      * [ReleaseUnlinkBug:解除关联Bug] 行为扩展
@@ -447,11 +461,12 @@ public class BugExService extends BugServiceImpl {
         Release release = iReleaseService.get(Long.parseLong(et.get(StaticDict.Action__object_type.RELEASE.getValue()).toString()));
         Release releaseUpdate = new Release();
         releaseUpdate.setId(release.getId());
-        String leftbugs = release.getLeftbugs();
-        leftbugs = ("," + leftbugs + ",").replace("," + String.valueOf(et.getId()) + ",", ",");
+        // String leftbugs = release.getLeftbugs();
+        String bugs = release.getBugs();
+        bugs = ("," + bugs + ",").replace("," + String.valueOf(et.getId()) + ",", ",");
         String regex = "^,*|,*$";
-        leftbugs = leftbugs.replaceAll(regex, "");
-        releaseUpdate.setLeftbugs(leftbugs);
+        bugs = bugs.replaceAll(regex, "");
+        releaseUpdate.setBugs(bugs);
         iReleaseService.update(releaseUpdate);
         ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.BUG.getValue(), null,   StaticDict.Action__type.UNLINKEDFROMRELEASE.getValue(), "",String.valueOf(release.getId()), AuthenticationUser.getAuthenticationUser().getUsername(), iActionService);
         return et;
