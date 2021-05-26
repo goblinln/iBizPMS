@@ -131,8 +131,10 @@
         "name" : "u4a41350",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "编辑",
           "codeName" : "Edit",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BranchPMEditView.json",
@@ -165,8 +167,10 @@
         "name" : "u2bf789e",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "删除",
           "codeName" : "Delete",
+          "dataAccessAction" : "DELETE",
           "fullCodeName" : "Branch_Delete",
           "name" : "删除",
           "getPSAppDEMethod" : {

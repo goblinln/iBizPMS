@@ -53,7 +53,7 @@ public class ProductPlanResource {
     public ProductPlanMapping productplanMapping;
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品产品计划", tags = {"产品计划" },  notes = "根据产品产品计划")
+    @ApiOperation(value = "根据产品关联需求产品计划", tags = {"产品计划" },  notes = "根据产品产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/linkstory")
     public ResponseEntity<ProductPlanDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
         ProductPlan domain = productplanMapping.toDomain(productplandto);
@@ -72,7 +72,7 @@ public class ProductPlanResource {
     }
 
 
-    @ApiOperation(value = "根据产品产品计划", tags = {"产品计划" },  notes = "根据产品产品计划")
+    @ApiOperation(value = "根据产品解除关联Bug产品计划", tags = {"产品计划" },  notes = "根据产品产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/unlinkbug")
     public ResponseEntity<ProductPlanDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
         ProductPlan domain = productplanMapping.toDomain(productplandto);
@@ -140,7 +140,7 @@ public class ProductPlanResource {
     }
 
 
-    @ApiOperation(value = "根据产品产品计划", tags = {"产品计划" },  notes = "根据产品产品计划")
+    @ApiOperation(value = "根据产品解除关联需求产品计划", tags = {"产品计划" },  notes = "根据产品产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/unlinkstory")
     public ResponseEntity<ProductPlanDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
         ProductPlan domain = productplanMapping.toDomain(productplandto);
@@ -152,7 +152,7 @@ public class ProductPlanResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品产品计划", tags = {"产品计划" },  notes = "根据产品产品计划")
+    @ApiOperation(value = "根据产品导入计划模板产品计划", tags = {"产品计划" },  notes = "根据产品产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/importplantemplet")
     public ResponseEntity<ProductPlanDTO> importPlanTempletByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
         ProductPlan domain = productplanMapping.toDomain(productplandto);
@@ -164,7 +164,7 @@ public class ProductPlanResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品产品计划", tags = {"产品计划" },  notes = "根据产品产品计划")
+    @ApiOperation(value = "根据产品关联Bug产品计划", tags = {"产品计划" },  notes = "根据产品产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/linkbug")
     public ResponseEntity<ProductPlanDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
         ProductPlan domain = productplanMapping.toDomain(productplandto);

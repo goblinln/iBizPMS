@@ -302,7 +302,7 @@ public class PRODUCTTEAMResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productteamService.checkKey(productteamMapping.toDomain(productteamdto)));
     }
 
-    @ApiOperation(value = "根据产品产品团队", tags = {"产品团队" },  notes = "根据产品产品团队")
+    @ApiOperation(value = "根据产品PmsEe团队管理过滤产品团队", tags = {"产品团队" },  notes = "根据产品产品团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productteams/{productteam_id}/productteamguolv")
     public ResponseEntity<PRODUCTTEAMDTO> productTeamGuoLvByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id, @RequestBody PRODUCTTEAMDTO productteamdto) {
         PRODUCTTEAM domain = productteamMapping.toDomain(productteamdto);

@@ -1,4 +1,4 @@
-package cn.ibizlab.pms.webapi.rest;
+package cn.ibizlab.pms.standardapi.rest;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -28,8 +28,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import cn.ibizlab.pms.webapi.dto.*;
-import cn.ibizlab.pms.webapi.mapping.*;
+import cn.ibizlab.pms.standardapi.dto.*;
+import cn.ibizlab.pms.standardapi.mapping.*;
 import cn.ibizlab.pms.core.zentao.domain.Branch;
 import cn.ibizlab.pms.core.zentao.service.IBranchService;
 import cn.ibizlab.pms.core.zentao.filter.BranchSearchContext;
@@ -38,7 +38,7 @@ import cn.ibizlab.pms.core.zentao.runtime.BranchRuntime;
 
 @Slf4j
 @Api(tags = {"产品的分支和平台信息" })
-@RestController("WebApi-branch")
+@RestController("StandardAPI-branch")
 @RequestMapping("")
 public class BranchResource {
 
@@ -52,13 +52,5 @@ public class BranchResource {
     @Lazy
     public BranchMapping branchMapping;
 
-
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/branches/{branch_id}/{action}")
-    public ResponseEntity<BranchDTO> dynamicCall(@PathVariable("branch_id") Long branch_id , @PathVariable("action") String action , @RequestBody BranchDTO branchdto) {
-        Branch domain = branchService.dynamicCall(branch_id, action, branchMapping.toDomain(branchdto));
-        branchdto = branchMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(branchdto);
-    }
 }
 

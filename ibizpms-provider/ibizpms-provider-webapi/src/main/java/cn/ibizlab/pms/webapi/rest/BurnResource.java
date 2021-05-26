@@ -250,7 +250,7 @@ public class BurnResource {
         return  ResponseEntity.status(HttpStatus.OK).body(burnService.checkKey(burnMapping.toDomain(burndto)));
     }
 
-    @ApiOperation(value = "根据项目burn", tags = {"burn" },  notes = "根据项目burn")
+    @ApiOperation(value = "根据项目更新燃尽图burn", tags = {"burn" },  notes = "根据项目burn")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/burns/{burn_id}/computeburn")
     public ResponseEntity<BurnDTO> computeBurnByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id, @RequestBody BurnDTO burndto) {
         Burn domain = burnMapping.toDomain(burndto);

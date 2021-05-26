@@ -278,7 +278,7 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testsuiteService.checkKey(testsuiteMapping.toDomain(testsuitedto)));
     }
 
-    @ApiOperation(value = "根据产品测试套件", tags = {"测试套件" },  notes = "根据产品测试套件")
+    @ApiOperation(value = "根据产品关联测试测试套件", tags = {"测试套件" },  notes = "根据产品测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/linkcase")
     public ResponseEntity<TestSuiteDTO> linkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
         TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
@@ -289,7 +289,7 @@ public class TestSuiteResource {
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
 
-    @ApiOperation(value = "根据产品测试套件", tags = {"测试套件" },  notes = "根据产品测试套件")
+    @ApiOperation(value = "根据产品移动端测试套件计数器测试套件", tags = {"测试套件" },  notes = "根据产品测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/mobtestsuitecount")
     public ResponseEntity<TestSuiteDTO> mobTestSuiteCountByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
         TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
@@ -310,7 +310,7 @@ public class TestSuiteResource {
     }
 
 
-    @ApiOperation(value = "根据产品测试套件", tags = {"测试套件" },  notes = "根据产品测试套件")
+    @ApiOperation(value = "根据产品未关联测试测试套件", tags = {"测试套件" },  notes = "根据产品测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/unlinkcase")
     public ResponseEntity<TestSuiteDTO> unlinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
         TestSuite domain = testsuiteMapping.toDomain(testsuitedto);

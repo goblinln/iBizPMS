@@ -246,7 +246,7 @@ public class ProjectTeamResource {
         projectteamdto = projectteamMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(projectteamdto);
     }
-    @ApiOperation(value = "根据项目项目团队", tags = {"项目团队" },  notes = "根据项目项目团队")
+    @ApiOperation(value = "根据项目获取成员角色项目团队", tags = {"项目团队" },  notes = "根据项目项目团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectteams/{projectteam_id}/getuserrole")
     public ResponseEntity<ProjectTeamDTO> getUserRoleByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id, @RequestBody ProjectTeamDTO projectteamdto) {
         ProjectTeam domain = projectteamMapping.toDomain(projectteamdto);

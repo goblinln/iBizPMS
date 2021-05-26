@@ -423,7 +423,7 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(buildService.checkKey(buildMapping.toDomain(builddto)));
     }
 
-    @ApiOperation(value = "根据产品版本", tags = {"版本" },  notes = "根据产品版本")
+    @ApiOperation(value = "根据产品关联Bug版本", tags = {"版本" },  notes = "根据产品版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/linkbug")
     public ResponseEntity<BuildDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -434,7 +434,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @ApiOperation(value = "根据产品版本", tags = {"版本" },  notes = "根据产品版本")
+    @ApiOperation(value = "根据产品关联需求版本", tags = {"版本" },  notes = "根据产品版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/linkstory")
     public ResponseEntity<BuildDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -445,7 +445,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @ApiOperation(value = "根据产品版本", tags = {"版本" },  notes = "根据产品版本")
+    @ApiOperation(value = "根据产品移动端项目版本计数器版本", tags = {"版本" },  notes = "根据产品版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/builds/{build_id}/mobprojectbuildcounter")
     public ResponseEntity<BuildDTO> mobProjectBuildCounterByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -456,7 +456,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @ApiOperation(value = "根据产品版本", tags = {"版本" },  notes = "根据产品版本")
+    @ApiOperation(value = "根据产品一键发布版本", tags = {"版本" },  notes = "根据产品版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/oneclickrelease")
     public ResponseEntity<BuildDTO> oneClickReleaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -477,7 +477,7 @@ public class BuildResource {
     }
 
 
-    @ApiOperation(value = "根据产品版本", tags = {"版本" },  notes = "根据产品版本")
+    @ApiOperation(value = "根据产品移除Bug关联版本", tags = {"版本" },  notes = "根据产品版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/unlinkbug")
     public ResponseEntity<BuildDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -488,7 +488,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @ApiOperation(value = "根据产品版本", tags = {"版本" },  notes = "根据产品版本")
+    @ApiOperation(value = "根据产品移除关联需求版本", tags = {"版本" },  notes = "根据产品版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/unlinkstory")
     public ResponseEntity<BuildDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -713,7 +713,7 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(buildService.checkKey(buildMapping.toDomain(builddto)));
     }
 
-    @ApiOperation(value = "根据项目版本", tags = {"版本" },  notes = "根据项目版本")
+    @ApiOperation(value = "根据项目关联Bug版本", tags = {"版本" },  notes = "根据项目版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/linkbug")
     public ResponseEntity<BuildDTO> linkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -724,7 +724,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @ApiOperation(value = "根据项目版本", tags = {"版本" },  notes = "根据项目版本")
+    @ApiOperation(value = "根据项目关联需求版本", tags = {"版本" },  notes = "根据项目版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/linkstory")
     public ResponseEntity<BuildDTO> linkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -735,7 +735,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @ApiOperation(value = "根据项目版本", tags = {"版本" },  notes = "根据项目版本")
+    @ApiOperation(value = "根据项目移动端项目版本计数器版本", tags = {"版本" },  notes = "根据项目版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/builds/{build_id}/mobprojectbuildcounter")
     public ResponseEntity<BuildDTO> mobProjectBuildCounterByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -746,7 +746,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @ApiOperation(value = "根据项目版本", tags = {"版本" },  notes = "根据项目版本")
+    @ApiOperation(value = "根据项目一键发布版本", tags = {"版本" },  notes = "根据项目版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/oneclickrelease")
     public ResponseEntity<BuildDTO> oneClickReleaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -767,7 +767,7 @@ public class BuildResource {
     }
 
 
-    @ApiOperation(value = "根据项目版本", tags = {"版本" },  notes = "根据项目版本")
+    @ApiOperation(value = "根据项目移除Bug关联版本", tags = {"版本" },  notes = "根据项目版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/unlinkbug")
     public ResponseEntity<BuildDTO> unlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -778,7 +778,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @ApiOperation(value = "根据项目版本", tags = {"版本" },  notes = "根据项目版本")
+    @ApiOperation(value = "根据项目移除关联需求版本", tags = {"版本" },  notes = "根据项目版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/unlinkstory")
     public ResponseEntity<BuildDTO> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);

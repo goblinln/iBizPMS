@@ -513,7 +513,7 @@ public class DocResource {
     }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-    @ApiOperation(value = "根据文档库文档", tags = {"文档" },  notes = "根据文档库文档")
+    @ApiOperation(value = "根据文档库根据版本更新正文信息文档", tags = {"文档" },  notes = "根据文档库文档")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/docs/{doc_id}/byversionupdatecontext")
     public ResponseEntity<DocDTO> byVersionUpdateContextByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -531,7 +531,7 @@ public class DocResource {
     }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-    @ApiOperation(value = "根据文档库文档", tags = {"文档" },  notes = "根据文档库文档")
+    @ApiOperation(value = "根据文档库收藏文档", tags = {"文档" },  notes = "根据文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/{doc_id}/collect")
     public ResponseEntity<DocDTO> collectByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -542,7 +542,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @ApiOperation(value = "根据文档库文档", tags = {"文档" },  notes = "根据文档库文档")
+    @ApiOperation(value = "根据文档库行为文档", tags = {"文档" },  notes = "根据文档库文档")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/docs/{doc_id}/getdocstatus")
     public ResponseEntity<DocDTO> getDocStatusByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -554,7 +554,7 @@ public class DocResource {
     }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-    @ApiOperation(value = "根据文档库文档", tags = {"文档" },  notes = "根据文档库文档")
+    @ApiOperation(value = "根据文档库仅收藏文档文档", tags = {"文档" },  notes = "根据文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/{doc_id}/onlycollectdoc")
     public ResponseEntity<DocDTO> onlyCollectDocByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -566,7 +566,7 @@ public class DocResource {
     }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-    @ApiOperation(value = "根据文档库文档", tags = {"文档" },  notes = "根据文档库文档")
+    @ApiOperation(value = "根据文档库仅取消收藏文档文档", tags = {"文档" },  notes = "根据文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/{doc_id}/onlyuncollectdoc")
     public ResponseEntity<DocDTO> onlyUnCollectDocByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -588,7 +588,7 @@ public class DocResource {
 
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-    @ApiOperation(value = "根据文档库文档", tags = {"文档" },  notes = "根据文档库文档")
+    @ApiOperation(value = "根据文档库取消收藏文档", tags = {"文档" },  notes = "根据文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/{doc_id}/uncollect")
     public ResponseEntity<DocDTO> unCollectByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -903,7 +903,7 @@ public class DocResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品文档库文档", tags = {"文档" },  notes = "根据产品文档库文档")
+    @ApiOperation(value = "根据产品文档库根据版本更新正文信息文档", tags = {"文档" },  notes = "根据产品文档库文档")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/byversionupdatecontext")
     public ResponseEntity<DocDTO> byVersionUpdateContextByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -921,7 +921,7 @@ public class DocResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品文档库文档", tags = {"文档" },  notes = "根据产品文档库文档")
+    @ApiOperation(value = "根据产品文档库收藏文档", tags = {"文档" },  notes = "根据产品文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/collect")
     public ResponseEntity<DocDTO> collectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -932,7 +932,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @ApiOperation(value = "根据产品文档库文档", tags = {"文档" },  notes = "根据产品文档库文档")
+    @ApiOperation(value = "根据产品文档库行为文档", tags = {"文档" },  notes = "根据产品文档库文档")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/getdocstatus")
     public ResponseEntity<DocDTO> getDocStatusByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -944,7 +944,7 @@ public class DocResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品文档库文档", tags = {"文档" },  notes = "根据产品文档库文档")
+    @ApiOperation(value = "根据产品文档库仅收藏文档文档", tags = {"文档" },  notes = "根据产品文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/onlycollectdoc")
     public ResponseEntity<DocDTO> onlyCollectDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -956,7 +956,7 @@ public class DocResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品文档库文档", tags = {"文档" },  notes = "根据产品文档库文档")
+    @ApiOperation(value = "根据产品文档库仅取消收藏文档文档", tags = {"文档" },  notes = "根据产品文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/onlyuncollectdoc")
     public ResponseEntity<DocDTO> onlyUnCollectDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -978,7 +978,7 @@ public class DocResource {
 
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品文档库文档", tags = {"文档" },  notes = "根据产品文档库文档")
+    @ApiOperation(value = "根据产品文档库取消收藏文档", tags = {"文档" },  notes = "根据产品文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/uncollect")
     public ResponseEntity<DocDTO> unCollectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -1293,7 +1293,7 @@ public class DocResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目文档库文档", tags = {"文档" },  notes = "根据项目文档库文档")
+    @ApiOperation(value = "根据项目文档库根据版本更新正文信息文档", tags = {"文档" },  notes = "根据项目文档库文档")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/byversionupdatecontext")
     public ResponseEntity<DocDTO> byVersionUpdateContextByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -1311,7 +1311,7 @@ public class DocResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目文档库文档", tags = {"文档" },  notes = "根据项目文档库文档")
+    @ApiOperation(value = "根据项目文档库收藏文档", tags = {"文档" },  notes = "根据项目文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/collect")
     public ResponseEntity<DocDTO> collectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -1322,7 +1322,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @ApiOperation(value = "根据项目文档库文档", tags = {"文档" },  notes = "根据项目文档库文档")
+    @ApiOperation(value = "根据项目文档库行为文档", tags = {"文档" },  notes = "根据项目文档库文档")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/getdocstatus")
     public ResponseEntity<DocDTO> getDocStatusByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -1334,7 +1334,7 @@ public class DocResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目文档库文档", tags = {"文档" },  notes = "根据项目文档库文档")
+    @ApiOperation(value = "根据项目文档库仅收藏文档文档", tags = {"文档" },  notes = "根据项目文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/onlycollectdoc")
     public ResponseEntity<DocDTO> onlyCollectDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -1346,7 +1346,7 @@ public class DocResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目文档库文档", tags = {"文档" },  notes = "根据项目文档库文档")
+    @ApiOperation(value = "根据项目文档库仅取消收藏文档文档", tags = {"文档" },  notes = "根据项目文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/onlyuncollectdoc")
     public ResponseEntity<DocDTO> onlyUnCollectDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);
@@ -1368,7 +1368,7 @@ public class DocResource {
 
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目文档库文档", tags = {"文档" },  notes = "根据项目文档库文档")
+    @ApiOperation(value = "根据项目文档库取消收藏文档", tags = {"文档" },  notes = "根据项目文档库文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/uncollect")
     public ResponseEntity<DocDTO> unCollectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc domain = docMapping.toDomain(docdto);

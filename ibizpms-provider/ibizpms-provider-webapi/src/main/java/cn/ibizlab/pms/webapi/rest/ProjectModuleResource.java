@@ -372,7 +372,7 @@ public class ProjectModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projectmoduleService.checkKey(projectmoduleMapping.toDomain(projectmoduledto)));
     }
 
-    @ApiOperation(value = "根据项目任务模块", tags = {"任务模块" },  notes = "根据项目任务模块")
+    @ApiOperation(value = "根据项目重建模块路径任务模块", tags = {"任务模块" },  notes = "根据项目任务模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/fix")
     public ResponseEntity<ProjectModuleDTO> fixByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
         ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
@@ -384,7 +384,7 @@ public class ProjectModuleResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
-    @ApiOperation(value = "根据项目任务模块", tags = {"任务模块" },  notes = "根据项目任务模块")
+    @ApiOperation(value = "根据项目删除模块任务模块", tags = {"任务模块" },  notes = "根据项目任务模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/removemodule")
     public ResponseEntity<ProjectModuleDTO> removeModuleByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
         ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);

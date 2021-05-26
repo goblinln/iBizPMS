@@ -481,7 +481,7 @@ public class DocLibModuleResource {
     }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'MANAGE')")
-    @ApiOperation(value = "根据文档库文档库分类", tags = {"文档库分类" },  notes = "根据文档库文档库分类")
+    @ApiOperation(value = "根据文档库收藏文档库分类", tags = {"文档库分类" },  notes = "根据文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/collect")
     public ResponseEntity<DocLibModuleDTO> collectByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -492,7 +492,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @ApiOperation(value = "根据文档库文档库分类", tags = {"文档库分类" },  notes = "根据文档库文档库分类")
+    @ApiOperation(value = "根据文档库取消收藏文档库分类", tags = {"文档库分类" },  notes = "根据文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulenfavorite")
     public ResponseEntity<DocLibModuleDTO> docLibModuleNFavoriteByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -503,7 +503,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @ApiOperation(value = "根据文档库文档库分类", tags = {"文档库分类" },  notes = "根据文档库文档库分类")
+    @ApiOperation(value = "根据文档库收藏文档库分类", tags = {"文档库分类" },  notes = "根据文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulefavorite")
     public ResponseEntity<DocLibModuleDTO> doclibModuleFavoriteByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -514,7 +514,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @ApiOperation(value = "根据文档库文档库分类", tags = {"文档库分类" },  notes = "根据文档库文档库分类")
+    @ApiOperation(value = "根据文档库重建模块路径文档库分类", tags = {"文档库分类" },  notes = "根据文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/fix")
     public ResponseEntity<DocLibModuleDTO> fixByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -536,7 +536,7 @@ public class DocLibModuleResource {
 
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'MANAGE')")
-    @ApiOperation(value = "根据文档库文档库分类", tags = {"文档库分类" },  notes = "根据文档库文档库分类")
+    @ApiOperation(value = "根据文档库取消收藏文档库分类", tags = {"文档库分类" },  notes = "根据文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/uncollect")
     public ResponseEntity<DocLibModuleDTO> unCollectByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -834,7 +834,7 @@ public class DocLibModuleResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'COLLECT')")
-    @ApiOperation(value = "根据产品文档库文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库文档库分类")
+    @ApiOperation(value = "根据产品文档库收藏文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/collect")
     public ResponseEntity<DocLibModuleDTO> collectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -845,7 +845,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @ApiOperation(value = "根据产品文档库文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库文档库分类")
+    @ApiOperation(value = "根据产品文档库取消收藏文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulenfavorite")
     public ResponseEntity<DocLibModuleDTO> docLibModuleNFavoriteByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -856,7 +856,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @ApiOperation(value = "根据产品文档库文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库文档库分类")
+    @ApiOperation(value = "根据产品文档库收藏文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulefavorite")
     public ResponseEntity<DocLibModuleDTO> doclibModuleFavoriteByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -867,7 +867,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @ApiOperation(value = "根据产品文档库文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库文档库分类")
+    @ApiOperation(value = "根据产品文档库重建模块路径文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/fix")
     public ResponseEntity<DocLibModuleDTO> fixByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -889,7 +889,7 @@ public class DocLibModuleResource {
 
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UNCOLLECT')")
-    @ApiOperation(value = "根据产品文档库文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库文档库分类")
+    @ApiOperation(value = "根据产品文档库取消收藏文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/uncollect")
     public ResponseEntity<DocLibModuleDTO> unCollectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -1187,7 +1187,7 @@ public class DocLibModuleResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'COLLECT')")
-    @ApiOperation(value = "根据项目文档库文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库文档库分类")
+    @ApiOperation(value = "根据项目文档库收藏文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/collect")
     public ResponseEntity<DocLibModuleDTO> collectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -1198,7 +1198,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @ApiOperation(value = "根据项目文档库文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库文档库分类")
+    @ApiOperation(value = "根据项目文档库取消收藏文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulenfavorite")
     public ResponseEntity<DocLibModuleDTO> docLibModuleNFavoriteByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -1209,7 +1209,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @ApiOperation(value = "根据项目文档库文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库文档库分类")
+    @ApiOperation(value = "根据项目文档库收藏文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulefavorite")
     public ResponseEntity<DocLibModuleDTO> doclibModuleFavoriteByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -1220,7 +1220,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @ApiOperation(value = "根据项目文档库文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库文档库分类")
+    @ApiOperation(value = "根据项目文档库重建模块路径文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/fix")
     public ResponseEntity<DocLibModuleDTO> fixByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -1242,7 +1242,7 @@ public class DocLibModuleResource {
 
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UNCOLLECT')")
-    @ApiOperation(value = "根据项目文档库文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库文档库分类")
+    @ApiOperation(value = "根据项目文档库取消收藏文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/uncollect")
     public ResponseEntity<DocLibModuleDTO> unCollectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);

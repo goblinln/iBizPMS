@@ -352,7 +352,7 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testmoduleService.checkKey(testmoduleMapping.toDomain(testmoduledto)));
     }
 
-    @ApiOperation(value = "根据产品测试模块", tags = {"测试模块" },  notes = "根据产品测试模块")
+    @ApiOperation(value = "根据产品重建模块路径测试模块", tags = {"测试模块" },  notes = "根据产品测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules/{testmodule_id}/fix")
     public ResponseEntity<TestModuleDTO> fixByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
         TestModule domain = testmoduleMapping.toDomain(testmoduledto);
@@ -364,7 +364,7 @@ public class TestModuleResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
-    @ApiOperation(value = "根据产品测试模块", tags = {"测试模块" },  notes = "根据产品测试模块")
+    @ApiOperation(value = "根据产品删除模块测试模块", tags = {"测试模块" },  notes = "根据产品测试模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testmodules/{testmodule_id}/removemodule")
     public ResponseEntity<TestModuleDTO> removeModuleByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
         TestModule domain = testmoduleMapping.toDomain(testmoduledto);

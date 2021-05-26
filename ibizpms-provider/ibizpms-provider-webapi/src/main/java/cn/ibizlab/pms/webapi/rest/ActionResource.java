@@ -110,7 +110,7 @@ public class ActionResource {
     }
 
     @PreAuthorize("@ActionRuntime.test(#action_id,'MANAGE')")
-    @ApiOperation(value = "根据产品系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
+    @ApiOperation(value = "根据产品添加备注系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/comment")
     public ResponseEntity<ActionDTO> commentByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
@@ -122,7 +122,7 @@ public class ActionResource {
     }
 
     @PreAuthorize("@ActionRuntime.test(#action_id,'CREATE')")
-    @ApiOperation(value = "根据产品系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
+    @ApiOperation(value = "根据产品创建历史日志系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/createhis")
     public ResponseEntity<ActionDTO> createHisByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
@@ -134,7 +134,7 @@ public class ActionResource {
     }
 
     @PreAuthorize("@ActionRuntime.test(#action_id,'MANAGE')")
-    @ApiOperation(value = "根据产品系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
+    @ApiOperation(value = "根据产品编辑备注信息系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/editcomment")
     public ResponseEntity<ActionDTO> editCommentByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
@@ -145,7 +145,7 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
 
-    @ApiOperation(value = "根据产品系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
+    @ApiOperation(value = "根据产品Pms企业专用系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/managepmsee")
     public ResponseEntity<ActionDTO> managePmsEeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
@@ -166,7 +166,7 @@ public class ActionResource {
     }
 
 
-    @ApiOperation(value = "根据产品系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
+    @ApiOperation(value = "根据产品已读系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/sendmarkdone")
     public ResponseEntity<ActionDTO> sendMarkDoneByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
@@ -177,7 +177,7 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
 
-    @ApiOperation(value = "根据产品系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
+    @ApiOperation(value = "根据产品发送待办系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/sendtodo")
     public ResponseEntity<ActionDTO> sendTodoByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
@@ -188,7 +188,7 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
 
-    @ApiOperation(value = "根据产品系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
+    @ApiOperation(value = "根据产品发送待阅系统日志", tags = {"系统日志" },  notes = "根据产品系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/sendtoread")
     public ResponseEntity<ActionDTO> sendToreadByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);

@@ -362,7 +362,7 @@ public class TaskEstimateResource {
     }
 
     @PreAuthorize("@TaskRuntime.test(#task_id,'MANAGE')")
-    @ApiOperation(value = "根据任务任务预计", tags = {"任务预计" },  notes = "根据任务任务预计")
+    @ApiOperation(value = "根据任务项目经理评估任务预计", tags = {"任务预计" },  notes = "根据任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
@@ -601,7 +601,7 @@ public class TaskEstimateResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
-    @ApiOperation(value = "根据项目任务任务预计", tags = {"任务预计" },  notes = "根据项目任务任务预计")
+    @ApiOperation(value = "根据项目任务项目经理评估任务预计", tags = {"任务预计" },  notes = "根据项目任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
