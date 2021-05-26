@@ -106,7 +106,7 @@
     "name" : "研发主管-ZT_PRODUCT[产品Bug管理（公开）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/BUGMANAGE.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_BugManage_Open.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
@@ -146,11 +146,21 @@
     "name" : "研发主管-ZT_PRODUCT[产品版本管理（公开）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/BUILDMANAGE.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_BuildManage_Open.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "研发主管-ZT_PROJECT[项目文档库管理（参与者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_DocLibManage_DEV.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     }
   }, {
     "name" : "研发主管-ZT_TASK[任务维护（我创建或参与）（跟随角色）]",
@@ -166,7 +176,7 @@
     "name" : "研发主管-ZT_PRODUCT[产品测试版本管理（公开）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/TESTTASKMANAGE.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_TesttaskManage_Open.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,

@@ -208,6 +208,157 @@ public class TestResultResource {
         testresultdto = testresultMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testresultdto);
     }
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'CREATE')")
+    @ApiOperation(value = "根据测试运行建立测试结果", tags = {"测试结果" },  notes = "根据测试运行建立测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/testruns/{testrun_id}/testresults")
+    public ResponseEntity<TestResultDTO> createByTestRun(@PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultDTO testresultdto) {
+        TestResult domain = testresultMapping.toDomain(testresultdto);
+        domain.setRun(testrun_id);
+		testresultService.create(domain);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'CREATE')")
+    @ApiOperation(value = "根据测试运行批量建立测试结果", tags = {"测试结果" },  notes = "根据测试运行批量建立测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/testruns/{testrun_id}/testresults/batch")
+    public ResponseEntity<Boolean> createBatchByTestRun(@PathVariable("testrun_id") Long testrun_id, @RequestBody List<TestResultDTO> testresultdtos) {
+        List<TestResult> domainlist=testresultMapping.toDomain(testresultdtos);
+        for(TestResult domain:domainlist){
+            domain.setRun(testrun_id);
+        }
+        testresultService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'UPDATE')")
+    @ApiOperation(value = "根据测试运行更新测试结果", tags = {"测试结果" },  notes = "根据测试运行更新测试结果")
+	@RequestMapping(method = RequestMethod.PUT, value = "/testruns/{testrun_id}/testresults/{testresult_id}")
+    public ResponseEntity<TestResultDTO> updateByTestRun(@PathVariable("testrun_id") Long testrun_id, @PathVariable("testresult_id") Long testresult_id, @RequestBody TestResultDTO testresultdto) {
+        TestResult domain = testresultMapping.toDomain(testresultdto);
+        domain.setRun(testrun_id);
+        domain.setId(testresult_id);
+		testresultService.update(domain);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'UPDATE')")
+    @ApiOperation(value = "根据测试运行批量更新测试结果", tags = {"测试结果" },  notes = "根据测试运行批量更新测试结果")
+	@RequestMapping(method = RequestMethod.PUT, value = "/testruns/{testrun_id}/testresults/batch")
+    public ResponseEntity<Boolean> updateBatchByTestRun(@PathVariable("testrun_id") Long testrun_id, @RequestBody List<TestResultDTO> testresultdtos) {
+        List<TestResult> domainlist=testresultMapping.toDomain(testresultdtos);
+        for(TestResult domain:domainlist){
+            domain.setRun(testrun_id);
+        }
+        testresultService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'DELETE')")
+    @ApiOperation(value = "根据测试运行删除测试结果", tags = {"测试结果" },  notes = "根据测试运行删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testruns/{testrun_id}/testresults/{testresult_id}")
+    public ResponseEntity<Boolean> removeByTestRun(@PathVariable("testrun_id") Long testrun_id, @PathVariable("testresult_id") Long testresult_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
+    }
+
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'DELETE')")
+    @ApiOperation(value = "根据测试运行批量删除测试结果", tags = {"测试结果" },  notes = "根据测试运行批量删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testruns/{testrun_id}/testresults/batch")
+    public ResponseEntity<Boolean> removeBatchByTestRun(@RequestBody List<Long> ids) {
+        testresultService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'READ')")
+    @ApiOperation(value = "根据测试运行获取测试结果", tags = {"测试结果" },  notes = "根据测试运行获取测试结果")
+	@RequestMapping(method = RequestMethod.GET, value = "/testruns/{testrun_id}/testresults/{testresult_id}")
+    public ResponseEntity<TestResultDTO> getByTestRun(@PathVariable("testrun_id") Long testrun_id, @PathVariable("testresult_id") Long testresult_id) {
+        TestResult domain = testresultService.get(testresult_id);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据测试运行获取测试结果草稿", tags = {"测试结果" },  notes = "根据测试运行获取测试结果草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/testruns/{testrun_id}/testresults/getdraft")
+    public ResponseEntity<TestResultDTO> getDraftByTestRun(@PathVariable("testrun_id") Long testrun_id, TestResultDTO dto) {
+        TestResult domain = testresultMapping.toDomain(dto);
+        domain.setRun(testrun_id);
+        return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据测试运行检查测试结果", tags = {"测试结果" },  notes = "根据测试运行检查测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/testruns/{testrun_id}/testresults/checkkey")
+    public ResponseEntity<Boolean> checkKeyByTestRun(@PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultDTO testresultdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
+    }
+
+    @ApiOperation(value = "根据测试运行保存测试结果", tags = {"测试结果" },  notes = "根据测试运行保存测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/testruns/{testrun_id}/testresults/save")
+    public ResponseEntity<TestResultDTO> saveByTestRun(@PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultDTO testresultdto) {
+        TestResult domain = testresultMapping.toDomain(testresultdto);
+        domain.setRun(testrun_id);
+        testresultService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据测试运行批量保存测试结果", tags = {"测试结果" },  notes = "根据测试运行批量保存测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/testruns/{testrun_id}/testresults/savebatch")
+    public ResponseEntity<Boolean> saveBatchByTestRun(@PathVariable("testrun_id") Long testrun_id, @RequestBody List<TestResultDTO> testresultdtos) {
+        List<TestResult> domainlist=testresultMapping.toDomain(testresultdtos);
+        for(TestResult domain:domainlist){
+             domain.setRun(testrun_id);
+        }
+        testresultService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'READ')")
+	@ApiOperation(value = "根据测试运行获取CurTestRun", tags = {"测试结果" } ,notes = "根据测试运行获取CurTestRun")
+    @RequestMapping(method= RequestMethod.POST , value="/testruns/{testrun_id}/testresults/fetchcurtestrun")
+	public ResponseEntity<List<TestResultDTO>> fetchTestResultCurTestRunByTestRun(@PathVariable("testrun_id") Long testrun_id,@RequestBody TestResultSearchContext context) {
+        context.setN_run_eq(testrun_id);
+        Page<TestResult> domains = testresultService.searchCurTestRun(context) ;
+        List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'READ')")
+	@ApiOperation(value = "根据测试运行查询CurTestRun", tags = {"测试结果" } ,notes = "根据测试运行查询CurTestRun")
+    @RequestMapping(method= RequestMethod.POST , value="/testruns/{testrun_id}/testresults/searchcurtestrun")
+	public ResponseEntity<Page<TestResultDTO>> searchTestResultCurTestRunByTestRun(@PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultSearchContext context) {
+        context.setN_run_eq(testrun_id);
+        Page<TestResult> domains = testresultService.searchCurTestRun(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(testresultMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'READ')")
+	@ApiOperation(value = "根据测试运行获取DEFAULT", tags = {"测试结果" } ,notes = "根据测试运行获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/testruns/{testrun_id}/testresults/fetchdefault")
+	public ResponseEntity<List<TestResultDTO>> fetchTestResultDefaultByTestRun(@PathVariable("testrun_id") Long testrun_id,@RequestBody TestResultSearchContext context) {
+        context.setN_run_eq(testrun_id);
+        Page<TestResult> domains = testresultService.searchDefault(context) ;
+        List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'READ')")
+	@ApiOperation(value = "根据测试运行查询DEFAULT", tags = {"测试结果" } ,notes = "根据测试运行查询DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/testruns/{testrun_id}/testresults/searchdefault")
+	public ResponseEntity<Page<TestResultDTO>> searchTestResultDefaultByTestRun(@PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultSearchContext context) {
+        context.setN_run_eq(testrun_id);
+        Page<TestResult> domains = testresultService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(testresultMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
     @PreAuthorize("@CaseRuntime.test(#case_id,'CREATE')")
     @ApiOperation(value = "根据测试用例建立测试结果", tags = {"测试结果" },  notes = "根据测试用例建立测试结果")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/testresults")
@@ -506,6 +657,459 @@ public class TestResultResource {
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/testresults/searchdefault")
 	public ResponseEntity<Page<TestResultDTO>> searchTestResultDefaultByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody TestResultSearchContext context) {
         context.setN_case_eq(case_id);
+        Page<TestResult> domains = testresultService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(testresultMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'CREATE')")
+    @ApiOperation(value = "根据测试版本测试运行建立测试结果", tags = {"测试结果" },  notes = "根据测试版本测试运行建立测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/testruns/{testrun_id}/testresults")
+    public ResponseEntity<TestResultDTO> createByTestTaskTestRun(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultDTO testresultdto) {
+        TestResult domain = testresultMapping.toDomain(testresultdto);
+        domain.setRun(testrun_id);
+		testresultService.create(domain);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'CREATE')")
+    @ApiOperation(value = "根据测试版本测试运行批量建立测试结果", tags = {"测试结果" },  notes = "根据测试版本测试运行批量建立测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/batch")
+    public ResponseEntity<Boolean> createBatchByTestTaskTestRun(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody List<TestResultDTO> testresultdtos) {
+        List<TestResult> domainlist=testresultMapping.toDomain(testresultdtos);
+        for(TestResult domain:domainlist){
+            domain.setRun(testrun_id);
+        }
+        testresultService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'UPDATE')")
+    @ApiOperation(value = "根据测试版本测试运行更新测试结果", tags = {"测试结果" },  notes = "根据测试版本测试运行更新测试结果")
+	@RequestMapping(method = RequestMethod.PUT, value = "/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/{testresult_id}")
+    public ResponseEntity<TestResultDTO> updateByTestTaskTestRun(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @PathVariable("testresult_id") Long testresult_id, @RequestBody TestResultDTO testresultdto) {
+        TestResult domain = testresultMapping.toDomain(testresultdto);
+        domain.setRun(testrun_id);
+        domain.setId(testresult_id);
+		testresultService.update(domain);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'UPDATE')")
+    @ApiOperation(value = "根据测试版本测试运行批量更新测试结果", tags = {"测试结果" },  notes = "根据测试版本测试运行批量更新测试结果")
+	@RequestMapping(method = RequestMethod.PUT, value = "/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/batch")
+    public ResponseEntity<Boolean> updateBatchByTestTaskTestRun(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody List<TestResultDTO> testresultdtos) {
+        List<TestResult> domainlist=testresultMapping.toDomain(testresultdtos);
+        for(TestResult domain:domainlist){
+            domain.setRun(testrun_id);
+        }
+        testresultService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'DELETE')")
+    @ApiOperation(value = "根据测试版本测试运行删除测试结果", tags = {"测试结果" },  notes = "根据测试版本测试运行删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/{testresult_id}")
+    public ResponseEntity<Boolean> removeByTestTaskTestRun(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @PathVariable("testresult_id") Long testresult_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
+    }
+
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'DELETE')")
+    @ApiOperation(value = "根据测试版本测试运行批量删除测试结果", tags = {"测试结果" },  notes = "根据测试版本测试运行批量删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/batch")
+    public ResponseEntity<Boolean> removeBatchByTestTaskTestRun(@RequestBody List<Long> ids) {
+        testresultService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
+    @ApiOperation(value = "根据测试版本测试运行获取测试结果", tags = {"测试结果" },  notes = "根据测试版本测试运行获取测试结果")
+	@RequestMapping(method = RequestMethod.GET, value = "/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/{testresult_id}")
+    public ResponseEntity<TestResultDTO> getByTestTaskTestRun(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @PathVariable("testresult_id") Long testresult_id) {
+        TestResult domain = testresultService.get(testresult_id);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据测试版本测试运行获取测试结果草稿", tags = {"测试结果" },  notes = "根据测试版本测试运行获取测试结果草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/getdraft")
+    public ResponseEntity<TestResultDTO> getDraftByTestTaskTestRun(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, TestResultDTO dto) {
+        TestResult domain = testresultMapping.toDomain(dto);
+        domain.setRun(testrun_id);
+        return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据测试版本测试运行检查测试结果", tags = {"测试结果" },  notes = "根据测试版本测试运行检查测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/checkkey")
+    public ResponseEntity<Boolean> checkKeyByTestTaskTestRun(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultDTO testresultdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
+    }
+
+    @ApiOperation(value = "根据测试版本测试运行保存测试结果", tags = {"测试结果" },  notes = "根据测试版本测试运行保存测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/save")
+    public ResponseEntity<TestResultDTO> saveByTestTaskTestRun(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultDTO testresultdto) {
+        TestResult domain = testresultMapping.toDomain(testresultdto);
+        domain.setRun(testrun_id);
+        testresultService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据测试版本测试运行批量保存测试结果", tags = {"测试结果" },  notes = "根据测试版本测试运行批量保存测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/savebatch")
+    public ResponseEntity<Boolean> saveBatchByTestTaskTestRun(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody List<TestResultDTO> testresultdtos) {
+        List<TestResult> domainlist=testresultMapping.toDomain(testresultdtos);
+        for(TestResult domain:domainlist){
+             domain.setRun(testrun_id);
+        }
+        testresultService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
+	@ApiOperation(value = "根据测试版本测试运行获取CurTestRun", tags = {"测试结果" } ,notes = "根据测试版本测试运行获取CurTestRun")
+    @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/fetchcurtestrun")
+	public ResponseEntity<List<TestResultDTO>> fetchTestResultCurTestRunByTestTaskTestRun(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id,@RequestBody TestResultSearchContext context) {
+        context.setN_run_eq(testrun_id);
+        Page<TestResult> domains = testresultService.searchCurTestRun(context) ;
+        List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
+	@ApiOperation(value = "根据测试版本测试运行查询CurTestRun", tags = {"测试结果" } ,notes = "根据测试版本测试运行查询CurTestRun")
+    @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/searchcurtestrun")
+	public ResponseEntity<Page<TestResultDTO>> searchTestResultCurTestRunByTestTaskTestRun(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultSearchContext context) {
+        context.setN_run_eq(testrun_id);
+        Page<TestResult> domains = testresultService.searchCurTestRun(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(testresultMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
+	@ApiOperation(value = "根据测试版本测试运行获取DEFAULT", tags = {"测试结果" } ,notes = "根据测试版本测试运行获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/fetchdefault")
+	public ResponseEntity<List<TestResultDTO>> fetchTestResultDefaultByTestTaskTestRun(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id,@RequestBody TestResultSearchContext context) {
+        context.setN_run_eq(testrun_id);
+        Page<TestResult> domains = testresultService.searchDefault(context) ;
+        List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
+	@ApiOperation(value = "根据测试版本测试运行查询DEFAULT", tags = {"测试结果" } ,notes = "根据测试版本测试运行查询DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/searchdefault")
+	public ResponseEntity<Page<TestResultDTO>> searchTestResultDefaultByTestTaskTestRun(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultSearchContext context) {
+        context.setN_run_eq(testrun_id);
+        Page<TestResult> domains = testresultService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(testresultMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品测试版本测试运行建立测试结果", tags = {"测试结果" },  notes = "根据产品测试版本测试运行建立测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults")
+    public ResponseEntity<TestResultDTO> createByProductTestTaskTestRun(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultDTO testresultdto) {
+        TestResult domain = testresultMapping.toDomain(testresultdto);
+        domain.setRun(testrun_id);
+		testresultService.create(domain);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品测试版本测试运行批量建立测试结果", tags = {"测试结果" },  notes = "根据产品测试版本测试运行批量建立测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/batch")
+    public ResponseEntity<Boolean> createBatchByProductTestTaskTestRun(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody List<TestResultDTO> testresultdtos) {
+        List<TestResult> domainlist=testresultMapping.toDomain(testresultdtos);
+        for(TestResult domain:domainlist){
+            domain.setRun(testrun_id);
+        }
+        testresultService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @ApiOperation(value = "根据产品测试版本测试运行更新测试结果", tags = {"测试结果" },  notes = "根据产品测试版本测试运行更新测试结果")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/{testresult_id}")
+    public ResponseEntity<TestResultDTO> updateByProductTestTaskTestRun(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @PathVariable("testresult_id") Long testresult_id, @RequestBody TestResultDTO testresultdto) {
+        TestResult domain = testresultMapping.toDomain(testresultdto);
+        domain.setRun(testrun_id);
+        domain.setId(testresult_id);
+		testresultService.update(domain);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @ApiOperation(value = "根据产品测试版本测试运行批量更新测试结果", tags = {"测试结果" },  notes = "根据产品测试版本测试运行批量更新测试结果")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/batch")
+    public ResponseEntity<Boolean> updateBatchByProductTestTaskTestRun(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody List<TestResultDTO> testresultdtos) {
+        List<TestResult> domainlist=testresultMapping.toDomain(testresultdtos);
+        for(TestResult domain:domainlist){
+            domain.setRun(testrun_id);
+        }
+        testresultService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @ApiOperation(value = "根据产品测试版本测试运行删除测试结果", tags = {"测试结果" },  notes = "根据产品测试版本测试运行删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/{testresult_id}")
+    public ResponseEntity<Boolean> removeByProductTestTaskTestRun(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @PathVariable("testresult_id") Long testresult_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @ApiOperation(value = "根据产品测试版本测试运行批量删除测试结果", tags = {"测试结果" },  notes = "根据产品测试版本测试运行批量删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/batch")
+    public ResponseEntity<Boolean> removeBatchByProductTestTaskTestRun(@RequestBody List<Long> ids) {
+        testresultService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @ApiOperation(value = "根据产品测试版本测试运行获取测试结果", tags = {"测试结果" },  notes = "根据产品测试版本测试运行获取测试结果")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/{testresult_id}")
+    public ResponseEntity<TestResultDTO> getByProductTestTaskTestRun(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @PathVariable("testresult_id") Long testresult_id) {
+        TestResult domain = testresultService.get(testresult_id);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据产品测试版本测试运行获取测试结果草稿", tags = {"测试结果" },  notes = "根据产品测试版本测试运行获取测试结果草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/getdraft")
+    public ResponseEntity<TestResultDTO> getDraftByProductTestTaskTestRun(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, TestResultDTO dto) {
+        TestResult domain = testresultMapping.toDomain(dto);
+        domain.setRun(testrun_id);
+        return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据产品测试版本测试运行检查测试结果", tags = {"测试结果" },  notes = "根据产品测试版本测试运行检查测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProductTestTaskTestRun(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultDTO testresultdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
+    }
+
+    @ApiOperation(value = "根据产品测试版本测试运行保存测试结果", tags = {"测试结果" },  notes = "根据产品测试版本测试运行保存测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/save")
+    public ResponseEntity<TestResultDTO> saveByProductTestTaskTestRun(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultDTO testresultdto) {
+        TestResult domain = testresultMapping.toDomain(testresultdto);
+        domain.setRun(testrun_id);
+        testresultService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据产品测试版本测试运行批量保存测试结果", tags = {"测试结果" },  notes = "根据产品测试版本测试运行批量保存测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProductTestTaskTestRun(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody List<TestResultDTO> testresultdtos) {
+        List<TestResult> domainlist=testresultMapping.toDomain(testresultdtos);
+        for(TestResult domain:domainlist){
+             domain.setRun(testrun_id);
+        }
+        testresultService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品测试版本测试运行获取CurTestRun", tags = {"测试结果" } ,notes = "根据产品测试版本测试运行获取CurTestRun")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/fetchcurtestrun")
+	public ResponseEntity<List<TestResultDTO>> fetchTestResultCurTestRunByProductTestTaskTestRun(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id,@RequestBody TestResultSearchContext context) {
+        context.setN_run_eq(testrun_id);
+        Page<TestResult> domains = testresultService.searchCurTestRun(context) ;
+        List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品测试版本测试运行查询CurTestRun", tags = {"测试结果" } ,notes = "根据产品测试版本测试运行查询CurTestRun")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/searchcurtestrun")
+	public ResponseEntity<Page<TestResultDTO>> searchTestResultCurTestRunByProductTestTaskTestRun(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultSearchContext context) {
+        context.setN_run_eq(testrun_id);
+        Page<TestResult> domains = testresultService.searchCurTestRun(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(testresultMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品测试版本测试运行获取DEFAULT", tags = {"测试结果" } ,notes = "根据产品测试版本测试运行获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/fetchdefault")
+	public ResponseEntity<List<TestResultDTO>> fetchTestResultDefaultByProductTestTaskTestRun(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id,@RequestBody TestResultSearchContext context) {
+        context.setN_run_eq(testrun_id);
+        Page<TestResult> domains = testresultService.searchDefault(context) ;
+        List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品测试版本测试运行查询DEFAULT", tags = {"测试结果" } ,notes = "根据产品测试版本测试运行查询DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/searchdefault")
+	public ResponseEntity<Page<TestResultDTO>> searchTestResultDefaultByProductTestTaskTestRun(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultSearchContext context) {
+        context.setN_run_eq(testrun_id);
+        Page<TestResult> domains = testresultService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(testresultMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
+    @ApiOperation(value = "根据项目测试版本测试运行建立测试结果", tags = {"测试结果" },  notes = "根据项目测试版本测试运行建立测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults")
+    public ResponseEntity<TestResultDTO> createByProjectTestTaskTestRun(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultDTO testresultdto) {
+        TestResult domain = testresultMapping.toDomain(testresultdto);
+        domain.setRun(testrun_id);
+		testresultService.create(domain);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
+    @ApiOperation(value = "根据项目测试版本测试运行批量建立测试结果", tags = {"测试结果" },  notes = "根据项目测试版本测试运行批量建立测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/batch")
+    public ResponseEntity<Boolean> createBatchByProjectTestTaskTestRun(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody List<TestResultDTO> testresultdtos) {
+        List<TestResult> domainlist=testresultMapping.toDomain(testresultdtos);
+        for(TestResult domain:domainlist){
+            domain.setRun(testrun_id);
+        }
+        testresultService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
+    @ApiOperation(value = "根据项目测试版本测试运行更新测试结果", tags = {"测试结果" },  notes = "根据项目测试版本测试运行更新测试结果")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/{testresult_id}")
+    public ResponseEntity<TestResultDTO> updateByProjectTestTaskTestRun(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @PathVariable("testresult_id") Long testresult_id, @RequestBody TestResultDTO testresultdto) {
+        TestResult domain = testresultMapping.toDomain(testresultdto);
+        domain.setRun(testrun_id);
+        domain.setId(testresult_id);
+		testresultService.update(domain);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
+    @ApiOperation(value = "根据项目测试版本测试运行批量更新测试结果", tags = {"测试结果" },  notes = "根据项目测试版本测试运行批量更新测试结果")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/batch")
+    public ResponseEntity<Boolean> updateBatchByProjectTestTaskTestRun(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody List<TestResultDTO> testresultdtos) {
+        List<TestResult> domainlist=testresultMapping.toDomain(testresultdtos);
+        for(TestResult domain:domainlist){
+            domain.setRun(testrun_id);
+        }
+        testresultService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
+    @ApiOperation(value = "根据项目测试版本测试运行删除测试结果", tags = {"测试结果" },  notes = "根据项目测试版本测试运行删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/{testresult_id}")
+    public ResponseEntity<Boolean> removeByProjectTestTaskTestRun(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @PathVariable("testresult_id") Long testresult_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
+    @ApiOperation(value = "根据项目测试版本测试运行批量删除测试结果", tags = {"测试结果" },  notes = "根据项目测试版本测试运行批量删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/batch")
+    public ResponseEntity<Boolean> removeBatchByProjectTestTaskTestRun(@RequestBody List<Long> ids) {
+        testresultService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+    @ApiOperation(value = "根据项目测试版本测试运行获取测试结果", tags = {"测试结果" },  notes = "根据项目测试版本测试运行获取测试结果")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/{testresult_id}")
+    public ResponseEntity<TestResultDTO> getByProjectTestTaskTestRun(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @PathVariable("testresult_id") Long testresult_id) {
+        TestResult domain = testresultService.get(testresult_id);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据项目测试版本测试运行获取测试结果草稿", tags = {"测试结果" },  notes = "根据项目测试版本测试运行获取测试结果草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/getdraft")
+    public ResponseEntity<TestResultDTO> getDraftByProjectTestTaskTestRun(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, TestResultDTO dto) {
+        TestResult domain = testresultMapping.toDomain(dto);
+        domain.setRun(testrun_id);
+        return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据项目测试版本测试运行检查测试结果", tags = {"测试结果" },  notes = "根据项目测试版本测试运行检查测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProjectTestTaskTestRun(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultDTO testresultdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
+    }
+
+    @ApiOperation(value = "根据项目测试版本测试运行保存测试结果", tags = {"测试结果" },  notes = "根据项目测试版本测试运行保存测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/save")
+    public ResponseEntity<TestResultDTO> saveByProjectTestTaskTestRun(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultDTO testresultdto) {
+        TestResult domain = testresultMapping.toDomain(testresultdto);
+        domain.setRun(testrun_id);
+        testresultService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据项目测试版本测试运行批量保存测试结果", tags = {"测试结果" },  notes = "根据项目测试版本测试运行批量保存测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProjectTestTaskTestRun(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody List<TestResultDTO> testresultdtos) {
+        List<TestResult> domainlist=testresultMapping.toDomain(testresultdtos);
+        for(TestResult domain:domainlist){
+             domain.setRun(testrun_id);
+        }
+        testresultService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+	@ApiOperation(value = "根据项目测试版本测试运行获取CurTestRun", tags = {"测试结果" } ,notes = "根据项目测试版本测试运行获取CurTestRun")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/fetchcurtestrun")
+	public ResponseEntity<List<TestResultDTO>> fetchTestResultCurTestRunByProjectTestTaskTestRun(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id,@RequestBody TestResultSearchContext context) {
+        context.setN_run_eq(testrun_id);
+        Page<TestResult> domains = testresultService.searchCurTestRun(context) ;
+        List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+	@ApiOperation(value = "根据项目测试版本测试运行查询CurTestRun", tags = {"测试结果" } ,notes = "根据项目测试版本测试运行查询CurTestRun")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/searchcurtestrun")
+	public ResponseEntity<Page<TestResultDTO>> searchTestResultCurTestRunByProjectTestTaskTestRun(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultSearchContext context) {
+        context.setN_run_eq(testrun_id);
+        Page<TestResult> domains = testresultService.searchCurTestRun(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(testresultMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+	@ApiOperation(value = "根据项目测试版本测试运行获取DEFAULT", tags = {"测试结果" } ,notes = "根据项目测试版本测试运行获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/fetchdefault")
+	public ResponseEntity<List<TestResultDTO>> fetchTestResultDefaultByProjectTestTaskTestRun(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id,@RequestBody TestResultSearchContext context) {
+        context.setN_run_eq(testrun_id);
+        Page<TestResult> domains = testresultService.searchDefault(context) ;
+        List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+	@ApiOperation(value = "根据项目测试版本测试运行查询DEFAULT", tags = {"测试结果" } ,notes = "根据项目测试版本测试运行查询DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/searchdefault")
+	public ResponseEntity<Page<TestResultDTO>> searchTestResultDefaultByProjectTestTaskTestRun(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultSearchContext context) {
+        context.setN_run_eq(testrun_id);
         Page<TestResult> domains = testresultService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testresultMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

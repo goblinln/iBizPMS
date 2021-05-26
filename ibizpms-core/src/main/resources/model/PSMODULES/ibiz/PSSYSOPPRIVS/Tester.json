@@ -46,7 +46,7 @@
     "name" : "测试人员-ZT_PRODUCT[产品测试版本管理（公开）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/TESTTASKMANAGE.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_TesttaskManage_Open.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
@@ -76,7 +76,7 @@
     "name" : "测试人员-ZT_PRODUCT[产品Bug管理（公开）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/BUGMANAGE.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_BugManage_Open.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
@@ -131,6 +131,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_PROJECT[项目文档库管理（参与者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_DocLibManage_DEV.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     }
   }, {
     "name" : "测试人员-ZT_PROJECT[项目查看（公开项目）（跟随角色）]",

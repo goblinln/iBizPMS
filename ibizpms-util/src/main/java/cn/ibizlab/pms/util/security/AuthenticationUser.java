@@ -292,6 +292,7 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
         if (this.sessionParams == null) {
             sessionParams = getUserSessionParam();
             sessionParams.put("srfdcid",this.getSrfdcid());
+            sessionParams.put("srfdcsystemid",this.getSrfdcsystemid());
             sessionParams.put("srfsystemid",this.getSrfsystemid());
             sessionParams.put("srfpersonid", this.getPersonid());
             sessionParams.put("srfpersonname", this.getPersonname());

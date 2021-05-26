@@ -4105,7 +4105,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/BUGMANAGE.json",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_BugManage_Open.json",
     "name" : "产品Bug管理（公开）（跟随角色）",
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "BUGMANAGE",
@@ -4115,12 +4115,12 @@
         "id" : "BUGMANAGE"
       }
     } ],
-    "roleTag" : "BUGMANAGE",
+    "roleTag" : "Product_BugManage_Open",
     "userCat" : "CAT1",
     "userDRAction" : "READ",
     "systemReserved" : true
   }, {
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/BUILDMANAGE.json",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_BuildManage_Open.json",
     "name" : "产品版本管理（公开）（跟随角色）",
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "BUILDMANAGE",
@@ -4130,7 +4130,7 @@
         "id" : "BUILDMANAGE"
       }
     } ],
-    "roleTag" : "BUILDMANAGE",
+    "roleTag" : "Product_BuildManage_Open",
     "userDRAction" : "READ"
   }, {
     "customCond" : "[ (1, '=', 1) ]",
@@ -4503,7 +4503,7 @@
     "userDRAction" : "READ",
     "systemReserved" : true
   }, {
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/TESTTASKMANAGE.json",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_TesttaskManage_Open.json",
     "name" : "产品测试版本管理（公开）（跟随角色）",
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "TESTTASKMANAGE",
@@ -4513,7 +4513,7 @@
         "id" : "TESTTASKMANAGE"
       }
     } ],
-    "roleTag" : "TESTTASKMANAGE",
+    "roleTag" : "Product_TesttaskManage_Open",
     "userCat" : "CAT1",
     "userDRAction" : "READ",
     "systemReserved" : true
@@ -5168,6 +5168,29 @@
     "pickupDEFName" : "PRODUCT",
     "removeActionType" : -1,
     "removeOrder" : 0
+  }, {
+    "codeName" : "Product",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PRODUCT.json",
+    "logicName" : "产品",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+    },
+    "name" : "DERCUSTOM_ZT_ACTION_ZT_PRODUCT",
+    "orderValue" : 100,
+    "pickupDEFName" : "OBJECTID",
+    "getPickupPSDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "removeActionType" : 0,
+    "removeOrder" : -1
   } ],
   "getMinorPSDERs" : [ {
     "codeName" : "ProductLine",
@@ -5252,7 +5275,7 @@
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 2,
-  "serviceAPIMode" : 1,
+  "serviceAPIMode" : 0,
   "serviceCodeName" : "Product",
   "storageMode" : 1,
   "systemTag" : "iBizPMS",

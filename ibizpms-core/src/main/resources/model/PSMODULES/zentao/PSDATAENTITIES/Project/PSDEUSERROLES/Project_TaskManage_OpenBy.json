@@ -1,0 +1,18 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_TaskManage_OpenBy.json",
+  "name" : "项目任务管理（创建者或者更新者）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "OpenByQuery"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "TASKMANAGE",
+    "name" : "TASKMANAGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "TASKMANAGE"
+    }
+  } ],
+  "roleTag" : "Project_TaskManage_OpenBy",
+  "userDRAction" : "READ"
+}

@@ -1,6 +1,19 @@
 /***    BRGIN:菜单样式    ***/
 .app-app-menu {
     background-color: var(--leftsidebar-background-color);
+    >.el-menu--collapse {
+        .el-submenu.is-active {
+            background-color: var(--leftsidebar-background-color-bright);
+            >.el-submenu__title {
+                i {
+                    color: var(--leftsidebar-font-color-bright);
+                }
+                span{
+                    color: var(--leftsidebar-font-color-bright);
+                }
+            }
+        }
+    }
     > .app-menu {
         background-color: var(--leftsidebar-background-color);
         .el-menu-item:hover {

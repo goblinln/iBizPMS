@@ -482,10 +482,6 @@
           "dataAccessAction" : "NOTOP",
           "fullCodeName" : "Product_ProductTop",
           "name" : "置顶",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "ProductTop"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
@@ -528,10 +524,6 @@
           "dataAccessAction" : "TOP",
           "fullCodeName" : "Product_CancelProductTop",
           "name" : "取消置顶",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "CancelProductTop"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"

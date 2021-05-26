@@ -305,6 +305,134 @@ public class HistoryResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("@HistoryRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据产品系统日志建立操作历史", tags = {"操作历史" },  notes = "根据产品系统日志建立操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/histories")
+    public ResponseEntity<HistoryDTO> createByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody HistoryDTO historydto) {
+        History domain = historyMapping.toDomain(historydto);
+        domain.setAction(action_id);
+		historyService.create(domain);
+        HistoryDTO dto = historyMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@HistoryRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据产品系统日志批量建立操作历史", tags = {"操作历史" },  notes = "根据产品系统日志批量建立操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/histories/batch")
+    public ResponseEntity<Boolean> createBatchByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody List<HistoryDTO> historydtos) {
+        List<History> domainlist=historyMapping.toDomain(historydtos);
+        for(History domain:domainlist){
+            domain.setAction(action_id);
+        }
+        historyService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@HistoryRuntime.test(#history_id,'UPDATE')")
+    @ApiOperation(value = "根据产品系统日志更新操作历史", tags = {"操作历史" },  notes = "根据产品系统日志更新操作历史")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/actions/{action_id}/histories/{history_id}")
+    public ResponseEntity<HistoryDTO> updateByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
+        History domain = historyMapping.toDomain(historydto);
+        domain.setAction(action_id);
+        domain.setId(history_id);
+		historyService.update(domain);
+        HistoryDTO dto = historyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@HistoryRuntime.quickTest('UPDATE')")
+    @ApiOperation(value = "根据产品系统日志批量更新操作历史", tags = {"操作历史" },  notes = "根据产品系统日志批量更新操作历史")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/actions/{action_id}/histories/batch")
+    public ResponseEntity<Boolean> updateBatchByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody List<HistoryDTO> historydtos) {
+        List<History> domainlist=historyMapping.toDomain(historydtos);
+        for(History domain:domainlist){
+            domain.setAction(action_id);
+        }
+        historyService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@HistoryRuntime.test(#history_id,'DELETE')")
+    @ApiOperation(value = "根据产品系统日志删除操作历史", tags = {"操作历史" },  notes = "根据产品系统日志删除操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/actions/{action_id}/histories/{history_id}")
+    public ResponseEntity<Boolean> removeByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @PathVariable("history_id") Long history_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(historyService.remove(history_id));
+    }
+
+    @PreAuthorize("@HistoryRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据产品系统日志批量删除操作历史", tags = {"操作历史" },  notes = "根据产品系统日志批量删除操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/actions/{action_id}/histories/batch")
+    public ResponseEntity<Boolean> removeBatchByProductAction(@RequestBody List<Long> ids) {
+        historyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@HistoryRuntime.test(#history_id,'READ')")
+    @ApiOperation(value = "根据产品系统日志获取操作历史", tags = {"操作历史" },  notes = "根据产品系统日志获取操作历史")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/actions/{action_id}/histories/{history_id}")
+    public ResponseEntity<HistoryDTO> getByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @PathVariable("history_id") Long history_id) {
+        History domain = historyService.get(history_id);
+        HistoryDTO dto = historyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据产品系统日志获取操作历史草稿", tags = {"操作历史" },  notes = "根据产品系统日志获取操作历史草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/actions/{action_id}/histories/getdraft")
+    public ResponseEntity<HistoryDTO> getDraftByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, HistoryDTO dto) {
+        History domain = historyMapping.toDomain(dto);
+        domain.setAction(action_id);
+        return ResponseEntity.status(HttpStatus.OK).body(historyMapping.toDto(historyService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据产品系统日志检查操作历史", tags = {"操作历史" },  notes = "根据产品系统日志检查操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/histories/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody HistoryDTO historydto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(historyService.checkKey(historyMapping.toDomain(historydto)));
+    }
+
+    @ApiOperation(value = "根据产品系统日志保存操作历史", tags = {"操作历史" },  notes = "根据产品系统日志保存操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/histories/save")
+    public ResponseEntity<HistoryDTO> saveByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody HistoryDTO historydto) {
+        History domain = historyMapping.toDomain(historydto);
+        domain.setAction(action_id);
+        historyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(historyMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据产品系统日志批量保存操作历史", tags = {"操作历史" },  notes = "根据产品系统日志批量保存操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/histories/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody List<HistoryDTO> historydtos) {
+        List<History> domainlist=historyMapping.toDomain(historydtos);
+        for(History domain:domainlist){
+             domain.setAction(action_id);
+        }
+        historyService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@HistoryRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据产品系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品系统日志获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/{action_id}/histories/fetchdefault")
+	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
+        context.setN_action_eq(action_id);
+        Page<History> domains = historyService.searchDefault(context) ;
+        List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@HistoryRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据产品系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品系统日志查询DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/{action_id}/histories/searchdefault")
+	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
+        context.setN_action_eq(action_id);
+        Page<History> domains = historyService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目系统日志建立操作历史", tags = {"操作历史" },  notes = "根据项目系统日志建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/{action_id}/histories")

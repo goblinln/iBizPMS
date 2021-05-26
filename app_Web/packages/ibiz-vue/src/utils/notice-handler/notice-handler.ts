@@ -1,6 +1,5 @@
 import { SyncSeriesHook } from "qx-util";
-import { LogUtil, Util } from "ibiz-core";
-import { AppError, ErrorCode } from "./app-error";
+import { AppError, AppErrorCode, LogUtil } from "ibiz-core";
 import { AppNoticeService } from "../../app-service";
 
 /**
@@ -35,15 +34,15 @@ export class NoticeHandler {
      * @return {*} 
      * @memberof NoticeHandler
      */
-    public static errorHandler(error: any, {param, caller, fnName = ''} :{param?: any, caller?: any, fnName?: string} = {}) {
+    public static errorHandler(error: any, { param, caller, fnName = '' }: { param?: any, caller?: any, fnName?: string } = {}) {
         // 错误处理前钩子
         let beforeArgs = { error, param, caller, fnName };
         this.hooks.beforeError.callSync(beforeArgs);
 
         // 处理错误对象
-        if(error?.ignore) return;
+        if (error?.ignore) return;
         const appError: AppError | null = this.parse(beforeArgs.error);
-        if(!appError) return; 
+        if (!appError) return;
 
         // 错误处理后钩子
         let afterArgs = { error: appError, param };
@@ -58,16 +57,21 @@ export class NoticeHandler {
      */
     public static parse(error: any, args?: any): AppError | null {
         if (typeof (error) === "string") {
-            return this.createError(ErrorCode.CUSTOM, error);
+            return this.createError({ code: AppErrorCode.SYSTEMERROR, message: error });
         } else {
             if (error instanceof EvalError || error instanceof RangeError || error instanceof ReferenceError || error instanceof SyntaxError || error instanceof TypeError || error instanceof URIError) {
                 LogUtil.error(error);
                 return null;
             } else {
                 if (!error || !error.status || !error.data) {
-                    return this.createError(ErrorCode.APP);
+                    return this.createError({ code: AppErrorCode.SYSTEMERROR });
                 } else {
-                    return this.createError(ErrorCode.CUSTOM, error.data.message);
+                    const errorInfo: any = error.data;
+                    if (errorInfo.code && errorInfo.message) {
+                        return this.createError(errorInfo);
+                    } else {
+                        return this.createError({ code: AppErrorCode.SYSTEMERROR });
+                    }
                 }
             }
         }
@@ -78,8 +82,8 @@ export class NoticeHandler {
      *
      * @memberof NoticeHandler
      */
-    public static createError(code: number, message?: string, param?: any): AppError {
-        return new AppError({ code, message });
+    public static createError(opts: any): AppError {
+        return new AppError(opts);
     }
 
     /**
@@ -92,7 +96,7 @@ export class NoticeHandler {
      * @param {string} [fnName=''] 调用方法名称
      * @memberof NoticeHandler
      */
-    public static successHandler(message: any, {param, caller, fnName = ''} :{param?: any, caller?: any, fnName?: string} = {}) {
+    public static successHandler(message: any, { param, caller, fnName = '' }: { param?: any, caller?: any, fnName?: string } = {}) {
         // 成功处理前钩子
         let beforeArgs = { message, param, caller, fnName };
         this.hooks.beforeSuccess.callSync(beforeArgs);
@@ -109,7 +113,7 @@ export class NoticeHandler {
      * @param {string} [fnName=''] 调用方法名称
      * @memberof NoticeHandler
      */
-    public static warningHandler(message: any, {param, caller, fnName = ''} :{param?: any, caller?: any, fnName?: string} = {}) {
+    public static warningHandler(message: any, { param, caller, fnName = '' }: { param?: any, caller?: any, fnName?: string } = {}) {
         // 警告处理前钩子
         let beforeArgs = { message, param, caller, fnName };
         this.hooks.beforeWarning.callSync(beforeArgs);
@@ -126,7 +130,7 @@ export class NoticeHandler {
      * @param {string} [fnName=''] 调用方法名称
      * @memberof NoticeHandler
      */
-    public static infoHandler(message: any, {param, caller, fnName = ''} :{param?: any, caller?: any, fnName?: string} = {}) {
+    public static infoHandler(message: any, { param, caller, fnName = '' }: { param?: any, caller?: any, fnName?: string } = {}) {
         // 信息处理前钩子
         let beforeArgs = { message, param, caller, fnName };
         this.hooks.beforeInfo.callSync(beforeArgs);

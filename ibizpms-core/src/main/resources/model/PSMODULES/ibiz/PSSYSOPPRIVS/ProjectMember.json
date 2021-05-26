@@ -56,7 +56,7 @@
     "name" : "项目成员-ZT_PRODUCT[产品Bug管理（公开）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/BUGMANAGE.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_BugManage_Open.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,

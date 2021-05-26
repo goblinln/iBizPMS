@@ -1926,6 +1926,12 @@
      "code_name":"Zt_project",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_PROJECT"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_PRODUCT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Product",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_PRODUCT"
     }
     ]
  }
@@ -43526,6 +43532,12 @@
      "relation_type":"DER1N",
      "code_name":"ZTProduct",
      "entity_name":"ZT_TESTTASK",
+     "ref_entity_name":"ZT_PRODUCT"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_PRODUCT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Product",
+     "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_PRODUCT"
     }
     ],

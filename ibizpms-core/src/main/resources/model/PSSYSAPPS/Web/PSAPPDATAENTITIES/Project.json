@@ -4226,6 +4226,9 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "文档库管理",
+    "name" : "DOCLIBMANAGE"
+  }, {
     "logicName" : "组群管理",
     "name" : "GROUPMANAGE"
   }, {
