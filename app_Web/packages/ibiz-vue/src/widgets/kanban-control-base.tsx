@@ -323,7 +323,7 @@ export class KanbanControlBase extends MDControlBase {
      */
     public async load(opt: any = {}, isReset: boolean = false) {
         if (!this.fetchAction) {
-            this.$throw('实体看板视图没有配置fetchAction','load');
+            this.$throw(this.$t('app.kanban.notConfig.fetchAction'),'load');
             return;
         }
         const arg: any = { ...opt };
@@ -507,9 +507,9 @@ export class KanbanControlBase extends MDControlBase {
         });
 
         if (_datas.length < 5) {
-            dataInfo = dataInfo + ' 共' + _datas.length + '条数据';
+            dataInfo = dataInfo + this.$t('app.dataView.sum') + _datas.length + this.$t('app.dataView.data');
         } else {
-            dataInfo = dataInfo + '...' + ' 共' + _datas.length + '条数据';
+            dataInfo = dataInfo + '...' + this.$t('app.dataView.sum') + _datas.length + this.$t('app.dataView.data');
         }
 
         const removeData = () => {
@@ -672,7 +672,7 @@ export class KanbanControlBase extends MDControlBase {
         if (Object.is(this.groupMode, 'CODELIST') && this.groupCodeList) {
             if (this.allCodeList && this.allCodeList.length > 0) {
                 if (!name) {
-                    return '未定义';
+                    return this.$t('app.chart.undefined');
                 }
                 let item = this.allCodeList.find((item: any) => Object.is(item.value, name));
                 if (item) {

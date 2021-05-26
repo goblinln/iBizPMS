@@ -676,32 +676,6 @@
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzProReportlyAction.json",
   "enableUIActions" : 15,
   "logicName" : "汇报日志",
-  "getMinorPSAppDERSs" : [ {
-    "actionRSMode" : 1,
-    "codeName" : "IbzProReportlyActions",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReportly.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzProReportlyAction.json"
-    },
-    "name" : "汇报-汇报日志",
-    "getParentPSAppDEField" : {
-      "name" : "OBJECTID",
-      "codeName" : "ObjectID"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ],
   "name" : "IBZPRO_REPORTLYACTION",
   "getPSDEName" : "IBZPRO_REPORTLYACTION",
   "getPSDEServiceAPI" : {

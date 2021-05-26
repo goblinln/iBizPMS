@@ -251,6 +251,6 @@ export class EditorBase extends Vue {
      * @memberof EditorBase
      */
     public render(): any {
-        return <div>{this.editorInstance ? '基类不输出' : 'editor实例不存在！'}</div>;
+        return <div>{this.editorInstance ? this.$t('app.editor.nooutput') : this.$t('app.editor.noexist')}</div>;
     }
 }

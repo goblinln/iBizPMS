@@ -125,15 +125,6 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
-    "codeName" : "ReturnEdit",
-    "methodType" : "DEACTION",
-    "name" : "ReturnEdit",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/ReturnEdit.json"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -901,15 +892,6 @@
       "id" : "MANAGE"
     },
     "userCat" : "CAT1",
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ReturnEdit",
-    "methodType" : "DEACTION",
-    "name" : "ReturnEdit",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/ReturnEdit.json"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "Save",

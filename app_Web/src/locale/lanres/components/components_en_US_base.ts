@@ -26,6 +26,7 @@ function getLocaleResourceBase(){
         },
         appCheckBox: {
             notExist: 'codelist is not existed',
+            warn: 'Code table value type and property type do not match, automatic cast exception, please correct code table value type and property type match'
         },
         appColumnLink: {
           error: 'error',
@@ -35,6 +36,9 @@ function getLocaleResourceBase(){
         appColumnRender: {
           select: 'please select...',
           unsupported: 'unsupported',
+        },
+        microcom: {
+          filterWarn: "Filter parameter configuration error, please check!"
         },
         appDashboardDesign: {
           global: 'Global',
@@ -66,6 +70,24 @@ function getLocaleResourceBase(){
           uploadText: 'Drag files here，or <em>Click</em> to upload',
           fileTypeErrorTitle: 'File type incorrect',
           fileTypeErrorInfo: 'Please select files with picture types，such as JPEG，GIF，PNG，BMP',
+          downloadError: "Image download failed!"
+        },
+        camera: {
+          dev: "developing",
+          choose: "Camera selection:",
+          left: "anticlockwise",
+          right: "right rotation",
+          photo: "photograph",
+          save: "save"
+        },
+        group2: {
+          noreal: "unrealized"
+        },
+        part: {
+          error: "Load dynamic form model data exception"
+        },
+        scren: {
+          all: "Application of full screen"
         },
         appFormDRUIPart: {
           blockUITipInfo: 'Please save the major data first',
@@ -102,6 +124,7 @@ function getLocaleResourceBase(){
           systemException: 'System Error！',
           valueitemException: 'valueitem Error！',
           formdataException: 'formdata Error！',
+          nosupport: "The redirect view is not yet supported"
         },
         appPickerSelectView: {
           error: 'Error',
@@ -111,6 +134,7 @@ function getLocaleResourceBase(){
         },
         appPortalDesign: {
           customPortal: 'Custom portal',
+          recover: "restore default",
           save: 'Save',
         },
         appRangDate: {
@@ -128,6 +152,9 @@ function getLocaleResourceBase(){
           configButton: 'Configuration',
           issueTitle: 'Create issues of current view',
           issueButton: 'Create issues',
+          success: "Copy success!",
+          copyname: "Click copy view name",
+          view: "check"
         },
         appTreePicker: {
           placeholder: 'please select...',
@@ -141,6 +168,7 @@ function getLocaleResourceBase(){
         },
         dropDownList: {
           placeholder: 'please select...',
+          valueError: "Drop down list, value conversion failed",
         },
         dropDownListDynamic: {
           placeholder: 'please select...',
@@ -185,6 +213,13 @@ function getLocaleResourceBase(){
               SimHei: 'SimHei',
               YouYuan: 'YouYuan',
           },
+          config: "The topic configuration",
+          customTheme: "Custom Theme",
+          color: "subject color",
+          preview: "preview",
+          save: "Save the configuration",
+          reset: "reset",
+          success: "Save custom theme successfully"
         },
         appFormGroup: {
           hide: 'hide',
@@ -209,7 +244,8 @@ function getLocaleResourceBase(){
           uploadFail:'Upload failed'
         },
         appOrgSelect:{
-          loadFail:'Failed to load data'
+          loadFail:'Failed to load data',
+          resetError: "An exception occurred in resetting application data"
         },
         appTransfer:{
           title1:'Not selected',
@@ -224,7 +260,9 @@ function getLocaleResourceBase(){
         },
         contextMenuDrag:{
           allApp:'All applications',
-          noFind:'The app was not found'
+          noFind:'The app was not found',
+          error: "Error loading data",
+          portlet: "enterprise portal"
         },
         filterMode:{
           placeholder:'Conditional logic',  
@@ -248,7 +286,8 @@ function getLocaleResourceBase(){
           imgMsg:'Drag the picture here to replace it',
           localUpload:'Local upload',
           or:'Or',
-          imgMsg1:'Select from stock'
+          imgMsg1:'Select from stock',
+          choose: "Select Upload File"
         },
         lockScren:{
           title:'Set the password lock screen',
@@ -261,6 +300,7 @@ function getLocaleResourceBase(){
           prompt:'prompt',
           confirmButtonText:'determine',
           cancelButtonText:'cancel',
+          lock: "Application of lock screen"
         },
         cronEditor: {
           label: {
@@ -330,7 +370,10 @@ function getLocaleResourceBase(){
         },
         appMessagePopover: {
           loadMore: 'Load more',
-          noMore: 'No more'
+          noMore: 'No more',
+          error: "Error loading data",
+          getError: "The tag content was not retrieved",
+          errorReturn: "Event trigger source has no value, force return"
         },
         diskFileUpload:{
           fileDrag: 'Drag the file here, or',
@@ -377,7 +420,9 @@ function getLocaleResourceBase(){
         },
         appMapPosition: {
           submit: 'Submit',
-          title: 'Please select address'
+          title: 'Please select address',
+          address: "Tianfu Panda Pagoda, Sichuan TV Tower, Mengchuanwan Street, Chenghua District, Chengdu City, Sichuan Province",
+          city: "Chengdu"
         },
         appSortBar: {
           title: 'Sort'
@@ -388,6 +433,40 @@ function getLocaleResourceBase(){
           dayAgo: 'days ago',
           monthsAgo: 'months ago',
           yearsAgo: 'years ago'
+        },
+        timeline: {
+          index: "serial",
+          node: "node",
+          author: "accepting officer",
+          type: "operation",
+          lastTime: "completion time",
+          opinion: "approval opinion"
+        },
+        content: {
+          title: "「Open/Close」Bottom Page [Ctrl + ']",
+          open: "On the menu",
+          close: "Pack up the menu"
+        },
+        richtext: {
+          content: "Please enter the contents of the template",
+          title: "Please enter a template title",
+          save: "Save the template",
+          pub: "public",
+          pri: "private",
+          apply: "application template",
+          success: "Save template successfully!!!",
+          error: "Failed to save template!!!",
+          delSuccess: "Delete template successfully!!!",
+          delError: "Failed to delete template!!!"
+        },
+        search: {
+          holder: "Search content"
+        },
+        drawer: {
+          back: "back",
+          confirm: "Make sure to close all interfaces?",
+          close: "Close all views",
+          toperror: "Upper-bay window opens view parameter conversion exception"
         }
     };
     return data;

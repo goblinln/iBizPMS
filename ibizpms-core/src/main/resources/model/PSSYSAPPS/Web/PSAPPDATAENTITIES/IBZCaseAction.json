@@ -774,32 +774,6 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseAction.json",
   "enableUIActions" : 15,
   "logicName" : "测试用例日志",
-  "getMinorPSAppDERSs" : [ {
-    "actionRSMode" : 1,
-    "codeName" : "IBZCaseActions",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseAction.json"
-    },
-    "name" : "测试用例-测试用例日志",
-    "getParentPSAppDEField" : {
-      "name" : "OBJECTID",
-      "codeName" : "ObjectID"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ],
   "name" : "IBZPRO_CASEACTION",
   "getPSDEName" : "IBZPRO_CASEACTION",
   "getPSDEServiceAPI" : {

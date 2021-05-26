@@ -22,7 +22,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['actor',];
     protected selectContextParam = {
-        ibzdaily: 'objectid',
     };
 
     newEntity(data: IIBZDailyAction): IBZDailyAction {
@@ -39,13 +38,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
 
     async getLocal(context: IContext, srfKey: string): Promise<IIBZDailyAction> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.objectid && entity.objectid !== '') {
-            const s = await ___ibz___.gs.getIbzDailyService();
-            const data = await s.getLocal2(context, entity.objectid);
-            if (data) {
-                entity.objectid = data.ibzdailyid;
-            }
-        }
         return entity!;
     }
 
@@ -54,13 +46,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
     }
 
     async getDraftLocal(_context: IContext, entity: IIBZDailyAction = {}): Promise<IIBZDailyAction> {
-        if (_context.ibzdaily && _context.ibzdaily !== '') {
-            const s = await ___ibz___.gs.getIbzDailyService();
-            const data = await s.getLocal2(_context, _context.ibzdaily);
-            if (data) {
-                entity.objectid = data.ibzdailyid;
-            }
-        }
         return new IBZDailyAction(entity);
     }
 
@@ -89,9 +74,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzdaily && _context.ibzdailyaction) {
-            return this.http.get(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/${_context.ibzdailyaction}/select`);
-        }
         return this.http.get(`/ibzdailyactions/${_context.ibzdailyaction}/select`);
     }
     /**
@@ -103,16 +85,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzdaily && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -131,10 +103,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzdaily && _context.ibzdailyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/${_context.ibzdailyaction}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/ibzdailyactions/${_context.ibzdailyaction}`, _data);
     }
@@ -147,9 +115,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzdaily && _context.ibzdailyaction) {
-            return this.http.delete(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/${_context.ibzdailyaction}`);
-        }
         return this.http.delete(`/ibzdailyactions/${_context.ibzdailyaction}`);
     }
     /**
@@ -161,10 +126,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzdaily && _context.ibzdailyaction) {
-            const res = await this.http.get(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/${_context.ibzdailyaction}`);
-            return res;
-        }
         const res = await this.http.get(`/ibzdailyactions/${_context.ibzdailyaction}`);
         return res;
     }
@@ -177,12 +138,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzdaily && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzdailyactions/getdraft`, _data);
@@ -197,10 +152,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionService
      */
     async Comment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzdaily && _context.ibzdailyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/${_context.ibzdailyaction}/comment`, _data);
-        }
         return this.http.post(`/ibzdailyactions/${_context.ibzdailyaction}/comment`, _data);
     }
     /**
@@ -212,10 +163,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionService
      */
     async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzdaily && _context.ibzdailyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/${_context.ibzdailyaction}/createhis`, _data);
-        }
         return this.http.post(`/ibzdailyactions/${_context.ibzdailyaction}/createhis`, _data);
     }
     /**
@@ -227,10 +174,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionService
      */
     async EditComment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzdaily && _context.ibzdailyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/${_context.ibzdailyaction}/editcomment`, _data);
-        }
         return this.http.post(`/ibzdailyactions/${_context.ibzdailyaction}/editcomment`, _data);
     }
     /**
@@ -242,10 +185,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionService
      */
     async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzdaily && _context.ibzdailyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/${_context.ibzdailyaction}/managepmsee`, _data);
-        }
         return this.http.post(`/ibzdailyactions/${_context.ibzdailyaction}/managepmsee`, _data);
     }
     /**
@@ -257,10 +196,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionService
      */
     async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzdaily && _context.ibzdailyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/${_context.ibzdailyaction}/sendmarkdone`, _data);
-        }
         return this.http.post(`/ibzdailyactions/${_context.ibzdailyaction}/sendmarkdone`, _data);
     }
     /**
@@ -272,10 +207,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionService
      */
     async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzdaily && _context.ibzdailyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/${_context.ibzdailyaction}/sendtodo`, _data);
-        }
         return this.http.post(`/ibzdailyactions/${_context.ibzdailyaction}/sendtodo`, _data);
     }
     /**
@@ -287,10 +218,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionService
      */
     async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzdaily && _context.ibzdailyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/${_context.ibzdailyaction}/sendtoread`, _data);
-        }
         return this.http.post(`/ibzdailyactions/${_context.ibzdailyaction}/sendtoread`, _data);
     }
     /**
@@ -302,9 +229,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/fetchdefault`, _data);
-        }
         return this.http.post(`/ibzdailyactions/fetchdefault`, _data);
     }
     /**
@@ -316,9 +240,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/fetchtype`, _data);
-        }
         return this.http.post(`/ibzdailyactions/fetchtype`, _data);
     }
 
@@ -332,10 +253,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionServiceBase
      */
     public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzdaily && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/createhisbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzdailyactions/createhisbatch`,_data);
     }
@@ -350,10 +267,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionServiceBase
      */
     public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzdaily && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/editcommentbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzdailyactions/editcommentbatch`,_data);
     }
@@ -368,10 +281,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionServiceBase
      */
     public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzdaily && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/managepmseebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzdailyactions/managepmseebatch`,_data);
     }
@@ -386,10 +295,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionServiceBase
      */
     public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzdaily && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/sendmarkdonebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzdailyactions/sendmarkdonebatch`,_data);
     }
@@ -404,10 +309,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionServiceBase
      */
     public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzdaily && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/sendtodobatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzdailyactions/sendtodobatch`,_data);
     }
@@ -422,10 +323,6 @@ export class IBZDailyActionBaseService extends EntityBaseService<IIBZDailyAction
      * @memberof IBZDailyActionServiceBase
      */
     public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzdaily && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/ibzdailyactions/sendtoreadbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzdailyactions/sendtoreadbatch`,_data);
     }

@@ -276,7 +276,7 @@ export class AppDefaultEditor extends Vue {
      * @memberof AppDynamicForm
      */
     public renderUnSupportEditorType(editor: any): any {
-        return <div class='unsupport'>{`暂未支持编辑器型为${editor.editorType}`}</div>;
+        return <div class='unsupport'>{`${this.$t('app.editor.unsupport')}${editor.editorType}`}</div>;
     }
 
     /**
@@ -301,7 +301,7 @@ export class AppDefaultEditor extends Vue {
             if( !editorName  || editor.getPSSysPFPlugin()?.pluginCode){
                 editorComponentName = AppComponentService.getEditorComponents(editor.editorType,editor.editorStyle); 
                 if(!editorComponentName){
-                    LogUtil.warn("目标编辑器查找不到");
+                    LogUtil.warn(this.$t('app.editor.nofind'));
                     return;
                 }
             } else {
@@ -341,7 +341,7 @@ export class AppDefaultEditor extends Vue {
         if (this.editorInstance) {
             return <div>{this.renderByEditorType(this.editorInstance)}</div>;
         } else {
-            return 'editor实例不存在！';
+            return this.$t('app.editor.noexist');
         }
     }
 }

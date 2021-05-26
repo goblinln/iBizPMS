@@ -218,10 +218,10 @@ export default class AppFormPart extends Vue {
                 let result:any = res.data;
                 resolve(result);
             }else{
-                LogUtil.warn("加载动态表单模型数据异常");
+                LogUtil.warn(this.$t('app.components.part.error'));
             }
         }).catch((error:any) =>{
-            LogUtil.warn("加载动态表单模型数据异常");
+            LogUtil.warn(this.$t('app.components.part.error'));
         })
     })
   }

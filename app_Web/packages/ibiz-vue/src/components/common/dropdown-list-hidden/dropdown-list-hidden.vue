@@ -75,7 +75,7 @@ export default class DropDownListHidden extends Vue {
                 this.loadData();
             }
         } catch (error) {
-            LogUtil.log('下拉列表，值转换失败');
+            LogUtil.log(this.$t('app.components.dropDownList.valueError'));
         }
     }
 
@@ -322,7 +322,7 @@ export default class DropDownListHidden extends Vue {
             this.codeListService.getDataItems({ tag: this.tag, type: this.codelistType,data: this.codeList,context:context,viewparam:viewparam }).then((codelistItems: Array<any>) => {
                 this.formatCodeList(codelistItems);
             }).catch((error: any) => {
-                LogUtil.log(`----${this.tag}----代码表不存在`);
+                LogUtil.log(`----${this.tag}----${this.$t('app.commonWords.codeNotExist')}`);
             })
         }
     }
@@ -369,7 +369,7 @@ export default class DropDownListHidden extends Vue {
                     let items: Array<any> = [...res];
                     this.formatCodeList(items);
                 }).catch((error:any) => {
-                    LogUtil.log(`----${this.tag}----代码表不存在`);
+                    LogUtil.log(`----${this.tag}----${this.$t('app.commonWords.codeNotExist')}`);
                 });
             }
         }
@@ -406,11 +406,11 @@ export default class DropDownListHidden extends Vue {
                 
             });
             if(matching){
-                LogUtil.warn(`代码表 ${ this.tag } 值类型和属性类型不匹配，已自动强制转换，请修正代码表值类型和属性类型匹配`);
+                LogUtil.warn(`${ this.tag }${this.$t('app.components.appCheckBox.warn')}`);
             }
             
         }catch(error){
-            LogUtil.warn('代码表值类型和属性类型不匹配，自动强制转换异常，请修正代码表值类型和属性类型匹配');
+            LogUtil.warn(this.$t('app.components.appCheckBox.warn'));
         }
         this.handleLevelCodeList(Util.deepCopy(this.items));
     }

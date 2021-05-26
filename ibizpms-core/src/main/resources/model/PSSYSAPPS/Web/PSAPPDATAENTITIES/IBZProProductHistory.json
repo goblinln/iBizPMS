@@ -372,32 +372,6 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductHistory.json",
   "enableUIActions" : 15,
   "logicName" : "产品操作历史",
-  "getMinorPSAppDERSs" : [ {
-    "actionRSMode" : 1,
-    "codeName" : "IBZProProductActions",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductAction.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductHistory.json"
-    },
-    "name" : "产品日志-产品操作历史",
-    "getParentPSAppDEField" : {
-      "name" : "ACTION",
-      "codeName" : "Action"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ],
   "name" : "IBZPRO_PRODUCTHISTORY",
   "getPSDEName" : "IBZPRO_PRODUCTHISTORY",
   "getPSDEServiceAPI" : {

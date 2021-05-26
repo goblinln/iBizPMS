@@ -22,7 +22,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['actor',];
     protected selectContextParam = {
-        case: 'objectid',
     };
 
     newEntity(data: IIBZCaseAction): IBZCaseAction {
@@ -39,13 +38,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
 
     async getLocal(context: IContext, srfKey: string): Promise<IIBZCaseAction> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.objectid && entity.objectid !== '') {
-            const s = await ___ibz___.gs.getCaseService();
-            const data = await s.getLocal2(context, entity.objectid);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -54,13 +46,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
     }
 
     async getDraftLocal(_context: IContext, entity: IIBZCaseAction = {}): Promise<IIBZCaseAction> {
-        if (_context.case && _context.case !== '') {
-            const s = await ___ibz___.gs.getCaseService();
-            const data = await s.getLocal2(_context, _context.case);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return new IBZCaseAction(entity);
     }
 
@@ -89,12 +74,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && _context.ibzcaseaction) {
-            return this.http.get(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}/select`);
-        }
-        if (_context.case && _context.ibzcaseaction) {
-            return this.http.get(`/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}/select`);
-        }
         return this.http.get(`/ibzcaseactions/${_context.ibzcaseaction}/select`);
     }
     /**
@@ -106,26 +85,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions`, _data);
-        }
-        if (_context.case && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/cases/${_context.case}/ibzcaseactions`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -144,14 +103,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && _context.ibzcaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}`, _data);
-        }
-        if (_context.case && _context.ibzcaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/ibzcaseactions/${_context.ibzcaseaction}`, _data);
     }
@@ -164,12 +115,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && _context.ibzcaseaction) {
-            return this.http.delete(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}`);
-        }
-        if (_context.case && _context.ibzcaseaction) {
-            return this.http.delete(`/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}`);
-        }
         return this.http.delete(`/ibzcaseactions/${_context.ibzcaseaction}`);
     }
     /**
@@ -181,14 +126,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && _context.ibzcaseaction) {
-            const res = await this.http.get(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}`);
-            return res;
-        }
-        if (_context.case && _context.ibzcaseaction) {
-            const res = await this.http.get(`/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}`);
-            return res;
-        }
         const res = await this.http.get(`/ibzcaseactions/${_context.ibzcaseaction}`);
         return res;
     }
@@ -201,18 +138,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/getdraft`, _data);
-            return res;
-        }
-        if (_context.case && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/cases/${_context.case}/ibzcaseactions/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzcaseactions/getdraft`, _data);
@@ -227,14 +152,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionService
      */
     async Comment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && _context.ibzcaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}/comment`, _data);
-        }
-        if (_context.case && _context.ibzcaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}/comment`, _data);
-        }
         return this.http.post(`/ibzcaseactions/${_context.ibzcaseaction}/comment`, _data);
     }
     /**
@@ -246,14 +163,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionService
      */
     async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && _context.ibzcaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}/createhis`, _data);
-        }
-        if (_context.case && _context.ibzcaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}/createhis`, _data);
-        }
         return this.http.post(`/ibzcaseactions/${_context.ibzcaseaction}/createhis`, _data);
     }
     /**
@@ -265,14 +174,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionService
      */
     async EditComment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && _context.ibzcaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}/editcomment`, _data);
-        }
-        if (_context.case && _context.ibzcaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}/editcomment`, _data);
-        }
         return this.http.post(`/ibzcaseactions/${_context.ibzcaseaction}/editcomment`, _data);
     }
     /**
@@ -284,14 +185,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionService
      */
     async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && _context.ibzcaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}/managepmsee`, _data);
-        }
-        if (_context.case && _context.ibzcaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}/managepmsee`, _data);
-        }
         return this.http.post(`/ibzcaseactions/${_context.ibzcaseaction}/managepmsee`, _data);
     }
     /**
@@ -303,14 +196,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionService
      */
     async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && _context.ibzcaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}/sendmarkdone`, _data);
-        }
-        if (_context.case && _context.ibzcaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}/sendmarkdone`, _data);
-        }
         return this.http.post(`/ibzcaseactions/${_context.ibzcaseaction}/sendmarkdone`, _data);
     }
     /**
@@ -322,14 +207,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionService
      */
     async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && _context.ibzcaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}/sendtodo`, _data);
-        }
-        if (_context.case && _context.ibzcaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}/sendtodo`, _data);
-        }
         return this.http.post(`/ibzcaseactions/${_context.ibzcaseaction}/sendtodo`, _data);
     }
     /**
@@ -341,14 +218,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionService
      */
     async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && _context.ibzcaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}/sendtoread`, _data);
-        }
-        if (_context.case && _context.ibzcaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/cases/${_context.case}/ibzcaseactions/${_context.ibzcaseaction}/sendtoread`, _data);
-        }
         return this.http.post(`/ibzcaseactions/${_context.ibzcaseaction}/sendtoread`, _data);
     }
     /**
@@ -360,12 +229,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && true) {
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/fetchdefault`, _data);
-        }
-        if (_context.case && true) {
-            return this.http.post(`/cases/${_context.case}/ibzcaseactions/fetchdefault`, _data);
-        }
         return this.http.post(`/ibzcaseactions/fetchdefault`, _data);
     }
     /**
@@ -377,12 +240,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && true) {
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/fetchtype`, _data);
-        }
-        if (_context.case && true) {
-            return this.http.post(`/cases/${_context.case}/ibzcaseactions/fetchtype`, _data);
-        }
         return this.http.post(`/ibzcaseactions/fetchtype`, _data);
     }
 
@@ -396,14 +253,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionServiceBase
      */
     public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.case && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/createhisbatch`,_data);
-        }
-        if(_context.case && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/cases/${_context.case}/ibzcaseactions/createhisbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzcaseactions/createhisbatch`,_data);
     }
@@ -418,14 +267,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionServiceBase
      */
     public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.case && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/editcommentbatch`,_data);
-        }
-        if(_context.case && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/cases/${_context.case}/ibzcaseactions/editcommentbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzcaseactions/editcommentbatch`,_data);
     }
@@ -440,14 +281,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionServiceBase
      */
     public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.case && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/managepmseebatch`,_data);
-        }
-        if(_context.case && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/cases/${_context.case}/ibzcaseactions/managepmseebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzcaseactions/managepmseebatch`,_data);
     }
@@ -462,14 +295,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionServiceBase
      */
     public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.case && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/sendmarkdonebatch`,_data);
-        }
-        if(_context.case && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/cases/${_context.case}/ibzcaseactions/sendmarkdonebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzcaseactions/sendmarkdonebatch`,_data);
     }
@@ -484,14 +309,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionServiceBase
      */
     public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.case && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/sendtodobatch`,_data);
-        }
-        if(_context.case && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/cases/${_context.case}/ibzcaseactions/sendtodobatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzcaseactions/sendtodobatch`,_data);
     }
@@ -506,14 +323,6 @@ export class IBZCaseActionBaseService extends EntityBaseService<IIBZCaseAction> 
      * @memberof IBZCaseActionServiceBase
      */
     public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.case && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/ibzcaseactions/sendtoreadbatch`,_data);
-        }
-        if(_context.case && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/cases/${_context.case}/ibzcaseactions/sendtoreadbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzcaseactions/sendtoreadbatch`,_data);
     }

@@ -109,9 +109,9 @@ export class AppWizardPanelBase extends WizardPanelControlBase {
     public renderStepsFooter() {
         return (
             <footer class="app-wizard-footer">
-                {!this.isHidden('PREV') ? <i-button on-click={this.onClickPrev.bind(this)} type="primary">上一步</i-button> : null}
-                {!this.isHidden('NEXT') ? <i-button on-click={this.onClickNext.bind(this)} type="primary">下一步</i-button> : null}
-                {!this.isHidden('FINISH') ? <i-button on-click={this.onClickFinish.bind(this)} type="primary">完成</i-button> : null}
+                {!this.isHidden('PREV') ? <i-button on-click={this.onClickPrev.bind(this)} type="primary">{this.$t('app.wizardPanel.back')}</i-button> : null}
+                {!this.isHidden('NEXT') ? <i-button on-click={this.onClickNext.bind(this)} type="primary">{this.$t('app.wizardPanel.next')}</i-button> : null}
+                {!this.isHidden('FINISH') ? <i-button on-click={this.onClickFinish.bind(this)} type="primary">{this.$t('app.wizardPanel.complete')}</i-button> : null}
             </footer>
         );
     }

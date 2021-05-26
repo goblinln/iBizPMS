@@ -161,7 +161,7 @@ export class AppFormBase extends EditFormControlBase {
             );
         }
 
-        throw new Error(`布局模式「${layout.layout}」暂未支持!`);
+        throw new Error(`${layout.layout}${this.$t('app.nosupport.layout')}`);
     }
 
     /**

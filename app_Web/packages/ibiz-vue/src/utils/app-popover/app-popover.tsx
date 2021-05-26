@@ -181,7 +181,7 @@ export class AppPopover {
     public openPop(event: any, view: any, context: any = {}, data: any, position?: Placement, isAutoClose?: boolean): Observable<any> {
         const subject = new Subject<any>();
         if (!event) {
-            console.error("事件触发源无值，强制返回");
+            console.error(view.$t('app.components.appMessagePopover.errorReturn'));
             return subject.asObservable();
         }
         if (!view.width) view.width = 300;

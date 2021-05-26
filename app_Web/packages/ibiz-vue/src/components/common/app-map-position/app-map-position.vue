@@ -266,7 +266,7 @@ export default class AppMapPosition extends Vue  {
         } else {
             Object.assign(this.marker, {
                 position: [104.09427199999999, 30.660396],
-                address: '四川省成都市成华区猛追湾街道四川电视塔天府熊猫塔',
+                address: this.$t('components.appMapPosition.address'),
                 visible: true
             })
             this.searchAddress = this.marker.address;
@@ -284,7 +284,7 @@ export default class AppMapPosition extends Vue  {
         } else {
             Object.assign(this.marker, {
                 position: [104.09427199999999, 30.660396],
-                address: '四川省成都市成华区猛追湾街道四川电视塔天府熊猫塔',
+                address: this.$t('components.appMapPosition.address'),
                 visible: true
             })
             this.searchAddress = this.marker.address;
@@ -302,7 +302,7 @@ export default class AppMapPosition extends Vue  {
         } else {
            Object.assign(this.marker, {
                 position: [104.09427199999999, 30.660396],
-                address: '四川省成都市成华区猛追湾街道四川电视塔天府熊猫塔',
+                address: this.$t('components.appMapPosition.address'),
                 visible: true
             })
             this.searchAddress = this.marker.address;
@@ -379,7 +379,7 @@ export default class AppMapPosition extends Vue  {
         that.win.AMap.service(["AMap.PlaceSearch"], () => {
             placeSearch = new this.win.AMap.PlaceSearch({
                 pageSize: 5,
-                city: '成都',
+                city: this.$t('components.appMapPosition.city'),
                 citylimit: false,
                 panel: 'map__result',
             })

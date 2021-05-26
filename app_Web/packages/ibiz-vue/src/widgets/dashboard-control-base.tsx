@@ -253,14 +253,14 @@ export class DashboardControlBase extends MainControlBase {
                         this.dashboardType = 'custom';
                         this.$forceUpdate();
                     }else{
-                        throw new Error('data数据异常')
+                        throw new Error(this.$t('app.dashBoard.dataError'));
                     }
                 }else{
-                    throw new Error('服务器异常')
+                    throw new Error(this.$t('app.dashBoard.serviceError'));
                 }
             }
         } catch (error) {
-            LogUtil.warn("加载面板模型异常:"+error);
+            LogUtil.warn(this.$t('app.dashBoard.loadError')+error);
             this.initStaticMountedMap();
             this.dashboardType = "default";
         }

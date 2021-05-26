@@ -604,7 +604,7 @@ export class GanttControlBase extends MDControlBase {
                 this.openTargtView(openView, view, tempContext, data, xData, $event, deResParameters, parameters, args, callback);
             }
         } else {
-            this.$warning('错误,未指定关系视图!','ganttOpendata');
+            this.$warning(this.$t('app.nosupport.unassign'),'ganttOpendata');
         }
     }
 
@@ -659,7 +659,7 @@ export class GanttControlBase extends MDControlBase {
                 callback(result, xData);
             });
         } else {
-            this.$warning('错误,'+`${openView.title}`+'不支持该模式打开','openTargtView');
+            this.$warning(`${openView.title}`+this.$t('app.nosupport.unopen'),'openTargtView');
         }
     }
 }

@@ -169,7 +169,7 @@ export default class ContextMenuDrag extends Vue {
                 this.handleAppList(response?.data?.model);
             }
         }).catch((error: any) => {
-            LogUtil.warn('加载数据错误');
+            LogUtil.warn(this.$t('components.contextMenuDrag.error'));
         });
     }
 
@@ -183,7 +183,7 @@ export default class ContextMenuDrag extends Vue {
         this.list = [];
       }
       const Environment: any = AppServiceBase.getInstance().getAppEnvironment();
-      let protalData:any = {fullName:'企业门户',addr:Environment.portalUrl};
+      let protalData:any = {fullName:this.$t('components.contextMenuDrag.portlet'),addr:Environment.portalUrl};
       this.list.push(protalData);
       this.list.push(...data);
     }

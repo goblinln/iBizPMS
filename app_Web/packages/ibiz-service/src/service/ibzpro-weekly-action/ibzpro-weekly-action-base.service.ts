@@ -22,7 +22,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['actor',];
     protected selectContextParam = {
-        ibzweekly: 'objectid',
     };
 
     newEntity(data: IIBZProWeeklyAction): IBZProWeeklyAction {
@@ -39,13 +38,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
 
     async getLocal(context: IContext, srfKey: string): Promise<IIBZProWeeklyAction> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.objectid && entity.objectid !== '') {
-            const s = await ___ibz___.gs.getIBZWEEKLYService();
-            const data = await s.getLocal2(context, entity.objectid);
-            if (data) {
-                entity.objectid = data.ibzweeklyid;
-            }
-        }
         return entity!;
     }
 
@@ -54,13 +46,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
     }
 
     async getDraftLocal(_context: IContext, entity: IIBZProWeeklyAction = {}): Promise<IIBZProWeeklyAction> {
-        if (_context.ibzweekly && _context.ibzweekly !== '') {
-            const s = await ___ibz___.gs.getIBZWEEKLYService();
-            const data = await s.getLocal2(_context, _context.ibzweekly);
-            if (data) {
-                entity.objectid = data.ibzweeklyid;
-            }
-        }
         return new IBZProWeeklyAction(entity);
     }
 
@@ -89,9 +74,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzweekly && _context.ibzproweeklyaction) {
-            return this.http.get(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/${_context.ibzproweeklyaction}/select`);
-        }
         return this.http.get(`/ibzproweeklyactions/${_context.ibzproweeklyaction}/select`);
     }
     /**
@@ -103,16 +85,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzweekly && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -131,10 +103,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzweekly && _context.ibzproweeklyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/${_context.ibzproweeklyaction}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/ibzproweeklyactions/${_context.ibzproweeklyaction}`, _data);
     }
@@ -147,9 +115,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzweekly && _context.ibzproweeklyaction) {
-            return this.http.delete(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/${_context.ibzproweeklyaction}`);
-        }
         return this.http.delete(`/ibzproweeklyactions/${_context.ibzproweeklyaction}`);
     }
     /**
@@ -161,10 +126,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzweekly && _context.ibzproweeklyaction) {
-            const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/${_context.ibzproweeklyaction}`);
-            return res;
-        }
         const res = await this.http.get(`/ibzproweeklyactions/${_context.ibzproweeklyaction}`);
         return res;
     }
@@ -177,12 +138,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzweekly && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzproweeklyactions/getdraft`, _data);
@@ -197,10 +152,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionService
      */
     async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzweekly && _context.ibzproweeklyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/${_context.ibzproweeklyaction}/createhis`, _data);
-        }
         return this.http.post(`/ibzproweeklyactions/${_context.ibzproweeklyaction}/createhis`, _data);
     }
     /**
@@ -212,10 +163,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionService
      */
     async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzweekly && _context.ibzproweeklyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/${_context.ibzproweeklyaction}/managepmsee`, _data);
-        }
         return this.http.post(`/ibzproweeklyactions/${_context.ibzproweeklyaction}/managepmsee`, _data);
     }
     /**
@@ -227,10 +174,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionService
      */
     async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzweekly && _context.ibzproweeklyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/${_context.ibzproweeklyaction}/sendmarkdone`, _data);
-        }
         return this.http.post(`/ibzproweeklyactions/${_context.ibzproweeklyaction}/sendmarkdone`, _data);
     }
     /**
@@ -242,10 +185,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionService
      */
     async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzweekly && _context.ibzproweeklyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/${_context.ibzproweeklyaction}/sendtodo`, _data);
-        }
         return this.http.post(`/ibzproweeklyactions/${_context.ibzproweeklyaction}/sendtodo`, _data);
     }
     /**
@@ -257,10 +196,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionService
      */
     async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzweekly && _context.ibzproweeklyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/${_context.ibzproweeklyaction}/sendtoread`, _data);
-        }
         return this.http.post(`/ibzproweeklyactions/${_context.ibzproweeklyaction}/sendtoread`, _data);
     }
     /**
@@ -272,9 +207,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/fetchdefault`, _data);
-        }
         return this.http.post(`/ibzproweeklyactions/fetchdefault`, _data);
     }
     /**
@@ -286,9 +218,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/fetchtype`, _data);
-        }
         return this.http.post(`/ibzproweeklyactions/fetchtype`, _data);
     }
 
@@ -302,10 +231,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionServiceBase
      */
     public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzweekly && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/createhisbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproweeklyactions/createhisbatch`,_data);
     }
@@ -320,10 +245,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionServiceBase
      */
     public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzweekly && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/managepmseebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproweeklyactions/managepmseebatch`,_data);
     }
@@ -338,10 +259,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionServiceBase
      */
     public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzweekly && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/sendmarkdonebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproweeklyactions/sendmarkdonebatch`,_data);
     }
@@ -356,10 +273,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionServiceBase
      */
     public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzweekly && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/sendtodobatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproweeklyactions/sendtodobatch`,_data);
     }
@@ -374,10 +287,6 @@ export class IBZProWeeklyActionBaseService extends EntityBaseService<IIBZProWeek
      * @memberof IBZProWeeklyActionServiceBase
      */
     public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzweekly && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/ibzproweeklyactions/sendtoreadbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproweeklyactions/sendtoreadbatch`,_data);
     }

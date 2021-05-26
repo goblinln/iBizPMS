@@ -345,7 +345,7 @@ export class PanelControlBase extends MDControlBase {
      * @memberof PanelControlBase
      */
     public opendata = (args: any[], fullargs?: any[], params?: any, $event?: any, xData?: any) => {
-        this.$throw('没有opendata','opendata');
+        this.$throw(this.$t('app.warn.unopendata'),'opendata');
     }
 
     /**
@@ -355,7 +355,7 @@ export class PanelControlBase extends MDControlBase {
      * @memberof PanelControlBase
      */
     public newdata = (args: any[], fullargs?: any[], params?: any, $event?: any, xData?: any) => {
-        this.$throw('没有newdata','newdata');
+        this.$throw(this.$t('app.warn.unnewdata'),'newdata');
     }
 
     /**
@@ -366,7 +366,7 @@ export class PanelControlBase extends MDControlBase {
      * @memberof PanelControlBase
      */
     public async remove(datas: any[]): Promise<any> {
-        this.$throw('没有remove','remove');
+        this.$throw(this.$t('app.warn.unremove'),'remove');
     }
 
     /**
@@ -376,7 +376,7 @@ export class PanelControlBase extends MDControlBase {
      * @memberof PanelControlBase
      */
     public refresh(args?: any) {
-        this.$throw('没有refresh','refresh');
+        this.$throw(this.$t('app.warn.unrefresh'),'refresh');
     }
 
     /**

@@ -126,7 +126,7 @@ export class MDViewBase extends MainViewBase {
             let res: any = await this.codeListService.getDataItems({ tag: this.quickGroupCodeList.codeName, type: this.quickGroupCodeList.codeListType, data: this.quickGroupCodeList });
             this.quickGroupModel = this.handleDynamicData(JSON.parse(JSON.stringify(res)));
         } catch (error: any) {
-            LogUtil.log(`----${this.quickGroupCodeList.codeName}----代码表不存在`);
+            LogUtil.log(`----${this.quickGroupCodeList.codeName}----${this.$t('app.commonWords.codeNotExist')}`);
         }
     }
 

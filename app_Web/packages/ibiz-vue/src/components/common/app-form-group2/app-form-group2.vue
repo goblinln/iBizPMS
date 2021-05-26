@@ -1,6 +1,6 @@
 
 <template>
-     <span>未实现</span>
+     <span>{{$t('app.components.group2.noreal')}}</span>
 </template>
 <script lang="ts">
 import { Vue, Component, Prop, } from 'vue-property-decorator';

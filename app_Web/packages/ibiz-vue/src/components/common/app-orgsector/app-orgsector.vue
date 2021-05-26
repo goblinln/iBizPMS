@@ -207,7 +207,7 @@ export default class AppOrgSector extends Vue {
               }
           }).catch((error: any) => {
                 resolve(false);
-                this.$throw("重置应用数据出现异常",'resetAppData');
+                this.$throw(this.$t('app.components.appOrgSelect.resetError'),'resetAppData');
           });
       });
   }

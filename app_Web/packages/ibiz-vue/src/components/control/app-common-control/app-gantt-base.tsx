@@ -92,7 +92,7 @@ export class AppGanttBase extends GanttControlBase {
                         on-taskList-item-dblclick={($event: any) => this.taskClick($event)}
                         on-task-item-expand={(task: any) => this.taskItemExpand(task)}>
                     </gantt-elastic> : 
-                    <div class="app-data-empty">暂无数据</div>
+                    <div class="app-data-empty">{this.$t('app.commonWords.noData')}</div>
                 }
             </div>
         );

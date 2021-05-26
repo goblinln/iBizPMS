@@ -524,31 +524,5 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "331ea9c716c9f7a180cb211f5bc7fdea",
-  "modeltype" : "PSAPPDEVIEW",
-  "getPSAppDERSPaths" : [ [ {
-    "actionRSMode" : 1,
-    "codeName" : "IbzProReportlyActions",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReportly.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzProReportlyAction.json"
-    },
-    "name" : "汇报-汇报日志",
-    "getParentPSAppDEField" : {
-      "name" : "OBJECTID",
-      "codeName" : "ObjectID"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ] ]
+  "modeltype" : "PSAPPDEVIEW"
 }

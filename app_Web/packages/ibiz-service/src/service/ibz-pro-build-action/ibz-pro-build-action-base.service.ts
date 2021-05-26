@@ -22,7 +22,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['actor',];
     protected selectContextParam = {
-        build: 'objectid',
     };
 
     newEntity(data: IIbzProBuildAction): IbzProBuildAction {
@@ -39,13 +38,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
 
     async getLocal(context: IContext, srfKey: string): Promise<IIbzProBuildAction> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.objectid && entity.objectid !== '') {
-            const s = await ___ibz___.gs.getBuildService();
-            const data = await s.getLocal2(context, entity.objectid);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -54,13 +46,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
     }
 
     async getDraftLocal(_context: IContext, entity: IIbzProBuildAction = {}): Promise<IIbzProBuildAction> {
-        if (_context.build && _context.build !== '') {
-            const s = await ___ibz___.gs.getBuildService();
-            const data = await s.getLocal2(_context, _context.build);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return new IbzProBuildAction(entity);
     }
 
@@ -89,15 +74,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build && _context.ibzprobuildaction) {
-            return this.http.get(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/select`);
-        }
-        if (_context.product && _context.build && _context.ibzprobuildaction) {
-            return this.http.get(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/select`);
-        }
-        if (_context.build && _context.ibzprobuildaction) {
-            return this.http.get(`/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/select`);
-        }
         return this.http.get(`/ibzprobuildactions/${_context.ibzprobuildaction}/select`);
     }
     /**
@@ -109,36 +85,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions`, _data);
-        }
-        if (_context.product && _context.build && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions`, _data);
-        }
-        if (_context.build && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/builds/${_context.build}/ibzprobuildactions`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -157,18 +103,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}`, _data);
-        }
-        if (_context.product && _context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}`, _data);
-        }
-        if (_context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/ibzprobuildactions/${_context.ibzprobuildaction}`, _data);
     }
@@ -181,15 +115,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build && _context.ibzprobuildaction) {
-            return this.http.delete(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}`);
-        }
-        if (_context.product && _context.build && _context.ibzprobuildaction) {
-            return this.http.delete(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}`);
-        }
-        if (_context.build && _context.ibzprobuildaction) {
-            return this.http.delete(`/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}`);
-        }
         return this.http.delete(`/ibzprobuildactions/${_context.ibzprobuildaction}`);
     }
     /**
@@ -201,18 +126,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build && _context.ibzprobuildaction) {
-            const res = await this.http.get(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}`);
-            return res;
-        }
-        if (_context.product && _context.build && _context.ibzprobuildaction) {
-            const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}`);
-            return res;
-        }
-        if (_context.build && _context.ibzprobuildaction) {
-            const res = await this.http.get(`/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}`);
-            return res;
-        }
         const res = await this.http.get(`/ibzprobuildactions/${_context.ibzprobuildaction}`);
         return res;
     }
@@ -225,24 +138,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && _context.build && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/getdraft`, _data);
-            return res;
-        }
-        if (_context.build && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/builds/${_context.build}/ibzprobuildactions/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzprobuildactions/getdraft`, _data);
@@ -257,18 +152,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionService
      */
     async Comment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/comment`, _data);
-        }
-        if (_context.product && _context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/comment`, _data);
-        }
-        if (_context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/comment`, _data);
-        }
         return this.http.post(`/ibzprobuildactions/${_context.ibzprobuildaction}/comment`, _data);
     }
     /**
@@ -280,18 +163,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionService
      */
     async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/createhis`, _data);
-        }
-        if (_context.product && _context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/createhis`, _data);
-        }
-        if (_context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/createhis`, _data);
-        }
         return this.http.post(`/ibzprobuildactions/${_context.ibzprobuildaction}/createhis`, _data);
     }
     /**
@@ -303,18 +174,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionService
      */
     async EditComment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/editcomment`, _data);
-        }
-        if (_context.product && _context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/editcomment`, _data);
-        }
-        if (_context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/editcomment`, _data);
-        }
         return this.http.post(`/ibzprobuildactions/${_context.ibzprobuildaction}/editcomment`, _data);
     }
     /**
@@ -326,18 +185,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionService
      */
     async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/managepmsee`, _data);
-        }
-        if (_context.product && _context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/managepmsee`, _data);
-        }
-        if (_context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/managepmsee`, _data);
-        }
         return this.http.post(`/ibzprobuildactions/${_context.ibzprobuildaction}/managepmsee`, _data);
     }
     /**
@@ -349,18 +196,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionService
      */
     async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/sendmarkdone`, _data);
-        }
-        if (_context.product && _context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/sendmarkdone`, _data);
-        }
-        if (_context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/sendmarkdone`, _data);
-        }
         return this.http.post(`/ibzprobuildactions/${_context.ibzprobuildaction}/sendmarkdone`, _data);
     }
     /**
@@ -372,18 +207,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionService
      */
     async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/sendtodo`, _data);
-        }
-        if (_context.product && _context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/sendtodo`, _data);
-        }
-        if (_context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/sendtodo`, _data);
-        }
         return this.http.post(`/ibzprobuildactions/${_context.ibzprobuildaction}/sendtodo`, _data);
     }
     /**
@@ -395,18 +218,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionService
      */
     async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/sendtoread`, _data);
-        }
-        if (_context.product && _context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/sendtoread`, _data);
-        }
-        if (_context.build && _context.ibzprobuildaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/builds/${_context.build}/ibzprobuildactions/${_context.ibzprobuildaction}/sendtoread`, _data);
-        }
         return this.http.post(`/ibzprobuildactions/${_context.ibzprobuildaction}/sendtoread`, _data);
     }
     /**
@@ -418,15 +229,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build && true) {
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/fetchdefault`, _data);
-        }
-        if (_context.product && _context.build && true) {
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/fetchdefault`, _data);
-        }
-        if (_context.build && true) {
-            return this.http.post(`/builds/${_context.build}/ibzprobuildactions/fetchdefault`, _data);
-        }
         return this.http.post(`/ibzprobuildactions/fetchdefault`, _data);
     }
     /**
@@ -438,15 +240,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build && true) {
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/fetchtype`, _data);
-        }
-        if (_context.product && _context.build && true) {
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/fetchtype`, _data);
-        }
-        if (_context.build && true) {
-            return this.http.post(`/builds/${_context.build}/ibzprobuildactions/fetchtype`, _data);
-        }
         return this.http.post(`/ibzprobuildactions/fetchtype`, _data);
     }
 
@@ -460,18 +253,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionServiceBase
      */
     public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/createhisbatch`,_data);
-        }
-        if(_context.product && _context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/createhisbatch`,_data);
-        }
-        if(_context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/builds/${_context.build}/ibzprobuildactions/createhisbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprobuildactions/createhisbatch`,_data);
     }
@@ -486,18 +267,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionServiceBase
      */
     public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/editcommentbatch`,_data);
-        }
-        if(_context.product && _context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/editcommentbatch`,_data);
-        }
-        if(_context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/builds/${_context.build}/ibzprobuildactions/editcommentbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprobuildactions/editcommentbatch`,_data);
     }
@@ -512,18 +281,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionServiceBase
      */
     public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/managepmseebatch`,_data);
-        }
-        if(_context.product && _context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/managepmseebatch`,_data);
-        }
-        if(_context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/builds/${_context.build}/ibzprobuildactions/managepmseebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprobuildactions/managepmseebatch`,_data);
     }
@@ -538,18 +295,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionServiceBase
      */
     public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/sendmarkdonebatch`,_data);
-        }
-        if(_context.product && _context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/sendmarkdonebatch`,_data);
-        }
-        if(_context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/builds/${_context.build}/ibzprobuildactions/sendmarkdonebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprobuildactions/sendmarkdonebatch`,_data);
     }
@@ -564,18 +309,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionServiceBase
      */
     public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/sendtodobatch`,_data);
-        }
-        if(_context.product && _context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/sendtodobatch`,_data);
-        }
-        if(_context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/builds/${_context.build}/ibzprobuildactions/sendtodobatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprobuildactions/sendtodobatch`,_data);
     }
@@ -590,18 +323,6 @@ export class IbzProBuildActionBaseService extends EntityBaseService<IIbzProBuild
      * @memberof IbzProBuildActionServiceBase
      */
     public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/ibzprobuildactions/sendtoreadbatch`,_data);
-        }
-        if(_context.product && _context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/ibzprobuildactions/sendtoreadbatch`,_data);
-        }
-        if(_context.build && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/builds/${_context.build}/ibzprobuildactions/sendtoreadbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprobuildactions/sendtoreadbatch`,_data);
     }

@@ -22,7 +22,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['actor',];
     protected selectContextParam = {
-        todo: 'objectid',
     };
 
     newEntity(data: IIBZProToDoAction): IBZProToDoAction {
@@ -39,13 +38,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
 
     async getLocal(context: IContext, srfKey: string): Promise<IIBZProToDoAction> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.objectid && entity.objectid !== '') {
-            const s = await ___ibz___.gs.getTodoService();
-            const data = await s.getLocal2(context, entity.objectid);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -54,13 +46,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
     }
 
     async getDraftLocal(_context: IContext, entity: IIBZProToDoAction = {}): Promise<IIBZProToDoAction> {
-        if (_context.todo && _context.todo !== '') {
-            const s = await ___ibz___.gs.getTodoService();
-            const data = await s.getLocal2(_context, _context.todo);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return new IBZProToDoAction(entity);
     }
 
@@ -89,9 +74,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.todo && _context.ibzprotodoaction) {
-            return this.http.get(`/todos/${_context.todo}/ibzprotodoactions/${_context.ibzprotodoaction}/select`);
-        }
         return this.http.get(`/ibzprotodoactions/${_context.ibzprotodoaction}/select`);
     }
     /**
@@ -103,16 +85,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.todo && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/todos/${_context.todo}/ibzprotodoactions`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -131,10 +103,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.todo && _context.ibzprotodoaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/todos/${_context.todo}/ibzprotodoactions/${_context.ibzprotodoaction}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/ibzprotodoactions/${_context.ibzprotodoaction}`, _data);
     }
@@ -147,9 +115,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.todo && _context.ibzprotodoaction) {
-            return this.http.delete(`/todos/${_context.todo}/ibzprotodoactions/${_context.ibzprotodoaction}`);
-        }
         return this.http.delete(`/ibzprotodoactions/${_context.ibzprotodoaction}`);
     }
     /**
@@ -161,10 +126,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.todo && _context.ibzprotodoaction) {
-            const res = await this.http.get(`/todos/${_context.todo}/ibzprotodoactions/${_context.ibzprotodoaction}`);
-            return res;
-        }
         const res = await this.http.get(`/ibzprotodoactions/${_context.ibzprotodoaction}`);
         return res;
     }
@@ -177,12 +138,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.todo && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/todos/${_context.todo}/ibzprotodoactions/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzprotodoactions/getdraft`, _data);
@@ -197,10 +152,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionService
      */
     async Comment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.todo && _context.ibzprotodoaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/todos/${_context.todo}/ibzprotodoactions/${_context.ibzprotodoaction}/comment`, _data);
-        }
         return this.http.post(`/ibzprotodoactions/${_context.ibzprotodoaction}/comment`, _data);
     }
     /**
@@ -212,10 +163,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionService
      */
     async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.todo && _context.ibzprotodoaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/todos/${_context.todo}/ibzprotodoactions/${_context.ibzprotodoaction}/createhis`, _data);
-        }
         return this.http.post(`/ibzprotodoactions/${_context.ibzprotodoaction}/createhis`, _data);
     }
     /**
@@ -227,10 +174,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionService
      */
     async EditComment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.todo && _context.ibzprotodoaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/todos/${_context.todo}/ibzprotodoactions/${_context.ibzprotodoaction}/editcomment`, _data);
-        }
         return this.http.post(`/ibzprotodoactions/${_context.ibzprotodoaction}/editcomment`, _data);
     }
     /**
@@ -242,10 +185,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionService
      */
     async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.todo && _context.ibzprotodoaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/todos/${_context.todo}/ibzprotodoactions/${_context.ibzprotodoaction}/managepmsee`, _data);
-        }
         return this.http.post(`/ibzprotodoactions/${_context.ibzprotodoaction}/managepmsee`, _data);
     }
     /**
@@ -257,10 +196,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionService
      */
     async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.todo && _context.ibzprotodoaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/todos/${_context.todo}/ibzprotodoactions/${_context.ibzprotodoaction}/sendmarkdone`, _data);
-        }
         return this.http.post(`/ibzprotodoactions/${_context.ibzprotodoaction}/sendmarkdone`, _data);
     }
     /**
@@ -272,10 +207,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionService
      */
     async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.todo && _context.ibzprotodoaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/todos/${_context.todo}/ibzprotodoactions/${_context.ibzprotodoaction}/sendtodo`, _data);
-        }
         return this.http.post(`/ibzprotodoactions/${_context.ibzprotodoaction}/sendtodo`, _data);
     }
     /**
@@ -287,10 +218,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionService
      */
     async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.todo && _context.ibzprotodoaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/todos/${_context.todo}/ibzprotodoactions/${_context.ibzprotodoaction}/sendtoread`, _data);
-        }
         return this.http.post(`/ibzprotodoactions/${_context.ibzprotodoaction}/sendtoread`, _data);
     }
     /**
@@ -302,9 +229,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/ibzprotodoactions/fetchdefault`, _data);
-        }
         return this.http.post(`/ibzprotodoactions/fetchdefault`, _data);
     }
     /**
@@ -316,9 +240,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/ibzprotodoactions/fetchtype`, _data);
-        }
         return this.http.post(`/ibzprotodoactions/fetchtype`, _data);
     }
 
@@ -332,10 +253,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionServiceBase
      */
     public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.todo && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/todos/${_context.todo}/ibzprotodoactions/createhisbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprotodoactions/createhisbatch`,_data);
     }
@@ -350,10 +267,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionServiceBase
      */
     public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.todo && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/todos/${_context.todo}/ibzprotodoactions/editcommentbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprotodoactions/editcommentbatch`,_data);
     }
@@ -368,10 +281,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionServiceBase
      */
     public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.todo && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/todos/${_context.todo}/ibzprotodoactions/managepmseebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprotodoactions/managepmseebatch`,_data);
     }
@@ -386,10 +295,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionServiceBase
      */
     public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.todo && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/todos/${_context.todo}/ibzprotodoactions/sendmarkdonebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprotodoactions/sendmarkdonebatch`,_data);
     }
@@ -404,10 +309,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionServiceBase
      */
     public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.todo && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/todos/${_context.todo}/ibzprotodoactions/sendtodobatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprotodoactions/sendtodobatch`,_data);
     }
@@ -422,10 +323,6 @@ export class IBZProToDoActionBaseService extends EntityBaseService<IIBZProToDoAc
      * @memberof IBZProToDoActionServiceBase
      */
     public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.todo && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/todos/${_context.todo}/ibzprotodoactions/sendtoreadbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprotodoactions/sendtoreadbatch`,_data);
     }

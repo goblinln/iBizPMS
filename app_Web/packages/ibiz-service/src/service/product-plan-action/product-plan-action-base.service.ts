@@ -22,7 +22,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['actor',];
     protected selectContextParam = {
-        productplan: 'objectid',
     };
 
     newEntity(data: IProductPlanAction): ProductPlanAction {
@@ -39,13 +38,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
 
     async getLocal(context: IContext, srfKey: string): Promise<IProductPlanAction> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.objectid && entity.objectid !== '') {
-            const s = await ___ibz___.gs.getProductPlanService();
-            const data = await s.getLocal2(context, entity.objectid);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -54,13 +46,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
     }
 
     async getDraftLocal(_context: IContext, entity: IProductPlanAction = {}): Promise<IProductPlanAction> {
-        if (_context.productplan && _context.productplan !== '') {
-            const s = await ___ibz___.gs.getProductPlanService();
-            const data = await s.getLocal2(_context, _context.productplan);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return new ProductPlanAction(entity);
     }
 
@@ -89,12 +74,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && _context.productplanaction) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}/select`);
-        }
-        if (_context.productplan && _context.productplanaction) {
-            return this.http.get(`/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}/select`);
-        }
         return this.http.get(`/productplanactions/${_context.productplanaction}/select`);
     }
     /**
@@ -106,26 +85,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions`, _data);
-        }
-        if (_context.productplan && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/productplans/${_context.productplan}/productplanactions`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -144,14 +103,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && _context.productplanaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}`, _data);
-        }
-        if (_context.productplan && _context.productplanaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/productplanactions/${_context.productplanaction}`, _data);
     }
@@ -164,12 +115,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && _context.productplanaction) {
-            return this.http.delete(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}`);
-        }
-        if (_context.productplan && _context.productplanaction) {
-            return this.http.delete(`/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}`);
-        }
         return this.http.delete(`/productplanactions/${_context.productplanaction}`);
     }
     /**
@@ -181,14 +126,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && _context.productplanaction) {
-            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}`);
-            return res;
-        }
-        if (_context.productplan && _context.productplanaction) {
-            const res = await this.http.get(`/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}`);
-            return res;
-        }
         const res = await this.http.get(`/productplanactions/${_context.productplanaction}`);
         return res;
     }
@@ -201,18 +138,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/getdraft`, _data);
-            return res;
-        }
-        if (_context.productplan && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/productplans/${_context.productplan}/productplanactions/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/productplanactions/getdraft`, _data);
@@ -227,14 +152,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionService
      */
     async Comment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && _context.productplanaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}/comment`, _data);
-        }
-        if (_context.productplan && _context.productplanaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}/comment`, _data);
-        }
         return this.http.post(`/productplanactions/${_context.productplanaction}/comment`, _data);
     }
     /**
@@ -246,14 +163,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionService
      */
     async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && _context.productplanaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}/createhis`, _data);
-        }
-        if (_context.productplan && _context.productplanaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}/createhis`, _data);
-        }
         return this.http.post(`/productplanactions/${_context.productplanaction}/createhis`, _data);
     }
     /**
@@ -265,14 +174,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionService
      */
     async EditComment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && _context.productplanaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}/editcomment`, _data);
-        }
-        if (_context.productplan && _context.productplanaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}/editcomment`, _data);
-        }
         return this.http.post(`/productplanactions/${_context.productplanaction}/editcomment`, _data);
     }
     /**
@@ -284,14 +185,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionService
      */
     async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && _context.productplanaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}/managepmsee`, _data);
-        }
-        if (_context.productplan && _context.productplanaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}/managepmsee`, _data);
-        }
         return this.http.post(`/productplanactions/${_context.productplanaction}/managepmsee`, _data);
     }
     /**
@@ -303,14 +196,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionService
      */
     async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && _context.productplanaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}/sendmarkdone`, _data);
-        }
-        if (_context.productplan && _context.productplanaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}/sendmarkdone`, _data);
-        }
         return this.http.post(`/productplanactions/${_context.productplanaction}/sendmarkdone`, _data);
     }
     /**
@@ -322,14 +207,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionService
      */
     async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && _context.productplanaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}/sendtodo`, _data);
-        }
-        if (_context.productplan && _context.productplanaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}/sendtodo`, _data);
-        }
         return this.http.post(`/productplanactions/${_context.productplanaction}/sendtodo`, _data);
     }
     /**
@@ -341,14 +218,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionService
      */
     async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && _context.productplanaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}/sendtoread`, _data);
-        }
-        if (_context.productplan && _context.productplanaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/productplanactions/${_context.productplanaction}/sendtoread`, _data);
-        }
         return this.http.post(`/productplanactions/${_context.productplanaction}/sendtoread`, _data);
     }
     /**
@@ -360,12 +229,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/fetchdefault`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/productplanactions/fetchdefault`, _data);
-        }
         return this.http.post(`/productplanactions/fetchdefault`, _data);
     }
     /**
@@ -377,12 +240,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/fetchtype`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/productplanactions/fetchtype`, _data);
-        }
         return this.http.post(`/productplanactions/fetchtype`, _data);
     }
 
@@ -396,14 +253,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionServiceBase
      */
     public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/createhisbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/productplanactions/createhisbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/productplanactions/createhisbatch`,_data);
     }
@@ -418,14 +267,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionServiceBase
      */
     public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/editcommentbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/productplanactions/editcommentbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/productplanactions/editcommentbatch`,_data);
     }
@@ -440,14 +281,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionServiceBase
      */
     public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/managepmseebatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/productplanactions/managepmseebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/productplanactions/managepmseebatch`,_data);
     }
@@ -462,14 +295,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionServiceBase
      */
     public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/sendmarkdonebatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/productplanactions/sendmarkdonebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/productplanactions/sendmarkdonebatch`,_data);
     }
@@ -484,14 +309,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionServiceBase
      */
     public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/sendtodobatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/productplanactions/sendtodobatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/productplanactions/sendtodobatch`,_data);
     }
@@ -506,14 +323,6 @@ export class ProductPlanActionBaseService extends EntityBaseService<IProductPlan
      * @memberof ProductPlanActionServiceBase
      */
     public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/productplanactions/sendtoreadbatch`,_data);
-        }
-        if(_context.productplan && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/productplans/${_context.productplan}/productplanactions/sendtoreadbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/productplanactions/sendtoreadbatch`,_data);
     }

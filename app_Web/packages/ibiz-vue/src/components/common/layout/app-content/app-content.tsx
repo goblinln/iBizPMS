@@ -36,7 +36,7 @@ export class AppContent extends Vue {
             this.$footerRenderService.registerRightItem(() => {
                 return (
                     <div
-                        title="「打开/关闭」底部分页 [ctrl + `]"
+                        title={this.$t('app.components.content.title')}
                         class="action-item"
                         on-click={() => this.changeBottom()}
                     >

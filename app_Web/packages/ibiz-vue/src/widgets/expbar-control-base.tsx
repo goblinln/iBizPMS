@@ -321,7 +321,7 @@ export class ExpBarControlBase extends MainControlBase {
             let res: any = await codeListService.getDataItems({ tag: quickGroupCodeList.codeName, type: quickGroupCodeList.codeListType, codeList: quickGroupCodeList });
             this.quickGroupModel = [...this.handleDynamicData(JSON.parse(JSON.stringify(res)))];
         } catch (error: any) {
-            LogUtil.log(`----${quickGroupCodeList.codeName}----代码表不存在`);
+            LogUtil.log(`----${quickGroupCodeList.codeName}----${this.$t('app.commonWords.codeNotExist')}`);
         }
     }
 

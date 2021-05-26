@@ -406,7 +406,7 @@ export class MainViewBase extends ViewBase {
                 callback(result, xData);
             });
         } else {
-            this.$warning(openView.title + '不支持该模式打开','openTargtView');
+            this.$warning(openView.title + this.$t('app.nosupport.unopen'),'openTargtView');
         }
     }
 
@@ -654,7 +654,7 @@ export class MainViewBase extends ViewBase {
                 );
             }
         } else {
-            this.$warning('未指定关系视图','opendata');
+            this.$warning(this.$t('app.nosupport.unassign'),'opendata');
         }
     }
 
@@ -755,9 +755,9 @@ export class MainViewBase extends ViewBase {
                     batchAddPSAppViews.length == 0 ||
                     !this.context.srfparentdename ||
                     !minorPSAppDERSs ||
-                    minorPSAppDERSs.length < 2
+                    minorPSAppDERSs.length !== 2
                 ) {
-                    this.$warning('批量添加需添加N:N关系','newdata');
+                    this.$warning(this.$t('app.warn.nton'),'newdata');
                     return;
                 }
                 let openViewModel: IPSAppUILogicRefView | undefined = batchAddPSAppViews.find(
@@ -814,7 +814,7 @@ export class MainViewBase extends ViewBase {
                         .createBatch(JSON.parse(JSON.stringify(this.context)), requestParam, true)
                         .then((response: any) => {
                             if (!response || response.status !== 200) {
-                                this.$throw('批处理操作失败','newdata');
+                                this.$throw(this.$t('app.warn.batchError'),'newdata');
                                 return;
                             }
                             if (!xData || !(xData.refresh instanceof Function)) {
@@ -824,7 +824,7 @@ export class MainViewBase extends ViewBase {
                         });
                 });
             } else if (viewNewAppUIlogic.batchAddOnly) {
-                LogUtil.warn('只支持批添加未实现');
+                LogUtil.warn(this.$t('app.warn.unbatchAdd'));
             } else if (viewNewAppUIlogic.getNewDataPSAppView()) {
                 const _this: any = this;
                 const newviewRef: IPSAppUILogicRefView | null = viewNewAppUIlogic.getNewDataPSAppView();
@@ -989,13 +989,13 @@ export class MainViewBase extends ViewBase {
                         callback(result, xData);
                     });
                 } else {
-                    this.$warning(`${dataview.title}不支持该模式打开`,'newdata');
+                    this.$warning(`${dataview.title}${this.$t('app.nosupport.unopen')}`,'newdata');
                 }
             } else {
-                this.$warning('未指定关系视图','newdata');
+                this.$warning(this.$t('app.nosupport.unassign'),'newdata');
             }
         } else {
-            this.$warning('未指定关系视图','newdata');
+            this.$warning(this.$t('app.nosupport.unassign'),'newdata');
         }
     }
 }

@@ -397,31 +397,5 @@
   "enableFilter" : false,
   "showCaptionBar" : false,
   "modelid" : "cfa9681b90cba7a66c835998f3ca7320",
-  "modeltype" : "PSAPPDEVIEW",
-  "getPSAppDERSPaths" : [ [ {
-    "actionRSMode" : 1,
-    "codeName" : "IBZProWeeklyActions",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProWeeklyAction.json"
-    },
-    "name" : "周报-周报日志",
-    "getParentPSAppDEField" : {
-      "name" : "OBJECTID",
-      "codeName" : "ObjectID"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ] ]
+  "modeltype" : "PSAPPDEVIEW"
 }

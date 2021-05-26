@@ -22,7 +22,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['actor',];
     protected selectContextParam = {
-        bug: 'objectid',
     };
 
     newEntity(data: IIbzProBugAction): IbzProBugAction {
@@ -39,13 +38,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
 
     async getLocal(context: IContext, srfKey: string): Promise<IIbzProBugAction> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.objectid && entity.objectid !== '') {
-            const s = await ___ibz___.gs.getBugService();
-            const data = await s.getLocal2(context, entity.objectid);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -54,13 +46,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
     }
 
     async getDraftLocal(_context: IContext, entity: IIbzProBugAction = {}): Promise<IIbzProBugAction> {
-        if (_context.bug && _context.bug !== '') {
-            const s = await ___ibz___.gs.getBugService();
-            const data = await s.getLocal2(_context, _context.bug);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return new IbzProBugAction(entity);
     }
 
@@ -89,12 +74,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.bug && _context.ibzprobugaction) {
-            return this.http.get(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}/select`);
-        }
-        if (_context.bug && _context.ibzprobugaction) {
-            return this.http.get(`/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}/select`);
-        }
         return this.http.get(`/ibzprobugactions/${_context.ibzprobugaction}/select`);
     }
     /**
@@ -106,26 +85,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.bug && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions`, _data);
-        }
-        if (_context.bug && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/bugs/${_context.bug}/ibzprobugactions`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -144,14 +103,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.bug && _context.ibzprobugaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}`, _data);
-        }
-        if (_context.bug && _context.ibzprobugaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/ibzprobugactions/${_context.ibzprobugaction}`, _data);
     }
@@ -164,12 +115,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.bug && _context.ibzprobugaction) {
-            return this.http.delete(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}`);
-        }
-        if (_context.bug && _context.ibzprobugaction) {
-            return this.http.delete(`/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}`);
-        }
         return this.http.delete(`/ibzprobugactions/${_context.ibzprobugaction}`);
     }
     /**
@@ -181,14 +126,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.bug && _context.ibzprobugaction) {
-            const res = await this.http.get(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}`);
-            return res;
-        }
-        if (_context.bug && _context.ibzprobugaction) {
-            const res = await this.http.get(`/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}`);
-            return res;
-        }
         const res = await this.http.get(`/ibzprobugactions/${_context.ibzprobugaction}`);
         return res;
     }
@@ -201,18 +138,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.bug && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/getdraft`, _data);
-            return res;
-        }
-        if (_context.bug && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/bugs/${_context.bug}/ibzprobugactions/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzprobugactions/getdraft`, _data);
@@ -227,14 +152,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionService
      */
     async Comment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.bug && _context.ibzprobugaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}/comment`, _data);
-        }
-        if (_context.bug && _context.ibzprobugaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}/comment`, _data);
-        }
         return this.http.post(`/ibzprobugactions/${_context.ibzprobugaction}/comment`, _data);
     }
     /**
@@ -246,14 +163,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionService
      */
     async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.bug && _context.ibzprobugaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}/createhis`, _data);
-        }
-        if (_context.bug && _context.ibzprobugaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}/createhis`, _data);
-        }
         return this.http.post(`/ibzprobugactions/${_context.ibzprobugaction}/createhis`, _data);
     }
     /**
@@ -265,14 +174,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionService
      */
     async EditComment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.bug && _context.ibzprobugaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}/editcomment`, _data);
-        }
-        if (_context.bug && _context.ibzprobugaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}/editcomment`, _data);
-        }
         return this.http.post(`/ibzprobugactions/${_context.ibzprobugaction}/editcomment`, _data);
     }
     /**
@@ -284,14 +185,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionService
      */
     async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.bug && _context.ibzprobugaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}/managepmsee`, _data);
-        }
-        if (_context.bug && _context.ibzprobugaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}/managepmsee`, _data);
-        }
         return this.http.post(`/ibzprobugactions/${_context.ibzprobugaction}/managepmsee`, _data);
     }
     /**
@@ -303,14 +196,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionService
      */
     async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.bug && _context.ibzprobugaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}/sendmarkdone`, _data);
-        }
-        if (_context.bug && _context.ibzprobugaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}/sendmarkdone`, _data);
-        }
         return this.http.post(`/ibzprobugactions/${_context.ibzprobugaction}/sendmarkdone`, _data);
     }
     /**
@@ -322,14 +207,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionService
      */
     async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.bug && _context.ibzprobugaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}/sendtodo`, _data);
-        }
-        if (_context.bug && _context.ibzprobugaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}/sendtodo`, _data);
-        }
         return this.http.post(`/ibzprobugactions/${_context.ibzprobugaction}/sendtodo`, _data);
     }
     /**
@@ -341,14 +218,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionService
      */
     async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.bug && _context.ibzprobugaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}/sendtoread`, _data);
-        }
-        if (_context.bug && _context.ibzprobugaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/bugs/${_context.bug}/ibzprobugactions/${_context.ibzprobugaction}/sendtoread`, _data);
-        }
         return this.http.post(`/ibzprobugactions/${_context.ibzprobugaction}/sendtoread`, _data);
     }
     /**
@@ -360,12 +229,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.bug && true) {
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/fetchdefault`, _data);
-        }
-        if (_context.bug && true) {
-            return this.http.post(`/bugs/${_context.bug}/ibzprobugactions/fetchdefault`, _data);
-        }
         return this.http.post(`/ibzprobugactions/fetchdefault`, _data);
     }
     /**
@@ -377,12 +240,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.bug && true) {
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/fetchtype`, _data);
-        }
-        if (_context.bug && true) {
-            return this.http.post(`/bugs/${_context.bug}/ibzprobugactions/fetchtype`, _data);
-        }
         return this.http.post(`/ibzprobugactions/fetchtype`, _data);
     }
 
@@ -396,14 +253,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionServiceBase
      */
     public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.bug && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/createhisbatch`,_data);
-        }
-        if(_context.bug && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/bugs/${_context.bug}/ibzprobugactions/createhisbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprobugactions/createhisbatch`,_data);
     }
@@ -418,14 +267,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionServiceBase
      */
     public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.bug && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/editcommentbatch`,_data);
-        }
-        if(_context.bug && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/bugs/${_context.bug}/ibzprobugactions/editcommentbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprobugactions/editcommentbatch`,_data);
     }
@@ -440,14 +281,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionServiceBase
      */
     public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.bug && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/managepmseebatch`,_data);
-        }
-        if(_context.bug && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/bugs/${_context.bug}/ibzprobugactions/managepmseebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprobugactions/managepmseebatch`,_data);
     }
@@ -462,14 +295,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionServiceBase
      */
     public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.bug && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/sendmarkdonebatch`,_data);
-        }
-        if(_context.bug && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/bugs/${_context.bug}/ibzprobugactions/sendmarkdonebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprobugactions/sendmarkdonebatch`,_data);
     }
@@ -484,14 +309,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionServiceBase
      */
     public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.bug && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/sendtodobatch`,_data);
-        }
-        if(_context.bug && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/bugs/${_context.bug}/ibzprobugactions/sendtodobatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprobugactions/sendtodobatch`,_data);
     }
@@ -506,14 +323,6 @@ export class IbzProBugActionBaseService extends EntityBaseService<IIbzProBugActi
      * @memberof IbzProBugActionServiceBase
      */
     public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.bug && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/ibzprobugactions/sendtoreadbatch`,_data);
-        }
-        if(_context.bug && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/bugs/${_context.bug}/ibzprobugactions/sendtoreadbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzprobugactions/sendtoreadbatch`,_data);
     }

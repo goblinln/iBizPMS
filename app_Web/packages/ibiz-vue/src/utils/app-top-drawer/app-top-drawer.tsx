@@ -220,7 +220,7 @@ export class AppTopDrawer extends Vue {
                 <div class="studio-drawer-breadcrumb">
                     <div class="studio-drawer-back" on-click={() => this.closeByIndex(this.viewList.length - 1)}>
                         <icon type="ios-arrow-back" />
-                        返回
+                        {this.$t('app.components.drawer.back')}
                     </div>
                     {this.showViewList.map((item, i) => {
                         const ref: any = this.$refs[item.viewname + i];
@@ -254,14 +254,14 @@ export class AppTopDrawer extends Vue {
                         class="close"
                         confirm
                         placement="left-start"
-                        title="确认关闭所有界面?"
+                        title={this.$t('app.components.drawer.confirm')}
                         on-on-ok={() => this.closeByIndex(-1)}
                     >
-                        <icon title="关闭所有视图" type="md-close" />
+                        <icon title={this.$t('app.components.drawer.close')} type="md-close" />
                     </poptip>
                 ) : (
                     <div class="close" on-click={() => this.closeByIndex(-1)}>
-                        <icon title="关闭所有视图" type="md-close" />
+                        <icon title={this.$t('app.components.drawer.close')} type="md-close" />
                     </div>
                 )}
             </div>
@@ -314,7 +314,7 @@ export class AppTopDrawer extends Vue {
                     </div>
                 );
             } catch (err) {
-                LogUtil.warn('上飘窗打开视图参数转换异常', err);
+                LogUtil.warn(this.$t('app.components.drawer.close'), err);
             }
         });
     }

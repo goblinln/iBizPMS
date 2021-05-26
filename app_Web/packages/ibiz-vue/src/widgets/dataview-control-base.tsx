@@ -834,7 +834,7 @@ export class DataViewControlBase extends MDControlBase {
             groups = Util.deepCopy(groupCodelist);
         }
         if (groups.length == 0) {
-            LogUtil.warn('分组数据无效');
+            LogUtil.warn(this.$t('app.dataView.useless'));
         }
         const map: Map<string, any> = new Map();
         data.forEach(item => {
@@ -900,7 +900,7 @@ export class DataViewControlBase extends MDControlBase {
         });
         groups = [...new Set(groups)];
         if (groups.length == 0) {
-            LogUtil.warn('分组数据无效');
+            LogUtil.warn(this.$t('app.dataView.useless'));
         }
         const groupTree: Array<any> = [];
         groups.forEach((group: any, i: number) => {
@@ -1122,7 +1122,7 @@ export class DataViewControlBase extends MDControlBase {
         } else {
             return (
                 <div v-else class='item-nodata'>
-                    nodata
+                    {this.$t('app.commonWords.noData')}
                 </div>
             );
         }

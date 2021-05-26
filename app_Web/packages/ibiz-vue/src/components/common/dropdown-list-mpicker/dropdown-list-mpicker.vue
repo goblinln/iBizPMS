@@ -291,11 +291,11 @@ export default class DropDownListMpicker extends Vue {
                 this.items.push(item);
             });
             if(matching){
-                LogUtil.warn(`代码表 ${ this.tag } 值类型和属性类型不匹配，已自动强制转换，请修正代码表值类型和属性类型匹配`);
+                LogUtil.warn(`${ this.tag }${this.$t('app.components.appCheckBox.warn')}`);
             }
             
         }catch(error){
-            LogUtil.warn('代码表值类型和属性类型不匹配，自动强制转换异常，请修正代码表值类型和属性类型匹配');
+            LogUtil.warn(this.$t('app.components.appCheckBox.warn'));
         }
         this.handleLevelCodeList(Util.deepCopy(this.items));
     }

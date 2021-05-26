@@ -158,7 +158,13 @@ function getAppLocale(){
                 startsuccess:"启动成功",
                 loadmore:"加载更多",
                 nomore:"没有更多了",
-                other:"其他"
+                other:"其他",
+                nosupportSingle: "不支持单项数据",
+                nosupportMultile: "不支持多项数据",
+                getAppidError: "获取网站应用appid失败",
+                getDingInfoError: "钉钉用户信息获取失败",
+                getIDError: "获取企业ID失败",
+                noassign: "未指定应用功能"
             },
             local:{
                 new: "新建",
@@ -349,10 +355,14 @@ function getAppLocale(){
                 handleClick: {
                     title: "面板设计",
                 },
+                dataError: "data数据异常",
+                serviceError: "服务器异常",
+                loadError: "加载面板模型异常"
             },
             dataView: {
                 sum: "共",
                 data: "条数据",
+                useless: "分组数据无效"
             },
             chart: {
                 undefined: "未定义",
@@ -371,7 +381,10 @@ function getAppLocale(){
                 back: "上一步",
                 next: "下一步",
                 complete: "完成",
-                preactionmessage:"未配置计算上一步行为"
+                preactionmessage:"未配置计算上一步行为",
+                nofind: "未找到流程功能操作视图",
+                success: "提交数据成功",
+                error: "将待办任务标记为已读失败"
             },
             viewLayoutPanel: {
                 appLogoutView: {
@@ -390,6 +403,37 @@ function getAppLocale(){
                     password: "密码",
                     login: "登录",
                 },
+            },
+            editor: {
+              noexist: "editor实例不存在！",
+              nooutput: "基类不输出",
+              unsupport: "暂未支持编辑器型为",
+              nofind: "目标编辑器查找不到",
+              error: "将抄送任务标记为已读失败"
+            },
+            button: {
+              leftbtn: "左移",
+              rightbtn: "右移",
+              allleftbtn: "全部左移",
+              allrightbtn: "全部右移",
+            },
+            nosupport: {
+              nosupport: "暂未支持该组件",
+              layout: "暂未支持该布局模式",
+              unopen: "不支持该模式打开",
+              unassign: "未指定关系视图",
+            },
+            warn: {
+              nton: "批量添加需添加N:N关系",
+              batchError: "批处理操作失败" ,
+              unbatchAdd: "只支持批添加未实现",
+              geterror: "获取数据异常",
+              load: "正在加载数据",
+              nofind: "未找到相关数据",
+              unopendata: "没有opendata",
+              unnewdata: "没有newdata",
+              unremove: "没有remove",
+              unrefresh: "没有refresh"
             },
         },
         entities: {

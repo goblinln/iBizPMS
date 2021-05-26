@@ -22,7 +22,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['actor',];
     protected selectContextParam = {
-        ibzreportly: 'objectid',
     };
 
     newEntity(data: IIbzProReportlyAction): IbzProReportlyAction {
@@ -39,13 +38,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
 
     async getLocal(context: IContext, srfKey: string): Promise<IIbzProReportlyAction> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.objectid && entity.objectid !== '') {
-            const s = await ___ibz___.gs.getIbzReportlyService();
-            const data = await s.getLocal2(context, entity.objectid);
-            if (data) {
-                entity.objectid = data.ibzreportlyid;
-            }
-        }
         return entity!;
     }
 
@@ -54,13 +46,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
     }
 
     async getDraftLocal(_context: IContext, entity: IIbzProReportlyAction = {}): Promise<IIbzProReportlyAction> {
-        if (_context.ibzreportly && _context.ibzreportly !== '') {
-            const s = await ___ibz___.gs.getIbzReportlyService();
-            const data = await s.getLocal2(_context, _context.ibzreportly);
-            if (data) {
-                entity.objectid = data.ibzreportlyid;
-            }
-        }
         return new IbzProReportlyAction(entity);
     }
 
@@ -89,9 +74,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzreportly && _context.ibzproreportlyaction) {
-            return this.http.get(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/${_context.ibzproreportlyaction}/select`);
-        }
         return this.http.get(`/ibzproreportlyactions/${_context.ibzproreportlyaction}/select`);
     }
     /**
@@ -103,16 +85,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzreportly && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -131,10 +103,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzreportly && _context.ibzproreportlyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/${_context.ibzproreportlyaction}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/ibzproreportlyactions/${_context.ibzproreportlyaction}`, _data);
     }
@@ -147,9 +115,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzreportly && _context.ibzproreportlyaction) {
-            return this.http.delete(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/${_context.ibzproreportlyaction}`);
-        }
         return this.http.delete(`/ibzproreportlyactions/${_context.ibzproreportlyaction}`);
     }
     /**
@@ -161,10 +126,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzreportly && _context.ibzproreportlyaction) {
-            const res = await this.http.get(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/${_context.ibzproreportlyaction}`);
-            return res;
-        }
         const res = await this.http.get(`/ibzproreportlyactions/${_context.ibzproreportlyaction}`);
         return res;
     }
@@ -177,12 +138,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzreportly && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzproreportlyactions/getdraft`, _data);
@@ -197,10 +152,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionService
      */
     async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzreportly && _context.ibzproreportlyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/${_context.ibzproreportlyaction}/createhis`, _data);
-        }
         return this.http.post(`/ibzproreportlyactions/${_context.ibzproreportlyaction}/createhis`, _data);
     }
     /**
@@ -212,10 +163,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionService
      */
     async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzreportly && _context.ibzproreportlyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/${_context.ibzproreportlyaction}/managepmsee`, _data);
-        }
         return this.http.post(`/ibzproreportlyactions/${_context.ibzproreportlyaction}/managepmsee`, _data);
     }
     /**
@@ -227,10 +174,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionService
      */
     async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzreportly && _context.ibzproreportlyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/${_context.ibzproreportlyaction}/sendmarkdone`, _data);
-        }
         return this.http.post(`/ibzproreportlyactions/${_context.ibzproreportlyaction}/sendmarkdone`, _data);
     }
     /**
@@ -242,10 +185,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionService
      */
     async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzreportly && _context.ibzproreportlyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/${_context.ibzproreportlyaction}/sendtodo`, _data);
-        }
         return this.http.post(`/ibzproreportlyactions/${_context.ibzproreportlyaction}/sendtodo`, _data);
     }
     /**
@@ -257,10 +196,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionService
      */
     async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzreportly && _context.ibzproreportlyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/${_context.ibzproreportlyaction}/sendtoread`, _data);
-        }
         return this.http.post(`/ibzproreportlyactions/${_context.ibzproreportlyaction}/sendtoread`, _data);
     }
     /**
@@ -272,9 +207,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/fetchdefault`, _data);
-        }
         return this.http.post(`/ibzproreportlyactions/fetchdefault`, _data);
     }
     /**
@@ -286,9 +218,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/fetchtype`, _data);
-        }
         return this.http.post(`/ibzproreportlyactions/fetchtype`, _data);
     }
 
@@ -302,10 +231,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionServiceBase
      */
     public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzreportly && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/createhisbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproreportlyactions/createhisbatch`,_data);
     }
@@ -320,10 +245,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionServiceBase
      */
     public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzreportly && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/managepmseebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproreportlyactions/managepmseebatch`,_data);
     }
@@ -338,10 +259,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionServiceBase
      */
     public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzreportly && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/sendmarkdonebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproreportlyactions/sendmarkdonebatch`,_data);
     }
@@ -356,10 +273,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionServiceBase
      */
     public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzreportly && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/sendtodobatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproreportlyactions/sendtodobatch`,_data);
     }
@@ -374,10 +287,6 @@ export class IbzProReportlyActionBaseService extends EntityBaseService<IIbzProRe
      * @memberof IbzProReportlyActionServiceBase
      */
     public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzreportly && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/ibzproreportlyactions/sendtoreadbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproreportlyactions/sendtoreadbatch`,_data);
     }

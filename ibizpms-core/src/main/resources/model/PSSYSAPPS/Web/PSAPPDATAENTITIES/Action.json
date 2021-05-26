@@ -524,6 +524,24 @@
     "logicName" : "系统日志编号",
     "name" : "ACTIONSN",
     "stdDataType" : 1
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",
@@ -1018,31 +1036,6 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
     },
     "name" : "产品日志",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  }, {
-    "actionRSMode" : 1,
-    "codeName" : "Actions",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
-    },
-    "name" : "项目-日志",
-    "getParentPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    },
     "rSMode" : 2,
     "enableCreateDataRS" : false,
     "enableDEAction" : true,

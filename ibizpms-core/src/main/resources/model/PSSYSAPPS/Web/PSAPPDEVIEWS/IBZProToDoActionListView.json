@@ -397,31 +397,5 @@
   "enableFilter" : false,
   "showCaptionBar" : false,
   "modelid" : "77016311316bb87635d8138a7d9a041e",
-  "modeltype" : "PSAPPDEVIEW",
-  "getPSAppDERSPaths" : [ [ {
-    "actionRSMode" : 1,
-    "codeName" : "IBZProToDoActions",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProToDoAction.json"
-    },
-    "name" : "todo-todo日志",
-    "getParentPSAppDEField" : {
-      "name" : "OBJECTID",
-      "codeName" : "ObjectID"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ] ]
+  "modeltype" : "PSAPPDEVIEW"
 }

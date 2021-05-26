@@ -111,13 +111,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDELOGICS/ProductTop.json"
     }
   }, {
-    "actionMode" : "CUSTOM",
-    "actionType" : "USERCUSTOM",
-    "codeName" : "ReturnEdit",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/ReturnEdit.json",
-    "logicName" : "退出",
-    "name" : "ReturnEdit"
-  }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
     "codeName" : "Save",
@@ -5306,7 +5299,8 @@
       "codeName" : "ObjectID"
     },
     "removeActionType" : 0,
-    "removeOrder" : -1
+    "removeOrder" : -1,
+    "typeValue" : "product"
   } ],
   "getMinorPSDERs" : [ {
     "codeName" : "ProductLine",

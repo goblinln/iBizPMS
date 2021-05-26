@@ -1349,7 +1349,7 @@ export class GridControlBase extends MDControlBase {
             return;
         }
         if (allGroup.length == 0) {
-            LogUtil.warn("分组数据无效");
+            LogUtil.warn(this.$t('app.dataView.useless'));
             this.items.forEach((item: any, index: number) => {
                 Object.assign(item, {
                     groupById: index + 1,
@@ -1377,7 +1377,7 @@ export class GridControlBase extends MDControlBase {
         })
         if (otherItems.length > 0) {
             otherItems = [...new Set(otherItems)];
-            const tree = this.initTree("其他", allGroup.length + 1, otherItems);
+            const tree = this.initTree(this.$t('app.commonWords.other'), allGroup.length + 1, otherItems);
             groupTree.push(tree);
         }
         this.items = groupTree;
@@ -1405,7 +1405,7 @@ export class GridControlBase extends MDControlBase {
         let groupTree: Array<any> = [];
         allGroup = [...new Set(allGroup)];
         if (allGroup.length == 0) {
-            LogUtil.warn("分组数据无效");
+            LogUtil.warn(this.$t('app.dataView.useless'));
         }
         // 组装数据
         allGroup.forEach((group: any, groupIndex: number) => {

@@ -1,15 +1,15 @@
 <template>
     <div class="rich-text-editor">
         <div class="editor-custom-action">
-            <Poptip ref="propip" trigger="hover" placement="top-end" title="请输入模板标题" :width="250" @on-popper-show="openPoper()">
+            <Poptip ref="propip" trigger="hover" placement="top-end" :title="$t('app.components.richtext.title')" :width="250" @on-popper-show="openPoper()">
                 <Button class="appTemplate">
-                    保存模板
+                    {{$t('app.components.richtext.save')}}
                 </Button>
                 <template slot="content">
                     <div>
-                        <Input v-model="templateTitle" placeholder="请输入模板标题" />
+                        <Input v-model="templateTitle" :placeholder="$t('app.components.richtext.title')" />
                         <div style="margin-top: 5px;">
-                            <Checkbox v-model="single">公开的</Checkbox>
+                            <Checkbox v-model="single">{{$t('app.components.richtext.pub')}}</Checkbox>
                             <Button @click="saveTemplate()">{{ $t('app.commonWords.save') }}</Button>&nbsp;
                             <Button @click="onCancel()">{{ $t('app.commonWords.cancel') }}</Button>
                         </div>
@@ -18,13 +18,13 @@
             </Poptip>
             <Dropdown trigger="click">
                 <Button class="appTemplate">
-                    应用模板
+                    {{$t('app.components.richtext.apply')}}
                     <Icon type="ios-arrow-down"></Icon>
                 </Button>
                 <DropdownMenu slot="list" >
                     <Tabs v-model="ibizpublic" :animated="false">
-                        <TabPane label="私人的" name="0"></TabPane>
-                        <TabPane label="公开的" name="1"></TabPane>
+                        <TabPane :label="$t('app.components.richtext.pri')" name="0"></TabPane>
+                        <TabPane :label="$t('app.components.richtext.pub')" name="1"></TabPane>
                     </Tabs>
                     <DropdownItem v-for="(item,index) in appTemplate" :key='index' :value="item.content">
                         <div class="keyOperation" v-if="item.ibizpublic == ibizpublic">
@@ -1003,20 +1003,20 @@ export default class RichTextEditor extends Vue {
         const templateContent = this.editor.getContent();
         templParams.ibizpublic = this.single == true? '1' : '0';
         if(!templateContent || Object.is(templateContent,'')){
-            this.$throw('请填充模板内容!!!','saveTemplate');
+            this.$throw(this.$t('app.components.appCheckBox.content'),'saveTemplate');
             return;
         }
         if(!templateTitle || Object.is(templateTitle,'')){
-            this.$throw('请输入模板标题!!!','saveTemplate');
+            this.$throw(this.$t('app.components.appCheckBox.title'),'saveTemplate');
             return;
         }
         templParams.title = templateTitle;
         templParams.content = templateContent;
         const response: any = await this.userTplService.Create({}, templParams);
         if(response && response.status === 200){
-            this.$success('保存模板成功!!!','saveTemplate');
+            this.$success(this.$t('app.components.appCheckBox.success'),'saveTemplate');
         }else{
-            this.$throw('保存模板失败!!!','saveTemplate');
+            this.$throw(this.$t('app.components.appCheckBox.error'),'saveTemplate');
         }
         this.appTemplateData();
         let propip: any = this.$refs.propip;
@@ -1051,9 +1051,9 @@ export default class RichTextEditor extends Vue {
         context.usertpl = event.id;
         const response: any = await this.userTplService.Remove(context,{});
         if(response && response.status === 200){
-            this.$success('删除模板成功!!!','removeAppTemplate');
+            this.$success(this.$t('app.components.appCheckBox.delSuccess'),'removeAppTemplate');
         }else{
-            this.$throw('删除模板失败!!!','removeAppTemplate');
+            this.$throw(this.$t('app.components.appCheckBox.delError'),'removeAppTemplate');
         }
         this.appTemplateData();
     }

@@ -1,7 +1,7 @@
 <template>
     <div class="lockscren">
         <span><Icon type="md-lock" size="15" @click="handleLock"/></span>
-        <span class="title" @click="handleLock">应用锁屏</span>
+        <span class="title" @click="handleLock">{{this.$t('app.components.lockScren.lock')}}</span>
         <el-dialog :title="this.$t('components.lockScren.title')"
             :visible.sync="box"
             width="30%"

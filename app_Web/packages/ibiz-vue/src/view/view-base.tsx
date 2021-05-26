@@ -517,12 +517,12 @@ export class ViewBase extends Vue {
         }
         if (Object.is(modeldata.viewType, 'DEPICKUPVIEW') || Object.is(modeldata.viewType, 'DEMPICKUPVIEW') || Object.is(modeldata.viewType, 'DEOPTVIEW') || Object.is(modeldata.viewType, 'DEWFSTARTVIEW') || Object.is(modeldata.viewType, 'DEWFACTIONVIEW')) {
             this.containerModel = {
-                view_okbtn: { name: 'okbtn', type: 'button', text: '确定', disabled: true },
-                view_cancelbtn: { name: 'cancelbtn', type: 'button', text: '取消', disabled: false },
-                view_leftbtn: { name: 'leftbtn', type: 'button', text: '左移', disabled: true },
-                view_rightbtn: { name: 'rightbtn', type: 'button', text: '右移', disabled: true },
-                view_allleftbtn: { name: 'allleftbtn', type: 'button', text: '全部左移', disabled: true },
-                view_allrightbtn: { name: 'allrightbtn', type: 'button', text: '全部右移', disabled: true },
+                view_okbtn: { name: 'okbtn', type: 'button', text: this.$t('app.commonWords.ok'), disabled: true },
+                view_cancelbtn: { name: 'cancelbtn', type: 'button', text: this.$t('app.commonWords.cancel'), disabled: false },
+                view_leftbtn: { name: 'leftbtn', type: 'button', text: this.$t('app.button.leftbtn'), disabled: true },
+                view_rightbtn: { name: 'rightbtn', type: 'button', text: this.$t('app.button.rightbtn'), disabled: true },
+                view_allleftbtn: { name: 'allleftbtn', type: 'button', text: this.$t('app.button.allleftbtn'), disabled: true },
+                view_allrightbtn: { name: 'allrightbtn', type: 'button', text: this.$t('app.button.allrightbtn'), disabled: true },
             }
         }
     }

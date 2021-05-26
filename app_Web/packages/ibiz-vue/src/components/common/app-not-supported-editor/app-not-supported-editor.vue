@@ -1,6 +1,6 @@
 <template>
     <div class='editor-container'>
-      暂未支持该组件
+      {{$t('app.nosupport.nosupport')}}
     </div>
 </template>
 <script lang = 'ts'>

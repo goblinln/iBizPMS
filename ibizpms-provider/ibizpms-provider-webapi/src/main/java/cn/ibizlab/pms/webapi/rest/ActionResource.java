@@ -73,6 +73,7 @@ public class ActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @VersionCheck(entity = "action" , versionfield = "updatedate")
     @ApiOperation(value = "更新系统日志", tags = {"系统日志" },  notes = "更新系统日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/actions/{action_id}")
     @Transactional
@@ -441,7 +442,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions")
     public ResponseEntity<ActionDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        
+        domain.setObjectid(product_id);domain.setObjecttype("product");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
@@ -452,17 +453,18 @@ public class ActionResource {
     public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ActionDTO> actiondtos) {
         List<Action> domainlist=actionMapping.toDomain(actiondtos);
         for(Action domain:domainlist){
-            
+            domain.setObjectid(product_id);domain.setObjecttype("product");
         }
         actionService.createBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @VersionCheck(entity = "action" , versionfield = "updatedate")
     @ApiOperation(value = "根据产品更新系统日志", tags = {"系统日志" },  notes = "根据产品更新系统日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/actions/{action_id}")
     public ResponseEntity<ActionDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        
+        domain.setObjectid(product_id);domain.setObjecttype("product");
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
@@ -474,7 +476,7 @@ public class ActionResource {
     public ResponseEntity<Boolean> updateBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ActionDTO> actiondtos) {
         List<Action> domainlist=actionMapping.toDomain(actiondtos);
         for(Action domain:domainlist){
-            
+            domain.setObjectid(product_id);domain.setObjecttype("product");
         }
         actionService.updateBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
@@ -505,7 +507,7 @@ public class ActionResource {
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/actions/getdraft")
     public ResponseEntity<ActionDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        
+        domain.setObjectid(product_id);domain.setObjecttype("product");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
@@ -519,7 +521,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/comment")
     public ResponseEntity<ActionDTO> commentByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        
+        domain.setObjectid(product_id);domain.setObjecttype("product");
         domain.setId(action_id);
         domain = actionService.comment(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -529,7 +531,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/createhis")
     public ResponseEntity<ActionDTO> createHisByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        
+        domain.setObjectid(product_id);domain.setObjecttype("product");
         domain.setId(action_id);
         domain = actionService.createHis(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -546,7 +548,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/editcomment")
     public ResponseEntity<ActionDTO> editCommentByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        
+        domain.setObjectid(product_id);domain.setObjecttype("product");
         domain.setId(action_id);
         domain = actionService.editComment(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -563,7 +565,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/managepmsee")
     public ResponseEntity<ActionDTO> managePmsEeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        
+        domain.setObjectid(product_id);domain.setObjecttype("product");
         domain.setId(action_id);
         domain = actionService.managePmsEe(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -580,7 +582,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/save")
     public ResponseEntity<ActionDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        
+        domain.setObjectid(product_id);domain.setObjecttype("product");
         actionService.save(domain);
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(domain));
     }
@@ -590,7 +592,7 @@ public class ActionResource {
     public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ActionDTO> actiondtos) {
         List<Action> domainlist=actionMapping.toDomain(actiondtos);
         for(Action domain:domainlist){
-             
+             domain.setObjectid(product_id);domain.setObjecttype("product");
         }
         actionService.saveBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
@@ -600,7 +602,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/sendmarkdone")
     public ResponseEntity<ActionDTO> sendMarkDoneByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        
+        domain.setObjectid(product_id);domain.setObjecttype("product");
         domain.setId(action_id);
         domain = actionService.sendMarkDone(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -617,7 +619,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/sendtodo")
     public ResponseEntity<ActionDTO> sendTodoByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        
+        domain.setObjectid(product_id);domain.setObjecttype("product");
         domain.setId(action_id);
         domain = actionService.sendTodo(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -634,7 +636,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/sendtoread")
     public ResponseEntity<ActionDTO> sendToreadByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        
+        domain.setObjectid(product_id);domain.setObjecttype("product");
         domain.setId(action_id);
         domain = actionService.sendToread(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -650,7 +652,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"系统日志" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchdefault")
 	public ResponseEntity<List<ActionDTO>> fetchActionDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody ActionSearchContext context) {
-        
+        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
         Page<Action> domains = actionService.searchDefault(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -663,7 +665,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"系统日志" } ,notes = "根据产品查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/searchdefault")
 	public ResponseEntity<Page<ActionDTO>> searchActionDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody ActionSearchContext context) {
-        
+        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
         Page<Action> domains = actionService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -671,7 +673,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品获取MobType", tags = {"系统日志" } ,notes = "根据产品获取MobType")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchmobtype")
 	public ResponseEntity<List<ActionDTO>> fetchActionMobTypeByProduct(@PathVariable("product_id") Long product_id,@RequestBody ActionSearchContext context) {
-        
+        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
         Page<Action> domains = actionService.searchMobType(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -684,7 +686,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品查询MobType", tags = {"系统日志" } ,notes = "根据产品查询MobType")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/searchmobtype")
 	public ResponseEntity<Page<ActionDTO>> searchActionMobTypeByProduct(@PathVariable("product_id") Long product_id, @RequestBody ActionSearchContext context) {
-        
+        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
         Page<Action> domains = actionService.searchMobType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -692,7 +694,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品获取项目动态(我的)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchmytrends")
 	public ResponseEntity<List<ActionDTO>> fetchActionMyTrendsByProduct(@PathVariable("product_id") Long product_id,@RequestBody ActionSearchContext context) {
-        
+        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
         Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -705,7 +707,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品查询项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品查询项目动态(我的)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/searchmytrends")
 	public ResponseEntity<Page<ActionDTO>> searchActionMyTrendsByProduct(@PathVariable("product_id") Long product_id, @RequestBody ActionSearchContext context) {
-        
+        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
         Page<Action> domains = actionService.searchMyTrends(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -713,7 +715,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchproducttrends")
 	public ResponseEntity<List<ActionDTO>> fetchActionProductTrendsByProduct(@PathVariable("product_id") Long product_id,@RequestBody ActionSearchContext context) {
-        
+        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
         Page<Action> domains = actionService.searchProductTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -726,7 +728,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品查询ProductTrends", tags = {"系统日志" } ,notes = "根据产品查询ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/searchproducttrends")
 	public ResponseEntity<Page<ActionDTO>> searchActionProductTrendsByProduct(@PathVariable("product_id") Long product_id, @RequestBody ActionSearchContext context) {
-        
+        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
         Page<Action> domains = actionService.searchProductTrends(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -734,7 +736,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据产品获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchprojecttrends")
 	public ResponseEntity<List<ActionDTO>> fetchActionProjectTrendsByProduct(@PathVariable("product_id") Long product_id,@RequestBody ActionSearchContext context) {
-        
+        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
         Page<Action> domains = actionService.searchProjectTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -747,7 +749,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品查询项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据产品查询项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/searchprojecttrends")
 	public ResponseEntity<Page<ActionDTO>> searchActionProjectTrendsByProduct(@PathVariable("product_id") Long product_id, @RequestBody ActionSearchContext context) {
-        
+        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
         Page<Action> domains = actionService.searchProjectTrends(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -755,7 +757,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品获取查询用户使用年", tags = {"系统日志" } ,notes = "根据产品获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchqueryuseryear")
 	public ResponseEntity<List<ActionDTO>> fetchActionQueryUserYEARByProduct(@PathVariable("product_id") Long product_id,@RequestBody ActionSearchContext context) {
-        
+        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
         Page<Action> domains = actionService.searchQueryUserYEAR(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -768,7 +770,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品查询查询用户使用年", tags = {"系统日志" } ,notes = "根据产品查询查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/searchqueryuseryear")
 	public ResponseEntity<Page<ActionDTO>> searchActionQueryUserYEARByProduct(@PathVariable("product_id") Long product_id, @RequestBody ActionSearchContext context) {
-        
+        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
         Page<Action> domains = actionService.searchQueryUserYEAR(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -776,7 +778,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品获取Type", tags = {"系统日志" } ,notes = "根据产品获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchtype")
 	public ResponseEntity<List<ActionDTO>> fetchActionTypeByProduct(@PathVariable("product_id") Long product_id,@RequestBody ActionSearchContext context) {
-        
+        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
         Page<Action> domains = actionService.searchType(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -789,364 +791,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品查询Type", tags = {"系统日志" } ,notes = "根据产品查询Type")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/searchtype")
 	public ResponseEntity<Page<ActionDTO>> searchActionTypeByProduct(@PathVariable("product_id") Long product_id, @RequestBody ActionSearchContext context) {
-        
-        Page<Action> domains = actionService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-    @ApiOperation(value = "根据项目建立系统日志", tags = {"系统日志" },  notes = "根据项目建立系统日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions")
-    public ResponseEntity<ActionDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionDTO actiondto) {
-        Action domain = actionMapping.toDomain(actiondto);
-        domain.setProject(project_id);
-		actionService.create(domain);
-        ActionDTO dto = actionMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "根据项目批量建立系统日志", tags = {"系统日志" },  notes = "根据项目批量建立系统日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/batch")
-    public ResponseEntity<Boolean> createBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domainlist=actionMapping.toDomain(actiondtos);
-        for(Action domain:domainlist){
-            domain.setProject(project_id);
-        }
-        actionService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @ApiOperation(value = "根据项目更新系统日志", tags = {"系统日志" },  notes = "根据项目更新系统日志")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/actions/{action_id}")
-    public ResponseEntity<ActionDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
-        Action domain = actionMapping.toDomain(actiondto);
-        domain.setProject(project_id);
-        domain.setId(action_id);
-		actionService.update(domain);
-        ActionDTO dto = actionMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "根据项目批量更新系统日志", tags = {"系统日志" },  notes = "根据项目批量更新系统日志")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/actions/batch")
-    public ResponseEntity<Boolean> updateBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domainlist=actionMapping.toDomain(actiondtos);
-        for(Action domain:domainlist){
-            domain.setProject(project_id);
-        }
-        actionService.updateBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @ApiOperation(value = "根据项目删除系统日志", tags = {"系统日志" },  notes = "根据项目删除系统日志")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/actions/{action_id}")
-    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(actionService.remove(action_id));
-    }
-
-    @ApiOperation(value = "根据项目批量删除系统日志", tags = {"系统日志" },  notes = "根据项目批量删除系统日志")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/actions/batch")
-    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
-        actionService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @ApiOperation(value = "根据项目获取系统日志", tags = {"系统日志" },  notes = "根据项目获取系统日志")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/actions/{action_id}")
-    public ResponseEntity<ActionDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id) {
-        Action domain = actionService.get(action_id);
-        ActionDTO dto = actionMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "根据项目获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ActionDTO dto) {
-        Action domain = actionMapping.toDomain(dto);
-        domain.setProject(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "根据项目检查系统日志", tags = {"系统日志" },  notes = "根据项目检查系统日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/checkkey")
-    public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionDTO actiondto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(actionService.checkKey(actionMapping.toDomain(actiondto)));
-    }
-
-    @ApiOperation(value = "根据项目系统日志", tags = {"系统日志" },  notes = "根据项目系统日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/{action_id}/comment")
-    public ResponseEntity<ActionDTO> commentByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
-        Action domain = actionMapping.toDomain(actiondto);
-        domain.setProject(project_id);
-        domain.setId(action_id);
-        domain = actionService.comment(domain) ;
-        actiondto = actionMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
-    }
-    @ApiOperation(value = "根据项目系统日志", tags = {"系统日志" },  notes = "根据项目系统日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/{action_id}/createhis")
-    public ResponseEntity<ActionDTO> createHisByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
-        Action domain = actionMapping.toDomain(actiondto);
-        domain.setProject(project_id);
-        domain.setId(action_id);
-        domain = actionService.createHis(domain) ;
-        actiondto = actionMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
-    }
-    @ApiOperation(value = "批量处理[根据项目系统日志]", tags = {"系统日志" },  notes = "批量处理[根据项目系统日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/createhisbatch")
-    public ResponseEntity<Boolean> createHisByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domains = actionMapping.toDomain(actiondtos);
-        boolean result = actionService.createHisBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
-    @ApiOperation(value = "根据项目系统日志", tags = {"系统日志" },  notes = "根据项目系统日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/{action_id}/editcomment")
-    public ResponseEntity<ActionDTO> editCommentByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
-        Action domain = actionMapping.toDomain(actiondto);
-        domain.setProject(project_id);
-        domain.setId(action_id);
-        domain = actionService.editComment(domain) ;
-        actiondto = actionMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
-    }
-    @ApiOperation(value = "批量处理[根据项目系统日志]", tags = {"系统日志" },  notes = "批量处理[根据项目系统日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/editcommentbatch")
-    public ResponseEntity<Boolean> editCommentByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domains = actionMapping.toDomain(actiondtos);
-        boolean result = actionService.editCommentBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
-    @ApiOperation(value = "根据项目系统日志", tags = {"系统日志" },  notes = "根据项目系统日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/{action_id}/managepmsee")
-    public ResponseEntity<ActionDTO> managePmsEeByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
-        Action domain = actionMapping.toDomain(actiondto);
-        domain.setProject(project_id);
-        domain.setId(action_id);
-        domain = actionService.managePmsEe(domain) ;
-        actiondto = actionMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
-    }
-    @ApiOperation(value = "批量处理[根据项目系统日志]", tags = {"系统日志" },  notes = "批量处理[根据项目系统日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/managepmseebatch")
-    public ResponseEntity<Boolean> managePmsEeByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domains = actionMapping.toDomain(actiondtos);
-        boolean result = actionService.managePmsEeBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
-    @ApiOperation(value = "根据项目保存系统日志", tags = {"系统日志" },  notes = "根据项目保存系统日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/save")
-    public ResponseEntity<ActionDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionDTO actiondto) {
-        Action domain = actionMapping.toDomain(actiondto);
-        domain.setProject(project_id);
-        actionService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(domain));
-    }
-
-    @ApiOperation(value = "根据项目批量保存系统日志", tags = {"系统日志" },  notes = "根据项目批量保存系统日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domainlist=actionMapping.toDomain(actiondtos);
-        for(Action domain:domainlist){
-             domain.setProject(project_id);
-        }
-        actionService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @ApiOperation(value = "根据项目系统日志", tags = {"系统日志" },  notes = "根据项目系统日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/{action_id}/sendmarkdone")
-    public ResponseEntity<ActionDTO> sendMarkDoneByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
-        Action domain = actionMapping.toDomain(actiondto);
-        domain.setProject(project_id);
-        domain.setId(action_id);
-        domain = actionService.sendMarkDone(domain) ;
-        actiondto = actionMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
-    }
-    @ApiOperation(value = "批量处理[根据项目系统日志]", tags = {"系统日志" },  notes = "批量处理[根据项目系统日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/sendmarkdonebatch")
-    public ResponseEntity<Boolean> sendMarkDoneByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domains = actionMapping.toDomain(actiondtos);
-        boolean result = actionService.sendMarkDoneBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
-    @ApiOperation(value = "根据项目系统日志", tags = {"系统日志" },  notes = "根据项目系统日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/{action_id}/sendtodo")
-    public ResponseEntity<ActionDTO> sendTodoByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
-        Action domain = actionMapping.toDomain(actiondto);
-        domain.setProject(project_id);
-        domain.setId(action_id);
-        domain = actionService.sendTodo(domain) ;
-        actiondto = actionMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
-    }
-    @ApiOperation(value = "批量处理[根据项目系统日志]", tags = {"系统日志" },  notes = "批量处理[根据项目系统日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/sendtodobatch")
-    public ResponseEntity<Boolean> sendTodoByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domains = actionMapping.toDomain(actiondtos);
-        boolean result = actionService.sendTodoBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
-    @ApiOperation(value = "根据项目系统日志", tags = {"系统日志" },  notes = "根据项目系统日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/{action_id}/sendtoread")
-    public ResponseEntity<ActionDTO> sendToreadByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
-        Action domain = actionMapping.toDomain(actiondto);
-        domain.setProject(project_id);
-        domain.setId(action_id);
-        domain = actionService.sendToread(domain) ;
-        actiondto = actionMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
-    }
-    @ApiOperation(value = "批量处理[根据项目系统日志]", tags = {"系统日志" },  notes = "批量处理[根据项目系统日志]")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/sendtoreadbatch")
-    public ResponseEntity<Boolean> sendToreadByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ActionDTO> actiondtos) {
-        List<Action> domains = actionMapping.toDomain(actiondtos);
-        boolean result = actionService.sendToreadBatch(domains);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
-    }
-	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"系统日志" } ,notes = "根据项目获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchdefault")
-	public ResponseEntity<List<ActionDTO>> fetchActionDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Action> domains = actionService.searchDefault(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"系统日志" } ,notes = "根据项目查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/searchdefault")
-	public ResponseEntity<Page<ActionDTO>> searchActionDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Action> domains = actionService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-	@ApiOperation(value = "根据项目获取MobType", tags = {"系统日志" } ,notes = "根据项目获取MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchmobtype")
-	public ResponseEntity<List<ActionDTO>> fetchActionMobTypeByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Action> domains = actionService.searchMobType(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-	@ApiOperation(value = "根据项目查询MobType", tags = {"系统日志" } ,notes = "根据项目查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/searchmobtype")
-	public ResponseEntity<Page<ActionDTO>> searchActionMobTypeByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Action> domains = actionService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-	@ApiOperation(value = "根据项目获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchActionMyTrendsByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-	@ApiOperation(value = "根据项目查询项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/searchmytrends")
-	public ResponseEntity<Page<ActionDTO>> searchActionMyTrendsByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-	@ApiOperation(value = "根据项目获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchproducttrends")
-	public ResponseEntity<List<ActionDTO>> fetchActionProductTrendsByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-	@ApiOperation(value = "根据项目查询ProductTrends", tags = {"系统日志" } ,notes = "根据项目查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/searchproducttrends")
-	public ResponseEntity<Page<ActionDTO>> searchActionProductTrendsByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-	@ApiOperation(value = "根据项目获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目获取项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchprojecttrends")
-	public ResponseEntity<List<ActionDTO>> fetchActionProjectTrendsByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Action> domains = actionService.searchProjectTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-	@ApiOperation(value = "根据项目查询项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/searchprojecttrends")
-	public ResponseEntity<Page<ActionDTO>> searchActionProjectTrendsByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Action> domains = actionService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-	@ApiOperation(value = "根据项目获取查询用户使用年", tags = {"系统日志" } ,notes = "根据项目获取查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchqueryuseryear")
-	public ResponseEntity<List<ActionDTO>> fetchActionQueryUserYEARByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Action> domains = actionService.searchQueryUserYEAR(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-	@ApiOperation(value = "根据项目查询查询用户使用年", tags = {"系统日志" } ,notes = "根据项目查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/searchqueryuseryear")
-	public ResponseEntity<Page<ActionDTO>> searchActionQueryUserYEARByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Action> domains = actionService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-	@ApiOperation(value = "根据项目获取Type", tags = {"系统日志" } ,notes = "根据项目获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchtype")
-	public ResponseEntity<List<ActionDTO>> fetchActionTypeByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Action> domains = actionService.searchType(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-	@ApiOperation(value = "根据项目查询Type", tags = {"系统日志" } ,notes = "根据项目查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/searchtype")
-	public ResponseEntity<Page<ActionDTO>> searchActionTypeByProject(@PathVariable("project_id") Long project_id, @RequestBody ActionSearchContext context) {
-        context.setN_project_eq(project_id);
+        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
         Page<Action> domains = actionService.searchType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

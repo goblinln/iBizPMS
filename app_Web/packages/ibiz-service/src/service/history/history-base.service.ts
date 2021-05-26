@@ -107,9 +107,6 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
      * @memberof HistoryService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.action && _context.history) {
-            return this.http.get(`/projects/${_context.project}/actions/${_context.action}/histories/${_context.history}/select`);
-        }
         if (_context.product && _context.action && _context.history) {
             return this.http.get(`/products/${_context.product}/actions/${_context.action}/histories/${_context.history}/select`);
         }
@@ -127,16 +124,6 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
      * @memberof HistoryService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.action && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projects/${_context.project}/actions/${_context.action}/histories`, _data);
-        }
         if (_context.product && _context.action && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -175,10 +162,6 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
      * @memberof HistoryService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.action && _context.history) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/actions/${_context.action}/histories/${_context.history}`, _data);
-        }
         if (_context.product && _context.action && _context.history) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/actions/${_context.action}/histories/${_context.history}`, _data);
@@ -199,9 +182,6 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
      * @memberof HistoryService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.action && _context.history) {
-            return this.http.delete(`/projects/${_context.project}/actions/${_context.action}/histories/${_context.history}`);
-        }
         if (_context.product && _context.action && _context.history) {
             return this.http.delete(`/products/${_context.product}/actions/${_context.action}/histories/${_context.history}`);
         }
@@ -219,10 +199,6 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
      * @memberof HistoryService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.action && _context.history) {
-            const res = await this.http.get(`/projects/${_context.project}/actions/${_context.action}/histories/${_context.history}`);
-            return res;
-        }
         if (_context.product && _context.action && _context.history) {
             const res = await this.http.get(`/products/${_context.product}/actions/${_context.action}/histories/${_context.history}`);
             return res;
@@ -243,12 +219,6 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
      * @memberof HistoryService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.action && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/actions/${_context.action}/histories/getdraft`, _data);
-            return res;
-        }
         if (_context.product && _context.action && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -275,9 +245,6 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
      * @memberof HistoryService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.action && true) {
-            return this.http.post(`/projects/${_context.project}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
         if (_context.product && _context.action && true) {
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/histories/fetchdefault`, _data);
         }

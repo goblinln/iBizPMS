@@ -188,7 +188,7 @@ export class AppGridBase extends GridControlBase {
                     <el-table-column
                         show-overflow-tooltip
                         prop='group'
-                        label='分组'
+                        label={this.$t('app.gridpage.group')}
                         min-width='80'
                         scopedSlots={{
                             default: (scope: any) => {
@@ -480,14 +480,11 @@ export class AppGridBase extends GridControlBase {
                         : this.renderColumn(column, scope);
                 },
                 header: () => {
-                    this.allColumnsInstance; // 别删，触发表格头刷新用
-                    return <span class='column-header'>{caption}</span>;
+                    return <span class='column-header'>{column.caption}</span>;
                 },
             },
         });
     }
-
-
 
     /**
      * 绘制分页栏
@@ -499,16 +496,16 @@ export class AppGridBase extends GridControlBase {
         // 表格列筛选
         let columnPopTip;
         // 分页显示文字
-        let pageText = <span>共&nbsp;{this.totalRecord}&nbsp;条</span>
+        let pageText = <span>{this.$t('app.dataView.sum')}&nbsp;{this.totalRecord}&nbsp;{this.$t('app.dataView.data')}</span>
         if (this.viewStyle == 'STYLE2') {
             pageText = <span>
-                &nbsp; 显示&nbsp;
+                &nbsp; {this.$t('app.gridpage.show')}&nbsp;
                 {this.items.length > 0 ? 1 : (this.curPage - 1) * this.limit + 1}&nbsp;-&nbsp;
                 {this.totalRecord > this.curPage * this.limit ? this.curPage * this.limit : this.totalRecord}&nbsp;
-                条，共&nbsp;{this.totalRecord}&nbsp;条
+                {this.$t('app.dataView.data')}，{this.$t('app.dataView.sum')}&nbsp;{this.totalRecord}&nbsp;{this.$t('app.dataView.data')}
             </span>
             columnPopTip = <poptip transfer placement='top-start' class='page-column'>
-                <i-button icon='md-menu'>选择列</i-button>
+                <i-button icon='md-menu'>{this.$t('app.gridpage.choicecolumns')}</i-button>
                 <div slot='content'>
                     {this.allColumns.map((col: any) => {
                         return (
@@ -527,7 +524,7 @@ export class AppGridBase extends GridControlBase {
                 </div>
             </poptip>
         } else {
-            pageText = <span>共&nbsp;{this.totalRecord}&nbsp;条</span>
+            pageText = <span>{this.$t('app.dataView.sum')}&nbsp;{this.totalRecord}&nbsp;{this.$t('app.dataView.data')}</span>
         }
         return this.items?.length > 0 ? (
             <row class='grid-pagination'>
@@ -547,7 +544,7 @@ export class AppGridBase extends GridControlBase {
                     {this.controlInstance.enableColFilter ? columnPopTip : null}
                     {this.renderBatchToolbar()}
                     <span class='page-button'>
-                        <i-button icon='md-refresh' title='刷新' on-click={() => this.pageRefresh()}></i-button>
+                        <i-button icon='md-refresh' title={this.$t('app.gridpage.refresh')} on-click={() => this.pageRefresh()}></i-button>
                     </span>
                     {pageText}
                 </page>

@@ -87,15 +87,15 @@ export class DataViewEngine extends MDViewEngine {
             }
         });
         if (selectedData.length < 5) {
-            dataInfo = dataInfo + '共' + selectedData.length + '条数据';
+            dataInfo = dataInfo + this.view.$t('app.dataView.sum') + selectedData.length + this.view.$t('app.dataView.data');
         } else {
-            dataInfo = dataInfo + '...' + '共' + selectedData.length + '条数据';
+            dataInfo = dataInfo + '...' + this.view.$t('app.dataView.sum') + selectedData.length + this.view.$t('app.dataView.data');
         }
         dataInfo = dataInfo.replace(/[null]/g, '').replace(/[undefined]/g, '').replace(/[ ]/g, '');
         // 询问框
         this.view.$Modal.confirm({
-            title:'警告',
-            content: '确认要删除 ' + dataInfo + '，删除操作将不可恢复？',
+            title:this.view.$t('app.commonWords.warning'),
+            content: this.view.$t('app.gridpage.confirmDel') + dataInfo + '，' + this.view.$t('app.gridpage.notRecoverable'),
             onOk:() => {
                 this.removeData(null);
             },

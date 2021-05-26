@@ -226,14 +226,14 @@ export default class AppClaendarTimeline extends Vue{
      */
     public leftPredefineButton: any[] = [
         {
-            text: '今天',
+            text: this.$t('app.calendar.today'),
             icon: '',
             imgsrc: '',
             tag: 'today',
             disabled: false,
         },
         {
-            text: '跳转',
+            text: this.$t('app.calendar.gotoDate'),
             icon: '',
             imgsrc: '',
             tag: 'jump',
@@ -270,19 +270,19 @@ export default class AppClaendarTimeline extends Vue{
      */
     public rightButton: any[] = [
         {
-            text: '天',
+            text: this.$t('app.calendar.day'),
             icon: '',
             imgsrc: '',
             tag: 'dayview',
         },
         {
-            text: '周',
+            text: this.$t('app.calendar.week'),
             icon: '',
             imgsrc: '',
             tag: 'weekview',
         },
         {
-            text: '月',
+            text: this.$t('app.calendar.month'),
             icon: '',
             imgsrc: '',
             tag: 'monthview',

@@ -26,6 +26,7 @@ function getLocaleResourceBase(){
         },
         appCheckBox: {
             notExist: '代码表不存在',
+            warn: '代码表值类型和属性类型不匹配，自动强制转换异常，请修正代码表值类型和属性类型匹配'
         },
         appColumnLink: {
           error: '错误',
@@ -35,6 +36,9 @@ function getLocaleResourceBase(){
         appColumnRender: {
           select: '请选择...',
           unsupported: '不支持',
+        },
+        microcom: {
+          filterWarn: "filter参数配置错误, 请检查!"
         },
         appDashboardDesign: {
           global: '全局',
@@ -67,6 +71,24 @@ function getLocaleResourceBase(){
           uploadError: '上传失败',
           fileTypeErrorTitle: '文件类型错误',
           fileTypeErrorInfo: '请选择图片类型的文件，如JPEG，GIF，PNG，BMP',
+          downloadError: "图片下载失败！"
+        },
+        camera: {
+          dev: "开发中",
+          choose: "摄像头选择：",
+          left: "左旋转",
+          right: "右旋转",
+          photo: "拍照",
+          save: "保存"
+        },
+        group2: {
+          noreal: "未实现"
+        },
+        part: {
+          error: "加载动态表单模型数据异常"
+        },
+        scren: {
+          all: "应用全屏"
         },
         appFormDRUIPart: {
           blockUITipInfo: '请先保存主数据',
@@ -103,6 +125,7 @@ function getLocaleResourceBase(){
           systemException: '系统异常！',
           valueitemException: '值项异常！',
           formdataException: '表单数据异常！',
+          nosupport: "重定向视图暂未支持"
         },
         appPickerSelectView: {
           error: '错误',
@@ -112,6 +135,7 @@ function getLocaleResourceBase(){
         },
         appPortalDesign: {
           customPortal: '自定义门户',
+          recover: "恢复默认",
           save: '保存',
         },
         appRangDate: {
@@ -129,6 +153,9 @@ function getLocaleResourceBase(){
           configButton: '配置',
           issueTitle: '建立当前界面的issues',
           issueButton: '新建issues',
+          success: "拷贝成功!",
+          copyname: "点击拷贝视图名称",
+          view: "查看"
         },
         appTreePicker: {
           placeholder: '请选择...',
@@ -142,6 +169,7 @@ function getLocaleResourceBase(){
         },
         dropDownList: {
           placeholder: '请选择...',
+          valueError: "下拉列表，值转换失败",
         },
         dropDownListDynamic: {
           placeholder: '请选择...',
@@ -186,6 +214,13 @@ function getLocaleResourceBase(){
               SimHei: '黑体',
               YouYuan: '幼圆',
           },
+          config: "主题配置",
+          customTheme: "自定义主题",
+          color: "主题色",
+          preview: "预览",
+          save: "保存配置",
+          reset: "重置",
+          success: "保存自定义主题成功"
         },
         appFormGroup: {
           hide: '隐藏字段',
@@ -210,7 +245,8 @@ function getLocaleResourceBase(){
           uploadFail:'上传失败'
         },
         appOrgSelect:{
-          loadFail:'加载数据失败'
+          loadFail:'加载数据失败',
+          resetError: "重置应用数据出现异常"
         },
         appTransfer:{
           title1:'未选择',
@@ -225,7 +261,9 @@ function getLocaleResourceBase(){
         },
         contextMenuDrag:{
           allApp:'全部应用',
-          noFind:'未找到该应用'
+          noFind:'未找到该应用',
+          error: "加载数据错误",
+          portlet: "企业门户"
         },
         filterMode:{
           placeholder:'条件逻辑',  
@@ -249,7 +287,8 @@ function getLocaleResourceBase(){
           imgMsg:'将图片拖到这里替换',
           localUpload:'本地上传',
           or:'或',
-          imgMsg1:'从素材库选择'
+          imgMsg1:'从素材库选择',
+          choose: "选择上传文件"
         },
         lockScren:{
           title:'设置锁屏密码',
@@ -262,6 +301,7 @@ function getLocaleResourceBase(){
           prompt:'提示',
           confirmButtonText:'确定',
           cancelButtonText:'取消',
+          lock: "应用锁屏"
         },
         cronEditor: {
           label: {
@@ -331,7 +371,10 @@ function getLocaleResourceBase(){
         },
         appMessagePopover: {
           loadMore: '加载更多',
-          noMore: '没有更多了'
+          noMore: '没有更多了',
+          error: "加载数据错误",
+          getError: "未获取到标签内容",
+          errorReturn: "事件触发源无值，强制返回"
         },
         diskFileUpload:{
           fileDrag: '将文件拖到此处，或',
@@ -378,7 +421,9 @@ function getLocaleResourceBase(){
         },
         appMapPosition: {
           submit: '确认',
-          title: '请选择地址'
+          title: '请选择地址',
+          address: "四川省成都市成华区猛追湾街道四川电视塔天府熊猫塔",
+          city: "成都"
         },
         appSortBar: {
           title: '排序'
@@ -389,6 +434,40 @@ function getLocaleResourceBase(){
           dayAgo: '天前',
           monthsAgo: '月前',
           yearsAgo: '年前'
+        },
+        timeline: {
+          index: "序号",
+          node: "节点",
+          author: "办理人员",
+          type: "操作",
+          lastTime: "完成时间",
+          opinion: "审批意见"
+        },
+        content: {
+          title: "「打开/关闭」底部分页 [ctrl + `]",
+          open: "展开菜单",
+          close: "收起菜单"
+        },
+        richtext: {
+          content: "请输入模板内容",
+          title: "请输入模板标题",
+          save: "保存模板",
+          pub: "公开的",
+          pri: "私人的",
+          apply: "应用模板",
+          success: "保存模板成功!!!",
+          error: "保存模板失败!!!",
+          delSuccess: "删除模板成功!!!",
+          delError: "删除模板失败!!!"
+        },
+        search: {
+          holder: "搜索内容"
+        },
+        drawer: {
+          back: "返回",
+          confirm: "确认关闭所有界面?",
+          close: "关闭所有视图",
+          toperror: "上飘窗打开视图参数转换异常"
         }
     };
     return data;

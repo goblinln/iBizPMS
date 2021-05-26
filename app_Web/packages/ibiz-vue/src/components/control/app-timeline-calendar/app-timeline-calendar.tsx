@@ -140,7 +140,7 @@ export class AppTimeLineCalendar extends CalendarControlBase {
         } else {
             return (
                 <div>
-                    <span class="app-data-empty">暂无数据</span>
+                    <span class="app-data-empty">{this.$t('app.commonWords.noData')}</span>
                     <span class="quick-toobar">
                         {this.renderQuickToolbar()}
                     </span>

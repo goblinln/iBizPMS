@@ -22,7 +22,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['actor',];
     protected selectContextParam = {
-        testreport: 'objectid',
     };
 
     newEntity(data: IIBZTestReportAction): IBZTestReportAction {
@@ -39,13 +38,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
 
     async getLocal(context: IContext, srfKey: string): Promise<IIBZTestReportAction> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.objectid && entity.objectid !== '') {
-            const s = await ___ibz___.gs.getTestReportService();
-            const data = await s.getLocal2(context, entity.objectid);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -54,13 +46,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
     }
 
     async getDraftLocal(_context: IContext, entity: IIBZTestReportAction = {}): Promise<IIBZTestReportAction> {
-        if (_context.testreport && _context.testreport !== '') {
-            const s = await ___ibz___.gs.getTestReportService();
-            const data = await s.getLocal2(_context, _context.testreport);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return new IBZTestReportAction(entity);
     }
 
@@ -89,15 +74,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testreport && _context.ibztestreportaction) {
-            return this.http.get(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/select`);
-        }
-        if (_context.product && _context.testreport && _context.ibztestreportaction) {
-            return this.http.get(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/select`);
-        }
-        if (_context.testreport && _context.ibztestreportaction) {
-            return this.http.get(`/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/select`);
-        }
         return this.http.get(`/ibztestreportactions/${_context.ibztestreportaction}/select`);
     }
     /**
@@ -109,36 +85,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testreport && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions`, _data);
-        }
-        if (_context.product && _context.testreport && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions`, _data);
-        }
-        if (_context.testreport && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/testreports/${_context.testreport}/ibztestreportactions`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -157,18 +103,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}`, _data);
-        }
-        if (_context.product && _context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}`, _data);
-        }
-        if (_context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/ibztestreportactions/${_context.ibztestreportaction}`, _data);
     }
@@ -181,15 +115,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testreport && _context.ibztestreportaction) {
-            return this.http.delete(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}`);
-        }
-        if (_context.product && _context.testreport && _context.ibztestreportaction) {
-            return this.http.delete(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}`);
-        }
-        if (_context.testreport && _context.ibztestreportaction) {
-            return this.http.delete(`/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}`);
-        }
         return this.http.delete(`/ibztestreportactions/${_context.ibztestreportaction}`);
     }
     /**
@@ -201,18 +126,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testreport && _context.ibztestreportaction) {
-            const res = await this.http.get(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}`);
-            return res;
-        }
-        if (_context.product && _context.testreport && _context.ibztestreportaction) {
-            const res = await this.http.get(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}`);
-            return res;
-        }
-        if (_context.testreport && _context.ibztestreportaction) {
-            const res = await this.http.get(`/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}`);
-            return res;
-        }
         const res = await this.http.get(`/ibztestreportactions/${_context.ibztestreportaction}`);
         return res;
     }
@@ -225,24 +138,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testreport && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && _context.testreport && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/getdraft`, _data);
-            return res;
-        }
-        if (_context.testreport && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/testreports/${_context.testreport}/ibztestreportactions/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibztestreportactions/getdraft`, _data);
@@ -257,18 +152,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionService
      */
     async Comment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/comment`, _data);
-        }
-        if (_context.product && _context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/comment`, _data);
-        }
-        if (_context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/comment`, _data);
-        }
         return this.http.post(`/ibztestreportactions/${_context.ibztestreportaction}/comment`, _data);
     }
     /**
@@ -280,18 +163,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionService
      */
     async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/createhis`, _data);
-        }
-        if (_context.product && _context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/createhis`, _data);
-        }
-        if (_context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/createhis`, _data);
-        }
         return this.http.post(`/ibztestreportactions/${_context.ibztestreportaction}/createhis`, _data);
     }
     /**
@@ -303,18 +174,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionService
      */
     async EditComment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/editcomment`, _data);
-        }
-        if (_context.product && _context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/editcomment`, _data);
-        }
-        if (_context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/editcomment`, _data);
-        }
         return this.http.post(`/ibztestreportactions/${_context.ibztestreportaction}/editcomment`, _data);
     }
     /**
@@ -326,18 +185,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionService
      */
     async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/managepmsee`, _data);
-        }
-        if (_context.product && _context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/managepmsee`, _data);
-        }
-        if (_context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/managepmsee`, _data);
-        }
         return this.http.post(`/ibztestreportactions/${_context.ibztestreportaction}/managepmsee`, _data);
     }
     /**
@@ -349,18 +196,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionService
      */
     async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/sendmarkdone`, _data);
-        }
-        if (_context.product && _context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/sendmarkdone`, _data);
-        }
-        if (_context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/sendmarkdone`, _data);
-        }
         return this.http.post(`/ibztestreportactions/${_context.ibztestreportaction}/sendmarkdone`, _data);
     }
     /**
@@ -372,18 +207,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionService
      */
     async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/sendtodo`, _data);
-        }
-        if (_context.product && _context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/sendtodo`, _data);
-        }
-        if (_context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/sendtodo`, _data);
-        }
         return this.http.post(`/ibztestreportactions/${_context.ibztestreportaction}/sendtodo`, _data);
     }
     /**
@@ -395,18 +218,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionService
      */
     async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/sendtoread`, _data);
-        }
-        if (_context.product && _context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/sendtoread`, _data);
-        }
-        if (_context.testreport && _context.ibztestreportaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testreports/${_context.testreport}/ibztestreportactions/${_context.ibztestreportaction}/sendtoread`, _data);
-        }
         return this.http.post(`/ibztestreportactions/${_context.ibztestreportaction}/sendtoread`, _data);
     }
     /**
@@ -418,15 +229,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testreport && true) {
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/fetchdefault`, _data);
-        }
-        if (_context.product && _context.testreport && true) {
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/fetchdefault`, _data);
-        }
-        if (_context.testreport && true) {
-            return this.http.post(`/testreports/${_context.testreport}/ibztestreportactions/fetchdefault`, _data);
-        }
         return this.http.post(`/ibztestreportactions/fetchdefault`, _data);
     }
     /**
@@ -438,15 +240,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testreport && true) {
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/fetchtype`, _data);
-        }
-        if (_context.product && _context.testreport && true) {
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/fetchtype`, _data);
-        }
-        if (_context.testreport && true) {
-            return this.http.post(`/testreports/${_context.testreport}/ibztestreportactions/fetchtype`, _data);
-        }
         return this.http.post(`/ibztestreportactions/fetchtype`, _data);
     }
 
@@ -460,18 +253,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionServiceBase
      */
     public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/createhisbatch`,_data);
-        }
-        if(_context.product && _context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/createhisbatch`,_data);
-        }
-        if(_context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testreports/${_context.testreport}/ibztestreportactions/createhisbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibztestreportactions/createhisbatch`,_data);
     }
@@ -486,18 +267,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionServiceBase
      */
     public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/editcommentbatch`,_data);
-        }
-        if(_context.product && _context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/editcommentbatch`,_data);
-        }
-        if(_context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testreports/${_context.testreport}/ibztestreportactions/editcommentbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibztestreportactions/editcommentbatch`,_data);
     }
@@ -512,18 +281,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionServiceBase
      */
     public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/managepmseebatch`,_data);
-        }
-        if(_context.product && _context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/managepmseebatch`,_data);
-        }
-        if(_context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testreports/${_context.testreport}/ibztestreportactions/managepmseebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibztestreportactions/managepmseebatch`,_data);
     }
@@ -538,18 +295,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionServiceBase
      */
     public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/sendmarkdonebatch`,_data);
-        }
-        if(_context.product && _context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/sendmarkdonebatch`,_data);
-        }
-        if(_context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testreports/${_context.testreport}/ibztestreportactions/sendmarkdonebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibztestreportactions/sendmarkdonebatch`,_data);
     }
@@ -564,18 +309,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionServiceBase
      */
     public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/sendtodobatch`,_data);
-        }
-        if(_context.product && _context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/sendtodobatch`,_data);
-        }
-        if(_context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testreports/${_context.testreport}/ibztestreportactions/sendtodobatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibztestreportactions/sendtodobatch`,_data);
     }
@@ -590,18 +323,6 @@ export class IBZTestReportActionBaseService extends EntityBaseService<IIBZTestRe
      * @memberof IBZTestReportActionServiceBase
      */
     public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && _context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/ibztestreportactions/sendtoreadbatch`,_data);
-        }
-        if(_context.product && _context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/ibztestreportactions/sendtoreadbatch`,_data);
-        }
-        if(_context.testreport && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testreports/${_context.testreport}/ibztestreportactions/sendtoreadbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibztestreportactions/sendtoreadbatch`,_data);
     }

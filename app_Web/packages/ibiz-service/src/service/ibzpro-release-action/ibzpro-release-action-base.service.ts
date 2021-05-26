@@ -22,7 +22,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['actor',];
     protected selectContextParam = {
-        release: 'objectid',
     };
 
     newEntity(data: IIBZProReleaseAction): IBZProReleaseAction {
@@ -39,13 +38,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
 
     async getLocal(context: IContext, srfKey: string): Promise<IIBZProReleaseAction> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.objectid && entity.objectid !== '') {
-            const s = await ___ibz___.gs.getReleaseService();
-            const data = await s.getLocal2(context, entity.objectid);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -54,13 +46,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
     }
 
     async getDraftLocal(_context: IContext, entity: IIBZProReleaseAction = {}): Promise<IIBZProReleaseAction> {
-        if (_context.release && _context.release !== '') {
-            const s = await ___ibz___.gs.getReleaseService();
-            const data = await s.getLocal2(_context, _context.release);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return new IBZProReleaseAction(entity);
     }
 
@@ -89,12 +74,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release && _context.ibzproreleaseaction) {
-            return this.http.get(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}/select`);
-        }
-        if (_context.release && _context.ibzproreleaseaction) {
-            return this.http.get(`/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}/select`);
-        }
         return this.http.get(`/ibzproreleaseactions/${_context.ibzproreleaseaction}/select`);
     }
     /**
@@ -106,26 +85,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions`, _data);
-        }
-        if (_context.release && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/releases/${_context.release}/ibzproreleaseactions`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -144,14 +103,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release && _context.ibzproreleaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}`, _data);
-        }
-        if (_context.release && _context.ibzproreleaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/ibzproreleaseactions/${_context.ibzproreleaseaction}`, _data);
     }
@@ -164,12 +115,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release && _context.ibzproreleaseaction) {
-            return this.http.delete(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}`);
-        }
-        if (_context.release && _context.ibzproreleaseaction) {
-            return this.http.delete(`/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}`);
-        }
         return this.http.delete(`/ibzproreleaseactions/${_context.ibzproreleaseaction}`);
     }
     /**
@@ -181,14 +126,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release && _context.ibzproreleaseaction) {
-            const res = await this.http.get(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}`);
-            return res;
-        }
-        if (_context.release && _context.ibzproreleaseaction) {
-            const res = await this.http.get(`/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}`);
-            return res;
-        }
         const res = await this.http.get(`/ibzproreleaseactions/${_context.ibzproreleaseaction}`);
         return res;
     }
@@ -201,18 +138,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/getdraft`, _data);
-            return res;
-        }
-        if (_context.release && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/releases/${_context.release}/ibzproreleaseactions/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzproreleaseactions/getdraft`, _data);
@@ -227,14 +152,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionService
      */
     async Comment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release && _context.ibzproreleaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}/comment`, _data);
-        }
-        if (_context.release && _context.ibzproreleaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}/comment`, _data);
-        }
         return this.http.post(`/ibzproreleaseactions/${_context.ibzproreleaseaction}/comment`, _data);
     }
     /**
@@ -246,14 +163,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionService
      */
     async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release && _context.ibzproreleaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}/createhis`, _data);
-        }
-        if (_context.release && _context.ibzproreleaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}/createhis`, _data);
-        }
         return this.http.post(`/ibzproreleaseactions/${_context.ibzproreleaseaction}/createhis`, _data);
     }
     /**
@@ -265,14 +174,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionService
      */
     async EditComment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release && _context.ibzproreleaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}/editcomment`, _data);
-        }
-        if (_context.release && _context.ibzproreleaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}/editcomment`, _data);
-        }
         return this.http.post(`/ibzproreleaseactions/${_context.ibzproreleaseaction}/editcomment`, _data);
     }
     /**
@@ -284,14 +185,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionService
      */
     async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release && _context.ibzproreleaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}/managepmsee`, _data);
-        }
-        if (_context.release && _context.ibzproreleaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}/managepmsee`, _data);
-        }
         return this.http.post(`/ibzproreleaseactions/${_context.ibzproreleaseaction}/managepmsee`, _data);
     }
     /**
@@ -303,14 +196,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionService
      */
     async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release && _context.ibzproreleaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}/sendmarkdone`, _data);
-        }
-        if (_context.release && _context.ibzproreleaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}/sendmarkdone`, _data);
-        }
         return this.http.post(`/ibzproreleaseactions/${_context.ibzproreleaseaction}/sendmarkdone`, _data);
     }
     /**
@@ -322,14 +207,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionService
      */
     async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release && _context.ibzproreleaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}/sendtodo`, _data);
-        }
-        if (_context.release && _context.ibzproreleaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}/sendtodo`, _data);
-        }
         return this.http.post(`/ibzproreleaseactions/${_context.ibzproreleaseaction}/sendtodo`, _data);
     }
     /**
@@ -341,14 +218,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionService
      */
     async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release && _context.ibzproreleaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}/sendtoread`, _data);
-        }
-        if (_context.release && _context.ibzproreleaseaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/releases/${_context.release}/ibzproreleaseactions/${_context.ibzproreleaseaction}/sendtoread`, _data);
-        }
         return this.http.post(`/ibzproreleaseactions/${_context.ibzproreleaseaction}/sendtoread`, _data);
     }
     /**
@@ -360,12 +229,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release && true) {
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/fetchdefault`, _data);
-        }
-        if (_context.release && true) {
-            return this.http.post(`/releases/${_context.release}/ibzproreleaseactions/fetchdefault`, _data);
-        }
         return this.http.post(`/ibzproreleaseactions/fetchdefault`, _data);
     }
     /**
@@ -377,12 +240,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release && true) {
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/fetchtype`, _data);
-        }
-        if (_context.release && true) {
-            return this.http.post(`/releases/${_context.release}/ibzproreleaseactions/fetchtype`, _data);
-        }
         return this.http.post(`/ibzproreleaseactions/fetchtype`, _data);
     }
 
@@ -396,14 +253,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionServiceBase
      */
     public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.release && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/createhisbatch`,_data);
-        }
-        if(_context.release && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/releases/${_context.release}/ibzproreleaseactions/createhisbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproreleaseactions/createhisbatch`,_data);
     }
@@ -418,14 +267,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionServiceBase
      */
     public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.release && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/editcommentbatch`,_data);
-        }
-        if(_context.release && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/releases/${_context.release}/ibzproreleaseactions/editcommentbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproreleaseactions/editcommentbatch`,_data);
     }
@@ -440,14 +281,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionServiceBase
      */
     public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.release && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/managepmseebatch`,_data);
-        }
-        if(_context.release && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/releases/${_context.release}/ibzproreleaseactions/managepmseebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproreleaseactions/managepmseebatch`,_data);
     }
@@ -462,14 +295,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionServiceBase
      */
     public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.release && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/sendmarkdonebatch`,_data);
-        }
-        if(_context.release && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/releases/${_context.release}/ibzproreleaseactions/sendmarkdonebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproreleaseactions/sendmarkdonebatch`,_data);
     }
@@ -484,14 +309,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionServiceBase
      */
     public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.release && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/sendtodobatch`,_data);
-        }
-        if(_context.release && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/releases/${_context.release}/ibzproreleaseactions/sendtodobatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproreleaseactions/sendtodobatch`,_data);
     }
@@ -506,14 +323,6 @@ export class IBZProReleaseActionBaseService extends EntityBaseService<IIBZProRel
      * @memberof IBZProReleaseActionServiceBase
      */
     public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.release && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/ibzproreleaseactions/sendtoreadbatch`,_data);
-        }
-        if(_context.release && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/releases/${_context.release}/ibzproreleaseactions/sendtoreadbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproreleaseactions/sendtoreadbatch`,_data);
     }

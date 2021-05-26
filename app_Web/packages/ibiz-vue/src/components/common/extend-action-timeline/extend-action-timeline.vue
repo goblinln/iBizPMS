@@ -5,12 +5,12 @@
       <div class="action-timeline-body" v-if="data && data.usertasks">
         <div class="timeline-draw timeline timeline-head">
           <div class="timeline-wrapper">
-            <div class="timeline-index">序号</div>
-            <div class="usertaskname">节点</div>
-            <div class="authorname">办理人员</div>
-            <div class="type">操作</div>
-            <div class="last-time">完成时间</div>
-            <div class="fullmessage">审批意见</div>
+            <div class="timeline-index">{{$t('app.components.timeline.index')}}</div>
+            <div class="usertaskname">{{$t('app.components.timeline.node')}}</div>
+            <div class="authorname">{{$t('app.components.timeline.author')}}</div>
+            <div class="type">{{$t('app.components.timeline.type')}}</div>
+            <div class="last-time">{{$t('app.components.timeline.lastTime')}}</div>
+            <div class="fullmessage">{{$t('app.components.timeline.opinion')}}</div>
           </div>
           <div class="arrow"></div>
         </div>

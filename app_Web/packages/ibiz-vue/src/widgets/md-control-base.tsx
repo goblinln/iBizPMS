@@ -361,7 +361,7 @@ export class MDControlBase extends MainControlBase {
     public renderLoadDataTip(){
         return <div class="empty-data-tip">
             <img class="tip-img" src="./assets/img/load-data.svg" />
-            <span class="tip-text">正在加载数据</span>
+            <span class="tip-text">{this.$t('app.warn.load')}</span>
         </div>
     }
 
@@ -374,7 +374,7 @@ export class MDControlBase extends MainControlBase {
     public renderEmptyDataTip(){
         return <div class="empty-data-tip">
             <img class="tip-img" src="./assets/img/empty-data.svg" />
-            <span class="tip-text">未找到相关数据</span>
+            <span class="tip-text">{this.$t('app.warn.nofind')}</span>
             {this.renderQuickToolbar()}
         </div>
     }

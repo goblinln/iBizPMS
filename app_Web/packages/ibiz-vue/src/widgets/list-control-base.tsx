@@ -275,7 +275,7 @@ export class ListControlBase extends MDControlBase {
      */
     public load(opt: any = {}): void {
         if (!this.fetchAction) {
-            this.$throw('视图列表fetchAction参数未配置','load');
+            this.$throw(this.$t('app.list.notConfig.fetchAction'),'load');
             return;
         }
         const arg: any = { ...opt };
@@ -447,7 +447,7 @@ export class ListControlBase extends MDControlBase {
      */
     public async remove(items: any[]): Promise<any> {
         if (!this.removeAction) {
-            this.$throw(`${this.name}列表removeAction参数未配置`,'remove');
+            this.$throw(`${this.name}${this.$t('app.list.notConfig.removeAction')}`,'remove');
             return;
         }
         if (items.length === 0) {
@@ -467,9 +467,9 @@ export class ListControlBase extends MDControlBase {
         });
 
         if (items.length < 5) {
-            dataInfo = dataInfo + ' 共' + items.length + '条数据';
+            dataInfo = dataInfo + this.$t('app.dataView.sum') + items.length + this.$t('app.dataView.data');
         } else {
-            dataInfo = dataInfo + '...' + ' 共' + items.length + '条数据';
+            dataInfo = dataInfo + '...' + this.$t('app.dataView.sum') + items.length + this.$t('app.dataView.data');
         }
         const removeData = () => {
             let keys: any[] = [];
@@ -489,10 +489,10 @@ export class ListControlBase extends MDControlBase {
                 post.then((response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        this.$throw('删除数据失败,' + response.info,'remove');
+                        this.$throw(this.$t('app.commonWords.delDataFail') + response.info,'remove');
                         return;
                     } else {
-                        this.$success('删除成功!','remove');
+                        this.$success(this.$t('app.commonWords.deleteSuccess'),'remove');
                     }
                     //删除items中已删除的项
                     items.forEach((data: any) => {
@@ -523,8 +523,8 @@ export class ListControlBase extends MDControlBase {
             .replace(/[undefined]/g, '')
             .replace(/[ ]/g, '');
         this.$Modal.confirm({
-            title: '警告',
-            content: '确认要删除 ' + dataInfo + '，删除操作将不可恢复？',
+            title: this.$t('app.commonWords.warning'),
+            content: this.$t('app.gridpage.confirmDel') + dataInfo + this.$t('app.gridpage.notRecoverable'),
             onOk: () => {
                 removeData();
             },

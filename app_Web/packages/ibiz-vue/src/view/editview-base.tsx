@@ -186,12 +186,12 @@ export class EditViewBase extends MainViewBase {
      public readTask(data: any) {
         this.appEntityService.ReadTask(this.context, data).then((response:any) =>{
             if (!response || response.status !== 200) {
-                LogUtil.warn("将抄送任务标记为已读失败");
+                LogUtil.warn(this.$t('app.editor.error'));
                 return;
             }
             AppCenterService.notifyMessage({ name: this.appDeCodeName, action: 'appRefresh', data: data });
         }).catch((error: any) => {
-            LogUtil.warn("将抄送任务标记为已读失败");
+            LogUtil.warn(this.$t('app.editor.error'));
         })
     }
     

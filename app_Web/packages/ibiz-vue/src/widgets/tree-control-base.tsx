@@ -686,7 +686,7 @@ export class TreeControlBase extends MDControlBase {
                 ViewTool.calcTreeActionItemAuthState(targetData.data, this.copyActionModel, nodeUIService);
                 return this.copyActionModel;
             } else {
-                LogUtil.warn('获取数据异常');
+                LogUtil.warn(this.$t('app.warn.geterror'));
                 return this.copyActionModel;
             }
         }

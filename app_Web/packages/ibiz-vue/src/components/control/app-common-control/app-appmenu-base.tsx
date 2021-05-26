@@ -192,7 +192,7 @@ export class AppmenuBase extends AppMenuControlBase {
                 this.$forceUpdate();
             }
         } else {
-            LogUtil.warn('未指定应用功能');
+            LogUtil.warn(this.$t('app.commonWords.noassign'));
         }
     }
 
@@ -435,7 +435,7 @@ export class AppmenuBase extends AppMenuControlBase {
                     <i-input
                         search={true}
                         class="index-search"
-                        placeholder="搜索内容"
+                        placeholder={this.$t('app.components.search.holder')}
                         on-on-search={(value: any) => { this.onSearch(value); }}>
                     </i-input>
                     <div style={{ height: '100%' }}>
@@ -452,7 +452,7 @@ export class AppmenuBase extends AppMenuControlBase {
                     <i-input
                         search={true}
                         class="index-search"
-                        placeholder="搜索内容"
+                        placeholder={this.$t('app.components.search.holder')}
                         on-on-search={(value: any) => { this.onSearch(value); }}>
                     </i-input>
                     <div style={{ height: '100%' }}>

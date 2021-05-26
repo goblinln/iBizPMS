@@ -584,8 +584,8 @@ export class AppSearchFormBase extends SearchFormControlBase {
                                     <div slot="content">
                                         <i-input v-model={this.saveItemName} placeholder=""></i-input>
                                         <div class="save-action">
-                                            <i-button on-click={this.onCancel.bind(this)}>取消</i-button>
-                                            <i-button type="primary" on-click={this.onOk.bind(this)}>保存</i-button>
+                                            <i-button on-click={this.onCancel.bind(this)}>{this.$t('app.commonWords.cancel')}</i-button>
+                                            <i-button type="primary" on-click={this.onOk.bind(this)}>{this.$t('app.commonWords.save')}</i-button>
                                         </div>
                                     </div>
                             </poptip>

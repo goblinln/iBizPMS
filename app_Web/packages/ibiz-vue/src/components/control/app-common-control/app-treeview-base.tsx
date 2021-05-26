@@ -202,7 +202,7 @@ export class AppTreeViewBase extends TreeControlBase {
                         on-check={this.onCheck.bind(this)}
                         on-current-change={this.selectionChange.bind(this)}
                         filter-node-method={this.filterNode.bind(this)}
-                        empty-text='没有数据'
+                        empty-text={this.$t('app.commonWords.noData')}
                         scopedSlots={{
                             default: this.renderNode.bind(this)
                         }}

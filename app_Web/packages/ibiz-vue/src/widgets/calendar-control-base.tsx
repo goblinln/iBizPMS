@@ -121,11 +121,11 @@ export class CalendarControlBase extends MDControlBase{
      * @memberof CalendarControlBase
      */
     public buttonText: any = {
-        today: '今天',
-        month: '月',
-        week: '周',
-        day: '天',
-        list: '列'
+        today: this.$t('app.calendar.today'),
+        month: this.$t('app.calendar.month'),
+        week: this.$t('app.calendar.week'),
+        day: this.$t('app.calendar.day'),
+        list: this.$t('app.calendar.list'),
     };
 
     /**
@@ -137,7 +137,7 @@ export class CalendarControlBase extends MDControlBase{
      */
     public customButtons: any = {
         gotoDate: {
-          text: "跳转",
+          text: this.$t('app.calendar.gotoDate'),
           click: this.openDateSelect
         }
     };
@@ -795,7 +795,7 @@ export class CalendarControlBase extends MDControlBase{
                 ViewTool.calcTreeActionItemAuthState(targetData.data,this.copyActionModel,this.appUIService);
                 return this.copyActionModel;
             }else{
-                LogUtil.warn("获取数据异常");
+                LogUtil.warn(this.$t('app.warn.geterror'));
                 return this.copyActionModel;
             }
         }

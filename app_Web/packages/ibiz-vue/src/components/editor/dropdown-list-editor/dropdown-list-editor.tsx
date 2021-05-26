@@ -58,7 +58,7 @@ export default class DropdownListEditor extends EditorBase {
         const { placeHolder} = this.editorInstance;
         let appDEField: IPSAppDEField = this.parentItem?.getPSAppDEField?.();
         this.customProps.valueType = ModelTool.isNumberField(appDEField) ? 'number' : 'string';
-        this.customProps.placeholder = placeHolder|| '请选择...';
+        this.customProps.placeholder = placeHolder|| this.$t('app.components.dropDownList.placeholder');
         switch (this.editorInstance?.editorType) {
             // 下拉列表框
             case 'DROPDOWNLIST':

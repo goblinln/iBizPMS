@@ -589,7 +589,7 @@ export default class AppFileUpload extends Vue {
             responseType: 'blob'
         }).then((response: any) => {
             if (!response || response.status != 200) {
-                console.error("图片下载失败！");
+                this.$throw(this.$t('app.components.appFileUpload.downloadError'));
                 return;
             }
             // 请求成功，后台返回的是一个文件流
@@ -616,7 +616,7 @@ export default class AppFileUpload extends Vue {
                 // 释放blob对象
                 URL.revokeObjectURL(href);
             } else {
-                console.error("图片下载失败！");
+                this.$throw(this.$t('app.components.appFileUpload.downloadError'));
             }
         }).catch((error: any) => {
             console.error(error);

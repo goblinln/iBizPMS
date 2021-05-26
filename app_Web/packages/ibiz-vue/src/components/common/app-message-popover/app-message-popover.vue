@@ -153,7 +153,7 @@ export default class AppMessagePopover extends Vue {
                 this.getMyMsgs();
             }
         }).catch((error: any) => {
-            LogUtil.warn("加载数据错误");
+            LogUtil.warn(this.$t('app.components.appMessagePopover.error'));
         })
     }
 
@@ -173,7 +173,7 @@ export default class AppMessagePopover extends Vue {
      * 点击标签事件
      */
     public handleTag(data: any) {
-        if (!data)  return this.$throw("未获取到标签内容",'handleTag');
+        if (!data)  return this.$throw(this.$t('app.components.appMessagePopover.getError'),'handleTag');
         // 拼接要打开的窗口地址
         const baseUrl:any = this.environment.BaseUrl;
         const openUrl:any = baseUrl + `/wfcore/mytasks/${data.processDefinitionKey}/web/${data.processInstanceBusinessKey}/usertasks/${data.taskDefinitionKey}`;

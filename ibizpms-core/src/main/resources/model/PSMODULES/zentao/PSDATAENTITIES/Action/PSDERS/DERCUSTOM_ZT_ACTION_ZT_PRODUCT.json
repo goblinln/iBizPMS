@@ -20,5 +20,6 @@
     "codeName" : "ObjectID"
   },
   "removeActionType" : 0,
-  "removeOrder" : -1
+  "removeOrder" : -1,
+  "typeValue" : "product"
 }

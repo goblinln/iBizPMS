@@ -425,7 +425,7 @@ export default class AppPicker extends Vue {
         }
         Object.assign(_param, { query: query, size: 1000 });
         // 错误信息国际化
-        let error: string = '错误';
+        // let error: string = '错误';
         // let miss: string = (this.$t('components.appPicker.miss') as any);
         // let requestException: string = (this.$t('components.appPicker.requestException') as any);
         if(!this.service){
@@ -642,7 +642,7 @@ export default class AppPicker extends Vue {
      * @memberof AppPicker
      */
     private openRedirectView($event: any, view: any, data: any): void {
-        LogUtil.warn("重定向视图暂未支持");
+        LogUtil.warn(this.$t('components.appPicker.nosupport'));
     }
 
     /**

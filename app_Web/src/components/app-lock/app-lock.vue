@@ -3,7 +3,7 @@
     <div class="lock-form animated bounceInDown">
       <div class="animated">
         <h3 class="title">{{username}}</h3>
-        <el-input :placeholder="this.$t('components.lockScren.placeholder1')"
+        <el-input :placeholder="$t('components.lockScren.placeholder1')"
                   type="password"
                   class="input-with-select animated"
                   v-model="passwd">

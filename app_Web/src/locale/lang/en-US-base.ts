@@ -136,7 +136,7 @@ import commonLogic from '@/locale/logic/common/common-logic';
 
 function getAppLocale(){
     const data:any = {
-        app: {
+         app: {
             commonWords:{
                 error: "Error",
                 success: "Success",
@@ -158,7 +158,13 @@ function getAppLocale(){
                 startsuccess:"Start successful",
                 loadmore:"Load more",
                 nomore:"No more",
-                other:"other"
+                other:"other",
+                nosupportSingle: "Single item data is not supported",
+                nosupportMultile: "Multiple data is not supported",
+                getAppidError: "Failed to get web application appid",
+                getDingInfoError: "Failed to retrieve user information",
+                getIDError: "Failed to get the enterprise ID",
+                noassign: "No application functionality specified"
             },
             local:{
                 new: "New",
@@ -350,10 +356,14 @@ function getAppLocale(){
                 handleClick: {
                     title: "Panel design",
                 },
+                dataError: "Data Exception",
+                serviceError: "Server exception",
+                loadError: "Error loading panel model"
             },
             dataView: {
                 sum: "total",
                 data: "data",
+                useless: "Packet data invalid"
             },
             chart: {
                 undefined: "Undefined",
@@ -372,7 +382,10 @@ function getAppLocale(){
                 back: "Back",
                 next: "Next",
                 complete: "Complete",
-                preactionmessage:"The calculation of the previous behavior is not configured"
+                preactionmessage:"The calculation of the previous behavior is not configured",
+                nofind: "Process function action view not found",
+                success: "Submitted data successfully",
+                error: "Mark the backlog task as read failed"
             },
             viewLayoutPanel: {
                 appLogoutView: {
@@ -391,6 +404,37 @@ function getAppLocale(){
                     password: "Password",
                     login: "Login",
                 },
+            },
+            editor: {
+              noexist: "Editor instance does not exist!",
+              nooutput: "The base class does not output",
+              unsupport: "The editor type is not currently supported",
+              nofind: "The destination editor could not be found",
+              error: "Mark the cc task as read failed"
+            },
+            button: {
+              leftbtn: "left shift",
+              rightbtn: "right shift",
+              allleftbtn: "All left",
+              allrightbtn: "All the moves to the right",
+            },
+            nosupport: {
+              nosupport: "This component is not currently supported",
+              layout: "This layout pattern is not currently supported",
+              unopen: "This mode is not supported to open",
+              unassign: "The relational view is not specified",
+            },
+            warn: {
+              nton: "Batch add need to add N:N relation",
+              batchError: "The batch operation failed" ,
+              unbatchAdd: "Only batch additions are supported unimplemented",
+              geterror: "Data acquisition exception",
+              load: "Loading data",
+              nofind: "No relevant data could be found",
+              unopendata: "There is no opendata",
+              unnewdata: "There is no newdata",
+              unremove: "Don't remove",
+              unrefresh: "There is no refresh"
             },
         },
         entities: {

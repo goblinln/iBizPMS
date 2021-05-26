@@ -17,7 +17,7 @@
 
 
     <!--输出实体[ZT_ACTION]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_action-71-2">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_action-75-2">
         <createTable tableName="zt_action">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -51,6 +51,12 @@
                 <column name="PROJECT" remarks="" type="BIGINT">
                 </column>
                 <column name="ACTIONSN" remarks="" type="BIGINT">
+                </column>
+                <column name="CREATEMAN" remarks="" type="VARCHAR(60)">
+                </column>
+                <column name="UPDATEDATE" remarks="" type="DATETIME">
+                </column>
+                <column name="UPDATEMAN" remarks="" type="VARCHAR(60)">
                 </column>
         </createTable>
     </changeSet>
@@ -3724,7 +3730,7 @@
         <!--输出实体[ZT_NOTIFY]外键关系 -->
         <!--输出实体[IBZ_PRODUCTTEAM]外键关系 -->
         <!--输出实体[ZT_PRODUCT]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-zt_product-387-183">
+    <changeSet author="a_A_23e8aa361" id="fk-zt_product-388-183">
        <addForeignKeyConstraint baseColumnNames="LINE" baseTableName="zt_product" constraintName="DER1N_ZT_PRODUCT_IBZPRO_PRODUC" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_module" validate="true"/>
     </changeSet>
         <!--输出实体[IBZ_PRODUCTLIFE]外键关系 -->

@@ -1,19 +1,19 @@
 <template>
     <div class="app-custom-theme" @click="showDrawer = true">
-        <span ><icon class='app-theme-icon' title="主题配置" type='md-settings' :size="15" /></span>
+        <span ><icon class='app-theme-icon' :title="$t('app.components.appTheme.config')" type='md-settings' :size="15" /></span>
         <span class="title">
-            主题配置
+            {{$t('app.components.appTheme.config')}}
         </span>
         <el-drawer
             append-to-body
-            title="自定义主题"
+            :title="$t('app.components.appTheme.customTheme')"
             :show-close="true"
             :visible.sync="showDrawer"
             :with-header="false"
             custom-class="app-custom-theme-drawaer"
             @open="drawerOpen">
             <div class="theme-color">
-                <h3>主题色</h3>
+                <h3>{{$t('app.components.appTheme.color')}}</h3>
                 <span 
                     v-for="(theme, index) in defaultThemes" 
                     :key="index" 
@@ -34,7 +34,7 @@
                             <div v-if="type.items && type.items.length > 0" :class="{ 'setting': true, [`${type.value}-setting`]: true }">
                                 <template v-if="type.value == 'app'">
                                     <div class="font-family setting-item">
-                                        字体
+                                        {{$t('app.components.appTheme.caption.font')}}
                                         <el-select v-model="selectFont" size="small">
                                             <el-option v-for="font in fontsFamily" :key="font.value" :label="$t(`components.appTheme.fontFamilys.${font.label}`)" :value="font.value">
                                                 {{$t(`components.appTheme.fontFamilys.${font.label}`)}}
@@ -54,9 +54,9 @@
                 </el-tabs>
             </div>
             <div class="split"></div>
-            <el-button type="primary" size="small" @click="previewTheme">预览</el-button>
-            <el-button type="primary" size="small" @click="saveThemeOptions">保存配置</el-button>
-            <el-button type="primary" size="small" @click="reset">重置</el-button>
+            <el-button type="primary" size="small" @click="previewTheme">{{$t('app.components.appTheme.preview')}}</el-button>
+            <el-button type="primary" size="small" @click="saveThemeOptions">{{$t('app.components.appTheme.save')}}</el-button>
+            <el-button type="primary" size="small" @click="reset">{{$t('app.components.appTheme.reset')}}</el-button>
         </el-drawer>
         
     </div>
@@ -359,7 +359,7 @@ export default class AppCustomTheme extends Vue {
                 { model: { cssValue: JSON.stringify(this.themeOptions), fontFamily: this.selectFont } }).then((res: any) => {
                 if (res) {
                     const _this: any = this;
-                    _this.$success('保存自定义主题成功','saveThemeOptions');
+                    _this.$success(this.$t('app.components.appTheme.success'),'saveThemeOptions');
                     this.previewTheme();
                 }
             });

@@ -191,7 +191,7 @@ export class MEditViewPanelControlBase extends MDControlBase {
      */
     public load(data: any): void {
         if(!this.fetchAction){
-            this.$throw('多表单编辑视图fetchAction行为不存在','load');
+            this.$throw(this.$t('app.multiEditView.notConfig.fetchAction'),'load');
             return;
         }
         let arg: any = {};
@@ -230,7 +230,7 @@ export class MEditViewPanelControlBase extends MDControlBase {
             return;
         }
         if(!this.loaddraftAction){
-            this.$throw('多表单编辑视图loaddraftAction行为不存在','handleAdd');
+            this.$throw(this.$t('app.multiEditView.notConfig.loaddraftAction'),'handleAdd');
             return;
         }
         const promice: Promise<any> = this.service.loadDraft(this.loaddraftAction,JSON.parse(JSON.stringify(this.context)),{viewparams:this.viewparams}, this.showBusyIndicator);
@@ -289,6 +289,6 @@ export class MEditViewPanelControlBase extends MDControlBase {
      * @memberof MEditViewPanelControlBase
      */
     public viewload($event:any){
-        LogUtil.log('视图加载完成');
+        LogUtil.log(this.$t('app.components.appFormDRUIPart.loadComp'));
     }
 }

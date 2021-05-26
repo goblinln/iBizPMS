@@ -22,7 +22,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['actor',];
     protected selectContextParam = {
-        ibzmonthly: 'objectid',
     };
 
     newEntity(data: IIbzProMonthlyAction): IbzProMonthlyAction {
@@ -39,13 +38,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
 
     async getLocal(context: IContext, srfKey: string): Promise<IIbzProMonthlyAction> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.objectid && entity.objectid !== '') {
-            const s = await ___ibz___.gs.getIbzMonthlyService();
-            const data = await s.getLocal2(context, entity.objectid);
-            if (data) {
-                entity.objectid = data.ibzmonthlyid;
-            }
-        }
         return entity!;
     }
 
@@ -54,13 +46,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
     }
 
     async getDraftLocal(_context: IContext, entity: IIbzProMonthlyAction = {}): Promise<IIbzProMonthlyAction> {
-        if (_context.ibzmonthly && _context.ibzmonthly !== '') {
-            const s = await ___ibz___.gs.getIbzMonthlyService();
-            const data = await s.getLocal2(_context, _context.ibzmonthly);
-            if (data) {
-                entity.objectid = data.ibzmonthlyid;
-            }
-        }
         return new IbzProMonthlyAction(entity);
     }
 
@@ -89,9 +74,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzmonthly && _context.ibzpromonthlyaction) {
-            return this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/${_context.ibzpromonthlyaction}/select`);
-        }
         return this.http.get(`/ibzpromonthlyactions/${_context.ibzpromonthlyaction}/select`);
     }
     /**
@@ -103,16 +85,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzmonthly && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -131,10 +103,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzmonthly && _context.ibzpromonthlyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/${_context.ibzpromonthlyaction}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/ibzpromonthlyactions/${_context.ibzpromonthlyaction}`, _data);
     }
@@ -147,9 +115,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzmonthly && _context.ibzpromonthlyaction) {
-            return this.http.delete(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/${_context.ibzpromonthlyaction}`);
-        }
         return this.http.delete(`/ibzpromonthlyactions/${_context.ibzpromonthlyaction}`);
     }
     /**
@@ -161,10 +126,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzmonthly && _context.ibzpromonthlyaction) {
-            const res = await this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/${_context.ibzpromonthlyaction}`);
-            return res;
-        }
         const res = await this.http.get(`/ibzpromonthlyactions/${_context.ibzpromonthlyaction}`);
         return res;
     }
@@ -177,12 +138,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzmonthly && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzpromonthlyactions/getdraft`, _data);
@@ -197,10 +152,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionService
      */
     async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzmonthly && _context.ibzpromonthlyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/${_context.ibzpromonthlyaction}/createhis`, _data);
-        }
         return this.http.post(`/ibzpromonthlyactions/${_context.ibzpromonthlyaction}/createhis`, _data);
     }
     /**
@@ -212,10 +163,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionService
      */
     async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzmonthly && _context.ibzpromonthlyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/${_context.ibzpromonthlyaction}/managepmsee`, _data);
-        }
         return this.http.post(`/ibzpromonthlyactions/${_context.ibzpromonthlyaction}/managepmsee`, _data);
     }
     /**
@@ -227,10 +174,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionService
      */
     async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzmonthly && _context.ibzpromonthlyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/${_context.ibzpromonthlyaction}/sendmarkdone`, _data);
-        }
         return this.http.post(`/ibzpromonthlyactions/${_context.ibzpromonthlyaction}/sendmarkdone`, _data);
     }
     /**
@@ -242,10 +185,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionService
      */
     async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzmonthly && _context.ibzpromonthlyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/${_context.ibzpromonthlyaction}/sendtodo`, _data);
-        }
         return this.http.post(`/ibzpromonthlyactions/${_context.ibzpromonthlyaction}/sendtodo`, _data);
     }
     /**
@@ -257,10 +196,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionService
      */
     async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzmonthly && _context.ibzpromonthlyaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/${_context.ibzpromonthlyaction}/sendtoread`, _data);
-        }
         return this.http.post(`/ibzpromonthlyactions/${_context.ibzpromonthlyaction}/sendtoread`, _data);
     }
     /**
@@ -272,9 +207,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/fetchdefault`, _data);
-        }
         return this.http.post(`/ibzpromonthlyactions/fetchdefault`, _data);
     }
     /**
@@ -286,9 +218,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/fetchtype`, _data);
-        }
         return this.http.post(`/ibzpromonthlyactions/fetchtype`, _data);
     }
 
@@ -302,10 +231,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionServiceBase
      */
     public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzmonthly && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/createhisbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzpromonthlyactions/createhisbatch`,_data);
     }
@@ -320,10 +245,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionServiceBase
      */
     public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzmonthly && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/managepmseebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzpromonthlyactions/managepmseebatch`,_data);
     }
@@ -338,10 +259,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionServiceBase
      */
     public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzmonthly && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/sendmarkdonebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzpromonthlyactions/sendmarkdonebatch`,_data);
     }
@@ -356,10 +273,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionServiceBase
      */
     public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzmonthly && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/sendtodobatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzpromonthlyactions/sendtodobatch`,_data);
     }
@@ -374,10 +287,6 @@ export class IbzProMonthlyActionBaseService extends EntityBaseService<IIbzProMon
      * @memberof IbzProMonthlyActionServiceBase
      */
     public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.ibzmonthly && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/ibzpromonthlyactions/sendtoreadbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzpromonthlyactions/sendtoreadbatch`,_data);
     }

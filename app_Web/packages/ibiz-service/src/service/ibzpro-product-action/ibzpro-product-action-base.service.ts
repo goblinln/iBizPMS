@@ -24,7 +24,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['actor',];
     protected selectContextParam = {
-        product: 'objectid',
     };
 
     newEntity(data: IIBZProProductAction): IBZProProductAction {
@@ -41,13 +40,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
 
     async getLocal(context: IContext, srfKey: string): Promise<IIBZProProductAction> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.objectid && entity.objectid !== '') {
-            const s = await ___ibz___.gs.getProductService();
-            const data = await s.getLocal2(context, entity.objectid);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -56,13 +48,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
     }
 
     async getDraftLocal(_context: IContext, entity: IIBZProProductAction = {}): Promise<IIBZProProductAction> {
-        if (_context.product && _context.product !== '') {
-            const s = await ___ibz___.gs.getProductService();
-            const data = await s.getLocal2(_context, _context.product);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return new IBZProProductAction(entity);
     }
 
@@ -139,9 +124,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.ibzproproductaction) {
-            return this.http.get(`/products/${_context.product}/ibzproproductactions/${_context.ibzproproductaction}/select`);
-        }
         return this.http.get(`/ibzproproductactions/${_context.ibzproproductaction}/select`);
     }
     /**
@@ -153,16 +135,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/ibzproproductactions`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -181,10 +153,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.ibzproproductaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/ibzproproductactions/${_context.ibzproproductaction}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/ibzproproductactions/${_context.ibzproproductaction}`, _data);
     }
@@ -197,9 +165,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.ibzproproductaction) {
-            return this.http.delete(`/products/${_context.product}/ibzproproductactions/${_context.ibzproproductaction}`);
-        }
         return this.http.delete(`/ibzproproductactions/${_context.ibzproproductaction}`);
     }
     /**
@@ -211,10 +176,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.ibzproproductaction) {
-            const res = await this.http.get(`/products/${_context.product}/ibzproproductactions/${_context.ibzproproductaction}`);
-            return res;
-        }
         const res = await this.http.get(`/ibzproproductactions/${_context.ibzproproductaction}`);
         return res;
     }
@@ -227,12 +188,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/ibzproproductactions/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzproproductactions/getdraft`, _data);
@@ -247,10 +202,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async Comment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.ibzproproductaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/${_context.ibzproproductaction}/comment`, _data);
-        }
         return this.http.post(`/ibzproproductactions/${_context.ibzproproductaction}/comment`, _data);
     }
     /**
@@ -262,10 +213,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.ibzproproductaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/${_context.ibzproproductaction}/createhis`, _data);
-        }
         return this.http.post(`/ibzproproductactions/${_context.ibzproproductaction}/createhis`, _data);
     }
     /**
@@ -277,10 +224,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async EditComment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.ibzproproductaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/${_context.ibzproproductaction}/editcomment`, _data);
-        }
         return this.http.post(`/ibzproproductactions/${_context.ibzproproductaction}/editcomment`, _data);
     }
     /**
@@ -292,10 +235,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.ibzproproductaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/${_context.ibzproproductaction}/managepmsee`, _data);
-        }
         return this.http.post(`/ibzproproductactions/${_context.ibzproproductaction}/managepmsee`, _data);
     }
     /**
@@ -307,10 +246,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.ibzproproductaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/${_context.ibzproproductaction}/sendmarkdone`, _data);
-        }
         return this.http.post(`/ibzproproductactions/${_context.ibzproproductaction}/sendmarkdone`, _data);
     }
     /**
@@ -322,10 +257,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.ibzproproductaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/${_context.ibzproproductaction}/sendtodo`, _data);
-        }
         return this.http.post(`/ibzproproductactions/${_context.ibzproproductaction}/sendtodo`, _data);
     }
     /**
@@ -337,10 +268,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.ibzproproductaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/${_context.ibzproproductaction}/sendtoread`, _data);
-        }
         return this.http.post(`/ibzproproductactions/${_context.ibzproproductaction}/sendtoread`, _data);
     }
     /**
@@ -352,9 +279,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/fetchdefault`, _data);
-        }
         return this.http.post(`/ibzproproductactions/fetchdefault`, _data);
     }
     /**
@@ -366,9 +290,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async FetchMobType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/fetchmobtype`, _data);
-        }
         return this.http.post(`/ibzproproductactions/fetchmobtype`, _data);
     }
     /**
@@ -380,9 +301,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async FetchProductTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/fetchproducttrends`, _data);
-        }
         return this.http.post(`/ibzproproductactions/fetchproducttrends`, _data);
     }
     /**
@@ -394,9 +312,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/fetchtype`, _data);
-        }
         return this.http.post(`/ibzproproductactions/fetchtype`, _data);
     }
 
@@ -410,10 +325,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionServiceBase
      */
     public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/createhisbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproproductactions/createhisbatch`,_data);
     }
@@ -428,10 +339,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionServiceBase
      */
     public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/editcommentbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproproductactions/editcommentbatch`,_data);
     }
@@ -446,10 +353,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionServiceBase
      */
     public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/managepmseebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproproductactions/managepmseebatch`,_data);
     }
@@ -464,10 +367,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionServiceBase
      */
     public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/sendmarkdonebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproproductactions/sendmarkdonebatch`,_data);
     }
@@ -482,10 +381,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionServiceBase
      */
     public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/sendtodobatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproproductactions/sendtodobatch`,_data);
     }
@@ -500,10 +395,6 @@ export class IBZProProductActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProductActionServiceBase
      */
     public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/ibzproproductactions/sendtoreadbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproproductactions/sendtoreadbatch`,_data);
     }

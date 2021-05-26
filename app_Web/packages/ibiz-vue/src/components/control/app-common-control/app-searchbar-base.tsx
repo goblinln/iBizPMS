@@ -178,8 +178,8 @@ export class AppSearchBarBase extends SearchBarControlBase {
                                     )
                                 })}
                             </el-select> : null}
-                    <i-button type="primary" on-click={this.onSearch.bind(this)}>搜索</i-button>
-                    <i-button on-click={this.onReset.bind(this)}>重置</i-button>
+                    <i-button type="primary" on-click={this.onSearch.bind(this)}>{this.$t('app.searchButton.search')}</i-button>
+                    <i-button on-click={this.onReset.bind(this)}>{this.$t('app.searchButton.reset')}</i-button>
                     <poptip
                         ref="propip"
                         trigger="hover"
@@ -192,8 +192,8 @@ export class AppSearchBarBase extends SearchBarControlBase {
                             <div slot="content">
                                 <i-input v-model={this.saveItemName} placeholder=""></i-input>
                                 <div class="save-action">
-                                    <i-button on-click={this.onCancel.bind(this)}>取消</i-button>
-                                    <i-button type="primary" on-click={this.onOk.bind(this)}>保存</i-button>
+                                    <i-button on-click={this.onCancel.bind(this)}>{this.$t('app.commonWords.cancel')}</i-button>
+                                    <i-button type="primary" on-click={this.onOk.bind(this)}>{this.$t('app.commonWords.save')}</i-button>
                                 </div>
                             </div>
                     </poptip>

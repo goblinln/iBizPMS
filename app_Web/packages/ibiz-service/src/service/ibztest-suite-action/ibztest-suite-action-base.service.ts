@@ -22,7 +22,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['actor',];
     protected selectContextParam = {
-        testsuite: 'objectid',
     };
 
     newEntity(data: IIBZTestSuiteAction): IBZTestSuiteAction {
@@ -39,13 +38,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
 
     async getLocal(context: IContext, srfKey: string): Promise<IIBZTestSuiteAction> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.objectid && entity.objectid !== '') {
-            const s = await ___ibz___.gs.getTestSuiteService();
-            const data = await s.getLocal2(context, entity.objectid);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -54,13 +46,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
     }
 
     async getDraftLocal(_context: IContext, entity: IIBZTestSuiteAction = {}): Promise<IIBZTestSuiteAction> {
-        if (_context.testsuite && _context.testsuite !== '') {
-            const s = await ___ibz___.gs.getTestSuiteService();
-            const data = await s.getLocal2(_context, _context.testsuite);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return new IBZTestSuiteAction(entity);
     }
 
@@ -89,12 +74,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite && _context.ibztestsuiteaction) {
-            return this.http.get(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}/select`);
-        }
-        if (_context.testsuite && _context.ibztestsuiteaction) {
-            return this.http.get(`/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}/select`);
-        }
         return this.http.get(`/ibztestsuiteactions/${_context.ibztestsuiteaction}/select`);
     }
     /**
@@ -106,26 +85,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions`, _data);
-        }
-        if (_context.testsuite && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/testsuites/${_context.testsuite}/ibztestsuiteactions`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -144,14 +103,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite && _context.ibztestsuiteaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}`, _data);
-        }
-        if (_context.testsuite && _context.ibztestsuiteaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/ibztestsuiteactions/${_context.ibztestsuiteaction}`, _data);
     }
@@ -164,12 +115,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite && _context.ibztestsuiteaction) {
-            return this.http.delete(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}`);
-        }
-        if (_context.testsuite && _context.ibztestsuiteaction) {
-            return this.http.delete(`/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}`);
-        }
         return this.http.delete(`/ibztestsuiteactions/${_context.ibztestsuiteaction}`);
     }
     /**
@@ -181,14 +126,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite && _context.ibztestsuiteaction) {
-            const res = await this.http.get(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}`);
-            return res;
-        }
-        if (_context.testsuite && _context.ibztestsuiteaction) {
-            const res = await this.http.get(`/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}`);
-            return res;
-        }
         const res = await this.http.get(`/ibztestsuiteactions/${_context.ibztestsuiteaction}`);
         return res;
     }
@@ -201,18 +138,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/getdraft`, _data);
-            return res;
-        }
-        if (_context.testsuite && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/testsuites/${_context.testsuite}/ibztestsuiteactions/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibztestsuiteactions/getdraft`, _data);
@@ -227,14 +152,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionService
      */
     async Comment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite && _context.ibztestsuiteaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}/comment`, _data);
-        }
-        if (_context.testsuite && _context.ibztestsuiteaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}/comment`, _data);
-        }
         return this.http.post(`/ibztestsuiteactions/${_context.ibztestsuiteaction}/comment`, _data);
     }
     /**
@@ -246,14 +163,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionService
      */
     async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite && _context.ibztestsuiteaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}/createhis`, _data);
-        }
-        if (_context.testsuite && _context.ibztestsuiteaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}/createhis`, _data);
-        }
         return this.http.post(`/ibztestsuiteactions/${_context.ibztestsuiteaction}/createhis`, _data);
     }
     /**
@@ -265,14 +174,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionService
      */
     async EditComment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite && _context.ibztestsuiteaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}/editcomment`, _data);
-        }
-        if (_context.testsuite && _context.ibztestsuiteaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}/editcomment`, _data);
-        }
         return this.http.post(`/ibztestsuiteactions/${_context.ibztestsuiteaction}/editcomment`, _data);
     }
     /**
@@ -284,14 +185,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionService
      */
     async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite && _context.ibztestsuiteaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}/managepmsee`, _data);
-        }
-        if (_context.testsuite && _context.ibztestsuiteaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}/managepmsee`, _data);
-        }
         return this.http.post(`/ibztestsuiteactions/${_context.ibztestsuiteaction}/managepmsee`, _data);
     }
     /**
@@ -303,14 +196,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionService
      */
     async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite && _context.ibztestsuiteaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}/sendmarkdone`, _data);
-        }
-        if (_context.testsuite && _context.ibztestsuiteaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}/sendmarkdone`, _data);
-        }
         return this.http.post(`/ibztestsuiteactions/${_context.ibztestsuiteaction}/sendmarkdone`, _data);
     }
     /**
@@ -322,14 +207,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionService
      */
     async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite && _context.ibztestsuiteaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}/sendtodo`, _data);
-        }
-        if (_context.testsuite && _context.ibztestsuiteaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}/sendtodo`, _data);
-        }
         return this.http.post(`/ibztestsuiteactions/${_context.ibztestsuiteaction}/sendtodo`, _data);
     }
     /**
@@ -341,14 +218,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionService
      */
     async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite && _context.ibztestsuiteaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}/sendtoread`, _data);
-        }
-        if (_context.testsuite && _context.ibztestsuiteaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testsuites/${_context.testsuite}/ibztestsuiteactions/${_context.ibztestsuiteaction}/sendtoread`, _data);
-        }
         return this.http.post(`/ibztestsuiteactions/${_context.ibztestsuiteaction}/sendtoread`, _data);
     }
     /**
@@ -360,12 +229,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite && true) {
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/fetchdefault`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/ibztestsuiteactions/fetchdefault`, _data);
-        }
         return this.http.post(`/ibztestsuiteactions/fetchdefault`, _data);
     }
     /**
@@ -377,12 +240,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite && true) {
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/fetchtype`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/ibztestsuiteactions/fetchtype`, _data);
-        }
         return this.http.post(`/ibztestsuiteactions/fetchtype`, _data);
     }
 
@@ -396,14 +253,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionServiceBase
      */
     public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.testsuite && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/createhisbatch`,_data);
-        }
-        if(_context.testsuite && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testsuites/${_context.testsuite}/ibztestsuiteactions/createhisbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibztestsuiteactions/createhisbatch`,_data);
     }
@@ -418,14 +267,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionServiceBase
      */
     public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.testsuite && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/editcommentbatch`,_data);
-        }
-        if(_context.testsuite && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testsuites/${_context.testsuite}/ibztestsuiteactions/editcommentbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibztestsuiteactions/editcommentbatch`,_data);
     }
@@ -440,14 +281,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionServiceBase
      */
     public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.testsuite && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/managepmseebatch`,_data);
-        }
-        if(_context.testsuite && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testsuites/${_context.testsuite}/ibztestsuiteactions/managepmseebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibztestsuiteactions/managepmseebatch`,_data);
     }
@@ -462,14 +295,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionServiceBase
      */
     public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.testsuite && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/sendmarkdonebatch`,_data);
-        }
-        if(_context.testsuite && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testsuites/${_context.testsuite}/ibztestsuiteactions/sendmarkdonebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibztestsuiteactions/sendmarkdonebatch`,_data);
     }
@@ -484,14 +309,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionServiceBase
      */
     public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.testsuite && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/sendtodobatch`,_data);
-        }
-        if(_context.testsuite && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testsuites/${_context.testsuite}/ibztestsuiteactions/sendtodobatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibztestsuiteactions/sendtodobatch`,_data);
     }
@@ -506,14 +323,6 @@ export class IBZTestSuiteActionBaseService extends EntityBaseService<IIBZTestSui
      * @memberof IBZTestSuiteActionServiceBase
      */
     public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.testsuite && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/ibztestsuiteactions/sendtoreadbatch`,_data);
-        }
-        if(_context.testsuite && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/testsuites/${_context.testsuite}/ibztestsuiteactions/sendtoreadbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibztestsuiteactions/sendtoreadbatch`,_data);
     }

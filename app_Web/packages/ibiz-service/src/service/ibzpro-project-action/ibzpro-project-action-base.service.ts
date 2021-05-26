@@ -22,7 +22,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['actor',];
     protected selectContextParam = {
-        project: 'objectid',
     };
 
     newEntity(data: IIBZProProjectAction): IBZProProjectAction {
@@ -39,13 +38,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
 
     async getLocal(context: IContext, srfKey: string): Promise<IIBZProProjectAction> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.objectid && entity.objectid !== '') {
-            const s = await ___ibz___.gs.getProjectService();
-            const data = await s.getLocal2(context, entity.objectid);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -54,13 +46,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
     }
 
     async getDraftLocal(_context: IContext, entity: IIBZProProjectAction = {}): Promise<IIBZProProjectAction> {
-        if (_context.project && _context.project !== '') {
-            const s = await ___ibz___.gs.getProjectService();
-            const data = await s.getLocal2(_context, _context.project);
-            if (data) {
-                entity.objectid = data.id;
-            }
-        }
         return new IBZProProjectAction(entity);
     }
 
@@ -89,9 +74,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.ibzproprojectaction) {
-            return this.http.get(`/projects/${_context.project}/ibzproprojectactions/${_context.ibzproprojectaction}/select`);
-        }
         return this.http.get(`/ibzproprojectactions/${_context.ibzproprojectaction}/select`);
     }
     /**
@@ -103,16 +85,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projects/${_context.project}/ibzproprojectactions`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -131,10 +103,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.ibzproprojectaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/ibzproprojectactions/${_context.ibzproprojectaction}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/ibzproprojectactions/${_context.ibzproprojectaction}`, _data);
     }
@@ -147,9 +115,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.ibzproprojectaction) {
-            return this.http.delete(`/projects/${_context.project}/ibzproprojectactions/${_context.ibzproprojectaction}`);
-        }
         return this.http.delete(`/ibzproprojectactions/${_context.ibzproprojectaction}`);
     }
     /**
@@ -161,10 +126,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.ibzproprojectaction) {
-            const res = await this.http.get(`/projects/${_context.project}/ibzproprojectactions/${_context.ibzproprojectaction}`);
-            return res;
-        }
         const res = await this.http.get(`/ibzproprojectactions/${_context.ibzproprojectaction}`);
         return res;
     }
@@ -177,12 +138,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/ibzproprojectactions/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzproprojectactions/getdraft`, _data);
@@ -197,10 +152,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionService
      */
     async Comment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.ibzproprojectaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/ibzproprojectactions/${_context.ibzproprojectaction}/comment`, _data);
-        }
         return this.http.post(`/ibzproprojectactions/${_context.ibzproprojectaction}/comment`, _data);
     }
     /**
@@ -212,10 +163,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionService
      */
     async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.ibzproprojectaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/ibzproprojectactions/${_context.ibzproprojectaction}/createhis`, _data);
-        }
         return this.http.post(`/ibzproprojectactions/${_context.ibzproprojectaction}/createhis`, _data);
     }
     /**
@@ -227,10 +174,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionService
      */
     async EditComment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.ibzproprojectaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/ibzproprojectactions/${_context.ibzproprojectaction}/editcomment`, _data);
-        }
         return this.http.post(`/ibzproprojectactions/${_context.ibzproprojectaction}/editcomment`, _data);
     }
     /**
@@ -242,10 +185,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionService
      */
     async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.ibzproprojectaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/ibzproprojectactions/${_context.ibzproprojectaction}/managepmsee`, _data);
-        }
         return this.http.post(`/ibzproprojectactions/${_context.ibzproprojectaction}/managepmsee`, _data);
     }
     /**
@@ -257,10 +196,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionService
      */
     async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.ibzproprojectaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/ibzproprojectactions/${_context.ibzproprojectaction}/sendmarkdone`, _data);
-        }
         return this.http.post(`/ibzproprojectactions/${_context.ibzproprojectaction}/sendmarkdone`, _data);
     }
     /**
@@ -272,10 +207,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionService
      */
     async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.ibzproprojectaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/ibzproprojectactions/${_context.ibzproprojectaction}/sendtodo`, _data);
-        }
         return this.http.post(`/ibzproprojectactions/${_context.ibzproprojectaction}/sendtodo`, _data);
     }
     /**
@@ -287,10 +218,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionService
      */
     async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.ibzproprojectaction) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/ibzproprojectactions/${_context.ibzproprojectaction}/sendtoread`, _data);
-        }
         return this.http.post(`/ibzproprojectactions/${_context.ibzproprojectaction}/sendtoread`, _data);
     }
     /**
@@ -302,9 +229,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/ibzproprojectactions/fetchdefault`, _data);
-        }
         return this.http.post(`/ibzproprojectactions/fetchdefault`, _data);
     }
     /**
@@ -316,9 +240,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/ibzproprojectactions/fetchtype`, _data);
-        }
         return this.http.post(`/ibzproprojectactions/fetchtype`, _data);
     }
 
@@ -332,10 +253,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionServiceBase
      */
     public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/ibzproprojectactions/createhisbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproprojectactions/createhisbatch`,_data);
     }
@@ -350,10 +267,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionServiceBase
      */
     public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/ibzproprojectactions/editcommentbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproprojectactions/editcommentbatch`,_data);
     }
@@ -368,10 +281,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionServiceBase
      */
     public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/ibzproprojectactions/managepmseebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproprojectactions/managepmseebatch`,_data);
     }
@@ -386,10 +295,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionServiceBase
      */
     public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/ibzproprojectactions/sendmarkdonebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproprojectactions/sendmarkdonebatch`,_data);
     }
@@ -404,10 +309,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionServiceBase
      */
     public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/ibzproprojectactions/sendtodobatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproprojectactions/sendtodobatch`,_data);
     }
@@ -422,10 +323,6 @@ export class IBZProProjectActionBaseService extends EntityBaseService<IIBZProPro
      * @memberof IBZProProjectActionServiceBase
      */
     public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/ibzproprojectactions/sendtoreadbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzproprojectactions/sendtoreadbatch`,_data);
     }

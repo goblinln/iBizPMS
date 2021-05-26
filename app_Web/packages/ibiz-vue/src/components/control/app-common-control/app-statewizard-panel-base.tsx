@@ -177,8 +177,8 @@ export class AppStateWizardPanelBase extends StateWizardPanelControlBase {
         return (
             <footer class="app-state-wizard-footer">
                 {this.isVisiable(name, 'PREV') ? <i-button on-click={this.onClickPrev.bind(this, name)} type="primary"><i class="ivu-icon ivu-icon-ios-arrow-back" /></i-button> : null}
-                {this.isVisiable(name, 'NEXT') ? <i-button on-click={this.onClickNext.bind(this, name)} type="primary" long>下一步</i-button> : null}
-                {this.isVisiable(name, 'FINISH') ? <i-button on-click={this.onClickFinish.bind(this, name)} type="primary" long>完成</i-button> : null}
+                {this.isVisiable(name, 'NEXT') ? <i-button on-click={this.onClickNext.bind(this, name)} type="primary" long>{this.$t('app.wizardPanel.next')}</i-button> : null}
+                {this.isVisiable(name, 'FINISH') ? <i-button on-click={this.onClickFinish.bind(this, name)} type="primary" long>{this.$t('app.wizardPanel.complete')}</i-button> : null}
             </footer>
         );
     }

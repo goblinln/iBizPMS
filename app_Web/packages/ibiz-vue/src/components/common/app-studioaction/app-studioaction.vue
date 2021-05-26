@@ -84,7 +84,7 @@ export default class AppStudioAction extends Vue {
      */
     copy() {
         if (textCopy.copy(this.viewInstance.name)) {
-            this.$message.success('拷贝成功!');
+            this.$success(this.$t('app.components.appStudioAction.success'));
         }
     }
 
@@ -98,12 +98,12 @@ export default class AppStudioAction extends Vue {
         if (this.sdc.isShowTool && this.isDevMode) {
             return (
                 <div class='app-studio-debug-bar'>
-                    <div class='app-studio-debug-info' title='点击拷贝视图名称' on-click={() => this.copy()}>
+                    <div class='app-studio-debug-info' title={this.$t('app.components.appStudioAction.copyname')} on-click={() => this.copy()}>
                         {v.title}（{v.name}）
                     </div>
                     <div class='app-studio-debug-actions'>
                         <i-button type='text' ghost size='small' on-click={this.openPreview}>
-                            查看
+                            {this.$t('app.components.appStudioAction.view')}
                         </i-button>
                     </div>
                 </div>

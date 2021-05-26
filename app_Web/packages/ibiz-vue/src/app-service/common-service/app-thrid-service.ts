@@ -1,5 +1,5 @@
 import * as dd from 'dingtalk-jsapi';
-import { Http } from "ibiz-core";
+import { AppServiceBase, Http } from "ibiz-core";
 
 export interface stateResult {
 
@@ -24,6 +24,13 @@ export interface stateResult {
  * @memberof AppThirdService
  */
 export class AppThirdService {
+
+    /**
+     * 国际化
+     * 
+     * @memberof AppNavHistory
+     */
+     public i18n: any = AppServiceBase.getInstance().getI18n();
 
     /**
      * 单例变量声明
@@ -63,15 +70,15 @@ export class AppThirdService {
                     if (data && data.appid) {
                         resolve({ state: "SUCCESS", data: data });
                     } else {
-                        resolve({ state: "ERROR", message: `获取网站应用appid失败，${data.detail}` });
+                        resolve({ state: "ERROR", message: `${this.i18n('app.commonWords.getAppidError')}，${data.detail}` });
                     }
                 }
             }).catch((error: any) => {
                 const data = error.data;
                 if (data && data.detail) {
-                    resolve({ state: "ERROR", message: `获取网站应用appid失败，${data.detail}` });
+                    resolve({ state: "ERROR", message: `${this.i18n('app.commonWords.getAppidError')}，${data.detail}` });
                 } else {
-                    resolve({ state: "ERROR", message: `获取网站应用appid失败` });
+                    resolve({ state: "ERROR", message: `${this.i18n('app.commonWords.getAppidError')}` });
                 }
             });
         })
@@ -91,15 +98,15 @@ export class AppThirdService {
                     if (data && data.corp_id && data.appid) {
                         resolve({ state: "SUCCESS", data: data });
                     } else {
-                        resolve({ state: "ERROR", message: `获取网站应用appid失败，${data.detail}` });
+                        resolve({ state: "ERROR", message: `${this.i18n('app.commonWords.getAppidError')}，${data.detail}` });
                     }
                 }
             }).catch((error: any) => {
                 const data = error.data;
                 if (data && data.detail) {
-                    resolve({ state: "ERROR", message: `获取网站应用appid失败，${data.detail}` });
+                    resolve({ state: "ERROR", message: `${this.i18n('app.commonWords.getAppidError')}，${data.detail}` });
                 } else {
-                    resolve({ state: "ERROR", message: `获取网站应用appid失败` });
+                    resolve({ state: "ERROR", message: `${this.i18n('app.commonWords.getAppidError')}` });
                 }
             });
         })
@@ -124,14 +131,14 @@ export class AppThirdService {
                                 }
                             })
                         } else {
-                            resolve({ state: "ERROR", message: `钉钉用户信息获取失败` });
+                            resolve({ state: "ERROR", message: `${this.i18n('app.commonWords.getDingInfoError')}` });
                         }
                     }).catch((error: any) => {
-                        resolve({ state: "ERROR", message: `钉钉用户信息获取失败` });
+                        resolve({ state: "ERROR", message: `${this.i18n('app.commonWords.getDingInfoError')}` });
                     })
                 }
             }).catch((error: any) => {
-                resolve({ state: "ERROR", message: `获取企业ID失败` });
+                resolve({ state: "ERROR", message: `${this.i18n('app.commonWords.getIDError')}` });
             })
         })
     }
@@ -147,10 +154,10 @@ export class AppThirdService {
                 if (result.status == 200 && result.data && result.data.corp_id) {
                     resolve({ state: "SUCCESS", data: result.data });
                 } else {
-                    resolve({ state: "ERROR", message: `获取企业ID失败` });
+                    resolve({ state: "ERROR", message: `${this.i18n('app.commonWords.getIDError')}` });
                 }
             }).catch((error: any) => {
-                resolve({ state: "ERROR", message: `获取企业ID失败` });
+                resolve({ state: "ERROR", message: `${this.i18n('app.commonWords.getIDError')}` });
             })
         })
 

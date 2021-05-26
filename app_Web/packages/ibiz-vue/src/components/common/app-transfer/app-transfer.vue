@@ -188,7 +188,7 @@ export default class AppTransfer extends Vue {
                 this.dataLeft = codelistItems;
                 this.initData()
             }).catch((error: any) => {
-                LogUtil.log(`----${this.tag}----代码表不存在`);
+                LogUtil.log(`----${this.tag}----${this.$t('app.commonWords.codeNotExist')}`);
             })
         }
     }

@@ -405,7 +405,7 @@ export class AppMenuControlBase extends ControlBase {
                 AppFuncService.getInstance().executeApplication(appFunc,tempContext);
             }
         } else {
-            LogUtil.warn('未指定应用功能');
+            LogUtil.warn(this.$t('app.commonWords.noassign'));
         }
     }
 

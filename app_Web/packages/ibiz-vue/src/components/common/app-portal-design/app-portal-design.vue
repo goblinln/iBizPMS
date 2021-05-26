@@ -1,11 +1,11 @@
 <template>
     <card class="app-portal-design" :dis-hover="true" :padding="0" :bordered="false">
         <p slot="title">
-            {{'自定义门户'}}
+            {{$t('app.components.appPortalDesign.customPortal')}}
         </p>
         <div class="design-toolbar" slot="extra">
-            <i-button @click="click('reset')">恢复默认</i-button>
-            <i-button @click="click('save')">保存</i-button> 
+            <i-button @click="click('reset')">{{$t('app.components.appPortalDesign.recover')}}</i-button>
+            <i-button @click="click('save')">{{$t('app.components.appPortalDesign.save')}}</i-button> 
         </div>
         <div class="design-container">
             <app-dashboard-design :viewState="viewState" :context="context" :customModel="customModel" :viewparams="viewparams" :utilServiceName="utilServiceName" @save="onSaved"></app-dashboard-design>

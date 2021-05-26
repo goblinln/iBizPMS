@@ -178,7 +178,7 @@ export class AppMEditViewPanelBase extends MEditViewPanelControlBase{
             <div class={{...controlClassNames,'multieditviewpanel': true}}>
                 {this.items.length > 0 ? this.renderContent() : null}
                 <i-button type="primary" on-click={()=>this.handleAdd()} style="float: right;">
-                    增加
+                    {this.$t('app.local.add')}
                 </i-button>
             </div>
         )

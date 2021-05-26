@@ -32,6 +32,9 @@ function getLocaleResourceBase(){
 		'actor': commonLogic.appcommonhandle("操作者",null),
 		'project': commonLogic.appcommonhandle("项目",null),
 		'actionsn': commonLogic.appcommonhandle("系统日志编号",null),
+		'createman': commonLogic.appcommonhandle("建立人",null),
+		'updatedate': commonLogic.appcommonhandle("更新时间",null),
+		'updateman': commonLogic.appcommonhandle("更新人",null),
 	},
 		views: {
 			'historylistview': {
@@ -83,6 +86,7 @@ function getLocaleResourceBase(){
 			details: {
 				'grouppanel2': commonLogic.appcommonhandle("分组面板",null), 
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srfupdatedate': commonLogic.appcommonhandle("更新时间",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("id",null), 
 				'srfmajortext': commonLogic.appcommonhandle("备注",null), 
@@ -108,6 +112,7 @@ function getLocaleResourceBase(){
 				'grouppanel1': commonLogic.appcommonhandle("分组面板",null), 
 				'grouppanel2': commonLogic.appcommonhandle("分组面板",null), 
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srfupdatedate': commonLogic.appcommonhandle("更新时间",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("id",null), 
 				'srfmajortext': commonLogic.appcommonhandle("备注",null), 
