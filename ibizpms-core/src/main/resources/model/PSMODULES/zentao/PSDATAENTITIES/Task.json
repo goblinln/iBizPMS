@@ -671,6 +671,10 @@
         "condType" : "CUSTOM",
         "customCond" : "t1.DELETED = '0'",
         "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : " (case when (#{srf.n_status1_eq} = \"storychange\") then (t1.storyVersion < t21.version and t21.`status` <> 'changed' ) else 1=1 end )",
+        "name" : "查询条件"
       } ]
     } ],
     "codeName" : "CurProjectTaskQuery",

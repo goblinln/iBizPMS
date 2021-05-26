@@ -161,22 +161,6 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
         return this.condCache.get('view');
     }
     /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductModuleService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productmodule) {
-            const res = await this.http.get(`/products/${_context.product}/productmodules/${_context.productmodule}/get`);
-            return res;
-        }
-        const res = await this.http.get(`/productmodules/${_context.productmodule}/get`);
-        return res;
-    }
-    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -211,6 +195,22 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/productmodules/${_context.productmodule}/update`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductModuleService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productmodule) {
+            const res = await this.http.get(`/products/${_context.product}/productmodules/${_context.productmodule}/get`);
+            return res;
+        }
+        const res = await this.http.get(`/productmodules/${_context.productmodule}/get`);
+        return res;
     }
     /**
      * FetchDefault

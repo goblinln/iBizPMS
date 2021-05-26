@@ -122,14 +122,6 @@ public class SysUserServiceImpl implements ISysUserService {
         et = sysUserFeignClient.changePwd(et.getUserid(), et);
         return et;
     }
-    @Override
-    @Transactional
-    public boolean changePwdBatch(List<SysUser> etList) {
-        for(SysUser et : etList) {
-            changePwd(et);
-        }
-        return true;
-    }
 
     @Override
     public boolean checkKey(SysUser et) {

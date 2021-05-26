@@ -126,28 +126,12 @@ public class IBIZProMessageServiceImpl implements IIBIZProMessageService {
         et = iBIZProMessageFeignClient.markDone(et.getIbizpromessageid(), et);
         return et;
     }
-    @Override
-    @Transactional
-    public boolean markDoneBatch(List<IBIZProMessage> etList) {
-        for(IBIZProMessage et : etList) {
-            markDone(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
     public IBIZProMessage markRead(IBIZProMessage et) {
         et = iBIZProMessageFeignClient.markRead(et.getIbizpromessageid(), et);
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean markReadBatch(List<IBIZProMessage> etList) {
-        for(IBIZProMessage et : etList) {
-            markRead(et);
-        }
-        return true;
     }
 
     @Override
@@ -182,14 +166,6 @@ public class IBIZProMessageServiceImpl implements IIBIZProMessageService {
     public IBIZProMessage send(IBIZProMessage et) {
         et = iBIZProMessageFeignClient.send(et.getIbizpromessageid(), et);
         return et;
-    }
-    @Override
-    @Transactional
-    public boolean sendBatch(List<IBIZProMessage> etList) {
-        for(IBIZProMessage et : etList) {
-            send(et);
-        }
-        return true;
     }
 
 
