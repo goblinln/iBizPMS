@@ -52,6 +52,74 @@ public class ProductModuleResource {
     @Lazy
     public ProductModuleMapping productmoduleMapping;
 
+    @PreAuthorize("@ProductModuleRuntime.test(#productmodule_id,'READ')")
+    @ApiOperation(value = "获取需求模块", tags = {"需求模块" },  notes = "获取需求模块")
+	@RequestMapping(method = RequestMethod.GET, value = "/productmodules/{productmodule_id}")
+    public ResponseEntity<ProductModuleDTO> get(@PathVariable("productmodule_id") Long productmodule_id) {
+        ProductModule domain = productmoduleService.get(productmodule_id);
+        ProductModuleDTO dto = productmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(productmodule_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductModuleRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "获取需求模块草稿", tags = {"需求模块" },  notes = "获取需求模块草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/productmodules/getdraft")
+    public ResponseEntity<ProductModuleDTO> getDraft(ProductModuleDTO dto) {
+        ProductModule domain = productmoduleMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(productmoduleMapping.toDto(productmoduleService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "保存需求模块", tags = {"需求模块" },  notes = "保存需求模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/productmodules/save")
+    public ResponseEntity<ProductModuleDTO> save(@RequestBody ProductModuleDTO productmoduledto) {
+        ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
+        productmoduleService.save(domain);
+        ProductModuleDTO dto = productmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取DEFAULT", tags = {"需求模块" } ,notes = "获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/productmodules/fetchdefault")
+	public ResponseEntity<List<ProductModuleDTO>> fetchdefault(@RequestBody ProductModuleSearchContext context) {
+        Page<ProductModule> domains = productmoduleService.searchDefault(context) ;
+        List<ProductModuleDTO> list = productmoduleMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询DEFAULT", tags = {"需求模块" } ,notes = "查询DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/productmodules/searchdefault")
+	public ResponseEntity<Page<ProductModuleDTO>> searchDefault(@RequestBody ProductModuleSearchContext context) {
+        Page<ProductModule> domains = productmoduleService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(productmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@ProductModuleRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "新建需求模块", tags = {"需求模块" },  notes = "新建需求模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/productmodules")
+    @Transactional
+    public ResponseEntity<ProductModuleDTO> create(@Validated @RequestBody ProductModuleDTO productmoduledto) {
+        ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
+		productmoduleService.create(domain);
+        if(!productmoduleRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
+        ProductModuleDTO dto = productmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("@ProductModuleRuntime.test(#productmodule_id,'DELETE')")
     @ApiOperation(value = "删除需求模块", tags = {"需求模块" },  notes = "删除需求模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productmodules/{productmodule_id}")
@@ -77,74 +145,6 @@ public class ProductModuleResource {
     }
 
 
-    @PreAuthorize("@ProductModuleRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "获取需求模块草稿", tags = {"需求模块" },  notes = "获取需求模块草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/productmodules/getdraft")
-    public ResponseEntity<ProductModuleDTO> getDraft(ProductModuleDTO dto) {
-        ProductModule domain = productmoduleMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(productmoduleMapping.toDto(productmoduleService.getDraft(domain)));
-    }
-
-    @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取DEFAULT", tags = {"需求模块" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/productmodules/fetchdefault")
-	public ResponseEntity<List<ProductModuleDTO>> fetchdefault(@RequestBody ProductModuleSearchContext context) {
-        Page<ProductModule> domains = productmoduleService.searchDefault(context) ;
-        List<ProductModuleDTO> list = productmoduleMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-    @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"需求模块" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/productmodules/searchdefault")
-	public ResponseEntity<Page<ProductModuleDTO>> searchDefault(@RequestBody ProductModuleSearchContext context) {
-        Page<ProductModule> domains = productmoduleService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductModuleRuntime.test(#productmodule_id,'READ')")
-    @ApiOperation(value = "获取需求模块", tags = {"需求模块" },  notes = "获取需求模块")
-	@RequestMapping(method = RequestMethod.GET, value = "/productmodules/{productmodule_id}")
-    public ResponseEntity<ProductModuleDTO> get(@PathVariable("productmodule_id") Long productmodule_id) {
-        ProductModule domain = productmoduleService.get(productmodule_id);
-        ProductModuleDTO dto = productmoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(productmodule_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("@ProductModuleRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "新建需求模块", tags = {"需求模块" },  notes = "新建需求模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/productmodules")
-    @Transactional
-    public ResponseEntity<ProductModuleDTO> create(@Validated @RequestBody ProductModuleDTO productmoduledto) {
-        ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
-		productmoduleService.create(domain);
-        if(!productmoduleRuntime.test(domain.getId(),"CREATE"))
-            throw new RuntimeException("无权限操作");
-        ProductModuleDTO dto = productmoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "保存需求模块", tags = {"需求模块" },  notes = "保存需求模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/productmodules/save")
-    public ResponseEntity<ProductModuleDTO> save(@RequestBody ProductModuleDTO productmoduledto) {
-        ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
-        productmoduleService.save(domain);
-        ProductModuleDTO dto = productmoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/productmodules/{productmodule_id}/{action}")
@@ -153,26 +153,14 @@ public class ProductModuleResource {
         productmoduledto = productmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);
     }
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
-    @ApiOperation(value = "根据产品删除需求模块", tags = {"需求模块" },  notes = "根据产品删除需求模块")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productmodules/{productmodule_id}")
-    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(productmoduleService.remove(productmodule_id));
-    }
-
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
-    @ApiOperation(value = "根据产品更新需求模块", tags = {"需求模块" },  notes = "根据产品更新需求模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productmodules/{productmodule_id}")
-    public ResponseEntity<ProductModuleDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
-        ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
-        domain.setRoot(product_id);
-        domain.setId(productmodule_id);
-		productmoduleService.update(domain);
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @ApiOperation(value = "根据产品获取需求模块", tags = {"需求模块" },  notes = "根据产品获取需求模块")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productmodules/{productmodule_id}")
+    public ResponseEntity<ProductModuleDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id) {
+        ProductModule domain = productmoduleService.get(productmodule_id);
         ProductModuleDTO dto = productmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品获取需求模块草稿", tags = {"需求模块" },  notes = "根据产品获取需求模块草稿")
@@ -182,6 +170,16 @@ public class ProductModuleResource {
         domain.setRoot(product_id);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduleMapping.toDto(productmoduleService.getDraft(domain)));
     }
+
+    @ApiOperation(value = "根据产品保存需求模块", tags = {"需求模块" },  notes = "根据产品保存需求模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productmodules/save")
+    public ResponseEntity<ProductModuleDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductModuleDTO productmoduledto) {
+        ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
+        domain.setRoot(product_id);
+        productmoduleService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productmoduleMapping.toDto(domain));
+    }
+
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"需求模块" } ,notes = "根据产品获取DEFAULT")
@@ -206,15 +204,6 @@ public class ProductModuleResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品获取需求模块", tags = {"需求模块" },  notes = "根据产品获取需求模块")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productmodules/{productmodule_id}")
-    public ResponseEntity<ProductModuleDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id) {
-        ProductModule domain = productmoduleService.get(productmodule_id);
-        ProductModuleDTO dto = productmoduleMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品建立需求模块", tags = {"需求模块" },  notes = "根据产品建立需求模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productmodules")
@@ -227,13 +216,24 @@ public class ProductModuleResource {
     }
 
 
-    @ApiOperation(value = "根据产品保存需求模块", tags = {"需求模块" },  notes = "根据产品保存需求模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productmodules/save")
-    public ResponseEntity<ProductModuleDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductModuleDTO productmoduledto) {
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @ApiOperation(value = "根据产品删除需求模块", tags = {"需求模块" },  notes = "根据产品删除需求模块")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productmodules/{productmodule_id}")
+    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(productmoduleService.remove(productmodule_id));
+    }
+
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @ApiOperation(value = "根据产品更新需求模块", tags = {"需求模块" },  notes = "根据产品更新需求模块")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productmodules/{productmodule_id}")
+    public ResponseEntity<ProductModuleDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
         ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
         domain.setRoot(product_id);
-        productmoduleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productmoduleMapping.toDto(domain));
+        domain.setId(productmodule_id);
+		productmoduleService.update(domain);
+        ProductModuleDTO dto = productmoduleMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 

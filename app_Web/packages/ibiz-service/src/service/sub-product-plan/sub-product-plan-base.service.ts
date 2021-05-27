@@ -205,25 +205,6 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SubProductPlanService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && _context.subproductplan) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/${_context.subproductplan}`, _data);
-        }
-        if (_context.productplan && _context.subproductplan) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/productplans/${_context.productplan}/subproductplans/${_context.subproductplan}`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -243,23 +224,6 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/productplans/${_context.productplan}/subproductplans/getdraft`, _data);
             return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchProductQuery
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SubProductPlanService
-     */
-    async FetchProductQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchproductquery`, _data);
-        }
-        if (_context.productplan && true) {
-            return this.http.post(`/productplans/${_context.productplan}/subproductplans/fetchproductquery`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -291,6 +255,42 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
                 delete _data.srffrontuf;
             }
             return this.http.post(`/productplans/${_context.productplan}/subproductplans`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchProductQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubProductPlanService
+     */
+    async FetchProductQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchproductquery`, _data);
+        }
+        if (_context.productplan && true) {
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/fetchproductquery`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubProductPlanService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productplan && _context.subproductplan) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/${_context.subproductplan}`, _data);
+        }
+        if (_context.productplan && _context.subproductplan) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/productplans/${_context.productplan}/subproductplans/${_context.subproductplan}`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
