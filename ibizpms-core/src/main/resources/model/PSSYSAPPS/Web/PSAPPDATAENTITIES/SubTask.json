@@ -1742,23 +1742,6 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "FetchChildTask",
-    "methodType" : "FETCH",
-    "name" : "FetchChildTask",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ChildTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchChildTask"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -1773,6 +1756,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchChildTask",
+    "methodType" : "FETCH",
+    "name" : "FetchChildTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildTask"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchChildTask"
     },
     "builtinMethod" : false
   }, {

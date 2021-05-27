@@ -1050,6 +1050,10 @@
             "dataAccessAction" : "FAVORITES",
             "fullCodeName" : "Bug_BugFavorites",
             "name" : "收藏",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "BugFavorites"
+            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -1080,6 +1084,10 @@
             "dataAccessAction" : "NFAVORITES",
             "fullCodeName" : "Bug_BugNFavorites",
             "name" : "取消收藏",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "BugNFavorites"
+            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"

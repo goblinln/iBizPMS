@@ -2,6 +2,7 @@
   "getAllPSDEActions" : [ {
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
     "codeName" : "Create",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json",
     "logicName" : "Create",
@@ -9,6 +10,7 @@
     "orderValue" : 1,
     "userCat" : "CAT1",
     "userTag4" : "create",
+    "batchAction" : true,
     "builtinAction" : true
   }, {
     "actionMode" : "CREATE",
@@ -438,13 +440,11 @@
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
-    "batchActionMode" : 1,
     "codeName" : "Start",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Start.json",
     "logicName" : "开始",
     "name" : "Start",
-    "userCat" : "CAT1",
-    "batchAction" : true
+    "userCat" : "CAT1"
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "DELOGIC",

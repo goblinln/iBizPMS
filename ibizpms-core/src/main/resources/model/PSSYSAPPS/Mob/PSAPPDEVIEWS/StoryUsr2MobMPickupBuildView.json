@@ -325,7 +325,7 @@
             "name" : "fetch",
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "FetchBuildLinkCompletedStories"
+              "id" : "FetchbuildLinkCompletedStories"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,

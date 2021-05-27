@@ -1066,6 +1066,10 @@
             "dataAccessAction" : "FAVORITES",
             "fullCodeName" : "Story_StoryFavorites",
             "name" : "收藏",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "StoryFavorites"
+            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -1096,6 +1100,10 @@
             "dataAccessAction" : "NFAVORITES",
             "fullCodeName" : "Story_StoryNFavorites",
             "name" : "取消收藏",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "StoryNFavorites"
+            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"

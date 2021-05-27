@@ -496,14 +496,6 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-    @Override
-    @Transactional
-    public boolean startBatch(List<Task> etList) {
-        for(Task et : etList) {
-            start(et);
-        }
-        return true;
-    }
 
     @Override
     @Transactional
