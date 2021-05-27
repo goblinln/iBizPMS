@@ -3,6 +3,16 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductManger.json",
   "name" : "产品经理",
   "getPSSysUserRoleDatas" : [ {
+    "name" : "产品经理-ZT_TODO[待办转需求（我的待办）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_ToStory_MyTodo.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  }, {
     "name" : "产品经理-ZT_PRODUCT[产品维护（公开）]",
     "getPSDEUserRole" : {
       "modelref" : true,

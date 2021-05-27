@@ -23,6 +23,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     }
   }, {
+    "name" : "项目成员-ZT_STORY[需求转Bug（我相关产品）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Tobug_MyReP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    }
+  }, {
     "name" : "项目成员-ZT_CASE[测试用例转Bug（我相关的产品）（系统使用）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -63,6 +73,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
     }
   }, {
+    "name" : "项目成员-ZT_TODO[待办转Bug（我的待办）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_ToBug_MyTodo.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  }, {
     "name" : "项目成员-ZT_PRODUCT[产品查看（参与者）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -101,6 +121,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+    }
+  }, {
+    "name" : "项目成员-ZT_STORY[需求转Bug（我创建或参与）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_ToBug_MyCOrP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     }
   }, {
     "name" : "项目成员-ZT_PROJECT[项目文档库管理（参与者）（跟随角色）]",

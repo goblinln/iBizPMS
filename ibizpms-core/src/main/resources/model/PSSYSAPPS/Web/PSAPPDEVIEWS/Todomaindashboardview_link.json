@@ -2758,6 +2758,7 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "转Bug",
                   "codeName" : "toBug",
+                  "dataAccessAction" : "TOBUG",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugTodoEditView.json",
@@ -2822,6 +2823,7 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "转任务",
                   "codeName" : "toTask",
+                  "dataAccessAction" : "TOTASK",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTodoEditView.json",

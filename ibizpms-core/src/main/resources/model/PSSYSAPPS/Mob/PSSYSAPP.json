@@ -24807,6 +24807,9 @@
         "logicName" : "转BUG",
         "name" : "TOBUG"
       }, {
+        "logicName" : "TOSTORY",
+        "name" : "TOSTORY"
+      }, {
         "logicName" : "转任务",
         "name" : "TOTASK"
       }, {

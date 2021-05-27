@@ -12356,7 +12356,7 @@
   }, {
     "logicName" : "提缺陷",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "MANAGE",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
@@ -12680,6 +12680,44 @@
       }
     } ],
     "roleTag" : "Story_Read_MyReP",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_ToBug_MyCOrP.json",
+    "name" : "需求转Bug（我创建或参与）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateOrPartake"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "TOBUG",
+      "name" : "TOBUG",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__TOBUG"
+      }
+    } ],
+    "roleTag" : "Story_ToBug_MyCOrP",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Tobug_MyReP.json",
+    "name" : "需求转Bug（我相关产品）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReProduct"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "TOBUG",
+      "name" : "TOBUG",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__TOBUG"
+      }
+    } ],
+    "roleTag" : "Story_Tobug_MyReP",
     "userCat" : "CAT1",
     "userDRAction" : "READ",
     "systemReserved" : true
