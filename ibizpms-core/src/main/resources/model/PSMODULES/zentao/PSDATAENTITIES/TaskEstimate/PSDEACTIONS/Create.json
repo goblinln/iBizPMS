@@ -1,10 +1,12 @@
 {
   "actionMode" : "CREATE",
   "actionType" : "BUILTIN",
+  "batchActionMode" : 1,
   "codeName" : "Create",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Create.json",
   "logicName" : "Create",
   "name" : "Create",
   "orderValue" : 1,
+  "batchAction" : true,
   "builtinAction" : true
 }
