@@ -216,11 +216,16 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 return todoService.sendMsgPreProcess((Todo) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return todoService.create((Todo) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return todoService.update((Todo) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return todoService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Todo){
                     Todo arg = (Todo) args[0] ;
                     CachedBeanCopier.copy(todoService.get(arg.getId()), arg);
@@ -228,12 +233,48 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 }else{
                     return todoService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return todoService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return todoService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return todoService.getDraft((Todo) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Activate")) {
+                return todoService.activate((Todo) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("AssignTo")) {
+                return todoService.assignTo((Todo) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return todoService.checkKey((Todo) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Close")) {
+                return todoService.close((Todo) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("createCycle")) {
+                return todoService.createCycle((Todo) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Finish")) {
+                return todoService.finish((Todo) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return todoService.save((Todo) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendMessage")) {
+                return todoService.sendMessage((Todo) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendMsgPreProcess")) {
+                return todoService.sendMsgPreProcess((Todo) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Todo){
+                    Todo arg = (Todo) args[0] ;
+                    CachedBeanCopier.copy(todoService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return todoService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return todoService.sysUpdate((Todo) args[0]);
             }             
         }
         

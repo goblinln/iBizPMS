@@ -311,7 +311,7 @@ export default class DropDownListMpicker extends Vue {
             this.codeListService.getDataItems({ tag: this.tag, type: this.codelistType,data: this.codeList,context:arg.context,viewparam:arg.viewparams }).then((codelistItems: Array<any>) => {
                 this.formatCodeList(codelistItems);   
             }).catch((error: any) => {
-                LogUtil.log(`----${this.tag}----${(this.$t('app.commonWords.codeNotExist') as string)}`);
+                LogUtil.log(`----${this.tag}----${(this.$t('app.commonwords.codenotexist') as string)}`);
             })
         }
     }

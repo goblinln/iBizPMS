@@ -405,7 +405,7 @@ export class AppMenuControlBase extends ControlBase {
                 AppFuncService.getInstance().executeApplication(appFunc,tempContext);
             }
         } else {
-            LogUtil.warn(this.$t('app.commonWords.noassign'));
+            LogUtil.warn(this.$t('app.commonwords.noassign'));
         }
     }
 

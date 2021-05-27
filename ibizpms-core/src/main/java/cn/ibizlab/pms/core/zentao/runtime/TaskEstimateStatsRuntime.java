@@ -189,11 +189,16 @@ public class TaskEstimateStatsRuntime extends cn.ibizlab.pms.core.runtime.System
                 return taskestimatestatsService.save((TaskEstimateStats) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return taskestimatestatsService.create((TaskEstimateStats) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return taskestimatestatsService.update((TaskEstimateStats) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return taskestimatestatsService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof TaskEstimateStats){
                     TaskEstimateStats arg = (TaskEstimateStats) args[0] ;
                     CachedBeanCopier.copy(taskestimatestatsService.get(arg.getId()), arg);
@@ -201,12 +206,27 @@ public class TaskEstimateStatsRuntime extends cn.ibizlab.pms.core.runtime.System
                 }else{
                     return taskestimatestatsService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return taskestimatestatsService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return taskestimatestatsService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return taskestimatestatsService.getDraft((TaskEstimateStats) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return taskestimatestatsService.checkKey((TaskEstimateStats) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return taskestimatestatsService.save((TaskEstimateStats) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof TaskEstimateStats){
+                    TaskEstimateStats arg = (TaskEstimateStats) args[0] ;
+                    CachedBeanCopier.copy(taskestimatestatsService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return taskestimatestatsService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return taskestimatestatsService.sysUpdate((TaskEstimateStats) args[0]);
             }             
         }
         

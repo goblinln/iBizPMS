@@ -179,11 +179,16 @@ public class IbzAgentRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 return ibzagentService.save((IbzAgent) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzagentService.create((IbzAgent) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzagentService.update((IbzAgent) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzagentService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbzAgent){
                     IbzAgent arg = (IbzAgent) args[0] ;
                     CachedBeanCopier.copy(ibzagentService.get(arg.getIbzagentid()), arg);
@@ -191,12 +196,27 @@ public class IbzAgentRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 }else{
                     return ibzagentService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzagentService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzagentService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzagentService.getDraft((IbzAgent) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzagentService.checkKey((IbzAgent) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzagentService.save((IbzAgent) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbzAgent){
+                    IbzAgent arg = (IbzAgent) args[0] ;
+                    CachedBeanCopier.copy(ibzagentService.sysGet(arg.getIbzagentid()), arg);
+                    return arg;
+                }else{
+                    return ibzagentService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzagentService.sysUpdate((IbzAgent) args[0]);
             }             
         }
         

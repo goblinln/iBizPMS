@@ -205,11 +205,16 @@ public class FileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 return fileService.updateObjectIDForPmsEe((File) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return fileService.create((File) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return fileService.update((File) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return fileService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof File){
                     File arg = (File) args[0] ;
                     CachedBeanCopier.copy(fileService.get(arg.getId()), arg);
@@ -217,12 +222,33 @@ public class FileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 }else{
                     return fileService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return fileService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return fileService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return fileService.getDraft((File) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return fileService.checkKey((File) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return fileService.save((File) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("updateObjectID")) {
+                return fileService.updateObjectID((File) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("updateObjectIDForPmsEe")) {
+                return fileService.updateObjectIDForPmsEe((File) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof File){
+                    File arg = (File) args[0] ;
+                    CachedBeanCopier.copy(fileService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return fileService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return fileService.sysUpdate((File) args[0]);
             }             
         }
         

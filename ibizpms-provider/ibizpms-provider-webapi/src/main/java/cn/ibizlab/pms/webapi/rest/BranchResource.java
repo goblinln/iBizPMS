@@ -52,14 +52,6 @@ public class BranchResource {
     @Lazy
     public BranchMapping branchMapping;
 
-    @PreAuthorize("@BranchRuntime.test(#branch_id,'DELETE')")
-    @ApiOperation(value = "删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "删除产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/branches/{branch_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("branch_id") Long branch_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(branch_id));
-    }
-
-
     @PreAuthorize("@BranchRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取CurProduct", tags = {"产品的分支和平台信息" } ,notes = "获取CurProduct")
     @RequestMapping(method= RequestMethod.POST , value="/branches/fetchcurproduct")
@@ -81,14 +73,6 @@ public class BranchResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(branchMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-
-    @PreAuthorize("@BranchRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "获取产品的分支和平台信息草稿", tags = {"产品的分支和平台信息" },  notes = "获取产品的分支和平台信息草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/branches/getdraft")
-    public ResponseEntity<BranchDTO> getDraft(BranchDTO dto) {
-        Branch domain = branchMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(branchMapping.toDto(branchService.getDraft(domain)));
-    }
 
     @PreAuthorize("@BranchRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "新建产品的分支和平台信息")
@@ -127,6 +111,23 @@ public class BranchResource {
                 .body(new PageImpl(branchMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@BranchRuntime.test(#branch_id,'UPDATE')")
+    @ApiOperation(value = "更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "更新产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.PUT, value = "/branches/{branch_id}")
+    @Transactional
+    public ResponseEntity<BranchDTO> update(@PathVariable("branch_id") Long branch_id, @RequestBody BranchDTO branchdto) {
+		Branch domain  = branchMapping.toDomain(branchdto);
+        domain.setId(branch_id);
+		branchService.update(domain );
+        if(!branchRuntime.test(branch_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
+		BranchDTO dto = branchMapping.toDto(domain);
+        Map<String,Integer> opprivs = branchRuntime.getOPPrivs(branch_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
     @ApiOperation(value = "保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "保存产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/branches/save")
     public ResponseEntity<BranchDTO> save(@RequestBody BranchDTO branchdto) {
@@ -145,20 +146,19 @@ public class BranchResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BranchRuntime.test(#branch_id,'UPDATE')")
-    @ApiOperation(value = "更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "更新产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.PUT, value = "/branches/{branch_id}")
-    @Transactional
-    public ResponseEntity<BranchDTO> update(@PathVariable("branch_id") Long branch_id, @RequestBody BranchDTO branchdto) {
-		Branch domain  = branchMapping.toDomain(branchdto);
-        domain.setId(branch_id);
-		branchService.update(domain );
-        if(!branchRuntime.test(branch_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
-		BranchDTO dto = branchMapping.toDto(domain);
-        Map<String,Integer> opprivs = branchRuntime.getOPPrivs(branch_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("@BranchRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "获取产品的分支和平台信息草稿", tags = {"产品的分支和平台信息" },  notes = "获取产品的分支和平台信息草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/branches/getdraft")
+    public ResponseEntity<BranchDTO> getDraft(BranchDTO dto) {
+        Branch domain = branchMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(branchMapping.toDto(branchService.getDraft(domain)));
+    }
+
+    @PreAuthorize("@BranchRuntime.test(#branch_id,'DELETE')")
+    @ApiOperation(value = "删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "删除产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/branches/{branch_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("branch_id") Long branch_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(branch_id));
     }
 
 
@@ -181,14 +181,6 @@ public class BranchResource {
         branchdto = branchMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(branchdto);
     }
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
-    @ApiOperation(value = "根据产品删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品删除产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/branches/{branch_id}")
-    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(branch_id));
-    }
-
-
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取CurProduct", tags = {"产品的分支和平台信息" } ,notes = "根据产品获取CurProduct")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/branches/fetchcurproduct")
@@ -212,15 +204,6 @@ public class BranchResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(branchMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品获取产品的分支和平台信息草稿", tags = {"产品的分支和平台信息" },  notes = "根据产品获取产品的分支和平台信息草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/branches/getdraft")
-    public ResponseEntity<BranchDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, BranchDTO dto) {
-        Branch domain = branchMapping.toDomain(dto);
-        domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(branchMapping.toDto(branchService.getDraft(domain)));
-    }
-
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品建立产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品建立产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/branches")
@@ -256,6 +239,19 @@ public class BranchResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(branchMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @ApiOperation(value = "根据产品更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品更新产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/branches/{branch_id}")
+    public ResponseEntity<BranchDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id, @RequestBody BranchDTO branchdto) {
+        Branch domain = branchMapping.toDomain(branchdto);
+        domain.setProduct(product_id);
+        domain.setId(branch_id);
+		branchService.update(domain);
+        BranchDTO dto = branchMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
     @ApiOperation(value = "根据产品保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品保存产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/branches/save")
     public ResponseEntity<BranchDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody BranchDTO branchdto) {
@@ -276,16 +272,20 @@ public class BranchResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
-    @ApiOperation(value = "根据产品更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品更新产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/branches/{branch_id}")
-    public ResponseEntity<BranchDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id, @RequestBody BranchDTO branchdto) {
-        Branch domain = branchMapping.toDomain(branchdto);
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品获取产品的分支和平台信息草稿", tags = {"产品的分支和平台信息" },  notes = "根据产品获取产品的分支和平台信息草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/branches/getdraft")
+    public ResponseEntity<BranchDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, BranchDTO dto) {
+        Branch domain = branchMapping.toDomain(dto);
         domain.setProduct(product_id);
-        domain.setId(branch_id);
-		branchService.update(domain);
-        BranchDTO dto = branchMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(branchMapping.toDto(branchService.getDraft(domain)));
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @ApiOperation(value = "根据产品删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品删除产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/branches/{branch_id}")
+    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(branch_id));
     }
 
 

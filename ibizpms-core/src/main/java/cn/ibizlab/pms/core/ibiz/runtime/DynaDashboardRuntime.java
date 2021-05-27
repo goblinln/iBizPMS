@@ -179,11 +179,16 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
                 return dynadashboardService.save((DynaDashboard) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return dynadashboardService.create((DynaDashboard) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return dynadashboardService.update((DynaDashboard) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return dynadashboardService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof DynaDashboard){
                     DynaDashboard arg = (DynaDashboard) args[0] ;
                     CachedBeanCopier.copy(dynadashboardService.get(arg.getDynadashboardid()), arg);
@@ -191,12 +196,27 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
                 }else{
                     return dynadashboardService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return dynadashboardService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return dynadashboardService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return dynadashboardService.getDraft((DynaDashboard) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return dynadashboardService.checkKey((DynaDashboard) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return dynadashboardService.save((DynaDashboard) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof DynaDashboard){
+                    DynaDashboard arg = (DynaDashboard) args[0] ;
+                    CachedBeanCopier.copy(dynadashboardService.sysGet(arg.getDynadashboardid()), arg);
+                    return arg;
+                }else{
+                    return dynadashboardService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return dynadashboardService.sysUpdate((DynaDashboard) args[0]);
             }             
         }
         

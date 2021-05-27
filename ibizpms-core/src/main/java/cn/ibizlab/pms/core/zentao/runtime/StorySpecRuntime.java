@@ -183,11 +183,16 @@ public class StorySpecRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 return storyspecService.save((StorySpec) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return storyspecService.create((StorySpec) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return storyspecService.update((StorySpec) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return storyspecService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof StorySpec){
                     StorySpec arg = (StorySpec) args[0] ;
                     CachedBeanCopier.copy(storyspecService.get(arg.getId()), arg);
@@ -195,12 +200,27 @@ public class StorySpecRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 }else{
                     return storyspecService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return storyspecService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return storyspecService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return storyspecService.getDraft((StorySpec) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return storyspecService.checkKey((StorySpec) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return storyspecService.save((StorySpec) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof StorySpec){
+                    StorySpec arg = (StorySpec) args[0] ;
+                    CachedBeanCopier.copy(storyspecService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return storyspecService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return storyspecService.sysUpdate((StorySpec) args[0]);
             }             
         }
         

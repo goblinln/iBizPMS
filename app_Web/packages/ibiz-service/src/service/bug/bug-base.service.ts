@@ -326,6 +326,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
         return this.condCache.get('myFavorites');
     }
 
+    protected getMyReProductCond() {
+        if (!this.condCache.has('myReProduct')) {
+            const strCond: any[] = ['AND'];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('myReProduct', cond);
+            }
+        }
+        return this.condCache.get('myReProduct');
+    }
+
     protected getNotCurPlanLinkBugCond() {
         return this.condCache.get('notCurPlanLinkBug');
     }

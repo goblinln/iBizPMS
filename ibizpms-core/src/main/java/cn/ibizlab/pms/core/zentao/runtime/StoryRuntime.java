@@ -159,6 +159,8 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             return storyService.searchMyCurOpenedStory(searchContext);    
         if (iPSDEDataSet.getName().equals("MyFavorites"))
             return storyService.searchMyFavorites(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyReProduct"))
+            return storyService.searchMyReProduct(searchContext);    
         if (iPSDEDataSet.getName().equals("NotCurPlanLinkStory"))
             return storyService.searchNotCurPlanLinkStory(searchContext);    
         if (iPSDEDataSet.getName().equals("ParentDefault"))
@@ -223,6 +225,8 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             return storyService.selectMyCurOpenedStory(searchContext);
         if (iPSDataQuery.getName().equals("MyFavorites"))
             return storyService.selectMyFavorites(searchContext);
+        if (iPSDataQuery.getName().equals("MyReProduct"))
+            return storyService.selectMyReProduct(searchContext);
         if (iPSDataQuery.getName().equals("NotCurPlanLinkStory"))
             return storyService.selectNotCurPlanLinkStory(searchContext);
         if (iPSDataQuery.getName().equals("ParentDefault"))
@@ -409,11 +413,16 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
                 return storyService.unlinkStory((Story) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return storyService.create((Story) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return storyService.update((Story) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return storyService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Story){
                     Story arg = (Story) args[0] ;
                     CachedBeanCopier.copy(storyService.get(arg.getId()), arg);
@@ -421,12 +430,147 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
                 }else{
                     return storyService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return storyService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return storyService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return storyService.getDraft((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("activate")) {
+                return storyService.activate((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("AllPush")) {
+                return storyService.allPush((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("AssignTo")) {
+                return storyService.assignTo((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BatchAssignTo")) {
+                return storyService.batchAssignTo((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BatchChangeBranch")) {
+                return storyService.batchChangeBranch((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BatchChangeModule")) {
+                return storyService.batchChangeModule((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BatchChangePlan")) {
+                return storyService.batchChangePlan((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BatchChangeStage")) {
+                return storyService.batchChangeStage((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BatchClose")) {
+                return storyService.batchClose((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BatchReview")) {
+                return storyService.batchReview((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BatchUnlinkStory")) {
+                return storyService.batchUnlinkStory((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BugToStory")) {
+                return storyService.bugToStory((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("buildBatchUnlinkStory")) {
+                return storyService.buildBatchUnlinkStory((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("buildLinkStory")) {
+                return storyService.buildLinkStory((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("buildUnlinkStory")) {
+                return storyService.buildUnlinkStory((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("buildUnlinkStorys")) {
+                return storyService.buildUnlinkStorys((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Change")) {
+                return storyService.change((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return storyService.checkKey((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Close")) {
+                return storyService.close((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CreateTasks")) {
+                return storyService.createTasks((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetStorySpec")) {
+                return storyService.getStorySpec((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetStorySpecs")) {
+                return storyService.getStorySpecs((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("importPlanStories")) {
+                return storyService.importPlanStories((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("LinkStory")) {
+                return storyService.linkStory((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ProjectBatchUnlinkStory")) {
+                return storyService.projectBatchUnlinkStory((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ProjectLinkStory")) {
+                return storyService.projectLinkStory((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ProjectUnlinkStory")) {
+                return storyService.projectUnlinkStory((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("projectUnlinkStorys")) {
+                return storyService.projectUnlinkStorys((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Push")) {
+                return storyService.push((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ReleaseBatchUnlinkStory")) {
+                return storyService.releaseBatchUnlinkStory((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ReleaseLinkStory")) {
+                return storyService.releaseLinkStory((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ReleaseUnlinkStory")) {
+                return storyService.releaseUnlinkStory((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ResetReviewedBy")) {
+                return storyService.resetReviewedBy((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Review")) {
+                return storyService.review((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return storyService.save((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendMessage")) {
+                return storyService.sendMessage((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendMsgPreProcess")) {
+                return storyService.sendMsgPreProcess((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("setStage")) {
+                return storyService.setStage((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("StoryFavorites")) {
+                return storyService.storyFavorites((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("StoryNFavorites")) {
+                return storyService.storyNFavorites((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("SyncFromIbiz")) {
+                return storyService.syncFromIbiz((Story) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("UnlinkStory")) {
+                return storyService.unlinkStory((Story) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Story){
+                    Story arg = (Story) args[0] ;
+                    CachedBeanCopier.copy(storyService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return storyService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return storyService.sysUpdate((Story) args[0]);
             }             
         }
         
@@ -688,6 +832,9 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         }
         else if (action.equals("searchMyFavorites")) {
             return aroundDataSet("MyFavorites", point);
+        }
+        else if (action.equals("searchMyReProduct")) {
+            return aroundDataSet("MyReProduct", point);
         }
         else if (action.equals("searchNotCurPlanLinkStory")) {
             return aroundDataSet("NotCurPlanLinkStory", point);

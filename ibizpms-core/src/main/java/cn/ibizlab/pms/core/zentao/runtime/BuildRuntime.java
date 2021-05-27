@@ -223,11 +223,16 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
                 return buildService.unlinkStory((Build) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return buildService.create((Build) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return buildService.update((Build) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return buildService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Build){
                     Build arg = (Build) args[0] ;
                     CachedBeanCopier.copy(buildService.get(arg.getId()), arg);
@@ -235,12 +240,45 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
                 }else{
                     return buildService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return buildService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return buildService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return buildService.getDraft((Build) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return buildService.checkKey((Build) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("linkBug")) {
+                return buildService.linkBug((Build) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("LinkStory")) {
+                return buildService.linkStory((Build) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("MobProjectBuildCounter")) {
+                return buildService.mobProjectBuildCounter((Build) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("OneClickRelease")) {
+                return buildService.oneClickRelease((Build) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return buildService.save((Build) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("unlinkBug")) {
+                return buildService.unlinkBug((Build) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("unlinkStory")) {
+                return buildService.unlinkStory((Build) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Build){
+                    Build arg = (Build) args[0] ;
+                    CachedBeanCopier.copy(buildService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return buildService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return buildService.sysUpdate((Build) args[0]);
             }             
         }
         

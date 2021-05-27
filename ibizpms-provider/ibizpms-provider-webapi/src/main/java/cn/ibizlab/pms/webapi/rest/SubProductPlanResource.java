@@ -52,18 +52,6 @@ public class SubProductPlanResource {
     @Lazy
     public SubProductPlanMapping subproductplanMapping;
 
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'CREATE')")
-    @ApiOperation(value = "根据产品计划建立产品计划", tags = {"产品计划" },  notes = "根据产品计划建立产品计划")
-	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans")
-    public ResponseEntity<SubProductPlanDTO> createByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
-        ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
-        domain.setParent(productplan_id);
-		productplanService.create(domain);
-        SubProductPlanDTO dto = subproductplanMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
     @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
     @ApiOperation(value = "根据产品计划获取产品计划", tags = {"产品计划" },  notes = "根据产品计划获取产品计划")
 	@RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
@@ -72,14 +60,6 @@ public class SubProductPlanResource {
         SubProductPlanDTO dto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'DELETE')")
-    @ApiOperation(value = "根据产品计划删除产品计划", tags = {"产品计划" },  notes = "根据产品计划删除产品计划")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
-    public ResponseEntity<Boolean> removeByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(subproductplan_id));
-    }
-
 
     @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'UPDATE')")
     @ApiOperation(value = "根据产品计划更新产品计划", tags = {"产品计划" },  notes = "根据产品计划更新产品计划")
@@ -91,6 +71,14 @@ public class SubProductPlanResource {
 		productplanService.update(domain);
         SubProductPlanDTO dto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'DELETE')")
+    @ApiOperation(value = "根据产品计划删除产品计划", tags = {"产品计划" },  notes = "根据产品计划删除产品计划")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
+    public ResponseEntity<Boolean> removeByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(subproductplan_id));
     }
 
 
@@ -126,10 +114,10 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品产品计划建立产品计划", tags = {"产品计划" },  notes = "根据产品产品计划建立产品计划")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans")
-    public ResponseEntity<SubProductPlanDTO> createByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'CREATE')")
+    @ApiOperation(value = "根据产品计划建立产品计划", tags = {"产品计划" },  notes = "根据产品计划建立产品计划")
+	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans")
+    public ResponseEntity<SubProductPlanDTO> createByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
 		productplanService.create(domain);
@@ -147,14 +135,6 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
-    @ApiOperation(value = "根据产品产品计划删除产品计划", tags = {"产品计划" },  notes = "根据产品产品计划删除产品计划")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
-    public ResponseEntity<Boolean> removeByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(subproductplan_id));
-    }
-
-
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品产品计划更新产品计划", tags = {"产品计划" },  notes = "根据产品产品计划更新产品计划")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
@@ -165,6 +145,14 @@ public class SubProductPlanResource {
 		productplanService.update(domain);
         SubProductPlanDTO dto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @ApiOperation(value = "根据产品产品计划删除产品计划", tags = {"产品计划" },  notes = "根据产品产品计划删除产品计划")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
+    public ResponseEntity<Boolean> removeByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(subproductplan_id));
     }
 
 
@@ -200,5 +188,17 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品产品计划建立产品计划", tags = {"产品计划" },  notes = "根据产品产品计划建立产品计划")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans")
+    public ResponseEntity<SubProductPlanDTO> createByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
+        ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
+        domain.setParent(productplan_id);
+		productplanService.create(domain);
+        SubProductPlanDTO dto = subproductplanMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
 }
 

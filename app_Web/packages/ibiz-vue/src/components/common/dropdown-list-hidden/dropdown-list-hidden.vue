@@ -322,7 +322,7 @@ export default class DropDownListHidden extends Vue {
             this.codeListService.getDataItems({ tag: this.tag, type: this.codelistType,data: this.codeList,context:context,viewparam:viewparam }).then((codelistItems: Array<any>) => {
                 this.formatCodeList(codelistItems);
             }).catch((error: any) => {
-                LogUtil.log(`----${this.tag}----${this.$t('app.commonWords.codeNotExist')}`);
+                LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codenotexist')}`);
             })
         }
     }
@@ -369,7 +369,7 @@ export default class DropDownListHidden extends Vue {
                     let items: Array<any> = [...res];
                     this.formatCodeList(items);
                 }).catch((error:any) => {
-                    LogUtil.log(`----${this.tag}----${this.$t('app.commonWords.codeNotExist')}`);
+                    LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codenotexist')}`);
                 });
             }
         }

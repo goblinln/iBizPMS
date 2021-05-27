@@ -179,11 +179,16 @@ public class HistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 return historyService.save((History) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return historyService.create((History) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return historyService.update((History) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return historyService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof History){
                     History arg = (History) args[0] ;
                     CachedBeanCopier.copy(historyService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class HistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 }else{
                     return historyService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return historyService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return historyService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return historyService.getDraft((History) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return historyService.checkKey((History) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return historyService.save((History) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof History){
+                    History arg = (History) args[0] ;
+                    CachedBeanCopier.copy(historyService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return historyService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return historyService.sysUpdate((History) args[0]);
             }             
         }
         

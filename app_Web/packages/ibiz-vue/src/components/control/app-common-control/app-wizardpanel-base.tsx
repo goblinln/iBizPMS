@@ -1,5 +1,5 @@
 import { Prop, Watch, Emit } from 'vue-property-decorator';
-import { Util } from 'ibiz-core';
+import { debounce, Util } from 'ibiz-core';
 import { WizardPanelControlBase } from '../../../widgets';
 import { IPSDEEditForm, IPSDEWizard, IPSDEWizardEditForm, IPSDEWizardStep } from '@ibiz/dynamic-model-api';
 
@@ -109,9 +109,9 @@ export class AppWizardPanelBase extends WizardPanelControlBase {
     public renderStepsFooter() {
         return (
             <footer class="app-wizard-footer">
-                {!this.isHidden('PREV') ? <i-button on-click={this.onClickPrev.bind(this)} type="primary">{this.$t('app.wizardPanel.back')}</i-button> : null}
-                {!this.isHidden('NEXT') ? <i-button on-click={this.onClickNext.bind(this)} type="primary">{this.$t('app.wizardPanel.next')}</i-button> : null}
-                {!this.isHidden('FINISH') ? <i-button on-click={this.onClickFinish.bind(this)} type="primary">{this.$t('app.wizardPanel.complete')}</i-button> : null}
+                {!this.isHidden('PREV') ? <i-button on-click={(...params: any[]) => debounce(this.onClickPrev,params,this)} type="primary">{this.$t('app.wizardPanel.back')}</i-button> : null}
+                {!this.isHidden('NEXT') ? <i-button on-click={(...params: any[]) => debounce(this.onClickNext,params,this)} type="primary">{this.$t('app.wizardPanel.next')}</i-button> : null}
+                {!this.isHidden('FINISH') ? <i-button on-click={(...params: any[]) => debounce(this.onClickFinish,params,this)} type="primary">{this.$t('app.wizardPanel.complete')}</i-button> : null}
             </footer>
         );
     }

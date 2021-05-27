@@ -179,11 +179,16 @@ public class TaskTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 return taskteamService.save((TaskTeam) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return taskteamService.create((TaskTeam) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return taskteamService.update((TaskTeam) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return taskteamService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof TaskTeam){
                     TaskTeam arg = (TaskTeam) args[0] ;
                     CachedBeanCopier.copy(taskteamService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class TaskTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 }else{
                     return taskteamService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return taskteamService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return taskteamService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return taskteamService.getDraft((TaskTeam) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return taskteamService.checkKey((TaskTeam) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return taskteamService.save((TaskTeam) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof TaskTeam){
+                    TaskTeam arg = (TaskTeam) args[0] ;
+                    CachedBeanCopier.copy(taskteamService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return taskteamService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return taskteamService.sysUpdate((TaskTeam) args[0]);
             }             
         }
         

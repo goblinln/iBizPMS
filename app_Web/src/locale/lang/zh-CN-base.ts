@@ -136,90 +136,90 @@ import commonLogic from '@/locale/logic/common/common-logic';
 function getAppLocale(){
     const data:any = {
         app: {
-            commonWords:{
+            commonwords:{
                 error: "失败",
                 success: "成功",
                 ok: "确认",
                 cancel: "取消",
                 save: "保存",
-                codeNotExist: "代码表不存在",
-                reqException: "请求异常",
-                sysException: "系统异常",
+                codenotexist: "代码表不存在",
+                reqexception: "请求异常",
+                sysexception: "系统异常",
                 warning: "警告",
                 wrong: "错误",
-                rulesException: "值规则校验异常",
-                saveSuccess: "保存成功",
-                saveFailed: "保存失败",
-                deleteSuccess: "删除成功",
-                deleteError: "删除失败",
-                delDataFail: "删除数据失败",
-                noData: "暂无数据",
+                rulesexception: "值规则校验异常",
+                savesuccess: "保存成功",
+                savefailed: "保存失败",
+                deletesuccess: "删除成功",
+                deleteerror: "删除失败",
+                deldatafail: "删除数据失败",
+                nodata: "暂无数据",
                 startsuccess:"启动成功",
                 loadmore:"加载更多",
                 nomore:"没有更多了",
                 other:"其他",
-                nosupportSingle: "不支持单项数据",
-                nosupportMultile: "不支持多项数据",
-                getAppidError: "获取网站应用appid失败",
-                getDingInfoError: "钉钉用户信息获取失败",
-                getIDError: "获取企业ID失败",
+                nosupportsingle: "不支持单项数据",
+                nosupportmultile: "不支持多项数据",
+                getappiderror: "获取网站应用appid失败",
+                getdinginfoerror: "钉钉用户信息获取失败",
+                getiderror: "获取企业ID失败",
                 noassign: "未指定应用功能"
             },
             local:{
                 new: "新建",
                 add: "增加",
             },
-            gridpage: {
+            grid: {
                 choicecolumns: "选择列",
                 refresh: "刷新",
                 show: "显示",
                 records: "条",
                 totle: "共",
-                valueVail: "值不能为空",
+                valuevail: "值不能为空",
                 group:"分组",
                 other:"其他",
-                notConfig: {
-                    fetchAction: "视图表格fetchAction参数未配置",
-                    removeAction: "视图表格removeAction参数未配置",
-                    createAction: "视图表格createAction参数未配置",
-                    updateAction: "视图表格updateAction参数未配置",
-                    loaddraftAction: "视图表格loaddraftAction参数未配置",
+                notconfig: {
+                    fetchaction: "视图表格fetchAction参数未配置",
+                    removeaction: "视图表格removeAction参数未配置",
+                    createaction: "视图表格createAction参数未配置",
+                    updateaction: "视图表格updateAction参数未配置",
+                    loaddraftaction: "视图表格loaddraftAction参数未配置",
                 },
                 data: "数据",
-                delDataFail: "删除数据失败",
-                delSuccess: "删除成功!",
-                confirmDel: "确认要删除",
-                notRecoverable: "删除操作将不可恢复？",
-                notBatch: "批量添加未实现",
+                deldatafail: "删除数据失败",
+                delsuccess: "删除成功!",
+                confirmdel: "确认要删除",
+                notrecoverable: "删除操作将不可恢复？",
+                notbatch: "批量添加未实现",
                 grid: "表",
-                exportFail: "数据导出失败",
+                exportfail: "数据导出失败",
                 sum: "合计",
-                formitemFailed: "表单项更新失败",
+                formitemfailed: "表单项更新失败",
             },
             list: {
-                notConfig: {
-                    fetchAction: "视图列表fetchAction参数未配置",
-                    removeAction: "视图表格removeAction参数未配置",
-                    createAction: "视图列表createAction参数未配置",
-                    updateAction: "视图列表updateAction参数未配置",
+                notconfig: {
+                    fetchaction: "视图列表fetchAction参数未配置",
+                    removeaction: "视图表格removeAction参数未配置",
+                    createaction: "视图列表createAction参数未配置",
+                    updateaction: "视图列表updateAction参数未配置",
                 },
-                confirmDel: "确认要删除",
-                notRecoverable: "删除操作将不可恢复？",
+                confirmdel: "确认要删除",
+                notrecoverable: "删除操作将不可恢复？",
             },
-            listExpBar: {
+            listexpbar: {
                 title: "列表导航栏",
             },
-            wfExpBar: {
+            wfexpbar: {
                 title: "流程导航栏",
             },
-            calendarExpBar:{
+            calendarexpbar:{
                 title: "日历导航栏",
             },
-            treeExpBar: {
+            treeexpbar: {
                 title: "树视图导航栏",
             },
             portlet: {
-                noExtensions: "无扩展插件",
+                noextensions: "无扩展插件",
             },
             tabpage: {
                 sureclosetip: {
@@ -229,10 +229,7 @@ function getAppLocale(){
                 closeall: "关闭所有",
                 closeother: "关闭其他",
             },
-            fileUpload: {
-                caption: "上传",
-            },
-            searchButton: {
+            searchbutton: {
                 search: "搜索",
                 reset: "重置",
             },

@@ -186,11 +186,16 @@ public class IbzPlanTempletRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
                 return ibzplantempletService.save((IbzPlanTemplet) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzplantempletService.create((IbzPlanTemplet) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzplantempletService.update((IbzPlanTemplet) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzplantempletService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbzPlanTemplet){
                     IbzPlanTemplet arg = (IbzPlanTemplet) args[0] ;
                     CachedBeanCopier.copy(ibzplantempletService.get(arg.getIbzplantempletid()), arg);
@@ -198,12 +203,30 @@ public class IbzPlanTempletRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
                 }else{
                     return ibzplantempletService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzplantempletService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzplantempletService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzplantempletService.getDraft((IbzPlanTemplet) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzplantempletService.checkKey((IbzPlanTemplet) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("getPlan")) {
+                return ibzplantempletService.getPlan((IbzPlanTemplet) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzplantempletService.save((IbzPlanTemplet) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbzPlanTemplet){
+                    IbzPlanTemplet arg = (IbzPlanTemplet) args[0] ;
+                    CachedBeanCopier.copy(ibzplantempletService.sysGet(arg.getIbzplantempletid()), arg);
+                    return arg;
+                }else{
+                    return ibzplantempletService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzplantempletService.sysUpdate((IbzPlanTemplet) args[0]);
             }             
         }
         

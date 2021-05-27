@@ -1,6 +1,6 @@
 import { Prop, Watch } from 'vue-property-decorator';
 import { CreateElement } from 'vue';
-import { Util } from 'ibiz-core';
+import { debounce, Util } from 'ibiz-core';
 import { WFDynaStartViewBase } from '../../../view';
 import { AppLayoutService } from '../../../app-service';
 
@@ -85,9 +85,9 @@ export class AppWFDynaStartViewBase extends WFDynaStartViewBase {
             this.renderMainContent(),
             <card slot="button" dis-hover bordered={false} class='footer'>
                 <row style=" text-align: right ">
-                <i-button type='primary' on-click={this.onClickOk.bind(this)} loading={this.viewLoadingService.isLoading}>确认</i-button>
+                <i-button type='primary' on-click={(...params: any[]) => debounce(this.onClickOk,params,this)} loading={this.viewLoadingService.isLoading}>确认</i-button>
                     &nbsp;&nbsp;
-                <i-button on-click={this.onClickCancel.bind(this)} loading={this.viewLoadingService.isLoading}>取消</i-button>
+                <i-button on-click={(...params: any[]) => debounce(this.onClickCancel,params,this)} loading={this.viewLoadingService.isLoading}>取消</i-button>
                 </row>
             </card>  
         ]);

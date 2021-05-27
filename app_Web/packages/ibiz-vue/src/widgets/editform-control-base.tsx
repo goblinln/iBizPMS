@@ -412,7 +412,7 @@ export class EditFormControlBase extends FormControlBase {
             if (response && response.status && response.data) {
                 this.$throw(response, 'autoSave', { dangerouslyUseHTMLString: true });
             } else {
-                this.$throw((this.$t('app.commonWords.sysException') as string), 'autoSave');
+                this.$throw((this.$t('app.commonwords.sysexception') as string), 'autoSave');
             }
         });
     }
@@ -485,7 +485,7 @@ export class EditFormControlBase extends FormControlBase {
                     this.$throw(response, 'save', { dangerouslyUseHTMLString: true });
                     reject(response);
                 } else {
-                    this.$throw((this.$t('app.commonWords.sysException') as string), 'save');
+                    this.$throw((this.$t('app.commonwords.sysexception') as string), 'save');
                     reject(response);
                 }
                 reject(response);

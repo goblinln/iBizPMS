@@ -199,11 +199,16 @@ public class CaseStepRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 return casestepService.save((CaseStep) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return casestepService.create((CaseStep) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return casestepService.update((CaseStep) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return casestepService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof CaseStep){
                     CaseStep arg = (CaseStep) args[0] ;
                     CachedBeanCopier.copy(casestepService.get(arg.getId()), arg);
@@ -211,12 +216,27 @@ public class CaseStepRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 }else{
                     return casestepService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return casestepService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return casestepService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return casestepService.getDraft((CaseStep) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return casestepService.checkKey((CaseStep) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return casestepService.save((CaseStep) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof CaseStep){
+                    CaseStep arg = (CaseStep) args[0] ;
+                    CachedBeanCopier.copy(casestepService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return casestepService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return casestepService.sysUpdate((CaseStep) args[0]);
             }             
         }
         

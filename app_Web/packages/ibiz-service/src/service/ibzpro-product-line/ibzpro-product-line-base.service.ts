@@ -96,6 +96,18 @@ export class IBZProProductLineBaseService extends EntityBaseService<IIBZProProdu
         return this.condCache.get('view');
     }
     /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZProProductLineService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/ibzproproductlines/${_context.ibzproproductline}`);
+        return res;
+    }
+    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -110,22 +122,16 @@ export class IBZProProductLineBaseService extends EntityBaseService<IIBZProProdu
         return res;
     }
     /**
-     * Create
+     * Update
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof IBZProProductLineService
      */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/ibzproproductlines`, _data);
+        return this.http.put(`/ibzproproductlines/${_context.ibzproproductline}`, _data);
     }
     /**
      * Remove
@@ -150,27 +156,21 @@ export class IBZProProductLineBaseService extends EntityBaseService<IIBZProProdu
         return this.http.post(`/ibzproproductlines/fetchdefault`, _data);
     }
     /**
-     * Get
+     * Create
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof IBZProProductLineService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/ibzproproductlines/${_context.ibzproproductline}`);
-        return res;
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZProProductLineService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzproproductlines/${_context.ibzproproductline}`, _data);
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
+        }
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        return this.http.post(`/ibzproproductlines`, _data);
     }
 }

@@ -414,7 +414,7 @@ export class DataViewControlBase extends MDControlBase {
      */
     public load(opt: any = {}, isReset: boolean = false) {
         if (!this.fetchAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.fetchAction') as string),'load');
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notconfig.fetchaction') as string),'load');
             return;
         }
         const arg: any = {};
@@ -601,7 +601,7 @@ export class DataViewControlBase extends MDControlBase {
      */
     public async remove(datas: any[]): Promise<any> {
         if (!this.removeAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.removeAction') as string),'remove');
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.grid.notconfig.removeaction') as string),'remove');
             return;
         }
         let _datas: any[] = [];
@@ -669,7 +669,7 @@ export class DataViewControlBase extends MDControlBase {
                         this.$throw(response,'remove');
                         return;
                     } else {
-                        this.$success(this.$t('app.commonWords.deleteSuccess') as string,'remove');
+                        this.$success(this.$t('app.commonwords.deletesuccess') as string,'remove');
                     }
                     //删除items中已删除的项
                     _datas.forEach((data: any) => {
@@ -699,13 +699,13 @@ export class DataViewControlBase extends MDControlBase {
             .replace(/[undefined]/g, '')
             .replace(/[ ]/g, '');
         this.$Modal.confirm({
-            title: this.$t('app.commonWords.warning') as string,
+            title: this.$t('app.commonwords.warning') as string,
             content:
-                (this.$t('app.gridpage.confirmDel') as string) +
+                (this.$t('app.grid.confirmdel') as string) +
                 ' ' +
                 dataInfo +
                 '，' +
-                (this.$t('app.gridpage.notRecoverable') as string),
+                (this.$t('app.grid.notrecoverable') as string),
             onOk: () => {
                 removeData();
             },
@@ -730,7 +730,7 @@ export class DataViewControlBase extends MDControlBase {
             try {
                 if (Object.is(item.rowDataState, 'create')) {
                     if (!this.createAction) {
-                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.createAction') as string),'save');
+                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notconfig.createaction') as string),'save');
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
                         let tempContext:any = JSON.parse(JSON.stringify(this.context));
@@ -741,7 +741,7 @@ export class DataViewControlBase extends MDControlBase {
                     }
                 } else if (Object.is(item.rowDataState, 'update')) {
                     if (!this.updateAction) {
-                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.updateAction') as string),'save');
+                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notconfig.updateaction') as string),'save');
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
                         //<#if de??>            if(this.controlInstance.getPSAppDataEntity){}
@@ -769,10 +769,10 @@ export class DataViewControlBase extends MDControlBase {
         this.$emit('ctrl-event', { controlname: this.controlInstance.name, action: 'save', data: successItems });
         this.refresh();
         if (errorItems.length === 0) {
-            this.$success(this.$t('app.commonWords.saveSuccess') as string,'save');
+            this.$success(this.$t('app.commonwords.savesuccess') as string,'save');
         } else {
             errorItems.forEach((item: any, index: number) => {
-                this.$throw(item.majorentityname + (this.$t('app.commonWords.saveFailed') as string) + '!','save');
+                this.$throw(item.majorentityname + (this.$t('app.commonwords.savefailed') as string) + '!','save');
             });
         }
         return successItems;
@@ -866,8 +866,8 @@ export class DataViewControlBase extends MDControlBase {
             }
         });
         const Tree: any = {
-            label: this.$t('app.commonWords.other'),
-            group: this.$t('app.commonWords.other'),
+            label: this.$t('app.commonwords.other'),
+            group: this.$t('app.commonwords.other'),
             children: child,
         };
         if (child && child.length > 0) {
@@ -901,7 +901,7 @@ export class DataViewControlBase extends MDControlBase {
                     children.push(item);
                 }
             });
-            group = group ? group : this.$t('app.commonWords.other');
+            group = group ? group : this.$t('app.commonwords.other');
             const tree: any = {
                 label: group,
                 group: group,
@@ -1113,7 +1113,7 @@ export class DataViewControlBase extends MDControlBase {
         } else {
             return (
                 <div v-else class='item-nodata'>
-                    {this.$t('app.commonWords.noData')}
+                    {this.$t('app.commonwords.nodata')}
                 </div>
             );
         }

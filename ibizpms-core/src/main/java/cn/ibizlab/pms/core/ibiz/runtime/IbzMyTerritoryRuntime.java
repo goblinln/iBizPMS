@@ -208,11 +208,16 @@ public class IbzMyTerritoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
                 return ibzmyterritoryService.save((IbzMyTerritory) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzmyterritoryService.create((IbzMyTerritory) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzmyterritoryService.update((IbzMyTerritory) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzmyterritoryService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbzMyTerritory){
                     IbzMyTerritory arg = (IbzMyTerritory) args[0] ;
                     CachedBeanCopier.copy(ibzmyterritoryService.get(arg.getId()), arg);
@@ -220,12 +225,36 @@ public class IbzMyTerritoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
                 }else{
                     return ibzmyterritoryService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzmyterritoryService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzmyterritoryService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzmyterritoryService.getDraft((IbzMyTerritory) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzmyterritoryService.checkKey((IbzMyTerritory) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("MobMenuCount")) {
+                return ibzmyterritoryService.mobMenuCount((IbzMyTerritory) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("MyFavoriteCount")) {
+                return ibzmyterritoryService.myFavoriteCount((IbzMyTerritory) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("MyTerritoryCount")) {
+                return ibzmyterritoryService.myTerritoryCount((IbzMyTerritory) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzmyterritoryService.save((IbzMyTerritory) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbzMyTerritory){
+                    IbzMyTerritory arg = (IbzMyTerritory) args[0] ;
+                    CachedBeanCopier.copy(ibzmyterritoryService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return ibzmyterritoryService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzmyterritoryService.sysUpdate((IbzMyTerritory) args[0]);
             }             
         }
         

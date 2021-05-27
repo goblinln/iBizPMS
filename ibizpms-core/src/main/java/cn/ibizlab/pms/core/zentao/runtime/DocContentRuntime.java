@@ -183,11 +183,16 @@ public class DocContentRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
                 return doccontentService.save((DocContent) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return doccontentService.create((DocContent) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return doccontentService.update((DocContent) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return doccontentService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof DocContent){
                     DocContent arg = (DocContent) args[0] ;
                     CachedBeanCopier.copy(doccontentService.get(arg.getId()), arg);
@@ -195,12 +200,27 @@ public class DocContentRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
                 }else{
                     return doccontentService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return doccontentService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return doccontentService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return doccontentService.getDraft((DocContent) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return doccontentService.checkKey((DocContent) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return doccontentService.save((DocContent) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof DocContent){
+                    DocContent arg = (DocContent) args[0] ;
+                    CachedBeanCopier.copy(doccontentService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return doccontentService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return doccontentService.sysUpdate((DocContent) args[0]);
             }             
         }
         

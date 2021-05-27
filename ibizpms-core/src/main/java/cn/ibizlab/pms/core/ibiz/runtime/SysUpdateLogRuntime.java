@@ -182,11 +182,16 @@ public class SysUpdateLogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 return sysupdatelogService.save((SysUpdateLog) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return sysupdatelogService.create((SysUpdateLog) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return sysupdatelogService.update((SysUpdateLog) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return sysupdatelogService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof SysUpdateLog){
                     SysUpdateLog arg = (SysUpdateLog) args[0] ;
                     CachedBeanCopier.copy(sysupdatelogService.get(arg.getSysupdatelogid()), arg);
@@ -194,12 +199,30 @@ public class SysUpdateLogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 }else{
                     return sysupdatelogService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return sysupdatelogService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return sysupdatelogService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return sysupdatelogService.getDraft((SysUpdateLog) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return sysupdatelogService.checkKey((SysUpdateLog) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("getLastUpdateInfo")) {
+                return sysupdatelogService.getLastUpdateInfo((SysUpdateLog) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return sysupdatelogService.save((SysUpdateLog) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof SysUpdateLog){
+                    SysUpdateLog arg = (SysUpdateLog) args[0] ;
+                    CachedBeanCopier.copy(sysupdatelogService.sysGet(arg.getSysupdatelogid()), arg);
+                    return arg;
+                }else{
+                    return sysupdatelogService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return sysupdatelogService.sysUpdate((SysUpdateLog) args[0]);
             }             
         }
         

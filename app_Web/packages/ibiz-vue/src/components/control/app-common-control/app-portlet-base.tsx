@@ -1,6 +1,6 @@
 
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import { Util } from 'ibiz-core';
+import { debounce, Util } from 'ibiz-core';
 import { PortletControlBase } from '../../../widgets';
 import { AppViewLogicService } from '../../../app-service';
 import { IPSDBAppViewPortletPart, IPSDBCustomPortletPart, IPSDBHtmlPortletPart, IPSDBRawItemPortletPart, IPSDBSysPortletPart, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
@@ -150,7 +150,7 @@ export class AppPortletBase extends PortletControlBase {
                 <view-toolbar
                     toolbarModels={this.toolbarModels}
                     on-item-click={(data: any, $event: any) => {
-                        this.handleItemClick(data, $event);
+                      debounce(this.handleItemClick,[data, $event],this);
                     }}
                 ></view-toolbar>
             </div>
@@ -168,7 +168,7 @@ export class AppPortletBase extends PortletControlBase {
             viewState={this.viewState}
             uiService={this.appUIService}
             items={this.actionBarModelData}
-            on-itemClick={this.handleItemClick.bind(this)}
+            on-itemClick={(...params: any[]) => debounce(this.handleItemClick,params,this)}
         ></app-actionbar>;
     }
 
@@ -184,7 +184,7 @@ export class AppPortletBase extends PortletControlBase {
         if (plugin) {
             // todo 自定义门户部件
         } else {
-            return <div>{this.$t('app.portlet.noExtensions')}</div>;
+            return <div>{this.$t('app.portlet.noextensions')}</div>;
         }
     }
 
@@ -323,7 +323,7 @@ export class AppPortletBase extends PortletControlBase {
                 let uiactionName = uiAction?.codeName?.toLowerCase() || actionDetail.name?.toLowerCase();
                 // 显示内容
                 // todo 界面行为显示this.actionModel?.[uiactionName]?.visabled 
-                let contentElement = <a on-click={(e: any) => { this.handleActionClick(e, actionDetail) }} v-show={true} >
+                let contentElement = <a on-click={(e: any) => { debounce(this.handleActionClick,[e, actionDetail],this) }} v-show={true} >
                     {this.renderIcon(actionDetail)}
                     {showCaption && (uiAction?.caption || uiAction?.name)}
                 </a>

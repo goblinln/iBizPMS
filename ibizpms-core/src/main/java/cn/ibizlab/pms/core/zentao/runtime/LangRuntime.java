@@ -179,11 +179,16 @@ public class LangRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 return langService.save((Lang) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return langService.create((Lang) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return langService.update((Lang) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return langService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Lang){
                     Lang arg = (Lang) args[0] ;
                     CachedBeanCopier.copy(langService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class LangRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 }else{
                     return langService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return langService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return langService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return langService.getDraft((Lang) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return langService.checkKey((Lang) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return langService.save((Lang) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Lang){
+                    Lang arg = (Lang) args[0] ;
+                    CachedBeanCopier.copy(langService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return langService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return langService.sysUpdate((Lang) args[0]);
             }             
         }
         

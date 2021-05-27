@@ -179,11 +179,16 @@ public class IbzLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 return ibzlibService.save((IbzLib) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzlibService.create((IbzLib) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzlibService.update((IbzLib) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzlibService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbzLib){
                     IbzLib arg = (IbzLib) args[0] ;
                     CachedBeanCopier.copy(ibzlibService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class IbzLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 }else{
                     return ibzlibService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzlibService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzlibService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzlibService.getDraft((IbzLib) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzlibService.checkKey((IbzLib) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzlibService.save((IbzLib) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbzLib){
+                    IbzLib arg = (IbzLib) args[0] ;
+                    CachedBeanCopier.copy(ibzlibService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return ibzlibService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzlibService.sysUpdate((IbzLib) args[0]);
             }             
         }
         

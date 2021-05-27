@@ -56,7 +56,7 @@ export class AppBackEndAction {
         if (this.actionModel.enableConfirm && this.actionModel.confirmMsg) {
             let confirmResult: boolean = await new Promise((resolve: any, reject: any) => {
                 actionContext.$Modal.confirm({
-                    title: actionContext.$t('app.commonWords.warning'),
+                    title: actionContext.$t('app.commonwords.warning'),
                     content: `${this.actionModel.confirmMsg}`,
                     onOk: () => {
                         resolve(true);
@@ -71,9 +71,9 @@ export class AppBackEndAction {
             }
         }
         if (Object.is(actionTarget, 'SINGLEDATA')) {
-            actionContext.$throw(actionContext.$t('app.commonWords.nosupportSingle'),'AppBackEndAction');
+            actionContext.$throw(actionContext.$t('app.commonwords.nosupportsingle'),'AppBackEndAction');
         } else if (Object.is(actionTarget, 'MULTIDATA')) {
-            actionContext.$throw(actionContext.$t('app.commonWords.nosupportMultile'),'AppBackEndAction');
+            actionContext.$throw(actionContext.$t('app.commonwords.nosupportmultile'),'AppBackEndAction');
         } else {
             let data: any = {};
             let parentContext: any = {};
@@ -181,7 +181,7 @@ export class AppBackEndAction {
                                             actionContext.$success(this.actionModel.successMsg,'AppBackEndAction');
 
                                         } else {
-                                            actionContext.$success(`${this.actionModel.caption}${actionContext.$t('app.commonWords.success')}!`,'AppBackEndAction');
+                                            actionContext.$success(`${this.actionModel.caption}${actionContext.$t('app.commonwords.success')}!`,'AppBackEndAction');
                                         }
                                     }
                                     if (

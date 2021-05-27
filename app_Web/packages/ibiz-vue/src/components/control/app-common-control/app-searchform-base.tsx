@@ -2,6 +2,7 @@ import { Prop, Watch, Emit } from 'vue-property-decorator';
 import {
     Util,
     LayoutTool,
+    debounce,
 } from 'ibiz-core';
 import { SearchFormControlBase } from '../../../widgets';
 import { IPSAppDEUIAction, IPSDEFormButton, IPSDEFormDetail, IPSDEFormDRUIPart, IPSDEFormFormPart, IPSDEFormGroupPanel, IPSDEFormIFrame, IPSDEFormPage, IPSDEFormRawItem, IPSDEFormTabPage, IPSDEFormTabPanel, IPSDESearchFormItem, IPSEditor, IPSFlexLayout, IPSFlexLayoutPos, IPSGridLayoutPos, IPSLayout } from '@ibiz/dynamic-model-api';
@@ -351,7 +352,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
         return (
             <div>
                 {badge}
-                <i-button title={title} type='primary' class={controlClassNames} style={btnClass} on-click={($event: any) => this.onFormItemActionClick({ tag: modelJson.name, event: $event })} disabled={this.detailsModel[modelJson.name]?.disabled}>
+                <i-button title={title} type='primary' class={controlClassNames} style={btnClass} on-click={($event: any) => debounce(this.onFormItemActionClick,[{ tag: modelJson.name, event: $event }],this)} disabled={this.detailsModel[modelJson.name]?.disabled}>
                     {sysImage ? (
                         <i class={sysImage?.cssClass} style='margin-right: 2px;'></i>
                     ) : (
@@ -455,7 +456,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
                 index={index}
                 runtimeModel={this.detailsModel[modelJson.name]}
                 controlInstance={this.controlInstance}
-                on-groupUIActionClick={this.handleActionClick.bind(this)}
+                on-groupUIActionClick={(...params: any[]) => debounce(this.handleActionClick,params,this)}
             >
                 {this.renderDetails(modelJson)}
             </app-default-group-panel>
@@ -505,7 +506,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
                     <tabs animated={false} name={tabsName}
                         value={this.detailsModel[name]?.activatedPage}
                         on-on-click={(e: any) => {
-                            this.detailsModel[name]?.clickPage(e);
+                          debounce(this.detailsModel[name]?.clickPage,[e],this);
                         }}
                     >
                         {formPages.map((item: any, index: number) => {
@@ -567,15 +568,15 @@ export class AppSearchFormBase extends SearchFormControlBase {
                                             >
                                                 <div on-click={() => { if (this.selectItem == item.value) { this.data = JSON.parse(JSON.stringify(item.data)); } }}>
                                                     <span>{item.name}</span>
-                                                    <i class="el-icon-close" on-click={(e: any) => this.removeHistoryItem(e, item)}/>
+                                                    <i class="el-icon-close" on-click={(e: any) => debounce(this.removeHistoryItem,[e, item],this)}/>
                                                 </div>
                                             </el-option>
                                     )
                                 })}
                             </el-select> : null}
                         {Object.keys(this.data).length > 0 && <row class='search-button'>
-                            <i-button class='search_reset' size='default' type='primary' on-click={this.onSearch.bind(this)}>{this.$t('app.searchButton.search')}</i-button>
-                            <i-button class='search_reset reset' size='default' on-click={this.onReset.bind(this)}>{this.$t('app.searchButton.reset')}</i-button>
+                            <i-button class='search_reset' size='default' type='primary' on-click={(...params: any[]) => debounce(this.onSearch,params,this)}>{this.$t('app.searchbutton.search')}</i-button>
+                            <i-button class='search_reset reset' size='default' on-click={(...params: any[]) => debounce(this.onReset,params,this)}>{this.$t('app.searchbutton.reset')}</i-button>
                             {this.enableSaveFilter ?
                                 <poptip
                                     ref="propip"
@@ -588,8 +589,8 @@ export class AppSearchFormBase extends SearchFormControlBase {
                                         <div slot="content">
                                             <i-input v-model={this.saveItemName} placeholder=""></i-input>
                                             <div class="save-action">
-                                                <i-button on-click={this.onCancel.bind(this)}>{this.$t('app.commonWords.cancel')}</i-button>
-                                                <i-button type="primary" on-click={this.onOk.bind(this)}>{this.$t('app.commonWords.save')}</i-button>
+                                                <i-button on-click={(...params: any[]) => debounce(this.onCancel,params,this)}>{this.$t('app.commonwords.cancel')}</i-button>
+                                                <i-button type="primary" on-click={(...params: any[]) => debounce(this.onOk,params,this)}>{this.$t('app.commonwords.save')}</i-button>
                                             </div>
                                         </div>
                                 </poptip> : null}

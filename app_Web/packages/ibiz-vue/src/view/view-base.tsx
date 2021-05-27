@@ -517,8 +517,8 @@ export class ViewBase extends Vue {
         }
         if (Object.is(modeldata.viewType, 'DEPICKUPVIEW') || Object.is(modeldata.viewType, 'DEMPICKUPVIEW') || Object.is(modeldata.viewType, 'DEOPTVIEW') || Object.is(modeldata.viewType, 'DEWFSTARTVIEW') || Object.is(modeldata.viewType, 'DEWFACTIONVIEW')) {
             this.containerModel = {
-                view_okbtn: { name: 'okbtn', type: 'button', text: this.$t('app.commonWords.ok'), disabled: true },
-                view_cancelbtn: { name: 'cancelbtn', type: 'button', text: this.$t('app.commonWords.cancel'), disabled: false },
+                view_okbtn: { name: 'okbtn', type: 'button', text: this.$t('app.commonwords.ok'), disabled: true },
+                view_cancelbtn: { name: 'cancelbtn', type: 'button', text: this.$t('app.commonwords.cancel'), disabled: false },
                 view_leftbtn: { name: 'leftbtn', type: 'button', text: this.$t('app.button.leftbtn'), disabled: true },
                 view_rightbtn: { name: 'rightbtn', type: 'button', text: this.$t('app.button.rightbtn'), disabled: true },
                 view_allleftbtn: { name: 'allleftbtn', type: 'button', text: this.$t('app.button.allleftbtn'), disabled: true },

@@ -206,11 +206,16 @@ public class IBZProReleaseActionRuntime extends cn.ibizlab.pms.core.runtime.Syst
                 return ibzproreleaseactionService.sendToread((IBZProReleaseAction) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzproreleaseactionService.create((IBZProReleaseAction) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzproreleaseactionService.update((IBZProReleaseAction) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzproreleaseactionService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IBZProReleaseAction){
                     IBZProReleaseAction arg = (IBZProReleaseAction) args[0] ;
                     CachedBeanCopier.copy(ibzproreleaseactionService.get(arg.getId()), arg);
@@ -218,12 +223,48 @@ public class IBZProReleaseActionRuntime extends cn.ibizlab.pms.core.runtime.Syst
                 }else{
                     return ibzproreleaseactionService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzproreleaseactionService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzproreleaseactionService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzproreleaseactionService.getDraft((IBZProReleaseAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzproreleaseactionService.checkKey((IBZProReleaseAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Comment")) {
+                return ibzproreleaseactionService.comment((IBZProReleaseAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CreateHis")) {
+                return ibzproreleaseactionService.createHis((IBZProReleaseAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("editComment")) {
+                return ibzproreleaseactionService.editComment((IBZProReleaseAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ManagePmsEe")) {
+                return ibzproreleaseactionService.managePmsEe((IBZProReleaseAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzproreleaseactionService.save((IBZProReleaseAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendMarkDone")) {
+                return ibzproreleaseactionService.sendMarkDone((IBZProReleaseAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendTodo")) {
+                return ibzproreleaseactionService.sendTodo((IBZProReleaseAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendToread")) {
+                return ibzproreleaseactionService.sendToread((IBZProReleaseAction) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IBZProReleaseAction){
+                    IBZProReleaseAction arg = (IBZProReleaseAction) args[0] ;
+                    CachedBeanCopier.copy(ibzproreleaseactionService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return ibzproreleaseactionService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzproreleaseactionService.sysUpdate((IBZProReleaseAction) args[0]);
             }             
         }
         

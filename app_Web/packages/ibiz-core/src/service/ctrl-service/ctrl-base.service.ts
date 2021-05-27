@@ -339,7 +339,7 @@ export class ControlServiceBase {
                     resolve(res);
                 }).catch((error: any) => {
                     resolve([]);
-                    LogUtil.log(`----${codeListObject.tag}----${this.controlInstance.$t('app.commonWords.codeNotExist')}`);
+                    LogUtil.log(`----${codeListObject.tag}----${this.controlInstance.$t('app.commonwords.codenotexist')}`);
                 })
             }
         })

@@ -179,11 +179,16 @@ public class RelationRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 return relationService.save((Relation) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return relationService.create((Relation) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return relationService.update((Relation) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return relationService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Relation){
                     Relation arg = (Relation) args[0] ;
                     CachedBeanCopier.copy(relationService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class RelationRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 }else{
                     return relationService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return relationService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return relationService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return relationService.getDraft((Relation) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return relationService.checkKey((Relation) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return relationService.save((Relation) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Relation){
+                    Relation arg = (Relation) args[0] ;
+                    CachedBeanCopier.copy(relationService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return relationService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return relationService.sysUpdate((Relation) args[0]);
             }             
         }
         

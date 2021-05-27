@@ -183,11 +183,16 @@ public class EmpLoyeeloadRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 return employeeloadService.save((EmpLoyeeload) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return employeeloadService.create((EmpLoyeeload) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return employeeloadService.update((EmpLoyeeload) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return employeeloadService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof EmpLoyeeload){
                     EmpLoyeeload arg = (EmpLoyeeload) args[0] ;
                     CachedBeanCopier.copy(employeeloadService.get(arg.getId()), arg);
@@ -195,12 +200,27 @@ public class EmpLoyeeloadRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 }else{
                     return employeeloadService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return employeeloadService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return employeeloadService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return employeeloadService.getDraft((EmpLoyeeload) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return employeeloadService.checkKey((EmpLoyeeload) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return employeeloadService.save((EmpLoyeeload) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof EmpLoyeeload){
+                    EmpLoyeeload arg = (EmpLoyeeload) args[0] ;
+                    CachedBeanCopier.copy(employeeloadService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return employeeloadService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return employeeloadService.sysUpdate((EmpLoyeeload) args[0]);
             }             
         }
         

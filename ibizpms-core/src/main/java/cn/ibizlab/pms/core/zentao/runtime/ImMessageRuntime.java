@@ -179,11 +179,16 @@ public class ImMessageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 return immessageService.save((ImMessage) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return immessageService.create((ImMessage) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return immessageService.update((ImMessage) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return immessageService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof ImMessage){
                     ImMessage arg = (ImMessage) args[0] ;
                     CachedBeanCopier.copy(immessageService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class ImMessageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 }else{
                     return immessageService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return immessageService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return immessageService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return immessageService.getDraft((ImMessage) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return immessageService.checkKey((ImMessage) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return immessageService.save((ImMessage) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof ImMessage){
+                    ImMessage arg = (ImMessage) args[0] ;
+                    CachedBeanCopier.copy(immessageService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return immessageService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return immessageService.sysUpdate((ImMessage) args[0]);
             }             
         }
         

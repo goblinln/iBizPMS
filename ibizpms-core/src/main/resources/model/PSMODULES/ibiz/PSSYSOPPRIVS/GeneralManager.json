@@ -102,6 +102,16 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     }
+  }, {
+    "name" : "总经理-ZT_STORY[需求查看（我相关产品）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Read_MyReP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    }
   } ],
   "getPSSysUserRoleReses" : [ {
     "name" : "null-产品左侧资源",

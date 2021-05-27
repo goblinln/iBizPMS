@@ -179,11 +179,16 @@ public class ExtensionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 return extensionService.save((Extension) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return extensionService.create((Extension) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return extensionService.update((Extension) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return extensionService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Extension){
                     Extension arg = (Extension) args[0] ;
                     CachedBeanCopier.copy(extensionService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class ExtensionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 }else{
                     return extensionService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return extensionService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return extensionService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return extensionService.getDraft((Extension) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return extensionService.checkKey((Extension) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return extensionService.save((Extension) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Extension){
+                    Extension arg = (Extension) args[0] ;
+                    CachedBeanCopier.copy(extensionService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return extensionService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return extensionService.sysUpdate((Extension) args[0]);
             }             
         }
         

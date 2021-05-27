@@ -206,11 +206,16 @@ public class IBZDailyActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
                 return ibzdailyactionService.sendToread((IBZDailyAction) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzdailyactionService.create((IBZDailyAction) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzdailyactionService.update((IBZDailyAction) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzdailyactionService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IBZDailyAction){
                     IBZDailyAction arg = (IBZDailyAction) args[0] ;
                     CachedBeanCopier.copy(ibzdailyactionService.get(arg.getId()), arg);
@@ -218,12 +223,48 @@ public class IBZDailyActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
                 }else{
                     return ibzdailyactionService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzdailyactionService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzdailyactionService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzdailyactionService.getDraft((IBZDailyAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzdailyactionService.checkKey((IBZDailyAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Comment")) {
+                return ibzdailyactionService.comment((IBZDailyAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CreateHis")) {
+                return ibzdailyactionService.createHis((IBZDailyAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("editComment")) {
+                return ibzdailyactionService.editComment((IBZDailyAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ManagePmsEe")) {
+                return ibzdailyactionService.managePmsEe((IBZDailyAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzdailyactionService.save((IBZDailyAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendMarkDone")) {
+                return ibzdailyactionService.sendMarkDone((IBZDailyAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendTodo")) {
+                return ibzdailyactionService.sendTodo((IBZDailyAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendToread")) {
+                return ibzdailyactionService.sendToread((IBZDailyAction) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IBZDailyAction){
+                    IBZDailyAction arg = (IBZDailyAction) args[0] ;
+                    CachedBeanCopier.copy(ibzdailyactionService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return ibzdailyactionService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzdailyactionService.sysUpdate((IBZDailyAction) args[0]);
             }             
         }
         

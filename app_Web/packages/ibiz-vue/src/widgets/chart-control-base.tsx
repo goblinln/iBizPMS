@@ -1432,7 +1432,7 @@ export class ChartControlBase extends MDControlBase {
                         resolve(res);
                     })
                     .catch((error: any) => {
-                        LogUtil.log(`----${codeListObject.codeName}----${this.$t('app.commonWords.codeNotExist')}`);
+                        LogUtil.log(`----${codeListObject.codeName}----${this.$t('app.commonwords.codenotexist')}`);
                     });
             } else if (codeListObject.codeName && Object.is(codeListObject.codeListType, 'DYNAMIC')) {
                 this.codeListService
@@ -1441,7 +1441,7 @@ export class ChartControlBase extends MDControlBase {
                         resolve(res);
                     })
                     .catch((error: any) => {
-                        LogUtil.log(`----${codeListObject.codeName}----${this.$t('app.commonWords.codeNotExist')}`);
+                        LogUtil.log(`----${codeListObject.codeName}----${this.$t('app.commonwords.codenotexist')}`);
                     });
             }
         });

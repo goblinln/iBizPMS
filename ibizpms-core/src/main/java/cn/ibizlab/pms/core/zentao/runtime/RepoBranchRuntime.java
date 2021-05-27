@@ -179,11 +179,16 @@ public class RepoBranchRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
                 return repobranchService.save((RepoBranch) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return repobranchService.create((RepoBranch) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return repobranchService.update((RepoBranch) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return repobranchService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof RepoBranch){
                     RepoBranch arg = (RepoBranch) args[0] ;
                     CachedBeanCopier.copy(repobranchService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class RepoBranchRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
                 }else{
                     return repobranchService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return repobranchService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return repobranchService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return repobranchService.getDraft((RepoBranch) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return repobranchService.checkKey((RepoBranch) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return repobranchService.save((RepoBranch) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof RepoBranch){
+                    RepoBranch arg = (RepoBranch) args[0] ;
+                    CachedBeanCopier.copy(repobranchService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return repobranchService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return repobranchService.sysUpdate((RepoBranch) args[0]);
             }             
         }
         

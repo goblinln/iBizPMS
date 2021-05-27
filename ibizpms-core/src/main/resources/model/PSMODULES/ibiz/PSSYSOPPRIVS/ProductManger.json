@@ -13,6 +13,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     }
   }, {
+    "name" : "产品经理-ZT_STORY[需求维护（我相关产品）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_MyReP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    }
+  }, {
     "name" : "产品经理-ZT_CASE[测试用例查看（创建或更新）（系统使用）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -31,16 +41,6 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
-    }
-  }, {
-    "name" : "产品经理-ZT_STORY[当前组织（写）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/CURORG_C.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     }
   }, {
     "name" : "产品经理-ZT_STORY[需求维护（我创建或参与）（跟随角色）]",
@@ -81,6 +81,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_BUG[BUG转需求（我相关的产品）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_TOSTORY_MyReP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
     }
   }, {
     "name" : "产品经理-ZT_PRODUCT[产品管理（参与者）（跟随角色）]",
@@ -193,6 +203,16 @@
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine.json"
     }
   }, {
+    "name" : "产品经理-ZT_STORY[需求查看（我相关产品）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Read_MyReP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    }
+  }, {
     "name" : "产品经理-ZT_PRODUCT[产品查看（参与者）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -224,6 +244,20 @@
       "id" : "zentao__TOP_DOC_MENU"
     },
     "sysUniResCode" : "TOP_DOC_MENU"
+  }, {
+    "name" : "产品经理-需求新建",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_CREATE_BUT"
+    },
+    "sysUniResCode" : "STORY_CREATE_BUT"
+  }, {
+    "name" : "产品经理-项目关联需求",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROJ_LINKSTORY_BUT"
+    },
+    "sysUniResCode" : "PROJ_LINKSTORY_BUT"
   }, {
     "name" : "产品经理-顶部_我的收藏",
     "getPSSysUniRes" : {
@@ -269,6 +303,6 @@
   } ],
   "roleTag" : "ProductManger",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "TOP_PRODUCT_MENU", "LEFT_CASE_MENU", "TOP_DOC_MENU", "TOP_MYFAVOURITE_MENU", "PRODUCTLEFT", "TOP_CASE_MENU", "TOP_MYPLACE_MENU", "PROD_CREATE_BUT", "LEFT_PROJECT_MENU" ],
+  "uniResTags" : [ "TOP_PRODUCT_MENU", "LEFT_CASE_MENU", "TOP_DOC_MENU", "STORY_CREATE_BUT", "PROJ_LINKSTORY_BUT", "TOP_MYFAVOURITE_MENU", "PRODUCTLEFT", "TOP_CASE_MENU", "TOP_MYPLACE_MENU", "PROD_CREATE_BUT", "LEFT_PROJECT_MENU" ],
   "globalRole" : true
 }

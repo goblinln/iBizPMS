@@ -187,11 +187,16 @@ public class TaskStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 return taskstatsService.save((TaskStats) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return taskstatsService.create((TaskStats) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return taskstatsService.update((TaskStats) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return taskstatsService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof TaskStats){
                     TaskStats arg = (TaskStats) args[0] ;
                     CachedBeanCopier.copy(taskstatsService.get(arg.getId()), arg);
@@ -199,12 +204,27 @@ public class TaskStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 }else{
                     return taskstatsService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return taskstatsService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return taskstatsService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return taskstatsService.getDraft((TaskStats) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return taskstatsService.checkKey((TaskStats) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return taskstatsService.save((TaskStats) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof TaskStats){
+                    TaskStats arg = (TaskStats) args[0] ;
+                    CachedBeanCopier.copy(taskstatsService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return taskstatsService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return taskstatsService.sysUpdate((TaskStats) args[0]);
             }             
         }
         

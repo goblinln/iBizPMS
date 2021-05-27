@@ -101,8 +101,8 @@ export class ListViewEngine extends MDViewEngine {
 
         // 询问框
         this.view.$Modal.confirm({
-            title:this.view.$t('app.commonWords.warning'),
-            content: this.view.$t('app.gridpage.confirmDel') + dataInfo + '，' + this.view.$t('app.gridpage.notRecoverable'),
+            title:this.view.$t('app.commonwords.warning'),
+            content: this.view.$t('app.grid.confirmdel') + dataInfo + '，' + this.view.$t('app.grid.notrecoverable'),
             onOk:() => {
                 this.removeData(null);
             },

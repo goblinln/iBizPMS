@@ -193,11 +193,16 @@ public class IbzReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 return ibzreportService.save((IbzReport) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzreportService.create((IbzReport) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzreportService.update((IbzReport) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzreportService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbzReport){
                     IbzReport arg = (IbzReport) args[0] ;
                     CachedBeanCopier.copy(ibzreportService.get(arg.getIbzdailyid()), arg);
@@ -205,12 +210,33 @@ public class IbzReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 }else{
                     return ibzreportService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzreportService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzreportService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzreportService.getDraft((IbzReport) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzreportService.checkKey((IbzReport) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("MyReportINotSubmit")) {
+                return ibzreportService.myReportINotSubmit((IbzReport) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ReportIReceived")) {
+                return ibzreportService.reportIReceived((IbzReport) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzreportService.save((IbzReport) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbzReport){
+                    IbzReport arg = (IbzReport) args[0] ;
+                    CachedBeanCopier.copy(ibzreportService.sysGet(arg.getIbzdailyid()), arg);
+                    return arg;
+                }else{
+                    return ibzreportService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzreportService.sysUpdate((IbzReport) args[0]);
             }             
         }
         

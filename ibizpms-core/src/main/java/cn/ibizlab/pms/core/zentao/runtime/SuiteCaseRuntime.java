@@ -179,11 +179,16 @@ public class SuiteCaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 return suitecaseService.save((SuiteCase) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return suitecaseService.create((SuiteCase) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return suitecaseService.update((SuiteCase) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return suitecaseService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof SuiteCase){
                     SuiteCase arg = (SuiteCase) args[0] ;
                     CachedBeanCopier.copy(suitecaseService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class SuiteCaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 }else{
                     return suitecaseService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return suitecaseService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return suitecaseService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return suitecaseService.getDraft((SuiteCase) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return suitecaseService.checkKey((SuiteCase) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return suitecaseService.save((SuiteCase) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof SuiteCase){
+                    SuiteCase arg = (SuiteCase) args[0] ;
+                    CachedBeanCopier.copy(suitecaseService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return suitecaseService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return suitecaseService.sysUpdate((SuiteCase) args[0]);
             }             
         }
         

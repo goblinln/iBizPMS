@@ -206,11 +206,16 @@ public class IBZTestSuiteActionRuntime extends cn.ibizlab.pms.core.runtime.Syste
                 return ibztestsuiteactionService.sendToread((IBZTestSuiteAction) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibztestsuiteactionService.create((IBZTestSuiteAction) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibztestsuiteactionService.update((IBZTestSuiteAction) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibztestsuiteactionService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IBZTestSuiteAction){
                     IBZTestSuiteAction arg = (IBZTestSuiteAction) args[0] ;
                     CachedBeanCopier.copy(ibztestsuiteactionService.get(arg.getId()), arg);
@@ -218,12 +223,48 @@ public class IBZTestSuiteActionRuntime extends cn.ibizlab.pms.core.runtime.Syste
                 }else{
                     return ibztestsuiteactionService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibztestsuiteactionService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibztestsuiteactionService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibztestsuiteactionService.getDraft((IBZTestSuiteAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibztestsuiteactionService.checkKey((IBZTestSuiteAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Comment")) {
+                return ibztestsuiteactionService.comment((IBZTestSuiteAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CreateHis")) {
+                return ibztestsuiteactionService.createHis((IBZTestSuiteAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("editComment")) {
+                return ibztestsuiteactionService.editComment((IBZTestSuiteAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ManagePmsEe")) {
+                return ibztestsuiteactionService.managePmsEe((IBZTestSuiteAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibztestsuiteactionService.save((IBZTestSuiteAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendMarkDone")) {
+                return ibztestsuiteactionService.sendMarkDone((IBZTestSuiteAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendTodo")) {
+                return ibztestsuiteactionService.sendTodo((IBZTestSuiteAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendToread")) {
+                return ibztestsuiteactionService.sendToread((IBZTestSuiteAction) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IBZTestSuiteAction){
+                    IBZTestSuiteAction arg = (IBZTestSuiteAction) args[0] ;
+                    CachedBeanCopier.copy(ibztestsuiteactionService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return ibztestsuiteactionService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibztestsuiteactionService.sysUpdate((IBZTestSuiteAction) args[0]);
             }             
         }
         

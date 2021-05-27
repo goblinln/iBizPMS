@@ -179,11 +179,16 @@ public class EffortRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 return effortService.save((Effort) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return effortService.create((Effort) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return effortService.update((Effort) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return effortService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Effort){
                     Effort arg = (Effort) args[0] ;
                     CachedBeanCopier.copy(effortService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class EffortRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 }else{
                     return effortService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return effortService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return effortService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return effortService.getDraft((Effort) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return effortService.checkKey((Effort) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return effortService.save((Effort) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Effort){
+                    Effort arg = (Effort) args[0] ;
+                    CachedBeanCopier.copy(effortService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return effortService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return effortService.sysUpdate((Effort) args[0]);
             }             
         }
         

@@ -179,11 +179,16 @@ public class ImChatuserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
                 return imchatuserService.save((ImChatuser) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return imchatuserService.create((ImChatuser) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return imchatuserService.update((ImChatuser) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return imchatuserService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof ImChatuser){
                     ImChatuser arg = (ImChatuser) args[0] ;
                     CachedBeanCopier.copy(imchatuserService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class ImChatuserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
                 }else{
                     return imchatuserService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return imchatuserService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return imchatuserService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return imchatuserService.getDraft((ImChatuser) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return imchatuserService.checkKey((ImChatuser) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return imchatuserService.save((ImChatuser) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof ImChatuser){
+                    ImChatuser arg = (ImChatuser) args[0] ;
+                    CachedBeanCopier.copy(imchatuserService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return imchatuserService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return imchatuserService.sysUpdate((ImChatuser) args[0]);
             }             
         }
         

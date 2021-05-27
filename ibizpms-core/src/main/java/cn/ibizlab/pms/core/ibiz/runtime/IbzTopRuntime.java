@@ -179,11 +179,16 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 return ibztopService.save((IbzTop) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibztopService.create((IbzTop) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibztopService.update((IbzTop) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibztopService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbzTop){
                     IbzTop arg = (IbzTop) args[0] ;
                     CachedBeanCopier.copy(ibztopService.get(arg.getIbztopid()), arg);
@@ -191,12 +196,27 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 }else{
                     return ibztopService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibztopService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibztopService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibztopService.getDraft((IbzTop) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibztopService.checkKey((IbzTop) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibztopService.save((IbzTop) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbzTop){
+                    IbzTop arg = (IbzTop) args[0] ;
+                    CachedBeanCopier.copy(ibztopService.sysGet(arg.getIbztopid()), arg);
+                    return arg;
+                }else{
+                    return ibztopService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibztopService.sysUpdate((IbzTop) args[0]);
             }             
         }
         

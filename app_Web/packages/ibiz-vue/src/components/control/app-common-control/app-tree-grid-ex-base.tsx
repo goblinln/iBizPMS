@@ -102,7 +102,7 @@ export class AppTreeGridExBase extends TreeGridExControlBase {
                     highlight-current-row={this.isSingleSelect}
                     on-current-change={this.select.bind(this)}>
                     <template slot="empty">
-                    {this.$t('app.commonWords.noData')}
+                    {this.$t('app.commonwords.nodata')}
                     </template>
                     { this.renderColumns()}
                 </el-table>

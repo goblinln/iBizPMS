@@ -674,6 +674,9 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     public List<Task> selectMyPlansTaskMobMonthly(TaskSearchContext context){
         return baseMapper.selectMyPlansTaskMobMonthly(context, context.getSelectCond());
     }
+    public List<Task> selectMyReProject(TaskSearchContext context){
+        return baseMapper.selectMyReProject(context, context.getSelectCond());
+    }
     public List<Task> selectMyTomorrowPlanTask(TaskSearchContext context){
         return baseMapper.selectMyTomorrowPlanTask(context, context.getSelectCond());
     }
@@ -940,6 +943,15 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Override
     public Page<Task> searchMyPlansTaskMobMonthly(TaskSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Task> pages=baseMapper.searchMyPlansTaskMobMonthly(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Task>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我相关项目（权限）
+     */
+    @Override
+    public Page<Task> searchMyReProject(TaskSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Task> pages=baseMapper.searchMyReProject(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Task>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

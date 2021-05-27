@@ -230,11 +230,16 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 return actionService.sendToread((Action) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return actionService.create((Action) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return actionService.update((Action) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return actionService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Action){
                     Action arg = (Action) args[0] ;
                     CachedBeanCopier.copy(actionService.get(arg.getId()), arg);
@@ -242,12 +247,48 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 }else{
                     return actionService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return actionService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return actionService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return actionService.getDraft((Action) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return actionService.checkKey((Action) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Comment")) {
+                return actionService.comment((Action) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CreateHis")) {
+                return actionService.createHis((Action) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("editComment")) {
+                return actionService.editComment((Action) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ManagePmsEe")) {
+                return actionService.managePmsEe((Action) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return actionService.save((Action) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendMarkDone")) {
+                return actionService.sendMarkDone((Action) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendTodo")) {
+                return actionService.sendTodo((Action) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendToread")) {
+                return actionService.sendToread((Action) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Action){
+                    Action arg = (Action) args[0] ;
+                    CachedBeanCopier.copy(actionService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return actionService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return actionService.sysUpdate((Action) args[0]);
             }             
         }
         

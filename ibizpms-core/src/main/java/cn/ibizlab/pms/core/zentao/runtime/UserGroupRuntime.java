@@ -179,11 +179,16 @@ public class UserGroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 return usergroupService.save((UserGroup) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return usergroupService.create((UserGroup) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return usergroupService.update((UserGroup) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return usergroupService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof UserGroup){
                     UserGroup arg = (UserGroup) args[0] ;
                     CachedBeanCopier.copy(usergroupService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class UserGroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 }else{
                     return usergroupService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return usergroupService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return usergroupService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return usergroupService.getDraft((UserGroup) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return usergroupService.checkKey((UserGroup) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return usergroupService.save((UserGroup) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof UserGroup){
+                    UserGroup arg = (UserGroup) args[0] ;
+                    CachedBeanCopier.copy(usergroupService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return usergroupService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return usergroupService.sysUpdate((UserGroup) args[0]);
             }             
         }
         

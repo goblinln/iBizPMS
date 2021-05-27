@@ -206,11 +206,16 @@ public class UserYearWorkStatsRuntime extends cn.ibizlab.pms.core.runtime.System
                 return useryearworkstatsService.updateTitleByYear((UserYearWorkStats) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return useryearworkstatsService.create((UserYearWorkStats) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return useryearworkstatsService.update((UserYearWorkStats) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return useryearworkstatsService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof UserYearWorkStats){
                     UserYearWorkStats arg = (UserYearWorkStats) args[0] ;
                     CachedBeanCopier.copy(useryearworkstatsService.get(arg.getId()), arg);
@@ -218,12 +223,42 @@ public class UserYearWorkStatsRuntime extends cn.ibizlab.pms.core.runtime.System
                 }else{
                     return useryearworkstatsService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return useryearworkstatsService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return useryearworkstatsService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return useryearworkstatsService.getDraft((UserYearWorkStats) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return useryearworkstatsService.checkKey((UserYearWorkStats) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetDevInfomation")) {
+                return useryearworkstatsService.getDevInfomation((UserYearWorkStats) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetPoInfomation")) {
+                return useryearworkstatsService.getPoInfomation((UserYearWorkStats) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetQaInfomation")) {
+                return useryearworkstatsService.getQaInfomation((UserYearWorkStats) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetUserYearAction")) {
+                return useryearworkstatsService.getUserYearAction((UserYearWorkStats) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return useryearworkstatsService.save((UserYearWorkStats) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("UpdateTitleByYear")) {
+                return useryearworkstatsService.updateTitleByYear((UserYearWorkStats) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof UserYearWorkStats){
+                    UserYearWorkStats arg = (UserYearWorkStats) args[0] ;
+                    CachedBeanCopier.copy(useryearworkstatsService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return useryearworkstatsService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return useryearworkstatsService.sysUpdate((UserYearWorkStats) args[0]);
             }             
         }
         

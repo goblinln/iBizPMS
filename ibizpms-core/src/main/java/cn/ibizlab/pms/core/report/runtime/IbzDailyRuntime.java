@@ -224,11 +224,16 @@ public class IbzDailyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 return ibzdailyService.submit((IbzDaily) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzdailyService.create((IbzDaily) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzdailyService.update((IbzDaily) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzdailyService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbzDaily){
                     IbzDaily arg = (IbzDaily) args[0] ;
                     CachedBeanCopier.copy(ibzdailyService.get(arg.getIbzdailyid()), arg);
@@ -236,12 +241,48 @@ public class IbzDailyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 }else{
                     return ibzdailyService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzdailyService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzdailyService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzdailyService.getDraft((IbzDaily) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzdailyService.checkKey((IbzDaily) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CreateUserDaily")) {
+                return ibzdailyService.createUserDaily((IbzDaily) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("getYeaterdayDailyPlansTaskEdit")) {
+                return ibzdailyService.getYeaterdayDailyPlansTaskEdit((IbzDaily) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("getYesterdayDailyPlansTask")) {
+                return ibzdailyService.getYesterdayDailyPlansTask((IbzDaily) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("HaveRead")) {
+                return ibzdailyService.haveRead((IbzDaily) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("LinkCompleteTask")) {
+                return ibzdailyService.linkCompleteTask((IbzDaily) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("PushUserDaily")) {
+                return ibzdailyService.pushUserDaily((IbzDaily) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzdailyService.save((IbzDaily) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("submit")) {
+                return ibzdailyService.submit((IbzDaily) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbzDaily){
+                    IbzDaily arg = (IbzDaily) args[0] ;
+                    CachedBeanCopier.copy(ibzdailyService.sysGet(arg.getIbzdailyid()), arg);
+                    return arg;
+                }else{
+                    return ibzdailyService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzdailyService.sysUpdate((IbzDaily) args[0]);
             }             
         }
         

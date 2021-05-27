@@ -301,7 +301,7 @@ export class WizardPanelControlBase extends MainControlBase {
             this.onControlResponse('doFinish', response);
             if (response && response.status === 200) {
                 const data = response.data;
-                this.$success(this.$t('app.commonWords.startsuccess') as string,'doFinish');
+                this.$success(this.$t('app.commonwords.startsuccess') as string,'doFinish');
                 this.ctrlEvent({
                     controlname: this.controlInstance.name,
                     action: 'finish',
@@ -377,7 +377,7 @@ export class WizardPanelControlBase extends MainControlBase {
                     this.curState = 'NEXT';
                     this.wizardState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].saveAction, emitAction: 'save', data: this.formParam } });
                 } else {
-                    this.$throw((this.$t('app.commonWords.rulesException') as string),'onClickNext');
+                    this.$throw((this.$t('app.commonwords.rulesexception') as string),'onClickNext');
                 }
             }
         }
@@ -396,7 +396,7 @@ export class WizardPanelControlBase extends MainControlBase {
                     this.curState = 'FINISH';
                     this.wizardState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].saveAction, emitAction: 'save', data: this.formParam } });
                 } else {
-                    this.$throw((this.$t('app.commonWords.rulesException') as string),'onClickFinish');
+                    this.$throw((this.$t('app.commonwords.rulesexception') as string),'onClickFinish');
                 }
             }
         }

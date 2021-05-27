@@ -186,11 +186,16 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 return burnService.save((Burn) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return burnService.create((Burn) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return burnService.update((Burn) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return burnService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Burn){
                     Burn arg = (Burn) args[0] ;
                     CachedBeanCopier.copy(burnService.get(arg.getId()), arg);
@@ -198,12 +203,30 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 }else{
                     return burnService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return burnService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return burnService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return burnService.getDraft((Burn) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return burnService.checkKey((Burn) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ComputeBurn")) {
+                return burnService.computeBurn((Burn) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return burnService.save((Burn) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Burn){
+                    Burn arg = (Burn) args[0] ;
+                    CachedBeanCopier.copy(burnService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return burnService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return burnService.sysUpdate((Burn) args[0]);
             }             
         }
         

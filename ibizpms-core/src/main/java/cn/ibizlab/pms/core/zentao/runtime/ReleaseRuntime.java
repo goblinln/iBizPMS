@@ -221,11 +221,16 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 return releaseService.unlinkStory((Release) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return releaseService.create((Release) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return releaseService.update((Release) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return releaseService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Release){
                     Release arg = (Release) args[0] ;
                     CachedBeanCopier.copy(releaseService.get(arg.getId()), arg);
@@ -233,12 +238,63 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 }else{
                     return releaseService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return releaseService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return releaseService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return releaseService.getDraft((Release) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Activate")) {
+                return releaseService.activate((Release) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BatchUnlinkBug")) {
+                return releaseService.batchUnlinkBug((Release) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ChangeStatus")) {
+                return releaseService.changeStatus((Release) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return releaseService.checkKey((Release) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("linkBug")) {
+                return releaseService.linkBug((Release) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("LinkBugbyBug")) {
+                return releaseService.linkBugbyBug((Release) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("LinkBugbyLeftBug")) {
+                return releaseService.linkBugbyLeftBug((Release) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("linkStory")) {
+                return releaseService.linkStory((Release) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("MobReleaseCounter")) {
+                return releaseService.mobReleaseCounter((Release) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("OneClickRelease")) {
+                return releaseService.oneClickRelease((Release) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return releaseService.save((Release) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Terminate")) {
+                return releaseService.terminate((Release) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("UnlinkBug")) {
+                return releaseService.unlinkBug((Release) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("UnlinkStory")) {
+                return releaseService.unlinkStory((Release) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Release){
+                    Release arg = (Release) args[0] ;
+                    CachedBeanCopier.copy(releaseService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return releaseService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return releaseService.sysUpdate((Release) args[0]);
             }             
         }
         

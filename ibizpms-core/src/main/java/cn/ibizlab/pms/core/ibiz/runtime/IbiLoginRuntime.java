@@ -176,11 +176,16 @@ public class IbiLoginRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 return ibiloginService.ztlogin((IbiLogin) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibiloginService.create((IbiLogin) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibiloginService.update((IbiLogin) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibiloginService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbiLogin){
                     IbiLogin arg = (IbiLogin) args[0] ;
                     CachedBeanCopier.copy(ibiloginService.get(arg.getId()), arg);
@@ -188,12 +193,24 @@ public class IbiLoginRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 }else{
                     return ibiloginService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibiloginService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibiloginService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("getUser")) {
+                return ibiloginService.getUser((IbiLogin) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ztlogin")) {
+                return ibiloginService.ztlogin((IbiLogin) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbiLogin){
+                    IbiLogin arg = (IbiLogin) args[0] ;
+                    CachedBeanCopier.copy(ibiloginService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return ibiloginService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibiloginService.sysUpdate((IbiLogin) args[0]);
             }             
         }
         

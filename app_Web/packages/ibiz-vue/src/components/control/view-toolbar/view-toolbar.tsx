@@ -1,6 +1,6 @@
 import { Vue, Component, Prop, Watch, Emit } from 'vue-property-decorator';
 import { ToolbarItem } from 'ibiz-core/src/interface/ctrl/toolbarItem';
-import { Util } from 'ibiz-core';
+import { debounce, Util } from 'ibiz-core';
 import "./view-toolbar.less";
 
 /**
@@ -151,7 +151,7 @@ export class ViewToolbar extends Vue {
                         <app-export-excel
                             item={item}
                             caption={item.caption}
-                            on-exportexcel={($event: any) => this.itemClick({ tag: item.name }, $event)}
+                            on-exportexcel={($event: any) => debounce(this.itemClick,[{ tag: item.name }, $event],this)}
                             loading={this.isViewLoading}
                         ></app-export-excel>
                     ) : (item.uiaction && item.uiaction.counterId) && targetCounterService ? (
@@ -159,7 +159,7 @@ export class ViewToolbar extends Vue {
                             <i-button
                                 disabled={item.disabled}
                                 class={this.getToolBarItemClass(item)}
-                                on-click={(e: any) => this.itemClick({ tag: item.name }, e)}
+                                on-click={(e: any) => debounce(this.itemClick,[{ tag: item.name }, e],this)}
                                 loading={this.isViewLoading}
                             >
                                 {item.showIcon ? <menu-icon item={item} /> : null}
@@ -170,7 +170,7 @@ export class ViewToolbar extends Vue {
                         <i-button
                             disabled={item.disabled}
                             class={this.getToolBarItemClass(item)}
-                            on-click={(e: any) => this.itemClick({ tag: item.name }, e)}
+                            on-click={(e: any) => debounce(this.itemClick,[{ tag: item.name }, e],this)}
                             loading={this.isViewLoading}
                         >
                             {item.showIcon ? <menu-icon item={item} /> : null}

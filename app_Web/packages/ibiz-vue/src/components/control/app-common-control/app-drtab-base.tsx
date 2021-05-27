@@ -1,5 +1,5 @@
 import { IPSAppCounterRef, IPSDETabViewPanel, IPSSysImage } from '@ibiz/dynamic-model-api';
-import { Util } from 'ibiz-core';
+import { debounce, Util } from 'ibiz-core';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { DrtabControlBase } from '../../../widgets/drtab-control-base';
 
@@ -119,7 +119,7 @@ export class AppDrtabBase extends DrtabControlBase {
         const tabPages = this.controlInstance.M.getPSDEDRTabPages;
         return (
             <div class={{ ...controlClassNames, 'drtab': true }} >
-                <tabs animated={false} class="app-dr-tab" name={codeName} on-on-click={this.tabPanelClick.bind(this)}>
+                <tabs animated={false} class="app-dr-tab" name={codeName} on-on-click={(...params: any[]) => debounce(this.tabPanelClick,params,this)}>
                 <tab-pane index={0} name='mainform' tab={codeName} label={this.controlInstance.M.editItemCaption?this.controlInstance.M.editItemCaption:'主表单'}>
                         <div class='main-data'>
                             {this.$parent.$slots.mainform}

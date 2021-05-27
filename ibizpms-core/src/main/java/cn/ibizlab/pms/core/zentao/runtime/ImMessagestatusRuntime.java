@@ -179,11 +179,16 @@ public class ImMessagestatusRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
                 return immessagestatusService.save((ImMessagestatus) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return immessagestatusService.create((ImMessagestatus) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return immessagestatusService.update((ImMessagestatus) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return immessagestatusService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof ImMessagestatus){
                     ImMessagestatus arg = (ImMessagestatus) args[0] ;
                     CachedBeanCopier.copy(immessagestatusService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class ImMessagestatusRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
                 }else{
                     return immessagestatusService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return immessagestatusService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return immessagestatusService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return immessagestatusService.getDraft((ImMessagestatus) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return immessagestatusService.checkKey((ImMessagestatus) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return immessagestatusService.save((ImMessagestatus) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof ImMessagestatus){
+                    ImMessagestatus arg = (ImMessagestatus) args[0] ;
+                    CachedBeanCopier.copy(immessagestatusService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return immessagestatusService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return immessagestatusService.sysUpdate((ImMessagestatus) args[0]);
             }             
         }
         

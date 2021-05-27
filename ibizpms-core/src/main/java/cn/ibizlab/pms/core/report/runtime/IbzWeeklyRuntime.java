@@ -216,11 +216,16 @@ public class IbzWeeklyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 return ibzweeklyService.submit((IbzWeekly) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzweeklyService.create((IbzWeekly) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzweeklyService.update((IbzWeekly) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzweeklyService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbzWeekly){
                     IbzWeekly arg = (IbzWeekly) args[0] ;
                     CachedBeanCopier.copy(ibzweeklyService.get(arg.getIbzweeklyid()), arg);
@@ -228,12 +233,48 @@ public class IbzWeeklyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 }else{
                     return ibzweeklyService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzweeklyService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzweeklyService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzweeklyService.getDraft((IbzWeekly) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzweeklyService.checkKey((IbzWeekly) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("createEveryWeekReport")) {
+                return ibzweeklyService.createEveryWeekReport((IbzWeekly) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CreateGetLastWeekPlanAndWork")) {
+                return ibzweeklyService.createGetLastWeekPlanAndWork((IbzWeekly) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("EditGetLastWeekTaskAndComTask")) {
+                return ibzweeklyService.editGetLastWeekTaskAndComTask((IbzWeekly) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("haveRead")) {
+                return ibzweeklyService.haveRead((IbzWeekly) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("JugThisWeekCreateWeekly")) {
+                return ibzweeklyService.jugThisWeekCreateWeekly((IbzWeekly) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("pushUserWeekly")) {
+                return ibzweeklyService.pushUserWeekly((IbzWeekly) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzweeklyService.save((IbzWeekly) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("submit")) {
+                return ibzweeklyService.submit((IbzWeekly) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbzWeekly){
+                    IbzWeekly arg = (IbzWeekly) args[0] ;
+                    CachedBeanCopier.copy(ibzweeklyService.sysGet(arg.getIbzweeklyid()), arg);
+                    return arg;
+                }else{
+                    return ibzweeklyService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzweeklyService.sysUpdate((IbzWeekly) args[0]);
             }             
         }
         

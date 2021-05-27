@@ -127,36 +127,125 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         return this.condCache.get('view');
     }
     /**
-     * getuserrole
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectTeamService
      */
-    async getuserrole(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectteam) {
+            const res = await this.http.get(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
+            return res;
+        }
+        const res = await this.http.get(`/projectteams/${_context.projectteam}`);
+        return res;
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectteam) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectteams/${_context.projectteam}/getuserrole`, _data);
+            return this.http.put(`/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
         }
-        return this.http.put(`/projectteams/${_context.projectteam}/getuserrole`, _data);
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/projectteams/${_context.projectteam}`, _data);
     }
-
     /**
-     * getuserroleBatch接口方法
+     * FetchSpecifyTeam
      *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProjectTeamServiceBase
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
      */
-    public async getuserroleBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
+    async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/projectteams/fetchspecifyteam`, _data);
+        }
+        return this.http.post(`/projectteams/fetchspecifyteam`, _data);
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/projectteams/getdraft`, _data);
+            return res;
+        }
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/projectteams/getdraft`, _data);
+        return res;
+    }
+    /**
+     * Create
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
+     */
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectteams/getuserrolebatch`,_data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/projectteams`, _data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/projectteams/getuserrolebatch`,_data);
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
+        }
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        return this.http.post(`/projectteams`, _data);
+    }
+    /**
+     * FetchTaskCntEstimateConsumedLeft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
+     */
+    async FetchTaskCntEstimateConsumedLeft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/projectteams/fetchtaskcntestimateconsumedleft`, _data);
+        }
+        return this.http.post(`/projectteams/fetchtaskcntestimateconsumedleft`, _data);
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectteam) {
+            return this.http.delete(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
+        }
+        return this.http.delete(`/projectteams/${_context.projectteam}`);
     }
 }

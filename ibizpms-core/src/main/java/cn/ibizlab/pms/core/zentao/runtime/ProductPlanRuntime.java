@@ -280,11 +280,16 @@ public class ProductPlanRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
                 return productplanService.unlinkStory((ProductPlan) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return productplanService.create((ProductPlan) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return productplanService.update((ProductPlan) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return productplanService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof ProductPlan){
                     ProductPlan arg = (ProductPlan) args[0] ;
                     CachedBeanCopier.copy(productplanService.get(arg.getId()), arg);
@@ -292,12 +297,84 @@ public class ProductPlanRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
                 }else{
                     return productplanService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return productplanService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return productplanService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return productplanService.getDraft((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BatchLinkBug")) {
+                return productplanService.batchLinkBug((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BatchLinkStory")) {
+                return productplanService.batchLinkStory((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BatchUnlinkBug")) {
+                return productplanService.batchUnlinkBug((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BatchUnlinkStory")) {
+                return productplanService.batchUnlinkStory((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return productplanService.checkKey((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("EeActivePlan")) {
+                return productplanService.eeActivePlan((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("EeCancelPlan")) {
+                return productplanService.eeCancelPlan((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("EeClosePlan")) {
+                return productplanService.eeClosePlan((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("EeFinishPlan")) {
+                return productplanService.eeFinishPlan((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("EePausePlan")) {
+                return productplanService.eePausePlan((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("EeRestartPlan")) {
+                return productplanService.eeRestartPlan((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("EeStartPlan")) {
+                return productplanService.eeStartPlan((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetOldPlanName")) {
+                return productplanService.getOldPlanName((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ImportPlanTemplet")) {
+                return productplanService.importPlanTemplet((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("LinkBug")) {
+                return productplanService.linkBug((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("LinkStory")) {
+                return productplanService.linkStory((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("LinkTask")) {
+                return productplanService.linkTask((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("MobProductPlanCounter")) {
+                return productplanService.mobProductPlanCounter((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return productplanService.save((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("UnlinkBug")) {
+                return productplanService.unlinkBug((ProductPlan) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("UnlinkStory")) {
+                return productplanService.unlinkStory((ProductPlan) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof ProductPlan){
+                    ProductPlan arg = (ProductPlan) args[0] ;
+                    CachedBeanCopier.copy(productplanService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return productplanService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return productplanService.sysUpdate((ProductPlan) args[0]);
             }             
         }
         

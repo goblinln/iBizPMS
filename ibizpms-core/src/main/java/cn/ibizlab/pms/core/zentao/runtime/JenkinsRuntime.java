@@ -179,11 +179,16 @@ public class JenkinsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 return jenkinsService.save((Jenkins) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return jenkinsService.create((Jenkins) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return jenkinsService.update((Jenkins) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return jenkinsService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Jenkins){
                     Jenkins arg = (Jenkins) args[0] ;
                     CachedBeanCopier.copy(jenkinsService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class JenkinsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 }else{
                     return jenkinsService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return jenkinsService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return jenkinsService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return jenkinsService.getDraft((Jenkins) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return jenkinsService.checkKey((Jenkins) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return jenkinsService.save((Jenkins) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Jenkins){
+                    Jenkins arg = (Jenkins) args[0] ;
+                    CachedBeanCopier.copy(jenkinsService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return jenkinsService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return jenkinsService.sysUpdate((Jenkins) args[0]);
             }             
         }
         

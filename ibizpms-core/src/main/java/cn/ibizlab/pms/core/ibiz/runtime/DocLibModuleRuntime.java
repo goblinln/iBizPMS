@@ -230,11 +230,16 @@ public class DocLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 return doclibmoduleService.unCollect((DocLibModule) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return doclibmoduleService.create((DocLibModule) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return doclibmoduleService.update((DocLibModule) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return doclibmoduleService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof DocLibModule){
                     DocLibModule arg = (DocLibModule) args[0] ;
                     CachedBeanCopier.copy(doclibmoduleService.get(arg.getId()), arg);
@@ -242,12 +247,42 @@ public class DocLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 }else{
                     return doclibmoduleService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return doclibmoduleService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return doclibmoduleService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return doclibmoduleService.getDraft((DocLibModule) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return doclibmoduleService.checkKey((DocLibModule) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Collect")) {
+                return doclibmoduleService.collect((DocLibModule) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("DocLibModuleNFavorite")) {
+                return doclibmoduleService.docLibModuleNFavorite((DocLibModule) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("DoclibModuleFavorite")) {
+                return doclibmoduleService.doclibModuleFavorite((DocLibModule) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Fix")) {
+                return doclibmoduleService.fix((DocLibModule) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return doclibmoduleService.save((DocLibModule) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("UnCollect")) {
+                return doclibmoduleService.unCollect((DocLibModule) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof DocLibModule){
+                    DocLibModule arg = (DocLibModule) args[0] ;
+                    CachedBeanCopier.copy(doclibmoduleService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return doclibmoduleService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return doclibmoduleService.sysUpdate((DocLibModule) args[0]);
             }             
         }
         

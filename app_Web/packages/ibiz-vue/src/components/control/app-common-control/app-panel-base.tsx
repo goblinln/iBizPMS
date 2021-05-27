@@ -1,5 +1,5 @@
 import { Prop, Watch, Emit } from 'vue-property-decorator';
-import { Util } from 'ibiz-core';
+import { debounce, Util } from 'ibiz-core';
 import { PanelControlBase } from '../../../widgets';
 import { IPSCodeListEditor, IPSPanel, IPSSysPanelField } from '@ibiz/dynamic-model-api';
 
@@ -318,7 +318,7 @@ export class AppPanelBase extends PanelControlBase {
                 disabled={this.detailsModel[name]?.disabled}
                 lableStyle={labelPSSysCss?.cssName}
                 on-onClick={($event: any) => {
-                    this.buttonClick(this.controlInstance.name, { tag: name }, $event);
+                  debounce(this.buttonClick,[this.controlInstance.name, { tag: name }, $event],this);
                 }}
             ></app-panel-button>
         );
@@ -424,7 +424,7 @@ export class AppPanelBase extends PanelControlBase {
             <i-col class={this.renderDetailClass(modelJson)}>
                 <el-tabs
                     v-model={activatedPage}
-                    on-tab-click={($event: any) => this.handleTabPanelClick(name, $event)}
+                    on-tab-click={($event: any) => debounce(this.handleTabPanelClick,[name, $event],this)}
                     class={this.renderDetailClass(modelJson)}
                 >
                     {getPSPanelTabPages &&

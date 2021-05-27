@@ -193,7 +193,7 @@ export class ListControlBase extends MDControlBase {
             try {
                 if (Object.is(item.rowDataState, 'create')) {
                     if (!this.createAction) {
-                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.createAction') as string),'save');
+                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notconfig.createaction') as string),'save');
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
                         let tempContext:any = JSON.parse(JSON.stringify(this.context));
@@ -204,7 +204,7 @@ export class ListControlBase extends MDControlBase {
                     }
                 } else if (Object.is(item.rowDataState, 'update')) {
                     if (!this.updateAction) {
-                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.updateAction') as string),'save');
+                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notconfig.updateaction') as string),'save');
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
                         if (this.appDeCodeName && item[this.appDeCodeName]) {
@@ -227,11 +227,11 @@ export class ListControlBase extends MDControlBase {
         this.refresh();
         if (errorItems.length === 0) {
             if(args?.showResultInfo || (args && !args.hasOwnProperty('showResultInfo'))){
-                this.$success((this.$t('app.commonWords.saveSuccess') as string),'save');
+                this.$success((this.$t('app.commonwords.savesuccess') as string),'save');
             }
         } else {
             errorItems.forEach((item: any, index: number) => {
-                this.$throw(item.majorentityname + (this.$t('app.commonWords.saveFailed') as string) + '!','save');
+                this.$throw(item.majorentityname + (this.$t('app.commonwords.savefailed') as string) + '!','save');
                 this.$throw(errorMessage[index],'save');
             });
         }
@@ -277,7 +277,7 @@ export class ListControlBase extends MDControlBase {
      */
     public load(opt: any = {}): void {
         if (!this.fetchAction) {
-            this.$throw(this.$t('app.list.notConfig.fetchAction'),'load');
+            this.$throw(this.$t('app.list.notconfig.fetchaction'),'load');
             return;
         }
         const arg: any = { ...opt };
@@ -445,7 +445,7 @@ export class ListControlBase extends MDControlBase {
      */
     public async remove(items: any[]): Promise<any> {
         if (!this.removeAction) {
-            this.$throw(`${this.name}${this.$t('app.list.notConfig.removeAction')}`,'remove');
+            this.$throw(`${this.name}${this.$t('app.list.notconfig.removeaction')}`,'remove');
             return;
         }
         if (items.length === 0) {
@@ -485,10 +485,10 @@ export class ListControlBase extends MDControlBase {
                 post.then((response: any) => {
                     this.onControlResponse('remove', response);
                     if (!response || response.status !== 200) {
-                        this.$throw(this.$t('app.commonWords.delDataFail') + response.info,'remove');
+                        this.$throw(this.$t('app.commonwords.deldatafail') + response.info,'remove');
                         return;
                     } else {
-                        this.$success(this.$t('app.commonWords.deleteSuccess'),'remove');
+                        this.$success(this.$t('app.commonwords.deletesuccess'),'remove');
                     }
                     //删除items中已删除的项
                     items.forEach((data: any) => {
@@ -519,8 +519,8 @@ export class ListControlBase extends MDControlBase {
             .replace(/[undefined]/g, '')
             .replace(/[ ]/g, '');
         this.$Modal.confirm({
-            title: (this.$t('app.commonWords.warning') as string),
-            content: this.$t('app.gridpage.confirmDel') + dataInfo + this.$t('app.gridpage.notRecoverable'),
+            title: (this.$t('app.commonwords.warning') as string),
+            content: this.$t('app.grid.confirmdel') + dataInfo + this.$t('app.grid.notrecoverable'),
             onOk: () => {
                 removeData();
             },

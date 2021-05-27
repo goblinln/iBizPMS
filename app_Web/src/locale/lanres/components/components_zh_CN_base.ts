@@ -71,7 +71,8 @@ function getLocaleResourceBase(){
           uploadError: '上传失败',
           fileTypeErrorTitle: '文件类型错误',
           fileTypeErrorInfo: '请选择图片类型的文件，如JPEG，GIF，PNG，BMP',
-          downloadError: "图片下载失败！"
+          downloadError: "图片下载失败！",
+          caption: "上传",
         },
         camera: {
           dev: "开发中",

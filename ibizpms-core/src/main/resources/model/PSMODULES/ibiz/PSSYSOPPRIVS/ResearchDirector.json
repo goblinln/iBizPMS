@@ -33,6 +33,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     }
   }, {
+    "name" : "研发主管-ZT_BUG[BUG维护（我相关的产品）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain_MyReP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+    }
+  }, {
     "name" : "研发主管-ZT_PROJECT[项目团队管理（公开项目）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -201,6 +211,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+    }
+  }, {
+    "name" : "研发主管-ZT_STORY[需求查看（我相关产品）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Read_MyReP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     }
   }, {
     "name" : "研发主管-ZT_STORY[需求维护（我创建或参与）（跟随角色）]",

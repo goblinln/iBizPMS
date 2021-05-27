@@ -219,11 +219,16 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 return doclibService.unCollect((DocLib) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return doclibService.create((DocLib) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return doclibService.update((DocLib) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return doclibService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof DocLib){
                     DocLib arg = (DocLib) args[0] ;
                     CachedBeanCopier.copy(doclibService.get(arg.getId()), arg);
@@ -231,12 +236,33 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 }else{
                     return doclibService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return doclibService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return doclibService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return doclibService.getDraft((DocLib) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return doclibService.checkKey((DocLib) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Collect")) {
+                return doclibService.collect((DocLib) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return doclibService.save((DocLib) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("UnCollect")) {
+                return doclibService.unCollect((DocLib) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof DocLib){
+                    DocLib arg = (DocLib) args[0] ;
+                    CachedBeanCopier.copy(doclibService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return doclibService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return doclibService.sysUpdate((DocLib) args[0]);
             }             
         }
         

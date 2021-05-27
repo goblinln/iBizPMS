@@ -56,9 +56,9 @@ export class AppFrontAction {
     ) {
         const actionTarget: string | null = this.actionModel.actionTarget;
         if (Object.is(actionTarget, 'SINGLEDATA')) {
-            actionContext.$throw(actionContext.$t('app.commonWords.nosupportSingle'),'AppFrontAction');
+            actionContext.$throw(actionContext.$t('app.commonwords.nosupportsingle'),'AppFrontAction');
         } else if (Object.is(actionTarget, 'MULTIDATA')) {
-            actionContext.$throw(actionContext.$t('app.commonWords.nosupportMultile'),'AppFrontAction');
+            actionContext.$throw(actionContext.$t('app.commonwords.nosupportmultile'),'AppFrontAction');
         } else {
             // 处理数据
             let data: any = {};

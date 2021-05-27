@@ -698,6 +698,24 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
+        "customCond" : "( t1.product IN (\n\t\t\tSELECT\n\t\t\t\tt.`id` \n\t\t\tFROM\n\t\t\t\tzt_product t \n\t\t\tWHERE\n\t\t\t\tt.`deleted` = '0' \n\t\t\t\tAND (\n\t\t\t\t\tt.`acl` = 'open' \n\t\t\t\t\tOR (\n\t\t\t\t\t\t(\n\t\t\t\t\t\t\tt.`acl` = 'private' \n\t\t\t\t\t\t\tAND (\n\t\t\t\t\t\t\t\tt.`updateby` = #{srf.sessioncontext.srfloginname}  \n\t\t\t\t\t\t\t\tOR t.`createdby` = #{srf.sessioncontext.srfloginname} \n\t\t\t\t\t\t\t\tOR t.`qd` =#{srf.sessioncontext.srfloginname} \n\t\t\t\t\t\t\t\tOR t.`rd` = #{srf.sessioncontext.srfloginname} \n\t\t\t\t\t\t\t\tOR t.`po` = #{srf.sessioncontext.srfloginname} \n\t\t\t\t\t\t\t) \n\t\t\t\t\t\t) \n\t\t\t\t\t\tOR ( t.id IN ( SELECT t.root FROM zt_team t WHERE t.account =#{srf.sessioncontext.srfloginname}  AND t.type = 'product' ) ) \n\t\t\t\t\t) \n\t\t\t\t) \n) )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "MyReProduct",
+    "logicName" : "我相关产品（权限）",
+    "name" : "MyReProduct",
+    "privQuery" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
         "customCond" : "t1.plan <> ${srfwebcontext('plan','{\"defname\":\"id\",\"dename\":\"ZT_PRODUCTPLAN\"}')}",
         "name" : "查询条件"
       }, {
@@ -1101,6 +1119,16 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "MyFavorites"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "MyReProduct",
+    "logicName" : "我相关产品（权限）",
+    "name" : "MyReProduct",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyReProduct"
     } ],
     "enableBackend" : true,
     "enableFront" : true
@@ -12506,6 +12534,109 @@
     "userDRAction" : "READ",
     "systemReserved" : true
   }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_MyReP.json",
+    "name" : "需求维护（我相关产品）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReProduct"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "FAVORITES",
+      "name" : "Story_Maintain_MyCOrP_Favorites",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "FAVORITES"
+      }
+    }, {
+      "dataAccessAction" : "ASSIGNTO",
+      "name" : "Story_Maintain_MyCOrP_Assignto",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__ASSIGNTO"
+      }
+    }, {
+      "dataAccessAction" : "CHANGE",
+      "name" : "Story_Maintain_MyCOrP_Change",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__CHANGE"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "Story_Maintain_MyCOrP_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "REVIEW",
+      "name" : "Story_Maintain_MyCOrP_Review",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "REVIEW"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "Story_Maintain_MyCOrP_DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "ISCHILD",
+      "name" : "Story_Maintain_MyCOrP_Ischild",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__ISCHILD"
+      }
+    }, {
+      "dataAccessAction" : "CREATE",
+      "name" : "CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
+    }, {
+      "dataAccessAction" : "ACTIVATE",
+      "name" : "Story_Maintain_MyCOrP_Activate",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ACTIVATE"
+      }
+    }, {
+      "dataAccessAction" : "NFAVORITES",
+      "name" : "Story_Maintain_MyCOrP_NFavorites",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__NFAVORITES"
+      }
+    }, {
+      "dataAccessAction" : "TOBUG",
+      "name" : "Story_Maintain_MyCOrP_TOBUG",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__TOBUG"
+      }
+    }, {
+      "dataAccessAction" : "CCASE",
+      "name" : "Story_Maintain_MyCOrP_CCASE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CCASE"
+      }
+    }, {
+      "dataAccessAction" : "CLOSE",
+      "name" : "Story_Maintain_MyCOrP_Close",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CLOSE"
+      }
+    } ],
+    "roleTag" : "Story_Maintain_MyReP",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Manage.json",
     "name" : "需求管理",
@@ -12533,6 +12664,25 @@
     } ],
     "roleTag" : "Story_Read",
     "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Read_MyReP.json",
+    "name" : "需求查看（我相关产品）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReProduct"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__READ"
+      }
+    } ],
+    "roleTag" : "Story_Read_MyReP",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
   } ],
   "codeName" : "Story",
   "dEType" : 1,

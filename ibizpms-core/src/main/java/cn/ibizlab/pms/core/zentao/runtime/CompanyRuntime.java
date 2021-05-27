@@ -179,11 +179,16 @@ public class CompanyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 return companyService.save((Company) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return companyService.create((Company) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return companyService.update((Company) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return companyService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Company){
                     Company arg = (Company) args[0] ;
                     CachedBeanCopier.copy(companyService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class CompanyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 }else{
                     return companyService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return companyService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return companyService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return companyService.getDraft((Company) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return companyService.checkKey((Company) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return companyService.save((Company) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Company){
+                    Company arg = (Company) args[0] ;
+                    CachedBeanCopier.copy(companyService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return companyService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return companyService.sysUpdate((Company) args[0]);
             }             
         }
         

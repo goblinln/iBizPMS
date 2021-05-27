@@ -209,11 +209,16 @@ public class UserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 return userService.syncAccount((User) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return userService.create((User) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return userService.update((User) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return userService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof User){
                     User arg = (User) args[0] ;
                     CachedBeanCopier.copy(userService.get(arg.getId()), arg);
@@ -221,12 +226,33 @@ public class UserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 }else{
                     return userService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return userService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return userService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return userService.getDraft((User) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return userService.checkKey((User) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("getByCommiter")) {
+                return userService.getByCommiter((User) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return userService.save((User) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("SyncAccount")) {
+                return userService.syncAccount((User) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof User){
+                    User arg = (User) args[0] ;
+                    CachedBeanCopier.copy(userService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return userService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return userService.sysUpdate((User) args[0]);
             }             
         }
         

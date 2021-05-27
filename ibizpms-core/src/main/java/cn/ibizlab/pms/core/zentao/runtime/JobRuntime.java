@@ -179,11 +179,16 @@ public class JobRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
                 return jobService.save((Job) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return jobService.create((Job) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return jobService.update((Job) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return jobService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Job){
                     Job arg = (Job) args[0] ;
                     CachedBeanCopier.copy(jobService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class JobRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
                 }else{
                     return jobService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return jobService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return jobService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return jobService.getDraft((Job) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return jobService.checkKey((Job) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return jobService.save((Job) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Job){
+                    Job arg = (Job) args[0] ;
+                    CachedBeanCopier.copy(jobService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return jobService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return jobService.sysUpdate((Job) args[0]);
             }             
         }
         

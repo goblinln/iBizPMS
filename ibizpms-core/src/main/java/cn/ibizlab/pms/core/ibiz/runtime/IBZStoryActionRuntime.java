@@ -206,11 +206,16 @@ public class IBZStoryActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
                 return ibzstoryactionService.sendToread((IBZStoryAction) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzstoryactionService.create((IBZStoryAction) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzstoryactionService.update((IBZStoryAction) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzstoryactionService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IBZStoryAction){
                     IBZStoryAction arg = (IBZStoryAction) args[0] ;
                     CachedBeanCopier.copy(ibzstoryactionService.get(arg.getId()), arg);
@@ -218,12 +223,48 @@ public class IBZStoryActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
                 }else{
                     return ibzstoryactionService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzstoryactionService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzstoryactionService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzstoryactionService.getDraft((IBZStoryAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzstoryactionService.checkKey((IBZStoryAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Comment")) {
+                return ibzstoryactionService.comment((IBZStoryAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CreateHis")) {
+                return ibzstoryactionService.createHis((IBZStoryAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("editComment")) {
+                return ibzstoryactionService.editComment((IBZStoryAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ManagePmsEe")) {
+                return ibzstoryactionService.managePmsEe((IBZStoryAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzstoryactionService.save((IBZStoryAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendMarkDone")) {
+                return ibzstoryactionService.sendMarkDone((IBZStoryAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendTodo")) {
+                return ibzstoryactionService.sendTodo((IBZStoryAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendToread")) {
+                return ibzstoryactionService.sendToread((IBZStoryAction) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IBZStoryAction){
+                    IBZStoryAction arg = (IBZStoryAction) args[0] ;
+                    CachedBeanCopier.copy(ibzstoryactionService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return ibzstoryactionService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzstoryactionService.sysUpdate((IBZStoryAction) args[0]);
             }             
         }
         

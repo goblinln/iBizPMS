@@ -179,11 +179,16 @@ public class IbzReportRoleConfigRuntime extends cn.ibizlab.pms.core.runtime.Syst
                 return ibzreportroleconfigService.save((IbzReportRoleConfig) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzreportroleconfigService.create((IbzReportRoleConfig) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzreportroleconfigService.update((IbzReportRoleConfig) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzreportroleconfigService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbzReportRoleConfig){
                     IbzReportRoleConfig arg = (IbzReportRoleConfig) args[0] ;
                     CachedBeanCopier.copy(ibzreportroleconfigService.get(arg.getIbzreportroleconfigid()), arg);
@@ -191,12 +196,27 @@ public class IbzReportRoleConfigRuntime extends cn.ibizlab.pms.core.runtime.Syst
                 }else{
                     return ibzreportroleconfigService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzreportroleconfigService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzreportroleconfigService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzreportroleconfigService.getDraft((IbzReportRoleConfig) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzreportroleconfigService.checkKey((IbzReportRoleConfig) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzreportroleconfigService.save((IbzReportRoleConfig) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbzReportRoleConfig){
+                    IbzReportRoleConfig arg = (IbzReportRoleConfig) args[0] ;
+                    CachedBeanCopier.copy(ibzreportroleconfigService.sysGet(arg.getIbzreportroleconfigid()), arg);
+                    return arg;
+                }else{
+                    return ibzreportroleconfigService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzreportroleconfigService.sysUpdate((IbzReportRoleConfig) args[0]);
             }             
         }
         

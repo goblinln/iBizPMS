@@ -179,11 +179,16 @@ public class UserViewRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 return userviewService.save((UserView) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return userviewService.create((UserView) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return userviewService.update((UserView) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return userviewService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof UserView){
                     UserView arg = (UserView) args[0] ;
                     CachedBeanCopier.copy(userviewService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class UserViewRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 }else{
                     return userviewService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return userviewService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return userviewService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return userviewService.getDraft((UserView) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return userviewService.checkKey((UserView) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return userviewService.save((UserView) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof UserView){
+                    UserView arg = (UserView) args[0] ;
+                    CachedBeanCopier.copy(userviewService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return userviewService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return userviewService.sysUpdate((UserView) args[0]);
             }             
         }
         

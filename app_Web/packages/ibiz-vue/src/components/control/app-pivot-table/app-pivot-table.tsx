@@ -70,7 +70,7 @@ export class AppPivotTable extends AppGridBase {
      */
     public load(opt: any = {}, pageReset: boolean = false): void {
         if(!this.fetchAction){
-            this.$throw((this.$t('app.gridpage.notConfig.fetchAction') as string),'load');
+            this.$throw((this.$t('app.grid.notconfig.fetchaction') as string),'load');
             return;
         }
         if(pageReset){

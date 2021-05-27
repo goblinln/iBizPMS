@@ -179,11 +179,16 @@ public class LogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
                 return logService.save((Log) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return logService.create((Log) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return logService.update((Log) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return logService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Log){
                     Log arg = (Log) args[0] ;
                     CachedBeanCopier.copy(logService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class LogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
                 }else{
                     return logService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return logService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return logService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return logService.getDraft((Log) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return logService.checkKey((Log) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return logService.save((Log) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Log){
+                    Log arg = (Log) args[0] ;
+                    CachedBeanCopier.copy(logService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return logService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return logService.sysUpdate((Log) args[0]);
             }             
         }
         

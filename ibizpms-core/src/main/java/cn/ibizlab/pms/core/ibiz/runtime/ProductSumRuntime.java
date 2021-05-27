@@ -203,11 +203,16 @@ public class ProductSumRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
                 return productsumService.save((ProductSum) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return productsumService.create((ProductSum) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return productsumService.update((ProductSum) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return productsumService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof ProductSum){
                     ProductSum arg = (ProductSum) args[0] ;
                     CachedBeanCopier.copy(productsumService.get(arg.getId()), arg);
@@ -215,12 +220,27 @@ public class ProductSumRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
                 }else{
                     return productsumService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return productsumService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return productsumService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return productsumService.getDraft((ProductSum) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return productsumService.checkKey((ProductSum) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return productsumService.save((ProductSum) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof ProductSum){
+                    ProductSum arg = (ProductSum) args[0] ;
+                    CachedBeanCopier.copy(productsumService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return productsumService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return productsumService.sysUpdate((ProductSum) args[0]);
             }             
         }
         

@@ -1,5 +1,5 @@
 import { Prop, Component, Watch, Emit } from 'vue-property-decorator';
-import { Util } from 'ibiz-core';
+import { debounce, Util } from 'ibiz-core';
 import { CalendarControlBase } from '../../../widgets/calendar-control-base';
 import "./app-timeline-calendar.less";
 import { IPSSysCalendar } from '@ibiz/dynamic-model-api';
@@ -96,7 +96,7 @@ export class AppTimeLineCalendar extends CalendarControlBase {
                         data={item}
                         renderContent={this.renderContextMenu.bind(this)}>
                             <el-card
-                                native-on-click={this.onEventClick.bind(this)}
+                                native-on-click={(...params: any[]) => debounce(this.onEventClick,params,this)}
                                 class={item.className}>
                                     {calendarItem && calendarItem.getPSLayoutPanel ? 
                                         this.renderItemPanel(item,calendarItem) : 
@@ -140,7 +140,7 @@ export class AppTimeLineCalendar extends CalendarControlBase {
         } else {
             return (
                 <div>
-                    <span class="app-data-empty">{this.$t('app.commonWords.noData')}</span>
+                    <span class="app-data-empty">{this.$t('app.commonwords.nodata')}</span>
                     <span class="quick-toobar">
                         {this.renderQuickToolbar()}
                     </span>

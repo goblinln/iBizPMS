@@ -1885,6 +1885,10 @@
     "resCode" : "CASE_CASECOF_BUT",
     "id" : "ibiz__CASE_CASECOF_BUT"
   }, {
+    "name" : "项目关联需求",
+    "resCode" : "PROJ_LINKSTORY_BUT",
+    "id" : "ibiz__PROJ_LINKSTORY_BUT"
+  }, {
     "name" : "测试用例删除",
     "resCode" : "CASE_DELETE_BUT",
     "id" : "ibiz__CASE_DELETE_BUT"

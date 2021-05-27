@@ -183,11 +183,16 @@ public class TestResultRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
                 return testresultService.save((TestResult) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return testresultService.create((TestResult) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return testresultService.update((TestResult) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return testresultService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof TestResult){
                     TestResult arg = (TestResult) args[0] ;
                     CachedBeanCopier.copy(testresultService.get(arg.getId()), arg);
@@ -195,12 +200,27 @@ public class TestResultRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
                 }else{
                     return testresultService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return testresultService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return testresultService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return testresultService.getDraft((TestResult) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return testresultService.checkKey((TestResult) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return testresultService.save((TestResult) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof TestResult){
+                    TestResult arg = (TestResult) args[0] ;
+                    CachedBeanCopier.copy(testresultService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return testresultService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return testresultService.sysUpdate((TestResult) args[0]);
             }             
         }
         

@@ -95,6 +95,7 @@ public interface IStoryService extends IService<Story> {
     List<Story> selectMyCreateOrPartake(StorySearchContext context);
     List<Story> selectMyCurOpenedStory(StorySearchContext context);
     List<Story> selectMyFavorites(StorySearchContext context);
+    List<Story> selectMyReProduct(StorySearchContext context);
     List<Story> selectNotCurPlanLinkStory(StorySearchContext context);
     List<Story> selectParentDefault(StorySearchContext context);
     List<Story> selectParentDefaultQ(StorySearchContext context);
@@ -125,6 +126,7 @@ public interface IStoryService extends IService<Story> {
     Page<Story> searchMyCreateOrPartake(StorySearchContext context);
     Page<Story> searchMyCurOpenedStory(StorySearchContext context);
     Page<Story> searchMyFavorites(StorySearchContext context);
+    Page<Story> searchMyReProduct(StorySearchContext context);
     Page<Story> searchNotCurPlanLinkStory(StorySearchContext context);
     Page<Story> searchParentDefault(StorySearchContext context);
     Page<Story> searchParentDefaultQ(StorySearchContext context);

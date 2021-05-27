@@ -1,7 +1,7 @@
 import { Prop, Watch,Emit } from 'vue-property-decorator';
 import { CalendarControlBase } from '../../../widgets/calendar-control-base';
 import FullCalendar from '@fullcalendar/vue';
-import { Util } from 'ibiz-core';
+import { debounce, Util } from 'ibiz-core';
 import { IPSSysCalendar, IPSSysCalendarItem } from '@ibiz/dynamic-model-api';
 
 /**
@@ -87,7 +87,7 @@ export class AppCalendarBase extends CalendarControlBase{
                     "event-disabled": !this.isShowlegend[item.itemType]
                 }
                 return (
-                    <div class={itemClass} on-click={() => { this.legendTrigger(item.itemType as string);}}>
+                    <div class={itemClass} on-click={() => { debounce(this.legendTrigger,[item.itemType as string],this);}}>
                         <div class="lengend-icon" style={"background: "+ item.bKColor}></div>
                         <span style={"color:" + item.color}>{item.name}</span>
                     </div>
@@ -109,7 +109,7 @@ export class AppCalendarBase extends CalendarControlBase{
                     ref="appCalendarTimeline"
                     ctrlParams={this.ctrlParams}
                     on-eventClick={(tempEvent: any) => {
-                        this.onEventClick(tempEvent,true);
+                        debounce(this.onEventClick,[tempEvent,true],this);
                     }}
                     events={this.searchEvents}>
                 </app-calendar-timeline>
@@ -132,9 +132,9 @@ export class AppCalendarBase extends CalendarControlBase{
                 defaultDate={this.defaultDate}
                 eventRender={this.eventRender}
                 navLinks={this.quickToolbarItems?.length>0 ? true : false}
-                navLinkDayClick={this.onDayClick}
-                on-dateClick={this.onDateClick}
-                on-eventClick={this.onEventClick}
+                navLinkDayClick={(...params: any[]) => debounce(this.onDayClick,params,this)}
+                on-dateClick={(...params: any[]) => debounce(this.onDateClick,params,this)}
+                on-eventClick={(...params: any[]) => debounce(this.onEventClick,params,this)}
                 on-eventDrop={this.onEventDrop}
                 defaultView={this.defaultView}
                 >

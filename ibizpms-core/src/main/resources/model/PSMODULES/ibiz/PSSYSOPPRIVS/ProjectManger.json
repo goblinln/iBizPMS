@@ -323,6 +323,26 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     }
   }, {
+    "name" : "项目经理-ZT_STORY[需求查看（我相关产品）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Read_MyReP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    }
+  }, {
+    "name" : "项目经理-ZT_BUG[BUG维护（我相关的产品）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain_MyReP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+    }
+  }, {
     "name" : "项目经理-ZT_TASK[任务维护（我创建或参与）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,

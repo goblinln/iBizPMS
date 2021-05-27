@@ -183,11 +183,16 @@ public class DeptRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 return deptService.save((Dept) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return deptService.create((Dept) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return deptService.update((Dept) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return deptService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Dept){
                     Dept arg = (Dept) args[0] ;
                     CachedBeanCopier.copy(deptService.get(arg.getId()), arg);
@@ -195,12 +200,27 @@ public class DeptRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 }else{
                     return deptService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return deptService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return deptService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return deptService.getDraft((Dept) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return deptService.checkKey((Dept) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return deptService.save((Dept) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Dept){
+                    Dept arg = (Dept) args[0] ;
+                    CachedBeanCopier.copy(deptService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return deptService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return deptService.sysUpdate((Dept) args[0]);
             }             
         }
         

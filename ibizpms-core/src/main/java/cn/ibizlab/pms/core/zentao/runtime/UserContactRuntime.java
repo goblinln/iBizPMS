@@ -187,11 +187,16 @@ public class UserContactRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
                 return usercontactService.save((UserContact) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return usercontactService.create((UserContact) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return usercontactService.update((UserContact) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return usercontactService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof UserContact){
                     UserContact arg = (UserContact) args[0] ;
                     CachedBeanCopier.copy(usercontactService.get(arg.getId()), arg);
@@ -199,12 +204,27 @@ public class UserContactRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
                 }else{
                     return usercontactService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return usercontactService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return usercontactService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return usercontactService.getDraft((UserContact) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return usercontactService.checkKey((UserContact) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return usercontactService.save((UserContact) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof UserContact){
+                    UserContact arg = (UserContact) args[0] ;
+                    CachedBeanCopier.copy(usercontactService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return usercontactService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return usercontactService.sysUpdate((UserContact) args[0]);
             }             
         }
         

@@ -529,10 +529,10 @@ export class KanbanControlBase extends MDControlBase {
                 post.then((response: any) => {
                     this.onControlResponse('remove', response);
                     if (!response || response.status !== 200) {
-                        this.$throw((this.$t('app.commonWords.delDataFail') as string) + ',' + response.info,'remove');
+                        this.$throw((this.$t('app.commonwords.deldatafail') as string) + ',' + response.info,'remove');
                         return;
                     } else {
-                        this.$success((this.$t('app.commonWords.deleteSuccess') as string),'remove');
+                        this.$success((this.$t('app.commonwords.deletesuccess') as string),'remove');
                     }
                     //删除items中已删除的项
                     _datas.forEach((data: any) => {
@@ -556,7 +556,7 @@ export class KanbanControlBase extends MDControlBase {
 
         dataInfo = dataInfo.replace(/[null]/g, '').replace(/[undefined]/g, '').replace(/[ ]/g, '');
         this.$Modal.confirm({
-            title: (this.$t('app.commonWords.warning') as string),
+            title: (this.$t('app.commonwords.warning') as string),
             content: (this.$t('app.kanban.delete1') as string) + dataInfo + '，' + (this.$t('app.kanban.delete2') as string),
             onOk: () => {
                 removeData();

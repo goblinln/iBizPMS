@@ -537,6 +537,7 @@ export class MainViewBase extends ViewBase {
                 ) {
                     return;
                 }
+                Object.assign(params,this.viewparams);
                 this.appUIService
                     .getRDAppView(
                         args[0][(ModelTool.getViewAppEntityCodeName(this.viewInstance) as string)?.toLowerCase()],
@@ -765,11 +766,18 @@ export class MainViewBase extends ViewBase {
                         return item.refMode && item.refMode !== this.context.srfparentdename.toUpperCase();
                     },
                 );
-                if (!openViewModel) {
+                let otherViewModel: IPSAppUILogicRefView | undefined = batchAddPSAppViews.find(
+                    (item: IPSAppUILogicRefView) => {
+                        return item.refMode && item.refMode == this.context.srfparentdename.toUpperCase();
+                    },
+                );
+                if (!openViewModel || !otherViewModel) {
                     return;
                 }
                 let openView: IPSAppDEView = openViewModel.getRefPSAppView() as IPSAppDEView;
                 await openView.fill();
+                let otherView: IPSAppDEView = otherViewModel.getRefPSAppView() as IPSAppDEView;
+                await otherView.fill();
                 let view: any = {
                     viewname: 'app-view-shell',
                     height: openView.height,
@@ -789,25 +797,14 @@ export class MainViewBase extends ViewBase {
                         return;
                     }
                     let requestParam: Array<any> = [];
-                    let tempEntity: IPSAppDataEntity | null = minorPSAppDERSs[0].getMajorPSAppDataEntity();
-                    if (!tempEntity) return;
                     result.datas.forEach((record: any) => {
                         let tempParam: any = {};
-                        if (tempEntity && tempEntity.codeName == this.context.srfparentdename) {
-                            tempParam[
-                                (minorPSAppDERSs[0].getParentPSAppDEField() as IPSAppDEField)?.codeName.toLowerCase()
-                            ] = this.context['srfparentkey'];
-                            tempParam[
-                                (minorPSAppDERSs[1].getParentPSAppDEField() as IPSAppDEField)?.codeName.toLowerCase()
-                            ] = record.srfkey;
-                        } else {
-                            tempParam[
-                                (minorPSAppDERSs[1].getParentPSAppDEField() as IPSAppDEField)?.codeName.toLowerCase()
-                            ] = this.context['srfparentkey'];
-                            tempParam[
-                                (minorPSAppDERSs[0].getParentPSAppDEField() as IPSAppDEField)?.codeName.toLowerCase()
-                            ] = record.srfkey;
-                        }
+                        tempParam[
+                            (ModelTool.getAppEntityKeyField(otherView.getPSAppDataEntity() as IPSAppDataEntity,) as IPSAppDEField)?.codeName.toLowerCase()
+                        ] = this.context['srfparentkey'];
+                        tempParam[
+                            (ModelTool.getAppEntityKeyField(openView.getPSAppDataEntity() as IPSAppDataEntity) as IPSAppDEField)?.codeName.toLowerCase()
+                        ] = record.srfkey;
                         requestParam.push(tempParam);
                     });
                     this.appEntityService

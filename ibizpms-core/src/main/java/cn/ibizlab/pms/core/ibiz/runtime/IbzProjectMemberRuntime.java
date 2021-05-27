@@ -191,11 +191,16 @@ public class IbzProjectMemberRuntime extends cn.ibizlab.pms.core.runtime.SystemD
                 return ibzprojectmemberService.save((IbzProjectMember) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzprojectmemberService.create((IbzProjectMember) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzprojectmemberService.update((IbzProjectMember) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzprojectmemberService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbzProjectMember){
                     IbzProjectMember arg = (IbzProjectMember) args[0] ;
                     CachedBeanCopier.copy(ibzprojectmemberService.get(arg.getId()), arg);
@@ -203,12 +208,27 @@ public class IbzProjectMemberRuntime extends cn.ibizlab.pms.core.runtime.SystemD
                 }else{
                     return ibzprojectmemberService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzprojectmemberService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzprojectmemberService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzprojectmemberService.getDraft((IbzProjectMember) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzprojectmemberService.checkKey((IbzProjectMember) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzprojectmemberService.save((IbzProjectMember) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbzProjectMember){
+                    IbzProjectMember arg = (IbzProjectMember) args[0] ;
+                    CachedBeanCopier.copy(ibzprojectmemberService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return ibzprojectmemberService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzprojectmemberService.sysUpdate((IbzProjectMember) args[0]);
             }             
         }
         

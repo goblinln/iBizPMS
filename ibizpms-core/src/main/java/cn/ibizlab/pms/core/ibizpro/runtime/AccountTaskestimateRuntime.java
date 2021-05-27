@@ -183,11 +183,16 @@ public class AccountTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
                 return accounttaskestimateService.save((AccountTaskestimate) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return accounttaskestimateService.create((AccountTaskestimate) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return accounttaskestimateService.update((AccountTaskestimate) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return accounttaskestimateService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof AccountTaskestimate){
                     AccountTaskestimate arg = (AccountTaskestimate) args[0] ;
                     CachedBeanCopier.copy(accounttaskestimateService.get(arg.getId()), arg);
@@ -195,12 +200,27 @@ public class AccountTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
                 }else{
                     return accounttaskestimateService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return accounttaskestimateService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return accounttaskestimateService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return accounttaskestimateService.getDraft((AccountTaskestimate) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return accounttaskestimateService.checkKey((AccountTaskestimate) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return accounttaskestimateService.save((AccountTaskestimate) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof AccountTaskestimate){
+                    AccountTaskestimate arg = (AccountTaskestimate) args[0] ;
+                    CachedBeanCopier.copy(accounttaskestimateService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return accounttaskestimateService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return accounttaskestimateService.sysUpdate((AccountTaskestimate) args[0]);
             }             
         }
         

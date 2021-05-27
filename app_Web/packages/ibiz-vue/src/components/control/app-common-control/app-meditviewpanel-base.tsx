@@ -1,6 +1,6 @@
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { MEditViewPanelControlBase } from '../../../widgets';
-import { Util } from 'ibiz-core';
+import { debounce, Util } from 'ibiz-core';
 
 /**
  * 多编辑面板部件基类
@@ -177,7 +177,7 @@ export class AppMEditViewPanelBase extends MEditViewPanelControlBase{
         return (
             <div class={{...controlClassNames,'multieditviewpanel': true}}>
                 {this.items.length > 0 ? this.renderContent() : null}
-                <i-button type="primary" on-click={()=>this.handleAdd()} style="float: right;">
+                <i-button type="primary" on-click={()=>debounce(this.handleAdd,[],this)} style="float: right;">
                     {this.$t('app.local.add')}
                 </i-button>
             </div>

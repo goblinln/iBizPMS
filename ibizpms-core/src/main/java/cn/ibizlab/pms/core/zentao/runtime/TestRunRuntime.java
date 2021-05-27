@@ -179,11 +179,16 @@ public class TestRunRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 return testrunService.save((TestRun) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return testrunService.create((TestRun) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return testrunService.update((TestRun) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return testrunService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof TestRun){
                     TestRun arg = (TestRun) args[0] ;
                     CachedBeanCopier.copy(testrunService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class TestRunRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 }else{
                     return testrunService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return testrunService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return testrunService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return testrunService.getDraft((TestRun) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return testrunService.checkKey((TestRun) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return testrunService.save((TestRun) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof TestRun){
+                    TestRun arg = (TestRun) args[0] ;
+                    CachedBeanCopier.copy(testrunService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return testrunService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return testrunService.sysUpdate((TestRun) args[0]);
             }             
         }
         

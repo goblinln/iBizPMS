@@ -182,11 +182,16 @@ public class IbzproConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 return ibzproconfigService.save((IbzproConfig) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzproconfigService.create((IbzproConfig) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzproconfigService.update((IbzproConfig) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzproconfigService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbzproConfig){
                     IbzproConfig arg = (IbzproConfig) args[0] ;
                     CachedBeanCopier.copy(ibzproconfigService.get(arg.getIbzproconfigid()), arg);
@@ -194,12 +199,30 @@ public class IbzproConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 }else{
                     return ibzproconfigService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzproconfigService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzproconfigService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzproconfigService.getDraft((IbzproConfig) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzproconfigService.checkKey((IbzproConfig) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetSystemConfig")) {
+                return ibzproconfigService.getSystemConfig((IbzproConfig) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzproconfigService.save((IbzproConfig) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbzproConfig){
+                    IbzproConfig arg = (IbzproConfig) args[0] ;
+                    CachedBeanCopier.copy(ibzproconfigService.sysGet(arg.getIbzproconfigid()), arg);
+                    return arg;
+                }else{
+                    return ibzproconfigService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzproconfigService.sysUpdate((IbzproConfig) args[0]);
             }             
         }
         

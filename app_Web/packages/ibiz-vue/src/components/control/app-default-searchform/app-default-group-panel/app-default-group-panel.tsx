@@ -1,3 +1,4 @@
+import { debounce } from 'ibiz-core';
 import { Vue, Component, Prop, Inject, Watch } from 'vue-property-decorator';
 import { AppDefaultSearchFormDetail } from '../app-default-searchform-detail/app-default-searchform-detail';
 
@@ -53,7 +54,7 @@ export class AppDefaultGroupPanel extends AppDefaultSearchFormDetail {
                 isManageContainer={this.runtimeModel?.isManageContainer}
                 uiActionGroup={this.runtimeModel?.uiActionGroup}
                 class={detailClassNames}
-                on-groupuiactionclick={(e: any)=>{this.groupUIActionClick(e)}}
+                on-groupuiactionclick={(e: any)=>{debounce(this.groupUIActionClick,[e],this)}}
                 style={this.runtimeModel?.visible ? '' : 'display: none;'}
             >
                 {this.$slots.default}

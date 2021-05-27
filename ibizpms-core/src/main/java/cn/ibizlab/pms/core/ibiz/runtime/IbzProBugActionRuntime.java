@@ -206,11 +206,16 @@ public class IbzProBugActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
                 return ibzprobugactionService.sendToread((IbzProBugAction) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzprobugactionService.create((IbzProBugAction) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzprobugactionService.update((IbzProBugAction) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzprobugactionService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbzProBugAction){
                     IbzProBugAction arg = (IbzProBugAction) args[0] ;
                     CachedBeanCopier.copy(ibzprobugactionService.get(arg.getId()), arg);
@@ -218,12 +223,48 @@ public class IbzProBugActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
                 }else{
                     return ibzprobugactionService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzprobugactionService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzprobugactionService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzprobugactionService.getDraft((IbzProBugAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzprobugactionService.checkKey((IbzProBugAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Comment")) {
+                return ibzprobugactionService.comment((IbzProBugAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CreateHis")) {
+                return ibzprobugactionService.createHis((IbzProBugAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("editComment")) {
+                return ibzprobugactionService.editComment((IbzProBugAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ManagePmsEe")) {
+                return ibzprobugactionService.managePmsEe((IbzProBugAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzprobugactionService.save((IbzProBugAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendMarkDone")) {
+                return ibzprobugactionService.sendMarkDone((IbzProBugAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendTodo")) {
+                return ibzprobugactionService.sendTodo((IbzProBugAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendToread")) {
+                return ibzprobugactionService.sendToread((IbzProBugAction) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbzProBugAction){
+                    IbzProBugAction arg = (IbzProBugAction) args[0] ;
+                    CachedBeanCopier.copy(ibzprobugactionService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return ibzprobugactionService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzprobugactionService.sysUpdate((IbzProBugAction) args[0]);
             }             
         }
         

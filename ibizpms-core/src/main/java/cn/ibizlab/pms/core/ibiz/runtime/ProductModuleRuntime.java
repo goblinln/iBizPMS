@@ -205,11 +205,16 @@ public class ProductModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
                 return productmoduleService.syncFromIBIZ((ProductModule) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return productmoduleService.create((ProductModule) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return productmoduleService.update((ProductModule) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return productmoduleService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof ProductModule){
                     ProductModule arg = (ProductModule) args[0] ;
                     CachedBeanCopier.copy(productmoduleService.get(arg.getId()), arg);
@@ -217,12 +222,33 @@ public class ProductModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
                 }else{
                     return productmoduleService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return productmoduleService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return productmoduleService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return productmoduleService.getDraft((ProductModule) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return productmoduleService.checkKey((ProductModule) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Fix")) {
+                return productmoduleService.fix((ProductModule) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return productmoduleService.save((ProductModule) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("SyncFromIBIZ")) {
+                return productmoduleService.syncFromIBIZ((ProductModule) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof ProductModule){
+                    ProductModule arg = (ProductModule) args[0] ;
+                    CachedBeanCopier.copy(productmoduleService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return productmoduleService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return productmoduleService.sysUpdate((ProductModule) args[0]);
             }             
         }
         

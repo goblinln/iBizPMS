@@ -179,11 +179,16 @@ public class IbzLibCaseStepsRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
                 return ibzlibcasestepsService.save((IbzLibCaseSteps) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzlibcasestepsService.create((IbzLibCaseSteps) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzlibcasestepsService.update((IbzLibCaseSteps) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzlibcasestepsService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbzLibCaseSteps){
                     IbzLibCaseSteps arg = (IbzLibCaseSteps) args[0] ;
                     CachedBeanCopier.copy(ibzlibcasestepsService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class IbzLibCaseStepsRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
                 }else{
                     return ibzlibcasestepsService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzlibcasestepsService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzlibcasestepsService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzlibcasestepsService.getDraft((IbzLibCaseSteps) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzlibcasestepsService.checkKey((IbzLibCaseSteps) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzlibcasestepsService.save((IbzLibCaseSteps) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbzLibCaseSteps){
+                    IbzLibCaseSteps arg = (IbzLibCaseSteps) args[0] ;
+                    CachedBeanCopier.copy(ibzlibcasestepsService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return ibzlibcasestepsService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzlibcasestepsService.sysUpdate((IbzLibCaseSteps) args[0]);
             }             
         }
         

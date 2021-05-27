@@ -173,6 +173,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.searchMyFavorites(searchContext);    
         if (iPSDEDataSet.getName().equals("MyPlansTaskMobMonthly"))
             return taskService.searchMyPlansTaskMobMonthly(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyReProject"))
+            return taskService.searchMyReProject(searchContext);    
         if (iPSDEDataSet.getName().equals("MyTomorrowPlanTask"))
             return taskService.searchMyTomorrowPlanTask(searchContext);    
         if (iPSDEDataSet.getName().equals("MyTomorrowPlanTaskMobDaily"))
@@ -257,6 +259,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.selectMyFavorites(searchContext);
         if (iPSDataQuery.getName().equals("MyPlansTaskMobMonthly"))
             return taskService.selectMyPlansTaskMobMonthly(searchContext);
+        if (iPSDataQuery.getName().equals("MyReProject"))
+            return taskService.selectMyReProject(searchContext);
         if (iPSDataQuery.getName().equals("MyTomorrowPlanTask"))
             return taskService.selectMyTomorrowPlanTask(searchContext);
         if (iPSDataQuery.getName().equals("MyTomorrowPlanTaskMobDaily"))
@@ -442,11 +446,16 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 return taskService.updateStoryVersion((Task) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return taskService.create((Task) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return taskService.update((Task) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return taskService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Task){
                     Task arg = (Task) args[0] ;
                     CachedBeanCopier.copy(taskService.get(arg.getId()), arg);
@@ -454,12 +463,132 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 }else{
                     return taskService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return taskService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return taskService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return taskService.getDraft((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Activate")) {
+                return taskService.activate((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("AssignTo")) {
+                return taskService.assignTo((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Cancel")) {
+                return taskService.cancel((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return taskService.checkKey((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Close")) {
+                return taskService.close((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("computeBeginAndEnd")) {
+                return taskService.computeBeginAndEnd((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("computeHours4Multiple")) {
+                return taskService.computeHours4Multiple((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("computeWorkingHours")) {
+                return taskService.computeWorkingHours((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ConfirmStoryChange")) {
+                return taskService.confirmStoryChange((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("createByCycle")) {
+                return taskService.createByCycle((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CreateCycleTasks")) {
+                return taskService.createCycleTasks((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("delete")) {
+                return taskService.delete((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("DeleteEstimate")) {
+                return taskService.deleteEstimate((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("EditEstimate")) {
+                return taskService.editEstimate((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Finish")) {
+                return taskService.finish((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetNextTeamUserFinish")) {
+                return taskService.getNextTeamUser((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetTeamUserLeftActivity")) {
+                return taskService.getTeamUserLeftActivity((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetTeamUserLeftStart")) {
+                return taskService.getTeamUserLeftStart((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("getUsernames")) {
+                return taskService.getUsernames((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("LinkPlan")) {
+                return taskService.linkPlan((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("OtherUpdate")) {
+                return taskService.otherUpdate((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Pause")) {
+                return taskService.pause((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("RecordEstimate")) {
+                return taskService.recordEstimate((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("RecordTimZeroLeftAfterContinue")) {
+                return taskService.recordTimZeroLeftAfterContinue((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("RecordTimateZeroLeft")) {
+                return taskService.recordTimateZeroLeft((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("RecordTimateZeroLeftAfterStart")) {
+                return taskService.recordTimateZeroLeftAfterStart((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Restart")) {
+                return taskService.restart((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return taskService.save((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendMessage")) {
+                return taskService.sendMessage((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendMsgPreProcess")) {
+                return taskService.sendMsgPreProcess((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Start")) {
+                return taskService.start((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("TaskFavorites")) {
+                return taskService.taskFavorites((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("taskForward")) {
+                return taskService.taskForward((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("TaskNFavorites")) {
+                return taskService.taskNFavorites((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("updateParentStatus")) {
+                return taskService.updateParentStatus((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("updateRelatedPlanStatus")) {
+                return taskService.updateRelatedPlanStatus((Task) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("updateStoryVersion")) {
+                return taskService.updateStoryVersion((Task) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Task){
+                    Task arg = (Task) args[0] ;
+                    CachedBeanCopier.copy(taskService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return taskService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return taskService.sysUpdate((Task) args[0]);
             }             
         }
         
@@ -729,6 +858,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("searchMyPlansTaskMobMonthly")) {
             return aroundDataSet("MyPlansTaskMobMonthly", point);
+        }
+        else if (action.equals("searchMyReProject")) {
+            return aroundDataSet("MyReProject", point);
         }
         else if (action.equals("searchMyTomorrowPlanTask")) {
             return aroundDataSet("MyTomorrowPlanTask", point);

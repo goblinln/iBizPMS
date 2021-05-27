@@ -183,11 +183,16 @@ public class CompanyStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 return companystatsService.save((CompanyStats) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return companystatsService.create((CompanyStats) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return companystatsService.update((CompanyStats) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return companystatsService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof CompanyStats){
                     CompanyStats arg = (CompanyStats) args[0] ;
                     CachedBeanCopier.copy(companystatsService.get(arg.getId()), arg);
@@ -195,12 +200,27 @@ public class CompanyStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 }else{
                     return companystatsService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return companystatsService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return companystatsService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return companystatsService.getDraft((CompanyStats) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return companystatsService.checkKey((CompanyStats) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return companystatsService.save((CompanyStats) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof CompanyStats){
+                    CompanyStats arg = (CompanyStats) args[0] ;
+                    CachedBeanCopier.copy(companystatsService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return companystatsService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return companystatsService.sysUpdate((CompanyStats) args[0]);
             }             
         }
         

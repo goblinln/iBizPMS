@@ -31,23 +31,6 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -62,23 +45,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
     },
     "builtinMethod" : false
   }, {
@@ -99,6 +65,23 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -113,6 +96,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
@@ -766,23 +766,6 @@
     "enableQuickSearch" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -800,23 +783,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -831,6 +797,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
     },
     "builtinMethod" : false
   }, {
@@ -865,6 +848,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProductQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {

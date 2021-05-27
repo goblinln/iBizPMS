@@ -179,11 +179,16 @@ public class CompileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 return compileService.save((Compile) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return compileService.create((Compile) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return compileService.update((Compile) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return compileService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Compile){
                     Compile arg = (Compile) args[0] ;
                     CachedBeanCopier.copy(compileService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class CompileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 }else{
                     return compileService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return compileService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return compileService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return compileService.getDraft((Compile) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return compileService.checkKey((Compile) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return compileService.save((Compile) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Compile){
+                    Compile arg = (Compile) args[0] ;
+                    CachedBeanCopier.copy(compileService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return compileService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return compileService.sysUpdate((Compile) args[0]);
             }             
         }
         

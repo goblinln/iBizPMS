@@ -209,7 +209,7 @@ export default class DropDownListDynamic extends Vue {
               let items: Array<any> = [...JSON.parse(JSON.stringify(codelist.items))];
               this.formatCodeList(items);
           } else {
-              LogUtil.log(`----${this.tag}----${this.$t('app.commonWords.codeNotExist')}`);
+              LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codenotexist')}`);
           }
       }else if(this.tag && Object.is(this.codelistType,"DYNAMIC")){
           // 公共参数处理
@@ -222,7 +222,7 @@ export default class DropDownListDynamic extends Vue {
                 let items: Array<any> = [...res];
                 this.formatCodeList(items);
           }).catch((error:any) => {
-              LogUtil.log(`----${this.tag}----${this.$t('app.commonWords.codeNotExist')}`);
+              LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codenotexist')}`);
           });
       }
     }
@@ -246,7 +246,7 @@ export default class DropDownListDynamic extends Vue {
                     let items: Array<any> = [...res];
                     this.formatCodeList(items);
                 }).catch((error:any) => {
-                    LogUtil.log(`----${this.tag}----${this.$t('app.commonWords.codeNotExist')}`);
+                    LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codenotexist')}`);
                 });
             }
         }

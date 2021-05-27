@@ -179,11 +179,16 @@ public class NotifyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 return notifyService.save((Notify) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return notifyService.create((Notify) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return notifyService.update((Notify) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return notifyService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Notify){
                     Notify arg = (Notify) args[0] ;
                     CachedBeanCopier.copy(notifyService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class NotifyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 }else{
                     return notifyService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return notifyService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return notifyService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return notifyService.getDraft((Notify) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return notifyService.checkKey((Notify) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return notifyService.save((Notify) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Notify){
+                    Notify arg = (Notify) args[0] ;
+                    CachedBeanCopier.copy(notifyService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return notifyService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return notifyService.sysUpdate((Notify) args[0]);
             }             
         }
         

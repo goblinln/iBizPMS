@@ -181,11 +181,16 @@ public class IbzProWeeklyHistoryRuntime extends cn.ibizlab.pms.core.runtime.Syst
                 return ibzproweeklyhistoryService.save((IbzProWeeklyHistory) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzproweeklyhistoryService.create((IbzProWeeklyHistory) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzproweeklyhistoryService.update((IbzProWeeklyHistory) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzproweeklyhistoryService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbzProWeeklyHistory){
                     IbzProWeeklyHistory arg = (IbzProWeeklyHistory) args[0] ;
                     CachedBeanCopier.copy(ibzproweeklyhistoryService.get(arg.getId()), arg);
@@ -193,12 +198,27 @@ public class IbzProWeeklyHistoryRuntime extends cn.ibizlab.pms.core.runtime.Syst
                 }else{
                     return ibzproweeklyhistoryService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzproweeklyhistoryService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzproweeklyhistoryService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzproweeklyhistoryService.getDraft((IbzProWeeklyHistory) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzproweeklyhistoryService.checkKey((IbzProWeeklyHistory) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzproweeklyhistoryService.save((IbzProWeeklyHistory) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbzProWeeklyHistory){
+                    IbzProWeeklyHistory arg = (IbzProWeeklyHistory) args[0] ;
+                    CachedBeanCopier.copy(ibzproweeklyhistoryService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return ibzproweeklyhistoryService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzproweeklyhistoryService.sysUpdate((IbzProWeeklyHistory) args[0]);
             }             
         }
         

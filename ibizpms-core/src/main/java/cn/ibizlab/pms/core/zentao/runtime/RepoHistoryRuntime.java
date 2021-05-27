@@ -179,11 +179,16 @@ public class RepoHistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
                 return repohistoryService.save((RepoHistory) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return repohistoryService.create((RepoHistory) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return repohistoryService.update((RepoHistory) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return repohistoryService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof RepoHistory){
                     RepoHistory arg = (RepoHistory) args[0] ;
                     CachedBeanCopier.copy(repohistoryService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class RepoHistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
                 }else{
                     return repohistoryService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return repohistoryService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return repohistoryService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return repohistoryService.getDraft((RepoHistory) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return repohistoryService.checkKey((RepoHistory) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return repohistoryService.save((RepoHistory) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof RepoHistory){
+                    RepoHistory arg = (RepoHistory) args[0] ;
+                    CachedBeanCopier.copy(repohistoryService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return repohistoryService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return repohistoryService.sysUpdate((RepoHistory) args[0]);
             }             
         }
         

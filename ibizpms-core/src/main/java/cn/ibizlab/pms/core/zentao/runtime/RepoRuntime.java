@@ -179,11 +179,16 @@ public class RepoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 return repoService.save((Repo) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return repoService.create((Repo) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return repoService.update((Repo) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return repoService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Repo){
                     Repo arg = (Repo) args[0] ;
                     CachedBeanCopier.copy(repoService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class RepoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 }else{
                     return repoService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return repoService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return repoService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return repoService.getDraft((Repo) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return repoService.checkKey((Repo) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return repoService.save((Repo) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Repo){
+                    Repo arg = (Repo) args[0] ;
+                    CachedBeanCopier.copy(repoService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return repoService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return repoService.sysUpdate((Repo) args[0]);
             }             
         }
         

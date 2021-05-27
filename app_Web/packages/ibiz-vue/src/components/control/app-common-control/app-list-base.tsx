@@ -1,5 +1,5 @@
 import { Prop, Watch, Emit } from 'vue-property-decorator';
-import { ModelTool, Util } from 'ibiz-core';
+import { debounce, ModelTool, Util } from 'ibiz-core';
 import { ListControlBase } from '../../../widgets';
 
 /**
@@ -180,8 +180,8 @@ export class AppListBase extends ListControlBase {
         return <div
             key={item.srfkey}
             class={['app-list-item', item.isselected === true ? 'isSelect' : ''].join(' ')}
-            on-click={() => this.handleClick(item)}
-            on-dblclick={() => this.handleDblClick(item)}
+            on-click={() => debounce(this.handleClick,[item],this)}
+            on-dblclick={() => debounce(this.handleDblClick,[item],this)}
         >
             {this.controlInstance.getItemPSLayoutPanel() ? this.renderItemPSLayoutPanel(item) : this.renderListContent(item, listItem)}
         </div>
@@ -205,8 +205,8 @@ export class AppListBase extends ListControlBase {
                             {item.children.map((item: any) => {
                                 return <div
                                     class={['app-list-item', { 'isSelect': item.isselected === true ? true : false }]}
-                                    on-click={() => this.handleClick(item)}
-                                    on-dblclick={() => this.handleDblClick(item)}
+                                    on-click={() => debounce(this.handleClick,[item],this)}
+                                    on-dblclick={() => debounce(this.handleDblClick,[item],this)}
                                 >
                                     {this.controlInstance.getItemPSLayoutPanel() ? this.renderItemPSLayoutPanel(item) : this.renderListContent(item, listItem)}
                                 </div>
@@ -231,7 +231,7 @@ export class AppListBase extends ListControlBase {
         return UIActionGroup && UIActionGroup?.getPSUIActionGroupDetails?.map((uiactionDetail: any, index: number) => {
             const uiaction = uiactionDetail.getPSUIAction;
             if (item[uiaction.uIActionTag].visabled) {
-                return <a key={index} style='display: inline-block;margin: 0 12px;' disabled={item[uiaction.uIActionTag].disabled} on-click={($event: any) => { this.handleActionClick(item, $event, listItem, uiactionDetail) }}>
+                return <a key={index} style='display: inline-block;margin: 0 12px;' disabled={item[uiaction.uIActionTag].disabled} on-click={($event: any) => { debounce(this.handleActionClick,[item, $event, listItem, uiactionDetail],this) }}>
                     {uiactionDetail.showIcon ? <i class={uiaction?.iconCls} style='margin-right:2px;'></i> : ''}
                     <span>{uiactionDetail.showCaption ? uiaction?.caption ? uiaction.caption : "" : ""}</span>
                 </a>;

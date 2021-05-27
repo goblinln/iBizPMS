@@ -70,7 +70,8 @@ function getLocaleResourceBase(){
           uploadText: 'Drag files here，or <em>Click</em> to upload',
           fileTypeErrorTitle: 'File type incorrect',
           fileTypeErrorInfo: 'Please select files with picture types，such as JPEG，GIF，PNG，BMP',
-          downloadError: "Image download failed!"
+          downloadError: "Image download failed!",
+          caption: "upload",
         },
         camera: {
           dev: "developing",

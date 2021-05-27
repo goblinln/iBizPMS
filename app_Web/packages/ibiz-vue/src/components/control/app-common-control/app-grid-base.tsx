@@ -9,7 +9,7 @@ import {
     IPSAppDEGridView,
     IPSDEToolbar,
 } from '@ibiz/dynamic-model-api';
-import { ModelTool, Util } from 'ibiz-core';
+import { debounce, ModelTool, Util } from 'ibiz-core';
 import { Prop, Watch, Emit } from 'vue-property-decorator';
 import { GridControlBase } from '../../../widgets';
 
@@ -145,10 +145,10 @@ export class AppGridBase extends GridControlBase {
      */
     public computeGridEvents() {
         let events: any = {
-            'row-click': (row: any, column: any, event: any) => this.rowClick(row, column, event),
-            'row-dblclick': (row: any) => this.rowDBLClick(row),
-            select: (selection: any, row: any) => this.select(selection, row),
-            'select-all': (selection: any) => this.selectAll(selection),
+            'row-click': (row: any, column: any, event: any) => debounce(this.rowClick,[row, column, event],this),
+            'row-dblclick': (row: any) => debounce(this.rowDBLClick,[row],this),
+            select: (selection: any, row: any) => debounce(this.select,[selection, row],this),
+            'select-all': (selection: any) => debounce(this.selectAll,[selection],this),
         };
         //  支持排序
         if (!this.controlInstance?.noSort) {
@@ -188,7 +188,7 @@ export class AppGridBase extends GridControlBase {
                     <el-table-column
                         show-overflow-tooltip
                         prop='group'
-                        label={this.$t('app.gridpage.group')}
+                        label={this.$t('app.grid.group')}
                         min-width='80'
                         scopedSlots={{
                             default: (scope: any) => {
@@ -319,8 +319,8 @@ export class AppGridBase extends GridControlBase {
                                 disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
                                 class={columnClass}
                                 on-click={($event: any) => {
-                                    (this.$apppopover as any).popperDestroy();
-                                    this.handleActionClick(row, $event, _column, uiactionDetail);
+                                  debounce((this.$apppopover as any).popperDestroy,[],this);
+                                  debounce(this.handleActionClick,[row, $event, _column, uiactionDetail],this);
                                 }}
                             >
                                 {uiactionDetail.showIcon ? <menu-icon item={uiaction} /> : null}
@@ -405,7 +405,7 @@ export class AppGridBase extends GridControlBase {
                                         title={uiaction.caption}
                                         disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
                                         on-click={($event: any) => {
-                                            this.handleActionClick(row, $event, _column, uiactionDetail);
+                                          debounce(this.handleActionClick,[row, $event, _column, uiactionDetail],this);
                                         }}
                                     >
                                         {uiactionDetail.showIcon ? (
@@ -427,7 +427,7 @@ export class AppGridBase extends GridControlBase {
                                         class={columnClass}
                                         disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
                                         on-click={($event: any) => {
-                                            this.handleActionClick(row, $event, _column, uiactionDetail);
+                                          debounce(this.handleActionClick,[row, $event, _column, uiactionDetail],this);
                                         }}
                                     >
                                         {uiactionDetail.showIcon ? (
@@ -500,13 +500,13 @@ export class AppGridBase extends GridControlBase {
         let pageText = <span>{this.$t('app.dataView.sum')}&nbsp;{this.totalRecord}&nbsp;{this.$t('app.dataView.data')}</span>
         if (this.viewStyle == 'STYLE2') {
             pageText = <span>
-                &nbsp; {this.$t('app.gridpage.show')}&nbsp;
+                &nbsp; {this.$t('app.grid.show')}&nbsp;
                 {this.items.length > 0 ? 1 : (this.curPage - 1) * this.limit + 1}&nbsp;-&nbsp;
                 {this.totalRecord > this.curPage * this.limit ? this.curPage * this.limit : this.totalRecord}&nbsp;
                 {this.$t('app.dataView.data')}，{this.$t('app.dataView.sum')}&nbsp;{this.totalRecord}&nbsp;{this.$t('app.dataView.data')}
             </span>
             columnPopTip = <poptip transfer placement='top-start' class='page-column'>
-                <i-button icon='md-menu'>{this.$t('app.gridpage.choicecolumns')}</i-button>
+                <i-button icon='md-menu'>{this.$t('app.grid.choicecolumns')}</i-button>
                 <div slot='content'>
                     {this.allColumns.map((col: any) => {
                         return (
@@ -545,7 +545,7 @@ export class AppGridBase extends GridControlBase {
                     {this.controlInstance.enableColFilter ? columnPopTip : null}
                     {this.renderBatchToolbar()}
                     <span class='page-button'>
-                        <i-button icon='md-refresh' title={this.$t('app.gridpage.refresh')} on-click={() => this.pageRefresh()}></i-button>
+                        <i-button icon='md-refresh' title={this.$t('app.grid.refresh')} on-click={() => debounce(this.pageRefresh,[],this)}></i-button>
                     </span>
                     {pageText}
                 </page>

@@ -328,7 +328,7 @@ export default class DropDownList extends Vue {
             this.codeListService.getDataItems({ tag: this.tag, type: this.codelistType,data: this.codeList,context:context,viewparam:viewparam }).then((codelistItems: Array<any>) => {
                 this.formatCodeList(codelistItems);
             }).catch((error: any) => {
-                LogUtil.log(`----${this.tag}----${this.$t('app.commonWords.codeNotExist')}`);
+                LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codenotexist')}`);
             })
         }
     }

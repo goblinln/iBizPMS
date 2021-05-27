@@ -185,11 +185,16 @@ public class TeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 return teamService.unlinkPorjectMember((Team) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return teamService.create((Team) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return teamService.update((Team) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return teamService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Team){
                     Team arg = (Team) args[0] ;
                     CachedBeanCopier.copy(teamService.get(arg.getId()), arg);
@@ -197,12 +202,33 @@ public class TeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 }else{
                     return teamService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return teamService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return teamService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return teamService.getDraft((Team) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return teamService.checkKey((Team) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("managePorjectMembers")) {
+                return teamService.managePorjectMembers((Team) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return teamService.save((Team) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("unlinkPorjectMember")) {
+                return teamService.unlinkPorjectMember((Team) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Team){
+                    Team arg = (Team) args[0] ;
+                    CachedBeanCopier.copy(teamService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return teamService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return teamService.sysUpdate((Team) args[0]);
             }             
         }
         

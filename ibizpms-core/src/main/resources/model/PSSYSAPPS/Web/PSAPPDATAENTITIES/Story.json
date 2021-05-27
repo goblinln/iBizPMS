@@ -1429,6 +1429,15 @@
       "id" : "MyCreateOrPartake"
     },
     "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyReProduct",
+    "methodType" : "FETCH",
+    "name" : "MyReProduct",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReProduct"
+    },
+    "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "AssignedTo",
@@ -3216,6 +3225,15 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMyReProduct",
+    "methodType" : "FETCH",
+    "name" : "MyReProduct",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReProduct"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FilterUpdate",
     "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE",
@@ -3885,7 +3903,7 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "projectLinkStories",
-    "dataAccessAction" : "PROJECTLINK",
+    "dataAccessAction" : "SRFUR__PROJ_LINKSTORY_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMPickupView3.json",
@@ -4370,7 +4388,7 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "ProjectCreateView",
-    "dataAccessAction" : "CREATE",
+    "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectEditView.json",
@@ -4558,7 +4576,7 @@
     "actionTarget" : "NONE",
     "caption" : "按照计划关联",
     "codeName" : "ProjecPlanLink",
-    "dataAccessAction" : "PLANLINK",
+    "dataAccessAction" : "SRFUR__PROJ_LINKSTORY_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectPlanView.json",

@@ -381,6 +381,13 @@
          )t1
      </select>
 
+    <!--数据集合[MyReProduct]-->
+	 <select id="searchMyReProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="MyReProduct" />
+         )t1
+     </select>
+
     <!--数据集合[NotCurPlanLinkStory]-->
 	 <select id="searchNotCurPlanLinkStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
 	 	select * from (
@@ -763,6 +770,24 @@
 	
 	<select id="selectMyFavorites"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="MyFavorites" />
+	</select>
+
+    <!--数据查询[MyReProduct]-->
+    <sql id="MyReProduct" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.ASSIGNEDTO AS `ASSIGNEDTOPK`, t1.`BRANCH`, t41.`NAME` AS `BRANCHNAME`, t1.`CHILDSTORIES`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DUPLICATESTORY`, t1.`ESTIMATE`, t1.`FROMBUG`, t1.`IBIZ_ID`, t1.`IBIZ_SOURCEID`, t1.`IBIZ_SOURCENAME`, t1.`IBIZ_SOURCEOBJECT`, t1.`ID`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS `ISCHILD`, '0' AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LINKSTORIES`, t1.`MAILTO`, '' AS `MAILTOPK`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, (case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root limit 0,1) end) AS `MODULENAME1`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`ORG`, t1.`ORGNAME`, t1.`PARENT`, t21.`TITLE` AS `PARENTNAME`, t11.`PATH`, t1.`PLAN`, t1.`PRI`, t31.`name` AS `PRODOCTNAME`, t1.`PRODUCT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SOURCE`, t1.`SOURCEID`, t1.`SOURCENAME`, t1.`SOURCENOTE`, t1.`SOURCEOBJECT`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STATUS`, t1.`STORYLATESTFINISHEDDATE`, t1.`STORYPOINTS`, t1.`STORYPROVIDEDATE`, t1.`STORYPROVIDER`, t1.`STORYSN`, t1.`SUBSTATUS`, t1.`TITLE`, t1.`TOBUG`, t1.`TYPE`, t1.`VERSION`, t1.`VERSION` AS `VERSIONC` FROM `zt_story` t1  LEFT JOIN `zt_module` t11 ON t1.`MODULE` = t11.`ID`  LEFT JOIN `zt_story` t21 ON t1.`PARENT` = t21.`ID`  LEFT JOIN `zt_product` t31 ON t1.`PRODUCT` = t31.`id`  LEFT JOIN `zt_branch` t41 ON t1.`BRANCH` = t41.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
+			<if test="true">
+                <![CDATA[ AND ( t1.product IN ( 			SELECT 				t.`id`  			FROM 				zt_product t  			WHERE 				t.`deleted` = '0'  				AND ( 					t.`acl` = 'open'  					OR ( 						( 							t.`acl` = 'private'  							AND ( 								t.`updateby` = #{srf.sessioncontext.srfloginname}   								OR t.`createdby` = #{srf.sessioncontext.srfloginname}  								OR t.`qd` =#{srf.sessioncontext.srfloginname}  								OR t.`rd` = #{srf.sessioncontext.srfloginname}  								OR t.`po` = #{srf.sessioncontext.srfloginname}  							)  						)  						OR ( t.id IN ( SELECT t.root FROM zt_team t WHERE t.account =#{srf.sessioncontext.srfloginname}  AND t.type = 'product' ) )  					)  				)  ) ) ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectMyReProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="MyReProduct" />
 	</select>
 
     <!--数据查询[NotCurPlanLinkStory]-->

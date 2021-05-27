@@ -203,11 +203,16 @@ public class TestReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
                 return testreportService.save((TestReport) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return testreportService.create((TestReport) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return testreportService.update((TestReport) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return testreportService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof TestReport){
                     TestReport arg = (TestReport) args[0] ;
                     CachedBeanCopier.copy(testreportService.get(arg.getId()), arg);
@@ -215,12 +220,51 @@ public class TestReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
                 }else{
                     return testreportService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return testreportService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return testreportService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return testreportService.getDraft((TestReport) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return testreportService.checkKey((TestReport) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetInfoTaskOvByTime")) {
+                return testreportService.getInfoTaskOvByTime((TestReport) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetInfoTestTask")) {
+                return testreportService.getInfoTestTask((TestReport) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetInfoTestTaskOvProject")) {
+                return testreportService.getInfoTestTaskOvProject((TestReport) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetInfoTestTaskProject")) {
+                return testreportService.getInfoTestTaskProject((TestReport) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetInfoTestTaskR")) {
+                return testreportService.getInfoTestTaskR((TestReport) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetInfoTestTaskS")) {
+                return testreportService.getInfoTestTaskS((TestReport) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetTestReportBasicInfo")) {
+                return testreportService.getTestReportBasicInfo((TestReport) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetTestReportProject")) {
+                return testreportService.getTestReportProject((TestReport) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return testreportService.save((TestReport) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof TestReport){
+                    TestReport arg = (TestReport) args[0] ;
+                    CachedBeanCopier.copy(testreportService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return testreportService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return testreportService.sysUpdate((TestReport) args[0]);
             }             
         }
         

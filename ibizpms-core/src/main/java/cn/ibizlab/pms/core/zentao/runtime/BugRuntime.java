@@ -177,6 +177,8 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             return bugService.searchMyCurOpenedBug(searchContext);    
         if (iPSDEDataSet.getName().equals("MyFavorites"))
             return bugService.searchMyFavorites(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyReProduct"))
+            return bugService.searchMyReProduct(searchContext);    
         if (iPSDEDataSet.getName().equals("NotCurPlanLinkBug"))
             return bugService.searchNotCurPlanLinkBug(searchContext);    
         if (iPSDEDataSet.getName().equals("ProjectBugs"))
@@ -249,6 +251,8 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             return bugService.selectMyCurOpenedBug(searchContext);
         if (iPSDataQuery.getName().equals("MyFavorites"))
             return bugService.selectMyFavorites(searchContext);
+        if (iPSDataQuery.getName().equals("MyReProduct"))
+            return bugService.selectMyReProduct(searchContext);
         if (iPSDataQuery.getName().equals("NotCurPlanLinkBug"))
             return bugService.selectNotCurPlanLinkBug(searchContext);
         if (iPSDataQuery.getName().equals("ReleaseBugs"))
@@ -382,11 +386,16 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
                 return bugService.updateStoryVersion((Bug) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return bugService.create((Bug) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return bugService.update((Bug) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return bugService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Bug){
                     Bug arg = (Bug) args[0] ;
                     CachedBeanCopier.copy(bugService.get(arg.getId()), arg);
@@ -394,12 +403,96 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
                 }else{
                     return bugService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return bugService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return bugService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return bugService.getDraft((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Activate")) {
+                return bugService.activate((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("assignTo")) {
+                return bugService.assignTo((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BatchUnlinkBug")) {
+                return bugService.batchUnlinkBug((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BugFavorites")) {
+                return bugService.bugFavorites((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("BugNFavorites")) {
+                return bugService.bugNFavorites((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("buildBatchUnlinkBug")) {
+                return bugService.buildBatchUnlinkBug((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("buildLinkBug")) {
+                return bugService.buildLinkBug((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("buildUnlinkBug")) {
+                return bugService.buildUnlinkBug((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return bugService.checkKey((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Close")) {
+                return bugService.close((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Confirm")) {
+                return bugService.confirm((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("LinkBug")) {
+                return bugService.linkBug((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ReleaaseBatchUnlinkBug")) {
+                return bugService.releaaseBatchUnlinkBug((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ReleaseLinkBugbyBug")) {
+                return bugService.releaseLinkBugbyBug((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ReleaseLinkBugbyLeftBug")) {
+                return bugService.releaseLinkBugbyLeftBug((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ReleaseUnLinkBugbyLeftBug")) {
+                return bugService.releaseUnLinkBugbyLeftBug((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ReleaseUnlinkBug")) {
+                return bugService.releaseUnlinkBug((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Resolve")) {
+                return bugService.resolve((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return bugService.save((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendMessage")) {
+                return bugService.sendMessage((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendMsgPreProcess")) {
+                return bugService.sendMsgPreProcess((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("TestScript")) {
+                return bugService.testScript((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("toStory")) {
+                return bugService.toStory((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("UnlinkBug")) {
+                return bugService.unlinkBug((Bug) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("UpdateStoryVersion")) {
+                return bugService.updateStoryVersion((Bug) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Bug){
+                    Bug arg = (Bug) args[0] ;
+                    CachedBeanCopier.copy(bugService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return bugService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return bugService.sysUpdate((Bug) args[0]);
             }             
         }
         
@@ -637,6 +730,9 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
         }
         else if (action.equals("searchMyFavorites")) {
             return aroundDataSet("MyFavorites", point);
+        }
+        else if (action.equals("searchMyReProduct")) {
+            return aroundDataSet("MyReProduct", point);
         }
         else if (action.equals("searchNotCurPlanLinkBug")) {
             return aroundDataSet("NotCurPlanLinkBug", point);

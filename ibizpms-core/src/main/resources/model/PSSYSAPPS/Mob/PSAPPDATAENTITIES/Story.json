@@ -1429,6 +1429,15 @@
       "id" : "MyCreateOrPartake"
     },
     "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyReProduct",
+    "methodType" : "FETCH",
+    "name" : "MyReProduct",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReProduct"
+    },
+    "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "AssignedTo",
@@ -3213,6 +3222,15 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyCreateOrPartake"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyReProduct",
+    "methodType" : "FETCH",
+    "name" : "MyReProduct",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReProduct"
     },
     "builtinMethod" : false
   }, {

@@ -179,11 +179,16 @@ public class WebHookRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 return webhookService.save((WebHook) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return webhookService.create((WebHook) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return webhookService.update((WebHook) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return webhookService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof WebHook){
                     WebHook arg = (WebHook) args[0] ;
                     CachedBeanCopier.copy(webhookService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class WebHookRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 }else{
                     return webhookService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return webhookService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return webhookService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return webhookService.getDraft((WebHook) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return webhookService.checkKey((WebHook) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return webhookService.save((WebHook) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof WebHook){
+                    WebHook arg = (WebHook) args[0] ;
+                    CachedBeanCopier.copy(webhookService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return webhookService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return webhookService.sysUpdate((WebHook) args[0]);
             }             
         }
         

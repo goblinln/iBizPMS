@@ -179,11 +179,16 @@ public class IbzFavoritesRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 return ibzfavoritesService.save((IbzFavorites) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzfavoritesService.create((IbzFavorites) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzfavoritesService.update((IbzFavorites) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzfavoritesService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbzFavorites){
                     IbzFavorites arg = (IbzFavorites) args[0] ;
                     CachedBeanCopier.copy(ibzfavoritesService.get(arg.getIbzfavoritesid()), arg);
@@ -191,12 +196,27 @@ public class IbzFavoritesRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 }else{
                     return ibzfavoritesService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzfavoritesService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzfavoritesService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzfavoritesService.getDraft((IbzFavorites) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzfavoritesService.checkKey((IbzFavorites) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzfavoritesService.save((IbzFavorites) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbzFavorites){
+                    IbzFavorites arg = (IbzFavorites) args[0] ;
+                    CachedBeanCopier.copy(ibzfavoritesService.sysGet(arg.getIbzfavoritesid()), arg);
+                    return arg;
+                }else{
+                    return ibzfavoritesService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzfavoritesService.sysUpdate((IbzFavorites) args[0]);
             }             
         }
         

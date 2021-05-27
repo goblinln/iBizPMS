@@ -1,5 +1,5 @@
 import { Prop, Watch, Emit } from 'vue-property-decorator';
-import { LayoutTool, Util } from 'ibiz-core';
+import { debounce, LayoutTool, Util } from 'ibiz-core';
 import { EditFormControlBase } from '../../../widgets';
 import {
     IPSAppDEUIAction,
@@ -403,7 +403,7 @@ export class AppFormBase extends EditFormControlBase {
                     type='primary'
                     class={controlClassNames}
                     style={btnClass}
-                    on-click={($event: any) => this.onFormItemActionClick({ tag: modelJson.name, event: $event })}
+                    on-click={($event: any) => debounce(this.onFormItemActionClick,[{ tag: modelJson.name, event: $event }],this)}
                     disabled={this.detailsModel[modelJson.name]?.disabled}
                 >
                     {sysImage ? (
@@ -530,8 +530,8 @@ export class AppFormBase extends EditFormControlBase {
                 index={index}
                 runtimeModel={this.detailsModel[modelJson.name]}
                 controlInstance={this.controlInstance}
-                on-groupUIActionClick={this.handleActionClick.bind(this)}
-                on-managecontainerclick={this.manageContainerClick.bind(this)}
+                on-groupUIActionClick={(...params: any[]) => debounce(this.handleActionClick,params,this)}
+                on-managecontainerclick={(...params: any[]) => debounce(this.manageContainerClick,params,this)}
                 context={this.context}
                 viewparams={this.viewparams}
                 data={this.data}
@@ -588,7 +588,7 @@ export class AppFormBase extends EditFormControlBase {
                         name={tabsName}
                         value={this.detailsModel[name]?.activatedPage}
                         on-on-click={(e: any) => {
-                            this.detailsModel[name]?.clickPage(e);
+                          debounce(this.detailsModel[name]?.clickPage,[e],this);
                         }}
                     >
                         {formPages.map((item: any, index: number) => {

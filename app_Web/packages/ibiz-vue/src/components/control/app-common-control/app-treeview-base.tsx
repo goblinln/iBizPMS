@@ -1,5 +1,5 @@
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import { Util, ModelTool } from 'ibiz-core';
+import { Util, ModelTool, debounce } from 'ibiz-core';
 import { TreeControlBase } from '../../../widgets';
 import { IPSDETreeNode, IPSDEContextMenu } from '@ibiz/dynamic-model-api';
 
@@ -152,7 +152,7 @@ export class AppTreeViewBase extends TreeControlBase {
                     <div
                         class='tree-node'
                         on-dblclick={() => {
-                            this.doDefaultAction(node);
+                          debounce(this.doDefaultAction,[node],this);
                         }}
                     >
                         {iconElement ? <span class='icon'>{iconElement}&nbsp;</span> : null}
@@ -202,7 +202,7 @@ export class AppTreeViewBase extends TreeControlBase {
                         on-check={this.onCheck.bind(this)}
                         on-current-change={this.selectionChange.bind(this)}
                         filter-node-method={this.filterNode.bind(this)}
-                        empty-text={this.$t('app.commonWords.noData')}
+                        empty-text={this.$t('app.commonwords.nodata')}
                         scopedSlots={{
                             default: this.renderNode.bind(this)
                         }}

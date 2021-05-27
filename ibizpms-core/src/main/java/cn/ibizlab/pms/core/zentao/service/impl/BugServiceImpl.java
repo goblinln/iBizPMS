@@ -648,6 +648,9 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     public List<Bug> selectMyFavorites(BugSearchContext context){
         return baseMapper.selectMyFavorites(context, context.getSelectCond());
     }
+    public List<Bug> selectMyReProduct(BugSearchContext context){
+        return baseMapper.selectMyReProduct(context, context.getSelectCond());
+    }
     public List<Bug> selectNotCurPlanLinkBug(BugSearchContext context){
         return baseMapper.selectNotCurPlanLinkBug(context, context.getSelectCond());
     }
@@ -908,6 +911,15 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     public Page<Bug> searchMyFavorites(BugSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchMyFavorites(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我相关的产品（权限）
+     */
+    @Override
+    public Page<Bug> searchMyReProduct(BugSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchMyReProduct(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

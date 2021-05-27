@@ -692,6 +692,9 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     public List<Story> selectMyFavorites(StorySearchContext context){
         return baseMapper.selectMyFavorites(context, context.getSelectCond());
     }
+    public List<Story> selectMyReProduct(StorySearchContext context){
+        return baseMapper.selectMyReProduct(context, context.getSelectCond());
+    }
     public List<Story> selectNotCurPlanLinkStory(StorySearchContext context){
         return baseMapper.selectNotCurPlanLinkStory(context, context.getSelectCond());
     }
@@ -874,6 +877,15 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Override
     public Page<Story> searchMyFavorites(StorySearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Story> pages=baseMapper.searchMyFavorites(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Story>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我相关产品（权限）
+     */
+    @Override
+    public Page<Story> searchMyReProduct(StorySearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Story> pages=baseMapper.searchMyReProduct(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Story>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

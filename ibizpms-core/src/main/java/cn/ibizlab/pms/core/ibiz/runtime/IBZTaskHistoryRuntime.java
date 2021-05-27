@@ -181,11 +181,16 @@ public class IBZTaskHistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
                 return ibztaskhistoryService.save((IBZTaskHistory) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibztaskhistoryService.create((IBZTaskHistory) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibztaskhistoryService.update((IBZTaskHistory) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibztaskhistoryService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IBZTaskHistory){
                     IBZTaskHistory arg = (IBZTaskHistory) args[0] ;
                     CachedBeanCopier.copy(ibztaskhistoryService.get(arg.getId()), arg);
@@ -193,12 +198,27 @@ public class IBZTaskHistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
                 }else{
                     return ibztaskhistoryService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibztaskhistoryService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibztaskhistoryService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibztaskhistoryService.getDraft((IBZTaskHistory) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibztaskhistoryService.checkKey((IBZTaskHistory) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibztaskhistoryService.save((IBZTaskHistory) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IBZTaskHistory){
+                    IBZTaskHistory arg = (IBZTaskHistory) args[0] ;
+                    CachedBeanCopier.copy(ibztaskhistoryService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return ibztaskhistoryService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibztaskhistoryService.sysUpdate((IBZTaskHistory) args[0]);
             }             
         }
         

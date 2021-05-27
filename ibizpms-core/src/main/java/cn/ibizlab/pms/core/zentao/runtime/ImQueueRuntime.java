@@ -179,11 +179,16 @@ public class ImQueueRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 return imqueueService.save((ImQueue) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return imqueueService.create((ImQueue) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return imqueueService.update((ImQueue) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return imqueueService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof ImQueue){
                     ImQueue arg = (ImQueue) args[0] ;
                     CachedBeanCopier.copy(imqueueService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class ImQueueRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 }else{
                     return imqueueService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return imqueueService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return imqueueService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return imqueueService.getDraft((ImQueue) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return imqueueService.checkKey((ImQueue) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return imqueueService.save((ImQueue) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof ImQueue){
+                    ImQueue arg = (ImQueue) args[0] ;
+                    CachedBeanCopier.copy(imqueueService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return imqueueService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return imqueueService.sysUpdate((ImQueue) args[0]);
             }             
         }
         

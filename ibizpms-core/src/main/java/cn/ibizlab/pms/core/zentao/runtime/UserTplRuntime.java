@@ -190,11 +190,16 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 return usertplService.save((UserTpl) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return usertplService.create((UserTpl) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return usertplService.update((UserTpl) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return usertplService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof UserTpl){
                     UserTpl arg = (UserTpl) args[0] ;
                     CachedBeanCopier.copy(usertplService.get(arg.getId()), arg);
@@ -202,12 +207,30 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 }else{
                     return usertplService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return usertplService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return usertplService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return usertplService.getDraft((UserTpl) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return usertplService.checkKey((UserTpl) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("hasDeleted")) {
+                return usertplService.hasDeleted((UserTpl) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return usertplService.save((UserTpl) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof UserTpl){
+                    UserTpl arg = (UserTpl) args[0] ;
+                    CachedBeanCopier.copy(usertplService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return usertplService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return usertplService.sysUpdate((UserTpl) args[0]);
             }             
         }
         

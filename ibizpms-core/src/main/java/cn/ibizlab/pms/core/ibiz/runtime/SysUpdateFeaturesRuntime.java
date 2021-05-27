@@ -179,11 +179,16 @@ public class SysUpdateFeaturesRuntime extends cn.ibizlab.pms.core.runtime.System
                 return sysupdatefeaturesService.save((SysUpdateFeatures) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return sysupdatefeaturesService.create((SysUpdateFeatures) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return sysupdatefeaturesService.update((SysUpdateFeatures) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return sysupdatefeaturesService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof SysUpdateFeatures){
                     SysUpdateFeatures arg = (SysUpdateFeatures) args[0] ;
                     CachedBeanCopier.copy(sysupdatefeaturesService.get(arg.getSysupdatefeaturesid()), arg);
@@ -191,12 +196,27 @@ public class SysUpdateFeaturesRuntime extends cn.ibizlab.pms.core.runtime.System
                 }else{
                     return sysupdatefeaturesService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return sysupdatefeaturesService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return sysupdatefeaturesService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return sysupdatefeaturesService.getDraft((SysUpdateFeatures) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return sysupdatefeaturesService.checkKey((SysUpdateFeatures) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return sysupdatefeaturesService.save((SysUpdateFeatures) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof SysUpdateFeatures){
+                    SysUpdateFeatures arg = (SysUpdateFeatures) args[0] ;
+                    CachedBeanCopier.copy(sysupdatefeaturesService.sysGet(arg.getSysupdatefeaturesid()), arg);
+                    return arg;
+                }else{
+                    return sysupdatefeaturesService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return sysupdatefeaturesService.sysUpdate((SysUpdateFeatures) args[0]);
             }             
         }
         

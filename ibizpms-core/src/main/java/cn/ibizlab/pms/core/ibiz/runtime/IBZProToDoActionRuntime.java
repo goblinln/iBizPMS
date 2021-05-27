@@ -206,11 +206,16 @@ public class IBZProToDoActionRuntime extends cn.ibizlab.pms.core.runtime.SystemD
                 return ibzprotodoactionService.sendToread((IBZProToDoAction) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzprotodoactionService.create((IBZProToDoAction) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzprotodoactionService.update((IBZProToDoAction) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzprotodoactionService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IBZProToDoAction){
                     IBZProToDoAction arg = (IBZProToDoAction) args[0] ;
                     CachedBeanCopier.copy(ibzprotodoactionService.get(arg.getId()), arg);
@@ -218,12 +223,48 @@ public class IBZProToDoActionRuntime extends cn.ibizlab.pms.core.runtime.SystemD
                 }else{
                     return ibzprotodoactionService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzprotodoactionService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzprotodoactionService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzprotodoactionService.getDraft((IBZProToDoAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzprotodoactionService.checkKey((IBZProToDoAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Comment")) {
+                return ibzprotodoactionService.comment((IBZProToDoAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CreateHis")) {
+                return ibzprotodoactionService.createHis((IBZProToDoAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("editComment")) {
+                return ibzprotodoactionService.editComment((IBZProToDoAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ManagePmsEe")) {
+                return ibzprotodoactionService.managePmsEe((IBZProToDoAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzprotodoactionService.save((IBZProToDoAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendMarkDone")) {
+                return ibzprotodoactionService.sendMarkDone((IBZProToDoAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendTodo")) {
+                return ibzprotodoactionService.sendTodo((IBZProToDoAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendToread")) {
+                return ibzprotodoactionService.sendToread((IBZProToDoAction) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IBZProToDoAction){
+                    IBZProToDoAction arg = (IBZProToDoAction) args[0] ;
+                    CachedBeanCopier.copy(ibzprotodoactionService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return ibzprotodoactionService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzprotodoactionService.sysUpdate((IBZProToDoAction) args[0]);
             }             
         }
         

@@ -179,11 +179,16 @@ public class ImConferenceRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 return imconferenceService.save((ImConference) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return imconferenceService.create((ImConference) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return imconferenceService.update((ImConference) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return imconferenceService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof ImConference){
                     ImConference arg = (ImConference) args[0] ;
                     CachedBeanCopier.copy(imconferenceService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class ImConferenceRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 }else{
                     return imconferenceService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return imconferenceService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return imconferenceService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return imconferenceService.getDraft((ImConference) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return imconferenceService.checkKey((ImConference) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return imconferenceService.save((ImConference) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof ImConference){
+                    ImConference arg = (ImConference) args[0] ;
+                    CachedBeanCopier.copy(imconferenceService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return imconferenceService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return imconferenceService.sysUpdate((ImConference) args[0]);
             }             
         }
         

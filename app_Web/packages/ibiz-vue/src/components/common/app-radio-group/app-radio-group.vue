@@ -230,7 +230,7 @@ export default class AppRadioGroup extends Vue {
                     this.formatCodeList(codelistItems);
                 })
                 .catch((error: any) => {
-                    LogUtil.log(`----${this.tag}----${this.$t('app.commonWords.codeNotExist')}`);
+                    LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codenotexist')}`);
                 });
         }
     }

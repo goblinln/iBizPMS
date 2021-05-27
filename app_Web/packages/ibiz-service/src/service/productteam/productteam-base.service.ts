@@ -123,20 +123,6 @@ export class PRODUCTTEAMBaseService extends EntityBaseService<IPRODUCTTEAM> {
         return this.condCache.get('view');
     }
     /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof PRODUCTTEAMService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productteam) {
-            return this.http.delete(`/products/${_context.product}/productteams/${_context.productteam}`);
-        }
-        return this.http.delete(`/productteams/${_context.productteam}`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -165,18 +151,18 @@ export class PRODUCTTEAMBaseService extends EntityBaseService<IPRODUCTTEAM> {
         return this.http.post(`/productteams`, _data);
     }
     /**
-     * FetchSpecifyTeam
+     * FetchRowEditDefaultProductTeam
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof PRODUCTTEAMService
      */
-    async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchRowEditDefaultProductTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productteams/fetchspecifyteam`, _data);
+            return this.http.post(`/products/${_context.product}/productteams/fetchroweditdefaultproductteam`, _data);
         }
-        return this.http.post(`/productteams/fetchspecifyteam`, _data);
+        return this.http.post(`/productteams/fetchroweditdefaultproductteam`, _data);
     }
     /**
      * Get
@@ -225,18 +211,32 @@ export class PRODUCTTEAMBaseService extends EntityBaseService<IPRODUCTTEAM> {
         return this.http.put(`/productteams/${_context.productteam}`, _data);
     }
     /**
-     * FetchRowEditDefaultProductTeam
+     * FetchSpecifyTeam
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof PRODUCTTEAMService
      */
-    async FetchRowEditDefaultProductTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productteams/fetchroweditdefaultproductteam`, _data);
+            return this.http.post(`/products/${_context.product}/productteams/fetchspecifyteam`, _data);
         }
-        return this.http.post(`/productteams/fetchroweditdefaultproductteam`, _data);
+        return this.http.post(`/productteams/fetchspecifyteam`, _data);
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof PRODUCTTEAMService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productteam) {
+            return this.http.delete(`/products/${_context.product}/productteams/${_context.productteam}`);
+        }
+        return this.http.delete(`/productteams/${_context.productteam}`);
     }
     /**
      * GetDraft

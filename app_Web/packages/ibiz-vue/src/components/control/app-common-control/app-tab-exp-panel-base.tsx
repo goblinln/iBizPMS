@@ -1,5 +1,5 @@
 import { IPSAppCounterRef, IPSDETabViewPanel, IPSSysImage } from '@ibiz/dynamic-model-api';
-import { Util } from 'ibiz-core';
+import { debounce, Util } from 'ibiz-core';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { TabExpPanelBase } from '../../../widgets';
 
@@ -144,7 +144,7 @@ export class AppTabExpPanelBase extends TabExpPanelBase {
         const tabsName = `${this.appDeCodeName.toLowerCase()}_${this.controlInstance?.controlType?.toLowerCase()}_${this.controlInstance?.codeName?.toLowerCase()}`;
         return (
             <div class={{ ...controlClassNames, 'tabviewpanel': true }} >
-                <tabs value={this.activiedTabViewPanel} animated={false} class='tabexppanel' name={tabsName} on-on-click={($event: any) => this.tabPanelClick($event)}>
+                <tabs value={this.activiedTabViewPanel} animated={false} class='tabexppanel' name={tabsName} on-on-click={($event: any) => debounce(this.tabPanelClick,[$event],this)}>
                     {
                         IPSDETabViewPanel?.map((tabViewPanel: IPSDETabViewPanel, index: number) => {
                             return this.authResourceObject && this.authResourceObject[tabViewPanel.name]?.visabled ?

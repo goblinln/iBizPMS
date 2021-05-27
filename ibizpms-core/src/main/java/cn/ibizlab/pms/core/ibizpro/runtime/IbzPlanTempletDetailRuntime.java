@@ -179,11 +179,16 @@ public class IbzPlanTempletDetailRuntime extends cn.ibizlab.pms.core.runtime.Sys
                 return ibzplantempletdetailService.save((IbzPlanTempletDetail) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return ibzplantempletdetailService.create((IbzPlanTempletDetail) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return ibzplantempletdetailService.update((IbzPlanTempletDetail) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzplantempletdetailService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof IbzPlanTempletDetail){
                     IbzPlanTempletDetail arg = (IbzPlanTempletDetail) args[0] ;
                     CachedBeanCopier.copy(ibzplantempletdetailService.get(arg.getIbzplantempletdetailid()), arg);
@@ -191,12 +196,27 @@ public class IbzPlanTempletDetailRuntime extends cn.ibizlab.pms.core.runtime.Sys
                 }else{
                     return ibzplantempletdetailService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return ibzplantempletdetailService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return ibzplantempletdetailService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzplantempletdetailService.getDraft((IbzPlanTempletDetail) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzplantempletdetailService.checkKey((IbzPlanTempletDetail) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzplantempletdetailService.save((IbzPlanTempletDetail) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof IbzPlanTempletDetail){
+                    IbzPlanTempletDetail arg = (IbzPlanTempletDetail) args[0] ;
+                    CachedBeanCopier.copy(ibzplantempletdetailService.sysGet(arg.getIbzplantempletdetailid()), arg);
+                    return arg;
+                }else{
+                    return ibzplantempletdetailService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return ibzplantempletdetailService.sysUpdate((IbzPlanTempletDetail) args[0]);
             }             
         }
         

@@ -188,11 +188,16 @@ public class BranchRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 return branchService.sort((Branch) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return branchService.create((Branch) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return branchService.update((Branch) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return branchService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Branch){
                     Branch arg = (Branch) args[0] ;
                     CachedBeanCopier.copy(branchService.get(arg.getId()), arg);
@@ -200,12 +205,30 @@ public class BranchRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 }else{
                     return branchService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return branchService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return branchService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return branchService.getDraft((Branch) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return branchService.checkKey((Branch) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return branchService.save((Branch) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Sort")) {
+                return branchService.sort((Branch) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Branch){
+                    Branch arg = (Branch) args[0] ;
+                    CachedBeanCopier.copy(branchService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return branchService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return branchService.sysUpdate((Branch) args[0]);
             }             
         }
         

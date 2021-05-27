@@ -806,7 +806,7 @@
             "name" : "GetUserRole",
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "getuserrole"
+              "id" : "GetUserRole"
             },
             "getPSDEGEIUpdateDetails" : [ {
               "name" : "role"

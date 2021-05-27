@@ -35,6 +35,7 @@ public interface StoryMapper extends BaseMapper<Story> {
     List<Story> selectMyCreateOrPartake(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectMyCurOpenedStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectMyFavorites(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectMyReProduct(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectNotCurPlanLinkStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectParentDefault(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectParentDefaultQ(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
@@ -65,6 +66,7 @@ public interface StoryMapper extends BaseMapper<Story> {
     Page<Story> searchMyCreateOrPartake(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchMyCurOpenedStory(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchMyFavorites(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    Page<Story> searchMyReProduct(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchNotCurPlanLinkStory(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchParentDefault(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchParentDefaultQ(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);

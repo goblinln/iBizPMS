@@ -181,11 +181,16 @@ public class DynaFilterRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
                 return dynafilterService.save((DynaFilter) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return dynafilterService.create((DynaFilter) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return dynafilterService.update((DynaFilter) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return dynafilterService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof DynaFilter){
                     DynaFilter arg = (DynaFilter) args[0] ;
                     CachedBeanCopier.copy(dynafilterService.get(arg.getDynafilterid()), arg);
@@ -193,12 +198,27 @@ public class DynaFilterRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
                 }else{
                     return dynafilterService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return dynafilterService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return dynafilterService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return dynafilterService.getDraft((DynaFilter) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return dynafilterService.checkKey((DynaFilter) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return dynafilterService.save((DynaFilter) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof DynaFilter){
+                    DynaFilter arg = (DynaFilter) args[0] ;
+                    CachedBeanCopier.copy(dynafilterService.sysGet(arg.getDynafilterid()), arg);
+                    return arg;
+                }else{
+                    return dynafilterService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return dynafilterService.sysUpdate((DynaFilter) args[0]);
             }             
         }
         

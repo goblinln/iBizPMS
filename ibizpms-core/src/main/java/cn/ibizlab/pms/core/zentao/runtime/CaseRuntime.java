@@ -318,11 +318,16 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 return caseService.unlinkSuiteCases((Case) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return caseService.create((Case) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return caseService.update((Case) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return caseService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Case){
                     Case arg = (Case) args[0] ;
                     CachedBeanCopier.copy(caseService.get(arg.getId()), arg);
@@ -330,12 +335,78 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 }else{
                     return caseService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return caseService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return caseService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return caseService.getDraft((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CaseFavorite")) {
+                return caseService.caseFavorite((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CaseNFavorite")) {
+                return caseService.caseNFavorite((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return caseService.checkKey((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("confirmChange")) {
+                return caseService.confirmChange((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("confirmstorychange")) {
+                return caseService.confirmstorychange((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetByTestTask")) {
+                return caseService.getByTestTask((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetTestTaskCntRun")) {
+                return caseService.getTestTaskCntRun((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("linkCase")) {
+                return caseService.linkCase((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("MobLinkCase")) {
+                return caseService.mobLinkCase((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("RunCase")) {
+                return caseService.runCase((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("runCases")) {
+                return caseService.runCases((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return caseService.save((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("TestRunCase")) {
+                return caseService.testRunCase((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("testRunCases")) {
+                return caseService.testRunCases((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("testsuitelinkCase")) {
+                return caseService.testsuitelinkCase((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("unlinkCase")) {
+                return caseService.unlinkCase((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("unlinkCases")) {
+                return caseService.unlinkCases((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("unlinkSuiteCase")) {
+                return caseService.unlinkSuiteCase((Case) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("unlinkSuiteCases")) {
+                return caseService.unlinkSuiteCases((Case) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Case){
+                    Case arg = (Case) args[0] ;
+                    CachedBeanCopier.copy(caseService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return caseService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return caseService.sysUpdate((Case) args[0]);
             }             
         }
         

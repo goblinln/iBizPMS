@@ -1,4 +1,4 @@
-import { Util, LogUtil  } from 'ibiz-core';
+import { Util, LogUtil, debounce  } from 'ibiz-core';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { AppMenuControlBase } from '../../../widgets';
 
@@ -192,7 +192,7 @@ export class AppmenuBase extends AppMenuControlBase {
                 this.$forceUpdate();
             }
         } else {
-            LogUtil.warn(this.$t('app.commonWords.noassign'));
+            LogUtil.warn(this.$t('app.commonwords.noassign'));
         }
     }
 
@@ -359,7 +359,7 @@ export class AppmenuBase extends AppMenuControlBase {
                                     return this.$createElement('card', {
                                         class: 'app-middle-menu-item',
                                         nativeOn: {
-                                            click: () => { this.click(item) }
+                                            click: () => { debounce(this.click,[item],this) }
                                         },
                                         scopedSlots: {
                                             default: () => {
@@ -405,7 +405,7 @@ export class AppmenuBase extends AppMenuControlBase {
                 },
                 ref: 'eltree',
                 on: {
-                    'node-click': ((e: any) => this.menuTreeClick(e))
+                    'node-click': ((e: any) => debounce(this.menuTreeClick,[e],this))
                 }
             })
         }

@@ -1191,6 +1191,15 @@
       "id" : "MyCreateOrPartake"
     },
     "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyReProduct",
+    "methodType" : "FETCH",
+    "name" : "MyReProduct",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReProduct"
+    },
+    "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "Severity",
@@ -2748,6 +2757,15 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyCreateOrPartake"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyReProduct",
+    "methodType" : "FETCH",
+    "name" : "MyReProduct",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReProduct"
     },
     "builtinMethod" : false
   }, {
@@ -6236,6 +6254,19 @@
   }, {
     "logicName" : "解决",
     "name" : "RESOLVE"
+  }, {
+    "logicName" : "产品-转用例",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "TOCASE",
+    "id" : "ZTProduct__TOCASE"
+  }, {
+    "logicName" : "转用例",
+    "name" : "TOCASE"
   }, {
     "logicName" : "转需求",
     "name" : "TOSTORY"

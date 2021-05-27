@@ -10,8 +10,8 @@
                         <Input v-model="templateTitle" :placeholder="$t('components.richtext.title')" />
                         <div style="margin-top: 5px;">
                             <Checkbox v-model="single">{{$t('components.richtext.pub')}}</Checkbox>
-                            <Button @click="saveTemplate()">{{ $t('app.commonWords.save') }}</Button>&nbsp;
-                            <Button @click="onCancel()">{{ $t('app.commonWords.cancel') }}</Button>
+                            <Button @click="saveTemplate()">{{ $t('app.commonwords.save') }}</Button>&nbsp;
+                            <Button @click="onCancel()">{{ $t('app.commonwords.cancel') }}</Button>
                         </div>
                     </div>
                 </template>

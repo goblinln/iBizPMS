@@ -42,6 +42,7 @@ public interface TaskMapper extends BaseMapper<Task> {
     List<Task> selectMyCreateOrPartake(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectMyFavorites(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectMyPlansTaskMobMonthly(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectMyReProject(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectMyTomorrowPlanTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectMyTomorrowPlanTaskMobDaily(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectNextWeekCompleteTaskMobZS(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
@@ -86,6 +87,7 @@ public interface TaskMapper extends BaseMapper<Task> {
     Page<Task> searchMyCreateOrPartake(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchMyFavorites(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchMyPlansTaskMobMonthly(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    Page<Task> searchMyReProject(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchMyTomorrowPlanTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchMyTomorrowPlanTaskMobDaily(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchNextWeekCompleteTaskMobZS(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);

@@ -179,11 +179,16 @@ public class ImClientRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 return imclientService.save((ImClient) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return imclientService.create((ImClient) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return imclientService.update((ImClient) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return imclientService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof ImClient){
                     ImClient arg = (ImClient) args[0] ;
                     CachedBeanCopier.copy(imclientService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class ImClientRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 }else{
                     return imclientService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return imclientService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return imclientService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return imclientService.getDraft((ImClient) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return imclientService.checkKey((ImClient) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return imclientService.save((ImClient) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof ImClient){
+                    ImClient arg = (ImClient) args[0] ;
+                    CachedBeanCopier.copy(imclientService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return imclientService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return imclientService.sysUpdate((ImClient) args[0]);
             }             
         }
         

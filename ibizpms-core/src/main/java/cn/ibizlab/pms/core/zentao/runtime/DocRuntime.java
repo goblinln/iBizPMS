@@ -237,11 +237,16 @@ public class DocRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
                 return docService.unCollect((Doc) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return docService.create((Doc) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return docService.update((Doc) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return docService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof Doc){
                     Doc arg = (Doc) args[0] ;
                     CachedBeanCopier.copy(docService.get(arg.getId()), arg);
@@ -249,12 +254,45 @@ public class DocRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
                 }else{
                     return docService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return docService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return docService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return docService.getDraft((Doc) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ByVersionUpdateContext")) {
+                return docService.byVersionUpdateContext((Doc) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return docService.checkKey((Doc) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Collect")) {
+                return docService.collect((Doc) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("GetDocStatus")) {
+                return docService.getDocStatus((Doc) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("OnlyCollectDoc")) {
+                return docService.onlyCollectDoc((Doc) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("OnlyUnCollectDoc")) {
+                return docService.onlyUnCollectDoc((Doc) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return docService.save((Doc) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("UnCollect")) {
+                return docService.unCollect((Doc) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof Doc){
+                    Doc arg = (Doc) args[0] ;
+                    CachedBeanCopier.copy(docService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return docService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return docService.sysUpdate((Doc) args[0]);
             }             
         }
         

@@ -919,6 +919,24 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
+        "customCond" : "( t1.project in (select t.id from zt_project t where (t.acl  = 'open'  or ( t.`ACL` = 'private'  AND  ( t.`OPENEDBY` =  #{srf.sessioncontext.srfloginname}  OR  t.`UPDATEBY` =  #{srf.sessioncontext.srfloginname}  OR  t.`PM` = #{srf.sessioncontext.srfloginname}  OR  t.`RD` =  #{srf.sessioncontext.srfloginname} OR  t.`PO` = #{srf.sessioncontext.srfloginname}  OR  t.`QD` = #{srf.sessioncontext.srfloginname} ) ) or ( t.id in (select t3.root from zt_team t3 where t3.account = #{srf.sessioncontext.srfloginname} \nand t3.type = 'project') ) )) )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "MyReProject",
+    "logicName" : "我相关项目（权限）",
+    "name" : "MyReProject",
+    "privQuery" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
         "customCond" : "( t1.`STATUS` IN ('doing','wait')  AND  t1.`ASSIGNEDTO` =  #{srf.sessioncontext.srfloginname} )",
         "name" : "查询条件"
       } ]
@@ -1515,6 +1533,17 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "MyPlansTaskMobMonthly"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
+    "codeName" : "MyReProject",
+    "logicName" : "我相关项目（权限）",
+    "name" : "MyReProject",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyReProject"
     } ],
     "enableBackend" : true,
     "enableFront" : true,
@@ -24098,6 +24127,19 @@
     "logicName" : "任务子任务",
     "name" : "SUBTASKS"
   }, {
+    "logicName" : "提取消",
+    "name" : "TOBUG"
+  }, {
+    "logicName" : "提取消",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "TOBUG",
+    "id" : "ZTProject__TOBUG"
+  }, {
     "logicName" : "更新",
     "name" : "UPDATE"
   }, {
@@ -24328,6 +24370,24 @@
     "userCat" : "CAT1",
     "userDRAction" : "READ",
     "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Read_MyReP.json",
+    "name" : "任务查看（我相关的项目）（默认角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReProject"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProject__READ"
+      }
+    } ],
+    "roleTag" : "Task_Read_MyReP",
+    "userDRAction" : "READ",
+    "defaultMode" : true
   } ],
   "codeName" : "Task",
   "dEType" : 1,

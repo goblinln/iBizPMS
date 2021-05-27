@@ -206,11 +206,16 @@ public class ProductPlanActionRuntime extends cn.ibizlab.pms.core.runtime.System
                 return productplanactionService.sendToread((ProductPlanAction) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return productplanactionService.create((ProductPlanAction) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return productplanactionService.update((ProductPlanAction) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return productplanactionService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof ProductPlanAction){
                     ProductPlanAction arg = (ProductPlanAction) args[0] ;
                     CachedBeanCopier.copy(productplanactionService.get(arg.getId()), arg);
@@ -218,12 +223,48 @@ public class ProductPlanActionRuntime extends cn.ibizlab.pms.core.runtime.System
                 }else{
                     return productplanactionService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return productplanactionService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return productplanactionService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return productplanactionService.getDraft((ProductPlanAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return productplanactionService.checkKey((ProductPlanAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Comment")) {
+                return productplanactionService.comment((ProductPlanAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CreateHis")) {
+                return productplanactionService.createHis((ProductPlanAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("editComment")) {
+                return productplanactionService.editComment((ProductPlanAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("ManagePmsEe")) {
+                return productplanactionService.managePmsEe((ProductPlanAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return productplanactionService.save((ProductPlanAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendMarkDone")) {
+                return productplanactionService.sendMarkDone((ProductPlanAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendTodo")) {
+                return productplanactionService.sendTodo((ProductPlanAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("sendToread")) {
+                return productplanactionService.sendToread((ProductPlanAction) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof ProductPlanAction){
+                    ProductPlanAction arg = (ProductPlanAction) args[0] ;
+                    CachedBeanCopier.copy(productplanactionService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return productplanactionService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return productplanactionService.sysUpdate((ProductPlanAction) args[0]);
             }             
         }
         

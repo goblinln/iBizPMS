@@ -191,11 +191,16 @@ public class ProductLifeRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
                 return productlifeService.save((ProductLife) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return productlifeService.create((ProductLife) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return productlifeService.update((ProductLife) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return productlifeService.remove((String) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof ProductLife){
                     ProductLife arg = (ProductLife) args[0] ;
                     CachedBeanCopier.copy(productlifeService.get(arg.getProductlifeid()), arg);
@@ -203,12 +208,27 @@ public class ProductLifeRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
                 }else{
                     return productlifeService.get((String) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return productlifeService.remove((String) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return productlifeService.sysGet((String) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return productlifeService.getDraft((ProductLife) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return productlifeService.checkKey((ProductLife) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return productlifeService.save((ProductLife) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof ProductLife){
+                    ProductLife arg = (ProductLife) args[0] ;
+                    CachedBeanCopier.copy(productlifeService.sysGet(arg.getProductlifeid()), arg);
+                    return arg;
+                }else{
+                    return productlifeService.sysGet((String) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return productlifeService.sysUpdate((ProductLife) args[0]);
             }             
         }
         

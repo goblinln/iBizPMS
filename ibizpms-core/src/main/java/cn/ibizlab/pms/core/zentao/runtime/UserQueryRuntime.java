@@ -179,11 +179,16 @@ public class UserQueryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 return userqueryService.save((UserQuery) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
-            if (strActionName.equals(DEActions.CREATE)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
                 return userqueryService.create((UserQuery) args[0]);
-            } else if (strActionName.equals(DEActions.UPDATE)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
                 return userqueryService.update((UserQuery) args[0]);
-            } else if (strActionName.equals(DEActions.GET)) {
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return userqueryService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
                 if(args[0] instanceof UserQuery){
                     UserQuery arg = (UserQuery) args[0] ;
                     CachedBeanCopier.copy(userqueryService.get(arg.getId()), arg);
@@ -191,12 +196,27 @@ public class UserQueryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 }else{
                     return userqueryService.get((Long) args[0]);
                 }
-            } else if (strActionName.equals(DEActions.REMOVE)) {
-                return userqueryService.remove((Long) args[0]);
-            } else if (strActionName.equals(DEActions.SYSGET)) {
-                return userqueryService.sysGet((Long) args[0]);
-            }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
-                
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return userqueryService.getDraft((UserQuery) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return userqueryService.checkKey((UserQuery) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return userqueryService.save((UserQuery) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+                if(args[0] instanceof UserQuery){
+                    UserQuery arg = (UserQuery) args[0] ;
+                    CachedBeanCopier.copy(userqueryService.sysGet(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return userqueryService.sysGet((Long) args[0]);
+                }
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSUPDATE)) {
+                    return userqueryService.sysUpdate((UserQuery) args[0]);
             }             
         }
         
