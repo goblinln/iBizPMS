@@ -205,7 +205,7 @@
     "nodeType" : "ChildTask",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchChildTaskTree"
+      "id" : "Fetch"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
