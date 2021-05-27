@@ -27,10 +27,6 @@
   "getPSDEFormItemUpdates" : [ {
     "codeName" : "UpdateStoryVersion",
     "name" : "UpdateStoryVersion",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "UpdateStoryVersion"
-    },
     "getPSDEFIUpdateDetails" : [ {
       "name" : "storyversion"
     } ]

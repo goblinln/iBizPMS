@@ -7428,7 +7428,9 @@
       }
     } ],
     "roleTag" : "Project_TaskManage_DEV",
-    "userDRAction" : "READ"
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_TaskManage_Open.json",
     "name" : "项目任务管理（公开项目）（跟随角色）",

@@ -33,6 +33,7 @@
   "getAllPSAppDEActions" : [ {
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Create.json"
@@ -41,14 +42,13 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SUBSTORY__DEACTION__CREATE"
-    },
-    "builtinMethod" : false
+    "userCat" : "CAT1",
+    "userTag4" : "create",
+    "builtinMethod" : true
   }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Update.json"
@@ -57,14 +57,12 @@
       "modelref" : true,
       "id" : "UPDATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SUBSTORY__DEACTION__UPDATE"
-    },
-    "builtinMethod" : false
+    "userCat" : "CAT1",
+    "builtinMethod" : true
   }, {
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Remove.json"
@@ -73,14 +71,13 @@
       "modelref" : true,
       "id" : "DELETE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SUBSTORY__DEACTION__REMOVE"
-    },
-    "builtinMethod" : false
+    "userCat" : "CAT1",
+    "userTag4" : "remove",
+    "builtinMethod" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Get.json"
@@ -89,14 +86,11 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SUBSTORY__DEACTION__GET"
-    },
-    "builtinMethod" : false
+    "builtinMethod" : true
   }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetDraft.json"
@@ -105,14 +99,11 @@
       "modelref" : true,
       "id" : "ZTProduct__CREATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
+    "builtinMethod" : true
   }, {
     "codeName" : "Activate",
     "methodType" : "DEACTION",
+    "name" : "activate",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Activate.json"
@@ -121,14 +112,12 @@
       "modelref" : true,
       "id" : "ACTIVATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Activate"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "AllPush",
     "methodType" : "DEACTION",
+    "name" : "AllPush",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/AllPush.json"
@@ -137,14 +126,11 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "AllPush"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
+    "name" : "AssignTo",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/AssignTo.json"
@@ -153,14 +139,12 @@
       "modelref" : true,
       "id" : "ASSIGNTO"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "AssignTo"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "BatchAssignTo",
     "methodType" : "DEACTION",
+    "name" : "BatchAssignTo",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchAssignTo.json"
@@ -169,14 +153,11 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BatchAssignTo"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "BatchChangeBranch",
     "methodType" : "DEACTION",
+    "name" : "BatchChangeBranch",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangeBranch.json"
@@ -185,14 +166,11 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BatchChangeBranch"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "BatchChangeModule",
     "methodType" : "DEACTION",
+    "name" : "BatchChangeModule",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangeModule.json"
@@ -201,14 +179,11 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BatchChangeModule"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "BatchChangePlan",
     "methodType" : "DEACTION",
+    "name" : "BatchChangePlan",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangePlan.json"
@@ -217,14 +192,11 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BatchChangePlan"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "BatchChangeStage",
     "methodType" : "DEACTION",
+    "name" : "BatchChangeStage",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangeStage.json"
@@ -233,14 +205,11 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BatchChangeStage"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "BatchClose",
     "methodType" : "DEACTION",
+    "name" : "BatchClose",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchClose.json"
@@ -249,14 +218,11 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BatchClose"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "BatchReview",
     "methodType" : "DEACTION",
+    "name" : "BatchReview",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchReview.json"
@@ -265,14 +231,11 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BatchReview"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "BatchUnlinkStory",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchUnlinkStory.json"
@@ -281,14 +244,12 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BatchUnlinkStory"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "BugToStory",
     "methodType" : "DEACTION",
+    "name" : "BugToStory",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BugToStory.json"
@@ -297,14 +258,11 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BugToStory"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "BuildBatchUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "buildBatchUnlinkStory",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildBatchUnlinkStory.json"
@@ -313,14 +271,12 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BuildBatchUnlinkStory"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "BuildLinkStory",
     "methodType" : "DEACTION",
+    "name" : "buildLinkStory",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildLinkStory.json"
@@ -329,14 +285,12 @@
       "modelref" : true,
       "id" : "ZTProduct__BUILDLINK"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BuildLinkStory"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "BuildUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "buildUnlinkStory",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildUnlinkStory.json"
@@ -345,30 +299,12 @@
       "modelref" : true,
       "id" : "ZTProduct__BUILDLINK"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BuildUnlinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "BuildUnlinkStorys",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildUnlinkStorys.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BuildUnlinkStorys"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "Change",
     "methodType" : "DEACTION",
+    "name" : "Change",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Change.json"
@@ -377,14 +313,13 @@
       "modelref" : true,
       "id" : "CHANGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Change"
-    },
+    "userCat" : "CAT1",
+    "userTag4" : "update",
     "builtinMethod" : false
   }, {
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/CheckKey.json"
@@ -393,14 +328,11 @@
       "modelref" : true,
       "id" : "ZTProduct__CREATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
-    "builtinMethod" : false
+    "builtinMethod" : true
   }, {
     "codeName" : "Close",
     "methodType" : "DEACTION",
+    "name" : "Close",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Close.json"
@@ -409,30 +341,12 @@
       "modelref" : true,
       "id" : "CLOSE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Close"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "CreateTasks",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/CreateTasks.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CreateTasks"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "GetStorySpec",
     "methodType" : "DEACTION",
+    "name" : "GetStorySpec",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetStorySpec.json"
@@ -440,338 +354,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetStorySpec"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetStorySpecs",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetStorySpecs.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetStorySpecs"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ImportPlanStories",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ImportPlanStories.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ImportPlanStories"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "LinkStory",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/LinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__PLANLINK"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "LinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ProjectBatchUnlinkStory",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectBatchUnlinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ProjectBatchUnlinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ProjectLinkStory",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectLinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__PROJECTLINK"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ProjectLinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ProjectUnlinkStory",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectUnlinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__PROJECTLINK"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ProjectUnlinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ProjectUnlinkStorys",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectUnlinkStorys.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ProjectUnlinkStorys"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Push",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Push.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Push"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ReleaseBatchUnlinkStory",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseBatchUnlinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ReleaseBatchUnlinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ReleaseLinkStory",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseLinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__RELEASELINK"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ReleaseLinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ReleaseUnlinkStory",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseUnlinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__RELEASELINK"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ReleaseUnlinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ResetReviewedBy",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ResetReviewedBy.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ResetReviewedBy"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Review",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Review.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "REVIEW"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Review"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Save.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "SendMessage",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SendMessage.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SendMessage"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "SendMsgPreProcess",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SendMsgPreProcess.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SendMsgPreProcess"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "SetStage",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SetStage"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "StoryFavorites",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "FAVORITES"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "StoryFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "StoryNFavorites",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NFAVORITES"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "StoryNFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "SyncFromIbiz",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SyncFromIbiz.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SyncFromIbiz"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "UnlinkStory",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/UnlinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__PLANLINK"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkStory"
     },
     "builtinMethod" : false
   }, {
@@ -805,6 +387,206 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "ImportPlanStories",
+    "methodType" : "DEACTION",
+    "name" : "importPlanStories",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ImportPlanStories.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "LinkStory",
+    "methodType" : "DEACTION",
+    "name" : "LinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/LinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__PLANLINK"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ProjectBatchUnlinkStory",
+    "methodType" : "DEACTION",
+    "name" : "ProjectBatchUnlinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectBatchUnlinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ProjectLinkStory",
+    "methodType" : "DEACTION",
+    "name" : "ProjectLinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectLinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__PROJECTLINK"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ProjectUnlinkStory",
+    "methodType" : "DEACTION",
+    "name" : "ProjectUnlinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectUnlinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__PROJECTLINK"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Push",
+    "methodType" : "DEACTION",
+    "name" : "Push",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Push.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ReleaseBatchUnlinkStory",
+    "methodType" : "DEACTION",
+    "name" : "ReleaseBatchUnlinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseBatchUnlinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ReleaseLinkStory",
+    "methodType" : "DEACTION",
+    "name" : "ReleaseLinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseLinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__RELEASELINK"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ReleaseUnlinkStory",
+    "methodType" : "DEACTION",
+    "name" : "ReleaseUnlinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseUnlinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__RELEASELINK"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ResetReviewedBy",
+    "methodType" : "DEACTION",
+    "name" : "ResetReviewedBy",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ResetReviewedBy.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Review",
+    "methodType" : "DEACTION",
+    "name" : "Review",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Review.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "REVIEW"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Save.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "SendMessage",
+    "methodType" : "DEACTION",
+    "name" : "sendMessage",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SendMessage.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SendMsgPreProcess",
+    "methodType" : "DEACTION",
+    "name" : "sendMsgPreProcess",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SendMsgPreProcess.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SyncFromIbiz",
+    "methodType" : "DEACTION",
+    "name" : "SyncFromIbiz",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SyncFromIbiz.json"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "ToStory",
     "methodType" : "DEACTION",
     "name" : "toStory",
@@ -816,6 +598,20 @@
       "modelref" : true,
       "id" : "CREATE"
     },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "UnlinkStory",
+    "methodType" : "DEACTION",
+    "name" : "UnlinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/UnlinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__PLANLINK"
+    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataExports" : [ {
@@ -975,449 +771,118 @@
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchAssignedToMyStory",
     "methodType" : "FETCH",
+    "name" : "AssignedToMyStory",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "AssignedToMyStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAssignedToMyStory"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyStoryCalendar",
     "methodType" : "FETCH",
+    "name" : "AssignedToMyStoryCalendar",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "AssignedToMyStoryCalendar"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAssignedToMyStoryCalendar"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugStory",
     "methodType" : "FETCH",
+    "name" : "BugStory",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "BugStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchBugStory"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildLinkCompletedStories",
     "methodType" : "FETCH",
+    "name" : "buildLinkCompletedStories",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "BuildLinkCompletedStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchBuildLinkCompletedStories"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildLinkableStories",
     "methodType" : "FETCH",
+    "name" : "BuildLinkableStories",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "BuildLinkableStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchBuildLinkableStories"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildStories",
     "methodType" : "FETCH",
+    "name" : "BuildStories",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "BuildStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchBuildStories"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchByModule",
     "methodType" : "FETCH",
+    "name" : "ByModule",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ByModule"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchByModule"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCaseStory",
     "methodType" : "FETCH",
+    "name" : "CaseStory",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "CaseStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchCaseStory"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildMore",
     "methodType" : "FETCH",
+    "name" : "ChildMore",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ChildMore"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchChildMore"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "DEFAULT",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
     "methodType" : "FETCH",
+    "name" : "ESBulk",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ESBulk"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchESBulk"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchGetProductStories",
     "methodType" : "FETCH",
+    "name" : "GetProductStories",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "GetProductStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchGetProductStories"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAgentStory",
     "methodType" : "FETCH",
+    "name" : "MyAgentStory",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyAgentStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyAgentStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyCurOpenedStory",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyCurOpenedStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyCurOpenedStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyFavorites",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyFavorites"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchNotCurPlanLinkStory",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "NotCurPlanLinkStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchNotCurPlanLinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchParentDefault",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ParentDefault"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchParentDefault"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchParentDefaultQ",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ParentDefaultQ"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchParentDefaultQ"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProjectLinkStory",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectLinkStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProjectLinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProjectStories",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProjectStories"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchReleaseLinkableStories",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ReleaseLinkableStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchReleaseLinkableStories"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchReleaseStories",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ReleaseStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchReleaseStories"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchReportStories",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ReportStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchReportStories"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchStoryChild",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "StoryChild"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchStoryChild"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchStoryRelated",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "StoryRelated"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchStoryRelated"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchSubStory",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "SubStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchSubStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchTaskRelatedStory",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TaskRelatedStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchTaskRelatedStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchView",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "View"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchView"
     },
     "builtinMethod" : false
   }, {
@@ -1430,12 +895,147 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMyCurOpenedStory",
+    "methodType" : "FETCH",
+    "name" : "MyCurOpenedStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCurOpenedStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyFavorites",
+    "methodType" : "FETCH",
+    "name" : "MyFavorites",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyFavorites"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchMyReProduct",
     "methodType" : "FETCH",
     "name" : "MyReProduct",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyReProduct"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchNotCurPlanLinkStory",
+    "methodType" : "FETCH",
+    "name" : "NotCurPlanLinkStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "NotCurPlanLinkStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchParentDefault",
+    "methodType" : "FETCH",
+    "name" : "ParentDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ParentDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchParentDefaultQ",
+    "methodType" : "FETCH",
+    "name" : "ParentDefaultQ",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ParentDefaultQ"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectLinkStory",
+    "methodType" : "FETCH",
+    "name" : "projectLinkStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectLinkStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectStories",
+    "methodType" : "FETCH",
+    "name" : "ProjectStories",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectStories"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchReleaseLinkableStories",
+    "methodType" : "FETCH",
+    "name" : "ReleaseLinkableStories",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ReleaseLinkableStories"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchReleaseStories",
+    "methodType" : "FETCH",
+    "name" : "ReleaseStories",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ReleaseStories"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchReportStories",
+    "methodType" : "FETCH",
+    "name" : "ReportStories",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ReportStories"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchStoryChild",
+    "methodType" : "FETCH",
+    "name" : "StoryChild",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "StoryChild"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchStoryRelated",
+    "methodType" : "FETCH",
+    "name" : "StoryRelated",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "StoryRelated"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchSubStory",
+    "methodType" : "FETCH",
+    "name" : "SubStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "SubStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTaskRelatedStory",
+    "methodType" : "FETCH",
+    "name" : "TaskRelatedStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskRelatedStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchView",
+    "methodType" : "FETCH",
+    "name" : "VIEW",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "View"
     },
     "builtinMethod" : false
   } ],
@@ -1983,6 +1583,7 @@
   }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Create.json"
@@ -1991,14 +1592,13 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SUBSTORY__DEACTION__CREATE"
-    },
-    "builtinMethod" : false
+    "userCat" : "CAT1",
+    "userTag4" : "create",
+    "builtinMethod" : true
   }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Update.json"
@@ -2007,14 +1607,12 @@
       "modelref" : true,
       "id" : "UPDATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SUBSTORY__DEACTION__UPDATE"
-    },
-    "builtinMethod" : false
+    "userCat" : "CAT1",
+    "builtinMethod" : true
   }, {
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Remove.json"
@@ -2023,14 +1621,13 @@
       "modelref" : true,
       "id" : "DELETE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SUBSTORY__DEACTION__REMOVE"
-    },
-    "builtinMethod" : false
+    "userCat" : "CAT1",
+    "userTag4" : "remove",
+    "builtinMethod" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Get.json"
@@ -2039,14 +1636,11 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SUBSTORY__DEACTION__GET"
-    },
-    "builtinMethod" : false
+    "builtinMethod" : true
   }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetDraft.json"
@@ -2055,14 +1649,11 @@
       "modelref" : true,
       "id" : "ZTProduct__CREATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
+    "builtinMethod" : true
   }, {
     "codeName" : "Activate",
     "methodType" : "DEACTION",
+    "name" : "activate",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Activate.json"
@@ -2071,14 +1662,12 @@
       "modelref" : true,
       "id" : "ACTIVATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Activate"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "AllPush",
     "methodType" : "DEACTION",
+    "name" : "AllPush",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/AllPush.json"
@@ -2087,14 +1676,11 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "AllPush"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
+    "name" : "AssignTo",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/AssignTo.json"
@@ -2103,14 +1689,12 @@
       "modelref" : true,
       "id" : "ASSIGNTO"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "AssignTo"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "BatchAssignTo",
     "methodType" : "DEACTION",
+    "name" : "BatchAssignTo",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchAssignTo.json"
@@ -2119,14 +1703,11 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BatchAssignTo"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "BatchChangeBranch",
     "methodType" : "DEACTION",
+    "name" : "BatchChangeBranch",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangeBranch.json"
@@ -2135,14 +1716,11 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BatchChangeBranch"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "BatchChangeModule",
     "methodType" : "DEACTION",
+    "name" : "BatchChangeModule",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangeModule.json"
@@ -2151,14 +1729,11 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BatchChangeModule"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "BatchChangePlan",
     "methodType" : "DEACTION",
+    "name" : "BatchChangePlan",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangePlan.json"
@@ -2167,14 +1742,11 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BatchChangePlan"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "BatchChangeStage",
     "methodType" : "DEACTION",
+    "name" : "BatchChangeStage",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangeStage.json"
@@ -2183,14 +1755,11 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BatchChangeStage"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "BatchClose",
     "methodType" : "DEACTION",
+    "name" : "BatchClose",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchClose.json"
@@ -2199,14 +1768,11 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BatchClose"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "BatchReview",
     "methodType" : "DEACTION",
+    "name" : "BatchReview",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchReview.json"
@@ -2215,14 +1781,11 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BatchReview"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "BatchUnlinkStory",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchUnlinkStory.json"
@@ -2231,14 +1794,12 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BatchUnlinkStory"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "BugToStory",
     "methodType" : "DEACTION",
+    "name" : "BugToStory",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BugToStory.json"
@@ -2247,14 +1808,11 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BugToStory"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "BuildBatchUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "buildBatchUnlinkStory",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildBatchUnlinkStory.json"
@@ -2263,14 +1821,12 @@
       "modelref" : true,
       "id" : "MANAGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BuildBatchUnlinkStory"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "BuildLinkStory",
     "methodType" : "DEACTION",
+    "name" : "buildLinkStory",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildLinkStory.json"
@@ -2279,14 +1835,12 @@
       "modelref" : true,
       "id" : "ZTProduct__BUILDLINK"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BuildLinkStory"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "BuildUnlinkStory",
     "methodType" : "DEACTION",
+    "name" : "buildUnlinkStory",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildUnlinkStory.json"
@@ -2295,30 +1849,12 @@
       "modelref" : true,
       "id" : "ZTProduct__BUILDLINK"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BuildUnlinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "BuildUnlinkStorys",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildUnlinkStorys.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "BuildUnlinkStorys"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "Change",
     "methodType" : "DEACTION",
+    "name" : "Change",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Change.json"
@@ -2327,14 +1863,13 @@
       "modelref" : true,
       "id" : "CHANGE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Change"
-    },
+    "userCat" : "CAT1",
+    "userTag4" : "update",
     "builtinMethod" : false
   }, {
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/CheckKey.json"
@@ -2343,14 +1878,11 @@
       "modelref" : true,
       "id" : "ZTProduct__CREATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
-    "builtinMethod" : false
+    "builtinMethod" : true
   }, {
     "codeName" : "Close",
     "methodType" : "DEACTION",
+    "name" : "Close",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Close.json"
@@ -2359,30 +1891,12 @@
       "modelref" : true,
       "id" : "CLOSE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Close"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "CreateTasks",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/CreateTasks.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CreateTasks"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "GetStorySpec",
     "methodType" : "DEACTION",
+    "name" : "GetStorySpec",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetStorySpec.json"
@@ -2390,786 +1904,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetStorySpec"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetStorySpecs",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetStorySpecs.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetStorySpecs"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ImportPlanStories",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ImportPlanStories.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ImportPlanStories"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "LinkStory",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/LinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__PLANLINK"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "LinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ProjectBatchUnlinkStory",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectBatchUnlinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ProjectBatchUnlinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ProjectLinkStory",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectLinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__PROJECTLINK"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ProjectLinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ProjectUnlinkStory",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectUnlinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__PROJECTLINK"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ProjectUnlinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ProjectUnlinkStorys",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectUnlinkStorys.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ProjectUnlinkStorys"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Push",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Push.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Push"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ReleaseBatchUnlinkStory",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseBatchUnlinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ReleaseBatchUnlinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ReleaseLinkStory",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseLinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__RELEASELINK"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ReleaseLinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ReleaseUnlinkStory",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseUnlinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__RELEASELINK"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ReleaseUnlinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ResetReviewedBy",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ResetReviewedBy.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ResetReviewedBy"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Review",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Review.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "REVIEW"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Review"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Save.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "SendMessage",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SendMessage.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SendMessage"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "SendMsgPreProcess",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SendMsgPreProcess.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SendMsgPreProcess"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "SetStage",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SetStage"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "StoryFavorites",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "FAVORITES"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "StoryFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "StoryNFavorites",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NFAVORITES"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "StoryNFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "SyncFromIbiz",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SyncFromIbiz.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SyncFromIbiz"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "UnlinkStory",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/UnlinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__PLANLINK"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchAssignedToMyStory",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "AssignedToMyStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAssignedToMyStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchAssignedToMyStoryCalendar",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "AssignedToMyStoryCalendar"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAssignedToMyStoryCalendar"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchBugStory",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "BugStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchBugStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchBuildLinkCompletedStories",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "BuildLinkCompletedStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchBuildLinkCompletedStories"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchBuildLinkableStories",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "BuildLinkableStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchBuildLinkableStories"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchBuildStories",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "BuildStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchBuildStories"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchByModule",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ByModule"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchByModule"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchCaseStory",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "CaseStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchCaseStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchChildMore",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ChildMore"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchChildMore"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchESBulk",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ESBulk"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchESBulk"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchGetProductStories",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "GetProductStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchGetProductStories"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyAgentStory",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyAgentStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyAgentStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyCurOpenedStory",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyCurOpenedStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyCurOpenedStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyFavorites",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyFavorites"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchNotCurPlanLinkStory",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "NotCurPlanLinkStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchNotCurPlanLinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchParentDefault",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ParentDefault"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchParentDefault"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchParentDefaultQ",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ParentDefaultQ"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchParentDefaultQ"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProjectLinkStory",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectLinkStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProjectLinkStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProjectStories",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProjectStories"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchReleaseLinkableStories",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ReleaseLinkableStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchReleaseLinkableStories"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchReleaseStories",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ReleaseStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchReleaseStories"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchReportStories",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ReportStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchReportStories"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchStoryChild",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "StoryChild"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchStoryChild"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchStoryRelated",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "StoryRelated"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchStoryRelated"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchSubStory",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "SubStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchSubStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchTaskRelatedStory",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TaskRelatedStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchTaskRelatedStory"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchView",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "View"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchView"
     },
     "builtinMethod" : false
   }, {
@@ -3203,6 +1937,206 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "ImportPlanStories",
+    "methodType" : "DEACTION",
+    "name" : "importPlanStories",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ImportPlanStories.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "LinkStory",
+    "methodType" : "DEACTION",
+    "name" : "LinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/LinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__PLANLINK"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ProjectBatchUnlinkStory",
+    "methodType" : "DEACTION",
+    "name" : "ProjectBatchUnlinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectBatchUnlinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ProjectLinkStory",
+    "methodType" : "DEACTION",
+    "name" : "ProjectLinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectLinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__PROJECTLINK"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ProjectUnlinkStory",
+    "methodType" : "DEACTION",
+    "name" : "ProjectUnlinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectUnlinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__PROJECTLINK"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Push",
+    "methodType" : "DEACTION",
+    "name" : "Push",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Push.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ReleaseBatchUnlinkStory",
+    "methodType" : "DEACTION",
+    "name" : "ReleaseBatchUnlinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseBatchUnlinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ReleaseLinkStory",
+    "methodType" : "DEACTION",
+    "name" : "ReleaseLinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseLinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__RELEASELINK"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ReleaseUnlinkStory",
+    "methodType" : "DEACTION",
+    "name" : "ReleaseUnlinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseUnlinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__RELEASELINK"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ResetReviewedBy",
+    "methodType" : "DEACTION",
+    "name" : "ResetReviewedBy",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ResetReviewedBy.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Review",
+    "methodType" : "DEACTION",
+    "name" : "Review",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Review.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "REVIEW"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Save.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "SendMessage",
+    "methodType" : "DEACTION",
+    "name" : "sendMessage",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SendMessage.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SendMsgPreProcess",
+    "methodType" : "DEACTION",
+    "name" : "sendMsgPreProcess",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SendMsgPreProcess.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SyncFromIbiz",
+    "methodType" : "DEACTION",
+    "name" : "SyncFromIbiz",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SyncFromIbiz.json"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "ToStory",
     "methodType" : "DEACTION",
     "name" : "toStory",
@@ -3216,6 +2150,137 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "UnlinkStory",
+    "methodType" : "DEACTION",
+    "name" : "UnlinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/UnlinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__PLANLINK"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchAssignedToMyStory",
+    "methodType" : "FETCH",
+    "name" : "AssignedToMyStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "AssignedToMyStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchAssignedToMyStoryCalendar",
+    "methodType" : "FETCH",
+    "name" : "AssignedToMyStoryCalendar",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "AssignedToMyStoryCalendar"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchBugStory",
+    "methodType" : "FETCH",
+    "name" : "BugStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "BugStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchBuildLinkCompletedStories",
+    "methodType" : "FETCH",
+    "name" : "buildLinkCompletedStories",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "BuildLinkCompletedStories"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchBuildLinkableStories",
+    "methodType" : "FETCH",
+    "name" : "BuildLinkableStories",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "BuildLinkableStories"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchBuildStories",
+    "methodType" : "FETCH",
+    "name" : "BuildStories",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "BuildStories"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchByModule",
+    "methodType" : "FETCH",
+    "name" : "ByModule",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ByModule"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchCaseStory",
+    "methodType" : "FETCH",
+    "name" : "CaseStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CaseStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchChildMore",
+    "methodType" : "FETCH",
+    "name" : "ChildMore",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildMore"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "DEFAULT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchESBulk",
+    "methodType" : "FETCH",
+    "name" : "ESBulk",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ESBulk"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchGetProductStories",
+    "methodType" : "FETCH",
+    "name" : "GetProductStories",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "GetProductStories"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyAgentStory",
+    "methodType" : "FETCH",
+    "name" : "MyAgentStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyAgentStory"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchMyCreateOrPartake",
     "methodType" : "FETCH",
     "name" : "MyCreateOrPartake",
@@ -3225,12 +2290,147 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMyCurOpenedStory",
+    "methodType" : "FETCH",
+    "name" : "MyCurOpenedStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCurOpenedStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyFavorites",
+    "methodType" : "FETCH",
+    "name" : "MyFavorites",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyFavorites"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchMyReProduct",
     "methodType" : "FETCH",
     "name" : "MyReProduct",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyReProduct"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchNotCurPlanLinkStory",
+    "methodType" : "FETCH",
+    "name" : "NotCurPlanLinkStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "NotCurPlanLinkStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchParentDefault",
+    "methodType" : "FETCH",
+    "name" : "ParentDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ParentDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchParentDefaultQ",
+    "methodType" : "FETCH",
+    "name" : "ParentDefaultQ",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ParentDefaultQ"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectLinkStory",
+    "methodType" : "FETCH",
+    "name" : "projectLinkStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectLinkStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectStories",
+    "methodType" : "FETCH",
+    "name" : "ProjectStories",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectStories"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchReleaseLinkableStories",
+    "methodType" : "FETCH",
+    "name" : "ReleaseLinkableStories",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ReleaseLinkableStories"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchReleaseStories",
+    "methodType" : "FETCH",
+    "name" : "ReleaseStories",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ReleaseStories"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchReportStories",
+    "methodType" : "FETCH",
+    "name" : "ReportStories",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ReportStories"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchStoryChild",
+    "methodType" : "FETCH",
+    "name" : "StoryChild",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "StoryChild"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchStoryRelated",
+    "methodType" : "FETCH",
+    "name" : "StoryRelated",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "StoryRelated"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchSubStory",
+    "methodType" : "FETCH",
+    "name" : "SubStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "SubStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTaskRelatedStory",
+    "methodType" : "FETCH",
+    "name" : "TaskRelatedStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskRelatedStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchView",
+    "methodType" : "FETCH",
+    "name" : "VIEW",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "View"
     },
     "builtinMethod" : false
   }, {

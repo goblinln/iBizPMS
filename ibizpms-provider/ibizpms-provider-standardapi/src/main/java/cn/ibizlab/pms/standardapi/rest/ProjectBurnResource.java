@@ -52,6 +52,7 @@ public class ProjectBurnResource {
     @Lazy
     public ProjectBurnMapping projectburnMapping;
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "根据项目更新燃尽图burn", tags = {"burn" },  notes = "根据项目burn")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectburns/{projectburn_id}/computeburn")
     public ResponseEntity<ProjectBurnDTO> computeBurnByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectburn_id") String projectburn_id, @RequestBody ProjectBurnDTO projectburndto) {

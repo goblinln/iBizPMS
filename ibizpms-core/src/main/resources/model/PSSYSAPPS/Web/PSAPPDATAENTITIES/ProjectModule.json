@@ -33,6 +33,7 @@
   "getAllPSAppDEActions" : [ {
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Create.json"
@@ -43,60 +44,13 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "PROJECTMODULE__DEACTION__CREATE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PROJECTMODULE__DEACTION__UPDATE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PROJECTMODULE__DEACTION__REMOVE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PROJECTMODULE__DEACTION__GET"
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/GetDraft.json"
@@ -111,39 +65,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "CheckKey",
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Fix",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Fix.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Fix"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "RemoveModule",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/RemoveModule.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Remove.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -151,12 +78,47 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "RemoveModule"
+      "id" : "Remove"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Save.json"
@@ -166,13 +128,27 @@
       "id" : "Save"
     },
     "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchByPath",
+    "codeName" : "FetchROOT_TASK",
     "methodType" : "FETCH",
+    "name" : "FetchRoot_Task",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "ByPath"
+      "id" : "Root_Task"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -180,12 +156,13 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchByPath"
+      "id" : "FetchROOT_TASK"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchDefault",
+    "codeName" : "FetchDEFAULT",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
@@ -196,28 +173,13 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchDefault"
+      "id" : "FetchDEFAULT"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchParentModule",
+    "codeName" : "FetchROOT",
     "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ParentModule"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchParentModule"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchRoot",
-    "methodType" : "FETCH",
+    "name" : "FetchRoot",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Root"
@@ -228,12 +190,13 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchRoot"
+      "id" : "FetchROOT"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRoot_NoBranch",
     "methodType" : "FETCH",
+    "name" : "FetchRoot_NoBranch",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Root_NoBranch"
@@ -248,24 +211,9 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchRoot_Task",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Root_Task"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRoot_Task"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchTaskModules",
     "methodType" : "FETCH",
+    "name" : "FetchTaskModules",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "TaskModules"
@@ -277,6 +225,32 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchTaskModules"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchParentModule",
+    "methodType" : "FETCH",
+    "name" : "FetchParentModule",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ParentModule"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchParentModule"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchByPath",
+    "methodType" : "FETCH",
+    "name" : "BYPATH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ByPath"
     },
     "builtinMethod" : false
   } ],
@@ -417,20 +391,26 @@
     "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Select",
-    "methodType" : "SELECT",
+    "codeName" : "FetchROOT_TASK",
+    "methodType" : "FETCH",
+    "name" : "FetchRoot_Task",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Root_Task"
+    },
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Select"
+      "id" : "FetchROOT_TASK"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Create.json"
@@ -441,60 +421,13 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "PROJECTMODULE__DEACTION__CREATE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PROJECTMODULE__DEACTION__UPDATE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PROJECTMODULE__DEACTION__REMOVE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PROJECTMODULE__DEACTION__GET"
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/GetDraft.json"
@@ -509,39 +442,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "CheckKey",
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Fix",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Fix.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Fix"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "RemoveModule",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/RemoveModule.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Remove.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -549,40 +455,13 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "RemoveModule"
+      "id" : "Remove"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Save.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchByPath",
+    "codeName" : "FetchDEFAULT",
     "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ByPath"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchByPath"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
@@ -593,28 +472,13 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchDefault"
+      "id" : "FetchDEFAULT"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchParentModule",
+    "codeName" : "FetchROOT",
     "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ParentModule"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchParentModule"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchRoot",
-    "methodType" : "FETCH",
+    "name" : "FetchRoot",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Root"
@@ -625,12 +489,30 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchRoot"
+      "id" : "FetchROOT"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRoot_NoBranch",
     "methodType" : "FETCH",
+    "name" : "FetchRoot_NoBranch",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Root_NoBranch"
@@ -645,24 +527,9 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchRoot_Task",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Root_Task"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRoot_Task"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchTaskModules",
     "methodType" : "FETCH",
+    "name" : "FetchTaskModules",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "TaskModules"
@@ -674,6 +541,75 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchTaskModules"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchParentModule",
+    "methodType" : "FETCH",
+    "name" : "FetchParentModule",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ParentModule"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchParentModule"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FetchByPath",
+    "methodType" : "FETCH",
+    "name" : "BYPATH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ByPath"
     },
     "builtinMethod" : false
   }, {
@@ -719,10 +655,6 @@
     "confirmMsg" : "执行修复模块路径",
     "fullCodeName" : "ProjectModule_Fix",
     "name" : "修复路径",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Fix"
-    },
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"

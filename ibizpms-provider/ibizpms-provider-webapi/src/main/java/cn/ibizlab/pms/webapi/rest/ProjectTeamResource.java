@@ -52,19 +52,11 @@ public class ProjectTeamResource {
     @Lazy
     public ProjectTeamMapping projectteamMapping;
 
-    @PreAuthorize("@ProjectTeamRuntime.test(#projectteam_id,'DELETE')")
-    @ApiOperation(value = "删除项目团队", tags = {"项目团队" },  notes = "删除项目团队")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projectteams/{projectteam_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("projectteam_id") Long projectteam_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
-    }
-
-
     @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取指定团队", tags = {"项目团队" } ,notes = "获取指定团队")
-    @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchspecifyteam")
-	public ResponseEntity<List<ProjectTeamDTO>> fetchspecifyteam(@RequestBody ProjectTeamSearchContext context) {
-        Page<ProjectTeam> domains = projectteamService.searchSpecifyTeam(context) ;
+	@ApiOperation(value = "获取数据查询", tags = {"项目团队" } ,notes = "获取数据查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchtaskcntestimateconsumedleft")
+	public ResponseEntity<List<ProjectTeamDTO>> fetchtaskcntestimateconsumedleft(@RequestBody ProjectTeamSearchContext context) {
+        Page<ProjectTeam> domains = projectteamService.searchTaskCntEstimateConsumedLeft(context) ;
         List<ProjectTeamDTO> list = projectteamMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -74,10 +66,10 @@ public class ProjectTeamResource {
 	}
 
     @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询指定团队", tags = {"项目团队" } ,notes = "查询指定团队")
-    @RequestMapping(method= RequestMethod.POST , value="/projectteams/searchspecifyteam")
-	public ResponseEntity<Page<ProjectTeamDTO>> searchSpecifyTeam(@RequestBody ProjectTeamSearchContext context) {
-        Page<ProjectTeam> domains = projectteamService.searchSpecifyTeam(context) ;
+	@ApiOperation(value = "查询数据查询", tags = {"项目团队" } ,notes = "查询数据查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projectteams/searchtaskcntestimateconsumedleft")
+	public ResponseEntity<Page<ProjectTeamDTO>> searchTaskCntEstimateConsumedLeft(@RequestBody ProjectTeamSearchContext context) {
+        Page<ProjectTeam> domains = projectteamService.searchTaskCntEstimateConsumedLeft(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
@@ -130,13 +122,27 @@ public class ProjectTeamResource {
     }
 
 
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "获取项目团队草稿", tags = {"项目团队" },  notes = "获取项目团队草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/projectteams/getdraft")
-    public ResponseEntity<ProjectTeamDTO> getDraft(ProjectTeamDTO dto) {
-        ProjectTeam domain = projectteamMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(projectteamService.getDraft(domain)));
-    }
+    @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取指定团队", tags = {"项目团队" } ,notes = "获取指定团队")
+    @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchspecifyteam")
+	public ResponseEntity<List<ProjectTeamDTO>> fetchspecifyteam(@RequestBody ProjectTeamSearchContext context) {
+        Page<ProjectTeam> domains = projectteamService.searchSpecifyTeam(context) ;
+        List<ProjectTeamDTO> list = projectteamMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询指定团队", tags = {"项目团队" } ,notes = "查询指定团队")
+    @RequestMapping(method= RequestMethod.POST , value="/projectteams/searchspecifyteam")
+	public ResponseEntity<Page<ProjectTeamDTO>> searchSpecifyTeam(@RequestBody ProjectTeamSearchContext context) {
+        Page<ProjectTeam> domains = projectteamService.searchSpecifyTeam(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(projectteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
 
     @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建项目团队", tags = {"项目团队" },  notes = "新建项目团队")
@@ -153,27 +159,21 @@ public class ProjectTeamResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取数据查询", tags = {"项目团队" } ,notes = "获取数据查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchtaskcntestimateconsumedleft")
-	public ResponseEntity<List<ProjectTeamDTO>> fetchtaskcntestimateconsumedleft(@RequestBody ProjectTeamSearchContext context) {
-        Page<ProjectTeam> domains = projectteamService.searchTaskCntEstimateConsumedLeft(context) ;
-        List<ProjectTeamDTO> list = projectteamMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
+    @PreAuthorize("@ProjectTeamRuntime.test(#projectteam_id,'DELETE')")
+    @ApiOperation(value = "删除项目团队", tags = {"项目团队" },  notes = "删除项目团队")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projectteams/{projectteam_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("projectteam_id") Long projectteam_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
+    }
 
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据查询", tags = {"项目团队" } ,notes = "查询数据查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projectteams/searchtaskcntestimateconsumedleft")
-	public ResponseEntity<Page<ProjectTeamDTO>> searchTaskCntEstimateConsumedLeft(@RequestBody ProjectTeamSearchContext context) {
-        Page<ProjectTeam> domains = projectteamService.searchTaskCntEstimateConsumedLeft(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
+
+    @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "获取项目团队草稿", tags = {"项目团队" },  notes = "获取项目团队草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/projectteams/getdraft")
+    public ResponseEntity<ProjectTeamDTO> getDraft(ProjectTeamDTO dto) {
+        ProjectTeam domain = projectteamMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(projectteamService.getDraft(domain)));
+    }
 
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
@@ -183,20 +183,12 @@ public class ProjectTeamResource {
         projectteamdto = projectteamMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(projectteamdto);
     }
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
-    @ApiOperation(value = "根据项目删除项目团队", tags = {"项目团队" },  notes = "根据项目删除项目团队")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectteams/{projectteam_id}")
-    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
-    }
-
-
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目获取指定团队", tags = {"项目团队" } ,notes = "根据项目获取指定团队")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/fetchspecifyteam")
-	public ResponseEntity<List<ProjectTeamDTO>> fetchProjectTeamSpecifyTeamByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectTeamSearchContext context) {
+	@ApiOperation(value = "根据项目获取数据查询", tags = {"项目团队" } ,notes = "根据项目获取数据查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/fetchtaskcntestimateconsumedleft")
+	public ResponseEntity<List<ProjectTeamDTO>> fetchProjectTeamTaskCntEstimateConsumedLeftByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectTeamSearchContext context) {
         context.setN_root_eq(project_id);
-        Page<ProjectTeam> domains = projectteamService.searchSpecifyTeam(context) ;
+        Page<ProjectTeam> domains = projectteamService.searchTaskCntEstimateConsumedLeft(context) ;
         List<ProjectTeamDTO> list = projectteamMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -206,11 +198,11 @@ public class ProjectTeamResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询指定团队", tags = {"项目团队" } ,notes = "根据项目查询指定团队")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/searchspecifyteam")
-	public ResponseEntity<Page<ProjectTeamDTO>> searchProjectTeamSpecifyTeamByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamSearchContext context) {
+	@ApiOperation(value = "根据项目查询数据查询", tags = {"项目团队" } ,notes = "根据项目查询数据查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/searchtaskcntestimateconsumedleft")
+	public ResponseEntity<Page<ProjectTeamDTO>> searchProjectTeamTaskCntEstimateConsumedLeftByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamSearchContext context) {
         context.setN_root_eq(project_id);
-        Page<ProjectTeam> domains = projectteamService.searchSpecifyTeam(context) ;
+        Page<ProjectTeam> domains = projectteamService.searchTaskCntEstimateConsumedLeft(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
@@ -258,15 +250,29 @@ public class ProjectTeamResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
-    @ApiOperation(value = "根据项目获取项目团队草稿", tags = {"项目团队" },  notes = "根据项目获取项目团队草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectteams/getdraft")
-    public ResponseEntity<ProjectTeamDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectTeamDTO dto) {
-        ProjectTeam domain = projectteamMapping.toDomain(dto);
-        domain.setRoot(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(projectteamService.getDraft(domain)));
-    }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+	@ApiOperation(value = "根据项目获取指定团队", tags = {"项目团队" } ,notes = "根据项目获取指定团队")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/fetchspecifyteam")
+	public ResponseEntity<List<ProjectTeamDTO>> fetchProjectTeamSpecifyTeamByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectTeamSearchContext context) {
+        context.setN_root_eq(project_id);
+        Page<ProjectTeam> domains = projectteamService.searchSpecifyTeam(context) ;
+        List<ProjectTeamDTO> list = projectteamMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+	@ApiOperation(value = "根据项目查询指定团队", tags = {"项目团队" } ,notes = "根据项目查询指定团队")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/searchspecifyteam")
+	public ResponseEntity<Page<ProjectTeamDTO>> searchProjectTeamSpecifyTeamByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamSearchContext context) {
+        context.setN_root_eq(project_id);
+        Page<ProjectTeam> domains = projectteamService.searchSpecifyTeam(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(projectteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目建立项目团队", tags = {"项目团队" },  notes = "根据项目建立项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams")
@@ -279,28 +285,22 @@ public class ProjectTeamResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目获取数据查询", tags = {"项目团队" } ,notes = "根据项目获取数据查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/fetchtaskcntestimateconsumedleft")
-	public ResponseEntity<List<ProjectTeamDTO>> fetchProjectTeamTaskCntEstimateConsumedLeftByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectTeamSearchContext context) {
-        context.setN_root_eq(project_id);
-        Page<ProjectTeam> domains = projectteamService.searchTaskCntEstimateConsumedLeft(context) ;
-        List<ProjectTeamDTO> list = projectteamMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
+    @ApiOperation(value = "根据项目删除项目团队", tags = {"项目团队" },  notes = "根据项目删除项目团队")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectteams/{projectteam_id}")
+    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
+    }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询数据查询", tags = {"项目团队" } ,notes = "根据项目查询数据查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/searchtaskcntestimateconsumedleft")
-	public ResponseEntity<Page<ProjectTeamDTO>> searchProjectTeamTaskCntEstimateConsumedLeftByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamSearchContext context) {
-        context.setN_root_eq(project_id);
-        Page<ProjectTeam> domains = projectteamService.searchTaskCntEstimateConsumedLeft(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
+    @ApiOperation(value = "根据项目获取项目团队草稿", tags = {"项目团队" },  notes = "根据项目获取项目团队草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectteams/getdraft")
+    public ResponseEntity<ProjectTeamDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectTeamDTO dto) {
+        ProjectTeam domain = projectteamMapping.toDomain(dto);
+        domain.setRoot(project_id);
+        return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(projectteamService.getDraft(domain)));
+    }
+
 }
 
