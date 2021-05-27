@@ -1095,6 +1095,15 @@
       "id" : "MyCreateOrUpdate"
     },
     "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyReProduct",
+    "methodType" : "FETCH",
+    "name" : "MyReProduct",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReProduct"
+    },
+    "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "LastEditedDate",
@@ -2536,6 +2545,25 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyFavorites"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyReProduct",
+    "methodType" : "FETCH",
+    "name" : "MyReProduct",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReProduct"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempMyReProduct",
+    "methodType" : "FETCHTEMP",
+    "name" : "MyReProduct",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReProduct"
     },
     "tempDataMode" : 2,
     "builtinMethod" : false
@@ -12477,6 +12505,16 @@
     "logicName" : "取消收藏",
     "name" : "NFAVORITE"
   }, {
+    "logicName" : "产品-读取",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "READ",
+    "id" : "ZTProduct__READ"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
@@ -12537,7 +12575,7 @@
   }, {
     "logicName" : "产品-toBug",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"

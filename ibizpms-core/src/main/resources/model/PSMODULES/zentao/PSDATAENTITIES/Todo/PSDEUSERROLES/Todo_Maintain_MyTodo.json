@@ -20,13 +20,6 @@
       "id" : "FINISH"
     }
   }, {
-    "dataAccessAction" : "TOBUG",
-    "name" : "Todo_Maintain_MyTodo_ToBug",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "TOBUG"
-    }
-  }, {
     "dataAccessAction" : "DELETE",
     "name" : "Todo_Maintain_MyTodo_Delete",
     "getPSDEOPPriv" : {

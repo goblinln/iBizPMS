@@ -90,6 +90,13 @@
       "id" : "ZTProject__RECORDESTIMATE"
     }
   }, {
+    "dataAccessAction" : "TOBUG",
+    "name" : "TOBUG",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "TOBUG"
+    }
+  }, {
     "dataAccessAction" : "ACTIVATE",
     "name" : "ACTIVATE",
     "getPSDEOPPriv" : {

@@ -193,6 +193,20 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         return res;
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectteam) {
+            return this.http.delete(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
+        }
+        return this.http.delete(`/projectteams/${_context.projectteam}`);
+    }
+    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -233,19 +247,5 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
             return this.http.post(`/projects/${_context.project}/projectteams/fetchtaskcntestimateconsumedleft`, _data);
         }
         return this.http.post(`/projectteams/fetchtaskcntestimateconsumedleft`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTeamService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectteam) {
-            return this.http.delete(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
-        }
-        return this.http.delete(`/projectteams/${_context.projectteam}`);
     }
 }

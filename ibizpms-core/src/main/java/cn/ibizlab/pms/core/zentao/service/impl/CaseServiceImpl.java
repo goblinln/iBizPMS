@@ -502,6 +502,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     public List<Case> selectMyFavorite(CaseSearchContext context){
         return baseMapper.selectMyFavorite(context, context.getSelectCond());
     }
+    public List<Case> selectMyReProduct(CaseSearchContext context){
+        return baseMapper.selectMyReProduct(context, context.getSelectCond());
+    }
     public List<Case> selectNotCurTestSuite(CaseSearchContext context){
         return baseMapper.selectNotCurTestSuite(context, context.getSelectCond());
     }
@@ -639,6 +642,15 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     @Override
     public Page<Case> searchMyFavorites(CaseSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Case> pages=baseMapper.searchMyFavorites(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Case>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我相关的产品（权限）
+     */
+    @Override
+    public Page<Case> searchMyReProduct(CaseSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Case> pages=baseMapper.searchMyReProduct(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Case>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

@@ -67,6 +67,7 @@ public interface ICaseService extends IService<Case> {
     List<Case> selectModuleRePortCase_Project(CaseSearchContext context);
     List<Case> selectMyCreateOrUpdate(CaseSearchContext context);
     List<Case> selectMyFavorite(CaseSearchContext context);
+    List<Case> selectMyReProduct(CaseSearchContext context);
     List<Case> selectNotCurTestSuite(CaseSearchContext context);
     List<Case> selectNotCurTestTask(CaseSearchContext context);
     List<Case> selectNotCurTestTaskProject(CaseSearchContext context);
@@ -92,6 +93,7 @@ public interface ICaseService extends IService<Case> {
     Page<Case> searchModuleRePortCase_Project(CaseSearchContext context);
     Page<Case> searchMyCreateOrUpdate(CaseSearchContext context);
     Page<Case> searchMyFavorites(CaseSearchContext context);
+    Page<Case> searchMyReProduct(CaseSearchContext context);
     Page<Case> searchNotCurTestSuite(CaseSearchContext context);
     Page<Case> searchNotCurTestTask(CaseSearchContext context);
     Page<Case> searchNotCurTestTaskProject(CaseSearchContext context);

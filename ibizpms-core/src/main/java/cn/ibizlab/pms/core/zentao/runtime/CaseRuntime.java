@@ -149,6 +149,8 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return caseService.searchMyCreateOrUpdate(searchContext);    
         if (iPSDEDataSet.getName().equals("MyFavorite"))
             return caseService.searchMyFavorites(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyReProduct"))
+            return caseService.searchMyReProduct(searchContext);    
         if (iPSDEDataSet.getName().equals("NotCurTestSuite"))
             return caseService.searchNotCurTestSuite(searchContext);    
         if (iPSDEDataSet.getName().equals("NotCurTestTask"))
@@ -201,6 +203,8 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return caseService.selectMyCreateOrUpdate(searchContext);
         if (iPSDataQuery.getName().equals("MyFavorite"))
             return caseService.selectMyFavorite(searchContext);
+        if (iPSDataQuery.getName().equals("MyReProduct"))
+            return caseService.selectMyReProduct(searchContext);
         if (iPSDataQuery.getName().equals("NotCurTestSuite"))
             return caseService.selectNotCurTestSuite(searchContext);
         if (iPSDataQuery.getName().equals("NotCurTestTask"))
@@ -584,6 +588,9 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("searchMyFavorites")) {
             return aroundDataSet("MyFavorite", point);
+        }
+        else if (action.equals("searchMyReProduct")) {
+            return aroundDataSet("MyReProduct", point);
         }
         else if (action.equals("searchNotCurTestSuite")) {
             return aroundDataSet("NotCurTestSuite", point);

@@ -888,8 +888,10 @@
           "name" : "ud5109c5",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
+            "noPrivDisplayMode" : 1,
             "caption" : "提缺陷",
             "codeName" : "TaskToBug",
+            "dataAccessAction" : "TOBUG",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugTaskToBugEditView.json",

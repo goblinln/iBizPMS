@@ -97,13 +97,6 @@
       "id" : "ZTProduct__CONFIRM"
     }
   }, {
-    "dataAccessAction" : "TOBUG",
-    "name" : "TOBUG",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "TOBUG"
-    }
-  }, {
     "dataAccessAction" : "RESULT",
     "name" : "RESULT",
     "getPSDEOPPriv" : {

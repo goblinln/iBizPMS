@@ -52,6 +52,26 @@ public class ProjectTeamResource {
     @Lazy
     public ProjectTeamMapping projectteamMapping;
 
+    @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "保存项目团队", tags = {"项目团队" },  notes = "保存项目团队")
+	@RequestMapping(method = RequestMethod.POST, value = "/projectteams/save")
+    public ResponseEntity<ProjectTeamDTO> save(@RequestBody ProjectTeamDTO projectteamdto) {
+        ProjectTeam domain = projectteamMapping.toDomain(projectteamdto);
+        projectteamService.save(domain);
+        ProjectTeamDTO dto = projectteamMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectteamRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "批量保存项目团队", tags = {"项目团队" },  notes = "批量保存项目团队")
+	@RequestMapping(method = RequestMethod.POST, value = "/projectteams/savebatch")
+    public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProjectTeamDTO> projectteamdtos) {
+        projectteamService.saveBatch(projectteamMapping.toDomain(projectteamdtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("@ProjectTeamRuntime.test(#projectteam_id,'READ')")
     @ApiOperation(value = "获取项目团队", tags = {"项目团队" },  notes = "获取项目团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectteams/{projectteam_id}")
@@ -110,6 +130,14 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(projectteamService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectTeamRuntime.test(#projectteam_id,'DELETE')")
+    @ApiOperation(value = "删除项目团队", tags = {"项目团队" },  notes = "删除项目团队")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projectteams/{projectteam_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("projectteam_id") Long projectteam_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
+    }
+
+
     @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建项目团队", tags = {"项目团队" },  notes = "新建项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectteams")
@@ -147,34 +175,6 @@ public class ProjectTeamResource {
                 .body(new PageImpl(projectteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "保存项目团队", tags = {"项目团队" },  notes = "保存项目团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/projectteams/save")
-    public ResponseEntity<ProjectTeamDTO> save(@RequestBody ProjectTeamDTO projectteamdto) {
-        ProjectTeam domain = projectteamMapping.toDomain(projectteamdto);
-        projectteamService.save(domain);
-        ProjectTeamDTO dto = projectteamMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectteamRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量保存项目团队", tags = {"项目团队" },  notes = "批量保存项目团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/projectteams/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProjectTeamDTO> projectteamdtos) {
-        projectteamService.saveBatch(projectteamMapping.toDomain(projectteamdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@ProjectTeamRuntime.test(#projectteam_id,'DELETE')")
-    @ApiOperation(value = "删除项目团队", tags = {"项目团队" },  notes = "删除项目团队")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projectteams/{projectteam_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("projectteam_id") Long projectteam_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
-    }
-
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/projectteams/{projectteam_id}/{action}")
@@ -183,6 +183,28 @@ public class ProjectTeamResource {
         projectteamdto = projectteamMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(projectteamdto);
     }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
+    @ApiOperation(value = "根据项目保存项目团队", tags = {"项目团队" },  notes = "根据项目保存项目团队")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams/save")
+    public ResponseEntity<ProjectTeamDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamDTO projectteamdto) {
+        ProjectTeam domain = projectteamMapping.toDomain(projectteamdto);
+        domain.setRoot(project_id);
+        projectteamService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(domain));
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
+    @ApiOperation(value = "根据项目批量保存项目团队", tags = {"项目团队" },  notes = "根据项目批量保存项目团队")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectTeamDTO> projectteamdtos) {
+        List<ProjectTeam> domainlist=projectteamMapping.toDomain(projectteamdtos);
+        for(ProjectTeam domain:domainlist){
+             domain.setRoot(project_id);
+        }
+        projectteamService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目获取项目团队", tags = {"项目团队" },  notes = "根据项目获取项目团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectteams/{projectteam_id}")
@@ -237,6 +259,14 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(projectteamService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
+    @ApiOperation(value = "根据项目删除项目团队", tags = {"项目团队" },  notes = "根据项目删除项目团队")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectteams/{projectteam_id}")
+    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
+    }
+
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目建立项目团队", tags = {"项目团队" },  notes = "根据项目建立项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams")
@@ -272,35 +302,5 @@ public class ProjectTeamResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
-    @ApiOperation(value = "根据项目保存项目团队", tags = {"项目团队" },  notes = "根据项目保存项目团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams/save")
-    public ResponseEntity<ProjectTeamDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamDTO projectteamdto) {
-        ProjectTeam domain = projectteamMapping.toDomain(projectteamdto);
-        domain.setRoot(project_id);
-        projectteamService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(domain));
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
-    @ApiOperation(value = "根据项目批量保存项目团队", tags = {"项目团队" },  notes = "根据项目批量保存项目团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectTeamDTO> projectteamdtos) {
-        List<ProjectTeam> domainlist=projectteamMapping.toDomain(projectteamdtos);
-        for(ProjectTeam domain:domainlist){
-             domain.setRoot(project_id);
-        }
-        projectteamService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
-    @ApiOperation(value = "根据项目删除项目团队", tags = {"项目团队" },  notes = "根据项目删除项目团队")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectteams/{projectteam_id}")
-    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
-    }
-
-
 }
 
