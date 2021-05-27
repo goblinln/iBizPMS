@@ -127,18 +127,48 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         return this.condCache.get('view');
     }
     /**
-     * Remove
+     * FetchSpecifyTeam
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectTeamService
      */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectteam) {
-            return this.http.delete(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
+    async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/projectteams/fetchspecifyteam`, _data);
         }
-        return this.http.delete(`/projectteams/${_context.projectteam}`);
+        return this.http.post(`/projectteams/fetchspecifyteam`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectteam) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/projectteams/${_context.projectteam}`, _data);
+    }
+    /**
+     * FetchTaskCntEstimateConsumedLeft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
+     */
+    async FetchTaskCntEstimateConsumedLeft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/projectteams/fetchtaskcntestimateconsumedleft`, _data);
+        }
+        return this.http.post(`/projectteams/fetchtaskcntestimateconsumedleft`, _data);
     }
     /**
      * Create
@@ -169,18 +199,34 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         return this.http.post(`/projectteams`, _data);
     }
     /**
-     * FetchTaskCntEstimateConsumedLeft
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectTeamService
      */
-    async FetchTaskCntEstimateConsumedLeft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectteams/fetchtaskcntestimateconsumedleft`, _data);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectteam) {
+            const res = await this.http.get(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
+            return res;
         }
-        return this.http.post(`/projectteams/fetchtaskcntestimateconsumedleft`, _data);
+        const res = await this.http.get(`/projectteams/${_context.projectteam}`);
+        return res;
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectteam) {
+            return this.http.delete(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
+        }
+        return this.http.delete(`/projectteams/${_context.projectteam}`);
     }
     /**
      * GetDraft
@@ -201,51 +247,5 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/projectteams/getdraft`, _data);
         return res;
-    }
-    /**
-     * FetchSpecifyTeam
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTeamService
-     */
-    async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectteams/fetchspecifyteam`, _data);
-        }
-        return this.http.post(`/projectteams/fetchspecifyteam`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTeamService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectteam) {
-            const res = await this.http.get(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
-            return res;
-        }
-        const res = await this.http.get(`/projectteams/${_context.projectteam}`);
-        return res;
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTeamService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectteam) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/projectteams/${_context.projectteam}`, _data);
     }
 }

@@ -334,6 +334,415 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         return this.condCache.get('view');
     }
     /**
+     * FetchMyFavorites
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchMyFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchmyfavorites`, _data);
+        }
+        return this.http.post(`/stories/fetchmyfavorites`, _data);
+    }
+    /**
+     * Review
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async Review(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/review`, _data);
+        }
+        return this.http.post(`/stories/${_context.story}/review`, _data);
+    }
+    /**
+     * FetchBugStory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchBugStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchbugstory`, _data);
+        }
+        return this.http.post(`/stories/fetchbugstory`, _data);
+    }
+    /**
+     * FetchAssignedToMyStory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchAssignedToMyStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchassignedtomystory`, _data);
+        }
+        return this.http.post(`/stories/fetchassignedtomystory`, _data);
+    }
+    /**
+     * StoryFavorites
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async StoryFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/storyfavorites`, _data);
+        }
+        return this.http.post(`/stories/${_context.story}/storyfavorites`, _data);
+    }
+    /**
+     * FetchCaseStory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchCaseStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchcasestory`, _data);
+        }
+        return this.http.post(`/stories/fetchcasestory`, _data);
+    }
+    /**
+     * FetchBuildLinkableStories
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchBuildLinkableStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchbuildlinkablestories`, _data);
+        }
+        return this.http.post(`/stories/fetchbuildlinkablestories`, _data);
+    }
+    /**
+     * FetchChildMore
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchChildMore(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchchildmore`, _data);
+        }
+        return this.http.post(`/stories/fetchchildmore`, _data);
+    }
+    /**
+     * FetchReleaseStories
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchReleaseStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchreleasestories`, _data);
+        }
+        return this.http.post(`/stories/fetchreleasestories`, _data);
+    }
+    /**
+     * Activate
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async Activate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/activate`, _data);
+        }
+        return this.http.post(`/stories/${_context.story}/activate`, _data);
+    }
+    /**
+     * Close
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/close`, _data);
+        }
+        return this.http.post(`/stories/${_context.story}/close`, _data);
+    }
+    /**
+     * Create
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/stories`, _data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
+        }
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        return this.http.post(`/stories`, _data);
+    }
+    /**
+     * FetchStoryRelated
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchStoryRelated(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchstoryrelated`, _data);
+        }
+        return this.http.post(`/stories/fetchstoryrelated`, _data);
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/stories/getdraft`, _data);
+            return res;
+        }
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/stories/getdraft`, _data);
+        return res;
+    }
+    /**
+     * FetchbuildLinkCompletedStories
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchbuildLinkCompletedStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchbuildlinkcompletedstories`, _data);
+        }
+        return this.http.post(`/stories/fetchbuildlinkcompletedstories`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/stories/${_context.story}`, _data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/stories/${_context.story}`, _data);
+    }
+    /**
+     * FetchByModule
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchByModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchbymodule`, _data);
+        }
+        return this.http.post(`/stories/fetchbymodule`, _data);
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+            return this.http.delete(`/products/${_context.product}/stories/${_context.story}`);
+        }
+        return this.http.delete(`/stories/${_context.story}`);
+    }
+    /**
+     * StoryNFavorites
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async StoryNFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/storynfavorites`, _data);
+        }
+        return this.http.post(`/stories/${_context.story}/storynfavorites`, _data);
+    }
+    /**
+     * FetchAssignedToMyStoryCalendar
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchAssignedToMyStoryCalendar(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchassignedtomystorycalendar`, _data);
+        }
+        return this.http.post(`/stories/fetchassignedtomystorycalendar`, _data);
+    }
+    /**
+     * Change
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async Change(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/change`, _data);
+        }
+        return this.http.post(`/stories/${_context.story}/change`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}`);
+            return res;
+        }
+        const res = await this.http.get(`/stories/${_context.story}`);
+        return res;
+    }
+    /**
+     * AssignTo
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async AssignTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/assignto`, _data);
+        }
+        return this.http.post(`/stories/${_context.story}/assignto`, _data);
+    }
+    /**
+     * FetchParentDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchParentDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchparentdefault`, _data);
+        }
+        return this.http.post(`/stories/fetchparentdefault`, _data);
+    }
+    /**
+     * FetchprojectLinkStory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchprojectLinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchprojectlinkstory`, _data);
+        }
+        return this.http.post(`/stories/fetchprojectlinkstory`, _data);
+    }
+    /**
+     * FetchBuildStories
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchBuildStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchbuildstories`, _data);
+        }
+        return this.http.post(`/stories/fetchbuildstories`, _data);
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchdefault`, _data);
+        }
+        return this.http.post(`/stories/fetchdefault`, _data);
+    }
+    /**
      * Select
      *
      * @param {*} [_context={}]
@@ -359,5 +768,95 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         const appLogic = new GetCurUserConcatLogic(_context, _data);
         _data = await appLogic.onExecute();
         return new HttpResponse(_data);
+    }
+
+    /**
+     * ReviewBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof StoryServiceBase
+     */
+    public async ReviewBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/reviewbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/stories/reviewbatch`,_data);
+    }
+
+    /**
+     * ActivateBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof StoryServiceBase
+     */
+    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/activatebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/stories/activatebatch`,_data);
+    }
+
+    /**
+     * CloseBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof StoryServiceBase
+     */
+    public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/closebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/stories/closebatch`,_data);
+    }
+
+    /**
+     * ChangeBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof StoryServiceBase
+     */
+    public async ChangeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/changebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/stories/changebatch`,_data);
+    }
+
+    /**
+     * AssignToBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof StoryServiceBase
+     */
+    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/assigntobatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/stories/assigntobatch`,_data);
     }
 }
