@@ -5790,7 +5790,7 @@
   } ],
   "codeName" : "Bug",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json",
   "enableUIActions" : 15,
   "logicName" : "Bug",

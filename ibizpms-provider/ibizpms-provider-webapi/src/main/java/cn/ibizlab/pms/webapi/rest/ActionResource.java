@@ -362,6 +362,316 @@ public class ActionResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("@ActionRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据待办建立系统日志", tags = {"系统日志" },  notes = "根据待办建立系统日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/actions")
+    public ResponseEntity<ActionDTO> createByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        
+		actionService.create(domain);
+        ActionDTO dto = actionMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @VersionCheck(entity = "action" , versionfield = "updatedate")
+    @PreAuthorize("@ActionRuntime.test(#action_id,'UPDATE')")
+    @ApiOperation(value = "根据待办更新系统日志", tags = {"系统日志" },  notes = "根据待办更新系统日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/todos/{todo_id}/actions/{action_id}")
+    public ResponseEntity<ActionDTO> updateByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        
+        domain.setId(action_id);
+		actionService.update(domain);
+        ActionDTO dto = actionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@ActionRuntime.test(#action_id,'DELETE')")
+    @ApiOperation(value = "根据待办删除系统日志", tags = {"系统日志" },  notes = "根据待办删除系统日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/todos/{todo_id}/actions/{action_id}")
+    public ResponseEntity<Boolean> removeByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("action_id") Long action_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(actionService.remove(action_id));
+    }
+
+
+    @PreAuthorize("@ActionRuntime.test(#action_id,'READ')")
+    @ApiOperation(value = "根据待办获取系统日志", tags = {"系统日志" },  notes = "根据待办获取系统日志")
+	@RequestMapping(method = RequestMethod.GET, value = "/todos/{todo_id}/actions/{action_id}")
+    public ResponseEntity<ActionDTO> getByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("action_id") Long action_id) {
+        Action domain = actionService.get(action_id);
+        ActionDTO dto = actionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ActionRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据待办获取系统日志草稿", tags = {"系统日志" },  notes = "根据待办获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/todos/{todo_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByTodo(@PathVariable("todo_id") Long todo_id, ActionDTO dto) {
+        Action domain = actionMapping.toDomain(dto);
+        
+        return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
+    }
+
+    @PreAuthorize("@ActionRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据待办检查系统日志", tags = {"系统日志" },  notes = "根据待办检查系统日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/actions/checkkey")
+    public ResponseEntity<Boolean> checkKeyByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody ActionDTO actiondto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(actionService.checkKey(actionMapping.toDomain(actiondto)));
+    }
+
+    @PreAuthorize("@ActionRuntime.test(#action_id,'MANAGE')")
+    @ApiOperation(value = "根据待办添加备注系统日志", tags = {"系统日志" },  notes = "根据待办系统日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/actions/{action_id}/comment")
+    public ResponseEntity<ActionDTO> commentByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        
+        domain.setId(action_id);
+        domain = actionService.comment(domain) ;
+        actiondto = actionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
+    }
+
+    @PreAuthorize("@ActionRuntime.test(#action_id,'CREATE')")
+    @ApiOperation(value = "根据待办创建历史日志系统日志", tags = {"系统日志" },  notes = "根据待办系统日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/actions/{action_id}/createhis")
+    public ResponseEntity<ActionDTO> createHisByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        
+        domain.setId(action_id);
+        domain = actionService.createHis(domain) ;
+        actiondto = actionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
+    }
+
+    @PreAuthorize("@ActionRuntime.test(#action_id,'MANAGE')")
+    @ApiOperation(value = "根据待办编辑备注信息系统日志", tags = {"系统日志" },  notes = "根据待办系统日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/actions/{action_id}/editcomment")
+    public ResponseEntity<ActionDTO> editCommentByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        
+        domain.setId(action_id);
+        domain = actionService.editComment(domain) ;
+        actiondto = actionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
+    }
+
+    @ApiOperation(value = "根据待办Pms企业专用系统日志", tags = {"系统日志" },  notes = "根据待办系统日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/actions/{action_id}/managepmsee")
+    public ResponseEntity<ActionDTO> managePmsEeByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        
+        domain.setId(action_id);
+        domain = actionService.managePmsEe(domain) ;
+        actiondto = actionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
+    }
+
+    @ApiOperation(value = "根据待办保存系统日志", tags = {"系统日志" },  notes = "根据待办保存系统日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/actions/save")
+    public ResponseEntity<ActionDTO> saveByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        
+        actionService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(domain));
+    }
+
+
+    @ApiOperation(value = "根据待办已读系统日志", tags = {"系统日志" },  notes = "根据待办系统日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/actions/{action_id}/sendmarkdone")
+    public ResponseEntity<ActionDTO> sendMarkDoneByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        
+        domain.setId(action_id);
+        domain = actionService.sendMarkDone(domain) ;
+        actiondto = actionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
+    }
+
+    @ApiOperation(value = "根据待办发送待办系统日志", tags = {"系统日志" },  notes = "根据待办系统日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/actions/{action_id}/sendtodo")
+    public ResponseEntity<ActionDTO> sendTodoByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        
+        domain.setId(action_id);
+        domain = actionService.sendTodo(domain) ;
+        actiondto = actionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
+    }
+
+    @ApiOperation(value = "根据待办发送待阅系统日志", tags = {"系统日志" },  notes = "根据待办系统日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/actions/{action_id}/sendtoread")
+    public ResponseEntity<ActionDTO> sendToreadByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        
+        domain.setId(action_id);
+        domain = actionService.sendToread(domain) ;
+        actiondto = actionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
+    }
+
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据待办获取DEFAULT", tags = {"系统日志" } ,notes = "根据待办获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/fetchdefault")
+	public ResponseEntity<List<ActionDTO>> fetchActionDefaultByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
+        
+        Page<Action> domains = actionService.searchDefault(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据待办查询DEFAULT", tags = {"系统日志" } ,notes = "根据待办查询DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/searchdefault")
+	public ResponseEntity<Page<ActionDTO>> searchActionDefaultByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody ActionSearchContext context) {
+        
+        Page<Action> domains = actionService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据待办获取MobType", tags = {"系统日志" } ,notes = "根据待办获取MobType")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/fetchmobtype")
+	public ResponseEntity<List<ActionDTO>> fetchActionMobTypeByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
+        
+        Page<Action> domains = actionService.searchMobType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据待办查询MobType", tags = {"系统日志" } ,notes = "根据待办查询MobType")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/searchmobtype")
+	public ResponseEntity<Page<ActionDTO>> searchActionMobTypeByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody ActionSearchContext context) {
+        
+        Page<Action> domains = actionService.searchMobType(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据待办获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据待办获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchActionMyTrendsByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
+        
+        Page<Action> domains = actionService.searchMyTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据待办查询项目动态(我的)", tags = {"系统日志" } ,notes = "根据待办查询项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/searchmytrends")
+	public ResponseEntity<Page<ActionDTO>> searchActionMyTrendsByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody ActionSearchContext context) {
+        
+        Page<Action> domains = actionService.searchMyTrends(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据待办获取ProductTrends", tags = {"系统日志" } ,notes = "根据待办获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/fetchproducttrends")
+	public ResponseEntity<List<ActionDTO>> fetchActionProductTrendsByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
+        
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据待办查询ProductTrends", tags = {"系统日志" } ,notes = "根据待办查询ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/searchproducttrends")
+	public ResponseEntity<Page<ActionDTO>> searchActionProductTrendsByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody ActionSearchContext context) {
+        
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据待办获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据待办获取项目动态(项目相关所有)")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/fetchprojecttrends")
+	public ResponseEntity<List<ActionDTO>> fetchActionProjectTrendsByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
+        
+        Page<Action> domains = actionService.searchProjectTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据待办查询项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据待办查询项目动态(项目相关所有)")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/searchprojecttrends")
+	public ResponseEntity<Page<ActionDTO>> searchActionProjectTrendsByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody ActionSearchContext context) {
+        
+        Page<Action> domains = actionService.searchProjectTrends(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据待办获取查询用户使用年", tags = {"系统日志" } ,notes = "根据待办获取查询用户使用年")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/fetchqueryuseryear")
+	public ResponseEntity<List<ActionDTO>> fetchActionQueryUserYEARByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
+        
+        Page<Action> domains = actionService.searchQueryUserYEAR(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据待办查询查询用户使用年", tags = {"系统日志" } ,notes = "根据待办查询查询用户使用年")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/searchqueryuseryear")
+	public ResponseEntity<Page<ActionDTO>> searchActionQueryUserYEARByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody ActionSearchContext context) {
+        
+        Page<Action> domains = actionService.searchQueryUserYEAR(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据待办获取Type", tags = {"系统日志" } ,notes = "根据待办获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/fetchtype")
+	public ResponseEntity<List<ActionDTO>> fetchActionTypeByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
+        
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据待办查询Type", tags = {"系统日志" } ,notes = "根据待办查询Type")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/searchtype")
+	public ResponseEntity<Page<ActionDTO>> searchActionTypeByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody ActionSearchContext context) {
+        
+        Page<Action> domains = actionService.searchType(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
     @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
     @ApiOperation(value = "根据需求建立系统日志", tags = {"系统日志" },  notes = "根据需求建立系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/actions")
