@@ -117,21 +117,6 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
         return this.condCache.get('view');
     }
     /**
-     * UnlinkBug
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ReleaseService
-     */
-    async UnlinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/unlinkbug`, _data);
-        }
-        return this.http.post(`/releases/${_context.release}/unlinkbug`, _data);
-    }
-    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -146,35 +131,6 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/releases/${_context.release}`, _data);
-    }
-    /**
-     * LinkBugbyLeftBug
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ReleaseService
-     */
-    async LinkBugbyLeftBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/linkbugbyleftbug`, _data);
-        }
-        return this.http.post(`/releases/${_context.release}/linkbugbyleftbug`, _data);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ReleaseService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/releases/fetchdefault`, _data);
-        }
-        return this.http.post(`/releases/fetchdefault`, _data);
     }
     /**
      * Create
@@ -205,19 +161,47 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
         return this.http.post(`/releases`, _data);
     }
     /**
-     * LinkStory
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ReleaseService
      */
-    async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.release) {
+            return this.http.delete(`/products/${_context.product}/releases/${_context.release}`);
+        }
+        return this.http.delete(`/releases/${_context.release}`);
+    }
+    /**
+     * UnlinkBug
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ReleaseService
+     */
+    async UnlinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.release) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/linkstory`, _data);
+            return this.http.post(`/products/${_context.product}/releases/${_context.release}/unlinkbug`, _data);
         }
-        return this.http.post(`/releases/${_context.release}/linkstory`, _data);
+        return this.http.post(`/releases/${_context.release}/unlinkbug`, _data);
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ReleaseService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/releases/fetchdefault`, _data);
+        }
+        return this.http.post(`/releases/fetchdefault`, _data);
     }
     /**
      * Terminate
@@ -235,6 +219,21 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
         return this.http.post(`/releases/${_context.release}/terminate`, _data);
     }
     /**
+     * LinkStory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ReleaseService
+     */
+    async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.release) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/releases/${_context.release}/linkstory`, _data);
+        }
+        return this.http.post(`/releases/${_context.release}/linkstory`, _data);
+    }
+    /**
      * UnlinkStory
      *
      * @param {*} [_context={}]
@@ -250,20 +249,6 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
         return this.http.post(`/releases/${_context.release}/unlinkstory`, _data);
     }
     /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ReleaseService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release) {
-            return this.http.delete(`/products/${_context.product}/releases/${_context.release}`);
-        }
-        return this.http.delete(`/releases/${_context.release}`);
-    }
-    /**
      * Activate
      *
      * @param {*} [_context={}]
@@ -277,22 +262,6 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/activate`, _data);
         }
         return this.http.post(`/releases/${_context.release}/activate`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ReleaseService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.release) {
-            const res = await this.http.get(`/products/${_context.product}/releases/${_context.release}`);
-            return res;
-        }
-        const res = await this.http.get(`/releases/${_context.release}`);
-        return res;
     }
     /**
      * GetDraft
@@ -314,6 +283,37 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
         const res = await this.http.get(`/releases/getdraft`, _data);
         return res;
     }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ReleaseService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.release) {
+            const res = await this.http.get(`/products/${_context.product}/releases/${_context.release}`);
+            return res;
+        }
+        const res = await this.http.get(`/releases/${_context.release}`);
+        return res;
+    }
+    /**
+     * LinkBugbyLeftBug
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ReleaseService
+     */
+    async LinkBugbyLeftBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.release) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/releases/${_context.release}/linkbugbyleftbug`, _data);
+        }
+        return this.http.post(`/releases/${_context.release}/linkbugbyleftbug`, _data);
+    }
 
     /**
      * UnlinkBugBatch接口方法
@@ -334,7 +334,7 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
     }
 
     /**
-     * LinkBugbyLeftBugBatch接口方法
+     * TerminateBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -342,13 +342,13 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
      * @returns {Promise<any>}
      * @memberof ReleaseServiceBase
      */
-    public async LinkBugbyLeftBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async TerminateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/linkbugbyleftbugbatch`,_data);
+            return this.http.post(`/products/${_context.product}/releases/terminatebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/releases/linkbugbyleftbugbatch`,_data);
+        return this.http.post(`/releases/terminatebatch`,_data);
     }
 
     /**
@@ -367,24 +367,6 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/releases/linkstorybatch`,_data);
-    }
-
-    /**
-     * TerminateBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ReleaseServiceBase
-     */
-    public async TerminateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/releases/terminatebatch`,_data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/releases/terminatebatch`,_data);
     }
 
     /**
@@ -421,5 +403,23 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/releases/activatebatch`,_data);
+    }
+
+    /**
+     * LinkBugbyLeftBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ReleaseServiceBase
+     */
+    public async LinkBugbyLeftBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/releases/linkbugbyleftbugbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/releases/linkbugbyleftbugbatch`,_data);
     }
 }

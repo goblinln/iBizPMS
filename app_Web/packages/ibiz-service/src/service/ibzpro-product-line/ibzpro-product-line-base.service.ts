@@ -96,6 +96,18 @@ export class IBZProProductLineBaseService extends EntityBaseService<IIBZProProdu
         return this.condCache.get('view');
     }
     /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZProProductLineService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/ibzproproductlines/${_context.ibzproproductline}`, _data);
+    }
+    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -112,6 +124,17 @@ export class IBZProProductLineBaseService extends EntityBaseService<IIBZProProdu
             delete _data.srffrontuf;
         }
         return this.http.post(`/ibzproproductlines`, _data);
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZProProductLineService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzproproductlines/fetchdefault`, _data);
     }
     /**
      * GetDraft
@@ -149,28 +172,5 @@ export class IBZProProductLineBaseService extends EntityBaseService<IIBZProProdu
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         const res = await this.http.get(`/ibzproproductlines/${_context.ibzproproductline}`);
         return res;
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZProProductLineService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzproproductlines/${_context.ibzproproductline}`, _data);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZProProductLineService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzproproductlines/fetchdefault`, _data);
     }
 }
