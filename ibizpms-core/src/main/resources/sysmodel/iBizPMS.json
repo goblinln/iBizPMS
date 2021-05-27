@@ -1974,11 +1974,47 @@
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_PROJECT"
     },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_BUG",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Bug",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_BUG"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_BUILD",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Build",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_BUILD"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_CASE",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Case",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_CASE"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_DOC",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Doc",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_DOC"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_DOCLIB",
+     "relation_type":"DERCUSTOM",
+     "code_name":"DocLib",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_DOCLIB"
+    },
     {"name":"DERCUSTOM_ZT_ACTION_ZT_PRODUCT",
      "relation_type":"DERCUSTOM",
      "code_name":"Product",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_PRODUCT"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_PRODUCTPLAN",
+     "relation_type":"DERCUSTOM",
+     "code_name":"ProductPlan",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_PRODUCTPLAN"
     },
     {"name":"DERCUSTOM_ZT_ACTION_ZT_PROJECT",
      "relation_type":"DERCUSTOM",
@@ -1986,11 +2022,47 @@
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_PROJECT"
     },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_Release",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Release",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_RELEASE"
+    },
     {"name":"DERCUSTOM_ZT_ACTION_ZT_STORY",
      "relation_type":"DERCUSTOM",
      "code_name":"Story",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_STORY"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_TASK",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Task",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_TASK"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_TESTREPORT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"TestReport",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_TESTREPORT"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_TESTSUITE",
+     "relation_type":"DERCUSTOM",
+     "code_name":"TestSuite",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_TESTSUITE"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_TESTTASK",
+     "relation_type":"DERCUSTOM",
+     "code_name":"TestTask",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_TESTTASK"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_TODO",
+     "relation_type":"DERCUSTOM",
+     "code_name":"ToDo",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_TODO"
     }
     ]
  }
@@ -3747,6 +3819,12 @@
      "code_name":"ZTFromBug",
      "entity_name":"ZT_TASK",
      "ref_entity_name":"ZT_BUG"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_BUG",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Bug",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_BUG"
     }
     ],
     "parentEntitys":[
@@ -4955,6 +5033,12 @@
      "relation_type":"DER1N",
      "code_name":"ZTBuild",
      "entity_name":"ZT_TESTTASK",
+     "ref_entity_name":"ZT_BUILD"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_BUILD",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Build",
+     "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_BUILD"
     }
     ],
@@ -6232,6 +6316,12 @@
      "relation_type":"DER1N",
      "code_name":"ZTCase",
      "entity_name":"ZT_TESTRUN",
+     "ref_entity_name":"ZT_CASE"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_CASE",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Case",
+     "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_CASE"
     }
     ],
@@ -8509,6 +8599,12 @@
      "code_name":"Zt_doc",
      "entity_name":"ZT_DOCCONTENT",
      "ref_entity_name":"ZT_DOC"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_DOC",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Doc",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_DOC"
     }
     ],
     "parentEntitys":[
@@ -9228,6 +9324,12 @@
      "relation_type":"DER1N",
      "code_name":"Zt_doclib",
      "entity_name":"ZT_DOC",
+     "ref_entity_name":"ZT_DOCLIB"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_DOCLIB",
+     "relation_type":"DERCUSTOM",
+     "code_name":"DocLib",
+     "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_DOCLIB"
     }
     ],
@@ -45106,6 +45208,12 @@
      "code_name":"IBizParent",
      "entity_name":"ZT_PRODUCTPLAN",
      "ref_entity_name":"ZT_PRODUCTPLAN"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_PRODUCTPLAN",
+     "relation_type":"DERCUSTOM",
+     "code_name":"ProductPlan",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_PRODUCTPLAN"
     }
     ],
     "parentEntitys":[
@@ -52944,6 +53052,12 @@
      "code_name":"IbzProRelease",
      "entity_name":"IBZPRO_RELEASEACTION",
      "ref_entity_name":"ZT_RELEASE"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_Release",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Release",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_RELEASE"
     }
     ],
     "parentEntitys":[
@@ -59748,6 +59862,12 @@
      "code_name":"ZTParent",
      "entity_name":"ZT_TASK",
      "ref_entity_name":"ZT_TASK"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_TASK",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Task",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_TASK"
     }
     ],
     "parentEntitys":[
@@ -62537,6 +62657,12 @@
      "code_name":"IbzProTestReport",
      "entity_name":"IBZPRO_TESTREPROTACTION",
      "ref_entity_name":"ZT_TESTREPORT"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_TESTREPORT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"TestReport",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_TESTREPORT"
     }
     ],
     "parentEntitys":[
@@ -63548,6 +63674,12 @@
      "code_name":"ZTTestSuite",
      "entity_name":"ZT_SUITECASE",
      "ref_entity_name":"ZT_TESTSUITE"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_TESTSUITE",
+     "relation_type":"DERCUSTOM",
+     "code_name":"TestSuite",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_TESTSUITE"
     }
     ],
     "parentEntitys":[
@@ -64120,6 +64252,12 @@
      "relation_type":"DER1N",
      "code_name":"ZTTestTask",
      "entity_name":"ZT_TESTRUN",
+     "ref_entity_name":"ZT_TESTTASK"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_TESTTASK",
+     "relation_type":"DERCUSTOM",
+     "code_name":"TestTask",
+     "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_TESTTASK"
     }
     ],
@@ -64748,6 +64886,12 @@
      "relation_type":"DER1N",
      "code_name":"IBZProToDoAction",
      "entity_name":"IBZPRO_TODOACTION",
+     "ref_entity_name":"ZT_TODO"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_TODO",
+     "relation_type":"DERCUSTOM",
+     "code_name":"ToDo",
+     "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_TODO"
     }
     ],

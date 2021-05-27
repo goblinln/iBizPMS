@@ -1190,6 +1190,30 @@
     "pickupDEFName" : "SUITE",
     "removeActionType" : -1,
     "removeOrder" : 0
+  }, {
+    "codeName" : "TestSuite",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTSUITE.json",
+    "logicName" : "TestSuite",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
+    },
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+    },
+    "name" : "DERCUSTOM_ZT_ACTION_ZT_TESTSUITE",
+    "orderValue" : 100,
+    "pickupDEFName" : "OBJECTID",
+    "getPickupPSDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "TestSuite"
   } ],
   "getMinorPSDERs" : [ {
     "codeName" : "ZTProduct",

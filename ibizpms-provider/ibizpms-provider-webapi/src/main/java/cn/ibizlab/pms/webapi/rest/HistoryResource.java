@@ -160,7 +160,7 @@ public class HistoryResource {
         historydto = historyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
-    @PreAuthorize("@HistoryRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品系统日志建立操作历史", tags = {"操作历史" },  notes = "根据产品系统日志建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/histories")
     public ResponseEntity<HistoryDTO> createByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody HistoryDTO historydto) {
@@ -172,7 +172,7 @@ public class HistoryResource {
     }
 
 
-    @PreAuthorize("@HistoryRuntime.test(#history_id,'UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品系统日志更新操作历史", tags = {"操作历史" },  notes = "根据产品系统日志更新操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/actions/{action_id}/histories/{history_id}")
     public ResponseEntity<HistoryDTO> updateByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
@@ -185,7 +185,7 @@ public class HistoryResource {
     }
 
 
-    @PreAuthorize("@HistoryRuntime.test(#history_id,'DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品系统日志删除操作历史", tags = {"操作历史" },  notes = "根据产品系统日志删除操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/actions/{action_id}/histories/{history_id}")
     public ResponseEntity<Boolean> removeByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @PathVariable("history_id") Long history_id) {
@@ -193,7 +193,7 @@ public class HistoryResource {
     }
 
 
-    @PreAuthorize("@HistoryRuntime.test(#history_id,'READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品系统日志获取操作历史", tags = {"操作历史" },  notes = "根据产品系统日志获取操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/actions/{action_id}/histories/{history_id}")
     public ResponseEntity<HistoryDTO> getByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @PathVariable("history_id") Long history_id) {
@@ -226,7 +226,7 @@ public class HistoryResource {
     }
 
 
-    @PreAuthorize("@HistoryRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -240,7 +240,7 @@ public class HistoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@HistoryRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品系统日志查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/{action_id}/histories/searchdefault")
 	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
@@ -249,7 +249,7 @@ public class HistoryResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@HistoryRuntime.quickTest('CREATE')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
     @ApiOperation(value = "根据需求系统日志建立操作历史", tags = {"操作历史" },  notes = "根据需求系统日志建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/actions/{action_id}/histories")
     public ResponseEntity<HistoryDTO> createByStoryAction(@PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id, @RequestBody HistoryDTO historydto) {
@@ -261,7 +261,7 @@ public class HistoryResource {
     }
 
 
-    @PreAuthorize("@HistoryRuntime.test(#history_id,'UPDATE')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'UPDATE')")
     @ApiOperation(value = "根据需求系统日志更新操作历史", tags = {"操作历史" },  notes = "根据需求系统日志更新操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/actions/{action_id}/histories/{history_id}")
     public ResponseEntity<HistoryDTO> updateByStoryAction(@PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
@@ -274,7 +274,7 @@ public class HistoryResource {
     }
 
 
-    @PreAuthorize("@HistoryRuntime.test(#history_id,'DELETE')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'DELETE')")
     @ApiOperation(value = "根据需求系统日志删除操作历史", tags = {"操作历史" },  notes = "根据需求系统日志删除操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/actions/{action_id}/histories/{history_id}")
     public ResponseEntity<Boolean> removeByStoryAction(@PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id, @PathVariable("history_id") Long history_id) {
@@ -282,7 +282,7 @@ public class HistoryResource {
     }
 
 
-    @PreAuthorize("@HistoryRuntime.test(#history_id,'READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
     @ApiOperation(value = "根据需求系统日志获取操作历史", tags = {"操作历史" },  notes = "根据需求系统日志获取操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/actions/{action_id}/histories/{history_id}")
     public ResponseEntity<HistoryDTO> getByStoryAction(@PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id, @PathVariable("history_id") Long history_id) {
@@ -315,7 +315,7 @@ public class HistoryResource {
     }
 
 
-    @PreAuthorize("@HistoryRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据需求系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByStoryAction(@PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -329,7 +329,7 @@ public class HistoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@HistoryRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据需求系统日志查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/actions/{action_id}/histories/searchdefault")
 	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByStoryAction(@PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
@@ -338,7 +338,7 @@ public class HistoryResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@HistoryRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目系统日志建立操作历史", tags = {"操作历史" },  notes = "根据项目系统日志建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/{action_id}/histories")
     public ResponseEntity<HistoryDTO> createByProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @RequestBody HistoryDTO historydto) {
@@ -350,7 +350,7 @@ public class HistoryResource {
     }
 
 
-    @PreAuthorize("@HistoryRuntime.test(#history_id,'UPDATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目系统日志更新操作历史", tags = {"操作历史" },  notes = "根据项目系统日志更新操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/actions/{action_id}/histories/{history_id}")
     public ResponseEntity<HistoryDTO> updateByProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
@@ -363,7 +363,7 @@ public class HistoryResource {
     }
 
 
-    @PreAuthorize("@HistoryRuntime.test(#history_id,'DELETE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目系统日志删除操作历史", tags = {"操作历史" },  notes = "根据项目系统日志删除操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/actions/{action_id}/histories/{history_id}")
     public ResponseEntity<Boolean> removeByProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @PathVariable("history_id") Long history_id) {
@@ -371,7 +371,7 @@ public class HistoryResource {
     }
 
 
-    @PreAuthorize("@HistoryRuntime.test(#history_id,'READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目系统日志获取操作历史", tags = {"操作历史" },  notes = "根据项目系统日志获取操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/actions/{action_id}/histories/{history_id}")
     public ResponseEntity<HistoryDTO> getByProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @PathVariable("history_id") Long history_id) {
@@ -404,7 +404,7 @@ public class HistoryResource {
     }
 
 
-    @PreAuthorize("@HistoryRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -418,7 +418,7 @@ public class HistoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@HistoryRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目系统日志查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/{action_id}/histories/searchdefault")
 	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {

@@ -1,0 +1,25 @@
+{
+  "codeName" : "TestReport",
+  "dERSubType" : "DER1N",
+  "dERType" : "DERCUSTOM",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTREPORT.json",
+  "logicName" : "TestReport",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
+  },
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+  },
+  "name" : "DERCUSTOM_ZT_ACTION_ZT_TESTREPORT",
+  "orderValue" : 100,
+  "pickupDEFName" : "OBJECTID",
+  "getPickupPSDEField" : {
+    "name" : "OBJECTID",
+    "codeName" : "ObjectID"
+  },
+  "removeActionType" : 0,
+  "removeOrder" : -1,
+  "typeValue" : "TestReport"
+}
