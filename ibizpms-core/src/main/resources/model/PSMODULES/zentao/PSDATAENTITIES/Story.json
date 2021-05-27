@@ -2,6 +2,7 @@
   "getAllPSDEActions" : [ {
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
     "codeName" : "Create",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Create.json",
     "logicName" : "Create",
@@ -9,6 +10,7 @@
     "orderValue" : 1,
     "userCat" : "CAT1",
     "userTag4" : "create",
+    "batchAction" : true,
     "builtinAction" : true
   }, {
     "actionMode" : "UPDATE",

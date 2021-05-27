@@ -67,6 +67,13 @@ public class SubStoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@StoryRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "批量新建需求", tags = {"需求" },  notes = "批量新建需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/substories/batch")
+    public ResponseEntity<Boolean> createBatch(@RequestBody List<SubStoryDTO> substorydtos) {
+        storyService.createBatch(substoryMapping.toDomain(substorydtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
     @VersionCheck(entity = "story" , versionfield = "lastediteddate")
     @PreAuthorize("@StoryRuntime.test(#substory_id,'UPDATE')")
     @ApiOperation(value = "更新需求", tags = {"需求" },  notes = "更新需求")
@@ -1330,6 +1337,17 @@ public class SubStoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
+    @ApiOperation(value = "根据需求批量建立需求", tags = {"需求" },  notes = "根据需求批量建立需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/substories/batch")
+    public ResponseEntity<Boolean> createBatchByStory(@PathVariable("story_id") Long story_id, @RequestBody List<SubStoryDTO> substorydtos) {
+        List<Story> domainlist=substoryMapping.toDomain(substorydtos);
+        for(Story domain:domainlist){
+            domain.setParent(story_id);
+        }
+        storyService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @VersionCheck(entity = "story" , versionfield = "lastediteddate")
     @PreAuthorize("@StoryRuntime.test(#story_id,'UPDATE')")
@@ -2531,6 +2549,17 @@ public class SubStoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品需求批量建立需求", tags = {"需求" },  notes = "根据产品需求批量建立需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/batch")
+    public ResponseEntity<Boolean> createBatchByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody List<SubStoryDTO> substorydtos) {
+        List<Story> domainlist=substoryMapping.toDomain(substorydtos);
+        for(Story domain:domainlist){
+            domain.setParent(story_id);
+        }
+        storyService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @VersionCheck(entity = "story" , versionfield = "lastediteddate")
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")

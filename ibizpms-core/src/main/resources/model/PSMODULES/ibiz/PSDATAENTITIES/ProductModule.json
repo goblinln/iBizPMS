@@ -90,10 +90,12 @@
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
+    "batchActionMode" : 2,
     "codeName" : "Save",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEACTIONS/Save.json",
     "logicName" : "Save",
     "name" : "Save",
+    "batchAction" : true,
     "builtinAction" : true
   }, {
     "actionMode" : "CUSTOM",

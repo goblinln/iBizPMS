@@ -53,30 +53,6 @@ public class ProductLifeResource {
     public ProductLifeMapping productlifeMapping;
 
     @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取RoadMapYear", tags = {"产品生命周期" } ,notes = "获取RoadMapYear")
-    @RequestMapping(method= RequestMethod.GET , value="/productlives/fetchroadmapyear")
-	public ResponseEntity<List<ProductLifeDTO>> fetchroadmapyear(ProductLifeSearchContext context) {
-        productlifeRuntime.addAuthorityConditions(context,"READ");
-        Page<ProductLife> domains = productlifeService.searchRoadMapYear(context) ;
-        List<ProductLifeDTO> list = productlifeMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-    @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询RoadMapYear", tags = {"产品生命周期" } ,notes = "查询RoadMapYear")
-    @RequestMapping(method= RequestMethod.POST , value="/productlives/searchroadmapyear")
-	public ResponseEntity<Page<ProductLifeDTO>> searchRoadMapYear(@RequestBody ProductLifeSearchContext context) {
-        productlifeRuntime.addAuthorityConditions(context,"READ");
-        Page<ProductLife> domains = productlifeService.searchRoadMapYear(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productlifeMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取产品路线", tags = {"产品生命周期" } ,notes = "获取获取产品路线")
     @RequestMapping(method= RequestMethod.GET , value="/productlives/fetchgetroadmaps")
 	public ResponseEntity<List<ProductLifeDTO>> fetchgetroadmaps(ProductLifeSearchContext context) {
@@ -96,6 +72,30 @@ public class ProductLifeResource {
 	public ResponseEntity<Page<ProductLifeDTO>> searchGetRoadmapS(@RequestBody ProductLifeSearchContext context) {
         productlifeRuntime.addAuthorityConditions(context,"READ");
         Page<ProductLife> domains = productlifeService.searchGetRoadmapS(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(productlifeMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取RoadMapYear", tags = {"产品生命周期" } ,notes = "获取RoadMapYear")
+    @RequestMapping(method= RequestMethod.GET , value="/productlives/fetchroadmapyear")
+	public ResponseEntity<List<ProductLifeDTO>> fetchroadmapyear(ProductLifeSearchContext context) {
+        productlifeRuntime.addAuthorityConditions(context,"READ");
+        Page<ProductLife> domains = productlifeService.searchRoadMapYear(context) ;
+        List<ProductLifeDTO> list = productlifeMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询RoadMapYear", tags = {"产品生命周期" } ,notes = "查询RoadMapYear")
+    @RequestMapping(method= RequestMethod.POST , value="/productlives/searchroadmapyear")
+	public ResponseEntity<Page<ProductLifeDTO>> searchRoadMapYear(@RequestBody ProductLifeSearchContext context) {
+        productlifeRuntime.addAuthorityConditions(context,"READ");
+        Page<ProductLife> domains = productlifeService.searchRoadMapYear(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productlifeMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}

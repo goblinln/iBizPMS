@@ -204,12 +204,33 @@
     }
   } ],
   "getPSSysUserRoleReses" : [ {
+    "name" : "产品经理-顶部_产品主页",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_PRODUCT_MENU"
+    },
+    "sysUniResCode" : "TOP_PRODUCT_MENU"
+  }, {
     "name" : "产品经理-左侧_测试资源",
     "getPSSysUniRes" : {
       "modelref" : true,
       "id" : "zentao__LEFT_CASE_MENU"
     },
     "sysUniResCode" : "LEFT_CASE_MENU"
+  }, {
+    "name" : "产品经理-顶部_文档",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_DOC_MENU"
+    },
+    "sysUniResCode" : "TOP_DOC_MENU"
+  }, {
+    "name" : "产品经理-顶部_我的收藏",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_MYFAVOURITE_MENU"
+    },
+    "sysUniResCode" : "TOP_MYFAVOURITE_MENU"
   }, {
     "name" : "产品经理-产品左侧资源",
     "getPSSysUniRes" : {
@@ -218,12 +239,33 @@
     },
     "sysUniResCode" : "PRODUCTLEFT"
   }, {
+    "name" : "产品经理-顶部_测试主页",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_CASE_MENU"
+    },
+    "sysUniResCode" : "TOP_CASE_MENU"
+  }, {
+    "name" : "产品经理-顶部_我的地盘",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_MYPLACE_MENU"
+    },
+    "sysUniResCode" : "TOP_MYPLACE_MENU"
+  }, {
     "name" : "产品经理-产品新建",
     "getPSSysUniRes" : {
       "modelref" : true,
       "id" : "ibiz__PROD_CREATE_BUT"
     },
     "sysUniResCode" : "PROD_CREATE_BUT"
+  }, {
+    "name" : "产品经理-顶部_项目主页",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_PROJECT_MENU"
+    },
+    "sysUniResCode" : "TOP_PROJECT_MENU"
   }, {
     "name" : "产品经理-左侧_项目管理（一级）",
     "getPSSysUniRes" : {
@@ -234,6 +276,6 @@
   } ],
   "roleTag" : "ProductManger",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "LEFT_CASE_MENU", "PRODUCTLEFT", "PROD_CREATE_BUT", "LEFT_PROJECT_MENU" ],
+  "uniResTags" : [ "TOP_PRODUCT_MENU", "LEFT_CASE_MENU", "TOP_DOC_MENU", "TOP_MYFAVOURITE_MENU", "PRODUCTLEFT", "TOP_CASE_MENU", "TOP_MYPLACE_MENU", "PROD_CREATE_BUT", "TOP_PROJECT_MENU", "LEFT_PROJECT_MENU" ],
   "globalRole" : true
 }

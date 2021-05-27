@@ -67,6 +67,13 @@ public class StoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@StoryRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "批量新建需求", tags = {"需求" },  notes = "批量新建需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/batch")
+    public ResponseEntity<Boolean> createBatch(@RequestBody List<StoryDTO> storydtos) {
+        storyService.createBatch(storyMapping.toDomain(storydtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
     @VersionCheck(entity = "story" , versionfield = "lastediteddate")
     @PreAuthorize("@StoryRuntime.test(#story_id,'UPDATE')")
     @ApiOperation(value = "更新需求", tags = {"需求" },  notes = "更新需求")
@@ -1330,6 +1337,17 @@ public class StoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品批量建立需求", tags = {"需求" },  notes = "根据产品批量建立需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/batch")
+    public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<StoryDTO> storydtos) {
+        List<Story> domainlist=storyMapping.toDomain(storydtos);
+        for(Story domain:domainlist){
+            domain.setProduct(product_id);
+        }
+        storyService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @VersionCheck(entity = "story" , versionfield = "lastediteddate")
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")

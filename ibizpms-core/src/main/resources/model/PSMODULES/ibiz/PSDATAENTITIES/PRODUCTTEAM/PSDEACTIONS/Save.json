@@ -1,7 +1,7 @@
 {
   "actionMode" : "UNKNOWN",
   "actionType" : "BUILTIN",
-  "batchActionMode" : 1,
+  "batchActionMode" : 2,
   "codeName" : "Save",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/Save.json",
   "logicName" : "Save",

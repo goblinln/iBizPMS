@@ -52,6 +52,29 @@ public class ProductReleaseStoryResource {
     @Lazy
     public ProductReleaseStoryMapping productreleasestoryMapping;
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品发布建立需求", tags = {"需求" },  notes = "根据产品发布建立需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productreleases/{release_id}/productreleasestories")
+    public ResponseEntity<ProductReleaseStoryDTO> createByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ProductReleaseStoryDTO productreleasestorydto) {
+        Story domain = productreleasestoryMapping.toDomain(productreleasestorydto);
+        
+		storyService.create(domain);
+        ProductReleaseStoryDTO dto = productreleasestoryMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品发布批量建立需求", tags = {"需求" },  notes = "根据产品发布批量建立需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productreleases/{release_id}/productreleasestories/batch")
+    public ResponseEntity<Boolean> createBatchByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody List<ProductReleaseStoryDTO> productreleasestorydtos) {
+        List<Story> domainlist=productreleasestoryMapping.toDomain(productreleasestorydtos);
+        for(Story domain:domainlist){
+            
+        }
+        storyService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品发布获取DEFAULT", tags = {"需求" } ,notes = "根据产品发布获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productreleases/{release_id}/productreleasestories/fetchdefault")
@@ -75,17 +98,5 @@ public class ProductReleaseStoryResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productreleasestoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品发布建立需求", tags = {"需求" },  notes = "根据产品发布建立需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productreleases/{release_id}/productreleasestories")
-    public ResponseEntity<ProductReleaseStoryDTO> createByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ProductReleaseStoryDTO productreleasestorydto) {
-        Story domain = productreleasestoryMapping.toDomain(productreleasestorydto);
-        
-		storyService.create(domain);
-        ProductReleaseStoryDTO dto = productreleasestoryMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
 }
 

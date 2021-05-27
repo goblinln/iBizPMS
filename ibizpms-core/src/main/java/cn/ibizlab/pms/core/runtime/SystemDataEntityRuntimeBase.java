@@ -169,19 +169,16 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                         }
                     }
                 }
+                List<Map<String, String>> deActions = new ArrayList<>();
                 java.util.List<IPSDEUserRoleOPPriv> psDEUserRoleOPPrivs = psDEUserRole.getPSDEUserRoleOPPrivs();
                 if (psDEUserRoleOPPrivs != null) {
-                    List<Map<String, String>> deActions = new ArrayList<>();
                     for (IPSDEUserRoleOPPriv psDEUserRoleOPPriv : psDEUserRoleOPPrivs) {
                         Map<String, String> deAction = new HashMap<>();
                         deAction.put(psDEUserRoleOPPriv.getDataAccessAction(), org.apache.commons.lang3.StringUtils.isBlank(psDEUserRoleOPPriv.getCustomCond()) ? "" : psDEUserRoleOPPriv.getCustomCond());
                         deActions.add(deAction);
                     }
-                    authority.setDeAction(deActions);
                 }
-                //非系统默认实体角色忽略
-                if (!psDEUserRole.isDefaultMode())
-                    continue;
+                authority.setDeAction(deActions);
                 this.defaultAuthorities.add(authority);
             }
         }
