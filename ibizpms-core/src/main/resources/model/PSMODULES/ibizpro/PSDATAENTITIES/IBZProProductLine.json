@@ -824,6 +824,13 @@
         "modelref" : true,
         "id" : "READ"
       }
+    }, {
+      "dataAccessAction" : "CREATE",
+      "name" : "CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
     } ],
     "roleTag" : "CURORG_RW",
     "userDRAction" : "READ",
@@ -880,7 +887,7 @@
   } ],
   "name" : "IBZPRO_PRODUCTLINE",
   "saaSMode" : 0,
-  "serviceAPIMode" : 0,
+  "serviceAPIMode" : 1,
   "serviceCodeName" : "IBZProProductLine",
   "storageMode" : 1,
   "systemTag" : "iBizPMS",

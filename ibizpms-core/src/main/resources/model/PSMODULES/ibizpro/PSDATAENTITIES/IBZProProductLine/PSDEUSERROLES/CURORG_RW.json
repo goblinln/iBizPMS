@@ -23,6 +23,13 @@
       "modelref" : true,
       "id" : "READ"
     }
+  }, {
+    "dataAccessAction" : "CREATE",
+    "name" : "CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
   } ],
   "roleTag" : "CURORG_RW",
   "userDRAction" : "READ",

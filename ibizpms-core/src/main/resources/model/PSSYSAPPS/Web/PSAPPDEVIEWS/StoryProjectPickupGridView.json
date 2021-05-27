@@ -75,7 +75,7 @@
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchprojectLinkStory"
+          "id" : "FetchProjectLinkStory"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

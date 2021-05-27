@@ -52,14 +52,6 @@ public class ProductResource {
     @Lazy
     public ProductMapping productMapping;
 
-    @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "获取产品草稿", tags = {"产品" },  notes = "获取产品草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/getdraft")
-    public ResponseEntity<ProductDTO> getDraft(ProductDTO dto) {
-        Product domain = productMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(productMapping.toDto(productService.getDraft(domain)));
-    }
-
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "置顶", tags = {"产品" },  notes = "置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/producttop")
@@ -137,6 +129,21 @@ public class ProductResource {
     }
 
 
+    @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "新建产品", tags = {"产品" },  notes = "新建产品")
+	@RequestMapping(method = RequestMethod.POST, value = "/products")
+    @Transactional
+    public ResponseEntity<ProductDTO> create(@Validated @RequestBody ProductDTO productdto) {
+        Product domain = productMapping.toDomain(productdto);
+		productService.create(domain);
+        if(!productRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
+        ProductDTO dto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "删除产品", tags = {"产品" },  notes = "删除产品")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}")
@@ -144,6 +151,14 @@ public class ProductResource {
          return ResponseEntity.status(HttpStatus.OK).body(productService.remove(product_id));
     }
 
+
+    @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "获取产品草稿", tags = {"产品" },  notes = "获取产品草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/getdraft")
+    public ResponseEntity<ProductDTO> getDraft(ProductDTO dto) {
+        Product domain = productMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(productMapping.toDto(productService.getDraft(domain)));
+    }
 
     @VersionCheck(entity = "product" , versionfield = "updatedate")
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
@@ -162,21 +177,6 @@ public class ProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "新建产品", tags = {"产品" },  notes = "新建产品")
-	@RequestMapping(method = RequestMethod.POST, value = "/products")
-    @Transactional
-    public ResponseEntity<ProductDTO> create(@Validated @RequestBody ProductDTO productdto) {
-        Product domain = productMapping.toDomain(productdto);
-		productService.create(domain);
-        if(!productRuntime.test(domain.getId(),"CREATE"))
-            throw new RuntimeException("无权限操作");
-        ProductDTO dto = productMapping.toDto(domain);
-        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
 
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")

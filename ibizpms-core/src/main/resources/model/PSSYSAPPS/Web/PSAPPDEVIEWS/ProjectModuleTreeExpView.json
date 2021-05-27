@@ -206,6 +206,10 @@
           "confirmMsg" : "执行修复模块路径",
           "fullCodeName" : "ProjectModule_Fix",
           "name" : "修复路径",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Fix"
+          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
@@ -2093,7 +2097,7 @@
         "nodeType" : "MODULE",
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchDEFAULT"
+          "id" : "FetchDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -2544,7 +2548,7 @@
         "nodeType" : "ProjectModule",
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchROOT_TASK"
+          "id" : "FetchRoot_Task"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

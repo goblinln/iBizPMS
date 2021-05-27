@@ -743,6 +743,10 @@
           "dataAccessAction" : "NOTOP",
           "fullCodeName" : "Project_ProjectTop",
           "name" : "置顶",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "ProjectTop"
+          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
@@ -774,6 +778,10 @@
           "dataAccessAction" : "TOP",
           "fullCodeName" : "Project_CancelProjectTop",
           "name" : "取消置顶",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "CancelProjectTop"
+          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"

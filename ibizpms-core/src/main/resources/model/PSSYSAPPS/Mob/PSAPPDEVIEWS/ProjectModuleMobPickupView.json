@@ -84,7 +84,7 @@
             "name" : "fetch",
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "FetchDEFAULT"
+              "id" : "FetchDefault"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,

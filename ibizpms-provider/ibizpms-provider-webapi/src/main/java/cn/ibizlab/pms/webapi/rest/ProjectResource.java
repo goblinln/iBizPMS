@@ -58,6 +58,21 @@ public class ProjectResource {
     @Autowired
     private IProjectTeamService projectteamService;
 
+    @PreAuthorize("@ProjectRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "新建项目", tags = {"项目" },  notes = "新建项目")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects")
+    @Transactional
+    public ResponseEntity<ProjectDTO> create(@Validated @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+		projectService.create(domain);
+        if(!projectRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
+        ProjectDTO dto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "更新项目", tags = {"项目" },  notes = "更新项目")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}")
@@ -75,29 +90,24 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取项目团队", tags = {"项目" } ,notes = "获取项目团队")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchprojectteam")
-	public ResponseEntity<List<ProjectDTO>> fetchprojectteam(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchProjectTeam(context) ;
-        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
+    @ApiOperation(value = "删除项目", tags = {"项目" },  notes = "删除项目")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("project_id") Long project_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(projectService.remove(project_id));
+    }
 
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询项目团队", tags = {"项目" } ,notes = "查询项目团队")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/searchprojectteam")
-	public ResponseEntity<Page<ProjectDTO>> searchProjectTeam(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchProjectTeam(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+    @ApiOperation(value = "获取项目", tags = {"项目" },  notes = "获取项目")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}")
+    public ResponseEntity<ProjectDTO> get(@PathVariable("project_id") Long project_id) {
+        Project domain = projectService.get(project_id);
+        ProjectDTO dto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(project_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
 
     @PreAuthorize("@ProjectRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取项目草稿", tags = {"项目" },  notes = "获取项目草稿")
@@ -107,37 +117,75 @@ public class ProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectMapping.toDto(projectService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取默认查询", tags = {"项目" } ,notes = "获取默认查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurdefaultquery")
-	public ResponseEntity<List<ProjectDTO>> fetchcurdefaultquery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchCurDefaultQuery(context) ;
-        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询默认查询", tags = {"项目" } ,notes = "查询默认查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/searchcurdefaultquery")
-	public ResponseEntity<Page<ProjectDTO>> searchCurDefaultQuery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchCurDefaultQuery(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'PUTOFF')")
-    @ApiOperation(value = "延期", tags = {"项目" },  notes = "延期")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/putoff")
-    public ResponseEntity<ProjectDTO> putoff(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'ACTIVATE')")
+    @ApiOperation(value = "激活", tags = {"项目" },  notes = "激活")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/activate")
+    public ResponseEntity<ProjectDTO> activate(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
         Project domain = projectMapping.toDomain(projectdto);
         domain.setId(project_id);
-        domain = projectService.putoff(domain);
+        domain = projectService.activate(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
+    @ApiOperation(value = "批量解除关联需求", tags = {"项目" },  notes = "批量解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/batchunlinkstory")
+    public ResponseEntity<ProjectDTO> batchUnlinkStory(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.batchUnlinkStory(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+    @ApiOperation(value = "取消置顶", tags = {"项目" },  notes = "取消置顶")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/cancelprojecttop")
+    public ResponseEntity<ProjectDTO> cancelProjectTop(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.cancelProjectTop(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
+    @PreAuthorize("@ProjectRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "检查项目", tags = {"项目" },  notes = "检查项目")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody ProjectDTO projectdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(projectService.checkKey(projectMapping.toDomain(projectdto)));
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CLOSE')")
+    @ApiOperation(value = "关闭", tags = {"项目" },  notes = "关闭")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/close")
+    public ResponseEntity<ProjectDTO> close(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.close(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
+    @ApiOperation(value = "项目关联需求-按计划关联", tags = {"项目" },  notes = "项目关联需求-按计划关联")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/importplanstories")
+    public ResponseEntity<ProjectDTO> importPlanStories(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.importPlanStories(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
@@ -172,64 +220,194 @@ public class ProjectResource {
     }
 
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
+    @ApiOperation(value = "团队管理", tags = {"项目" },  notes = "团队管理")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/managemembers")
+    public ResponseEntity<ProjectDTO> manageMembers(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.manageMembers(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
+    @ApiOperation(value = "移动端项目计数器", tags = {"项目" },  notes = "移动端项目计数器")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/mobprojectcount")
+    public ResponseEntity<ProjectDTO> mobProjectCount(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.mobProjectCount(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
+    @ApiOperation(value = "项目立项任务快速分组计数器", tags = {"项目" },  notes = "项目立项任务快速分组计数器")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/pmseeprojectalltaskcount")
+    public ResponseEntity<ProjectDTO> pmsEeProjectAllTaskCount(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.pmsEeProjectAllTaskCount(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
+    @ApiOperation(value = "项目立项待办任务快速分组计数器", tags = {"项目" },  notes = "项目立项待办任务快速分组计数器")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/pmseeprojecttodotaskcount")
+    public ResponseEntity<ProjectDTO> pmsEeProjectTodoTaskCount(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.pmsEeProjectTodoTaskCount(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
+    @ApiOperation(value = "项目任务快速分组计数器", tags = {"项目" },  notes = "项目任务快速分组计数器")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttaskqcnt")
+    public ResponseEntity<ProjectDTO> projectTaskQCnt(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.projectTaskQCnt(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "获取项目", tags = {"项目" },  notes = "获取项目")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}")
-    public ResponseEntity<ProjectDTO> get(@PathVariable("project_id") Long project_id) {
-        Project domain = projectService.get(project_id);
+    @ApiOperation(value = "置顶", tags = {"项目" },  notes = "置顶")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttop")
+    public ResponseEntity<ProjectDTO> projectTop(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.projectTop(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'PUTOFF')")
+    @ApiOperation(value = "延期", tags = {"项目" },  notes = "延期")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/putoff")
+    public ResponseEntity<ProjectDTO> putoff(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.putoff(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
+    @ApiOperation(value = "保存项目", tags = {"项目" },  notes = "保存项目")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/save")
+    public ResponseEntity<ProjectDTO> save(@RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        projectService.save(domain);
         ProjectDTO dto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(project_id);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取我的项目", tags = {"项目" } ,notes = "获取我的项目")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchmyproject")
-	public ResponseEntity<List<ProjectDTO>> fetchmyproject(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchMyProject(context) ;
-        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询我的项目", tags = {"项目" } ,notes = "查询我的项目")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/searchmyproject")
-	public ResponseEntity<Page<ProjectDTO>> searchMyProject(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchMyProject(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'START')")
+    @ApiOperation(value = "开始", tags = {"项目" },  notes = "开始")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/start")
+    public ResponseEntity<ProjectDTO> start(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.start(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
 
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取未完成项目", tags = {"项目" } ,notes = "获取未完成项目")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchundoneproject")
-	public ResponseEntity<List<ProjectDTO>> fetchundoneproject(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchUnDoneProject(context) ;
-        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询未完成项目", tags = {"项目" } ,notes = "查询未完成项目")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/searchundoneproject")
-	public ResponseEntity<Page<ProjectDTO>> searchUnDoneProject(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchUnDoneProject(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'SUSPEND')")
+    @ApiOperation(value = "挂起", tags = {"项目" },  notes = "挂起")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/suspend")
+    public ResponseEntity<ProjectDTO> suspend(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.suspend(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
+    @ApiOperation(value = "移除成员", tags = {"项目" },  notes = "移除成员")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/unlinkmember")
+    public ResponseEntity<ProjectDTO> unlinkMember(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.unlinkMember(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
+    @ApiOperation(value = "解除关联产品", tags = {"项目" },  notes = "解除关联产品")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/unlinkproduct")
+    public ResponseEntity<ProjectDTO> unlinkProduct(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.unlinkProduct(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
+    @ApiOperation(value = "解除关联需求", tags = {"项目" },  notes = "解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/unlinkstory")
+    public ResponseEntity<ProjectDTO> unlinkStory(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.unlinkStory(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
+    @ApiOperation(value = "排序", tags = {"项目" },  notes = "排序")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/updateorder")
+    public ResponseEntity<ProjectDTO> updateOrder(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.updateOrder(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
 
 	@ApiOperation(value = "获取BugProject", tags = {"项目" } ,notes = "获取BugProject")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchbugproject")
@@ -251,26 +429,12 @@ public class ProjectResource {
                 .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'ACTIVATE')")
-    @ApiOperation(value = "激活", tags = {"项目" },  notes = "激活")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/activate")
-    public ResponseEntity<ProjectDTO> activate(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
-        Project domain = projectMapping.toDomain(projectdto);
-        domain.setId(project_id);
-        domain = projectService.activate(domain);
-        projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        projectdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
-    }
-
-
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取当前用户项目", tags = {"项目" } ,notes = "获取当前用户项目")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcuruser")
-	public ResponseEntity<List<ProjectDTO>> fetchcuruser(@RequestBody ProjectSearchContext context) {
+	@ApiOperation(value = "获取默认查询", tags = {"项目" } ,notes = "获取默认查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurdefaultquery")
+	public ResponseEntity<List<ProjectDTO>> fetchcurdefaultquery(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchCurUser(context) ;
+        Page<Project> domains = projectService.searchCurDefaultQuery(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -280,78 +444,14 @@ public class ProjectResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询当前用户项目", tags = {"项目" } ,notes = "查询当前用户项目")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/searchcuruser")
-	public ResponseEntity<Page<ProjectDTO>> searchCurUser(@RequestBody ProjectSearchContext context) {
+	@ApiOperation(value = "查询默认查询", tags = {"项目" } ,notes = "查询默认查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/searchcurdefaultquery")
+	public ResponseEntity<Page<ProjectDTO>> searchCurDefaultQuery(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchCurUser(context) ;
+        Page<Project> domains = projectService.searchCurDefaultQuery(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'SUSPEND')")
-    @ApiOperation(value = "挂起", tags = {"项目" },  notes = "挂起")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/suspend")
-    public ResponseEntity<ProjectDTO> suspend(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
-        Project domain = projectMapping.toDomain(projectdto);
-        domain.setId(project_id);
-        domain = projectService.suspend(domain);
-        projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        projectdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
-    }
-
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
-    @ApiOperation(value = "删除项目", tags = {"项目" },  notes = "删除项目")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("project_id") Long project_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(projectService.remove(project_id));
-    }
-
-
-    @PreAuthorize("@ProjectRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "新建项目", tags = {"项目" },  notes = "新建项目")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects")
-    @Transactional
-    public ResponseEntity<ProjectDTO> create(@Validated @RequestBody ProjectDTO projectdto) {
-        Project domain = projectMapping.toDomain(projectdto);
-		projectService.create(domain);
-        if(!projectRuntime.test(domain.getId(),"CREATE"))
-            throw new RuntimeException("无权限操作");
-        ProjectDTO dto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'START')")
-    @ApiOperation(value = "开始", tags = {"项目" },  notes = "开始")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/start")
-    public ResponseEntity<ProjectDTO> start(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
-        Project domain = projectMapping.toDomain(projectdto);
-        domain.setId(project_id);
-        domain = projectService.start(domain);
-        projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        projectdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
-    }
-
-
-    @ApiOperation(value = "解除关联产品", tags = {"项目" },  notes = "解除关联产品")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/unlinkproduct")
-    public ResponseEntity<ProjectDTO> unlinkProduct(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
-        Project domain = projectMapping.toDomain(projectdto);
-        domain.setId(project_id);
-        domain = projectService.unlinkProduct(domain);
-        projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        projectdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
-    }
-
 
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取默认查询（项目导航）", tags = {"项目" } ,notes = "获取默认查询（项目导航）")
@@ -425,19 +525,245 @@ public class ProjectResource {
                 .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CLOSE')")
-    @ApiOperation(value = "关闭", tags = {"项目" },  notes = "关闭")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/close")
-    public ResponseEntity<ProjectDTO> close(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
-        Project domain = projectMapping.toDomain(projectdto);
-        domain.setId(project_id);
-        domain = projectService.close(domain);
-        projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        projectdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
-    }
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取当前用户项目", tags = {"项目" } ,notes = "获取当前用户项目")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcuruser")
+	public ResponseEntity<List<ProjectDTO>> fetchcuruser(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchCurUser(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询当前用户项目", tags = {"项目" } ,notes = "查询当前用户项目")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/searchcuruser")
+	public ResponseEntity<Page<ProjectDTO>> searchCurUser(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchCurUser(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取当前用户项目（企业版）", tags = {"项目" } ,notes = "获取当前用户项目（企业版）")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurusersa")
+	public ResponseEntity<List<ProjectDTO>> fetchcurusersa(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchCurUserSa(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询当前用户项目（企业版）", tags = {"项目" } ,notes = "查询当前用户项目（企业版）")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/searchcurusersa")
+	public ResponseEntity<Page<ProjectDTO>> searchCurUserSa(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchCurUserSa(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取DEFAULT", tags = {"项目" } ,notes = "获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchdefault")
+	public ResponseEntity<List<ProjectDTO>> fetchdefault(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchDefault(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询DEFAULT", tags = {"项目" } ,notes = "查询DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/searchdefault")
+	public ResponseEntity<Page<ProjectDTO>> searchDefault(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取ES批量的导入", tags = {"项目" } ,notes = "获取ES批量的导入")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchesbulk")
+	public ResponseEntity<List<ProjectDTO>> fetchesbulk(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchESBulk(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询ES批量的导入", tags = {"项目" } ,notes = "查询ES批量的导入")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/searchesbulk")
+	public ResponseEntity<Page<ProjectDTO>> searchESBulk(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchESBulk(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取参与项目(年度总结)", tags = {"项目" } ,notes = "获取参与项目(年度总结)")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchinvolvedproject")
+	public ResponseEntity<List<ProjectDTO>> fetchinvolvedproject(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchInvolvedProject(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询参与项目(年度总结)", tags = {"项目" } ,notes = "查询参与项目(年度总结)")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/searchinvolvedproject")
+	public ResponseEntity<Page<ProjectDTO>> searchInvolvedProject(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchInvolvedProject(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取参与项目完成需求任务bug", tags = {"项目" } ,notes = "获取参与项目完成需求任务bug")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchinvolvedproject_storytaskbug")
+	public ResponseEntity<List<ProjectDTO>> fetchinvolvedproject_storytaskbug(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchInvolvedProject_StoryTaskBug(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询参与项目完成需求任务bug", tags = {"项目" } ,notes = "查询参与项目完成需求任务bug")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/searchinvolvedproject_storytaskbug")
+	public ResponseEntity<Page<ProjectDTO>> searchInvolvedProject_StoryTaskBug(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchInvolvedProject_StoryTaskBug(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取我的项目", tags = {"项目" } ,notes = "获取我的项目")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchmyproject")
+	public ResponseEntity<List<ProjectDTO>> fetchmyproject(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchMyProject(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询我的项目", tags = {"项目" } ,notes = "查询我的项目")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/searchmyproject")
+	public ResponseEntity<Page<ProjectDTO>> searchMyProject(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchMyProject(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取项目团队", tags = {"项目" } ,notes = "获取项目团队")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchprojectteam")
+	public ResponseEntity<List<ProjectDTO>> fetchprojectteam(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchProjectTeam(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询项目团队", tags = {"项目" } ,notes = "查询项目团队")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/searchprojectteam")
+	public ResponseEntity<Page<ProjectDTO>> searchProjectTeam(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchProjectTeam(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取需求影响项目", tags = {"项目" } ,notes = "获取需求影响项目")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchstoryproject")
+	public ResponseEntity<List<ProjectDTO>> fetchstoryproject(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchStoryProject(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询需求影响项目", tags = {"项目" } ,notes = "查询需求影响项目")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/searchstoryproject")
+	public ResponseEntity<Page<ProjectDTO>> searchStoryProject(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchStoryProject(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取未完成项目", tags = {"项目" } ,notes = "获取未完成项目")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchundoneproject")
+	public ResponseEntity<List<ProjectDTO>> fetchundoneproject(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchUnDoneProject(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询未完成项目", tags = {"项目" } ,notes = "查询未完成项目")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/searchundoneproject")
+	public ResponseEntity<Page<ProjectDTO>> searchUnDoneProject(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchUnDoneProject(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
 
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
