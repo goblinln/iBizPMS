@@ -3041,7 +3041,7 @@
     "userDRAction" : "READ"
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEUSERROLES/TestTask_Read_MyTestTaskPC.json",
-    "name" : "测试版本查看（我创建或参与）（跟随角色）",
+    "name" : "测试版本查看（我创建或参与）（默认角色）",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyTestTaskPc"
@@ -3055,7 +3055,8 @@
       }
     } ],
     "roleTag" : "TestTask_Read_MyTestTaskPC",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "defaultMode" : true
   } ],
   "codeName" : "TestTask",
   "dEType" : 1,

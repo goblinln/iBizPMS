@@ -372,6 +372,9 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     public List<Doc> selectModuleDocChild(DocSearchContext context){
         return baseMapper.selectModuleDocChild(context, context.getSelectCond());
     }
+    public List<Doc> selectMyCreateOrUpdateDoc(DocSearchContext context){
+        return baseMapper.selectMyCreateOrUpdateDoc(context, context.getSelectCond());
+    }
     public List<Doc> selectMyFavourite(DocSearchContext context){
         return baseMapper.selectMyFavourite(context, context.getSelectCond());
     }
@@ -449,6 +452,15 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Override
     public Page<Doc> searchModuleDocChild(DocSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchModuleDocChild(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Doc>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我创建或更新文档（权限）
+     */
+    @Override
+    public Page<Doc> searchMyCreateOrUpdateDoc(DocSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchMyCreateOrUpdateDoc(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Doc>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

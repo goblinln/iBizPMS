@@ -1472,6 +1472,7 @@
               "actionTarget" : "NONE",
               "caption" : "新建",
               "codeName" : "MobCreate",
+              "dataAccessAction" : "CREATE",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugNewMobEditView.json",

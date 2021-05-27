@@ -141,6 +141,8 @@ public class DocRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             return docService.searchDocStatus(searchContext);    
         if (iPSDEDataSet.getName().equals("ModuleDocChild"))
             return docService.searchModuleDocChild(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyCreateOrUpdateDoc"))
+            return docService.searchMyCreateOrUpdateDoc(searchContext);    
         if (iPSDEDataSet.getName().equals("MYFAVOURITE"))
             return docService.searchMyFavourite(searchContext);    
         if (iPSDEDataSet.getName().equals("MyFavouritesOnlyDoc"))
@@ -169,6 +171,8 @@ public class DocRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             return docService.selectDocStatus(searchContext);
         if (iPSDataQuery.getName().equals("ModuleDocChild"))
             return docService.selectModuleDocChild(searchContext);
+        if (iPSDataQuery.getName().equals("MyCreateOrUpdateDoc"))
+            return docService.selectMyCreateOrUpdateDoc(searchContext);
         if (iPSDataQuery.getName().equals("MYFAVOURITE"))
             return docService.selectMyFavourite(searchContext);
         if (iPSDataQuery.getName().equals("MyFavouritesOnlyDoc"))
@@ -425,6 +429,9 @@ public class DocRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
         }
         else if (action.equals("searchModuleDocChild")) {
             return aroundDataSet("ModuleDocChild", point);
+        }
+        else if (action.equals("searchMyCreateOrUpdateDoc")) {
+            return aroundDataSet("MyCreateOrUpdateDoc", point);
         }
         else if (action.equals("searchMyFavourite")) {
             return aroundDataSet("MYFAVOURITE", point);

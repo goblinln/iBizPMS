@@ -234,6 +234,24 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`ADDEDBY` =  ${srfsessioncontext('srfloginnane','{\"defname\":\"ADDEDBY\",\"dename\":\"ZT_DOC\"}')}  OR  t1.`EDITEDBY` =  ${srfsessioncontext('srfloginnane','{\"defname\":\"EDITEDBY\",\"dename\":\"ZT_DOC\"}')}  OR  t1.`UPDATEBY` =  ${srfsessioncontext('srfloginnane','{\"defname\":\"UPDATEBY\",\"dename\":\"ZT_DOC\"}')} ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "MyCreateOrUpdateDoc",
+    "logicName" : "我创建或更新文档（权限）",
+    "name" : "MyCreateOrUpdateDoc",
+    "privQuery" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
       "name" : "MySQL5"
     } ],
     "codeName" : "MyFavourite",
@@ -380,6 +398,16 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "ModuleDocChild"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "MyCreateOrUpdateDoc",
+    "logicName" : "我创建或更新文档（权限）",
+    "name" : "MyCreateOrUpdateDoc",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyCreateOrUpdateDoc"
     } ],
     "enableBackend" : true,
     "enableFront" : true
@@ -2998,6 +3026,59 @@
     } ],
     "roleTag" : "Doc_Maintain",
     "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEUSERROLES/Doc_Maintain_MyDoc.json",
+    "name" : "文档维护（我的文档）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateOrUpdateDoc"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "Zt_doclib__DELETE"
+      }
+    }, {
+      "dataAccessAction" : "UNCOLLECT",
+      "name" : "UNCOLLECT",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UNCOLLECT"
+      }
+    }, {
+      "dataAccessAction" : "OCD",
+      "name" : "OCD",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "Zt_doclib__OCD"
+      }
+    }, {
+      "dataAccessAction" : "CREATE",
+      "name" : "CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "Zt_doclib__CREATE"
+      }
+    }, {
+      "dataAccessAction" : "COLLECT",
+      "name" : "COLLECT",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "COLLECT"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    } ],
+    "roleTag" : "Doc_Maintain_MyDoc",
+    "userDRAction" : "READ",
+    "defaultMode" : true
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEUSERROLES/Doc_Read.json",

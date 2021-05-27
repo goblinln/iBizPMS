@@ -411,6 +411,15 @@
       "id" : "FetchRootDoc"
     },
     "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyCreateOrUpdateDoc",
+    "methodType" : "FETCH",
+    "name" : "MyCreateOrUpdateDoc",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateOrUpdateDoc"
+    },
+    "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "Groups",
@@ -1037,6 +1046,15 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRootDoc"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyCreateOrUpdateDoc",
+    "methodType" : "FETCH",
+    "name" : "MyCreateOrUpdateDoc",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateOrUpdateDoc"
     },
     "builtinMethod" : false
   }, {
