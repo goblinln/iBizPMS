@@ -14,4 +14,10 @@ export default [
     'total',
     'type',
     'root',
+    'deptname',
+    'org',
+    'dept',
+    'updateby',
+    'createby',
+    'orgname',
 ];

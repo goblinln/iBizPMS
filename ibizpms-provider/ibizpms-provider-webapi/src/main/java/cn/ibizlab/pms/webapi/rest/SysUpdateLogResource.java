@@ -104,7 +104,7 @@ public class SysUpdateLogResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id,'CREATE')")
+    @PreAuthorize("@SysUpdateLogRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取更新日志草稿", tags = {"更新日志" },  notes = "获取更新日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysupdatelogs/getdraft")
     public ResponseEntity<SysUpdateLogDTO> getDraft(SysUpdateLogDTO dto) {
@@ -112,7 +112,7 @@ public class SysUpdateLogResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogMapping.toDto(sysupdatelogService.getDraft(domain)));
     }
 
-    @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id,'CREATE')")
+    @PreAuthorize("@SysUpdateLogRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查更新日志", tags = {"更新日志" },  notes = "检查更新日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SysUpdateLogDTO sysupdatelogdto) {

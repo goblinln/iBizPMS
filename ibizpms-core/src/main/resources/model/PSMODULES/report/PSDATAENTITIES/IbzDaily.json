@@ -1658,6 +1658,30 @@
     "pickupDEFName" : "OBJECTID",
     "removeActionType" : -1,
     "removeOrder" : 0
+  }, {
+    "codeName" : "Daily",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_DAILY.json",
+    "logicName" : "日报",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
+    },
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+    },
+    "name" : "DERCUSTOM_ZT_ACTION_IBZ_DAILY",
+    "orderValue" : 100,
+    "pickupDEFName" : "OBJECTID",
+    "getPickupPSDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "daily"
   } ],
   "name" : "IBZ_DAILY",
   "saaSDCIdColumnName" : "SRFDCID",

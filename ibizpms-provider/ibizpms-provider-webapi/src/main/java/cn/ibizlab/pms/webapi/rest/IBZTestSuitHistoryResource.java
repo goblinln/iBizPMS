@@ -103,7 +103,7 @@ public class IBZTestSuitHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZTestSuitHistoryRuntime.test(#ibztestsuithistory_id,'CREATE')")
+    @PreAuthorize("@IBZTestSuitHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取套件操作历史草稿", tags = {"套件操作历史" },  notes = "获取套件操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibztestsuithistories/getdraft")
     public ResponseEntity<IBZTestSuitHistoryDTO> getDraft(IBZTestSuitHistoryDTO dto) {
@@ -111,7 +111,7 @@ public class IBZTestSuitHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibztestsuithistoryMapping.toDto(ibztestsuithistoryService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IBZTestSuitHistoryRuntime.test(#ibztestsuithistory_id,'CREATE')")
+    @PreAuthorize("@IBZTestSuitHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查套件操作历史", tags = {"套件操作历史" },  notes = "检查套件操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztestsuithistories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZTestSuitHistoryDTO ibztestsuithistorydto) {

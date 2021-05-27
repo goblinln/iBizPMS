@@ -103,7 +103,7 @@ public class IBZProStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProStoryRuntime.test(#ibzprostory_id,'CREATE')")
+    @PreAuthorize("@IBZProStoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取需求草稿", tags = {"需求" },  notes = "获取需求草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprostories/getdraft")
     public ResponseEntity<IBZProStoryDTO> getDraft(IBZProStoryDTO dto) {
@@ -111,7 +111,7 @@ public class IBZProStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprostoryMapping.toDto(ibzprostoryService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IBZProStoryRuntime.test(#ibzprostory_id,'CREATE')")
+    @PreAuthorize("@IBZProStoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查需求", tags = {"需求" },  notes = "检查需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProStoryDTO ibzprostorydto) {

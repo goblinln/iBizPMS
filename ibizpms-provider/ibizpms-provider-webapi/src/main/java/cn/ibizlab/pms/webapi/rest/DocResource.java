@@ -103,7 +103,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DocRuntime.test(#doc_id,'CREATE')")
+    @PreAuthorize("@DocRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取文档草稿", tags = {"文档" },  notes = "获取文档草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/docs/getdraft")
     public ResponseEntity<DocDTO> getDraft(DocDTO dto) {
@@ -125,7 +125,7 @@ public class DocResource {
     }
 
 
-    @PreAuthorize("@DocRuntime.test(#doc_id,'CREATE')")
+    @PreAuthorize("@DocRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查文档", tags = {"文档" },  notes = "检查文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody DocDTO docdto) {
@@ -505,6 +505,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'CREATE')")
     @ApiOperation(value = "根据文档库获取文档草稿", tags = {"文档" },  notes = "根据文档库获取文档草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}/docs/getdraft")
     public ResponseEntity<DocDTO> getDraftByDocLib(@PathVariable("doclib_id") Long doclib_id, DocDTO dto) {
@@ -525,6 +526,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
+    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'CREATE')")
     @ApiOperation(value = "根据文档库检查文档", tags = {"文档" },  notes = "根据文档库检查文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/checkkey")
     public ResponseEntity<Boolean> checkKeyByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
@@ -895,6 +897,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品文档库获取文档草稿", tags = {"文档" },  notes = "根据产品文档库获取文档草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/doclibs/{doclib_id}/docs/getdraft")
     public ResponseEntity<DocDTO> getDraftByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, DocDTO dto) {
@@ -915,6 +918,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品文档库检查文档", tags = {"文档" },  notes = "根据产品文档库检查文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/checkkey")
     public ResponseEntity<Boolean> checkKeyByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
@@ -1285,6 +1289,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目文档库获取文档草稿", tags = {"文档" },  notes = "根据项目文档库获取文档草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/getdraft")
     public ResponseEntity<DocDTO> getDraftByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, DocDTO dto) {
@@ -1305,6 +1310,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目文档库检查文档", tags = {"文档" },  notes = "根据项目文档库检查文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/checkkey")
     public ResponseEntity<Boolean> checkKeyByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {

@@ -2710,6 +2710,14 @@
     "psappsbitemid" : "ba0e6ea6e018a2a960074bf5145ea4d0",
     "itemtype" : "APPVIEW"
   }, {
+    "psappviewname" : "ProjectEditView_Start",
+    "psappsbitemname" : "项目",
+    "itemtag2" : "48287FFA-C177-4ED8-85B0-9B95C19A20EB",
+    "psappviewid" : "1a6b370499bda6a41b02a08c7870b062",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView_Start.json",
+    "psappsbitemid" : "45f0fa184e7912c52dbf38bc4f1b1f62",
+    "itemtype" : "APPVIEW"
+  }, {
     "psappviewname" : "IbzLibTabExpView",
     "psappsbitemname" : "用例库",
     "itemtag2" : "a34d9b677f2c95e7f78e275134c43147",
@@ -13488,6 +13496,32 @@
     "cpsappsbitemid" : "21127fe543f2bfd60ebf8910f83d51cb",
     "psappsbitemrsname" : "新建视图",
     "rstype" : "APPVIEWREF"
+  }, {
+    "psappsbitemrsid" : "cd653e7063a236cf8e60ce58bff7c7e2",
+    "ppsappsbitemname" : "项目",
+    "rstag" : "SYS",
+    "rstag2" : "系统预定义",
+    "ppsappsbitemid" : "45f0fa184e7912c52dbf38bc4f1b1f62",
+    "psappsbitemrsname" : "编辑界面_保存并退出操作",
+    "rstype" : "UIACTION"
+  }, {
+    "cpsappsbitemname" : "历史记录",
+    "psappsbitemrsid" : "9b68faab39555d9543efe47ce78a8461",
+    "ppsappsbitemname" : "项目",
+    "ppsappsbitemid" : "45f0fa184e7912c52dbf38bc4f1b1f62",
+    "cpsappsbitemid" : "5e4b4b3fcd8f73b61d6d8011784efd87",
+    "psappsbitemrsname" : "嵌入视图",
+    "rstype" : "APPVIEWEMBED"
+  }, {
+    "cpsappsbitemname" : "项目",
+    "psappsbitemrsid" : "a153cf3a950ace6fe56778ea14e1a1ad",
+    "ppsappsbitemname" : "项目数据看板视图",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
+    "ppsappsbitemid" : "c8b6a4b9828f3b0e71014dd4edfec7f6",
+    "cpsappsbitemid" : "45f0fa184e7912c52dbf38bc4f1b1f62",
+    "psappsbitemrsname" : "项目开始",
+    "rstype" : "UIACTION"
   }, {
     "psappsbitemrsid" : "a5dc7d9922b7174b74174f0f0f4b4105",
     "ppsappsbitemname" : "项目",

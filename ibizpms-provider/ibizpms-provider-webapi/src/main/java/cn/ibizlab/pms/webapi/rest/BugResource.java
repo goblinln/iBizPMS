@@ -104,7 +104,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@BugRuntime.test(#bug_id,'CREATE')")
+    @PreAuthorize("@BugRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取Bug草稿", tags = {"Bug" },  notes = "获取Bug草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/bugs/getdraft")
     public ResponseEntity<BugDTO> getDraft(BugDTO dto) {
@@ -222,7 +222,7 @@ public class BugResource {
     }
 
 
-    @PreAuthorize("@BugRuntime.test(#bug_id,'CREATE')")
+    @PreAuthorize("@BugRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查Bug", tags = {"Bug" },  notes = "检查Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugs/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody BugDTO bugdto) {
@@ -1291,6 +1291,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@BugRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据产品获取Bug草稿", tags = {"Bug" },  notes = "根据产品获取Bug草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/bugs/getdraft")
     public ResponseEntity<BugDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, BugDTO dto) {
@@ -1393,6 +1394,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
+    @PreAuthorize("@BugRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据产品检查Bug", tags = {"Bug" },  notes = "根据产品检查Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugDTO bugdto) {

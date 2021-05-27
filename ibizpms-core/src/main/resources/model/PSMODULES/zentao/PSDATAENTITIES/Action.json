@@ -2149,6 +2149,102 @@
     "removeActionType" : -1,
     "removeOrder" : 0
   }, {
+    "codeName" : "Daily",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_DAILY.json",
+    "logicName" : "日报",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
+    },
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+    },
+    "name" : "DERCUSTOM_ZT_ACTION_IBZ_DAILY",
+    "orderValue" : 100,
+    "pickupDEFName" : "OBJECTID",
+    "getPickupPSDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "daily"
+  }, {
+    "codeName" : "Monthly",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_MONTHLY.json",
+    "logicName" : "月报",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly.json"
+    },
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+    },
+    "name" : "DERCUSTOM_ZT_ACTION_IBZ_MONTHLY",
+    "orderValue" : 100,
+    "pickupDEFName" : "OBJECTID",
+    "getPickupPSDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "monthly"
+  }, {
+    "codeName" : "Reportly",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_REPORTLY.json",
+    "logicName" : "汇报",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly.json"
+    },
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+    },
+    "name" : "DERCUSTOM_ZT_ACTION_IBZ_REPORTLY",
+    "orderValue" : 100,
+    "pickupDEFName" : "OBJECTID",
+    "getPickupPSDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "reportly"
+  }, {
+    "codeName" : "Weekly",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_WEEKLY.json",
+    "logicName" : "周报",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
+    },
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+    },
+    "name" : "DERCUSTOM_ZT_ACTION_IBZ_WEEKLY",
+    "orderValue" : 100,
+    "pickupDEFName" : "OBJECTID",
+    "getPickupPSDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "weekly"
+  }, {
     "codeName" : "Bug",
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",
@@ -2201,7 +2297,7 @@
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_CASE.json",
-    "logicName" : "Case",
+    "logicName" : "用例",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
@@ -2219,13 +2315,13 @@
     },
     "removeActionType" : 0,
     "removeOrder" : -1,
-    "typeValue" : "Case"
+    "typeValue" : "case"
   }, {
     "codeName" : "Doc",
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_DOC.json",
-    "logicName" : "Doc",
+    "logicName" : "文档",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
@@ -2243,13 +2339,13 @@
     },
     "removeActionType" : 0,
     "removeOrder" : -1,
-    "typeValue" : "Doc"
+    "typeValue" : "doc"
   }, {
-    "codeName" : "DocLib",
+    "codeName" : "doclib",
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_DOCLIB.json",
-    "logicName" : "DocLib",
+    "logicName" : "文档库",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
@@ -2267,7 +2363,7 @@
     },
     "removeActionType" : 0,
     "removeOrder" : -1,
-    "typeValue" : "DocLib"
+    "typeValue" : "doclib"
   }, {
     "codeName" : "Product",
     "dERSubType" : "DER1N",
@@ -2297,7 +2393,7 @@
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PRODUCTPLAN.json",
-    "logicName" : "ProductPlan",
+    "logicName" : "产品计划",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
@@ -2315,7 +2411,7 @@
     },
     "removeActionType" : 0,
     "removeOrder" : -1,
-    "typeValue" : "ProductPlan"
+    "typeValue" : "productplan"
   }, {
     "codeName" : "Project",
     "dERSubType" : "DER1N",
@@ -2345,7 +2441,7 @@
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_Release.json",
-    "logicName" : "Release",
+    "logicName" : "发布",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
@@ -2363,7 +2459,7 @@
     },
     "removeActionType" : 0,
     "removeOrder" : -1,
-    "typeValue" : "Release"
+    "typeValue" : "release"
   }, {
     "codeName" : "Story",
     "dERSubType" : "DER1N",
@@ -2393,7 +2489,7 @@
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TASK.json",
-    "logicName" : "Task",
+    "logicName" : "任务",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
@@ -2411,13 +2507,13 @@
     },
     "removeActionType" : 0,
     "removeOrder" : -1,
-    "typeValue" : "Task"
+    "typeValue" : "task"
   }, {
     "codeName" : "TestReport",
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTREPORT.json",
-    "logicName" : "TestReport",
+    "logicName" : "报告",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
@@ -2435,13 +2531,13 @@
     },
     "removeActionType" : 0,
     "removeOrder" : -1,
-    "typeValue" : "TestReport"
+    "typeValue" : "testreport"
   }, {
-    "codeName" : "TestSuite",
+    "codeName" : "testsuite",
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTSUITE.json",
-    "logicName" : "TestSuite",
+    "logicName" : "套件",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
@@ -2465,7 +2561,7 @@
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTTASK.json",
-    "logicName" : "TestTask",
+    "logicName" : "测试单",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
@@ -2483,13 +2579,13 @@
     },
     "removeActionType" : 0,
     "removeOrder" : -1,
-    "typeValue" : "TestTask"
+    "typeValue" : "testtask"
   }, {
     "codeName" : "ToDo",
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TODO.json",
-    "logicName" : "ToDo",
+    "logicName" : "待办",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
@@ -2507,7 +2603,7 @@
     },
     "removeActionType" : 0,
     "removeOrder" : -1,
-    "typeValue" : "ToDo"
+    "typeValue" : "todo"
   } ],
   "name" : "ZT_ACTION",
   "saaSDCIdColumnName" : "SRFDCID",

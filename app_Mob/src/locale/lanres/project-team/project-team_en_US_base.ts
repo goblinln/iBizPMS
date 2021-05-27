@@ -20,6 +20,12 @@ export default {
     pM:  commonLogic.appcommonhandle("项目经理",null),
     projectName:  commonLogic.appcommonhandle("所属项目",null),
     root:  commonLogic.appcommonhandle("项目编号",null),
+    deptName:  commonLogic.appcommonhandle("归属部门名",null),
+    dept:  commonLogic.appcommonhandle("归属部门",null),
+    org:  commonLogic.appcommonhandle("归属组织",null),
+    updateBy:  commonLogic.appcommonhandle("由谁更新",null),
+    createBy:  commonLogic.appcommonhandle("由谁创建",null),
+    orgName:  commonLogic.appcommonhandle("归属组织名",null),
   },
 	views: {
 		projectteammobeditview: {

@@ -103,7 +103,7 @@ public class IbzProWeeklyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProWeeklyHistoryRuntime.test(#ibzproweeklyhistory_id,'CREATE')")
+    @PreAuthorize("@IbzProWeeklyHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取周报操作历史草稿", tags = {"周报操作历史" },  notes = "获取周报操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproweeklyhistories/getdraft")
     public ResponseEntity<IbzProWeeklyHistoryDTO> getDraft(IbzProWeeklyHistoryDTO dto) {
@@ -111,7 +111,7 @@ public class IbzProWeeklyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyhistoryMapping.toDto(ibzproweeklyhistoryService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzProWeeklyHistoryRuntime.test(#ibzproweeklyhistory_id,'CREATE')")
+    @PreAuthorize("@IbzProWeeklyHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查周报操作历史", tags = {"周报操作历史" },  notes = "检查周报操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyhistories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzProWeeklyHistoryDTO ibzproweeklyhistorydto) {

@@ -1974,6 +1974,30 @@
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_PROJECT"
     },
+    {"name":"DERCUSTOM_ZT_ACTION_IBZ_DAILY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Daily",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"IBZ_DAILY"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_IBZ_MONTHLY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Monthly",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"IBZ_MONTHLY"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_IBZ_REPORTLY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Reportly",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"IBZ_REPORTLY"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_IBZ_WEEKLY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Weekly",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"IBZ_WEEKLY"
+    },
     {"name":"DERCUSTOM_ZT_ACTION_ZT_BUG",
      "relation_type":"DERCUSTOM",
      "code_name":"Bug",
@@ -2000,7 +2024,7 @@
     },
     {"name":"DERCUSTOM_ZT_ACTION_ZT_DOCLIB",
      "relation_type":"DERCUSTOM",
-     "code_name":"DocLib",
+     "code_name":"doclib",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_DOCLIB"
     },
@@ -2048,7 +2072,7 @@
     },
     {"name":"DERCUSTOM_ZT_ACTION_ZT_TESTSUITE",
      "relation_type":"DERCUSTOM",
-     "code_name":"TestSuite",
+     "code_name":"testsuite",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_TESTSUITE"
     },
@@ -9328,7 +9352,7 @@
     },
     {"name":"DERCUSTOM_ZT_ACTION_ZT_DOCLIB",
      "relation_type":"DERCUSTOM",
-     "code_name":"DocLib",
+     "code_name":"doclib",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_DOCLIB"
     }
@@ -24525,6 +24549,12 @@
      "code_name":"IbzProDaily",
      "entity_name":"IBZPRO_DAILYACTION",
      "ref_entity_name":"IBZ_DAILY"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_IBZ_DAILY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Daily",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"IBZ_DAILY"
     }
     ],
     "parentEntitys":[
@@ -25839,6 +25869,12 @@
      "relation_type":"DER1N",
      "code_name":"IbzProMonthlyAction",
      "entity_name":"IBZPRO_MONTHLYACTION",
+     "ref_entity_name":"IBZ_MONTHLY"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_IBZ_MONTHLY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Monthly",
+     "entity_name":"ZT_ACTION",
      "ref_entity_name":"IBZ_MONTHLY"
     }
     ],
@@ -31130,6 +31166,12 @@
      "code_name":"IbzProReportly",
      "entity_name":"IBZPRO_REPORTLYACTION",
      "ref_entity_name":"IBZ_REPORTLY"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_IBZ_REPORTLY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Reportly",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"IBZ_REPORTLY"
     }
     ],
     "parentEntitys":[
@@ -31652,6 +31694,12 @@
      "relation_type":"DER1N",
      "code_name":"IbzProWeeklyAction",
      "entity_name":"IBZPRO_WEEKLYACTION",
+     "ref_entity_name":"IBZ_WEEKLY"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_IBZ_WEEKLY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Weekly",
+     "entity_name":"ZT_ACTION",
      "ref_entity_name":"IBZ_WEEKLY"
     }
     ],
@@ -63677,7 +63725,7 @@
     },
     {"name":"DERCUSTOM_ZT_ACTION_ZT_TESTSUITE",
      "relation_type":"DERCUSTOM",
-     "code_name":"TestSuite",
+     "code_name":"testsuite",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_TESTSUITE"
     }

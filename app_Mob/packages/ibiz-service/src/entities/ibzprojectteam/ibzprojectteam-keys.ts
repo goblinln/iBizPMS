@@ -18,4 +18,10 @@ export default [
     'pm',
     'projectname',
     'root',
+    'deptname',
+    'dept',
+    'org',
+    'updateby',
+    'createby',
+    'orgname',
 ];

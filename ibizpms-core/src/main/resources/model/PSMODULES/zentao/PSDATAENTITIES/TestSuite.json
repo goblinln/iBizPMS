@@ -1191,11 +1191,11 @@
     "removeActionType" : -1,
     "removeOrder" : 0
   }, {
-    "codeName" : "TestSuite",
+    "codeName" : "testsuite",
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTSUITE.json",
-    "logicName" : "TestSuite",
+    "logicName" : "套件",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"

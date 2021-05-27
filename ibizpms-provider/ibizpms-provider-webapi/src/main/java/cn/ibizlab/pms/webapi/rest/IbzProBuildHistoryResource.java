@@ -103,7 +103,7 @@ public class IbzProBuildHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProBuildHistoryRuntime.test(#ibzprobuildhistory_id,'CREATE')")
+    @PreAuthorize("@IbzProBuildHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取版本操作历史草稿", tags = {"版本操作历史" },  notes = "获取版本操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprobuildhistories/getdraft")
     public ResponseEntity<IbzProBuildHistoryDTO> getDraft(IbzProBuildHistoryDTO dto) {
@@ -111,7 +111,7 @@ public class IbzProBuildHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprobuildhistoryMapping.toDto(ibzprobuildhistoryService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzProBuildHistoryRuntime.test(#ibzprobuildhistory_id,'CREATE')")
+    @PreAuthorize("@IbzProBuildHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查版本操作历史", tags = {"版本操作历史" },  notes = "检查版本操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobuildhistories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzProBuildHistoryDTO ibzprobuildhistorydto) {

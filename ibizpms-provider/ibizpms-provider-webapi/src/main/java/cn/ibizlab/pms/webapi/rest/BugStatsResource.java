@@ -103,7 +103,7 @@ public class BugStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@BugStatsRuntime.test(#bugstats_id,'CREATE')")
+    @PreAuthorize("@BugStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取Bug统计草稿", tags = {"Bug统计" },  notes = "获取Bug统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/bugstats/getdraft")
     public ResponseEntity<BugStatsDTO> getDraft(BugStatsDTO dto) {
@@ -111,7 +111,7 @@ public class BugStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugstatsMapping.toDto(bugstatsService.getDraft(domain)));
     }
 
-    @PreAuthorize("@BugStatsRuntime.test(#bugstats_id,'CREATE')")
+    @PreAuthorize("@BugStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查Bug统计", tags = {"Bug统计" },  notes = "检查Bug统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugstats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody BugStatsDTO bugstatsdto) {

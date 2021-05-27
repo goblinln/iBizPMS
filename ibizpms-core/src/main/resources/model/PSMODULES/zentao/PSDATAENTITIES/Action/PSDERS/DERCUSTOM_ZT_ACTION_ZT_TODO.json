@@ -3,7 +3,7 @@
   "dERSubType" : "DER1N",
   "dERType" : "DERCUSTOM",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TODO.json",
-  "logicName" : "ToDo",
+  "logicName" : "待办",
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
@@ -21,5 +21,5 @@
   },
   "removeActionType" : 0,
   "removeOrder" : -1,
-  "typeValue" : "ToDo"
+  "typeValue" : "todo"
 }

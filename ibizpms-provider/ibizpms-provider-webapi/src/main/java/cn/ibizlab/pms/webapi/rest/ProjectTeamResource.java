@@ -116,7 +116,7 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectTeamRuntime.test(#projectteam_id,'CREATE')")
+    @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取项目团队草稿", tags = {"项目团队" },  notes = "获取项目团队草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectteams/getdraft")
     public ResponseEntity<ProjectTeamDTO> getDraft(ProjectTeamDTO dto) {
@@ -124,7 +124,7 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(projectteamService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectTeamRuntime.test(#projectteam_id,'CREATE')")
+    @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查项目团队", tags = {"项目团队" },  notes = "检查项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectteams/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProjectTeamDTO projectteamdto) {
@@ -300,6 +300,7 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目获取项目团队草稿", tags = {"项目团队" },  notes = "根据项目获取项目团队草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectteams/getdraft")
     public ResponseEntity<ProjectTeamDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectTeamDTO dto) {
@@ -308,6 +309,7 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(projectteamService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目检查项目团队", tags = {"项目团队" },  notes = "根据项目检查项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams/checkkey")
     public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamDTO projectteamdto) {

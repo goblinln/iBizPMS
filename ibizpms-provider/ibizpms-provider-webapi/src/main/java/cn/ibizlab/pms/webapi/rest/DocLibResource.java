@@ -103,7 +103,7 @@ public class DocLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'CREATE')")
+    @PreAuthorize("@DocLibRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取文档库草稿", tags = {"文档库" },  notes = "获取文档库草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/doclibs/getdraft")
     public ResponseEntity<DocLibDTO> getDraft(DocLibDTO dto) {
@@ -111,7 +111,7 @@ public class DocLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibMapping.toDto(doclibService.getDraft(domain)));
     }
 
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'CREATE')")
+    @PreAuthorize("@DocLibRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查文档库", tags = {"文档库" },  notes = "检查文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody DocLibDTO doclibdto) {
@@ -406,6 +406,7 @@ public class DocLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品获取文档库草稿", tags = {"文档库" },  notes = "根据产品获取文档库草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/doclibs/getdraft")
     public ResponseEntity<DocLibDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, DocLibDTO dto) {
@@ -414,6 +415,7 @@ public class DocLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibMapping.toDto(doclibService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品检查文档库", tags = {"文档库" },  notes = "根据产品检查文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody DocLibDTO doclibdto) {
@@ -703,6 +705,7 @@ public class DocLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目获取文档库草稿", tags = {"文档库" },  notes = "根据项目获取文档库草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/getdraft")
     public ResponseEntity<DocLibDTO> getDraftByProject(@PathVariable("project_id") Long project_id, DocLibDTO dto) {
@@ -711,6 +714,7 @@ public class DocLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibMapping.toDto(doclibService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目检查文档库", tags = {"文档库" },  notes = "根据项目检查文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/checkkey")
     public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody DocLibDTO doclibdto) {

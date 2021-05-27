@@ -103,7 +103,7 @@ public class IBZProProjectActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProProjectActionRuntime.test(#ibzproprojectaction_id,'CREATE')")
+    @PreAuthorize("@IBZProProjectActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取项目日志草稿", tags = {"项目日志" },  notes = "获取项目日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproprojectactions/getdraft")
     public ResponseEntity<IBZProProjectActionDTO> getDraft(IBZProProjectActionDTO dto) {
@@ -111,7 +111,7 @@ public class IBZProProjectActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectactionMapping.toDto(ibzproprojectactionService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IBZProProjectActionRuntime.test(#ibzproprojectaction_id,'CREATE')")
+    @PreAuthorize("@IBZProProjectActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查项目日志", tags = {"项目日志" },  notes = "检查项目日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectactions/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProProjectActionDTO ibzproprojectactiondto) {

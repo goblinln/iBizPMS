@@ -16,6 +16,12 @@ export default {
     total: "总计可用",
     type: "团队类型",
     root: "编号",
+    deptname: "归属部门名",
+    org: "归属组织",
+    dept: "归属部门",
+    updateby: "由谁更新",
+    createby: "由谁创建",
+    orgname: "归属组织名",
   },
 	views: {
 		mobeditview9: {

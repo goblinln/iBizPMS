@@ -103,7 +103,7 @@ public class IbizproProjectDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbizproProjectDailyRuntime.test(#ibizproprojectdaily_id,'CREATE')")
+    @PreAuthorize("@IbizproProjectDailyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取项目日报草稿", tags = {"项目日报" },  notes = "获取项目日报草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectdailies/getdraft")
     public ResponseEntity<IbizproProjectDailyDTO> getDraft(IbizproProjectDailyDTO dto) {
@@ -111,7 +111,7 @@ public class IbizproProjectDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailyMapping.toDto(ibizproprojectdailyService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbizproProjectDailyRuntime.test(#ibizproprojectdaily_id,'CREATE')")
+    @PreAuthorize("@IbizproProjectDailyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查项目日报", tags = {"项目日报" },  notes = "检查项目日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProjectDailyDTO ibizproprojectdailydto) {

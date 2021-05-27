@@ -68,19 +68,11 @@ export const settingConfig = {
       entext:'About',
     },
     {
-      name: "logout",
-      isEnable: true,
-      text: "退出登录",
-      position: "bottom",
-      sort: "100",
-      entext:'Sign out',
-    },
-    {
       name: "clear",
       isEnable: true,
       text: "清除缓存",
       position: "bottom",
-      sort: "200",
+      sort: "100",
       entext:'Clear cache',
     },
     {
@@ -91,6 +83,14 @@ export const settingConfig = {
       sort: "200",
       entext:'Switch language',
     },
+    {
+      name: "logout",
+      isEnable: true,
+      text: "退出登录",
+      position: "end",
+      sort: "100",
+      entext:'Sign out',
+    },    
   ],
   // 个人中心视图（需用户手动配置）
   userCenterViewName: "sys-employee-login-mob-edit-view",

@@ -104,7 +104,7 @@ public class IbzFavoritesResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id,'CREATE')")
+    @PreAuthorize("@IbzFavoritesRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取收藏草稿", tags = {"收藏" },  notes = "获取收藏草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzfavorites/getdraft")
     public ResponseEntity<IbzFavoritesDTO> getDraft(IbzFavoritesDTO dto) {
@@ -112,7 +112,7 @@ public class IbzFavoritesResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzfavoritesMapping.toDto(ibzfavoritesService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id,'CREATE')")
+    @PreAuthorize("@IbzFavoritesRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查收藏", tags = {"收藏" },  notes = "检查收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzfavorites/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzFavoritesDTO ibzfavoritesdto) {

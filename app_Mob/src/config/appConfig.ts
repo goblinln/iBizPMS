@@ -12,7 +12,7 @@ export const appConfig = {
     {
       value: "app-dark-blue-theme",
       text: "经典蓝",
-      background: "#5475ab",
+      background: "#679BF6",
       color: "#fff",
     },
     {

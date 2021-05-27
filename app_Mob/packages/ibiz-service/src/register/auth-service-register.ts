@@ -74,7 +74,6 @@ export class AuthServiceRegister extends ServiceRegisterBase {
         this.allService.set('authservice-ibzprojectteam', () => import('../authservice/ibzprojectteam/ibzprojectteam-auth-service'));
         this.allService.set('authservice-story', () => import('../authservice/story/story-auth-service'));
         this.allService.set('authservice-productline', () => import('../authservice/product-line/product-line-auth-service'));
-        this.allService.set('authservice-ibzproreportlyaction', () => import('../authservice/ibz-pro-reportly-action/ibz-pro-reportly-action-auth-service'));
         this.allService.set('authservice-dynafilter', () => import('../authservice/dyna-filter/dyna-filter-auth-service'));
     }
 

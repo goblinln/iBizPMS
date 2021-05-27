@@ -104,7 +104,7 @@ public class IbzAgentResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzAgentRuntime.test(#ibzagent_id,'CREATE')")
+    @PreAuthorize("@IbzAgentRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取代理草稿", tags = {"代理" },  notes = "获取代理草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzagents/getdraft")
     public ResponseEntity<IbzAgentDTO> getDraft(IbzAgentDTO dto) {
@@ -112,7 +112,7 @@ public class IbzAgentResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzagentMapping.toDto(ibzagentService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzAgentRuntime.test(#ibzagent_id,'CREATE')")
+    @PreAuthorize("@IbzAgentRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查代理", tags = {"代理" },  notes = "检查代理")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzagents/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzAgentDTO ibzagentdto) {

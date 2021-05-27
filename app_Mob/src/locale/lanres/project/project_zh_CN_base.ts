@@ -96,6 +96,9 @@ export default {
 		mobpickupview: {
 			caption: commonLogic.appcommonhandle("项目",null),
 		},
+		startmobeditview: {
+			caption: commonLogic.appcommonhandle("开始",null),
+		},
 		mobeditview: {
 			caption: commonLogic.appcommonhandle("项目",null),
 		},
@@ -333,6 +336,12 @@ export default {
 		deuiaction1: {
 			caption: commonLogic.appcommonhandle("新建",null),
 			tip: '新建',
+		},
+	},
+	startmobeditviewrighttoolbar_toolbar: {
+		tbitem1: {
+			caption: commonLogic.appcommonhandle("保存",null),
+			tip: '保存',
 		},
 	},
 };

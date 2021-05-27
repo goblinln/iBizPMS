@@ -110,7 +110,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'CREATE')")
+    @PreAuthorize("@CaseRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取测试用例草稿", tags = {"测试用例" },  notes = "获取测试用例草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/cases/getdraft")
     public ResponseEntity<CaseDTO> getDraft(CaseDTO dto) {
@@ -146,7 +146,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'CREATE')")
+    @PreAuthorize("@CaseRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查测试用例", tags = {"测试用例" },  notes = "检查测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody CaseDTO casedto) {
@@ -915,6 +915,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
     @ApiOperation(value = "根据产品获取测试用例草稿", tags = {"测试用例" },  notes = "根据产品获取测试用例草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/getdraft")
     public ResponseEntity<CaseDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, CaseDTO dto) {
@@ -947,6 +948,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
     @ApiOperation(value = "根据产品检查测试用例", tags = {"测试用例" },  notes = "根据产品检查测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseDTO casedto) {

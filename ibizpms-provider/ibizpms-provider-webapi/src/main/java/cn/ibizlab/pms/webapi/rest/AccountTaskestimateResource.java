@@ -103,7 +103,7 @@ public class AccountTaskestimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@AccountTaskestimateRuntime.test(#accounttaskestimate_id,'CREATE')")
+    @PreAuthorize("@AccountTaskestimateRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取用户工时统计草稿", tags = {"用户工时统计" },  notes = "获取用户工时统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/accounttaskestimates/getdraft")
     public ResponseEntity<AccountTaskestimateDTO> getDraft(AccountTaskestimateDTO dto) {
@@ -111,7 +111,7 @@ public class AccountTaskestimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(accounttaskestimateMapping.toDto(accounttaskestimateService.getDraft(domain)));
     }
 
-    @PreAuthorize("@AccountTaskestimateRuntime.test(#accounttaskestimate_id,'CREATE')")
+    @PreAuthorize("@AccountTaskestimateRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查用户工时统计", tags = {"用户工时统计" },  notes = "检查用户工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/accounttaskestimates/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody AccountTaskestimateDTO accounttaskestimatedto) {

@@ -2486,7 +2486,7 @@
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_Release.json",
-    "logicName" : "Release",
+    "logicName" : "发布",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
@@ -2504,7 +2504,7 @@
     },
     "removeActionType" : 0,
     "removeOrder" : -1,
-    "typeValue" : "Release"
+    "typeValue" : "release"
   } ],
   "getMinorPSDERs" : [ {
     "codeName" : "ZTBranch",

@@ -103,7 +103,7 @@ public class UserTplResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserTplRuntime.test(#usertpl_id,'CREATE')")
+    @PreAuthorize("@UserTplRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取用户模板草稿", tags = {"用户模板" },  notes = "获取用户模板草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/usertpls/getdraft")
     public ResponseEntity<UserTplDTO> getDraft(UserTplDTO dto) {
@@ -111,7 +111,7 @@ public class UserTplResource {
         return ResponseEntity.status(HttpStatus.OK).body(usertplMapping.toDto(usertplService.getDraft(domain)));
     }
 
-    @PreAuthorize("@UserTplRuntime.test(#usertpl_id,'CREATE')")
+    @PreAuthorize("@UserTplRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查用户模板", tags = {"用户模板" },  notes = "检查用户模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody UserTplDTO usertpldto) {

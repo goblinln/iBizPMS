@@ -103,7 +103,7 @@ public class IbzProReportlyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProReportlyHistoryRuntime.test(#ibzproreportlyhistory_id,'CREATE')")
+    @PreAuthorize("@IbzProReportlyHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取汇报操作历史草稿", tags = {"汇报操作历史" },  notes = "获取汇报操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproreportlyhistories/getdraft")
     public ResponseEntity<IbzProReportlyHistoryDTO> getDraft(IbzProReportlyHistoryDTO dto) {
@@ -111,7 +111,7 @@ public class IbzProReportlyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreportlyhistoryMapping.toDto(ibzproreportlyhistoryService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzProReportlyHistoryRuntime.test(#ibzproreportlyhistory_id,'CREATE')")
+    @PreAuthorize("@IbzProReportlyHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查汇报操作历史", tags = {"汇报操作历史" },  notes = "检查汇报操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyhistories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzProReportlyHistoryDTO ibzproreportlyhistorydto) {

@@ -103,7 +103,7 @@ public class IbizproIndexResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbizproIndexRuntime.test(#ibizproindex_id,'CREATE')")
+    @PreAuthorize("@IbizproIndexRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取索引检索草稿", tags = {"索引检索" },  notes = "获取索引检索草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproindices/getdraft")
     public ResponseEntity<IbizproIndexDTO> getDraft(IbizproIndexDTO dto) {
@@ -111,7 +111,7 @@ public class IbizproIndexResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproindexMapping.toDto(ibizproindexService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbizproIndexRuntime.test(#ibizproindex_id,'CREATE')")
+    @PreAuthorize("@IbizproIndexRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查索引检索", tags = {"索引检索" },  notes = "检查索引检索")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproindices/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbizproIndexDTO ibizproindexdto) {

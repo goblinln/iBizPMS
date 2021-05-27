@@ -104,7 +104,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
+    @PreAuthorize("@StoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取需求草稿", tags = {"需求" },  notes = "获取需求草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/stories/getdraft")
     public ResponseEntity<StoryDTO> getDraft(StoryDTO dto) {
@@ -350,7 +350,7 @@ public class StoryResource {
     }
 
 
-    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
+    @PreAuthorize("@StoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查需求", tags = {"需求" },  notes = "检查需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody StoryDTO storydto) {
@@ -1362,6 +1362,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品获取需求草稿", tags = {"需求" },  notes = "根据产品获取需求草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/getdraft")
     public ResponseEntity<StoryDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, StoryDTO dto) {
@@ -1574,6 +1575,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品检查需求", tags = {"需求" },  notes = "根据产品检查需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody StoryDTO storydto) {

@@ -102,7 +102,7 @@ public class ProjectStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id,'CREATE')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取项目统计草稿", tags = {"项目统计" },  notes = "获取项目统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectstats/getdraft")
     public ResponseEntity<ProjectStatsDTO> getDraft(ProjectStatsDTO dto) {
@@ -110,7 +110,7 @@ public class ProjectStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectstatsMapping.toDto(projectstatsService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id,'CREATE')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查项目统计", tags = {"项目统计" },  notes = "检查项目统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectstats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProjectStatsDTO projectstatsdto) {

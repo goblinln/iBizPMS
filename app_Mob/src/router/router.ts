@@ -440,6 +440,55 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'products/:product?/stories/:story?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'stories/:story?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'products/:product?/actions/:action?/views/mobmdview9',
                     meta: {
                         caption: 'entities.action.views.mobmdview9.caption',
@@ -469,6 +518,55 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'stories/:story?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'products/:product?/actions/:action?/views/allmobmdview9',
@@ -502,6 +600,55 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'products/:product?/stories/:story?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'stories/:story?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'products/:product?/actions/:action?/views/moremobmdview',
                     meta: {
                         caption: 'entities.action.views.moremobmdview.caption',
@@ -531,6 +678,55 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'stories/:story?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'products/:product?/actions/:action?/views/mobmapview',
@@ -1061,6 +1257,21 @@ const router = new Router({
                             { pathName: 'appindexview', parameterName: 'appindexview' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'mobpickupview' },
+                        ],
+                        resource:'project',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/views/startmobeditview',
+                    meta: {
+                        caption: 'entities.project.views.startmobeditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'views', parameterName: 'startmobeditview' },
                         ],
                         resource:'project',
                         requireAuth: true,
@@ -7894,21 +8105,6 @@ const router = new Router({
                     },
                     component: AppViewShell
                     },
-                    {
-                    path: 'ibzproreportlyactions/:ibzproreportlyaction?/views/optionview',
-                    meta: {
-                        caption: 'entities.ibzproreportlyaction.views.optionview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzproreportlyactions', parameterName: 'ibzproreportlyaction' },
-                            { pathName: 'views', parameterName: 'optionview' },
-                        ],
-                        resource:'ibzproreportlyaction',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
                 {
                     path: 'views/taskteammobeditview9',
                     meta: {
@@ -8522,6 +8718,19 @@ const router = new Router({
                     component: AppViewShell,
                 },
                 {
+                    path: 'views/projectstartmobeditview',
+                    meta: {
+                        caption: 'entities.project.views.startmobeditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'views', parameterName: 'projectstartmobeditview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
                     path: 'views/taskcancelmoboptionview',
                     meta: {
                         caption: 'entities.task.views.cancelmoboptionview.caption',
@@ -8904,19 +9113,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
                             { pathName: 'views', parameterName: 'projectactivitemobeditview' },
-                        ],
-                        requireAuth: true,
-                    },
-                    component: AppViewShell,
-                },
-                {
-                    path: 'views/ibzproreportlyactionoptionview',
-                    meta: {
-                        caption: 'entities.ibzproreportlyaction.views.optionview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'views', parameterName: 'ibzproreportlyactionoptionview' },
                         ],
                         requireAuth: true,
                     },

@@ -20,6 +20,12 @@ export default {
     pm: "项目经理",
     projectname: "所属项目",
     root: "项目编号",
+    deptname: "归属部门名",
+    dept: "归属部门",
+    org: "归属组织",
+    updateby: "由谁更新",
+    createby: "由谁创建",
+    orgname: "归属组织名",
   },
 	views: {
 		projectteammobmeditview: {

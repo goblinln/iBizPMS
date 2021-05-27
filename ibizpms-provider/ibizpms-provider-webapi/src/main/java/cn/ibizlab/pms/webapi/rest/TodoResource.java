@@ -103,7 +103,7 @@ public class TodoResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id,'CREATE')")
+    @PreAuthorize("@TodoRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取待办草稿", tags = {"待办" },  notes = "获取待办草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/todos/getdraft")
     public ResponseEntity<TodoDTO> getDraft(TodoDTO dto) {
@@ -139,7 +139,7 @@ public class TodoResource {
     }
 
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id,'CREATE')")
+    @PreAuthorize("@TodoRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查待办", tags = {"待办" },  notes = "检查待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody TodoDTO tododto) {

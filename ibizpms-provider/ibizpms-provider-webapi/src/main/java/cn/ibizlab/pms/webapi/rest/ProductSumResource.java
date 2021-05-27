@@ -103,7 +103,7 @@ public class ProductSumResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductSumRuntime.test(#productsum_id,'CREATE')")
+    @PreAuthorize("@ProductSumRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取产品汇总表草稿", tags = {"产品汇总表" },  notes = "获取产品汇总表草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/productsums/getdraft")
     public ResponseEntity<ProductSumDTO> getDraft(ProductSumDTO dto) {
@@ -111,7 +111,7 @@ public class ProductSumResource {
         return ResponseEntity.status(HttpStatus.OK).body(productsumMapping.toDto(productsumService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductSumRuntime.test(#productsum_id,'CREATE')")
+    @PreAuthorize("@ProductSumRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查产品汇总表", tags = {"产品汇总表" },  notes = "检查产品汇总表")
 	@RequestMapping(method = RequestMethod.POST, value = "/productsums/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProductSumDTO productsumdto) {

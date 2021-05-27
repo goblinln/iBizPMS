@@ -3069,7 +3069,7 @@
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_DOC.json",
-    "logicName" : "Doc",
+    "logicName" : "文档",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
@@ -3087,7 +3087,7 @@
     },
     "removeActionType" : 0,
     "removeOrder" : -1,
-    "typeValue" : "Doc"
+    "typeValue" : "doc"
   } ],
   "getMinorPSDERs" : [ {
     "codeName" : "Zt_doclib",

@@ -104,7 +104,7 @@ public class DynaDashboardResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id,'CREATE')")
+    @PreAuthorize("@DynaDashboardRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取动态数据看板草稿", tags = {"动态数据看板" },  notes = "获取动态数据看板草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/dynadashboards/getdraft")
     public ResponseEntity<DynaDashboardDTO> getDraft(DynaDashboardDTO dto) {
@@ -112,7 +112,7 @@ public class DynaDashboardResource {
         return ResponseEntity.status(HttpStatus.OK).body(dynadashboardMapping.toDto(dynadashboardService.getDraft(domain)));
     }
 
-    @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id,'CREATE')")
+    @PreAuthorize("@DynaDashboardRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查动态数据看板", tags = {"动态数据看板" },  notes = "检查动态数据看板")
 	@RequestMapping(method = RequestMethod.POST, value = "/dynadashboards/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody DynaDashboardDTO dynadashboarddto) {

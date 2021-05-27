@@ -103,7 +103,7 @@ public class UserResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserRuntime.test(#user_id,'CREATE')")
+    @PreAuthorize("@UserRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取用户草稿", tags = {"用户" },  notes = "获取用户草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/users/getdraft")
     public ResponseEntity<UserDTO> getDraft(UserDTO dto) {
@@ -111,7 +111,7 @@ public class UserResource {
         return ResponseEntity.status(HttpStatus.OK).body(userMapping.toDto(userService.getDraft(domain)));
     }
 
-    @PreAuthorize("@UserRuntime.test(#user_id,'CREATE')")
+    @PreAuthorize("@UserRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查用户", tags = {"用户" },  notes = "检查用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/users/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody UserDTO userdto) {

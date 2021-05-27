@@ -103,7 +103,7 @@ public class TestResultResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestResultRuntime.test(#testresult_id,'CREATE')")
+    @PreAuthorize("@TestResultRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取测试结果草稿", tags = {"测试结果" },  notes = "获取测试结果草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/testresults/getdraft")
     public ResponseEntity<TestResultDTO> getDraft(TestResultDTO dto) {
@@ -111,7 +111,7 @@ public class TestResultResource {
         return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
     }
 
-    @PreAuthorize("@TestResultRuntime.test(#testresult_id,'CREATE')")
+    @PreAuthorize("@TestResultRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查测试结果", tags = {"测试结果" },  notes = "检查测试结果")
 	@RequestMapping(method = RequestMethod.POST, value = "/testresults/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody TestResultDTO testresultdto) {
@@ -224,6 +224,7 @@ public class TestResultResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'CREATE')")
     @ApiOperation(value = "根据测试运行获取测试结果草稿", tags = {"测试结果" },  notes = "根据测试运行获取测试结果草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/testruns/{testrun_id}/testresults/getdraft")
     public ResponseEntity<TestResultDTO> getDraftByTestRun(@PathVariable("testrun_id") Long testrun_id, TestResultDTO dto) {
@@ -232,6 +233,7 @@ public class TestResultResource {
         return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
     }
 
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'CREATE')")
     @ApiOperation(value = "根据测试运行检查测试结果", tags = {"测试结果" },  notes = "根据测试运行检查测试结果")
 	@RequestMapping(method = RequestMethod.POST, value = "/testruns/{testrun_id}/testresults/checkkey")
     public ResponseEntity<Boolean> checkKeyByTestRun(@PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultDTO testresultdto) {
@@ -336,6 +338,7 @@ public class TestResultResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@CaseRuntime.test(#case_id,'CREATE')")
     @ApiOperation(value = "根据测试用例获取测试结果草稿", tags = {"测试结果" },  notes = "根据测试用例获取测试结果草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/cases/{case_id}/testresults/getdraft")
     public ResponseEntity<TestResultDTO> getDraftByCase(@PathVariable("case_id") Long case_id, TestResultDTO dto) {
@@ -344,6 +347,7 @@ public class TestResultResource {
         return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
     }
 
+    @PreAuthorize("@CaseRuntime.test(#case_id,'CREATE')")
     @ApiOperation(value = "根据测试用例检查测试结果", tags = {"测试结果" },  notes = "根据测试用例检查测试结果")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/testresults/checkkey")
     public ResponseEntity<Boolean> checkKeyByCase(@PathVariable("case_id") Long case_id, @RequestBody TestResultDTO testresultdto) {
@@ -448,6 +452,7 @@ public class TestResultResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品测试用例获取测试结果草稿", tags = {"测试结果" },  notes = "根据产品测试用例获取测试结果草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}/testresults/getdraft")
     public ResponseEntity<TestResultDTO> getDraftByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, TestResultDTO dto) {
@@ -456,6 +461,7 @@ public class TestResultResource {
         return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品测试用例检查测试结果", tags = {"测试结果" },  notes = "根据产品测试用例检查测试结果")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/testresults/checkkey")
     public ResponseEntity<Boolean> checkKeyByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody TestResultDTO testresultdto) {
@@ -560,6 +566,7 @@ public class TestResultResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'CREATE')")
     @ApiOperation(value = "根据测试版本测试运行获取测试结果草稿", tags = {"测试结果" },  notes = "根据测试版本测试运行获取测试结果草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/getdraft")
     public ResponseEntity<TestResultDTO> getDraftByTestTaskTestRun(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, TestResultDTO dto) {
@@ -568,6 +575,7 @@ public class TestResultResource {
         return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
     }
 
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'CREATE')")
     @ApiOperation(value = "根据测试版本测试运行检查测试结果", tags = {"测试结果" },  notes = "根据测试版本测试运行检查测试结果")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/checkkey")
     public ResponseEntity<Boolean> checkKeyByTestTaskTestRun(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultDTO testresultdto) {
@@ -672,6 +680,7 @@ public class TestResultResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品测试版本测试运行获取测试结果草稿", tags = {"测试结果" },  notes = "根据产品测试版本测试运行获取测试结果草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/getdraft")
     public ResponseEntity<TestResultDTO> getDraftByProductTestTaskTestRun(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, TestResultDTO dto) {
@@ -680,6 +689,7 @@ public class TestResultResource {
         return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品测试版本测试运行检查测试结果", tags = {"测试结果" },  notes = "根据产品测试版本测试运行检查测试结果")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/checkkey")
     public ResponseEntity<Boolean> checkKeyByProductTestTaskTestRun(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultDTO testresultdto) {
@@ -784,6 +794,7 @@ public class TestResultResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目测试版本测试运行获取测试结果草稿", tags = {"测试结果" },  notes = "根据项目测试版本测试运行获取测试结果草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/getdraft")
     public ResponseEntity<TestResultDTO> getDraftByProjectTestTaskTestRun(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, TestResultDTO dto) {
@@ -792,6 +803,7 @@ public class TestResultResource {
         return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目测试版本测试运行检查测试结果", tags = {"测试结果" },  notes = "根据项目测试版本测试运行检查测试结果")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}/testresults/checkkey")
     public ResponseEntity<Boolean> checkKeyByProjectTestTaskTestRun(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestResultDTO testresultdto) {

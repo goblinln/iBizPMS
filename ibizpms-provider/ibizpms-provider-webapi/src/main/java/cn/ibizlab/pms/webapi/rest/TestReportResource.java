@@ -117,7 +117,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestReportRuntime.test(#testreport_id,'CREATE')")
+    @PreAuthorize("@TestReportRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取测试报告草稿", tags = {"测试报告" },  notes = "获取测试报告草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/testreports/getdraft")
     public ResponseEntity<TestReportDTO> getDraft(TestReportDTO dto) {
@@ -125,7 +125,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportMapping.toDto(testreportService.getDraft(domain)));
     }
 
-    @PreAuthorize("@TestReportRuntime.test(#testreport_id,'CREATE')")
+    @PreAuthorize("@TestReportRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查测试报告", tags = {"测试报告" },  notes = "检查测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/testreports/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody TestReportDTO testreportdto) {
@@ -326,6 +326,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'TESTREPORTMANAGE')")
     @ApiOperation(value = "根据产品获取测试报告草稿", tags = {"测试报告" },  notes = "根据产品获取测试报告草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testreports/getdraft")
     public ResponseEntity<TestReportDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestReportDTO dto) {
@@ -334,6 +335,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportMapping.toDto(testreportService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'TESTREPORTMANAGE')")
     @ApiOperation(value = "根据产品检查测试报告", tags = {"测试报告" },  notes = "根据产品检查测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testreports/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestReportDTO testreportdto) {
@@ -511,6 +513,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目获取测试报告草稿", tags = {"测试报告" },  notes = "根据项目获取测试报告草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testreports/getdraft")
     public ResponseEntity<TestReportDTO> getDraftByProject(@PathVariable("project_id") Long project_id, TestReportDTO dto) {
@@ -519,6 +522,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportMapping.toDto(testreportService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目检查测试报告", tags = {"测试报告" },  notes = "根据项目检查测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/checkkey")
     public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody TestReportDTO testreportdto) {

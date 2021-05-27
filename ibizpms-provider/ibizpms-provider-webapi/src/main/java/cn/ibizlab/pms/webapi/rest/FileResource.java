@@ -103,7 +103,7 @@ public class FileResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@FileRuntime.test(#file_id,'CREATE')")
+    @PreAuthorize("@FileRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取附件草稿", tags = {"附件" },  notes = "获取附件草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/files/getdraft")
     public ResponseEntity<FileDTO> getDraft(FileDTO dto) {
@@ -111,7 +111,7 @@ public class FileResource {
         return ResponseEntity.status(HttpStatus.OK).body(fileMapping.toDto(fileService.getDraft(domain)));
     }
 
-    @PreAuthorize("@FileRuntime.test(#file_id,'CREATE')")
+    @PreAuthorize("@FileRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查附件", tags = {"附件" },  notes = "检查附件")
 	@RequestMapping(method = RequestMethod.POST, value = "/files/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody FileDTO filedto) {

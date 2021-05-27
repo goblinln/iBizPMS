@@ -103,7 +103,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'CREATE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取测试运行草稿", tags = {"测试运行" },  notes = "获取测试运行草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/testruns/getdraft")
     public ResponseEntity<TestRunDTO> getDraft(TestRunDTO dto) {
@@ -111,7 +111,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrunMapping.toDto(testrunService.getDraft(domain)));
     }
 
-    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'CREATE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查测试运行", tags = {"测试运行" },  notes = "检查测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/testruns/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody TestRunDTO testrundto) {
@@ -208,6 +208,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据测试版本获取测试运行草稿", tags = {"测试运行" },  notes = "根据测试版本获取测试运行草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/testtasks/{testtask_id}/testruns/getdraft")
     public ResponseEntity<TestRunDTO> getDraftByTestTask(@PathVariable("testtask_id") Long testtask_id, TestRunDTO dto) {
@@ -216,6 +217,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrunMapping.toDto(testrunService.getDraft(domain)));
     }
 
+    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据测试版本检查测试运行", tags = {"测试运行" },  notes = "根据测试版本检查测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/testruns/checkkey")
     public ResponseEntity<Boolean> checkKeyByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
@@ -303,6 +305,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据产品测试版本获取测试运行草稿", tags = {"测试运行" },  notes = "根据产品测试版本获取测试运行草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/getdraft")
     public ResponseEntity<TestRunDTO> getDraftByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, TestRunDTO dto) {
@@ -311,6 +314,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrunMapping.toDto(testrunService.getDraft(domain)));
     }
 
+    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据产品测试版本检查测试运行", tags = {"测试运行" },  notes = "根据产品测试版本检查测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/checkkey")
     public ResponseEntity<Boolean> checkKeyByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
@@ -398,6 +402,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据项目测试版本获取测试运行草稿", tags = {"测试运行" },  notes = "根据项目测试版本获取测试运行草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/getdraft")
     public ResponseEntity<TestRunDTO> getDraftByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, TestRunDTO dto) {
@@ -406,6 +411,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrunMapping.toDto(testrunService.getDraft(domain)));
     }
 
+    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据项目测试版本检查测试运行", tags = {"测试运行" },  notes = "根据项目测试版本检查测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/checkkey")
     public ResponseEntity<Boolean> checkKeyByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {

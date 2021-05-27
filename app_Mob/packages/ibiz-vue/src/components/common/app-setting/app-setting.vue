@@ -70,6 +70,9 @@
             </template>
         </template>
       </ion-list>
+      <template v-for="item in data.end">
+        <van-button type="default" class="content-end" :key="item.name" size="large" @click="onItemClick(item)">{{item.showtext}}</van-button>
+      </template>
     </div>
   </ion-page>
 </template>
@@ -109,6 +112,7 @@ export default class AppSetting extends Vue {
         top: [],
         center: [],
         bottom: [],
+        end:[]        
     };
 
     /**
@@ -129,6 +133,9 @@ export default class AppSetting extends Vue {
             }
             if (item.position == "bottom") {
                 this.data.bottom.push(item);
+            }
+            if (item.position == "end") {
+                this.data.end.push(item);
             }
             // 多语言处理
             if (item.entext) {

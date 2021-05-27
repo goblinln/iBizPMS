@@ -103,7 +103,7 @@ public class IBZProBugHostoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProBugHostoryRuntime.test(#ibzprobughostory_id,'CREATE')")
+    @PreAuthorize("@IBZProBugHostoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取Bug操作历史草稿", tags = {"Bug操作历史" },  notes = "获取Bug操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprobughostories/getdraft")
     public ResponseEntity<IBZProBugHostoryDTO> getDraft(IBZProBugHostoryDTO dto) {
@@ -111,7 +111,7 @@ public class IBZProBugHostoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprobughostoryMapping.toDto(ibzprobughostoryService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IBZProBugHostoryRuntime.test(#ibzprobughostory_id,'CREATE')")
+    @PreAuthorize("@IBZProBugHostoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查Bug操作历史", tags = {"Bug操作历史" },  notes = "检查Bug操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobughostories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProBugHostoryDTO ibzprobughostorydto) {

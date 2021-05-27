@@ -103,7 +103,7 @@ public class IbzWeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklyMapping.toDto(ibzweeklyService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'CREATE')")
+    @PreAuthorize("@IbzWeeklyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查周报", tags = {"周报" },  notes = "检查周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzWeeklyDTO ibzweeklydto) {

@@ -103,7 +103,7 @@ public class IBZTaskHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZTaskHistoryRuntime.test(#ibztaskhistory_id,'CREATE')")
+    @PreAuthorize("@IBZTaskHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取任务操作历史草稿", tags = {"任务操作历史" },  notes = "获取任务操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibztaskhistories/getdraft")
     public ResponseEntity<IBZTaskHistoryDTO> getDraft(IBZTaskHistoryDTO dto) {
@@ -111,7 +111,7 @@ public class IBZTaskHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibztaskhistoryMapping.toDto(ibztaskhistoryService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IBZTaskHistoryRuntime.test(#ibztaskhistory_id,'CREATE')")
+    @PreAuthorize("@IBZTaskHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查任务操作历史", tags = {"任务操作历史" },  notes = "检查任务操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztaskhistories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZTaskHistoryDTO ibztaskhistorydto) {

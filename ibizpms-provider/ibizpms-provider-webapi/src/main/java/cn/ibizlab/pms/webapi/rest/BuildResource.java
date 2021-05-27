@@ -104,7 +104,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@BuildRuntime.test(#build_id,'CREATE')")
+    @PreAuthorize("@BuildRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取版本草稿", tags = {"版本" },  notes = "获取版本草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/builds/getdraft")
     public ResponseEntity<BuildDTO> getDraft(BuildDTO dto) {
@@ -112,7 +112,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(buildMapping.toDto(buildService.getDraft(domain)));
     }
 
-    @PreAuthorize("@BuildRuntime.test(#build_id,'CREATE')")
+    @PreAuthorize("@BuildRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查版本", tags = {"版本" },  notes = "检查版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody BuildDTO builddto) {
@@ -410,6 +410,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'BUILDMANAGE')")
     @ApiOperation(value = "根据产品获取版本草稿", tags = {"版本" },  notes = "根据产品获取版本草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/builds/getdraft")
     public ResponseEntity<BuildDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, BuildDTO dto) {
@@ -418,6 +419,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(buildMapping.toDto(buildService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'BUILDMANAGE')")
     @ApiOperation(value = "根据产品检查版本", tags = {"版本" },  notes = "根据产品检查版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildDTO builddto) {
@@ -700,6 +702,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目获取版本草稿", tags = {"版本" },  notes = "根据项目获取版本草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/builds/getdraft")
     public ResponseEntity<BuildDTO> getDraftByProject(@PathVariable("project_id") Long project_id, BuildDTO dto) {
@@ -708,6 +711,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(buildMapping.toDto(buildService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目检查版本", tags = {"版本" },  notes = "根据项目检查版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/checkkey")
     public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildDTO builddto) {

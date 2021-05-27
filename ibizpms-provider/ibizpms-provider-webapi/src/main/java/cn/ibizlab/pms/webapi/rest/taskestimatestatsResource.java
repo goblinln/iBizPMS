@@ -103,7 +103,7 @@ public class taskestimatestatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskEstimateStatsRuntime.test(#taskestimatestats_id,'CREATE')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取任务工时统计草稿", tags = {"任务工时统计" },  notes = "获取任务工时统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/taskestimatestats/getdraft")
     public ResponseEntity<taskestimatestatsDTO> getDraft(taskestimatestatsDTO dto) {
@@ -111,7 +111,7 @@ public class taskestimatestatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsMapping.toDto(taskestimatestatsService.getDraft(domain)));
     }
 
-    @PreAuthorize("@TaskEstimateStatsRuntime.test(#taskestimatestats_id,'CREATE')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查任务工时统计", tags = {"任务工时统计" },  notes = "检查任务工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody taskestimatestatsDTO taskestimatestatsdto) {

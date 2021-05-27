@@ -7354,7 +7354,7 @@
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTREPORT.json",
-    "logicName" : "TestReport",
+    "logicName" : "报告",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
@@ -7372,7 +7372,7 @@
     },
     "removeActionType" : 0,
     "removeOrder" : -1,
-    "typeValue" : "TestReport"
+    "typeValue" : "testreport"
   } ],
   "getMinorPSDERs" : [ {
     "codeName" : "ZTProduct",

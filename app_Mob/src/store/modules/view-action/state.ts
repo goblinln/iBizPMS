@@ -524,6 +524,16 @@ export const viewstate: any = {
             ],
         },
         {
+            viewtag: '213046c819a2b121740d6f5112f595be',
+            viewmodule: 'zentao',
+            viewname: 'ProjectStartMobEditView',
+            viewaction: '',
+            viewdatachange: false,
+            refviews: [
+                '1d9d30b890d34ecfebbb4f33eb5999ad',
+            ],
+        },
+        {
             viewtag: '21575c1aa48e2c18135cbc5775ecd712',
             viewmodule: 'ibiz',
             viewname: 'TaskCancelMobOptionView',
@@ -835,15 +845,6 @@ export const viewstate: any = {
             viewdatachange: false,
             refviews: [
                 '1d9d30b890d34ecfebbb4f33eb5999ad',
-            ],
-        },
-        {
-            viewtag: '331ea9c716c9f7a180cb211f5bc7fdea',
-            viewmodule: 'ibiz',
-            viewname: 'IbzProReportlyActionOptionView',
-            viewaction: '',
-            viewdatachange: false,
-            refviews: [
             ],
         },
         {

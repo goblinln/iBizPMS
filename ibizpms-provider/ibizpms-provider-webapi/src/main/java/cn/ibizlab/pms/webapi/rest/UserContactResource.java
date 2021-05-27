@@ -95,7 +95,7 @@ public class UserContactResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserContactRuntime.test(#usercontact_id,'CREATE')")
+    @PreAuthorize("@UserContactRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取用户联系方式草稿", tags = {"用户联系方式" },  notes = "获取用户联系方式草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/usercontacts/getdraft")
     public ResponseEntity<UserContactDTO> getDraft(UserContactDTO dto) {
@@ -103,7 +103,7 @@ public class UserContactResource {
         return ResponseEntity.status(HttpStatus.OK).body(usercontactMapping.toDto(usercontactService.getDraft(domain)));
     }
 
-    @PreAuthorize("@UserContactRuntime.test(#usercontact_id,'CREATE')")
+    @PreAuthorize("@UserContactRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查用户联系方式", tags = {"用户联系方式" },  notes = "检查用户联系方式")
 	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody UserContactDTO usercontactdto) {

@@ -104,7 +104,7 @@ public class SysUpdateFeaturesResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.test(#sysupdatefeatures_id,'CREATE')")
+    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取系统更新功能草稿", tags = {"系统更新功能" },  notes = "获取系统更新功能草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysupdatefeatures/getdraft")
     public ResponseEntity<SysUpdateFeaturesDTO> getDraft(SysUpdateFeaturesDTO dto) {
@@ -112,7 +112,7 @@ public class SysUpdateFeaturesResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesMapping.toDto(sysupdatefeaturesService.getDraft(domain)));
     }
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.test(#sysupdatefeatures_id,'CREATE')")
+    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查系统更新功能", tags = {"系统更新功能" },  notes = "检查系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatefeatures/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {
@@ -204,6 +204,7 @@ public class SysUpdateFeaturesResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id,'CREATE')")
     @ApiOperation(value = "根据更新日志获取系统更新功能草稿", tags = {"系统更新功能" },  notes = "根据更新日志获取系统更新功能草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/getdraft")
     public ResponseEntity<SysUpdateFeaturesDTO> getDraftBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, SysUpdateFeaturesDTO dto) {
@@ -212,6 +213,7 @@ public class SysUpdateFeaturesResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesMapping.toDto(sysupdatefeaturesService.getDraft(domain)));
     }
 
+    @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id,'CREATE')")
     @ApiOperation(value = "根据更新日志检查系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志检查系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/checkkey")
     public ResponseEntity<Boolean> checkKeyBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {

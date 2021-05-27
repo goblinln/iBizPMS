@@ -103,7 +103,7 @@ public class ProductPlanActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'CREATE')")
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取产品计划日志草稿", tags = {"产品计划日志" },  notes = "获取产品计划日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/productplanactions/getdraft")
     public ResponseEntity<ProductPlanActionDTO> getDraft(ProductPlanActionDTO dto) {
@@ -111,7 +111,7 @@ public class ProductPlanActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplanactionMapping.toDto(productplanactionService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'CREATE')")
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查产品计划日志", tags = {"产品计划日志" },  notes = "检查产品计划日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProductPlanActionDTO productplanactiondto) {

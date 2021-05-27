@@ -116,7 +116,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.test(#task_id,'CREATE')")
+    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取任务草稿", tags = {"任务" },  notes = "获取任务草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/tasks/getdraft")
     public ResponseEntity<TaskDTO> getDraft(TaskDTO dto) {
@@ -166,7 +166,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("@TaskRuntime.test(#task_id,'CREATE')")
+    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查任务", tags = {"任务" },  notes = "检查任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody TaskDTO taskdto) {
@@ -1552,6 +1552,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
     @ApiOperation(value = "根据项目获取任务草稿", tags = {"任务" },  notes = "根据项目获取任务草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/getdraft")
     public ResponseEntity<TaskDTO> getDraftByProject(@PathVariable("project_id") Long project_id, TaskDTO dto) {
@@ -1596,6 +1597,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
     @ApiOperation(value = "根据项目检查任务", tags = {"任务" },  notes = "根据项目检查任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/checkkey")
     public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskDTO taskdto) {

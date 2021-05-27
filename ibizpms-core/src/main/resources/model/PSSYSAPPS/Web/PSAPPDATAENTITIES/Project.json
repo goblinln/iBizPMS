@@ -2560,6 +2560,34 @@
     "id" : "ProjectEdit@Project"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "caption" : "开始",
+    "codeName" : "ProjectStart",
+    "dataAccessAction" : "START",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView_Start.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "Project_ProjectStart",
+    "name" : "项目开始",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf01d@FontAwesome",
+      "cssClass" : "fa fa-play-circle-o"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "ProjectStart",
+    "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
+    "id" : "ProjectStart@Project"
+  }, {
+    "actionTarget" : "SINGLEKEY",
     "caption" : "关闭",
     "codeName" : "ProjectClose",
     "dataAccessAction" : "CLOSE",

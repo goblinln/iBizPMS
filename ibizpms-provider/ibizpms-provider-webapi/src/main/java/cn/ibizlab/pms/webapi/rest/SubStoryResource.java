@@ -104,7 +104,7 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@StoryRuntime.test(#substory_id,'CREATE')")
+    @PreAuthorize("@StoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取需求草稿", tags = {"需求" },  notes = "获取需求草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/substories/getdraft")
     public ResponseEntity<SubStoryDTO> getDraft(SubStoryDTO dto) {
@@ -350,7 +350,7 @@ public class SubStoryResource {
     }
 
 
-    @PreAuthorize("@StoryRuntime.test(#substory_id,'CREATE')")
+    @PreAuthorize("@StoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查需求", tags = {"需求" },  notes = "检查需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SubStoryDTO substorydto) {
@@ -1362,6 +1362,7 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
     @ApiOperation(value = "根据需求获取需求草稿", tags = {"需求" },  notes = "根据需求获取需求草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/substories/getdraft")
     public ResponseEntity<SubStoryDTO> getDraftByStory(@PathVariable("story_id") Long story_id, SubStoryDTO dto) {
@@ -1574,6 +1575,7 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
     @ApiOperation(value = "根据需求检查需求", tags = {"需求" },  notes = "根据需求检查需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/substories/checkkey")
     public ResponseEntity<Boolean> checkKeyByStory(@PathVariable("story_id") Long story_id, @RequestBody SubStoryDTO substorydto) {
@@ -2561,6 +2563,7 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品需求获取需求草稿", tags = {"需求" },  notes = "根据产品需求获取需求草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/substories/getdraft")
     public ResponseEntity<SubStoryDTO> getDraftByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, SubStoryDTO dto) {
@@ -2773,6 +2776,7 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品需求检查需求", tags = {"需求" },  notes = "根据产品需求检查需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/checkkey")
     public ResponseEntity<Boolean> checkKeyByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody SubStoryDTO substorydto) {

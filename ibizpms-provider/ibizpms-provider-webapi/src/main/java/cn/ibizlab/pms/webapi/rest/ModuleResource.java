@@ -103,7 +103,7 @@ public class ModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ModuleRuntime.test(#module_id,'CREATE')")
+    @PreAuthorize("@ModuleRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取模块草稿", tags = {"模块" },  notes = "获取模块草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/modules/getdraft")
     public ResponseEntity<ModuleDTO> getDraft(ModuleDTO dto) {
@@ -111,7 +111,7 @@ public class ModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(moduleMapping.toDto(moduleService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ModuleRuntime.test(#module_id,'CREATE')")
+    @PreAuthorize("@ModuleRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查模块", tags = {"模块" },  notes = "检查模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/modules/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ModuleDTO moduledto) {

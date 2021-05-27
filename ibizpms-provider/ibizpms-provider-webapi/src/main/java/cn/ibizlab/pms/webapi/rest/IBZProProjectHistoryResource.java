@@ -103,7 +103,7 @@ public class IBZProProjectHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProProjectHistoryRuntime.test(#ibzproprojecthistory_id,'CREATE')")
+    @PreAuthorize("@IBZProProjectHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取项目操作历史草稿", tags = {"项目操作历史" },  notes = "获取项目操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproprojecthistories/getdraft")
     public ResponseEntity<IBZProProjectHistoryDTO> getDraft(IBZProProjectHistoryDTO dto) {
@@ -111,7 +111,7 @@ public class IBZProProjectHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproprojecthistoryMapping.toDto(ibzproprojecthistoryService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IBZProProjectHistoryRuntime.test(#ibzproprojecthistory_id,'CREATE')")
+    @PreAuthorize("@IBZProProjectHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查项目操作历史", tags = {"项目操作历史" },  notes = "检查项目操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojecthistories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProProjectHistoryDTO ibzproprojecthistorydto) {

@@ -103,7 +103,7 @@ public class IbzProBugActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProBugActionRuntime.test(#ibzprobugaction_id,'CREATE')")
+    @PreAuthorize("@IbzProBugActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取Bug日志草稿", tags = {"Bug日志" },  notes = "获取Bug日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprobugactions/getdraft")
     public ResponseEntity<IbzProBugActionDTO> getDraft(IbzProBugActionDTO dto) {
@@ -111,7 +111,7 @@ public class IbzProBugActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactionMapping.toDto(ibzprobugactionService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzProBugActionRuntime.test(#ibzprobugaction_id,'CREATE')")
+    @PreAuthorize("@IbzProBugActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查Bug日志", tags = {"Bug日志" },  notes = "检查Bug日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzProBugActionDTO ibzprobugactiondto) {

@@ -103,7 +103,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@HistoryRuntime.test(#history_id,'CREATE')")
+    @PreAuthorize("@HistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取操作历史草稿", tags = {"操作历史" },  notes = "获取操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/histories/getdraft")
     public ResponseEntity<HistoryDTO> getDraft(HistoryDTO dto) {
@@ -111,7 +111,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historyMapping.toDto(historyService.getDraft(domain)));
     }
 
-    @PreAuthorize("@HistoryRuntime.test(#history_id,'CREATE')")
+    @PreAuthorize("@HistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查操作历史", tags = {"操作历史" },  notes = "检查操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/histories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody HistoryDTO historydto) {
@@ -202,6 +202,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品系统日志获取操作历史草稿", tags = {"操作历史" },  notes = "根据产品系统日志获取操作历史草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/actions/{action_id}/histories/getdraft")
     public ResponseEntity<HistoryDTO> getDraftByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, HistoryDTO dto) {
@@ -210,6 +211,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historyMapping.toDto(historyService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品系统日志检查操作历史", tags = {"操作历史" },  notes = "根据产品系统日志检查操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/actions/{action_id}/histories/checkkey")
     public ResponseEntity<Boolean> checkKeyByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody HistoryDTO historydto) {
@@ -291,6 +293,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
     @ApiOperation(value = "根据需求系统日志获取操作历史草稿", tags = {"操作历史" },  notes = "根据需求系统日志获取操作历史草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/actions/{action_id}/histories/getdraft")
     public ResponseEntity<HistoryDTO> getDraftByStoryAction(@PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id, HistoryDTO dto) {
@@ -299,6 +302,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historyMapping.toDto(historyService.getDraft(domain)));
     }
 
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
     @ApiOperation(value = "根据需求系统日志检查操作历史", tags = {"操作历史" },  notes = "根据需求系统日志检查操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/actions/{action_id}/histories/checkkey")
     public ResponseEntity<Boolean> checkKeyByStoryAction(@PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id, @RequestBody HistoryDTO historydto) {
@@ -380,6 +384,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目系统日志获取操作历史草稿", tags = {"操作历史" },  notes = "根据项目系统日志获取操作历史草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/actions/{action_id}/histories/getdraft")
     public ResponseEntity<HistoryDTO> getDraftByProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, HistoryDTO dto) {
@@ -388,6 +393,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historyMapping.toDto(historyService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目系统日志检查操作历史", tags = {"操作历史" },  notes = "根据项目系统日志检查操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/actions/{action_id}/histories/checkkey")
     public ResponseEntity<Boolean> checkKeyByProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @RequestBody HistoryDTO historydto) {
@@ -469,6 +475,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品需求系统日志获取操作历史草稿", tags = {"操作历史" },  notes = "根据产品需求系统日志获取操作历史草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/actions/{action_id}/histories/getdraft")
     public ResponseEntity<HistoryDTO> getDraftByProductStoryAction(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id, HistoryDTO dto) {
@@ -477,6 +484,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historyMapping.toDto(historyService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品需求系统日志检查操作历史", tags = {"操作历史" },  notes = "根据产品需求系统日志检查操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/actions/{action_id}/histories/checkkey")
     public ResponseEntity<Boolean> checkKeyByProductStoryAction(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id, @RequestBody HistoryDTO historydto) {

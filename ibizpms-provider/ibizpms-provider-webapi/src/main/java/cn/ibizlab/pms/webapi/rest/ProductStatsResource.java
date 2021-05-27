@@ -102,7 +102,7 @@ public class ProductStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductStatsRuntime.test(#productstats_id,'CREATE')")
+    @PreAuthorize("@ProductStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取产品统计草稿", tags = {"产品统计" },  notes = "获取产品统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/productstats/getdraft")
     public ResponseEntity<ProductStatsDTO> getDraft(ProductStatsDTO dto) {
@@ -110,7 +110,7 @@ public class ProductStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(productstatsMapping.toDto(productstatsService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductStatsRuntime.test(#productstats_id,'CREATE')")
+    @PreAuthorize("@ProductStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查产品统计", tags = {"产品统计" },  notes = "检查产品统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/productstats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProductStatsDTO productstatsdto) {

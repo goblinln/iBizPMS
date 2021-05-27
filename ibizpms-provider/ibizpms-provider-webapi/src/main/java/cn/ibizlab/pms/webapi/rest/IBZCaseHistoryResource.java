@@ -103,7 +103,7 @@ public class IBZCaseHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZCaseHistoryRuntime.test(#ibzcasehistory_id,'CREATE')")
+    @PreAuthorize("@IBZCaseHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取测试操作历史草稿", tags = {"测试操作历史" },  notes = "获取测试操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzcasehistories/getdraft")
     public ResponseEntity<IBZCaseHistoryDTO> getDraft(IBZCaseHistoryDTO dto) {
@@ -111,7 +111,7 @@ public class IBZCaseHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryMapping.toDto(ibzcasehistoryService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IBZCaseHistoryRuntime.test(#ibzcasehistory_id,'CREATE')")
+    @PreAuthorize("@IBZCaseHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查测试操作历史", tags = {"测试操作历史" },  notes = "检查测试操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcasehistories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {

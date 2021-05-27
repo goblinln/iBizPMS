@@ -103,7 +103,7 @@ public class CompanyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CompanyRuntime.test(#company_id,'CREATE')")
+    @PreAuthorize("@CompanyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取公司草稿", tags = {"公司" },  notes = "获取公司草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/companies/getdraft")
     public ResponseEntity<CompanyDTO> getDraft(CompanyDTO dto) {
@@ -111,7 +111,7 @@ public class CompanyResource {
         return ResponseEntity.status(HttpStatus.OK).body(companyMapping.toDto(companyService.getDraft(domain)));
     }
 
-    @PreAuthorize("@CompanyRuntime.test(#company_id,'CREATE')")
+    @PreAuthorize("@CompanyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查公司", tags = {"公司" },  notes = "检查公司")
 	@RequestMapping(method = RequestMethod.POST, value = "/companies/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody CompanyDTO companydto) {

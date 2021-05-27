@@ -103,7 +103,7 @@ public class IbzProTestTaskActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProTestTaskActionRuntime.test(#ibzprotesttaskaction_id,'CREATE')")
+    @PreAuthorize("@IbzProTestTaskActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取测试单日志草稿", tags = {"测试单日志" },  notes = "获取测试单日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprotesttaskactions/getdraft")
     public ResponseEntity<IbzProTestTaskActionDTO> getDraft(IbzProTestTaskActionDTO dto) {
@@ -111,7 +111,7 @@ public class IbzProTestTaskActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactionMapping.toDto(ibzprotesttaskactionService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzProTestTaskActionRuntime.test(#ibzprotesttaskaction_id,'CREATE')")
+    @PreAuthorize("@IbzProTestTaskActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查测试单日志", tags = {"测试单日志" },  notes = "检查测试单日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {

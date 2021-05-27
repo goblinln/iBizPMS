@@ -103,7 +103,7 @@ public class SuiteCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@SuiteCaseRuntime.test(#suitecase_id,'CREATE')")
+    @PreAuthorize("@SuiteCaseRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取套件用例草稿", tags = {"套件用例" },  notes = "获取套件用例草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/suitecases/getdraft")
     public ResponseEntity<SuiteCaseDTO> getDraft(SuiteCaseDTO dto) {
@@ -111,7 +111,7 @@ public class SuiteCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(suitecaseMapping.toDto(suitecaseService.getDraft(domain)));
     }
 
-    @PreAuthorize("@SuiteCaseRuntime.test(#suitecase_id,'CREATE')")
+    @PreAuthorize("@SuiteCaseRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查套件用例", tags = {"套件用例" },  notes = "检查套件用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/suitecases/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SuiteCaseDTO suitecasedto) {

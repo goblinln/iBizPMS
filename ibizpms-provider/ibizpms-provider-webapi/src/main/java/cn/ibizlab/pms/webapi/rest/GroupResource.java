@@ -103,7 +103,7 @@ public class GroupResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@GroupRuntime.test(#group_id,'CREATE')")
+    @PreAuthorize("@GroupRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取群组草稿", tags = {"群组" },  notes = "获取群组草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/groups/getdraft")
     public ResponseEntity<GroupDTO> getDraft(GroupDTO dto) {
@@ -111,7 +111,7 @@ public class GroupResource {
         return ResponseEntity.status(HttpStatus.OK).body(groupMapping.toDto(groupService.getDraft(domain)));
     }
 
-    @PreAuthorize("@GroupRuntime.test(#group_id,'CREATE')")
+    @PreAuthorize("@GroupRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查群组", tags = {"群组" },  notes = "检查群组")
 	@RequestMapping(method = RequestMethod.POST, value = "/groups/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody GroupDTO groupdto) {

@@ -72,6 +72,7 @@ export class ProjectUIServiceBase extends UIServiceBase {
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set('MOBMDATAVIEW:','MOBMDATAVIEW');
         this.allViewFuncMap.set('MOBPICKUPVIEW:','MOBPICKUPVIEW');
+        this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set('MOBEDITVIEW:','MOBEDITVIEW');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');

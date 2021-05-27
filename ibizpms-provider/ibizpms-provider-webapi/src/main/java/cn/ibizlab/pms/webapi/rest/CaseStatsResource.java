@@ -103,7 +103,7 @@ public class CaseStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CaseStatsRuntime.test(#casestats_id,'CREATE')")
+    @PreAuthorize("@CaseStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取测试用例统计草稿", tags = {"测试用例统计" },  notes = "获取测试用例统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/casestats/getdraft")
     public ResponseEntity<CaseStatsDTO> getDraft(CaseStatsDTO dto) {
@@ -111,7 +111,7 @@ public class CaseStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(casestatsMapping.toDto(casestatsService.getDraft(domain)));
     }
 
-    @PreAuthorize("@CaseStatsRuntime.test(#casestats_id,'CREATE')")
+    @PreAuthorize("@CaseStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查测试用例统计", tags = {"测试用例统计" },  notes = "检查测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody CaseStatsDTO casestatsdto) {

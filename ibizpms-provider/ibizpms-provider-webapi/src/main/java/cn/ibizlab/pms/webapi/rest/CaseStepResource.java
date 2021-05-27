@@ -103,7 +103,7 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CaseStepRuntime.test(#casestep_id,'CREATE')")
+    @PreAuthorize("@CaseStepRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取用例步骤草稿", tags = {"用例步骤" },  notes = "获取用例步骤草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/casesteps/getdraft")
     public ResponseEntity<CaseStepDTO> getDraft(CaseStepDTO dto) {
@@ -111,7 +111,7 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(casestepMapping.toDto(casestepService.getDraft(domain)));
     }
 
-    @PreAuthorize("@CaseStepRuntime.test(#casestep_id,'CREATE')")
+    @PreAuthorize("@CaseStepRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查用例步骤", tags = {"用例步骤" },  notes = "检查用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/casesteps/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody CaseStepDTO casestepdto) {
@@ -312,6 +312,7 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@CaseRuntime.test(#case_id,'CREATE')")
     @ApiOperation(value = "根据测试用例获取用例步骤草稿", tags = {"用例步骤" },  notes = "根据测试用例获取用例步骤草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/cases/{case_id}/casesteps/getdraft")
     public ResponseEntity<CaseStepDTO> getDraftByCase(@PathVariable("case_id") Long case_id, CaseStepDTO dto) {
@@ -320,6 +321,7 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(casestepMapping.toDto(casestepService.getDraft(domain)));
     }
 
+    @PreAuthorize("@CaseRuntime.test(#case_id,'CREATE')")
     @ApiOperation(value = "根据测试用例检查用例步骤", tags = {"用例步骤" },  notes = "根据测试用例检查用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/casesteps/checkkey")
     public ResponseEntity<Boolean> checkKeyByCase(@PathVariable("case_id") Long case_id, @RequestBody CaseStepDTO casestepdto) {
@@ -516,6 +518,7 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品测试用例获取用例步骤草稿", tags = {"用例步骤" },  notes = "根据产品测试用例获取用例步骤草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}/casesteps/getdraft")
     public ResponseEntity<CaseStepDTO> getDraftByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, CaseStepDTO dto) {
@@ -524,6 +527,7 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(casestepMapping.toDto(casestepService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品测试用例检查用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例检查用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/casesteps/checkkey")
     public ResponseEntity<Boolean> checkKeyByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseStepDTO casestepdto) {

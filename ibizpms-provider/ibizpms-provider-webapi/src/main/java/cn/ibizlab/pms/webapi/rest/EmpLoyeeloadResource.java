@@ -103,7 +103,7 @@ public class EmpLoyeeloadResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id,'CREATE')")
+    @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取员工负载表草稿", tags = {"员工负载表" },  notes = "获取员工负载表草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/employeeloads/getdraft")
     public ResponseEntity<EmpLoyeeloadDTO> getDraft(EmpLoyeeloadDTO dto) {
@@ -111,7 +111,7 @@ public class EmpLoyeeloadResource {
         return ResponseEntity.status(HttpStatus.OK).body(employeeloadMapping.toDto(employeeloadService.getDraft(domain)));
     }
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id,'CREATE')")
+    @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查员工负载表", tags = {"员工负载表" },  notes = "检查员工负载表")
 	@RequestMapping(method = RequestMethod.POST, value = "/employeeloads/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody EmpLoyeeloadDTO employeeloaddto) {

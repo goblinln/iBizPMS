@@ -104,7 +104,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'CREATE')")
+    @PreAuthorize("@TestTaskRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取测试版本草稿", tags = {"测试版本" },  notes = "获取测试版本草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/testtasks/getdraft")
     public ResponseEntity<TestTaskDTO> getDraft(TestTaskDTO dto) {
@@ -138,7 +138,7 @@ public class TestTaskResource {
     }
 
 
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'CREATE')")
+    @PreAuthorize("@TestTaskRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查测试版本", tags = {"测试版本" },  notes = "检查测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody TestTaskDTO testtaskdto) {
@@ -317,6 +317,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'TESTTASKMANAGE')")
     @ApiOperation(value = "根据产品获取测试版本草稿", tags = {"测试版本" },  notes = "根据产品获取测试版本草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testtasks/getdraft")
     public ResponseEntity<TestTaskDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestTaskDTO dto) {
@@ -347,6 +348,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'TESTTASKMANAGE')")
     @ApiOperation(value = "根据产品检查测试版本", tags = {"测试版本" },  notes = "根据产品检查测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -507,6 +509,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目获取测试版本草稿", tags = {"测试版本" },  notes = "根据项目获取测试版本草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/getdraft")
     public ResponseEntity<TestTaskDTO> getDraftByProject(@PathVariable("project_id") Long project_id, TestTaskDTO dto) {
@@ -537,6 +540,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目检查测试版本", tags = {"测试版本" },  notes = "根据项目检查测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/checkkey")
     public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody TestTaskDTO testtaskdto) {

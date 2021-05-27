@@ -103,7 +103,7 @@ public class IbzproProjectUserTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.test(#ibzproprojectusertask_id,'CREATE')")
+    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取项目汇报用户任务草稿", tags = {"项目汇报用户任务" },  notes = "获取项目汇报用户任务草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproprojectusertasks/getdraft")
     public ResponseEntity<IbzproProjectUserTaskDTO> getDraft(IbzproProjectUserTaskDTO dto) {
@@ -111,7 +111,7 @@ public class IbzproProjectUserTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskMapping.toDto(ibzproprojectusertaskService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.test(#ibzproprojectusertask_id,'CREATE')")
+    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "检查项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectusertasks/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzproProjectUserTaskDTO ibzproprojectusertaskdto) {

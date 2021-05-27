@@ -1,6 +1,10 @@
 <template>
     <div  class="app-mobile-theme">
-        <div class="activeoption" v-if="activeoption" :style="{'background':activeoption.background,'color':activeoption.color}">{{activeoption.text}}</div>
+        <div class="activeoption" v-if="activeoption" >
+          <div :style="{'background':activeoption.background,'width':'8px','height':'8px'}"></div>
+          <span class="activeoption-text">{{activeoption.text}}</span>
+          <app-mob-icon name="chevron-forward-outline" ></app-mob-icon>
+        </div>
         <van-action-sheet  get-container="#app" :title="$t('themeSelection')" :closeable="false"   v-model="show" :cancel-text="$t('app.button.cancel')"  close-on-click-action>
             <div class = "app-mob-select-theme_theme">
                 <div @click="themeChange(item.value)" v-for="item in options" :key="item.value" class="app-mob-select-theme_theme_item" :style="{background:item.background,color:item.color}">{{item.text}}</div>

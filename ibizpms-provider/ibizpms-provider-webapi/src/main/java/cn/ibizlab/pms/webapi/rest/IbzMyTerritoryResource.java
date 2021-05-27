@@ -103,7 +103,7 @@ public class IbzMyTerritoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.test(#ibzmyterritory_id,'CREATE')")
+    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取我的地盘草稿", tags = {"我的地盘" },  notes = "获取我的地盘草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzmyterritories/getdraft")
     public ResponseEntity<IbzMyTerritoryDTO> getDraft(IbzMyTerritoryDTO dto) {
@@ -111,7 +111,7 @@ public class IbzMyTerritoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzmyterritoryMapping.toDto(ibzmyterritoryService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.test(#ibzmyterritory_id,'CREATE')")
+    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查我的地盘", tags = {"我的地盘" },  notes = "检查我的地盘")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmyterritories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzMyTerritoryDTO ibzmyterritorydto) {

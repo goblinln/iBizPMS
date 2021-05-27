@@ -103,7 +103,7 @@ public class IBZProProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProProductRuntime.test(#ibzproproduct_id,'CREATE')")
+    @PreAuthorize("@IBZProProductRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取平台产品草稿", tags = {"平台产品" },  notes = "获取平台产品草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproproducts/getdraft")
     public ResponseEntity<IBZProProductDTO> getDraft(IBZProProductDTO dto) {
@@ -111,7 +111,7 @@ public class IBZProProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductMapping.toDto(ibzproproductService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IBZProProductRuntime.test(#ibzproproduct_id,'CREATE')")
+    @PreAuthorize("@IBZProProductRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查平台产品", tags = {"平台产品" },  notes = "检查平台产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproducts/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProProductDTO ibzproproductdto) {

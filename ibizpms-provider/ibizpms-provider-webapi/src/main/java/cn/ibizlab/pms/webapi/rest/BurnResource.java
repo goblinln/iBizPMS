@@ -103,7 +103,7 @@ public class BurnResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@BurnRuntime.test(#burn_id,'CREATE')")
+    @PreAuthorize("@BurnRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取burn草稿", tags = {"burn" },  notes = "获取burn草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/burns/getdraft")
     public ResponseEntity<BurnDTO> getDraft(BurnDTO dto) {
@@ -111,7 +111,7 @@ public class BurnResource {
         return ResponseEntity.status(HttpStatus.OK).body(burnMapping.toDto(burnService.getDraft(domain)));
     }
 
-    @PreAuthorize("@BurnRuntime.test(#burn_id,'CREATE')")
+    @PreAuthorize("@BurnRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查burn", tags = {"burn" },  notes = "检查burn")
 	@RequestMapping(method = RequestMethod.POST, value = "/burns/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody BurnDTO burndto) {
@@ -237,6 +237,7 @@ public class BurnResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目获取burn草稿", tags = {"burn" },  notes = "根据项目获取burn草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/burns/getdraft")
     public ResponseEntity<BurnDTO> getDraftByProject(@PathVariable("project_id") Long project_id, BurnDTO dto) {
@@ -245,6 +246,7 @@ public class BurnResource {
         return ResponseEntity.status(HttpStatus.OK).body(burnMapping.toDto(burnService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目检查burn", tags = {"burn" },  notes = "根据项目检查burn")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/burns/checkkey")
     public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody BurnDTO burndto) {

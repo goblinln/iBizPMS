@@ -72,4 +72,28 @@ export interface ITaskTeam extends IEntityBase {
      * 编号
      */
     root?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
 }

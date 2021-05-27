@@ -103,7 +103,7 @@ public class IbizproProjectMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbizproProjectMonthlyRuntime.test(#ibizproprojectmonthly_id,'CREATE')")
+    @PreAuthorize("@IbizproProjectMonthlyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取项目月报草稿", tags = {"项目月报" },  notes = "获取项目月报草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectmonthlies/getdraft")
     public ResponseEntity<IbizproProjectMonthlyDTO> getDraft(IbizproProjectMonthlyDTO dto) {
@@ -111,7 +111,7 @@ public class IbizproProjectMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectmonthlyMapping.toDto(ibizproprojectmonthlyService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbizproProjectMonthlyRuntime.test(#ibizproprojectmonthly_id,'CREATE')")
+    @PreAuthorize("@IbizproProjectMonthlyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查项目月报", tags = {"项目月报" },  notes = "检查项目月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProjectMonthlyDTO ibizproprojectmonthlydto) {

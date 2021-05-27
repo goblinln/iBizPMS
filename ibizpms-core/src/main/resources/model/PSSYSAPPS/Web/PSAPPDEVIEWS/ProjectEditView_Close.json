@@ -120,7 +120,7 @@
       "id" : "load"
     },
     "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
-    "logicName" : "挂起、关闭操作通用表单",
+    "logicName" : "挂起、关闭、开始操作通用表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"

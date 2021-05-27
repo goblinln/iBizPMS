@@ -110,7 +110,7 @@ public class IbzPlanTempletResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id,'CREATE')")
+    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取计划模板草稿", tags = {"计划模板" },  notes = "获取计划模板草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzplantemplets/getdraft")
     public ResponseEntity<IbzPlanTempletDTO> getDraft(IbzPlanTempletDTO dto) {
@@ -118,7 +118,7 @@ public class IbzPlanTempletResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletMapping.toDto(ibzplantempletService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id,'CREATE')")
+    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查计划模板", tags = {"计划模板" },  notes = "检查计划模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzPlanTempletDTO ibzplantempletdto) {

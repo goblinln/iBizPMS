@@ -104,7 +104,7 @@ public class TestSuiteResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'CREATE')")
+    @PreAuthorize("@TestSuiteRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取测试套件草稿", tags = {"测试套件" },  notes = "获取测试套件草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/testsuites/getdraft")
     public ResponseEntity<TestSuiteDTO> getDraft(TestSuiteDTO dto) {
@@ -112,7 +112,7 @@ public class TestSuiteResource {
         return ResponseEntity.status(HttpStatus.OK).body(testsuiteMapping.toDto(testsuiteService.getDraft(domain)));
     }
 
-    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'CREATE')")
+    @PreAuthorize("@TestSuiteRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查测试套件", tags = {"测试套件" },  notes = "检查测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody TestSuiteDTO testsuitedto) {
@@ -265,6 +265,7 @@ public class TestSuiteResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品获取测试套件草稿", tags = {"测试套件" },  notes = "根据产品获取测试套件草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testsuites/getdraft")
     public ResponseEntity<TestSuiteDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestSuiteDTO dto) {
@@ -273,6 +274,7 @@ public class TestSuiteResource {
         return ResponseEntity.status(HttpStatus.OK).body(testsuiteMapping.toDto(testsuiteService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品检查测试套件", tags = {"测试套件" },  notes = "根据产品检查测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestSuiteDTO testsuitedto) {

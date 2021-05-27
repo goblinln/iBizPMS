@@ -39,7 +39,7 @@ export class ProjectTeamUIServiceBase extends UIServiceBase {
     protected initBasicData(){
         this.isEnableDEMainState = false;
         this.dynaInstTag = "";
-        this.tempOrgIdDEField =null;
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

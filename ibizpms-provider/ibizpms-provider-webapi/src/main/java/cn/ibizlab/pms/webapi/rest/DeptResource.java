@@ -103,7 +103,7 @@ public class DeptResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DeptRuntime.test(#dept_id,'CREATE')")
+    @PreAuthorize("@DeptRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取部门草稿", tags = {"部门" },  notes = "获取部门草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/depts/getdraft")
     public ResponseEntity<DeptDTO> getDraft(DeptDTO dto) {
@@ -111,7 +111,7 @@ public class DeptResource {
         return ResponseEntity.status(HttpStatus.OK).body(deptMapping.toDto(deptService.getDraft(domain)));
     }
 
-    @PreAuthorize("@DeptRuntime.test(#dept_id,'CREATE')")
+    @PreAuthorize("@DeptRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查部门", tags = {"部门" },  notes = "检查部门")
 	@RequestMapping(method = RequestMethod.POST, value = "/depts/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody DeptDTO deptdto) {

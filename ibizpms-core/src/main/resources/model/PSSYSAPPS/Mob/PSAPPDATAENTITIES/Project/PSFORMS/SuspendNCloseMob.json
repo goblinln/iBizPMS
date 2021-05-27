@@ -19,7 +19,7 @@
     "id" : "load"
   },
   "hookEventNames" : [ "SAVE", "BEFORELOAD", "REMOVE", "BEFORESAVE", "LOAD" ],
-  "logicName" : " 挂起、关闭操作通用表单（移动端）",
+  "logicName" : " 开始、挂起、关闭操作通用表单（移动端）",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"

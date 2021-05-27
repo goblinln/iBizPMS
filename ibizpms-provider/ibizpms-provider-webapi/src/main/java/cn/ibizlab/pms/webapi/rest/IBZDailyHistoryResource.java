@@ -103,7 +103,7 @@ public class IBZDailyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZDailyHistoryRuntime.test(#ibzdailyhistory_id,'CREATE')")
+    @PreAuthorize("@IBZDailyHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取日报操作历史草稿", tags = {"日报操作历史" },  notes = "获取日报操作历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailyhistories/getdraft")
     public ResponseEntity<IBZDailyHistoryDTO> getDraft(IBZDailyHistoryDTO dto) {
@@ -111,7 +111,7 @@ public class IBZDailyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailyhistoryMapping.toDto(ibzdailyhistoryService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IBZDailyHistoryRuntime.test(#ibzdailyhistory_id,'CREATE')")
+    @PreAuthorize("@IBZDailyHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查日报操作历史", tags = {"日报操作历史" },  notes = "检查日报操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyhistories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZDailyHistoryDTO ibzdailyhistorydto) {

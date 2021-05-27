@@ -103,7 +103,7 @@ public class UserYearWorkStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'CREATE')")
+    @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取用户年度工作内容统计草稿", tags = {"用户年度工作内容统计" },  notes = "获取用户年度工作内容统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/getdraft")
     public ResponseEntity<UserYearWorkStatsDTO> getDraft(UserYearWorkStatsDTO dto) {
@@ -111,7 +111,7 @@ public class UserYearWorkStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsMapping.toDto(useryearworkstatsService.getDraft(domain)));
     }
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'CREATE')")
+    @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "检查用户年度工作内容统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/useryearworkstats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {

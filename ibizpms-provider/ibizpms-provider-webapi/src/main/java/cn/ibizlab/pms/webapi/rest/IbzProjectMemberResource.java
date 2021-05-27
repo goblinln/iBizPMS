@@ -102,7 +102,7 @@ public class IbzProjectMemberResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id,'CREATE')")
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取项目相关成员草稿", tags = {"项目相关成员" },  notes = "获取项目相关成员草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprojectmembers/getdraft")
     public ResponseEntity<IbzProjectMemberDTO> getDraft(IbzProjectMemberDTO dto) {
@@ -110,7 +110,7 @@ public class IbzProjectMemberResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprojectmemberMapping.toDto(ibzprojectmemberService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id,'CREATE')")
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查项目相关成员", tags = {"项目相关成员" },  notes = "检查项目相关成员")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprojectmembers/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzProjectMemberDTO ibzprojectmemberdto) {

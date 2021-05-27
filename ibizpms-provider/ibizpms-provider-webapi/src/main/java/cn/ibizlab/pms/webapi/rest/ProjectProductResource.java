@@ -104,7 +104,7 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectProductRuntime.test(#projectproduct_id,'CREATE')")
+    @PreAuthorize("@ProjectProductRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取项目产品草稿", tags = {"项目产品" },  notes = "获取项目产品草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectproducts/getdraft")
     public ResponseEntity<ProjectProductDTO> getDraft(ProjectProductDTO dto) {
@@ -112,7 +112,7 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectproductMapping.toDto(projectproductService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectProductRuntime.test(#projectproduct_id,'CREATE')")
+    @PreAuthorize("@ProjectProductRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查项目产品", tags = {"项目产品" },  notes = "检查项目产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectproducts/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProjectProductDTO projectproductdto) {
@@ -226,6 +226,7 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品获取项目产品草稿", tags = {"项目产品" },  notes = "根据产品获取项目产品草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projectproducts/getdraft")
     public ResponseEntity<ProjectProductDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProjectProductDTO dto) {
@@ -234,6 +235,7 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectproductMapping.toDto(projectproductService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品检查项目产品", tags = {"项目产品" },  notes = "根据产品检查项目产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projectproducts/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProjectProductDTO projectproductdto) {
@@ -339,6 +341,7 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目获取项目产品草稿", tags = {"项目产品" },  notes = "根据项目获取项目产品草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectproducts/getdraft")
     public ResponseEntity<ProjectProductDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectProductDTO dto) {
@@ -347,6 +350,7 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectproductMapping.toDto(projectproductService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目检查项目产品", tags = {"项目产品" },  notes = "根据项目检查项目产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectproducts/checkkey")
     public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectProductDTO projectproductdto) {

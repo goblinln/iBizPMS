@@ -103,7 +103,7 @@ public class ProductPlanHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductPlanHistoryRuntime.test(#productplanhistory_id,'CREATE')")
+    @PreAuthorize("@ProductPlanHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取产品计划历史草稿", tags = {"产品计划历史" },  notes = "获取产品计划历史草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/productplanhistories/getdraft")
     public ResponseEntity<ProductPlanHistoryDTO> getDraft(ProductPlanHistoryDTO dto) {
@@ -111,7 +111,7 @@ public class ProductPlanHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplanhistoryMapping.toDto(productplanhistoryService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductPlanHistoryRuntime.test(#productplanhistory_id,'CREATE')")
+    @PreAuthorize("@ProductPlanHistoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查产品计划历史", tags = {"产品计划历史" },  notes = "检查产品计划历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanhistories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProductPlanHistoryDTO productplanhistorydto) {

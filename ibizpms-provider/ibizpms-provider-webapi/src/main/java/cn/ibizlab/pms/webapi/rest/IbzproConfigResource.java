@@ -104,7 +104,7 @@ public class IbzproConfigResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzproConfigRuntime.test(#ibzproconfig_id,'CREATE')")
+    @PreAuthorize("@IbzproConfigRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取系统配置表草稿", tags = {"系统配置表" },  notes = "获取系统配置表草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproconfigs/getdraft")
     public ResponseEntity<IbzproConfigDTO> getDraft(IbzproConfigDTO dto) {
@@ -112,7 +112,7 @@ public class IbzproConfigResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproconfigMapping.toDto(ibzproconfigService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzproConfigRuntime.test(#ibzproconfig_id,'CREATE')")
+    @PreAuthorize("@IbzproConfigRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查系统配置表", tags = {"系统配置表" },  notes = "检查系统配置表")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproconfigs/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzproConfigDTO ibzproconfigdto) {

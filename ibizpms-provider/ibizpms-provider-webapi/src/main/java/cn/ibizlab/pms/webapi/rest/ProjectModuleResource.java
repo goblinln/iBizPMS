@@ -103,7 +103,7 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'CREATE')")
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取任务模块草稿", tags = {"任务模块" },  notes = "获取任务模块草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectmodules/getdraft")
     public ResponseEntity<ProjectModuleDTO> getDraft(ProjectModuleDTO dto) {
@@ -111,7 +111,7 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(projectmoduleService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'CREATE')")
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查任务模块", tags = {"任务模块" },  notes = "检查任务模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProjectModuleDTO projectmoduledto) {
@@ -359,6 +359,7 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目获取任务模块草稿", tags = {"任务模块" },  notes = "根据项目获取任务模块草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectmodules/getdraft")
     public ResponseEntity<ProjectModuleDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectModuleDTO dto) {
@@ -367,6 +368,7 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(projectmoduleService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目检查任务模块", tags = {"任务模块" },  notes = "根据项目检查任务模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/checkkey")
     public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
