@@ -755,6 +755,16 @@
     "logicName" : "读取",
     "name" : "READ"
   }, {
+    "logicName" : "读取",
+    "mapPSDEName" : "ZT_ACTION",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDERS/DER1N_ZT_HISTORY_ZT_ACTION_ACTION.json"
+    },
+    "name" : "READ",
+    "id" : "Zt_action__READ"
+  }, {
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
@@ -806,8 +816,7 @@
       }
     } ],
     "roleTag" : "History_Read",
-    "userDRAction" : "READ",
-    "defaultMode" : true
+    "userDRAction" : "READ"
   } ],
   "codeName" : "History",
   "dEType" : 1,
