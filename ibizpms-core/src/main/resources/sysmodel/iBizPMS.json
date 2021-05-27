@@ -1979,6 +1979,18 @@
      "code_name":"Product",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_PRODUCT"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_PROJECT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Project",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_PROJECT"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_STORY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Story",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_STORY"
     }
     ]
  }
@@ -48242,6 +48254,12 @@
      "code_name":"IBizParent",
      "entity_name":"ZT_PROJECT",
      "ref_entity_name":"ZT_PROJECT"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_PROJECT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Project",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_PROJECT"
     }
     ],
     "parentEntitys":[
@@ -54907,6 +54925,12 @@
      "relation_type":"DER1N",
      "code_name":"ZTParent",
      "entity_name":"ZT_STORY",
+     "ref_entity_name":"ZT_STORY"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_ZT_STORY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Story",
+     "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_STORY"
     }
     ],

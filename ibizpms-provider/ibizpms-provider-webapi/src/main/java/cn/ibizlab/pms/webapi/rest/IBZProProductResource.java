@@ -111,6 +111,7 @@ public class IBZProProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductMapping.toDto(ibzproproductService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IBZProProductRuntime.test(#ibzproproduct_id,'CREATE')")
     @ApiOperation(value = "检查平台产品", tags = {"平台产品" },  notes = "检查平台产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproducts/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProProductDTO ibzproproductdto) {

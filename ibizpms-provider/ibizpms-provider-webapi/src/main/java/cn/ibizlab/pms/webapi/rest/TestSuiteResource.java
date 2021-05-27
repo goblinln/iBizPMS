@@ -112,6 +112,7 @@ public class TestSuiteResource {
         return ResponseEntity.status(HttpStatus.OK).body(testsuiteMapping.toDto(testsuiteService.getDraft(domain)));
     }
 
+    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'CREATE')")
     @ApiOperation(value = "检查测试套件", tags = {"测试套件" },  notes = "检查测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody TestSuiteDTO testsuitedto) {

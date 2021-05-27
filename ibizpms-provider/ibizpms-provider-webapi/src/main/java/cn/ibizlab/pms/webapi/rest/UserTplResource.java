@@ -111,6 +111,7 @@ public class UserTplResource {
         return ResponseEntity.status(HttpStatus.OK).body(usertplMapping.toDto(usertplService.getDraft(domain)));
     }
 
+    @PreAuthorize("@UserTplRuntime.test(#usertpl_id,'CREATE')")
     @ApiOperation(value = "检查用户模板", tags = {"用户模板" },  notes = "检查用户模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody UserTplDTO usertpldto) {

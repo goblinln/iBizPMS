@@ -111,6 +111,7 @@ public class SuiteCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(suitecaseMapping.toDto(suitecaseService.getDraft(domain)));
     }
 
+    @PreAuthorize("@SuiteCaseRuntime.test(#suitecase_id,'CREATE')")
     @ApiOperation(value = "检查套件用例", tags = {"套件用例" },  notes = "检查套件用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/suitecases/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SuiteCaseDTO suitecasedto) {

@@ -110,6 +110,7 @@ public class ProjectStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectstatsMapping.toDto(projectstatsService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id,'CREATE')")
     @ApiOperation(value = "检查项目统计", tags = {"项目统计" },  notes = "检查项目统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectstats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProjectStatsDTO projectstatsdto) {

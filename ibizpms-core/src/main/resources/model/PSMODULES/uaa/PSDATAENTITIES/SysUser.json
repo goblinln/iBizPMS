@@ -52,7 +52,7 @@
     "logicName" : "修改密码",
     "name" : "ChangePwd"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/CheckKey.json",

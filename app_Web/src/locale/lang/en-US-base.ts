@@ -124,7 +124,6 @@ import module_en_US from '@locale/lanres/entities/module/module_en_US';
 import ibzprotesttaskaction_en_US from '@locale/lanres/entities/ibz-pro-test-task-action/ibz-pro-test-task-action_en_US';
 import ibztestsuiteaction_en_US from '@locale/lanres/entities/ibztest-suite-action/ibztest-suite-action_en_US';
 import ibztestreportaction_en_US from '@locale/lanres/entities/ibztest-report-action/ibztest-report-action_en_US';
-import ibzproreportlyaction_en_US from '@locale/lanres/entities/ibz-pro-reportly-action/ibz-pro-reportly-action_en_US';
 import ibzdailyaction_en_US from '@locale/lanres/entities/ibzdaily-action/ibzdaily-action_en_US';
 import ibzprotodoaction_en_US from '@locale/lanres/entities/ibzpro-to-do-action/ibzpro-to-do-action_en_US';
 import projecttaskestimate_en_US from '@locale/lanres/entities/project-taskestimate/project-taskestimate_en_US';
@@ -330,7 +329,8 @@ function getAppLocale(){
                     submiterror: "Workflow submission failed",
                     submitsuccess: "Workflow submitted successfully",
                 },
-                updateerror: "Form item update failed",       
+                updateerror: "Form item update failed",  
+                valueverif:"Please input ",       
             },
             gridBar: {
                 title: "Table navigation bar",
@@ -377,6 +377,7 @@ function getAppLocale(){
                 },
                 custom: "Store custom queries",
                 title: "Name",
+                globalerrortip:"Please check if the information is incorrect",
             },
             wizardPanel: {
                 back: "Back",
@@ -566,7 +567,6 @@ function getAppLocale(){
             'ibzprotesttaskaction': ibzprotesttaskaction_en_US(),
             'ibztestsuiteaction': ibztestsuiteaction_en_US(),
             'ibztestreportaction': ibztestreportaction_en_US(),
-            'ibzproreportlyaction': ibzproreportlyaction_en_US(),
             'ibzdailyaction': ibzdailyaction_en_US(),
             'ibzprotodoaction': ibzprotodoaction_en_US(),
             'projecttaskestimate': projecttaskestimate_en_US(),

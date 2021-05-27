@@ -190,7 +190,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/CaseNFavorite.json"
     }
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CheckKey.json",

@@ -124,7 +124,6 @@ export * from './imodule';
 export * from './iibz-pro-test-task-action';
 export * from './iibztest-suite-action';
 export * from './iibztest-report-action';
-export * from './iibz-pro-reportly-action';
 export * from './iibzdaily-action';
 export * from './iibzpro-to-do-action';
 export * from './iproject-taskestimate';

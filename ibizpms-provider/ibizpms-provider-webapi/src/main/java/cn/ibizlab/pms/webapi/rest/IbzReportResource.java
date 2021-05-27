@@ -111,6 +111,7 @@ public class IbzReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportMapping.toDto(ibzreportService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzReportRuntime.test(#ibzreport_id,'CREATE')")
     @ApiOperation(value = "检查汇报汇总", tags = {"汇报汇总" },  notes = "检查汇报汇总")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreports/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzReportDTO ibzreportdto) {

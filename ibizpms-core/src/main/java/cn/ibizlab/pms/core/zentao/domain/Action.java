@@ -318,7 +318,7 @@ public class Action extends EntityMP implements Serializable {
     private String updateman;
 
     /**
-     * 项目
+     * 项目相关操作
      */
     @JsonIgnore
     @JSONField(serialize = false)

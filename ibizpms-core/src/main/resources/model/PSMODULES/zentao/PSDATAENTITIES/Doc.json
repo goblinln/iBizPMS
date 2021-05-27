@@ -66,7 +66,7 @@
     "logicName" : "根据版本更新正文信息",
     "name" : "ByVersionUpdateContext"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/CheckKey.json",

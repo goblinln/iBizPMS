@@ -117,6 +117,10 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/CheckKey.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DocLib__CREATE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
@@ -609,6 +613,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DocLib__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,

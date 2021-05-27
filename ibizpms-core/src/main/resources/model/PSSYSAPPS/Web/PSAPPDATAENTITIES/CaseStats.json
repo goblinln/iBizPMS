@@ -117,6 +117,10 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats/PSDEACTIONS/CheckKey.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTPRODUCT__CREATE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
@@ -328,6 +332,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTPRODUCT__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,

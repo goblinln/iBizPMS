@@ -117,6 +117,7 @@ public class IbzCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzcaseMapping.toDto(ibzcaseService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzCaseRuntime.test(#ibzcase_id,'CREATE')")
     @ApiOperation(value = "检查测试用例", tags = {"测试用例" },  notes = "检查测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzCaseDTO ibzcasedto) {

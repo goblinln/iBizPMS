@@ -39,7 +39,6 @@
       .el-menu-item,
       .el-submenu > .el-submenu__title {
           min-width: calc(100% - 10px);
-          color: #616161;
           height: 38px;
           line-height: 38px;
           font-size: 18px;
@@ -49,13 +48,15 @@
           > i {
               margin-right: 5px;
               width: 24px;
-              color: #616161;
               text-align: center;
+              vertical-align: middle;
           }
 
           > span {
               font-size: 14px;
-              color: #616161;
+          }
+          >span + i {
+            line-height: 16px;
           }
       }
 
@@ -63,13 +64,6 @@
           > .el-menu.el-menu--inline {
               padding-left: 10px;
           }
-      }
-
-      .el-menu-item:hover,
-      .el-menu-item.is-active,
-      .el-submenu > .el-submenu__title:hover {
-          color: #2d2d2d;
-          background-color: #f0f2f5;
       }
   }
 
@@ -90,7 +84,7 @@
 
           > i {
               margin: 0 !important;
-              color: #616161;
+              // color: #616161;
           }
       }
   }
@@ -118,7 +112,7 @@
         .el-submenu__title:hover {
             background-color: var(--leftsidebar-background-color-bright);
             i {
-                color: var(--leftsidebar-font-color-bright);
+                color: var(--leftsidebar-font-color);
             }
             span {
                 color: var(--leftsidebar-font-color-bright);
@@ -128,10 +122,10 @@
             background-color: var(--leftsidebar-background-color-bright);
             >.el-submenu__title {
                 i {
-                    color: var(--leftsidebar-font-color-bright);
+                    color: var(--leftsidebar-font-color);
                 }
                 span{
-                    color: var(--leftsidebar-font-color-bright);
+                    color: var(--leftsidebar-font-color);
                 }
             }
         }

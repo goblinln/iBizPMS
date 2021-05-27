@@ -146,6 +146,7 @@ public class CaseResource {
     }
 
 
+    @PreAuthorize("@CaseRuntime.test(#case_id,'CREATE')")
     @ApiOperation(value = "检查测试用例", tags = {"测试用例" },  notes = "检查测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody CaseDTO casedto) {

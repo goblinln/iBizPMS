@@ -103,6 +103,7 @@ public class UserContactResource {
         return ResponseEntity.status(HttpStatus.OK).body(usercontactMapping.toDto(usercontactService.getDraft(domain)));
     }
 
+    @PreAuthorize("@UserContactRuntime.test(#usercontact_id,'CREATE')")
     @ApiOperation(value = "检查用户联系方式", tags = {"用户联系方式" },  notes = "检查用户联系方式")
 	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody UserContactDTO usercontactdto) {

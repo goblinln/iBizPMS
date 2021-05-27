@@ -111,6 +111,7 @@ public class IbizproProjectDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailyMapping.toDto(ibizproprojectdailyService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbizproProjectDailyRuntime.test(#ibizproprojectdaily_id,'CREATE')")
     @ApiOperation(value = "检查项目日报", tags = {"项目日报" },  notes = "检查项目日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProjectDailyDTO ibizproprojectdailydto) {

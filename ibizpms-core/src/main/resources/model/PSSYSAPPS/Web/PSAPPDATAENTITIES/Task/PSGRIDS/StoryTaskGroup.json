@@ -962,8 +962,7 @@
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
           "getCapPSLanguageRes" : {
-            "lanResTag" : "TBB.TEXT.*.COPY",
-            "id" : "工具栏按钮文本[*.COPY]"
+            "lanResTag" : "TBB.TEXT.*.COPY"
           },
           "caption" : "拷贝",
           "codeName" : "Copy",
@@ -975,8 +974,7 @@
           },
           "timeout" : 60000,
           "getTooltipPSLanguageRes" : {
-            "lanResTag" : "TBB.TOOLTIP.*.COPY",
-            "id" : "工具栏按钮提示[*.COPY]"
+            "lanResTag" : "TBB.TOOLTIP.*.COPY"
           },
           "uIActionMode" : "SYS",
           "uIActionTag" : "Copy",

@@ -110,6 +110,7 @@ public class IbzProjectMemberResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprojectmemberMapping.toDto(ibzprojectmemberService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id,'CREATE')")
     @ApiOperation(value = "检查项目相关成员", tags = {"项目相关成员" },  notes = "检查项目相关成员")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprojectmembers/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzProjectMemberDTO ibzprojectmemberdto) {

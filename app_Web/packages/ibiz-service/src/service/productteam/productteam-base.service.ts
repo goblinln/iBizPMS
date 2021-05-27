@@ -143,66 +143,6 @@ export class PRODUCTTEAMBaseService extends EntityBaseService<IPRODUCTTEAM> {
         return res;
     }
     /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof PRODUCTTEAMService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productteam) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productteams/${_context.productteam}/update`, _data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productteams/${_context.productteam}/update`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof PRODUCTTEAMService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productteam) {
-            return this.http.delete(`/products/${_context.product}/productteams/${_context.productteam}/remove`);
-        }
-        return this.http.delete(`/productteams/${_context.productteam}/remove`);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof PRODUCTTEAMService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productteam) {
-            const res = await this.http.get(`/products/${_context.product}/productteams/${_context.productteam}/get`);
-            return res;
-        }
-        const res = await this.http.get(`/productteams/${_context.productteam}/get`);
-        return res;
-    }
-    /**
-     * FetchProductTeamInfo
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof PRODUCTTEAMService
-     */
-    async FetchProductTeamInfo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productteams/fetchproductteaminfo`, _data);
-        }
-        return this.http.post(`/productteams/fetchproductteaminfo`, _data);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -231,6 +171,50 @@ export class PRODUCTTEAMBaseService extends EntityBaseService<IPRODUCTTEAM> {
         return this.http.post(`/productteams`, _data);
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof PRODUCTTEAMService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productteam) {
+            return this.http.delete(`/products/${_context.product}/productteams/${_context.productteam}`);
+        }
+        return this.http.delete(`/productteams/${_context.productteam}`);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof PRODUCTTEAMService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productteam) {
+            const res = await this.http.get(`/products/${_context.product}/productteams/${_context.productteam}`);
+            return res;
+        }
+        const res = await this.http.get(`/productteams/${_context.productteam}`);
+        return res;
+    }
+    /**
+     * FetchProductTeamInfo
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof PRODUCTTEAMService
+     */
+    async FetchProductTeamInfo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productteams/fetchproductteaminfo`, _data);
+        }
+        return this.http.post(`/productteams/fetchproductteaminfo`, _data);
+    }
+    /**
      * FetchSpecifyTeam
      *
      * @param {*} [_context={}]
@@ -257,5 +241,21 @@ export class PRODUCTTEAMBaseService extends EntityBaseService<IPRODUCTTEAM> {
             return this.http.post(`/products/${_context.product}/productteams/fetchroweditdefaultproductteam`, _data);
         }
         return this.http.post(`/productteams/fetchroweditdefaultproductteam`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof PRODUCTTEAMService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productteam) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/productteams/${_context.productteam}`, _data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/productteams/${_context.productteam}`, _data);
     }
 }

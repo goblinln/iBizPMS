@@ -149,8 +149,7 @@
     },
     "getPSDEToolbarItems" : [ {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.SAVE",
-        "id" : "工具栏按钮文本[*.SAVE]"
+        "lanResTag" : "TBB.TEXT.*.SAVE"
       },
       "caption" : "保存",
       "groupExtractMode" : "ITEM",
@@ -167,8 +166,7 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.SAVE",
-          "id" : "工具栏按钮文本[*.SAVE]"
+          "lanResTag" : "TBB.TEXT.*.SAVE"
         },
         "caption" : "保存",
         "codeName" : "Save",
@@ -181,8 +179,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.SAVE",
-          "id" : "工具栏按钮提示[*.SAVE]"
+          "lanResTag" : "TBB.TOOLTIP.*.SAVE"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "Save",
@@ -190,15 +187,13 @@
       },
       "tooltip" : "保存",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.SAVE",
-        "id" : "工具栏按钮提示[*.SAVE]"
+        "lanResTag" : "TBB.TOOLTIP.*.SAVE"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDNEW",
-        "id" : "工具栏按钮文本[EDITVIEW.SAVEANDNEW]"
+        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDNEW"
       },
       "caption" : "保存并新建",
       "groupExtractMode" : "ITEM",
@@ -214,8 +209,7 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDNEW",
-          "id" : "工具栏按钮文本[EDITVIEW.SAVEANDNEW]"
+          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDNEW"
         },
         "caption" : "保存并新建",
         "codeName" : "SaveAndNew",
@@ -227,8 +221,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDNEW",
-          "id" : "工具栏按钮提示[EDITVIEW.SAVEANDNEW]"
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDNEW"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "SaveAndNew",
@@ -236,15 +229,13 @@
       },
       "tooltip" : "保存并新建",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDNEW",
-        "id" : "工具栏按钮提示[EDITVIEW.SAVEANDNEW]"
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDNEW"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
-        "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
+        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
       },
       "caption" : "保存并关闭",
       "groupExtractMode" : "ITEM",
@@ -260,8 +251,7 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
-          "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
+          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
         },
         "caption" : "保存并关闭",
         "codeName" : "SaveAndExit",
@@ -272,8 +262,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
-          "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "SaveAndExit",
@@ -281,15 +270,13 @@
       },
       "tooltip" : "保存并关闭",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
-        "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE",
-        "id" : "工具栏按钮文本[EDITVIEW.REMOVEANDCLOSE]"
+        "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE"
       },
       "caption" : "删除",
       "groupExtractMode" : "ITEM",
@@ -307,8 +294,7 @@
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE",
-          "id" : "工具栏按钮文本[EDITVIEW.REMOVEANDCLOSE]"
+          "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE"
         },
         "caption" : "删除",
         "codeName" : "RemoveAndExit",
@@ -321,8 +307,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE",
-          "id" : "工具栏按钮提示[EDITVIEW.REMOVEANDCLOSE]"
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "RemoveAndExit",
@@ -330,8 +315,7 @@
       },
       "tooltip" : "删除",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE",
-        "id" : "工具栏按钮提示[EDITVIEW.REMOVEANDCLOSE]"
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE"
       },
       "showCaption" : true,
       "showIcon" : true

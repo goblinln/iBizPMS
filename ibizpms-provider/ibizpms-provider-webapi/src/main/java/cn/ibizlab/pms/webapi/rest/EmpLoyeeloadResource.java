@@ -111,6 +111,7 @@ public class EmpLoyeeloadResource {
         return ResponseEntity.status(HttpStatus.OK).body(employeeloadMapping.toDto(employeeloadService.getDraft(domain)));
     }
 
+    @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id,'CREATE')")
     @ApiOperation(value = "检查员工负载表", tags = {"员工负载表" },  notes = "检查员工负载表")
 	@RequestMapping(method = RequestMethod.POST, value = "/employeeloads/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody EmpLoyeeloadDTO employeeloaddto) {

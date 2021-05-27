@@ -410,8 +410,7 @@
         },
         "tooltip" : "产品",
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "MENUITEM.CAPTION.MENUITEM.CAPTION.LEFT_PRODUCT",
-          "id" : "菜单项文本[MENUITEM.CAPTION.LEFT_PRODUCT]"
+          "lanResTag" : "MENUITEM.CAPTION.MENUITEM.CAPTION.LEFT_PRODUCT"
         }
       }, {
         "accUserMode" : 4,

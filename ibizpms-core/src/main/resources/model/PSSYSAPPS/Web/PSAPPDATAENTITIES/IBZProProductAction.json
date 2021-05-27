@@ -117,6 +117,10 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductAction/PSDEACTIONS/CheckKey.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "IbzProProduct__CREATE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
@@ -561,6 +565,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductAction/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "IbzProProduct__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,

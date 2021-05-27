@@ -117,6 +117,10 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProMonthlyAction/PSDEACTIONS/CheckKey.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
@@ -497,6 +501,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProMonthlyAction/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,

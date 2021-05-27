@@ -243,6 +243,10 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/CheckKey.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ProjectTeam__CREATE"
+    },
     "builtinMethod" : true
   }, {
     "codeName" : "GetUserRole",
@@ -730,6 +734,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ProjectTeam__CREATE"
     },
     "builtinMethod" : true
   }, {

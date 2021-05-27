@@ -180,7 +180,6 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('ibzprotesttaskaction', () => import('../uiservice/ibz-pro-test-task-action/ibz-pro-test-task-action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibztestsuiteaction', () => import('../uiservice/ibztest-suite-action/ibztest-suite-action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibztestreportaction', () => import('../uiservice/ibztest-report-action/ibztest-report-action-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('ibzproreportlyaction', () => import('../uiservice/ibz-pro-reportly-action/ibz-pro-reportly-action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzdailyaction', () => import('../uiservice/ibzdaily-action/ibzdaily-action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzprotodoaction', () => import('../uiservice/ibzpro-to-do-action/ibzpro-to-do-action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('projecttaskestimate', () => import('../uiservice/project-taskestimate/project-taskestimate-ui-service'));

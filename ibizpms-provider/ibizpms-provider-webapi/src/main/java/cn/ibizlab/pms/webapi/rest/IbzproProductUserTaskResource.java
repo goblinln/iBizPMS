@@ -111,6 +111,7 @@ public class IbzproProductUserTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductusertaskMapping.toDto(ibzproproductusertaskService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzproProductUserTaskRuntime.test(#ibzproproductusertask_id,'CREATE')")
     @ApiOperation(value = "检查产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "检查产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductusertasks/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzproProductUserTaskDTO ibzproproductusertaskdto) {

@@ -111,6 +111,7 @@ public class GroupResource {
         return ResponseEntity.status(HttpStatus.OK).body(groupMapping.toDto(groupService.getDraft(domain)));
     }
 
+    @PreAuthorize("@GroupRuntime.test(#group_id,'CREATE')")
     @ApiOperation(value = "检查群组", tags = {"群组" },  notes = "检查群组")
 	@RequestMapping(method = RequestMethod.POST, value = "/groups/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody GroupDTO groupdto) {

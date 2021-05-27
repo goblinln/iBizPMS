@@ -111,6 +111,7 @@ public class IbzProMonthlyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyhistoryMapping.toDto(ibzpromonthlyhistoryService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzProMonthlyHistoryRuntime.test(#ibzpromonthlyhistory_id,'CREATE')")
     @ApiOperation(value = "检查月报操作历史", tags = {"月报操作历史" },  notes = "检查月报操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyhistories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzProMonthlyHistoryDTO ibzpromonthlyhistorydto) {

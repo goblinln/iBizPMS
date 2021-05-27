@@ -112,6 +112,7 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectproductMapping.toDto(projectproductService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectProductRuntime.test(#projectproduct_id,'CREATE')")
     @ApiOperation(value = "检查项目产品", tags = {"项目产品" },  notes = "检查项目产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectproducts/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProjectProductDTO projectproductdto) {

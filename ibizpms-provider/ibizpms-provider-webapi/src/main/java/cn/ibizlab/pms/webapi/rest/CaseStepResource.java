@@ -111,6 +111,7 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(casestepMapping.toDto(casestepService.getDraft(domain)));
     }
 
+    @PreAuthorize("@CaseStepRuntime.test(#casestep_id,'CREATE')")
     @ApiOperation(value = "检查用例步骤", tags = {"用例步骤" },  notes = "检查用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/casesteps/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody CaseStepDTO casestepdto) {

@@ -111,6 +111,7 @@ public class DocContentResource {
         return ResponseEntity.status(HttpStatus.OK).body(doccontentMapping.toDto(doccontentService.getDraft(domain)));
     }
 
+    @PreAuthorize("@DocContentRuntime.test(#doccontent_id,'CREATE')")
     @ApiOperation(value = "检查文档内容", tags = {"文档内容" },  notes = "检查文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/doccontents/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody DocContentDTO doccontentdto) {

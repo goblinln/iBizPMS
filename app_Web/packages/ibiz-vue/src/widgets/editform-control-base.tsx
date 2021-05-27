@@ -429,15 +429,7 @@ export class EditFormControlBase extends FormControlBase {
     public async save(opt: any = {}, showResultInfo: boolean = true, isStateNext: boolean = true): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
             if (!this.formValidateStatus()) {
-                if (this.errorMessages && this.errorMessages.length > 0) {
-                    let descMessage: string = '';
-                    this.errorMessages.forEach((message: any) => {
-                        descMessage += message.error + '<br/>';
-                    })
-                    this.$throw(descMessage, 'save', { dangerouslyUseHTMLString: true });
-                } else {
-                    this.$throw((this.$t('app.formpage.valuecheckex') as string), 'save');
-                }
+                this.$throw(this.$t('app.searchForm.globalerrortip') as string, 'save', { dangerouslyUseHTMLString: true });
                 return;
             }
             const arg: any = { ...opt };
@@ -552,6 +544,7 @@ export class EditFormControlBase extends FormControlBase {
      */
     public async wfstart(data: any, localdata?: any): Promise<any> {
         if (!this.formValidateStatus()) {
+            this.$throw(this.$t('app.searchForm.globalerrortip') as string, 'wfstart', { dangerouslyUseHTMLString: true });
             return;
         }
         return new Promise((resolve: any, reject: any) => {
@@ -638,6 +631,7 @@ export class EditFormControlBase extends FormControlBase {
      */
     public async wfsubmit(data: any, localdata?: any): Promise<any> {
         if (!this.formValidateStatus()) {
+            this.$throw(this.$t('app.searchForm.globalerrortip') as string, 'wfsubmit', { dangerouslyUseHTMLString: true });
             return;
         }
         return new Promise((resolve: any, reject: any) => {
@@ -1330,7 +1324,7 @@ export class EditFormControlBase extends FormControlBase {
                     let editorRules = Verify.buildVerConditions(detail.getPSEditor())
                     this.rules[detail.name] = [
                         // 非空值规则
-                        { validator: (rule: any, value: any, callback: any) => { return !(this.detailsModel[detail.name].required && (value === null || value === undefined || value === "")) }, message: `${detail.caption} 必须填写` },
+                        { validator: (rule: any, value: any, callback: any) => { return !(this.detailsModel[detail.name].required && (value === null || value === undefined || value === "")) }, message: `${this.$t('app.formpage.valueverif') as string}${detail.caption}` },
                         // 表单值规则
                         ...otherRules,
                         // 编辑器基础值规则

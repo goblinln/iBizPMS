@@ -166,6 +166,7 @@ public class TaskResource {
     }
 
 
+    @PreAuthorize("@TaskRuntime.test(#task_id,'CREATE')")
     @ApiOperation(value = "检查任务", tags = {"任务" },  notes = "检查任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody TaskDTO taskdto) {

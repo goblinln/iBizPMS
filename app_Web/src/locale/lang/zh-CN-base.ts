@@ -124,7 +124,6 @@ import module_zh_CN from '@locale/lanres/entities/module/module_zh_CN';
 import ibzprotesttaskaction_zh_CN from '@locale/lanres/entities/ibz-pro-test-task-action/ibz-pro-test-task-action_zh_CN';
 import ibztestsuiteaction_zh_CN from '@locale/lanres/entities/ibztest-suite-action/ibztest-suite-action_zh_CN';
 import ibztestreportaction_zh_CN from '@locale/lanres/entities/ibztest-report-action/ibztest-report-action_zh_CN';
-import ibzproreportlyaction_zh_CN from '@locale/lanres/entities/ibz-pro-reportly-action/ibz-pro-reportly-action_zh_CN';
 import ibzdailyaction_zh_CN from '@locale/lanres/entities/ibzdaily-action/ibzdaily-action_zh_CN';
 import ibzprotodoaction_zh_CN from '@locale/lanres/entities/ibzpro-to-do-action/ibzpro-to-do-action_zh_CN';
 import projecttaskestimate_zh_CN from '@locale/lanres/entities/project-taskestimate/project-taskestimate_zh_CN';
@@ -329,7 +328,8 @@ function getAppLocale(){
                     submiterror: "工作流提交失败",
                     submitsuccess: "工作流提交成功",
                 },
-                updateerror: "表单项更新失败",     
+                updateerror: "表单项更新失败",   
+                valueverif:"请输入",     
             },
             gridBar: {
                 title: "表格导航栏",
@@ -375,7 +375,7 @@ function getAppLocale(){
                     loaddraftAction: "视图搜索表单loaddraftAction参数未配置",
                 },
                 custom: "存储自定义查询",
-                title: "名称",
+                globalerrortip:"填写信息有误，请检查",
             },
             wizardPanel: {
                 back: "上一步",
@@ -565,7 +565,6 @@ function getAppLocale(){
             'ibzprotesttaskaction': ibzprotesttaskaction_zh_CN(),
             'ibztestsuiteaction': ibztestsuiteaction_zh_CN(),
             'ibztestreportaction': ibztestreportaction_zh_CN(),
-            'ibzproreportlyaction': ibzproreportlyaction_zh_CN(),
             'ibzdailyaction': ibzdailyaction_zh_CN(),
             'ibzprotodoaction': ibzprotodoaction_zh_CN(),
             'projecttaskestimate': projecttaskestimate_zh_CN(),

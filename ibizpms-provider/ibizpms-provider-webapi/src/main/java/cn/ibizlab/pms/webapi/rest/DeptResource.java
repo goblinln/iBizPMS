@@ -111,6 +111,7 @@ public class DeptResource {
         return ResponseEntity.status(HttpStatus.OK).body(deptMapping.toDto(deptService.getDraft(domain)));
     }
 
+    @PreAuthorize("@DeptRuntime.test(#dept_id,'CREATE')")
     @ApiOperation(value = "检查部门", tags = {"部门" },  notes = "检查部门")
 	@RequestMapping(method = RequestMethod.POST, value = "/depts/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody DeptDTO deptdto) {

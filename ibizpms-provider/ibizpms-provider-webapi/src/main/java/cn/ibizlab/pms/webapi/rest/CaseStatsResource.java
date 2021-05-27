@@ -111,6 +111,7 @@ public class CaseStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(casestatsMapping.toDto(casestatsService.getDraft(domain)));
     }
 
+    @PreAuthorize("@CaseStatsRuntime.test(#casestats_id,'CREATE')")
     @ApiOperation(value = "检查测试用例统计", tags = {"测试用例统计" },  notes = "检查测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody CaseStatsDTO casestatsdto) {

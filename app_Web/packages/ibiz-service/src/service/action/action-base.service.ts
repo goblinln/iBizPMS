@@ -140,6 +140,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.action) {
+            return this.http.get(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}/select`);
+        }
+        if (_context.project && _context.action) {
+            return this.http.get(`/projects/${_context.project}/actions/${_context.action}/select`);
+        }
+        if (_context.story && _context.action) {
+            return this.http.get(`/stories/${_context.story}/actions/${_context.action}/select`);
+        }
         if (_context.product && _context.action) {
             return this.http.get(`/products/${_context.product}/actions/${_context.action}/select`);
         }
@@ -154,6 +163,36 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions`, _data);
+        }
+        if (_context.project && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/actions`, _data);
+        }
+        if (_context.story && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/stories/${_context.story}/actions`, _data);
+        }
         if (_context.product && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -175,6 +214,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/actions/${_context.action}`, _data);
+        }
+        if (_context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/stories/${_context.story}/actions/${_context.action}`, _data);
+        }
         if (_context.product && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/actions/${_context.action}`, _data);
@@ -190,6 +241,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.action) {
+            return this.http.delete(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}`);
+        }
+        if (_context.project && _context.action) {
+            return this.http.delete(`/projects/${_context.project}/actions/${_context.action}`);
+        }
+        if (_context.story && _context.action) {
+            return this.http.delete(`/stories/${_context.story}/actions/${_context.action}`);
+        }
         if (_context.product && _context.action) {
             return this.http.delete(`/products/${_context.product}/actions/${_context.action}`);
         }
@@ -204,6 +264,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.story && _context.action) {
+            const res = await this.http.get(`/stories/${_context.story}/actions/${_context.action}`);
+            return res;
+        }
         if (_context.product && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/actions/${_context.action}`);
             return res;
@@ -219,6 +291,24 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.story && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/stories/${_context.story}/actions/getdraft`, _data);
+            return res;
+        }
         if (_context.product && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -236,6 +326,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async Comment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}/comment`, _data);
+        }
+        if (_context.project && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/actions/${_context.action}/comment`, _data);
+        }
+        if (_context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/actions/${_context.action}/comment`, _data);
+        }
         if (_context.product && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/comment`, _data);
@@ -251,6 +353,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}/createhis`, _data);
+        }
+        if (_context.project && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/actions/${_context.action}/createhis`, _data);
+        }
+        if (_context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/actions/${_context.action}/createhis`, _data);
+        }
         if (_context.product && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/createhis`, _data);
@@ -266,6 +380,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async EditComment(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}/editcomment`, _data);
+        }
+        if (_context.project && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/actions/${_context.action}/editcomment`, _data);
+        }
+        if (_context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/actions/${_context.action}/editcomment`, _data);
+        }
         if (_context.product && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/editcomment`, _data);
@@ -281,6 +407,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async ManagePmsEe(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}/managepmsee`, _data);
+        }
+        if (_context.project && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/actions/${_context.action}/managepmsee`, _data);
+        }
+        if (_context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/actions/${_context.action}/managepmsee`, _data);
+        }
         if (_context.product && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/managepmsee`, _data);
@@ -296,6 +434,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}/sendmarkdone`, _data);
+        }
+        if (_context.project && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/actions/${_context.action}/sendmarkdone`, _data);
+        }
+        if (_context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/actions/${_context.action}/sendmarkdone`, _data);
+        }
         if (_context.product && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/sendmarkdone`, _data);
@@ -311,6 +461,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async SendTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}/sendtodo`, _data);
+        }
+        if (_context.project && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/actions/${_context.action}/sendtodo`, _data);
+        }
+        if (_context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/actions/${_context.action}/sendtodo`, _data);
+        }
         if (_context.product && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/sendtodo`, _data);
@@ -326,6 +488,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async SendToread(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}/sendtoread`, _data);
+        }
+        if (_context.project && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/actions/${_context.action}/sendtoread`, _data);
+        }
+        if (_context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/actions/${_context.action}/sendtoread`, _data);
+        }
         if (_context.product && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/sendtoread`, _data);
@@ -341,6 +515,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchdefault`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchdefault`, _data);
+        }
+        if (_context.story && true) {
+            return this.http.post(`/stories/${_context.story}/actions/fetchdefault`, _data);
+        }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchdefault`, _data);
         }
@@ -355,6 +538,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchMobType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmobtype`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchmobtype`, _data);
+        }
+        if (_context.story && true) {
+            return this.http.post(`/stories/${_context.story}/actions/fetchmobtype`, _data);
+        }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchmobtype`, _data);
         }
@@ -369,6 +561,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchMyTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchmytrends`, _data);
+        }
+        if (_context.story && true) {
+            return this.http.post(`/stories/${_context.story}/actions/fetchmytrends`, _data);
+        }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchmytrends`, _data);
         }
@@ -383,6 +584,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchProductTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.story && true) {
+            return this.http.post(`/stories/${_context.story}/actions/fetchproducttrends`, _data);
+        }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchproducttrends`, _data);
         }
@@ -397,6 +607,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchProjectTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchprojecttrends`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchprojecttrends`, _data);
+        }
+        if (_context.story && true) {
+            return this.http.post(`/stories/${_context.story}/actions/fetchprojecttrends`, _data);
+        }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchprojecttrends`, _data);
         }
@@ -411,6 +630,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchQueryUserYEAR(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchqueryuseryear`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchqueryuseryear`, _data);
+        }
+        if (_context.story && true) {
+            return this.http.post(`/stories/${_context.story}/actions/fetchqueryuseryear`, _data);
+        }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchqueryuseryear`, _data);
         }
@@ -425,6 +653,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchtype`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchtype`, _data);
+        }
+        if (_context.story && true) {
+            return this.http.post(`/stories/${_context.story}/actions/fetchtype`, _data);
+        }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchtype`, _data);
         }
@@ -441,6 +678,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionServiceBase
      */
     public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/createhisbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/actions/createhisbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/actions/createhisbatch`,_data);
+        }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/createhisbatch`,_data);
@@ -458,6 +707,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionServiceBase
      */
     public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/editcommentbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/actions/editcommentbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/actions/editcommentbatch`,_data);
+        }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/editcommentbatch`,_data);
@@ -475,6 +736,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionServiceBase
      */
     public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/managepmseebatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/actions/managepmseebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/actions/managepmseebatch`,_data);
+        }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/managepmseebatch`,_data);
@@ -492,6 +765,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionServiceBase
      */
     public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/sendmarkdonebatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/actions/sendmarkdonebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/actions/sendmarkdonebatch`,_data);
+        }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/sendmarkdonebatch`,_data);
@@ -509,6 +794,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionServiceBase
      */
     public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/sendtodobatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/actions/sendtodobatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/actions/sendtodobatch`,_data);
+        }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/sendtodobatch`,_data);
@@ -526,6 +823,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionServiceBase
      */
     public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/sendtoreadbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/actions/sendtoreadbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/actions/sendtoreadbatch`,_data);
+        }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/sendtoreadbatch`,_data);

@@ -111,6 +111,7 @@ public class IbzProReportlyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreportlyhistoryMapping.toDto(ibzproreportlyhistoryService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzProReportlyHistoryRuntime.test(#ibzproreportlyhistory_id,'CREATE')")
     @ApiOperation(value = "检查汇报操作历史", tags = {"汇报操作历史" },  notes = "检查汇报操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyhistories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzProReportlyHistoryDTO ibzproreportlyhistorydto) {

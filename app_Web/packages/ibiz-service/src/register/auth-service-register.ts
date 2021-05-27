@@ -179,7 +179,6 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('ibzprotesttaskaction', () => import('../authservice/ibz-pro-test-task-action/ibz-pro-test-task-action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibztestsuiteaction', () => import('../authservice/ibztest-suite-action/ibztest-suite-action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibztestreportaction', () => import('../authservice/ibztest-report-action/ibztest-report-action-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('ibzproreportlyaction', () => import('../authservice/ibz-pro-reportly-action/ibz-pro-reportly-action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzdailyaction', () => import('../authservice/ibzdaily-action/ibzdaily-action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzprotodoaction', () => import('../authservice/ibzpro-to-do-action/ibzpro-to-do-action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projecttaskestimate', () => import('../authservice/project-taskestimate/project-taskestimate-auth-service'));

@@ -111,6 +111,7 @@ public class ProductSumResource {
         return ResponseEntity.status(HttpStatus.OK).body(productsumMapping.toDto(productsumService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductSumRuntime.test(#productsum_id,'CREATE')")
     @ApiOperation(value = "检查产品汇总表", tags = {"产品汇总表" },  notes = "检查产品汇总表")
 	@RequestMapping(method = RequestMethod.POST, value = "/productsums/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProductSumDTO productsumdto) {

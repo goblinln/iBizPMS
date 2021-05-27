@@ -112,6 +112,7 @@ public class IbzReportRoleConfigResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigMapping.toDto(ibzreportroleconfigService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzReportRoleConfigRuntime.test(#ibzreportroleconfig_id,'CREATE')")
     @ApiOperation(value = "检查汇报角色配置", tags = {"汇报角色配置" },  notes = "检查汇报角色配置")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportroleconfigs/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzReportRoleConfigDTO ibzreportroleconfigdto) {

@@ -111,6 +111,7 @@ public class IBZProReleaseHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreleasehistoryMapping.toDto(ibzproreleasehistoryService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IBZProReleaseHistoryRuntime.test(#ibzproreleasehistory_id,'CREATE')")
     @ApiOperation(value = "检查发布操作历史", tags = {"发布操作历史" },  notes = "检查发布操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleasehistories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProReleaseHistoryDTO ibzproreleasehistorydto) {

@@ -125,7 +125,6 @@ export * from './module/module';
 export * from './ibz-pro-test-task-action/ibz-pro-test-task-action';
 export * from './ibztest-suite-action/ibztest-suite-action';
 export * from './ibztest-report-action/ibztest-report-action';
-export * from './ibz-pro-reportly-action/ibz-pro-reportly-action';
 export * from './ibzdaily-action/ibzdaily-action';
 export * from './ibzpro-to-do-action/ibzpro-to-do-action';
 export * from './project-taskestimate/project-taskestimate';

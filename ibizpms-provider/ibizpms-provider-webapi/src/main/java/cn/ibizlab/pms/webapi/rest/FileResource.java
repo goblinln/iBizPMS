@@ -111,6 +111,7 @@ public class FileResource {
         return ResponseEntity.status(HttpStatus.OK).body(fileMapping.toDto(fileService.getDraft(domain)));
     }
 
+    @PreAuthorize("@FileRuntime.test(#file_id,'CREATE')")
     @ApiOperation(value = "检查附件", tags = {"附件" },  notes = "检查附件")
 	@RequestMapping(method = RequestMethod.POST, value = "/files/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody FileDTO filedto) {

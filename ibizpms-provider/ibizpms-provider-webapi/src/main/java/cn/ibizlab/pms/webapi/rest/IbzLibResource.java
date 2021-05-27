@@ -112,6 +112,7 @@ public class IbzLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzlibMapping.toDto(ibzlibService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'CREATE')")
     @ApiOperation(value = "检查用例库", tags = {"用例库" },  notes = "检查用例库")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzLibDTO ibzlibdto) {

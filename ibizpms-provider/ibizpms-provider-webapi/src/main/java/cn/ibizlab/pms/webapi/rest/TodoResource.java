@@ -139,6 +139,7 @@ public class TodoResource {
     }
 
 
+    @PreAuthorize("@TodoRuntime.test(#todo_id,'CREATE')")
     @ApiOperation(value = "检查待办", tags = {"待办" },  notes = "检查待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody TodoDTO tododto) {

@@ -110,6 +110,7 @@ public class ProductStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(productstatsMapping.toDto(productstatsService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductStatsRuntime.test(#productstats_id,'CREATE')")
     @ApiOperation(value = "检查产品统计", tags = {"产品统计" },  notes = "检查产品统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/productstats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProductStatsDTO productstatsdto) {

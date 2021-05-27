@@ -1391,8 +1391,7 @@
       "spanMode" : false
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.FILTER",
-        "id" : "工具栏按钮文本[*.FILTER]"
+        "lanResTag" : "TBB.TEXT.*.FILTER"
       },
       "caption" : "过滤",
       "groupExtractMode" : "ITEM",
@@ -1409,8 +1408,7 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.FILTER",
-          "id" : "工具栏按钮文本[*.FILTER]"
+          "lanResTag" : "TBB.TEXT.*.FILTER"
         },
         "caption" : "过滤",
         "codeName" : "ToggleFilter",
@@ -1422,8 +1420,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.FILTER",
-          "id" : "工具栏按钮提示[*.FILTER]"
+          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "ToggleFilter",
@@ -1432,8 +1429,7 @@
       },
       "tooltip" : "过滤",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.FILTER",
-        "id" : "工具栏按钮提示[*.FILTER]"
+        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
       },
       "enableToggleMode" : true,
       "showCaption" : true,

@@ -529,8 +529,7 @@
               "showIcon" : true
             }, {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.EXPORT",
-                "id" : "工具栏按钮文本[*.EXPORT]"
+                "lanResTag" : "TBB.TEXT.*.EXPORT"
               },
               "caption" : "导出",
               "groupExtractMode" : "ITEM",
@@ -547,8 +546,7 @@
               },
               "getPSUIAction" : {
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.*.EXPORT",
-                  "id" : "工具栏按钮文本[*.EXPORT]"
+                  "lanResTag" : "TBB.TEXT.*.EXPORT"
                 },
                 "caption" : "导出",
                 "codeName" : "ExportExcel",
@@ -560,8 +558,7 @@
                 },
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
-                  "id" : "工具栏按钮提示[*.EXPORT]"
+                  "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "ExportExcel",
@@ -569,15 +566,13 @@
               },
               "tooltip" : "导出",
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
-                "id" : "工具栏按钮提示[*.EXPORT]"
+                "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
               },
               "showCaption" : true,
               "showIcon" : true
             }, {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.FILTER",
-                "id" : "工具栏按钮文本[*.FILTER]"
+                "lanResTag" : "TBB.TEXT.*.FILTER"
               },
               "caption" : "过滤",
               "groupExtractMode" : "ITEM",
@@ -594,8 +589,7 @@
               },
               "getPSUIAction" : {
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.*.FILTER",
-                  "id" : "工具栏按钮文本[*.FILTER]"
+                  "lanResTag" : "TBB.TEXT.*.FILTER"
                 },
                 "caption" : "过滤",
                 "codeName" : "ToggleFilter",
@@ -607,8 +601,7 @@
                 },
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.*.FILTER",
-                  "id" : "工具栏按钮提示[*.FILTER]"
+                  "lanResTag" : "TBB.TOOLTIP.*.FILTER"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "ToggleFilter",
@@ -617,8 +610,7 @@
               },
               "tooltip" : "过滤",
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.FILTER",
-                "id" : "工具栏按钮提示[*.FILTER]"
+                "lanResTag" : "TBB.TOOLTIP.*.FILTER"
               },
               "enableToggleMode" : true,
               "showCaption" : true,
@@ -2984,8 +2976,7 @@
               "showIcon" : true
             }, {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.EXPORT",
-                "id" : "工具栏按钮文本[*.EXPORT]"
+                "lanResTag" : "TBB.TEXT.*.EXPORT"
               },
               "caption" : "导出",
               "groupExtractMode" : "ITEM",
@@ -3002,8 +2993,7 @@
               },
               "getPSUIAction" : {
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.*.EXPORT",
-                  "id" : "工具栏按钮文本[*.EXPORT]"
+                  "lanResTag" : "TBB.TEXT.*.EXPORT"
                 },
                 "caption" : "导出",
                 "codeName" : "ExportExcel",
@@ -3015,8 +3005,7 @@
                 },
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
-                  "id" : "工具栏按钮提示[*.EXPORT]"
+                  "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "ExportExcel",
@@ -3024,15 +3013,13 @@
               },
               "tooltip" : "导出",
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
-                "id" : "工具栏按钮提示[*.EXPORT]"
+                "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
               },
               "showCaption" : true,
               "showIcon" : true
             }, {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.FILTER",
-                "id" : "工具栏按钮文本[*.FILTER]"
+                "lanResTag" : "TBB.TEXT.*.FILTER"
               },
               "caption" : "过滤",
               "groupExtractMode" : "ITEM",
@@ -3049,8 +3036,7 @@
               },
               "getPSUIAction" : {
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.*.FILTER",
-                  "id" : "工具栏按钮文本[*.FILTER]"
+                  "lanResTag" : "TBB.TEXT.*.FILTER"
                 },
                 "caption" : "过滤",
                 "codeName" : "ToggleFilter",
@@ -3062,8 +3048,7 @@
                 },
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.*.FILTER",
-                  "id" : "工具栏按钮提示[*.FILTER]"
+                  "lanResTag" : "TBB.TOOLTIP.*.FILTER"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "ToggleFilter",
@@ -3072,8 +3057,7 @@
               },
               "tooltip" : "过滤",
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.FILTER",
-                "id" : "工具栏按钮提示[*.FILTER]"
+                "lanResTag" : "TBB.TOOLTIP.*.FILTER"
               },
               "enableToggleMode" : true,
               "showCaption" : true,
@@ -6796,6 +6780,94 @@
               "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b",
               "modeltype" : "PSAPPDEVIEW",
               "getPSAppDERSPaths" : [ [ {
+                "actionRSMode" : 1,
+                "codeName" : "Stories",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                },
+                "name" : "产品需求",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2,
+                "enableCreateDataRS" : false,
+                "enableDEAction" : true,
+                "enableDEDataSet" : true,
+                "enableGetDataRS" : false,
+                "enableSelect" : true,
+                "enableSelectDataRS" : false,
+                "enableUpdateDataRS" : false
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "需求日志",
+                "rSMode" : 2,
+                "enableCreateDataRS" : false,
+                "enableDEAction" : true,
+                "enableDEDataSet" : true,
+                "enableGetDataRS" : false,
+                "enableSelect" : true,
+                "enableSelectDataRS" : false,
+                "enableUpdateDataRS" : false
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "项目日志",
+                "rSMode" : 2,
+                "enableCreateDataRS" : false,
+                "enableDEAction" : true,
+                "enableDEDataSet" : true,
+                "enableGetDataRS" : false,
+                "enableSelect" : true,
+                "enableSelectDataRS" : false,
+                "enableUpdateDataRS" : false
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "需求日志",
+                "rSMode" : 2,
+                "enableCreateDataRS" : false,
+                "enableDEAction" : true,
+                "enableDEDataSet" : true,
+                "enableGetDataRS" : false,
+                "enableSelect" : true,
+                "enableSelectDataRS" : false,
+                "enableUpdateDataRS" : false
+              } ], [ {
                 "actionRSMode" : 1,
                 "codeName" : "Actions",
                 "dataRSMode" : 0,

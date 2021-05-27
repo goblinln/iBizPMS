@@ -112,6 +112,7 @@ public class IbzTopResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibztopMapping.toDto(ibztopService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzTopRuntime.test(#ibztop_id,'CREATE')")
     @ApiOperation(value = "检查置顶", tags = {"置顶" },  notes = "检查置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztops/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzTopDTO ibztopdto) {

@@ -117,6 +117,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/CheckKey.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "Zt_product__CREATE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
@@ -575,6 +579,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "Zt_product__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,

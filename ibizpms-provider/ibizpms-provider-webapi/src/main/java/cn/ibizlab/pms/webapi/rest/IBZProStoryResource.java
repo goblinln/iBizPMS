@@ -111,6 +111,7 @@ public class IBZProStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprostoryMapping.toDto(ibzprostoryService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IBZProStoryRuntime.test(#ibzprostory_id,'CREATE')")
     @ApiOperation(value = "检查需求", tags = {"需求" },  notes = "检查需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProStoryDTO ibzprostorydto) {

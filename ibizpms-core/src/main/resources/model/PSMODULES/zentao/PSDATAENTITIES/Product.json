@@ -62,7 +62,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDELOGICS/CancelProductTop.json"
     }
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CheckKey.json",

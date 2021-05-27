@@ -350,6 +350,7 @@ public class SubStoryResource {
     }
 
 
+    @PreAuthorize("@StoryRuntime.test(#substory_id,'CREATE')")
     @ApiOperation(value = "检查需求", tags = {"需求" },  notes = "检查需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SubStoryDTO substorydto) {

@@ -111,6 +111,7 @@ public class ModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(moduleMapping.toDto(moduleService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ModuleRuntime.test(#module_id,'CREATE')")
     @ApiOperation(value = "检查模块", tags = {"模块" },  notes = "检查模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/modules/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ModuleDTO moduledto) {

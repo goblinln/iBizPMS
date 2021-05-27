@@ -103,6 +103,7 @@ public class IbizproProjectWeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklyMapping.toDto(ibizproprojectweeklyService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbizproProjectWeeklyRuntime.test(#ibizproprojectweekly_id,'CREATE')")
     @ApiOperation(value = "检查项目周报", tags = {"项目周报" },  notes = "检查项目周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectweeklies/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProjectWeeklyDTO ibizproprojectweeklydto) {

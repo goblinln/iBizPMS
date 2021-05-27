@@ -111,6 +111,7 @@ public class IbizproProjectMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectmonthlyMapping.toDto(ibizproprojectmonthlyService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbizproProjectMonthlyRuntime.test(#ibizproprojectmonthly_id,'CREATE')")
     @ApiOperation(value = "检查项目月报", tags = {"项目月报" },  notes = "检查项目月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProjectMonthlyDTO ibizproprojectmonthlydto) {

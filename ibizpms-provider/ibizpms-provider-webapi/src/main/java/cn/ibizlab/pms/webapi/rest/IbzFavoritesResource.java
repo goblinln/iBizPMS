@@ -112,6 +112,7 @@ public class IbzFavoritesResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzfavoritesMapping.toDto(ibzfavoritesService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id,'CREATE')")
     @ApiOperation(value = "检查收藏", tags = {"收藏" },  notes = "检查收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzfavorites/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzFavoritesDTO ibzfavoritesdto) {

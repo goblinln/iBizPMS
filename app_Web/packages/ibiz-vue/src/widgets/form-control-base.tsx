@@ -1,7 +1,7 @@
 import { Subject, Subscription } from 'rxjs';
 import { ModelTool, Verify, AppErrorCode, EntityFieldErrorCode } from 'ibiz-core';
 import { MainControlBase } from './main-control-base';
-import { IPSDEEditFormItem, IPSDEForm, IPSDEFormItem } from '@ibiz/dynamic-model-api';
+import { IPSDEEditFormItem, IPSDEForm } from '@ibiz/dynamic-model-api';
 
 /**
  * 表单部件基类
@@ -415,18 +415,18 @@ export class FormControlBase extends MainControlBase {
      */
     public load(opt: any = {}): void {
         if (!this.loadAction) {
-            this.$throw( `${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.loadaction') as string),'load');
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.loadaction') as string), 'load');
             return;
         }
         const arg: any = { ...opt };
-        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        let tempContext: any = JSON.parse(JSON.stringify(this.context));
         let viewparamResult: any = Object.assign(arg, this.viewparams);
-        this.onControlRequset('load',tempContext,viewparamResult);
+        this.onControlRequset('load', tempContext, viewparamResult);
         const get: Promise<any> = this.service.get(this.loadAction, tempContext, { viewparams: viewparamResult }, this.showBusyIndicator);
         get.then((response: any) => {
-            this.onControlResponse('load',response);
+            this.onControlResponse('load', response);
             if (!response.status || response.status !== 200) {
-                this.$throw(response,'load');
+                this.$throw(response, 'load');
                 return;
             }
             const data = response.data;
@@ -440,8 +440,8 @@ export class FormControlBase extends MainControlBase {
                 this.formState.next({ type: 'load', data: data });
             });
         }).catch((error: any) => {
-            this.onControlResponse('load',error);
-            this.$throw(error,'load');
+            this.onControlResponse('load', error);
+            this.$throw(error, 'load');
         });
     }
 
@@ -453,18 +453,18 @@ export class FormControlBase extends MainControlBase {
      */
     public loadDraft(opt: any = {}, mode?: string): void {
         if (!this.loaddraftAction) {
-            this.$throw((this.$t('app.searchForm.notConfig.loaddraftAction') as string),'loadDraft');
+            this.$throw((this.$t('app.searchForm.notConfig.loaddraftAction') as string), 'loadDraft');
             return;
         }
         const arg: any = { ...opt };
         Object.assign(arg, { viewparams: this.viewparams });
-        const tempContext:any =  JSON.parse(JSON.stringify(this.context));
-        this.onControlRequset('loadDraft',tempContext,arg);
+        const tempContext: any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('loadDraft', tempContext, arg);
         let post: Promise<any> = this.service.loadDraft(this.loaddraftAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
-            this.onControlResponse('loadDraft',response);
+            this.onControlResponse('loadDraft', response);
             if (!response.status || response.status !== 200) {
-                this.$throw(response,'loadDraft');
+                this.$throw(response, 'loadDraft');
                 return;
             }
             const data = response.data;
@@ -494,8 +494,8 @@ export class FormControlBase extends MainControlBase {
                 this.formState.next({ type: 'load', data: data });
             });
         }).catch((response: any) => {
-            this.onControlResponse('loadDraft',response);
-            this.$throw(response,'loadDraft');
+            this.onControlResponse('loadDraft', response);
+            this.$throw(response, 'loadDraft');
         });
     }
 
@@ -545,25 +545,39 @@ export class FormControlBase extends MainControlBase {
     }
 
     /**
+     * 通过属性名获取表单项
+     *
+     * @memberof FormControlBase
+     */
+    public findFormItemByField(fieldName: string) {
+        const formItems: IPSDEEditFormItem[] = ModelTool.getAllFormItems(this.controlInstance);
+        return formItems.find((formItem: any) => {
+            return formItem.getPSAppDEField()?.name == fieldName;
+        })
+    }
+
+    /**
      * 处理部件UI响应
      *
      * @memberof FormControlBase
      */
-    public onControlResponse(action: string, response: any){
+    public onControlResponse(action: string, response: any) {
         super.onControlResponse(action, response);
         if (response && response.status && response.status != 200 && response.data) {
             const data: any = response.data;
             if (data.code && Object.is(AppErrorCode.INPUTERROR, data.code) && data.details?.length > 0) {
-                const formItems: IPSDEEditFormItem[] = ModelTool.getAllFormItems(this.controlInstance);
+                let errorMsg:string = '';
                 data.details.forEach((detail: any) => {
                     if (Object.is(EntityFieldErrorCode.ERROR_VALUERULE, detail.fielderrortype) && detail.fieldname) {
-                        formItems.forEach((formItem: IPSDEFormItem) => {
-                            if (Object.is(formItem.getPSAppDEField()?.name, detail.fieldname)) {
-                                Object.assign( this.detailsModel[formItem.name], { error: detail.fielderrorinfo } );
-                            }
-                        })
+                        const tempFormItem: any = this.findFormItemByField(detail.fieldname);
+                        if (tempFormItem) {
+                            Object.assign(this.detailsModel[tempFormItem.name], { error: new String(detail.fielderrorinfo) });
+                        }else{
+                            errorMsg += `${detail.fieldlogicname}${detail.fielderrorinfo}<br/>`;
+                        }
                     }
                 })
+                response.data.message = errorMsg?errorMsg:(this.$t('app.searchForm.globalerrortip') as string);
                 this.$forceUpdate();
             }
         }

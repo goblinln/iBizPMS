@@ -103,6 +103,7 @@ public class IbzMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlyMapping.toDto(ibzmonthlyService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'CREATE')")
     @ApiOperation(value = "检查月报", tags = {"月报" },  notes = "检查月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzMonthlyDTO ibzmonthlydto) {

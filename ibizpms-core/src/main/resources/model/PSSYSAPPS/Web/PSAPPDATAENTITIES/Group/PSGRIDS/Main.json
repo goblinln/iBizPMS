@@ -115,8 +115,7 @@
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
           "getCapPSLanguageRes" : {
-            "lanResTag" : "TBB.TEXT.*.EDIT",
-            "id" : "工具栏按钮文本[*.EDIT]"
+            "lanResTag" : "TBB.TEXT.*.EDIT"
           },
           "caption" : "编辑",
           "codeName" : "Edit",
@@ -128,8 +127,7 @@
           },
           "timeout" : 60000,
           "getTooltipPSLanguageRes" : {
-            "lanResTag" : "TBB.TOOLTIP.*.EDIT",
-            "id" : "工具栏按钮提示[*.EDIT]"
+            "lanResTag" : "TBB.TOOLTIP.*.EDIT"
           },
           "uIActionMode" : "SYS",
           "uIActionTag" : "Edit",
@@ -144,8 +142,7 @@
         "getPSUIAction" : {
           "actionTarget" : "MULTIKEY",
           "getCapPSLanguageRes" : {
-            "lanResTag" : "TBB.TEXT.*.REMOVE",
-            "id" : "工具栏按钮文本[*.REMOVE]"
+            "lanResTag" : "TBB.TEXT.*.REMOVE"
           },
           "caption" : "删除",
           "codeName" : "Remove",
@@ -157,8 +154,7 @@
           },
           "timeout" : 60000,
           "getTooltipPSLanguageRes" : {
-            "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
-            "id" : "工具栏按钮提示[*.REMOVE]"
+            "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
           },
           "uIActionMode" : "SYS",
           "uIActionTag" : "Remove",

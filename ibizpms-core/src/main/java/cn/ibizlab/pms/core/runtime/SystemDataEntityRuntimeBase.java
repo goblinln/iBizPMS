@@ -59,24 +59,39 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     protected boolean deauditlog;
 
     /**
-	 * 主键字段
-	 */
+     * 主键字段
+     */
     protected String key;
 
     /**
-	 * 组织控制字段
-	 */
+     * 组织控制字段
+     */
     protected String orgIdField;
 
     /**
-	 * 部门控制字段
-	 */
+     * 部门控制字段
+     */
     protected String deptIdField;
 
     /**
      * 默认实体能力
      */
     protected List<UAADEAuthority> defaultAuthorities = new ArrayList<>();
+
+    /**
+     * 默认用户实体能力
+     */
+    protected List<UAADEAuthority> userAuthorities = null;
+
+    /**
+     * 默认管理员实体能力
+     */
+    protected List<UAADEAuthority> adminAuthorities = null;
+
+    /**
+     * 全部操作标识
+     */
+    protected Map<String, Integer> allOPprivs = new HashMap<>();
 
     @Autowired
     ISystemRuntime system;
@@ -114,9 +129,6 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         List<IPSDEUserRole> psDEUserRoles = this.getDefaultPSDEUserRoles();
         if (psDEUserRoles != null) {
             for (IPSDEUserRole psDEUserRole : psDEUserRoles) {
-                //非系统默认实体角色不处理
-                if (!psDEUserRole.isDefaultMode())
-                    continue;
                 UAADEAuthority authority = new UAADEAuthority();
                 authority.setName(psDEUserRole.getName());
                 authority.setEntity(this.getName());
@@ -163,9 +175,15 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                         Map<String, String> deAction = new HashMap<>();
                         deAction.put(psDEUserRoleOPPriv.getDataAccessAction(), org.apache.commons.lang3.StringUtils.isBlank(psDEUserRoleOPPriv.getCustomCond()) ? "" : psDEUserRoleOPPriv.getCustomCond());
                         deActions.add(deAction);
+                        if (!allOPprivs.containsKey(psDEUserRoleOPPriv.getDataAccessAction())) {
+                            allOPprivs.put(psDEUserRoleOPPriv.getDataAccessAction(), 0);
+                        }
                     }
                     authority.setDeAction(deActions);
                 }
+                //非系统默认实体角色忽略
+                if (!psDEUserRole.isDefaultMode())
+                    continue;
                 this.defaultAuthorities.add(authority);
             }
         }
@@ -206,71 +224,71 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     @Override
     public IEntityBase[] getNestedDERValue(IEntityBase iEntityBase, IPSDERBase iPSDERBase) {
         IEntity entity = (IEntity) iEntityBase;
-        if(iPSDERBase instanceof IPSDER1N){
+        if (iPSDERBase instanceof IPSDER1N) {
             IPSDER1N iPSDER1N = (IPSDER1N) iPSDERBase;
             String strNestField = iPSDER1N.getMinorCodeName();
-            if(StringUtils.isBlank(strNestField)){
+            if (StringUtils.isBlank(strNestField)) {
                 try {
                     strNestField = iPSDER1N.getMinorPSDataEntity().getCodeName();
-                }catch (Exception e){
-                    throw new DataEntityRuntimeException(String.format("获取嵌套属性发生错误：%s",e.getMessage()), Errors.INTERNALERROR, this);
+                } catch (Exception e) {
+                    throw new DataEntityRuntimeException(String.format("获取嵌套属性发生错误：%s", e.getMessage()), Errors.INTERNALERROR, this);
                 }
             }
             Object obj = entity.get(strNestField.toLowerCase());
-            if(obj != null) {
+            if (obj != null) {
                 List<IEntityBase> minorDatas = (List<IEntityBase>) obj;
                 return minorDatas.toArray(new IEntityBase[minorDatas.size()]);
             }
         }
-        return null ;
+        return null;
     }
 
     @Override
     public void setNestedDERValue(IEntityBase iEntityBase, IPSDERBase iPSDERBase, IEntityBase[] value) {
         IEntity entity = (IEntity) iEntityBase;
-        if(iPSDERBase instanceof IPSDER1N){
+        if (iPSDERBase instanceof IPSDER1N) {
             IPSDER1N iPSDER1N = (IPSDER1N) iPSDERBase;
             String strNestField = iPSDER1N.getMinorCodeName();
-            if(StringUtils.isBlank(strNestField)){
+            if (StringUtils.isBlank(strNestField)) {
                 try {
                     strNestField = iPSDER1N.getMinorPSDataEntity().getCodeName();
-                }catch (Exception e){
-                    throw new DataEntityRuntimeException(String.format("获取嵌套属性发生错误：%s",e.getMessage()), Errors.INTERNALERROR, this);
+                } catch (Exception e) {
+                    throw new DataEntityRuntimeException(String.format("获取嵌套属性发生错误：%s", e.getMessage()), Errors.INTERNALERROR, this);
                 }
             }
-            entity.set(strNestField.toLowerCase(),Arrays.asList(value));
+            entity.set(strNestField.toLowerCase(), Arrays.asList(value));
         }
     }
 
     @Override
     public boolean containsNestedDERValue(IEntityBase iEntityBase, IPSDERBase iPSDERBase){
         IEntity entity = (IEntity) iEntityBase;
-        if(iPSDERBase instanceof IPSDER1N){
+        if (iPSDERBase instanceof IPSDER1N) {
             IPSDER1N iPSDER1N = (IPSDER1N) iPSDERBase;
             String strNestField = iPSDER1N.getMinorCodeName();
-            if(StringUtils.isBlank(strNestField)){
+            if (StringUtils.isBlank(strNestField)) {
                 try {
                     strNestField = iPSDER1N.getMinorPSDataEntity().getCodeName();
-                }catch (Exception e){
-                    throw new DataEntityRuntimeException(String.format("获取嵌套属性发生错误：%s",e.getMessage()), Errors.INTERNALERROR, this);
+                } catch (Exception e) {
+                    throw new DataEntityRuntimeException(String.format("获取嵌套属性发生错误：%s", e.getMessage()), Errors.INTERNALERROR, this);
                 }
             }
             return entity.contains(strNestField.toLowerCase());
         }
-        return false ;
+        return false;
     }
 
     @Override
     public void resetNestedDERValue(IEntityBase iEntityBase, IPSDERBase iPSDERBase) {
         IEntity entity = (IEntity) iEntityBase;
-        if(iPSDERBase instanceof IPSDER1N){
+        if (iPSDERBase instanceof IPSDER1N) {
             IPSDER1N iPSDER1N = (IPSDER1N) iPSDERBase;
             String strNestField = iPSDER1N.getMinorCodeName();
-            if(StringUtils.isBlank(strNestField)){
+            if (StringUtils.isBlank(strNestField)) {
                 try {
                     strNestField = iPSDER1N.getMinorPSDataEntity().getCodeName();
-                }catch (Exception e){
-                    throw new DataEntityRuntimeException(String.format("获取嵌套属性发生错误：%s",e.getMessage()), Errors.INTERNALERROR, this);
+                } catch (Exception e) {
+                    throw new DataEntityRuntimeException(String.format("获取嵌套属性发生错误：%s", e.getMessage()), Errors.INTERNALERROR, this);
                 }
             }
             entity.reset(strNestField.toLowerCase());
@@ -362,7 +380,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             } else {
                 return searchField.get(iSearchContextBase);
             }
-        }  catch (NoSuchFieldException e) {
+        } catch (NoSuchFieldException e) {
             log.warn(String.format("不存在搜索项[%s]。", iPSDEFSearchMode.getName()));
         } catch (IllegalAccessException e) {
             log.warn(String.format("获取搜索项[%s]值发生错误：%s", iPSDEFSearchMode.getName(), e.getMessage()));
@@ -435,10 +453,10 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @return
      */
     public boolean quickTest(String action) {
-        if(DataAccessActions.DENY.equals(action)){
+        if (DataAccessActions.DENY.equals(action)) {
             return false;
         }
-        if(DataAccessActions.NONE.equals(action)){
+        if (DataAccessActions.NONE.equals(action)) {
             return true;
         }
         boolean check = true;
@@ -468,10 +486,10 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      */
     @SneakyThrows
     public boolean test(Serializable key, String action) {
-        if(DataAccessActions.DENY.equals(action)){
+        if (DataAccessActions.DENY.equals(action)) {
             return false;
         }
-        if(DataAccessActions.NONE.equals(action)){
+        if (DataAccessActions.NONE.equals(action)) {
             return true;
         }
         boolean check = true;
@@ -548,10 +566,10 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         if (this.getUserContext().isSuperuser())
             return true;
         if (testUnires(action))
-            return true ;
+            return true;
         //检查能力
         if (!quickTest(action))
-            return false ;
+            return false;
 
         //检查数据范围
         QueryWrapperContext context = this.createSearchContext();
@@ -656,6 +674,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
     /**
      * 加载运行时能力
+     *
      * @param uaadeAuthority
      * @param action
      * @return
@@ -744,9 +763,9 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
             //自定义条件
             if (StringUtils.isNotBlank(uaadeAuthority.getBscope())) {
-                if(!uaadeAuthority.isDataset()){
+                if (!uaadeAuthority.isDataset()) {
                     authorityCondition.or(ScopeUtils.parse(this, uaadeAuthority.getBscope()));
-                }else{
+                } else {
                     //直接由查询构造条件
                     Consumer<QueryWrapper> bScopeConditions = bScopeCondition -> {
                         bScopeCondition.apply(uaadeAuthority.getBscope());
@@ -785,7 +804,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                                     }
                                 })));
         //系统用户能力
-        ((SystemRuntime) this.getSystemRuntime()).getUserUAADEAuthority().stream().forEach(
+        this.getUserUAAAuthorities().stream().forEach(
                 uaadeAuthority -> uaadeAuthority.getDeAction().stream().forEach(
                         deaction -> deaction.keySet().stream().forEach(
                                 actionkey -> {
@@ -795,7 +814,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                                 })));
         //系统管理员能力
         if (curUser.getAdminuser() == 1) {
-            ((SystemRuntime) this.getSystemRuntime()).getAdminUAADEAuthority().stream().forEach(
+            this.getAdminUAAAuthorities().stream().forEach(
                     uaadeAuthority -> uaadeAuthority.getDeAction().stream().forEach(
                             deaction -> deaction.keySet().stream().forEach(
                                     actionkey -> {
@@ -805,7 +824,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                                     })));
         }
         //系统角色分配固定能力
-        ((SystemRuntime) this.getSystemRuntime()).getRoleUAADEAuthority().stream().forEach(
+        this.getRoleUAAAuthorities().stream().forEach(
                 uaadeAuthority -> uaadeAuthority.getDeAction().stream().forEach(
                         deaction -> deaction.keySet().stream().forEach(
                                 actionkey -> {
@@ -827,9 +846,15 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                                             })));
 
         }
-        opprivsMap.entrySet().stream().forEach(stringIntegerEntry -> {
-            if (test(key, stringIntegerEntry.getKey())) {
-                stringIntegerEntry.setValue(1);
+        opprivsMap.entrySet().stream().forEach(opprivsrEntry -> {
+            if (test(key, opprivsrEntry.getKey())) {
+                opprivsrEntry.setValue(1);
+            }
+        });
+        //补充未分配能力
+        allOPprivs.entrySet().stream().forEach(opprivEntry -> {
+            if (!opprivsMap.containsKey(opprivEntry.getKey())) {
+                opprivsMap.put(opprivEntry.getKey(), 0);
             }
         });
         return opprivsMap;
@@ -847,28 +872,24 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
         //实体默认能力
         uaaDEAuthority.addAll(defaultAuthorities.stream().filter(
-                uaadeAuthority -> uaadeAuthority.getEntity().equals(this.getName())
-                        && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
+                uaadeAuthority -> DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))
                 .collect(Collectors.toList()));
         //系统用户能力
-        uaaDEAuthority.addAll(((SystemRuntime) this.getSystemRuntime()).getUserUAADEAuthority().stream().filter(
-                uaadeAuthority -> uaadeAuthority.getEntity().equals(this.getName())
-                        && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
+        uaaDEAuthority.addAll(this.getUserUAAAuthorities().stream().filter(
+                uaadeAuthority -> DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))
                 .collect(Collectors.toList()));
         //系统管理员能力
         if (curUser.getAdminuser() == 1) {
-            uaaDEAuthority.addAll(((SystemRuntime) this.getSystemRuntime()).getAdminUAADEAuthority().stream().filter(
-                    uaadeAuthority -> uaadeAuthority.getEntity().equals(this.getName())
-                            && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
+            uaaDEAuthority.addAll(this.getAdminUAAAuthorities().stream().filter(
+                    uaadeAuthority -> DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))
                     .collect(Collectors.toList()));
         }
         //系统角色分配固定能力
-        uaaDEAuthority.addAll(((SystemRuntime) this.getSystemRuntime()).getRoleUAADEAuthority().stream().filter(
-                uaadeAuthority -> uaadeAuthority.getEntity().equals(this.getName())
-                        && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
+        uaaDEAuthority.addAll(this.getRoleUAAAuthorities().stream().filter(
+                uaadeAuthority -> DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))
                 .collect(Collectors.toList()));
         //运行时分配能力
-        if(curUser.getAuthorities() != null){
+        if (curUser.getAuthorities() != null) {
             String curSystemId = curUser.getSrfsystemid();
             if (StringUtils.isEmpty(curSystemId)) {
                 uaaDEAuthority.addAll(curUser.getAuthorities().stream()
@@ -888,11 +909,51 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     }
 
     /**
+     * 获取普通用户权限
+     *
+     * @return
+     */
+    public List<UAADEAuthority> getUserUAAAuthorities() {
+        if (userAuthorities == null) {
+            userAuthorities = ((SystemRuntime) this.getSystemRuntime()).getUserUAADEAuthority().stream().filter(
+                    uaadeAuthority -> uaadeAuthority.getEntity().equals(this.getName()))
+                    .collect(Collectors.toList());
+        }
+        return userAuthorities;
+    }
+
+    /**
+     * 获取管理员权限
+     *
+     * @return
+     */
+    public List<UAADEAuthority> getAdminUAAAuthorities() {
+        if (adminAuthorities == null) {
+            adminAuthorities = ((SystemRuntime) this.getSystemRuntime()).getAdminUAADEAuthority().stream().filter(
+                    uaadeAuthority -> uaadeAuthority.getEntity().equals(this.getName()))
+                    .collect(Collectors.toList());
+        }
+        return adminAuthorities;
+    }
+
+    /**
+     * 获取系统角色固定权限
+     *
+     * @return
+     */
+    public List<UAADEAuthority> getRoleUAAAuthorities() {
+        return ((SystemRuntime) this.getSystemRuntime()).getRoleUAADEAuthority().stream().filter(
+                uaadeAuthority -> uaadeAuthority.getEntity().equals(this.getName()))
+                .collect(Collectors.toList());
+    }
+
+    /**
      * 获取实体主键字段
+     *
      * @return
      */
     public String getKey() {
-        if(StringUtils.isBlank(this.key)){
+        if (StringUtils.isBlank(this.key)) {
             this.key = this.getKeyFieldQueryExp();
         }
         return this.key;
@@ -900,10 +961,11 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
     /**
      * 获取实体组织控制字段
+     *
      * @return
      */
     public String getOrgIdField() {
-        if(StringUtils.isBlank(this.orgIdField)){
+        if (StringUtils.isBlank(this.orgIdField)) {
             this.orgIdField = this.getOrgIdFieldQueryExp();
         }
         return this.orgIdField;
@@ -911,10 +973,11 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
     /**
      * 获取实体部门控制字段
+     *
      * @return
      */
     public String getDeptIdField() {
-        if(StringUtils.isBlank(this.deptIdField)){
+        if (StringUtils.isBlank(this.deptIdField)) {
             this.deptIdField = this.getDeptIdFieldQueryExp();
         }
         return this.deptIdField;
@@ -930,10 +993,9 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         }
         if (iPSDEField instanceof IPSLinkDEField && !iPSDEField.isPhisicalDEField()) {
             IPSLinkDEField iPSLinkDEField = (IPSLinkDEField) iPSDEField;
-            fieldExp = fieldExp.replace(iPSLinkDEField.getRelatedPSDEField().getName(),iPSLinkDEField.getName());
+            fieldExp = fieldExp.replace(iPSLinkDEField.getRelatedPSDEField().getName(), iPSLinkDEField.getName());
             return fieldExp;
         }
-        
         return fieldExp;
     }
 

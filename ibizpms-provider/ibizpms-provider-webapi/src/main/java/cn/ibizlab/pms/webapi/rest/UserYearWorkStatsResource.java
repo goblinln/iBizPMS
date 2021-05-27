@@ -111,6 +111,7 @@ public class UserYearWorkStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsMapping.toDto(useryearworkstatsService.getDraft(domain)));
     }
 
+    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'CREATE')")
     @ApiOperation(value = "检查用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "检查用户年度工作内容统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/useryearworkstats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {

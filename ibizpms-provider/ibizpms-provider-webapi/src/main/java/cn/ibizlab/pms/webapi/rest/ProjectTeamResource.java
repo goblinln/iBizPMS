@@ -124,6 +124,7 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(projectteamService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectTeamRuntime.test(#projectteam_id,'CREATE')")
     @ApiOperation(value = "检查项目团队", tags = {"项目团队" },  notes = "检查项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectteams/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProjectTeamDTO projectteamdto) {

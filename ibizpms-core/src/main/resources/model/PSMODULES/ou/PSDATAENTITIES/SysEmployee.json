@@ -45,7 +45,7 @@
     "orderValue" : 41,
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/CheckKey.json",
@@ -1707,8 +1707,7 @@
     "dataType" : "YESNO",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "CTRL.WFSERVICE.ERR000015",
-      "id" : "处理逻辑[WFSERVICE.ERR000015]"
+      "lanResTag" : "CTRL.WFSERVICE.ERR000015"
     },
     "logicName" : "逻辑有效",
     "name" : "ENABLE",
@@ -1746,8 +1745,7 @@
     "dataType" : "DATETIME",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "TBB.TOOLTIP.*.PRINT",
-      "id" : "工具栏按钮提示[*.PRINT]"
+      "lanResTag" : "TBB.TOOLTIP.*.PRINT"
     },
     "logicName" : "创建时间",
     "name" : "CREATEDATE",

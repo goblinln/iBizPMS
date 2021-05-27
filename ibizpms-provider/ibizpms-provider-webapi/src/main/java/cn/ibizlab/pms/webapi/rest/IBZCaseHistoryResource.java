@@ -111,6 +111,7 @@ public class IBZCaseHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryMapping.toDto(ibzcasehistoryService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IBZCaseHistoryRuntime.test(#ibzcasehistory_id,'CREATE')")
     @ApiOperation(value = "检查测试操作历史", tags = {"测试操作历史" },  notes = "检查测试操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcasehistories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {

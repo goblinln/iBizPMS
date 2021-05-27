@@ -112,6 +112,7 @@ public class IbzproConfigResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproconfigMapping.toDto(ibzproconfigService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzproConfigRuntime.test(#ibzproconfig_id,'CREATE')")
     @ApiOperation(value = "检查系统配置表", tags = {"系统配置表" },  notes = "检查系统配置表")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproconfigs/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzproConfigDTO ibzproconfigdto) {

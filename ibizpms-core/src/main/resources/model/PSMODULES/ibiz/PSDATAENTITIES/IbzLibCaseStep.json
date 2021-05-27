@@ -155,7 +155,7 @@
     "builtinAction" : true,
     "enableTempData" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/CheckKey.json",

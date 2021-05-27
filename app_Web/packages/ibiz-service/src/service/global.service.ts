@@ -1151,15 +1151,6 @@ export class GlobalService {
         return (await import('./ibztest-report-action/ibztest-report-action.service')).default.getInstance();
     }
     /**
-     * 汇报日志服务
-     *
-     * @return {IbzProReportlyAction}
-     * @memberof GlobalService
-     */
-    async getIbzProReportlyActionService() {
-        return (await import('./ibz-pro-reportly-action/ibz-pro-reportly-action.service')).default.getInstance();
-    }
-    /**
      * 日报日志服务
      *
      * @return {IBZDailyAction}

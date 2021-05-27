@@ -124,7 +124,6 @@ export * from './module/module-ui-service';
 export * from './ibz-pro-test-task-action/ibz-pro-test-task-action-ui-service';
 export * from './ibztest-suite-action/ibztest-suite-action-ui-service';
 export * from './ibztest-report-action/ibztest-report-action-ui-service';
-export * from './ibz-pro-reportly-action/ibz-pro-reportly-action-ui-service';
 export * from './ibzdaily-action/ibzdaily-action-ui-service';
 export * from './ibzpro-to-do-action/ibzpro-to-do-action-ui-service';
 export * from './project-taskestimate/project-taskestimate-ui-service';

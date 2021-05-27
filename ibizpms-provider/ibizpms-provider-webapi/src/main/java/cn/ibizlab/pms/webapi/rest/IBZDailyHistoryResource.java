@@ -111,6 +111,7 @@ public class IBZDailyHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailyhistoryMapping.toDto(ibzdailyhistoryService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IBZDailyHistoryRuntime.test(#ibzdailyhistory_id,'CREATE')")
     @ApiOperation(value = "检查日报操作历史", tags = {"日报操作历史" },  notes = "检查日报操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyhistories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZDailyHistoryDTO ibzdailyhistorydto) {

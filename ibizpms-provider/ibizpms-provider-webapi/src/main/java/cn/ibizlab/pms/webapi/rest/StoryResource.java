@@ -350,6 +350,7 @@ public class StoryResource {
     }
 
 
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
     @ApiOperation(value = "检查需求", tags = {"需求" },  notes = "检查需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody StoryDTO storydto) {

@@ -112,6 +112,7 @@ public class SysUpdateLogResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogMapping.toDto(sysupdatelogService.getDraft(domain)));
     }
 
+    @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id,'CREATE')")
     @ApiOperation(value = "检查更新日志", tags = {"更新日志" },  notes = "检查更新日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SysUpdateLogDTO sysupdatelogdto) {

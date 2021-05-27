@@ -142,23 +142,13 @@ export class AppError {
      *
      * @memberof AppError
      */
-    public handleEntityException(opts: any) {
-        if (opts && opts.details && opts.details.length > 0) {
-            let errorMessage: string = '';
-            opts.details.forEach((detail: any) => {
-                errorMessage += `${detail.fieldlogicname}${detail.fielderrorinfo}<br/>`;
-            })
-            this.message = notNilEmpty(errorMessage) ? errorMessage : this.errorMapper[opts.code];
-        }
-    }
+    public handleEntityException(opts: any) { }
 
     /**
      * 处理DataEntityRuntime类型预置错误
      *
      * @memberof AppError
      */
-    public handleDataEntityRuntimeException(opts: any) {
-
-    }
+    public handleDataEntityRuntimeException(opts: any) { }
 
 }

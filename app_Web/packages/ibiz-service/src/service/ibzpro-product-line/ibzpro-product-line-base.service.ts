@@ -122,7 +122,7 @@ export class IBZProProductLineBaseService extends EntityBaseService<IIBZProProdu
      * @memberof IBZProProductLineService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/ibzproproductlines/${_context.ibzproproductline}/get`);
+        const res = await this.http.get(`/ibzproproductlines/${_context.ibzproproductline}`);
         return res;
     }
     /**
@@ -146,7 +146,7 @@ export class IBZProProductLineBaseService extends EntityBaseService<IIBZProProdu
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzproproductlines/${_context.ibzproproductline}/update`, _data);
+        return this.http.put(`/ibzproproductlines/${_context.ibzproproductline}`, _data);
     }
     /**
      * GetDraft
@@ -171,6 +171,6 @@ export class IBZProProductLineBaseService extends EntityBaseService<IIBZProProdu
      * @memberof IBZProProductLineService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzproproductlines/${_context.ibzproproductline}/remove`);
+        return this.http.delete(`/ibzproproductlines/${_context.ibzproproductline}`);
     }
 }

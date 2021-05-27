@@ -6,12 +6,22 @@
             background-color: var(--leftsidebar-background-color-bright);
             >.el-submenu__title {
                 i {
-                    color: var(--leftsidebar-font-color-bright);
+                    color: var(--leftsidebar-font-color);
                 }
                 span{
-                    color: var(--leftsidebar-font-color-bright);
+                    color: var(--leftsidebar-font-color);
                 }
             }
+        }
+        .el-submenu.isCollpase {
+          >.el-submenu__title:hover {
+            i {
+              color: var(--leftsidebar-font-color);
+            }
+            span{
+                color: var(--leftsidebar-font-color);
+            }
+          }
         }
     }
     > .app-menu {
@@ -35,6 +45,9 @@
             color: var(--leftsidebar-font-color);
             i {
                 color: var(--leftsidebar-font-color);
+            }
+            >span + i {
+              line-height: 16px;
             }
         }
         .el-menu-item {

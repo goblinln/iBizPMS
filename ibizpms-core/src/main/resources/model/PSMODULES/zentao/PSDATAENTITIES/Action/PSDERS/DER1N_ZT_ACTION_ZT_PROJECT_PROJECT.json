@@ -2,7 +2,7 @@
   "codeName" : "Zt_project",
   "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DER1N_ZT_ACTION_ZT_PROJECT_PROJECT.json",
-  "logicName" : "项目",
+  "logicName" : "项目相关操作",
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"

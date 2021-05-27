@@ -63,11 +63,6 @@ export class ProjectTaskQCounterCounterServiceBase extends CounterService {
      * @memberof  ProjectTaskQCounterCounterServiceBase
      */
     public async fetchCounterData(context:any,data:any){
-        let _appEntityService:any = await this.appEntityService.getService('Project');
-        if (_appEntityService['ProjectTaskQCnt'] && _appEntityService['ProjectTaskQCnt'] instanceof Function) {
-            let result = await _appEntityService['ProjectTaskQCnt'](context,data);
-            this.counterData = result.data;
-        }
     }
 
     /**

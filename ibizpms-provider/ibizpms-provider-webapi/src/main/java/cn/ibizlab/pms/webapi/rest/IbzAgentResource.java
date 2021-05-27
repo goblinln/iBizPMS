@@ -112,6 +112,7 @@ public class IbzAgentResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzagentMapping.toDto(ibzagentService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzAgentRuntime.test(#ibzagent_id,'CREATE')")
     @ApiOperation(value = "检查代理", tags = {"代理" },  notes = "检查代理")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzagents/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzAgentDTO ibzagentdto) {

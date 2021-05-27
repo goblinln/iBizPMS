@@ -45,7 +45,7 @@
     "orderValue" : 41,
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDEACTIONS/CheckKey.json",
@@ -139,8 +139,7 @@
     "dataType" : "GUID",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "ERROR.STD.NOMAJORDATAENTITY",
-      "id" : "标准错误[NOMAJORDATAENTITY]"
+      "lanResTag" : "ERROR.STD.NOMAJORDATAENTITY"
     },
     "length" : 100,
     "logicName" : "用户角色关系标识",
@@ -648,8 +647,7 @@
     "dataType" : "DATETIME",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "COMMON.CONDITION.ABSGT",
-      "id" : "通用[CONDITION.ABSGT]"
+      "lanResTag" : "COMMON.CONDITION.ABSGT"
     },
     "length" : 8,
     "logicName" : "建立时间",
@@ -690,8 +688,7 @@
     "dataType" : "DATETIME",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "CONTROL.PICTURE.UPLOAD.TEXT",
-      "id" : "控件文本[PICTURE.UPLOAD.TEXT]"
+      "lanResTag" : "CONTROL.PICTURE.UPLOAD.TEXT"
     },
     "length" : 8,
     "logicName" : "更新时间",

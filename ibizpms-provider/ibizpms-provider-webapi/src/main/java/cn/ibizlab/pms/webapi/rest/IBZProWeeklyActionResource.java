@@ -111,6 +111,7 @@ public class IBZProWeeklyActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyactionMapping.toDto(ibzproweeklyactionService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IBZProWeeklyActionRuntime.test(#ibzproweeklyaction_id,'CREATE')")
     @ApiOperation(value = "检查周报日志", tags = {"周报日志" },  notes = "检查周报日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyactions/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProWeeklyActionDTO ibzproweeklyactiondto) {

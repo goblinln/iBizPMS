@@ -111,6 +111,7 @@ public class IbizproIndexResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproindexMapping.toDto(ibizproindexService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbizproIndexRuntime.test(#ibizproindex_id,'CREATE')")
     @ApiOperation(value = "检查索引检索", tags = {"索引检索" },  notes = "检查索引检索")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproindices/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbizproIndexDTO ibizproindexdto) {

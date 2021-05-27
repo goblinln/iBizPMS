@@ -118,6 +118,7 @@ public class IbzPlanTempletResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletMapping.toDto(ibzplantempletService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id,'CREATE')")
     @ApiOperation(value = "检查计划模板", tags = {"计划模板" },  notes = "检查计划模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzPlanTempletDTO ibzplantempletdto) {

@@ -45,7 +45,7 @@
     "orderValue" : 41,
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDEACTIONS/CheckKey.json",
@@ -149,8 +149,7 @@
     "dataType" : "TEXT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "COMMON.DATATYPE.DECIMAL",
-      "id" : "通用[DATATYPE.DECIMAL]"
+      "lanResTag" : "COMMON.DATATYPE.DECIMAL"
     },
     "length" : 100,
     "logicName" : "部门标识",
@@ -202,8 +201,7 @@
     "dataType" : "TEXT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "CONTROL.UPLOADER.CANCEL.TIPS",
-      "id" : "控件文本[UPLOADER.CANCEL.TIPS]"
+      "lanResTag" : "CONTROL.UPLOADER.CANCEL.TIPS"
     },
     "length" : 100,
     "logicName" : "部门代码",
@@ -261,8 +259,7 @@
     "dataType" : "TEXT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "CONTROL.DATAGRIDROWCOUNTLIST.PAGEFMT",
-      "id" : "控件文本[DATAGRIDROWCOUNTLIST.PAGEFMT]"
+      "lanResTag" : "CONTROL.DATAGRIDROWCOUNTLIST.PAGEFMT"
     },
     "length" : 100,
     "logicName" : "部门名称",
@@ -440,8 +437,7 @@
     "dataType" : "TEXT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "PAGE.COMMON.EDITVIEW.DERGROUP.OTHER",
-      "id" : "界面常规[EDITVIEW.DERGROUP.OTHER]"
+      "lanResTag" : "PAGE.COMMON.EDITVIEW.DERGROUP.OTHER"
     },
     "length" : 100,
     "logicName" : "部门简称",
@@ -480,8 +476,7 @@
     "dataType" : "INT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "TBB.TEXT.*.ROLLBACKWF",
-      "id" : "工具栏按钮文本[*.ROLLBACKWF]"
+      "lanResTag" : "TBB.TEXT.*.ROLLBACKWF"
     },
     "logicName" : "部门级别",
     "name" : "DEPTLEVEL",
@@ -565,8 +560,7 @@
     "dataType" : "INT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "PAGE.COMMON.EDITVIEW.DER.AUDIT",
-      "id" : "界面常规[EDITVIEW.DER.AUDIT]"
+      "lanResTag" : "PAGE.COMMON.EDITVIEW.DER.AUDIT"
     },
     "logicName" : "排序",
     "name" : "SHOWORDER",
@@ -614,8 +608,7 @@
     "dataType" : "TEXT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "PAGE.COMMON.CUSTOMSPDESIGNER.LOGIC",
-      "id" : "界面常规[CUSTOMSPDESIGNER.LOGIC]"
+      "lanResTag" : "PAGE.COMMON.CUSTOMSPDESIGNER.LOGIC"
     },
     "length" : 100,
     "logicName" : "业务编码",

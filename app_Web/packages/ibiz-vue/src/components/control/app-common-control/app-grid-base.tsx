@@ -145,7 +145,7 @@ export class AppGridBase extends GridControlBase {
      */
     public computeGridEvents() {
         let events: any = {
-            'row-click': (row: any) => this.rowClick(row),
+            'row-click': (row: any, column: any, event: any) => this.rowClick(row, column, event),
             'row-dblclick': (row: any) => this.rowDBLClick(row),
             select: (selection: any, row: any) => this.select(selection, row),
             'select-all': (selection: any) => this.selectAll(selection),

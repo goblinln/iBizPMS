@@ -138,6 +138,7 @@ public class TestTaskResource {
     }
 
 
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'CREATE')")
     @ApiOperation(value = "检查测试版本", tags = {"测试版本" },  notes = "检查测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody TestTaskDTO testtaskdto) {

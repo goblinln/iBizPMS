@@ -432,8 +432,7 @@
       "showCaption" : true
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.PRINT",
-        "id" : "工具栏按钮提示[*.PRINT]"
+        "lanResTag" : "TBB.TOOLTIP.*.PRINT"
       },
       "caption" : "创建时间",
       "codeName" : "createdate",
@@ -552,8 +551,7 @@
       "showCaption" : true
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "CTRL.WFSERVICE.ERR000015",
-        "id" : "处理逻辑[WFSERVICE.ERR000015]"
+        "lanResTag" : "CTRL.WFSERVICE.ERR000015"
       },
       "caption" : "逻辑有效",
       "codeName" : "enable",

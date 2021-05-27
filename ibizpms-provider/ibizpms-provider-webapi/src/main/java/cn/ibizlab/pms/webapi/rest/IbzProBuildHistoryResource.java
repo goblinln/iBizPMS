@@ -111,6 +111,7 @@ public class IbzProBuildHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprobuildhistoryMapping.toDto(ibzprobuildhistoryService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzProBuildHistoryRuntime.test(#ibzprobuildhistory_id,'CREATE')")
     @ApiOperation(value = "检查版本操作历史", tags = {"版本操作历史" },  notes = "检查版本操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobuildhistories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzProBuildHistoryDTO ibzprobuildhistorydto) {

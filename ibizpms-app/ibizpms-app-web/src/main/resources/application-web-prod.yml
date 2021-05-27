@@ -571,10 +571,6 @@ zuul:
       path: /ibztestreportactions/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
-    ibzpro_reportlyaction:
-      path: /ibzproreportlyactions/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
     ibzpro_dailyaction:
       path: /ibzdailyactions/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}

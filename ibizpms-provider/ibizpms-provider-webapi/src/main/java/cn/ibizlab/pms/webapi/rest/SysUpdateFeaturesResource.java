@@ -112,6 +112,7 @@ public class SysUpdateFeaturesResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesMapping.toDto(sysupdatefeaturesService.getDraft(domain)));
     }
 
+    @PreAuthorize("@SysUpdateFeaturesRuntime.test(#sysupdatefeatures_id,'CREATE')")
     @ApiOperation(value = "检查系统更新功能", tags = {"系统更新功能" },  notes = "检查系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatefeatures/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {

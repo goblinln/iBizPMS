@@ -222,6 +222,7 @@ public class BugResource {
     }
 
 
+    @PreAuthorize("@BugRuntime.test(#bug_id,'CREATE')")
     @ApiOperation(value = "检查Bug", tags = {"Bug" },  notes = "检查Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugs/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody BugDTO bugdto) {

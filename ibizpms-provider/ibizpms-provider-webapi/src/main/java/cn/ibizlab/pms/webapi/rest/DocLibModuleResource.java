@@ -111,6 +111,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleMapping.toDto(doclibmoduleService.getDraft(domain)));
     }
 
+    @PreAuthorize("@DocLibModuleRuntime.test(#doclibmodule_id,'CREATE')")
     @ApiOperation(value = "检查文档库分类", tags = {"文档库分类" },  notes = "检查文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody DocLibModuleDTO doclibmoduledto) {

@@ -125,6 +125,7 @@ public class DocResource {
     }
 
 
+    @PreAuthorize("@DocRuntime.test(#doc_id,'CREATE')")
     @ApiOperation(value = "检查文档", tags = {"文档" },  notes = "检查文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody DocDTO docdto) {

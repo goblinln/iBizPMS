@@ -111,6 +111,7 @@ public class IbzProBuildActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprobuildactionMapping.toDto(ibzprobuildactionService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzProBuildActionRuntime.test(#ibzprobuildaction_id,'CREATE')")
     @ApiOperation(value = "检查版本日志", tags = {"版本日志" },  notes = "检查版本日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobuildactions/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {

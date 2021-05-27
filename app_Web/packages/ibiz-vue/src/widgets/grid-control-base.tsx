@@ -1623,16 +1623,21 @@ export class GridControlBase extends MDControlBase {
     /**
      * 行单击选中
      *
-     * @param {*} $event
+     * @param {*} row 行
+     * @param {*} column 列
+     * @param {*} event 点击事件
+     * @param {boolean} ifAlways
      * @returns {void}
      * @memberof GridControlBase
      */
-    public rowClick($event: any, ifAlways: boolean = false): void {
+    public rowClick(row: any, column?: any, event?: any, ifAlways: boolean = false): void {
+        //是否是分组列，是分组列时选中数据
+        const isSelectColumn: boolean = column && Object.is(column.type, 'selection') ? true : false;
         // 分组行跳过
-        if ($event && $event.children) {
+        if (row && row.children) {
             return;
         }
-        if (!ifAlways && (!$event || this.actualIsOpenEdit)) {
+        if (!ifAlways && (!row|| this.actualIsOpenEdit)) {
             return;
         }
         if (this.stopRowClick) {
@@ -1642,20 +1647,20 @@ export class GridControlBase extends MDControlBase {
         if (this.isSingleSelect) {
             this.selections = [];
         }
-        if (this.gridRowActiveMode == 1) {
-            this.ctrlEvent({ controlname: this.name, action: "rowclick", data: Util.deepCopy($event) });
-            this.ctrlEvent({ controlname: this.name, action: "selectiondata", data: [Util.deepCopy($event)] });
-        } else if (this.gridRowActiveMode == 2) {
+        if (this.gridRowActiveMode == 1 && !isSelectColumn) {
+            this.ctrlEvent({ controlname: this.name, action: "rowclick", data: Util.deepCopy(row) });
+            this.ctrlEvent({ controlname: this.name, action: "selectiondata", data: [Util.deepCopy(row)] });
+        } else if (this.gridRowActiveMode == 2 || isSelectColumn) {
             // 已选中则删除，没选中则添加
             const appDeCodeName = this.controlInstance.getPSAppDataEntity()?.codeName || '';
             let selectIndex = -1;
             if (appDeCodeName) {
                 selectIndex = this.selections.findIndex((item: any) => {
-                    return Object.is(item[appDeCodeName.toLowerCase()], $event[appDeCodeName.toLowerCase()]);
+                    return Object.is(item[appDeCodeName.toLowerCase()], row[appDeCodeName.toLowerCase()]);
                 });
             }
             if (Object.is(selectIndex, -1)) {
-                this.selections.push(Util.deepCopy($event));
+                this.selections.push(Util.deepCopy(row));
             } else {
                 this.selections.splice(selectIndex, 1);
             }
@@ -1663,9 +1668,9 @@ export class GridControlBase extends MDControlBase {
             if (table) {
                 if (this.isSingleSelect) {
                     table.clearSelection();
-                    table.setCurrentRow($event);
+                    table.setCurrentRow(row);
                 } else {
-                    table.toggleRowSelection($event);
+                    table.toggleRowSelection(row);
                 }
             }
             this.ctrlEvent({ controlname: this.name, action: "selectiondata", data: this.selections });

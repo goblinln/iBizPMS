@@ -43,3 +43,98 @@
         }
     }
 }
+
+.app-modal .ivu-modal .ivu-modal-content .ivu-modal-body .view-container.dempickupview.view-default {
+    padding-right: 14px;
+}
+
+.view-default.dempickupview.view-container {
+    padding-right: 14px;
+    .pickupviewpanel >.view-default.depickupgridview  {
+        .ivu-card-body {
+            .app-search-form {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background-color: #f6f6f6;
+                padding: 6px 14px 0 0;
+                >.ivu-row {
+                    overflow: auto;
+                    height: 100%;
+                    width: 88%;
+                }
+                .search-action-footer {
+                    width: 12%;
+                    padding: 0;
+                    height: 44px;
+                    bottom: 2px;
+                    .search-button .reset {
+                        margin-right: 0px;
+                    }
+                }
+            }
+            .content-container.pickup-view {
+                overflow: hidden;
+                padding: 8px 14px;
+                background-color: #f6f6f6;
+            }
+            .content-container {
+                .el-table {
+                    .el-table__header-wrapper,.el-table__fixed-header-wrapper{
+                        background: #E9E9E9;
+                        thead>tr th {
+                            background: #E9E9E9;
+                        }
+                    }
+                    .el-table__body-wrapper,.el-table__fixed-body-wrapper{
+                        height: calc(100% - 45px);
+                        .grid-selected-row {
+                            background-color: var(--ctrl-select-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .content-container.pickup-view {
+        .translate-contant {
+            .translate-buttons .buttons button {
+                width: 32px;
+                height: 32px;
+                padding: 0;
+                span i {
+                    line-height: 2;
+                }
+            }
+            .translate-buttons {
+                width: 56px;
+            }
+            .center {
+                width: calc(100% - 354px);
+            }
+            .right {
+                background-color: #f6f6f6;
+                border: none;
+                border-radius: 2px;
+                margin: 6px 0px 6px 4px;
+                .mpicker-select .picker-item {
+                    height: 32px;
+                    background: #FFFFFF;
+                    border-radius: 2px;
+                    color: #666666;
+                    border: none;
+                    line-height: 32px;
+                    font-size: 12px;
+                    font-weight: 400;
+                    padding: 0 0 0 20px;
+                    margin: 10px;
+                }
+            }
+
+        }
+        .footer .ivu-card-body {
+            padding: 16px 10px;
+        }
+    }
+}

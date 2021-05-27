@@ -112,6 +112,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(buildMapping.toDto(buildService.getDraft(domain)));
     }
 
+    @PreAuthorize("@BuildRuntime.test(#build_id,'CREATE')")
     @ApiOperation(value = "检查版本", tags = {"版本" },  notes = "检查版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody BuildDTO builddto) {

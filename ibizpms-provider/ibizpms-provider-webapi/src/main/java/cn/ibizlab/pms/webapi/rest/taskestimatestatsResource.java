@@ -111,6 +111,7 @@ public class taskestimatestatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsMapping.toDto(taskestimatestatsService.getDraft(domain)));
     }
 
+    @PreAuthorize("@TaskEstimateStatsRuntime.test(#taskestimatestats_id,'CREATE')")
     @ApiOperation(value = "检查任务工时统计", tags = {"任务工时统计" },  notes = "检查任务工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody taskestimatestatsDTO taskestimatestatsdto) {

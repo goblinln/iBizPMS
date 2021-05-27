@@ -111,6 +111,7 @@ public class BurnResource {
         return ResponseEntity.status(HttpStatus.OK).body(burnMapping.toDto(burnService.getDraft(domain)));
     }
 
+    @PreAuthorize("@BurnRuntime.test(#burn_id,'CREATE')")
     @ApiOperation(value = "检查burn", tags = {"burn" },  notes = "检查burn")
 	@RequestMapping(method = RequestMethod.POST, value = "/burns/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody BurnDTO burndto) {

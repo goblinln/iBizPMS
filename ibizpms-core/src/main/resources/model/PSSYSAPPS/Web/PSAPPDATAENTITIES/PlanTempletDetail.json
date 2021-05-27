@@ -243,6 +243,10 @@
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail/PSDEACTIONS/CheckKey.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
     "builtinMethod" : true
   }, {
     "codeName" : "Save",
@@ -551,6 +555,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
     },
     "builtinMethod" : true
   }, {

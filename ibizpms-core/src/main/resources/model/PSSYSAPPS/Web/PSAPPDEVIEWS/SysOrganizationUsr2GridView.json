@@ -204,8 +204,7 @@
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
       "getCapPSLanguageRes" : {
-        "lanResTag" : "CTRL.WFSERVICE.ERR000012",
-        "id" : "处理逻辑[WFSERVICE.ERR000012]"
+        "lanResTag" : "CTRL.WFSERVICE.ERR000012"
       },
       "caption" : "单位标识",
       "codeName" : "orgid",
@@ -225,8 +224,7 @@
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.CANCELWF",
-        "id" : "工具栏按钮文本[*.CANCELWF]"
+        "lanResTag" : "TBB.TEXT.*.CANCELWF"
       },
       "caption" : "单位简称",
       "codeName" : "shortname",

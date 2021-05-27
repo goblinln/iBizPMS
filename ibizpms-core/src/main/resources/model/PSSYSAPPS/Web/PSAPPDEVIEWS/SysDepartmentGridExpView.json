@@ -182,8 +182,7 @@
         "align" : "LEFT",
         "cLConvertMode" : "NONE",
         "getCapPSLanguageRes" : {
-          "lanResTag" : "COMMON.DATATYPE.DECIMAL",
-          "id" : "通用[DATATYPE.DECIMAL]"
+          "lanResTag" : "COMMON.DATATYPE.DECIMAL"
         },
         "caption" : "部门标识",
         "codeName" : "deptid",
@@ -203,8 +202,7 @@
         "align" : "LEFT",
         "cLConvertMode" : "NONE",
         "getCapPSLanguageRes" : {
-          "lanResTag" : "CONTROL.DATAGRIDROWCOUNTLIST.PAGEFMT",
-          "id" : "控件文本[DATAGRIDROWCOUNTLIST.PAGEFMT]"
+          "lanResTag" : "CONTROL.DATAGRIDROWCOUNTLIST.PAGEFMT"
         },
         "caption" : "部门名称",
         "codeName" : "deptname",

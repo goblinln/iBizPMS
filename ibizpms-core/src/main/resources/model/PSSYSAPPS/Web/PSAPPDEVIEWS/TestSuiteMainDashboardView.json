@@ -267,8 +267,7 @@
               },
               "getPSDEToolbarItems" : [ {
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.*.FILTER",
-                  "id" : "工具栏按钮文本[*.FILTER]"
+                  "lanResTag" : "TBB.TEXT.*.FILTER"
                 },
                 "caption" : "过滤",
                 "groupExtractMode" : "ITEM",
@@ -285,8 +284,7 @@
                 },
                 "getPSUIAction" : {
                   "getCapPSLanguageRes" : {
-                    "lanResTag" : "TBB.TEXT.*.FILTER",
-                    "id" : "工具栏按钮文本[*.FILTER]"
+                    "lanResTag" : "TBB.TEXT.*.FILTER"
                   },
                   "caption" : "过滤",
                   "codeName" : "ToggleFilter",
@@ -298,8 +296,7 @@
                   },
                   "timeout" : 60000,
                   "getTooltipPSLanguageRes" : {
-                    "lanResTag" : "TBB.TOOLTIP.*.FILTER",
-                    "id" : "工具栏按钮提示[*.FILTER]"
+                    "lanResTag" : "TBB.TOOLTIP.*.FILTER"
                   },
                   "uIActionMode" : "SYS",
                   "uIActionTag" : "ToggleFilter",
@@ -308,8 +305,7 @@
                 },
                 "tooltip" : "过滤",
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.*.FILTER",
-                  "id" : "工具栏按钮提示[*.FILTER]"
+                  "lanResTag" : "TBB.TOOLTIP.*.FILTER"
                 },
                 "enableToggleMode" : true,
                 "showCaption" : true,
@@ -2069,8 +2065,7 @@
                 "name" : "ud46cf4d",
                 "getPSUIAction" : {
                   "getCapPSLanguageRes" : {
-                    "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
-                    "id" : "工具栏按钮文本[EDITVIEW.CLOSE]"
+                    "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE"
                   },
                   "caption" : "返回",
                   "codeName" : "Exit",
@@ -2082,8 +2077,7 @@
                   },
                   "timeout" : 60000,
                   "getTooltipPSLanguageRes" : {
-                    "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE",
-                    "id" : "工具栏按钮提示[EDITVIEW.CLOSE]"
+                    "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE"
                   },
                   "uIActionMode" : "SYS",
                   "uIActionTag" : "Exit",
@@ -3243,6 +3237,94 @@
             "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b",
             "modeltype" : "PSAPPDEVIEW",
             "getPSAppDERSPaths" : [ [ {
+              "actionRSMode" : 1,
+              "codeName" : "Stories",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+              },
+              "name" : "产品需求",
+              "getParentPSAppDEField" : {
+                "name" : "PRODUCT",
+                "codeName" : "Product"
+              },
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            }, {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "需求日志",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "项目日志",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "需求日志",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Actions",
               "dataRSMode" : 0,

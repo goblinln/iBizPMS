@@ -45,7 +45,7 @@
     "orderValue" : 41,
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization/PSDEACTIONS/CheckKey.json",
@@ -152,8 +152,7 @@
     "defaultValueType" : "PARAM",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "CTRL.WFSERVICE.ERR000012",
-      "id" : "处理逻辑[WFSERVICE.ERR000012]"
+      "lanResTag" : "CTRL.WFSERVICE.ERR000012"
     },
     "length" : 100,
     "logicName" : "单位标识",
@@ -207,8 +206,7 @@
     "dataType" : "TEXT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "DEF.LNAME.*.UPDATEMAN",
-      "id" : "实体属性逻辑名[*.UPDATEMAN]"
+      "lanResTag" : "DEF.LNAME.*.UPDATEMAN"
     },
     "length" : 100,
     "logicName" : "单位代码",
@@ -378,8 +376,7 @@
     "dataType" : "TEXT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "TBB.TEXT.*.CANCELWF",
-      "id" : "工具栏按钮文本[*.CANCELWF]"
+      "lanResTag" : "TBB.TEXT.*.CANCELWF"
     },
     "length" : 100,
     "logicName" : "单位简称",
@@ -452,8 +449,7 @@
     "dataType" : "INT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "PAGE.COMMON.EDITVIEW.DER.AUDIT",
-      "id" : "界面常规[EDITVIEW.DER.AUDIT]"
+      "lanResTag" : "PAGE.COMMON.EDITVIEW.DER.AUDIT"
     },
     "logicName" : "排序",
     "name" : "SHOWORDER",
@@ -605,8 +601,7 @@
     "dataType" : "YESNO",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "CTRL.WFSERVICE.ERR000015",
-      "id" : "处理逻辑[WFSERVICE.ERR000015]"
+      "lanResTag" : "CTRL.WFSERVICE.ERR000015"
     },
     "logicName" : "逻辑有效",
     "name" : "ENABLE",
@@ -644,8 +639,7 @@
     "dataType" : "DATETIME",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "TBB.TOOLTIP.*.PRINT",
-      "id" : "工具栏按钮提示[*.PRINT]"
+      "lanResTag" : "TBB.TOOLTIP.*.PRINT"
     },
     "logicName" : "创建时间",
     "name" : "CREATEDATE",
@@ -684,8 +678,7 @@
     "dataType" : "DATETIME",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "lanResTag" : "OTHER.LIST.MYWF.COL.ACTOR.CAPTION",
-      "id" : "其它[LIST.MYWF.COL.ACTOR.CAPTION]"
+      "lanResTag" : "OTHER.LIST.MYWF.COL.ACTOR.CAPTION"
     },
     "logicName" : "最后修改时间",
     "name" : "UPDATEDATE",

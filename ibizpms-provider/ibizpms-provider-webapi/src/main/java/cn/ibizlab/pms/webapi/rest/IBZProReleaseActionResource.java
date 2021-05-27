@@ -111,6 +111,7 @@ public class IBZProReleaseActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactionMapping.toDto(ibzproreleaseactionService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IBZProReleaseActionRuntime.test(#ibzproreleaseaction_id,'CREATE')")
     @ApiOperation(value = "检查发布日志", tags = {"发布日志" },  notes = "检查发布日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProReleaseActionDTO ibzproreleaseactiondto) {

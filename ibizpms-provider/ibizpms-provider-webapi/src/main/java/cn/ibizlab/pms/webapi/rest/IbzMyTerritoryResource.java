@@ -111,6 +111,7 @@ public class IbzMyTerritoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzmyterritoryMapping.toDto(ibzmyterritoryService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzMyTerritoryRuntime.test(#ibzmyterritory_id,'CREATE')")
     @ApiOperation(value = "检查我的地盘", tags = {"我的地盘" },  notes = "检查我的地盘")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmyterritories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzMyTerritoryDTO ibzmyterritorydto) {

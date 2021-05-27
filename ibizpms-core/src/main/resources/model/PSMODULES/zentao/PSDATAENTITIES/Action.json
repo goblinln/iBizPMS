@@ -59,7 +59,7 @@
     "orderValue" : 41,
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/CheckKey.json",
@@ -2011,78 +2011,46 @@
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "产品-创建",
-    "mapPSDEOPPrivName" : "CREATE",
-    "name" : "CREATE"
-  }, {
-    "logicName" : "Project_Create",
-    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DER1N_ZT_ACTION_ZT_PROJECT_PROJECT.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PRODUCT.json"
     },
     "name" : "CREATE",
-    "id" : "Zt_project__CREATE"
+    "id" : "Product__CREATE"
   }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
-    "logicName" : "Project_Delete",
-    "mapPSDEName" : "ZT_PROJECT",
-    "mapPSDEOPPrivName" : "DELETE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DER1N_ZT_ACTION_ZT_PROJECT_PROJECT.json"
-    },
-    "name" : "DELETE",
-    "id" : "Zt_project__DELETE"
-  }, {
     "logicName" : "删除",
     "name" : "DELETE"
-  }, {
-    "logicName" : "Project_Manage",
-    "mapPSDEName" : "ZT_PROJECT",
-    "mapPSDEOPPrivName" : "MANAGE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DER1N_ZT_ACTION_ZT_PROJECT_PROJECT.json"
-    },
-    "name" : "MANAGE",
-    "id" : "Zt_project__MANAGE"
   }, {
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
-    "logicName" : "Project_Read",
-    "mapPSDEName" : "ZT_PROJECT",
+    "logicName" : "产品-读取",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DER1N_ZT_ACTION_ZT_PROJECT_PROJECT.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PRODUCT.json"
     },
     "name" : "READ",
-    "id" : "Zt_project__READ"
-  }, {
-    "logicName" : "产品-读取",
-    "mapPSDEOPPrivName" : "READ",
-    "name" : "READ"
+    "id" : "Product__READ"
   }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
     "logicName" : "产品-更新",
-    "mapPSDEOPPrivName" : "UPDATE",
-    "name" : "UPDATE"
-  }, {
-    "logicName" : "Project_Update",
-    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DER1N_ZT_ACTION_ZT_PROJECT_PROJECT.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PRODUCT.json"
     },
     "name" : "UPDATE",
-    "id" : "Zt_project__UPDATE"
+    "id" : "Product__UPDATE"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
@@ -2091,56 +2059,12 @@
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_MANAGE_ALL.json",
     "name" : "系统日志添加备注（全部数据）",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "UPDATE",
-      "name" : " Action_MANAGE_ALL_UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "UPDATE"
-      }
-    }, {
-      "dataAccessAction" : "CREATE",
-      "name" : " Action_MANAGE_ALL_CREATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "CREATE"
-      }
-    }, {
-      "dataAccessAction" : "DELETE",
-      "name" : " Action_MANAGE_ALL_DELETE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DELETE"
-      }
-    }, {
-      "dataAccessAction" : "READ",
-      "name" : " Action_MANAGE_ALL_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    }, {
-      "dataAccessAction" : "MANAGE",
-      "name" : " Action_MANAGE_ALL_MANAGE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "MANAGE"
-      }
-    } ],
     "roleTag" : "Action_MANAGE_ALL",
     "userDRAction" : "READ"
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_READ_ALL.json",
     "name" : "系统日志查看（全部数据）",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "Action_READ_ALL_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    } ],
     "roleTag" : "Action_READ_ALL",
     "userDRAction" : "READ"
   }, {
@@ -2150,14 +2074,6 @@
       "modelref" : true,
       "id" : "MyAction"
     },
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "Action_Read_MyAction_Read",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "Zt_project__READ"
-      }
-    } ],
     "roleTag" : "Action_Read_MyAction",
     "userCat" : "CAT1",
     "userDRAction" : "READ",
@@ -2212,7 +2128,7 @@
     "codeName" : "Zt_project",
     "dERType" : "DER1N",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DER1N_ZT_ACTION_ZT_PROJECT_PROJECT.json",
-    "logicName" : "项目",
+    "logicName" : "项目相关操作",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
@@ -2256,6 +2172,54 @@
     "removeActionType" : 0,
     "removeOrder" : -1,
     "typeValue" : "product"
+  }, {
+    "codeName" : "Project",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PROJECT.json",
+    "logicName" : "项目操作日志",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+    },
+    "name" : "DERCUSTOM_ZT_ACTION_ZT_PROJECT",
+    "orderValue" : 100,
+    "pickupDEFName" : "OBJECTID",
+    "getPickupPSDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "project"
+  }, {
+    "codeName" : "Story",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_STORY.json",
+    "logicName" : "需求",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    },
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+    },
+    "name" : "DERCUSTOM_ZT_ACTION_ZT_STORY",
+    "orderValue" : 100,
+    "pickupDEFName" : "OBJECTID",
+    "getPickupPSDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "story"
   } ],
   "name" : "ZT_ACTION",
   "saaSDCIdColumnName" : "SRFDCID",

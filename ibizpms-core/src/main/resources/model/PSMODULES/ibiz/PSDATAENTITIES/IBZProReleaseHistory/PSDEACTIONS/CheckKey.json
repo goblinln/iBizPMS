@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CHECKKEY",
   "actionType" : "BUILTIN",
   "codeName" : "CheckKey",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseHistory/PSDEACTIONS/CheckKey.json",

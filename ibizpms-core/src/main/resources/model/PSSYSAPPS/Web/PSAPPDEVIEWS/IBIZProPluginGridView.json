@@ -204,8 +204,7 @@
     },
     "getPSDEToolbarItems" : [ {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.NEW",
-        "id" : "工具栏按钮文本[*.NEW]"
+        "lanResTag" : "TBB.TEXT.*.NEW"
       },
       "caption" : "新建",
       "groupExtractMode" : "ITEM",
@@ -222,8 +221,7 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.NEW",
-          "id" : "工具栏按钮文本[*.NEW]"
+          "lanResTag" : "TBB.TEXT.*.NEW"
         },
         "caption" : "新建",
         "codeName" : "New",
@@ -236,8 +234,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.NEW",
-          "id" : "工具栏按钮提示[*.NEW]"
+          "lanResTag" : "TBB.TOOLTIP.*.NEW"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "New",
@@ -245,15 +242,13 @@
       },
       "tooltip" : "新建",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.NEW",
-        "id" : "工具栏按钮提示[*.NEW]"
+        "lanResTag" : "TBB.TOOLTIP.*.NEW"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.REMOVE",
-        "id" : "工具栏按钮文本[*.REMOVE]"
+        "lanResTag" : "TBB.TEXT.*.REMOVE"
       },
       "caption" : "删除",
       "groupExtractMode" : "ITEM",
@@ -271,8 +266,7 @@
       "getPSUIAction" : {
         "actionTarget" : "MULTIKEY",
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.REMOVE",
-          "id" : "工具栏按钮文本[*.REMOVE]"
+          "lanResTag" : "TBB.TEXT.*.REMOVE"
         },
         "caption" : "删除",
         "codeName" : "Remove",
@@ -284,8 +278,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
-          "id" : "工具栏按钮提示[*.REMOVE]"
+          "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "Remove",
@@ -293,8 +286,7 @@
       },
       "tooltip" : "删除",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
-        "id" : "工具栏按钮提示[*.REMOVE]"
+        "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
       },
       "showCaption" : true,
       "showIcon" : true
@@ -339,8 +331,7 @@
       "spanMode" : false
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.EXPORT",
-        "id" : "工具栏按钮文本[*.EXPORT]"
+        "lanResTag" : "TBB.TEXT.*.EXPORT"
       },
       "caption" : "导出",
       "groupExtractMode" : "ITEM",
@@ -357,8 +348,7 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.EXPORT",
-          "id" : "工具栏按钮文本[*.EXPORT]"
+          "lanResTag" : "TBB.TEXT.*.EXPORT"
         },
         "caption" : "导出",
         "codeName" : "ExportExcel",
@@ -370,8 +360,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
-          "id" : "工具栏按钮提示[*.EXPORT]"
+          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "ExportExcel",
@@ -379,8 +368,7 @@
       },
       "tooltip" : "导出",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
-        "id" : "工具栏按钮提示[*.EXPORT]"
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
       },
       "showCaption" : true,
       "showIcon" : true
@@ -390,8 +378,7 @@
       "spanMode" : false
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.FILTER",
-        "id" : "工具栏按钮文本[*.FILTER]"
+        "lanResTag" : "TBB.TEXT.*.FILTER"
       },
       "caption" : "过滤",
       "groupExtractMode" : "ITEM",
@@ -408,8 +395,7 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.FILTER",
-          "id" : "工具栏按钮文本[*.FILTER]"
+          "lanResTag" : "TBB.TEXT.*.FILTER"
         },
         "caption" : "过滤",
         "codeName" : "ToggleFilter",
@@ -421,8 +407,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.FILTER",
-          "id" : "工具栏按钮提示[*.FILTER]"
+          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "ToggleFilter",
@@ -431,8 +416,7 @@
       },
       "tooltip" : "过滤",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.FILTER",
-        "id" : "工具栏按钮提示[*.FILTER]"
+        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
       },
       "enableToggleMode" : true,
       "showCaption" : true,

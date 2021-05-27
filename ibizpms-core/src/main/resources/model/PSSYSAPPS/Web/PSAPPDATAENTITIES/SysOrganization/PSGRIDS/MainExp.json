@@ -41,8 +41,7 @@
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
     "getCapPSLanguageRes" : {
-      "lanResTag" : "TBB.TEXT.*.CANCELWF",
-      "id" : "工具栏按钮文本[*.CANCELWF]"
+      "lanResTag" : "TBB.TEXT.*.CANCELWF"
     },
     "caption" : "单位简称",
     "codeName" : "shortname",

@@ -188,7 +188,7 @@ export class MPickUpViewBase extends MainViewBase {
     public renderMpickerSelect(){
       return <div class="mpicker-select">
         {this.viewSelections.map((item:any,index:number)=>{
-          return <div key={index} class={item._select ? 'select' : ''} on-click={()=>this.selectionsClick(item)} on-dblclick={()=>this.selectionsDBLClick(item)}>
+          return <div key={index} class={{ 'select': item._select, 'picker-item': true }} on-click={()=>this.selectionsClick(item)} on-dblclick={()=>this.selectionsDBLClick(item)}>
             <span>{item.srfmajortext}</span>
           </div>
         })}

@@ -112,6 +112,7 @@ public class ProductLineResource {
         return ResponseEntity.status(HttpStatus.OK).body(productlineMapping.toDto(productlineService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductLineRuntime.test(#productline_id,'CREATE')")
     @ApiOperation(value = "检查产品线（废弃）", tags = {"产品线（废弃）" },  notes = "检查产品线（废弃）")
 	@RequestMapping(method = RequestMethod.POST, value = "/productlines/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProductLineDTO productlinedto) {

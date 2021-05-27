@@ -111,6 +111,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrunMapping.toDto(testrunService.getDraft(domain)));
     }
 
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'CREATE')")
     @ApiOperation(value = "检查测试运行", tags = {"测试运行" },  notes = "检查测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/testruns/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody TestRunDTO testrundto) {

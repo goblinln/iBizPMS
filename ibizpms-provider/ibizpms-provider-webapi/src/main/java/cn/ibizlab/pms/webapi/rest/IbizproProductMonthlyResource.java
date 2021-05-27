@@ -103,6 +103,7 @@ public class IbizproProductMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlyMapping.toDto(ibizproproductmonthlyService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbizproProductMonthlyRuntime.test(#ibizproproductmonthly_id,'CREATE')")
     @ApiOperation(value = "检查产品月报", tags = {"产品月报" },  notes = "检查产品月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductmonthlies/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProductMonthlyDTO ibizproproductmonthlydto) {

@@ -77,8 +77,7 @@
     },
     "getPSDEToolbarItems" : [ {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.SAVE",
-        "id" : "工具栏按钮文本[*.SAVE]"
+        "lanResTag" : "TBB.TEXT.*.SAVE"
       },
       "caption" : "保存",
       "groupExtractMode" : "ITEM",
@@ -95,8 +94,7 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.SAVE",
-          "id" : "工具栏按钮文本[*.SAVE]"
+          "lanResTag" : "TBB.TEXT.*.SAVE"
         },
         "caption" : "保存",
         "codeName" : "Save",
@@ -109,8 +107,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.SAVE",
-          "id" : "工具栏按钮提示[*.SAVE]"
+          "lanResTag" : "TBB.TOOLTIP.*.SAVE"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "Save",
@@ -118,15 +115,13 @@
       },
       "tooltip" : "保存",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.SAVE",
-        "id" : "工具栏按钮提示[*.SAVE]"
+        "lanResTag" : "TBB.TOOLTIP.*.SAVE"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE",
-        "id" : "工具栏按钮文本[EDITVIEW.REMOVEANDCLOSE]"
+        "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE"
       },
       "caption" : "删除",
       "groupExtractMode" : "ITEM",
@@ -144,8 +139,7 @@
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE",
-          "id" : "工具栏按钮文本[EDITVIEW.REMOVEANDCLOSE]"
+          "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE"
         },
         "caption" : "删除",
         "codeName" : "RemoveAndExit",
@@ -158,8 +152,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE",
-          "id" : "工具栏按钮提示[EDITVIEW.REMOVEANDCLOSE]"
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "RemoveAndExit",
@@ -167,8 +160,7 @@
       },
       "tooltip" : "删除",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE",
-        "id" : "工具栏按钮提示[EDITVIEW.REMOVEANDCLOSE]"
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE"
       },
       "showCaption" : true,
       "showIcon" : true

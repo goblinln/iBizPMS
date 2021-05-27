@@ -286,8 +286,7 @@
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.EXPORT",
-        "id" : "工具栏按钮文本[*.EXPORT]"
+        "lanResTag" : "TBB.TEXT.*.EXPORT"
       },
       "caption" : "导出",
       "groupExtractMode" : "ITEM",
@@ -304,8 +303,7 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.EXPORT",
-          "id" : "工具栏按钮文本[*.EXPORT]"
+          "lanResTag" : "TBB.TEXT.*.EXPORT"
         },
         "caption" : "导出",
         "codeName" : "ExportExcel",
@@ -317,8 +315,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
-          "id" : "工具栏按钮提示[*.EXPORT]"
+          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "ExportExcel",
@@ -326,15 +323,13 @@
       },
       "tooltip" : "导出",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
-        "id" : "工具栏按钮提示[*.EXPORT]"
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.FILTER",
-        "id" : "工具栏按钮文本[*.FILTER]"
+        "lanResTag" : "TBB.TEXT.*.FILTER"
       },
       "caption" : "过滤",
       "groupExtractMode" : "ITEM",
@@ -351,8 +346,7 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.FILTER",
-          "id" : "工具栏按钮文本[*.FILTER]"
+          "lanResTag" : "TBB.TEXT.*.FILTER"
         },
         "caption" : "过滤",
         "codeName" : "ToggleFilter",
@@ -364,8 +358,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.FILTER",
-          "id" : "工具栏按钮提示[*.FILTER]"
+          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "ToggleFilter",
@@ -374,8 +367,7 @@
       },
       "tooltip" : "过滤",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.FILTER",
-        "id" : "工具栏按钮提示[*.FILTER]"
+        "lanResTag" : "TBB.TOOLTIP.*.FILTER"
       },
       "enableToggleMode" : true,
       "showCaption" : true,

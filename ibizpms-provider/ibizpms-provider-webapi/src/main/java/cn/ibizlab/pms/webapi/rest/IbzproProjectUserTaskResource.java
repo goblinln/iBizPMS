@@ -111,6 +111,7 @@ public class IbzproProjectUserTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskMapping.toDto(ibzproprojectusertaskService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IbzproProjectUserTaskRuntime.test(#ibzproprojectusertask_id,'CREATE')")
     @ApiOperation(value = "检查项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "检查项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectusertasks/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzproProjectUserTaskDTO ibzproprojectusertaskdto) {

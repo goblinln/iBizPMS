@@ -111,6 +111,7 @@ public class UserResource {
         return ResponseEntity.status(HttpStatus.OK).body(userMapping.toDto(userService.getDraft(domain)));
     }
 
+    @PreAuthorize("@UserRuntime.test(#user_id,'CREATE')")
     @ApiOperation(value = "检查用户", tags = {"用户" },  notes = "检查用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/users/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody UserDTO userdto) {

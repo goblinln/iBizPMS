@@ -111,6 +111,7 @@ public class IBZProToDoHistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprotodohistoryMapping.toDto(ibzprotodohistoryService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IBZProToDoHistoryRuntime.test(#ibzprotodohistory_id,'CREATE')")
     @ApiOperation(value = "检查todo操作历史", tags = {"todo操作历史" },  notes = "检查todo操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodohistories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProToDoHistoryDTO ibzprotodohistorydto) {

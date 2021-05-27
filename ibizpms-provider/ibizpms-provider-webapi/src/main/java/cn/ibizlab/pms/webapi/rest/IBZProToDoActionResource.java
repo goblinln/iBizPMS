@@ -111,6 +111,7 @@ public class IBZProToDoActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactionMapping.toDto(ibzprotodoactionService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IBZProToDoActionRuntime.test(#ibzprotodoaction_id,'CREATE')")
     @ApiOperation(value = "检查ToDo日志", tags = {"ToDo日志" },  notes = "检查ToDo日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
