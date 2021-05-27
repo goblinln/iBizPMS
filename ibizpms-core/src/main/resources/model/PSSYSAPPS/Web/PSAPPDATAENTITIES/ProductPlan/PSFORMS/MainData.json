@@ -6543,6 +6543,7 @@
                     "actionTarget" : "NONE",
                     "caption" : "添加备注",
                     "codeName" : "AddComment",
+                    "dataAccessAction" : "CREATE",
                     "getFrontPSAppView" : {
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionOptionView.json",

@@ -31,6 +31,23 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Save.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -651,22 +668,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Save.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -969,6 +970,23 @@
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchSubStory",
+    "methodType" : "FETCH",
+    "name" : "FetchSubStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "SubStory"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchSubStory"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchAssignedToMyStory",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -1366,22 +1384,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchStoryRelated"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchSubStory",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "SubStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchSubStory"
     },
     "builtinMethod" : false
   }, {
@@ -1956,6 +1958,40 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
+    "codeName" : "FetchSubStory",
+    "methodType" : "FETCH",
+    "name" : "FetchSubStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "SubStory"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchSubStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Save.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
@@ -2588,22 +2624,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Save.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -3105,22 +3125,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchStoryRelated"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchSubStory",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "SubStory"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchSubStory"
     },
     "builtinMethod" : false
   }, {

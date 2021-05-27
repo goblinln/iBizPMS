@@ -2010,6 +2010,10 @@
     "enableFront" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "产品-创建",
+    "mapPSDEOPPrivName" : "CREATE",
+    "name" : "CREATE"
+  }, {
     "logicName" : "Project_Create",
     "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "CREATE",
@@ -2059,8 +2063,16 @@
     "name" : "READ",
     "id" : "Zt_project__READ"
   }, {
+    "logicName" : "产品-读取",
+    "mapPSDEOPPrivName" : "READ",
+    "name" : "READ"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "产品-更新",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "name" : "UPDATE"
   }, {
     "logicName" : "Project_Update",
     "mapPSDEName" : "ZT_PROJECT",
