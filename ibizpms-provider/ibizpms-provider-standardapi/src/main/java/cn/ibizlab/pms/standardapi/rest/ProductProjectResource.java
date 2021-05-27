@@ -52,5 +52,30 @@ public class ProductProjectResource {
     @Lazy
     public ProductProjectMapping productprojectMapping;
 
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据产品获取当前项目", tags = {"项目" } ,notes = "根据产品获取当前项目")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productprojects/fetchcurproduct")
+	public ResponseEntity<List<ProductProjectDTO>> fetchProductProjectCurProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProjectSearchContext context) {
+        
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchCurProduct(context) ;
+        List<ProductProjectDTO> list = productprojectMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据产品查询当前项目", tags = {"项目" } ,notes = "根据产品查询当前项目")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productprojects/searchcurproduct")
+	public ResponseEntity<Page<ProductProjectDTO>> searchProductProjectCurProductByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProjectSearchContext context) {
+        
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchCurProduct(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(productprojectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
 }
 
