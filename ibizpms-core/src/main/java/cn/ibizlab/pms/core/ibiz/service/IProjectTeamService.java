@@ -50,6 +50,7 @@ public interface IProjectTeamService extends IService<ProjectTeam> {
     Page<ProjectTeam> searchDefault(ProjectTeamSearchContext context);
     Page<ProjectTeam> searchProjectTeamPm(ProjectTeamSearchContext context);
     Page<ProjectTeam> searchRowEditDefault(ProjectTeamSearchContext context);
+    Page<ProjectTeam> searchSpecifyTeam(ProjectTeamSearchContext context);
     Page<ProjectTeam> searchTaskCntEstimateConsumedLeft(ProjectTeamSearchContext context);
     List<ProjectTeam> selectByRoot(Long id);
     void removeByRoot(Long id);

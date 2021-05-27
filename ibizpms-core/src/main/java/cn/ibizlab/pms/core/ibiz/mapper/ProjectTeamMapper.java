@@ -29,6 +29,7 @@ public interface ProjectTeamMapper extends BaseMapper<ProjectTeam> {
     Page<ProjectTeam> searchDefault(IPage page, @Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
     Page<ProjectTeam> searchProjectTeamPm(IPage page, @Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
     Page<ProjectTeam> searchRowEditDefault(IPage page, @Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
+    Page<ProjectTeam> searchSpecifyTeam(IPage page, @Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
     Page<ProjectTeam> searchTaskCntEstimateConsumedLeft(IPage page, @Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
     @Override
     ProjectTeam selectById(Serializable id);

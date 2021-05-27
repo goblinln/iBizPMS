@@ -97,6 +97,13 @@
          )t1
      </select>
 
+    <!--数据集合[SpecifyTeam]-->
+	 <select id="searchSpecifyTeam"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext"  resultMap="ProjectTeamResultMap">
+         select t1.* from (
+                <include refid="SpecifyTeam" />
+         )t1
+     </select>
+
     <!--数据集合[TaskCntEstimateConsumedLeft]-->
 	 <select id="searchTaskCntEstimateConsumedLeft"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext"  resultMap="ProjectTeamResultMap">
          select t1.* from (

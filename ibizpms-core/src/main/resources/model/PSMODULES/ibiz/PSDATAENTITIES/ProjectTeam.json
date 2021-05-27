@@ -306,6 +306,17 @@
     "enableFront" : true,
     "enableTempData" : true
   }, {
+    "codeName" : "SpecifyTeam",
+    "logicName" : "指定团队",
+    "name" : "SpecifyTeam",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "SpecifyTeam"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
     "codeName" : "TaskCntEstimateConsumedLeft",
     "logicName" : "数据查询",
     "name" : "TaskCntEstimateConsumedLeft",

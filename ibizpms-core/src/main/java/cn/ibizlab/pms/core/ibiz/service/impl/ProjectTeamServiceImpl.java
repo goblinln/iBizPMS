@@ -349,6 +349,15 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
     }
 
     /**
+     * 查询集合 指定团队
+     */
+    @Override
+    public Page<ProjectTeam> searchSpecifyTeam(ProjectTeamSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProjectTeam> pages=baseMapper.searchSpecifyTeam(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<ProjectTeam>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
      * 查询集合 数据查询
      */
     @Override

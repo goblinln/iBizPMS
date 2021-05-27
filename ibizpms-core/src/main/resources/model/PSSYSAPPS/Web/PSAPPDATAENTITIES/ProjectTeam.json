@@ -373,6 +373,15 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchSpecifyTeam",
+    "methodType" : "FETCH",
+    "name" : "SpecifyTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "SpecifyTeam"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTaskCntEstimateConsumedLeft",
     "methodType" : "FETCH",
     "name" : "TaskCntEstimateConsumedLeft",
@@ -824,6 +833,25 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "RowEditDefault"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchSpecifyTeam",
+    "methodType" : "FETCH",
+    "name" : "SpecifyTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "SpecifyTeam"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempSpecifyTeam",
+    "methodType" : "FETCHTEMP",
+    "name" : "SpecifyTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "SpecifyTeam"
     },
     "tempDataMode" : 2,
     "builtinMethod" : false
