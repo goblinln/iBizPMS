@@ -895,6 +895,14 @@
     "psappsbitemid" : "2b86e79ae5dcff6db1082e3e28b60c69",
     "itemtype" : "APPVIEW"
   }, {
+    "psappviewname" : "ProjectStartMobEditView",
+    "psappsbitemname" : "项目移动端编辑视图（开始）",
+    "itemtag2" : "B9567989-242C-47DF-8CEF-30C805DF78A9",
+    "psappviewid" : "213046c819a2b121740d6f5112f595be",
+    "itemtag" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProjectStartMobEditView.json",
+    "psappsbitemid" : "f5149f53e2eb7468b0794a173d3c5be3",
+    "itemtype" : "APPVIEW"
+  }, {
     "psappviewname" : "ProjectActiviteMobEditView",
     "psappsbitemname" : "项目移动端编辑视图激活）",
     "itemtag2" : "4bce983a017b1f05737bbabb7b5ee540",
@@ -5483,6 +5491,32 @@
     "rstag2" : "系统预定义",
     "ppsappsbitemid" : "539452b41cf321e361e9b59aff82cab1",
     "psappsbitemrsname" : "表格界面_删除操作",
+    "rstype" : "UIACTION"
+  }, {
+    "psappsbitemrsid" : "4fa913e30d75597c9624a2f43ce1ecc9",
+    "ppsappsbitemname" : "项目移动端编辑视图（开始）",
+    "rstag" : "SYS",
+    "rstag2" : "系统预定义",
+    "ppsappsbitemid" : "f5149f53e2eb7468b0794a173d3c5be3",
+    "psappsbitemrsname" : "编辑界面_保存并退出操作",
+    "rstype" : "UIACTION"
+  }, {
+    "cpsappsbitemname" : "系统日志移动端多数据视图（通用）",
+    "psappsbitemrsid" : "c79c6cb930ba150648ce6eaf031122be",
+    "ppsappsbitemname" : "项目移动端编辑视图（开始）",
+    "ppsappsbitemid" : "f5149f53e2eb7468b0794a173d3c5be3",
+    "cpsappsbitemid" : "b5bb7faf74c163ce0b68f6f00f118a09",
+    "psappsbitemrsname" : "嵌入视图",
+    "rstype" : "APPVIEWEMBED"
+  }, {
+    "cpsappsbitemname" : "项目移动端编辑视图（开始）",
+    "psappsbitemrsid" : "f763d2fde35fc1c70250525a379b12ed",
+    "ppsappsbitemname" : "项目移动端编辑视图",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
+    "ppsappsbitemid" : "a8442a9d0e27f7728760bb73e9d10e38",
+    "cpsappsbitemid" : "f5149f53e2eb7468b0794a173d3c5be3",
+    "psappsbitemrsname" : "项目开始（移动端）",
     "rstype" : "UIACTION"
   }, {
     "psappsbitemrsid" : "c3c2eb96c5be8aa12eb2a439fefff298",

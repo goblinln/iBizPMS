@@ -1980,6 +1980,12 @@
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"IBZ_DAILY"
     },
+    {"name":"DERCUSTOM_ZT_ACTION_IBZ_LIB",
+     "relation_type":"DERCUSTOM",
+     "code_name":"IbzLib",
+     "entity_name":"ZT_ACTION",
+     "ref_entity_name":"IBZ_LIB"
+    },
     {"name":"DERCUSTOM_ZT_ACTION_IBZ_MONTHLY",
      "relation_type":"DERCUSTOM",
      "code_name":"Monthly",
@@ -24878,6 +24884,12 @@
      "relation_type":"DER1N",
      "code_name":"Lib",
      "entity_name":"IBZ_LIBMODULE",
+     "ref_entity_name":"IBZ_LIB"
+    },
+    {"name":"DERCUSTOM_ZT_ACTION_IBZ_LIB",
+     "relation_type":"DERCUSTOM",
+     "code_name":"IbzLib",
+     "entity_name":"ZT_ACTION",
      "ref_entity_name":"IBZ_LIB"
     }
     ],

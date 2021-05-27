@@ -41,6 +41,7 @@ public interface IProjectService extends IService<Project> {
     boolean checkKey(Project et);
     Project close(Project et);
     Project importPlanStories(Project et);
+    Project linkProduct(Project et);
     Project linkStory(Project et);
     Project manageMembers(Project et);
     Project mobProjectCount(Project et);
@@ -54,6 +55,7 @@ public interface IProjectService extends IService<Project> {
     Project start(Project et);
     Project suspend(Project et);
     Project unlinkMember(Project et);
+    Project unlinkProduct(Project et);
     Project unlinkStory(Project et);
     Project updateOrder(Project et);
     List<Project> select(ProjectSearchContext context);

@@ -803,6 +803,7 @@
           "caption" : "删除",
           "codeName" : "deleteMob",
           "confirmMsg" : "确认要删除，删除操作将不可恢复？",
+          "dataAccessAction" : "DELETE",
           "fullCodeName" : "Project_deleteMob",
           "name" : "删除（移动端）",
           "getPSAppDEMethod" : {
@@ -887,6 +888,7 @@
         "actionTarget" : "NONE",
         "caption" : "新建",
         "codeName" : "CreateMob",
+        "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProjectNewMobEditView.json",

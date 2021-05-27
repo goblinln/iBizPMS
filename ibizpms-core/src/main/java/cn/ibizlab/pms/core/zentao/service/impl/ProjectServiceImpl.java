@@ -285,6 +285,13 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
 
     @Override
     @Transactional
+    public Project linkProduct(Project et) {
+        //自定义代码
+        return et;
+    }
+
+    @Override
+    @Transactional
     public Project linkStory(Project et) {
         //自定义代码
         return et;
@@ -419,6 +426,13 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     @Override
     @Transactional
     public Project unlinkMember(Project et) {
+        //自定义代码
+        return et;
+    }
+
+    @Override
+    @Transactional
+    public Project unlinkProduct(Project et) {
         //自定义代码
         return et;
     }

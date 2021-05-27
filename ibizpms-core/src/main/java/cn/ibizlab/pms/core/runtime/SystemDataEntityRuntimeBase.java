@@ -91,7 +91,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     /**
      * 全部操作标识
      */
-    protected Map<String, Integer> allOPprivs = new HashMap<>();
+    protected Map<String, Integer> allOPPrivs = new HashMap<>();
 
     @Autowired
     ISystemRuntime system;
@@ -118,6 +118,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     protected void onInit() throws Exception {
         super.onInit();
         this.loadDefaultDEUserRoles();
+        this.loadAllOPPrivs();
     }
 
     /**
@@ -175,9 +176,6 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                         Map<String, String> deAction = new HashMap<>();
                         deAction.put(psDEUserRoleOPPriv.getDataAccessAction(), org.apache.commons.lang3.StringUtils.isBlank(psDEUserRoleOPPriv.getCustomCond()) ? "" : psDEUserRoleOPPriv.getCustomCond());
                         deActions.add(deAction);
-                        if (!allOPprivs.containsKey(psDEUserRoleOPPriv.getDataAccessAction())) {
-                            allOPprivs.put(psDEUserRoleOPPriv.getDataAccessAction(), 0);
-                        }
                     }
                     authority.setDeAction(deActions);
                 }
@@ -185,6 +183,28 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                 if (!psDEUserRole.isDefaultMode())
                     continue;
                 this.defaultAuthorities.add(authority);
+            }
+        }
+    }
+
+    /**
+     * 加载操作标识
+     * 
+     * @throws Exception
+     */
+    protected void loadAllOPPrivs() throws Exception {
+        List<IPSDEUserRole> psDEUserRoles = this.getPSDataEntity().getAllPSDEUserRoles();
+        if (psDEUserRoles != null) {
+            for (IPSDEUserRole psDEUserRole : psDEUserRoles) {
+                java.util.List<IPSDEUserRoleOPPriv> psDEUserRoleOPPrivs = psDEUserRole.getPSDEUserRoleOPPrivs();
+                if (psDEUserRoleOPPrivs != null) {
+                    List<Map<String, String>> deActions = new ArrayList<>();
+                    for (IPSDEUserRoleOPPriv psDEUserRoleOPPriv : psDEUserRoleOPPrivs) {
+                        if (!allOPPrivs.containsKey(psDEUserRoleOPPriv.getDataAccessAction())) {
+                            allOPPrivs.put(psDEUserRoleOPPriv.getDataAccessAction(), 0);
+                        }
+                    }
+                }
             }
         }
     }
@@ -793,6 +813,9 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      */
     public Map<String, Integer> getOPPrivs(Serializable key) {
         Map<String, Integer> opprivsMap = new HashMap<>();
+        if (this.getUserContext().isSuperuser()){
+            return opprivsMap;
+        }
         AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
         //实体默认能力
         defaultAuthorities.stream().forEach(
@@ -852,7 +875,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             }
         });
         //补充未分配能力
-        allOPprivs.entrySet().stream().forEach(opprivEntry -> {
+        allOPPrivs.entrySet().stream().forEach(opprivEntry -> {
             if (!opprivsMap.containsKey(opprivEntry.getKey())) {
                 opprivsMap.put(opprivEntry.getKey(), 0);
             }

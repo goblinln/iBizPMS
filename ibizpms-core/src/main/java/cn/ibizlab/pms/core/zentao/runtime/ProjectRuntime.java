@@ -258,6 +258,9 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             else if (iPSDEAction.getName().equals("importPlanStories")) {
                 return projectService.importPlanStories((Project) args[0]);
             }
+            else if (iPSDEAction.getName().equals("LinkProduct")) {
+                return projectService.linkProduct((Project) args[0]);
+            }
             else if (iPSDEAction.getName().equals("LinkStory")) {
                 return projectService.linkStory((Project) args[0]);
             }
@@ -293,6 +296,9 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             }
             else if (iPSDEAction.getName().equals("UnlinkMember")) {
                 return projectService.unlinkMember((Project) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("UnlinkProduct")) {
+                return projectService.unlinkProduct((Project) args[0]);
             }
             else if (iPSDEAction.getName().equals("UnlinkStory")) {
                 return projectService.unlinkStory((Project) args[0]);
@@ -425,6 +431,9 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         else if (action.equals("importPlanStories")) {
             return aroundAction("importPlanStories", point);
         }
+        else if (action.equals("linkProduct")) {
+            return aroundAction("LinkProduct", point);
+        }
         else if (action.equals("linkStory")) {
             return aroundAction("LinkStory", point);
         }
@@ -460,6 +469,9 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         }
         else if (action.equals("unlinkMember")) {
             return aroundAction("UnlinkMember", point);
+        }
+        else if (action.equals("unlinkProduct")) {
+            return aroundAction("UnlinkProduct", point);
         }
         else if (action.equals("unlinkStory")) {
             return aroundAction("UnlinkStory", point);

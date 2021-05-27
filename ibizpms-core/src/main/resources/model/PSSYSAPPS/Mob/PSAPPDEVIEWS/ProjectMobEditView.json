@@ -20,6 +20,17 @@
     } ]
   } ],
   "getPSAppViewLogics" : [ {
+    "eventArg" : "deuiaction6",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "righttoolbar_deuiaction6_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "righttoolbar_deuiaction6"
+    },
+    "getPSViewCtrlName" : "righttoolbar"
+  }, {
     "eventArg" : "deuiaction1",
     "eventNames" : "CLICK",
     "logicTrigger" : "CTRLEVENT",
@@ -98,6 +109,18 @@
     "rawValue" : true
   } ],
   "getPSAppViewUIActions" : [ {
+    "name" : "righttoolbar_deuiaction6",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+      },
+      "modelref" : true,
+      "id" : "ProjectStartMob@Project"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "form"
+  }, {
     "name" : "righttoolbar_deuiaction1",
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
@@ -1594,6 +1617,50 @@
       "itemType" : "ITEMS",
       "name" : "items1",
       "getPSDEToolbarItems" : [ {
+        "caption" : "开始",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction6",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "righttoolbar_deuiaction6"
+        },
+        "getPSSysImage" : {
+          "cssClass" : "play"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "caption" : "开始",
+          "codeName" : "ProjectStartMob",
+          "dataAccessAction" : "START",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProjectStartMobEditView.json",
+            "viewType" : "DEMOBEDITVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "fullCodeName" : "Project_ProjectStartMob",
+          "name" : "项目开始（移动端）",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+          },
+          "getPSSysImage" : {
+            "cssClass" : "play"
+          },
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "ProjectStartMob",
+          "uIActionType" : "DEUIACTION",
+          "reloadData" : true,
+          "id" : "ProjectStartMob@Project"
+        },
+        "tooltip" : "开始",
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
         "caption" : "激活",
         "groupExtractMode" : "ITEM",
         "itemType" : "DEUIACTION",
@@ -1610,6 +1677,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "激活",
           "codeName" : "ProjectActivateMob",
+          "dataAccessAction" : "ACTIVATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProjectActiviteMobEditView.json",
@@ -1653,6 +1721,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "挂起",
           "codeName" : "ProjectSuspendMob",
+          "dataAccessAction" : "SUSPEND",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProjectSupMobEditView.json",
@@ -1696,6 +1765,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "关闭",
           "codeName" : "ProjectCloseMob",
+          "dataAccessAction" : "CLOSE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProjectCloseMobEditView.json",
@@ -1740,6 +1810,7 @@
           "caption" : "删除",
           "codeName" : "deleteMob",
           "confirmMsg" : "确认要删除，删除操作将不可恢复？",
+          "dataAccessAction" : "DELETE",
           "fullCodeName" : "Project_deleteMob",
           "name" : "删除（移动端）",
           "getPSAppDEMethod" : {
@@ -1786,6 +1857,7 @@
           "actionTarget" : "NONE",
           "caption" : "团队成员管理",
           "codeName" : "TeamMemberManage",
+          "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProjectProjectTeamManageMobEditView.json",

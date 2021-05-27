@@ -213,6 +213,13 @@
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
+    "codeName" : "LinkProduct",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/LinkProduct.json",
+    "logicName" : "关联产品",
+    "name" : "LinkProduct"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "LinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/LinkStory.json",
     "logicName" : "关联需求",
@@ -322,6 +329,13 @@
     "logicName" : "移除成员",
     "name" : "UnlinkMember",
     "userCat" : "CAT1"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "UnlinkProduct",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UnlinkProduct.json",
+    "logicName" : "解除关联产品",
+    "name" : "UnlinkProduct"
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
