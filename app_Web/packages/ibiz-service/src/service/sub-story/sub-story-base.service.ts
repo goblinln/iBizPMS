@@ -322,23 +322,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         return this.condCache.get('view');
     }
     /**
-     * FetchSubStory
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SubStoryService
-     */
-    async FetchSubStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchsubstory`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchsubstory`, _data);
-        }
-        return this.http.post(`/substories/fetchsubstory`, _data);
-    }
-    /**
      * Select
      *
      * @param {*} [_context={}]
@@ -1661,6 +1644,23 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
             return this.http.post(`/stories/${_context.story}/substories/fetchstoryrelated`, _data);
         }
         return this.http.post(`/substories/fetchstoryrelated`, _data);
+    }
+    /**
+     * FetchSubStory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubStoryService
+     */
+    async FetchSubStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchsubstory`, _data);
+        }
+        if (_context.story && true) {
+            return this.http.post(`/stories/${_context.story}/substories/fetchsubstory`, _data);
+        }
+        return this.http.post(`/substories/fetchsubstory`, _data);
     }
     /**
      * FetchTaskRelatedStory

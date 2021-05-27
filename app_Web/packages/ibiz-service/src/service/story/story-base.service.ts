@@ -322,94 +322,46 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         return this.condCache.get('view');
     }
     /**
-     * Change
+     * Select
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof StoryService
      */
-    async Change(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/change`, _data);
+            return this.http.get(`/products/${_context.product}/stories/${_context.story}/select`);
         }
-        return this.http.post(`/stories/${_context.story}/change`, _data);
+        return this.http.get(`/stories/${_context.story}/select`);
     }
     /**
-     * StoryNFavorites
+     * Create
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof StoryService
      */
-    async StoryNFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/storynfavorites`, _data);
-        }
-        return this.http.post(`/stories/${_context.story}/storynfavorites`, _data);
-    }
-    /**
-     * AssignTo
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async AssignTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/assignto`, _data);
-        }
-        return this.http.post(`/stories/${_context.story}/assignto`, _data);
-    }
-    /**
-     * FetchStoryRelated
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async FetchStoryRelated(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/stories/fetchstoryrelated`, _data);
-        }
-        return this.http.post(`/stories/fetchstoryrelated`, _data);
-    }
-    /**
-     * Review
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async Review(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/review`, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/stories`, _data);
         }
-        return this.http.post(`/stories/${_context.story}/review`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story) {
-            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/get`);
-            return res;
+        _data = await this.obtainMinor(_context, _data);
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
         }
-        const res = await this.http.get(`/stories/${_context.story}/get`);
-        return res;
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        return this.http.post(`/stories`, _data);
     }
     /**
      * Update
@@ -422,39 +374,40 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/stories/${_context.story}/update`, _data);
+            return this.http.put(`/products/${_context.product}/stories/${_context.story}`, _data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/stories/${_context.story}/update`, _data);
+        return this.http.put(`/stories/${_context.story}`, _data);
     }
     /**
-     * FetchStoryChild
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof StoryService
      */
-    async FetchStoryChild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/stories/fetchstorychild`, _data);
-        }
-        return this.http.post(`/stories/fetchstorychild`, _data);
-    }
-    /**
-     * StoryFavorites
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async StoryFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/storyfavorites`, _data);
+            return this.http.delete(`/products/${_context.product}/stories/${_context.story}`);
         }
-        return this.http.post(`/stories/${_context.story}/storyfavorites`, _data);
+        return this.http.delete(`/stories/${_context.story}`);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}`);
+            return res;
+        }
+        const res = await this.http.get(`/stories/${_context.story}`);
+        return res;
     }
     /**
      * GetDraft
@@ -492,105 +445,6 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         return this.http.post(`/stories/${_context.story}/activate`, _data);
     }
     /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/stories/fetchdefault`, _data);
-        }
-        return this.http.post(`/stories/fetchdefault`, _data);
-    }
-    /**
-     * Close
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/close`, _data);
-        }
-        return this.http.post(`/stories/${_context.story}/close`, _data);
-    }
-    /**
-     * FetchParentDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async FetchParentDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/stories/fetchparentdefault`, _data);
-        }
-        return this.http.post(`/stories/fetchparentdefault`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story) {
-            return this.http.delete(`/products/${_context.product}/stories/${_context.story}/remove`);
-        }
-        return this.http.delete(`/stories/${_context.story}/remove`);
-    }
-    /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/stories`, _data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/stories`, _data);
-    }
-    /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/select`);
-        }
-        return this.http.get(`/stories/${_context.story}/select`);
-    }
-    /**
      * AllPush
      *
      * @param {*} [_context={}]
@@ -604,6 +458,21 @@ export class StoryBaseService extends EntityBaseService<IStory> {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/allpush`, _data);
         }
         return this.http.post(`/stories/${_context.story}/allpush`, _data);
+    }
+    /**
+     * AssignTo
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async AssignTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/assignto`, _data);
+        }
+        return this.http.post(`/stories/${_context.story}/assignto`, _data);
     }
     /**
      * BatchAssignTo
@@ -799,6 +668,36 @@ export class StoryBaseService extends EntityBaseService<IStory> {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/buildunlinkstorys`, _data);
         }
         return this.http.post(`/stories/${_context.story}/buildunlinkstorys`, _data);
+    }
+    /**
+     * Change
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async Change(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/change`, _data);
+        }
+        return this.http.post(`/stories/${_context.story}/change`, _data);
+    }
+    /**
+     * Close
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/close`, _data);
+        }
+        return this.http.post(`/stories/${_context.story}/close`, _data);
     }
     /**
      * CreateTasks
@@ -1012,6 +911,21 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         return this.http.post(`/stories/${_context.story}/resetreviewedby`, _data);
     }
     /**
+     * Review
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async Review(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/review`, _data);
+        }
+        return this.http.post(`/stories/${_context.story}/review`, _data);
+    }
+    /**
      * SendMessage
      *
      * @param {*} [_context={}]
@@ -1055,6 +969,36 @@ export class StoryBaseService extends EntityBaseService<IStory> {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/setstage`, _data);
         }
         return this.http.post(`/stories/${_context.story}/setstage`, _data);
+    }
+    /**
+     * StoryFavorites
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async StoryFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/storyfavorites`, _data);
+        }
+        return this.http.post(`/stories/${_context.story}/storyfavorites`, _data);
+    }
+    /**
+     * StoryNFavorites
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async StoryNFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/storynfavorites`, _data);
+        }
+        return this.http.post(`/stories/${_context.story}/storynfavorites`, _data);
     }
     /**
      * SyncFromIbiz
@@ -1311,6 +1255,20 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         return this.http.post(`/stories/fetchnotcurplanlinkstory`, _data);
     }
     /**
+     * FetchParentDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchParentDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchparentdefault`, _data);
+        }
+        return this.http.post(`/stories/fetchparentdefault`, _data);
+    }
+    /**
      * FetchParentDefaultQ
      *
      * @param {*} [_context={}]
@@ -1395,6 +1353,34 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         return this.http.post(`/stories/fetchreportstories`, _data);
     }
     /**
+     * FetchStoryChild
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchStoryChild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchstorychild`, _data);
+        }
+        return this.http.post(`/stories/fetchstorychild`, _data);
+    }
+    /**
+     * FetchStoryRelated
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchStoryRelated(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchstoryrelated`, _data);
+        }
+        return this.http.post(`/stories/fetchstoryrelated`, _data);
+    }
+    /**
      * FetchSubStory
      *
      * @param {*} [_context={}]
@@ -1451,60 +1437,6 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     }
 
     /**
-     * ChangeBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof StoryServiceBase
-     */
-    public async ChangeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/changebatch`,_data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/stories/changebatch`,_data);
-    }
-
-    /**
-     * AssignToBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof StoryServiceBase
-     */
-    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/assigntobatch`,_data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/stories/assigntobatch`,_data);
-    }
-
-    /**
-     * ReviewBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof StoryServiceBase
-     */
-    public async ReviewBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/reviewbatch`,_data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/stories/reviewbatch`,_data);
-    }
-
-    /**
      * ActivateBatch接口方法
      *
      * @param {*} [context={}]
@@ -1523,24 +1455,6 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     }
 
     /**
-     * CloseBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof StoryServiceBase
-     */
-    public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/closebatch`,_data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/stories/closebatch`,_data);
-    }
-
-    /**
      * AllPushBatch接口方法
      *
      * @param {*} [context={}]
@@ -1556,6 +1470,24 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/stories/allpushbatch`,_data);
+    }
+
+    /**
+     * AssignToBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof StoryServiceBase
+     */
+    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/assigntobatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/stories/assigntobatch`,_data);
     }
 
     /**
@@ -1775,6 +1707,42 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     }
 
     /**
+     * ChangeBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof StoryServiceBase
+     */
+    public async ChangeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/changebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/stories/changebatch`,_data);
+    }
+
+    /**
+     * CloseBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof StoryServiceBase
+     */
+    public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/closebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/stories/closebatch`,_data);
+    }
+
+    /**
      * CreateTasksBatch接口方法
      *
      * @param {*} [context={}]
@@ -1988,6 +1956,24 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/stories/resetreviewedbybatch`,_data);
+    }
+
+    /**
+     * ReviewBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof StoryServiceBase
+     */
+    public async ReviewBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/reviewbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/stories/reviewbatch`,_data);
     }
 
     /**

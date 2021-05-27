@@ -52,29 +52,27 @@ public class ProductResource {
     @Lazy
     public ProductMapping productMapping;
 
-    @PreAuthorize("@ProductRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取默认查询", tags = {"产品" } ,notes = "获取默认查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/fetchcurdefault")
-	public ResponseEntity<List<ProductDTO>> fetchcurdefault(@RequestBody ProductSearchContext context) {
-        productRuntime.addAuthorityConditions(context,"READ");
-        Page<Product> domains = productService.searchCurDefault(context) ;
-        List<ProductDTO> list = productMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
+    @ApiOperation(value = "关闭", tags = {"产品" },  notes = "关闭")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/close")
+    public ResponseEntity<ProductDTO> close(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
+        Product domain = productMapping.toDomain(productdto);
+        domain.setId(product_id);
+        domain = productService.close(domain);
+        productdto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        productdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(productdto);
+    }
 
-    @PreAuthorize("@ProductRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询默认查询", tags = {"产品" } ,notes = "查询默认查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/searchcurdefault")
-	public ResponseEntity<Page<ProductDTO>> searchCurDefault(@RequestBody ProductSearchContext context) {
-        productRuntime.addAuthorityConditions(context,"READ");
-        Page<Product> domains = productService.searchCurDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @ApiOperation(value = "删除产品", tags = {"产品" },  notes = "删除产品")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("product_id") Long product_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(productService.remove(product_id));
+    }
+
 
     @VersionCheck(entity = "product" , versionfield = "updatedate")
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
@@ -94,89 +92,29 @@ public class ProductResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "新建产品", tags = {"产品" },  notes = "新建产品")
-	@RequestMapping(method = RequestMethod.POST, value = "/products")
-    @Transactional
-    public ResponseEntity<ProductDTO> create(@Validated @RequestBody ProductDTO productdto) {
-        Product domain = productMapping.toDomain(productdto);
-		productService.create(domain);
-        if(!productRuntime.test(domain.getId(),"CREATE"))
-            throw new RuntimeException("无权限操作");
-        ProductDTO dto = productMapping.toDto(domain);
-        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取产品团队", tags = {"产品" } ,notes = "获取产品团队")
+    @RequestMapping(method= RequestMethod.POST , value="/products/fetchproductteam")
+	public ResponseEntity<List<ProductDTO>> fetchproductteam(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchProductTeam(context) ;
+        List<ProductDTO> list = productMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "置顶", tags = {"产品" },  notes = "置顶")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/producttop")
-    public ResponseEntity<ProductDTO> productTop(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
-        Product domain = productMapping.toDomain(productdto);
-        domain.setId(product_id);
-        domain = productService.productTop(domain);
-        productdto = productMapping.toDto(domain);
-        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
-        productdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(productdto);
-    }
-
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
-    @ApiOperation(value = "删除产品", tags = {"产品" },  notes = "删除产品")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("product_id") Long product_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(productService.remove(product_id));
-    }
-
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "获取产品草稿", tags = {"产品" },  notes = "获取产品草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/getdraft")
-    public ResponseEntity<ProductDTO> getDraft(ProductDTO dto) {
-        Product domain = productMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(productMapping.toDto(productService.getDraft(domain)));
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "关闭", tags = {"产品" },  notes = "关闭")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/close")
-    public ResponseEntity<ProductDTO> close(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
-        Product domain = productMapping.toDomain(productdto);
-        domain.setId(product_id);
-        domain = productService.close(domain);
-        productdto = productMapping.toDto(domain);
-        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
-        productdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(productdto);
-    }
-
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "取消置顶", tags = {"产品" },  notes = "取消置顶")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cancelproducttop")
-    public ResponseEntity<ProductDTO> cancelProductTop(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
-        Product domain = productMapping.toDomain(productdto);
-        domain.setId(product_id);
-        domain = productService.cancelProductTop(domain);
-        productdto = productMapping.toDto(domain);
-        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
-        productdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(productdto);
-    }
-
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "获取产品", tags = {"产品" },  notes = "获取产品")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}")
-    public ResponseEntity<ProductDTO> get(@PathVariable("product_id") Long product_id) {
-        Product domain = productService.get(product_id);
-        ProductDTO dto = productMapping.toDto(domain);
-        Map<String,Integer> opprivs = productRuntime.getOPPrivs(product_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询产品团队", tags = {"产品" } ,notes = "查询产品团队")
+    @RequestMapping(method= RequestMethod.POST , value="/products/searchproductteam")
+	public ResponseEntity<Page<ProductDTO>> searchProductTeam(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchProductTeam(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
 
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取全部产品", tags = {"产品" } ,notes = "获取全部产品")
@@ -202,12 +140,45 @@ public class ProductResource {
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @ApiOperation(value = "置顶", tags = {"产品" },  notes = "置顶")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/producttop")
+    public ResponseEntity<ProductDTO> productTop(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
+        Product domain = productMapping.toDomain(productdto);
+        domain.setId(product_id);
+        domain = productService.productTop(domain);
+        productdto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        productdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(productdto);
+    }
+
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @ApiOperation(value = "获取产品", tags = {"产品" },  notes = "获取产品")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}")
+    public ResponseEntity<ProductDTO> get(@PathVariable("product_id") Long product_id) {
+        Product domain = productService.get(product_id);
+        ProductDTO dto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(product_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "获取产品草稿", tags = {"产品" },  notes = "获取产品草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/getdraft")
+    public ResponseEntity<ProductDTO> getDraft(ProductDTO dto) {
+        Product domain = productMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(productMapping.toDto(productService.getDraft(domain)));
+    }
+
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取产品团队", tags = {"产品" } ,notes = "获取产品团队")
-    @RequestMapping(method= RequestMethod.POST , value="/products/fetchproductteam")
-	public ResponseEntity<List<ProductDTO>> fetchproductteam(@RequestBody ProductSearchContext context) {
+	@ApiOperation(value = "获取默认查询", tags = {"产品" } ,notes = "获取默认查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/fetchcurdefault")
+	public ResponseEntity<List<ProductDTO>> fetchcurdefault(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
-        Page<Product> domains = productService.searchProductTeam(context) ;
+        Page<Product> domains = productService.searchCurDefault(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -217,14 +188,43 @@ public class ProductResource {
 	}
 
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询产品团队", tags = {"产品" } ,notes = "查询产品团队")
-    @RequestMapping(method= RequestMethod.POST , value="/products/searchproductteam")
-	public ResponseEntity<Page<ProductDTO>> searchProductTeam(@RequestBody ProductSearchContext context) {
+	@ApiOperation(value = "查询默认查询", tags = {"产品" } ,notes = "查询默认查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/searchcurdefault")
+	public ResponseEntity<Page<ProductDTO>> searchCurDefault(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
-        Page<Product> domains = productService.searchProductTeam(context) ;
+        Page<Product> domains = productService.searchCurDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+
+    @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "新建产品", tags = {"产品" },  notes = "新建产品")
+	@RequestMapping(method = RequestMethod.POST, value = "/products")
+    @Transactional
+    public ResponseEntity<ProductDTO> create(@Validated @RequestBody ProductDTO productdto) {
+        Product domain = productMapping.toDomain(productdto);
+		productService.create(domain);
+        if(!productRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
+        ProductDTO dto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @ApiOperation(value = "取消置顶", tags = {"产品" },  notes = "取消置顶")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cancelproducttop")
+    public ResponseEntity<ProductDTO> cancelProductTop(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
+        Product domain = productMapping.toDomain(productdto);
+        domain.setId(product_id);
+        domain = productService.cancelProductTop(domain);
+        productdto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        productdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(productdto);
+    }
+
 
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
