@@ -174,38 +174,15 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.condCache.get('view');
     }
     /**
-     * FetchAllList
+     * Select
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductService
      */
-    async FetchAllList(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/fetchalllist`, _data);
-    }
-    /**
-     * Close
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/${_context.product}/close`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/products/${_context.product}`);
-        return res;
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/products/${_context.product}/select`);
     }
     /**
      * Create
@@ -238,17 +215,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.http.put(`/products/${_context.product}`, _data);
     }
     /**
-     * CancelProductTop
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async CancelProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/${_context.product}/cancelproducttop`, _data);
-    }
-    /**
      * Remove
      *
      * @param {*} [_context={}]
@@ -258,6 +224,18 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.delete(`/products/${_context.product}`);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/products/${_context.product}`);
+        return res;
     }
     /**
      * GetDraft
@@ -274,15 +252,48 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return res;
     }
     /**
-     * FetchCurDefault
+     * CancelProductTop
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductService
      */
-    async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/fetchcurdefault`, _data);
+    async CancelProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/${_context.product}/cancelproducttop`, _data);
+    }
+    /**
+     * Close
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/${_context.product}/close`, _data);
+    }
+    /**
+     * MobProductCounter
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async MobProductCounter(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.put(`/products/${_context.product}/mobproductcounter`, _data);
+    }
+    /**
+     * MobProductTestCounter
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async MobProductTestCounter(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/${_context.product}/mobproducttestcounter`, _data);
     }
     /**
      * ProductTop
@@ -296,6 +307,105 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.http.post(`/products/${_context.product}/producttop`, _data);
     }
     /**
+     * FetchAllList
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchAllList(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchalllist`, _data);
+    }
+    /**
+     * FetchAllProduct
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchAllProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchallproduct`, _data);
+    }
+    /**
+     * FetchCheckNameOrCode
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchCheckNameOrCode(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchchecknameorcode`, _data);
+    }
+    /**
+     * FetchCurDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchcurdefault`, _data);
+    }
+    /**
+     * FetchCurProject
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchCurProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchcurproject`, _data);
+    }
+    /**
+     * FetchCurUer
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchCurUer(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchcuruer`, _data);
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchdefault`, _data);
+    }
+    /**
+     * FetchESBulk
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchESBulk(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchesbulk`, _data);
+    }
+    /**
+     * FetchProductPM
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchProductPM(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchproductpm`, _data);
+    }
+    /**
      * FetchProductTeam
      *
      * @param {*} [_context={}]
@@ -307,15 +417,15 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.http.post(`/products/fetchproductteam`, _data);
     }
     /**
-     * Select
+     * FetchStoryCurProject
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductService
      */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/products/${_context.product}/select`);
+    async FetchStoryCurProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchstorycurproject`, _data);
     }
 
     /**

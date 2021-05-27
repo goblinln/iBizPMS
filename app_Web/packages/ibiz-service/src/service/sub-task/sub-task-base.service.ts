@@ -286,49 +286,6 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
         return this.condCache.get('view');
     }
     /**
-     * FetchChildTask
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SubTaskService
-     */
-    async FetchChildTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
-        }
-        if (_context.task && true) {
-            return this.http.post(`/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
-        }
-        return this.http.post(`/subtasks/fetchchildtask`, _data);
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SubTaskService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/getdraft`, _data);
-            return res;
-        }
-        if (_context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/tasks/${_context.task}/subtasks/getdraft`, _data);
-            return res;
-        }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/subtasks/getdraft`, _data);
-        return res;
-    }
-    /**
      * GetUserConcat
      *
      * @param {*} [_context={}]

@@ -135,23 +135,6 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
         return this.condCache.get('view');
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskEstimateService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task && _context.taskestimate) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}/select`);
-        }
-        if (_context.task && _context.taskestimate) {
-            return this.http.get(`/tasks/${_context.task}/taskestimates/${_context.taskestimate}/select`);
-        }
-        return this.http.get(`/taskestimates/${_context.taskestimate}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -190,24 +173,47 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
         return this.http.post(`/taskestimates`, _data);
     }
     /**
-     * Update
+     * GetDraft
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TaskEstimateService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task && _context.taskestimate) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/getdraft`, _data);
+            return res;
         }
-        if (_context.task && _context.taskestimate) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
+        if (_context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/tasks/${_context.task}/taskestimates/getdraft`, _data);
+            return res;
         }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/taskestimates/${_context.taskestimate}`, _data);
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/taskestimates/getdraft`, _data);
+        return res;
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskEstimateService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
+        }
+        if (_context.task && true) {
+            return this.http.post(`/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
+        }
+        return this.http.post(`/taskestimates/fetchdefault`, _data);
     }
     /**
      * Remove
@@ -247,30 +253,41 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
         return res;
     }
     /**
-     * GetDraft
+     * Update
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TaskEstimateService
      */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/getdraft`, _data);
-            return res;
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.task && _context.taskestimate) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
         }
-        if (_context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/tasks/${_context.task}/taskestimates/getdraft`, _data);
-            return res;
+        if (_context.task && _context.taskestimate) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
         }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/taskestimates/getdraft`, _data);
-        return res;
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/taskestimates/${_context.taskestimate}`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskEstimateService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.task && _context.taskestimate) {
+            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}/select`);
+        }
+        if (_context.task && _context.taskestimate) {
+            return this.http.get(`/tasks/${_context.task}/taskestimates/${_context.taskestimate}/select`);
+        }
+        return this.http.get(`/taskestimates/${_context.taskestimate}/select`);
     }
     /**
      * PMEvaluation
@@ -324,23 +341,6 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
             return this.http.post(`/tasks/${_context.task}/taskestimates/fetchactionyear`, _data);
         }
         return this.http.post(`/taskestimates/fetchactionyear`, _data);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskEstimateService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
-        }
-        if (_context.task && true) {
-            return this.http.post(`/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
-        }
-        return this.http.post(`/taskestimates/fetchdefault`, _data);
     }
     /**
      * FetchDefaults
