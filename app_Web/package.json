@@ -4,8 +4,7 @@
     "private": true,
     "workspaces": [
         "packages/*",
-        "plugins/*",
-        "../plugins/*"
+        "plugins/*"
     ],
     "scripts": {
         "link-model": "./node_modules/.bin/ibz link-model -m ibizpms-core/src/main/resources/model -f",

@@ -28,6 +28,7 @@ public interface CaseMapper extends BaseMapper<Case> {
     List<Case> selectModuleRePortCase(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     List<Case> selectModuleRePortCaseEntry(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     List<Case> selectModuleRePortCase_Project(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectMyCreateOrUpdate(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     List<Case> selectMyFavorite(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     List<Case> selectNotCurTestSuite(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     List<Case> selectNotCurTestTask(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
@@ -52,6 +53,7 @@ public interface CaseMapper extends BaseMapper<Case> {
     Page<Case> searchModuleRePortCase(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     Page<Case> searchModuleRePortCaseEntry(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     Page<Case> searchModuleRePortCase_Project(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    Page<Case> searchMyCreateOrUpdate(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     Page<Case> searchMyFavorites(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     Page<Case> searchNotCurTestSuite(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     Page<Case> searchNotCurTestTask(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);

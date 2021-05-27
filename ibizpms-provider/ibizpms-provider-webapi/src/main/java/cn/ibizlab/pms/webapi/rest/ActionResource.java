@@ -4397,7 +4397,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/actions")
     public ResponseEntity<ActionDTO> createByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
@@ -4410,7 +4410,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/testsuites/{testsuite_id}/actions/{action_id}")
     public ResponseEntity<ActionDTO> updateByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
@@ -4440,7 +4440,7 @@ public class ActionResource {
     @RequestMapping(method = RequestMethod.GET, value = "/testsuites/{testsuite_id}/actions/getdraft")
     public ResponseEntity<ActionDTO> getDraftByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
@@ -4456,7 +4456,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/actions/{action_id}/comment")
     public ResponseEntity<ActionDTO> commentByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         domain.setId(action_id);
         domain = actionService.comment(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -4468,7 +4468,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/actions/{action_id}/createhis")
     public ResponseEntity<ActionDTO> createHisByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         domain.setId(action_id);
         domain = actionService.createHis(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -4480,7 +4480,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/actions/{action_id}/editcomment")
     public ResponseEntity<ActionDTO> editCommentByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         domain.setId(action_id);
         domain = actionService.editComment(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -4491,7 +4491,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/actions/{action_id}/managepmsee")
     public ResponseEntity<ActionDTO> managePmsEeByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         domain.setId(action_id);
         domain = actionService.managePmsEe(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -4502,7 +4502,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/actions/save")
     public ResponseEntity<ActionDTO> saveByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         actionService.save(domain);
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(domain));
     }
@@ -4512,7 +4512,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/actions/{action_id}/sendmarkdone")
     public ResponseEntity<ActionDTO> sendMarkDoneByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         domain.setId(action_id);
         domain = actionService.sendMarkDone(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -4523,7 +4523,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/actions/{action_id}/sendtodo")
     public ResponseEntity<ActionDTO> sendTodoByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         domain.setId(action_id);
         domain = actionService.sendTodo(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -4534,7 +4534,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/actions/{action_id}/sendtoread")
     public ResponseEntity<ActionDTO> sendToreadByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         domain.setId(action_id);
         domain = actionService.sendToread(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -4545,7 +4545,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据测试套件获取DEFAULT", tags = {"系统日志" } ,notes = "根据测试套件获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/fetchdefault")
 	public ResponseEntity<List<ActionDTO>> fetchActionDefaultByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchDefault(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4559,7 +4559,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据测试套件查询DEFAULT", tags = {"系统日志" } ,notes = "根据测试套件查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/searchdefault")
 	public ResponseEntity<Page<ActionDTO>> searchActionDefaultByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -4568,7 +4568,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据测试套件获取MobType", tags = {"系统日志" } ,notes = "根据测试套件获取MobType")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/fetchmobtype")
 	public ResponseEntity<List<ActionDTO>> fetchActionMobTypeByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchMobType(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4582,7 +4582,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据测试套件查询MobType", tags = {"系统日志" } ,notes = "根据测试套件查询MobType")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/searchmobtype")
 	public ResponseEntity<Page<ActionDTO>> searchActionMobTypeByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchMobType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -4591,7 +4591,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据测试套件获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据测试套件获取项目动态(我的)")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/fetchmytrends")
 	public ResponseEntity<List<ActionDTO>> fetchActionMyTrendsByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4605,7 +4605,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据测试套件查询项目动态(我的)", tags = {"系统日志" } ,notes = "根据测试套件查询项目动态(我的)")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/searchmytrends")
 	public ResponseEntity<Page<ActionDTO>> searchActionMyTrendsByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchMyTrends(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -4614,7 +4614,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据测试套件获取ProductTrends", tags = {"系统日志" } ,notes = "根据测试套件获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/fetchproducttrends")
 	public ResponseEntity<List<ActionDTO>> fetchActionProductTrendsByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchProductTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4628,7 +4628,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据测试套件查询ProductTrends", tags = {"系统日志" } ,notes = "根据测试套件查询ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/searchproducttrends")
 	public ResponseEntity<Page<ActionDTO>> searchActionProductTrendsByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchProductTrends(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -4637,7 +4637,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据测试套件获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据测试套件获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/fetchprojecttrends")
 	public ResponseEntity<List<ActionDTO>> fetchActionProjectTrendsByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchProjectTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4651,7 +4651,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据测试套件查询项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据测试套件查询项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/searchprojecttrends")
 	public ResponseEntity<Page<ActionDTO>> searchActionProjectTrendsByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchProjectTrends(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -4660,7 +4660,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据测试套件获取查询用户使用年", tags = {"系统日志" } ,notes = "根据测试套件获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/fetchqueryuseryear")
 	public ResponseEntity<List<ActionDTO>> fetchActionQueryUserYEARByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchQueryUserYEAR(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4674,7 +4674,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据测试套件查询查询用户使用年", tags = {"系统日志" } ,notes = "根据测试套件查询查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/searchqueryuseryear")
 	public ResponseEntity<Page<ActionDTO>> searchActionQueryUserYEARByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchQueryUserYEAR(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -4683,7 +4683,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据测试套件获取Type", tags = {"系统日志" } ,notes = "根据测试套件获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/fetchtype")
 	public ResponseEntity<List<ActionDTO>> fetchActionTypeByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchType(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4697,7 +4697,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据测试套件查询Type", tags = {"系统日志" } ,notes = "根据测试套件查询Type")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/searchtype")
 	public ResponseEntity<Page<ActionDTO>> searchActionTypeByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -7187,7 +7187,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/actions")
     public ResponseEntity<ActionDTO> createByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
@@ -7200,7 +7200,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testsuites/{testsuite_id}/actions/{action_id}")
     public ResponseEntity<ActionDTO> updateByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
@@ -7230,7 +7230,7 @@ public class ActionResource {
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testsuites/{testsuite_id}/actions/getdraft")
     public ResponseEntity<ActionDTO> getDraftByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
@@ -7246,7 +7246,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/actions/{action_id}/comment")
     public ResponseEntity<ActionDTO> commentByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         domain.setId(action_id);
         domain = actionService.comment(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -7258,7 +7258,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/actions/{action_id}/createhis")
     public ResponseEntity<ActionDTO> createHisByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         domain.setId(action_id);
         domain = actionService.createHis(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -7270,7 +7270,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/actions/{action_id}/editcomment")
     public ResponseEntity<ActionDTO> editCommentByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         domain.setId(action_id);
         domain = actionService.editComment(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -7281,7 +7281,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/actions/{action_id}/managepmsee")
     public ResponseEntity<ActionDTO> managePmsEeByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         domain.setId(action_id);
         domain = actionService.managePmsEe(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -7292,7 +7292,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/actions/save")
     public ResponseEntity<ActionDTO> saveByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         actionService.save(domain);
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(domain));
     }
@@ -7302,7 +7302,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/actions/{action_id}/sendmarkdone")
     public ResponseEntity<ActionDTO> sendMarkDoneByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         domain.setId(action_id);
         domain = actionService.sendMarkDone(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -7313,7 +7313,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/actions/{action_id}/sendtodo")
     public ResponseEntity<ActionDTO> sendTodoByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         domain.setId(action_id);
         domain = actionService.sendTodo(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -7324,7 +7324,7 @@ public class ActionResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/actions/{action_id}/sendtoread")
     public ResponseEntity<ActionDTO> sendToreadByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
         Action domain = actionMapping.toDomain(actiondto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("TestSuite");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         domain.setId(action_id);
         domain = actionService.sendToread(domain) ;
         actiondto = actionMapping.toDto(domain);
@@ -7335,7 +7335,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品测试套件获取DEFAULT", tags = {"系统日志" } ,notes = "根据产品测试套件获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/actions/fetchdefault")
 	public ResponseEntity<List<ActionDTO>> fetchActionDefaultByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchDefault(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7349,7 +7349,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品测试套件查询DEFAULT", tags = {"系统日志" } ,notes = "根据产品测试套件查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/actions/searchdefault")
 	public ResponseEntity<Page<ActionDTO>> searchActionDefaultByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -7358,7 +7358,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品测试套件获取MobType", tags = {"系统日志" } ,notes = "根据产品测试套件获取MobType")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/actions/fetchmobtype")
 	public ResponseEntity<List<ActionDTO>> fetchActionMobTypeByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchMobType(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7372,7 +7372,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品测试套件查询MobType", tags = {"系统日志" } ,notes = "根据产品测试套件查询MobType")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/actions/searchmobtype")
 	public ResponseEntity<Page<ActionDTO>> searchActionMobTypeByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchMobType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -7381,7 +7381,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品测试套件获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品测试套件获取项目动态(我的)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/actions/fetchmytrends")
 	public ResponseEntity<List<ActionDTO>> fetchActionMyTrendsByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7395,7 +7395,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品测试套件查询项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品测试套件查询项目动态(我的)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/actions/searchmytrends")
 	public ResponseEntity<Page<ActionDTO>> searchActionMyTrendsByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchMyTrends(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -7404,7 +7404,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品测试套件获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品测试套件获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/actions/fetchproducttrends")
 	public ResponseEntity<List<ActionDTO>> fetchActionProductTrendsByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchProductTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7418,7 +7418,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品测试套件查询ProductTrends", tags = {"系统日志" } ,notes = "根据产品测试套件查询ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/actions/searchproducttrends")
 	public ResponseEntity<Page<ActionDTO>> searchActionProductTrendsByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchProductTrends(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -7427,7 +7427,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品测试套件获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据产品测试套件获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/actions/fetchprojecttrends")
 	public ResponseEntity<List<ActionDTO>> fetchActionProjectTrendsByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchProjectTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7441,7 +7441,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品测试套件查询项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据产品测试套件查询项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/actions/searchprojecttrends")
 	public ResponseEntity<Page<ActionDTO>> searchActionProjectTrendsByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchProjectTrends(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -7450,7 +7450,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品测试套件获取查询用户使用年", tags = {"系统日志" } ,notes = "根据产品测试套件获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/actions/fetchqueryuseryear")
 	public ResponseEntity<List<ActionDTO>> fetchActionQueryUserYEARByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchQueryUserYEAR(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7464,7 +7464,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品测试套件查询查询用户使用年", tags = {"系统日志" } ,notes = "根据产品测试套件查询查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/actions/searchqueryuseryear")
 	public ResponseEntity<Page<ActionDTO>> searchActionQueryUserYEARByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchQueryUserYEAR(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -7473,7 +7473,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品测试套件获取Type", tags = {"系统日志" } ,notes = "根据产品测试套件获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/actions/fetchtype")
 	public ResponseEntity<List<ActionDTO>> fetchActionTypeByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchType(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7487,7 +7487,7 @@ public class ActionResource {
 	@ApiOperation(value = "根据产品测试套件查询Type", tags = {"系统日志" } ,notes = "根据产品测试套件查询Type")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/actions/searchtype")
 	public ResponseEntity<Page<ActionDTO>> searchActionTypeByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("TestSuite");
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
         Page<Action> domains = actionService.searchType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

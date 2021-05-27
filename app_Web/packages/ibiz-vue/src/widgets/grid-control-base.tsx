@@ -498,7 +498,7 @@ export class GridControlBase extends MDControlBase {
                         return Object.is(item.srfkey, selection.srfkey);
                     });
                     if (selectedItem) {
-                        this.rowClick(selectedItem);
+                        // this.rowClick(selectedItem);
                     }
                 });
             }
@@ -1309,6 +1309,8 @@ export class GridControlBase extends MDControlBase {
      * @memberof GridControlBase
      */
     public rowDBLClick($event: any): void {
+      console.log(111);
+      
         // 分组行跳过
         if ($event && $event.children) {
             return;
@@ -1484,6 +1486,8 @@ export class GridControlBase extends MDControlBase {
      * @memberof GridControlBase
      */
     public select(selection: any, row: any): void {
+      console.log(333);
+      
         if (this.groupAppField) {
             let isContain: boolean = selection.some((item: any) => {
                 return item == row;
@@ -1579,6 +1583,8 @@ export class GridControlBase extends MDControlBase {
      * @memberof GridControlBase
      */
     public selectAll(selection: any): void {
+      console.log(444);
+      
         this.selections = [];
         if (this.groupAppField) {
             let flag: boolean = true;
@@ -1631,6 +1637,7 @@ export class GridControlBase extends MDControlBase {
      * @memberof GridControlBase
      */
     public rowClick(row: any, column?: any, event?: any, ifAlways: boolean = false): void {
+      console.log(111);
         //是否是分组列，是分组列时选中数据
         const isSelectColumn: boolean = column && Object.is(column.type, 'selection') ? true : false;
         // 分组行跳过

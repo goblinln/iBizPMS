@@ -759,7 +759,6 @@
           "name" : "u0d5407b",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "关闭",
             "codeName" : "CloseBug",
             "dataAccessAction" : "CLOSE",

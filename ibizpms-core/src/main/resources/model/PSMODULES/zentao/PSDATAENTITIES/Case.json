@@ -486,6 +486,24 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_CASE\"}')}  OR  t1.`REVIEWEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"REVIEWEDBY\",\"dename\":\"ZT_CASE\"}')}  OR  t1.`LASTEDITEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"LASTEDITEDBY\",\"dename\":\"ZT_CASE\"}')}  OR  t2.`ASSIGNEDTO` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ASSIGNEDTO\",\"dename\":\"ZT_CASE\"}')} ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "MyCreateOrUpdate",
+    "logicName" : "我创建或更新（权限）",
+    "name" : "MyCreateOrUpdate",
+    "privQuery" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
         "customCond" : "(\n\t\t\tt1.CASESN IN (\n\t\t\tSELECT\n\t\t\t\tt.OBJECTID \n\t\t\tFROM\n\t\t\t\tT_IBZ_FAVORITES t \n\t\t\tWHERE\n\t\t\tt.type = 'case' \n\tAND t.account = #{srf.sessioncontext.srfloginname})  AND  t1.DELETED = '0' )",
         "name" : "查询条件"
       } ]
@@ -801,6 +819,17 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "ModuleRePortCase_Project"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
+    "codeName" : "MyCreateOrUpdate",
+    "logicName" : "我创建或更新（权限）",
+    "name" : "MyCreateOrUpdate",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyCreateOrUpdate"
     } ],
     "enableBackend" : true,
     "enableFront" : true,
@@ -13822,16 +13851,6 @@
     "logicName" : "取消收藏",
     "name" : "NFAVORITE"
   }, {
-    "logicName" : "Product_Read",
-    "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
-    },
-    "name" : "READ",
-    "id" : "ZTProduct__READ"
-  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
@@ -13975,6 +13994,151 @@
     "roleTag" : "Case_Maintain",
     "userDRAction" : "READ"
   }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Manage_COU.json",
+    "name" : "测试用例管理（创建或更新）（系统使用）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateOrUpdate"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "UNLINKCASE",
+      "name" : "UNLINKCASE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__UNLINKCASE"
+      }
+    }, {
+      "dataAccessAction" : "EDITSUITE",
+      "name" : "EDITSUITE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__EDITSUITE"
+      }
+    }, {
+      "dataAccessAction" : "MANAGE",
+      "name" : "MANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MANAGE"
+      }
+    }, {
+      "dataAccessAction" : "FAVORITE",
+      "name" : "FAVORITE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "FAVORITE"
+      }
+    }, {
+      "dataAccessAction" : "TESRUNCASE",
+      "name" : "TESRUNCASE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "TESRUNCASE"
+      }
+    }, {
+      "dataAccessAction" : "LINKCASE",
+      "name" : "LINKCASE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__LINKCASE"
+      }
+    }, {
+      "dataAccessAction" : "RUNCASE",
+      "name" : "RUNCASE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__RUNCASE"
+      }
+    }, {
+      "dataAccessAction" : "NFAVORITE",
+      "name" : "NFAVORITE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__NFAVORITE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__DELETE"
+      }
+    }, {
+      "dataAccessAction" : "CASECOF",
+      "name" : "CASECOF",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__CASECOF"
+      }
+    }, {
+      "dataAccessAction" : "CONFIRMCHANGE",
+      "name" : "CONFIRMCHANGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CONFIRMCHANGE"
+      }
+    }, {
+      "dataAccessAction" : "STORYLINK",
+      "name" : "STORYLINK",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "STORYLINK"
+      }
+    }, {
+      "dataAccessAction" : "CONFIRM",
+      "name" : "CONFIRM",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__CONFIRM"
+      }
+    }, {
+      "dataAccessAction" : "TOBUG",
+      "name" : "TOBUG",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "TOBUG"
+      }
+    }, {
+      "dataAccessAction" : "RESULT",
+      "name" : "RESULT",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "RESULT"
+      }
+    }, {
+      "dataAccessAction" : "UNLINKSUITCASE",
+      "name" : "UNLINKSUITCASE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__UNLINKSUITCASE"
+      }
+    }, {
+      "dataAccessAction" : "CASEEDIT",
+      "name" : "Case_Manage_COU_CASEEDIT",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__CASEEDIT"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "CASERESULT",
+      "name" : "CASERESULT",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__CASERESULT"
+      }
+    } ],
+    "roleTag" : "Case_Manage_COU",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Read.json",
     "name" : "用例查看",
@@ -13988,6 +14152,25 @@
     } ],
     "roleTag" : "Case_Read",
     "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Read_COU.json",
+    "name" : "测试用例查看（创建或更新）（系统使用）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateOrUpdate"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "Case_Read_COU",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
   } ],
   "codeName" : "Case",
   "dEType" : 1,

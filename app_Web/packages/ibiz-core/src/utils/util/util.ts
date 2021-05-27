@@ -644,3 +644,22 @@ export const getSessionStorage: Function = (key: string) => {
         sessionStorage.removeItem(key);
     }
 }
+
+/**
+ * 防抖
+ *
+ * @param {any} fun 函数
+ * @param {any} params 参数
+ * @param {any} context 方法上下文
+ * @param {number} delay 延迟时间，默认300
+ * @static
+ * @memberof Util
+ */
+export const debounce: Function = (fun: any,params: any[],context: any,delay: number = 500) => {
+    clearTimeout(fun.tId);
+    fun.tId = setTimeout(() => {
+        if (typeof fun === 'function') {
+            fun.apply(context,params);
+        }
+    }, delay)
+}

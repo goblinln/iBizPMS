@@ -1213,7 +1213,7 @@
     },
     "removeActionType" : 0,
     "removeOrder" : -1,
-    "typeValue" : "TestSuite"
+    "typeValue" : "testsuite"
   } ],
   "getMinorPSDERs" : [ {
     "codeName" : "ZTProduct",

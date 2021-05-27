@@ -13,6 +13,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     }
   }, {
+    "name" : "产品主管-ZT_CASE[测试用例查看（创建或更新）（系统使用）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Read_COU.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+    }
+  }, {
     "name" : "产品主管-ZT_PRODUCT[产品查看（参与者）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,

@@ -146,6 +146,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.doclib && _context.doc && _context.action) {
             return this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/select`);
         }
+        if (_context.project && _context.build && _context.action) {
+            return this.http.get(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/select`);
+        }
         if (_context.project && _context.testtask && _context.action) {
             return this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}/select`);
         }
@@ -170,6 +173,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.case && _context.action) {
             return this.http.get(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}/select`);
         }
+        if (_context.product && _context.build && _context.action) {
+            return this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/select`);
+        }
         if (_context.product && _context.testreport && _context.action) {
             return this.http.get(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}/select`);
         }
@@ -182,6 +188,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.release && _context.action) {
             return this.http.get(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}/select`);
         }
+        if (_context.product && _context.bug && _context.action) {
+            return this.http.get(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}/select`);
+        }
         if (_context.product && _context.doclib && _context.action) {
             return this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}/select`);
         }
@@ -190,6 +199,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.story && _context.action) {
             return this.http.get(`/stories/${_context.story}/actions/${_context.action}/select`);
+        }
+        if (_context.ibzlib && _context.action) {
+            return this.http.get(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/select`);
+        }
+        if (_context.build && _context.action) {
+            return this.http.get(`/builds/${_context.build}/actions/${_context.action}/select`);
         }
         if (_context.case && _context.action) {
             return this.http.get(`/cases/${_context.case}/actions/${_context.action}/select`);
@@ -200,6 +215,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testtask && _context.action) {
             return this.http.get(`/testtasks/${_context.testtask}/actions/${_context.action}/select`);
         }
+        if (_context.ibzreportly && _context.action) {
+            return this.http.get(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/select`);
+        }
+        if (_context.ibzmonthly && _context.action) {
+            return this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}/select`);
+        }
+        if (_context.ibzdaily && _context.action) {
+            return this.http.get(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}/select`);
+        }
         if (_context.doc && _context.action) {
             return this.http.get(`/docs/${_context.doc}/actions/${_context.action}/select`);
         }
@@ -208,6 +232,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.testreport && _context.action) {
             return this.http.get(`/testreports/${_context.testreport}/actions/${_context.action}/select`);
+        }
+        if (_context.ibzweekly && _context.action) {
+            return this.http.get(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/select`);
         }
         if (_context.release && _context.action) {
             return this.http.get(`/releases/${_context.release}/actions/${_context.action}/select`);
@@ -223,6 +250,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.action) {
             return this.http.get(`/products/${_context.product}/actions/${_context.action}/select`);
+        }
+        if (_context.bug && _context.action) {
+            return this.http.get(`/bugs/${_context.bug}/actions/${_context.action}/select`);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -254,6 +284,16 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions`, _data);
+        }
+        if (_context.project && _context.build && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions`, _data);
         }
         if (_context.project && _context.testtask && true) {
         _data = await this.obtainMinor(_context, _data);
@@ -335,6 +375,16 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             }
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions`, _data);
         }
+        if (_context.product && _context.build && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions`, _data);
+        }
         if (_context.product && _context.testreport && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -375,6 +425,16 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             }
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions`, _data);
         }
+        if (_context.product && _context.bug && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions`, _data);
+        }
         if (_context.product && _context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -404,6 +464,26 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/stories/${_context.story}/actions`, _data);
+        }
+        if (_context.ibzlib && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions`, _data);
+        }
+        if (_context.build && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/builds/${_context.build}/actions`, _data);
         }
         if (_context.case && true) {
         _data = await this.obtainMinor(_context, _data);
@@ -435,6 +515,36 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             }
             return this.http.post(`/testtasks/${_context.testtask}/actions`, _data);
         }
+        if (_context.ibzreportly && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions`, _data);
+        }
+        if (_context.ibzmonthly && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions`, _data);
+        }
+        if (_context.ibzdaily && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions`, _data);
+        }
         if (_context.doc && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -464,6 +574,16 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/testreports/${_context.testreport}/actions`, _data);
+        }
+        if (_context.ibzweekly && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions`, _data);
         }
         if (_context.release && true) {
         _data = await this.obtainMinor(_context, _data);
@@ -515,6 +635,16 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             }
             return this.http.post(`/products/${_context.product}/actions`, _data);
         }
+        if (_context.bug && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/bugs/${_context.bug}/actions`, _data);
+        }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -533,6 +663,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.doclib && _context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}`, _data);
         }
         if (_context.project && _context.testtask && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -566,6 +700,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}`, _data);
         }
+        if (_context.product && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}`, _data);
+        }
         if (_context.product && _context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}`, _data);
@@ -582,6 +720,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}`, _data);
         }
+        if (_context.product && _context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}`, _data);
+        }
         if (_context.product && _context.doclib && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}`, _data);
@@ -593,6 +735,14 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.story && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/stories/${_context.story}/actions/${_context.action}`, _data);
+        }
+        if (_context.ibzlib && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}`, _data);
+        }
+        if (_context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/builds/${_context.build}/actions/${_context.action}`, _data);
         }
         if (_context.case && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -606,6 +756,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/testtasks/${_context.testtask}/actions/${_context.action}`, _data);
         }
+        if (_context.ibzreportly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}`, _data);
+        }
+        if (_context.ibzmonthly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}`, _data);
+        }
+        if (_context.ibzdaily && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}`, _data);
+        }
         if (_context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/docs/${_context.doc}/actions/${_context.action}`, _data);
@@ -617,6 +779,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/testreports/${_context.testreport}/actions/${_context.action}`, _data);
+        }
+        if (_context.ibzweekly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}`, _data);
         }
         if (_context.release && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -638,6 +804,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/actions/${_context.action}`, _data);
         }
+        if (_context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/bugs/${_context.bug}/actions/${_context.action}`, _data);
+        }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -654,6 +824,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.doclib && _context.doc && _context.action) {
             return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`);
+        }
+        if (_context.project && _context.build && _context.action) {
+            return this.http.delete(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}`);
         }
         if (_context.project && _context.testtask && _context.action) {
             return this.http.delete(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}`);
@@ -679,6 +852,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.case && _context.action) {
             return this.http.delete(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}`);
         }
+        if (_context.product && _context.build && _context.action) {
+            return this.http.delete(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}`);
+        }
         if (_context.product && _context.testreport && _context.action) {
             return this.http.delete(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}`);
         }
@@ -691,6 +867,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.release && _context.action) {
             return this.http.delete(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}`);
         }
+        if (_context.product && _context.bug && _context.action) {
+            return this.http.delete(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}`);
+        }
         if (_context.product && _context.doclib && _context.action) {
             return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}`);
         }
@@ -699,6 +878,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.story && _context.action) {
             return this.http.delete(`/stories/${_context.story}/actions/${_context.action}`);
+        }
+        if (_context.ibzlib && _context.action) {
+            return this.http.delete(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}`);
+        }
+        if (_context.build && _context.action) {
+            return this.http.delete(`/builds/${_context.build}/actions/${_context.action}`);
         }
         if (_context.case && _context.action) {
             return this.http.delete(`/cases/${_context.case}/actions/${_context.action}`);
@@ -709,6 +894,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testtask && _context.action) {
             return this.http.delete(`/testtasks/${_context.testtask}/actions/${_context.action}`);
         }
+        if (_context.ibzreportly && _context.action) {
+            return this.http.delete(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}`);
+        }
+        if (_context.ibzmonthly && _context.action) {
+            return this.http.delete(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}`);
+        }
+        if (_context.ibzdaily && _context.action) {
+            return this.http.delete(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}`);
+        }
         if (_context.doc && _context.action) {
             return this.http.delete(`/docs/${_context.doc}/actions/${_context.action}`);
         }
@@ -717,6 +911,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.testreport && _context.action) {
             return this.http.delete(`/testreports/${_context.testreport}/actions/${_context.action}`);
+        }
+        if (_context.ibzweekly && _context.action) {
+            return this.http.delete(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}`);
         }
         if (_context.release && _context.action) {
             return this.http.delete(`/releases/${_context.release}/actions/${_context.action}`);
@@ -732,6 +929,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.action) {
             return this.http.delete(`/products/${_context.product}/actions/${_context.action}`);
+        }
+        if (_context.bug && _context.action) {
+            return this.http.delete(`/bugs/${_context.bug}/actions/${_context.action}`);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -750,6 +950,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.doclib && _context.doc && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.build && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}`);
             return res;
         }
         if (_context.project && _context.testtask && _context.action) {
@@ -784,6 +988,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}`);
             return res;
         }
+        if (_context.product && _context.build && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}`);
+            return res;
+        }
         if (_context.product && _context.testreport && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}`);
             return res;
@@ -800,6 +1008,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}`);
             return res;
         }
+        if (_context.product && _context.bug && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}`);
+            return res;
+        }
         if (_context.product && _context.doclib && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}`);
             return res;
@@ -810,6 +1022,14 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.story && _context.action) {
             const res = await this.http.get(`/stories/${_context.story}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.ibzlib && _context.action) {
+            const res = await this.http.get(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.build && _context.action) {
+            const res = await this.http.get(`/builds/${_context.build}/actions/${_context.action}`);
             return res;
         }
         if (_context.case && _context.action) {
@@ -824,6 +1044,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/testtasks/${_context.testtask}/actions/${_context.action}`);
             return res;
         }
+        if (_context.ibzreportly && _context.action) {
+            const res = await this.http.get(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.ibzmonthly && _context.action) {
+            const res = await this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.ibzdaily && _context.action) {
+            const res = await this.http.get(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}`);
+            return res;
+        }
         if (_context.doc && _context.action) {
             const res = await this.http.get(`/docs/${_context.doc}/actions/${_context.action}`);
             return res;
@@ -834,6 +1066,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.testreport && _context.action) {
             const res = await this.http.get(`/testreports/${_context.testreport}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.ibzweekly && _context.action) {
+            const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}`);
             return res;
         }
         if (_context.release && _context.action) {
@@ -854,6 +1090,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.bug && _context.action) {
+            const res = await this.http.get(`/bugs/${_context.bug}/actions/${_context.action}`);
             return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
@@ -877,6 +1117,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.build && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/builds/${_context.build}/actions/getdraft`, _data);
             return res;
         }
         if (_context.project && _context.testtask && true) {
@@ -927,6 +1173,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/products/${_context.product}/cases/${_context.case}/actions/getdraft`, _data);
             return res;
         }
+        if (_context.product && _context.build && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/getdraft`, _data);
+            return res;
+        }
         if (_context.product && _context.testreport && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -951,6 +1203,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/products/${_context.product}/releases/${_context.release}/actions/getdraft`, _data);
             return res;
         }
+        if (_context.product && _context.bug && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/bugs/${_context.bug}/actions/getdraft`, _data);
+            return res;
+        }
         if (_context.product && _context.doclib && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -967,6 +1225,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/stories/${_context.story}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.ibzlib && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/ibzlibs/${_context.ibzlib}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.build && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/builds/${_context.build}/actions/getdraft`, _data);
             return res;
         }
         if (_context.case && true) {
@@ -987,6 +1257,24 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/testtasks/${_context.testtask}/actions/getdraft`, _data);
             return res;
         }
+        if (_context.ibzreportly && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/ibzreportlies/${_context.ibzreportly}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.ibzmonthly && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.ibzdaily && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/ibzdailies/${_context.ibzdaily}/actions/getdraft`, _data);
+            return res;
+        }
         if (_context.doc && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -1003,6 +1291,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/testreports/${_context.testreport}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.ibzweekly && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}/actions/getdraft`, _data);
             return res;
         }
         if (_context.release && true) {
@@ -1035,6 +1329,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/products/${_context.product}/actions/getdraft`, _data);
             return res;
         }
+        if (_context.bug && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/bugs/${_context.bug}/actions/getdraft`, _data);
+            return res;
+        }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -1053,6 +1353,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.doclib && _context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/comment`, _data);
+        }
+        if (_context.project && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/comment`, _data);
         }
         if (_context.project && _context.testtask && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1086,6 +1390,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}/comment`, _data);
         }
+        if (_context.product && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/comment`, _data);
+        }
         if (_context.product && _context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}/comment`, _data);
@@ -1102,6 +1410,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}/comment`, _data);
         }
+        if (_context.product && _context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}/comment`, _data);
+        }
         if (_context.product && _context.doclib && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}/comment`, _data);
@@ -1113,6 +1425,14 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.story && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/stories/${_context.story}/actions/${_context.action}/comment`, _data);
+        }
+        if (_context.ibzlib && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/comment`, _data);
+        }
+        if (_context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/builds/${_context.build}/actions/${_context.action}/comment`, _data);
         }
         if (_context.case && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1126,6 +1446,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testtasks/${_context.testtask}/actions/${_context.action}/comment`, _data);
         }
+        if (_context.ibzreportly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/comment`, _data);
+        }
+        if (_context.ibzmonthly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}/comment`, _data);
+        }
+        if (_context.ibzdaily && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}/comment`, _data);
+        }
         if (_context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/docs/${_context.doc}/actions/${_context.action}/comment`, _data);
@@ -1137,6 +1469,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testreports/${_context.testreport}/actions/${_context.action}/comment`, _data);
+        }
+        if (_context.ibzweekly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/comment`, _data);
         }
         if (_context.release && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1158,6 +1494,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/comment`, _data);
         }
+        if (_context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/bugs/${_context.bug}/actions/${_context.action}/comment`, _data);
+        }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -1176,6 +1516,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.doclib && _context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/createhis`, _data);
+        }
+        if (_context.project && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/createhis`, _data);
         }
         if (_context.project && _context.testtask && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1209,6 +1553,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}/createhis`, _data);
         }
+        if (_context.product && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/createhis`, _data);
+        }
         if (_context.product && _context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}/createhis`, _data);
@@ -1225,6 +1573,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}/createhis`, _data);
         }
+        if (_context.product && _context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}/createhis`, _data);
+        }
         if (_context.product && _context.doclib && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}/createhis`, _data);
@@ -1236,6 +1588,14 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.story && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/stories/${_context.story}/actions/${_context.action}/createhis`, _data);
+        }
+        if (_context.ibzlib && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/createhis`, _data);
+        }
+        if (_context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/builds/${_context.build}/actions/${_context.action}/createhis`, _data);
         }
         if (_context.case && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1249,6 +1609,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testtasks/${_context.testtask}/actions/${_context.action}/createhis`, _data);
         }
+        if (_context.ibzreportly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/createhis`, _data);
+        }
+        if (_context.ibzmonthly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}/createhis`, _data);
+        }
+        if (_context.ibzdaily && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}/createhis`, _data);
+        }
         if (_context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/docs/${_context.doc}/actions/${_context.action}/createhis`, _data);
@@ -1260,6 +1632,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testreports/${_context.testreport}/actions/${_context.action}/createhis`, _data);
+        }
+        if (_context.ibzweekly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/createhis`, _data);
         }
         if (_context.release && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1281,6 +1657,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/createhis`, _data);
         }
+        if (_context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/bugs/${_context.bug}/actions/${_context.action}/createhis`, _data);
+        }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -1299,6 +1679,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.doclib && _context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/editcomment`, _data);
+        }
+        if (_context.project && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/editcomment`, _data);
         }
         if (_context.project && _context.testtask && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1332,6 +1716,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}/editcomment`, _data);
         }
+        if (_context.product && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/editcomment`, _data);
+        }
         if (_context.product && _context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}/editcomment`, _data);
@@ -1348,6 +1736,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}/editcomment`, _data);
         }
+        if (_context.product && _context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}/editcomment`, _data);
+        }
         if (_context.product && _context.doclib && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}/editcomment`, _data);
@@ -1359,6 +1751,14 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.story && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/stories/${_context.story}/actions/${_context.action}/editcomment`, _data);
+        }
+        if (_context.ibzlib && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/editcomment`, _data);
+        }
+        if (_context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/builds/${_context.build}/actions/${_context.action}/editcomment`, _data);
         }
         if (_context.case && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1372,6 +1772,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testtasks/${_context.testtask}/actions/${_context.action}/editcomment`, _data);
         }
+        if (_context.ibzreportly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/editcomment`, _data);
+        }
+        if (_context.ibzmonthly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}/editcomment`, _data);
+        }
+        if (_context.ibzdaily && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}/editcomment`, _data);
+        }
         if (_context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/docs/${_context.doc}/actions/${_context.action}/editcomment`, _data);
@@ -1383,6 +1795,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testreports/${_context.testreport}/actions/${_context.action}/editcomment`, _data);
+        }
+        if (_context.ibzweekly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/editcomment`, _data);
         }
         if (_context.release && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1404,6 +1820,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/editcomment`, _data);
         }
+        if (_context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/bugs/${_context.bug}/actions/${_context.action}/editcomment`, _data);
+        }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -1422,6 +1842,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.doclib && _context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/managepmsee`, _data);
+        }
+        if (_context.project && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/managepmsee`, _data);
         }
         if (_context.project && _context.testtask && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1455,6 +1879,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}/managepmsee`, _data);
         }
+        if (_context.product && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/managepmsee`, _data);
+        }
         if (_context.product && _context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}/managepmsee`, _data);
@@ -1471,6 +1899,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}/managepmsee`, _data);
         }
+        if (_context.product && _context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}/managepmsee`, _data);
+        }
         if (_context.product && _context.doclib && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}/managepmsee`, _data);
@@ -1482,6 +1914,14 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.story && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/stories/${_context.story}/actions/${_context.action}/managepmsee`, _data);
+        }
+        if (_context.ibzlib && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/managepmsee`, _data);
+        }
+        if (_context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/builds/${_context.build}/actions/${_context.action}/managepmsee`, _data);
         }
         if (_context.case && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1495,6 +1935,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testtasks/${_context.testtask}/actions/${_context.action}/managepmsee`, _data);
         }
+        if (_context.ibzreportly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/managepmsee`, _data);
+        }
+        if (_context.ibzmonthly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}/managepmsee`, _data);
+        }
+        if (_context.ibzdaily && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}/managepmsee`, _data);
+        }
         if (_context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/docs/${_context.doc}/actions/${_context.action}/managepmsee`, _data);
@@ -1506,6 +1958,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testreports/${_context.testreport}/actions/${_context.action}/managepmsee`, _data);
+        }
+        if (_context.ibzweekly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/managepmsee`, _data);
         }
         if (_context.release && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1527,6 +1983,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/managepmsee`, _data);
         }
+        if (_context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/bugs/${_context.bug}/actions/${_context.action}/managepmsee`, _data);
+        }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -1545,6 +2005,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.doclib && _context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/sendmarkdone`, _data);
+        }
+        if (_context.project && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/sendmarkdone`, _data);
         }
         if (_context.project && _context.testtask && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1578,6 +2042,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}/sendmarkdone`, _data);
         }
+        if (_context.product && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/sendmarkdone`, _data);
+        }
         if (_context.product && _context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}/sendmarkdone`, _data);
@@ -1594,6 +2062,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}/sendmarkdone`, _data);
         }
+        if (_context.product && _context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}/sendmarkdone`, _data);
+        }
         if (_context.product && _context.doclib && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}/sendmarkdone`, _data);
@@ -1605,6 +2077,14 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.story && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/stories/${_context.story}/actions/${_context.action}/sendmarkdone`, _data);
+        }
+        if (_context.ibzlib && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/sendmarkdone`, _data);
+        }
+        if (_context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/builds/${_context.build}/actions/${_context.action}/sendmarkdone`, _data);
         }
         if (_context.case && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1618,6 +2098,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testtasks/${_context.testtask}/actions/${_context.action}/sendmarkdone`, _data);
         }
+        if (_context.ibzreportly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/sendmarkdone`, _data);
+        }
+        if (_context.ibzmonthly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}/sendmarkdone`, _data);
+        }
+        if (_context.ibzdaily && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}/sendmarkdone`, _data);
+        }
         if (_context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/docs/${_context.doc}/actions/${_context.action}/sendmarkdone`, _data);
@@ -1629,6 +2121,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testreports/${_context.testreport}/actions/${_context.action}/sendmarkdone`, _data);
+        }
+        if (_context.ibzweekly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/sendmarkdone`, _data);
         }
         if (_context.release && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1650,6 +2146,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/sendmarkdone`, _data);
         }
+        if (_context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/bugs/${_context.bug}/actions/${_context.action}/sendmarkdone`, _data);
+        }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -1668,6 +2168,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.doclib && _context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/sendtodo`, _data);
+        }
+        if (_context.project && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/sendtodo`, _data);
         }
         if (_context.project && _context.testtask && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1701,6 +2205,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}/sendtodo`, _data);
         }
+        if (_context.product && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/sendtodo`, _data);
+        }
         if (_context.product && _context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}/sendtodo`, _data);
@@ -1717,6 +2225,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}/sendtodo`, _data);
         }
+        if (_context.product && _context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}/sendtodo`, _data);
+        }
         if (_context.product && _context.doclib && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}/sendtodo`, _data);
@@ -1728,6 +2240,14 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.story && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/stories/${_context.story}/actions/${_context.action}/sendtodo`, _data);
+        }
+        if (_context.ibzlib && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/sendtodo`, _data);
+        }
+        if (_context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/builds/${_context.build}/actions/${_context.action}/sendtodo`, _data);
         }
         if (_context.case && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1741,6 +2261,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testtasks/${_context.testtask}/actions/${_context.action}/sendtodo`, _data);
         }
+        if (_context.ibzreportly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/sendtodo`, _data);
+        }
+        if (_context.ibzmonthly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}/sendtodo`, _data);
+        }
+        if (_context.ibzdaily && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}/sendtodo`, _data);
+        }
         if (_context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/docs/${_context.doc}/actions/${_context.action}/sendtodo`, _data);
@@ -1752,6 +2284,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testreports/${_context.testreport}/actions/${_context.action}/sendtodo`, _data);
+        }
+        if (_context.ibzweekly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/sendtodo`, _data);
         }
         if (_context.release && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1773,6 +2309,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/sendtodo`, _data);
         }
+        if (_context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/bugs/${_context.bug}/actions/${_context.action}/sendtodo`, _data);
+        }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -1791,6 +2331,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.doclib && _context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/sendtoread`, _data);
+        }
+        if (_context.project && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/sendtoread`, _data);
         }
         if (_context.project && _context.testtask && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1824,6 +2368,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}/sendtoread`, _data);
         }
+        if (_context.product && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/sendtoread`, _data);
+        }
         if (_context.product && _context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}/sendtoread`, _data);
@@ -1840,6 +2388,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}/sendtoread`, _data);
         }
+        if (_context.product && _context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}/sendtoread`, _data);
+        }
         if (_context.product && _context.doclib && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}/sendtoread`, _data);
@@ -1851,6 +2403,14 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.story && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/stories/${_context.story}/actions/${_context.action}/sendtoread`, _data);
+        }
+        if (_context.ibzlib && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/sendtoread`, _data);
+        }
+        if (_context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/builds/${_context.build}/actions/${_context.action}/sendtoread`, _data);
         }
         if (_context.case && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1864,6 +2424,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testtasks/${_context.testtask}/actions/${_context.action}/sendtoread`, _data);
         }
+        if (_context.ibzreportly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/sendtoread`, _data);
+        }
+        if (_context.ibzmonthly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}/sendtoread`, _data);
+        }
+        if (_context.ibzdaily && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}/sendtoread`, _data);
+        }
         if (_context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/docs/${_context.doc}/actions/${_context.action}/sendtoread`, _data);
@@ -1875,6 +2447,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testreports/${_context.testreport}/actions/${_context.action}/sendtoread`, _data);
+        }
+        if (_context.ibzweekly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/sendtoread`, _data);
         }
         if (_context.release && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -1896,6 +2472,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/sendtoread`, _data);
         }
+        if (_context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/bugs/${_context.bug}/actions/${_context.action}/sendtoread`, _data);
+        }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -1912,6 +2492,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchdefault`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchdefault`, _data);
         }
         if (_context.project && _context.testtask && true) {
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchdefault`, _data);
@@ -1937,6 +2520,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.case && true) {
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/fetchdefault`, _data);
         }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchdefault`, _data);
+        }
         if (_context.product && _context.testreport && true) {
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/fetchdefault`, _data);
         }
@@ -1949,6 +2535,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.release && true) {
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/fetchdefault`, _data);
         }
+        if (_context.product && _context.bug && true) {
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/fetchdefault`, _data);
+        }
         if (_context.product && _context.doclib && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchdefault`, _data);
         }
@@ -1957,6 +2546,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.story && true) {
             return this.http.post(`/stories/${_context.story}/actions/fetchdefault`, _data);
+        }
+        if (_context.ibzlib && true) {
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchdefault`, _data);
+        }
+        if (_context.build && true) {
+            return this.http.post(`/builds/${_context.build}/actions/fetchdefault`, _data);
         }
         if (_context.case && true) {
             return this.http.post(`/cases/${_context.case}/actions/fetchdefault`, _data);
@@ -1967,6 +2562,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testtask && true) {
             return this.http.post(`/testtasks/${_context.testtask}/actions/fetchdefault`, _data);
         }
+        if (_context.ibzreportly && true) {
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchdefault`, _data);
+        }
+        if (_context.ibzmonthly && true) {
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchdefault`, _data);
+        }
+        if (_context.ibzdaily && true) {
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchdefault`, _data);
+        }
         if (_context.doc && true) {
             return this.http.post(`/docs/${_context.doc}/actions/fetchdefault`, _data);
         }
@@ -1975,6 +2579,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.testreport && true) {
             return this.http.post(`/testreports/${_context.testreport}/actions/fetchdefault`, _data);
+        }
+        if (_context.ibzweekly && true) {
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchdefault`, _data);
         }
         if (_context.release && true) {
             return this.http.post(`/releases/${_context.release}/actions/fetchdefault`, _data);
@@ -1990,6 +2597,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchdefault`, _data);
+        }
+        if (_context.bug && true) {
+            return this.http.post(`/bugs/${_context.bug}/actions/fetchdefault`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -2007,6 +2617,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmobtype`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchmobtype`, _data);
         }
         if (_context.project && _context.testtask && true) {
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmobtype`, _data);
@@ -2032,6 +2645,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.case && true) {
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/fetchmobtype`, _data);
         }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmobtype`, _data);
+        }
         if (_context.product && _context.testreport && true) {
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/fetchmobtype`, _data);
         }
@@ -2044,6 +2660,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.release && true) {
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/fetchmobtype`, _data);
         }
+        if (_context.product && _context.bug && true) {
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/fetchmobtype`, _data);
+        }
         if (_context.product && _context.doclib && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchmobtype`, _data);
         }
@@ -2052,6 +2671,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.story && true) {
             return this.http.post(`/stories/${_context.story}/actions/fetchmobtype`, _data);
+        }
+        if (_context.ibzlib && true) {
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchmobtype`, _data);
+        }
+        if (_context.build && true) {
+            return this.http.post(`/builds/${_context.build}/actions/fetchmobtype`, _data);
         }
         if (_context.case && true) {
             return this.http.post(`/cases/${_context.case}/actions/fetchmobtype`, _data);
@@ -2062,6 +2687,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testtask && true) {
             return this.http.post(`/testtasks/${_context.testtask}/actions/fetchmobtype`, _data);
         }
+        if (_context.ibzreportly && true) {
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchmobtype`, _data);
+        }
+        if (_context.ibzmonthly && true) {
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchmobtype`, _data);
+        }
+        if (_context.ibzdaily && true) {
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchmobtype`, _data);
+        }
         if (_context.doc && true) {
             return this.http.post(`/docs/${_context.doc}/actions/fetchmobtype`, _data);
         }
@@ -2070,6 +2704,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.testreport && true) {
             return this.http.post(`/testreports/${_context.testreport}/actions/fetchmobtype`, _data);
+        }
+        if (_context.ibzweekly && true) {
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchmobtype`, _data);
         }
         if (_context.release && true) {
             return this.http.post(`/releases/${_context.release}/actions/fetchmobtype`, _data);
@@ -2085,6 +2722,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchmobtype`, _data);
+        }
+        if (_context.bug && true) {
+            return this.http.post(`/bugs/${_context.bug}/actions/fetchmobtype`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -2102,6 +2742,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchmytrends`, _data);
         }
         if (_context.project && _context.testtask && true) {
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmytrends`, _data);
@@ -2127,6 +2770,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.case && true) {
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/fetchmytrends`, _data);
         }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmytrends`, _data);
+        }
         if (_context.product && _context.testreport && true) {
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/fetchmytrends`, _data);
         }
@@ -2139,6 +2785,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.release && true) {
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/fetchmytrends`, _data);
         }
+        if (_context.product && _context.bug && true) {
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/fetchmytrends`, _data);
+        }
         if (_context.product && _context.doclib && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
         }
@@ -2147,6 +2796,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.story && true) {
             return this.http.post(`/stories/${_context.story}/actions/fetchmytrends`, _data);
+        }
+        if (_context.ibzlib && true) {
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchmytrends`, _data);
+        }
+        if (_context.build && true) {
+            return this.http.post(`/builds/${_context.build}/actions/fetchmytrends`, _data);
         }
         if (_context.case && true) {
             return this.http.post(`/cases/${_context.case}/actions/fetchmytrends`, _data);
@@ -2157,6 +2812,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testtask && true) {
             return this.http.post(`/testtasks/${_context.testtask}/actions/fetchmytrends`, _data);
         }
+        if (_context.ibzreportly && true) {
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchmytrends`, _data);
+        }
+        if (_context.ibzmonthly && true) {
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchmytrends`, _data);
+        }
+        if (_context.ibzdaily && true) {
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchmytrends`, _data);
+        }
         if (_context.doc && true) {
             return this.http.post(`/docs/${_context.doc}/actions/fetchmytrends`, _data);
         }
@@ -2165,6 +2829,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.testreport && true) {
             return this.http.post(`/testreports/${_context.testreport}/actions/fetchmytrends`, _data);
+        }
+        if (_context.ibzweekly && true) {
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchmytrends`, _data);
         }
         if (_context.release && true) {
             return this.http.post(`/releases/${_context.release}/actions/fetchmytrends`, _data);
@@ -2180,6 +2847,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchmytrends`, _data);
+        }
+        if (_context.bug && true) {
+            return this.http.post(`/bugs/${_context.bug}/actions/fetchmytrends`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -2197,6 +2867,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproducttrends`, _data);
         }
         if (_context.project && _context.testtask && true) {
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproducttrends`, _data);
@@ -2222,6 +2895,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.case && true) {
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/fetchproducttrends`, _data);
         }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproducttrends`, _data);
+        }
         if (_context.product && _context.testreport && true) {
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/fetchproducttrends`, _data);
         }
@@ -2234,6 +2910,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.release && true) {
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/fetchproducttrends`, _data);
         }
+        if (_context.product && _context.bug && true) {
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/fetchproducttrends`, _data);
+        }
         if (_context.product && _context.doclib && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchproducttrends`, _data);
         }
@@ -2242,6 +2921,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.story && true) {
             return this.http.post(`/stories/${_context.story}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.ibzlib && true) {
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.build && true) {
+            return this.http.post(`/builds/${_context.build}/actions/fetchproducttrends`, _data);
         }
         if (_context.case && true) {
             return this.http.post(`/cases/${_context.case}/actions/fetchproducttrends`, _data);
@@ -2252,6 +2937,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testtask && true) {
             return this.http.post(`/testtasks/${_context.testtask}/actions/fetchproducttrends`, _data);
         }
+        if (_context.ibzreportly && true) {
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.ibzmonthly && true) {
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.ibzdaily && true) {
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchproducttrends`, _data);
+        }
         if (_context.doc && true) {
             return this.http.post(`/docs/${_context.doc}/actions/fetchproducttrends`, _data);
         }
@@ -2260,6 +2954,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.testreport && true) {
             return this.http.post(`/testreports/${_context.testreport}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.ibzweekly && true) {
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchproducttrends`, _data);
         }
         if (_context.release && true) {
             return this.http.post(`/releases/${_context.release}/actions/fetchproducttrends`, _data);
@@ -2275,6 +2972,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.bug && true) {
+            return this.http.post(`/bugs/${_context.bug}/actions/fetchproducttrends`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -2292,6 +2992,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchprojecttrends`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchprojecttrends`, _data);
         }
         if (_context.project && _context.testtask && true) {
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchprojecttrends`, _data);
@@ -2317,6 +3020,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.case && true) {
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/fetchprojecttrends`, _data);
         }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchprojecttrends`, _data);
+        }
         if (_context.product && _context.testreport && true) {
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/fetchprojecttrends`, _data);
         }
@@ -2329,6 +3035,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.release && true) {
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/fetchprojecttrends`, _data);
         }
+        if (_context.product && _context.bug && true) {
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/fetchprojecttrends`, _data);
+        }
         if (_context.product && _context.doclib && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchprojecttrends`, _data);
         }
@@ -2337,6 +3046,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.story && true) {
             return this.http.post(`/stories/${_context.story}/actions/fetchprojecttrends`, _data);
+        }
+        if (_context.ibzlib && true) {
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchprojecttrends`, _data);
+        }
+        if (_context.build && true) {
+            return this.http.post(`/builds/${_context.build}/actions/fetchprojecttrends`, _data);
         }
         if (_context.case && true) {
             return this.http.post(`/cases/${_context.case}/actions/fetchprojecttrends`, _data);
@@ -2347,6 +3062,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testtask && true) {
             return this.http.post(`/testtasks/${_context.testtask}/actions/fetchprojecttrends`, _data);
         }
+        if (_context.ibzreportly && true) {
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchprojecttrends`, _data);
+        }
+        if (_context.ibzmonthly && true) {
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchprojecttrends`, _data);
+        }
+        if (_context.ibzdaily && true) {
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchprojecttrends`, _data);
+        }
         if (_context.doc && true) {
             return this.http.post(`/docs/${_context.doc}/actions/fetchprojecttrends`, _data);
         }
@@ -2355,6 +3079,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.testreport && true) {
             return this.http.post(`/testreports/${_context.testreport}/actions/fetchprojecttrends`, _data);
+        }
+        if (_context.ibzweekly && true) {
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchprojecttrends`, _data);
         }
         if (_context.release && true) {
             return this.http.post(`/releases/${_context.release}/actions/fetchprojecttrends`, _data);
@@ -2370,6 +3097,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchprojecttrends`, _data);
+        }
+        if (_context.bug && true) {
+            return this.http.post(`/bugs/${_context.bug}/actions/fetchprojecttrends`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -2387,6 +3117,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchqueryuseryear`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchqueryuseryear`, _data);
         }
         if (_context.project && _context.testtask && true) {
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchqueryuseryear`, _data);
@@ -2412,6 +3145,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.case && true) {
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/fetchqueryuseryear`, _data);
         }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchqueryuseryear`, _data);
+        }
         if (_context.product && _context.testreport && true) {
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/fetchqueryuseryear`, _data);
         }
@@ -2424,6 +3160,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.release && true) {
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/fetchqueryuseryear`, _data);
         }
+        if (_context.product && _context.bug && true) {
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/fetchqueryuseryear`, _data);
+        }
         if (_context.product && _context.doclib && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchqueryuseryear`, _data);
         }
@@ -2432,6 +3171,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.story && true) {
             return this.http.post(`/stories/${_context.story}/actions/fetchqueryuseryear`, _data);
+        }
+        if (_context.ibzlib && true) {
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchqueryuseryear`, _data);
+        }
+        if (_context.build && true) {
+            return this.http.post(`/builds/${_context.build}/actions/fetchqueryuseryear`, _data);
         }
         if (_context.case && true) {
             return this.http.post(`/cases/${_context.case}/actions/fetchqueryuseryear`, _data);
@@ -2442,6 +3187,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testtask && true) {
             return this.http.post(`/testtasks/${_context.testtask}/actions/fetchqueryuseryear`, _data);
         }
+        if (_context.ibzreportly && true) {
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchqueryuseryear`, _data);
+        }
+        if (_context.ibzmonthly && true) {
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchqueryuseryear`, _data);
+        }
+        if (_context.ibzdaily && true) {
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchqueryuseryear`, _data);
+        }
         if (_context.doc && true) {
             return this.http.post(`/docs/${_context.doc}/actions/fetchqueryuseryear`, _data);
         }
@@ -2450,6 +3204,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.testreport && true) {
             return this.http.post(`/testreports/${_context.testreport}/actions/fetchqueryuseryear`, _data);
+        }
+        if (_context.ibzweekly && true) {
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchqueryuseryear`, _data);
         }
         if (_context.release && true) {
             return this.http.post(`/releases/${_context.release}/actions/fetchqueryuseryear`, _data);
@@ -2465,6 +3222,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchqueryuseryear`, _data);
+        }
+        if (_context.bug && true) {
+            return this.http.post(`/bugs/${_context.bug}/actions/fetchqueryuseryear`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -2482,6 +3242,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchtype`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchtype`, _data);
         }
         if (_context.project && _context.testtask && true) {
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchtype`, _data);
@@ -2507,6 +3270,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.case && true) {
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/fetchtype`, _data);
         }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchtype`, _data);
+        }
         if (_context.product && _context.testreport && true) {
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/fetchtype`, _data);
         }
@@ -2519,6 +3285,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.release && true) {
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/fetchtype`, _data);
         }
+        if (_context.product && _context.bug && true) {
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/fetchtype`, _data);
+        }
         if (_context.product && _context.doclib && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchtype`, _data);
         }
@@ -2527,6 +3296,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.story && true) {
             return this.http.post(`/stories/${_context.story}/actions/fetchtype`, _data);
+        }
+        if (_context.ibzlib && true) {
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchtype`, _data);
+        }
+        if (_context.build && true) {
+            return this.http.post(`/builds/${_context.build}/actions/fetchtype`, _data);
         }
         if (_context.case && true) {
             return this.http.post(`/cases/${_context.case}/actions/fetchtype`, _data);
@@ -2537,6 +3312,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.testtask && true) {
             return this.http.post(`/testtasks/${_context.testtask}/actions/fetchtype`, _data);
         }
+        if (_context.ibzreportly && true) {
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchtype`, _data);
+        }
+        if (_context.ibzmonthly && true) {
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchtype`, _data);
+        }
+        if (_context.ibzdaily && true) {
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchtype`, _data);
+        }
         if (_context.doc && true) {
             return this.http.post(`/docs/${_context.doc}/actions/fetchtype`, _data);
         }
@@ -2545,6 +3329,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.testreport && true) {
             return this.http.post(`/testreports/${_context.testreport}/actions/fetchtype`, _data);
+        }
+        if (_context.ibzweekly && true) {
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchtype`, _data);
         }
         if (_context.release && true) {
             return this.http.post(`/releases/${_context.release}/actions/fetchtype`, _data);
@@ -2560,6 +3347,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchtype`, _data);
+        }
+        if (_context.bug && true) {
+            return this.http.post(`/bugs/${_context.bug}/actions/fetchtype`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -2581,6 +3371,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.product && _context.doclib && _context.doc && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/createhisbatch`,_data);
+        }
+        if(_context.project && _context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/createhisbatch`,_data);
         }
         if(_context.project && _context.testtask && true){
         _data = await this.obtainMinor(_context, _data);
@@ -2614,6 +3408,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/createhisbatch`,_data);
         }
+        if(_context.product && _context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/createhisbatch`,_data);
+        }
         if(_context.product && _context.testreport && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/createhisbatch`,_data);
@@ -2630,6 +3428,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/createhisbatch`,_data);
         }
+        if(_context.product && _context.bug && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/createhisbatch`,_data);
+        }
         if(_context.product && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/createhisbatch`,_data);
@@ -2641,6 +3443,14 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/stories/${_context.story}/actions/createhisbatch`,_data);
+        }
+        if(_context.ibzlib && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/createhisbatch`,_data);
+        }
+        if(_context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/builds/${_context.build}/actions/createhisbatch`,_data);
         }
         if(_context.case && true){
         _data = await this.obtainMinor(_context, _data);
@@ -2654,6 +3464,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testtasks/${_context.testtask}/actions/createhisbatch`,_data);
         }
+        if(_context.ibzreportly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/createhisbatch`,_data);
+        }
+        if(_context.ibzmonthly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/createhisbatch`,_data);
+        }
+        if(_context.ibzdaily && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/createhisbatch`,_data);
+        }
         if(_context.doc && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/docs/${_context.doc}/actions/createhisbatch`,_data);
@@ -2665,6 +3487,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.testreport && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testreports/${_context.testreport}/actions/createhisbatch`,_data);
+        }
+        if(_context.ibzweekly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/createhisbatch`,_data);
         }
         if(_context.release && true){
         _data = await this.obtainMinor(_context, _data);
@@ -2686,6 +3512,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/createhisbatch`,_data);
         }
+        if(_context.bug && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/bugs/${_context.bug}/actions/createhisbatch`,_data);
+        }
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
@@ -2706,6 +3536,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.product && _context.doclib && _context.doc && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/editcommentbatch`,_data);
+        }
+        if(_context.project && _context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/editcommentbatch`,_data);
         }
         if(_context.project && _context.testtask && true){
         _data = await this.obtainMinor(_context, _data);
@@ -2739,6 +3573,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/editcommentbatch`,_data);
         }
+        if(_context.product && _context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/editcommentbatch`,_data);
+        }
         if(_context.product && _context.testreport && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/editcommentbatch`,_data);
@@ -2755,6 +3593,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/editcommentbatch`,_data);
         }
+        if(_context.product && _context.bug && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/editcommentbatch`,_data);
+        }
         if(_context.product && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/editcommentbatch`,_data);
@@ -2766,6 +3608,14 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/stories/${_context.story}/actions/editcommentbatch`,_data);
+        }
+        if(_context.ibzlib && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/editcommentbatch`,_data);
+        }
+        if(_context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/builds/${_context.build}/actions/editcommentbatch`,_data);
         }
         if(_context.case && true){
         _data = await this.obtainMinor(_context, _data);
@@ -2779,6 +3629,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testtasks/${_context.testtask}/actions/editcommentbatch`,_data);
         }
+        if(_context.ibzreportly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/editcommentbatch`,_data);
+        }
+        if(_context.ibzmonthly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/editcommentbatch`,_data);
+        }
+        if(_context.ibzdaily && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/editcommentbatch`,_data);
+        }
         if(_context.doc && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/docs/${_context.doc}/actions/editcommentbatch`,_data);
@@ -2790,6 +3652,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.testreport && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testreports/${_context.testreport}/actions/editcommentbatch`,_data);
+        }
+        if(_context.ibzweekly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/editcommentbatch`,_data);
         }
         if(_context.release && true){
         _data = await this.obtainMinor(_context, _data);
@@ -2811,6 +3677,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/editcommentbatch`,_data);
         }
+        if(_context.bug && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/bugs/${_context.bug}/actions/editcommentbatch`,_data);
+        }
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
@@ -2831,6 +3701,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.product && _context.doclib && _context.doc && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/managepmseebatch`,_data);
+        }
+        if(_context.project && _context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/managepmseebatch`,_data);
         }
         if(_context.project && _context.testtask && true){
         _data = await this.obtainMinor(_context, _data);
@@ -2864,6 +3738,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/managepmseebatch`,_data);
         }
+        if(_context.product && _context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/managepmseebatch`,_data);
+        }
         if(_context.product && _context.testreport && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/managepmseebatch`,_data);
@@ -2880,6 +3758,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/managepmseebatch`,_data);
         }
+        if(_context.product && _context.bug && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/managepmseebatch`,_data);
+        }
         if(_context.product && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/managepmseebatch`,_data);
@@ -2891,6 +3773,14 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/stories/${_context.story}/actions/managepmseebatch`,_data);
+        }
+        if(_context.ibzlib && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/managepmseebatch`,_data);
+        }
+        if(_context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/builds/${_context.build}/actions/managepmseebatch`,_data);
         }
         if(_context.case && true){
         _data = await this.obtainMinor(_context, _data);
@@ -2904,6 +3794,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testtasks/${_context.testtask}/actions/managepmseebatch`,_data);
         }
+        if(_context.ibzreportly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/managepmseebatch`,_data);
+        }
+        if(_context.ibzmonthly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/managepmseebatch`,_data);
+        }
+        if(_context.ibzdaily && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/managepmseebatch`,_data);
+        }
         if(_context.doc && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/docs/${_context.doc}/actions/managepmseebatch`,_data);
@@ -2915,6 +3817,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.testreport && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testreports/${_context.testreport}/actions/managepmseebatch`,_data);
+        }
+        if(_context.ibzweekly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/managepmseebatch`,_data);
         }
         if(_context.release && true){
         _data = await this.obtainMinor(_context, _data);
@@ -2936,6 +3842,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/managepmseebatch`,_data);
         }
+        if(_context.bug && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/bugs/${_context.bug}/actions/managepmseebatch`,_data);
+        }
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
@@ -2956,6 +3866,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.product && _context.doclib && _context.doc && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/sendmarkdonebatch`,_data);
+        }
+        if(_context.project && _context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/sendmarkdonebatch`,_data);
         }
         if(_context.project && _context.testtask && true){
         _data = await this.obtainMinor(_context, _data);
@@ -2989,6 +3903,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/sendmarkdonebatch`,_data);
         }
+        if(_context.product && _context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/sendmarkdonebatch`,_data);
+        }
         if(_context.product && _context.testreport && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/sendmarkdonebatch`,_data);
@@ -3005,6 +3923,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/sendmarkdonebatch`,_data);
         }
+        if(_context.product && _context.bug && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/sendmarkdonebatch`,_data);
+        }
         if(_context.product && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/sendmarkdonebatch`,_data);
@@ -3016,6 +3938,14 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/stories/${_context.story}/actions/sendmarkdonebatch`,_data);
+        }
+        if(_context.ibzlib && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/sendmarkdonebatch`,_data);
+        }
+        if(_context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/builds/${_context.build}/actions/sendmarkdonebatch`,_data);
         }
         if(_context.case && true){
         _data = await this.obtainMinor(_context, _data);
@@ -3029,6 +3959,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testtasks/${_context.testtask}/actions/sendmarkdonebatch`,_data);
         }
+        if(_context.ibzreportly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/sendmarkdonebatch`,_data);
+        }
+        if(_context.ibzmonthly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/sendmarkdonebatch`,_data);
+        }
+        if(_context.ibzdaily && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/sendmarkdonebatch`,_data);
+        }
         if(_context.doc && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/docs/${_context.doc}/actions/sendmarkdonebatch`,_data);
@@ -3040,6 +3982,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.testreport && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testreports/${_context.testreport}/actions/sendmarkdonebatch`,_data);
+        }
+        if(_context.ibzweekly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/sendmarkdonebatch`,_data);
         }
         if(_context.release && true){
         _data = await this.obtainMinor(_context, _data);
@@ -3061,6 +4007,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/sendmarkdonebatch`,_data);
         }
+        if(_context.bug && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/bugs/${_context.bug}/actions/sendmarkdonebatch`,_data);
+        }
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
@@ -3081,6 +4031,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.product && _context.doclib && _context.doc && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/sendtodobatch`,_data);
+        }
+        if(_context.project && _context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/sendtodobatch`,_data);
         }
         if(_context.project && _context.testtask && true){
         _data = await this.obtainMinor(_context, _data);
@@ -3114,6 +4068,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/sendtodobatch`,_data);
         }
+        if(_context.product && _context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/sendtodobatch`,_data);
+        }
         if(_context.product && _context.testreport && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/sendtodobatch`,_data);
@@ -3130,6 +4088,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/sendtodobatch`,_data);
         }
+        if(_context.product && _context.bug && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/sendtodobatch`,_data);
+        }
         if(_context.product && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/sendtodobatch`,_data);
@@ -3141,6 +4103,14 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/stories/${_context.story}/actions/sendtodobatch`,_data);
+        }
+        if(_context.ibzlib && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/sendtodobatch`,_data);
+        }
+        if(_context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/builds/${_context.build}/actions/sendtodobatch`,_data);
         }
         if(_context.case && true){
         _data = await this.obtainMinor(_context, _data);
@@ -3154,6 +4124,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testtasks/${_context.testtask}/actions/sendtodobatch`,_data);
         }
+        if(_context.ibzreportly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/sendtodobatch`,_data);
+        }
+        if(_context.ibzmonthly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/sendtodobatch`,_data);
+        }
+        if(_context.ibzdaily && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/sendtodobatch`,_data);
+        }
         if(_context.doc && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/docs/${_context.doc}/actions/sendtodobatch`,_data);
@@ -3165,6 +4147,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.testreport && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testreports/${_context.testreport}/actions/sendtodobatch`,_data);
+        }
+        if(_context.ibzweekly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/sendtodobatch`,_data);
         }
         if(_context.release && true){
         _data = await this.obtainMinor(_context, _data);
@@ -3186,6 +4172,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/sendtodobatch`,_data);
         }
+        if(_context.bug && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/bugs/${_context.bug}/actions/sendtodobatch`,_data);
+        }
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
@@ -3206,6 +4196,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.product && _context.doclib && _context.doc && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/sendtoreadbatch`,_data);
+        }
+        if(_context.project && _context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/sendtoreadbatch`,_data);
         }
         if(_context.project && _context.testtask && true){
         _data = await this.obtainMinor(_context, _data);
@@ -3239,6 +4233,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/sendtoreadbatch`,_data);
         }
+        if(_context.product && _context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/sendtoreadbatch`,_data);
+        }
         if(_context.product && _context.testreport && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/sendtoreadbatch`,_data);
@@ -3255,6 +4253,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/sendtoreadbatch`,_data);
         }
+        if(_context.product && _context.bug && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/sendtoreadbatch`,_data);
+        }
         if(_context.product && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/sendtoreadbatch`,_data);
@@ -3266,6 +4268,14 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/stories/${_context.story}/actions/sendtoreadbatch`,_data);
+        }
+        if(_context.ibzlib && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/sendtoreadbatch`,_data);
+        }
+        if(_context.build && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/builds/${_context.build}/actions/sendtoreadbatch`,_data);
         }
         if(_context.case && true){
         _data = await this.obtainMinor(_context, _data);
@@ -3279,6 +4289,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testtasks/${_context.testtask}/actions/sendtoreadbatch`,_data);
         }
+        if(_context.ibzreportly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/sendtoreadbatch`,_data);
+        }
+        if(_context.ibzmonthly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/sendtoreadbatch`,_data);
+        }
+        if(_context.ibzdaily && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/sendtoreadbatch`,_data);
+        }
         if(_context.doc && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/docs/${_context.doc}/actions/sendtoreadbatch`,_data);
@@ -3290,6 +4312,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.testreport && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/testreports/${_context.testreport}/actions/sendtoreadbatch`,_data);
+        }
+        if(_context.ibzweekly && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/sendtoreadbatch`,_data);
         }
         if(_context.release && true){
         _data = await this.obtainMinor(_context, _data);
@@ -3310,6 +4336,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/actions/sendtoreadbatch`,_data);
+        }
+        if(_context.bug && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/bugs/${_context.bug}/actions/sendtoreadbatch`,_data);
         }
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

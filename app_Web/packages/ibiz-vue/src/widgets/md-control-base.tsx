@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { CodeListServiceBase, ModelTool } from 'ibiz-core'
+import { CodeListServiceBase, debounce, ModelTool } from 'ibiz-core'
 import { MainControlBase } from './main-control-base';
 import { GlobalService } from 'ibiz-service';
 import { AppCenterService, AppViewLogicService } from '../app-service';
@@ -390,7 +390,7 @@ export class MDControlBase extends MainControlBase {
             <view-toolbar
                 toolbarModels={this.quickToolbarModels}
                 on-item-click={(data: any, $event: any) => {
-                    this.handleItemClick('quicktoolbar', data, $event);
+                    debounce(this.handleItemClick,['quicktoolbar', data, $event],this);
                 }}
             ></view-toolbar>
         </span>
@@ -428,7 +428,7 @@ export class MDControlBase extends MainControlBase {
             <view-toolbar
                 toolbarModels={this.batchToolbarModels}
                 on-item-click={(data: any, $event: any) => {
-                    this.handleItemClick('batchtoolbar', data, $event);
+                    debounce(this.handleItemClick,['batchtoolbar', data, $event],this);
                 }}
             ></view-toolbar>
         </span>

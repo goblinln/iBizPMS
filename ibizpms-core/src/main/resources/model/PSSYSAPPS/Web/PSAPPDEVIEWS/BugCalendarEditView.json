@@ -841,7 +841,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "noPrivDisplayMode" : 1,
               "caption" : "关闭",
               "codeName" : "CloseBugDash",
               "dataAccessAction" : "CLOSE",

@@ -1,5 +1,5 @@
 import { IPSDESearchForm, IPSSearchBar, IPSAppDEMultiDataView, IPSAppCodeList, IPSCodeItem, IPSAppDEField } from '@ibiz/dynamic-model-api';
-import { CodeListServiceBase, LogUtil, ModelTool, Util } from 'ibiz-core'
+import { CodeListServiceBase, debounce, LogUtil, ModelTool, Util } from 'ibiz-core'
 import { AppGlobalService } from '../app-service/logic-service/app-global-action-service';
 import { MainViewBase } from "./mainview-base";
 
@@ -330,7 +330,7 @@ export class MDViewBase extends MainViewBase {
             {enableFilter && <el-popover placement="bottom" popper-class={popoverClass} trigger="click" visible-arrow={false} on-hide={() => this.isExpandSearchForm = !this.isExpandSearchForm}>
                 <i-button slot="reference" class={{'filter': true, 'is-expand': this.isExpandSearchForm}} icon="ios-funnel" on-click={(e:any)=>{
                     if (!this.isExpandSearchForm) {
-                        (AppGlobalService.getInstance() as any).executeGlobalAction('ToggleFilter',undefined, undefined, undefined, e, undefined, this, undefined, );
+                      debounce((AppGlobalService.getInstance() as any).executeGlobalAction,['ToggleFilter',undefined, undefined, undefined, e, undefined, this, undefined],this);
                     }}} />
                 {popoverClass && popoverClass != '' ? popoverClass == 'searchform-popover' ? this.renderSearchForm() : this.renderSearchBar() : null}
             </el-popover>}

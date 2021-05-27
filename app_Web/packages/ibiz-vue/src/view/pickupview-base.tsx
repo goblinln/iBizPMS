@@ -1,5 +1,5 @@
 import { IPSAppDEPickupView, IPSDEPickupViewPanel } from '@ibiz/dynamic-model-api';
-import { PickupViewEngine, ModelTool } from 'ibiz-core';
+import { PickupViewEngine, ModelTool, debounce } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 
 /**
@@ -185,9 +185,9 @@ export class PickupViewBase extends MainViewBase {
             return (
                 <card dis-hover={true} bordered={false} class="footer">
                     <row style={{ "textAlign": 'right' }}>
-                        <i-button type="primary" disabled={this.viewSelections.length > 0 ? false : true} on-click={this.onClickOk.bind(this)}>{this.containerModel?.view_okbtn?.text}</i-button>
+                        <i-button type="primary" disabled={this.viewSelections.length > 0 ? false : true} on-click={(...params: any[]) => debounce(this.onClickOk,params,this)}>{this.containerModel?.view_okbtn?.text}</i-button>
                             &nbsp;&nbsp;
-                        <i-button on-click={this.onClickCancel.bind(this)}>{this.containerModel?.view_cancelbtn?.text}</i-button>
+                        <i-button on-click={(...params: any[]) => debounce(this.onClickCancel,params,this)}>{this.containerModel?.view_cancelbtn?.text}</i-button>
                     </row>
                 </card>
             )

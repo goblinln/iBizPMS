@@ -1,4 +1,4 @@
-import { ViewTool, Util, ModelTool, LogUtil } from 'ibiz-core';
+import { ViewTool, Util, ModelTool, LogUtil, debounce } from 'ibiz-core';
 import {
     IPSDEDataView,
     IPSDEDataViewItem,
@@ -1040,7 +1040,7 @@ export class DataViewControlBase extends MDControlBase {
                             {super.renderBatchToolbar()}
                         </div>
                         <div class='dataview-pagination-icon'>
-                            <icon type='md-code-working' on-click={($event: any) => this.onClick($event)} />
+                            <icon type='md-code-working' on-click={($event: any) => debounce(this.onClick,[$event],this)} />
                         </div>
                     </row>
                 </div>
@@ -1129,8 +1129,8 @@ export class DataViewControlBase extends MDControlBase {
             <el-card
                 shadow='always'
                 class={[args.isselected === true ? 'isselected' : false, 'single-card-data']}
-                nativeOnClick={() => this.handleClick(args)}
-                nativeOnDblclick={() => this.handleDblClick(args)}
+                nativeOnClick={() => debounce(this.handleClick,[args],this)}
+                nativeOnDblclick={() => debounce(this.handleDblClick,[args],this)}
             >
                 {this.controlInstance.getItemPSLayoutPanel()
                     ? this.renderItemPSLayoutPanel(args)
@@ -1210,7 +1210,7 @@ export class DataViewControlBase extends MDControlBase {
                                 type='info'
                                 disabled={args[uiaction.uIActionTag].disabled}
                                 on-click={($event: any) => {
-                                    this.handleActionClick(args, $event, dataViewItem, uiactionDetail);
+                                    debounce(this.handleActionClick,[args, $event, dataViewItem, uiactionDetail],this);
                                 }}
                             >
                                 {uiactionDetail.showIcon ? (
@@ -1258,7 +1258,7 @@ export class DataViewControlBase extends MDControlBase {
                     sortField={this.sortField}
                     sortDir={this.sortDir}
                     entityName={appDataEntity?.codeName}
-                    on-clickSort={(val: any) => this.sortClick(val)}
+                    on-clickSort={(val: any) => debounce(this.sortClick,[val],this)}
                 ></app-sort-bar>
             );
         }

@@ -738,6 +738,7 @@ public class DELogicAspect {
         validLogic.put("storystoryfavoritesexec.bpmn", 1);
         validLogic.put("storystorynfavoritesexec.bpmn", 1);
         validLogic.put("sysupdatelogcreateafter.bpmn", 1);
+        validLogic.put("taskgetafter.bpmn", 1);
         validLogic.put("taskgetdraftafter.bpmn", 1);
         validLogic.put("taskgetusernamesexec.bpmn", 1);
         validLogic.put("tasktaskfavoritesexec.bpmn", 1);

@@ -15030,13 +15030,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "TaskNFavorites",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskNFavorites.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Restart",
       "getPSDEAction" : {
         "modelref" : true,

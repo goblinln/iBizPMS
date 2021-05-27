@@ -102,13 +102,17 @@
     "actionMode" : "READ",
     "actionType" : "BUILTIN",
     "getAfterPSDEActionLogics" : [ {
-      "actionLogicType" : 2,
+      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
+      "getPSDELogic" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/ResetTaskestimate.json"
+      },
       "scriptCode" : "entity.set(\"taskestimates\",null);",
       "cloneParam" : false,
       "ignoreException" : false,
-      "internalLogic" : false
+      "internalLogic" : true
     } ],
     "codeName" : "Get",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json",
@@ -16800,13 +16804,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "TaskNFavorites",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskNFavorites.json"
       },
       "allowMode" : true
     }, {

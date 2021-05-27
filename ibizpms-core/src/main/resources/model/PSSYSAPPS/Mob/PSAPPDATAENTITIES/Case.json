@@ -1086,6 +1086,15 @@
       "id" : "FetchRunRePortCase_Project"
     },
     "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyCreateOrUpdate",
+    "methodType" : "FETCH",
+    "name" : "MyCreateOrUpdate",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateOrUpdate"
+    },
+    "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "LastEditedDate",
@@ -2498,6 +2507,25 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ModuleRePortCase_Project"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyCreateOrUpdate",
+    "methodType" : "FETCH",
+    "name" : "MyCreateOrUpdate",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateOrUpdate"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempMyCreateOrUpdate",
+    "methodType" : "FETCHTEMP",
+    "name" : "MyCreateOrUpdate",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateOrUpdate"
     },
     "tempDataMode" : 2,
     "builtinMethod" : false
@@ -11764,16 +11792,6 @@
   }, {
     "logicName" : "取消收藏",
     "name" : "NFAVORITE"
-  }, {
-    "logicName" : "Product_Read",
-    "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
-    },
-    "name" : "READ",
-    "id" : "ZTProduct__READ"
   }, {
     "logicName" : "读取",
     "name" : "READ"

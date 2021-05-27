@@ -496,6 +496,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     public List<Case> selectModuleRePortCase_Project(CaseSearchContext context){
         return baseMapper.selectModuleRePortCase_Project(context, context.getSelectCond());
     }
+    public List<Case> selectMyCreateOrUpdate(CaseSearchContext context){
+        return baseMapper.selectMyCreateOrUpdate(context, context.getSelectCond());
+    }
     public List<Case> selectMyFavorite(CaseSearchContext context){
         return baseMapper.selectMyFavorite(context, context.getSelectCond());
     }
@@ -618,6 +621,15 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     @Override
     public Page<Case> searchModuleRePortCase_Project(CaseSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Case> pages=baseMapper.searchModuleRePortCase_Project(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Case>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我创建或更新（权限）
+     */
+    @Override
+    public Page<Case> searchMyCreateOrUpdate(CaseSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Case> pages=baseMapper.searchMyCreateOrUpdate(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Case>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

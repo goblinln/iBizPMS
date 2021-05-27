@@ -113,6 +113,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.product && _context.doclib && _context.doc && _context.action && _context.history) {
             return this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/${_context.history}/select`);
         }
+        if (_context.project && _context.build && _context.action && _context.history) {
+            return this.http.get(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/histories/${_context.history}/select`);
+        }
         if (_context.project && _context.testtask && _context.action && _context.history) {
             return this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}/histories/${_context.history}/select`);
         }
@@ -137,6 +140,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.product && _context.case && _context.action && _context.history) {
             return this.http.get(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}/histories/${_context.history}/select`);
         }
+        if (_context.product && _context.build && _context.action && _context.history) {
+            return this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/histories/${_context.history}/select`);
+        }
         if (_context.product && _context.testreport && _context.action && _context.history) {
             return this.http.get(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}/histories/${_context.history}/select`);
         }
@@ -149,6 +155,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.product && _context.release && _context.action && _context.history) {
             return this.http.get(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}/histories/${_context.history}/select`);
         }
+        if (_context.product && _context.bug && _context.action && _context.history) {
+            return this.http.get(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}/histories/${_context.history}/select`);
+        }
         if (_context.product && _context.doclib && _context.action && _context.history) {
             return this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}/histories/${_context.history}/select`);
         }
@@ -157,6 +166,12 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.story && _context.action && _context.history) {
             return this.http.get(`/stories/${_context.story}/actions/${_context.action}/histories/${_context.history}/select`);
+        }
+        if (_context.ibzlib && _context.action && _context.history) {
+            return this.http.get(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/histories/${_context.history}/select`);
+        }
+        if (_context.build && _context.action && _context.history) {
+            return this.http.get(`/builds/${_context.build}/actions/${_context.action}/histories/${_context.history}/select`);
         }
         if (_context.case && _context.action && _context.history) {
             return this.http.get(`/cases/${_context.case}/actions/${_context.action}/histories/${_context.history}/select`);
@@ -167,6 +182,15 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.testtask && _context.action && _context.history) {
             return this.http.get(`/testtasks/${_context.testtask}/actions/${_context.action}/histories/${_context.history}/select`);
         }
+        if (_context.ibzreportly && _context.action && _context.history) {
+            return this.http.get(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/histories/${_context.history}/select`);
+        }
+        if (_context.ibzmonthly && _context.action && _context.history) {
+            return this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}/histories/${_context.history}/select`);
+        }
+        if (_context.ibzdaily && _context.action && _context.history) {
+            return this.http.get(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}/histories/${_context.history}/select`);
+        }
         if (_context.doc && _context.action && _context.history) {
             return this.http.get(`/docs/${_context.doc}/actions/${_context.action}/histories/${_context.history}/select`);
         }
@@ -175,6 +199,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.testreport && _context.action && _context.history) {
             return this.http.get(`/testreports/${_context.testreport}/actions/${_context.action}/histories/${_context.history}/select`);
+        }
+        if (_context.ibzweekly && _context.action && _context.history) {
+            return this.http.get(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/histories/${_context.history}/select`);
         }
         if (_context.release && _context.action && _context.history) {
             return this.http.get(`/releases/${_context.release}/actions/${_context.action}/histories/${_context.history}/select`);
@@ -190,6 +217,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.product && _context.action && _context.history) {
             return this.http.get(`/products/${_context.product}/actions/${_context.action}/histories/${_context.history}/select`);
+        }
+        if (_context.bug && _context.action && _context.history) {
+            return this.http.get(`/bugs/${_context.bug}/actions/${_context.action}/histories/${_context.history}/select`);
         }
         return this.http.get(`/histories/${_context.history}/select`);
     }
@@ -221,6 +251,16 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories`, _data);
+        }
+        if (_context.project && _context.build && _context.action && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/histories`, _data);
         }
         if (_context.project && _context.testtask && _context.action && true) {
         _data = await this.obtainMinor(_context, _data);
@@ -302,6 +342,16 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             }
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}/histories`, _data);
         }
+        if (_context.product && _context.build && _context.action && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/histories`, _data);
+        }
         if (_context.product && _context.testreport && _context.action && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -342,6 +392,16 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             }
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}/histories`, _data);
         }
+        if (_context.product && _context.bug && _context.action && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}/histories`, _data);
+        }
         if (_context.product && _context.doclib && _context.action && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -371,6 +431,26 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/stories/${_context.story}/actions/${_context.action}/histories`, _data);
+        }
+        if (_context.ibzlib && _context.action && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/histories`, _data);
+        }
+        if (_context.build && _context.action && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/builds/${_context.build}/actions/${_context.action}/histories`, _data);
         }
         if (_context.case && _context.action && true) {
         _data = await this.obtainMinor(_context, _data);
@@ -402,6 +482,36 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             }
             return this.http.post(`/testtasks/${_context.testtask}/actions/${_context.action}/histories`, _data);
         }
+        if (_context.ibzreportly && _context.action && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/histories`, _data);
+        }
+        if (_context.ibzmonthly && _context.action && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}/histories`, _data);
+        }
+        if (_context.ibzdaily && _context.action && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}/histories`, _data);
+        }
         if (_context.doc && _context.action && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -431,6 +541,16 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/testreports/${_context.testreport}/actions/${_context.action}/histories`, _data);
+        }
+        if (_context.ibzweekly && _context.action && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/histories`, _data);
         }
         if (_context.release && _context.action && true) {
         _data = await this.obtainMinor(_context, _data);
@@ -482,6 +602,16 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             }
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/histories`, _data);
         }
+        if (_context.bug && _context.action && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/bugs/${_context.bug}/actions/${_context.action}/histories`, _data);
+        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -507,6 +637,10 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.product && _context.doclib && _context.doc && _context.action && _context.history) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/${_context.history}`, _data);
+        }
+        if (_context.project && _context.build && _context.action && _context.history) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/histories/${_context.history}`, _data);
         }
         if (_context.project && _context.testtask && _context.action && _context.history) {
         _data = await this.obtainMinor(_context, _data);
@@ -540,6 +674,10 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}/histories/${_context.history}`, _data);
         }
+        if (_context.product && _context.build && _context.action && _context.history) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/histories/${_context.history}`, _data);
+        }
         if (_context.product && _context.testreport && _context.action && _context.history) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}/histories/${_context.history}`, _data);
@@ -556,6 +694,10 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}/histories/${_context.history}`, _data);
         }
+        if (_context.product && _context.bug && _context.action && _context.history) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}/histories/${_context.history}`, _data);
+        }
         if (_context.product && _context.doclib && _context.action && _context.history) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}/histories/${_context.history}`, _data);
@@ -567,6 +709,14 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.story && _context.action && _context.history) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/stories/${_context.story}/actions/${_context.action}/histories/${_context.history}`, _data);
+        }
+        if (_context.ibzlib && _context.action && _context.history) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/histories/${_context.history}`, _data);
+        }
+        if (_context.build && _context.action && _context.history) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/builds/${_context.build}/actions/${_context.action}/histories/${_context.history}`, _data);
         }
         if (_context.case && _context.action && _context.history) {
         _data = await this.obtainMinor(_context, _data);
@@ -580,6 +730,18 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/testtasks/${_context.testtask}/actions/${_context.action}/histories/${_context.history}`, _data);
         }
+        if (_context.ibzreportly && _context.action && _context.history) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/histories/${_context.history}`, _data);
+        }
+        if (_context.ibzmonthly && _context.action && _context.history) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}/histories/${_context.history}`, _data);
+        }
+        if (_context.ibzdaily && _context.action && _context.history) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}/histories/${_context.history}`, _data);
+        }
         if (_context.doc && _context.action && _context.history) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/docs/${_context.doc}/actions/${_context.action}/histories/${_context.history}`, _data);
@@ -591,6 +753,10 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.testreport && _context.action && _context.history) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/testreports/${_context.testreport}/actions/${_context.action}/histories/${_context.history}`, _data);
+        }
+        if (_context.ibzweekly && _context.action && _context.history) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/histories/${_context.history}`, _data);
         }
         if (_context.release && _context.action && _context.history) {
         _data = await this.obtainMinor(_context, _data);
@@ -612,6 +778,10 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/actions/${_context.action}/histories/${_context.history}`, _data);
         }
+        if (_context.bug && _context.action && _context.history) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/bugs/${_context.bug}/actions/${_context.action}/histories/${_context.history}`, _data);
+        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/histories/${_context.history}`, _data);
     }
@@ -629,6 +799,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.product && _context.doclib && _context.doc && _context.action && _context.history) {
             return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/${_context.history}`);
+        }
+        if (_context.project && _context.build && _context.action && _context.history) {
+            return this.http.delete(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/histories/${_context.history}`);
         }
         if (_context.project && _context.testtask && _context.action && _context.history) {
             return this.http.delete(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}/histories/${_context.history}`);
@@ -654,6 +827,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.product && _context.case && _context.action && _context.history) {
             return this.http.delete(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}/histories/${_context.history}`);
         }
+        if (_context.product && _context.build && _context.action && _context.history) {
+            return this.http.delete(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/histories/${_context.history}`);
+        }
         if (_context.product && _context.testreport && _context.action && _context.history) {
             return this.http.delete(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}/histories/${_context.history}`);
         }
@@ -666,6 +842,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.product && _context.release && _context.action && _context.history) {
             return this.http.delete(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}/histories/${_context.history}`);
         }
+        if (_context.product && _context.bug && _context.action && _context.history) {
+            return this.http.delete(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}/histories/${_context.history}`);
+        }
         if (_context.product && _context.doclib && _context.action && _context.history) {
             return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}/histories/${_context.history}`);
         }
@@ -674,6 +853,12 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.story && _context.action && _context.history) {
             return this.http.delete(`/stories/${_context.story}/actions/${_context.action}/histories/${_context.history}`);
+        }
+        if (_context.ibzlib && _context.action && _context.history) {
+            return this.http.delete(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/histories/${_context.history}`);
+        }
+        if (_context.build && _context.action && _context.history) {
+            return this.http.delete(`/builds/${_context.build}/actions/${_context.action}/histories/${_context.history}`);
         }
         if (_context.case && _context.action && _context.history) {
             return this.http.delete(`/cases/${_context.case}/actions/${_context.action}/histories/${_context.history}`);
@@ -684,6 +869,15 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.testtask && _context.action && _context.history) {
             return this.http.delete(`/testtasks/${_context.testtask}/actions/${_context.action}/histories/${_context.history}`);
         }
+        if (_context.ibzreportly && _context.action && _context.history) {
+            return this.http.delete(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/histories/${_context.history}`);
+        }
+        if (_context.ibzmonthly && _context.action && _context.history) {
+            return this.http.delete(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}/histories/${_context.history}`);
+        }
+        if (_context.ibzdaily && _context.action && _context.history) {
+            return this.http.delete(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}/histories/${_context.history}`);
+        }
         if (_context.doc && _context.action && _context.history) {
             return this.http.delete(`/docs/${_context.doc}/actions/${_context.action}/histories/${_context.history}`);
         }
@@ -692,6 +886,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.testreport && _context.action && _context.history) {
             return this.http.delete(`/testreports/${_context.testreport}/actions/${_context.action}/histories/${_context.history}`);
+        }
+        if (_context.ibzweekly && _context.action && _context.history) {
+            return this.http.delete(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/histories/${_context.history}`);
         }
         if (_context.release && _context.action && _context.history) {
             return this.http.delete(`/releases/${_context.release}/actions/${_context.action}/histories/${_context.history}`);
@@ -707,6 +904,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.product && _context.action && _context.history) {
             return this.http.delete(`/products/${_context.product}/actions/${_context.action}/histories/${_context.history}`);
+        }
+        if (_context.bug && _context.action && _context.history) {
+            return this.http.delete(`/bugs/${_context.bug}/actions/${_context.action}/histories/${_context.history}`);
         }
         return this.http.delete(`/histories/${_context.history}`);
     }
@@ -725,6 +925,10 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.product && _context.doclib && _context.doc && _context.action && _context.history) {
             const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/${_context.history}`);
+            return res;
+        }
+        if (_context.project && _context.build && _context.action && _context.history) {
+            const res = await this.http.get(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/histories/${_context.history}`);
             return res;
         }
         if (_context.project && _context.testtask && _context.action && _context.history) {
@@ -759,6 +963,10 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             const res = await this.http.get(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}/histories/${_context.history}`);
             return res;
         }
+        if (_context.product && _context.build && _context.action && _context.history) {
+            const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/histories/${_context.history}`);
+            return res;
+        }
         if (_context.product && _context.testreport && _context.action && _context.history) {
             const res = await this.http.get(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}/histories/${_context.history}`);
             return res;
@@ -775,6 +983,10 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             const res = await this.http.get(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}/histories/${_context.history}`);
             return res;
         }
+        if (_context.product && _context.bug && _context.action && _context.history) {
+            const res = await this.http.get(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}/histories/${_context.history}`);
+            return res;
+        }
         if (_context.product && _context.doclib && _context.action && _context.history) {
             const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}/histories/${_context.history}`);
             return res;
@@ -785,6 +997,14 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.story && _context.action && _context.history) {
             const res = await this.http.get(`/stories/${_context.story}/actions/${_context.action}/histories/${_context.history}`);
+            return res;
+        }
+        if (_context.ibzlib && _context.action && _context.history) {
+            const res = await this.http.get(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/histories/${_context.history}`);
+            return res;
+        }
+        if (_context.build && _context.action && _context.history) {
+            const res = await this.http.get(`/builds/${_context.build}/actions/${_context.action}/histories/${_context.history}`);
             return res;
         }
         if (_context.case && _context.action && _context.history) {
@@ -799,6 +1019,18 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             const res = await this.http.get(`/testtasks/${_context.testtask}/actions/${_context.action}/histories/${_context.history}`);
             return res;
         }
+        if (_context.ibzreportly && _context.action && _context.history) {
+            const res = await this.http.get(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/histories/${_context.history}`);
+            return res;
+        }
+        if (_context.ibzmonthly && _context.action && _context.history) {
+            const res = await this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}/histories/${_context.history}`);
+            return res;
+        }
+        if (_context.ibzdaily && _context.action && _context.history) {
+            const res = await this.http.get(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}/histories/${_context.history}`);
+            return res;
+        }
         if (_context.doc && _context.action && _context.history) {
             const res = await this.http.get(`/docs/${_context.doc}/actions/${_context.action}/histories/${_context.history}`);
             return res;
@@ -809,6 +1041,10 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.testreport && _context.action && _context.history) {
             const res = await this.http.get(`/testreports/${_context.testreport}/actions/${_context.action}/histories/${_context.history}`);
+            return res;
+        }
+        if (_context.ibzweekly && _context.action && _context.history) {
+            const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/histories/${_context.history}`);
             return res;
         }
         if (_context.release && _context.action && _context.history) {
@@ -829,6 +1065,10 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.product && _context.action && _context.history) {
             const res = await this.http.get(`/products/${_context.product}/actions/${_context.action}/histories/${_context.history}`);
+            return res;
+        }
+        if (_context.bug && _context.action && _context.history) {
+            const res = await this.http.get(`/bugs/${_context.bug}/actions/${_context.action}/histories/${_context.history}`);
             return res;
         }
         const res = await this.http.get(`/histories/${_context.history}`);
@@ -853,6 +1093,12 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.build && _context.action && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/histories/getdraft`, _data);
             return res;
         }
         if (_context.project && _context.testtask && _context.action && true) {
@@ -903,6 +1149,12 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             const res = await this.http.get(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}/histories/getdraft`, _data);
             return res;
         }
+        if (_context.product && _context.build && _context.action && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/histories/getdraft`, _data);
+            return res;
+        }
         if (_context.product && _context.testreport && _context.action && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -927,6 +1179,12 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             const res = await this.http.get(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}/histories/getdraft`, _data);
             return res;
         }
+        if (_context.product && _context.bug && _context.action && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}/histories/getdraft`, _data);
+            return res;
+        }
         if (_context.product && _context.doclib && _context.action && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -943,6 +1201,18 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/stories/${_context.story}/actions/${_context.action}/histories/getdraft`, _data);
+            return res;
+        }
+        if (_context.ibzlib && _context.action && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/histories/getdraft`, _data);
+            return res;
+        }
+        if (_context.build && _context.action && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/builds/${_context.build}/actions/${_context.action}/histories/getdraft`, _data);
             return res;
         }
         if (_context.case && _context.action && true) {
@@ -963,6 +1233,24 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             const res = await this.http.get(`/testtasks/${_context.testtask}/actions/${_context.action}/histories/getdraft`, _data);
             return res;
         }
+        if (_context.ibzreportly && _context.action && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/histories/getdraft`, _data);
+            return res;
+        }
+        if (_context.ibzmonthly && _context.action && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}/histories/getdraft`, _data);
+            return res;
+        }
+        if (_context.ibzdaily && _context.action && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}/histories/getdraft`, _data);
+            return res;
+        }
         if (_context.doc && _context.action && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -979,6 +1267,12 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/testreports/${_context.testreport}/actions/${_context.action}/histories/getdraft`, _data);
+            return res;
+        }
+        if (_context.ibzweekly && _context.action && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/histories/getdraft`, _data);
             return res;
         }
         if (_context.release && _context.action && true) {
@@ -1011,6 +1305,12 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             const res = await this.http.get(`/products/${_context.product}/actions/${_context.action}/histories/getdraft`, _data);
             return res;
         }
+        if (_context.bug && _context.action && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/bugs/${_context.bug}/actions/${_context.action}/histories/getdraft`, _data);
+            return res;
+        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/histories/getdraft`, _data);
@@ -1030,6 +1330,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.product && _context.doclib && _context.doc && _context.action && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.project && _context.build && _context.action && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.project && _context.testtask && _context.action && true) {
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}/histories/fetchdefault`, _data);
@@ -1055,6 +1358,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.product && _context.case && _context.action && true) {
             return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
+        if (_context.product && _context.build && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
         if (_context.product && _context.testreport && _context.action && true) {
             return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
@@ -1067,6 +1373,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.product && _context.release && _context.action && true) {
             return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
+        if (_context.product && _context.bug && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
         if (_context.product && _context.doclib && _context.action && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
@@ -1075,6 +1384,12 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.story && _context.action && true) {
             return this.http.post(`/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.ibzlib && _context.action && true) {
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.build && _context.action && true) {
+            return this.http.post(`/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.case && _context.action && true) {
             return this.http.post(`/cases/${_context.case}/actions/${_context.action}/histories/fetchdefault`, _data);
@@ -1085,6 +1400,15 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.testtask && _context.action && true) {
             return this.http.post(`/testtasks/${_context.testtask}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
+        if (_context.ibzreportly && _context.action && true) {
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.ibzmonthly && _context.action && true) {
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.ibzdaily && _context.action && true) {
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
         if (_context.doc && _context.action && true) {
             return this.http.post(`/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
@@ -1093,6 +1417,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.testreport && _context.action && true) {
             return this.http.post(`/testreports/${_context.testreport}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.ibzweekly && _context.action && true) {
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.release && _context.action && true) {
             return this.http.post(`/releases/${_context.release}/actions/${_context.action}/histories/fetchdefault`, _data);
@@ -1108,6 +1435,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.product && _context.action && true) {
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.bug && _context.action && true) {
+            return this.http.post(`/bugs/${_context.bug}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         return this.http.post(`/histories/fetchdefault`, _data);
     }
