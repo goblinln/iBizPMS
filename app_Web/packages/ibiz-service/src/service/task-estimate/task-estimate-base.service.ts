@@ -152,52 +152,6 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
         return this.http.delete(`/taskestimates/${_context.taskestimate}`);
     }
     /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskEstimateService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/getdraft`, _data);
-            return res;
-        }
-        if (_context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/tasks/${_context.task}/taskestimates/getdraft`, _data);
-            return res;
-        }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/taskestimates/getdraft`, _data);
-        return res;
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskEstimateService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task && _context.taskestimate) {
-            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-            return res;
-        }
-        if (_context.task && _context.taskestimate) {
-            const res = await this.http.get(`/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-            return res;
-        }
-        const res = await this.http.get(`/taskestimates/${_context.taskestimate}`);
-        return res;
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -234,6 +188,52 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/taskestimates`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskEstimateService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.task && _context.taskestimate) {
+            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
+            return res;
+        }
+        if (_context.task && _context.taskestimate) {
+            const res = await this.http.get(`/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
+            return res;
+        }
+        const res = await this.http.get(`/taskestimates/${_context.taskestimate}`);
+        return res;
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskEstimateService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/getdraft`, _data);
+            return res;
+        }
+        if (_context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/tasks/${_context.task}/taskestimates/getdraft`, _data);
+            return res;
+        }
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/taskestimates/getdraft`, _data);
+        return res;
     }
     /**
      * FetchDefault

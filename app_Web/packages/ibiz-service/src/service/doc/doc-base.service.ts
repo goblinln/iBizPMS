@@ -121,6 +121,18 @@ export class DocBaseService extends EntityBaseService<IDoc> {
         return this.condCache.get('moduleDocChild');
     }
 
+    protected getMyCreateOrUpdateDocCond() {
+        if (!this.condCache.has('myCreateOrUpdateDoc')) {
+            const strCond: any[] = ['AND', ['OR', ['EQ', 'ADDEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginnane'}], ['EQ', 'EDITEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginnane'}], ['EQ', 'UPDATEBY',{ type: 'SESSIONCONTEXT', value: 'srfloginnane'}]]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('myCreateOrUpdateDoc', cond);
+            }
+        }
+        return this.condCache.get('myCreateOrUpdateDoc');
+    }
+
     protected getMyFavouriteCond() {
         return this.condCache.get('myFavourite');
     }
