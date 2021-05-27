@@ -6537,6 +6537,21 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/views/editview_start',
+                    meta: {
+                        caption: 'entities.project.views.editview_start.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'views', parameterName: 'editview_start' },
+                        ],
+                        resource:'project',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'projects/:project?/views/burndownchartview',
                     meta: {
                         caption: 'entities.project.views.burndownchartview.caption',
@@ -23793,6 +23808,19 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'bugbuildsubgridview_new_9212' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/projecteditview_start',
+                    meta: {
+                        caption: 'entities.project.views.editview_start.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'projecteditview_start' },
                         ],
                         requireAuth: true,
                     },

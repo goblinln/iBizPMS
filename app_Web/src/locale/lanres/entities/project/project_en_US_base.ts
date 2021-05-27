@@ -93,6 +93,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("项目",null),
 				title: commonLogic.appcommonhandle("项目任务导航视图",null),
 			},
+			'editview_start': {
+				caption: commonLogic.appcommonhandle("项目",null),
+				title: commonLogic.appcommonhandle("项目",null),
+			},
 			'burndownchartview': {
 				caption: commonLogic.appcommonhandle("项目",null),
 				title: commonLogic.appcommonhandle("燃尽图",null),
@@ -214,6 +218,24 @@ function getLocaleResourceBase(){
 				title: commonLogic.appcommonhandle("项目编辑视图（需求相关）",null),
 			},
 		},
+		suspendnclose_form: {
+			details: {
+				'druipart1': commonLogic.appcommonhandle("",null), 
+				'group1': commonLogic.appcommonhandle("project基本信息",null), 
+				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srforikey': commonLogic.appcommonhandle("",null), 
+				'srfkey': commonLogic.appcommonhandle("项目编号",null), 
+				'srfmajortext': commonLogic.appcommonhandle("项目名称",null), 
+				'srftempmode': commonLogic.appcommonhandle("",null), 
+				'srfuf': commonLogic.appcommonhandle("",null), 
+				'srfdeid': commonLogic.appcommonhandle("",null), 
+				'srfsourcekey': commonLogic.appcommonhandle("",null), 
+				'comment': commonLogic.appcommonhandle("备注",null), 
+				'id': commonLogic.appcommonhandle("项目编号",null), 
+			},
+			uiactions: {
+			},
+		},
 		putoff_form: {
 			details: {
 				'grouppanel2': commonLogic.appcommonhandle("分组面板",null), 
@@ -233,24 +255,6 @@ function getLocaleResourceBase(){
 				'period': commonLogic.appcommonhandle("",null), 
 				'days': commonLogic.appcommonhandle("可用工作日",null), 
 				'type': commonLogic.appcommonhandle("项目类型",null), 
-				'comment': commonLogic.appcommonhandle("备注",null), 
-				'id': commonLogic.appcommonhandle("项目编号",null), 
-			},
-			uiactions: {
-			},
-		},
-		suspendnclose_form: {
-			details: {
-				'druipart1': commonLogic.appcommonhandle("",null), 
-				'group1': commonLogic.appcommonhandle("project基本信息",null), 
-				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
-				'srforikey': commonLogic.appcommonhandle("",null), 
-				'srfkey': commonLogic.appcommonhandle("项目编号",null), 
-				'srfmajortext': commonLogic.appcommonhandle("项目名称",null), 
-				'srftempmode': commonLogic.appcommonhandle("",null), 
-				'srfuf': commonLogic.appcommonhandle("",null), 
-				'srfdeid': commonLogic.appcommonhandle("",null), 
-				'srfsourcekey': commonLogic.appcommonhandle("",null), 
 				'comment': commonLogic.appcommonhandle("备注",null), 
 				'id': commonLogic.appcommonhandle("项目编号",null), 
 			},
@@ -580,6 +584,12 @@ function getLocaleResourceBase(){
 				'formpage1': commonLogic.appcommonhandle("常规条件",null), 
 			},
 			uiactions: {
+			},
+		},
+		editview_starttoolbar_toolbar: {
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("Save And Close",null),
+				tip: commonLogic.appcommonhandle("Save And Close Window",null),
 			},
 		},
 		editview_putofftoolbar_toolbar: {
