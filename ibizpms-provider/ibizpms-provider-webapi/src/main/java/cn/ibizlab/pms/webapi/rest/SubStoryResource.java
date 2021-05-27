@@ -52,48 +52,6 @@ public class SubStoryResource {
     @Lazy
     public SubStoryMapping substoryMapping;
 
-    @PreAuthorize("@StoryRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取需求细分", tags = {"需求" } ,notes = "获取需求细分")
-    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchsubstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchsubstory(@RequestBody StorySearchContext context) {
-        Page<Story> domains = storyService.searchSubStory(context) ;
-        List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-    @PreAuthorize("@StoryRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询需求细分", tags = {"需求" } ,notes = "查询需求细分")
-    @RequestMapping(method= RequestMethod.POST , value="/substories/searchsubstory")
-	public ResponseEntity<Page<SubStoryDTO>> searchSubStory(@RequestBody StorySearchContext context) {
-        Page<Story> domains = storyService.searchSubStory(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@StoryRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "保存需求", tags = {"需求" },  notes = "保存需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/substories/save")
-    public ResponseEntity<SubStoryDTO> save(@RequestBody SubStoryDTO substorydto) {
-        Story domain = substoryMapping.toDomain(substorydto);
-        storyService.save(domain);
-        SubStoryDTO dto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("@StoryRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量保存需求", tags = {"需求" },  notes = "批量保存需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/substories/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<SubStoryDTO> substorydtos) {
-        storyService.saveBatch(substoryMapping.toDomain(substorydtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
     @PreAuthorize("@StoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建需求", tags = {"需求" },  notes = "新建需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories")
@@ -621,6 +579,26 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
+
+    @PreAuthorize("@StoryRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "保存需求", tags = {"需求" },  notes = "保存需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/substories/save")
+    public ResponseEntity<SubStoryDTO> save(@RequestBody SubStoryDTO substorydto) {
+        Story domain = substoryMapping.toDomain(substorydto);
+        storyService.save(domain);
+        SubStoryDTO dto = substoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@StoryRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "批量保存需求", tags = {"需求" },  notes = "批量保存需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/substories/savebatch")
+    public ResponseEntity<Boolean> saveBatch(@RequestBody List<SubStoryDTO> substorydtos) {
+        storyService.saveBatch(substoryMapping.toDomain(substorydtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@StoryRuntime.test(#substory_id,'MANAGE')")
     @ApiOperation(value = "行为", tags = {"需求" },  notes = "行为")
@@ -1267,6 +1245,28 @@ public class SubStoryResource {
 	}
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取需求细分", tags = {"需求" } ,notes = "获取需求细分")
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchsubstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchsubstory(@RequestBody StorySearchContext context) {
+        Page<Story> domains = storyService.searchSubStory(context) ;
+        List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@StoryRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询需求细分", tags = {"需求" } ,notes = "查询需求细分")
+    @RequestMapping(method= RequestMethod.POST , value="/substories/searchsubstory")
+	public ResponseEntity<Page<SubStoryDTO>> searchSubStory(@RequestBody StorySearchContext context) {
+        Page<Story> domains = storyService.searchSubStory(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务相关需求", tags = {"需求" } ,notes = "获取任务相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchtaskrelatedstory")
 	public ResponseEntity<List<SubStoryDTO>> fetchtaskrelatedstory(@RequestBody StorySearchContext context) {
@@ -1318,51 +1318,6 @@ public class SubStoryResource {
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
-    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
-	@ApiOperation(value = "根据需求获取需求细分", tags = {"需求" } ,notes = "根据需求获取需求细分")
-    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchsubstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStorySubStoryByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
-        context.setN_parent_eq(story_id);
-        Page<Story> domains = storyService.searchSubStory(context) ;
-        List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
-	@ApiOperation(value = "根据需求查询需求细分", tags = {"需求" } ,notes = "根据需求查询需求细分")
-    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/searchsubstory")
-	public ResponseEntity<Page<SubStoryDTO>> searchSubStorySubStoryByStory(@PathVariable("story_id") Long story_id, @RequestBody StorySearchContext context) {
-        context.setN_parent_eq(story_id);
-        Page<Story> domains = storyService.searchSubStory(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
-    @ApiOperation(value = "根据需求保存需求", tags = {"需求" },  notes = "根据需求保存需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/substories/save")
-    public ResponseEntity<SubStoryDTO> saveByStory(@PathVariable("story_id") Long story_id, @RequestBody SubStoryDTO substorydto) {
-        Story domain = substoryMapping.toDomain(substorydto);
-        domain.setParent(story_id);
-        storyService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(domain));
-    }
-
-    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
-    @ApiOperation(value = "根据需求批量保存需求", tags = {"需求" },  notes = "根据需求批量保存需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/substories/savebatch")
-    public ResponseEntity<Boolean> saveBatchByStory(@PathVariable("story_id") Long story_id, @RequestBody List<SubStoryDTO> substorydtos) {
-        List<Story> domainlist=substoryMapping.toDomain(substorydtos);
-        for(Story domain:domainlist){
-             domain.setParent(story_id);
-        }
-        storyService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
     @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
     @ApiOperation(value = "根据需求建立需求", tags = {"需求" },  notes = "根据需求建立需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/substories")
@@ -1814,6 +1769,28 @@ public class SubStoryResource {
         domain = storyService.review(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
+    }
+
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
+    @ApiOperation(value = "根据需求保存需求", tags = {"需求" },  notes = "根据需求保存需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/substories/save")
+    public ResponseEntity<SubStoryDTO> saveByStory(@PathVariable("story_id") Long story_id, @RequestBody SubStoryDTO substorydto) {
+        Story domain = substoryMapping.toDomain(substorydto);
+        domain.setParent(story_id);
+        storyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(domain));
+    }
+
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
+    @ApiOperation(value = "根据需求批量保存需求", tags = {"需求" },  notes = "根据需求批量保存需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/substories/savebatch")
+    public ResponseEntity<Boolean> saveBatchByStory(@PathVariable("story_id") Long story_id, @RequestBody List<SubStoryDTO> substorydtos) {
+        List<Story> domainlist=substoryMapping.toDomain(substorydtos);
+        for(Story domain:domainlist){
+             domain.setParent(story_id);
+        }
+        storyService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("@StoryRuntime.test(#story_id,'MANAGE')")
@@ -2472,6 +2449,29 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
+	@ApiOperation(value = "根据需求获取需求细分", tags = {"需求" } ,notes = "根据需求获取需求细分")
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchsubstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStorySubStoryByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
+        context.setN_parent_eq(story_id);
+        Page<Story> domains = storyService.searchSubStory(context) ;
+        List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
+	@ApiOperation(value = "根据需求查询需求细分", tags = {"需求" } ,notes = "根据需求查询需求细分")
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/searchsubstory")
+	public ResponseEntity<Page<SubStoryDTO>> searchSubStorySubStoryByStory(@PathVariable("story_id") Long story_id, @RequestBody StorySearchContext context) {
+        context.setN_parent_eq(story_id);
+        Page<Story> domains = storyService.searchSubStory(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取任务相关需求", tags = {"需求" } ,notes = "根据需求获取任务相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchtaskrelatedstory")
 	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryTaskRelatedStoryByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
@@ -2517,51 +2517,6 @@ public class SubStoryResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品需求获取需求细分", tags = {"需求" } ,notes = "根据产品需求获取需求细分")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchsubstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStorySubStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
-        context.setN_parent_eq(story_id);
-        Page<Story> domains = storyService.searchSubStory(context) ;
-        List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品需求查询需求细分", tags = {"需求" } ,notes = "根据产品需求查询需求细分")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/searchsubstory")
-	public ResponseEntity<Page<SubStoryDTO>> searchSubStorySubStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StorySearchContext context) {
-        context.setN_parent_eq(story_id);
-        Page<Story> domains = storyService.searchSubStory(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品需求保存需求", tags = {"需求" },  notes = "根据产品需求保存需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/save")
-    public ResponseEntity<SubStoryDTO> saveByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody SubStoryDTO substorydto) {
-        Story domain = substoryMapping.toDomain(substorydto);
-        domain.setParent(story_id);
-        storyService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(domain));
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品需求批量保存需求", tags = {"需求" },  notes = "根据产品需求批量保存需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody List<SubStoryDTO> substorydtos) {
-        List<Story> domainlist=substoryMapping.toDomain(substorydtos);
-        for(Story domain:domainlist){
-             domain.setParent(story_id);
-        }
-        storyService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品需求建立需求", tags = {"需求" },  notes = "根据产品需求建立需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories")
@@ -3013,6 +2968,28 @@ public class SubStoryResource {
         domain = storyService.review(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品需求保存需求", tags = {"需求" },  notes = "根据产品需求保存需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/save")
+    public ResponseEntity<SubStoryDTO> saveByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody SubStoryDTO substorydto) {
+        Story domain = substoryMapping.toDomain(substorydto);
+        domain.setParent(story_id);
+        storyService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(domain));
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品需求批量保存需求", tags = {"需求" },  notes = "根据产品需求批量保存需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody List<SubStoryDTO> substorydtos) {
+        List<Story> domainlist=substoryMapping.toDomain(substorydtos);
+        for(Story domain:domainlist){
+             domain.setParent(story_id);
+        }
+        storyService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
@@ -3667,6 +3644,29 @@ public class SubStoryResource {
 	public ResponseEntity<Page<SubStoryDTO>> searchSubStoryStoryRelatedByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchStoryRelated(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品需求获取需求细分", tags = {"需求" } ,notes = "根据产品需求获取需求细分")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchsubstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStorySubStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
+        context.setN_parent_eq(story_id);
+        Page<Story> domains = storyService.searchSubStory(context) ;
+        List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品需求查询需求细分", tags = {"需求" } ,notes = "根据产品需求查询需求细分")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/searchsubstory")
+	public ResponseEntity<Page<SubStoryDTO>> searchSubStorySubStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StorySearchContext context) {
+        context.setN_parent_eq(story_id);
+        Page<Story> domains = storyService.searchSubStory(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}

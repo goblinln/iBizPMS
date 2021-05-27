@@ -52,42 +52,11 @@ public class BranchResource {
     @Lazy
     public BranchMapping branchMapping;
 
-    @PreAuthorize("@BranchRuntime.test(#branch_id,'READ')")
-    @ApiOperation(value = "获取产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "获取产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.GET, value = "/branches/{branch_id}")
-    public ResponseEntity<BranchDTO> get(@PathVariable("branch_id") Long branch_id) {
-        Branch domain = branchService.get(branch_id);
-        BranchDTO dto = branchMapping.toDto(domain);
-        Map<String,Integer> opprivs = branchRuntime.getOPPrivs(branch_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "保存产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/branches/save")
-    public ResponseEntity<BranchDTO> save(@RequestBody BranchDTO branchdto) {
-        Branch domain = branchMapping.toDomain(branchdto);
-        branchService.save(domain);
-        BranchDTO dto = branchMapping.toDto(domain);
-        Map<String,Integer> opprivs = branchRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("@BranchRuntime.test(#branch_id,'DELETE')")
-    @ApiOperation(value = "删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "删除产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/branches/{branch_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("branch_id") Long branch_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(branch_id));
-    }
-
-
     @PreAuthorize("@BranchRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取CurProduct", tags = {"产品的分支和平台信息" } ,notes = "获取CurProduct")
-    @RequestMapping(method= RequestMethod.POST , value="/branches/fetchcurproduct")
-	public ResponseEntity<List<BranchDTO>> fetchcurproduct(@RequestBody BranchSearchContext context) {
-        Page<Branch> domains = branchService.searchCurProduct(context) ;
+	@ApiOperation(value = "获取DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/branches/fetchdefault")
+	public ResponseEntity<List<BranchDTO>> fetchdefault(@RequestBody BranchSearchContext context) {
+        Page<Branch> domains = branchService.searchDefault(context) ;
         List<BranchDTO> list = branchMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -97,10 +66,10 @@ public class BranchResource {
 	}
 
     @PreAuthorize("@BranchRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询CurProduct", tags = {"产品的分支和平台信息" } ,notes = "查询CurProduct")
-    @RequestMapping(method= RequestMethod.POST , value="/branches/searchcurproduct")
-	public ResponseEntity<Page<BranchDTO>> searchCurProduct(@RequestBody BranchSearchContext context) {
-        Page<Branch> domains = branchService.searchCurProduct(context) ;
+	@ApiOperation(value = "查询DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "查询DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/branches/searchdefault")
+	public ResponseEntity<Page<BranchDTO>> searchDefault(@RequestBody BranchSearchContext context) {
+        Page<Branch> domains = branchService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(branchMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
@@ -137,11 +106,23 @@ public class BranchResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @ApiOperation(value = "保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "保存产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.POST, value = "/branches/save")
+    public ResponseEntity<BranchDTO> save(@RequestBody BranchDTO branchdto) {
+        Branch domain = branchMapping.toDomain(branchdto);
+        branchService.save(domain);
+        BranchDTO dto = branchMapping.toDto(domain);
+        Map<String,Integer> opprivs = branchRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
     @PreAuthorize("@BranchRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/branches/fetchdefault")
-	public ResponseEntity<List<BranchDTO>> fetchdefault(@RequestBody BranchSearchContext context) {
-        Page<Branch> domains = branchService.searchDefault(context) ;
+	@ApiOperation(value = "获取CurProduct", tags = {"产品的分支和平台信息" } ,notes = "获取CurProduct")
+    @RequestMapping(method= RequestMethod.POST , value="/branches/fetchcurproduct")
+	public ResponseEntity<List<BranchDTO>> fetchcurproduct(@RequestBody BranchSearchContext context) {
+        Page<Branch> domains = branchService.searchCurProduct(context) ;
         List<BranchDTO> list = branchMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -151,10 +132,10 @@ public class BranchResource {
 	}
 
     @PreAuthorize("@BranchRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/branches/searchdefault")
-	public ResponseEntity<Page<BranchDTO>> searchDefault(@RequestBody BranchSearchContext context) {
-        Page<Branch> domains = branchService.searchDefault(context) ;
+	@ApiOperation(value = "查询CurProduct", tags = {"产品的分支和平台信息" } ,notes = "查询CurProduct")
+    @RequestMapping(method= RequestMethod.POST , value="/branches/searchcurproduct")
+	public ResponseEntity<Page<BranchDTO>> searchCurProduct(@RequestBody BranchSearchContext context) {
+        Page<Branch> domains = branchService.searchCurProduct(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(branchMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
@@ -167,6 +148,25 @@ public class BranchResource {
         return ResponseEntity.status(HttpStatus.OK).body(branchMapping.toDto(branchService.getDraft(domain)));
     }
 
+    @PreAuthorize("@BranchRuntime.test(#branch_id,'READ')")
+    @ApiOperation(value = "获取产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "获取产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.GET, value = "/branches/{branch_id}")
+    public ResponseEntity<BranchDTO> get(@PathVariable("branch_id") Long branch_id) {
+        Branch domain = branchService.get(branch_id);
+        BranchDTO dto = branchMapping.toDto(domain);
+        Map<String,Integer> opprivs = branchRuntime.getOPPrivs(branch_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@BranchRuntime.test(#branch_id,'DELETE')")
+    @ApiOperation(value = "删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "删除产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/branches/{branch_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("branch_id") Long branch_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(branch_id));
+    }
+
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/branches/{branch_id}/{action}")
@@ -176,38 +176,11 @@ public class BranchResource {
         return ResponseEntity.status(HttpStatus.OK).body(branchdto);
     }
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品获取产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品获取产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/branches/{branch_id}")
-    public ResponseEntity<BranchDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id) {
-        Branch domain = branchService.get(branch_id);
-        BranchDTO dto = branchMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "根据产品保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品保存产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/branches/save")
-    public ResponseEntity<BranchDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody BranchDTO branchdto) {
-        Branch domain = branchMapping.toDomain(branchdto);
-        domain.setProduct(product_id);
-        branchService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(branchMapping.toDto(domain));
-    }
-
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
-    @ApiOperation(value = "根据产品删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品删除产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/branches/{branch_id}")
-    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(branch_id));
-    }
-
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品获取CurProduct", tags = {"产品的分支和平台信息" } ,notes = "根据产品获取CurProduct")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/branches/fetchcurproduct")
-	public ResponseEntity<List<BranchDTO>> fetchBranchCurProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody BranchSearchContext context) {
+	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "根据产品获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/branches/fetchdefault")
+	public ResponseEntity<List<BranchDTO>> fetchBranchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody BranchSearchContext context) {
         context.setN_product_eq(product_id);
-        Page<Branch> domains = branchService.searchCurProduct(context) ;
+        Page<Branch> domains = branchService.searchDefault(context) ;
         List<BranchDTO> list = branchMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -217,11 +190,11 @@ public class BranchResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询CurProduct", tags = {"产品的分支和平台信息" } ,notes = "根据产品查询CurProduct")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/branches/searchcurproduct")
-	public ResponseEntity<Page<BranchDTO>> searchBranchCurProductByProduct(@PathVariable("product_id") Long product_id, @RequestBody BranchSearchContext context) {
+	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "根据产品查询DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/branches/searchdefault")
+	public ResponseEntity<Page<BranchDTO>> searchBranchDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody BranchSearchContext context) {
         context.setN_product_eq(product_id);
-        Page<Branch> domains = branchService.searchCurProduct(context) ;
+        Page<Branch> domains = branchService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(branchMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
@@ -250,12 +223,22 @@ public class BranchResource {
     }
 
 
+    @ApiOperation(value = "根据产品保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品保存产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/branches/save")
+    public ResponseEntity<BranchDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody BranchDTO branchdto) {
+        Branch domain = branchMapping.toDomain(branchdto);
+        domain.setProduct(product_id);
+        branchService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(branchMapping.toDto(domain));
+    }
+
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "根据产品获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/branches/fetchdefault")
-	public ResponseEntity<List<BranchDTO>> fetchBranchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody BranchSearchContext context) {
+	@ApiOperation(value = "根据产品获取CurProduct", tags = {"产品的分支和平台信息" } ,notes = "根据产品获取CurProduct")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/branches/fetchcurproduct")
+	public ResponseEntity<List<BranchDTO>> fetchBranchCurProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody BranchSearchContext context) {
         context.setN_product_eq(product_id);
-        Page<Branch> domains = branchService.searchDefault(context) ;
+        Page<Branch> domains = branchService.searchCurProduct(context) ;
         List<BranchDTO> list = branchMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -265,11 +248,11 @@ public class BranchResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/branches/searchdefault")
-	public ResponseEntity<Page<BranchDTO>> searchBranchDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody BranchSearchContext context) {
+	@ApiOperation(value = "根据产品查询CurProduct", tags = {"产品的分支和平台信息" } ,notes = "根据产品查询CurProduct")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/branches/searchcurproduct")
+	public ResponseEntity<Page<BranchDTO>> searchBranchCurProductByProduct(@PathVariable("product_id") Long product_id, @RequestBody BranchSearchContext context) {
         context.setN_product_eq(product_id);
-        Page<Branch> domains = branchService.searchDefault(context) ;
+        Page<Branch> domains = branchService.searchCurProduct(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(branchMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
@@ -280,6 +263,23 @@ public class BranchResource {
         domain.setProduct(product_id);
         return ResponseEntity.status(HttpStatus.OK).body(branchMapping.toDto(branchService.getDraft(domain)));
     }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @ApiOperation(value = "根据产品获取产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品获取产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/branches/{branch_id}")
+    public ResponseEntity<BranchDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id) {
+        Branch domain = branchService.get(branch_id);
+        BranchDTO dto = branchMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @ApiOperation(value = "根据产品删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品删除产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/branches/{branch_id}")
+    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(branch_id));
+    }
+
 
 }
 
