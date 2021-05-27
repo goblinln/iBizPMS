@@ -1,5 +1,5 @@
 import { Subject } from 'rxjs';
-import { ViewTool, FormItemModel, Util, Verify, ModelTool, AppServiceBase, LogUtil } from 'ibiz-core';
+import { ViewTool, FormItemModel, Util, Verify, ModelTool, AppServiceBase, LogUtil, AppErrorCode, EntityFieldErrorCode } from 'ibiz-core';
 import { MDControlBase } from './md-control-base';
 import { AppGridService } from '../ctrl-service/app-grid-service';
 import { AppViewLogicService } from 'ibiz-vue';
@@ -1961,8 +1961,8 @@ export class GridControlBase extends MDControlBase {
             }
         }
         this.ctrlEvent({ controlname: this.name, action: "save", data: successItems });
-        this.refresh();
         if (errorItems.length === 0 && successItems.length > 0) {
+            this.refresh();
             if(args?.showResultInfo || (args && !args.hasOwnProperty('showResultInfo'))){
                 this.$success((this.$t('app.commonWords.saveSuccess') as string),'save');
             }
@@ -2511,5 +2511,77 @@ export class GridControlBase extends MDControlBase {
         }
         const tag = `grid_${column.codeName.toLowerCase()}_click`;
         AppViewLogicService.getInstance().executeViewLogic(tag, event, this, data, this.controlInstance.getPSAppViewLogics() || []);
+    }
+
+
+    /**
+     * 通过属性名获取编辑列
+     *
+     * @memberof GridControlBase
+     */
+     public findEditItemByField(fieldName: string) {
+        const editItems: Array<any> = this.controlInstance.getPSDEGridEditItems() || [];
+        return editItems.find((editItem: any) => {
+            return editItem.getPSAppDEField()?.name == fieldName;
+        })
+    }
+
+    /**
+     * 获取当前数据的行号
+     * 
+     * @param data 当前数据的JSON
+     * @memberof GridControlBase
+     */
+    public findRowDataIndex(data: string) {
+        const _data = JSON.parse(data);
+        const indexs: any[] = [];
+        this.items.forEach((item: any, index: number) => {
+            let flag = item[this.appDeCodeName.toLowerCase()] == _data[this.appDeKeyFieldName.toLowerCase()];
+            // 新建时判断除主键外数据是否一致
+            if (flag && !_data[this.appDeKeyFieldName.toLowerCase()]) {
+                for (const tempData in _data) {
+                    if (!Object.is(tempData, this.appDeKeyFieldName.toLowerCase())) {
+                        if (item[tempData] != _data[tempData]) {
+                            flag = false;
+                            return;
+                        }
+                    } 
+                }
+            }
+            if (flag) {
+                indexs.push(index);
+            }
+        });
+        return indexs;
+    }
+
+    /**
+     * 处理部件UI响应
+     *
+     * @memberof GridControlBase
+     */
+    public onControlResponse(action: string, response: any){
+        super.onControlResponse(action, response);
+        if (response && response.status && response.status != 200 && response.data) {
+            const data: any = response.data;
+            if (data.code && Object.is(AppErrorCode.INPUTERROR, data.code) && data.details?.length > 0) {
+                let errorMsg:string = '';
+                data.details.forEach((detail: any) => {
+                    if (Object.is(EntityFieldErrorCode.ERROR_VALUERULE, detail.fielderrortype) && detail.fieldname) {
+                        const tempEditItem: any = this.findEditItemByField(detail.fieldname);
+                        const indexs = this.findRowDataIndex(response.config?.data);
+                        if (tempEditItem && indexs.length > 0) {
+                            indexs.forEach((_index: any) => {
+                                Object.assign(this.gridItemsModel[_index][tempEditItem.name], { error: new String(detail.fielderrorinfo) });
+                            })
+                        }else{
+                            errorMsg += `${detail.fieldlogicname}${detail.fielderrorinfo}<br/>`;
+                        }
+                    }
+                })
+                response.data.message = errorMsg?errorMsg:(this.$t('app.searchForm.globalerrortip') as string);
+                this.$forceUpdate();
+            }
+        }
     }
 }

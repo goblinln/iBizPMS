@@ -96,16 +96,16 @@ export class IBZProProductLineBaseService extends EntityBaseService<IIBZProProdu
         return this.condCache.get('view');
     }
     /**
-     * Update
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof IBZProProductLineService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzproproductlines/${_context.ibzproproductline}`, _data);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/ibzproproductlines/${_context.ibzproproductline}`);
+        return res;
     }
     /**
      * Create
@@ -126,6 +126,17 @@ export class IBZProProductLineBaseService extends EntityBaseService<IIBZProProdu
         return this.http.post(`/ibzproproductlines`, _data);
     }
     /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZProProductLineService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzproproductlines/fetchdefault`, _data);
+    }
+    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -140,18 +151,6 @@ export class IBZProProductLineBaseService extends EntityBaseService<IIBZProProdu
         return res;
     }
     /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZProProductLineService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/ibzproproductlines/${_context.ibzproproductline}`);
-        return res;
-    }
-    /**
      * Remove
      *
      * @param {*} [_context={}]
@@ -163,14 +162,15 @@ export class IBZProProductLineBaseService extends EntityBaseService<IIBZProProdu
         return this.http.delete(`/ibzproproductlines/${_context.ibzproproductline}`);
     }
     /**
-     * FetchDefault
+     * Update
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof IBZProProductLineService
      */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzproproductlines/fetchdefault`, _data);
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/ibzproproductlines/${_context.ibzproproductline}`, _data);
     }
 }
