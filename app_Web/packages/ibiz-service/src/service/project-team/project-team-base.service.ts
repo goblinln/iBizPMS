@@ -127,38 +127,6 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         return this.condCache.get('view');
     }
     /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTeamService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectteam) {
-            const res = await this.http.get(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
-            return res;
-        }
-        const res = await this.http.get(`/projectteams/${_context.projectteam}`);
-        return res;
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTeamService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectteam) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/projectteams/${_context.projectteam}`, _data);
-    }
-    /**
      * FetchSpecifyTeam
      *
      * @param {*} [_context={}]
@@ -171,26 +139,6 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
             return this.http.post(`/projects/${_context.project}/projectteams/fetchspecifyteam`, _data);
         }
         return this.http.post(`/projectteams/fetchspecifyteam`, _data);
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTeamService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/projectteams/getdraft`, _data);
-            return res;
-        }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/projectteams/getdraft`, _data);
-        return res;
     }
     /**
      * Remove
@@ -235,6 +183,26 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         return this.http.post(`/projectteams`, _data);
     }
     /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/projectteams/getdraft`, _data);
+            return res;
+        }
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/projectteams/getdraft`, _data);
+        return res;
+    }
+    /**
      * FetchTaskCntEstimateConsumedLeft
      *
      * @param {*} [_context={}]
@@ -247,5 +215,37 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
             return this.http.post(`/projects/${_context.project}/projectteams/fetchtaskcntestimateconsumedleft`, _data);
         }
         return this.http.post(`/projectteams/fetchtaskcntestimateconsumedleft`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectteam) {
+            const res = await this.http.get(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
+            return res;
+        }
+        const res = await this.http.get(`/projectteams/${_context.projectteam}`);
+        return res;
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectteam) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/projectteams/${_context.projectteam}`, _data);
     }
 }

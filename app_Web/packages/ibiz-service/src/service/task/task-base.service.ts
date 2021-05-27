@@ -349,34 +349,18 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         return this.condCache.get('view');
     }
     /**
-     * Cancel
+     * FetchDefault
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TaskService
      */
-    async Cancel(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/cancel`, _data);
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/fetchdefault`, _data);
         }
-        return this.http.post(`/tasks/${_context.task}/cancel`, _data);
-    }
-    /**
-     * Finish
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskService
-     */
-    async Finish(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/finish`, _data);
-        }
-        return this.http.post(`/tasks/${_context.task}/finish`, _data);
+        return this.http.post(`/tasks/fetchdefault`, _data);
     }
     /**
      * GetDraft
@@ -419,47 +403,19 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         return this.http.delete(`/tasks/${_context.task}`);
     }
     /**
-     * AssignTo
+     * ConfirmStoryChange
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TaskService
      */
-    async AssignTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async ConfirmStoryChange(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/assignto`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/confirmstorychange`, _data);
         }
-        return this.http.post(`/tasks/${_context.task}/assignto`, _data);
-    }
-    /**
-     * FetchCurProjectTaskQuery
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskService
-     */
-    async FetchCurProjectTaskQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/fetchcurprojecttaskquery`, _data);
-        }
-        return this.http.post(`/tasks/fetchcurprojecttaskquery`, _data);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/fetchdefault`, _data);
-        }
-        return this.http.post(`/tasks/fetchdefault`, _data);
+        return this.http.post(`/tasks/${_context.task}/confirmstorychange`, _data);
     }
     /**
      * Create
@@ -488,6 +444,36 @@ export class TaskBaseService extends EntityBaseService<ITask> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/tasks`, _data);
+    }
+    /**
+     * Restart
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
+     */
+    async Restart(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.task) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/restart`, _data);
+        }
+        return this.http.post(`/tasks/${_context.task}/restart`, _data);
+    }
+    /**
+     * AssignTo
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
+     */
+    async AssignTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.task) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/assignto`, _data);
+        }
+        return this.http.post(`/tasks/${_context.task}/assignto`, _data);
     }
     /**
      * Pause
@@ -542,6 +528,35 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         return this.http.post(`/tasks/${_context.task}/close`, _data);
     }
     /**
+     * Start
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
+     */
+    async Start(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.task) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/start`, _data);
+        }
+        return this.http.post(`/tasks/${_context.task}/start`, _data);
+    }
+    /**
+     * FetchCurProjectTaskQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
+     */
+    async FetchCurProjectTaskQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/fetchcurprojecttaskquery`, _data);
+        }
+        return this.http.post(`/tasks/fetchcurprojecttaskquery`, _data);
+    }
+    /**
      * Activate
      *
      * @param {*} [_context={}]
@@ -557,19 +572,33 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         return this.http.post(`/tasks/${_context.task}/activate`, _data);
     }
     /**
-     * Start
+     * FetchByModule
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TaskService
      */
-    async Start(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchByModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/fetchbymodule`, _data);
+        }
+        return this.http.post(`/tasks/fetchbymodule`, _data);
+    }
+    /**
+     * Finish
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
+     */
+    async Finish(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/start`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/finish`, _data);
         }
-        return this.http.post(`/tasks/${_context.task}/start`, _data);
+        return this.http.post(`/tasks/${_context.task}/finish`, _data);
     }
     /**
      * Update
@@ -588,48 +617,19 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         return this.http.put(`/tasks/${_context.task}`, _data);
     }
     /**
-     * FetchByModule
+     * Cancel
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TaskService
      */
-    async FetchByModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/fetchbymodule`, _data);
-        }
-        return this.http.post(`/tasks/fetchbymodule`, _data);
-    }
-    /**
-     * ConfirmStoryChange
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskService
-     */
-    async ConfirmStoryChange(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Cancel(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/confirmstorychange`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/cancel`, _data);
         }
-        return this.http.post(`/tasks/${_context.task}/confirmstorychange`, _data);
-    }
-    /**
-     * Restart
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskService
-     */
-    async Restart(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/restart`, _data);
-        }
-        return this.http.post(`/tasks/${_context.task}/restart`, _data);
+        return this.http.post(`/tasks/${_context.task}/cancel`, _data);
     }
     /**
      * GetUserConcat
@@ -646,7 +646,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
     }
 
     /**
-     * CancelBatch接口方法
+     * ConfirmStoryChangeBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -654,17 +654,17 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async CancelBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async ConfirmStoryChangeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/cancelbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/confirmstorychangebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/tasks/cancelbatch`,_data);
+        return this.http.post(`/tasks/confirmstorychangebatch`,_data);
     }
 
     /**
-     * FinishBatch接口方法
+     * RestartBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -672,13 +672,13 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async FinishBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async RestartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/finishbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/restartbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/tasks/finishbatch`,_data);
+        return this.http.post(`/tasks/restartbatch`,_data);
     }
 
     /**
@@ -736,24 +736,6 @@ export class TaskBaseService extends EntityBaseService<ITask> {
     }
 
     /**
-     * ActivateBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof TaskServiceBase
-     */
-    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/activatebatch`,_data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/tasks/activatebatch`,_data);
-    }
-
-    /**
      * StartBatch接口方法
      *
      * @param {*} [context={}]
@@ -772,7 +754,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
     }
 
     /**
-     * ConfirmStoryChangeBatch接口方法
+     * ActivateBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -780,17 +762,17 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async ConfirmStoryChangeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/confirmstorychangebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/activatebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/tasks/confirmstorychangebatch`,_data);
+        return this.http.post(`/tasks/activatebatch`,_data);
     }
 
     /**
-     * RestartBatch接口方法
+     * FinishBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -798,12 +780,30 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async RestartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async FinishBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/restartbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/finishbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/tasks/restartbatch`,_data);
+        return this.http.post(`/tasks/finishbatch`,_data);
+    }
+
+    /**
+     * CancelBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async CancelBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/cancelbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/tasks/cancelbatch`,_data);
     }
 }
