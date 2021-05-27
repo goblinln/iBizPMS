@@ -167,6 +167,65 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         return this.condCache.get('view');
     }
     /**
+     * BatchUnlinkStory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductPlanService
+     */
+    async BatchUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productplan) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/batchunlinkstory`, _data);
+        }
+        return this.http.post(`/productplans/${_context.productplan}/batchunlinkstory`, _data);
+    }
+    /**
+     * UnlinkBug
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductPlanService
+     */
+    async UnlinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productplan) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/unlinkbug`, _data);
+        }
+        return this.http.post(`/productplans/${_context.productplan}/unlinkbug`, _data);
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductPlanService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productplan) {
+            return this.http.delete(`/products/${_context.product}/productplans/${_context.productplan}`);
+        }
+        return this.http.delete(`/productplans/${_context.productplan}`);
+    }
+    /**
+     * LinkStory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductPlanService
+     */
+    async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productplan) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/linkstory`, _data);
+        }
+        return this.http.post(`/productplans/${_context.productplan}/linkstory`, _data);
+    }
+    /**
      * LinkBug
      *
      * @param {*} [_context={}]
@@ -182,20 +241,108 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         return this.http.post(`/productplans/${_context.productplan}/linkbug`, _data);
     }
     /**
-     * Update
+     * FetchCurProductPlanStory
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductPlanService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan) {
+    async FetchCurProductPlanStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productplans/fetchcurproductplanstory`, _data);
+        }
+        return this.http.post(`/productplans/fetchcurproductplanstory`, _data);
+    }
+    /**
+     * FetchCurProductPlan
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductPlanService
+     */
+    async FetchCurProductPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productplans/fetchcurproductplan`, _data);
+        }
+        return this.http.post(`/productplans/fetchcurproductplan`, _data);
+    }
+    /**
+     * FetchProjectPlan
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductPlanService
+     */
+    async FetchProjectPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productplans/fetchprojectplan`, _data);
+        }
+        return this.http.post(`/productplans/fetchprojectplan`, _data);
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductPlanService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/productplans/getdraft`, _data);
+            return res;
+        }
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/productplans/getdraft`, _data);
+        return res;
+    }
+    /**
+     * FetchProductQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductPlanService
+     */
+    async FetchProductQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productplans/fetchproductquery`, _data);
+        }
+        return this.http.post(`/productplans/fetchproductquery`, _data);
+    }
+    /**
+     * Create
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductPlanService
+     */
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}`, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/productplans`, _data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productplans/${_context.productplan}`, _data);
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
+        }
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        return this.http.post(`/productplans`, _data);
     }
     /**
      * BatchLinkStory
@@ -229,47 +376,19 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         return res;
     }
     /**
-     * LinkStory
+     * BatchLinkBug
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductPlanService
      */
-    async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async BatchLinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/linkstory`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/batchlinkbug`, _data);
         }
-        return this.http.post(`/productplans/${_context.productplan}/linkstory`, _data);
-    }
-    /**
-     * FetchProjectPlan
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductPlanService
-     */
-    async FetchProjectPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productplans/fetchprojectplan`, _data);
-        }
-        return this.http.post(`/productplans/fetchprojectplan`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductPlanService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan) {
-            return this.http.delete(`/products/${_context.product}/productplans/${_context.productplan}`);
-        }
-        return this.http.delete(`/productplans/${_context.productplan}`);
+        return this.http.post(`/productplans/${_context.productplan}/batchlinkbug`, _data);
     }
     /**
      * FetchPlanCodeList
@@ -284,34 +403,6 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
             return this.http.post(`/products/${_context.product}/productplans/fetchplancodelist`, _data);
         }
         return this.http.post(`/productplans/fetchplancodelist`, _data);
-    }
-    /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductPlanService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/productplans`, _data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/productplans`, _data);
     }
     /**
      * UnlinkStory
@@ -329,35 +420,6 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         return this.http.post(`/productplans/${_context.productplan}/unlinkstory`, _data);
     }
     /**
-     * UnlinkBug
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductPlanService
-     */
-    async UnlinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/unlinkbug`, _data);
-        }
-        return this.http.post(`/productplans/${_context.productplan}/unlinkbug`, _data);
-    }
-    /**
-     * FetchCurProductPlanStory
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductPlanService
-     */
-    async FetchCurProductPlanStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productplans/fetchcurproductplanstory`, _data);
-        }
-        return this.http.post(`/productplans/fetchcurproductplanstory`, _data);
-    }
-    /**
      * BatchUnlinkBug
      *
      * @param {*} [_context={}]
@@ -371,20 +433,6 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
             return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/batchunlinkbug`, _data);
         }
         return this.http.post(`/productplans/${_context.productplan}/batchunlinkbug`, _data);
-    }
-    /**
-     * FetchProductQuery
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductPlanService
-     */
-    async FetchProductQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productplans/fetchproductquery`, _data);
-        }
-        return this.http.post(`/productplans/fetchproductquery`, _data);
     }
     /**
      * ImportPlanTemplet
@@ -402,68 +450,20 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         return this.http.post(`/productplans/${_context.productplan}/importplantemplet`, _data);
     }
     /**
-     * FetchCurProductPlan
+     * Update
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductPlanService
      */
-    async FetchCurProductPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productplans/fetchcurproductplan`, _data);
-        }
-        return this.http.post(`/productplans/fetchcurproductplan`, _data);
-    }
-    /**
-     * BatchUnlinkStory
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductPlanService
-     */
-    async BatchUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/batchunlinkstory`, _data);
+            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}`, _data);
         }
-        return this.http.post(`/productplans/${_context.productplan}/batchunlinkstory`, _data);
-    }
-    /**
-     * BatchLinkBug
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductPlanService
-     */
-    async BatchLinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/batchlinkbug`, _data);
-        }
-        return this.http.post(`/productplans/${_context.productplan}/batchlinkbug`, _data);
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductPlanService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/productplans/getdraft`, _data);
-            return res;
-        }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/productplans/getdraft`, _data);
-        return res;
+        return this.http.put(`/productplans/${_context.productplan}`, _data);
     }
     /**
      * Select
@@ -478,6 +478,60 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
             return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/select`);
         }
         return this.http.get(`/productplans/${_context.productplan}/select`);
+    }
+
+    /**
+     * BatchUnlinkStoryBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductPlanServiceBase
+     */
+    public async BatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productplans/batchunlinkstorybatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/productplans/batchunlinkstorybatch`,_data);
+    }
+
+    /**
+     * UnlinkBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductPlanServiceBase
+     */
+    public async UnlinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productplans/unlinkbugbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/productplans/unlinkbugbatch`,_data);
+    }
+
+    /**
+     * LinkStoryBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductPlanServiceBase
+     */
+    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productplans/linkstorybatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/productplans/linkstorybatch`,_data);
     }
 
     /**
@@ -517,7 +571,7 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
     }
 
     /**
-     * LinkStoryBatch接口方法
+     * BatchLinkBugBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -525,13 +579,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @returns {Promise<any>}
      * @memberof ProductPlanServiceBase
      */
-    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async BatchLinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/linkstorybatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/batchlinkbugbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/productplans/linkstorybatch`,_data);
+        return this.http.post(`/productplans/batchlinkbugbatch`,_data);
     }
 
     /**
@@ -550,24 +604,6 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/productplans/unlinkstorybatch`,_data);
-    }
-
-    /**
-     * UnlinkBugBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProductPlanServiceBase
-     */
-    public async UnlinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/unlinkbugbatch`,_data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/productplans/unlinkbugbatch`,_data);
     }
 
     /**
@@ -604,41 +640,5 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/productplans/importplantempletbatch`,_data);
-    }
-
-    /**
-     * BatchUnlinkStoryBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProductPlanServiceBase
-     */
-    public async BatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/batchunlinkstorybatch`,_data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/productplans/batchunlinkstorybatch`,_data);
-    }
-
-    /**
-     * BatchLinkBugBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProductPlanServiceBase
-     */
-    public async BatchLinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/batchlinkbugbatch`,_data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/productplans/batchlinkbugbatch`,_data);
     }
 }

@@ -53,16 +53,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     }
   }, {
-    "name" : "产品经理-ZT_ACTION[日志查看（我的日志）（跟随角色）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_Read_MyAction.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
-    }
-  }, {
     "name" : "产品经理-ZT_PRODUCT[产品维护（参与者）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -270,13 +260,6 @@
     },
     "sysUniResCode" : "PROD_CREATE_BUT"
   }, {
-    "name" : "产品经理-顶部_项目主页",
-    "getPSSysUniRes" : {
-      "modelref" : true,
-      "id" : "zentao__TOP_PROJECT_MENU"
-    },
-    "sysUniResCode" : "TOP_PROJECT_MENU"
-  }, {
     "name" : "产品经理-左侧_项目管理（一级）",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -286,6 +269,6 @@
   } ],
   "roleTag" : "ProductManger",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "TOP_PRODUCT_MENU", "LEFT_CASE_MENU", "TOP_DOC_MENU", "TOP_MYFAVOURITE_MENU", "PRODUCTLEFT", "TOP_CASE_MENU", "TOP_MYPLACE_MENU", "PROD_CREATE_BUT", "TOP_PROJECT_MENU", "LEFT_PROJECT_MENU" ],
+  "uniResTags" : [ "TOP_PRODUCT_MENU", "LEFT_CASE_MENU", "TOP_DOC_MENU", "TOP_MYFAVOURITE_MENU", "PRODUCTLEFT", "TOP_CASE_MENU", "TOP_MYPLACE_MENU", "PROD_CREATE_BUT", "LEFT_PROJECT_MENU" ],
   "globalRole" : true
 }

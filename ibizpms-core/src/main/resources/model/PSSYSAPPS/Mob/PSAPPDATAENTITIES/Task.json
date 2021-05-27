@@ -33,6 +33,7 @@
   "getAllPSAppDEActions" : [ {
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
@@ -41,603 +42,9 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TASK__DEACTION__CREATE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TASK__DEACTION__UPDATE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TASK__DEACTION__REMOVE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TASK__DEACTION__GET"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Activate",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ACTIVATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Activate"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "AssignTo",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ASSIGNTO"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "AssignTo"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Cancel",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Cancel.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CANCEL"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Cancel"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "CheckKey",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Close",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CLOSE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Close"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ComputeBeginAndEnd",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ComputeBeginAndEnd"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ComputeHours4Multiple",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeHours4Multiple.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ComputeHours4Multiple"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ComputeWorkingHours",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ComputeWorkingHours"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ConfirmStoryChange",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ConfirmStoryChange"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "CreateByCycle",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CreateByCycle"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "CreateCycleTasks",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateCycleTasks.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CreateCycleTasks"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Delete",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Delete"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "DeleteEstimate",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/DeleteEstimate.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "DeleteEstimate"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "EditEstimate",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/EditEstimate.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "EditEstimate"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Finish",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "FINISH"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Finish"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetNextTeamUser",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetNextTeamUser.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetNextTeamUser"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetTeamUserLeftActivity",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftActivity.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetTeamUserLeftActivity"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetTeamUserLeftStart",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftStart.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetTeamUserLeftStart"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetUsernames",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetUsernames.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetUsernames"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "LinkPlan",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/LinkPlan.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "LinkPlan"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "OtherUpdate",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/OtherUpdate.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "OtherUpdate"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Pause",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "PAUSE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Pause"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "RecordEstimate",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "RECORDESTIMATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "RecordEstimate"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "RecordTimZeroLeftAfterContinue",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "RecordTimZeroLeftAfterContinue"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "RecordTimateZeroLeft",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "RecordTimateZeroLeft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "RecordTimateZeroLeftAfterStart",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeftAfterStart.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "RecordTimateZeroLeftAfterStart"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Restart",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "RESTART"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Restart"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Save.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "SendMessage",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/SendMessage.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SendMessage"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "SendMsgPreProcess",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/SendMsgPreProcess.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SendMsgPreProcess"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Start",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Start.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "START"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Start"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "TaskFavorites",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskFavorites.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TaskFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "TaskForward",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskForward.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TaskForward"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "TaskNFavorites",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskNFavorites.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TaskNFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "UpdateParentStatus",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateParentStatus.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UpdateParentStatus"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "UpdateRelatedPlanStatus",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UpdateRelatedPlanStatus"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "UpdateStoryVersion",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateStoryVersion.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UpdateStoryVersion"
-    },
-    "builtinMethod" : false
+    "userCat" : "CAT1",
+    "userTag4" : "create",
+    "builtinMethod" : true
   }, {
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
@@ -665,6 +72,21 @@
       "id" : "CREATE"
     },
     "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__UPDATE"
+    },
+    "userCat" : "CAT1",
+    "userTag4" : "update",
     "builtinMethod" : true
   }, {
     "codeName" : "UpdateTemp",
@@ -695,6 +117,21 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__DELETE"
+    },
+    "userCat" : "CAT1",
+    "userTag4" : "remove",
+    "builtinMethod" : true
+  }, {
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
@@ -721,6 +158,19 @@
       "id" : "ZTProject__DELETE"
     },
     "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
     "builtinMethod" : true
   }, {
     "codeName" : "GetTemp",
@@ -751,6 +201,19 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
@@ -779,12 +242,183 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "codeName" : "Activate",
+    "methodType" : "DEACTION",
+    "name" : "Activate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ACTIVATE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "AssignTo",
+    "methodType" : "DEACTION",
+    "name" : "AssignTo",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ASSIGNTO"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
     "codeName" : "CalcTime",
     "methodType" : "DEACTION",
     "name" : "CalcTime",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CalcTime.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Cancel",
+    "methodType" : "DEACTION",
+    "name" : "Cancel",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Cancel.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CANCEL"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Close",
+    "methodType" : "DEACTION",
+    "name" : "Close",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ComputeHours4Multiple",
+    "methodType" : "DEACTION",
+    "name" : "computeHours4Multiple",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeHours4Multiple.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ConfirmStoryChange",
+    "methodType" : "DEACTION",
+    "name" : "ConfirmStoryChange",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Delete",
+    "methodType" : "DEACTION",
+    "name" : "delete",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "DeleteEstimate",
+    "methodType" : "DEACTION",
+    "name" : "DeleteEstimate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/DeleteEstimate.json"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "EditEstimate",
+    "methodType" : "DEACTION",
+    "name" : "EditEstimate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/EditEstimate.json"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Finish",
+    "methodType" : "DEACTION",
+    "name" : "Finish",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FINISH"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetNextTeamUser",
+    "methodType" : "DEACTION",
+    "name" : "GetNextTeamUserFinish",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetNextTeamUser.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetTeamUserLeftActivity",
+    "methodType" : "DEACTION",
+    "name" : "GetTeamUserLeftActivity",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftActivity.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetTeamUserLeftStart",
+    "methodType" : "DEACTION",
+    "name" : "GetTeamUserLeftStart",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftStart.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     },
     "builtinMethod" : false
   }, {
@@ -802,6 +436,156 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "OtherUpdate",
+    "methodType" : "DEACTION",
+    "name" : "OtherUpdate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/OtherUpdate.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Pause",
+    "methodType" : "DEACTION",
+    "name" : "Pause",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "PAUSE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "RecordEstimate",
+    "methodType" : "DEACTION",
+    "name" : "RecordEstimate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RECORDESTIMATE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "RecordTimZeroLeftAfterContinue",
+    "methodType" : "DEACTION",
+    "name" : "RecordTimZeroLeftAfterContinue",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "RecordTimateZeroLeft",
+    "methodType" : "DEACTION",
+    "name" : "RecordTimateZeroLeft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "RecordTimateZeroLeftAfterStart",
+    "methodType" : "DEACTION",
+    "name" : "RecordTimateZeroLeftAfterStart",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeftAfterStart.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Restart",
+    "methodType" : "DEACTION",
+    "name" : "Restart",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RESTART"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Save.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "SendMessage",
+    "methodType" : "DEACTION",
+    "name" : "sendMessage",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/SendMessage.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SendMsgPreProcess",
+    "methodType" : "DEACTION",
+    "name" : "sendMsgPreProcess",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/SendMsgPreProcess.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Start",
+    "methodType" : "DEACTION",
+    "name" : "Start",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Start.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "START"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "TaskForward",
+    "methodType" : "DEACTION",
+    "name" : "taskForward",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskForward.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "UpdateParentStatus",
+    "methodType" : "DEACTION",
+    "name" : "updateParentStatus",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateParentStatus.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__UPDATE"
     },
     "builtinMethod" : false
   } ],
@@ -962,641 +746,181 @@
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchAssignedToMyTask",
     "methodType" : "FETCH",
+    "name" : "AssignedToMyTask",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "AssignedToMyTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAssignedToMyTask"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyTaskPc",
     "methodType" : "FETCH",
+    "name" : "AssignedToMyTaskPc",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "AssignedToMyTaskPc"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAssignedToMyTaskPc"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugTask",
     "methodType" : "FETCH",
+    "name" : "BugTask",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "BugTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchBugTask"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchByModule",
     "methodType" : "FETCH",
+    "name" : "ByModule",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ByModule"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchByModule"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildDefault",
     "methodType" : "FETCH",
+    "name" : "ChildDefault",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ChildDefault"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchChildDefault"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildDefaultMore",
     "methodType" : "FETCH",
+    "name" : "ChildDefaultMore",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ChildDefaultMore"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchChildDefaultMore"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildTask",
     "methodType" : "FETCH",
+    "name" : "ChildTask",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ChildTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchChildTask"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildTaskTree",
     "methodType" : "FETCH",
+    "name" : "ChildTaskTree",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ChildTaskTree"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchChildTaskTree"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurFinishTask",
     "methodType" : "FETCH",
+    "name" : "CurFinishTask",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "CurFinishTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchCurFinishTask"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurProjectTaskQuery",
     "methodType" : "FETCH",
+    "name" : "CurProjectTaskQuery",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "CurProjectTaskQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchCurProjectTaskQuery"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "DEFAULT",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefaultRow",
     "methodType" : "FETCH",
+    "name" : "DefaultRow",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "DefaultRow"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefaultRow"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
     "methodType" : "FETCH",
+    "name" : "ESBulk",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ESBulk"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchESBulk"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAgentTask",
     "methodType" : "FETCH",
+    "name" : "MyAgentTask",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyAgentTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyAgentTask"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAllTask",
     "methodType" : "FETCH",
+    "name" : "MyAllTask",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyAllTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyAllTask"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCompleteTask",
     "methodType" : "FETCH",
+    "name" : "MyCompleteTask",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyCompleteTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyCompleteTask"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCompleteTaskMobDaily",
     "methodType" : "FETCH",
+    "name" : "MyCompleteTaskMobDaily",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyCompleteTaskMobDaily"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyCompleteTaskMobDaily"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCompleteTaskMobMonthly",
     "methodType" : "FETCH",
+    "name" : "MyCompleteTaskMobMonthly",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyCompleteTaskMobMonthly"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyCompleteTaskMobMonthly"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCompleteTaskMonthlyZS",
     "methodType" : "FETCH",
+    "name" : "MyCompleteTaskMonthlyZS",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyCompleteTaskMonthlyZS"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyCompleteTaskMonthlyZS"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCompleteTaskZS",
     "methodType" : "FETCH",
+    "name" : "MyCompleteTaskZS",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyCompleteTaskZS"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyCompleteTaskZS"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyFavorites",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyFavorites"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyPlansTaskMobMonthly",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyPlansTaskMobMonthly"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyPlansTaskMobMonthly"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyTomorrowPlanTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyTomorrowPlanTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyTomorrowPlanTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyTomorrowPlanTaskMobDaily",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyTomorrowPlanTaskMobDaily"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyTomorrowPlanTaskMobDaily"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchNextWeekCompleteTaskMobZS",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "NextWeekCompleteTaskMobZS"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchNextWeekCompleteTaskMobZS"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchNextWeekCompleteTaskZS",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "NextWeekCompleteTaskZS"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchNextWeekCompleteTaskZS"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchNextWeekPlanCompleteTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "NextWeekPlanCompleteTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchNextWeekPlanCompleteTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchPlanTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "PlanTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchPlanTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProjectAppTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectAppTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProjectAppTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProjectTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProjectTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchRootTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "RootTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRootTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchTaskLinkPlan",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TaskLinkPlan"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchTaskLinkPlan"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchThisMonthCompleteTaskChoice",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ThisMonthCompleteTaskChoice"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchThisMonthCompleteTaskChoice"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchThisWeekCompleteTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ThisWeekCompleteTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchThisWeekCompleteTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchThisWeekCompleteTaskChoice",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ThisWeekCompleteTaskChoice"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchThisWeekCompleteTaskChoice"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchThisWeekCompleteTaskMobZS",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ThisWeekCompleteTaskMobZS"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchThisWeekCompleteTaskMobZS"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchThisWeekCompleteTaskZS",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ThisWeekCompleteTaskZS"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchThisWeekCompleteTaskZS"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchTodoListTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TodoListTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchTodoListTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchTypeGroup",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TypeGroup"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchTypeGroup"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchTypeGroupPlan",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TypeGroupPlan"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchTypeGroupPlan"
     },
     "builtinMethod" : false
   }, {
@@ -1606,6 +930,186 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyCreateOrPartake"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyFavorites",
+    "methodType" : "FETCH",
+    "name" : "MyFavorites",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyFavorites"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyPlansTaskMobMonthly",
+    "methodType" : "FETCH",
+    "name" : "MyPlansTaskMobMonthly",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyPlansTaskMobMonthly"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyTomorrowPlanTask",
+    "methodType" : "FETCH",
+    "name" : "MyTomorrowPlanTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyTomorrowPlanTask"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyTomorrowPlanTaskMobDaily",
+    "methodType" : "FETCH",
+    "name" : "MyTomorrowPlanTaskMobDaily",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyTomorrowPlanTaskMobDaily"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchNextWeekCompleteTaskMobZS",
+    "methodType" : "FETCH",
+    "name" : "NextWeekCompleteTaskMobZS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "NextWeekCompleteTaskMobZS"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchNextWeekCompleteTaskZS",
+    "methodType" : "FETCH",
+    "name" : "NextWeekCompleteTaskZS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "NextWeekCompleteTaskZS"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchNextWeekPlanCompleteTask",
+    "methodType" : "FETCH",
+    "name" : "NextWeekPlanCompleteTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "NextWeekPlanCompleteTask"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchPlanTask",
+    "methodType" : "FETCH",
+    "name" : "PlanTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "PlanTask"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectAppTask",
+    "methodType" : "FETCH",
+    "name" : "ProjectAppTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectAppTask"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectTask",
+    "methodType" : "FETCH",
+    "name" : "ProjectTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTask"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchRootTask",
+    "methodType" : "FETCH",
+    "name" : "RootTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "RootTask"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTaskLinkPlan",
+    "methodType" : "FETCH",
+    "name" : "TaskLinkPlan",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskLinkPlan"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchThisMonthCompleteTaskChoice",
+    "methodType" : "FETCH",
+    "name" : "ThisMonthCompleteTaskChoice",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ThisMonthCompleteTaskChoice"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchThisWeekCompleteTask",
+    "methodType" : "FETCH",
+    "name" : "ThisWeekCompleteTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ThisWeekCompleteTask"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchThisWeekCompleteTaskChoice",
+    "methodType" : "FETCH",
+    "name" : "ThisWeekCompleteTaskChoice",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ThisWeekCompleteTaskChoice"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchThisWeekCompleteTaskMobZS",
+    "methodType" : "FETCH",
+    "name" : "ThisWeekCompleteTaskMobZS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ThisWeekCompleteTaskMobZS"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchThisWeekCompleteTaskZS",
+    "methodType" : "FETCH",
+    "name" : "ThisWeekCompleteTaskZS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ThisWeekCompleteTaskZS"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTodoListTask",
+    "methodType" : "FETCH",
+    "name" : "TodoListTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TodoListTask"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTypeGroup",
+    "methodType" : "FETCH",
+    "name" : "TypeGroup",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TypeGroup"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTypeGroupPlan",
+    "methodType" : "FETCH",
+    "name" : "TypeGroupPlan",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TypeGroupPlan"
     },
     "builtinMethod" : false
   } ],
@@ -2213,20 +1717,9 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Select",
-    "methodType" : "SELECT",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Select"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
@@ -2235,1243 +1728,9 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TASK__DEACTION__CREATE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TASK__DEACTION__UPDATE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TASK__DEACTION__REMOVE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TASK__DEACTION__GET"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Activate",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ACTIVATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Activate"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "AssignTo",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ASSIGNTO"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "AssignTo"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Cancel",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Cancel.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CANCEL"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Cancel"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "CheckKey",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Close",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CLOSE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Close"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ComputeBeginAndEnd",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ComputeBeginAndEnd"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ComputeHours4Multiple",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeHours4Multiple.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ComputeHours4Multiple"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ComputeWorkingHours",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ComputeWorkingHours"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ConfirmStoryChange",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ConfirmStoryChange"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "CreateByCycle",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CreateByCycle"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "CreateCycleTasks",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateCycleTasks.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CreateCycleTasks"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Delete",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Delete"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "DeleteEstimate",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/DeleteEstimate.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "DeleteEstimate"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "EditEstimate",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/EditEstimate.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "EditEstimate"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Finish",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "FINISH"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Finish"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetNextTeamUser",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetNextTeamUser.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetNextTeamUser"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetTeamUserLeftActivity",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftActivity.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetTeamUserLeftActivity"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetTeamUserLeftStart",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftStart.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetTeamUserLeftStart"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetUsernames",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetUsernames.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetUsernames"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "LinkPlan",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/LinkPlan.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "LinkPlan"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "OtherUpdate",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/OtherUpdate.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "OtherUpdate"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Pause",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "PAUSE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Pause"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "RecordEstimate",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "RECORDESTIMATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "RecordEstimate"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "RecordTimZeroLeftAfterContinue",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "RecordTimZeroLeftAfterContinue"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "RecordTimateZeroLeft",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "RecordTimateZeroLeft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "RecordTimateZeroLeftAfterStart",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeftAfterStart.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "RecordTimateZeroLeftAfterStart"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Restart",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "RESTART"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Restart"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Save.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "SendMessage",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/SendMessage.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SendMessage"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "SendMsgPreProcess",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/SendMsgPreProcess.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "SendMsgPreProcess"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Start",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Start.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "START"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Start"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "TaskFavorites",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskFavorites.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TaskFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "TaskForward",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskForward.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TaskForward"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "TaskNFavorites",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskNFavorites.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TaskNFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "UpdateParentStatus",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateParentStatus.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UpdateParentStatus"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "UpdateRelatedPlanStatus",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UpdateRelatedPlanStatus"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "UpdateStoryVersion",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateStoryVersion.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UpdateStoryVersion"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchAssignedToMyTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "AssignedToMyTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAssignedToMyTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchAssignedToMyTaskPc",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "AssignedToMyTaskPc"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAssignedToMyTaskPc"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchBugTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "BugTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchBugTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchByModule",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ByModule"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchByModule"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchChildDefault",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ChildDefault"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchChildDefault"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchChildDefaultMore",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ChildDefaultMore"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchChildDefaultMore"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchChildTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ChildTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchChildTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchChildTaskTree",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ChildTaskTree"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchChildTaskTree"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchCurFinishTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "CurFinishTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchCurFinishTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchCurProjectTaskQuery",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "CurProjectTaskQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchCurProjectTaskQuery"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchDefaultRow",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "DefaultRow"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefaultRow"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchESBulk",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ESBulk"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchESBulk"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyAgentTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyAgentTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyAgentTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyAllTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyAllTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyAllTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyCompleteTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyCompleteTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyCompleteTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyCompleteTaskMobDaily",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyCompleteTaskMobDaily"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyCompleteTaskMobDaily"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyCompleteTaskMobMonthly",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyCompleteTaskMobMonthly"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyCompleteTaskMobMonthly"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyCompleteTaskMonthlyZS",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyCompleteTaskMonthlyZS"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyCompleteTaskMonthlyZS"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyCompleteTaskZS",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyCompleteTaskZS"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyCompleteTaskZS"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyFavorites",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyFavorites"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyPlansTaskMobMonthly",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyPlansTaskMobMonthly"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyPlansTaskMobMonthly"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyTomorrowPlanTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyTomorrowPlanTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyTomorrowPlanTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyTomorrowPlanTaskMobDaily",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyTomorrowPlanTaskMobDaily"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyTomorrowPlanTaskMobDaily"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchNextWeekCompleteTaskMobZS",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "NextWeekCompleteTaskMobZS"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchNextWeekCompleteTaskMobZS"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchNextWeekCompleteTaskZS",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "NextWeekCompleteTaskZS"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchNextWeekCompleteTaskZS"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchNextWeekPlanCompleteTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "NextWeekPlanCompleteTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchNextWeekPlanCompleteTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchPlanTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "PlanTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchPlanTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProjectAppTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectAppTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProjectAppTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProjectTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProjectTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchRootTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "RootTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRootTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchTaskLinkPlan",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TaskLinkPlan"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchTaskLinkPlan"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchThisMonthCompleteTaskChoice",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ThisMonthCompleteTaskChoice"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchThisMonthCompleteTaskChoice"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchThisWeekCompleteTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ThisWeekCompleteTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchThisWeekCompleteTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchThisWeekCompleteTaskChoice",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ThisWeekCompleteTaskChoice"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchThisWeekCompleteTaskChoice"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchThisWeekCompleteTaskMobZS",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ThisWeekCompleteTaskMobZS"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchThisWeekCompleteTaskMobZS"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchThisWeekCompleteTaskZS",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ThisWeekCompleteTaskZS"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchThisWeekCompleteTaskZS"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchTodoListTask",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TodoListTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchTodoListTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchTypeGroup",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TypeGroup"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchTypeGroup"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchTypeGroupPlan",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TypeGroupPlan"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchTypeGroupPlan"
-    },
-    "builtinMethod" : false
+    "userCat" : "CAT1",
+    "userTag4" : "create",
+    "builtinMethod" : true
   }, {
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
@@ -3499,6 +1758,21 @@
       "id" : "CREATE"
     },
     "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__UPDATE"
+    },
+    "userCat" : "CAT1",
+    "userTag4" : "update",
     "builtinMethod" : true
   }, {
     "codeName" : "UpdateTemp",
@@ -3529,6 +1803,21 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__DELETE"
+    },
+    "userCat" : "CAT1",
+    "userTag4" : "remove",
+    "builtinMethod" : true
+  }, {
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
@@ -3555,6 +1844,19 @@
       "id" : "ZTProject__DELETE"
     },
     "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
     "builtinMethod" : true
   }, {
     "codeName" : "GetTemp",
@@ -3585,6 +1887,19 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
@@ -3613,12 +1928,183 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "codeName" : "Activate",
+    "methodType" : "DEACTION",
+    "name" : "Activate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ACTIVATE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "AssignTo",
+    "methodType" : "DEACTION",
+    "name" : "AssignTo",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ASSIGNTO"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
     "codeName" : "CalcTime",
     "methodType" : "DEACTION",
     "name" : "CalcTime",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CalcTime.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Cancel",
+    "methodType" : "DEACTION",
+    "name" : "Cancel",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Cancel.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CANCEL"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Close",
+    "methodType" : "DEACTION",
+    "name" : "Close",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ComputeHours4Multiple",
+    "methodType" : "DEACTION",
+    "name" : "computeHours4Multiple",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeHours4Multiple.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ConfirmStoryChange",
+    "methodType" : "DEACTION",
+    "name" : "ConfirmStoryChange",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Delete",
+    "methodType" : "DEACTION",
+    "name" : "delete",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "DeleteEstimate",
+    "methodType" : "DEACTION",
+    "name" : "DeleteEstimate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/DeleteEstimate.json"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "EditEstimate",
+    "methodType" : "DEACTION",
+    "name" : "EditEstimate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/EditEstimate.json"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Finish",
+    "methodType" : "DEACTION",
+    "name" : "Finish",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FINISH"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetNextTeamUser",
+    "methodType" : "DEACTION",
+    "name" : "GetNextTeamUserFinish",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetNextTeamUser.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetTeamUserLeftActivity",
+    "methodType" : "DEACTION",
+    "name" : "GetTeamUserLeftActivity",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftActivity.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetTeamUserLeftStart",
+    "methodType" : "DEACTION",
+    "name" : "GetTeamUserLeftStart",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftStart.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     },
     "builtinMethod" : false
   }, {
@@ -3639,6 +2125,165 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "OtherUpdate",
+    "methodType" : "DEACTION",
+    "name" : "OtherUpdate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/OtherUpdate.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Pause",
+    "methodType" : "DEACTION",
+    "name" : "Pause",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "PAUSE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "RecordEstimate",
+    "methodType" : "DEACTION",
+    "name" : "RecordEstimate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RECORDESTIMATE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "RecordTimZeroLeftAfterContinue",
+    "methodType" : "DEACTION",
+    "name" : "RecordTimZeroLeftAfterContinue",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "RecordTimateZeroLeft",
+    "methodType" : "DEACTION",
+    "name" : "RecordTimateZeroLeft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "RecordTimateZeroLeftAfterStart",
+    "methodType" : "DEACTION",
+    "name" : "RecordTimateZeroLeftAfterStart",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeftAfterStart.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Restart",
+    "methodType" : "DEACTION",
+    "name" : "Restart",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RESTART"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Save.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "SendMessage",
+    "methodType" : "DEACTION",
+    "name" : "sendMessage",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/SendMessage.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SendMsgPreProcess",
+    "methodType" : "DEACTION",
+    "name" : "sendMsgPreProcess",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/SendMsgPreProcess.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Start",
+    "methodType" : "DEACTION",
+    "name" : "Start",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Start.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "START"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "TaskForward",
+    "methodType" : "DEACTION",
+    "name" : "taskForward",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskForward.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "UpdateParentStatus",
+    "methodType" : "DEACTION",
+    "name" : "updateParentStatus",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateParentStatus.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__UPDATE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchAssignedToMyTask",
+    "methodType" : "FETCH",
+    "name" : "AssignedToMyTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "AssignedToMyTask"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempAssignedToMyTask",
     "methodType" : "FETCHTEMP",
     "name" : "AssignedToMyTask",
@@ -3647,6 +2292,15 @@
       "id" : "AssignedToMyTask"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchAssignedToMyTaskPc",
+    "methodType" : "FETCH",
+    "name" : "AssignedToMyTaskPc",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "AssignedToMyTaskPc"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempAssignedToMyTaskPc",
@@ -3659,6 +2313,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchBugTask",
+    "methodType" : "FETCH",
+    "name" : "BugTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "BugTask"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempBugTask",
     "methodType" : "FETCHTEMP",
     "name" : "BugTask",
@@ -3667,6 +2330,15 @@
       "id" : "BugTask"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchByModule",
+    "methodType" : "FETCH",
+    "name" : "ByModule",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ByModule"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempByModule",
@@ -3679,6 +2351,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchChildDefault",
+    "methodType" : "FETCH",
+    "name" : "ChildDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildDefault"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempChildDefault",
     "methodType" : "FETCHTEMP",
     "name" : "ChildDefault",
@@ -3687,6 +2368,15 @@
       "id" : "ChildDefault"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchChildDefaultMore",
+    "methodType" : "FETCH",
+    "name" : "ChildDefaultMore",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildDefaultMore"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempChildDefaultMore",
@@ -3699,6 +2389,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchChildTask",
+    "methodType" : "FETCH",
+    "name" : "ChildTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildTask"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempChildTask",
     "methodType" : "FETCHTEMP",
     "name" : "ChildTask",
@@ -3707,6 +2406,15 @@
       "id" : "ChildTask"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchChildTaskTree",
+    "methodType" : "FETCH",
+    "name" : "ChildTaskTree",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildTaskTree"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempChildTaskTree",
@@ -3719,6 +2427,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchCurFinishTask",
+    "methodType" : "FETCH",
+    "name" : "CurFinishTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurFinishTask"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempCurFinishTask",
     "methodType" : "FETCHTEMP",
     "name" : "CurFinishTask",
@@ -3727,6 +2444,15 @@
       "id" : "CurFinishTask"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchCurProjectTaskQuery",
+    "methodType" : "FETCH",
+    "name" : "CurProjectTaskQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurProjectTaskQuery"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempCurProjectTaskQuery",
@@ -3739,6 +2465,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "DEFAULT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempDefault",
     "methodType" : "FETCHTEMP",
     "name" : "DEFAULT",
@@ -3747,6 +2482,15 @@
       "id" : "Default"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefaultRow",
+    "methodType" : "FETCH",
+    "name" : "DefaultRow",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DefaultRow"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempDefaultRow",
@@ -3759,6 +2503,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchESBulk",
+    "methodType" : "FETCH",
+    "name" : "ESBulk",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ESBulk"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempESBulk",
     "methodType" : "FETCHTEMP",
     "name" : "ESBulk",
@@ -3767,6 +2520,15 @@
       "id" : "ESBulk"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyAgentTask",
+    "methodType" : "FETCH",
+    "name" : "MyAgentTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyAgentTask"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyAgentTask",
@@ -3779,6 +2541,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMyAllTask",
+    "methodType" : "FETCH",
+    "name" : "MyAllTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyAllTask"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempMyAllTask",
     "methodType" : "FETCHTEMP",
     "name" : "MyAllTask",
@@ -3787,6 +2558,15 @@
       "id" : "MyAllTask"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyCompleteTask",
+    "methodType" : "FETCH",
+    "name" : "MyCompleteTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCompleteTask"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyCompleteTask",
@@ -3799,6 +2579,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMyCompleteTaskMobDaily",
+    "methodType" : "FETCH",
+    "name" : "MyCompleteTaskMobDaily",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCompleteTaskMobDaily"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempMyCompleteTaskMobDaily",
     "methodType" : "FETCHTEMP",
     "name" : "MyCompleteTaskMobDaily",
@@ -3807,6 +2596,15 @@
       "id" : "MyCompleteTaskMobDaily"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyCompleteTaskMobMonthly",
+    "methodType" : "FETCH",
+    "name" : "MyCompleteTaskMobMonthly",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCompleteTaskMobMonthly"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyCompleteTaskMobMonthly",
@@ -3819,6 +2617,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMyCompleteTaskMonthlyZS",
+    "methodType" : "FETCH",
+    "name" : "MyCompleteTaskMonthlyZS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCompleteTaskMonthlyZS"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempMyCompleteTaskMonthlyZS",
     "methodType" : "FETCHTEMP",
     "name" : "MyCompleteTaskMonthlyZS",
@@ -3827,6 +2634,15 @@
       "id" : "MyCompleteTaskMonthlyZS"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyCompleteTaskZS",
+    "methodType" : "FETCH",
+    "name" : "MyCompleteTaskZS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCompleteTaskZS"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyCompleteTaskZS",
@@ -3858,6 +2674,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMyFavorites",
+    "methodType" : "FETCH",
+    "name" : "MyFavorites",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyFavorites"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempMyFavorites",
     "methodType" : "FETCHTEMP",
     "name" : "MyFavorites",
@@ -3866,6 +2691,15 @@
       "id" : "MyFavorites"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyPlansTaskMobMonthly",
+    "methodType" : "FETCH",
+    "name" : "MyPlansTaskMobMonthly",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyPlansTaskMobMonthly"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyPlansTaskMobMonthly",
@@ -3878,6 +2712,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMyTomorrowPlanTask",
+    "methodType" : "FETCH",
+    "name" : "MyTomorrowPlanTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyTomorrowPlanTask"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempMyTomorrowPlanTask",
     "methodType" : "FETCHTEMP",
     "name" : "MyTomorrowPlanTask",
@@ -3886,6 +2729,15 @@
       "id" : "MyTomorrowPlanTask"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyTomorrowPlanTaskMobDaily",
+    "methodType" : "FETCH",
+    "name" : "MyTomorrowPlanTaskMobDaily",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyTomorrowPlanTaskMobDaily"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyTomorrowPlanTaskMobDaily",
@@ -3898,6 +2750,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchNextWeekCompleteTaskMobZS",
+    "methodType" : "FETCH",
+    "name" : "NextWeekCompleteTaskMobZS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "NextWeekCompleteTaskMobZS"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempNextWeekCompleteTaskMobZS",
     "methodType" : "FETCHTEMP",
     "name" : "NextWeekCompleteTaskMobZS",
@@ -3906,6 +2767,15 @@
       "id" : "NextWeekCompleteTaskMobZS"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchNextWeekCompleteTaskZS",
+    "methodType" : "FETCH",
+    "name" : "NextWeekCompleteTaskZS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "NextWeekCompleteTaskZS"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempNextWeekCompleteTaskZS",
@@ -3918,6 +2788,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchNextWeekPlanCompleteTask",
+    "methodType" : "FETCH",
+    "name" : "NextWeekPlanCompleteTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "NextWeekPlanCompleteTask"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempNextWeekPlanCompleteTask",
     "methodType" : "FETCHTEMP",
     "name" : "NextWeekPlanCompleteTask",
@@ -3926,6 +2805,15 @@
       "id" : "NextWeekPlanCompleteTask"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchPlanTask",
+    "methodType" : "FETCH",
+    "name" : "PlanTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "PlanTask"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempPlanTask",
@@ -3938,6 +2826,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchProjectAppTask",
+    "methodType" : "FETCH",
+    "name" : "ProjectAppTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectAppTask"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempProjectAppTask",
     "methodType" : "FETCHTEMP",
     "name" : "ProjectAppTask",
@@ -3946,6 +2843,15 @@
       "id" : "ProjectAppTask"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectTask",
+    "methodType" : "FETCH",
+    "name" : "ProjectTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTask"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempProjectTask",
@@ -3958,6 +2864,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchRootTask",
+    "methodType" : "FETCH",
+    "name" : "RootTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "RootTask"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempRootTask",
     "methodType" : "FETCHTEMP",
     "name" : "RootTask",
@@ -3966,6 +2881,15 @@
       "id" : "RootTask"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTaskLinkPlan",
+    "methodType" : "FETCH",
+    "name" : "TaskLinkPlan",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskLinkPlan"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempTaskLinkPlan",
@@ -3978,6 +2902,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchThisMonthCompleteTaskChoice",
+    "methodType" : "FETCH",
+    "name" : "ThisMonthCompleteTaskChoice",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ThisMonthCompleteTaskChoice"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempThisMonthCompleteTaskChoice",
     "methodType" : "FETCHTEMP",
     "name" : "ThisMonthCompleteTaskChoice",
@@ -3986,6 +2919,15 @@
       "id" : "ThisMonthCompleteTaskChoice"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchThisWeekCompleteTask",
+    "methodType" : "FETCH",
+    "name" : "ThisWeekCompleteTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ThisWeekCompleteTask"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempThisWeekCompleteTask",
@@ -3998,6 +2940,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchThisWeekCompleteTaskChoice",
+    "methodType" : "FETCH",
+    "name" : "ThisWeekCompleteTaskChoice",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ThisWeekCompleteTaskChoice"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempThisWeekCompleteTaskChoice",
     "methodType" : "FETCHTEMP",
     "name" : "ThisWeekCompleteTaskChoice",
@@ -4006,6 +2957,15 @@
       "id" : "ThisWeekCompleteTaskChoice"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchThisWeekCompleteTaskMobZS",
+    "methodType" : "FETCH",
+    "name" : "ThisWeekCompleteTaskMobZS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ThisWeekCompleteTaskMobZS"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempThisWeekCompleteTaskMobZS",
@@ -4018,6 +2978,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchThisWeekCompleteTaskZS",
+    "methodType" : "FETCH",
+    "name" : "ThisWeekCompleteTaskZS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ThisWeekCompleteTaskZS"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempThisWeekCompleteTaskZS",
     "methodType" : "FETCHTEMP",
     "name" : "ThisWeekCompleteTaskZS",
@@ -4026,6 +2995,15 @@
       "id" : "ThisWeekCompleteTaskZS"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTodoListTask",
+    "methodType" : "FETCH",
+    "name" : "TodoListTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TodoListTask"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempTodoListTask",
@@ -4038,6 +3016,15 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchTypeGroup",
+    "methodType" : "FETCH",
+    "name" : "TypeGroup",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TypeGroup"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempTypeGroup",
     "methodType" : "FETCHTEMP",
     "name" : "TypeGroup",
@@ -4046,6 +3033,15 @@
       "id" : "TypeGroup"
     },
     "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTypeGroupPlan",
+    "methodType" : "FETCH",
+    "name" : "TypeGroupPlan",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TypeGroupPlan"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempTypeGroupPlan",
@@ -4208,10 +3204,6 @@
     "codeName" : "TaskFavoritesMob",
     "fullCodeName" : "Task_TaskFavoritesMob",
     "name" : "收藏（移动端）",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "TaskFavorites"
-    },
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
@@ -4320,10 +3312,6 @@
     "codeName" : "TaskNFavoritesMob",
     "fullCodeName" : "Task_TaskNFavoritesMob",
     "name" : "取消收藏（移动端）",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "TaskNFavorites"
-    },
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"

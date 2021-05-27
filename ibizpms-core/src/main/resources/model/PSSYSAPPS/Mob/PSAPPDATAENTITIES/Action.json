@@ -1018,6 +1018,26 @@
     "name" : "CREATE",
     "id" : "Zt_project__CREATE"
   }, {
+    "logicName" : "测试版本-创建",
+    "mapPSDEName" : "ZT_TESTTASK",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTTASK.json"
+    },
+    "name" : "CREATE",
+    "id" : "TestTask__CREATE"
+  }, {
+    "logicName" : "测试用例-创建",
+    "mapPSDEName" : "ZT_CASE",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_CASE.json"
+    },
+    "name" : "CREATE",
+    "id" : "Case__CREATE"
+  }, {
     "logicName" : "任务-创建",
     "mapPSDEName" : "ZT_TASK",
     "mapPSDEOPPrivName" : "CREATE",
@@ -1087,6 +1107,16 @@
     "name" : "READ",
     "id" : "Story__READ"
   }, {
+    "logicName" : "测试用例-读取",
+    "mapPSDEName" : "ZT_CASE",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_CASE.json"
+    },
+    "name" : "READ",
+    "id" : "Case__READ"
+  }, {
     "logicName" : "待办-读取",
     "mapPSDEName" : "ZT_TODO",
     "mapPSDEOPPrivName" : "READ",
@@ -1116,6 +1146,16 @@
     },
     "name" : "READ",
     "id" : "Release__READ"
+  }, {
+    "logicName" : "测试版本-读取",
+    "mapPSDEName" : "ZT_TESTTASK",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTTASK.json"
+    },
+    "name" : "READ",
+    "id" : "TestTask__READ"
   }, {
     "logicName" : "Bug-读取",
     "mapPSDEName" : "ZT_BUG",
@@ -1170,6 +1210,16 @@
     "name" : "READ",
     "id" : "Build__READ"
   }, {
+    "logicName" : "测试版本-更新",
+    "mapPSDEName" : "ZT_TESTTASK",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTTASK.json"
+    },
+    "name" : "UPDATE",
+    "id" : "TestTask__UPDATE"
+  }, {
     "logicName" : "版本-更新",
     "mapPSDEName" : "ZT_BUILD",
     "mapPSDEOPPrivName" : "UPDATE",
@@ -1189,6 +1239,16 @@
     },
     "name" : "UPDATE",
     "id" : "ToDo__UPDATE"
+  }, {
+    "logicName" : "测试用例-更新",
+    "mapPSDEName" : "ZT_CASE",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_CASE.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Case__UPDATE"
   }, {
     "logicName" : "产品-更新",
     "mapPSDEName" : "ZT_PRODUCT",
@@ -1675,5 +1735,5 @@
   "enableUIModify" : true,
   "enableUIRemove" : true,
   "enableWFActions" : false,
-  "major" : false
+  "major" : true
 }

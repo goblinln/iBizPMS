@@ -143,16 +143,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     }
   }, {
-    "name" : "运维人员-ZT_ACTION[日志查看（我的日志）（跟随角色）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_Read_MyAction.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
-    }
-  }, {
     "name" : "运维人员-ZT_TASK[任务查看（我创建或参与）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -305,13 +295,6 @@
     },
     "sysUniResCode" : "TOP_DOC_MENU"
   }, {
-    "name" : "null-顶部_产品主页",
-    "getPSSysUniRes" : {
-      "modelref" : true,
-      "id" : "zentao__TOP_PRODUCT_MENU"
-    },
-    "sysUniResCode" : "TOP_PRODUCT_MENU"
-  }, {
     "name" : "null-顶部_项目主页",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -349,6 +332,6 @@
   } ],
   "roleTag" : "Maintainer",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "TOP_MYPLACE_MENU", "LEFT_CASE_MENU", "TOP_DOC_MENU", "TOP_PRODUCT_MENU", "TOP_PROJECT_MENU", "PRODUCTLEFT", "LEFT_PROJECT_MENU", "TOP_CASE_MENU", "TOP_MYFAVOURITE_MENU" ],
+  "uniResTags" : [ "TOP_MYPLACE_MENU", "LEFT_CASE_MENU", "TOP_DOC_MENU", "TOP_PROJECT_MENU", "PRODUCTLEFT", "LEFT_PROJECT_MENU", "TOP_CASE_MENU", "TOP_MYFAVOURITE_MENU" ],
   "globalRole" : true
 }

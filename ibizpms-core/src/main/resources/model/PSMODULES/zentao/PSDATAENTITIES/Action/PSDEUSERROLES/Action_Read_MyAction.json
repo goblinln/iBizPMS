@@ -5,8 +5,15 @@
     "modelref" : true,
     "id" : "MyAction"
   },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "Zt_project__READ"
+    }
+  } ],
   "roleTag" : "Action_Read_MyAction",
-  "userCat" : "CAT1",
   "userDRAction" : "READ",
-  "systemReserved" : true
+  "defaultMode" : true
 }

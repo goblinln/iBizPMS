@@ -66,15 +66,15 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
         return new HttpResponse(entity);
     }
     /**
-     * FetchGetRoadmap
+     * FetchGetRoadmapS
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductLifeService
      */
-    async FetchGetRoadmap(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/productlives/fetchgetroadmap`, _data);
+    async FetchGetRoadmapS(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/productlives/fetchgetroadmaps`, _data);
     }
     /**
      * FetchRoadMapYear
@@ -88,14 +88,14 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
         return this.http.get(`/productlives/fetchroadmapyear`, _data);
     }
     /**
-     * FetchGetRoadmapS
+     * FetchGetRoadmap
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductLifeService
      */
-    async FetchGetRoadmapS(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/productlives/fetchgetroadmaps`, _data);
+    async FetchGetRoadmap(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/productlives/fetchgetroadmap`, _data);
     }
 }

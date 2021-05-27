@@ -93,16 +93,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
     }
   }, {
-    "name" : "测试主管-ZT_ACTION[日志查看（我的日志）（跟随角色）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_Read_MyAction.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
-    }
-  }, {
     "name" : "测试主管-ZT_PROJECT[项目查看（创建者或者更新者）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -546,13 +536,6 @@
     },
     "sysUniResCode" : "TOP_CASE_MENU"
   }, {
-    "name" : "null-顶部_产品主页",
-    "getPSSysUniRes" : {
-      "modelref" : true,
-      "id" : "zentao__TOP_PRODUCT_MENU"
-    },
-    "sysUniResCode" : "TOP_PRODUCT_MENU"
-  }, {
     "name" : "null-左侧_项目管理（一级）",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -569,6 +552,6 @@
   } ],
   "roleTag" : "TestSupervisor",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "TOP_MYPLACE_MENU", "LEFT_CASE_MENU", "TOP_MYFAVOURITE_MENU", "PRODUCTLEFT", "TOP_PROJECT_MENU", "TOP_CASE_MENU", "TOP_PRODUCT_MENU", "LEFT_PROJECT_MENU", "TOP_DOC_MENU" ],
+  "uniResTags" : [ "TOP_MYPLACE_MENU", "LEFT_CASE_MENU", "TOP_MYFAVOURITE_MENU", "PRODUCTLEFT", "TOP_PROJECT_MENU", "TOP_CASE_MENU", "LEFT_PROJECT_MENU", "TOP_DOC_MENU" ],
   "globalRole" : true
 }
