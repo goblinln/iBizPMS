@@ -29,13 +29,13 @@ export class AuthServiceBase {
     public sysOPPrivsMap: Map<string, any> = new Map();
 
     /**
-     * 实体操作标识映射Map
+     * 实体操作标识映射
      *
      * @public
      * @type {Map<string,any>}
      * @memberof AuthServiceBase
      */
-    public deOPPrivsMap: Map<string, any> = new Map();
+    public deOPPrivsArray: Array<any> | null = [];
 
     /**
      * 实体数据访问控制方式
@@ -100,25 +100,8 @@ export class AuthServiceBase {
      */
     protected async loaded() {
         this.entityModel = await (await GetModelService(this.context)).getPSAppDataEntity(this.dynaModelFilePath);
-        this.registerDEOPPrivs(this.entityModel);
+        this.deOPPrivsArray = this.entityModel.getAllPSDEOPPrivs();
         this.dataAccCtrlMode = this.entityModel.dataAccCtrlMode;
-    }
-
-    /**
-     * 注册实体操作标识Map
-     *
-     * @memberof  AuthServiceBase
-     */
-    public registerDEOPPrivs(opts: IPSAppDataEntity) {
-        if (opts.getAllPSDEOPPrivs()) {
-            opts.getAllPSDEOPPrivs()?.forEach((item: IPSDEOPPriv) => {
-                if (item.mapPSDEName && item.mapPSDEOPPrivName) {
-                    this.deOPPrivsMap.set(`${item.mapPSDEName}_${item.mapPSDEOPPrivName}`, item);
-                } else {
-                    this.deOPPrivsMap.set(item.name, item);
-                }
-            })
-        }
     }
 
     /**
@@ -201,9 +184,9 @@ export class AuthServiceBase {
      */
     public getOPPsWithP(tempOPPriv: any, dataaccaction: string) {
         if (tempOPPriv && tempOPPriv['mapPSDEName'] && tempOPPriv['mapPSDEOPPrivName']) {
-            if(this.getCurDeOPPrivs(`${this.context['srfparentdemapname']}-${this.context['srfparentkey']}`)){
+            if (this.getCurDeOPPrivs(`${this.context['srfparentdemapname']}-${this.context['srfparentkey']}`)) {
                 return (this.getCurDeOPPrivs(`${this.context['srfparentdemapname']}-${this.context['srfparentkey']}`)[dataaccaction] == 0) ? 0 : 1;
-            }else{
+            } else {
                 return 1;
             }
         } else {
@@ -226,16 +209,16 @@ export class AuthServiceBase {
             if (parentOPPrivs && parentOPPrivs.hasOwnProperty(dataaccaction)) {
                 return (parentOPPrivs[dataaccaction] == 0) ? 0 : 1;
             } else {
-                if(this.getCurDeOPPrivs(`${this.deName}-${key}`)){
+                if (this.getCurDeOPPrivs(`${this.deName}-${key}`)) {
                     return (this.getCurDeOPPrivs(`${this.deName}-${key}`)[dataaccaction] == 0) ? 0 : 1;
-                }else{
+                } else {
                     return 1;
                 }
             }
         } else {
-            if(this.getCurDeOPPrivs(`${this.deName}-${key}`)){
+            if (this.getCurDeOPPrivs(`${this.deName}-${key}`)) {
                 return (this.getCurDeOPPrivs(`${this.deName}-${key}`)[dataaccaction] == 0) ? 0 : 1;
-            }else{
+            } else {
                 return 1;
             }
         }
@@ -250,16 +233,27 @@ export class AuthServiceBase {
      * @memberof AuthServiceBase
      */
     public getActivedDeOPPrivs(key: string, dataaccaction: string) {
-        let tempOPPriv = this.deOPPrivsMap.get(dataaccaction);
-        if (this.context['srfparentdemapname']) {
-            tempOPPriv = this.deOPPrivsMap.get(`${this.context['srfparentdemapname']}_${dataaccaction}`);
+        let tempOPPriv: any;
+        let tempOPPrivArray: any = this.deOPPrivsArray?.filter((item: any) => {
+            return item.name === dataaccaction;
+        })
+        if (!tempOPPrivArray || (tempOPPrivArray && (tempOPPrivArray.length === 0))) {
+            return 1;
+        } else {
+            if (this.context['srfparentdemapname']) {
+                tempOPPriv = tempOPPrivArray.find((item: any) => {
+                    return item.mapPSDEName === this.context['srfparentdemapname'];
+                })
+            } else {
+                tempOPPriv = tempOPPrivArray[0];
+            }
         }
         if (this.dataAccCtrlMode == 0) {
             return 1;
         } else if (this.dataAccCtrlMode == 1) {
-            if(this.getCurDeOPPrivs(`${this.deName}-${key}`)){
+            if (this.getCurDeOPPrivs(`${this.deName}-${key}`)) {
                 return (this.getCurDeOPPrivs(`${this.deName}-${key}`)[dataaccaction] == 0) ? 0 : 1;
-            }else{
+            } else {
                 return 1;
             }
         } else if (this.dataAccCtrlMode == 2) {

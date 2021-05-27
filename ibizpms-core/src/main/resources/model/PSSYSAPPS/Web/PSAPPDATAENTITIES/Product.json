@@ -48,6 +48,23 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "ProductTop",
+    "methodType" : "DEACTION",
+    "name" : "ProductTop",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/ProductTop.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ProductTop"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -82,12 +99,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "ProductTop",
+    "codeName" : "CancelProductTop",
     "methodType" : "DEACTION",
-    "name" : "ProductTop",
+    "name" : "CancelProductTop",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/ProductTop.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CancelProductTop.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -95,7 +112,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "ProductTop"
+      "id" : "CancelProductTop"
     },
     "builtinMethod" : false
   }, {
@@ -150,23 +167,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "CancelProductTop",
-    "methodType" : "DEACTION",
-    "name" : "CancelProductTop",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CancelProductTop.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CancelProductTop"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -199,23 +199,6 @@
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchProductTeam",
-    "methodType" : "FETCH",
-    "name" : "FetchProductTeam",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProductTeam"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProductTeam"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchCurDefault",
     "methodType" : "FETCH",
     "name" : "FetchCurDefault",
@@ -247,6 +230,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAllList"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProductTeam",
+    "methodType" : "FETCH",
+    "name" : "FetchProductTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductTeam"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductTeam"
     },
     "builtinMethod" : false
   }, {
@@ -867,23 +867,6 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "FetchProductTeam",
-    "methodType" : "FETCH",
-    "name" : "FetchProductTeam",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProductTeam"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProductTeam"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
@@ -901,20 +884,20 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Update",
+    "codeName" : "ProductTop",
     "methodType" : "DEACTION",
-    "name" : "Update",
+    "name" : "ProductTop",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Update.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/ProductTop.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Update"
+      "id" : "ProductTop"
     },
     "builtinMethod" : false
   }, {
@@ -935,6 +918,23 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -952,12 +952,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "ProductTop",
+    "codeName" : "CancelProductTop",
     "methodType" : "DEACTION",
-    "name" : "ProductTop",
+    "name" : "CancelProductTop",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/ProductTop.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CancelProductTop.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -965,7 +965,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "ProductTop"
+      "id" : "CancelProductTop"
     },
     "builtinMethod" : false
   }, {
@@ -1020,23 +1020,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "CancelProductTop",
-    "methodType" : "DEACTION",
-    "name" : "CancelProductTop",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CancelProductTop.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CancelProductTop"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchAllList",
     "methodType" : "FETCH",
     "name" : "FetchAllList",
@@ -1051,6 +1034,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAllList"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProductTeam",
+    "methodType" : "FETCH",
+    "name" : "FetchProductTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductTeam"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductTeam"
     },
     "builtinMethod" : false
   }, {

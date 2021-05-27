@@ -52,6 +52,14 @@ public class ProductLineResource {
     @Lazy
     public ProductLineMapping productlineMapping;
 
+    @PreAuthorize("@IBZProProductLineRuntime.test(#productline_id,'DELETE')")
+    @ApiOperation(value = "删除产品线", tags = {"产品线" },  notes = "删除产品线")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productlines/{productline_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("productline_id") Long productline_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductlineService.remove(productline_id));
+    }
+
+
     @PreAuthorize("@IBZProProductLineRuntime.test(#productline_id,'READ')")
     @ApiOperation(value = "获取产品线", tags = {"产品线" },  notes = "获取产品线")
 	@RequestMapping(method = RequestMethod.GET, value = "/productlines/{productline_id}")
@@ -76,14 +84,6 @@ public class ProductLineResource {
         Map<String,Integer> opprivs = ibzproproductlineRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("@IBZProProductLineRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "获取产品线草稿", tags = {"产品线" },  notes = "获取产品线草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/productlines/getdraft")
-    public ResponseEntity<ProductLineDTO> getDraft(ProductLineDTO dto) {
-        IBZProProductLine domain = productlineMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(productlineMapping.toDto(ibzproproductlineService.getDraft(domain)));
     }
 
     @PreAuthorize("@IBZProProductLineRuntime.quickTest('READ')")
@@ -127,13 +127,13 @@ public class ProductLineResource {
     }
 
 
-    @PreAuthorize("@IBZProProductLineRuntime.test(#productline_id,'DELETE')")
-    @ApiOperation(value = "删除产品线", tags = {"产品线" },  notes = "删除产品线")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productlines/{productline_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("productline_id") Long productline_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductlineService.remove(productline_id));
+    @PreAuthorize("@IBZProProductLineRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "获取产品线草稿", tags = {"产品线" },  notes = "获取产品线草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/productlines/getdraft")
+    public ResponseEntity<ProductLineDTO> getDraft(ProductLineDTO dto) {
+        IBZProProductLine domain = productlineMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(productlineMapping.toDto(ibzproproductlineService.getDraft(domain)));
     }
-
 
     @ApiOperation(value = "保存产品线", tags = {"产品线" },  notes = "保存产品线")
 	@RequestMapping(method = RequestMethod.POST, value = "/productlines/save")

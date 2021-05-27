@@ -184,7 +184,7 @@
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
-    "batchActionMode" : 1,
+    "batchActionMode" : 2,
     "codeName" : "Save",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Save.json",
     "logicName" : "Save",
@@ -233,6 +233,15 @@
     "codeName" : "RowEditDefault",
     "logicName" : "行编辑查询",
     "name" : "RowEditDefault",
+    "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
+    "codeName" : "SpecifyTeam",
+    "logicName" : "指定团队",
+    "name" : "SpecifyTeam",
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1867,7 +1876,7 @@
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 2,
-  "serviceAPIMode" : 1,
+  "serviceAPIMode" : 0,
   "serviceCodeName" : "ProjectTeam",
   "storageMode" : 1,
   "systemTag" : "iBizPMS",

@@ -310,6 +310,9 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
     public List<ProjectTeam> selectRowEditDefault(ProjectTeamSearchContext context){
         return baseMapper.selectRowEditDefault(context, context.getSelectCond());
     }
+    public List<ProjectTeam> selectSpecifyTeam(ProjectTeamSearchContext context){
+        return baseMapper.selectSpecifyTeam(context, context.getSelectCond());
+    }
     public List<ProjectTeam> selectTaskCntEstimateConsumedLeft(ProjectTeamSearchContext context){
         return baseMapper.selectTaskCntEstimateConsumedLeft(context, context.getSelectCond());
     }

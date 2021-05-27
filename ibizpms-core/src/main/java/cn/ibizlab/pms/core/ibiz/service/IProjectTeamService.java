@@ -43,6 +43,7 @@ public interface IProjectTeamService extends IService<ProjectTeam> {
     List<ProjectTeam> selectDefault(ProjectTeamSearchContext context);
     List<ProjectTeam> selectProjectTeamPm(ProjectTeamSearchContext context);
     List<ProjectTeam> selectRowEditDefault(ProjectTeamSearchContext context);
+    List<ProjectTeam> selectSpecifyTeam(ProjectTeamSearchContext context);
     List<ProjectTeam> selectTaskCntEstimateConsumedLeft(ProjectTeamSearchContext context);
     List<ProjectTeam> selectView(ProjectTeamSearchContext context);
 

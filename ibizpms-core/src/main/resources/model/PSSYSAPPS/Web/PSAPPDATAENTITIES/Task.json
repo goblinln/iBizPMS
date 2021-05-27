@@ -4565,7 +4565,6 @@
     "id" : "Activation@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "完成",
     "codeName" : "DoneTaskDash",
     "dataAccessAction" : "FINISH",

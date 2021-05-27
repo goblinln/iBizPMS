@@ -22,6 +22,7 @@ public interface ProjectTeamMapper extends BaseMapper<ProjectTeam> {
     List<ProjectTeam> selectDefault(@Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
     List<ProjectTeam> selectProjectTeamPm(@Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
     List<ProjectTeam> selectRowEditDefault(@Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
+    List<ProjectTeam> selectSpecifyTeam(@Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
     List<ProjectTeam> selectTaskCntEstimateConsumedLeft(@Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
     List<ProjectTeam> selectView(@Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
 

@@ -147,6 +147,8 @@ public class ProjectTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             return projectteamService.selectProjectTeamPm(searchContext);
         if (iPSDataQuery.getName().equals("RowEditDefault"))
             return projectteamService.selectRowEditDefault(searchContext);
+        if (iPSDataQuery.getName().equals("SpecifyTeam"))
+            return projectteamService.selectSpecifyTeam(searchContext);
         if (iPSDataQuery.getName().equals("TaskCntEstimateConsumedLeft"))
             return projectteamService.selectTaskCntEstimateConsumedLeft(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
