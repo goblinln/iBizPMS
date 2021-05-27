@@ -157,18 +157,48 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
         return this.condCache.get('view');
     }
     /**
-     * Select
+     * FetchRoot_NoBranch
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectModuleService
      */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/select`);
+    async FetchRoot_NoBranch(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/projectmodules/fetchroot_nobranch`, _data);
         }
-        return this.http.get(`/projectmodules/${_context.projectmodule}/select`);
+        return this.http.post(`/projectmodules/fetchroot_nobranch`, _data);
+    }
+    /**
+     * FetchROOT_TASK
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectModuleService
+     */
+    async FetchROOT_TASK(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/projectmodules/fetchroot_task`, _data);
+        }
+        return this.http.post(`/projectmodules/fetchroot_task`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectModuleService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectmodule) {
+            const res = await this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`);
+            return res;
+        }
+        const res = await this.http.get(`/projectmodules/${_context.projectmodule}`);
+        return res;
     }
     /**
      * Create
@@ -199,20 +229,18 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
         return this.http.post(`/projectmodules`, _data);
     }
     /**
-     * Update
+     * FetchParentModule
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectModuleService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`, _data);
+    async FetchParentModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/projectmodules/fetchparentmodule`, _data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/projectmodules/${_context.projectmodule}`, _data);
+        return this.http.post(`/projectmodules/fetchparentmodule`, _data);
     }
     /**
      * Remove
@@ -229,20 +257,48 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
         return this.http.delete(`/projectmodules/${_context.projectmodule}`);
     }
     /**
-     * Get
+     * FetchTaskModules
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectModuleService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule) {
-            const res = await this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`);
-            return res;
+    async FetchTaskModules(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/projectmodules/fetchtaskmodules`, _data);
         }
-        const res = await this.http.get(`/projectmodules/${_context.projectmodule}`);
-        return res;
+        return this.http.post(`/projectmodules/fetchtaskmodules`, _data);
+    }
+    /**
+     * FetchROOT
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectModuleService
+     */
+    async FetchROOT(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/projectmodules/fetchroot`, _data);
+        }
+        return this.http.post(`/projectmodules/fetchroot`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectModuleService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectmodule) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`, _data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/projectmodules/${_context.projectmodule}`, _data);
     }
     /**
      * GetDraft
@@ -265,131 +321,17 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
         return res;
     }
     /**
-     * Fix
+     * FetchDEFAULT
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectModuleService
      */
-    async Fix(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/fix`, _data);
-        }
-        return this.http.post(`/projectmodules/${_context.projectmodule}/fix`, _data);
-    }
-    /**
-     * RemoveModule
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectModuleService
-     */
-    async RemoveModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/removemodule`, _data);
-        }
-        return this.http.put(`/projectmodules/${_context.projectmodule}/removemodule`, _data);
-    }
-    /**
-     * FetchByPath
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectModuleService
-     */
-    async FetchByPath(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/fetchbypath`, _data);
-        }
-        return this.http.post(`/projectmodules/fetchbypath`, _data);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectModuleService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchDEFAULT(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/projectmodules/fetchdefault`, _data);
         }
         return this.http.post(`/projectmodules/fetchdefault`, _data);
-    }
-    /**
-     * FetchParentModule
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectModuleService
-     */
-    async FetchParentModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/fetchparentmodule`, _data);
-        }
-        return this.http.post(`/projectmodules/fetchparentmodule`, _data);
-    }
-    /**
-     * FetchRoot
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectModuleService
-     */
-    async FetchRoot(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/fetchroot`, _data);
-        }
-        return this.http.post(`/projectmodules/fetchroot`, _data);
-    }
-    /**
-     * FetchRoot_NoBranch
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectModuleService
-     */
-    async FetchRoot_NoBranch(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/fetchroot_nobranch`, _data);
-        }
-        return this.http.post(`/projectmodules/fetchroot_nobranch`, _data);
-    }
-    /**
-     * FetchRoot_Task
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectModuleService
-     */
-    async FetchRoot_Task(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/fetchroot_task`, _data);
-        }
-        return this.http.post(`/projectmodules/fetchroot_task`, _data);
-    }
-    /**
-     * FetchTaskModules
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectModuleService
-     */
-    async FetchTaskModules(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/fetchtaskmodules`, _data);
-        }
-        return this.http.post(`/projectmodules/fetchtaskmodules`, _data);
     }
 }
