@@ -128,6 +128,16 @@ public class ProjectSearchContext extends QueryWrapperContext<Project> {
         this.n_status_eq = n_status_eq;
     }
                 
+	private String n_status_in;//[项目状态]
+	public void setN_status_in(String n_status_in) {
+        this.n_status_in = n_status_in;
+    }
+                
+	private String n_status_isnull;//[项目状态]
+	public void setN_status_isnull(String n_status_isnull) {
+        this.n_status_isnull = n_status_isnull;
+    }
+                
 	private String n_status_noteq;//[项目状态]
 	public void setN_status_noteq(String n_status_noteq) {
         this.n_status_noteq = n_status_noteq;

@@ -3950,6 +3950,16 @@
       "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
+      "codeName" : "N_STATUS_IN",
+      "name" : "N_STATUS_IN",
+      "stdDataType" : 25,
+      "valueOP" : "IN"
+    }, {
+      "codeName" : "N_STATUS_ISNULL",
+      "name" : "N_STATUS_ISNULL",
+      "stdDataType" : 25,
+      "valueOP" : "ISNULL"
+    }, {
       "codeName" : "N_STATUS_NOTEQ",
       "name" : "N_STATUS_NOTEQ",
       "stdDataType" : 25,

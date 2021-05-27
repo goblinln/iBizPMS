@@ -534,7 +534,7 @@
         "nodeType" : "Product",
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchCurUer"
+          "id" : "FetchCurDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

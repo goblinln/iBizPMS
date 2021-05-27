@@ -63,6 +63,15 @@
 		<if test="srf.n_status_eq != null ">
 			<![CDATA[ AND  t1.`STATUS` = #{srf.n_status_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_status_in != null ">
+			<![CDATA[ AND  t1.`STATUS` IN ]]>
+            <foreach item="item" collection="srf.n_status_in.split(',|;')"  open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+		<if test="srf.n_status_isnull != null ">
+			<![CDATA[ AND  t1.`STATUS` IS NULL ]]>
+        </if>
 		<if test="srf.n_status_noteq != null ">
 			<![CDATA[ AND  t1.`STATUS` <> #{srf.n_status_noteq,jdbcType=VARCHAR} ]]>
         </if>
