@@ -52,14 +52,6 @@ public class ProductResource {
     @Lazy
     public ProductMapping productMapping;
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
-    @ApiOperation(value = "删除产品", tags = {"产品" },  notes = "删除产品")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("product_id") Long product_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(productService.remove(product_id));
-    }
-
-
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "取消置顶", tags = {"产品" },  notes = "取消置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cancelproducttop")
@@ -89,6 +81,14 @@ public class ProductResource {
         Map<String,Integer> opprivs = productRuntime.getOPPrivs(product_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @ApiOperation(value = "删除产品", tags = {"产品" },  notes = "删除产品")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("product_id") Long product_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(productService.remove(product_id));
     }
 
 

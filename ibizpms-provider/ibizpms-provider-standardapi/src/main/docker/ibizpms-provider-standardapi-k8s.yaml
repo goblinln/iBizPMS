@@ -57,9 +57,9 @@ spec:
         - name: ZUUL_ROUTES_DYNAMODEL_URL
           value: "http://172.16.170.145"      
         - name: PORTMAP
-          value: "9988:9988"      
+          value: "19988:19988"      
         - name: JOBS_APP-PORT
-          value: "9988"      
+          value: "19988"      
         - name: IBIZ_REF_SERVICE_IBZUAA-API
           value: "ibizrt4ebsx-rt4ebsx"      
         - name: IBIZ_DYNAMIC_PUBLISHPATH
@@ -109,9 +109,9 @@ spec:
     nodePort: 32012
     protocol: TCP
   - name: portmap
-    port: 9988:9988
-    targetPort: 9988:9988
-    nodePort: 9988:9988
+    port: 19988:19988
+    targetPort: 19988:19988
+    nodePort: 19988:19988
     protocol: TCP    
   selector:
     app: ibizpms-provider-standardapi
