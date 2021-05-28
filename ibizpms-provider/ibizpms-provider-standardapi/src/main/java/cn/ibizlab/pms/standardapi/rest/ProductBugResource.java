@@ -54,13 +54,29 @@ public class ProductBugResource {
 
 
     @PreAuthorize("@BugRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据产品获取Bug草稿", tags = {"Bug" },  notes = "根据产品获取Bug草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productbugs/getdraft")
-    public ResponseEntity<ProductBugDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductBugDTO dto) {
-        Bug domain = productbugMapping.toDomain(dto);
+	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"Bug" } ,notes = "根据产品获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productbugs/fetchdefault")
+	public ResponseEntity<List<ProductBugDTO>> fetchProductBugDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody BugSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Bug> domains = bugService.searchDefault(context) ;
+        List<ProductBugDTO> list = productbugMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据产品建立Bug", tags = {"Bug" },  notes = "根据产品建立Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs")
+    public ResponseEntity<ProductBugDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductBugDTO productbugdto) {
+        Bug domain = productbugMapping.toDomain(productbugdto);
         domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(productbugMapping.toDto(bugService.getDraft(domain)));
+		bugService.create(domain);
+        ProductBugDTO dto = productbugMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
+
 
     @VersionCheck(entity = "bug" , versionfield = "lastediteddate")
     @PreAuthorize("@BugRuntime.quickTest('DENY')")
@@ -77,14 +93,10 @@ public class ProductBugResource {
 
 
     @PreAuthorize("@BugRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据产品建立Bug", tags = {"Bug" },  notes = "根据产品建立Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs")
-    public ResponseEntity<ProductBugDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductBugDTO productbugdto) {
-        Bug domain = productbugMapping.toDomain(productbugdto);
-        domain.setProduct(product_id);
-		bugService.create(domain);
-        ProductBugDTO dto = productbugMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "根据产品删除Bug", tags = {"Bug" },  notes = "根据产品删除Bug")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productbugs/{productbug_id}")
+    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(bugService.remove(productbug_id));
     }
 
 
@@ -98,12 +110,13 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@BugRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据产品删除Bug", tags = {"Bug" },  notes = "根据产品删除Bug")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productbugs/{productbug_id}")
-    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(bugService.remove(productbug_id));
+    @ApiOperation(value = "根据产品获取Bug草稿", tags = {"Bug" },  notes = "根据产品获取Bug草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productbugs/getdraft")
+    public ResponseEntity<ProductBugDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductBugDTO dto) {
+        Bug domain = productbugMapping.toDomain(dto);
+        domain.setProduct(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(productbugMapping.toDto(bugService.getDraft(domain)));
     }
-
 
     @PreAuthorize("@BugRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品激活", tags = {"Bug" },  notes = "根据产品激活")
