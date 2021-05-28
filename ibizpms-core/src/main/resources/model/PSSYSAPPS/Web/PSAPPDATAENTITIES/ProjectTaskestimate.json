@@ -14,14 +14,14 @@
       "dataType" : 25,
       "name" : "text",
       "getPSAppDEField" : {
-        "name" : "DATE",
-        "codeName" : "Date"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     } ],
     "pagingSize" : 50,
     "getTextPSAppDEField" : {
-      "name" : "DATE",
-      "codeName" : "Date"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "getValuePSAppDEField" : {
       "name" : "ID",
@@ -31,27 +31,12 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PROJECTTASKESTIMATE__DEACTION__CREATE"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Update.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Update.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -59,31 +44,16 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "PROJECTTASKESTIMATE__DEACTION__UPDATE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PROJECTTASKESTIMATE__DEACTION__REMOVE"
+      "id" : "Update"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Get.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Get.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -91,15 +61,16 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "PROJECTTASKESTIMATE__DEACTION__GET"
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/GetDraft.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraft.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -111,11 +82,29 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "CheckKey",
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/CheckKey.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Create.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -123,41 +112,189 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "CheckKey"
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Save",
+    "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
+    "name" : "CreateTemp",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Save.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CreateTemp.json"
     },
-    "getPSDEServiceAPIMethod" : {
+    "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Save"
+      "id" : "CREATE"
     },
-    "builtinMethod" : false
-  } ],
-  "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchAccountDetail",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "CreateTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "CreateTempMajor",
+    "getPSDEAction" : {
       "modelref" : true,
-      "id" : "AccountDetail"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CreateTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "UpdateTemp",
+    "methodType" : "DEACTION",
+    "name" : "UpdateTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/UpdateTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "UpdateTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "UpdateTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/UpdateTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "RemoveTemp",
+    "methodType" : "DEACTION",
+    "name" : "RemoveTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/RemoveTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "RemoveTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "RemoveTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/RemoveTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetTemp",
+    "methodType" : "DEACTION",
+    "name" : "GetTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetTemp.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "getPSDEServiceAPIMethod" : {
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "GetTempMajor",
+    "getPSDEAction" : {
       "modelref" : true,
-      "id" : "FetchAccountDetail"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetDraftTemp",
+    "methodType" : "DEACTION",
+    "name" : "GetDraftTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraftTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetDraftTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "GetDraftTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraftTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "PMEvaluation",
+    "methodType" : "DEACTION",
+    "name" : "PMEvaluation",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/PMEvaluation.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Save.json"
+    },
+    "builtinMethod" : true
+  } ],
+  "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
@@ -171,403 +308,79 @@
       "id" : "FetchDefault"
     },
     "builtinMethod" : false
+  }, {
+    "codeName" : "FetchActionMonth",
+    "methodType" : "FETCH",
+    "name" : "ActionMonth",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ActionMonth"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchActionYear",
+    "methodType" : "FETCH",
+    "name" : "ActionYear",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ActionYear"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefaults",
+    "methodType" : "FETCH",
+    "name" : "DEFAULT1",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Defaults"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectActionMonth",
+    "methodType" : "FETCH",
+    "name" : "ProjectActionMonth",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectActionMonth"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectActionYear",
+    "methodType" : "FETCH",
+    "name" : "ProjectActionYear",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectActionYear"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectTaskEstimate",
+    "methodType" : "FETCH",
+    "name" : "ProjectTaskEstimate",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTaskEstimate"
+    },
+    "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
-    "codeName" : "TwentyfiveEVALUATIONTIME",
-    "logicName" : "二十五号评估工时",
-    "name" : "TWENTYFIVEEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Seventeenconsumed",
-    "logicName" : "十七号工时",
-    "name" : "SEVENTEENCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Project",
-    "logicName" : "项目标识",
-    "name" : "PROJECT",
-    "stdDataType" : 1
-  }, {
-    "codeName" : "FifteenEVALUATIONTIME",
-    "logicName" : "十五号评估工时",
-    "name" : "FIFTEENEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Otherconsumed",
-    "logicName" : "其他项目工时",
-    "name" : "OTHERCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "ThirteenEVALUATIONCOST",
-    "logicName" : "十三号评估成本",
-    "name" : "THIRTEENEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "ThirtyEVALUATIONCOST",
-    "logicName" : "三十号评估成本",
-    "name" : "THIRTYEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Evaluationcost",
-    "logicName" : "评估成本",
-    "name" : "EVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwentysixEVALUATIONCOST",
-    "logicName" : "二十六号评估成本",
-    "name" : "TWENTYSIXEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwoEVALUATIONTIME",
-    "logicName" : "二号评估工时",
-    "name" : "TWOEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "ThirtyEVALUATIONTIME",
-    "logicName" : "三十号评估工时",
-    "name" : "THIRTYEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Twentysixconsumed",
-    "logicName" : "二十六号工时",
-    "name" : "TWENTYSIXCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "NineteenEVALUATIONTIME",
-    "logicName" : "十九号评估工时",
-    "name" : "NINETEENEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Twentyoneconsumed",
-    "logicName" : "二十一号工时",
-    "name" : "TWENTYONECONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Evaluationtime",
-    "logicName" : "评估工时",
-    "name" : "EVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwentyfourEVALUATIONCOST",
-    "logicName" : "二十四号评估成本",
-    "name" : "TWENTYFOUREVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "ThreeEVALUATIONCOST",
-    "logicName" : "三号评估成本",
-    "name" : "THREEEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "ThirtyoneEVALUATIONCOST",
-    "logicName" : "三十一号评估成本",
-    "name" : "THIRTYONEEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "SixEVALUATIONCOST",
-    "logicName" : "六号评估成本",
-    "name" : "SIXEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "EighteenEVALUATIONTIME",
-    "logicName" : "十八号评估工时",
-    "name" : "EIGHTEENEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "ThirteenEVALUATIONTIME",
-    "logicName" : "十三号评估工时",
-    "name" : "THIRTEENEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwentynineEVALUATIONCOST",
-    "logicName" : "二十九号评估成本",
-    "name" : "TWENTYNINEEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwentyEVALUATIONTIME",
-    "logicName" : "二十号评估工时",
-    "name" : "TWENTYEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwentytwoEVALUATIONTIME",
-    "logicName" : "二十二号评估工时",
-    "name" : "TWENTYTWOEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "OneEVALUATIONTIME",
-    "logicName" : "一号评估工时",
-    "name" : "ONEEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Elevenconsumed",
-    "logicName" : "十一号工时",
-    "name" : "ELEVENCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "FourteenEVALUATIONTIME",
-    "logicName" : "十四号评估工时",
-    "name" : "FOURTEENEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Twentytwoconsumed",
-    "logicName" : "二十二号工时",
-    "name" : "TWENTYTWOCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwentyoneEVALUATIONCOST",
-    "logicName" : "二十一号评估成本",
-    "name" : "TWENTYONEEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Eightconsumed",
-    "logicName" : "八号工时",
-    "name" : "EIGHTCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwentyeightEVALUATIONTIME",
-    "logicName" : "二十八号评估工时",
-    "name" : "TWENTYEIGHTEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Threeconsumed",
-    "logicName" : "三号工时",
-    "name" : "THREECONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwentythreeEVALUATIONTIME",
-    "logicName" : "二十三号评估工时",
-    "name" : "TWENTYTHREEEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TenEVALUATIONTIME",
-    "logicName" : "十号评估工时",
-    "name" : "TENEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Sixconsumed",
-    "logicName" : "六号工时",
-    "name" : "SIXCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Twentyfiveconsumed",
-    "logicName" : "二十五号工时",
-    "name" : "TWENTYFIVECONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Twentyeightconsumed",
-    "logicName" : "二十八号工时",
-    "name" : "TWENTYEIGHTCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Thirteenconsumed",
-    "logicName" : "十三号工时",
-    "name" : "THIRTEENCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "FourEVALUATIONCOST",
-    "logicName" : "四号评估成本",
-    "name" : "FOUREVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwentytwoEVALUATIONCOST",
-    "logicName" : "二十二号评估成本",
-    "name" : "TWENTYTWOEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Month",
-    "logicName" : "月",
-    "name" : "MONTH",
+    "codeName" : "Org",
+    "logicName" : "归属组织",
+    "name" : "ORG",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
-    "codeName" : "TwelveEVALUATIONTIME",
-    "logicName" : "十二号评估工时",
-    "name" : "TWELVEEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TenEVALUATIONCOST",
-    "logicName" : "十号评估成本",
-    "name" : "TENEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "SevenEVALUATIONCOST",
-    "logicName" : "七号评估成本",
-    "name" : "SEVENEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "FifteenEVALUATIONCOST",
-    "logicName" : "十五号评估成本",
-    "name" : "FIFTEENEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "NineEVALUATIONCOST",
-    "logicName" : "九号评估成本",
-    "name" : "NINEEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Thirtyconsumed",
-    "logicName" : "三十号工时",
-    "name" : "THIRTYCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "ElevenEVALUATIONCOST",
-    "logicName" : "十一号评估成本",
-    "name" : "ELEVENEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "ThreeEVALUATIONTIME",
-    "logicName" : "三号评估工时",
-    "name" : "THREEEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwentynineEVALUATIONTIME",
-    "logicName" : "二十九号评估工时",
-    "name" : "TWENTYNINEEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Nineconsumed",
-    "logicName" : "九号工时",
-    "name" : "NINECONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "OneEVALUATIONCOST",
-    "logicName" : "一号评估成本",
-    "name" : "ONEEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Twentyconsumed",
-    "logicName" : "二十号工时",
-    "name" : "TWENTYCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "FiveEVALUATIONCOST",
-    "logicName" : "五号评估成本",
-    "name" : "FIVEEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwentyoneEVALUATIONTIME",
-    "logicName" : "二十一号评估工时",
-    "name" : "TWENTYONEEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Fourconsumed",
-    "logicName" : "四号工时",
-    "name" : "FOURONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Otherevaluationtime",
-    "logicName" : "其他项目评估工时",
-    "name" : "OTHEREVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Twentysevenconsumed",
-    "logicName" : "二十七号工时",
-    "name" : "TWENTYSEVENCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Twoconsumed",
-    "logicName" : "二号工时",
-    "name" : "TWOCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwentyfourEVALUATIONTIME",
-    "logicName" : "二十四号评估工时",
-    "name" : "TWENTYFOUREVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwentysixEVALUATIONTIME",
-    "logicName" : "二十六号评估工时",
-    "name" : "TWENTYSIXEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "NineEVALUATIONTIME",
-    "logicName" : "九号评估工时",
-    "name" : "NINEEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "EighteenEVALUATIONCOST",
-    "logicName" : "十八号评估成本",
-    "name" : "EIGHTEENEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwentythreeEVALUATIONCOST",
-    "logicName" : "二十三号评估成本",
-    "name" : "TWENTYTHREEEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "FourEVALUATIONTIME",
-    "logicName" : "四号评估工时",
-    "name" : "FOUREVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "ProjectName",
-    "logicName" : "项目名称",
-    "name" : "PROJECTNAME",
+    "codeName" : "Monthname",
+    "logicName" : "月（显示）",
+    "name" : "MONTHNAME",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
-    "codeName" : "EightEVALUATIONCOST",
-    "logicName" : "八号评估成本",
-    "name" : "EIGHTEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "EightEVALUATIONTIME",
-    "logicName" : "八号评估工时",
-    "name" : "EIGHTEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Twentynineconsumed",
-    "logicName" : "二十九号工时",
-    "name" : "TWENTYNINECONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Consumed",
-    "logicName" : "工时",
-    "name" : "CONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Date",
-    "logicName" : "日期",
-    "name" : "DATE",
-    "stdDataType" : 5,
-    "valueFormat" : "YYYY-MM-DD",
-    "enableQuickSearch" : true,
-    "majorField" : true
-  }, {
-    "codeName" : "Sixteenconsumed",
-    "logicName" : "十六号工时",
-    "name" : "SIXTEENCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "ThirtyoneEVALUATIONTIME",
-    "logicName" : "三十一号评估工时",
-    "name" : "THIRTYONEEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "SixteenEVALUATIONCOST",
-    "logicName" : "十六号评估成本",
-    "name" : "SIXTEENEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "SixteenEVALUATIONTIME",
-    "logicName" : "十六号评估工时",
-    "name" : "SIXTEENEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Account",
-    "logicName" : "用户",
-    "name" : "ACCOUNT",
+    "codeName" : "Dept",
+    "logicName" : "归属部门",
+    "name" : "DEPT",
     "stdDataType" : 25,
     "stringLength" : 100
-  }, {
-    "codeName" : "Sevenconsumed",
-    "logicName" : "七号工时",
-    "name" : "SEVENCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Nineteenconsumed",
-    "logicName" : "十九号工时",
-    "name" : "NINETEENCONSUMED",
-    "stdDataType" : 7
   }, {
     "codeName" : "Year",
     "logicName" : "年",
@@ -575,177 +388,176 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
-    "codeName" : "SixEVALUATIONTIME",
-    "logicName" : "六号评估工时",
-    "name" : "SIXEVALUATIONTIME",
+    "codeName" : "Account",
+    "logicName" : "用户",
+    "name" : "ACCOUNT",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "Left",
+    "logicName" : "预计剩余",
+    "name" : "LEFT",
+    "precision" : 2,
     "stdDataType" : 7
   }, {
-    "codeName" : "TwentyfiveEVALUATIONCOST",
-    "logicName" : "二十五号评估成本",
-    "name" : "TWENTYFIVEEVALUATIONCOST",
+    "codeName" : "Consumed",
+    "logicName" : "总计消耗",
+    "name" : "CONSUMED",
+    "precision" : 2,
     "stdDataType" : 7
   }, {
-    "codeName" : "SeventeenEVALUATIONTIME",
-    "logicName" : "十七号评估工时",
-    "name" : "SEVENTEENEVALUATIONTIME",
+    "codeName" : "CreateBy",
+    "logicName" : "由谁创建",
+    "name" : "CREATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Evaluationcost",
+    "logicName" : "评估成本",
+    "name" : "EVALUATIONCOST",
     "stdDataType" : 7
   }, {
-    "codeName" : "TwentysevenEVALUATIONTIME",
-    "logicName" : "二十七号评估工时",
-    "name" : "TWENTYSEVENEVALUATIONTIME",
-    "stdDataType" : 7
+    "codeName" : "Monthorder",
+    "logicName" : "月（排序）",
+    "name" : "MONTHORDER",
+    "stdDataType" : 9
   }, {
-    "codeName" : "Fourteenconsumed",
-    "logicName" : "十四号工时",
-    "name" : "FOURTEENCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Eighteenconsumed",
-    "logicName" : "十八号工时",
-    "name" : "EIGHTEENCONSUMED",
-    "stdDataType" : 7
+    "codeName" : "Files",
+    "logicName" : "附件",
+    "name" : "FILES",
+    "stdDataType" : 25,
+    "stringLength" : 2000
   }, {
     "codeName" : "Id",
-    "logicName" : "主键",
+    "logicName" : "编号",
     "name" : "ID",
+    "stdDataType" : 1,
+    "enableQuickSearch" : true,
+    "keyField" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "Evaluationstatus",
+    "logicName" : "评估状态",
+    "name" : "EVALUATIONSTATUS",
     "stdDataType" : 25,
-    "stringLength" : 100,
-    "keyField" : true
+    "stringLength" : 100
   }, {
-    "codeName" : "Twentyfourconsumed",
-    "logicName" : "二十四号工时",
-    "name" : "TWENTYFOURCONSUMED",
-    "stdDataType" : 7
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
-    "codeName" : "Thirtyoneconsumed",
-    "logicName" : "三十一号工时",
-    "name" : "THIRTYONECONSUMED",
-    "stdDataType" : 7
+    "codeName" : "Yearname",
+    "logicName" : "年（显示）",
+    "name" : "YEARNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
-    "codeName" : "TwelveEVALUATIONCOST",
-    "logicName" : "十二号评估成本",
-    "name" : "TWELVEEVALUATIONCOST",
-    "stdDataType" : 7
+    "codeName" : "Date",
+    "logicName" : "日期",
+    "name" : "DATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
   }, {
-    "codeName" : "SeventeenEVALUATIONCOST",
-    "logicName" : "十七号评估成本",
-    "name" : "SEVENTEENEVALUATIONCOST",
-    "stdDataType" : 7
+    "codeName" : "UpdateBy",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
-    "codeName" : "TwentyEVALUATIONCOST",
-    "logicName" : "二十号评估成本",
-    "name" : "TWENTYEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Tenconsumed",
-    "logicName" : "十号工时",
-    "name" : "TENCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "ElevenEVALUATIONTIME",
-    "logicName" : "十一号评估工时",
-    "name" : "ELEVENEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "FiveEVALUATIONTIME",
-    "logicName" : "五号评估工时",
-    "name" : "FIVEEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Fifteenconsumed",
-    "logicName" : "十五号工时",
-    "name" : "FIFTEENCONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwentyeightEVALUATIONCOST",
-    "logicName" : "二十八号评估成本",
-    "name" : "TWENTYEIGHTEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Twelveconsumed",
-    "logicName" : "十二号工时",
-    "name" : "TWELVECONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "FourteenEVALUATIONCOST",
-    "logicName" : "十四号评估成本",
-    "name" : "FOURTEENEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Fiveconsumed",
-    "logicName" : "五号工时",
-    "name" : "FIVECONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Twentythreeconsumed",
-    "logicName" : "二十三号工时",
-    "name" : "TWENTYTHREECONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "SevenEVALUATIONTIME",
-    "logicName" : "七号评估工时",
-    "name" : "SEVENEVALUATIONTIME",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwentysevenEVALUATIONCOST",
-    "logicName" : "二十七号评估成本",
-    "name" : "TWENTYSEVENEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Oneconsumed",
-    "logicName" : "一号工时",
-    "name" : "ONECONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "TwoEVALUATIONCOST",
-    "logicName" : "二号评估成本",
-    "name" : "TWOEVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "NineteenEVALUATIONCOST",
-    "logicName" : "十九号评估成本",
-    "name" : "NINETEENEVALUATIONCOST",
+    "codeName" : "Evaluationtime",
+    "logicName" : "评估工时",
+    "name" : "EVALUATIONTIME",
     "stdDataType" : 7
   }, {
     "codeName" : "Inputcost",
     "logicName" : "投入成本",
     "name" : "INPUTCOST",
     "stdDataType" : 7
+  }, {
+    "codeName" : "Dates",
+    "logicName" : "日期",
+    "name" : "DATES",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Month",
+    "logicName" : "月",
+    "name" : "MONTH",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Work",
+    "logicName" : "work",
+    "name" : "WORK",
+    "stdDataType" : 21,
+    "stringLength" : 65535
+  }, {
+    "codeName" : "Evaluationdesc",
+    "logicName" : "评估说明",
+    "name" : "EVALUATIONDESC",
+    "stdDataType" : 21,
+    "stringLength" : 1048576
+  }, {
+    "codeName" : "Taskspecies",
+    "logicName" : "任务种别",
+    "name" : "TASKSPECIES",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "TaskName",
+    "logicName" : "任务名称",
+    "name" : "TASKNAME",
+    "stdDataType" : 25,
+    "stringLength" : 255
+  }, {
+    "codeName" : "ProjectName",
+    "logicName" : "所属项目",
+    "name" : "PROJECTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 90
+  }, {
+    "codeName" : "Type",
+    "logicName" : "任务类型",
+    "name" : "TYPE",
+    "stdDataType" : 25,
+    "stringLength" : 20
+  }, {
+    "codeName" : "Deleted",
+    "logicName" : "任务删除标识",
+    "name" : "DELETED",
+    "stdDataType" : 25,
+    "stringLength" : 1
+  }, {
+    "codeName" : "Project",
+    "logicName" : "项目",
+    "name" : "PROJECT",
+    "stdDataType" : 1
+  }, {
+    "codeName" : "Task",
+    "logicName" : "任务",
+    "name" : "TASK",
+    "stdDataType" : 1
+  }, {
+    "codeName" : "TaskEstimatesn",
+    "logicName" : "任务预计编号",
+    "name" : "TASKESTIMATESN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Select",
-    "methodType" : "SELECT",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Select"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PROJECTTASKESTIMATE__DEACTION__CREATE"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Update.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Update.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -753,31 +565,16 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "PROJECTTASKESTIMATE__DEACTION__UPDATE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PROJECTTASKESTIMATE__DEACTION__REMOVE"
+      "id" : "Update"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Get.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Get.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -785,15 +582,16 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "PROJECTTASKESTIMATE__DEACTION__GET"
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/GetDraft.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraft.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -805,52 +603,9 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "CheckKey",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDEACTIONS/Save.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchAccountDetail",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "AccountDetail"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAccountDetail"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
@@ -863,6 +618,339 @@
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CreateTemp",
+    "methodType" : "DEACTION",
+    "name" : "CreateTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CreateTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "CreateTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "CreateTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CreateTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "UpdateTemp",
+    "methodType" : "DEACTION",
+    "name" : "UpdateTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/UpdateTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "UpdateTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "UpdateTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/UpdateTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "RemoveTemp",
+    "methodType" : "DEACTION",
+    "name" : "RemoveTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/RemoveTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "RemoveTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "RemoveTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/RemoveTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetTemp",
+    "methodType" : "DEACTION",
+    "name" : "GetTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "GetTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetDraftTemp",
+    "methodType" : "DEACTION",
+    "name" : "GetDraftTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraftTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetDraftTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "GetDraftTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraftTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "PMEvaluation",
+    "methodType" : "DEACTION",
+    "name" : "PMEvaluation",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/PMEvaluation.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Save.json"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FetchActionMonth",
+    "methodType" : "FETCH",
+    "name" : "ActionMonth",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ActionMonth"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempActionMonth",
+    "methodType" : "FETCHTEMP",
+    "name" : "ActionMonth",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ActionMonth"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchActionYear",
+    "methodType" : "FETCH",
+    "name" : "ActionYear",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ActionYear"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempActionYear",
+    "methodType" : "FETCHTEMP",
+    "name" : "ActionYear",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ActionYear"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempDefault",
+    "methodType" : "FETCHTEMP",
+    "name" : "DEFAULT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefaults",
+    "methodType" : "FETCH",
+    "name" : "DEFAULT1",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Defaults"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempDefaults",
+    "methodType" : "FETCHTEMP",
+    "name" : "DEFAULT1",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Defaults"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectActionMonth",
+    "methodType" : "FETCH",
+    "name" : "ProjectActionMonth",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectActionMonth"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempProjectActionMonth",
+    "methodType" : "FETCHTEMP",
+    "name" : "ProjectActionMonth",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectActionMonth"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectActionYear",
+    "methodType" : "FETCH",
+    "name" : "ProjectActionYear",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectActionYear"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempProjectActionYear",
+    "methodType" : "FETCHTEMP",
+    "name" : "ProjectActionYear",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectActionYear"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectTaskEstimate",
+    "methodType" : "FETCH",
+    "name" : "ProjectTaskEstimate",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTaskEstimate"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempProjectTaskEstimate",
+    "methodType" : "FETCHTEMP",
+    "name" : "ProjectTaskEstimate",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTaskEstimate"
+    },
+    "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
     "codeName" : "FilterUpdate",
@@ -900,6 +988,34 @@
     "name" : "FILTERFETCH",
     "builtinMethod" : true
   } ],
+  "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "编辑",
+    "codeName" : "Edit",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEstimateOptionView.json",
+      "viewType" : "DEOPTVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "TaskEstimate_Edit",
+    "name" : "编辑",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskEstimate.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf044@FontAwesome",
+      "cssClass" : "fa fa-edit"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "Edit",
+    "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
+    "id" : "Edit@TaskEstimate"
+  } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -907,34 +1023,65 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "管理",
+    "name" : "MANAGE"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "codeName" : "ProjectTaskestimate",
+  "codeName" : "ProjectTaskEstimate",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskestimate.json",
+  "dataAccCtrlMode" : 2,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskEstimate.json",
   "enableUIActions" : 15,
-  "logicName" : "项目工时统计",
-  "name" : "PROJECTTASKESTIMATE",
-  "getPSDEName" : "PROJECTTASKESTIMATE",
+  "logicName" : "任务预计",
+  "getMinorPSAppDERSs" : [ {
+    "actionRSMode" : 1,
+    "codeName" : "taskEstimates",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskEstimate.json"
+    },
+    "name" : "PROJECT_TASK__PROJECT_TASK_ESTIMATE",
+    "getParentPSAppDEField" : {
+      "name" : "TASK",
+      "codeName" : "Task"
+    },
+    "rSMode" : 2,
+    "tempDataOrder" : 10,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ],
+  "name" : "ZT_TASKESTIMATE",
+  "getPSDEName" : "ZT_TASKESTIMATE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDESERVICEAPIS/ProjectTaskestimate.json"
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDESERVICEAPIS/ProjectTaskEstimate.json"
   },
   "getQuickSearchPSAppDEFields" : [ {
-    "name" : "DATE",
-    "codeName" : "Date"
+    "name" : "ID",
+    "codeName" : "Id"
   } ],
   "storageMode" : 0,
   "defaultMode" : true,
   "enableFilterActions" : true,
+  "enableTempData" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,
   "enableUIRemove" : true,
   "enableWFActions" : false,
-  "major" : true
+  "major" : false
 }
