@@ -53,6 +53,89 @@ public class ProjectBuildResource {
     public ProjectBuildMapping projectbuildMapping;
 
 
+    @ApiOperation(value = "根据项目关联Bug", tags = {"版本" },  notes = "根据项目关联Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}/linkbug")
+    public ResponseEntity<ProjectBuildDTO> linkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id, @RequestBody ProjectBuildDTO projectbuilddto) {
+        Build domain = projectbuildMapping.toDomain(projectbuilddto);
+        domain.setProject(project_id);
+        domain.setId(projectbuild_id);
+        domain = buildService.linkBug(domain) ;
+        projectbuilddto = projectbuildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectbuilddto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'BUILDMANAGE')")
+    @ApiOperation(value = "根据项目删除版本", tags = {"版本" },  notes = "根据项目删除版本")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}")
+    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(buildService.remove(projectbuild_id));
+    }
+
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+    @ApiOperation(value = "根据项目获取版本", tags = {"版本" },  notes = "根据项目获取版本")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}")
+    public ResponseEntity<ProjectBuildDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id) {
+        Build domain = buildService.get(projectbuild_id);
+        ProjectBuildDTO dto = projectbuildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'BUILDMANAGE')")
+    @ApiOperation(value = "根据项目获取版本草稿", tags = {"版本" },  notes = "根据项目获取版本草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectbuilds/getdraft")
+    public ResponseEntity<ProjectBuildDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectBuildDTO dto) {
+        Build domain = projectbuildMapping.toDomain(dto);
+        domain.setProject(project_id);
+        return ResponseEntity.status(HttpStatus.OK).body(projectbuildMapping.toDto(buildService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据项目移除关联需求", tags = {"版本" },  notes = "根据项目移除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}/unlinkstory")
+    public ResponseEntity<ProjectBuildDTO> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id, @RequestBody ProjectBuildDTO projectbuilddto) {
+        Build domain = projectbuildMapping.toDomain(projectbuilddto);
+        domain.setProject(project_id);
+        domain.setId(projectbuild_id);
+        domain = buildService.unlinkStory(domain) ;
+        projectbuilddto = projectbuildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectbuilddto);
+    }
+
+    @ApiOperation(value = "根据项目移除Bug关联", tags = {"版本" },  notes = "根据项目移除Bug关联")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}/unlinkbug")
+    public ResponseEntity<ProjectBuildDTO> unlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id, @RequestBody ProjectBuildDTO projectbuilddto) {
+        Build domain = projectbuildMapping.toDomain(projectbuilddto);
+        domain.setProject(project_id);
+        domain.setId(projectbuild_id);
+        domain = buildService.unlinkBug(domain) ;
+        projectbuilddto = projectbuildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectbuilddto);
+    }
+
+    @ApiOperation(value = "根据项目关联需求", tags = {"版本" },  notes = "根据项目关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}/linkstory")
+    public ResponseEntity<ProjectBuildDTO> linkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id, @RequestBody ProjectBuildDTO projectbuilddto) {
+        Build domain = projectbuildMapping.toDomain(projectbuilddto);
+        domain.setProject(project_id);
+        domain.setId(projectbuild_id);
+        domain = buildService.linkStory(domain) ;
+        projectbuilddto = projectbuildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectbuilddto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"版本" } ,notes = "根据项目获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectbuilds/fetchdefault")
+	public ResponseEntity<List<ProjectBuildDTO>> fetchProjectBuildDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Build> domains = buildService.searchDefault(context) ;
+        List<ProjectBuildDTO> list = projectbuildMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @VersionCheck(entity = "build" , versionfield = "updatedate")
     @PreAuthorize("@ProjectRuntime.test(#project_id,'BUILDMANAGE')")
     @ApiOperation(value = "根据项目更新版本", tags = {"版本" },  notes = "根据项目更新版本")
@@ -78,89 +161,6 @@ public class ProjectBuildResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @ApiOperation(value = "根据项目移除关联需求", tags = {"版本" },  notes = "根据项目移除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}/unlinkstory")
-    public ResponseEntity<ProjectBuildDTO> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id, @RequestBody ProjectBuildDTO projectbuilddto) {
-        Build domain = projectbuildMapping.toDomain(projectbuilddto);
-        domain.setProject(project_id);
-        domain.setId(projectbuild_id);
-        domain = buildService.unlinkStory(domain) ;
-        projectbuilddto = projectbuildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectbuilddto);
-    }
-
-    @ApiOperation(value = "根据项目关联Bug", tags = {"版本" },  notes = "根据项目关联Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}/linkbug")
-    public ResponseEntity<ProjectBuildDTO> linkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id, @RequestBody ProjectBuildDTO projectbuilddto) {
-        Build domain = projectbuildMapping.toDomain(projectbuilddto);
-        domain.setProject(project_id);
-        domain.setId(projectbuild_id);
-        domain = buildService.linkBug(domain) ;
-        projectbuilddto = projectbuildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectbuilddto);
-    }
-
-    @ApiOperation(value = "根据项目移除Bug关联", tags = {"版本" },  notes = "根据项目移除Bug关联")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}/unlinkbug")
-    public ResponseEntity<ProjectBuildDTO> unlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id, @RequestBody ProjectBuildDTO projectbuilddto) {
-        Build domain = projectbuildMapping.toDomain(projectbuilddto);
-        domain.setProject(project_id);
-        domain.setId(projectbuild_id);
-        domain = buildService.unlinkBug(domain) ;
-        projectbuilddto = projectbuildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectbuilddto);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'BUILDMANAGE')")
-    @ApiOperation(value = "根据项目删除版本", tags = {"版本" },  notes = "根据项目删除版本")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}")
-    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(buildService.remove(projectbuild_id));
-    }
-
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'BUILDMANAGE')")
-    @ApiOperation(value = "根据项目获取版本草稿", tags = {"版本" },  notes = "根据项目获取版本草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectbuilds/getdraft")
-    public ResponseEntity<ProjectBuildDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectBuildDTO dto) {
-        Build domain = projectbuildMapping.toDomain(dto);
-        domain.setProject(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(projectbuildMapping.toDto(buildService.getDraft(domain)));
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"版本" } ,notes = "根据项目获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectbuilds/fetchdefault")
-	public ResponseEntity<List<ProjectBuildDTO>> fetchProjectBuildDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Build> domains = buildService.searchDefault(context) ;
-        List<ProjectBuildDTO> list = projectbuildMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目获取版本", tags = {"版本" },  notes = "根据项目获取版本")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}")
-    public ResponseEntity<ProjectBuildDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id) {
-        Build domain = buildService.get(projectbuild_id);
-        ProjectBuildDTO dto = projectbuildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "根据项目关联需求", tags = {"版本" },  notes = "根据项目关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}/linkstory")
-    public ResponseEntity<ProjectBuildDTO> linkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id, @RequestBody ProjectBuildDTO projectbuilddto) {
-        Build domain = projectbuildMapping.toDomain(projectbuilddto);
-        domain.setProject(project_id);
-        domain.setId(projectbuild_id);
-        domain = buildService.linkStory(domain) ;
-        projectbuilddto = projectbuildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectbuilddto);
-    }
 
 }
 

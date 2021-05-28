@@ -53,17 +53,14 @@ public class ProductBugResource {
     public ProductBugMapping productbugMapping;
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品建立Bug", tags = {"Bug" },  notes = "根据产品建立Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs")
-    public ResponseEntity<ProductBugDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductBugDTO productbugdto) {
-        Bug domain = productbugMapping.toDomain(productbugdto);
-        domain.setProduct(product_id);
-		bugService.create(domain);
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @ApiOperation(value = "根据产品获取Bug", tags = {"Bug" },  notes = "根据产品获取Bug")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productbugs/{productbug_id}")
+    public ResponseEntity<ProductBugDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id) {
+        Bug domain = bugService.get(productbug_id);
         ProductBugDTO dto = productbugMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @VersionCheck(entity = "bug" , versionfield = "lastediteddate")
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
@@ -80,23 +77,6 @@ public class ProductBugResource {
 
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品删除Bug", tags = {"Bug" },  notes = "根据产品删除Bug")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productbugs/{productbug_id}")
-    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(bugService.remove(productbug_id));
-    }
-
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品获取Bug", tags = {"Bug" },  notes = "根据产品获取Bug")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productbugs/{productbug_id}")
-    public ResponseEntity<ProductBugDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id) {
-        Bug domain = bugService.get(productbug_id);
-        ProductBugDTO dto = productbugMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
     @ApiOperation(value = "根据产品获取Bug草稿", tags = {"Bug" },  notes = "根据产品获取Bug草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productbugs/getdraft")
     public ResponseEntity<ProductBugDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductBugDTO dto) {
@@ -104,6 +84,26 @@ public class ProductBugResource {
         domain.setProduct(product_id);
         return ResponseEntity.status(HttpStatus.OK).body(productbugMapping.toDto(bugService.getDraft(domain)));
     }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
+    @ApiOperation(value = "根据产品建立Bug", tags = {"Bug" },  notes = "根据产品建立Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs")
+    public ResponseEntity<ProductBugDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductBugDTO productbugdto) {
+        Bug domain = productbugMapping.toDomain(productbugdto);
+        domain.setProduct(product_id);
+		bugService.create(domain);
+        ProductBugDTO dto = productbugMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
+    @ApiOperation(value = "根据产品删除Bug", tags = {"Bug" },  notes = "根据产品删除Bug")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productbugs/{productbug_id}")
+    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(bugService.remove(productbug_id));
+    }
+
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
     @ApiOperation(value = "根据产品激活", tags = {"Bug" },  notes = "根据产品激活")

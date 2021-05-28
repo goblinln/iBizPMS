@@ -12,7 +12,7 @@
                 </div>
                 <div class="content">
                     <div class="textarea">
-                        <input-box v-model="value" :placeholder="placeholder || '请输入...'" type="textarea"/>
+                        <input-box v-model="value" @change="valueChange" :placeholder="placeholder || '请输入...'" type="textarea"/>
                     </div>
                     <div class="navbar">
                         <div class="navbar-header">
@@ -29,6 +29,7 @@
         </template>
     </div>
 </template>
+
 
 <script lang="ts">
 import { Vue, Prop, Component } from 'vue-property-decorator';
@@ -244,6 +245,15 @@ export default class AppWFOpinion extends Vue {
             }
         };
         rAF(frameFunc);
+    }
+
+    /**
+     * 值变更
+     * 
+     * @memberof AppWFOpinion
+     */
+    public valueChange(value: any) {
+        this.$emit('change', value);
     }
 
 }    
