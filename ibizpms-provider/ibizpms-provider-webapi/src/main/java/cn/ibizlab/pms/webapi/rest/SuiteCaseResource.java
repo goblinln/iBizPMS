@@ -91,7 +91,7 @@ public class SuiteCaseResource {
          return ResponseEntity.status(HttpStatus.OK).body(suitecaseService.remove(suitecase_id));
     }
 
-    @PreAuthorize("@SuiteCaseRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@SuiteCaseRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除套件用例", tags = {"套件用例" },  notes = "批量删除套件用例")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/suitecases/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {

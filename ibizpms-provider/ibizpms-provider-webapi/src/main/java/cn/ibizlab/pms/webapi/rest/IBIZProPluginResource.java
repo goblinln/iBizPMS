@@ -81,7 +81,7 @@ public class IBIZProPluginResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizpropluginService.remove(ibizproplugin_id));
     }
 
-    @PreAuthorize("@IBIZProPluginRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IBIZProPluginRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除系统插件", tags = {"系统插件" },  notes = "批量删除系统插件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproplugins/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {

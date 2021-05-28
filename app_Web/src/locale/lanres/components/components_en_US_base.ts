@@ -393,50 +393,50 @@ function getLocaleResourceBase(){
           deleteFileFailure: 'File deletion failed',
           updateFailure: 'Batch update file failed',
         },
-        diskImageUpload:{
+        diskimageupload:{
           preview: 'Preview',
-          OCRdiscern: 'OCRdiscern',
+          ocrdiscern: 'OCRdiscern',
           load: 'Load',
           delete: 'Delete',
-          getImageFailure: 'Failed to get list of images',
-          loadImageFailure: 'Failed to download thumbnails',
-          loadImageFailure1: 'Failed to download thumbnail, failed to get file!',
-          loadImageFailure2:'Download image failed',
-          loadImageFailure3:'Download picture failed, no picture found!',
-          ImageIdNone: 'Picture ID does not exist!',
-          uploadImageFailure: 'Failed to upload image',
-          uploadImageFailure1: "Upload failed, only support 'GIF, JPG, PNG, BMP' format images!",
-          uploadFailure: 'Upload failed, individual image must not exceed',
-          notImageUrl: 'The image URL does not exist',
-          deleteFile: 'This action will permanently delete the file. Do you want to continue?',
-          deleteFilePrompt: 'Prompt',
+          getimagefailure: 'Failed to get list of images',
+          loadimagefailure: 'Failed to download thumbnails',
+          loadimagefailure1: 'Failed to download thumbnail, failed to get file!',
+          loadimagefailure2:'Download image failed',
+          loadimagefailure3:'Download picture failed, no picture found!',
+          imageidnone: 'Picture ID does not exist!',
+          uploadimagefailure: 'Failed to upload image',
+          uploadimagefailure1: "Upload failed, only support 'GIF, JPG, PNG, BMP' format images!",
+          uploadfailure: 'Upload failed, individual image must not exceed',
+          notimageurl: 'The image URL does not exist',
+          deletefile: 'This action will permanently delete the file. Do you want to continue?',
+          deletefileprompt: 'Prompt',
           true: 'True',
           false: 'False',
-          deleteImageFailure:'Image deletion failed',
-          updateFailure: 'Batch update file failed',
+          deleteimagefailure:'Image deletion failed',
+          updatefailure: 'Batch update file failed',
         },
-        appMapPosition: {
+        appmapposition: {
           submit: 'Submit',
           title: 'Please select address',
           address: "Tianfu Panda Pagoda, Sichuan TV Tower, Mengchuanwan Street, Chenghua District, Chengdu City, Sichuan Province",
           city: "Chengdu"
         },
-        appSortBar: {
+        appsortbar: {
           title: 'Sort'
         },
-        appAfterTime:{
-          minutesAgo: 'minutes ago',
-          hoursAgo: 'hours ago',
-          dayAgo: 'days ago',
-          monthsAgo: 'months ago',
-          yearsAgo: 'years ago'
+        appaftertime:{
+          minutesago: 'minutes ago',
+          hoursago: 'hours ago',
+          dayago: 'days ago',
+          monthsago: 'months ago',
+          yearsago: 'years ago'
         },
         timeline: {
           index: "serial",
           node: "node",
           author: "accepting officer",
           type: "operation",
-          lastTime: "completion time",
+          lasttime: "completion time",
           opinion: "approval opinion"
         },
         content: {
@@ -453,8 +453,8 @@ function getLocaleResourceBase(){
           apply: "application template",
           success: "Save template successfully!!!",
           error: "Failed to save template!!!",
-          delSuccess: "Delete template successfully!!!",
-          delError: "Failed to delete template!!!"
+          delsuccess: "Delete template successfully!!!",
+          delerror: "Failed to delete template!!!"
         },
         search: {
           holder: "Search content"

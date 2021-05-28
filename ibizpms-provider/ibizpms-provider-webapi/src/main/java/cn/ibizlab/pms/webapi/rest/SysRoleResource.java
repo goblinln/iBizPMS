@@ -81,7 +81,7 @@ public class SysRoleResource {
          return ResponseEntity.status(HttpStatus.OK).body(sysroleService.remove(sysrole_id));
     }
 
-    @PreAuthorize("@SysRoleRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@SysRoleRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除系统角色", tags = {"系统角色" },  notes = "批量删除系统角色")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysroles/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {

@@ -67,7 +67,7 @@ public interface PSDataEntityFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/psdataentities/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/psdataentities/fetchdefault")
     Page<PSDataEntity> searchDefault(@RequestBody PSDataEntitySearchContext context);
 
 

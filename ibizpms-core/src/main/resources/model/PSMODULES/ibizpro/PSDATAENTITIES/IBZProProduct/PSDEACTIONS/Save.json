@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "BUILTIN",
+  "codeName" : "Save",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProduct/PSDEACTIONS/Save.json",
+  "logicName" : "Save",
+  "name" : "Save",
+  "builtinAction" : true
+}

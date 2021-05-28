@@ -1,0 +1,28 @@
+{
+  "codeName" : "ZTRranch",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_BRANCH_BRANCH.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+  },
+  "name" : "DER1N_ZT_BUG_ZT_BRANCH_BRANCH",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "BRANCH",
+    "codeName" : "Branch"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "BRANCHNAME",
+    "codeName" : "Branchname"
+  },
+  "pickupDEFName" : "BRANCH",
+  "removeActionType" : -1,
+  "removeOrder" : 0
+}

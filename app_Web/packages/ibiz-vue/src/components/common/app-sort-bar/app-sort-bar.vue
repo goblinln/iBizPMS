@@ -19,7 +19,7 @@
         <div class="issort" @click="handleSort">
             <Icon v-if="isSort" type="ios-funnel-outline" />
             <Icon v-else type="ios-funnel" />
-            {{ $t('components.appSortBar.title') }}
+            {{ $t('components.appsortbar.title') }}
         </div>
     </row>
 </div>

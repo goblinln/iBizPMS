@@ -67,7 +67,7 @@ public interface SysDepartmentFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysdepartments/fetchdefault")
     Page<SysDepartment> searchDefault(@RequestBody SysDepartmentSearchContext context);
 
 

@@ -67,12 +67,12 @@ public interface PSSysAppFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/searchbuild")
+    @RequestMapping(method = RequestMethod.GET, value = "/pssysapps/fetchbuild")
     Page<PSSysApp> searchBuild(@RequestBody PSSysAppSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/pssysapps/fetchdefault")
     Page<PSSysApp> searchDefault(@RequestBody PSSysAppSearchContext context);
 
 

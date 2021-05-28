@@ -1,0 +1,8 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "BatchLinkStory",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/BatchLinkStory.json",
+  "logicName" : "批关联需求",
+  "name" : "BatchLinkStory"
+}

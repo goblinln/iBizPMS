@@ -91,7 +91,7 @@ public class IBZProToDoActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactionService.remove(ibzprotodoaction_id));
     }
 
-    @PreAuthorize("@IBZProToDoActionRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IBZProToDoActionRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除ToDo日志", tags = {"ToDo日志" },  notes = "批量删除ToDo日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprotodoactions/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -125,7 +125,7 @@ public class IBZProToDoActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactionService.checkKey(ibzprotodoactionMapping.toDomain(ibzprotodoactiondto)));
     }
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'MANAGE')")
+    @PreAuthorize("@IBZProToDoActionRuntime.test(#ibzprotodoaction_id, 'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"ToDo日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/{ibzprotodoaction_id}/comment")
     public ResponseEntity<IBZProToDoActionDTO> comment(@PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
@@ -153,7 +153,7 @@ public class IBZProToDoActionResource {
     }
 
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'MANAGE')")
+    @PreAuthorize("@IBZProToDoActionRuntime.test(#ibzprotodoaction_id, 'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"ToDo日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/{ibzprotodoaction_id}/editcomment")
     public ResponseEntity<IBZProToDoActionDTO> editComment(@PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {

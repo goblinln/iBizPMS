@@ -92,7 +92,7 @@ public class IbizproProductDailyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproproductdailyService.remove(ibizproproductdaily_id));
     }
 
-    @PreAuthorize("@IbizproProductDailyRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IbizproProductDailyRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除产品日报", tags = {"产品日报" },  notes = "批量删除产品日报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductdailies/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UPDATE",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "UpdateOrder",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UpdateOrder.json",
+  "logicName" : "排序",
+  "name" : "UpdateOrder",
+  "userCat" : "CAT1"
+}

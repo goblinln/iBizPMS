@@ -67,7 +67,7 @@ public interface PSSysReqItemFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/pssysreqitems/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/pssysreqitems/fetchdefault")
     Page<PSSysReqItem> searchDefault(@RequestBody PSSysReqItemSearchContext context);
 
 

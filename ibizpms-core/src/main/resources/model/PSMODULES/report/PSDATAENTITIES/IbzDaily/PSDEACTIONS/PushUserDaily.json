@@ -1,0 +1,9 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "PushUserDaily",
+  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/PushUserDaily.json",
+  "logicName" : "定时推送待阅提醒用户日报",
+  "name" : "PushUserDaily",
+  "userCat" : "CAT1"
+}

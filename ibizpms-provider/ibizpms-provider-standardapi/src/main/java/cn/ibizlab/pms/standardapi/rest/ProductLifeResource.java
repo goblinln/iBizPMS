@@ -53,11 +53,11 @@ public class ProductLifeResource {
     public ProductLifeMapping productlifeMapping;
 
 
-    @PreAuthorize("@ProductRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取RoadMapYear", tags = {"产品生命周期" } ,notes = "根据产品获取RoadMapYear")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productlives/fetchroadmapyear")
 	public ResponseEntity<List<ProductLifeDTO>> fetchProductLifeRoadMapYearByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductLifeSearchContext context) {
-        
+        context.setN_product_eq(product_id);
         Page<ProductLife> domains = productlifeService.searchRoadMapYear(context) ;
         List<ProductLifeDTO> list = productlifeMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)

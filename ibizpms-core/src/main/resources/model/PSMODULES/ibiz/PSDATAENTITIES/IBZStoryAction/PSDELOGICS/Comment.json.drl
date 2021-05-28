@@ -1,0 +1,34 @@
+package cn.ibizlab.pms.ibiz.logic.ibzstoryactionlogic.comment;
+        import java.util.Map;
+        import java.util.HashMap;
+        import com.alibaba.fastjson.JSONObject;
+        import org.springframework.util.StringUtils;
+        import org.springframework.util.ObjectUtils;
+        import cn.ibizlab.pms.util.errors.BadRequestAlertException;
+                global cn.ibizlab.pms.core.ibiz.domain.IBZStoryAction ibzstoryactioncommentdefault;
+        global cn.ibizlab.pms.core.ibiz.service.IIBZStoryActionService iBzSysIbzstoryactionDefaultService;
+        global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
+
+
+    no-loop
+
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "ibzstoryactioncommentbegin"
+            when
+            then
+            end
+
+            //逻辑处理节点[设置默认参数]
+            rule "prepareparam1"
+            ruleflow-group "ibzstoryactioncommentprepareparam1"
+            when
+            then
+                                ibzstoryactioncommentdefault.set("actor",curuser.getSessionParams().get("srfloginname"));
+                            ibzstoryactioncommentdefault.set("product","0");
+                            ibzstoryactioncommentdefault.set("project","0");
+                            ibzstoryactioncommentdefault.set("read","0");
+                            ibzstoryactioncommentdefault.set("action","commented");
+                            ibzstoryactioncommentdefault.set("extra","");
+                        update(ibzstoryactioncommentdefault);//更新fact中变量值
+            end

@@ -1,0 +1,9 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "ManagePorjectMembers",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Team/PSDEACTIONS/ManagePorjectMembers.json",
+  "logicName" : "项目团队管理",
+  "name" : "managePorjectMembers",
+  "userCat" : "CAT1"
+}

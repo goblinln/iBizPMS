@@ -1,0 +1,487 @@
+{
+  "codeName" : "Create",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly/PSFORMS/Create.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "新建表单",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
+  },
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "IBZ_REPORTLYID",
+      "codeName" : "IbzReportlyId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "IBZ_REPORTLYNAME",
+      "codeName" : "IbzReportlyName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "ibz_reportlyname",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "IBZ_REPORTLYNAME",
+      "codeName" : "IbzReportlyName"
+    }
+  }, {
+    "id" : "content",
+    "dataType" : 21,
+    "getPSAppDEField" : {
+      "name" : "CONTENT",
+      "codeName" : "Content"
+    }
+  }, {
+    "id" : "files",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "FILES",
+      "codeName" : "Files"
+    }
+  }, {
+    "id" : "reportto",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "REPORTTO",
+      "codeName" : "Reportto"
+    }
+  }, {
+    "id" : "mailto",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "MAILTO",
+      "codeName" : "Mailto"
+    }
+  }, {
+    "id" : "ibz_reportlyid",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "IBZ_REPORTLYID",
+      "codeName" : "IbzReportlyId"
+    }
+  }, {
+    "id" : "date",
+    "hidden" : true,
+    "dataType" : 5,
+    "createDVT" : "CURTIME",
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    }
+  }, {
+    "id" : "account",
+    "hidden" : true,
+    "dataType" : 25,
+    "createDVT" : "SESSION",
+    "createDV" : "srfloginname",
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    }
+  }, {
+    "id" : "issubmit",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "ISSUBMIT",
+      "codeName" : "Issubmit"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "汇报基本信息",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "汇报名称",
+        "codeName" : "ibz_reportlyname",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "name" : "ibz_reportlyname",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "IBZ_REPORTLYNAME",
+          "codeName" : "IbzReportlyName"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "maxLength" : 200,
+          "name" : "ibz_reportlyname"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : false,
+        "inputTipClosable" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "工作内容",
+        "codeName" : "content",
+        "dataType" : 21,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "name" : "content",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CONTENT",
+          "codeName" : "Content"
+        },
+        "getPSEditor" : {
+          "editorParams" : {
+            "uploadparams" : "{objecttype:\"reportly\",version:\"editor\"}",
+            "exportparams" : "{objecttype:\"reportly\",version:\"editor\"}"
+          },
+          "editorType" : "HTMLEDITOR",
+          "name" : "content"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : false,
+        "inputTipClosable" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "附件",
+        "codeName" : "files",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "name" : "files",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "FILES",
+          "codeName" : "Files"
+        },
+        "getPSEditor" : {
+          "editorParams" : {
+            "uploadparams" : "{objecttype:\"reportly\",objectid:\"0\",version:\"1\"}",
+            "FILEEXTS" : "",
+            "exportparams" : "{objecttype:\"reportly\",objectid:\"0\",version:\"1\"}",
+            "MAXFILESIZE" : "",
+            "MINFILECNT" : "",
+            "MAXFILECNT" : ""
+          },
+          "editorType" : "FILEUPLOADER",
+          "maxFileCount" : -1,
+          "maxFileSize" : -1,
+          "minFileCount" : 0,
+          "name" : "files"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : false,
+        "inputTipClosable" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "汇报给",
+        "codeName" : "reportto",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "name" : "reportto",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "REPORTTO",
+          "codeName" : "Reportto"
+        },
+        "getPSEditor" : {
+          "editorType" : "DROPDOWNLIST",
+          "name" : "reportto",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+          },
+          "singleSelect" : true
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : false,
+        "inputTipClosable" : false,
+        "needCodeListConfig" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "抄送给",
+        "codeName" : "mailto",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "name" : "mailto",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "MAILTO",
+          "codeName" : "Mailto"
+        },
+        "getPSEditor" : {
+          "editorType" : "MDROPDOWNLIST",
+          "name" : "mailto",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+          },
+          "singleSelect" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : false,
+        "inputTipClosable" : false,
+        "needCodeListConfig" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "汇报标识",
+        "codeName" : "ibz_reportlyid",
+        "dataType" : 1,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "name" : "ibz_reportlyid",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "IBZ_REPORTLYID",
+          "codeName" : "IbzReportlyId"
+        },
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "ibz_reportlyid"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : true,
+        "inputTipClosable" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "汇报日期",
+        "codeName" : "date",
+        "createDVT" : "CURTIME",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "name" : "date",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "DATE",
+          "codeName" : "Date"
+        },
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "date"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : true,
+        "inputTipClosable" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "用户",
+        "codeName" : "account",
+        "createDV" : "srfloginname",
+        "createDVT" : "SESSION",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "name" : "account",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "ACCOUNT",
+          "codeName" : "Account"
+        },
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "account"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : true,
+        "inputTipClosable" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "是否提交",
+        "codeName" : "issubmit",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "name" : "issubmit",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "ISSUBMIT",
+          "codeName" : "Issubmit"
+        },
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "issubmit"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : true,
+        "inputTipClosable" : false,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "noTabHeader" : true,
+  "readOnly" : false,
+  "showFormNavBar" : false,
+  "modelid" : "9fde702acc07af7429c39b41b6fdf498",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

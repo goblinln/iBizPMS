@@ -67,7 +67,7 @@ public interface SysPostFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysposts/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysposts/fetchdefault")
     Page<SysPost> searchDefault(@RequestBody SysPostSearchContext context);
 
 

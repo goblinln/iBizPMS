@@ -91,7 +91,7 @@ public class IbzLibModuleResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.remove(ibzlibmodule_id));
     }
 
-    @PreAuthorize("@IbzLibModuleRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IbzLibModuleRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除用例库模块", tags = {"用例库模块" },  notes = "批量删除用例库模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibmodules/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

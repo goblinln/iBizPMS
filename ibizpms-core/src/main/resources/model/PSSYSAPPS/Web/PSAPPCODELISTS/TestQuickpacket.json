@@ -1,0 +1,40 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "TestQuickpacket",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/TestQuickpacket.json",
+  "emptyText" : "未定义",
+  "name" : "测试单快速分组",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "All",
+    "data" : "{}",
+    "text" : "全部",
+    "value" : "ALL",
+    "default" : true
+  }, {
+    "codeName" : "Icreate",
+    "data" : "{\"n_status_eq\":\"wait\"}",
+    "text" : "待测测试单",
+    "value" : "ICREATE"
+  }, {
+    "codeName" : "Ireview",
+    "data" : "{\"n_status_eq\":\"doing\"}",
+    "text" : "测试中测试单",
+    "value" : "IREVIEW"
+  }, {
+    "codeName" : "Iclose",
+    "data" : "{\"n_status_eq\":\"blocked\"}",
+    "text" : "被阻塞测试单",
+    "value" : "ICLOSE"
+  }, {
+    "codeName" : "Tested",
+    "data" : "{\"n_status_eq\":\"done\"}",
+    "text" : "已测测试单",
+    "value" : "Tested"
+  } ],
+  "enableCache" : true
+}

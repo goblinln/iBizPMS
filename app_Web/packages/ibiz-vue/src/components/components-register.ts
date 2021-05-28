@@ -155,6 +155,7 @@ import { AppDefaultWFActionView } from './view/app-default-view/app-default-wfac
 import { AppDefaultDeRedirectView } from './view/app-default-view/app-default-deredirectview';
 import { AppDefaultWfStepTraceView } from './view/app-default-view/app-default-wfsteptraceview';
 import { AppDefaultWFDynaEditView3 } from './view/app-default-view/app-default-wfdynaeditview3';
+import { AppDefaultHtmlView } from './view/app-default-view/app-default-htmlview';
 import { AppStyle2IndexView } from './view/app-style2-view/app-style2-indexview';
 import { AppStyle2EditView } from './view/app-style2-view/app-style2-editview';
 import { AppStyle2EditView3 } from './view/app-style2-view/app-style2-editview3';
@@ -392,6 +393,7 @@ export const ComponentsRegister = {
         v.component('app-default-wfactionview', AppDefaultWFActionView);
         v.component("app-default-deredirectview",AppDefaultDeRedirectView);
         v.component("app-default-wfsteptraceview",AppDefaultWfStepTraceView);
+        v.component('app-default-htmlview', AppDefaultHtmlView);
         v.component('app-style2-indexview', AppStyle2IndexView);
         v.component('app-style2-editview', AppStyle2EditView);
         v.component('app-style2-editview3', AppStyle2EditView3);

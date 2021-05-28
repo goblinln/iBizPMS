@@ -97,7 +97,7 @@ public class IbzCaseResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.remove(ibzcase_id));
     }
 
-    @PreAuthorize("@IbzCaseRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IbzCaseRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除测试用例", tags = {"测试用例" },  notes = "批量删除测试用例")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcases/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

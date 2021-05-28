@@ -1,0 +1,26 @@
+{
+  "cacheTimeout" : 600,
+  "codeListType" : "DYNAMIC",
+  "codeName" : "AllBug",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/AllBug.json",
+  "emptyText" : "未定义",
+  "name" : "所有bug",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchDefault"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "TITLE",
+    "codeName" : "Title"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "enableCache" : true
+}

@@ -67,67 +67,67 @@ public interface SysEmployeeFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/searchbuguser")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchbuguser")
     Page<SysEmployee> searchBugUser(@RequestBody SysEmployeeSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/searchcontactlist")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchcontactlist")
     Page<SysEmployee> searchContActList(@RequestBody SysEmployeeSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchdefault")
     Page<SysEmployee> searchDefault(@RequestBody SysEmployeeSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/searchproductteamm")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchproductteamm")
     Page<SysEmployee> searchProductTeamM(@RequestBody SysEmployeeSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/searchprojectteamm")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteamm")
     Page<SysEmployee> searchProjectTeamM(@RequestBody SysEmployeeSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/searchprojectteammproduct")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteammproduct")
     Page<SysEmployee> searchProjectTeamMProduct(@RequestBody SysEmployeeSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/searchprojectteamtaskusertemp")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteamtaskusertemp")
     Page<SysEmployee> searchProjectTeamTaskUserTemp(@RequestBody SysEmployeeSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/searchprojectteamuser")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteamuser")
     Page<SysEmployee> searchProjectTeamUser(@RequestBody SysEmployeeSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/searchprojectteamusertask")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteamusertask")
     Page<SysEmployee> searchProjectTeamUserTask(@RequestBody SysEmployeeSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/searchprojectteampk")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteampk")
     Page<SysEmployee> searchProjectteamPk(@RequestBody SysEmployeeSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/searchstoryproductteampk")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchstoryproductteampk")
     Page<SysEmployee> searchStoryProductTeamPK(@RequestBody SysEmployeeSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/searchtaskmteam")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchtaskmteam")
     Page<SysEmployee> searchTaskMTeam(@RequestBody SysEmployeeSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/searchtaskteam")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchtaskteam")
     Page<SysEmployee> searchTaskTeam(@RequestBody SysEmployeeSearchContext context);
 
 

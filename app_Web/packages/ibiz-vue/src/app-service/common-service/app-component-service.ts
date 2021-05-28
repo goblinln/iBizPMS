@@ -89,6 +89,7 @@ export class AppComponentService {
         this.viewMap.set("DEREDIRECTVIEW_DEFAULT", 'app-default-deredirectview');
         this.viewMap.set("APPWFSTEPTRACEVIEW_DEFAULT", 'app-default-wfsteptraceview');
         this.viewMap.set("DEEDITVIEW3_DEFAULT", 'app-default-editview3');
+        this.viewMap.set("DEHTMLVIEW_DEFAULT", 'app-default-htmlview');
         // STYLE2 样式
         this.viewMap.set("APPINDEXVIEW_STYLE2", 'app-style2-indexview');
         this.viewMap.set("DEEDITVIEW_STYLE2", 'app-style2-editview');

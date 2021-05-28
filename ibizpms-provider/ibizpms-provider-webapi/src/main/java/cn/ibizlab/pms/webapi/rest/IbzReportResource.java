@@ -92,7 +92,7 @@ public class IbzReportResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzreportService.remove(ibzreport_id));
     }
 
-    @PreAuthorize("@IbzReportRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IbzReportRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除汇报汇总", tags = {"汇报汇总" },  notes = "批量删除汇报汇总")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreports/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

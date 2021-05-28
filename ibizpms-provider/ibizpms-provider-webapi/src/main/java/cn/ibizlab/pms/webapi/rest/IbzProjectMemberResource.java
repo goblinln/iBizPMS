@@ -91,7 +91,7 @@ public class IbzProjectMemberResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprojectmemberService.remove(ibzprojectmember_id));
     }
 
-    @PreAuthorize("@IbzProjectMemberRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除项目相关成员", tags = {"项目相关成员" },  notes = "批量删除项目相关成员")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprojectmembers/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

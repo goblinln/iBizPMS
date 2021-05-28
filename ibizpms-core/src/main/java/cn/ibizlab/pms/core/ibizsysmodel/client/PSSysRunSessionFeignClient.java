@@ -67,7 +67,7 @@ public interface PSSysRunSessionFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/pssysrunsessions/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/pssysrunsessions/fetchdefault")
     Page<PSSysRunSession> searchDefault(@RequestBody PSSysRunSessionSearchContext context);
 
 

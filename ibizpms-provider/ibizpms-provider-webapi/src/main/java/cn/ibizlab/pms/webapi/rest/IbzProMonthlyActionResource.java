@@ -91,7 +91,7 @@ public class IbzProMonthlyActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyactionService.remove(ibzpromonthlyaction_id));
     }
 
-    @PreAuthorize("@IbzProMonthlyActionRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IbzProMonthlyActionRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除月报日志", tags = {"月报日志" },  notes = "批量删除月报日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzpromonthlyactions/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

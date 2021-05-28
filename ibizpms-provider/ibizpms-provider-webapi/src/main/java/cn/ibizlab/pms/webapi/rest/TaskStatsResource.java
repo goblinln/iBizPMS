@@ -91,7 +91,7 @@ public class TaskStatsResource {
          return ResponseEntity.status(HttpStatus.OK).body(taskstatsService.remove(taskstats_id));
     }
 
-    @PreAuthorize("@TaskStatsRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@TaskStatsRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除任务统计", tags = {"任务统计" },  notes = "批量删除任务统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/taskstats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

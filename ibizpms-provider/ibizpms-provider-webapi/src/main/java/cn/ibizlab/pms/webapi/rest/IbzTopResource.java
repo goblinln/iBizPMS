@@ -92,7 +92,7 @@ public class IbzTopResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibztopService.remove(ibztop_id));
     }
 
-    @PreAuthorize("@IbzTopRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IbzTopRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除置顶", tags = {"置顶" },  notes = "批量删除置顶")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztops/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {

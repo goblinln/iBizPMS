@@ -1,0 +1,23 @@
+{
+  "actionMode" : "CREATE",
+  "actionType" : "BUILTIN",
+  "getBeforePSDEActionLogics" : [ {
+    "actionLogicType" : 1,
+    "attachMode" : "BEFORE",
+    "name" : "附加逻辑",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDELOGICS/Comment.json"
+    },
+    "cloneParam" : false,
+    "ignoreException" : false,
+    "internalLogic" : true
+  } ],
+  "codeName" : "Create",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/Create.json",
+  "logicName" : "Create",
+  "name" : "Create",
+  "orderValue" : 1,
+  "userCat" : "CAT1",
+  "builtinAction" : true
+}

@@ -1,0 +1,20 @@
+{
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Manage_DEV.json",
+  "name" : "项目管理（参与者）（系统使用）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "DeveloperQuery"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "MANAGE",
+    "name" : "MANAGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    }
+  } ],
+  "roleTag" : "Project_Manage_DEV",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

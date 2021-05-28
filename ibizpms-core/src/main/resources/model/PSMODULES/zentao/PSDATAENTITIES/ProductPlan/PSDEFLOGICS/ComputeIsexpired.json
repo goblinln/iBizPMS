@@ -1,0 +1,17 @@
+{
+  "codeName" : "ComputeIsexpired",
+  "dEFLogicMode" : "COMPUTE",
+  "defaultParamName" : "DEFAULT",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/ComputeIsexpired.json",
+  "logicName" : "计算是否过期",
+  "logicSubType" : "DEFIELD",
+  "name" : "计算是否过期",
+  "getPSDEField" : {
+    "name" : "ISEXPIRED",
+    "codeName" : "Isexpired"
+  },
+  "scriptCode" : "var end = entity.get(\"end\");\nvar newdate = new Date();\nvar isexpired = \"1\"; \nif(end !== null) {\n\tvar dateSpan;\n\tend = Date.parse(end);\n\tif(end > newdate) {\n\t\tisexpired = \"0\";\n\t}\n}\nreturn isexpired;",
+  "customCode" : true,
+  "enableBackend" : true,
+  "enableFront" : false
+}

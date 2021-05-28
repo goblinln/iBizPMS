@@ -1,0 +1,20 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_TeamManage_Open.json",
+  "name" : "项目团队管理（公开项目）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "OpenQuery"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "PROJECTTEAMMANAGE",
+    "name" : "PROJECTTEAMMANGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "PROJECTTEAMMANAGE"
+    }
+  } ],
+  "roleTag" : "Project_TeamManage_Open",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

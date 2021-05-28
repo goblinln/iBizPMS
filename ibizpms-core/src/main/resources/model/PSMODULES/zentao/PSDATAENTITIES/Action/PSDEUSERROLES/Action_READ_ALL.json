@@ -1,0 +1,7 @@
+{
+  "customCond" : "[ (1, '=', 1) ]",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_READ_ALL.json",
+  "name" : "系统日志查看（全部数据）",
+  "roleTag" : "Action_READ_ALL",
+  "userDRAction" : "READ"
+}

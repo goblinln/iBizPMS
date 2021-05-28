@@ -67,12 +67,12 @@ public interface PSSystemDBCfgFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/searchbuild")
+    @RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/fetchbuild")
     Page<PSSystemDBCfg> searchBuild(@RequestBody PSSystemDBCfgSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/fetchdefault")
     Page<PSSystemDBCfg> searchDefault(@RequestBody PSSystemDBCfgSearchContext context);
 
 

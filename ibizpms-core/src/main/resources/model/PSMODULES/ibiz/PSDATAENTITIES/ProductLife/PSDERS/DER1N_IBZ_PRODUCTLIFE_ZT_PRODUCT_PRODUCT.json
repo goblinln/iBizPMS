@@ -1,0 +1,25 @@
+{
+  "codeName" : "IbzProduct",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDERS/DER1N_IBZ_PRODUCTLIFE_ZT_PRODUCT_PRODUCT.json",
+  "logicName" : "产品",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 4,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife.json"
+  },
+  "name" : "DER1N_IBZ_PRODUCTLIFE_ZT_PRODUCT_PRODUCT",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "PRODUCT",
+    "codeName" : "Product"
+  },
+  "pickupDEFName" : "PRODUCT",
+  "removeActionType" : -1,
+  "removeOrder" : 0
+}

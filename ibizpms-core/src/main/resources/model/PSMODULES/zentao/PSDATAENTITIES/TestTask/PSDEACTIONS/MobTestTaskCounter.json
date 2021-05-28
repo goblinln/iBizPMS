@@ -1,0 +1,12 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "DELOGIC",
+  "codeName" : "MobTestTaskCounter",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/MobTestTaskCounter.json",
+  "logicName" : "移动端测试版本计数器",
+  "name" : "MobTestTaskCounter",
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDELOGICS/MobTestTaskCounter.json"
+  }
+}

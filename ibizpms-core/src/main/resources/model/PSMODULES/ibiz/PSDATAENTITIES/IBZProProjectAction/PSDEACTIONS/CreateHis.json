@@ -1,0 +1,8 @@
+{
+  "actionMode" : "CREATE",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "CreateHis",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProjectAction/PSDEACTIONS/CreateHis.json",
+  "logicName" : "创建历史日志",
+  "name" : "CreateHis"
+}

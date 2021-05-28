@@ -1,0 +1,318 @@
+{
+  "codeName" : "ProductManger",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductManger.json",
+  "name" : "产品经理",
+  "getPSSysUserRoleDatas" : [ {
+    "name" : "产品经理-ZT_TODO[待办转需求（我的待办）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_ToStory_MyTodo.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_PRODUCT[产品维护（公开）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_Open.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_STORY[需求维护（我相关产品）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_MyReP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_CASE[测试用例查看（创建或更新）（系统使用）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Read_COU.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_PRODUCT[产品查看（公开）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_Open.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_STORY[需求维护（我创建或参与）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_MyCOrP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_PRODUCT[产品维护（参与者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_DEV.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_PRODUCT[产品维护（创建者或更新者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_CreateBy.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_PROJECT[项目查看（公开项目）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_Open.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_BUG[BUG转需求（我相关的产品）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_TOSTORY_MyReP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_PRODUCT[产品管理（参与者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_DEV.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_PROJECT[项目查看（创建者或者更新者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_OpenBy.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_PROJECT[项目查看（参与者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_DEV.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_PRODUCT[产品管理（公开）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_Open.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_PRODUCT[产品管理（创建者或更新者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_CreateBy.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_TASK[任务查看（我创建或参与）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Read_MyCOrP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_USERTPL[用户模板维护（我的模板或公开模板）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEUSERROLES/UserTpl_Maintain_My.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_TODO[待办维护（我的待办）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Maintain_MyTodo.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_PRODUCT[产品查看（创建者或更新者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_CreateBy.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_DOCLIB[当前组织（读写）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/CURORG_RW.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+    }
+  }, {
+    "name" : "产品经理-IBZPRO_PRODUCTLINE[当前组织（读）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEUSERROLES/CURORG_R.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_STORY[需求查看（我相关产品）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Read_MyReP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_PRODUCT[产品查看（参与者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_DEV.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  } ],
+  "getPSSysUserRoleReses" : [ {
+    "name" : "产品经理-顶部_产品主页",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_PRODUCT_MENU"
+    },
+    "sysUniResCode" : "TOP_PRODUCT_MENU"
+  }, {
+    "name" : "产品经理-左侧_测试资源",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__LEFT_CASE_MENU"
+    },
+    "sysUniResCode" : "LEFT_CASE_MENU"
+  }, {
+    "name" : "产品经理-顶部_文档",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_DOC_MENU"
+    },
+    "sysUniResCode" : "TOP_DOC_MENU"
+  }, {
+    "name" : "产品经理-需求新建",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_CREATE_BUT"
+    },
+    "sysUniResCode" : "STORY_CREATE_BUT"
+  }, {
+    "name" : "产品经理-项目关联需求",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROJ_LINKSTORY_BUT"
+    },
+    "sysUniResCode" : "PROJ_LINKSTORY_BUT"
+  }, {
+    "name" : "产品经理-顶部_我的收藏",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_MYFAVOURITE_MENU"
+    },
+    "sysUniResCode" : "TOP_MYFAVOURITE_MENU"
+  }, {
+    "name" : "产品经理-产品左侧资源",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PRODUCTLEFT"
+    },
+    "sysUniResCode" : "PRODUCTLEFT"
+  }, {
+    "name" : "产品经理-顶部_测试主页",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_CASE_MENU"
+    },
+    "sysUniResCode" : "TOP_CASE_MENU"
+  }, {
+    "name" : "产品经理-顶部_我的地盘",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_MYPLACE_MENU"
+    },
+    "sysUniResCode" : "TOP_MYPLACE_MENU"
+  }, {
+    "name" : "产品经理-产品新建",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROD_CREATE_BUT"
+    },
+    "sysUniResCode" : "PROD_CREATE_BUT"
+  }, {
+    "name" : "产品经理-左侧_项目管理（一级）",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__LEFT_PROJECT_MENU"
+    },
+    "sysUniResCode" : "LEFT_PROJECT_MENU"
+  } ],
+  "roleTag" : "ProductManger",
+  "roleType" : "CUSTOM",
+  "uniResTags" : [ "TOP_PRODUCT_MENU", "LEFT_CASE_MENU", "TOP_DOC_MENU", "STORY_CREATE_BUT", "PROJ_LINKSTORY_BUT", "TOP_MYFAVOURITE_MENU", "PRODUCTLEFT", "TOP_CASE_MENU", "TOP_MYPLACE_MENU", "PROD_CREATE_BUT", "LEFT_PROJECT_MENU" ],
+  "globalRole" : true
+}

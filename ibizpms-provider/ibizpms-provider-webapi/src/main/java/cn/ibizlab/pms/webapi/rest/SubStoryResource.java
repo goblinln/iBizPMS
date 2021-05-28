@@ -99,7 +99,7 @@ public class SubStoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(substory_id));
     }
 
-    @PreAuthorize("@StoryRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@StoryRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除需求", tags = {"需求" },  notes = "批量删除需求")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/substories/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -308,7 +308,7 @@ public class SubStoryResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @PreAuthorize("@StoryRuntime.test(#substory_id, 'BUILDLINK')")
     @ApiOperation(value = "项目关联需求", tags = {"需求" },  notes = "项目关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories/{substory_id}/buildlinkstory")
     public ResponseEntity<SubStoryDTO> buildLinkStory(@PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -322,7 +322,7 @@ public class SubStoryResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @PreAuthorize("@StoryRuntime.test(#substory_id, 'BUILDLINK')")
     @ApiOperation(value = "版本解除关联需求", tags = {"需求" },  notes = "版本解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories/{substory_id}/buildunlinkstory")
     public ResponseEntity<SubStoryDTO> buildUnlinkStory(@PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -441,7 +441,7 @@ public class SubStoryResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @PreAuthorize("@StoryRuntime.test(#substory_id, 'PLANLINK')")
     @ApiOperation(value = "计划关联需求", tags = {"需求" },  notes = "计划关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories/{substory_id}/linkstory")
     public ResponseEntity<SubStoryDTO> linkStory(@PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -469,7 +469,7 @@ public class SubStoryResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @PreAuthorize("@StoryRuntime.test(#substory_id, 'PROJECTLINK')")
     @ApiOperation(value = "项目关联需求", tags = {"需求" },  notes = "项目关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories/{substory_id}/projectlinkstory")
     public ResponseEntity<SubStoryDTO> projectLinkStory(@PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -483,7 +483,7 @@ public class SubStoryResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @PreAuthorize("@StoryRuntime.test(#substory_id, 'PROJECTLINK')")
     @ApiOperation(value = "项目解除关联需求", tags = {"需求" },  notes = "项目解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories/{substory_id}/projectunlinkstory")
     public ResponseEntity<SubStoryDTO> projectUnlinkStory(@PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -539,7 +539,7 @@ public class SubStoryResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @PreAuthorize("@StoryRuntime.test(#substory_id, 'RELEASELINK')")
     @ApiOperation(value = "发布关联需求", tags = {"需求" },  notes = "发布关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories/{substory_id}/releaselinkstory")
     public ResponseEntity<SubStoryDTO> releaseLinkStory(@PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -553,7 +553,7 @@ public class SubStoryResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @PreAuthorize("@StoryRuntime.test(#substory_id, 'RELEASELINK')")
     @ApiOperation(value = "发布解除关联需求", tags = {"需求" },  notes = "发布解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories/{substory_id}/releaseunlinkstory")
     public ResponseEntity<SubStoryDTO> releaseUnlinkStory(@PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -699,7 +699,7 @@ public class SubStoryResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @PreAuthorize("@StoryRuntime.test(#substory_id, 'PLANLINK')")
     @ApiOperation(value = "计划解除关联需求", tags = {"需求" },  notes = "计划解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories/{substory_id}/unlinkstory")
     public ResponseEntity<SubStoryDTO> unlinkStory(@PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -941,7 +941,7 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目相关需求", tags = {"需求" } ,notes = "获取项目相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchprojectstories")
 	public ResponseEntity<List<SubStoryDTO>> fetchprojectstories(@RequestBody StorySearchContext context) {
@@ -1025,7 +1025,7 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务相关需求", tags = {"需求" } ,notes = "获取任务相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchtaskrelatedstory")
 	public ResponseEntity<List<SubStoryDTO>> fetchtaskrelatedstory(@RequestBody StorySearchContext context) {

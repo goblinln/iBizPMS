@@ -1,0 +1,9 @@
+{
+  "actionMode" : "CHECKKEY",
+  "actionType" : "BUILTIN",
+  "codeName" : "CheckKey",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Branch/PSDEACTIONS/CheckKey.json",
+  "logicName" : "CheckKey",
+  "name" : "CheckKey",
+  "builtinAction" : true
+}

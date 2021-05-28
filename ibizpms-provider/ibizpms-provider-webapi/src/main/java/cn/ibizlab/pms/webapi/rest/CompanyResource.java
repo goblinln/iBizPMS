@@ -91,7 +91,7 @@ public class CompanyResource {
          return ResponseEntity.status(HttpStatus.OK).body(companyService.remove(company_id));
     }
 
-    @PreAuthorize("@CompanyRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@CompanyRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除公司", tags = {"公司" },  notes = "批量删除公司")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/companies/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

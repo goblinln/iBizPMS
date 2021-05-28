@@ -80,7 +80,7 @@ public class IBIZProMessageResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizpromessageService.remove(ibizpromessage_id));
     }
 
-    @PreAuthorize("@IBIZProMessageRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IBIZProMessageRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除消息", tags = {"消息" },  notes = "批量删除消息")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {

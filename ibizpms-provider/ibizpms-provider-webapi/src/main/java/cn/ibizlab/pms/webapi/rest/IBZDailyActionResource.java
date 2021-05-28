@@ -91,7 +91,7 @@ public class IBZDailyActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzdailyactionService.remove(ibzdailyaction_id));
     }
 
-    @PreAuthorize("@IBZDailyActionRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IBZDailyActionRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除日报日志", tags = {"日报日志" },  notes = "批量删除日报日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailyactions/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -125,7 +125,7 @@ public class IBZDailyActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzdailyactionService.checkKey(ibzdailyactionMapping.toDomain(ibzdailyactiondto)));
     }
 
-    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id, 'MANAGE')")
+    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id, 'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"日报日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/{ibzdailyaction_id}/comment")
     public ResponseEntity<IBZDailyActionDTO> comment(@PathVariable("ibzdailyaction_id") Long ibzdailyaction_id, @RequestBody IBZDailyActionDTO ibzdailyactiondto) {
@@ -153,7 +153,7 @@ public class IBZDailyActionResource {
     }
 
 
-    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id, 'MANAGE')")
+    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id, 'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"日报日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/{ibzdailyaction_id}/editcomment")
     public ResponseEntity<IBZDailyActionDTO> editComment(@PathVariable("ibzdailyaction_id") Long ibzdailyaction_id, @RequestBody IBZDailyActionDTO ibzdailyactiondto) {

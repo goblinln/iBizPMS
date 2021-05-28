@@ -3,7 +3,6 @@ export default [
     'createman',
     'updatedate',
     'productlifename',
-    'product',
     'createdate',
     'parent',
     'year',
@@ -13,4 +12,5 @@ export default [
     'begin',
     'productlifeid',
     'end',
+    'product',
 ];

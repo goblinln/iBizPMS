@@ -1,0 +1,17 @@
+{
+  "codeName" : "ComputeIsLeaf",
+  "dEFLogicMode" : "COMPUTE",
+  "defaultParamName" : "DEFAULT",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEFLOGICS/ComputeIsLeaf.json",
+  "logicName" : "计算是否是子需求",
+  "logicSubType" : "DEFIELD",
+  "name" : "计算是否是子需求",
+  "getPSDEField" : {
+    "name" : "ISLEAF",
+    "codeName" : "IsLeaf"
+  },
+  "scriptCode" : "var parent = entity.get(\"parent\");\nreturn parent > 0 ? true : false;",
+  "customCode" : true,
+  "enableBackend" : true,
+  "enableFront" : false
+}

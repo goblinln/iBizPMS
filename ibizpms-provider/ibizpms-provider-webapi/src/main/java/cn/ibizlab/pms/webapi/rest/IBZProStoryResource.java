@@ -91,7 +91,7 @@ public class IBZProStoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprostoryService.remove(ibzprostory_id));
     }
 
-    @PreAuthorize("@IBZProStoryRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IBZProStoryRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除需求", tags = {"需求" },  notes = "批量删除需求")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprostories/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

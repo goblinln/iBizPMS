@@ -91,7 +91,7 @@ public class EmpLoyeeloadResource {
          return ResponseEntity.status(HttpStatus.OK).body(employeeloadService.remove(employeeload_id));
     }
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除员工负载表", tags = {"员工负载表" },  notes = "批量删除员工负载表")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/employeeloads/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

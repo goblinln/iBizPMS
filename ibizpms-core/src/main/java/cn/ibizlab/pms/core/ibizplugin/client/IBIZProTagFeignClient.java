@@ -67,7 +67,7 @@ public interface IBIZProTagFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/fetchdefault")
     Page<IBIZProTag> searchDefault(@RequestBody IBIZProTagSearchContext context);
 
 

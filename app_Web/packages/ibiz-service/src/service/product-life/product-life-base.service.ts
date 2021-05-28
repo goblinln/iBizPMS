@@ -22,6 +22,7 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
     protected APPDETEXT = 'productlifename';
     protected quickSearchFields = ['productlifename',];
     protected selectContextParam = {
+        product: 'product',
     };
 
     newEntity(data: IProductLife): ProductLife {
@@ -38,6 +39,13 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
 
     async getLocal(context: IContext, srfKey: string): Promise<IProductLife> {
         const entity = this.cache.get(context, srfKey);
+        if (entity && entity.product && entity.product !== '') {
+            const s = await ___ibz___.gs.getProductService();
+            const data = await s.getLocal2(context, entity.product);
+            if (data) {
+                entity.product = data.id;
+            }
+        }
         return entity!;
     }
 
@@ -46,6 +54,13 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
     }
 
     async getDraftLocal(_context: IContext, entity: IProductLife = {}): Promise<IProductLife> {
+        if (_context.product && _context.product !== '') {
+            const s = await ___ibz___.gs.getProductService();
+            const data = await s.getLocal2(_context, _context.product);
+            if (data) {
+                entity.product = data.id;
+            }
+        }
         return new ProductLife(entity);
     }
 

@@ -15,24 +15,24 @@
                 <span class="el-upload-list__item-actions">
                     <!--预览按钮-->
                     <span class="el-upload-list__item-preview" @click="onPreview(file)"
-                          :title="$t('components.diskImageUpload.preview')"
+                          :title="$t('components.diskimageupload.preview')"
                           v-show="showPreview">
                         <i class="el-icon-view"></i>
                     </span>
                     <!--OCR按钮-->
                     <span class="el-upload-list__item-delete" @click="onOcr(file)"
-                          :title="$t('components.diskImageUpload.OCRdiscern')"
+                          :title="$t('components.diskimageupload.ocrdiscern')"
                            v-show="showOcrview && (file.name.match(/^.+\.(gif|GIF|jpg|JPG|jpeg|JPEG|png|PNG|bmp|BMP)$/))">>
                       <i class="el-icon-camera"></i>
                     </span>
                     <!--下载按钮-->
                     <span class="el-upload-list__item-delete" @click="onDownload(file)"
-                          :title="$t('components.diskImageUpload.load')">
+                          :title="$t('components.diskimageupload.load')">
                       <i class="el-icon-download"></i>
                     </span>
                     <!--删除按钮-->
                     <span class="el-upload-list__item-delete" @click="onRemove(file)"
-                          :title="$t('components.diskImageUpload.delete')">
+                          :title="$t('components.diskimageupload.delete')">
                       <i class="el-icon-delete"></i>
                     </span>
               </span>
@@ -399,7 +399,7 @@ export default class DiskImageUplaod extends Vue {
                 ownerid: this.getOwnerid(),
         }).then((response: any) => {
             if (!response || response.status != 200) {
-                this.$throw(_this.$t('components.diskImageUpload.getImageFailure') + "!",'getFiles');
+                this.$throw(_this.$t('components.diskimageupload.getimagefailure') + "!",'getFiles');
                 return;
             }
             // 返回的是一个jsonArray
@@ -435,7 +435,7 @@ export default class DiskImageUplaod extends Vue {
             responseType: 'blob',
         }).then((response: any) => {
             if (!response || response.status != 200) {
-                this.$throw(_this.$t('components.diskImageUpload.loadImageFailure') + "!",'getRealImageData');
+                this.$throw(_this.$t('components.diskimageupload.loadimagefailure') + "!",'getRealImageData');
                 return;
             }
             // 请求成功，后台返回的是一个文件流
@@ -452,13 +452,13 @@ export default class DiskImageUplaod extends Vue {
                 } else if (fileData.id) {
                     this.imageFileids.push(fileData.id);
                 } else {
-                    this.$throw(_this.$t('components.diskImageUpload.ImageIdNone') + "!",'getRealImageData');
+                    this.$throw(_this.$t('components.diskimageupload.imageidnone') + "!",'getRealImageData');
                     return;
                 }
                 // 保存图片到图片列表进行显示
                 this.imageList.push(fileData);
             } else {
-                this.$throw(_this.$t('components.diskImageUpload.loadImageFailure1') + "!",'getRealImageData');
+                this.$throw(_this.$t('components.diskimageupload.loadimagefailure1') + "!",'getRealImageData');
             }
         }).catch((error: any) => {
             this.$throw(error,'getRealImageData');
@@ -474,7 +474,7 @@ export default class DiskImageUplaod extends Vue {
         // 支持上传的图片格式
         let _this: any = this;
         if (!file.name.match(/^.+\.(gif|GIF|jpg|JPG|jpeg|JPEG|png|PNG|bmp|BMP)$/)) {
-            this.$throw(_this.$t('components.diskImageUpload.uploadImageFailure1') + "!",'beforeUpload');
+            this.$throw(_this.$t('components.diskimageupload.uploadimagefailure1') + "!",'beforeUpload');
             return false;
         }
     }
@@ -496,7 +496,7 @@ export default class DiskImageUplaod extends Vue {
         // 发送post请求
         this.$http.post(uploadUrl, formData, {timeout: 2000}).then((response: any) => {
             if (!response || response.status != 200) {
-                this.$throw(_this.$t('components.diskImageUpload.uploadImageFailure') + "!",'customImageUpload');
+                this.$throw(_this.$t('components.diskimageupload.uploadimagefailure') + "!",'customImageUpload');
             }
             //返回的是一个jsonobject
             if (response.data) {
@@ -509,7 +509,7 @@ export default class DiskImageUplaod extends Vue {
                     responseType: 'blob',
                 }).then((response2: any) => {
                     if (!response2 || response2.status != 200) {
-                        this.$throw(_this.$t('components.diskImageUpload.loadImageFailure') + "!",'customImageUpload');
+                        this.$throw(_this.$t('components.diskimageupload.loadimagefailure') + "!",'customImageUpload');
                         return;
                     }
                     // 请求成功，后台返回的是一个文件流
@@ -526,7 +526,7 @@ export default class DiskImageUplaod extends Vue {
                         } else if (returnData.id) {
                             this.imageFileids.push(returnData.id);
                         } else {
-                            this.$throw(_this.$t('components.diskImageUpload.ImageIdNone') + "!",'customImageUpload');
+                            this.$throw(_this.$t('components.diskimageupload.imageidnone') + "!",'customImageUpload');
                             return;
                         }
                         // 保存jsonobject到图片列表进行显示
@@ -541,7 +541,7 @@ export default class DiskImageUplaod extends Vue {
                             this.$emit('formitemvaluechange', {name: this.formItemName, value: value});
                         }
                     } else {
-                        this.$throw(_this.$t('components.diskImageUpload.loadImageFailure1') + "!",'customImageUpload');
+                        this.$throw(_this.$t('components.diskimageupload.loadimagefailure1') + "!",'customImageUpload');
                     }
                 }).catch((error2: any) => {
                     this.$throw(error2,'customImageUpload');
@@ -564,7 +564,7 @@ export default class DiskImageUplaod extends Vue {
             this.dialogImageUrl = file.url;
             this.dialogVisible = true;
         } else {
-            this.$throw(_this.$t('components.diskImageUpload.notImageUrl') + "!",'onPreview');
+            this.$throw(_this.$t('components.diskimageupload.notimageurl') + "!",'onPreview');
         }
     }
 
@@ -610,7 +610,7 @@ export default class DiskImageUplaod extends Vue {
             responseType: 'blob',
         }).then((response: any) => {
             if (!response || response.status != 200) {
-                this.$throw(_this.$t('components.diskImageUpload.loadImageFailure2') + "!",'onDownload');
+                this.$throw(_this.$t('components.diskimageupload.loadimagefailure2') + "!",'onDownload');
                 return;
             }
             // 请求成功，后台返回的是一个文件流
@@ -639,7 +639,7 @@ export default class DiskImageUplaod extends Vue {
                 // 释放blob对象
                 URL.revokeObjectURL(href);
             } else {
-                this.$throw(_this.$t('components.diskImageUpload.loadImageFailure3') + "!",'onDownload');
+                this.$throw(_this.$t('components.diskimageupload.loadimagefailure3') + "!",'onDownload');
             }
         }).catch((error: any) => {
             this.$throw(error,'onDownload');
@@ -655,9 +655,9 @@ export default class DiskImageUplaod extends Vue {
     public onRemove(file: any) {
         let _this: any = this;
         if (file) {
-            MessageBox.confirm(_this.$t('components.diskImageUpload.deleteFile'), _this.$t('components.diskImageUpload.deleteFilePrompt'), {
-                confirmButtonText: _this.$t('components.diskImageUpload.true'),
-                cancelButtonText: _this.$t('components.diskImageUpload.false'),
+            MessageBox.confirm(_this.$t('components.diskimageupload.deletefile'), _this.$t('components.diskimageupload.deletefileprompt'), {
+                confirmButtonText: _this.$t('components.diskimageupload.true'),
+                cancelButtonText: _this.$t('components.diskimageupload.false'),
                 type: 'warning'
             }).then(() => {
                 if (this.imageFileids.indexOf(file.id) != -1) {
@@ -668,7 +668,7 @@ export default class DiskImageUplaod extends Vue {
                     // 发送delete请求
                     this.$http.delete(deleteUrl).then((response: any) => {
                         if (!response || response.status != 200) {
-                            this.$throw(_this.$t('components.diskImageUpload.deleteImageFailure') + "!",'onRemove');
+                            this.$throw(_this.$t('components.diskimageupload.deleteimagefailure') + "!",'onRemove');
                         }
                         // 从fileid数组中删除
                         this.imageFileids.splice(index, 1);
@@ -712,7 +712,7 @@ export default class DiskImageUplaod extends Vue {
             timeout: 2000
         }).then((response: any) => {
             if (!response || response.status != 200) {
-                this.$throw(_this.$t('components.diskImageUpload.updateFailure') + "!",'updateFileBatch');
+                this.$throw(_this.$t('components.diskimageupload.updatefailure') + "!",'updateFileBatch');
                 return;
             }
         }).catch((error: any) => {

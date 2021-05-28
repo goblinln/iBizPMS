@@ -394,50 +394,50 @@ function getLocaleResourceBase(){
           deleteFileFailure: '删除文件失败',
           updateFailure: '批量更新文件失败',
         },
-        diskImageUpload:{
+        diskimageupload:{
           preview: '预览',
-          OCRdiscern: 'ORC识别',
+          ocrdiscern: 'ORC识别',
           load: '下载',
           delete: '删除',
-          getImageFailure: '获取图片列表失败',
-          loadImageFailure: '下载缩略图失败',
-          loadImageFailure1: '下载缩略图失败,未获取到文件!',
-          loadImageFailure2:'下载图片失败',
-          loadImageFailure3:'下载图片失败,未找到图片!',
-          ImageIdNone: '图片id不存在!',
-          uploadImageFailure: '上传图片失败',
-          uploadImageFailure1: '上传失败,仅支持＇gif，jpg，png，bmp＇格式的图片!',
-          uploadFailure: '上传失败,单个图片不得超过',
-          notImageUrl: '图片url不存在',
-          deleteFile: '此操作将永久删除该文件, 是否继续?',
-          deleteFilePrompt: '提示',
+          getimagefailure: '获取图片列表失败',
+          loadimagefailure: '下载缩略图失败',
+          loadimagefailure1: '下载缩略图失败,未获取到文件!',
+          loadimagefailure2:'下载图片失败',
+          loadimagefailure3:'下载图片失败,未找到图片!',
+          imageidnone: '图片id不存在!',
+          uploadimagefailure: '上传图片失败',
+          uploadimagefailure1: '上传失败,仅支持＇gif，jpg，png，bmp＇格式的图片!',
+          uploadfailure: '上传失败,单个图片不得超过',
+          notimageurl: '图片url不存在',
+          deletefile: '此操作将永久删除该文件, 是否继续?',
+          deletefileprompt: '提示',
           true: '确定',
           false: '取消',
-          deleteImageFailure:'删除图片失败',
-          updateFailure: '批量更新文件失败',
+          deleteimagefailure:'删除图片失败',
+          updatefailure: '批量更新文件失败',
         },
-        appMapPosition: {
+        appmapposition: {
           submit: '确认',
           title: '请选择地址',
           address: "四川省成都市成华区猛追湾街道四川电视塔天府熊猫塔",
           city: "成都"
         },
-        appSortBar: {
+        appsortbar: {
           title: '排序'
         },
-        appAfterTime:{
-          minutesAgo: '分钟前',
-          hoursAgo: '小时前',
-          dayAgo: '天前',
-          monthsAgo: '月前',
-          yearsAgo: '年前'
+        appaftertime:{
+          minutesago: '分钟前',
+          hoursago: '小时前',
+          dayago: '天前',
+          monthsago: '月前',
+          yearsago: '年前'
         },
         timeline: {
           index: "序号",
           node: "节点",
           author: "办理人员",
           type: "操作",
-          lastTime: "完成时间",
+          lasttime: "完成时间",
           opinion: "审批意见"
         },
         content: {
@@ -454,8 +454,8 @@ function getLocaleResourceBase(){
           apply: "应用模板",
           success: "保存模板成功!!!",
           error: "保存模板失败!!!",
-          delSuccess: "删除模板成功!!!",
-          delError: "删除模板失败!!!"
+          delsuccess: "删除模板成功!!!",
+          delerror: "删除模板失败!!!"
         },
         search: {
           holder: "搜索内容"

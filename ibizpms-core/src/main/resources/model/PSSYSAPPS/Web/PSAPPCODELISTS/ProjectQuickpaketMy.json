@@ -1,0 +1,20 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "ProjectQuickpaketMy",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectQuickpaketMy.json",
+  "emptyText" : "未定义",
+  "name" : "项目快速分组（我的地盘）",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "All",
+    "data" : "{\"n_account_eq\":\"%srfloginname%\"}",
+    "text" : "我的项目",
+    "value" : "All",
+    "default" : true
+  } ],
+  "enableCache" : true
+}

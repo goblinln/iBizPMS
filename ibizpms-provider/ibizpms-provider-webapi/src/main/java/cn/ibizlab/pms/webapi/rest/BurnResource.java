@@ -91,7 +91,7 @@ public class BurnResource {
          return ResponseEntity.status(HttpStatus.OK).body(burnService.remove(burn_id));
     }
 
-    @PreAuthorize("@BurnRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@BurnRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除burn", tags = {"burn" },  notes = "批量删除burn")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/burns/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -125,7 +125,7 @@ public class BurnResource {
         return  ResponseEntity.status(HttpStatus.OK).body(burnService.checkKey(burnMapping.toDomain(burndto)));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'MANAGE')")
+    @PreAuthorize("@BurnRuntime.test(#burn_id, 'MANAGE')")
     @ApiOperation(value = "更新燃尽图", tags = {"burn" },  notes = "更新燃尽图")
 	@RequestMapping(method = RequestMethod.POST, value = "/burns/{burn_id}/computeburn")
     public ResponseEntity<BurnDTO> computeBurn(@PathVariable("burn_id") String burn_id, @RequestBody BurnDTO burndto) {
@@ -185,7 +185,7 @@ public class BurnResource {
         return ResponseEntity.status(HttpStatus.OK).body(burndto);
     }
 
-    @PreAuthorize("@ProjectRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'CREATE')")
     @ApiOperation(value = "根据项目建立burn", tags = {"burn" },  notes = "根据项目建立burn")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/burns")
     public ResponseEntity<BurnDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody BurnDTO burndto) {
@@ -197,7 +197,7 @@ public class BurnResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#burn_id, 'UPDATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'UPDATE')")
     @ApiOperation(value = "根据项目更新burn", tags = {"burn" },  notes = "根据项目更新burn")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/burns/{burn_id}")
     public ResponseEntity<BurnDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id, @RequestBody BurnDTO burndto) {
@@ -210,14 +210,14 @@ public class BurnResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#burn_id, 'DELETE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
     @ApiOperation(value = "根据项目删除burn", tags = {"burn" },  notes = "根据项目删除burn")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/burns/{burn_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(burnService.remove(burn_id));
     }
 
-    @PreAuthorize("@ProjectRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
     @ApiOperation(value = "根据项目批量删除burn", tags = {"burn" },  notes = "根据项目批量删除burn")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/burns/batch")
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<String> ids) {
@@ -225,7 +225,7 @@ public class BurnResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#burn_id, 'READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
     @ApiOperation(value = "根据项目获取burn", tags = {"burn" },  notes = "根据项目获取burn")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/burns/{burn_id}")
     public ResponseEntity<BurnDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id) {
@@ -234,7 +234,7 @@ public class BurnResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'CREATE')")
     @ApiOperation(value = "根据项目获取burn草稿", tags = {"burn" },  notes = "根据项目获取burn草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/burns/getdraft")
     public ResponseEntity<BurnDTO> getDraftByProject(@PathVariable("project_id") Long project_id, BurnDTO dto) {
@@ -243,14 +243,14 @@ public class BurnResource {
         return ResponseEntity.status(HttpStatus.OK).body(burnMapping.toDto(burnService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'CREATE')")
     @ApiOperation(value = "根据项目检查burn", tags = {"burn" },  notes = "根据项目检查burn")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/burns/checkkey")
     public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody BurnDTO burndto) {
         return  ResponseEntity.status(HttpStatus.OK).body(burnService.checkKey(burnMapping.toDomain(burndto)));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#burn_id, 'MANAGE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'MANAGE')")
     @ApiOperation(value = "根据项目更新燃尽图", tags = {"burn" },  notes = "根据项目更新燃尽图")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/burns/{burn_id}/computeburn")
     public ResponseEntity<BurnDTO> computeBurnByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id, @RequestBody BurnDTO burndto) {
@@ -273,7 +273,7 @@ public class BurnResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"burn" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/burns/fetchdefault")
 	public ResponseEntity<List<BurnDTO>> fetchBurnDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody BurnSearchContext context) {
@@ -286,7 +286,7 @@ public class BurnResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据项目获取燃尽图预计（含周末）", tags = {"burn" } ,notes = "根据项目获取燃尽图预计（含周末）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/burns/fetchestimateandleft")
 	public ResponseEntity<List<BurnDTO>> fetchBurnESTIMATEANDLEFTByProject(@PathVariable("project_id") Long project_id,@RequestBody BurnSearchContext context) {

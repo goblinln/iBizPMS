@@ -80,7 +80,7 @@ public class IBIZProTagResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizprotagService.remove(ibizprotag_id));
     }
 
-    @PreAuthorize("@IBIZProTagRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IBIZProTagRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除标签", tags = {"标签" },  notes = "批量删除标签")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizprotags/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {

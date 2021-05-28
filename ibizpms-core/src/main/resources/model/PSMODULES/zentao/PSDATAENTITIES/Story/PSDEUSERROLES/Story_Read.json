@@ -1,0 +1,15 @@
+{
+  "customCond" : "[ (1, '=', 1) ]",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Read.json",
+  "name" : "需求查看",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "Story_Read_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  } ],
+  "roleTag" : "Story_Read",
+  "userDRAction" : "READ"
+}

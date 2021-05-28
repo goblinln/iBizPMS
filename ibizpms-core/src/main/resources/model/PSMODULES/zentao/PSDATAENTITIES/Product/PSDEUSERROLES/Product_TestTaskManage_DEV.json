@@ -1,0 +1,20 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_TestTaskManage_DEV.json",
+  "name" : "产品测试版本管理（参与者）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "DeveloperQuery"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "TESTTASKMANAGE",
+    "name" : "TESTTASKMANAGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "TESTTASKMANAGE"
+    }
+  } ],
+  "roleTag" : "Product_TestTaskManage_DEV",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

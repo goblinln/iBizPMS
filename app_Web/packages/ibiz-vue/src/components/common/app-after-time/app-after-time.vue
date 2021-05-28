@@ -1,10 +1,10 @@
 <template>
     <div class="app-after-time">
-        <span v-if="diffTime =='minutes'">{{curvalue}}{{$t('components.appAfterTime.minutesAgo')}}</span>
-        <span v-if="diffTime =='hours'">{{curvalue}}{{$t('components.appAfterTime.hoursAgo')}}</span>
-        <span v-if="diffTime =='days'">{{curvalue}}{{$t('components.appAfterTime.dayAgo')}}</span>
-        <span v-if="diffTime =='mouth'">{{curvalue}}{{$t('components.appAfterTime.monthsAgo')}}</span>
-        <span v-if="diffTime =='years'">{{curvalue}}{{$t('components.appAfterTime.yearsAgo')}}</span>
+        <span v-if="diffTime =='minutes'">{{curvalue}}{{$t('components.appaftertime.minutesago')}}</span>
+        <span v-if="diffTime =='hours'">{{curvalue}}{{$t('components.appaftertime.hoursago')}}</span>
+        <span v-if="diffTime =='days'">{{curvalue}}{{$t('components.appaftertime.dayago')}}</span>
+        <span v-if="diffTime =='mouth'">{{curvalue}}{{$t('components.appaftertime.monthsago')}}</span>
+        <span v-if="diffTime =='years'">{{curvalue}}{{$t('components.appaftertime.yearsago')}}</span>
         <span v-if="!diffTime">&nbsp;</span>
     </div>
 </template>

@@ -67,7 +67,7 @@ public interface PSModuleFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/psmodules/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/psmodules/fetchdefault")
     Page<PSModule> searchDefault(@RequestBody PSModuleSearchContext context);
 
 

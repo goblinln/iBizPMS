@@ -1,0 +1,12 @@
+{
+  "actionMode" : "GETDRAFT",
+  "actionType" : "BUILTIN",
+  "codeName" : "GetDraftTempMajor",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzCase/PSDEACTIONS/GetDraftTempMajor.json",
+  "logicName" : "GetDraftTempMajor",
+  "name" : "GetDraftTempMajor",
+  "orderValue" : 45,
+  "tempDataMode" : 1,
+  "builtinAction" : true,
+  "enableTempData" : true
+}

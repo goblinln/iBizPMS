@@ -92,7 +92,7 @@ public class IbzFavoritesResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzfavoritesService.remove(ibzfavorites_id));
     }
 
-    @PreAuthorize("@IbzFavoritesRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IbzFavoritesRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除收藏", tags = {"收藏" },  notes = "批量删除收藏")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzfavorites/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {

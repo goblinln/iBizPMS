@@ -91,7 +91,7 @@ public class IBZTestReportActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibztestreportactionService.remove(ibztestreportaction_id));
     }
 
-    @PreAuthorize("@IBZTestReportActionRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IBZTestReportActionRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除报告日志", tags = {"报告日志" },  notes = "批量删除报告日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztestreportactions/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -125,7 +125,7 @@ public class IBZTestReportActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztestreportactionService.checkKey(ibztestreportactionMapping.toDomain(ibztestreportactiondto)));
     }
 
-    @PreAuthorize("@TestReportRuntime.test(#testreport_id, 'MANAGE')")
+    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id, 'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"报告日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztestreportactions/{ibztestreportaction_id}/comment")
     public ResponseEntity<IBZTestReportActionDTO> comment(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @RequestBody IBZTestReportActionDTO ibztestreportactiondto) {
@@ -153,7 +153,7 @@ public class IBZTestReportActionResource {
     }
 
 
-    @PreAuthorize("@TestReportRuntime.test(#testreport_id, 'MANAGE')")
+    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id, 'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"报告日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztestreportactions/{ibztestreportaction_id}/editcomment")
     public ResponseEntity<IBZTestReportActionDTO> editComment(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @RequestBody IBZTestReportActionDTO ibztestreportactiondto) {

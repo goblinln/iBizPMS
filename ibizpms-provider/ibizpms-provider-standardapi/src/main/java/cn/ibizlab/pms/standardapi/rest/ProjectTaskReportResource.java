@@ -53,7 +53,7 @@ public class ProjectTaskReportResource {
     public ProjectTaskReportMapping projecttaskreportMapping;
 
 
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"任务" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projecttaskreports/fetchdefault")
 	public ResponseEntity<List<ProjectTaskReportDTO>> fetchProjectTaskReportDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {

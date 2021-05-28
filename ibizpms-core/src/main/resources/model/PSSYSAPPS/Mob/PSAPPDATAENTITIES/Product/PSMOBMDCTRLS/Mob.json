@@ -1,0 +1,124 @@
+{
+  "codeName" : "Mob",
+  "controlStyle" : "LISTVIEW",
+  "controlType" : "MOBMDCTRL",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product/PSMOBMDCTRLS/Mob.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+  "logicName" : "MOB",
+  "mobListStyle" : "LISTVIEW",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_batchtoolbar_deuiaction1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "mdctrl_batchtoolbar_deuiaction1"
+    },
+    "getPSViewCtrlName" : "mdctrl_batchtoolbar"
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "mdctrl_batchtoolbar_deuiaction1",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "uIActionTarget" : "MULTIKEY",
+    "xDataControlName" : "mdctrl"
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "MobPickupMDViewmdctrl_batchtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "移动端多数据批操工具栏",
+    "name" : "mdctrl_batchtoolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+    },
+    "getPSControlParam" : {
+      "id" : "mdctrl_batchtoolbar"
+    },
+    "modelid" : "dc72839424ae81886458969764aad35c",
+    "modeltype" : "PSDETOOLBAR"
+  } ],
+  "getPSDEListDataItems" : [ {
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "dataType" : 9,
+    "name" : "istop"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Product__status.json"
+    },
+    "name" : "status"
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "line",
+    "getPSAppDEField" : {
+      "name" : "LINE",
+      "codeName" : "Line"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
+  } ],
+  "getPSSysPFPlugin" : {
+    "pluginType" : "LIST_ITEMRENDER",
+    "pluginCode" : "mobItemList"
+  },
+  "pagingSize" : 1000,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "enableGroup" : false,
+  "enableRowEdit" : false,
+  "enableRowEditGroup" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "noSort" : false,
+  "showHeader" : true,
+  "modelid" : "367d445821a484a912a99a012f155a76",
+  "modeltype" : "PSDELIST"
+}

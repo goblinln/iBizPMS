@@ -88,7 +88,7 @@ public class IbzDailyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzdailyService.remove(ibzdaily_id));
     }
 
-    @PreAuthorize("@IbzDailyRuntime.test(#ids, 'NONE')")
+    @PreAuthorize("@IbzDailyRuntime.quickTest('NONE')")
     @ApiOperation(value = "批量删除日报", tags = {"日报" },  notes = "批量删除日报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailies/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

@@ -1,0 +1,262 @@
+{
+  "aggMode" : "PAGE",
+  "codeName" : "ProjectStoryStatusStats",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSGRIDS/ProjectStoryStatusStats.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "项目需求状态统计",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+  },
+  "getPSDEGridColumns" : [ {
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "项目名称",
+    "codeName" : "name",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "name",
+    "excelCaption" : "项目名称",
+    "name" : "name",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "width" : 150,
+    "widthUnit" : "STAR",
+    "enableSort" : false
+  }, {
+    "aggMode" : "SUM",
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "空",
+    "codeName" : "emptystory",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "emptystory",
+    "excelCaption" : "空",
+    "name" : "emptystory",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "EMPTYSTORY",
+      "codeName" : "Emptystory"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "aggMode" : "SUM",
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "草稿",
+    "codeName" : "draftstory",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "draftstory",
+    "excelCaption" : "草稿",
+    "name" : "draftstory",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "DRAFTSTORY",
+      "codeName" : "Draftstory"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  }, {
+    "aggMode" : "SUM",
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "激活",
+    "codeName" : "activestory",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "activestory",
+    "excelCaption" : "激活",
+    "name" : "activestory",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "ACTIVESTORY",
+      "codeName" : "Activestory"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  }, {
+    "aggMode" : "SUM",
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "已关闭",
+    "codeName" : "closedstory",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "closedstory",
+    "excelCaption" : "已关闭",
+    "name" : "closedstory",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "CLOSEDSTORY",
+      "codeName" : "Closedstory"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  }, {
+    "aggMode" : "SUM",
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "已变更",
+    "codeName" : "changedstory",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "changedstory",
+    "excelCaption" : "已变更",
+    "name" : "changedstory",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "CHANGEDSTORY",
+      "codeName" : "Changedstory"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  }, {
+    "aggMode" : "SUM",
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "总计",
+    "codeName" : "storycnt",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "storycnt",
+    "excelCaption" : "总计",
+    "name" : "storycnt",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "STORYCNT",
+      "codeName" : "StoryCnt"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 9,
+    "name" : "closedstory",
+    "getPSAppDEField" : {
+      "name" : "CLOSEDSTORY",
+      "codeName" : "Closedstory"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "emptystory",
+    "getPSAppDEField" : {
+      "name" : "EMPTYSTORY",
+      "codeName" : "Emptystory"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "draftstory",
+    "getPSAppDEField" : {
+      "name" : "DRAFTSTORY",
+      "codeName" : "Draftstory"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "changedstory",
+    "getPSAppDEField" : {
+      "name" : "CHANGEDSTORY",
+      "codeName" : "Changedstory"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "storycnt",
+    "getPSAppDEField" : {
+      "name" : "STORYCNT",
+      "codeName" : "StoryCnt"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "activestory",
+    "getPSAppDEField" : {
+      "name" : "ACTIVESTORY",
+      "codeName" : "Activestory"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "项目编号",
+    "codeName" : "srfkey",
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 1000,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : true,
+  "modelid" : "d001edabb8a8678c69be6de8868a2346",
+  "modeltype" : "PSDEGRID"
+}

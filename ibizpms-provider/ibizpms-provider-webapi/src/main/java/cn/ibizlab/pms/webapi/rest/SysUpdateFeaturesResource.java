@@ -92,7 +92,7 @@ public class SysUpdateFeaturesResource {
          return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesService.remove(sysupdatefeatures_id));
     }
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除系统更新功能", tags = {"系统更新功能" },  notes = "批量删除系统更新功能")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatefeatures/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {

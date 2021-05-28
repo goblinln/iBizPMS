@@ -91,7 +91,7 @@ public class IbzProWeeklyHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyhistoryService.remove(ibzproweeklyhistory_id));
     }
 
-    @PreAuthorize("@IbzProWeeklyHistoryRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IbzProWeeklyHistoryRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除周报操作历史", tags = {"周报操作历史" },  notes = "批量删除周报操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproweeklyhistories/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

@@ -1,0 +1,12 @@
+{
+  "actionMode" : "GETDRAFT",
+  "actionType" : "BUILTIN",
+  "codeName" : "GetDraftTemp",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/GetDraftTemp.json",
+  "logicName" : "GetDraftTemp",
+  "name" : "GetDraftTemp",
+  "orderValue" : 43,
+  "tempDataMode" : 2,
+  "builtinAction" : true,
+  "enableTempData" : true
+}

@@ -1,0 +1,25 @@
+{
+  "codeName" : "IbzProTestTask",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProTestTaskHistory/PSDERS/DER1N_IBZPRO_TESTTASKHISTORY_IBZPRO_TESTTASKACTION_ACTION.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 12,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProTestTaskHistory.json"
+  },
+  "name" : "DER1N_IBZPRO_TESTTASKHISTORY_IBZPRO_TESTTASKACTION_ACTION",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "ACTION",
+    "codeName" : "Action"
+  },
+  "pickupDEFName" : "ACTION",
+  "removeActionType" : -1,
+  "removeOrder" : 0,
+  "nestedRS" : true
+}

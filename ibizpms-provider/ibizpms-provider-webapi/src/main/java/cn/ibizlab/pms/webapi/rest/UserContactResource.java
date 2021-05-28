@@ -87,7 +87,7 @@ public class UserContactResource {
          return ResponseEntity.status(HttpStatus.OK).body(usercontactService.remove(usercontact_id));
     }
 
-    @PreAuthorize("@UserContactRuntime.test(#ids, 'NONE')")
+    @PreAuthorize("@UserContactRuntime.quickTest('NONE')")
     @ApiOperation(value = "批量删除用户联系方式", tags = {"用户联系方式" },  notes = "批量删除用户联系方式")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/usercontacts/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

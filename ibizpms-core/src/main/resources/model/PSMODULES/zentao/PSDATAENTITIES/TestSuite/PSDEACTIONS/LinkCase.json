@@ -1,0 +1,8 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "LinkCase",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/LinkCase.json",
+  "logicName" : "关联测试",
+  "name" : "linkCase"
+}

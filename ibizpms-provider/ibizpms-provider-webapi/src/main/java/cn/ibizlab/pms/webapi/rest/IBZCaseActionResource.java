@@ -91,7 +91,7 @@ public class IBZCaseActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzcaseactionService.remove(ibzcaseaction_id));
     }
 
-    @PreAuthorize("@IBZCaseActionRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IBZCaseActionRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除测试用例日志", tags = {"测试用例日志" },  notes = "批量删除测试用例日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcaseactions/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -125,7 +125,7 @@ public class IBZCaseActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzcaseactionService.checkKey(ibzcaseactionMapping.toDomain(ibzcaseactiondto)));
     }
 
-    @PreAuthorize("@CaseRuntime.test(#case_id, 'MANAGE')")
+    @PreAuthorize("@IBZCaseActionRuntime.test(#ibzcaseaction_id, 'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"测试用例日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcaseactions/{ibzcaseaction_id}/comment")
     public ResponseEntity<IBZCaseActionDTO> comment(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseActionDTO ibzcaseactiondto) {
@@ -153,7 +153,7 @@ public class IBZCaseActionResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.test(#case_id, 'MANAGE')")
+    @PreAuthorize("@IBZCaseActionRuntime.test(#ibzcaseaction_id, 'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"测试用例日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcaseactions/{ibzcaseaction_id}/editcomment")
     public ResponseEntity<IBZCaseActionDTO> editComment(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseActionDTO ibzcaseactiondto) {

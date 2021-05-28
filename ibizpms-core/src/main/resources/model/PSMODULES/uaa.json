@@ -1,0 +1,19 @@
+{
+  "getAllPSCodeLists" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSCODELISTS/AllRole.json"
+  } ],
+  "getAllPSDataEntities" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole.json"
+  } ],
+  "codeName" : "uaa",
+  "dynaModelFilePath" : "PSMODULES/uaa.json",
+  "name" : "uaa权限模块"
+}

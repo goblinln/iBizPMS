@@ -92,7 +92,7 @@ public class IbzAgentResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzagentService.remove(ibzagent_id));
     }
 
-    @PreAuthorize("@IbzAgentRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IbzAgentRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除代理", tags = {"代理" },  notes = "批量删除代理")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzagents/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

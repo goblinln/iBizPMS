@@ -1,0 +1,27 @@
+{
+  "codeName" : "ProductAction",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductHistory/PSDERS/DER1N_IBZPRO_PRODUCTHISTORY_IBZPRO_PRODUCTACTION_ACTION.json",
+  "logicName" : "产品日志",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductAction.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 12,
+  "minorCodeName" : "IBZProProductActions",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductHistory.json"
+  },
+  "name" : "DER1N_IBZPRO_PRODUCTHISTORY_IBZPRO_PRODUCTACTION_ACTION",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "ACTION",
+    "codeName" : "Action"
+  },
+  "pickupDEFName" : "ACTION",
+  "removeActionType" : -1,
+  "removeOrder" : 0,
+  "nestedRS" : true
+}

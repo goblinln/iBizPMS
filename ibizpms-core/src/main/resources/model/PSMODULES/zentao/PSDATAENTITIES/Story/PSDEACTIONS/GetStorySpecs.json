@@ -1,0 +1,12 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "DELOGIC",
+  "codeName" : "GetStorySpecs",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetStorySpecs.json",
+  "logicName" : "获取需求描述",
+  "name" : "GetStorySpecs",
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/GetStorySpecs.json"
+  }
+}

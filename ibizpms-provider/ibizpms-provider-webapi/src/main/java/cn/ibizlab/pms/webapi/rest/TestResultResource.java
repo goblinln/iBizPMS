@@ -91,7 +91,7 @@ public class TestResultResource {
          return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
     }
 
-    @PreAuthorize("@TestResultRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@TestResultRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除测试结果", tags = {"测试结果" },  notes = "批量删除测试结果")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testresults/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

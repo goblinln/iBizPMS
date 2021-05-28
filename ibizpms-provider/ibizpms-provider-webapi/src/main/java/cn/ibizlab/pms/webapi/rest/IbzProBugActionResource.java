@@ -91,7 +91,7 @@ public class IbzProBugActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprobugactionService.remove(ibzprobugaction_id));
     }
 
-    @PreAuthorize("@IbzProBugActionRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IbzProBugActionRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除Bug日志", tags = {"Bug日志" },  notes = "批量删除Bug日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprobugactions/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

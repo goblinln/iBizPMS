@@ -1,0 +1,8 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "GetTestTaskCntRun",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetTestTaskCntRun.json",
+  "logicName" : "获取测试单执行结果",
+  "name" : "GetTestTaskCntRun"
+}

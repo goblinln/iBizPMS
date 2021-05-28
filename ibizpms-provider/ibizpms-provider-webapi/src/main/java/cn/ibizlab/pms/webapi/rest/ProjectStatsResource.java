@@ -91,7 +91,7 @@ public class ProjectStatsResource {
          return ResponseEntity.status(HttpStatus.OK).body(projectstatsService.remove(projectstats_id));
     }
 
-    @PreAuthorize("@ProjectStatsRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除项目统计", tags = {"项目统计" },  notes = "批量删除项目统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projectstats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

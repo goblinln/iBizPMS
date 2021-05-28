@@ -1,0 +1,20 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_BuildManage_DEV.json",
+  "name" : "项目版本管理（参与者）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "DeveloperQuery"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "BUILDMANAGE",
+    "name" : "BUILDMANAGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "BUILDMANAGE"
+    }
+  } ],
+  "roleTag" : "Project_BuildManage_DEV",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

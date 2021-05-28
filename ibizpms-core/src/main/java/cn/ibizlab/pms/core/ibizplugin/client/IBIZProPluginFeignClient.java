@@ -67,7 +67,7 @@ public interface IBIZProPluginFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizproplugins/fetchdefault")
     Page<IBIZProPlugin> searchDefault(@RequestBody IBIZProPluginSearchContext context);
 
 

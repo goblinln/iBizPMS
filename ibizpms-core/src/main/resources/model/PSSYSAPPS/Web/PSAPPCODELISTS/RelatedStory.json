@@ -1,0 +1,28 @@
+{
+  "cacheTimeout" : 600,
+  "codeListType" : "DYNAMIC",
+  "codeName" : "RelatedStory",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/RelatedStory.json",
+  "name" : "关联需求（动态）",
+  "orMode" : "STR",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchDefault"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "TITLE",
+    "codeName" : "Title"
+  },
+  "textSeparator" : ",",
+  "getValuePSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "valueSeparator" : ",",
+  "enableCache" : true
+}

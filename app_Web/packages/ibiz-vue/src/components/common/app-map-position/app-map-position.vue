@@ -4,10 +4,10 @@
             size="small"
             @focus="handleMapShow"
             v-model="value"
-            :placeholder="placeholder ? placeholder : $t('components.appMapPosition.title')">
+            :placeholder="placeholder ? placeholder : $t('components.appmapposition.title')">
         </el-input>
         <el-dialog
-            :title="$t('components.appMapPosition.title')"
+            :title="$t('components.appmapposition.title')"
             class="map-modal"
             :visible.sync="dialogShow">
             <div class="search-toolbar">
@@ -38,7 +38,7 @@
                     type="primary"
                     size="small"
                     @click="handleSubmit">
-                    {{ $t('components.appMapPosition.submit') }}
+                    {{ $t('components.appmapposition.submit') }}
                 </el-button>
             </template>
         </el-dialog>
@@ -266,7 +266,7 @@ export default class AppMapPosition extends Vue  {
         } else {
             Object.assign(this.marker, {
                 position: [104.09427199999999, 30.660396],
-                address: this.$t('components.appMapPosition.address'),
+                address: this.$t('components.appmapposition.address'),
                 visible: true
             })
             this.searchAddress = this.marker.address;
@@ -284,7 +284,7 @@ export default class AppMapPosition extends Vue  {
         } else {
             Object.assign(this.marker, {
                 position: [104.09427199999999, 30.660396],
-                address: this.$t('components.appMapPosition.address'),
+                address: this.$t('components.appmapposition.address'),
                 visible: true
             })
             this.searchAddress = this.marker.address;
@@ -302,7 +302,7 @@ export default class AppMapPosition extends Vue  {
         } else {
            Object.assign(this.marker, {
                 position: [104.09427199999999, 30.660396],
-                address: this.$t('components.appMapPosition.address'),
+                address: this.$t('components.appmapposition.address'),
                 visible: true
             })
             this.searchAddress = this.marker.address;
@@ -379,7 +379,7 @@ export default class AppMapPosition extends Vue  {
         that.win.AMap.service(["AMap.PlaceSearch"], () => {
             placeSearch = new this.win.AMap.PlaceSearch({
                 pageSize: 5,
-                city: this.$t('components.appMapPosition.city'),
+                city: this.$t('components.appmapposition.city'),
                 citylimit: false,
                 panel: 'map__result',
             })

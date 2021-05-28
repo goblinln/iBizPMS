@@ -1,0 +1,101 @@
+{
+  "codeName" : "Severity",
+  "controlType" : "CHART",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug/PSCHARTS/Severity.json",
+  "emptyText" : "无",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "height" : 300.0,
+  "logicName" : "severity",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+  },
+  "getPSChartCoordinateSystems" : [ {
+    "eChartsType" : "none",
+    "index" : 0,
+    "name" : "[severity]无坐标系[0]",
+    "type" : "NONE",
+    "id" : "0"
+  } ],
+  "getPSChartDataSetGroups" : [ {
+    "index" : 0,
+    "name" : "BuildProduceBug",
+    "id" : "0"
+  } ],
+  "getPSChartDataSets" : [ {
+    "index" : 0,
+    "name" : "severity-BuildProduceBug",
+    "getPSChartDataSetFields" : [ {
+      "groupMode" : "CODELIST",
+      "index" : 0,
+      "name" : "severity",
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__severity.json"
+      },
+      "groupField" : true,
+      "id" : "0"
+    }, {
+      "index" : 1,
+      "name" : "SRFCOUNT",
+      "groupField" : false,
+      "id" : "1"
+    } ],
+    "id" : "0"
+  } ],
+  "getPSDEChartLegend" : {
+    "index" : 0,
+    "showLegend" : true,
+    "id" : "0"
+  },
+  "getPSDEChartSerieses" : [ {
+    "catalogField" : "severity",
+    "getCatalogPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__severity.json"
+    },
+    "eChartsType" : "pie",
+    "groupMode" : "CODELIST",
+    "index" : 0,
+    "name" : "severity",
+    "getPSChartCoordinateSystem" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartDataSet" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartSeriesEncode" : {
+      "category" : "severity",
+      "index" : 0,
+      "name" : "坐标系编码",
+      "type" : "NONE",
+      "value" : "SRFCOUNT",
+      "id" : "0"
+    },
+    "seriesLayoutBy" : "column",
+    "seriesType" : "pie",
+    "valueField" : "SRFCOUNT",
+    "enableChartDataSet" : true
+  } ],
+  "getPSDEChartTitle" : {
+    "index" : 0,
+    "title" : "Bug严重级别分布",
+    "showTitle" : false,
+    "id" : "0"
+  },
+  "getPSSysPFPlugin" : {
+    "pluginType" : "CHART_RENDER",
+    "pluginCode" : "tablechart"
+  },
+  "readOnly" : true,
+  "modelid" : "7cd4aacb75ee3c2a48879a7cf4f11ed9",
+  "modeltype" : "PSDECHART",
+  "getUserParam" : {
+    "EC.color" : "[\"#2979FF\",\"#3D5AFE\",\"#651fff\",\"#D500f9\",'#00ffa9','#85B3FF','#A1FFFF']"
+  }
+}

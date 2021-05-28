@@ -91,7 +91,7 @@ public class BugStatsResource {
          return ResponseEntity.status(HttpStatus.OK).body(bugstatsService.remove(bugstats_id));
     }
 
-    @PreAuthorize("@BugStatsRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@BugStatsRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除Bug统计", tags = {"Bug统计" },  notes = "批量删除Bug统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/bugstats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

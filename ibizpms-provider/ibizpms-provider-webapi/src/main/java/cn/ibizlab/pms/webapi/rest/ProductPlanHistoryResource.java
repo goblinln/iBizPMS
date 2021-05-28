@@ -91,7 +91,7 @@ public class ProductPlanHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(productplanhistoryService.remove(productplanhistory_id));
     }
 
-    @PreAuthorize("@ProductPlanHistoryRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@ProductPlanHistoryRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除产品计划历史", tags = {"产品计划历史" },  notes = "批量删除产品计划历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productplanhistories/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

@@ -81,7 +81,7 @@ public class PSSysSFPubResource {
          return ResponseEntity.status(HttpStatus.OK).body(pssyssfpubService.remove(pssyssfpub_id));
     }
 
-    @PreAuthorize("@PSSysSFPubRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@PSSysSFPubRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除后台服务架构", tags = {"后台服务架构" },  notes = "批量删除后台服务架构")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/pssyssfpubs/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {

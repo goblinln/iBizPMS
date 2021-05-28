@@ -91,7 +91,7 @@ public class AccountTaskestimateResource {
          return ResponseEntity.status(HttpStatus.OK).body(accounttaskestimateService.remove(accounttaskestimate_id));
     }
 
-    @PreAuthorize("@AccountTaskestimateRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@AccountTaskestimateRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除用户工时统计", tags = {"用户工时统计" },  notes = "批量删除用户工时统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/accounttaskestimates/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {

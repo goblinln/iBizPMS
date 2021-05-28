@@ -67,7 +67,7 @@ public interface SysTeamFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/systeams/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/systeams/fetchdefault")
     Page<SysTeam> searchDefault(@RequestBody SysTeamSearchContext context);
 
 

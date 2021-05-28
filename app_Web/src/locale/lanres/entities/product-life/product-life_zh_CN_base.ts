@@ -7,7 +7,6 @@ function getLocaleResourceBase(){
 		'createman': commonLogic.appcommonhandle("建立人",null),
 		'updatedate': commonLogic.appcommonhandle("更新时间",null),
 		'productlifename': commonLogic.appcommonhandle("产品生命周期名称",null),
-		'product': commonLogic.appcommonhandle("产品",null),
 		'createdate': commonLogic.appcommonhandle("建立时间",null),
 		'parent': commonLogic.appcommonhandle("父对象",null),
 		'year': commonLogic.appcommonhandle("年",null),
@@ -17,6 +16,7 @@ function getLocaleResourceBase(){
 		'begin': commonLogic.appcommonhandle("开始日期",null),
 		'productlifeid': commonLogic.appcommonhandle("产品生命周期标识",null),
 		'end': commonLogic.appcommonhandle("结束日期",null),
+		'product': commonLogic.appcommonhandle("编号",null),
 	},
 		views: {
 			'roadmaplistview': {

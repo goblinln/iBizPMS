@@ -98,7 +98,7 @@ public class IbzPlanTempletResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletService.remove(ibzplantemplet_id));
     }
 
-    @PreAuthorize("@IbzPlanTempletRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除计划模板", tags = {"计划模板" },  notes = "批量删除计划模板")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzplantemplets/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {

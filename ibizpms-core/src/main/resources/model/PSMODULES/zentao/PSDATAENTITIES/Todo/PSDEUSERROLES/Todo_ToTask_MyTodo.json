@@ -1,0 +1,20 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_ToTask_MyTodo.json",
+  "name" : "待办转任务（我的待办）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "MyCreateTodo"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "TOTASK",
+    "name" : "TOTASK",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "TOTASK"
+    }
+  } ],
+  "roleTag" : "Todo_ToTask_MyTodo",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

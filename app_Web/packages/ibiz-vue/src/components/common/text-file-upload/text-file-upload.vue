@@ -472,7 +472,7 @@ export default class TextFileUpload extends Vue {
                 ownerid: this.getOwnerid(),
         }).then((response: any) => {
             if (!response || response.status != 200) {
-                this.$throw(_this.$t('components.diskImageUpload.getFileFailure') + "!",'getFiles');
+                this.$throw(_this.$t('components.diskimageupload.getFileFailure') + "!",'getFiles');
                 return;
             }
             // 返回的是一个jsonArray
@@ -515,7 +515,7 @@ export default class TextFileUpload extends Vue {
               ownerid: param[fileParam.id]
           }).then((response: any) => {
               if (!response || response.status != 200) {
-                  this.$throw(_this.$t('components.diskImageUpload.getFileFailure') + "!",'customUploadFile');
+                  this.$throw(_this.$t('components.diskimageupload.getFileFailure') + "!",'customUploadFile');
                   return;
               }
               // 返回的是一个jsonArray
@@ -540,14 +540,14 @@ export default class TextFileUpload extends Vue {
               responseType: 'arraybuffer',
           }).then((response: any) => {
               if (!response || response.status != 200) {
-                  this.$throw(_this.$t('components.diskImageUpload.downloadFile') + "!",'customUploadFile');
+                  this.$throw(_this.$t('components.diskimageupload.downloadFile') + "!",'customUploadFile');
                   return;
               }
               // 请求成功，后台返回的是一个文件流
               if (response.data) {
                   fileText = response.data;
               } else {
-                  this.$throw(_this.$t('components.diskImageUpload.downloadFile1') + "!",'customUploadFile');
+                  this.$throw(_this.$t('components.diskimageupload.downloadFile1') + "!",'customUploadFile');
               }
           }).catch((error: any) => {
               this.$throw(error,'customUploadFile');
@@ -569,7 +569,7 @@ export default class TextFileUpload extends Vue {
         // 发送post请求
         this.$http.post(uploadUrl, formData, {timeout: 2000}).then((response: any) => {
             if (!response || response.status != 200) {
-                this.$throw(_this.$t('components.diskImageUpload.loadFailure') + "!",'customUploadFile');
+                this.$throw(_this.$t('components.diskimageupload.loadFailure') + "!",'customUploadFile');
             }
             // 返回的是一个jsonobject
             if (response.data) {
@@ -634,7 +634,7 @@ export default class TextFileUpload extends Vue {
             responseType: 'arraybuffer',
         }).then((response: any) => {
             if (!response || response.status != 200) {
-                this.$throw(_this.$t('components.diskImageUpload.downloadFile1') + "!",'onDownload');
+                this.$throw(_this.$t('components.diskimageupload.downloadFile1') + "!",'onDownload');
                 return;
             }
             // 请求成功，后台返回的是一个文件流
@@ -663,7 +663,7 @@ export default class TextFileUpload extends Vue {
                 // 释放blob对象
                 URL.revokeObjectURL(href);
             } else {
-                this.$throw(_this.$t('components.diskImageUpload.downloadFile1') + "!",'onDownload');
+                this.$throw(_this.$t('components.diskimageupload.downloadFile1') + "!",'onDownload');
             }
         }).catch((error: any) => {
             this.$throw(error,'onDownload');
@@ -762,7 +762,7 @@ export default class TextFileUpload extends Vue {
                 // 发送delete请求
                 this.$http.delete(deleteUrl).then((response: any) => {
                     if (!response || response.status != 200) {
-                        this.$throw(_this.$t('components.diskImageUpload.deleteFileFailure') + "!",'onRemove');
+                        this.$throw(_this.$t('components.diskimageupload.deletefileFailure') + "!",'onRemove');
                         return
                     }
                     // 从文件列表中删除
@@ -801,7 +801,7 @@ export default class TextFileUpload extends Vue {
                 // 发送delete请求
                 this.$http.delete(deleteUrl).then((response: any) => {
                     if (!response || response.status != 200) {
-                        this.$throw(_this.$t('components.diskImageUpload.deleteFileFailure') + "!",'updateFileBatch');
+                        this.$throw(_this.$t('components.diskimageupload.deletefileFailure') + "!",'updateFileBatch');
                     }
                 }).catch((error: any) => {
                     // 提示删除失败
@@ -812,7 +812,7 @@ export default class TextFileUpload extends Vue {
                 // 发送post请求
                 this.$http.post(updateUrl, formData, {timeout: 2000}).then((response: any) => {
                     if (!response || response.status != 200) {
-                        this.$throw(_this.$t('components.diskImageUpload.loadFailure') + "!",'updateFileBatch');
+                        this.$throw(_this.$t('components.diskimageupload.loadFailure') + "!",'updateFileBatch');
                         return;
                     }
                     item.fileid = response.data.fileid;

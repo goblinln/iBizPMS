@@ -88,7 +88,7 @@ public class IbizproProductMonthlyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlyService.remove(ibizproproductmonthly_id));
     }
 
-    @PreAuthorize("@IbizproProductMonthlyRuntime.test(#ids, 'NONE')")
+    @PreAuthorize("@IbizproProductMonthlyRuntime.quickTest('NONE')")
     @ApiOperation(value = "批量删除产品月报", tags = {"产品月报" },  notes = "批量删除产品月报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductmonthlies/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

@@ -91,7 +91,7 @@ public class IBZProProductActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactionService.remove(ibzproproductaction_id));
     }
 
-    @PreAuthorize("@IBZProProductActionRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IBZProProductActionRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除产品日志", tags = {"产品日志" },  notes = "批量删除产品日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproductactions/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -125,7 +125,7 @@ public class IBZProProductActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzproproductactionService.checkKey(ibzproproductactionMapping.toDomain(ibzproproductactiondto)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @PreAuthorize("@IBZProProductActionRuntime.test(#ibzproproductaction_id, 'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"产品日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/{ibzproproductaction_id}/comment")
     public ResponseEntity<IBZProProductActionDTO> comment(@PathVariable("ibzproproductaction_id") Long ibzproproductaction_id, @RequestBody IBZProProductActionDTO ibzproproductactiondto) {
@@ -153,7 +153,7 @@ public class IBZProProductActionResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @PreAuthorize("@IBZProProductActionRuntime.test(#ibzproproductaction_id, 'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"产品日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/{ibzproproductaction_id}/editcomment")
     public ResponseEntity<IBZProProductActionDTO> editComment(@PathVariable("ibzproproductaction_id") Long ibzproproductaction_id, @RequestBody IBZProProductActionDTO ibzproproductactiondto) {

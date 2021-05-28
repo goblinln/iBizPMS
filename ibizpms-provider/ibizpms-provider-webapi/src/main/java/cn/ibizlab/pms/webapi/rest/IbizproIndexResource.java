@@ -91,7 +91,7 @@ public class IbizproIndexResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproindexService.remove(ibizproindex_id));
     }
 
-    @PreAuthorize("@IbizproIndexRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IbizproIndexRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除索引检索", tags = {"索引检索" },  notes = "批量删除索引检索")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproindices/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

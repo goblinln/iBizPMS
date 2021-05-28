@@ -80,7 +80,7 @@ public class SysTeamResource {
          return ResponseEntity.status(HttpStatus.OK).body(systeamService.remove(systeam_id));
     }
 
-    @PreAuthorize("@SysTeamRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@SysTeamRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除组", tags = {"组" },  notes = "批量删除组")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/systeams/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {

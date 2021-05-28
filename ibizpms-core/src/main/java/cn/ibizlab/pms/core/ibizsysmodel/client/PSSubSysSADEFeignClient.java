@@ -67,7 +67,7 @@ public interface PSSubSysSADEFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/pssubsyssades/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/pssubsyssades/fetchdefault")
     Page<PSSubSysSADE> searchDefault(@RequestBody PSSubSysSADESearchContext context);
 
 

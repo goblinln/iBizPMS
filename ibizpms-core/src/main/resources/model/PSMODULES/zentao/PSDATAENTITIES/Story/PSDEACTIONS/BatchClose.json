@@ -1,0 +1,8 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "BatchClose",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchClose.json",
+  "logicName" : "批量关闭",
+  "name" : "BatchClose"
+}

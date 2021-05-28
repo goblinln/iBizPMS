@@ -91,7 +91,7 @@ public class CaseStepResource {
          return ResponseEntity.status(HttpStatus.OK).body(casestepService.remove(casestep_id));
     }
 
-    @PreAuthorize("@CaseStepRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@CaseStepRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除用例步骤", tags = {"用例步骤" },  notes = "批量删除用例步骤")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/casesteps/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

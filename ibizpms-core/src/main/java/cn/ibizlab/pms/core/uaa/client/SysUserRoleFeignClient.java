@@ -67,7 +67,7 @@ public interface SysUserRoleFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysuserroles/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysuserroles/fetchdefault")
     Page<SysUserRole> searchDefault(@RequestBody SysUserRoleSearchContext context);
 
 

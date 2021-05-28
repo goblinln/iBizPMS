@@ -92,7 +92,7 @@ public class TestSuiteResource {
          return ResponseEntity.status(HttpStatus.OK).body(testsuiteService.remove(testsuite_id));
     }
 
-    @PreAuthorize("@TestSuiteRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@TestSuiteRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除测试套件", tags = {"测试套件" },  notes = "批量删除测试套件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testsuites/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -214,7 +214,7 @@ public class TestSuiteResource {
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
 
-    @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
     @ApiOperation(value = "根据产品建立测试套件", tags = {"测试套件" },  notes = "根据产品建立测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites")
     public ResponseEntity<TestSuiteDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestSuiteDTO testsuitedto) {
@@ -227,7 +227,7 @@ public class TestSuiteResource {
 
 
     @VersionCheck(entity = "testsuite" , versionfield = "lastediteddate")
-    @PreAuthorize("@ProductRuntime.test(#testsuite_id, 'UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
     @ApiOperation(value = "根据产品更新测试套件", tags = {"测试套件" },  notes = "根据产品更新测试套件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testsuites/{testsuite_id}")
     public ResponseEntity<TestSuiteDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
@@ -240,14 +240,14 @@ public class TestSuiteResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#testsuite_id, 'DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除测试套件", tags = {"测试套件" },  notes = "根据产品删除测试套件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testsuites/{testsuite_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(testsuiteService.remove(testsuite_id));
     }
 
-    @PreAuthorize("@ProductRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
     @ApiOperation(value = "根据产品批量删除测试套件", tags = {"测试套件" },  notes = "根据产品批量删除测试套件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testsuites/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -255,7 +255,7 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#testsuite_id, 'READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
     @ApiOperation(value = "根据产品获取测试套件", tags = {"测试套件" },  notes = "根据产品获取测试套件")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testsuites/{testsuite_id}")
     public ResponseEntity<TestSuiteDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id) {
@@ -264,7 +264,7 @@ public class TestSuiteResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
     @ApiOperation(value = "根据产品获取测试套件草稿", tags = {"测试套件" },  notes = "根据产品获取测试套件草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testsuites/getdraft")
     public ResponseEntity<TestSuiteDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestSuiteDTO dto) {
@@ -273,7 +273,7 @@ public class TestSuiteResource {
         return ResponseEntity.status(HttpStatus.OK).body(testsuiteMapping.toDto(testsuiteService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
     @ApiOperation(value = "根据产品检查测试套件", tags = {"测试套件" },  notes = "根据产品检查测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestSuiteDTO testsuitedto) {
@@ -327,7 +327,7 @@ public class TestSuiteResource {
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
 
-    @PreAuthorize("@ProductRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试套件" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/fetchdefault")
 	public ResponseEntity<List<TestSuiteDTO>> fetchTestSuiteDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestSuiteSearchContext context) {
@@ -340,7 +340,7 @@ public class TestSuiteResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取公开套件", tags = {"测试套件" } ,notes = "根据产品获取公开套件")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/fetchpublictestsuite")
 	public ResponseEntity<List<TestSuiteDTO>> fetchTestSuitePublicTestSuiteByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestSuiteSearchContext context) {

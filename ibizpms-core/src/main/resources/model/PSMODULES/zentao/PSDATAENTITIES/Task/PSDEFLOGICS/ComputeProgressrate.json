@@ -1,0 +1,17 @@
+{
+  "codeName" : "ComputeProgressrate",
+  "dEFLogicMode" : "COMPUTE",
+  "defaultParamName" : "DEFAULT",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEFLOGICS/ComputeProgressrate.json",
+  "logicName" : "计算进度",
+  "logicSubType" : "DEFIELD",
+  "name" : "计算进度",
+  "getPSDEField" : {
+    "name" : "PROGRESSRATE",
+    "codeName" : "Progressrate"
+  },
+  "scriptCode" : "var consumed = entity.get(\"consumed\");\nvar left = entity.get(\"left\");\nvar progressrate = \"0\";\nif(consumed === null || consumed == 0 ) {\n\tprogressrate = \"0\";\n}else if(left  === null || left == 0) {\n\tprogressrate = \"100\";\n}else {\n\tprogressrate = (consumed /(consumed  + left) ).toFixed(2) * 100;\n}\nreturn progressrate;",
+  "customCode" : true,
+  "enableBackend" : true,
+  "enableFront" : false
+}

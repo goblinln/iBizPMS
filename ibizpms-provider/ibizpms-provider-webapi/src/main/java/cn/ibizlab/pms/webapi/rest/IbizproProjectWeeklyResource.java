@@ -88,7 +88,7 @@ public class IbizproProjectWeeklyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklyService.remove(ibizproprojectweekly_id));
     }
 
-    @PreAuthorize("@IbizproProjectWeeklyRuntime.test(#ids, 'NONE')")
+    @PreAuthorize("@IbizproProjectWeeklyRuntime.quickTest('NONE')")
     @ApiOperation(value = "批量删除项目周报", tags = {"项目周报" },  notes = "批量删除项目周报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectweeklies/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {

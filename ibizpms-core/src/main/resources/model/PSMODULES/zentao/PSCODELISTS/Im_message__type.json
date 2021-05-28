@@ -1,0 +1,27 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Im_message__type",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Im_message__type.json",
+  "emptyText" : "未定义",
+  "getPSCodeItems" : [ {
+    "codeName" : "Normal",
+    "text" : "normal",
+    "value" : "normal"
+  }, {
+    "codeName" : "Broadcast",
+    "text" : "broadcast",
+    "value" : "broadcast"
+  }, {
+    "codeName" : "Notify",
+    "text" : "notify",
+    "value" : "notify"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
+}

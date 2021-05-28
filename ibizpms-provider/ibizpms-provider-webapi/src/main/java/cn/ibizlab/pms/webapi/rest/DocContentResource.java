@@ -91,7 +91,7 @@ public class DocContentResource {
          return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
     }
 
-    @PreAuthorize("@DocContentRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@DocContentRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除文档内容", tags = {"文档内容" },  notes = "批量删除文档内容")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/doccontents/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

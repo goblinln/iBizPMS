@@ -79,17 +79,17 @@ public interface IBIZProMessageFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/fetchdefault")
     Page<IBIZProMessage> searchDefault(@RequestBody IBIZProMessageSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/searchuserallmessages")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/fetchuserallmessages")
     Page<IBIZProMessage> searchUserAllMessages(@RequestBody IBIZProMessageSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/searchuserunreadmessages")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/fetchuserunreadmessages")
     Page<IBIZProMessage> searchUserUnreadMessages(@RequestBody IBIZProMessageSearchContext context);
 
 

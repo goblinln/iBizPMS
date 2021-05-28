@@ -1,0 +1,9 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "LinkTask",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkTask.json",
+  "logicName" : "关联任务",
+  "name" : "LinkTask",
+  "userCat" : "CAT1"
+}

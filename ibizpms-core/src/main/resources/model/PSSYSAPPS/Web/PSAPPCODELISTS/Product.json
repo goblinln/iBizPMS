@@ -1,0 +1,20 @@
+{
+  "codeListType" : "DYNAMIC",
+  "codeName" : "Product",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product.json",
+  "emptyText" : "未定义",
+  "name" : "产品（动态）",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchAllList"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  }
+}

@@ -67,12 +67,12 @@ public interface PSSysSFPubFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/searchbuild")
+    @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/fetchbuild")
     Page<PSSysSFPub> searchBuild(@RequestBody PSSysSFPubSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/fetchdefault")
     Page<PSSysSFPub> searchDefault(@RequestBody PSSysSFPubSearchContext context);
 
 

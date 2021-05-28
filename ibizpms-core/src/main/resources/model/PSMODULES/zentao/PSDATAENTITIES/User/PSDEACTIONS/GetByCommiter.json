@@ -1,0 +1,9 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "BUILTIN",
+  "codeName" : "GetByCommiter",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDEACTIONS/GetByCommiter.json",
+  "logicName" : "根据代码账户查询用户信息",
+  "name" : "getByCommiter",
+  "builtinAction" : true
+}

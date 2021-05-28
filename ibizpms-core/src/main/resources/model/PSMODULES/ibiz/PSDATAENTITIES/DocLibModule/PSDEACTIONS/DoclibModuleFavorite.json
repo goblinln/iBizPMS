@@ -1,0 +1,12 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "DELOGIC",
+  "codeName" : "DoclibModuleFavorite",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/DoclibModuleFavorite.json",
+  "logicName" : "收藏",
+  "name" : "DoclibModuleFavorite",
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/DocLibModuleFavorite.json"
+  }
+}

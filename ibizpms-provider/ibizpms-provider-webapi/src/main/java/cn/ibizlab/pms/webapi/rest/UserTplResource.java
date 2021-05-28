@@ -91,7 +91,7 @@ public class UserTplResource {
          return ResponseEntity.status(HttpStatus.OK).body(usertplService.remove(usertpl_id));
     }
 
-    @PreAuthorize("@UserTplRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@UserTplRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除用户模板", tags = {"用户模板" },  notes = "批量删除用户模板")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/usertpls/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

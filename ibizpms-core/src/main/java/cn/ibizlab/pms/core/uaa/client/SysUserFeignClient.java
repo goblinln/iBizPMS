@@ -71,7 +71,7 @@ public interface SysUserFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysusers/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysusers/fetchdefault")
     Page<SysUser> searchDefault(@RequestBody SysUserSearchContext context);
 
 

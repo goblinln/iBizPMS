@@ -1,0 +1,8 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "ProductTeamGuoLv",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/ProductTeamGuoLv.json",
+  "logicName" : "PmsEe团队管理过滤",
+  "name" : "ProductTeamGuoLv"
+}

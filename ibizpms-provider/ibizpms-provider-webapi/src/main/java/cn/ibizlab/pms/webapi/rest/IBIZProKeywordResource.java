@@ -80,7 +80,7 @@ public class IBIZProKeywordResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizprokeywordService.remove(ibizprokeyword_id));
     }
 
-    @PreAuthorize("@IBIZProKeywordRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IBIZProKeywordRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除关键字", tags = {"关键字" },  notes = "批量删除关键字")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizprokeywords/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {

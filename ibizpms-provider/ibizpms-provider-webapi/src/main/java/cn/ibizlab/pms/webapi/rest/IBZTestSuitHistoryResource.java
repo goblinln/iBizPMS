@@ -91,7 +91,7 @@ public class IBZTestSuitHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibztestsuithistoryService.remove(ibztestsuithistory_id));
     }
 
-    @PreAuthorize("@IBZTestSuitHistoryRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IBZTestSuitHistoryRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除套件操作历史", tags = {"套件操作历史" },  notes = "批量删除套件操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztestsuithistories/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

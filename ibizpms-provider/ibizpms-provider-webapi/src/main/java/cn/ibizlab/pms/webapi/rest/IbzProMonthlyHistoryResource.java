@@ -91,7 +91,7 @@ public class IbzProMonthlyHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyhistoryService.remove(ibzpromonthlyhistory_id));
     }
 
-    @PreAuthorize("@IbzProMonthlyHistoryRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IbzProMonthlyHistoryRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除月报操作历史", tags = {"月报操作历史" },  notes = "批量删除月报操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzpromonthlyhistories/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

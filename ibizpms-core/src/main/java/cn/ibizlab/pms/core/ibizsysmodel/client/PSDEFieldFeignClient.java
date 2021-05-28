@@ -67,7 +67,7 @@ public interface PSDEFieldFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/psdefields/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/psdefields/fetchdefault")
     Page<PSDEField> searchDefault(@RequestBody PSDEFieldSearchContext context);
 
 

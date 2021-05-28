@@ -1,0 +1,12 @@
+{
+  "actionMode" : "CREATE",
+  "actionType" : "BUILTIN",
+  "codeName" : "CreateTemp",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail/PSDEACTIONS/CreateTemp.json",
+  "logicName" : "CreateTemp",
+  "name" : "CreateTemp",
+  "orderValue" : 2,
+  "tempDataMode" : 2,
+  "builtinAction" : true,
+  "enableTempData" : true
+}

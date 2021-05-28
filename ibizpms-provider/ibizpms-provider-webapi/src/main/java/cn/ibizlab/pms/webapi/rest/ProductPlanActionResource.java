@@ -91,7 +91,7 @@ public class ProductPlanActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(productplanactionService.remove(productplanaction_id));
     }
 
-    @PreAuthorize("@ProductPlanActionRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除产品计划日志", tags = {"产品计划日志" },  notes = "批量删除产品计划日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productplanactions/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -125,7 +125,7 @@ public class ProductPlanActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productplanactionService.checkKey(productplanactionMapping.toDomain(productplanactiondto)));
     }
 
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id, 'MANAGE')")
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id, 'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"产品计划日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/{productplanaction_id}/comment")
     public ResponseEntity<ProductPlanActionDTO> comment(@PathVariable("productplanaction_id") Long productplanaction_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
@@ -153,7 +153,7 @@ public class ProductPlanActionResource {
     }
 
 
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id, 'MANAGE')")
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id, 'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"产品计划日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/{productplanaction_id}/editcomment")
     public ResponseEntity<ProductPlanActionDTO> editComment(@PathVariable("productplanaction_id") Long productplanaction_id, @RequestBody ProductPlanActionDTO productplanactiondto) {

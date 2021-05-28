@@ -53,7 +53,7 @@ public class ProjectTaskGanttResource {
     public ProjectTaskGanttMapping projecttaskganttMapping;
 
 
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据项目获取任务类型分组", tags = {"任务" } ,notes = "根据项目获取任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projecttaskgantts/fetchtypegroup")
 	public ResponseEntity<List<Map>> fetchProjectTaskGanttTypeGroupByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {

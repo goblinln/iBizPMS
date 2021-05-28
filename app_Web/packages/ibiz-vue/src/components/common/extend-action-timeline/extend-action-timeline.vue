@@ -9,7 +9,7 @@
             <div class="usertaskname">{{$t('components.timeline.node')}}</div>
             <div class="authorname">{{$t('components.timeline.author')}}</div>
             <div class="type">{{$t('components.timeline.type')}}</div>
-            <div class="last-time">{{$t('components.timeline.lastTime')}}</div>
+            <div class="last-time">{{$t('components.timeline.lasttime')}}</div>
             <div class="fullmessage">{{$t('components.timeline.opinion')}}</div>
           </div>
           <div class="arrow"></div>

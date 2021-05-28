@@ -91,7 +91,7 @@ public class TodoResource {
          return ResponseEntity.status(HttpStatus.OK).body(todoService.remove(todo_id));
     }
 
-    @PreAuthorize("@TodoRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@TodoRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除待办", tags = {"待办" },  notes = "批量删除待办")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/todos/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

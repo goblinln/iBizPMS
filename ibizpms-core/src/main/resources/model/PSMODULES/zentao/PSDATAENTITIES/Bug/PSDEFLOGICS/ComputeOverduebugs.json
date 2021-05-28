@@ -1,0 +1,17 @@
+{
+  "codeName" : "ComputeOverduebugs",
+  "dEFLogicMode" : "COMPUTE",
+  "defaultParamName" : "DEFAULT",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEFLOGICS/ComputeOverduebugs.json",
+  "logicName" : "计算过期天数",
+  "logicSubType" : "DEFIELD",
+  "name" : "计算过期天数",
+  "getPSDEField" : {
+    "name" : "OVERDUEBUGS",
+    "codeName" : "Overduebugs"
+  },
+  "scriptCode" : "var Overduebugs = 0;\nvar deadline = entity.get(\"deadline\");\nvar end = Date.parse(deadline);\nif(end == Date.parse('0000-00-00')){\n\tOverduebugs = 0;\n}else{\t\t\t\n\tvar now = Date.parse(new Date());\n\tvar ms= Math.abs(end - now);\n\t Overduebugs = Math.floor(ms / (24 * 3600 * 1000));\n\t}\nreturn Overduebugs;",
+  "customCode" : true,
+  "enableBackend" : true,
+  "enableFront" : false
+}

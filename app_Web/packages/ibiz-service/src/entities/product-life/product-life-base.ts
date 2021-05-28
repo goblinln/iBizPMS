@@ -50,10 +50,6 @@ export abstract class ProductLifeBase extends EntityBase implements IProductLife
      */
     productlifename?: any;
     /**
-     * 产品
-     */
-    product?: any;
-    /**
      * 建立时间
      */
     createdate?: any;
@@ -91,6 +87,10 @@ export abstract class ProductLifeBase extends EntityBase implements IProductLife
      * 结束日期
      */
     end?: any;
+    /**
+     * 编号
+     */
+    product?: any;
 
     /**
      * 重置实体数据

@@ -6,6 +6,7 @@ import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
 import net.ibizsys.runtime.util.EntityException;
 import net.ibizsys.runtime.util.EntityFieldError;
 import net.ibizsys.runtime.util.Errors;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -23,15 +24,21 @@ public class RuntimeExceptionHandler {
         out.put("message", entityException.getMessage());
         JSONArray array = new JSONArray();
         out.put("details", array);
-        for (EntityFieldError entityFieldError : entityException.getEntityError().getEntityFieldErrorList()) {
-            JSONObject fieldError = new JSONObject();
-            fieldError.put("fieldname", entityFieldError.getFieldName());
-            fieldError.put("fieldlogicname", entityFieldError.getFieldLogicName());
-            fieldError.put("fielderrortype", entityFieldError.getErrorType());
-            fieldError.put("fielderrorinfo", entityFieldError.getErrorInfo());
-            array.add(fieldError);
+        if (entityException.getEntityError() != null) {
+            for (EntityFieldError entityFieldError : entityException.getEntityError().getEntityFieldErrorList()) {
+                JSONObject fieldError = new JSONObject();
+                fieldError.put("fieldname", entityFieldError.getFieldName());
+                fieldError.put("fieldlogicname", entityFieldError.getFieldLogicName());
+                fieldError.put("fielderrortype", entityFieldError.getErrorType());
+                fieldError.put("fielderrorinfo", entityFieldError.getErrorInfo());
+                array.add(fieldError);
+            }
         }
-        return ResponseEntity.badRequest().body(out);
+        if (Errors.ACCESSDENY == entityException.getErrorCode()) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(out);
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(out);
+        }
     }
 
     @ExceptionHandler(value = DataEntityRuntimeException.class)
@@ -41,7 +48,7 @@ public class RuntimeExceptionHandler {
         out.put("type", "DataEntityRuntimeException");
         out.put("code", dataEntityRuntimeException.getErrorCode());
         out.put("message", dataEntityRuntimeException.getMessage());
-        return ResponseEntity.badRequest().body(out);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(out);
     }
 
     //@ExceptionHandler(value = RuntimeException.class)
@@ -51,7 +58,7 @@ public class RuntimeExceptionHandler {
         out.put("type", "RuntimeException");
         out.put("code", Errors.INTERNALERROR);
         out.put("message", runtimeException.getMessage());
-        return ResponseEntity.badRequest().body(out);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(out);
     }
 
 }

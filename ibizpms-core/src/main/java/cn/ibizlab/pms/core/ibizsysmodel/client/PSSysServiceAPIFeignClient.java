@@ -67,7 +67,7 @@ public interface PSSysServiceAPIFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/pssysserviceapis/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/pssysserviceapis/fetchdefault")
     Page<PSSysServiceAPI> searchDefault(@RequestBody PSSysServiceAPISearchContext context);
 
 

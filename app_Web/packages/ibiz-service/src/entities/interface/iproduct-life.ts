@@ -25,10 +25,6 @@ export interface IProductLife extends IEntityBase {
      */
     productlifename?: any;
     /**
-     * 产品
-     */
-    product?: any;
-    /**
      * 建立时间
      */
     createdate?: any;
@@ -66,4 +62,8 @@ export interface IProductLife extends IEntityBase {
      * 结束日期
      */
     end?: any;
+    /**
+     * 编号
+     */
+    product?: any;
 }

@@ -67,7 +67,7 @@ public interface SysOrganizationFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/fetchdefault")
     Page<SysOrganization> searchDefault(@RequestBody SysOrganizationSearchContext context);
 
 

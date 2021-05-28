@@ -91,7 +91,7 @@ public class IBZProReleaseActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactionService.remove(ibzproreleaseaction_id));
     }
 
-    @PreAuthorize("@IBZProReleaseActionRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IBZProReleaseActionRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除发布日志", tags = {"发布日志" },  notes = "批量删除发布日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproreleaseactions/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -125,7 +125,7 @@ public class IBZProReleaseActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactionService.checkKey(ibzproreleaseactionMapping.toDomain(ibzproreleaseactiondto)));
     }
 
-    @PreAuthorize("@ReleaseRuntime.test(#release_id, 'MANAGE')")
+    @PreAuthorize("@IBZProReleaseActionRuntime.test(#ibzproreleaseaction_id, 'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"发布日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/{ibzproreleaseaction_id}/comment")
     public ResponseEntity<IBZProReleaseActionDTO> comment(@PathVariable("ibzproreleaseaction_id") Long ibzproreleaseaction_id, @RequestBody IBZProReleaseActionDTO ibzproreleaseactiondto) {
@@ -153,7 +153,7 @@ public class IBZProReleaseActionResource {
     }
 
 
-    @PreAuthorize("@ReleaseRuntime.test(#release_id, 'MANAGE')")
+    @PreAuthorize("@IBZProReleaseActionRuntime.test(#ibzproreleaseaction_id, 'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"发布日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/{ibzproreleaseaction_id}/editcomment")
     public ResponseEntity<IBZProReleaseActionDTO> editComment(@PathVariable("ibzproreleaseaction_id") Long ibzproreleaseaction_id, @RequestBody IBZProReleaseActionDTO ibzproreleaseactiondto) {

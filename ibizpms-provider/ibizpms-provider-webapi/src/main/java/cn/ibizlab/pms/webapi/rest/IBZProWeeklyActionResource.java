@@ -91,7 +91,7 @@ public class IBZProWeeklyActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyactionService.remove(ibzproweeklyaction_id));
     }
 
-    @PreAuthorize("@IBZProWeeklyActionRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IBZProWeeklyActionRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除周报日志", tags = {"周报日志" },  notes = "批量删除周报日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproweeklyactions/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

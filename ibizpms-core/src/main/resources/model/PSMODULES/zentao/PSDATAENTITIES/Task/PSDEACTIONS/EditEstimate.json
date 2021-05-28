@@ -1,0 +1,9 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "EditEstimate",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/EditEstimate.json",
+  "logicName" : "编辑工时",
+  "name" : "EditEstimate",
+  "userCat" : "CAT1"
+}

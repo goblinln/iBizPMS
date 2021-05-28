@@ -91,7 +91,7 @@ public class IBZTestSuiteActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibztestsuiteactionService.remove(ibztestsuiteaction_id));
     }
 
-    @PreAuthorize("@IBZTestSuiteActionRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IBZTestSuiteActionRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除套件日志", tags = {"套件日志" },  notes = "批量删除套件日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztestsuiteactions/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -125,7 +125,7 @@ public class IBZTestSuiteActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztestsuiteactionService.checkKey(ibztestsuiteactionMapping.toDomain(ibztestsuiteactiondto)));
     }
 
-    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id, 'MANAGE')")
+    @PreAuthorize("@IBZTestSuiteActionRuntime.test(#ibztestsuiteaction_id, 'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"套件日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztestsuiteactions/{ibztestsuiteaction_id}/comment")
     public ResponseEntity<IBZTestSuiteActionDTO> comment(@PathVariable("ibztestsuiteaction_id") Long ibztestsuiteaction_id, @RequestBody IBZTestSuiteActionDTO ibztestsuiteactiondto) {
@@ -153,7 +153,7 @@ public class IBZTestSuiteActionResource {
     }
 
 
-    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id, 'MANAGE')")
+    @PreAuthorize("@IBZTestSuiteActionRuntime.test(#ibztestsuiteaction_id, 'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"套件日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztestsuiteactions/{ibztestsuiteaction_id}/editcomment")
     public ResponseEntity<IBZTestSuiteActionDTO> editComment(@PathVariable("ibztestsuiteaction_id") Long ibztestsuiteaction_id, @RequestBody IBZTestSuiteActionDTO ibztestsuiteactiondto) {

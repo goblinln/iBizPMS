@@ -91,7 +91,7 @@ public class IBZProToDoHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprotodohistoryService.remove(ibzprotodohistory_id));
     }
 
-    @PreAuthorize("@IBZProToDoHistoryRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IBZProToDoHistoryRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除todo操作历史", tags = {"todo操作历史" },  notes = "批量删除todo操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprotodohistories/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

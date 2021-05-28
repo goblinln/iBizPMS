@@ -67,7 +67,7 @@ public interface IBIZProKeywordFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/searchdefault")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/fetchdefault")
     Page<IBIZProKeyword> searchDefault(@RequestBody IBIZProKeywordSearchContext context);
 
 

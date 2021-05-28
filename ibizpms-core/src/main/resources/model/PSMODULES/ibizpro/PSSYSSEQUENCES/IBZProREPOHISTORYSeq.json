@@ -1,0 +1,20 @@
+{
+  "codeName" : "IBZProREPOHISTORYSeq",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProREPOHISTORYSeq.json",
+  "getKeyPSDEField" : {
+    "name" : "IBZPRO_SEQUENCENAME",
+    "codeName" : "IBZProSequenceName"
+  },
+  "maxValue" : 999999,
+  "minValue" : 1,
+  "name" : "REPOHISTORY编号序列",
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence.json"
+  },
+  "sequenceType" : "DE",
+  "getValuePSDEField" : {
+    "name" : "CURSEQ",
+    "codeName" : "Curseq"
+  }
+}

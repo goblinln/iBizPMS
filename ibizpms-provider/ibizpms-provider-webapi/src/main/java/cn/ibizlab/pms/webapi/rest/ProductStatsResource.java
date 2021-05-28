@@ -91,7 +91,7 @@ public class ProductStatsResource {
          return ResponseEntity.status(HttpStatus.OK).body(productstatsService.remove(productstats_id));
     }
 
-    @PreAuthorize("@ProductStatsRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@ProductStatsRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除产品统计", tags = {"产品统计" },  notes = "批量删除产品统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productstats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

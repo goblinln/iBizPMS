@@ -91,7 +91,7 @@ public class IBZProProjectActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectactionService.remove(ibzproprojectaction_id));
     }
 
-    @PreAuthorize("@IBZProProjectActionRuntime.test(#ids, 'DELETE')")
+    @PreAuthorize("@IBZProProjectActionRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除项目日志", tags = {"项目日志" },  notes = "批量删除项目日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproprojectactions/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -125,7 +125,7 @@ public class IBZProProjectActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzproprojectactionService.checkKey(ibzproprojectactionMapping.toDomain(ibzproprojectactiondto)));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'MANAGE')")
+    @PreAuthorize("@IBZProProjectActionRuntime.test(#ibzproprojectaction_id, 'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"项目日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectactions/{ibzproprojectaction_id}/comment")
     public ResponseEntity<IBZProProjectActionDTO> comment(@PathVariable("ibzproprojectaction_id") Long ibzproprojectaction_id, @RequestBody IBZProProjectActionDTO ibzproprojectactiondto) {
@@ -153,7 +153,7 @@ public class IBZProProjectActionResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'MANAGE')")
+    @PreAuthorize("@IBZProProjectActionRuntime.test(#ibzproprojectaction_id, 'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"项目日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectactions/{ibzproprojectaction_id}/editcomment")
     public ResponseEntity<IBZProProjectActionDTO> editComment(@PathVariable("ibzproprojectaction_id") Long ibzproprojectaction_id, @RequestBody IBZProProjectActionDTO ibzproprojectactiondto) {

@@ -1,0 +1,59 @@
+{
+  "codeName" : "DEFAULT",
+  "controlType" : "LIST",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzProMonthlyActionAddListView/PSLISTS/DEFAULT.json",
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupMode" : "NONE",
+  "logicName" : "DEFAULT",
+  "minorSortDir" : "DESC",
+  "getPSDEListDataItems" : [ {
+    "dataType" : 1,
+    "format" : "%1$s",
+    "name" : "action"
+  }, {
+    "dataType" : 21,
+    "format" : "%1$s",
+    "name" : "diff"
+  }, {
+    "dataType" : 25,
+    "format" : "%1$s",
+    "name" : "field"
+  }, {
+    "dataType" : 1,
+    "format" : "%1$s",
+    "name" : "id"
+  }, {
+    "dataType" : 21,
+    "format" : "%1$s",
+    "name" : "old"
+  }, {
+    "dataType" : 25,
+    "name" : "ibiznew"
+  } ],
+  "pagingSize" : 1000,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "enableGroup" : false,
+  "enableRowEdit" : false,
+  "enableRowEditGroup" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "noSort" : false,
+  "showHeader" : true,
+  "modelid" : "da7aa85414de53a5241a4176b0177f13",
+  "modeltype" : "PSDELIST"
+}

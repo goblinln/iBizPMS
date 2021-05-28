@@ -1,0 +1,24 @@
+{
+  "codeName" : "IBZProToDoAction",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction/PSDERS/DER1N_IBZPRO_TODOACTION_ZT_TODO_OBJECTID.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 4,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction.json"
+  },
+  "name" : "DER1N_IBZPRO_TODOACTION_ZT_TODO_OBJECTID",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "OBJECTID",
+    "codeName" : "ObjectID"
+  },
+  "pickupDEFName" : "OBJECTID",
+  "removeActionType" : -1,
+  "removeOrder" : 0
+}

@@ -1,0 +1,17 @@
+{
+  "codeName" : "ComputeMultiple",
+  "dEFLogicMode" : "COMPUTE",
+  "defaultParamName" : "DEFAULT",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEFLOGICS/ComputeMultiple.json",
+  "logicName" : "计算多任务标识",
+  "logicSubType" : "DEFIELD",
+  "name" : "计算多任务标识",
+  "getPSDEField" : {
+    "name" : "MULTIPLE",
+    "codeName" : "Multiple"
+  },
+  "scriptCode" : "var multiple = entity.get(\"multiple\");\nif(multiple === null || multiple == 0) {\n\tmultiple = 0;\n}else {\n\tmultiple = 1;\n}\nreturn multiple;",
+  "customCode" : true,
+  "enableBackend" : true,
+  "enableFront" : false
+}
