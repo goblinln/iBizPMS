@@ -54,18 +54,6 @@ public class ProjectBurnResource {
 
 
     @PreAuthorize("@BurnRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目更新燃尽图", tags = {"burn" },  notes = "根据项目更新燃尽图")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectburns/{projectburn_id}/computeburn")
-    public ResponseEntity<ProjectBurnDTO> computeBurnByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectburn_id") String projectburn_id, @RequestBody ProjectBurnDTO projectburndto) {
-        Burn domain = projectburnMapping.toDomain(projectburndto);
-        domain.setProject(project_id);
-        domain.setId(projectburn_id);
-        domain = burnService.computeBurn(domain) ;
-        projectburndto = projectburnMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectburndto);
-    }
-
-    @PreAuthorize("@BurnRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据项目获取燃尽图预计（含周末）", tags = {"burn" } ,notes = "根据项目获取燃尽图预计（含周末）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectburns/fetchestimateandleft")
 	public ResponseEntity<List<ProjectBurnDTO>> fetchProjectBurnESTIMATEANDLEFTByProject(@PathVariable("project_id") Long project_id,@RequestBody BurnSearchContext context) {
@@ -78,5 +66,17 @@ public class ProjectBurnResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@BurnRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目更新燃尽图", tags = {"burn" },  notes = "根据项目更新燃尽图")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectburns/{projectburn_id}/computeburn")
+    public ResponseEntity<ProjectBurnDTO> computeBurnByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectburn_id") String projectburn_id, @RequestBody ProjectBurnDTO projectburndto) {
+        Burn domain = projectburnMapping.toDomain(projectburndto);
+        domain.setProject(project_id);
+        domain.setId(projectburn_id);
+        domain = burnService.computeBurn(domain) ;
+        projectburndto = projectburnMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectburndto);
+    }
+
 }
 

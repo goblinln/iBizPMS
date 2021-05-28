@@ -52,6 +52,19 @@ public class TestResource {
     @Lazy
     public TestMapping testMapping;
 
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取默认查询", tags = {"产品" } ,notes = "获取默认查询")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/fetchcurdefault")
+	public ResponseEntity<List<TestDTO>> fetchcurdefault(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchCurDefault(context) ;
+        List<TestDTO> list = testMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/tests/{test_id}/{action}")

@@ -135,32 +135,16 @@ export class ProjectTaskEstimateBaseService extends EntityBaseService<IProjectTa
         return this.condCache.get('view');
     }
     /**
-     * Get
+     * FetchDefault
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectTaskEstimateService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projecttask && _context.projecttaskestimate) {
-            const res = await this.http.get(`/projects/${_context.project}/projecttasks/${_context.projecttask}/projecttaskestimates/${_context.projecttaskestimate}`);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTaskEstimateService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projecttask && _context.projecttaskestimate) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projecttasks/${_context.projecttask}/projecttaskestimates/${_context.projecttaskestimate}`, _data);
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projecttask && true) {
+            return this.http.post(`/projects/${_context.project}/projecttasks/${_context.projecttask}/projecttaskestimates/fetchdefault`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -203,16 +187,32 @@ export class ProjectTaskEstimateBaseService extends EntityBaseService<IProjectTa
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchDefault
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectTaskEstimateService
      */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projecttask && true) {
-            return this.http.post(`/projects/${_context.project}/projecttasks/${_context.projecttask}/projecttaskestimates/fetchdefault`, _data);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projecttask && _context.projecttaskestimate) {
+            const res = await this.http.get(`/projects/${_context.project}/projecttasks/${_context.projecttask}/projecttaskestimates/${_context.projecttaskestimate}`);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTaskEstimateService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projecttask && _context.projecttaskestimate) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/projecttasks/${_context.projecttask}/projecttaskestimates/${_context.projecttaskestimate}`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

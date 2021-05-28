@@ -246,23 +246,6 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "ComputeBurn",
-    "methodType" : "DEACTION",
-    "name" : "ComputeBurn",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/ComputeBurn.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ComputeBurn"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchEstimate",
     "methodType" : "FETCH",
     "name" : "FetchESTIMATEANDLEFT",
@@ -277,6 +260,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchEstimate"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ComputeBurn",
+    "methodType" : "DEACTION",
+    "name" : "ComputeBurn",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/ComputeBurn.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__MANAGE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ComputeBurn"
     },
     "builtinMethod" : false
   }, {
