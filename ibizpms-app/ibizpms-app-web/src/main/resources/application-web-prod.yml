@@ -75,6 +75,10 @@ zuul:
       path: /products/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    ibz_api__project_task_report:
+      path: /projecttaskreports/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     zt_burn:
       path: /projectburns/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -113,6 +117,10 @@ zuul:
       stripPrefix: false
     zt_build:
       path: /projectbuilds/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
+    ibz_api__project_task_gantt:
+      path: /projecttaskgantts/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     ibz_projectteam:

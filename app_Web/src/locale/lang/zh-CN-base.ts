@@ -1,5 +1,6 @@
 import productplan_zh_CN from '@locale/lanres/entities/product-plan/product-plan_zh_CN';
 import product_zh_CN from '@locale/lanres/entities/product/product_zh_CN';
+import projecttaskreport_zh_CN from '@locale/lanres/entities/project-task-report/project-task-report_zh_CN';
 import projectburn_zh_CN from '@locale/lanres/entities/project-burn/project-burn_zh_CN';
 import productbranch_zh_CN from '@locale/lanres/entities/product-branch/product-branch_zh_CN';
 import projecttaskestimate_zh_CN from '@locale/lanres/entities/project-task-estimate/project-task-estimate_zh_CN';
@@ -10,6 +11,7 @@ import productteam_zh_CN from '@locale/lanres/entities/product-team/product-team
 import productlife_zh_CN from '@locale/lanres/entities/product-life/product-life_zh_CN';
 import projecttask_zh_CN from '@locale/lanres/entities/project-task/project-task_zh_CN';
 import projectbuild_zh_CN from '@locale/lanres/entities/project-build/project-build_zh_CN';
+import projecttaskgantt_zh_CN from '@locale/lanres/entities/project-task-gantt/project-task-gantt_zh_CN';
 import projectteam_zh_CN from '@locale/lanres/entities/project-team/project-team_zh_CN';
 import productbug_zh_CN from '@locale/lanres/entities/product-bug/product-bug_zh_CN';
 import projectmodule_zh_CN from '@locale/lanres/entities/project-module/project-module_zh_CN';
@@ -440,6 +442,7 @@ function getAppLocale(){
         entities: {
             'productplan': productplan_zh_CN(),
             'product': product_zh_CN(),
+            'projecttaskreport': projecttaskreport_zh_CN(),
             'projectburn': projectburn_zh_CN(),
             'productbranch': productbranch_zh_CN(),
             'projecttaskestimate': projecttaskestimate_zh_CN(),
@@ -450,6 +453,7 @@ function getAppLocale(){
             'productlife': productlife_zh_CN(),
             'projecttask': projecttask_zh_CN(),
             'projectbuild': projectbuild_zh_CN(),
+            'projecttaskgantt': projecttaskgantt_zh_CN(),
             'projectteam': projectteam_zh_CN(),
             'productbug': productbug_zh_CN(),
             'projectmodule': projectmodule_zh_CN(),

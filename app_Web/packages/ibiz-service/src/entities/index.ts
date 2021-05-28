@@ -1,6 +1,7 @@
 export * from './interface';
 export * from './product-plan/product-plan';
 export * from './product/product';
+export * from './project-task-report/project-task-report';
 export * from './project-burn/project-burn';
 export * from './product-branch/product-branch';
 export * from './project-task-estimate/project-task-estimate';
@@ -11,6 +12,7 @@ export * from './product-team/product-team';
 export * from './product-life/product-life';
 export * from './project-task/project-task';
 export * from './project-build/project-build';
+export * from './project-task-gantt/project-task-gantt';
 export * from './project-team/project-team';
 export * from './product-bug/product-bug';
 export * from './project-module/project-module';

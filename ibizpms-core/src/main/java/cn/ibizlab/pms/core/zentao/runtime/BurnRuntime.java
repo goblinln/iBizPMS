@@ -140,7 +140,7 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         if (iPSDataQuery.getName().equals("DEFAULT"))
             return burnService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("ESTIMATEANDLEFT"))
-            return burnService.selectESTIMATEANDLEFT(searchContext);
+            return burnService.selectEstimate(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return burnService.selectView(searchContext);
         return null;

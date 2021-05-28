@@ -203,10 +203,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("日历航显示",null),
 				title: commonLogic.appcommonhandle("任务编辑视图（日历航显示）",null),
 			},
-			'tasktypeganttview': {
-				caption: commonLogic.appcommonhandle("任务",null),
-				title: commonLogic.appcommonhandle("任务甘特视图",null),
-			},
 			'pickupview': {
 				caption: commonLogic.appcommonhandle("任务",null),
 				title: commonLogic.appcommonhandle("task数据选择视图",null),
@@ -1429,11 +1425,6 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("无",null),
 		},
 		taskkanban_kanban: {
-			nodata:commonLogic.appcommonhandle("",null),
-			uiactions: {
-			},
-		},
-		typegantt_gantt: {
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
 			},

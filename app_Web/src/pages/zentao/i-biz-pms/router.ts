@@ -4518,41 +4518,6 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/tasktypeganttview',
-                    meta: {
-                        caption: 'entities.projecttask.views.tasktypeganttview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'tasktypeganttview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/tasktypeganttview',
-                    meta: {
-                        caption: 'entities.projecttask.views.tasktypeganttview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'tasktypeganttview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
                     path: 'projects/:project?/projecttasks/:projecttask?/views/pickupview',
                     meta: {
                         caption: 'entities.projecttask.views.pickupview.caption',
@@ -5773,6 +5738,41 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'editview' },
                         ],
                         resource:'projectbuild',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/projecttaskgantts/:projecttaskgantt?/views/tasktypeganttview',
+                    meta: {
+                        caption: 'entities.projecttaskgantt.views.tasktypeganttview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'projecttaskgantts', parameterName: 'projecttaskgantt' },
+                            { pathName: 'views', parameterName: 'tasktypeganttview' },
+                        ],
+                        resource:'projecttaskgantt',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projecttaskgantts/:projecttaskgantt?/views/tasktypeganttview',
+                    meta: {
+                        caption: 'entities.projecttaskgantt.views.tasktypeganttview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projecttaskgantts', parameterName: 'projecttaskgantt' },
+                            { pathName: 'views', parameterName: 'tasktypeganttview' },
+                        ],
+                        resource:'projecttaskgantt',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -22999,7 +22999,7 @@ const router = new Router({
                 {
                     path: 'views/tasktasktypeganttview',
                     meta: {
-                        caption: 'entities.projecttask.views.tasktypeganttview.caption',
+                        caption: 'entities.projecttaskgantt.views.tasktypeganttview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',

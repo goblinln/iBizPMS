@@ -35,6 +35,15 @@ export class GlobalService {
         return (await import('./product/product.service')).default.getInstance();
     }
     /**
+     * 项目任务管理服务
+     *
+     * @return {ProjectTaskReport}
+     * @memberof GlobalService
+     */
+    async getProjectTaskReportService() {
+        return (await import('./project-task-report/project-task-report.service')).default.getInstance();
+    }
+    /**
      * burn服务
      *
      * @return {ProjectBurn}
@@ -123,6 +132,15 @@ export class GlobalService {
      */
     async getProjectBuildService() {
         return (await import('./project-build/project-build.service')).default.getInstance();
+    }
+    /**
+     * 项目甘特图服务
+     *
+     * @return {ProjectTaskGantt}
+     * @memberof GlobalService
+     */
+    async getProjectTaskGanttService() {
+        return (await import('./project-task-gantt/project-task-gantt.service')).default.getInstance();
     }
     /**
      * 项目团队服务

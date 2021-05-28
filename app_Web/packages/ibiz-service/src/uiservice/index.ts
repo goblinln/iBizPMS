@@ -1,5 +1,6 @@
 export * from './product-plan/product-plan-ui-service';
 export * from './product/product-ui-service';
+export * from './project-task-report/project-task-report-ui-service';
 export * from './project-burn/project-burn-ui-service';
 export * from './product-branch/product-branch-ui-service';
 export * from './project-task-estimate/project-task-estimate-ui-service';
@@ -10,6 +11,7 @@ export * from './product-team/product-team-ui-service';
 export * from './product-life/product-life-ui-service';
 export * from './project-task/project-task-ui-service';
 export * from './project-build/project-build-ui-service';
+export * from './project-task-gantt/project-task-gantt-ui-service';
 export * from './project-team/project-team-ui-service';
 export * from './product-bug/product-bug-ui-service';
 export * from './project-module/project-module-ui-service';

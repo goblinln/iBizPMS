@@ -86,7 +86,7 @@
 	 <select id="searchEstimate"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext"  resultMap="BurnResultMap">
 	 	select * from (
          select t1.* from (
-                <include refid="ESTIMATEANDLEFT" />
+                <include refid="Estimate" />
          )t1
 		 )t1
      </select>
@@ -103,16 +103,16 @@
 		<include refid="Default" />
 	</select>
 
-    <!--数据查询[ESTIMATEANDLEFT]-->
-    <sql id="ESTIMATEANDLEFT" databaseId="mysql">
+    <!--数据查询[Estimate]-->
+    <sql id="Estimate" databaseId="mysql">
 		<![CDATA[ SELECT t1.`CONSUMED`, t1.`DATE`, ROUND((select estimate from zt_burn where date=t2.`begin` and project=t1.project)*(1-(DATEDIFF(t1.date,t2.`begin`))/(DATEDIFF(t2.`end`,t2.`begin`))),1) AS `ESTIMATE`, t1.`LEFT`, t1.`PROJECT`, DATE_FORMAT(t1.date,'%w')  as ISWEEKEND FROM `zt_burn` t1   LEFT JOIN zt_project t2 on t1.project=t2.id ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
     </sql>
 	
-	<select id="selectESTIMATEANDLEFT"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext" resultMap="BurnResultMap">
-		<include refid="ESTIMATEANDLEFT" />
+	<select id="selectEstimate"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext" resultMap="BurnResultMap">
+		<include refid="Estimate" />
 	</select>
 
     <!--数据查询[View]-->

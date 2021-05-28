@@ -1,6 +1,7 @@
 export { GlobalService } from './global.service';
 export * from './product-plan/product-plan.service';
 export * from './product/product.service';
+export * from './project-task-report/project-task-report.service';
 export * from './project-burn/project-burn.service';
 export * from './product-branch/product-branch.service';
 export * from './project-task-estimate/project-task-estimate.service';
@@ -11,6 +12,7 @@ export * from './product-team/product-team.service';
 export * from './product-life/product-life.service';
 export * from './project-task/project-task.service';
 export * from './project-build/project-build.service';
+export * from './project-task-gantt/project-task-gantt.service';
 export * from './project-team/project-team.service';
 export * from './product-bug/product-bug.service';
 export * from './project-module/project-module.service';

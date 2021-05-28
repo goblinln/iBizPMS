@@ -1,5 +1,6 @@
 export * from './iproduct-plan';
 export * from './iproduct';
+export * from './iproject-task-report';
 export * from './iproject-burn';
 export * from './iproduct-branch';
 export * from './iproject-task-estimate';
@@ -10,6 +11,7 @@ export * from './iproduct-team';
 export * from './iproduct-life';
 export * from './iproject-task';
 export * from './iproject-build';
+export * from './iproject-task-gantt';
 export * from './iproject-team';
 export * from './iproduct-bug';
 export * from './iproject-module';

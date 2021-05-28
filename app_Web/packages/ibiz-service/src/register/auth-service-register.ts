@@ -55,6 +55,7 @@ export class AuthServiceRegister{
     protected init(): void {
                 AuthServiceRegister.allAuthServiceMap.set('productplan', () => import('../authservice/product-plan/product-plan-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('product', () => import('../authservice/product/product-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('projecttaskreport', () => import('../authservice/project-task-report/project-task-report-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectburn', () => import('../authservice/project-burn/project-burn-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productbranch', () => import('../authservice/product-branch/product-branch-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projecttaskestimate', () => import('../authservice/project-task-estimate/project-task-estimate-auth-service'));
@@ -65,6 +66,7 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('productlife', () => import('../authservice/product-life/product-life-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projecttask', () => import('../authservice/project-task/project-task-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectbuild', () => import('../authservice/project-build/project-build-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('projecttaskgantt', () => import('../authservice/project-task-gantt/project-task-gantt-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectteam', () => import('../authservice/project-team/project-team-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productbug', () => import('../authservice/product-bug/product-bug-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectmodule', () => import('../authservice/project-module/project-module-auth-service'));

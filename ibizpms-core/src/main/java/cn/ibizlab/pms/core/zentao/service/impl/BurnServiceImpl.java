@@ -267,8 +267,8 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     public List<Burn> selectDefault(BurnSearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Burn> selectESTIMATEANDLEFT(BurnSearchContext context){
-        return baseMapper.selectESTIMATEANDLEFT(context, context.getSelectCond());
+    public List<Burn> selectEstimate(BurnSearchContext context){
+        return baseMapper.selectEstimate(context, context.getSelectCond());
     }
     public List<Burn> selectView(BurnSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());

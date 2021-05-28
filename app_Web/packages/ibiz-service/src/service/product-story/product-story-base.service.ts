@@ -334,50 +334,6 @@ export class ProductStoryBaseService extends EntityBaseService<IProductStory> {
         return this.condCache.get('view');
     }
     /**
-     * StoryFavorites
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductStoryService
-     */
-    async StoryFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productstory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productstories/${_context.productstory}/storyfavorites`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductStoryService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productstory) {
-            return this.http.delete(`/products/${_context.product}/productstories/${_context.productstory}`);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Change
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductStoryService
-     */
-    async Change(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productstory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productstories/${_context.productstory}/change`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -414,17 +370,34 @@ export class ProductStoryBaseService extends EntityBaseService<IProductStory> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * StoryNFavorites
+     * GetDraft
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductStoryService
      */
-    async StoryNFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/productstories/getdraft`, _data);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductStoryService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productstory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productstories/${_context.productstory}/storynfavorites`, _data);
+            const res = await this.http.get(`/products/${_context.product}/productstories/${_context.productstory}`);
+            return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -443,38 +416,6 @@ export class ProductStoryBaseService extends EntityBaseService<IProductStory> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Review
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductStoryService
-     */
-    async Review(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productstory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productstories/${_context.productstory}/review`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductStoryService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/productstories/getdraft`, _data);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * FetchParentDefault
      *
      * @param {*} [_context={}]
@@ -485,6 +426,35 @@ export class ProductStoryBaseService extends EntityBaseService<IProductStory> {
     async FetchParentDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/productstories/fetchparentdefault`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * StoryNFavorites
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductStoryService
+     */
+    async StoryNFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productstory) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productstories/${_context.productstory}/storynfavorites`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductStoryService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productstory) {
+            return this.http.delete(`/products/${_context.product}/productstories/${_context.productstory}`);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -504,17 +474,47 @@ export class ProductStoryBaseService extends EntityBaseService<IProductStory> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Get
+     * Change
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductStoryService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Change(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productstory) {
-            const res = await this.http.get(`/products/${_context.product}/productstories/${_context.productstory}`);
-            return res;
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productstories/${_context.productstory}/change`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Review
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductStoryService
+     */
+    async Review(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productstory) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productstories/${_context.productstory}/review`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * StoryFavorites
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductStoryService
+     */
+    async StoryFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productstory) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productstories/${_context.productstory}/storyfavorites`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -563,6 +563,23 @@ export class ProductStoryBaseService extends EntityBaseService<IProductStory> {
     }
 
     /**
+     * ActivateBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductStoryServiceBase
+     */
+    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productstories/activatebatch`,_data);
+        }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+
+    /**
      * ChangeBatch接口方法
      *
      * @param {*} [context={}]
@@ -592,23 +609,6 @@ export class ProductStoryBaseService extends EntityBaseService<IProductStory> {
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productstories/reviewbatch`,_data);
-        }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-
-    /**
-     * ActivateBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProductStoryServiceBase
-     */
-    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productstories/activatebatch`,_data);
         }
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

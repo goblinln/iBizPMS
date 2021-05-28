@@ -84,7 +84,7 @@
       "dBType" : "MYSQL5",
       "name" : "MySQL5"
     } ],
-    "codeName" : "ESTIMATEANDLEFT",
+    "codeName" : "Estimate",
     "logicName" : "燃尽图预计（含周末）",
     "name" : "ESTIMATEANDLEFT",
     "customCode" : true
@@ -119,7 +119,7 @@
     "name" : "ESTIMATEANDLEFT",
     "getPSDEDataQueries" : [ {
       "modelref" : true,
-      "id" : "ESTIMATEANDLEFT"
+      "id" : "Estimate"
     } ],
     "enableBackend" : true,
     "enableFront" : true
