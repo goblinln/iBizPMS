@@ -238,7 +238,6 @@
         "actionTarget" : "NONE",
         "caption" : "添加备注",
         "codeName" : "AddComment",
-        "dataAccessAction" : "CREATE",
         "frontProcessType" : "WIZARD",
         "fullCodeName" : "IbzProBuildAction_AddComment",
         "name" : "添加备注",

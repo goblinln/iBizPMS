@@ -2020,6 +2020,16 @@
     "name" : "CREATE",
     "id" : "Story__CREATE"
   }, {
+    "logicName" : "日报-创建",
+    "mapPSDEName" : "IBZ_DAILY",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_DAILY.json"
+    },
+    "name" : "CREATE",
+    "id" : "Daily__CREATE"
+  }, {
     "logicName" : "发布-创建",
     "mapPSDEName" : "ZT_RELEASE",
     "mapPSDEOPPrivName" : "CREATE",
@@ -2059,6 +2069,16 @@
     },
     "name" : "CREATE",
     "id" : "Bug__CREATE"
+  }, {
+    "logicName" : "测试报告-创建",
+    "mapPSDEName" : "ZT_TESTREPORT",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTREPORT.json"
+    },
+    "name" : "CREATE",
+    "id" : "TestReport__CREATE"
   }, {
     "logicName" : "产品-创建",
     "mapPSDEName" : "ZT_PRODUCT",
@@ -2110,6 +2130,36 @@
     "name" : "CREATE",
     "id" : "Task__CREATE"
   }, {
+    "logicName" : "周报-创建",
+    "mapPSDEName" : "IBZ_WEEKLY",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_WEEKLY.json"
+    },
+    "name" : "CREATE",
+    "id" : "Weekly__CREATE"
+  }, {
+    "logicName" : "文档库-创建",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_DOCLIB.json"
+    },
+    "name" : "CREATE",
+    "id" : "doclib__CREATE"
+  }, {
+    "logicName" : "用例库-创建",
+    "mapPSDEName" : "IBZ_LIB",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_LIB.json"
+    },
+    "name" : "CREATE",
+    "id" : "IbzLib__CREATE"
+  }, {
     "logicName" : "版本-创建",
     "mapPSDEName" : "ZT_BUILD",
     "mapPSDEOPPrivName" : "CREATE",
@@ -2133,6 +2183,46 @@
     "name" : "CREATE",
     "id" : "ProductPlan__CREATE"
   }, {
+    "logicName" : "月报-创建",
+    "mapPSDEName" : "IBZ_MONTHLY",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_MONTHLY.json"
+    },
+    "name" : "CREATE",
+    "id" : "Monthly__CREATE"
+  }, {
+    "logicName" : "文档-创建",
+    "mapPSDEName" : "ZT_DOC",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_DOC.json"
+    },
+    "name" : "CREATE",
+    "id" : "Doc__CREATE"
+  }, {
+    "logicName" : "测试套件-创建",
+    "mapPSDEName" : "ZT_TESTSUITE",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTSUITE.json"
+    },
+    "name" : "CREATE",
+    "id" : "testsuite__CREATE"
+  }, {
+    "logicName" : "汇报-创建",
+    "mapPSDEName" : "IBZ_REPORTLY",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_REPORTLY.json"
+    },
+    "name" : "CREATE",
+    "id" : "Reportly__CREATE"
+  }, {
     "logicName" : "删除",
     "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "UPDATE",
@@ -2149,6 +2239,16 @@
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
+    "logicName" : "周报-读取",
+    "mapPSDEName" : "IBZ_WEEKLY",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_WEEKLY.json"
+    },
+    "name" : "READ",
+    "id" : "Weekly__READ"
+  }, {
     "logicName" : "读取",
     "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "READ",
@@ -2159,6 +2259,16 @@
     "name" : "READ",
     "id" : "Zt_project__READ"
   }, {
+    "logicName" : "测试报告-读取",
+    "mapPSDEName" : "ZT_TESTREPORT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTREPORT.json"
+    },
+    "name" : "READ",
+    "id" : "TestReport__READ"
+  }, {
     "logicName" : "需求-读取",
     "mapPSDEName" : "ZT_STORY",
     "mapPSDEOPPrivName" : "READ",
@@ -2168,6 +2278,16 @@
     },
     "name" : "READ",
     "id" : "Story__READ"
+  }, {
+    "logicName" : "汇报-读取",
+    "mapPSDEName" : "IBZ_REPORTLY",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_REPORTLY.json"
+    },
+    "name" : "READ",
+    "id" : "Reportly__READ"
   }, {
     "logicName" : "测试用例-读取",
     "mapPSDEName" : "ZT_CASE",
@@ -2189,6 +2309,16 @@
     "name" : "READ",
     "id" : "ToDo__READ"
   }, {
+    "logicName" : "测试套件-读取",
+    "mapPSDEName" : "ZT_TESTSUITE",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTSUITE.json"
+    },
+    "name" : "READ",
+    "id" : "testsuite__READ"
+  }, {
     "logicName" : "项目-读取",
     "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "READ",
@@ -2209,6 +2339,16 @@
     "name" : "READ",
     "id" : "Release__READ"
   }, {
+    "logicName" : "用例库-读取",
+    "mapPSDEName" : "IBZ_LIB",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_LIB.json"
+    },
+    "name" : "READ",
+    "id" : "IbzLib__READ"
+  }, {
     "logicName" : "测试版本-读取",
     "mapPSDEName" : "ZT_TESTTASK",
     "mapPSDEOPPrivName" : "READ",
@@ -2219,6 +2359,16 @@
     "name" : "READ",
     "id" : "TestTask__READ"
   }, {
+    "logicName" : "文档-读取",
+    "mapPSDEName" : "ZT_DOC",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_DOC.json"
+    },
+    "name" : "READ",
+    "id" : "Doc__READ"
+  }, {
     "logicName" : "Bug-读取",
     "mapPSDEName" : "ZT_BUG",
     "mapPSDEOPPrivName" : "READ",
@@ -2228,6 +2378,16 @@
     },
     "name" : "READ",
     "id" : "Bug__READ"
+  }, {
+    "logicName" : "日报-读取",
+    "mapPSDEName" : "IBZ_DAILY",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_DAILY.json"
+    },
+    "name" : "READ",
+    "id" : "Daily__READ"
   }, {
     "logicName" : "任务-读取",
     "mapPSDEName" : "ZT_TASK",
@@ -2249,6 +2409,16 @@
     "name" : "READ",
     "id" : "Product__READ"
   }, {
+    "logicName" : "月报-读取",
+    "mapPSDEName" : "IBZ_MONTHLY",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_MONTHLY.json"
+    },
+    "name" : "READ",
+    "id" : "Monthly__READ"
+  }, {
     "logicName" : "产品计划-读取",
     "mapPSDEName" : "ZT_PRODUCTPLAN",
     "mapPSDEOPPrivName" : "READ",
@@ -2262,6 +2432,16 @@
     "logicName" : "读取",
     "name" : "READ"
   }, {
+    "logicName" : "文档库-读取",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_DOCLIB.json"
+    },
+    "name" : "READ",
+    "id" : "doclib__READ"
+  }, {
     "logicName" : "版本-读取",
     "mapPSDEName" : "ZT_BUILD",
     "mapPSDEOPPrivName" : "READ",
@@ -2272,6 +2452,16 @@
     "name" : "READ",
     "id" : "Build__READ"
   }, {
+    "logicName" : "测试报告-更新",
+    "mapPSDEName" : "ZT_TESTREPORT",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTREPORT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "TestReport__UPDATE"
+  }, {
     "logicName" : "测试版本-更新",
     "mapPSDEName" : "ZT_TESTTASK",
     "mapPSDEOPPrivName" : "UPDATE",
@@ -2281,6 +2471,26 @@
     },
     "name" : "UPDATE",
     "id" : "TestTask__UPDATE"
+  }, {
+    "logicName" : "文档库-更新",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_DOCLIB.json"
+    },
+    "name" : "UPDATE",
+    "id" : "doclib__UPDATE"
+  }, {
+    "logicName" : "用例库-更新",
+    "mapPSDEName" : "IBZ_LIB",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_LIB.json"
+    },
+    "name" : "UPDATE",
+    "id" : "IbzLib__UPDATE"
   }, {
     "logicName" : "版本-更新",
     "mapPSDEName" : "ZT_BUILD",
@@ -2301,6 +2511,16 @@
     },
     "name" : "UPDATE",
     "id" : "ToDo__UPDATE"
+  }, {
+    "logicName" : "周报-更新",
+    "mapPSDEName" : "IBZ_WEEKLY",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_WEEKLY.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Weekly__UPDATE"
   }, {
     "logicName" : "测试用例-更新",
     "mapPSDEName" : "ZT_CASE",
@@ -2332,6 +2552,16 @@
     "name" : "UPDATE",
     "id" : "Bug__UPDATE"
   }, {
+    "logicName" : "文档-更新",
+    "mapPSDEName" : "ZT_DOC",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_DOC.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Doc__UPDATE"
+  }, {
     "logicName" : "发布-更新",
     "mapPSDEName" : "ZT_RELEASE",
     "mapPSDEOPPrivName" : "UPDATE",
@@ -2352,6 +2582,16 @@
     "name" : "UPDATE",
     "id" : "ProductPlan__UPDATE"
   }, {
+    "logicName" : "月报-更新",
+    "mapPSDEName" : "IBZ_MONTHLY",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_MONTHLY.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Monthly__UPDATE"
+  }, {
     "logicName" : "更新",
     "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "UPDATE",
@@ -2361,6 +2601,16 @@
     },
     "name" : "UPDATE",
     "id" : "Zt_project__UPDATE"
+  }, {
+    "logicName" : "日报-更新",
+    "mapPSDEName" : "IBZ_DAILY",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_DAILY.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Daily__UPDATE"
   }, {
     "logicName" : "任务-更新",
     "mapPSDEName" : "ZT_TASK",
@@ -2382,8 +2632,28 @@
     "name" : "UPDATE",
     "id" : "Story__UPDATE"
   }, {
+    "logicName" : "测试套件-更新",
+    "mapPSDEName" : "ZT_TESTSUITE",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTSUITE.json"
+    },
+    "name" : "UPDATE",
+    "id" : "testsuite__UPDATE"
+  }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  }, {
+    "logicName" : "汇报-更新",
+    "mapPSDEName" : "IBZ_REPORTLY",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_REPORTLY.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Reportly__UPDATE"
   }, {
     "logicName" : "项目-更新",
     "mapPSDEName" : "ZT_PROJECT",

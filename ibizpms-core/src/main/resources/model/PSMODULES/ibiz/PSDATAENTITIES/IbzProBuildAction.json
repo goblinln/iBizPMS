@@ -1642,31 +1642,11 @@
     "enableFront" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
-    "logicName" : "添加备注",
-    "mapPSDEName" : "ZT_BUILD",
-    "mapPSDEOPPrivName" : "CREATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildAction/PSDERS/DER1N_IBZPRO_BUILDACTION_ZT_BUILD_OBJECTID.json"
-    },
-    "name" : "CREATE",
-    "id" : "IbzProBuild__CREATE"
-  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
-  }, {
-    "logicName" : "管理",
-    "mapPSDEName" : "ZT_BUILD",
-    "mapPSDEOPPrivName" : "MANAGE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildAction/PSDERS/DER1N_IBZPRO_BUILDACTION_ZT_BUILD_OBJECTID.json"
-    },
-    "name" : "MANAGE",
-    "id" : "IbzProBuild__MANAGE"
   }, {
     "logicName" : "读取",
     "name" : "READ"

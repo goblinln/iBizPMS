@@ -4099,6 +4099,9 @@
     "logicName" : "激活",
     "name" : "ACTIVATE"
   }, {
+    "logicName" : "版本管理",
+    "name" : "BUILDMANAGE"
+  }, {
     "logicName" : "关闭",
     "name" : "CLOSE"
   }, {
@@ -4137,6 +4140,9 @@
   }, {
     "logicName" : "任务管理",
     "name" : "TASKMANAGE"
+  }, {
+    "logicName" : "测试单管理",
+    "name" : "TESTTASKMANAGE"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
