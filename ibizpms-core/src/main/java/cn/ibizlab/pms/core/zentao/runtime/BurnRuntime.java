@@ -130,7 +130,7 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return burnService.searchDefault(searchContext);    
         if (iPSDEDataSet.getName().equals("ESTIMATEANDLEFT"))
-            return burnService.searchESTIMATEANDLEFT(searchContext);    
+            return burnService.searchEstimate(searchContext);    
         return null;
     }
 
@@ -327,7 +327,7 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
         }
-        else if (action.equals("searchESTIMATEANDLEFT")) {
+        else if (action.equals("searchEstimate")) {
             return aroundDataSet("ESTIMATEANDLEFT", point);
         }
         return point.proceed();

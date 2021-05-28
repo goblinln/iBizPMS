@@ -109,7 +109,7 @@
     "enableBackend" : true,
     "enableFront" : true
   }, {
-    "codeName" : "ESTIMATEANDLEFT",
+    "codeName" : "Estimate",
     "logicName" : "燃尽图预计（含周末）",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {

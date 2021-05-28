@@ -45,7 +45,7 @@ public interface IBurnService extends IService<Burn> {
     List<Burn> selectView(BurnSearchContext context);
 
     Page<Burn> searchDefault(BurnSearchContext context);
-    Page<Burn> searchESTIMATEANDLEFT(BurnSearchContext context);
+    Page<Burn> searchEstimate(BurnSearchContext context);
     List<Burn> selectByProject(Long id);
     void removeByProject(Long id);
     List<Burn> selectByTask(Long id);

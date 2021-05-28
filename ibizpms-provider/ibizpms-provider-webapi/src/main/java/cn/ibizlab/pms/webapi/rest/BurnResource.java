@@ -166,9 +166,9 @@ public class BurnResource {
 	}
     @PreAuthorize("@BurnRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取燃尽图预计（含周末）", tags = {"burn" } ,notes = "获取燃尽图预计（含周末）")
-    @RequestMapping(method= RequestMethod.POST , value="/burns/fetchestimateandleft")
-	public ResponseEntity<List<BurnDTO>> fetchestimateandleft(@RequestBody BurnSearchContext context) {
-        Page<Burn> domains = burnService.searchESTIMATEANDLEFT(context) ;
+    @RequestMapping(method= RequestMethod.POST , value="/burns/fetchestimate")
+	public ResponseEntity<List<BurnDTO>> fetchestimate(@RequestBody BurnSearchContext context) {
+        Page<Burn> domains = burnService.searchEstimate(context) ;
         List<BurnDTO> list = burnMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -288,10 +288,10 @@ public class BurnResource {
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据项目获取燃尽图预计（含周末）", tags = {"burn" } ,notes = "根据项目获取燃尽图预计（含周末）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/burns/fetchestimateandleft")
-	public ResponseEntity<List<BurnDTO>> fetchBurnESTIMATEANDLEFTByProject(@PathVariable("project_id") Long project_id,@RequestBody BurnSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/burns/fetchestimate")
+	public ResponseEntity<List<BurnDTO>> fetchBurnEstimateByProject(@PathVariable("project_id") Long project_id,@RequestBody BurnSearchContext context) {
         context.setN_project_eq(project_id);
-        Page<Burn> domains = burnService.searchESTIMATEANDLEFT(context) ;
+        Page<Burn> domains = burnService.searchEstimate(context) ;
         List<BurnDTO> list = burnMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

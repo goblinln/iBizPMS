@@ -82,8 +82,8 @@
          )t1
      </select>
 
-    <!--数据集合[ESTIMATEANDLEFT]-->
-	 <select id="searchESTIMATEANDLEFT"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext"  resultMap="BurnResultMap">
+    <!--数据集合[Estimate]-->
+	 <select id="searchEstimate"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext"  resultMap="BurnResultMap">
 	 	select * from (
          select t1.* from (
                 <include refid="ESTIMATEANDLEFT" />

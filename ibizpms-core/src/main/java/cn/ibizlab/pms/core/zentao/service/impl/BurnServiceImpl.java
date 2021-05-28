@@ -288,8 +288,8 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
      * 查询集合 燃尽图预计（含周末）
      */
     @Override
-    public Page<Burn> searchESTIMATEANDLEFT(BurnSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Burn> pages=baseMapper.searchESTIMATEANDLEFT(context.getPages(),context,context.getSelectCond());
+    public Page<Burn> searchEstimate(BurnSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Burn> pages=baseMapper.searchEstimate(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Burn>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

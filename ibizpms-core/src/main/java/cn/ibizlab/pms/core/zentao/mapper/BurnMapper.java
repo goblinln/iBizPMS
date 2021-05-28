@@ -24,7 +24,7 @@ public interface BurnMapper extends BaseMapper<Burn> {
     List<Burn> selectView(@Param("srf") BurnSearchContext context, @Param("ew") Wrapper<Burn> wrapper);
 
     Page<Burn> searchDefault(IPage page, @Param("srf") BurnSearchContext context, @Param("ew") Wrapper<Burn> wrapper);
-    Page<Burn> searchESTIMATEANDLEFT(IPage page, @Param("srf") BurnSearchContext context, @Param("ew") Wrapper<Burn> wrapper);
+    Page<Burn> searchEstimate(IPage page, @Param("srf") BurnSearchContext context, @Param("ew") Wrapper<Burn> wrapper);
     @Override
     Burn selectById(Serializable id);
     @Override
