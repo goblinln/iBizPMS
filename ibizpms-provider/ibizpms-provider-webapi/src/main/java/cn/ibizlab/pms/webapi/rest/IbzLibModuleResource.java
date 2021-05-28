@@ -186,6 +186,7 @@ public class IbzLibModuleResource {
         ibzlibmoduledto = ibzlibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduledto);
     }
+
     @PreAuthorize("@IbzLibModuleRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据用例库建立用例库模块", tags = {"用例库模块" },  notes = "根据用例库建立用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules")

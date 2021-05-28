@@ -784,7 +784,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
       },
       "dropDownView" : false,
       "enableAC" : true,
@@ -833,7 +833,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
       },
       "dropDownView" : false,
       "enableAC" : true,

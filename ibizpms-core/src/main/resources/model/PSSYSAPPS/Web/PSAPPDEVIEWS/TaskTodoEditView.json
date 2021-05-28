@@ -7,7 +7,7 @@
   "openMode" : "DRAWER_RIGHT",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -29,7 +29,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSFORMS/PendingSubmission.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask/PSFORMS/PendingSubmission.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -46,7 +46,7 @@
     "logicName" : "待办转任务",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -60,7 +60,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
         }
       }, {
         "actionName" : "GETDRAFTFROM",
@@ -69,7 +69,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
         }
       }, {
         "actionName" : "Remove",
@@ -82,7 +82,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -95,7 +95,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
         }
       }, {
         "actionName" : "Get",
@@ -108,7 +108,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
         }
       }, {
         "actionName" : "Create",
@@ -121,7 +121,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -1363,85 +1363,7 @@
               "rowEditDefault" : true,
               "showCaptionBar" : true,
               "modelid" : "d1339f33d3d82d7b6993e510b20fddbe",
-              "modeltype" : "PSAPPDEVIEW",
-              "getPSAppDERSPaths" : [ [ {
-                "actionRSMode" : 1,
-                "codeName" : "Tasks",
-                "dataRSMode" : 0,
-                "getMajorPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-                },
-                "getMinorPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                },
-                "name" : "项目任务",
-                "getParentPSAppDEField" : {
-                  "name" : "PROJECT",
-                  "codeName" : "Project"
-                },
-                "rSMode" : 2,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
-              }, {
-                "actionRSMode" : 1,
-                "codeName" : "TaskTeams",
-                "dataRSMode" : 0,
-                "getMajorPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                },
-                "getMinorPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
-                },
-                "name" : "任务团队成员（嵌套）",
-                "getParentPSAppDEField" : {
-                  "name" : "ROOT",
-                  "codeName" : "Root"
-                },
-                "rSMode" : 2,
-                "tempDataOrder" : 10,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
-              } ], [ {
-                "actionRSMode" : 1,
-                "codeName" : "TaskTeams",
-                "dataRSMode" : 0,
-                "getMajorPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                },
-                "getMinorPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
-                },
-                "name" : "任务团队成员（嵌套）",
-                "getParentPSAppDEField" : {
-                  "name" : "ROOT",
-                  "codeName" : "Root"
-                },
-                "rSMode" : 2,
-                "tempDataOrder" : 10,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
-              } ] ]
+              "modeltype" : "PSAPPDEVIEW"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -1549,7 +1471,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "PROJECT",
@@ -2004,7 +1926,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -2021,7 +1943,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "Tasks",
+    "codeName" : "ProjectTasks",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -2029,9 +1951,9 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
     },
-    "name" : "项目任务",
+    "name" : "PROJECT__PROJECT_TASK",
     "getParentPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"

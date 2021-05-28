@@ -1,0 +1,91 @@
+{
+  "codeName" : "BugOpenedBy_Project",
+  "controlType" : "CHART",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug/PSCHARTS/BugOpenedBy_Project.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "height" : 300.0,
+  "logicName" : "BugOpenedBy_Project",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+  },
+  "getPSChartCoordinateSystems" : [ {
+    "eChartsType" : "none",
+    "index" : 0,
+    "name" : "[BugOpenedBy_Project]无坐标系[0]",
+    "type" : "NONE",
+    "id" : "0"
+  } ],
+  "getPSChartDataSetGroups" : [ {
+    "index" : 0,
+    "name" : "BuildProduceBugOpenedBy_Project",
+    "id" : "0"
+  } ],
+  "getPSChartDataSets" : [ {
+    "index" : 0,
+    "name" : "BugOpenedBy_Project-BuildProduceBugOpenedBy_Project",
+    "getPSChartDataSetFields" : [ {
+      "index" : 0,
+      "name" : "OPENEDBY",
+      "groupField" : true,
+      "id" : "0"
+    }, {
+      "index" : 1,
+      "name" : "SRFCOUNT",
+      "groupField" : false,
+      "id" : "1"
+    } ],
+    "id" : "0"
+  } ],
+  "getPSDEChartLegend" : {
+    "index" : 0,
+    "showLegend" : true,
+    "id" : "0"
+  },
+  "getPSDEChartSerieses" : [ {
+    "catalogField" : "OPENEDBY",
+    "eChartsType" : "pie",
+    "index" : 0,
+    "name" : "BugOpenedBy_Project",
+    "getPSChartCoordinateSystem" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartDataSet" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartSeriesEncode" : {
+      "category" : "OPENEDBY",
+      "index" : 0,
+      "name" : "坐标系编码",
+      "type" : "NONE",
+      "value" : "SRFCOUNT",
+      "id" : "0"
+    },
+    "seriesLayoutBy" : "column",
+    "seriesType" : "pie",
+    "valueField" : "SRFCOUNT",
+    "enableChartDataSet" : true
+  } ],
+  "getPSDEChartTitle" : {
+    "index" : 0,
+    "subTitle" : "Bug创建者分类",
+    "title" : "Bug创建者分布_Project",
+    "showTitle" : false,
+    "id" : "0"
+  },
+  "getPSSysPFPlugin" : {
+    "pluginType" : "CHART_RENDER",
+    "pluginCode" : "tablechart"
+  },
+  "readOnly" : true,
+  "modelid" : "39a339f11202bfa1cd8bfff50a3d1d95",
+  "modeltype" : "PSDECHART",
+  "getUserParam" : {
+    "EC.color" : "[\"#00A9FC\",\"#FF5D5D\",\"#FDC137\",\"#3D5AFE\",'#651FFF','#D500F9','#F50057','#FF1744','#BD7B46']"
+  }
+}

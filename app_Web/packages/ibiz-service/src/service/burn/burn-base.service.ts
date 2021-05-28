@@ -22,7 +22,6 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
     protected APPDETEXT = 'date';
     protected quickSearchFields = ['date',];
     protected selectContextParam = {
-        project: 'project',
     };
 
     newEntity(data: IBurn): Burn {
@@ -39,13 +38,6 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
 
     async getLocal(context: IContext, srfKey: string): Promise<IBurn> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.project && entity.project !== '') {
-            const s = await ___ibz___.gs.getProjectService();
-            const data = await s.getLocal2(context, entity.project);
-            if (data) {
-                entity.project = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -54,13 +46,6 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
     }
 
     async getDraftLocal(_context: IContext, entity: IBurn = {}): Promise<IBurn> {
-        if (_context.project && _context.project !== '') {
-            const s = await ___ibz___.gs.getProjectService();
-            const data = await s.getLocal2(_context, _context.project);
-            if (data) {
-                entity.project = data.id;
-            }
-        }
         return new Burn(entity);
     }
 
@@ -89,9 +74,6 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
      * @memberof BurnService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.burn) {
-            return this.http.get(`/projects/${_context.project}/burns/${_context.burn}/select`);
-        }
         return this.http.get(`/burns/${_context.burn}/select`);
     }
     /**
@@ -103,16 +85,6 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
      * @memberof BurnService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projects/${_context.project}/burns`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -131,10 +103,6 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
      * @memberof BurnService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.burn) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/burns/${_context.burn}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/burns/${_context.burn}`, _data);
     }
@@ -147,9 +115,6 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
      * @memberof BurnService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.burn) {
-            return this.http.delete(`/projects/${_context.project}/burns/${_context.burn}`);
-        }
         return this.http.delete(`/burns/${_context.burn}`);
     }
     /**
@@ -161,10 +126,6 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
      * @memberof BurnService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.burn) {
-            const res = await this.http.get(`/projects/${_context.project}/burns/${_context.burn}`);
-            return res;
-        }
         const res = await this.http.get(`/burns/${_context.burn}`);
         return res;
     }
@@ -177,12 +138,6 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
      * @memberof BurnService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/burns/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/burns/getdraft`, _data);
@@ -197,10 +152,6 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
      * @memberof BurnService
      */
     async ComputeBurn(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.burn) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/burns/${_context.burn}/computeburn`, _data);
-        }
         return this.http.post(`/burns/${_context.burn}/computeburn`, _data);
     }
     /**
@@ -212,9 +163,6 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
      * @memberof BurnService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/burns/fetchdefault`, _data);
-        }
         return this.http.post(`/burns/fetchdefault`, _data);
     }
     /**
@@ -226,9 +174,6 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
      * @memberof BurnService
      */
     async FetchESTIMATEANDLEFT(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/burns/fetchestimateandleft`, _data);
-        }
         return this.http.post(`/burns/fetchestimateandleft`, _data);
     }
 
@@ -242,10 +187,6 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
      * @memberof BurnServiceBase
      */
     public async ComputeBurnBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/burns/computeburnbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/burns/computeburnbatch`,_data);
     }

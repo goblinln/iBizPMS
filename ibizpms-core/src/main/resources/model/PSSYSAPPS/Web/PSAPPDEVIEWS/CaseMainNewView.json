@@ -758,7 +758,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
               },
               "getPSNavigateContexts" : [ {
                 "key" : "N_MODULE_EQ",
@@ -1495,57 +1495,6 @@
               "modeltype" : "PSAPPDEVIEW",
               "getPSAppDERSPaths" : [ [ {
                 "actionRSMode" : 1,
-                "codeName" : "Cases",
-                "dataRSMode" : 0,
-                "getMajorPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-                },
-                "getMinorPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-                },
-                "name" : "产品用例",
-                "getParentPSAppDEField" : {
-                  "name" : "PRODUCT",
-                  "codeName" : "Product"
-                },
-                "rSMode" : 2,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
-              }, {
-                "actionRSMode" : 1,
-                "codeName" : "caseSteps",
-                "dataRSMode" : 0,
-                "getMajorPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-                },
-                "getMinorPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
-                },
-                "name" : "用例步骤(嵌套)",
-                "getParentPSAppDEField" : {
-                  "name" : "CASE",
-                  "codeName" : "IBizCase"
-                },
-                "rSMode" : 2,
-                "tempDataOrder" : 10,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
-              } ], [ {
-                "actionRSMode" : 1,
                 "codeName" : "caseSteps",
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
@@ -1772,31 +1721,5 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "6e8645d9fed039c0d242e50504074fb8",
-  "modeltype" : "PSAPPDEVIEW",
-  "getPSAppDERSPaths" : [ [ {
-    "actionRSMode" : 1,
-    "codeName" : "Cases",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "name" : "产品用例",
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ] ]
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -877,7 +877,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
         },
         "getPSDEContextMenu" : {
           "codeName" : "StoryTreeExpViewbranchs_cm",

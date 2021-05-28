@@ -1360,7 +1360,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
     },
     "getPSDEContextMenu" : {
       "codeName" : "TreeExpViewbranchs_cm",

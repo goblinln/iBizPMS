@@ -24,8 +24,6 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
     protected APPDETEXT = 'productname';
     protected quickSearchFields = ['productname',];
     protected selectContextParam = {
-        product: 'product',
-        project: 'project',
     };
 
     newEntity(data: IProjectProduct): ProjectProduct {
@@ -42,23 +40,6 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
 
     async getLocal(context: IContext, srfKey: string): Promise<IProjectProduct> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.product && entity.product !== '') {
-            const s = await ___ibz___.gs.getProductService();
-            const data = await s.getLocal2(context, entity.product);
-            if (data) {
-                entity.productname = data.name;
-                entity.product = data.id;
-                entity.product = data;
-            }
-        }
-        if (entity && entity.project && entity.project !== '') {
-            const s = await ___ibz___.gs.getProjectService();
-            const data = await s.getLocal2(context, entity.project);
-            if (data) {
-                entity.projectname = data.name;
-                entity.project = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -67,23 +48,6 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
     }
 
     async getDraftLocal(_context: IContext, entity: IProjectProduct = {}): Promise<IProjectProduct> {
-        if (_context.product && _context.product !== '') {
-            const s = await ___ibz___.gs.getProductService();
-            const data = await s.getLocal2(_context, _context.product);
-            if (data) {
-                entity.productname = data.name;
-                entity.product = data.id;
-                entity.product = data;
-            }
-        }
-        if (_context.project && _context.project !== '') {
-            const s = await ___ibz___.gs.getProjectService();
-            const data = await s.getLocal2(_context, _context.project);
-            if (data) {
-                entity.projectname = data.name;
-                entity.project = data.id;
-            }
-        }
         return new ProjectProduct(entity);
     }
 
@@ -136,12 +100,6 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
      * @memberof ProjectProductService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectproduct) {
-            return this.http.get(`/projects/${_context.project}/projectproducts/${_context.projectproduct}/select`);
-        }
-        if (_context.product && _context.projectproduct) {
-            return this.http.get(`/products/${_context.product}/projectproducts/${_context.projectproduct}/select`);
-        }
         return this.http.get(`/projectproducts/${_context.projectproduct}/select`);
     }
     /**
@@ -153,26 +111,6 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
      * @memberof ProjectProductService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projects/${_context.project}/projectproducts`, _data);
-        }
-        if (_context.product && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/projectproducts`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -191,14 +129,6 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
      * @memberof ProjectProductService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectproduct) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectproducts/${_context.projectproduct}`, _data);
-        }
-        if (_context.product && _context.projectproduct) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/projectproducts/${_context.projectproduct}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/projectproducts/${_context.projectproduct}`, _data);
     }
@@ -211,12 +141,6 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
      * @memberof ProjectProductService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectproduct) {
-            return this.http.delete(`/projects/${_context.project}/projectproducts/${_context.projectproduct}`);
-        }
-        if (_context.product && _context.projectproduct) {
-            return this.http.delete(`/products/${_context.product}/projectproducts/${_context.projectproduct}`);
-        }
         return this.http.delete(`/projectproducts/${_context.projectproduct}`);
     }
     /**
@@ -228,14 +152,6 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
      * @memberof ProjectProductService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectproduct) {
-            const res = await this.http.get(`/projects/${_context.project}/projectproducts/${_context.projectproduct}`);
-            return res;
-        }
-        if (_context.product && _context.projectproduct) {
-            const res = await this.http.get(`/products/${_context.product}/projectproducts/${_context.projectproduct}`);
-            return res;
-        }
         const res = await this.http.get(`/projectproducts/${_context.projectproduct}`);
         return res;
     }
@@ -248,18 +164,6 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
      * @memberof ProjectProductService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/projectproducts/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/projectproducts/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/projectproducts/getdraft`, _data);
@@ -274,12 +178,6 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
      * @memberof ProjectProductService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectproducts/fetchdefault`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/projectproducts/fetchdefault`, _data);
-        }
         return this.http.post(`/projectproducts/fetchdefault`, _data);
     }
     /**
@@ -291,12 +189,6 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
      * @memberof ProjectProductService
      */
     async FetchRelationPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectproducts/fetchrelationplan`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/projectproducts/fetchrelationplan`, _data);
-        }
         return this.http.post(`/projectproducts/fetchrelationplan`, _data);
     }
 }

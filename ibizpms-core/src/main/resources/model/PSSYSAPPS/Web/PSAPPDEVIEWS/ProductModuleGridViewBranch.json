@@ -745,7 +745,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
     },
-    "name" : "产品模块",
+    "name" : "PRODUCT__PRODUCT_MODULE",
     "getParentPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"

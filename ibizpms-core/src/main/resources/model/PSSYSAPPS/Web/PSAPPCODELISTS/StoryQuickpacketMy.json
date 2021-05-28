@@ -7,7 +7,7 @@
   "name" : "需求快速分组（我的地盘）",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
   },
   "getPSCodeItems" : [ {
     "codeName" : "Tome",

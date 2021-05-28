@@ -7,7 +7,7 @@
   "name" : "PRODUCTTEAMProductTeamListView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -74,7 +74,7 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
       },
       "modelref" : true,
       "id" : "ManagerMember@PRODUCTTEAM"
@@ -111,7 +111,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -150,7 +150,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
         },
         "getPSNavigateContexts" : [ {
           "key" : "PRODUCT",
@@ -222,7 +222,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM/PSLISTS/ProductTeam.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam/PSLISTS/ProductTeam.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -258,12 +258,12 @@
       } ],
       "codeName" : "ProductTeamPc",
       "controlType" : "PANEL",
-      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM/PSPANELS/ProductTeamPc.json",
+      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam/PSPANELS/ProductTeamPc.json",
       "layoutMode" : "TABLE_24COL",
       "logicName" : "团队成员卡片视图-产品",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
       },
       "getPSAppViewLogics" : [ {
         "logicTrigger" : "CUSTOM",
@@ -279,7 +279,7 @@
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
           },
           "modelref" : true,
           "id" : "RemoveMember@PRODUCTTEAM"
@@ -715,7 +715,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
               },
               "getPSSysImage" : {
                 "glyph" : "xf127@FontAwesome",
@@ -760,7 +760,7 @@
     "logicName" : "ProductTeam",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -774,7 +774,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -785,7 +785,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
         }
       }, {
         "actionName" : "Remove",
@@ -798,7 +798,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
         }
       }, {
         "actionName" : "Get",
@@ -811,7 +811,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
         }
       }, {
         "actionName" : "Create",
@@ -824,7 +824,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -929,7 +929,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -947,7 +947,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "PRODUCTTEAMs",
+    "codeName" : "ProductTeams",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -955,9 +955,9 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/PRODUCTTEAM.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
     },
-    "name" : "产品团队",
+    "name" : "PRODUCT__PRODUCT_TEAM",
     "getParentPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"

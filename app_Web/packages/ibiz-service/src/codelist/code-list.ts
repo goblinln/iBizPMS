@@ -1,4 +1,4 @@
-import { TaskService } from "../service";
+import { ProjectTaskService } from "../service";
 /**
  * 代码表--周报我完成的任务(下拉框选择)
  *
@@ -90,10 +90,10 @@ export default class CodeList {
     /**
      * 任务应用实体服务对象
      *
-     * @type {TaskService}
+     * @type {ProjectTaskService}
      * @memberof CodeList
      */
-    public taskService: TaskService = new TaskService();
+    public projecttaskService: ProjectTaskService = new ProjectTaskService();
 
 
     /**
@@ -134,7 +134,7 @@ export default class CodeList {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.taskService.FetchThisWeekCompleteTaskChoice(context, data);
+            const promise: Promise<any> = this.projecttaskService.FetchThisWeekCompleteTaskChoice(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

@@ -163,16 +163,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     }
   }, {
-    "name" : "研发人员-ZT_PROJECT[项目测试单管理（公开项目）（跟随角色）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_TestTaskManage_Open.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
-    }
-  }, {
     "name" : "研发人员-ZT_PRODUCT[产品Bug管理（公开）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,

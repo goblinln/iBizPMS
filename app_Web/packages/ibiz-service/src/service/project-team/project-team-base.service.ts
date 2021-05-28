@@ -127,18 +127,18 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         return this.condCache.get('view');
     }
     /**
-     * Select
+     * FetchCntEst
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectTeamService
      */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectteam) {
-            return this.http.get(`/projects/${_context.project}/projectteams/${_context.projectteam}/select`);
+    async FetchCntEst(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/projectteams/fetchcntest`, _data);
         }
-        return this.http.get(`/projectteams/${_context.projectteam}/select`);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Create
@@ -159,30 +159,7 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
             }
             return this.http.post(`/projects/${_context.project}/projectteams`, _data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/projectteams`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTeamService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectteam) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/projectteams/${_context.projectteam}`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Remove
@@ -196,7 +173,21 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         if (_context.project && _context.projectteam) {
             return this.http.delete(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
         }
-        return this.http.delete(`/projectteams/${_context.projectteam}`);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchSpecifyTeam
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
+     */
+    async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/projectteams/fetchspecifyteam`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Get
@@ -211,8 +202,7 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
             const res = await this.http.get(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
             return res;
         }
-        const res = await this.http.get(`/projectteams/${_context.projectteam}`);
-        return res;
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * GetDraft
@@ -229,113 +219,21 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
             const res = await this.http.get(`/projects/${_context.project}/projectteams/getdraft`, _data);
             return res;
         }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/projectteams/getdraft`, _data);
-        return res;
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * GetUserRole
+     * Update
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectTeamService
      */
-    async GetUserRole(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectteam) {
-            const res = await this.http.get(`/projects/${_context.project}/projectteams/${_context.projectteam}/getuserrole`);
-            return res;
-        }
-        const res = await this.http.get(`/projectteams/${_context.projectteam}/getuserrole`);
-        return res;
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTeamService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectteams/fetchdefault`, _data);
-        }
-        return this.http.post(`/projectteams/fetchdefault`, _data);
-    }
-    /**
-     * FetchProjectTeamPm
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTeamService
-     */
-    async FetchProjectTeamPm(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectteams/fetchprojectteampm`, _data);
-        }
-        return this.http.post(`/projectteams/fetchprojectteampm`, _data);
-    }
-    /**
-     * FetchRowEditDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTeamService
-     */
-    async FetchRowEditDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectteams/fetchroweditdefault`, _data);
-        }
-        return this.http.post(`/projectteams/fetchroweditdefault`, _data);
-    }
-    /**
-     * FetchSpecifyTeam
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTeamService
-     */
-    async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectteams/fetchspecifyteam`, _data);
-        }
-        return this.http.post(`/projectteams/fetchspecifyteam`, _data);
-    }
-    /**
-     * FetchTaskCntEstimateConsumedLeft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTeamService
-     */
-    async FetchTaskCntEstimateConsumedLeft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectteams/fetchtaskcntestimateconsumedleft`, _data);
-        }
-        return this.http.post(`/projectteams/fetchtaskcntestimateconsumedleft`, _data);
-    }
-
-    /**
-     * GetUserRoleBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProjectTeamServiceBase
-     */
-    public async GetUserRoleBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectteams/getuserrolebatch`,_data);
+            return this.http.put(`/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/projectteams/getuserrolebatch`,_data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

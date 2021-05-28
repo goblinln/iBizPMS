@@ -272,6 +272,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品根据测试单获取相应信息测试报告", tags = {"测试报告" },  notes = "根据产品测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}/getinfotesttask")
@@ -459,6 +460,7 @@ public class TestReportResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testreportMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目根据测试单获取相应信息测试报告", tags = {"测试报告" },  notes = "根据项目测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttask")

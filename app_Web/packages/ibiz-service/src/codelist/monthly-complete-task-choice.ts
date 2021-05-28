@@ -1,4 +1,4 @@
-import { TaskService } from "../service";
+import { ProjectTaskService } from "../service";
 /**
  * 代码表--月报我完成的任务（下拉列表框）
  *
@@ -90,10 +90,10 @@ export default class MonthlyCompleteTaskChoice {
     /**
      * 任务应用实体服务对象
      *
-     * @type {TaskService}
+     * @type {ProjectTaskService}
      * @memberof MonthlyCompleteTaskChoice
      */
-    public taskService: TaskService = new TaskService();
+    public projecttaskService: ProjectTaskService = new ProjectTaskService();
 
 
     /**
@@ -134,7 +134,7 @@ export default class MonthlyCompleteTaskChoice {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.taskService.FetchThisMonthCompleteTaskChoice(context, data);
+            const promise: Promise<any> = this.projecttaskService.FetchThisMonthCompleteTaskChoice(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

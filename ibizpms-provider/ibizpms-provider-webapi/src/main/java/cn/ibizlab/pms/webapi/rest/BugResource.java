@@ -1180,6 +1180,7 @@ public class BugResource {
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
     @ApiOperation(value = "根据产品建立Bug", tags = {"Bug" },  notes = "根据产品建立Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs")

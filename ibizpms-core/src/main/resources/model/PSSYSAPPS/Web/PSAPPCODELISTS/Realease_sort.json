@@ -7,7 +7,7 @@
   "name" : "发布快速分组",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
   },
   "getPSCodeItems" : [ {
     "codeName" : "All",

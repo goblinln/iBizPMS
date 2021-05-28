@@ -7,7 +7,7 @@
   "openMode" : "DRAWER_RIGHT",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -56,7 +56,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -112,7 +112,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build/PSFORMS/EditForm.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild/PSFORMS/EditForm.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -129,7 +129,7 @@
     "logicName" : "编辑模式",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -143,7 +143,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
         }
       }, {
         "actionName" : "GETDRAFTFROM",
@@ -152,7 +152,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
         }
       }, {
         "actionName" : "Remove",
@@ -165,7 +165,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -178,7 +178,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
         }
       }, {
         "actionName" : "Get",
@@ -191,7 +191,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
         }
       }, {
         "actionName" : "Create",
@@ -204,7 +204,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -786,7 +786,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -803,7 +803,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "Builds",
+    "codeName" : "ProjectBuilds",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -811,37 +811,12 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
     },
-    "name" : "项目版本",
+    "name" : "PROJECT__PROJECT_BUILD",
     "getParentPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ], [ {
-    "actionRSMode" : 1,
-    "codeName" : "Builds",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
-    },
-    "name" : "产品版本",
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
     },
     "rSMode" : 2,
     "enableCreateDataRS" : false,

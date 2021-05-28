@@ -89,9 +89,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && _context.casestep) {
-            return this.http.get(`/products/${_context.product}/cases/${_context.case}/casesteps/${_context.casestep}/select`);
-        }
         if (_context.case && _context.casestep) {
             return this.http.get(`/cases/${_context.case}/casesteps/${_context.casestep}/select`);
         }
@@ -106,16 +103,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/casesteps`, _data);
-        }
         if (_context.case && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -144,10 +131,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && _context.casestep) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/cases/${_context.case}/casesteps/${_context.casestep}`, _data);
-        }
         if (_context.case && _context.casestep) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/cases/${_context.case}/casesteps/${_context.casestep}`, _data);
@@ -164,9 +147,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && _context.casestep) {
-            return this.http.delete(`/products/${_context.product}/cases/${_context.case}/casesteps/${_context.casestep}`);
-        }
         if (_context.case && _context.casestep) {
             return this.http.delete(`/cases/${_context.case}/casesteps/${_context.casestep}`);
         }
@@ -181,10 +161,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && _context.casestep) {
-            const res = await this.http.get(`/products/${_context.product}/cases/${_context.case}/casesteps/${_context.casestep}`);
-            return res;
-        }
         if (_context.case && _context.casestep) {
             const res = await this.http.get(`/cases/${_context.case}/casesteps/${_context.casestep}`);
             return res;
@@ -201,12 +177,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/cases/${_context.case}/casesteps/getdraft`, _data);
-            return res;
-        }
         if (_context.case && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -227,9 +197,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async FetchCurTest(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && true) {
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchcurtest`, _data);
-        }
         if (_context.case && true) {
             return this.http.post(`/cases/${_context.case}/casesteps/fetchcurtest`, _data);
         }
@@ -244,9 +211,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && true) {
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchdefault`, _data);
-        }
         if (_context.case && true) {
             return this.http.post(`/cases/${_context.case}/casesteps/fetchdefault`, _data);
         }
@@ -261,9 +225,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async FetchDefault1(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && true) {
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchdefault1`, _data);
-        }
         if (_context.case && true) {
             return this.http.post(`/cases/${_context.case}/casesteps/fetchdefault1`, _data);
         }
@@ -278,9 +239,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async FetchMob(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && true) {
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchmob`, _data);
-        }
         if (_context.case && true) {
             return this.http.post(`/cases/${_context.case}/casesteps/fetchmob`, _data);
         }
@@ -295,9 +253,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async FetchVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && true) {
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchversion`, _data);
-        }
         if (_context.case && true) {
             return this.http.post(`/cases/${_context.case}/casesteps/fetchversion`, _data);
         }
@@ -312,9 +267,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async FetchVersions(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.case && true) {
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchversions`, _data);
-        }
         if (_context.case && true) {
             return this.http.post(`/cases/${_context.case}/casesteps/fetchversions`, _data);
         }

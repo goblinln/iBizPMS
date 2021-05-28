@@ -7,7 +7,7 @@
   "name" : "BranchPMGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -144,7 +144,7 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
       },
       "modelref" : true,
       "id" : "Create@Branch"
@@ -181,7 +181,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -215,7 +215,7 @@
         "name" : "新建",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
         },
         "getPSSysImage" : {
           "glyph" : "xf067@FontAwesome",
@@ -359,7 +359,7 @@
     "codeName" : "PlatformManagement",
     "columnEnableLink" : 2,
     "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch/PSGRIDS/PlatformManagement.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch/PSGRIDS/PlatformManagement.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -374,7 +374,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
     },
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
@@ -398,7 +398,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
         },
         "modelref" : true,
         "id" : "Edit@Branch"
@@ -410,7 +410,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
         },
         "modelref" : true,
         "id" : "Delete@Branch"
@@ -430,7 +430,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -441,7 +441,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
         }
       }, {
         "actionName" : "Remove",
@@ -454,7 +454,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
         }
       }, {
         "actionName" : "Get",
@@ -467,7 +467,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -480,7 +480,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
         }
       }, {
         "actionName" : "Create",
@@ -493,7 +493,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -588,7 +588,7 @@
             "name" : "编辑",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
@@ -622,7 +622,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf00d@FontAwesome",
@@ -732,7 +732,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -754,11 +754,11 @@
   }, {
     "codeName" : "Custom",
     "controlType" : "SEARCHBAR",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch/PSSEARCHBARS/Custom.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch/PSSEARCHBARS/Custom.json",
     "logicName" : "平台自定义搜索栏",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
     },
     "getPSControlParam" : {
       "id" : "SEARCHBAR"
@@ -846,7 +846,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -869,7 +869,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "Branches",
+    "codeName" : "ProductBranches",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -877,9 +877,9 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
     },
-    "name" : "产品平台",
+    "name" : "PRODUCT__PRODUCT_BRANCH",
     "getParentPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"

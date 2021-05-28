@@ -7,7 +7,7 @@
   "name" : "BugBugProjectKanbanView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -279,7 +279,7 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
       },
       "modelref" : true,
       "id" : "ProjectCreate@Bug"
@@ -316,7 +316,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -350,7 +350,7 @@
         "name" : "新建（项目新建）",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
         },
         "getPSNavigateParams" : [ {
           "key" : "project",
@@ -414,7 +414,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSKANBANS/BugKanBan.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug/PSKANBANS/BugKanBan.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -491,12 +491,12 @@
       } ],
       "codeName" : "BugKanBan",
       "controlType" : "PANEL",
-      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSPANELS/BugKanBan.json",
+      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug/PSPANELS/BugKanBan.json",
       "layoutMode" : "TABLE_24COL",
       "logicName" : "Bug看板项布局面板",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
       },
       "getPSAppViewLogics" : [ {
         "logicTrigger" : "CUSTOM",
@@ -512,7 +512,7 @@
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
           },
           "modelref" : true,
           "id" : "AssingToBug@Bug"
@@ -1119,7 +1119,7 @@
               "name" : "指派bug",
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
               },
               "getPSSysImage" : {
                 "glyph" : "xf0a4@FontAwesome",
@@ -1310,7 +1310,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -1324,7 +1324,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
         }
       }, {
         "actionName" : "Update",
@@ -1337,7 +1337,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -1348,7 +1348,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
         }
       }, {
         "actionName" : "Remove",
@@ -1361,7 +1361,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
         }
       }, {
         "actionName" : "Get",
@@ -1374,7 +1374,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
         }
       }, {
         "actionName" : "Create",
@@ -1387,7 +1387,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -1960,7 +1960,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -1977,7 +1977,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "Bugs",
+    "codeName" : "ProductBugs",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -1985,9 +1985,9 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
     },
-    "name" : "产品BUG",
+    "name" : "PRODUCT__PRODUCT_BUG",
     "getParentPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"

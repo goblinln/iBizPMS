@@ -196,6 +196,7 @@ public class BurnResource {
         burndto = burnMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(burndto);
     }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目建立burn", tags = {"burn" },  notes = "根据项目建立burn")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/burns")

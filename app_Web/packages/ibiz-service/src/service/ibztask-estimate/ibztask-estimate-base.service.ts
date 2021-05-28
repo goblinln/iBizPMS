@@ -25,7 +25,6 @@ export class IBZTaskEstimateBaseService extends EntityBaseService<IIBZTaskEstima
     protected APPDETEXT = 'id';
     protected quickSearchFields = ['id',];
     protected selectContextParam = {
-        task: 'task',
     };
 
     newEntity(data: IIBZTaskEstimate): IBZTaskEstimate {
@@ -42,15 +41,6 @@ export class IBZTaskEstimateBaseService extends EntityBaseService<IIBZTaskEstima
 
     async getLocal(context: IContext, srfKey: string): Promise<IIBZTaskEstimate> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.task && entity.task !== '') {
-            const s = await ___ibz___.gs.getTaskService();
-            const data = await s.getLocal2(context, entity.task);
-            if (data) {
-                entity.taskname = data.name;
-                entity.task = data.id;
-                entity.task = data;
-            }
-        }
         return entity!;
     }
 
@@ -59,15 +49,6 @@ export class IBZTaskEstimateBaseService extends EntityBaseService<IIBZTaskEstima
     }
 
     async getDraftLocal(_context: IContext, entity: IIBZTaskEstimate = {}): Promise<IIBZTaskEstimate> {
-        if (_context.task && _context.task !== '') {
-            const s = await ___ibz___.gs.getTaskService();
-            const data = await s.getLocal2(_context, _context.task);
-            if (data) {
-                entity.taskname = data.name;
-                entity.task = data.id;
-                entity.task = data;
-            }
-        }
         return new IBZTaskEstimate(entity);
     }
 

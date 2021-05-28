@@ -74,7 +74,7 @@
         "name" : "dashboard_sysportlet3",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
         },
         "getPSControlHandler" : {
           "enableDEFieldPrivilege" : false,
@@ -88,7 +88,7 @@
         "getPSControls" : [ {
           "codeName" : "MyFinishedbyTask",
           "controlType" : "CHART",
-          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSCHARTS/MyFinishedbyTask.json",
+          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask/PSCHARTS/MyFinishedbyTask.json",
           "emptyText" : "无",
           "getFetchPSControlAction" : {
             "modelref" : true,
@@ -98,7 +98,7 @@
           "logicName" : "MyFinishedbyTask",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
           },
           "getPSChartCoordinateSystems" : [ {
             "eChartsType" : "none",
@@ -140,7 +140,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
               }
             }, {
               "actionType" : "DEDATASET",
@@ -151,7 +151,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
               }
             }, {
               "actionName" : "Remove",
@@ -164,7 +164,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
               }
             }, {
               "actionName" : "Get",
@@ -177,7 +177,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
               }
             }, {
               "actionName" : "Create",
@@ -190,7 +190,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
               }
             } ],
             "userDRAction" : "READ",
@@ -279,7 +279,7 @@
         "name" : "dashboard_sysportlet4",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
         },
         "getPSControlHandler" : {
           "enableDEFieldPrivilege" : false,
@@ -294,7 +294,7 @@
           "codeName" : "CurUserResolveBug",
           "controlType" : "CHART",
           "coordinateSystem" : "NONE",
-          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/CurUserResolveBug.json",
+          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug/PSCHARTS/CurUserResolveBug.json",
           "emptyText" : "无",
           "getFetchPSControlAction" : {
             "modelref" : true,
@@ -304,7 +304,7 @@
           "logicName" : "CurUserResolveBug",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
           },
           "getPSChartCoordinateSystems" : [ {
             "eChartsType" : "none",
@@ -346,7 +346,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
               }
             }, {
               "actionType" : "DEDATASET",
@@ -357,7 +357,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
               }
             }, {
               "actionName" : "Remove",
@@ -370,7 +370,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
               }
             }, {
               "actionName" : "Get",
@@ -383,7 +383,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
               }
             }, {
               "actionName" : "Create",
@@ -396,7 +396,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
               }
             } ],
             "userDRAction" : "READ",

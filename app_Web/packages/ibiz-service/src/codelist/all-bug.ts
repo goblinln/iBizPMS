@@ -1,4 +1,4 @@
-import { BugService } from "../service";
+import { ProductBugService } from "../service";
 /**
  * 代码表--所有bug
  *
@@ -88,12 +88,12 @@ export default class AllBug {
     }
 
     /**
-     * Bug应用实体服务对象
+     * 产品缺陷应用实体服务对象
      *
-     * @type {BugService}
+     * @type {ProductBugService}
      * @memberof AllBug
      */
-    public bugService: BugService = new BugService();
+    public productbugService: ProductBugService = new ProductBugService();
 
 
     /**
@@ -134,7 +134,7 @@ export default class AllBug {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.bugService.FetchDefault(context, data);
+            const promise: Promise<any> = this.productbugService.FetchDefault(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

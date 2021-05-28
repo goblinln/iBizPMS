@@ -52,6 +52,7 @@ public class ProjectBurnResource {
     @Lazy
     public ProjectBurnMapping projectburnMapping;
 
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取燃尽图预计（含周末）", tags = {"burn" } ,notes = "根据项目获取燃尽图预计（含周末）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectburns/fetchestimateandleft")

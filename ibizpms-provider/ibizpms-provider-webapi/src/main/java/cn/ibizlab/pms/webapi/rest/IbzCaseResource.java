@@ -168,6 +168,7 @@ public class IbzCaseResource {
         ibzcasedto = ibzcaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzcasedto);
     }
+
     @PreAuthorize("@IbzCaseRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据用例库建立测试用例", tags = {"测试用例" },  notes = "根据用例库建立测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases")

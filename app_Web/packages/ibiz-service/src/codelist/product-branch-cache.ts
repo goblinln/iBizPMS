@@ -1,4 +1,4 @@
-import { BranchService } from "../service";
+import { ProductBranchService } from "../service";
 /**
  * 代码表--产品平台（动态）_缓存
  *
@@ -90,10 +90,10 @@ export default class ProductBranch_Cache {
     /**
      * 产品的分支和平台信息应用实体服务对象
      *
-     * @type {BranchService}
+     * @type {ProductBranchService}
      * @memberof ProductBranch_Cache
      */
-    public branchService: BranchService = new BranchService();
+    public productbranchService: ProductBranchService = new ProductBranchService();
 
 
     /**
@@ -134,7 +134,7 @@ export default class ProductBranch_Cache {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.branchService.FetchCurProduct(context, data);
+            const promise: Promise<any> = this.productbranchService.FetchCurProduct(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

@@ -364,6 +364,7 @@ public class DocLibResource {
         doclibdto = doclibMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品建立文档库", tags = {"文档库" },  notes = "根据产品建立文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs")
@@ -663,6 +664,7 @@ public class DocLibResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目建立文档库", tags = {"文档库" },  notes = "根据项目建立文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs")

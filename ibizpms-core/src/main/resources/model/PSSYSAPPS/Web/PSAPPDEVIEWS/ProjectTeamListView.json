@@ -763,7 +763,7 @@
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchTaskCntEstimateConsumedLeft"
+          "id" : "FetchCntEst"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -943,7 +943,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
     },
-    "name" : "项目团队",
+    "name" : "PROJECT__PROJECT_TEAM",
     "getParentPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"

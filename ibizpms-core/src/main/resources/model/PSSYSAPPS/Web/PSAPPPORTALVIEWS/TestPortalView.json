@@ -326,7 +326,6 @@
                       },
                       "caption" : "新建",
                       "codeName" : "New",
-                      "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
                       "fullCodeName" : "New",
                       "name" : "表格界面_新建操作",
                       "getPSSysImage" : {
@@ -992,58 +991,7 @@
             "rowEditDefault" : false,
             "showCaptionBar" : false,
             "modelid" : "fe6c2d81a15a946d67c798e5af01f6ae",
-            "modeltype" : "PSAPPDEVIEW",
-            "getPSAppDERSPaths" : [ [ {
-              "actionRSMode" : 1,
-              "codeName" : "TestTasks",
-              "dataRSMode" : 0,
-              "getMajorPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-              },
-              "getMinorPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
-              },
-              "name" : "项目测试单",
-              "getParentPSAppDEField" : {
-                "name" : "PROJECT",
-                "codeName" : "Project"
-              },
-              "rSMode" : 2,
-              "enableCreateDataRS" : false,
-              "enableDEAction" : true,
-              "enableDEDataSet" : true,
-              "enableGetDataRS" : false,
-              "enableSelect" : true,
-              "enableSelectDataRS" : false,
-              "enableUpdateDataRS" : false
-            } ], [ {
-              "actionRSMode" : 1,
-              "codeName" : "TestTasks",
-              "dataRSMode" : 0,
-              "getMajorPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-              },
-              "getMinorPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
-              },
-              "name" : "产品测试单",
-              "getParentPSAppDEField" : {
-                "name" : "PRODUCT",
-                "codeName" : "Product"
-              },
-              "rSMode" : 2,
-              "enableCreateDataRS" : false,
-              "enableDEAction" : true,
-              "enableDEDataSet" : true,
-              "enableGetDataRS" : false,
-              "enableSelect" : true,
-              "enableSelectDataRS" : false,
-              "enableUpdateDataRS" : false
-            } ] ]
+            "modeltype" : "PSAPPDEVIEW"
           },
           "portletType" : "VIEW",
           "title" : "待测试版本",
@@ -1084,7 +1032,7 @@
           "name" : "db_assigntomebugportlet1",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
           },
           "getPSAppViewLogics" : [ {
             "logicTrigger" : "CUSTOM",
@@ -1100,7 +1048,7 @@
             "getPSUIAction" : {
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
               },
               "modelref" : true,
               "id" : "More@Bug"
@@ -1141,7 +1089,7 @@
                 "name" : "更多",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
                 },
                 "timeout" : 60000,
                 "uIActionMode" : "FRONT",
@@ -1163,7 +1111,7 @@
             "name" : "BugGridView9_AssignedToMe",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
             },
             "getPSAppViewEngines" : [ {
               "engineCat" : "VIEW",
@@ -1333,7 +1281,7 @@
               "codeName" : "Main2",
               "columnEnableLink" : 2,
               "controlType" : "GRID",
-              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSGRIDS/Main2.json",
+              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug/PSGRIDS/Main2.json",
               "getFetchPSControlAction" : {
                 "modelref" : true,
                 "id" : "fetch"
@@ -1348,7 +1296,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
@@ -1362,7 +1310,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
                   }
                 }, {
                   "actionType" : "DEDATASET",
@@ -1373,7 +1321,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
                   }
                 }, {
                   "actionName" : "Remove",
@@ -1386,7 +1334,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
                   }
                 }, {
                   "actionName" : "Get",
@@ -1399,7 +1347,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
                   }
                 }, {
                   "actionName" : "GetDraft",
@@ -1412,7 +1360,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
                   }
                 }, {
                   "actionName" : "Create",
@@ -1425,7 +1373,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
                   }
                 } ],
                 "userDRAction" : "READ",
@@ -1708,7 +1656,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
                 }
               },
               "sortMode" : "REMOTE",
@@ -1741,7 +1689,7 @@
               "name" : "layoutpanel",
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
               },
               "getPSControlParam" : { },
               "layoutPanel" : true,
@@ -1762,7 +1710,7 @@
             "modeltype" : "PSAPPDEVIEW",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
-              "codeName" : "Bugs",
+              "codeName" : "ProductBugs",
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
@@ -1770,9 +1718,9 @@
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
               },
-              "name" : "产品BUG",
+              "name" : "PRODUCT__PRODUCT_BUG",
               "getParentPSAppDEField" : {
                 "name" : "PRODUCT",
                 "codeName" : "Product"
@@ -2289,33 +2237,7 @@
             "rowEditDefault" : false,
             "showCaptionBar" : false,
             "modelid" : "ec0f9989926ab7fb4faf31f25b800d2d",
-            "modeltype" : "PSAPPDEVIEW",
-            "getPSAppDERSPaths" : [ [ {
-              "actionRSMode" : 1,
-              "codeName" : "Cases",
-              "dataRSMode" : 0,
-              "getMajorPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-              },
-              "getMinorPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-              },
-              "name" : "产品用例",
-              "getParentPSAppDEField" : {
-                "name" : "PRODUCT",
-                "codeName" : "Product"
-              },
-              "rSMode" : 2,
-              "enableCreateDataRS" : false,
-              "enableDEAction" : true,
-              "enableDEDataSet" : true,
-              "enableGetDataRS" : false,
-              "enableSelect" : true,
-              "enableSelectDataRS" : false,
-              "enableUpdateDataRS" : false
-            } ] ]
+            "modeltype" : "PSAPPDEVIEW"
           },
           "portletType" : "VIEW",
           "title" : "由我创建的用例",

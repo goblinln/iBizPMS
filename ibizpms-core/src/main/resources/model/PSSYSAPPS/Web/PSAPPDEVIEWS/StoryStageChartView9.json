@@ -6,7 +6,7 @@
   "name" : "StoryStageChartView9",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -20,7 +20,7 @@
   "getPSControls" : [ {
     "codeName" : "MyOpenedStory_Stage",
     "controlType" : "CHART",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSCHARTS/MyOpenedStory_Stage.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory/PSCHARTS/MyOpenedStory_Stage.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -29,7 +29,7 @@
     "logicName" : "MyOpenedStory_Stage",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
     },
     "getPSChartCoordinateSystems" : [ {
       "eChartsType" : "none",
@@ -75,7 +75,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -86,7 +86,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
         }
       }, {
         "actionName" : "Remove",
@@ -99,7 +99,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
         }
       }, {
         "actionName" : "Get",
@@ -112,7 +112,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
         }
       }, {
         "actionName" : "Create",
@@ -125,7 +125,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -210,7 +210,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -230,7 +230,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "Stories",
+    "codeName" : "ProductStories",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -238,9 +238,9 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
     },
-    "name" : "产品需求",
+    "name" : "PRODUCT__PRODUCT_STORY",
     "getParentPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"

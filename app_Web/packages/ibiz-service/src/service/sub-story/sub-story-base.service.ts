@@ -25,7 +25,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title','id',];
     protected selectContextParam = {
-        story: 'parent',
     };
 
     newEntity(data: ISubStory): SubStory {
@@ -42,14 +41,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
 
     async getLocal(context: IContext, srfKey: string): Promise<ISubStory> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.parent && entity.parent !== '') {
-            const s = await ___ibz___.gs.getStoryService();
-            const data = await s.getLocal2(context, entity.parent);
-            if (data) {
-                entity.parentname = data.title;
-                entity.parent = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -58,14 +49,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
     }
 
     async getDraftLocal(_context: IContext, entity: ISubStory = {}): Promise<ISubStory> {
-        if (_context.story && _context.story !== '') {
-            const s = await ___ibz___.gs.getStoryService();
-            const data = await s.getLocal2(_context, _context.story);
-            if (data) {
-                entity.parentname = data.title;
-                entity.parent = data.id;
-            }
-        }
         return new SubStory(entity);
     }
 
@@ -342,12 +325,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/select`);
-        }
-        if (_context.story && _context.substory) {
-            return this.http.get(`/stories/${_context.story}/substories/${_context.substory}/select`);
-        }
         return this.http.get(`/substories/${_context.substory}/select`);
     }
     /**
@@ -359,26 +336,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories`, _data);
-        }
-        if (_context.story && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/stories/${_context.story}/substories`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -397,14 +354,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/stories/${_context.story}/substories/${_context.substory}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/substories/${_context.substory}`, _data);
     }
@@ -417,12 +366,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-            return this.http.delete(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}`);
-        }
-        if (_context.story && _context.substory) {
-            return this.http.delete(`/stories/${_context.story}/substories/${_context.substory}`);
-        }
         return this.http.delete(`/substories/${_context.substory}`);
     }
     /**
@@ -434,14 +377,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}`);
-            return res;
-        }
-        if (_context.story && _context.substory) {
-            const res = await this.http.get(`/stories/${_context.story}/substories/${_context.substory}`);
-            return res;
-        }
         const res = await this.http.get(`/substories/${_context.substory}`);
         return res;
     }
@@ -454,18 +389,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/substories/getdraft`, _data);
-            return res;
-        }
-        if (_context.story && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/stories/${_context.story}/substories/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/substories/getdraft`, _data);
@@ -480,14 +403,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async Activate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/activate`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/activate`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/activate`, _data);
     }
     /**
@@ -499,14 +414,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async AllPush(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/allpush`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/allpush`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/allpush`, _data);
     }
     /**
@@ -518,14 +425,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async AssignTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/assignto`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/assignto`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/assignto`, _data);
     }
     /**
@@ -537,14 +436,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async BatchAssignTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/batchassignto`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/batchassignto`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/batchassignto`, _data);
     }
     /**
@@ -556,14 +447,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async BatchChangeBranch(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/batchchangebranch`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/batchchangebranch`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/batchchangebranch`, _data);
     }
     /**
@@ -575,14 +458,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async BatchChangeModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/batchchangemodule`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/batchchangemodule`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/batchchangemodule`, _data);
     }
     /**
@@ -594,14 +469,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async BatchChangePlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/batchchangeplan`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/batchchangeplan`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/batchchangeplan`, _data);
     }
     /**
@@ -613,14 +480,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async BatchChangeStage(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/batchchangestage`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/batchchangestage`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/batchchangestage`, _data);
     }
     /**
@@ -632,14 +491,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async BatchClose(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/batchclose`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/batchclose`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/batchclose`, _data);
     }
     /**
@@ -651,14 +502,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async BatchReview(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/batchreview`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/batchreview`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/batchreview`, _data);
     }
     /**
@@ -670,14 +513,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async BatchUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/batchunlinkstory`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/batchunlinkstory`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/batchunlinkstory`, _data);
     }
     /**
@@ -689,14 +524,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async BugToStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/bugtostory`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/bugtostory`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/bugtostory`, _data);
     }
     /**
@@ -708,14 +535,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async BuildBatchUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/buildbatchunlinkstory`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/buildbatchunlinkstory`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/buildbatchunlinkstory`, _data);
     }
     /**
@@ -727,14 +546,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async BuildLinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/buildlinkstory`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/buildlinkstory`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/buildlinkstory`, _data);
     }
     /**
@@ -746,14 +557,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async BuildUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/buildunlinkstory`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/buildunlinkstory`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/buildunlinkstory`, _data);
     }
     /**
@@ -765,14 +568,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async BuildUnlinkStorys(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/buildunlinkstorys`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/buildunlinkstorys`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/buildunlinkstorys`, _data);
     }
     /**
@@ -784,14 +579,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async Change(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/change`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/change`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/change`, _data);
     }
     /**
@@ -803,14 +590,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/close`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/close`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/close`, _data);
     }
     /**
@@ -822,14 +601,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async CreateTasks(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/createtasks`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/createtasks`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/createtasks`, _data);
     }
     /**
@@ -841,14 +612,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async GetStorySpec(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/getstoryspec`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/getstoryspec`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/getstoryspec`, _data);
     }
     /**
@@ -860,14 +623,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async GetStorySpecs(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/getstoryspecs`);
-            return res;
-        }
-        if (_context.story && _context.substory) {
-            const res = await this.http.get(`/stories/${_context.story}/substories/${_context.substory}/getstoryspecs`);
-            return res;
-        }
         const res = await this.http.get(`/substories/${_context.substory}/getstoryspecs`);
         return res;
     }
@@ -880,14 +635,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async ImportPlanStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/importplanstories`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/importplanstories`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/importplanstories`, _data);
     }
     /**
@@ -899,14 +646,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/linkstory`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/linkstory`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/linkstory`, _data);
     }
     /**
@@ -918,14 +657,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async ProjectBatchUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/projectbatchunlinkstory`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/projectbatchunlinkstory`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/projectbatchunlinkstory`, _data);
     }
     /**
@@ -937,14 +668,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async ProjectLinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/projectlinkstory`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/projectlinkstory`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/projectlinkstory`, _data);
     }
     /**
@@ -956,14 +679,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async ProjectUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/projectunlinkstory`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/projectunlinkstory`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/projectunlinkstory`, _data);
     }
     /**
@@ -975,14 +690,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async ProjectUnlinkStorys(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/projectunlinkstorys`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/projectunlinkstorys`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/projectunlinkstorys`, _data);
     }
     /**
@@ -994,14 +701,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async Push(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/push`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/push`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/push`, _data);
     }
     /**
@@ -1013,14 +712,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async ReleaseBatchUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/releasebatchunlinkstory`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/releasebatchunlinkstory`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/releasebatchunlinkstory`, _data);
     }
     /**
@@ -1032,14 +723,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async ReleaseLinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/releaselinkstory`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/releaselinkstory`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/releaselinkstory`, _data);
     }
     /**
@@ -1051,14 +734,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async ReleaseUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/releaseunlinkstory`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/releaseunlinkstory`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/releaseunlinkstory`, _data);
     }
     /**
@@ -1070,14 +745,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async ResetReviewedBy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/resetreviewedby`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/resetreviewedby`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/resetreviewedby`, _data);
     }
     /**
@@ -1089,14 +756,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async Review(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/review`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/review`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/review`, _data);
     }
     /**
@@ -1108,14 +767,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async SendMessage(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/sendmessage`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/sendmessage`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/sendmessage`, _data);
     }
     /**
@@ -1127,14 +778,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async SendMsgPreProcess(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/sendmsgpreprocess`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/sendmsgpreprocess`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/sendmsgpreprocess`, _data);
     }
     /**
@@ -1146,14 +789,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async SetStage(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/setstage`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/setstage`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/setstage`, _data);
     }
     /**
@@ -1165,14 +800,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async StoryFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/storyfavorites`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/storyfavorites`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/storyfavorites`, _data);
     }
     /**
@@ -1184,14 +811,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async StoryNFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/storynfavorites`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/storynfavorites`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/storynfavorites`, _data);
     }
     /**
@@ -1203,14 +822,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async SyncFromIbiz(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/syncfromibiz`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/syncfromibiz`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/syncfromibiz`, _data);
     }
     /**
@@ -1222,14 +833,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async UnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/unlinkstory`, _data);
-        }
-        if (_context.story && _context.substory) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/unlinkstory`, _data);
-        }
         return this.http.post(`/substories/${_context.substory}/unlinkstory`, _data);
     }
     /**
@@ -1241,12 +844,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchAssignedToMyStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchassignedtomystory`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchassignedtomystory`, _data);
-        }
         return this.http.post(`/substories/fetchassignedtomystory`, _data);
     }
     /**
@@ -1258,12 +855,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchAssignedToMyStoryCalendar(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchassignedtomystorycalendar`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchassignedtomystorycalendar`, _data);
-        }
         return this.http.post(`/substories/fetchassignedtomystorycalendar`, _data);
     }
     /**
@@ -1275,12 +866,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchBugStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchbugstory`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchbugstory`, _data);
-        }
         return this.http.post(`/substories/fetchbugstory`, _data);
     }
     /**
@@ -1292,12 +877,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchBuildLinkCompletedStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchbuildlinkcompletedstories`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchbuildlinkcompletedstories`, _data);
-        }
         return this.http.post(`/substories/fetchbuildlinkcompletedstories`, _data);
     }
     /**
@@ -1309,12 +888,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchBuildLinkableStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchbuildlinkablestories`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchbuildlinkablestories`, _data);
-        }
         return this.http.post(`/substories/fetchbuildlinkablestories`, _data);
     }
     /**
@@ -1326,12 +899,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchBuildStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchbuildstories`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchbuildstories`, _data);
-        }
         return this.http.post(`/substories/fetchbuildstories`, _data);
     }
     /**
@@ -1343,12 +910,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchByModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchbymodule`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchbymodule`, _data);
-        }
         return this.http.post(`/substories/fetchbymodule`, _data);
     }
     /**
@@ -1360,12 +921,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchCaseStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchcasestory`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchcasestory`, _data);
-        }
         return this.http.post(`/substories/fetchcasestory`, _data);
     }
     /**
@@ -1377,12 +932,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchChildMore(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchchildmore`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchchildmore`, _data);
-        }
         return this.http.post(`/substories/fetchchildmore`, _data);
     }
     /**
@@ -1394,12 +943,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchdefault`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchdefault`, _data);
-        }
         return this.http.post(`/substories/fetchdefault`, _data);
     }
     /**
@@ -1411,12 +954,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchESBulk(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchesbulk`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchesbulk`, _data);
-        }
         return this.http.post(`/substories/fetchesbulk`, _data);
     }
     /**
@@ -1428,12 +965,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchGetProductStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchgetproductstories`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchgetproductstories`, _data);
-        }
         return this.http.post(`/substories/fetchgetproductstories`, _data);
     }
     /**
@@ -1445,12 +976,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchMyAgentStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchmyagentstory`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchmyagentstory`, _data);
-        }
         return this.http.post(`/substories/fetchmyagentstory`, _data);
     }
     /**
@@ -1462,12 +987,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchMyCurOpenedStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchmycuropenedstory`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchmycuropenedstory`, _data);
-        }
         return this.http.post(`/substories/fetchmycuropenedstory`, _data);
     }
     /**
@@ -1479,12 +998,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchMyFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchmyfavorites`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchmyfavorites`, _data);
-        }
         return this.http.post(`/substories/fetchmyfavorites`, _data);
     }
     /**
@@ -1496,12 +1009,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchNotCurPlanLinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchnotcurplanlinkstory`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchnotcurplanlinkstory`, _data);
-        }
         return this.http.post(`/substories/fetchnotcurplanlinkstory`, _data);
     }
     /**
@@ -1513,12 +1020,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchParentDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchparentdefault`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchparentdefault`, _data);
-        }
         return this.http.post(`/substories/fetchparentdefault`, _data);
     }
     /**
@@ -1530,12 +1031,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchParentDefaultQ(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchparentdefaultq`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchparentdefaultq`, _data);
-        }
         return this.http.post(`/substories/fetchparentdefaultq`, _data);
     }
     /**
@@ -1547,12 +1042,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchProjectLinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchprojectlinkstory`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchprojectlinkstory`, _data);
-        }
         return this.http.post(`/substories/fetchprojectlinkstory`, _data);
     }
     /**
@@ -1564,12 +1053,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchProjectStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchprojectstories`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchprojectstories`, _data);
-        }
         return this.http.post(`/substories/fetchprojectstories`, _data);
     }
     /**
@@ -1581,12 +1064,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchReleaseLinkableStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchreleaselinkablestories`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchreleaselinkablestories`, _data);
-        }
         return this.http.post(`/substories/fetchreleaselinkablestories`, _data);
     }
     /**
@@ -1598,12 +1075,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchReleaseStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchreleasestories`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchreleasestories`, _data);
-        }
         return this.http.post(`/substories/fetchreleasestories`, _data);
     }
     /**
@@ -1615,12 +1086,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchReportStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchreportstories`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchreportstories`, _data);
-        }
         return this.http.post(`/substories/fetchreportstories`, _data);
     }
     /**
@@ -1632,12 +1097,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchStoryChild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchstorychild`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchstorychild`, _data);
-        }
         return this.http.post(`/substories/fetchstorychild`, _data);
     }
     /**
@@ -1649,12 +1108,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchStoryRelated(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchstoryrelated`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchstoryrelated`, _data);
-        }
         return this.http.post(`/substories/fetchstoryrelated`, _data);
     }
     /**
@@ -1666,12 +1119,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchSubStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchsubstory`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchsubstory`, _data);
-        }
         return this.http.post(`/substories/fetchsubstory`, _data);
     }
     /**
@@ -1683,12 +1130,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchTaskRelatedStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchtaskrelatedstory`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchtaskrelatedstory`, _data);
-        }
         return this.http.post(`/substories/fetchtaskrelatedstory`, _data);
     }
     /**
@@ -1700,12 +1141,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async FetchView(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchview`, _data);
-        }
-        if (_context.story && true) {
-            return this.http.post(`/stories/${_context.story}/substories/fetchview`, _data);
-        }
         return this.http.post(`/substories/fetchview`, _data);
     }
     /**
@@ -1732,14 +1167,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/activatebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/activatebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/activatebatch`,_data);
     }
@@ -1754,14 +1181,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async AllPushBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/allpushbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/allpushbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/allpushbatch`,_data);
     }
@@ -1776,14 +1195,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async AssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/assigntobatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/assigntobatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/assigntobatch`,_data);
     }
@@ -1798,14 +1209,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async BatchAssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/batchassigntobatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/batchassigntobatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/batchassigntobatch`,_data);
     }
@@ -1820,14 +1223,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async BatchChangeBranchBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/batchchangebranchbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/batchchangebranchbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/batchchangebranchbatch`,_data);
     }
@@ -1842,14 +1237,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async BatchChangeModuleBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/batchchangemodulebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/batchchangemodulebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/batchchangemodulebatch`,_data);
     }
@@ -1864,14 +1251,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async BatchChangePlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/batchchangeplanbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/batchchangeplanbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/batchchangeplanbatch`,_data);
     }
@@ -1886,14 +1265,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async BatchChangeStageBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/batchchangestagebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/batchchangestagebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/batchchangestagebatch`,_data);
     }
@@ -1908,14 +1279,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async BatchCloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/batchclosebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/batchclosebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/batchclosebatch`,_data);
     }
@@ -1930,14 +1293,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async BatchReviewBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/batchreviewbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/batchreviewbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/batchreviewbatch`,_data);
     }
@@ -1952,14 +1307,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async BatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/batchunlinkstorybatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/batchunlinkstorybatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/batchunlinkstorybatch`,_data);
     }
@@ -1974,14 +1321,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async BugToStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/bugtostorybatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/bugtostorybatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/bugtostorybatch`,_data);
     }
@@ -1996,14 +1335,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async BuildBatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/buildbatchunlinkstorybatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/buildbatchunlinkstorybatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/buildbatchunlinkstorybatch`,_data);
     }
@@ -2018,14 +1349,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async BuildLinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/buildlinkstorybatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/buildlinkstorybatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/buildlinkstorybatch`,_data);
     }
@@ -2040,14 +1363,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async BuildUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/buildunlinkstorybatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/buildunlinkstorybatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/buildunlinkstorybatch`,_data);
     }
@@ -2062,14 +1377,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async ChangeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/changebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/changebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/changebatch`,_data);
     }
@@ -2084,14 +1391,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/closebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/closebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/closebatch`,_data);
     }
@@ -2106,14 +1405,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async CreateTasksBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/createtasksbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/createtasksbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/createtasksbatch`,_data);
     }
@@ -2128,14 +1419,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async GetStorySpecBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/getstoryspecbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/getstoryspecbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/getstoryspecbatch`,_data);
     }
@@ -2150,14 +1433,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async ImportPlanStoriesBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/importplanstoriesbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/importplanstoriesbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/importplanstoriesbatch`,_data);
     }
@@ -2172,14 +1447,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/linkstorybatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/linkstorybatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/linkstorybatch`,_data);
     }
@@ -2194,14 +1461,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async ProjectBatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/projectbatchunlinkstorybatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/projectbatchunlinkstorybatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/projectbatchunlinkstorybatch`,_data);
     }
@@ -2216,14 +1475,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async ProjectLinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/projectlinkstorybatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/projectlinkstorybatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/projectlinkstorybatch`,_data);
     }
@@ -2238,14 +1489,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async ProjectUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/projectunlinkstorybatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/projectunlinkstorybatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/projectunlinkstorybatch`,_data);
     }
@@ -2260,14 +1503,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async PushBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/pushbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/pushbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/pushbatch`,_data);
     }
@@ -2282,14 +1517,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async ReleaseBatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/releasebatchunlinkstorybatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/releasebatchunlinkstorybatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/releasebatchunlinkstorybatch`,_data);
     }
@@ -2304,14 +1531,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async ReleaseLinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/releaselinkstorybatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/releaselinkstorybatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/releaselinkstorybatch`,_data);
     }
@@ -2326,14 +1545,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async ReleaseUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/releaseunlinkstorybatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/releaseunlinkstorybatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/releaseunlinkstorybatch`,_data);
     }
@@ -2348,14 +1559,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async ResetReviewedByBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/resetreviewedbybatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/resetreviewedbybatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/resetreviewedbybatch`,_data);
     }
@@ -2370,14 +1573,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async ReviewBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/reviewbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/reviewbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/reviewbatch`,_data);
     }
@@ -2392,14 +1587,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async SendMessageBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/sendmessagebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/sendmessagebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/sendmessagebatch`,_data);
     }
@@ -2414,14 +1601,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async SendMsgPreProcessBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/sendmsgpreprocessbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/sendmsgpreprocessbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/sendmsgpreprocessbatch`,_data);
     }
@@ -2436,14 +1615,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async SetStageBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/setstagebatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/setstagebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/setstagebatch`,_data);
     }
@@ -2458,14 +1629,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async SyncFromIbizBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/syncfromibizbatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/syncfromibizbatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/syncfromibizbatch`,_data);
     }
@@ -2480,14 +1643,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryServiceBase
      */
     public async UnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && _context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/unlinkstorybatch`,_data);
-        }
-        if(_context.story && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/stories/${_context.story}/substories/unlinkstorybatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/substories/unlinkstorybatch`,_data);
     }

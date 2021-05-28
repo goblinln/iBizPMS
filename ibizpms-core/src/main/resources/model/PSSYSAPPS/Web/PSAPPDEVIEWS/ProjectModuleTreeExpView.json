@@ -206,10 +206,6 @@
           "confirmMsg" : "执行修复模块路径",
           "fullCodeName" : "ProjectModule_Fix",
           "name" : "修复路径",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Fix"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
@@ -1769,7 +1765,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
         },
         "getPSDEContextMenu" : {
           "codeName" : "TreeExpViewbranchs_cm",
@@ -2732,7 +2728,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
     },
-    "name" : "项目任务模块",
+    "name" : "PROJECT__PROJECT_MODULE",
     "getParentPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"

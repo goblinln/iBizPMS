@@ -292,7 +292,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
-    "name" : "产品计划",
+    "name" : "PRODUCT__PRODUCT_PLAN",
     "getParentPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"

@@ -269,6 +269,7 @@ public class PRODUCTTEAMResource {
         productteamdto = productteamMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(productteamdto);
     }
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品建立产品团队", tags = {"产品团队" },  notes = "根据产品建立产品团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productteams")

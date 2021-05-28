@@ -204,10 +204,6 @@
           "dataAccessAction" : "MANAGE",
           "fullCodeName" : "ProductModule_Fix",
           "name" : "修复路径",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Fix"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
@@ -1695,7 +1691,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
         },
         "getPSDEContextMenu" : {
           "codeName" : "TreeExpViewbranchs_cm",
@@ -2001,7 +1997,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
     },
-    "name" : "产品模块",
+    "name" : "PRODUCT__PRODUCT_MODULE",
     "getParentPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"

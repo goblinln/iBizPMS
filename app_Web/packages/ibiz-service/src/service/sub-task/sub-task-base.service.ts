@@ -25,7 +25,6 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['id','name',];
     protected selectContextParam = {
-        task: 'parent',
     };
 
     newEntity(data: ISubTask): SubTask {
@@ -42,14 +41,6 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
 
     async getLocal(context: IContext, srfKey: string): Promise<ISubTask> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.parent && entity.parent !== '') {
-            const s = await ___ibz___.gs.getTaskService();
-            const data = await s.getLocal2(context, entity.parent);
-            if (data) {
-                entity.parentname = data.name;
-                entity.parent = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -58,14 +49,6 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
     }
 
     async getDraftLocal(_context: IContext, entity: ISubTask = {}): Promise<ISubTask> {
-        if (_context.task && _context.task !== '') {
-            const s = await ___ibz___.gs.getTaskService();
-            const data = await s.getLocal2(_context, _context.task);
-            if (data) {
-                entity.parentname = data.name;
-                entity.parent = data.id;
-            }
-        }
         return new SubTask(entity);
     }
 

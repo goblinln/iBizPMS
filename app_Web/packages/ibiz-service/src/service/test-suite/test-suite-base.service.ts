@@ -24,7 +24,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];
     protected selectContextParam = {
-        product: 'product',
     };
 
     newEntity(data: ITestSuite): TestSuite {
@@ -41,13 +40,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
 
     async getLocal(context: IContext, srfKey: string): Promise<ITestSuite> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.product && entity.product !== '') {
-            const s = await ___ibz___.gs.getProductService();
-            const data = await s.getLocal2(context, entity.product);
-            if (data) {
-                entity.product = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -56,13 +48,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
     }
 
     async getDraftLocal(_context: IContext, entity: ITestSuite = {}): Promise<ITestSuite> {
-        if (_context.product && _context.product !== '') {
-            const s = await ___ibz___.gs.getProductService();
-            const data = await s.getLocal2(_context, _context.product);
-            if (data) {
-                entity.product = data.id;
-            }
-        }
         return new TestSuite(entity);
     }
 
@@ -111,9 +96,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @memberof TestSuiteService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite) {
-            return this.http.get(`/products/${_context.product}/testsuites/${_context.testsuite}/select`);
-        }
         return this.http.get(`/testsuites/${_context.testsuite}/select`);
     }
     /**
@@ -125,16 +107,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @memberof TestSuiteService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/testsuites`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -153,10 +125,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @memberof TestSuiteService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/testsuites/${_context.testsuite}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/testsuites/${_context.testsuite}`, _data);
     }
@@ -169,9 +137,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @memberof TestSuiteService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite) {
-            return this.http.delete(`/products/${_context.product}/testsuites/${_context.testsuite}`);
-        }
         return this.http.delete(`/testsuites/${_context.testsuite}`);
     }
     /**
@@ -183,10 +148,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @memberof TestSuiteService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite) {
-            const res = await this.http.get(`/products/${_context.product}/testsuites/${_context.testsuite}`);
-            return res;
-        }
         const res = await this.http.get(`/testsuites/${_context.testsuite}`);
         return res;
     }
@@ -199,12 +160,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @memberof TestSuiteService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/testsuites/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/testsuites/getdraft`, _data);
@@ -219,10 +174,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @memberof TestSuiteService
      */
     async LinkCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/linkcase`, _data);
-        }
         return this.http.post(`/testsuites/${_context.testsuite}/linkcase`, _data);
     }
     /**
@@ -234,10 +185,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @memberof TestSuiteService
      */
     async MobTestSuiteCount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/mobtestsuitecount`, _data);
-        }
         return this.http.post(`/testsuites/${_context.testsuite}/mobtestsuitecount`, _data);
     }
     /**
@@ -249,10 +196,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @memberof TestSuiteService
      */
     async UnlinkCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testsuite) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/unlinkcase`, _data);
-        }
         return this.http.post(`/testsuites/${_context.testsuite}/unlinkcase`, _data);
     }
     /**
@@ -264,9 +207,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @memberof TestSuiteService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/testsuites/fetchdefault`, _data);
-        }
         return this.http.post(`/testsuites/fetchdefault`, _data);
     }
     /**
@@ -278,9 +218,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @memberof TestSuiteService
      */
     async FetchPublicTestSuite(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/testsuites/fetchpublictestsuite`, _data);
-        }
         return this.http.post(`/testsuites/fetchpublictestsuite`, _data);
     }
 
@@ -294,10 +231,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @memberof TestSuiteServiceBase
      */
     public async LinkCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/linkcasebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/testsuites/linkcasebatch`,_data);
     }
@@ -312,10 +245,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @memberof TestSuiteServiceBase
      */
     public async UnlinkCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testsuites/unlinkcasebatch`,_data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/testsuites/unlinkcasebatch`,_data);
     }

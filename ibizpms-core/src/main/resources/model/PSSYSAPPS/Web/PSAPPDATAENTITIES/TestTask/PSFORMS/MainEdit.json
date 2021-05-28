@@ -394,7 +394,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "N_PROJECT_EQ",

@@ -7,7 +7,7 @@
   "name" : "Bug浏览器",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
   },
   "getPSCodeItems" : [ {
     "codeName" : "All",

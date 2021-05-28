@@ -1380,7 +1380,7 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
             },
-            "name" : "项目团队",
+            "name" : "PROJECT__PROJECT_TEAM",
             "getParentPSAppDEField" : {
               "name" : "ROOT",
               "codeName" : "Root"

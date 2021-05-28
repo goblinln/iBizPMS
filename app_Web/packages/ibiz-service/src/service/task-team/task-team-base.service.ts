@@ -24,7 +24,6 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
     protected APPDETEXT = 'account';
     protected quickSearchFields = ['account',];
     protected selectContextParam = {
-        task: 'root',
     };
 
     newEntity(data: ITaskTeam): TaskTeam {
@@ -41,13 +40,6 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
 
     async getLocal(context: IContext, srfKey: string): Promise<ITaskTeam> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.root && entity.root !== '') {
-            const s = await ___ibz___.gs.getTaskService();
-            const data = await s.getLocal2(context, entity.root);
-            if (data) {
-                entity.root = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -56,13 +48,6 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
     }
 
     async getDraftLocal(_context: IContext, entity: ITaskTeam = {}): Promise<ITaskTeam> {
-        if (_context.task && _context.task !== '') {
-            const s = await ___ibz___.gs.getTaskService();
-            const data = await s.getLocal2(_context, _context.task);
-            if (data) {
-                entity.root = data.id;
-            }
-        }
         return new TaskTeam(entity);
     }
 
@@ -97,148 +82,5 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
 
     protected getViewCond() {
         return this.condCache.get('view');
-    }
-    /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskTeamService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task && _context.taskteam) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskteams/${_context.taskteam}/select`);
-        }
-        if (_context.task && _context.taskteam) {
-            return this.http.get(`/tasks/${_context.task}/taskteams/${_context.taskteam}/select`);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskTeamService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskteams`, _data);
-        }
-        if (_context.task && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/tasks/${_context.task}/taskteams`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskTeamService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task && _context.taskteam) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/taskteams/${_context.taskteam}`, _data);
-        }
-        if (_context.task && _context.taskteam) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/tasks/${_context.task}/taskteams/${_context.taskteam}`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskTeamService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task && _context.taskteam) {
-            return this.http.delete(`/projects/${_context.project}/tasks/${_context.task}/taskteams/${_context.taskteam}`);
-        }
-        if (_context.task && _context.taskteam) {
-            return this.http.delete(`/tasks/${_context.task}/taskteams/${_context.taskteam}`);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskTeamService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task && _context.taskteam) {
-            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskteams/${_context.taskteam}`);
-            return res;
-        }
-        if (_context.task && _context.taskteam) {
-            const res = await this.http.get(`/tasks/${_context.task}/taskteams/${_context.taskteam}`);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskTeamService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskteams/getdraft`, _data);
-            return res;
-        }
-        if (_context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/tasks/${_context.task}/taskteams/getdraft`, _data);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskTeamService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
-        }
-        if (_context.task && true) {
-            return this.http.post(`/tasks/${_context.task}/taskteams/fetchdefault`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

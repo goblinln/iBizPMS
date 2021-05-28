@@ -89,12 +89,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testtask && _context.testrun) {
-            return this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}/testruns/${_context.testrun}/select`);
-        }
-        if (_context.product && _context.testtask && _context.testrun) {
-            return this.http.get(`/products/${_context.product}/testtasks/${_context.testtask}/testruns/${_context.testrun}/select`);
-        }
         if (_context.testtask && _context.testrun) {
             return this.http.get(`/testtasks/${_context.testtask}/testruns/${_context.testrun}/select`);
         }
@@ -109,26 +103,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testtask && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/testruns`, _data);
-        }
-        if (_context.product && _context.testtask && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/testtasks/${_context.testtask}/testruns`, _data);
-        }
         if (_context.testtask && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -157,14 +131,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testtask && _context.testrun) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/testtasks/${_context.testtask}/testruns/${_context.testrun}`, _data);
-        }
-        if (_context.product && _context.testtask && _context.testrun) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/testtasks/${_context.testtask}/testruns/${_context.testrun}`, _data);
-        }
         if (_context.testtask && _context.testrun) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/testtasks/${_context.testtask}/testruns/${_context.testrun}`, _data);
@@ -181,12 +147,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testtask && _context.testrun) {
-            return this.http.delete(`/projects/${_context.project}/testtasks/${_context.testtask}/testruns/${_context.testrun}`);
-        }
-        if (_context.product && _context.testtask && _context.testrun) {
-            return this.http.delete(`/products/${_context.product}/testtasks/${_context.testtask}/testruns/${_context.testrun}`);
-        }
         if (_context.testtask && _context.testrun) {
             return this.http.delete(`/testtasks/${_context.testtask}/testruns/${_context.testrun}`);
         }
@@ -201,14 +161,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testtask && _context.testrun) {
-            const res = await this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}/testruns/${_context.testrun}`);
-            return res;
-        }
-        if (_context.product && _context.testtask && _context.testrun) {
-            const res = await this.http.get(`/products/${_context.product}/testtasks/${_context.testtask}/testruns/${_context.testrun}`);
-            return res;
-        }
         if (_context.testtask && _context.testrun) {
             const res = await this.http.get(`/testtasks/${_context.testtask}/testruns/${_context.testrun}`);
             return res;
@@ -225,18 +177,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testtask && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}/testruns/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && _context.testtask && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/testtasks/${_context.testtask}/testruns/getdraft`, _data);
-            return res;
-        }
         if (_context.testtask && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -257,12 +197,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testtask && true) {
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/testruns/fetchdefault`, _data);
-        }
-        if (_context.product && _context.testtask && true) {
-            return this.http.post(`/products/${_context.product}/testtasks/${_context.testtask}/testruns/fetchdefault`, _data);
-        }
         if (_context.testtask && true) {
             return this.http.post(`/testtasks/${_context.testtask}/testruns/fetchdefault`, _data);
         }

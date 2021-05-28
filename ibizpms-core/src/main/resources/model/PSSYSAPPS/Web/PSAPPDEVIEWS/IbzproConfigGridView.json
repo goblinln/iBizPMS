@@ -227,7 +227,6 @@
         },
         "caption" : "新建",
         "codeName" : "New",
-        "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
         "fullCodeName" : "New",
         "name" : "表格界面_新建操作",
         "getPSSysImage" : {

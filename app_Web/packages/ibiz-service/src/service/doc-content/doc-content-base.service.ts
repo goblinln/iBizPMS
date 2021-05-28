@@ -89,12 +89,6 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      * @memberof DocContentService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.doclib && _context.doc && _context.doccontent) {
-            return this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}/select`);
-        }
-        if (_context.product && _context.doclib && _context.doc && _context.doccontent) {
-            return this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}/select`);
-        }
         if (_context.doclib && _context.doc && _context.doccontent) {
             return this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}/select`);
         }
@@ -112,26 +106,6 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      * @memberof DocContentService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.doclib && _context.doc && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents`, _data);
-        }
-        if (_context.product && _context.doclib && _context.doc && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents`, _data);
-        }
         if (_context.doclib && _context.doc && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -170,14 +144,6 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      * @memberof DocContentService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.doclib && _context.doc && _context.doccontent) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}`, _data);
-        }
-        if (_context.product && _context.doclib && _context.doc && _context.doccontent) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}`, _data);
-        }
         if (_context.doclib && _context.doc && _context.doccontent) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}`, _data);
@@ -198,12 +164,6 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      * @memberof DocContentService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.doclib && _context.doc && _context.doccontent) {
-            return this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}`);
-        }
-        if (_context.product && _context.doclib && _context.doc && _context.doccontent) {
-            return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}`);
-        }
         if (_context.doclib && _context.doc && _context.doccontent) {
             return this.http.delete(`/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}`);
         }
@@ -221,14 +181,6 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      * @memberof DocContentService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.doclib && _context.doc && _context.doccontent) {
-            const res = await this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}`);
-            return res;
-        }
-        if (_context.product && _context.doclib && _context.doc && _context.doccontent) {
-            const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}`);
-            return res;
-        }
         if (_context.doclib && _context.doc && _context.doccontent) {
             const res = await this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}`);
             return res;
@@ -249,18 +201,6 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      * @memberof DocContentService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.doclib && _context.doc && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && _context.doclib && _context.doc && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/getdraft`, _data);
-            return res;
-        }
         if (_context.doclib && _context.doc && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -287,12 +227,6 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      * @memberof DocContentService
      */
     async FetchCurVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.doclib && _context.doc && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/fetchcurversion`, _data);
-        }
-        if (_context.product && _context.doclib && _context.doc && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/fetchcurversion`, _data);
-        }
         if (_context.doclib && _context.doc && true) {
             return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/fetchcurversion`, _data);
         }
@@ -310,12 +244,6 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      * @memberof DocContentService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.doclib && _context.doc && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/fetchdefault`, _data);
-        }
-        if (_context.product && _context.doclib && _context.doc && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/fetchdefault`, _data);
-        }
         if (_context.doclib && _context.doc && true) {
             return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/fetchdefault`, _data);
         }

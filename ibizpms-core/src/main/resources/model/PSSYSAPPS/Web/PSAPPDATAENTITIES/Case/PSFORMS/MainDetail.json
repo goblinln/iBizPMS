@@ -417,7 +417,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
           },
           "valueItemName" : "story",
           "dropDownView" : false,

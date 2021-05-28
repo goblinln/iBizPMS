@@ -161,6 +161,7 @@ public class SysUpdateFeaturesResource {
         sysupdatefeaturesdto = sysupdatefeaturesMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesdto);
     }
+
     @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id,'CREATE')")
     @ApiOperation(value = "根据更新日志建立系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志建立系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures")

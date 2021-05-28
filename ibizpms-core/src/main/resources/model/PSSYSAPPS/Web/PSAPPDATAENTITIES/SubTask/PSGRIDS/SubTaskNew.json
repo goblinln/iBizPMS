@@ -556,7 +556,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
       },
       "getPSNavigateContexts" : [ {
         "key" : "N_MODULE_EQ",

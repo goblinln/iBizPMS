@@ -7,7 +7,7 @@
   "openMode" : "DRAWER_RIGHT",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -29,7 +29,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release/PSFORMS/OneRelease.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease/PSFORMS/OneRelease.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -46,7 +46,7 @@
     "logicName" : "发布",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -60,7 +60,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
         }
       }, {
         "actionName" : "GETDRAFTFROM",
@@ -69,7 +69,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
         }
       }, {
         "actionName" : "Remove",
@@ -82,7 +82,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -95,7 +95,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
         }
       }, {
         "actionName" : "Get",
@@ -108,7 +108,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
         }
       }, {
         "actionName" : "Create",
@@ -121,7 +121,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -525,7 +525,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -542,7 +542,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "Releases",
+    "codeName" : "ProductReleases",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -550,9 +550,9 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
     },
-    "name" : "产品发布",
+    "name" : "PRODUCT__PRODUCT_RELEASE",
     "getParentPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"

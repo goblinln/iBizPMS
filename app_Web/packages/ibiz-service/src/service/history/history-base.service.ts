@@ -107,71 +107,11 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
      * @memberof HistoryService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.doclib && _context.doc && _context.action && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.product && _context.doclib && _context.doc && _context.action && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.project && _context.build && _context.action && true) {
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.project && _context.testtask && _context.action && true) {
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.project && _context.testreport && _context.action && true) {
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.project && _context.task && _context.action && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.project && _context.doclib && _context.action && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
         if (_context.doclib && _context.doc && _context.action && true) {
             return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.product && _context.story && _context.action && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.product && _context.productplan && _context.action && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.product && _context.case && _context.action && true) {
-            return this.http.post(`/products/${_context.product}/cases/${_context.case}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.product && _context.build && _context.action && true) {
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.product && _context.testreport && _context.action && true) {
-            return this.http.post(`/products/${_context.product}/testreports/${_context.testreport}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.product && _context.testtask && _context.action && true) {
-            return this.http.post(`/products/${_context.product}/testtasks/${_context.testtask}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.product && _context.testsuite && _context.action && true) {
-            return this.http.post(`/products/${_context.product}/testsuites/${_context.testsuite}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.product && _context.release && _context.action && true) {
-            return this.http.post(`/products/${_context.product}/releases/${_context.release}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.product && _context.bug && _context.action && true) {
-            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.product && _context.doclib && _context.action && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.project && _context.action && true) {
-            return this.http.post(`/projects/${_context.project}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.story && _context.action && true) {
-            return this.http.post(`/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
         if (_context.ibzlib && _context.action && true) {
             return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.build && _context.action && true) {
-            return this.http.post(`/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.case && _context.action && true) {
             return this.http.post(`/cases/${_context.case}/actions/${_context.action}/histories/fetchdefault`, _data);
@@ -203,23 +143,8 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.ibzweekly && _context.action && true) {
             return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.release && _context.action && true) {
-            return this.http.post(`/releases/${_context.release}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.task && _context.action && true) {
-            return this.http.post(`/tasks/${_context.task}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
         if (_context.todo && _context.action && true) {
             return this.http.post(`/todos/${_context.todo}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.productplan && _context.action && true) {
-            return this.http.post(`/productplans/${_context.productplan}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.product && _context.action && true) {
-            return this.http.post(`/products/${_context.product}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.bug && _context.action && true) {
-            return this.http.post(`/bugs/${_context.bug}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.action && true) {
             return this.http.post(`/actions/${_context.action}/histories/fetchdefault`, _data);

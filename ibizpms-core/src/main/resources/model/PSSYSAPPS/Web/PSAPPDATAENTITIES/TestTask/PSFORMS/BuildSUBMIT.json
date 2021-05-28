@@ -418,7 +418,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
             },
             "valueItemName" : "build",
             "dropDownView" : false,

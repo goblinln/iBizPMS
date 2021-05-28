@@ -7,7 +7,7 @@
   "name" : "BranchPickupView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -30,7 +30,7 @@
       "name" : "BranchPickupGridView",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
       },
       "getPSAppViewEngines" : [ {
         "engineCat" : "VIEW",
@@ -49,7 +49,7 @@
         "codeName" : "Main",
         "columnEnableLink" : 2,
         "controlType" : "GRID",
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch/PSGRIDS/Main.json",
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch/PSGRIDS/Main.json",
         "getFetchPSControlAction" : {
           "modelref" : true,
           "id" : "fetch"
@@ -64,7 +64,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
         },
         "getPSControlHandler" : {
           "getPSHandlerActions" : [ {
@@ -78,7 +78,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
             }
           }, {
             "actionType" : "DEDATASET",
@@ -89,7 +89,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
             }
           }, {
             "actionName" : "Remove",
@@ -102,7 +102,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
             }
           }, {
             "actionName" : "Get",
@@ -115,7 +115,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
             }
           }, {
             "actionName" : "GetDraft",
@@ -128,7 +128,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
             }
           }, {
             "actionName" : "Create",
@@ -141,7 +141,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
             }
           } ],
           "userDRAction" : "READ",
@@ -236,7 +236,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
           }
         },
         "sortMode" : "REMOTE",
@@ -258,12 +258,12 @@
       }, {
         "codeName" : "Default",
         "controlType" : "SEARCHFORM",
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch/PSSEARCHFORMS/Default.json",
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch/PSSEARCHFORMS/Default.json",
         "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
         "logicName" : "默认搜索表单",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
         },
         "getPSControlHandler" : {
           "getPSHandlerActions" : [ {
@@ -275,7 +275,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
             }
           }, {
             "actionType" : "FILTERACTION",
@@ -286,7 +286,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
             }
           }, {
             "actionType" : "FILTERACTION",
@@ -297,7 +297,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
             }
           } ],
           "enableDEFieldPrivilege" : false,
@@ -347,7 +347,7 @@
         "name" : "layoutpanel",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
         },
         "getPSControlParam" : { },
         "layoutPanel" : true,
@@ -371,7 +371,7 @@
       "modeltype" : "PSAPPDEVIEW",
       "getPSAppDERSPaths" : [ [ {
         "actionRSMode" : 1,
-        "codeName" : "Branches",
+        "codeName" : "ProductBranches",
         "dataRSMode" : 0,
         "getMajorPSAppDataEntity" : {
           "modelref" : true,
@@ -379,9 +379,9 @@
         },
         "getMinorPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
         },
-        "name" : "产品平台",
+        "name" : "PRODUCT__PRODUCT_BRANCH",
         "getParentPSAppDEField" : {
           "name" : "PRODUCT",
           "codeName" : "Product"
@@ -400,7 +400,7 @@
     "name" : "pickupviewpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
     },
     "getPSControlParam" : {
       "id" : "PICKUPVIEWPANEL"
@@ -419,7 +419,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -434,7 +434,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "Branches",
+    "codeName" : "ProductBranches",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -442,9 +442,9 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json"
     },
-    "name" : "产品平台",
+    "name" : "PRODUCT__PRODUCT_BRANCH",
     "getParentPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"

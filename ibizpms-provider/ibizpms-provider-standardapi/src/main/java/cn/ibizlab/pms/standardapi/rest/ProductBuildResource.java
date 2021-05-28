@@ -52,6 +52,7 @@ public class ProductBuildResource {
     @Lazy
     public ProductBuildMapping productbuildMapping;
 
+
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"版本" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productbuilds/fetchdefault")

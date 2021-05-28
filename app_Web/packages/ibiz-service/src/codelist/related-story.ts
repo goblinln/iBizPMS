@@ -1,4 +1,4 @@
-import { StoryService } from "../service";
+import { ProductStoryService } from "../service";
 /**
  * 代码表--关联需求（动态）
  *
@@ -90,10 +90,10 @@ export default class RelatedStory {
     /**
      * 需求应用实体服务对象
      *
-     * @type {StoryService}
+     * @type {ProductStoryService}
      * @memberof RelatedStory
      */
-    public storyService: StoryService = new StoryService();
+    public productstoryService: ProductStoryService = new ProductStoryService();
 
 
     /**
@@ -134,7 +134,7 @@ export default class RelatedStory {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.storyService.FetchDefault(context, data);
+            const promise: Promise<any> = this.productstoryService.FetchDefault(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

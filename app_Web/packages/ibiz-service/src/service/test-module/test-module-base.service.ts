@@ -24,7 +24,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];
     protected selectContextParam = {
-        product: 'root',
     };
 
     newEntity(data: ITestModule): TestModule {
@@ -41,14 +40,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
 
     async getLocal(context: IContext, srfKey: string): Promise<ITestModule> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.root && entity.root !== '') {
-            const s = await ___ibz___.gs.getProductService();
-            const data = await s.getLocal2(context, entity.root);
-            if (data) {
-                entity.rootname = data.name;
-                entity.root = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -57,14 +48,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
     }
 
     async getDraftLocal(_context: IContext, entity: ITestModule = {}): Promise<ITestModule> {
-        if (_context.product && _context.product !== '') {
-            const s = await ___ibz___.gs.getProductService();
-            const data = await s.getLocal2(_context, _context.product);
-            if (data) {
-                entity.rootname = data.name;
-                entity.root = data.id;
-            }
-        }
         return new TestModule(entity);
     }
 
@@ -161,9 +144,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testmodule) {
-            return this.http.get(`/products/${_context.product}/testmodules/${_context.testmodule}/select`);
-        }
         return this.http.get(`/testmodules/${_context.testmodule}/select`);
     }
     /**
@@ -175,16 +155,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/testmodules`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -203,10 +173,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testmodule) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/testmodules/${_context.testmodule}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/testmodules/${_context.testmodule}`, _data);
     }
@@ -219,9 +185,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testmodule) {
-            return this.http.delete(`/products/${_context.product}/testmodules/${_context.testmodule}`);
-        }
         return this.http.delete(`/testmodules/${_context.testmodule}`);
     }
     /**
@@ -233,10 +196,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testmodule) {
-            const res = await this.http.get(`/products/${_context.product}/testmodules/${_context.testmodule}`);
-            return res;
-        }
         const res = await this.http.get(`/testmodules/${_context.testmodule}`);
         return res;
     }
@@ -249,12 +208,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/testmodules/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/testmodules/getdraft`, _data);
@@ -269,10 +222,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async Fix(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testmodule) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/testmodules/${_context.testmodule}/fix`, _data);
-        }
         return this.http.post(`/testmodules/${_context.testmodule}/fix`, _data);
     }
     /**
@@ -284,10 +233,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async RemoveModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.testmodule) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/testmodules/${_context.testmodule}/removemodule`, _data);
-        }
         return this.http.put(`/testmodules/${_context.testmodule}/removemodule`, _data);
     }
     /**
@@ -299,9 +244,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async FetchByPath(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/testmodules/fetchbypath`, _data);
-        }
         return this.http.post(`/testmodules/fetchbypath`, _data);
     }
     /**
@@ -313,9 +255,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/testmodules/fetchdefault`, _data);
-        }
         return this.http.post(`/testmodules/fetchdefault`, _data);
     }
     /**
@@ -327,9 +266,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async FetchParentModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/testmodules/fetchparentmodule`, _data);
-        }
         return this.http.post(`/testmodules/fetchparentmodule`, _data);
     }
     /**
@@ -341,9 +277,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async FetchRoot(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/testmodules/fetchroot`, _data);
-        }
         return this.http.post(`/testmodules/fetchroot`, _data);
     }
     /**
@@ -355,9 +288,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async FetchRoot_NoBranch(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/testmodules/fetchroot_nobranch`, _data);
-        }
         return this.http.post(`/testmodules/fetchroot_nobranch`, _data);
     }
     /**
@@ -369,9 +299,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async FetchTestModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/testmodules/fetchtestmodule`, _data);
-        }
         return this.http.post(`/testmodules/fetchtestmodule`, _data);
     }
 }

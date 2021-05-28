@@ -52,6 +52,7 @@ public class IbzLibCaseStepsResource {
     @Lazy
     public IbzLibCaseStepsMapping ibzlibcasestepsMapping;
 
+
     @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据测试用例建立用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例建立用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps")
@@ -149,6 +150,105 @@ public class IbzLibCaseStepsResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzlibcasestepsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据用例库建立用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库建立用例库用例步骤")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzlibcasesteps")
+    public ResponseEntity<IbzLibCaseStepsDTO> createByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
+        IbzLibCaseSteps domain = ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdto);
+        
+		ibzlibcasestepsService.create(domain);
+        if(!ibzlibcasestepsRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
+        IbzLibCaseStepsDTO dto = ibzlibcasestepsMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@IbzLibCaseStepsRuntime.test(#ibzlibcasesteps_id,'UPDATE')")
+    @ApiOperation(value = "根据用例库更新用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库更新用例库用例步骤")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
+    public ResponseEntity<IbzLibCaseStepsDTO> updateByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
+        IbzLibCaseSteps domain = ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdto);
+        
+        domain.setId(ibzlibcasesteps_id);
+		ibzlibcasestepsService.update(domain);
+        if(!ibzlibcasestepsRuntime.test(domain.getId(),"UPDATE"))
+            throw new RuntimeException("无权限操作");
+        IbzLibCaseStepsDTO dto = ibzlibcasestepsMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@IbzLibCaseStepsRuntime.test(#ibzlibcasesteps_id,'DELETE')")
+    @ApiOperation(value = "根据用例库删除用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库删除用例库用例步骤")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
+    public ResponseEntity<Boolean> removeByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsService.remove(ibzlibcasesteps_id));
+    }
+
+
+    @PreAuthorize("@IbzLibCaseStepsRuntime.test(#ibzlibcasesteps_id,'READ')")
+    @ApiOperation(value = "根据用例库获取用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库获取用例库用例步骤")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
+    public ResponseEntity<IbzLibCaseStepsDTO> getByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id) {
+        IbzLibCaseSteps domain = ibzlibcasestepsService.get(ibzlibcasesteps_id);
+        IbzLibCaseStepsDTO dto = ibzlibcasestepsMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据用例库获取用例库用例步骤草稿", tags = {"用例库用例步骤" },  notes = "根据用例库获取用例库用例步骤草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}/ibzlibcasesteps/getdraft")
+    public ResponseEntity<IbzLibCaseStepsDTO> getDraftByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, IbzLibCaseStepsDTO dto) {
+        IbzLibCaseSteps domain = ibzlibcasestepsMapping.toDomain(dto);
+        
+        return ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsMapping.toDto(ibzlibcasestepsService.getDraft(domain)));
+    }
+
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据用例库检查用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库检查用例库用例步骤")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzlibcasesteps/checkkey")
+    public ResponseEntity<Boolean> checkKeyByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsService.checkKey(ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdto)));
+    }
+
+    @ApiOperation(value = "根据用例库保存用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库保存用例库用例步骤")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzlibcasesteps/save")
+    public ResponseEntity<IbzLibCaseStepsDTO> saveByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
+        IbzLibCaseSteps domain = ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdto);
+        
+        ibzlibcasestepsService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsMapping.toDto(domain));
+    }
+
+
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据用例库获取DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据用例库获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzlibcasesteps/fetchdefault")
+	public ResponseEntity<List<IbzLibCaseStepsDTO>> fetchIbzLibCaseStepsDefaultByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,@RequestBody IbzLibCaseStepsSearchContext context) {
+        
+        ibzlibcasestepsRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzLibCaseSteps> domains = ibzlibcasestepsService.searchDefault(context) ;
+        List<IbzLibCaseStepsDTO> list = ibzlibcasestepsMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据用例库查询DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据用例库查询DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzlibcasesteps/searchdefault")
+	public ResponseEntity<Page<IbzLibCaseStepsDTO>> searchIbzLibCaseStepsDefaultByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibCaseStepsSearchContext context) {
+        
+        ibzlibcasestepsRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzLibCaseSteps> domains = ibzlibcasestepsService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzlibcasestepsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
     @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据用例库测试用例建立用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例建立用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps")

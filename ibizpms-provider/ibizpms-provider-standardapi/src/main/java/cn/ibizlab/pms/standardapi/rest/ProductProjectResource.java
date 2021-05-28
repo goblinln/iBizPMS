@@ -52,6 +52,7 @@ public class ProductProjectResource {
     @Lazy
     public ProductProjectMapping productprojectMapping;
 
+
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品获取当前项目", tags = {"项目" } ,notes = "根据产品获取当前项目")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productprojects/fetchcurproduct")
