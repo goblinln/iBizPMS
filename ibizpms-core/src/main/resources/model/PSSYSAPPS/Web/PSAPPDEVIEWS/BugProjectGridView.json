@@ -7,7 +7,7 @@
   "name" : "BugProjectGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -189,7 +189,7 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
       },
       "modelref" : true,
       "id" : "ProjectCreate@Bug"
@@ -226,7 +226,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -260,7 +260,7 @@
         "name" : "新建（项目新建）",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
         },
         "getPSNavigateParams" : [ {
           "key" : "project",
@@ -410,7 +410,7 @@
     "codeName" : "Main",
     "columnEnableLink" : 2,
     "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug/PSGRIDS/Main.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug/PSGRIDS/Main.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -425,7 +425,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
     },
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
@@ -497,7 +497,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
         },
         "modelref" : true,
         "id" : "AssingToBug@Bug"
@@ -509,7 +509,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
         },
         "modelref" : true,
         "id" : "ConfirmBug@Bug"
@@ -521,7 +521,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
         },
         "modelref" : true,
         "id" : "ResolveBug@Bug"
@@ -533,7 +533,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
         },
         "modelref" : true,
         "id" : "CloseBug@Bug"
@@ -545,7 +545,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
         },
         "modelref" : true,
         "id" : "MainEdit@Bug"
@@ -565,7 +565,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
         },
         "modelref" : true,
         "id" : "BugFavorites@Bug"
@@ -577,7 +577,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
         },
         "modelref" : true,
         "id" : "BugNFavorites@Bug"
@@ -597,7 +597,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -608,7 +608,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
         }
       }, {
         "actionName" : "Remove",
@@ -621,7 +621,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
         }
       }, {
         "actionName" : "Get",
@@ -634,7 +634,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -647,7 +647,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
         }
       }, {
         "actionName" : "Create",
@@ -660,7 +660,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -856,7 +856,7 @@
         "name" : "指派bug",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
         },
         "getPSSysImage" : {
           "glyph" : "xf0a4@FontAwesome",
@@ -924,7 +924,7 @@
             "name" : "确认bug",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf06e@FontAwesome",
@@ -959,7 +959,7 @@
             "name" : "解决bug",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf046@FontAwesome",
@@ -993,7 +993,7 @@
             "name" : "关闭bug",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf011@FontAwesome",
@@ -1027,7 +1027,7 @@
             "name" : "主信息编辑",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
@@ -1079,9 +1079,13 @@
             "dataAccessAction" : "FAVORITES",
             "fullCodeName" : "Bug_BugFavorites",
             "name" : "收藏",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "BugFavorites"
+            },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf006@FontAwesome",
@@ -1109,9 +1113,13 @@
             "dataAccessAction" : "NFAVORITES",
             "fullCodeName" : "Bug_BugNFavorites",
             "name" : "取消收藏",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "BugNFavorites"
+            },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf005@FontAwesome",
@@ -1442,7 +1450,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -1464,11 +1472,11 @@
   }, {
     "codeName" : "Custom",
     "controlType" : "SEARCHBAR",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug/PSSEARCHBARS/Custom.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug/PSSEARCHBARS/Custom.json",
     "logicName" : "Bug自定义搜索栏",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
     },
     "getPSControlParam" : {
       "id" : "SEARCHBAR"
@@ -3125,7 +3133,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -3153,20 +3161,20 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "ProductBugs",
+    "codeName" : "ProjectBugs",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
     },
-    "name" : "PRODUCT__PRODUCT_BUG",
+    "name" : "PROJECT__PROJECT_BUG",
     "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+      "name" : "PROJECT",
+      "codeName" : "Project"
     },
     "rSMode" : 2,
     "enableCreateDataRS" : false,

@@ -3515,6 +3515,41 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/projectbugs/:projectbug?/views/projectgridview',
+                    meta: {
+                        caption: 'entities.projectbug.views.projectgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'projectbugs', parameterName: 'projectbug' },
+                            { pathName: 'views', parameterName: 'projectgridview' },
+                        ],
+                        resource:'projectbug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projectbugs/:projectbug?/views/projectgridview',
+                    meta: {
+                        caption: 'entities.projectbug.views.projectgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projectbugs', parameterName: 'projectbug' },
+                            { pathName: 'views', parameterName: 'projectgridview' },
+                        ],
+                        resource:'projectbug',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'products/:product?/productlives/:productlife?/views/roadmaplistview',
                     meta: {
                         caption: 'entities.productlife.views.roadmaplistview.caption',
@@ -5883,1821 +5918,868 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/testbugsgridview',
+                    path: 'bugs/:bug?/views/testbugsgridview',
                     meta: {
-                        caption: 'entities.productbug.views.testbugsgridview.caption',
+                        caption: 'entities.bug.views.testbugsgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'testbugsgridview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/testbugsgridview',
-                    meta: {
-                        caption: 'entities.productbug.views.testbugsgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'testbugsgridview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/assingtoview',
+                    path: 'bugs/:bug?/views/assingtoview',
                     meta: {
-                        caption: 'entities.productbug.views.assingtoview.caption',
+                        caption: 'entities.bug.views.assingtoview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'assingtoview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/assingtoview',
-                    meta: {
-                        caption: 'entities.productbug.views.assingtoview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'assingtoview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/maindashboardview_link',
+                    path: 'bugs/:bug?/views/maindashboardview_link',
                     meta: {
-                        caption: 'entities.productbug.views.maindashboardview_link.caption',
+                        caption: 'entities.bug.views.maindashboardview_link.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'maindashboardview_link' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/maindashboardview_link',
-                    meta: {
-                        caption: 'entities.productbug.views.maindashboardview_link.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'maindashboardview_link' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/mpickupview5',
+                    path: 'bugs/:bug?/views/mpickupview5',
                     meta: {
-                        caption: 'entities.productbug.views.mpickupview5.caption',
+                        caption: 'entities.bug.views.mpickupview5.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mpickupview5' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/mpickupview5',
-                    meta: {
-                        caption: 'entities.productbug.views.mpickupview5.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'mpickupview5' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/editview_4791',
+                    path: 'bugs/:bug?/views/editview_4791',
                     meta: {
-                        caption: 'entities.productbug.views.editview_4791.caption',
+                        caption: 'entities.bug.views.editview_4791.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'editview_4791' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/editview_4791',
-                    meta: {
-                        caption: 'entities.productbug.views.editview_4791.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'editview_4791' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/buglifeeditview9',
+                    path: 'bugs/:bug?/views/buglifeeditview9',
                     meta: {
-                        caption: 'entities.productbug.views.buglifeeditview9.caption',
+                        caption: 'entities.bug.views.buglifeeditview9.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'buglifeeditview9' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/buglifeeditview9',
-                    meta: {
-                        caption: 'entities.productbug.views.buglifeeditview9.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'buglifeeditview9' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/maindashboardview',
+                    path: 'bugs/:bug?/views/maindashboardview',
                     meta: {
-                        caption: 'entities.productbug.views.maindashboardview.caption',
+                        caption: 'entities.bug.views.maindashboardview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'maindashboardview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/maindashboardview',
-                    meta: {
-                        caption: 'entities.productbug.views.maindashboardview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'maindashboardview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/pickupgridview5',
+                    path: 'bugs/:bug?/views/pickupgridview5',
                     meta: {
-                        caption: 'entities.productbug.views.pickupgridview5.caption',
+                        caption: 'entities.bug.views.pickupgridview5.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'pickupgridview5' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/pickupgridview5',
-                    meta: {
-                        caption: 'entities.productbug.views.pickupgridview5.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'pickupgridview5' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/buildsubgridview_new_9212',
+                    path: 'bugs/:bug?/views/buildsubgridview_new_9212',
                     meta: {
-                        caption: 'entities.productbug.views.buildsubgridview_new_9212.caption',
+                        caption: 'entities.bug.views.buildsubgridview_new_9212.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'buildsubgridview_new_9212' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/buildsubgridview_new_9212',
-                    meta: {
-                        caption: 'entities.productbug.views.buildsubgridview_new_9212.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'buildsubgridview_new_9212' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/pickupgridview',
+                    path: 'bugs/:bug?/views/pickupgridview',
                     meta: {
-                        caption: 'entities.productbug.views.pickupgridview.caption',
+                        caption: 'entities.bug.views.pickupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'pickupgridview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/pickupgridview',
-                    meta: {
-                        caption: 'entities.productbug.views.pickupgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'pickupgridview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/releasesubgridview_done',
+                    path: 'bugs/:bug?/views/releasesubgridview_done',
                     meta: {
-                        caption: 'entities.productbug.views.releasesubgridview_done.caption',
+                        caption: 'entities.bug.views.releasesubgridview_done.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'releasesubgridview_done' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/releasesubgridview_done',
-                    meta: {
-                        caption: 'entities.productbug.views.releasesubgridview_done.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'releasesubgridview_done' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/mpickupview',
+                    path: 'bugs/:bug?/views/mpickupview',
                     meta: {
-                        caption: 'entities.productbug.views.mpickupview.caption',
+                        caption: 'entities.bug.views.mpickupview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mpickupview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/mpickupview',
-                    meta: {
-                        caption: 'entities.productbug.views.mpickupview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'mpickupview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/calendareditview',
+                    path: 'bugs/:bug?/views/calendareditview',
                     meta: {
-                        caption: 'entities.productbug.views.calendareditview.caption',
+                        caption: 'entities.bug.views.calendareditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'calendareditview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/calendareditview',
-                    meta: {
-                        caption: 'entities.productbug.views.calendareditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'calendareditview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/bugprojectkanbanview',
+                    path: 'bugs/:bug?/views/bugprojectkanbanview',
                     meta: {
-                        caption: 'entities.productbug.views.bugprojectkanbanview.caption',
+                        caption: 'entities.bug.views.bugprojectkanbanview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'bugprojectkanbanview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/bugprojectkanbanview',
-                    meta: {
-                        caption: 'entities.productbug.views.bugprojectkanbanview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'bugprojectkanbanview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/maineditview',
+                    path: 'bugs/:bug?/views/maineditview',
                     meta: {
-                        caption: 'entities.productbug.views.maineditview.caption',
+                        caption: 'entities.bug.views.maineditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'maineditview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/maineditview',
-                    meta: {
-                        caption: 'entities.productbug.views.maineditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'maineditview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/resolvechartview',
+                    path: 'bugs/:bug?/views/resolvechartview',
                     meta: {
-                        caption: 'entities.productbug.views.resolvechartview.caption',
+                        caption: 'entities.bug.views.resolvechartview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'resolvechartview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/resolvechartview',
-                    meta: {
-                        caption: 'entities.productbug.views.resolvechartview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'resolvechartview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/usr2gridview',
+                    path: 'bugs/:bug?/views/usr2gridview',
                     meta: {
-                        caption: 'entities.productbug.views.usr2gridview.caption',
+                        caption: 'entities.bug.views.usr2gridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'usr2gridview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/usr2gridview',
-                    meta: {
-                        caption: 'entities.productbug.views.usr2gridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'usr2gridview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/gridview9_taskrelated',
+                    path: 'bugs/:bug?/views/gridview9_taskrelated',
                     meta: {
-                        caption: 'entities.productbug.views.gridview9_taskrelated.caption',
+                        caption: 'entities.bug.views.gridview9_taskrelated.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_taskrelated' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/gridview9_taskrelated',
-                    meta: {
-                        caption: 'entities.productbug.views.gridview9_taskrelated.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'gridview9_taskrelated' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/mpickupview4',
+                    path: 'bugs/:bug?/views/mpickupview4',
                     meta: {
-                        caption: 'entities.productbug.views.mpickupview4.caption',
+                        caption: 'entities.bug.views.mpickupview4.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mpickupview4' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/mpickupview4',
-                    meta: {
-                        caption: 'entities.productbug.views.mpickupview4.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'mpickupview4' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/editview',
+                    path: 'bugs/:bug?/views/editview',
                     meta: {
-                        caption: 'entities.productbug.views.editview.caption',
+                        caption: 'entities.bug.views.editview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/editview',
-                    meta: {
-                        caption: 'entities.productbug.views.editview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/plansubgridview',
+                    path: 'bugs/:bug?/views/plansubgridview',
                     meta: {
-                        caption: 'entities.productbug.views.plansubgridview.caption',
+                        caption: 'entities.bug.views.plansubgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'plansubgridview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/plansubgridview',
-                    meta: {
-                        caption: 'entities.productbug.views.plansubgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'plansubgridview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/closeview',
+                    path: 'bugs/:bug?/views/closeview',
                     meta: {
-                        caption: 'entities.productbug.views.closeview.caption',
+                        caption: 'entities.bug.views.closeview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'closeview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/closeview',
-                    meta: {
-                        caption: 'entities.productbug.views.closeview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'closeview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/bugkanbanview',
+                    path: 'bugs/:bug?/views/bugkanbanview',
                     meta: {
-                        caption: 'entities.productbug.views.bugkanbanview.caption',
+                        caption: 'entities.bug.views.bugkanbanview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'bugkanbanview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/bugkanbanview',
-                    meta: {
-                        caption: 'entities.productbug.views.bugkanbanview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'bugkanbanview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/tasktobugeditview',
+                    path: 'bugs/:bug?/views/tasktobugeditview',
                     meta: {
-                        caption: 'entities.productbug.views.tasktobugeditview.caption',
+                        caption: 'entities.bug.views.tasktobugeditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'tasktobugeditview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/tasktobugeditview',
-                    meta: {
-                        caption: 'entities.productbug.views.tasktobugeditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'tasktobugeditview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/activationview',
+                    path: 'bugs/:bug?/views/activationview',
                     meta: {
-                        caption: 'entities.productbug.views.activationview.caption',
+                        caption: 'entities.bug.views.activationview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'activationview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/activationview',
-                    meta: {
-                        caption: 'entities.productbug.views.activationview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'activationview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/gridview9_storyformbug',
+                    path: 'bugs/:bug?/views/gridview9_storyformbug',
                     meta: {
-                        caption: 'entities.productbug.views.gridview9_storyformbug.caption',
+                        caption: 'entities.bug.views.gridview9_storyformbug.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_storyformbug' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/gridview9_storyformbug',
-                    meta: {
-                        caption: 'entities.productbug.views.gridview9_storyformbug.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'gridview9_storyformbug' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/gridview9_storyaffect',
+                    path: 'bugs/:bug?/views/gridview9_storyaffect',
                     meta: {
-                        caption: 'entities.productbug.views.gridview9_storyaffect.caption',
+                        caption: 'entities.bug.views.gridview9_storyaffect.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_storyaffect' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/gridview9_storyaffect',
-                    meta: {
-                        caption: 'entities.productbug.views.gridview9_storyaffect.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'gridview9_storyaffect' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/myfavoritegridview',
+                    path: 'bugs/:bug?/views/myfavoritegridview',
                     meta: {
-                        caption: 'entities.productbug.views.myfavoritegridview.caption',
+                        caption: 'entities.bug.views.myfavoritegridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'myfavoritegridview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/myfavoritegridview',
-                    meta: {
-                        caption: 'entities.productbug.views.myfavoritegridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'myfavoritegridview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/releasesubgridview_undone',
+                    path: 'bugs/:bug?/views/releasesubgridview_undone',
                     meta: {
-                        caption: 'entities.productbug.views.releasesubgridview_undone.caption',
+                        caption: 'entities.bug.views.releasesubgridview_undone.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'releasesubgridview_undone' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/releasesubgridview_undone',
-                    meta: {
-                        caption: 'entities.productbug.views.releasesubgridview_undone.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'releasesubgridview_undone' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/stepsinfoeditview',
+                    path: 'bugs/:bug?/views/stepsinfoeditview',
                     meta: {
-                        caption: 'entities.productbug.views.stepsinfoeditview.caption',
+                        caption: 'entities.bug.views.stepsinfoeditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'stepsinfoeditview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/stepsinfoeditview',
-                    meta: {
-                        caption: 'entities.productbug.views.stepsinfoeditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'stepsinfoeditview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/testreportsubgridview',
+                    path: 'bugs/:bug?/views/testreportsubgridview',
                     meta: {
-                        caption: 'entities.productbug.views.testreportsubgridview.caption',
+                        caption: 'entities.bug.views.testreportsubgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'testreportsubgridview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/testreportsubgridview',
-                    meta: {
-                        caption: 'entities.productbug.views.testreportsubgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'testreportsubgridview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/resolveview',
+                    path: 'bugs/:bug?/views/resolveview',
                     meta: {
-                        caption: 'entities.productbug.views.resolveview.caption',
+                        caption: 'entities.bug.views.resolveview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'resolveview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/resolveview',
-                    meta: {
-                        caption: 'entities.productbug.views.resolveview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'resolveview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/pickupgridview4',
+                    path: 'bugs/:bug?/views/pickupgridview4',
                     meta: {
-                        caption: 'entities.productbug.views.pickupgridview4.caption',
+                        caption: 'entities.bug.views.pickupgridview4.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'pickupgridview4' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/pickupgridview4',
-                    meta: {
-                        caption: 'entities.productbug.views.pickupgridview4.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'pickupgridview4' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/gridview9_myassignedtome',
+                    path: 'bugs/:bug?/views/gridview9_myassignedtome',
                     meta: {
-                        caption: 'entities.productbug.views.gridview9_myassignedtome.caption',
+                        caption: 'entities.bug.views.gridview9_myassignedtome.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_myassignedtome' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/gridview9_myassignedtome',
-                    meta: {
-                        caption: 'entities.productbug.views.gridview9_myassignedtome.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'gridview9_myassignedtome' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/projectneweditview',
+                    path: 'bugs/:bug?/views/projectneweditview',
                     meta: {
-                        caption: 'entities.productbug.views.projectneweditview.caption',
+                        caption: 'entities.bug.views.projectneweditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'projectneweditview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/projectneweditview',
-                    meta: {
-                        caption: 'entities.productbug.views.projectneweditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'projectneweditview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/projectgridview',
+                    path: 'bugs/:bug?/views/casetobugeditview',
                     meta: {
-                        caption: 'entities.productbug.views.projectgridview.caption',
+                        caption: 'entities.bug.views.casetobugeditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'projectgridview' },
-                        ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/projectgridview',
-                    meta: {
-                        caption: 'entities.productbug.views.projectgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'projectgridview' },
-                        ],
-                        resource:'productbug',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'products/:product?/productbugs/:productbug?/views/casetobugeditview',
-                    meta: {
-                        caption: 'entities.productbug.views.casetobugeditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'casetobugeditview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/casetobugeditview',
-                    meta: {
-                        caption: 'entities.productbug.views.casetobugeditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'casetobugeditview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/buildsubgridview_done',
+                    path: 'bugs/:bug?/views/buildsubgridview_done',
                     meta: {
-                        caption: 'entities.productbug.views.buildsubgridview_done.caption',
+                        caption: 'entities.bug.views.buildsubgridview_done.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'buildsubgridview_done' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/buildsubgridview_done',
-                    meta: {
-                        caption: 'entities.productbug.views.buildsubgridview_done.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'buildsubgridview_done' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/projectbugsgridview',
+                    path: 'bugs/:bug?/views/projectbugsgridview',
                     meta: {
-                        caption: 'entities.productbug.views.projectbugsgridview.caption',
+                        caption: 'entities.bug.views.projectbugsgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'projectbugsgridview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/projectbugsgridview',
-                    meta: {
-                        caption: 'entities.productbug.views.projectbugsgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'projectbugsgridview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/confirmview',
+                    path: 'bugs/:bug?/views/confirmview',
                     meta: {
-                        caption: 'entities.productbug.views.confirmview.caption',
+                        caption: 'entities.bug.views.confirmview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'confirmview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/confirmview',
-                    meta: {
-                        caption: 'entities.productbug.views.confirmview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'confirmview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/dashboardmaineditview9',
+                    path: 'bugs/:bug?/views/dashboardmaineditview9',
                     meta: {
-                        caption: 'entities.productbug.views.dashboardmaineditview9.caption',
+                        caption: 'entities.bug.views.dashboardmaineditview9.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'dashboardmaineditview9' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/dashboardmaineditview9',
-                    meta: {
-                        caption: 'entities.productbug.views.dashboardmaineditview9.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'dashboardmaineditview9' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/pickupgridview_buildlinkresolvedbugs',
+                    path: 'bugs/:bug?/views/pickupgridview_buildlinkresolvedbugs',
                     meta: {
-                        caption: 'entities.productbug.views.pickupgridview_buildlinkresolvedbugs.caption',
+                        caption: 'entities.bug.views.pickupgridview_buildlinkresolvedbugs.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'pickupgridview_buildlinkresolvedbugs' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/pickupgridview_buildlinkresolvedbugs',
-                    meta: {
-                        caption: 'entities.productbug.views.pickupgridview_buildlinkresolvedbugs.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'pickupgridview_buildlinkresolvedbugs' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/buildsubgridview_new',
+                    path: 'bugs/:bug?/views/buildsubgridview_new',
                     meta: {
-                        caption: 'entities.productbug.views.buildsubgridview_new.caption',
+                        caption: 'entities.bug.views.buildsubgridview_new.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'buildsubgridview_new' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/buildsubgridview_new',
-                    meta: {
-                        caption: 'entities.productbug.views.buildsubgridview_new.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'buildsubgridview_new' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/todoeditview',
+                    path: 'bugs/:bug?/views/todoeditview',
                     meta: {
-                        caption: 'entities.productbug.views.todoeditview.caption',
+                        caption: 'entities.bug.views.todoeditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'todoeditview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/todoeditview',
-                    meta: {
-                        caption: 'entities.productbug.views.todoeditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'todoeditview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/gridview',
+                    path: 'bugs/:bug?/views/gridview',
                     meta: {
-                        caption: 'entities.productbug.views.gridview.caption',
+                        caption: 'entities.bug.views.gridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/gridview',
-                    meta: {
-                        caption: 'entities.productbug.views.gridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/mpickupview2',
+                    path: 'bugs/:bug?/views/mpickupview2',
                     meta: {
-                        caption: 'entities.productbug.views.mpickupview2.caption',
+                        caption: 'entities.bug.views.mpickupview2.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mpickupview2' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/mpickupview2',
-                    meta: {
-                        caption: 'entities.productbug.views.mpickupview2.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'mpickupview2' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/gridview9_storyrelated',
+                    path: 'bugs/:bug?/views/gridview9_storyrelated',
                     meta: {
-                        caption: 'entities.productbug.views.gridview9_storyrelated.caption',
+                        caption: 'entities.bug.views.gridview9_storyrelated.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_storyrelated' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/gridview9_storyrelated',
-                    meta: {
-                        caption: 'entities.productbug.views.gridview9_storyrelated.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'gridview9_storyrelated' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/gridview9_assignedtome',
+                    path: 'bugs/:bug?/views/gridview9_assignedtome',
                     meta: {
-                        caption: 'entities.productbug.views.gridview9_assignedtome.caption',
+                        caption: 'entities.bug.views.gridview9_assignedtome.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_assignedtome' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/gridview9_assignedtome',
-                    meta: {
-                        caption: 'entities.productbug.views.gridview9_assignedtome.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'gridview9_assignedtome' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/editview_1162',
+                    path: 'bugs/:bug?/views/editview_1162',
                     meta: {
-                        caption: 'entities.productbug.views.editview_1162.caption',
+                        caption: 'entities.bug.views.editview_1162.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'editview_1162' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/editview_1162',
-                    meta: {
-                        caption: 'entities.productbug.views.editview_1162.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'editview_1162' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/storytobugeditview',
+                    path: 'bugs/:bug?/views/storytobugeditview',
                     meta: {
-                        caption: 'entities.productbug.views.storytobugeditview.caption',
+                        caption: 'entities.bug.views.storytobugeditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'storytobugeditview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/storytobugeditview',
-                    meta: {
-                        caption: 'entities.productbug.views.storytobugeditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'storytobugeditview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/totalopenedchartview',
+                    path: 'bugs/:bug?/views/totalopenedchartview',
                     meta: {
-                        caption: 'entities.productbug.views.totalopenedchartview.caption',
+                        caption: 'entities.bug.views.totalopenedchartview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'totalopenedchartview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/totalopenedchartview',
-                    meta: {
-                        caption: 'entities.productbug.views.totalopenedchartview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'totalopenedchartview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/productbugs/:productbug?/views/mainmygridview',
+                    path: 'bugs/:bug?/views/mainmygridview',
                     meta: {
-                        caption: 'entities.productbug.views.mainmygridview.caption',
+                        caption: 'entities.bug.views.mainmygridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
+                            { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mainmygridview' },
                         ],
-                        resource:'productbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'productbugs/:productbug?/views/mainmygridview',
-                    meta: {
-                        caption: 'entities.productbug.views.mainmygridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productbugs', parameterName: 'productbug' },
-                            { pathName: 'views', parameterName: 'mainmygridview' },
-                        ],
-                        resource:'productbug',
+                        resource:'bug',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -19249,7 +18331,7 @@ const router = new Router({
                 {
                     path: 'views/bugtestbugsgridview',
                     meta: {
-                        caption: 'entities.productbug.views.testbugsgridview.caption',
+                        caption: 'entities.bug.views.testbugsgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -19342,7 +18424,7 @@ const router = new Router({
                 {
                     path: 'views/bugassingtoview',
                     meta: {
-                        caption: 'entities.productbug.views.assingtoview.caption',
+                        caption: 'entities.bug.views.assingtoview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -19357,7 +18439,7 @@ const router = new Router({
                 {
                     path: 'views/bugmaindashboardview_link',
                     meta: {
-                        caption: 'entities.productbug.views.maindashboardview_link.caption',
+                        caption: 'entities.bug.views.maindashboardview_link.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -19411,7 +18493,7 @@ const router = new Router({
                 {
                     path: 'views/bugmpickupview5',
                     meta: {
-                        caption: 'entities.productbug.views.mpickupview5.caption',
+                        caption: 'entities.bug.views.mpickupview5.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -19612,7 +18694,7 @@ const router = new Router({
                 {
                     path: 'views/bugeditview_4791',
                     meta: {
-                        caption: 'entities.productbug.views.editview_4791.caption',
+                        caption: 'entities.bug.views.editview_4791.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -19763,7 +18845,7 @@ const router = new Router({
                 {
                     path: 'views/bugbuglifeeditview9',
                     meta: {
-                        caption: 'entities.productbug.views.buglifeeditview9.caption',
+                        caption: 'entities.bug.views.buglifeeditview9.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -19920,7 +19002,7 @@ const router = new Router({
                 {
                     path: 'views/bugmaindashboardview',
                     meta: {
-                        caption: 'entities.productbug.views.maindashboardview.caption',
+                        caption: 'entities.bug.views.maindashboardview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -20060,7 +19142,7 @@ const router = new Router({
                 {
                     path: 'views/bugpickupgridview5',
                     meta: {
-                        caption: 'entities.productbug.views.pickupgridview5.caption',
+                        caption: 'entities.bug.views.pickupgridview5.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -20144,7 +19226,7 @@ const router = new Router({
                 {
                     path: 'views/bugbuildsubgridview_new_9212',
                     meta: {
-                        caption: 'entities.productbug.views.buildsubgridview_new_9212.caption',
+                        caption: 'entities.bug.views.buildsubgridview_new_9212.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -20252,7 +19334,7 @@ const router = new Router({
                 {
                     path: 'views/bugpickupgridview',
                     meta: {
-                        caption: 'entities.productbug.views.pickupgridview.caption',
+                        caption: 'entities.bug.views.pickupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -20414,7 +19496,7 @@ const router = new Router({
                 {
                     path: 'views/bugreleasesubgridview_done',
                     meta: {
-                        caption: 'entities.productbug.views.releasesubgridview_done.caption',
+                        caption: 'entities.bug.views.releasesubgridview_done.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -20442,7 +19524,7 @@ const router = new Router({
                 {
                     path: 'views/bugmpickupview',
                     meta: {
-                        caption: 'entities.productbug.views.mpickupview.caption',
+                        caption: 'entities.bug.views.mpickupview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -20753,7 +19835,7 @@ const router = new Router({
                 {
                     path: 'views/bugcalendareditview',
                     meta: {
-                        caption: 'entities.productbug.views.calendareditview.caption',
+                        caption: 'entities.bug.views.calendareditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -20807,7 +19889,7 @@ const router = new Router({
                 {
                     path: 'views/bugbugprojectkanbanview',
                     meta: {
-                        caption: 'entities.productbug.views.bugprojectkanbanview.caption',
+                        caption: 'entities.bug.views.bugprojectkanbanview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -20990,7 +20072,7 @@ const router = new Router({
                 {
                     path: 'views/bugmaineditview',
                     meta: {
-                        caption: 'entities.productbug.views.maineditview.caption',
+                        caption: 'entities.bug.views.maineditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -21346,7 +20428,7 @@ const router = new Router({
                 {
                     path: 'views/bugresolvechartview',
                     meta: {
-                        caption: 'entities.productbug.views.resolvechartview.caption',
+                        caption: 'entities.bug.views.resolvechartview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -21404,7 +20486,7 @@ const router = new Router({
                 {
                     path: 'views/bugusr2gridview',
                     meta: {
-                        caption: 'entities.productbug.views.usr2gridview.caption',
+                        caption: 'entities.bug.views.usr2gridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -21499,7 +20581,7 @@ const router = new Router({
                 {
                     path: 'views/buggridview9_taskrelated',
                     meta: {
-                        caption: 'entities.productbug.views.gridview9_taskrelated.caption',
+                        caption: 'entities.bug.views.gridview9_taskrelated.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -21613,7 +20695,7 @@ const router = new Router({
                 {
                     path: 'views/bugmpickupview4',
                     meta: {
-                        caption: 'entities.productbug.views.mpickupview4.caption',
+                        caption: 'entities.bug.views.mpickupview4.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -21814,7 +20896,7 @@ const router = new Router({
                 {
                     path: 'views/bugeditview',
                     meta: {
-                        caption: 'entities.productbug.views.editview.caption',
+                        caption: 'entities.bug.views.editview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -21915,7 +20997,7 @@ const router = new Router({
                 {
                     path: 'views/bugplansubgridview',
                     meta: {
-                        caption: 'entities.productbug.views.plansubgridview.caption',
+                        caption: 'entities.bug.views.plansubgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -21945,7 +21027,7 @@ const router = new Router({
                 {
                     path: 'views/bugcloseview',
                     meta: {
-                        caption: 'entities.productbug.views.closeview.caption',
+                        caption: 'entities.bug.views.closeview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -22128,7 +21210,7 @@ const router = new Router({
                 {
                     path: 'views/bugbugkanbanview',
                     meta: {
-                        caption: 'entities.productbug.views.bugkanbanview.caption',
+                        caption: 'entities.bug.views.bugkanbanview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -22348,7 +21430,7 @@ const router = new Router({
                 {
                     path: 'views/bugtasktobugeditview',
                     meta: {
-                        caption: 'entities.productbug.views.tasktobugeditview.caption',
+                        caption: 'entities.bug.views.tasktobugeditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -22363,7 +21445,7 @@ const router = new Router({
                 {
                     path: 'views/bugactivationview',
                     meta: {
-                        caption: 'entities.productbug.views.activationview.caption',
+                        caption: 'entities.bug.views.activationview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -22624,7 +21706,7 @@ const router = new Router({
                 {
                     path: 'views/buggridview9_storyformbug',
                     meta: {
-                        caption: 'entities.productbug.views.gridview9_storyformbug.caption',
+                        caption: 'entities.bug.views.gridview9_storyformbug.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -22984,7 +22066,7 @@ const router = new Router({
                 {
                     path: 'views/buggridview9_storyaffect',
                     meta: {
-                        caption: 'entities.productbug.views.gridview9_storyaffect.caption',
+                        caption: 'entities.bug.views.gridview9_storyaffect.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -23070,7 +22152,7 @@ const router = new Router({
                 {
                     path: 'views/bugmyfavoritegridview',
                     meta: {
-                        caption: 'entities.productbug.views.myfavoritegridview.caption',
+                        caption: 'entities.bug.views.myfavoritegridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -23139,7 +22221,7 @@ const router = new Router({
                 {
                     path: 'views/bugreleasesubgridview_undone',
                     meta: {
-                        caption: 'entities.productbug.views.releasesubgridview_undone.caption',
+                        caption: 'entities.bug.views.releasesubgridview_undone.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -23167,7 +22249,7 @@ const router = new Router({
                 {
                     path: 'views/bugstepsinfoeditview',
                     meta: {
-                        caption: 'entities.productbug.views.stepsinfoeditview.caption',
+                        caption: 'entities.bug.views.stepsinfoeditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -23618,7 +22700,7 @@ const router = new Router({
                 {
                     path: 'views/bugtestreportsubgridview',
                     meta: {
-                        caption: 'entities.productbug.views.testreportsubgridview.caption',
+                        caption: 'entities.bug.views.testreportsubgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -24658,7 +23740,7 @@ const router = new Router({
                 {
                     path: 'views/bugresolveview',
                     meta: {
-                        caption: 'entities.productbug.views.resolveview.caption',
+                        caption: 'entities.bug.views.resolveview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -24807,7 +23889,7 @@ const router = new Router({
                 {
                     path: 'views/bugpickupgridview4',
                     meta: {
-                        caption: 'entities.productbug.views.pickupgridview4.caption',
+                        caption: 'entities.bug.views.pickupgridview4.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -25105,7 +24187,7 @@ const router = new Router({
                 {
                     path: 'views/buggridview9_myassignedtome',
                     meta: {
-                        caption: 'entities.productbug.views.gridview9_myassignedtome.caption',
+                        caption: 'entities.bug.views.gridview9_myassignedtome.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -25342,7 +24424,7 @@ const router = new Router({
                 {
                     path: 'views/bugprojectneweditview',
                     meta: {
-                        caption: 'entities.productbug.views.projectneweditview.caption',
+                        caption: 'entities.bug.views.projectneweditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -25759,7 +24841,7 @@ const router = new Router({
                 {
                     path: 'views/bugprojectgridview',
                     meta: {
-                        caption: 'entities.productbug.views.projectgridview.caption',
+                        caption: 'entities.projectbug.views.projectgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -25843,7 +24925,7 @@ const router = new Router({
                 {
                     path: 'views/bugcasetobugeditview',
                     meta: {
-                        caption: 'entities.productbug.views.casetobugeditview.caption',
+                        caption: 'entities.bug.views.casetobugeditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -26007,7 +25089,7 @@ const router = new Router({
                 {
                     path: 'views/bugbuildsubgridview_done',
                     meta: {
-                        caption: 'entities.productbug.views.buildsubgridview_done.caption',
+                        caption: 'entities.bug.views.buildsubgridview_done.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -26158,7 +25240,7 @@ const router = new Router({
                 {
                     path: 'views/bugprojectbugsgridview',
                     meta: {
-                        caption: 'entities.productbug.views.projectbugsgridview.caption',
+                        caption: 'entities.bug.views.projectbugsgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -26266,7 +25348,7 @@ const router = new Router({
                 {
                     path: 'views/bugconfirmview',
                     meta: {
-                        caption: 'entities.productbug.views.confirmview.caption',
+                        caption: 'entities.bug.views.confirmview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -26960,7 +26042,7 @@ const router = new Router({
                 {
                     path: 'views/bugdashboardmaineditview9',
                     meta: {
-                        caption: 'entities.productbug.views.dashboardmaineditview9.caption',
+                        caption: 'entities.bug.views.dashboardmaineditview9.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -27033,7 +26115,7 @@ const router = new Router({
                 {
                     path: 'views/bugpickupgridview_buildlinkresolvedbugs',
                     meta: {
-                        caption: 'entities.productbug.views.pickupgridview_buildlinkresolvedbugs.caption',
+                        caption: 'entities.bug.views.pickupgridview_buildlinkresolvedbugs.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -27191,7 +26273,7 @@ const router = new Router({
                 {
                     path: 'views/bugbuildsubgridview_new',
                     meta: {
-                        caption: 'entities.productbug.views.buildsubgridview_new.caption',
+                        caption: 'entities.bug.views.buildsubgridview_new.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -27277,7 +26359,7 @@ const router = new Router({
                 {
                     path: 'views/bugtodoeditview',
                     meta: {
-                        caption: 'entities.productbug.views.todoeditview.caption',
+                        caption: 'entities.bug.views.todoeditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -27534,7 +26616,7 @@ const router = new Router({
                 {
                     path: 'views/buggridview',
                     meta: {
-                        caption: 'entities.productbug.views.gridview.caption',
+                        caption: 'entities.bug.views.gridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -27692,7 +26774,7 @@ const router = new Router({
                 {
                     path: 'views/bugmpickupview2',
                     meta: {
-                        caption: 'entities.productbug.views.mpickupview2.caption',
+                        caption: 'entities.bug.views.mpickupview2.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -28608,7 +27690,7 @@ const router = new Router({
                 {
                     path: 'views/buggridview9_storyrelated',
                     meta: {
-                        caption: 'entities.productbug.views.gridview9_storyrelated.caption',
+                        caption: 'entities.bug.views.gridview9_storyrelated.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -28623,7 +27705,7 @@ const router = new Router({
                 {
                     path: 'views/buggridview9_assignedtome',
                     meta: {
-                        caption: 'entities.productbug.views.gridview9_assignedtome.caption',
+                        caption: 'entities.bug.views.gridview9_assignedtome.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -28638,7 +27720,7 @@ const router = new Router({
                 {
                     path: 'views/bugeditview_1162',
                     meta: {
-                        caption: 'entities.productbug.views.editview_1162.caption',
+                        caption: 'entities.bug.views.editview_1162.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -28972,7 +28054,7 @@ const router = new Router({
                 {
                     path: 'views/bugstorytobugeditview',
                     meta: {
-                        caption: 'entities.productbug.views.storytobugeditview.caption',
+                        caption: 'entities.bug.views.storytobugeditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -29516,7 +28598,7 @@ const router = new Router({
                 {
                     path: 'views/bugtotalopenedchartview',
                     meta: {
-                        caption: 'entities.productbug.views.totalopenedchartview.caption',
+                        caption: 'entities.bug.views.totalopenedchartview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -29630,7 +28712,7 @@ const router = new Router({
                 {
                     path: 'views/bugmainmygridview',
                     meta: {
-                        caption: 'entities.productbug.views.mainmygridview.caption',
+                        caption: 'entities.bug.views.mainmygridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',

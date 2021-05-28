@@ -7,7 +7,7 @@
   "openMode" : "DRAWER_TOP",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -30,7 +30,7 @@
       "name" : "BugPickupGridView4",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
       },
       "getPSAppViewEngines" : [ {
         "engineCat" : "VIEW",
@@ -52,7 +52,7 @@
         "codeName" : "PickupGird",
         "columnEnableLink" : 2,
         "controlType" : "GRID",
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug/PSGRIDS/PickupGird.json",
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSGRIDS/PickupGird.json",
         "getFetchPSControlAction" : {
           "modelref" : true,
           "id" : "fetch"
@@ -67,7 +67,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
         },
         "getPSControlHandler" : {
           "getPSHandlerActions" : [ {
@@ -81,7 +81,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             }
           }, {
             "actionType" : "DEDATASET",
@@ -92,7 +92,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             }
           }, {
             "actionName" : "Remove",
@@ -105,7 +105,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             }
           }, {
             "actionName" : "Get",
@@ -118,7 +118,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             }
           }, {
             "actionName" : "GetDraft",
@@ -131,7 +131,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             }
           }, {
             "actionName" : "Create",
@@ -144,7 +144,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
             }
           } ],
           "userDRAction" : "READ",
@@ -476,7 +476,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
           }
         },
         "sortMode" : "REMOTE",
@@ -509,7 +509,7 @@
         "name" : "layoutpanel",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
         },
         "getPSControlParam" : { },
         "layoutPanel" : true,
@@ -529,39 +529,13 @@
       "rowEditDefault" : false,
       "showCaptionBar" : false,
       "modelid" : "88a2e4ac2ac010f7ec3f5b256e955207",
-      "modeltype" : "PSAPPDEVIEW",
-      "getPSAppDERSPaths" : [ [ {
-        "actionRSMode" : 1,
-        "codeName" : "ProductBugs",
-        "dataRSMode" : 0,
-        "getMajorPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-        },
-        "getMinorPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
-        },
-        "name" : "PRODUCT__PRODUCT_BUG",
-        "getParentPSAppDEField" : {
-          "name" : "PRODUCT",
-          "codeName" : "Product"
-        },
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
-      } ] ]
+      "modeltype" : "PSAPPDEVIEW"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
     "name" : "pickupviewpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
     },
     "getPSControlParam" : {
       "id" : "PICKUPVIEWPANEL"
@@ -580,7 +554,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -592,31 +566,5 @@
   "enableDP" : true,
   "showCaptionBar" : false,
   "modelid" : "404fbffbb8a204ad2acce5a4c9aa0f68",
-  "modeltype" : "PSAPPDEVIEW",
-  "getPSAppDERSPaths" : [ [ {
-    "actionRSMode" : 1,
-    "codeName" : "ProductBugs",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
-    },
-    "name" : "PRODUCT__PRODUCT_BUG",
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ] ]
+  "modeltype" : "PSAPPDEVIEW"
 }

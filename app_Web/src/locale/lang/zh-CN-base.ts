@@ -5,15 +5,17 @@ import projectburn_zh_CN from '@locale/lanres/entities/project-burn/project-burn
 import productbranch_zh_CN from '@locale/lanres/entities/product-branch/product-branch_zh_CN';
 import projecttaskestimate_zh_CN from '@locale/lanres/entities/project-task-estimate/project-task-estimate_zh_CN';
 import productstory_zh_CN from '@locale/lanres/entities/product-story/product-story_zh_CN';
+import productbug_zh_CN from '@locale/lanres/entities/product-bug/product-bug_zh_CN';
 import project_zh_CN from '@locale/lanres/entities/project/project_zh_CN';
 import productmodule_zh_CN from '@locale/lanres/entities/product-module/product-module_zh_CN';
 import productteam_zh_CN from '@locale/lanres/entities/product-team/product-team_zh_CN';
+import projectbug_zh_CN from '@locale/lanres/entities/project-bug/project-bug_zh_CN';
 import productlife_zh_CN from '@locale/lanres/entities/product-life/product-life_zh_CN';
 import projecttask_zh_CN from '@locale/lanres/entities/project-task/project-task_zh_CN';
 import projectbuild_zh_CN from '@locale/lanres/entities/project-build/project-build_zh_CN';
 import projecttaskgantt_zh_CN from '@locale/lanres/entities/project-task-gantt/project-task-gantt_zh_CN';
 import projectteam_zh_CN from '@locale/lanres/entities/project-team/project-team_zh_CN';
-import productbug_zh_CN from '@locale/lanres/entities/product-bug/product-bug_zh_CN';
+import bug_zh_CN from '@locale/lanres/entities/bug/bug_zh_CN';
 import projectmodule_zh_CN from '@locale/lanres/entities/project-module/project-module_zh_CN';
 import productproject_zh_CN from '@locale/lanres/entities/product-project/product-project_zh_CN';
 import productrelease_zh_CN from '@locale/lanres/entities/product-release/product-release_zh_CN';
@@ -447,15 +449,17 @@ function getAppLocale(){
             'productbranch': productbranch_zh_CN(),
             'projecttaskestimate': projecttaskestimate_zh_CN(),
             'productstory': productstory_zh_CN(),
+            'productbug': productbug_zh_CN(),
             'project': project_zh_CN(),
             'productmodule': productmodule_zh_CN(),
             'productteam': productteam_zh_CN(),
+            'projectbug': projectbug_zh_CN(),
             'productlife': productlife_zh_CN(),
             'projecttask': projecttask_zh_CN(),
             'projectbuild': projectbuild_zh_CN(),
             'projecttaskgantt': projecttaskgantt_zh_CN(),
             'projectteam': projectteam_zh_CN(),
-            'productbug': productbug_zh_CN(),
+            'bug': bug_zh_CN(),
             'projectmodule': projectmodule_zh_CN(),
             'productproject': productproject_zh_CN(),
             'productrelease': productrelease_zh_CN(),

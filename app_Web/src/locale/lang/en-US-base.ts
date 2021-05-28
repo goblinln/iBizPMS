@@ -5,15 +5,17 @@ import projectburn_en_US from '@locale/lanres/entities/project-burn/project-burn
 import productbranch_en_US from '@locale/lanres/entities/product-branch/product-branch_en_US';
 import projecttaskestimate_en_US from '@locale/lanres/entities/project-task-estimate/project-task-estimate_en_US';
 import productstory_en_US from '@locale/lanres/entities/product-story/product-story_en_US';
+import productbug_en_US from '@locale/lanres/entities/product-bug/product-bug_en_US';
 import project_en_US from '@locale/lanres/entities/project/project_en_US';
 import productmodule_en_US from '@locale/lanres/entities/product-module/product-module_en_US';
 import productteam_en_US from '@locale/lanres/entities/product-team/product-team_en_US';
+import projectbug_en_US from '@locale/lanres/entities/project-bug/project-bug_en_US';
 import productlife_en_US from '@locale/lanres/entities/product-life/product-life_en_US';
 import projecttask_en_US from '@locale/lanres/entities/project-task/project-task_en_US';
 import projectbuild_en_US from '@locale/lanres/entities/project-build/project-build_en_US';
 import projecttaskgantt_en_US from '@locale/lanres/entities/project-task-gantt/project-task-gantt_en_US';
 import projectteam_en_US from '@locale/lanres/entities/project-team/project-team_en_US';
-import productbug_en_US from '@locale/lanres/entities/product-bug/product-bug_en_US';
+import bug_en_US from '@locale/lanres/entities/bug/bug_en_US';
 import projectmodule_en_US from '@locale/lanres/entities/project-module/project-module_en_US';
 import productproject_en_US from '@locale/lanres/entities/product-project/product-project_en_US';
 import productrelease_en_US from '@locale/lanres/entities/product-release/product-release_en_US';
@@ -449,15 +451,17 @@ function getAppLocale(){
             'productbranch': productbranch_en_US(),
             'projecttaskestimate': projecttaskestimate_en_US(),
             'productstory': productstory_en_US(),
+            'productbug': productbug_en_US(),
             'project': project_en_US(),
             'productmodule': productmodule_en_US(),
             'productteam': productteam_en_US(),
+            'projectbug': projectbug_en_US(),
             'productlife': productlife_en_US(),
             'projecttask': projecttask_en_US(),
             'projectbuild': projectbuild_en_US(),
             'projecttaskgantt': projecttaskgantt_en_US(),
             'projectteam': projectteam_en_US(),
-            'productbug': productbug_en_US(),
+            'bug': bug_en_US(),
             'projectmodule': projectmodule_en_US(),
             'productproject': productproject_en_US(),
             'productrelease': productrelease_en_US(),

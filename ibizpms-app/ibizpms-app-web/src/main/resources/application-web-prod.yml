@@ -95,6 +95,10 @@ zuul:
       path: /productstories/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    ibz_api__product_bug:
+      path: /productbugs/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     zt_project:
       path: /projects/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -105,6 +109,10 @@ zuul:
       stripPrefix: false
     ibz_productteam:
       path: /productteams/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
+    ibz_api__project_bug:
+      path: /projectbugs/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     ibz_productlife:
@@ -128,7 +136,7 @@ zuul:
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     zt_bug:
-      path: /productbugs/**
+      path: /bugs/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     ibz_projectmodule:

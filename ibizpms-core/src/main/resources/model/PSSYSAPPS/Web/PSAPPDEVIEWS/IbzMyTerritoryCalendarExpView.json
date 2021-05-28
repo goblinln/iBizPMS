@@ -177,7 +177,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
         },
         "getPSLayoutPanel" : {
           "getAllPSPanelFields" : [ {
@@ -193,12 +193,12 @@
           } ],
           "codeName" : "Mob",
           "controlType" : "PANEL",
-          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug/PSPANELS/Mob.json",
+          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSPANELS/Mob.json",
           "layoutMode" : "TABLE_12COL",
           "logicName" : "移动端列表项布局面板",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
           },
           "getPSControlParam" : { },
           "getPSLayout" : {

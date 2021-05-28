@@ -80,6 +80,15 @@ export class GlobalService {
         return (await import('./product-story/product-story.service')).default.getInstance();
     }
     /**
+     * 产品缺陷服务
+     *
+     * @return {ProductBug}
+     * @memberof GlobalService
+     */
+    async getProductBugService() {
+        return (await import('./product-bug/product-bug.service')).default.getInstance();
+    }
+    /**
      * 项目服务
      *
      * @return {Project}
@@ -105,6 +114,15 @@ export class GlobalService {
      */
     async getProductTeamService() {
         return (await import('./product-team/product-team.service')).default.getInstance();
+    }
+    /**
+     * 项目BUG服务
+     *
+     * @return {ProjectBug}
+     * @memberof GlobalService
+     */
+    async getProjectBugService() {
+        return (await import('./project-bug/project-bug.service')).default.getInstance();
     }
     /**
      * 产品生命周期服务
@@ -152,13 +170,13 @@ export class GlobalService {
         return (await import('./project-team/project-team.service')).default.getInstance();
     }
     /**
-     * 产品缺陷服务
+     * 测试BUG服务
      *
-     * @return {ProductBug}
+     * @return {Bug}
      * @memberof GlobalService
      */
-    async getProductBugService() {
-        return (await import('./product-bug/product-bug.service')).default.getInstance();
+    async getBugService() {
+        return (await import('./bug/bug.service')).default.getInstance();
     }
     /**
      * 任务模块服务

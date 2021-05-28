@@ -135,6 +135,21 @@ export class ProjectTaskEstimateBaseService extends EntityBaseService<IProjectTa
         return this.condCache.get('view');
     }
     /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTaskEstimateService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projecttask && _context.projecttaskestimate) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/projecttasks/${_context.projecttask}/projecttaskestimates/${_context.projecttaskestimate}`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -187,17 +202,16 @@ export class ProjectTaskEstimateBaseService extends EntityBaseService<IProjectTa
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Update
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectTaskEstimateService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projecttask && _context.projecttaskestimate) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projecttasks/${_context.projecttask}/projecttaskestimates/${_context.projecttaskestimate}`, _data);
+            return this.http.delete(`/projects/${_context.project}/projecttasks/${_context.projecttask}/projecttaskestimates/${_context.projecttaskestimate}`);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -213,20 +227,6 @@ export class ProjectTaskEstimateBaseService extends EntityBaseService<IProjectTa
         if (_context.project && _context.projecttask && _context.projecttaskestimate) {
             const res = await this.http.get(`/projects/${_context.project}/projecttasks/${_context.projecttask}/projecttaskestimates/${_context.projecttaskestimate}`);
             return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTaskEstimateService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projecttask && _context.projecttaskestimate) {
-            return this.http.delete(`/projects/${_context.project}/projecttasks/${_context.projecttask}/projecttaskestimates/${_context.projecttaskestimate}`);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

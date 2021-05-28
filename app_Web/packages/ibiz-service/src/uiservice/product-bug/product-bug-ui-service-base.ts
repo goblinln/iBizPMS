@@ -80,58 +80,6 @@ export class ProductBugUIServiceBase extends UIServiceBase {
      * @memberof  ProductBugUIServiceBase
      */  
     protected initViewFuncMap(){
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set('MPICKUPVIEW:','MPICKUPVIEW');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set('EDITVIEW:','EDITVIEW');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set('MDATAVIEW:','MDATAVIEW');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
     }
 
 }

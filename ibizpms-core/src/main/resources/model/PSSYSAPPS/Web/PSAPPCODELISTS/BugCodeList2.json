@@ -7,7 +7,7 @@
   "name" : "Bug快速分组（\b版本\b\b\b\b\b所有bug）",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
   },
   "getPSCodeItems" : [ {
     "codeName" : "All",

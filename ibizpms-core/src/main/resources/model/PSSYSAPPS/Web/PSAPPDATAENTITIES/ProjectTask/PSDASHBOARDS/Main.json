@@ -7738,7 +7738,7 @@
                   "name" : "BugGridView9_TaskRelated",
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                   },
                   "getPSAppViewEngines" : [ {
                     "engineCat" : "VIEW",
@@ -7848,7 +7848,7 @@
                     "codeName" : "TaskRelated",
                     "columnEnableLink" : 2,
                     "controlType" : "GRID",
-                    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug/PSGRIDS/TaskRelated.json",
+                    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSGRIDS/TaskRelated.json",
                     "getFetchPSControlAction" : {
                       "modelref" : true,
                       "id" : "fetch"
@@ -7863,7 +7863,7 @@
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                     },
                     "getPSControlHandler" : {
                       "getPSHandlerActions" : [ {
@@ -7877,7 +7877,7 @@
                         },
                         "getPSAppDataEntity" : {
                           "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                         }
                       }, {
                         "actionType" : "DEDATASET",
@@ -7888,7 +7888,7 @@
                         },
                         "getPSAppDataEntity" : {
                           "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                         }
                       }, {
                         "actionName" : "Remove",
@@ -7901,7 +7901,7 @@
                         },
                         "getPSAppDataEntity" : {
                           "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                         }
                       }, {
                         "actionName" : "Get",
@@ -7914,7 +7914,7 @@
                         },
                         "getPSAppDataEntity" : {
                           "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                         }
                       }, {
                         "actionName" : "GetDraft",
@@ -7927,7 +7927,7 @@
                         },
                         "getPSAppDataEntity" : {
                           "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                         }
                       }, {
                         "actionName" : "Create",
@@ -7940,7 +7940,7 @@
                         },
                         "getPSAppDataEntity" : {
                           "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                         }
                       } ],
                       "userDRAction" : "READ",
@@ -8167,7 +8167,7 @@
                       },
                       "getPSAppDataEntity" : {
                         "modelref" : true,
-                        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+                        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                       }
                     },
                     "sortMode" : "REMOTE",
@@ -8200,7 +8200,7 @@
                     "name" : "layoutpanel",
                     "getPSAppDataEntity" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                     },
                     "getPSControlParam" : { },
                     "layoutPanel" : true,
@@ -8218,33 +8218,7 @@
                   "rowEditDefault" : false,
                   "showCaptionBar" : true,
                   "modelid" : "3da1f37a9dc628fb6755d3d9c03fc112",
-                  "modeltype" : "PSAPPDEVIEW",
-                  "getPSAppDERSPaths" : [ [ {
-                    "actionRSMode" : 1,
-                    "codeName" : "ProductBugs",
-                    "dataRSMode" : 0,
-                    "getMajorPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-                    },
-                    "getMinorPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
-                    },
-                    "name" : "PRODUCT__PRODUCT_BUG",
-                    "getParentPSAppDEField" : {
-                      "name" : "PRODUCT",
-                      "codeName" : "Product"
-                    },
-                    "rSMode" : 2,
-                    "enableCreateDataRS" : false,
-                    "enableDEAction" : true,
-                    "enableDEDataSet" : true,
-                    "enableGetDataRS" : false,
-                    "enableSelect" : true,
-                    "enableSelectDataRS" : false,
-                    "enableUpdateDataRS" : false
-                  } ] ]
+                  "modeltype" : "PSAPPDEVIEW"
                 },
                 "getPSLayoutPos" : {
                   "colMD" : 24,
