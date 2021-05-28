@@ -122,14 +122,6 @@ public class PSSysAppResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询版本", tags = {"系统应用" } ,notes = "查询版本")
-    @RequestMapping(method= RequestMethod.POST , value="/pssysapps/searchbuild")
-	public ResponseEntity<Page<PSSysAppDTO>> searchBuild(@RequestBody PSSysAppSearchContext context) {
-        Page<PSSysApp> domains = pssysappService.searchBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(pssysappMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取数据集", tags = {"系统应用" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/pssysapps/fetchdefault")
 	public ResponseEntity<List<PSSysAppDTO>> fetchdefault(@RequestBody PSSysAppSearchContext context) {
@@ -140,14 +132,6 @@ public class PSSysAppResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询数据集", tags = {"系统应用" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/pssysapps/searchdefault")
-	public ResponseEntity<Page<PSSysAppDTO>> searchDefault(@RequestBody PSSysAppSearchContext context) {
-        Page<PSSysApp> domains = pssysappService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(pssysappMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

@@ -144,15 +144,6 @@ public class SysUpdateFeaturesResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"系统更新功能" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/sysupdatefeatures/searchdefault")
-	public ResponseEntity<Page<SysUpdateFeaturesDTO>> searchDefault(@RequestBody SysUpdateFeaturesSearchContext context) {
-        Page<SysUpdateFeatures> domains = sysupdatefeaturesService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(sysupdatefeaturesMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/sysupdatefeatures/{sysupdatefeatures_id}/{action}")
@@ -243,16 +234,6 @@ public class SysUpdateFeaturesResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id,'READ')")
-	@ApiOperation(value = "根据更新日志查询数据集", tags = {"系统更新功能" } ,notes = "根据更新日志查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/searchdefault")
-	public ResponseEntity<Page<SysUpdateFeaturesDTO>> searchSysUpdateFeaturesDefaultBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @RequestBody SysUpdateFeaturesSearchContext context) {
-        context.setN_sys_update_logid_eq(sysupdatelog_id);
-        Page<SysUpdateFeatures> domains = sysupdatefeaturesService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(sysupdatefeaturesMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 }
 

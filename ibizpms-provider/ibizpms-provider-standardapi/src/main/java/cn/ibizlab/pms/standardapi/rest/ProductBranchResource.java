@@ -66,16 +66,6 @@ public class ProductBranchResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productbranches/searchdefault")
-	public ResponseEntity<Page<ProductBranchDTO>> searchProductBranchDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody BranchSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Branch> domains = branchService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productbranchMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品建立产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品建立产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbranches")

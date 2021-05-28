@@ -144,16 +144,6 @@ public class CompanyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@CompanyRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"公司" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/companies/searchdefault")
-	public ResponseEntity<Page<CompanyDTO>> searchDefault(@RequestBody CompanySearchContext context) {
-        companyRuntime.addAuthorityConditions(context,"READ");
-        Page<Company> domains = companyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(companyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/companies/{company_id}/{action}")

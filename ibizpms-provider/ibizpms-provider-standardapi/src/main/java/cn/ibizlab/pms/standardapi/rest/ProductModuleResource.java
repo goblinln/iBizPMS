@@ -137,15 +137,5 @@ public class ProductModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"需求模块" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productmodules/searchdefault")
-	public ResponseEntity<Page<ProductModuleDTO>> searchProductModuleDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductModuleSearchContext context) {
-        context.setN_root_eq(product_id);
-        Page<ProductModule> domains = productmoduleService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 }
 

@@ -155,14 +155,6 @@ public class IbizproProjectDailyResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"项目日报" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibizproprojectdailies/searchdefault")
-	public ResponseEntity<Page<IbizproProjectDailyDTO>> searchDefault(@RequestBody IbizproProjectDailySearchContext context) {
-        Page<IbizproProjectDaily> domains = ibizproprojectdailyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibizproprojectdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/{ibizproprojectdaily_id}/{action}")

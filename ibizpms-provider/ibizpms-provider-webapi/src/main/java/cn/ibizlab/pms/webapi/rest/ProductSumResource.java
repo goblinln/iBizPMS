@@ -142,14 +142,6 @@ public class ProductSumResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"产品汇总表" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/productsums/searchdefault")
-	public ResponseEntity<Page<ProductSumDTO>> searchDefault(@RequestBody ProductSumSearchContext context) {
-        Page<ProductSum> domains = productsumService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productsumMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取产品创建bug数及占比", tags = {"产品汇总表" } ,notes = "获取产品创建bug数及占比")
     @RequestMapping(method= RequestMethod.POST , value="/productsums/fetchproductbugcnt_qa")
 	public ResponseEntity<List<ProductSumDTO>> fetchproductbugcnt_qa(@RequestBody ProductSumSearchContext context) {
@@ -160,14 +152,6 @@ public class ProductSumResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询产品创建bug数及占比", tags = {"产品汇总表" } ,notes = "查询产品创建bug数及占比")
-    @RequestMapping(method= RequestMethod.POST , value="/productsums/searchproductbugcnt_qa")
-	public ResponseEntity<Page<ProductSumDTO>> searchProductBugcnt_QA(@RequestBody ProductSumSearchContext context) {
-        Page<ProductSum> domains = productsumService.searchProductBugcnt_QA(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productsumMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 	@ApiOperation(value = "获取产品创建需求占比", tags = {"产品汇总表" } ,notes = "获取产品创建需求占比")
@@ -182,14 +166,6 @@ public class ProductSumResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询产品创建需求占比", tags = {"产品汇总表" } ,notes = "查询产品创建需求占比")
-    @RequestMapping(method= RequestMethod.POST , value="/productsums/searchproductcreatestory")
-	public ResponseEntity<Page<ProductSumDTO>> searchProductCreateStory(@RequestBody ProductSumSearchContext context) {
-        Page<ProductSum> domains = productsumService.searchProductCreateStory(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productsumMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取产品需求工时汇总", tags = {"产品汇总表" } ,notes = "获取产品需求工时汇总")
     @RequestMapping(method= RequestMethod.POST , value="/productsums/fetchproductstoryhourssum")
 	public ResponseEntity<List<ProductSumDTO>> fetchproductstoryhourssum(@RequestBody ProductSumSearchContext context) {
@@ -200,14 +176,6 @@ public class ProductSumResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询产品需求工时汇总", tags = {"产品汇总表" } ,notes = "查询产品需求工时汇总")
-    @RequestMapping(method= RequestMethod.POST , value="/productsums/searchproductstoryhourssum")
-	public ResponseEntity<Page<ProductSumDTO>> searchProductStoryHoursSum(@RequestBody ProductSumSearchContext context) {
-        Page<ProductSum> domains = productsumService.searchProductStoryHoursSum(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productsumMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 	@ApiOperation(value = "获取产品需求汇总查询", tags = {"产品汇总表" } ,notes = "获取产品需求汇总查询")
@@ -222,14 +190,6 @@ public class ProductSumResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询产品需求汇总查询", tags = {"产品汇总表" } ,notes = "查询产品需求汇总查询")
-    @RequestMapping(method= RequestMethod.POST , value="/productsums/searchproductstorysum")
-	public ResponseEntity<Page<ProductSumDTO>> searchProductStorySum(@RequestBody ProductSumSearchContext context) {
-        Page<ProductSum> domains = productsumService.searchProductStorySum(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productsumMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取产品计划数和需求数", tags = {"产品汇总表" } ,notes = "获取产品计划数和需求数")
     @RequestMapping(method= RequestMethod.POST , value="/productsums/fetchproductstorycntandplancnt")
 	public ResponseEntity<List<ProductSumDTO>> fetchproductstorycntandplancnt(@RequestBody ProductSumSearchContext context) {
@@ -242,14 +202,6 @@ public class ProductSumResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询产品计划数和需求数", tags = {"产品汇总表" } ,notes = "查询产品计划数和需求数")
-    @RequestMapping(method= RequestMethod.POST , value="/productsums/searchproductstorycntandplancnt")
-	public ResponseEntity<Page<ProductSumDTO>> searchProductStorycntAndPlancnt(@RequestBody ProductSumSearchContext context) {
-        Page<ProductSum> domains = productsumService.searchProductStorycntAndPlancnt(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productsumMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取产品Bug类型统计", tags = {"产品汇总表" } ,notes = "获取产品Bug类型统计")
     @RequestMapping(method= RequestMethod.POST , value="/productsums/fetchproductsumbugtype")
 	public ResponseEntity<List<ProductSumDTO>> fetchproductsumbugtype(@RequestBody ProductSumSearchContext context) {
@@ -260,14 +212,6 @@ public class ProductSumResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询产品Bug类型统计", tags = {"产品汇总表" } ,notes = "查询产品Bug类型统计")
-    @RequestMapping(method= RequestMethod.POST , value="/productsums/searchproductsumbugtype")
-	public ResponseEntity<Page<ProductSumDTO>> searchProductSumBugType(@RequestBody ProductSumSearchContext context) {
-        Page<ProductSum> domains = productsumService.searchProductSumBugType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productsumMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

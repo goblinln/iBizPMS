@@ -143,15 +143,6 @@ public class IBZProBugHostoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IBZProBugHostoryRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"Bug操作历史" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzprobughostories/searchdefault")
-	public ResponseEntity<Page<IBZProBugHostoryDTO>> searchDefault(@RequestBody IBZProBugHostorySearchContext context) {
-        Page<IBZProBugHostory> domains = ibzprobughostoryService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzprobughostoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzprobughostories/{ibzprobughostory_id}/{action}")

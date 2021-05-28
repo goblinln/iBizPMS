@@ -145,16 +145,6 @@ public class taskestimatestatsResource {
 	}
 
     @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询日志月", tags = {"任务工时统计" } ,notes = "查询日志月")
-    @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/searchactionmonth")
-	public ResponseEntity<Page<taskestimatestatsDTO>> searchActionMonth(@RequestBody TaskEstimateStatsSearchContext context) {
-        taskestimatestatsRuntime.addAuthorityConditions(context,"READ");
-        Page<TaskEstimateStats> domains = taskestimatestatsService.searchActionMonth(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(taskestimatestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志年", tags = {"任务工时统计" } ,notes = "获取日志年")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/fetchactionyear")
 	public ResponseEntity<List<taskestimatestatsDTO>> fetchactionyear(@RequestBody TaskEstimateStatsSearchContext context) {
@@ -169,16 +159,6 @@ public class taskestimatestatsResource {
 	}
 
     @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询日志年", tags = {"任务工时统计" } ,notes = "查询日志年")
-    @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/searchactionyear")
-	public ResponseEntity<Page<taskestimatestatsDTO>> searchActionYear(@RequestBody TaskEstimateStatsSearchContext context) {
-        taskestimatestatsRuntime.addAuthorityConditions(context,"READ");
-        Page<TaskEstimateStats> domains = taskestimatestatsService.searchActionYear(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(taskestimatestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"任务工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/fetchdefault")
 	public ResponseEntity<List<taskestimatestatsDTO>> fetchdefault(@RequestBody TaskEstimateStatsSearchContext context) {
@@ -190,16 +170,6 @@ public class taskestimatestatsResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"任务工时统计" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/searchdefault")
-	public ResponseEntity<Page<taskestimatestatsDTO>> searchDefault(@RequestBody TaskEstimateStatsSearchContext context) {
-        taskestimatestatsRuntime.addAuthorityConditions(context,"READ");
-        Page<TaskEstimateStats> domains = taskestimatestatsService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(taskestimatestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

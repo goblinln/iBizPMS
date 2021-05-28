@@ -236,15 +236,6 @@ public class IbzProBugActionResource {
 	}
 
     @PreAuthorize("@IbzProBugActionRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"Bug日志" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzprobugactions/searchdefault")
-	public ResponseEntity<Page<IbzProBugActionDTO>> searchDefault(@RequestBody IbzProBugActionSearchContext context) {
-        Page<IbzProBugAction> domains = ibzprobugactionService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzprobugactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@IbzProBugActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"Bug日志" } ,notes = "获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprobugactions/fetchtype")
 	public ResponseEntity<List<IbzProBugActionDTO>> fetchtype(@RequestBody IbzProBugActionSearchContext context) {
@@ -255,15 +246,6 @@ public class IbzProBugActionResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzProBugActionRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"Bug日志" } ,notes = "查询动态(根据类型过滤)")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzprobugactions/searchtype")
-	public ResponseEntity<Page<IbzProBugActionDTO>> searchType(@RequestBody IbzProBugActionSearchContext context) {
-        Page<IbzProBugAction> domains = ibzprobugactionService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzprobugactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

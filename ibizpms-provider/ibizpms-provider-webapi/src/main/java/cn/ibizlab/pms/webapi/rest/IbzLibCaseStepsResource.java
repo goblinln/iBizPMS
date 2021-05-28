@@ -140,17 +140,6 @@ public class IbzLibCaseStepsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据测试用例查询DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据测试用例查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzcases/{ibzcase_id}/ibzlibcasesteps/searchdefault")
-	public ResponseEntity<Page<IbzLibCaseStepsDTO>> searchIbzLibCaseStepsDefaultByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzLibCaseStepsSearchContext context) {
-        context.setN_case_eq(ibzcase_id);
-        ibzlibcasestepsRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzLibCaseSteps> domains = ibzlibcasestepsService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzlibcasestepsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
     @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据用例库建立用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库建立用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzlibcasesteps")
@@ -238,17 +227,6 @@ public class IbzLibCaseStepsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据用例库查询DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据用例库查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzlibcasesteps/searchdefault")
-	public ResponseEntity<Page<IbzLibCaseStepsDTO>> searchIbzLibCaseStepsDefaultByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibCaseStepsSearchContext context) {
-        
-        ibzlibcasestepsRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzLibCaseSteps> domains = ibzlibcasestepsService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzlibcasestepsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
     @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据用例库测试用例建立用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例建立用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps")
@@ -334,17 +312,6 @@ public class IbzLibCaseStepsResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据用例库测试用例查询DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据用例库测试用例查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/searchdefault")
-	public ResponseEntity<Page<IbzLibCaseStepsDTO>> searchIbzLibCaseStepsDefaultByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzLibCaseStepsSearchContext context) {
-        context.setN_case_eq(ibzcase_id);
-        ibzlibcasestepsRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzLibCaseSteps> domains = ibzlibcasestepsService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzlibcasestepsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 }
 

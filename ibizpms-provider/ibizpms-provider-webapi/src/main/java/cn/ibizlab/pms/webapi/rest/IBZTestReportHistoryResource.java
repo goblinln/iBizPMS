@@ -143,15 +143,6 @@ public class IBZTestReportHistoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IBZTestReportHistoryRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"报告操作历史" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibztestreporthistories/searchdefault")
-	public ResponseEntity<Page<IBZTestReportHistoryDTO>> searchDefault(@RequestBody IBZTestReportHistorySearchContext context) {
-        Page<IBZTestReportHistory> domains = ibztestreporthistoryService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibztestreporthistoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibztestreporthistories/{ibztestreporthistory_id}/{action}")

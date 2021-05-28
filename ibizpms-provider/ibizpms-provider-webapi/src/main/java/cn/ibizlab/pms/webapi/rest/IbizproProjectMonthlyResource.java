@@ -168,14 +168,6 @@ public class IbizproProjectMonthlyResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"项目月报" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibizproprojectmonthlies/searchdefault")
-	public ResponseEntity<Page<IbizproProjectMonthlyDTO>> searchDefault(@RequestBody IbizproProjectMonthlySearchContext context) {
-        Page<IbizproProjectMonthly> domains = ibizproprojectmonthlyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibizproprojectmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/{ibizproprojectmonthly_id}/{action}")

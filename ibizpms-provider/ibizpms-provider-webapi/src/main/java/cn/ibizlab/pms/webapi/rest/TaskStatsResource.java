@@ -142,14 +142,6 @@ public class TaskStatsResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"任务统计" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/taskstats/searchdefault")
-	public ResponseEntity<Page<TaskStatsDTO>> searchDefault(@RequestBody TaskStatsSearchContext context) {
-        Page<TaskStats> domains = taskstatsService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(taskstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取任务完成汇总表", tags = {"任务统计" } ,notes = "获取任务完成汇总表")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/fetchtaskfinishhuizong")
 	public ResponseEntity<List<TaskStatsDTO>> fetchtaskfinishhuizong(@RequestBody TaskStatsSearchContext context) {
@@ -162,14 +154,6 @@ public class TaskStatsResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询任务完成汇总表", tags = {"任务统计" } ,notes = "查询任务完成汇总表")
-    @RequestMapping(method= RequestMethod.POST , value="/taskstats/searchtaskfinishhuizong")
-	public ResponseEntity<Page<TaskStatsDTO>> searchTaskFinishHuiZong(@RequestBody TaskStatsSearchContext context) {
-        Page<TaskStats> domains = taskstatsService.searchTaskFinishHuiZong(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(taskstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取用户完成任务统计", tags = {"任务统计" } ,notes = "获取用户完成任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/fetchuserfinishtasksum")
 	public ResponseEntity<List<TaskStatsDTO>> fetchuserfinishtasksum(@RequestBody TaskStatsSearchContext context) {
@@ -180,14 +164,6 @@ public class TaskStatsResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询用户完成任务统计", tags = {"任务统计" } ,notes = "查询用户完成任务统计")
-    @RequestMapping(method= RequestMethod.POST , value="/taskstats/searchuserfinishtasksum")
-	public ResponseEntity<Page<TaskStatsDTO>> searchUserFinishTaskSum(@RequestBody TaskStatsSearchContext context) {
-        Page<TaskStats> domains = taskstatsService.searchUserFinishTaskSum(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(taskstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

@@ -66,16 +66,6 @@ public class ProjectTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询数据查询", tags = {"项目团队" } ,notes = "根据项目查询数据查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/searchtaskcntestimateconsumedleft")
-	public ResponseEntity<Page<ProjectTeamDTO>> searchProjectTeamTaskCntEstimateConsumedLeftByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamSearchContext context) {
-        context.setN_root_eq(project_id);
-        Page<ProjectTeam> domains = projectteamService.searchTaskCntEstimateConsumedLeft(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目建立项目团队", tags = {"项目团队" },  notes = "根据项目建立项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams")
@@ -130,16 +120,6 @@ public class ProjectTeamResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询指定团队", tags = {"项目团队" } ,notes = "根据项目查询指定团队")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/searchspecifyteam")
-	public ResponseEntity<Page<ProjectTeamDTO>> searchProjectTeamSpecifyTeamByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamSearchContext context) {
-        context.setN_root_eq(project_id);
-        Page<ProjectTeam> domains = projectteamService.searchSpecifyTeam(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目获取项目团队", tags = {"项目团队" },  notes = "根据项目获取项目团队")

@@ -145,16 +145,6 @@ public class DeptResource {
 	}
 
     @PreAuthorize("@DeptRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"部门" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/depts/searchdefault")
-	public ResponseEntity<Page<DeptDTO>> searchDefault(@RequestBody DeptSearchContext context) {
-        deptRuntime.addAuthorityConditions(context,"READ");
-        Page<Dept> domains = deptService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(deptMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@DeptRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根部门", tags = {"部门" } ,notes = "获取根部门")
     @RequestMapping(method= RequestMethod.POST , value="/depts/fetchroot")
 	public ResponseEntity<List<DeptDTO>> fetchroot(@RequestBody DeptSearchContext context) {
@@ -166,16 +156,6 @@ public class DeptResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DeptRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询根部门", tags = {"部门" } ,notes = "查询根部门")
-    @RequestMapping(method= RequestMethod.POST , value="/depts/searchroot")
-	public ResponseEntity<Page<DeptDTO>> searchRoot(@RequestBody DeptSearchContext context) {
-        deptRuntime.addAuthorityConditions(context,"READ");
-        Page<Dept> domains = deptService.searchRoot(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(deptMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

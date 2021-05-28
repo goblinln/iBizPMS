@@ -144,15 +144,6 @@ public class CaseStepResource {
 	}
 
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询当前测试步骤", tags = {"用例步骤" } ,notes = "查询当前测试步骤")
-    @RequestMapping(method= RequestMethod.POST , value="/casesteps/searchcurtest")
-	public ResponseEntity<Page<CaseStepDTO>> searchCurTest(@RequestBody CaseStepSearchContext context) {
-        Page<CaseStep> domains = casestepService.searchCurTest(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用例步骤" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchdefault")
 	public ResponseEntity<List<CaseStepDTO>> fetchdefault(@RequestBody CaseStepSearchContext context) {
@@ -163,15 +154,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"用例步骤" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/casesteps/searchdefault")
-	public ResponseEntity<Page<CaseStepDTO>> searchDefault(@RequestBody CaseStepSearchContext context) {
-        Page<CaseStep> domains = casestepService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
@@ -188,15 +170,6 @@ public class CaseStepResource {
 	}
 
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT1", tags = {"用例步骤" } ,notes = "查询DEFAULT1")
-    @RequestMapping(method= RequestMethod.POST , value="/casesteps/searchdefault1")
-	public ResponseEntity<Page<CaseStepDTO>> searchDefault1(@RequestBody CaseStepSearchContext context) {
-        Page<CaseStep> domains = casestepService.searchDefault1(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Mob", tags = {"用例步骤" } ,notes = "获取Mob")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchmob")
 	public ResponseEntity<List<CaseStepDTO>> fetchmob(@RequestBody CaseStepSearchContext context) {
@@ -207,15 +180,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询Mob", tags = {"用例步骤" } ,notes = "查询Mob")
-    @RequestMapping(method= RequestMethod.POST , value="/casesteps/searchmob")
-	public ResponseEntity<Page<CaseStepDTO>> searchMob(@RequestBody CaseStepSearchContext context) {
-        Page<CaseStep> domains = casestepService.searchMob(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
@@ -232,15 +196,6 @@ public class CaseStepResource {
 	}
 
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询版本", tags = {"用例步骤" } ,notes = "查询版本")
-    @RequestMapping(method= RequestMethod.POST , value="/casesteps/searchversion")
-	public ResponseEntity<Page<CaseStepDTO>> searchVersion(@RequestBody CaseStepSearchContext context) {
-        Page<CaseStep> domains = casestepService.searchVersion(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本1", tags = {"用例步骤" } ,notes = "获取版本1")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchversions")
 	public ResponseEntity<List<CaseStepDTO>> fetchversions(@RequestBody CaseStepSearchContext context) {
@@ -251,15 +206,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询版本1", tags = {"用例步骤" } ,notes = "查询版本1")
-    @RequestMapping(method= RequestMethod.POST , value="/casesteps/searchversions")
-	public ResponseEntity<Page<CaseStepDTO>> searchVersions(@RequestBody CaseStepSearchContext context) {
-        Page<CaseStep> domains = casestepService.searchVersions(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 
@@ -352,16 +298,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
-	@ApiOperation(value = "根据测试用例查询当前测试步骤", tags = {"用例步骤" } ,notes = "根据测试用例查询当前测试步骤")
-    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/casesteps/searchcurtest")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepCurTestByCase(@PathVariable("case_id") Long case_id, @RequestBody CaseStepSearchContext context) {
-        context.setN_case_eq(case_id);
-        Page<CaseStep> domains = casestepService.searchCurTest(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
 	@ApiOperation(value = "根据测试用例获取DEFAULT", tags = {"用例步骤" } ,notes = "根据测试用例获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/casesteps/fetchdefault")
@@ -374,16 +310,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
-	@ApiOperation(value = "根据测试用例查询DEFAULT", tags = {"用例步骤" } ,notes = "根据测试用例查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/casesteps/searchdefault")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepDefaultByCase(@PathVariable("case_id") Long case_id, @RequestBody CaseStepSearchContext context) {
-        context.setN_case_eq(case_id);
-        Page<CaseStep> domains = casestepService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
 	@ApiOperation(value = "根据测试用例获取DEFAULT1", tags = {"用例步骤" } ,notes = "根据测试用例获取DEFAULT1")
@@ -398,16 +324,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
-	@ApiOperation(value = "根据测试用例查询DEFAULT1", tags = {"用例步骤" } ,notes = "根据测试用例查询DEFAULT1")
-    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/casesteps/searchdefault1")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepDefault1ByCase(@PathVariable("case_id") Long case_id, @RequestBody CaseStepSearchContext context) {
-        context.setN_case_eq(case_id);
-        Page<CaseStep> domains = casestepService.searchDefault1(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
 	@ApiOperation(value = "根据测试用例获取Mob", tags = {"用例步骤" } ,notes = "根据测试用例获取Mob")
     @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/casesteps/fetchmob")
@@ -420,16 +336,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
-	@ApiOperation(value = "根据测试用例查询Mob", tags = {"用例步骤" } ,notes = "根据测试用例查询Mob")
-    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/casesteps/searchmob")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepMobByCase(@PathVariable("case_id") Long case_id, @RequestBody CaseStepSearchContext context) {
-        context.setN_case_eq(case_id);
-        Page<CaseStep> domains = casestepService.searchMob(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
 	@ApiOperation(value = "根据测试用例获取版本", tags = {"用例步骤" } ,notes = "根据测试用例获取版本")
@@ -444,16 +350,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
-	@ApiOperation(value = "根据测试用例查询版本", tags = {"用例步骤" } ,notes = "根据测试用例查询版本")
-    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/casesteps/searchversion")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepVersionByCase(@PathVariable("case_id") Long case_id, @RequestBody CaseStepSearchContext context) {
-        context.setN_case_eq(case_id);
-        Page<CaseStep> domains = casestepService.searchVersion(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
 	@ApiOperation(value = "根据测试用例获取版本1", tags = {"用例步骤" } ,notes = "根据测试用例获取版本1")
     @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/casesteps/fetchversions")
@@ -466,16 +362,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
-	@ApiOperation(value = "根据测试用例查询版本1", tags = {"用例步骤" } ,notes = "根据测试用例查询版本1")
-    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/casesteps/searchversions")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepVersionsByCase(@PathVariable("case_id") Long case_id, @RequestBody CaseStepSearchContext context) {
-        context.setN_case_eq(case_id);
-        Page<CaseStep> domains = casestepService.searchVersions(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
@@ -530,7 +416,7 @@ public class CaseStepResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'FAVORITE')")
-    @ApiOperation(value = "根据产品行为用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品行为", tags = {"用例步骤" },  notes = "根据产品行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/casesteps/{casestep_id}/casefavorite")
     public ResponseEntity<CaseStepDTO> caseFavoriteByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -542,7 +428,7 @@ public class CaseStepResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'NFAVORITE')")
-    @ApiOperation(value = "根据产品CaseNFavorite用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品CaseNFavorite", tags = {"用例步骤" },  notes = "根据产品CaseNFavorite")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/casesteps/{casestep_id}/casenfavorite")
     public ResponseEntity<CaseStepDTO> caseNFavoriteByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -561,7 +447,7 @@ public class CaseStepResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CONFIRMCHANGE')")
-    @ApiOperation(value = "根据产品确认用例变更用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品确认用例变更", tags = {"用例步骤" },  notes = "根据产品确认用例变更")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/casesteps/{casestep_id}/confirmchange")
     public ResponseEntity<CaseStepDTO> confirmChangeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -572,7 +458,7 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(casestepdto);
     }
 
-    @ApiOperation(value = "根据产品确认需求变更用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品确认需求变更", tags = {"用例步骤" },  notes = "根据产品确认需求变更")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/casesteps/{casestep_id}/confirmstorychange")
     public ResponseEntity<CaseStepDTO> confirmstorychangeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -584,7 +470,7 @@ public class CaseStepResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据测试单获取或者状态用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品根据测试单获取或者状态", tags = {"用例步骤" },  notes = "根据产品根据测试单获取或者状态")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/casesteps/{casestep_id}/getbytesttask")
     public ResponseEntity<CaseStepDTO> getByTestTaskByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -596,7 +482,7 @@ public class CaseStepResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CASERESULT')")
-    @ApiOperation(value = "根据产品获取测试单执行结果用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品获取测试单执行结果", tags = {"用例步骤" },  notes = "根据产品获取测试单执行结果")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/casesteps/{casestep_id}/gettesttaskcntrun")
     public ResponseEntity<CaseStepDTO> getTestTaskCntRunByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -607,7 +493,7 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(casestepdto);
     }
 
-    @ApiOperation(value = "根据产品测试单关联测试用例用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品测试单关联测试用例", tags = {"用例步骤" },  notes = "根据产品测试单关联测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/casesteps/{casestep_id}/linkcase")
     public ResponseEntity<CaseStepDTO> linkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -619,7 +505,7 @@ public class CaseStepResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'STORYLINK')")
-    @ApiOperation(value = "根据产品移动端关联需求用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品移动端关联需求", tags = {"用例步骤" },  notes = "根据产品移动端关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/casesteps/{casestep_id}/moblinkcase")
     public ResponseEntity<CaseStepDTO> mobLinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -631,7 +517,7 @@ public class CaseStepResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'RUNCASE')")
-    @ApiOperation(value = "根据产品执行测试用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品执行测试", tags = {"用例步骤" },  notes = "根据产品执行测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/casesteps/{casestep_id}/runcase")
     public ResponseEntity<CaseStepDTO> runCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -643,7 +529,7 @@ public class CaseStepResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'RUNCASE')")
-    @ApiOperation(value = "根据产品runCases用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品runCases", tags = {"用例步骤" },  notes = "根据产品runCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/casesteps/{casestep_id}/runcases")
     public ResponseEntity<CaseStepDTO> runCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -677,7 +563,7 @@ public class CaseStepResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'TESRUNCASE')")
-    @ApiOperation(value = "根据产品执行测试用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品执行测试", tags = {"用例步骤" },  notes = "根据产品执行测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/casesteps/{casestep_id}/testruncase")
     public ResponseEntity<CaseStepDTO> testRunCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -689,7 +575,7 @@ public class CaseStepResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'TESRUNCASE')")
-    @ApiOperation(value = "根据产品testRunCases用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品testRunCases", tags = {"用例步骤" },  notes = "根据产品testRunCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/casesteps/{casestep_id}/testruncases")
     public ResponseEntity<CaseStepDTO> testRunCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -700,7 +586,7 @@ public class CaseStepResource {
         return ResponseEntity.status(HttpStatus.OK).body(casestepdto);
     }
 
-    @ApiOperation(value = "根据产品套件关联用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品套件关联", tags = {"用例步骤" },  notes = "根据产品套件关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/casesteps/{casestep_id}/testsuitelinkcase")
     public ResponseEntity<CaseStepDTO> testsuitelinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -712,7 +598,7 @@ public class CaseStepResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UNLINKCASE')")
-    @ApiOperation(value = "根据产品移除用例用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品移除用例", tags = {"用例步骤" },  notes = "根据产品移除用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/casesteps/{casestep_id}/unlinkcase")
     public ResponseEntity<CaseStepDTO> unlinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -724,7 +610,7 @@ public class CaseStepResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UNLINKCASE')")
-    @ApiOperation(value = "根据产品unlinkCases用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品unlinkCases", tags = {"用例步骤" },  notes = "根据产品unlinkCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/casesteps/{casestep_id}/unlinkcases")
     public ResponseEntity<CaseStepDTO> unlinkCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -736,7 +622,7 @@ public class CaseStepResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UNLINKSUITCASE')")
-    @ApiOperation(value = "根据产品移除用例用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品移除用例", tags = {"用例步骤" },  notes = "根据产品移除用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/casesteps/{casestep_id}/unlinksuitecase")
     public ResponseEntity<CaseStepDTO> unlinkSuiteCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -748,7 +634,7 @@ public class CaseStepResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UNLINKSUITCASE')")
-    @ApiOperation(value = "根据产品unlinkSuiteCases用例步骤", tags = {"用例步骤" },  notes = "根据产品用例步骤")
+    @ApiOperation(value = "根据产品unlinkSuiteCases", tags = {"用例步骤" },  notes = "根据产品unlinkSuiteCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/casesteps/{casestep_id}/unlinksuitecases")
     public ResponseEntity<CaseStepDTO> unlinkSuiteCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -772,16 +658,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询批量新建用例", tags = {"用例步骤" } ,notes = "根据产品查询批量新建用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchbatchnew")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepBatchNewByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchBatchNew(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取累计创建的用例", tags = {"用例步骤" } ,notes = "根据产品获取累计创建的用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/fetchcuropenedcase")
@@ -794,16 +670,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询累计创建的用例", tags = {"用例步骤" } ,notes = "根据产品查询累计创建的用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchcuropenedcase")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepCurOpenedCaseByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchCurOpenedCase(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取套件关联用例", tags = {"用例步骤" } ,notes = "根据产品获取套件关联用例")
@@ -818,16 +684,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询套件关联用例", tags = {"用例步骤" } ,notes = "根据产品查询套件关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchcursuite")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepCurSuiteByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchCurSuite(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试单关联用例", tags = {"用例步骤" } ,notes = "根据产品获取测试单关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/fetchcurtesttask")
@@ -840,16 +696,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试单关联用例", tags = {"用例步骤" } ,notes = "根据产品查询测试单关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchcurtesttask")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepCurTestTaskByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchCurTestTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"用例步骤" } ,notes = "根据产品获取DEFAULT")
@@ -864,16 +710,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"用例步骤" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchdefault")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取ES批量的导入", tags = {"用例步骤" } ,notes = "根据产品获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/fetchesbulk")
@@ -886,16 +722,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询ES批量的导入", tags = {"用例步骤" } ,notes = "根据产品查询ES批量的导入")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchesbulk")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepESBulkByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchESBulk(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联用例", tags = {"用例步骤" } ,notes = "根据产品获取测试报告关联用例")
@@ -910,16 +736,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联用例", tags = {"用例步骤" } ,notes = "根据产品查询测试报告关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchmodulereportcase")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepModuleRePortCaseByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchModuleRePortCase(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联-按模块-条目", tags = {"用例步骤" } ,notes = "根据产品获取测试报告关联-按模块-条目")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/fetchmodulereportcaseentry")
@@ -932,16 +748,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联-按模块-条目", tags = {"用例步骤" } ,notes = "根据产品查询测试报告关联-按模块-条目")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchmodulereportcaseentry")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepModuleRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchModuleRePortCaseEntry(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目报告关联-按模块", tags = {"用例步骤" } ,notes = "根据产品获取项目报告关联-按模块")
@@ -956,16 +762,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目报告关联-按模块", tags = {"用例步骤" } ,notes = "根据产品查询项目报告关联-按模块")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchmodulereportcase_project")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepModuleRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchModuleRePortCase_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取我的收藏", tags = {"用例步骤" } ,notes = "根据产品获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/fetchmyfavorites")
@@ -978,16 +774,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询我的收藏", tags = {"用例步骤" } ,notes = "根据产品查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchmyfavorites")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepMyFavoritesByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchMyFavorites(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取套件关联用例", tags = {"用例步骤" } ,notes = "根据产品获取套件关联用例")
@@ -1002,16 +788,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询套件关联用例", tags = {"用例步骤" } ,notes = "根据产品查询套件关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchnotcurtestsuite")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepNotCurTestSuiteByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchNotCurTestSuite(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试单关联用例", tags = {"用例步骤" } ,notes = "根据产品获取测试单关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/fetchnotcurtesttask")
@@ -1024,16 +800,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试单关联用例", tags = {"用例步骤" } ,notes = "根据产品查询测试单关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchnotcurtesttask")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepNotCurTestTaskByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchNotCurTestTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试单关联用例（项目关联）", tags = {"用例步骤" } ,notes = "根据产品获取测试单关联用例（项目关联）")
@@ -1048,16 +814,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试单关联用例（项目关联）", tags = {"用例步骤" } ,notes = "根据产品查询测试单关联用例（项目关联）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchnotcurtesttaskproject")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepNotCurTestTaskProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchNotCurTestTaskProject(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联用例", tags = {"用例步骤" } ,notes = "根据产品获取测试报告关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/fetchreportcase")
@@ -1070,16 +826,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联用例", tags = {"用例步骤" } ,notes = "根据产品查询测试报告关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchreportcase")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepRePortCaseByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchRePortCase(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联用例-条目", tags = {"用例步骤" } ,notes = "根据产品获取测试报告关联用例-条目")
@@ -1094,16 +840,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联用例-条目", tags = {"用例步骤" } ,notes = "根据产品查询测试报告关联用例-条目")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchreportcaseentry")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchRePortCaseEntry(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目报告关联用例-关联用例", tags = {"用例步骤" } ,notes = "根据产品获取项目报告关联用例-关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/fetchreportcase_project")
@@ -1116,16 +852,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目报告关联用例-关联用例", tags = {"用例步骤" } ,notes = "根据产品查询项目报告关联用例-关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchreportcase_project")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchRePortCase_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联-执行人", tags = {"用例步骤" } ,notes = "根据产品获取测试报告关联-执行人")
@@ -1140,16 +866,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联-执行人", tags = {"用例步骤" } ,notes = "根据产品查询测试报告关联-执行人")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchrunerreportcase")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepRunERRePortCaseByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchRunERRePortCase(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联-执行人-条目", tags = {"用例步骤" } ,notes = "根据产品获取测试报告关联-执行人-条目")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/fetchrunerreportcaseentry")
@@ -1162,16 +878,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联-执行人-条目", tags = {"用例步骤" } ,notes = "根据产品查询测试报告关联-执行人-条目")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchrunerreportcaseentry")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepRunERRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchRunERRePortCaseEntry(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目报告关联-执行人", tags = {"用例步骤" } ,notes = "根据产品获取项目报告关联-执行人")
@@ -1186,16 +892,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目报告关联-执行人", tags = {"用例步骤" } ,notes = "根据产品查询项目报告关联-执行人")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchrunerreportcase_project")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepRunERRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchRunERRePortCase_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联用例", tags = {"用例步骤" } ,notes = "根据产品获取测试报告关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/fetchrunreportcase")
@@ -1208,16 +904,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联用例", tags = {"用例步骤" } ,notes = "根据产品查询测试报告关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchrunreportcase")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepRunRePortCaseByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchRunRePortCase(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联--执行结果条目", tags = {"用例步骤" } ,notes = "根据产品获取测试报告关联--执行结果条目")
@@ -1232,16 +918,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联--执行结果条目", tags = {"用例步骤" } ,notes = "根据产品查询测试报告关联--执行结果条目")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchrunreportcaseentry")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepRunRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchRunRePortCaseEntry(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目报告关联-执行结果", tags = {"用例步骤" } ,notes = "根据产品获取项目报告关联-执行结果")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/fetchrunreportcase_project")
@@ -1254,16 +930,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目报告关联-执行结果", tags = {"用例步骤" } ,notes = "根据产品查询项目报告关联-执行结果")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/casesteps/searchrunreportcase_project")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepRunRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseStepSearchContext context) {
-        
-        Page<CaseStep> domains = casestepService.searchRunRePortCase_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
@@ -1347,16 +1013,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试用例查询当前测试步骤", tags = {"用例步骤" } ,notes = "根据产品测试用例查询当前测试步骤")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/casesteps/searchcurtest")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepCurTestByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseStepSearchContext context) {
-        context.setN_case_eq(case_id);
-        Page<CaseStep> domains = casestepService.searchCurTest(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试用例获取DEFAULT", tags = {"用例步骤" } ,notes = "根据产品测试用例获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/casesteps/fetchdefault")
@@ -1369,16 +1025,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试用例查询DEFAULT", tags = {"用例步骤" } ,notes = "根据产品测试用例查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/casesteps/searchdefault")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepDefaultByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseStepSearchContext context) {
-        context.setN_case_eq(case_id);
-        Page<CaseStep> domains = casestepService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试用例获取DEFAULT1", tags = {"用例步骤" } ,notes = "根据产品测试用例获取DEFAULT1")
@@ -1393,16 +1039,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试用例查询DEFAULT1", tags = {"用例步骤" } ,notes = "根据产品测试用例查询DEFAULT1")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/casesteps/searchdefault1")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepDefault1ByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseStepSearchContext context) {
-        context.setN_case_eq(case_id);
-        Page<CaseStep> domains = casestepService.searchDefault1(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试用例获取Mob", tags = {"用例步骤" } ,notes = "根据产品测试用例获取Mob")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/casesteps/fetchmob")
@@ -1415,16 +1051,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试用例查询Mob", tags = {"用例步骤" } ,notes = "根据产品测试用例查询Mob")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/casesteps/searchmob")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepMobByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseStepSearchContext context) {
-        context.setN_case_eq(case_id);
-        Page<CaseStep> domains = casestepService.searchMob(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试用例获取版本", tags = {"用例步骤" } ,notes = "根据产品测试用例获取版本")
@@ -1439,16 +1065,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试用例查询版本", tags = {"用例步骤" } ,notes = "根据产品测试用例查询版本")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/casesteps/searchversion")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepVersionByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseStepSearchContext context) {
-        context.setN_case_eq(case_id);
-        Page<CaseStep> domains = casestepService.searchVersion(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试用例获取版本1", tags = {"用例步骤" } ,notes = "根据产品测试用例获取版本1")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/casesteps/fetchversions")
@@ -1461,16 +1077,6 @@ public class CaseStepResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试用例查询版本1", tags = {"用例步骤" } ,notes = "根据产品测试用例查询版本1")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/casesteps/searchversions")
-	public ResponseEntity<Page<CaseStepDTO>> searchCaseStepVersionsByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseStepSearchContext context) {
-        context.setN_case_eq(case_id);
-        Page<CaseStep> domains = casestepService.searchVersions(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 }
 

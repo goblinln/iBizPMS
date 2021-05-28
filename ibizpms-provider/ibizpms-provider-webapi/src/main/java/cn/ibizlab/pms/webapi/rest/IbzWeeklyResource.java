@@ -225,14 +225,6 @@ public class IbzWeeklyResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"周报" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/searchdefault")
-	public ResponseEntity<Page<IbzWeeklyDTO>> searchDefault(@RequestBody IbzWeeklySearchContext context) {
-        Page<IbzWeekly> domains = ibzweeklyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzweeklyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取我的周报", tags = {"周报" } ,notes = "获取我的周报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchmynotsubmit")
 	public ResponseEntity<List<IbzWeeklyDTO>> fetchmynotsubmit(@RequestBody IbzWeeklySearchContext context) {
@@ -243,14 +235,6 @@ public class IbzWeeklyResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询我的周报", tags = {"周报" } ,notes = "查询我的周报")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/searchmynotsubmit")
-	public ResponseEntity<Page<IbzWeeklyDTO>> searchMyNotSubmit(@RequestBody IbzWeeklySearchContext context) {
-        Page<IbzWeekly> domains = ibzweeklyService.searchMyNotSubmit(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzweeklyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 	@ApiOperation(value = "获取我收到的周报", tags = {"周报" } ,notes = "获取我收到的周报")
@@ -265,14 +249,6 @@ public class IbzWeeklyResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询我收到的周报", tags = {"周报" } ,notes = "查询我收到的周报")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/searchmyweekly")
-	public ResponseEntity<Page<IbzWeeklyDTO>> searchMyWeekly(@RequestBody IbzWeeklySearchContext context) {
-        Page<IbzWeekly> domains = ibzweeklyService.searchMyWeekly(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzweeklyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取产品团队成员周报", tags = {"周报" } ,notes = "获取产品团队成员周报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchproductteammemberweekly")
 	public ResponseEntity<List<IbzWeeklyDTO>> fetchproductteammemberweekly(@RequestBody IbzWeeklySearchContext context) {
@@ -285,14 +261,6 @@ public class IbzWeeklyResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询产品团队成员周报", tags = {"周报" } ,notes = "查询产品团队成员周报")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/searchproductteammemberweekly")
-	public ResponseEntity<Page<IbzWeeklyDTO>> searchProductTeamMemberWeekly(@RequestBody IbzWeeklySearchContext context) {
-        Page<IbzWeekly> domains = ibzweeklyService.searchProductTeamMemberWeekly(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzweeklyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取项目周报", tags = {"周报" } ,notes = "获取项目周报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchprojectweekly")
 	public ResponseEntity<List<IbzWeeklyDTO>> fetchprojectweekly(@RequestBody IbzWeeklySearchContext context) {
@@ -303,14 +271,6 @@ public class IbzWeeklyResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询项目周报", tags = {"周报" } ,notes = "查询项目周报")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/searchprojectweekly")
-	public ResponseEntity<Page<IbzWeeklyDTO>> searchProjectWeekly(@RequestBody IbzWeeklySearchContext context) {
-        Page<IbzWeekly> domains = ibzweeklyService.searchProjectWeekly(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzweeklyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

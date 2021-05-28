@@ -66,18 +66,8 @@ public class ProjectBurnResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询燃尽图预计（含周末）", tags = {"burn" } ,notes = "根据项目查询燃尽图预计（含周末）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectburns/searchestimateandleft")
-	public ResponseEntity<Page<ProjectBurnDTO>> searchProjectBurnESTIMATEANDLEFTByProject(@PathVariable("project_id") Long project_id, @RequestBody BurnSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Burn> domains = burnService.searchESTIMATEANDLEFT(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectburnMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
-    @ApiOperation(value = "根据项目更新燃尽图burn", tags = {"burn" },  notes = "根据项目burn")
+    @ApiOperation(value = "根据项目更新燃尽图", tags = {"burn" },  notes = "根据项目更新燃尽图")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectburns/{projectburn_id}/computeburn")
     public ResponseEntity<ProjectBurnDTO> computeBurnByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectburn_id") String projectburn_id, @RequestBody ProjectBurnDTO projectburndto) {
         Burn domain = projectburnMapping.toDomain(projectburndto);

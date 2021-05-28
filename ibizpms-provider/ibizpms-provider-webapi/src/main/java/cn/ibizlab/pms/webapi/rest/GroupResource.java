@@ -144,16 +144,6 @@ public class GroupResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@GroupRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"群组" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/groups/searchdefault")
-	public ResponseEntity<Page<GroupDTO>> searchDefault(@RequestBody GroupSearchContext context) {
-        groupRuntime.addAuthorityConditions(context,"READ");
-        Page<Group> domains = groupService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(groupMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/groups/{group_id}/{action}")

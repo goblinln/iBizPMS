@@ -66,15 +66,5 @@ public class ProjectTaskReportResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"任务" } ,notes = "根据项目查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projecttaskreports/searchdefault")
-	public ResponseEntity<Page<ProjectTaskReportDTO>> searchProjectTaskReportDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Task> domains = taskService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projecttaskreportMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 }
 

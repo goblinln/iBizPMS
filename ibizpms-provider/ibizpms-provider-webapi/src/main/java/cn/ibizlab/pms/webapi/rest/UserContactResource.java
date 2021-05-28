@@ -134,14 +134,6 @@ public class UserContactResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询抄送联系人", tags = {"用户联系方式" } ,notes = "查询抄送联系人")
-    @RequestMapping(method= RequestMethod.POST , value="/usercontacts/searchcurusercontact")
-	public ResponseEntity<Page<UserContactDTO>> searchCurUSERCONTACT(@RequestBody UserContactSearchContext context) {
-        Page<UserContact> domains = usercontactService.searchCurUSERCONTACT(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(usercontactMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户联系方式" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchdefault")
 	public ResponseEntity<List<UserContactDTO>> fetchdefault(@RequestBody UserContactSearchContext context) {
@@ -154,14 +146,6 @@ public class UserContactResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询DEFAULT", tags = {"用户联系方式" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/usercontacts/searchdefault")
-	public ResponseEntity<Page<UserContactDTO>> searchDefault(@RequestBody UserContactSearchContext context) {
-        Page<UserContact> domains = usercontactService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(usercontactMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取我的联系人", tags = {"用户联系方式" } ,notes = "获取我的联系人")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchmyusercontact")
 	public ResponseEntity<List<UserContactDTO>> fetchmyusercontact(@RequestBody UserContactSearchContext context) {
@@ -172,14 +156,6 @@ public class UserContactResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询我的联系人", tags = {"用户联系方式" } ,notes = "查询我的联系人")
-    @RequestMapping(method= RequestMethod.POST , value="/usercontacts/searchmyusercontact")
-	public ResponseEntity<Page<UserContactDTO>> searchMyUSERCONTACT(@RequestBody UserContactSearchContext context) {
-        Page<UserContact> domains = usercontactService.searchMyUSERCONTACT(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(usercontactMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

@@ -238,15 +238,6 @@ public class IBZCaseActionResource {
 	}
 
     @PreAuthorize("@IBZCaseActionRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"测试用例日志" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzcaseactions/searchdefault")
-	public ResponseEntity<Page<IBZCaseActionDTO>> searchDefault(@RequestBody IBZCaseActionSearchContext context) {
-        Page<IBZCaseAction> domains = ibzcaseactionService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzcaseactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@IBZCaseActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"测试用例日志" } ,notes = "获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/ibzcaseactions/fetchtype")
 	public ResponseEntity<List<IBZCaseActionDTO>> fetchtype(@RequestBody IBZCaseActionSearchContext context) {
@@ -257,15 +248,6 @@ public class IBZCaseActionResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IBZCaseActionRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"测试用例日志" } ,notes = "查询动态(根据类型过滤)")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzcaseactions/searchtype")
-	public ResponseEntity<Page<IBZCaseActionDTO>> searchType(@RequestBody IBZCaseActionSearchContext context) {
-        Page<IBZCaseAction> domains = ibzcaseactionService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzcaseactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

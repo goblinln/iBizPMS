@@ -150,16 +150,6 @@ public class IbzCaseResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzCaseRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"测试用例" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzcases/searchdefault")
-	public ResponseEntity<Page<IbzCaseDTO>> searchDefault(@RequestBody IbzCaseSearchContext context) {
-        ibzcaseRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzCase> domains = ibzcaseService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzcaseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzcases/{ibzcase_id}/{action}")
@@ -254,17 +244,6 @@ public class IbzCaseResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzCaseRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据用例库查询DEFAULT", tags = {"测试用例" } ,notes = "根据用例库查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzcases/searchdefault")
-	public ResponseEntity<Page<IbzCaseDTO>> searchIbzCaseDefaultByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzCaseSearchContext context) {
-        context.setN_lib_eq(ibzlib_id);
-        ibzcaseRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzCase> domains = ibzcaseService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzcaseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 }
 

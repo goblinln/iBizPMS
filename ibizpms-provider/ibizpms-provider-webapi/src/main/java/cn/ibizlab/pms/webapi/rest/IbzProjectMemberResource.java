@@ -143,16 +143,6 @@ public class IbzProjectMemberResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"项目相关成员" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzprojectmembers/searchdefault")
-	public ResponseEntity<Page<IbzProjectMemberDTO>> searchDefault(@RequestBody IbzProjectMemberSearchContext context) {
-        ibzprojectmemberRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzProjectMember> domains = ibzprojectmemberService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzprojectmemberMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzprojectmembers/{ibzprojectmember_id}/{action}")

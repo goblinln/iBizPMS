@@ -158,16 +158,6 @@ public class UserTplResource {
 	}
 
     @PreAuthorize("@UserTplRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"用户模板" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/usertpls/searchdefault")
-	public ResponseEntity<Page<UserTplDTO>> searchDefault(@RequestBody UserTplSearchContext context) {
-        usertplRuntime.addAuthorityConditions(context,"READ");
-        Page<UserTpl> domains = usertplService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(usertplMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@UserTplRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的模板", tags = {"用户模板" } ,notes = "获取我的模板")
     @RequestMapping(method= RequestMethod.POST , value="/usertpls/fetchmyusertpl")
 	public ResponseEntity<List<UserTplDTO>> fetchmyusertpl(@RequestBody UserTplSearchContext context) {
@@ -179,16 +169,6 @@ public class UserTplResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@UserTplRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询我的模板", tags = {"用户模板" } ,notes = "查询我的模板")
-    @RequestMapping(method= RequestMethod.POST , value="/usertpls/searchmyusertpl")
-	public ResponseEntity<Page<UserTplDTO>> searchMyUserTpl(@RequestBody UserTplSearchContext context) {
-        usertplRuntime.addAuthorityConditions(context,"READ");
-        Page<UserTpl> domains = usertplService.searchMyUserTpl(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(usertplMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

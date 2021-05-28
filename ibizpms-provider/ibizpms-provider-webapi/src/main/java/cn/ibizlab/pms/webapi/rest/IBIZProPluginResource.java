@@ -122,14 +122,6 @@ public class IBIZProPluginResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"系统插件" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibizproplugins/searchdefault")
-	public ResponseEntity<Page<IBIZProPluginDTO>> searchDefault(@RequestBody IBIZProPluginSearchContext context) {
-        Page<IBIZProPlugin> domains = ibizpropluginService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibizpropluginMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/{ibizproplugin_id}/{action}")

@@ -143,15 +143,6 @@ public class IbzProMonthlyHistoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzProMonthlyHistoryRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"月报操作历史" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzpromonthlyhistories/searchdefault")
-	public ResponseEntity<Page<IbzProMonthlyHistoryDTO>> searchDefault(@RequestBody IbzProMonthlyHistorySearchContext context) {
-        Page<IbzProMonthlyHistory> domains = ibzpromonthlyhistoryService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzpromonthlyhistoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyhistories/{ibzpromonthlyhistory_id}/{action}")

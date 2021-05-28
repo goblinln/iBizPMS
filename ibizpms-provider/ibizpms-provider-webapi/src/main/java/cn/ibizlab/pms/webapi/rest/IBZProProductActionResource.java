@@ -238,15 +238,6 @@ public class IBZProProductActionResource {
 	}
 
     @PreAuthorize("@IBZProProductActionRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"产品日志" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzproproductactions/searchdefault")
-	public ResponseEntity<Page<IBZProProductActionDTO>> searchDefault(@RequestBody IBZProProductActionSearchContext context) {
-        Page<IBZProProductAction> domains = ibzproproductactionService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzproproductactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@IBZProProductActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"产品日志" } ,notes = "获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductactions/fetchmobtype")
 	public ResponseEntity<List<IBZProProductActionDTO>> fetchmobtype(@RequestBody IBZProProductActionSearchContext context) {
@@ -257,15 +248,6 @@ public class IBZProProductActionResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IBZProProductActionRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"产品日志" } ,notes = "查询动态(根据类型过滤)")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzproproductactions/searchmobtype")
-	public ResponseEntity<Page<IBZProProductActionDTO>> searchMobType(@RequestBody IBZProProductActionSearchContext context) {
-        Page<IBZProProductAction> domains = ibzproproductactionService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzproproductactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@IBZProProductActionRuntime.quickTest('READ')")
@@ -282,15 +264,6 @@ public class IBZProProductActionResource {
 	}
 
     @PreAuthorize("@IBZProProductActionRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询产品动态(产品相关所有)", tags = {"产品日志" } ,notes = "查询产品动态(产品相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzproproductactions/searchproducttrends")
-	public ResponseEntity<Page<IBZProProductActionDTO>> searchProductTrends(@RequestBody IBZProProductActionSearchContext context) {
-        Page<IBZProProductAction> domains = ibzproproductactionService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzproproductactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@IBZProProductActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"产品日志" } ,notes = "获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductactions/fetchtype")
 	public ResponseEntity<List<IBZProProductActionDTO>> fetchtype(@RequestBody IBZProProductActionSearchContext context) {
@@ -301,15 +274,6 @@ public class IBZProProductActionResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IBZProProductActionRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"产品日志" } ,notes = "查询动态(根据类型过滤)")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzproproductactions/searchtype")
-	public ResponseEntity<Page<IBZProProductActionDTO>> searchType(@RequestBody IBZProProductActionSearchContext context) {
-        Page<IBZProProductAction> domains = ibzproproductactionService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzproproductactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

@@ -145,16 +145,6 @@ public class IbzLibModuleResource {
 	}
 
     @PreAuthorize("@IbzLibModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"用例库模块" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzlibmodules/searchdefault")
-	public ResponseEntity<Page<IbzLibModuleDTO>> searchDefault(@RequestBody IbzLibModuleSearchContext context) {
-        ibzlibmoduleRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzLibModule> domains = ibzlibmoduleService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzlibmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@IbzLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取无枝叶", tags = {"用例库模块" } ,notes = "获取无枝叶")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibmodules/fetchroot_nobranch")
 	public ResponseEntity<List<IbzLibModuleDTO>> fetchroot_nobranch(@RequestBody IbzLibModuleSearchContext context) {
@@ -166,16 +156,6 @@ public class IbzLibModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzLibModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询无枝叶", tags = {"用例库模块" } ,notes = "查询无枝叶")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzlibmodules/searchroot_nobranch")
-	public ResponseEntity<Page<IbzLibModuleDTO>> searchRoot_NoBranch(@RequestBody IbzLibModuleSearchContext context) {
-        ibzlibmoduleRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzLibModule> domains = ibzlibmoduleService.searchRoot_NoBranch(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzlibmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 
@@ -273,17 +253,6 @@ public class IbzLibModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzLibModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据用例库查询DEFAULT", tags = {"用例库模块" } ,notes = "根据用例库查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzlibmodules/searchdefault")
-	public ResponseEntity<Page<IbzLibModuleDTO>> searchIbzLibModuleDefaultByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibModuleSearchContext context) {
-        context.setN_root_eq(ibzlib_id);
-        ibzlibmoduleRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzLibModule> domains = ibzlibmoduleService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzlibmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据用例库获取无枝叶", tags = {"用例库模块" } ,notes = "根据用例库获取无枝叶")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzlibmodules/fetchroot_nobranch")
@@ -297,17 +266,6 @@ public class IbzLibModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzLibModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据用例库查询无枝叶", tags = {"用例库模块" } ,notes = "根据用例库查询无枝叶")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzlibmodules/searchroot_nobranch")
-	public ResponseEntity<Page<IbzLibModuleDTO>> searchIbzLibModuleRoot_NoBranchByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibModuleSearchContext context) {
-        context.setN_root_eq(ibzlib_id);
-        ibzlibmoduleRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzLibModule> domains = ibzlibmoduleService.searchRoot_NoBranch(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzlibmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 }
 

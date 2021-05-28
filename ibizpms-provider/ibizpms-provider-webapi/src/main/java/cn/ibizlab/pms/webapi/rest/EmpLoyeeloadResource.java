@@ -142,14 +142,6 @@ public class EmpLoyeeloadResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"员工负载表" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/employeeloads/searchdefault")
-	public ResponseEntity<Page<EmpLoyeeloadDTO>> searchDefault(@RequestBody EmpLoyeeloadSearchContext context) {
-        Page<EmpLoyeeload> domains = employeeloadService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(employeeloadMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取获取员工负载表", tags = {"员工负载表" } ,notes = "获取获取员工负载表")
     @RequestMapping(method= RequestMethod.POST , value="/employeeloads/fetchgetwoerkload")
 	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchgetwoerkload(@RequestBody EmpLoyeeloadSearchContext context) {
@@ -160,14 +152,6 @@ public class EmpLoyeeloadResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询获取员工负载表", tags = {"员工负载表" } ,notes = "查询获取员工负载表")
-    @RequestMapping(method= RequestMethod.POST , value="/employeeloads/searchgetwoerkload")
-	public ResponseEntity<Page<EmpLoyeeloadDTO>> searchGETWOERKLOAD(@RequestBody EmpLoyeeloadSearchContext context) {
-        Page<EmpLoyeeload> domains = employeeloadService.searchGETWOERKLOAD(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(employeeloadMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

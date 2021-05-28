@@ -143,14 +143,6 @@ public class IbzAgentResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"代理" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzagents/searchdefault")
-	public ResponseEntity<Page<IbzAgentDTO>> searchDefault(@RequestBody IbzAgentSearchContext context) {
-        Page<IbzAgent> domains = ibzagentService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzagentMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzagents/{ibzagent_id}/{action}")

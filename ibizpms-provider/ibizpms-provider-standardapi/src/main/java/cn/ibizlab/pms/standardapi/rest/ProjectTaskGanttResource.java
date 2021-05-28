@@ -65,15 +65,5 @@ public class ProjectTaskGanttResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(domains.getContent());
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询任务类型分组", tags = {"任务" } ,notes = "根据项目查询任务类型分组")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projecttaskgantts/searchtypegroup")
-	public ResponseEntity<Page<Map>> searchProjectTaskGanttTypeGroupByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Map> domains = taskService.searchTypeGroup(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
-	}
 }
 

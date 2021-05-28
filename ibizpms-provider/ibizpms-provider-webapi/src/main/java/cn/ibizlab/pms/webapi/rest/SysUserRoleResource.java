@@ -122,14 +122,6 @@ public class SysUserRoleResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"用户角色关系" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/sysuserroles/searchdefault")
-	public ResponseEntity<Page<SysUserRoleDTO>> searchDefault(@RequestBody SysUserRoleSearchContext context) {
-        Page<SysUserRole> domains = sysuserroleService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(sysuserroleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/sysuserroles/{sysuserrole_id}/{action}")

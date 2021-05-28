@@ -171,15 +171,6 @@ public class ProjectModuleResource {
 	}
 
     @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询BYPATH", tags = {"任务模块" } ,notes = "查询BYPATH")
-    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/searchbypath")
-	public ResponseEntity<Page<ProjectModuleDTO>> searchByPath(@RequestBody ProjectModuleSearchContext context) {
-        Page<ProjectModule> domains = projectmoduleService.searchByPath(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"任务模块" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchdefault")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchdefault(@RequestBody ProjectModuleSearchContext context) {
@@ -190,15 +181,6 @@ public class ProjectModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"任务模块" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/searchdefault")
-	public ResponseEntity<Page<ProjectModuleDTO>> searchDefault(@RequestBody ProjectModuleSearchContext context) {
-        Page<ProjectModule> domains = projectmoduleService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
@@ -215,15 +197,6 @@ public class ProjectModuleResource {
 	}
 
     @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询父模块", tags = {"任务模块" } ,notes = "查询父模块")
-    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/searchparentmodule")
-	public ResponseEntity<Page<ProjectModuleDTO>> searchParentModule(@RequestBody ProjectModuleSearchContext context) {
-        Page<ProjectModule> domains = projectmoduleService.searchParentModule(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块", tags = {"任务模块" } ,notes = "获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchroot")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchroot(@RequestBody ProjectModuleSearchContext context) {
@@ -234,15 +207,6 @@ public class ProjectModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询根模块", tags = {"任务模块" } ,notes = "查询根模块")
-    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/searchroot")
-	public ResponseEntity<Page<ProjectModuleDTO>> searchRoot(@RequestBody ProjectModuleSearchContext context) {
-        Page<ProjectModule> domains = projectmoduleService.searchRoot(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
@@ -259,15 +223,6 @@ public class ProjectModuleResource {
 	}
 
     @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询根模块_无分支", tags = {"任务模块" } ,notes = "查询根模块_无分支")
-    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/searchroot_nobranch")
-	public ResponseEntity<Page<ProjectModuleDTO>> searchRoot_NoBranch(@RequestBody ProjectModuleSearchContext context) {
-        Page<ProjectModule> domains = projectmoduleService.searchRoot_NoBranch(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块", tags = {"任务模块" } ,notes = "获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchroot_task")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchroot_task(@RequestBody ProjectModuleSearchContext context) {
@@ -280,15 +235,6 @@ public class ProjectModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询根模块", tags = {"任务模块" } ,notes = "查询根模块")
-    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/searchroot_task")
-	public ResponseEntity<Page<ProjectModuleDTO>> searchRoot_Task(@RequestBody ProjectModuleSearchContext context) {
-        Page<ProjectModule> domains = projectmoduleService.searchRoot_Task(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取任务模块", tags = {"任务模块" } ,notes = "获取任务模块")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchtaskmodules")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchtaskmodules(@RequestBody ProjectModuleSearchContext context) {
@@ -299,14 +245,6 @@ public class ProjectModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询任务模块", tags = {"任务模块" } ,notes = "查询任务模块")
-    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/searchtaskmodules")
-	public ResponseEntity<Page<ProjectModuleDTO>> searchTaskModules(@RequestBody ProjectModuleSearchContext context) {
-        Page<ProjectModule> domains = projectmoduleService.searchTaskModules(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 
@@ -376,7 +314,7 @@ public class ProjectModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projectmoduleService.checkKey(projectmoduleMapping.toDomain(projectmoduledto)));
     }
 
-    @ApiOperation(value = "根据项目重建模块路径任务模块", tags = {"任务模块" },  notes = "根据项目任务模块")
+    @ApiOperation(value = "根据项目重建模块路径", tags = {"任务模块" },  notes = "根据项目重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/fix")
     public ResponseEntity<ProjectModuleDTO> fixByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
         ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
@@ -388,7 +326,7 @@ public class ProjectModuleResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
-    @ApiOperation(value = "根据项目删除模块任务模块", tags = {"任务模块" },  notes = "根据项目任务模块")
+    @ApiOperation(value = "根据项目删除模块", tags = {"任务模块" },  notes = "根据项目删除模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/removemodule")
     public ResponseEntity<ProjectModuleDTO> removeModuleByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
         ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
@@ -422,16 +360,6 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询BYPATH", tags = {"任务模块" } ,notes = "根据项目查询BYPATH")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/searchbypath")
-	public ResponseEntity<Page<ProjectModuleDTO>> searchProjectModuleByPathByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleSearchContext context) {
-        context.setN_root_eq(project_id);
-        Page<ProjectModule> domains = projectmoduleService.searchByPath(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"任务模块" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/fetchdefault")
@@ -444,16 +372,6 @@ public class ProjectModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"任务模块" } ,notes = "根据项目查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/searchdefault")
-	public ResponseEntity<Page<ProjectModuleDTO>> searchProjectModuleDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleSearchContext context) {
-        context.setN_root_eq(project_id);
-        Page<ProjectModule> domains = projectmoduleService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取父模块", tags = {"任务模块" } ,notes = "根据项目获取父模块")
@@ -468,16 +386,6 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询父模块", tags = {"任务模块" } ,notes = "根据项目查询父模块")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/searchparentmodule")
-	public ResponseEntity<Page<ProjectModuleDTO>> searchProjectModuleParentModuleByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleSearchContext context) {
-        context.setN_root_eq(project_id);
-        Page<ProjectModule> domains = projectmoduleService.searchParentModule(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取根模块", tags = {"任务模块" } ,notes = "根据项目获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/fetchroot")
@@ -490,16 +398,6 @@ public class ProjectModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询根模块", tags = {"任务模块" } ,notes = "根据项目查询根模块")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/searchroot")
-	public ResponseEntity<Page<ProjectModuleDTO>> searchProjectModuleRootByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleSearchContext context) {
-        context.setN_root_eq(project_id);
-        Page<ProjectModule> domains = projectmoduleService.searchRoot(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取根模块_无分支", tags = {"任务模块" } ,notes = "根据项目获取根模块_无分支")
@@ -514,16 +412,6 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询根模块_无分支", tags = {"任务模块" } ,notes = "根据项目查询根模块_无分支")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/searchroot_nobranch")
-	public ResponseEntity<Page<ProjectModuleDTO>> searchProjectModuleRoot_NoBranchByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleSearchContext context) {
-        context.setN_root_eq(project_id);
-        Page<ProjectModule> domains = projectmoduleService.searchRoot_NoBranch(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取根模块", tags = {"任务模块" } ,notes = "根据项目获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/fetchroot_task")
@@ -537,16 +425,6 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询根模块", tags = {"任务模块" } ,notes = "根据项目查询根模块")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/searchroot_task")
-	public ResponseEntity<Page<ProjectModuleDTO>> searchProjectModuleRoot_TaskByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleSearchContext context) {
-        context.setN_root_eq(project_id);
-        Page<ProjectModule> domains = projectmoduleService.searchRoot_Task(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 	@ApiOperation(value = "根据项目获取任务模块", tags = {"任务模块" } ,notes = "根据项目获取任务模块")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/fetchtaskmodules")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchProjectModuleTaskModulesByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectModuleSearchContext context) {
@@ -558,15 +436,6 @@ public class ProjectModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "根据项目查询任务模块", tags = {"任务模块" } ,notes = "根据项目查询任务模块")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/searchtaskmodules")
-	public ResponseEntity<Page<ProjectModuleDTO>> searchProjectModuleTaskModulesByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleSearchContext context) {
-        context.setN_root_eq(project_id);
-        Page<ProjectModule> domains = projectmoduleService.searchTaskModules(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 }
 

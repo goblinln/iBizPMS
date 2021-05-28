@@ -144,16 +144,6 @@ public class TestRunResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TestRunRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"测试运行" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/testruns/searchdefault")
-	public ResponseEntity<Page<TestRunDTO>> searchDefault(@RequestBody TestRunSearchContext context) {
-        testrunRuntime.addAuthorityConditions(context,"READ");
-        Page<TestRun> domains = testrunService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(testrunMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/testruns/{testrun_id}/{action}")
@@ -250,17 +240,6 @@ public class TestRunResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TestRunRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据测试版本查询DEFAULT", tags = {"测试运行" } ,notes = "根据测试版本查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/testruns/searchdefault")
-	public ResponseEntity<Page<TestRunDTO>> searchTestRunDefaultByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunSearchContext context) {
-        context.setN_task_eq(testtask_id);
-        testrunRuntime.addAuthorityConditions(context,"READ");
-        Page<TestRun> domains = testrunService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(testrunMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
     @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据产品建立测试运行", tags = {"测试运行" },  notes = "根据产品建立测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testruns")
@@ -316,7 +295,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrunMapping.toDto(testrunService.getDraft(domain)));
     }
 
-    @ApiOperation(value = "根据产品激活测试运行", tags = {"测试运行" },  notes = "根据产品测试运行")
+    @ApiOperation(value = "根据产品激活", tags = {"测试运行" },  notes = "根据产品激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testruns/{testrun_id}/activate")
     public ResponseEntity<TestRunDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
@@ -327,7 +306,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrundto);
     }
 
-    @ApiOperation(value = "根据产品阻塞测试运行", tags = {"测试运行" },  notes = "根据产品测试运行")
+    @ApiOperation(value = "根据产品阻塞", tags = {"测试运行" },  notes = "根据产品阻塞")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testruns/{testrun_id}/block")
     public ResponseEntity<TestRunDTO> blockByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
@@ -345,7 +324,7 @@ public class TestRunResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testrunService.checkKey(testrunMapping.toDomain(testrundto)));
     }
 
-    @ApiOperation(value = "根据产品关闭测试运行", tags = {"测试运行" },  notes = "根据产品测试运行")
+    @ApiOperation(value = "根据产品关闭", tags = {"测试运行" },  notes = "根据产品关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testruns/{testrun_id}/close")
     public ResponseEntity<TestRunDTO> closeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
@@ -356,7 +335,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrundto);
     }
 
-    @ApiOperation(value = "根据产品关联测试用例测试运行", tags = {"测试运行" },  notes = "根据产品测试运行")
+    @ApiOperation(value = "根据产品关联测试用例", tags = {"测试运行" },  notes = "根据产品关联测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testruns/{testrun_id}/linkcase")
     public ResponseEntity<TestRunDTO> linkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
@@ -367,7 +346,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrundto);
     }
 
-    @ApiOperation(value = "根据产品移动端测试版本计数器测试运行", tags = {"测试运行" },  notes = "根据产品测试运行")
+    @ApiOperation(value = "根据产品移动端测试版本计数器", tags = {"测试运行" },  notes = "根据产品移动端测试版本计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testruns/{testrun_id}/mobtesttaskcounter")
     public ResponseEntity<TestRunDTO> mobTestTaskCounterByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
@@ -388,7 +367,7 @@ public class TestRunResource {
     }
 
 
-    @ApiOperation(value = "根据产品开始测试运行", tags = {"测试运行" },  notes = "根据产品测试运行")
+    @ApiOperation(value = "根据产品开始", tags = {"测试运行" },  notes = "根据产品开始")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testruns/{testrun_id}/start")
     public ResponseEntity<TestRunDTO> startByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
@@ -399,7 +378,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrundto);
     }
 
-    @ApiOperation(value = "根据产品关联测试用例测试运行", tags = {"测试运行" },  notes = "根据产品测试运行")
+    @ApiOperation(value = "根据产品关联测试用例", tags = {"测试运行" },  notes = "根据产品关联测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testruns/{testrun_id}/unlinkcase")
     public ResponseEntity<TestRunDTO> unlinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
@@ -424,17 +403,6 @@ public class TestRunResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TestRunRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"测试运行" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testruns/searchdefault")
-	public ResponseEntity<Page<TestRunDTO>> searchTestRunDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestRunSearchContext context) {
-        
-        testrunRuntime.addAuthorityConditions(context,"READ");
-        Page<TestRun> domains = testrunService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(testrunMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TestRunRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品获取我的测试单", tags = {"测试运行" } ,notes = "根据产品获取我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testruns/fetchmytesttaskpc")
@@ -448,17 +416,6 @@ public class TestRunResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TestRunRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据产品查询我的测试单", tags = {"测试运行" } ,notes = "根据产品查询我的测试单")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testruns/searchmytesttaskpc")
-	public ResponseEntity<Page<TestRunDTO>> searchTestRunMyTestTaskPcByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestRunSearchContext context) {
-        
-        testrunRuntime.addAuthorityConditions(context,"READ");
-        Page<TestRun> domains = testrunService.searchMyTestTaskPc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(testrunMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
@@ -548,17 +505,6 @@ public class TestRunResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TestRunRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据产品测试版本查询DEFAULT", tags = {"测试运行" } ,notes = "根据产品测试版本查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/testruns/searchdefault")
-	public ResponseEntity<Page<TestRunDTO>> searchTestRunDefaultByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunSearchContext context) {
-        context.setN_task_eq(testtask_id);
-        testrunRuntime.addAuthorityConditions(context,"READ");
-        Page<TestRun> domains = testrunService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(testrunMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
     @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据项目建立测试运行", tags = {"测试运行" },  notes = "根据项目建立测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testruns")
@@ -614,7 +560,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrunMapping.toDto(testrunService.getDraft(domain)));
     }
 
-    @ApiOperation(value = "根据项目激活测试运行", tags = {"测试运行" },  notes = "根据项目测试运行")
+    @ApiOperation(value = "根据项目激活", tags = {"测试运行" },  notes = "根据项目激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testruns/{testrun_id}/activate")
     public ResponseEntity<TestRunDTO> activateByProject(@PathVariable("project_id") Long project_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
@@ -625,7 +571,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrundto);
     }
 
-    @ApiOperation(value = "根据项目阻塞测试运行", tags = {"测试运行" },  notes = "根据项目测试运行")
+    @ApiOperation(value = "根据项目阻塞", tags = {"测试运行" },  notes = "根据项目阻塞")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testruns/{testrun_id}/block")
     public ResponseEntity<TestRunDTO> blockByProject(@PathVariable("project_id") Long project_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
@@ -643,7 +589,7 @@ public class TestRunResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testrunService.checkKey(testrunMapping.toDomain(testrundto)));
     }
 
-    @ApiOperation(value = "根据项目关闭测试运行", tags = {"测试运行" },  notes = "根据项目测试运行")
+    @ApiOperation(value = "根据项目关闭", tags = {"测试运行" },  notes = "根据项目关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testruns/{testrun_id}/close")
     public ResponseEntity<TestRunDTO> closeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
@@ -654,7 +600,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrundto);
     }
 
-    @ApiOperation(value = "根据项目关联测试用例测试运行", tags = {"测试运行" },  notes = "根据项目测试运行")
+    @ApiOperation(value = "根据项目关联测试用例", tags = {"测试运行" },  notes = "根据项目关联测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testruns/{testrun_id}/linkcase")
     public ResponseEntity<TestRunDTO> linkCaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
@@ -665,7 +611,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrundto);
     }
 
-    @ApiOperation(value = "根据项目移动端测试版本计数器测试运行", tags = {"测试运行" },  notes = "根据项目测试运行")
+    @ApiOperation(value = "根据项目移动端测试版本计数器", tags = {"测试运行" },  notes = "根据项目移动端测试版本计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testruns/{testrun_id}/mobtesttaskcounter")
     public ResponseEntity<TestRunDTO> mobTestTaskCounterByProject(@PathVariable("project_id") Long project_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
@@ -686,7 +632,7 @@ public class TestRunResource {
     }
 
 
-    @ApiOperation(value = "根据项目开始测试运行", tags = {"测试运行" },  notes = "根据项目测试运行")
+    @ApiOperation(value = "根据项目开始", tags = {"测试运行" },  notes = "根据项目开始")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testruns/{testrun_id}/start")
     public ResponseEntity<TestRunDTO> startByProject(@PathVariable("project_id") Long project_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
@@ -697,7 +643,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrundto);
     }
 
-    @ApiOperation(value = "根据项目关联测试用例测试运行", tags = {"测试运行" },  notes = "根据项目测试运行")
+    @ApiOperation(value = "根据项目关联测试用例", tags = {"测试运行" },  notes = "根据项目关联测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testruns/{testrun_id}/unlinkcase")
     public ResponseEntity<TestRunDTO> unlinkCaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun domain = testrunMapping.toDomain(testrundto);
@@ -722,17 +668,6 @@ public class TestRunResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TestRunRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"测试运行" } ,notes = "根据项目查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testruns/searchdefault")
-	public ResponseEntity<Page<TestRunDTO>> searchTestRunDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody TestRunSearchContext context) {
-        
-        testrunRuntime.addAuthorityConditions(context,"READ");
-        Page<TestRun> domains = testrunService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(testrunMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TestRunRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目获取我的测试单", tags = {"测试运行" } ,notes = "根据项目获取我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testruns/fetchmytesttaskpc")
@@ -746,17 +681,6 @@ public class TestRunResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TestRunRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据项目查询我的测试单", tags = {"测试运行" } ,notes = "根据项目查询我的测试单")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testruns/searchmytesttaskpc")
-	public ResponseEntity<Page<TestRunDTO>> searchTestRunMyTestTaskPcByProject(@PathVariable("project_id") Long project_id, @RequestBody TestRunSearchContext context) {
-        
-        testrunRuntime.addAuthorityConditions(context,"READ");
-        Page<TestRun> domains = testrunService.searchMyTestTaskPc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(testrunMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
@@ -844,17 +768,6 @@ public class TestRunResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TestRunRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据项目测试版本查询DEFAULT", tags = {"测试运行" } ,notes = "根据项目测试版本查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/testruns/searchdefault")
-	public ResponseEntity<Page<TestRunDTO>> searchTestRunDefaultByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunSearchContext context) {
-        context.setN_task_eq(testtask_id);
-        testrunRuntime.addAuthorityConditions(context,"READ");
-        Page<TestRun> domains = testrunService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(testrunMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 }
 

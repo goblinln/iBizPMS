@@ -97,16 +97,6 @@ public class ProductTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询指定团队部门", tags = {"产品团队" } ,notes = "根据产品查询指定团队部门")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productteams/searchspecifyteam")
-	public ResponseEntity<Page<ProductTeamDTO>> searchProductTeamSpecifyTeamByProduct(@PathVariable("product_id") Long product_id, @RequestBody PRODUCTTEAMSearchContext context) {
-        context.setN_root_eq(product_id);
-        Page<PRODUCTTEAM> domains = productteamService.searchSpecifyTeam(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品删除产品团队", tags = {"产品团队" },  notes = "根据产品删除产品团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productteams/{productteam_id}")
@@ -127,16 +117,6 @@ public class ProductTeamResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询产品团队成员信息", tags = {"产品团队" } ,notes = "根据产品查询产品团队成员信息")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productteams/searchproductteaminfo")
-	public ResponseEntity<Page<ProductTeamDTO>> searchProductTeamProductTeamInfoByProduct(@PathVariable("product_id") Long product_id, @RequestBody PRODUCTTEAMSearchContext context) {
-        context.setN_root_eq(product_id);
-        Page<PRODUCTTEAM> domains = productteamService.searchProductTeamInfo(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品获取产品团队草稿", tags = {"产品团队" },  notes = "根据产品获取产品团队草稿")

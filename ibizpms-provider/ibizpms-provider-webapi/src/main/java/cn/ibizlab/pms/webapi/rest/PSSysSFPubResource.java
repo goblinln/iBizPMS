@@ -122,14 +122,6 @@ public class PSSysSFPubResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询版本", tags = {"后台服务架构" } ,notes = "查询版本")
-    @RequestMapping(method= RequestMethod.POST , value="/pssyssfpubs/searchbuild")
-	public ResponseEntity<Page<PSSysSFPubDTO>> searchBuild(@RequestBody PSSysSFPubSearchContext context) {
-        Page<PSSysSFPub> domains = pssyssfpubService.searchBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(pssyssfpubMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取数据集", tags = {"后台服务架构" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/pssyssfpubs/fetchdefault")
 	public ResponseEntity<List<PSSysSFPubDTO>> fetchdefault(@RequestBody PSSysSFPubSearchContext context) {
@@ -140,14 +132,6 @@ public class PSSysSFPubResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询数据集", tags = {"后台服务架构" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/pssyssfpubs/searchdefault")
-	public ResponseEntity<Page<PSSysSFPubDTO>> searchDefault(@RequestBody PSSysSFPubSearchContext context) {
-        Page<PSSysSFPub> domains = pssyssfpubService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(pssyssfpubMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

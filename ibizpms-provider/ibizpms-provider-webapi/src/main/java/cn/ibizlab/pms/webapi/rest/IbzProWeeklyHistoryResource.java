@@ -143,15 +143,6 @@ public class IbzProWeeklyHistoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzProWeeklyHistoryRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"周报操作历史" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzproweeklyhistories/searchdefault")
-	public ResponseEntity<Page<IbzProWeeklyHistoryDTO>> searchDefault(@RequestBody IbzProWeeklyHistorySearchContext context) {
-        Page<IbzProWeeklyHistory> domains = ibzproweeklyhistoryService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzproweeklyhistoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyhistories/{ibzproweeklyhistory_id}/{action}")

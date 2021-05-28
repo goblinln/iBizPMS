@@ -173,16 +173,6 @@ public class FileResource {
 	}
 
     @PreAuthorize("@FileRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"附件" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/files/searchdefault")
-	public ResponseEntity<Page<FileDTO>> searchDefault(@RequestBody FileSearchContext context) {
-        fileRuntime.addAuthorityConditions(context,"READ");
-        Page<File> domains = fileService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(fileMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@FileRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文件库查询", tags = {"附件" } ,notes = "获取文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchdoclibfile")
 	public ResponseEntity<List<FileDTO>> fetchdoclibfile(@RequestBody FileSearchContext context) {
@@ -194,16 +184,6 @@ public class FileResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@FileRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询文件库查询", tags = {"附件" } ,notes = "查询文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/files/searchdoclibfile")
-	public ResponseEntity<Page<FileDTO>> searchDocLibFile(@RequestBody FileSearchContext context) {
-        fileRuntime.addAuthorityConditions(context,"READ");
-        Page<File> domains = fileService.searchDocLibFile(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(fileMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@FileRuntime.quickTest('READ')")
@@ -221,16 +201,6 @@ public class FileResource {
 	}
 
     @PreAuthorize("@FileRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询文件库查询", tags = {"附件" } ,notes = "查询文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/files/searchproductdoclibfile")
-	public ResponseEntity<Page<FileDTO>> searchProductDocLibFile(@RequestBody FileSearchContext context) {
-        fileRuntime.addAuthorityConditions(context,"READ");
-        Page<File> domains = fileService.searchProductDocLibFile(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(fileMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@FileRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"附件" } ,notes = "获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchtype")
 	public ResponseEntity<List<FileDTO>> fetchtype(@RequestBody FileSearchContext context) {
@@ -245,16 +215,6 @@ public class FileResource {
 	}
 
     @PreAuthorize("@FileRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"附件" } ,notes = "查询动态(根据类型过滤)")
-    @RequestMapping(method= RequestMethod.POST , value="/files/searchtype")
-	public ResponseEntity<Page<FileDTO>> searchType(@RequestBody FileSearchContext context) {
-        fileRuntime.addAuthorityConditions(context,"READ");
-        Page<File> domains = fileService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(fileMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@FileRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取查询附件", tags = {"附件" } ,notes = "获取查询附件")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchtypenotbysrfparentkey")
 	public ResponseEntity<List<FileDTO>> fetchtypenotbysrfparentkey(@RequestBody FileSearchContext context) {
@@ -266,16 +226,6 @@ public class FileResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@FileRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询查询附件", tags = {"附件" } ,notes = "查询查询附件")
-    @RequestMapping(method= RequestMethod.POST , value="/files/searchtypenotbysrfparentkey")
-	public ResponseEntity<Page<FileDTO>> searchTypeNotBySrfparentkey(@RequestBody FileSearchContext context) {
-        fileRuntime.addAuthorityConditions(context,"READ");
-        Page<File> domains = fileService.searchTypeNotBySrfparentkey(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(fileMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

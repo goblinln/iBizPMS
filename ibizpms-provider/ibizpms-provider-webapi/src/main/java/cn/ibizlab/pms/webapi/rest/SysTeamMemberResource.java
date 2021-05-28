@@ -121,14 +121,6 @@ public class SysTeamMemberResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"组成员" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/systeammembers/searchdefault")
-	public ResponseEntity<Page<SysTeamMemberDTO>> searchDefault(@RequestBody SysTeamMemberSearchContext context) {
-        Page<SysTeamMember> domains = systeammemberService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(systeammemberMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/systeammembers/{systeammember_id}/{action}")

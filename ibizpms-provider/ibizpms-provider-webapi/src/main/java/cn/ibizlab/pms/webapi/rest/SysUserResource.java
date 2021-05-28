@@ -132,14 +132,6 @@ public class SysUserResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"系统用户" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/sysusers/searchdefault")
-	public ResponseEntity<Page<SysUserDTO>> searchDefault(@RequestBody SysUserSearchContext context) {
-        Page<SysUser> domains = sysuserService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(sysuserMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/sysusers/{sysuser_id}/{action}")

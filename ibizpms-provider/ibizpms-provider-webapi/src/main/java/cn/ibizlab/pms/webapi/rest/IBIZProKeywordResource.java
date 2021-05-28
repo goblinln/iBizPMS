@@ -121,14 +121,6 @@ public class IBIZProKeywordResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"关键字" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibizprokeywords/searchdefault")
-	public ResponseEntity<Page<IBIZProKeywordDTO>> searchDefault(@RequestBody IBIZProKeywordSearchContext context) {
-        Page<IBIZProKeyword> domains = ibizprokeywordService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibizprokeywordMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/{ibizprokeyword_id}/{action}")

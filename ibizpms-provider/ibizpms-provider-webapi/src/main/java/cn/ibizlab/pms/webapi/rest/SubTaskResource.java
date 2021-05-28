@@ -126,7 +126,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
-    @ApiOperation(value = "根据项目激活任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目激活", tags = {"任务" },  notes = "根据项目激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/activate")
     public ResponseEntity<SubTaskDTO> activateByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -138,7 +138,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
-    @ApiOperation(value = "根据项目指派/转交任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目指派/转交", tags = {"任务" },  notes = "根据项目指派/转交")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/assignto")
     public ResponseEntity<SubTaskDTO> assignToByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -150,7 +150,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
-    @ApiOperation(value = "根据项目取消任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目取消", tags = {"任务" },  notes = "根据项目取消")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/cancel")
     public ResponseEntity<SubTaskDTO> cancelByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -169,7 +169,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
-    @ApiOperation(value = "根据项目关闭任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目关闭", tags = {"任务" },  notes = "根据项目关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/close")
     public ResponseEntity<SubTaskDTO> closeByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -180,7 +180,7 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 
-    @ApiOperation(value = "根据项目计算开始时间和完成时间任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目计算开始时间和完成时间", tags = {"任务" },  notes = "根据项目计算开始时间和完成时间")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/computebeginandend")
     public ResponseEntity<SubTaskDTO> computeBeginAndEndByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -191,7 +191,7 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 
-    @ApiOperation(value = "根据项目更新父任务时间任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目更新父任务时间", tags = {"任务" },  notes = "根据项目更新父任务时间")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/computehours4multiple")
     public ResponseEntity<SubTaskDTO> computeHours4MultipleByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -202,7 +202,7 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 
-    @ApiOperation(value = "根据项目更新工作时间任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目更新工作时间", tags = {"任务" },  notes = "根据项目更新工作时间")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/computeworkinghours")
     public ResponseEntity<SubTaskDTO> computeWorkingHoursByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -213,7 +213,7 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 
-    @ApiOperation(value = "根据项目需求变更确认任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目需求变更确认", tags = {"任务" },  notes = "根据项目需求变更确认")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/confirmstorychange")
     public ResponseEntity<SubTaskDTO> confirmStoryChangeByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -225,7 +225,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
-    @ApiOperation(value = "根据项目创建周期任务任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目创建周期任务", tags = {"任务" },  notes = "根据项目创建周期任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/createbycycle")
     public ResponseEntity<SubTaskDTO> createByCycleByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -237,7 +237,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
-    @ApiOperation(value = "根据项目创建周期任务任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目创建周期任务", tags = {"任务" },  notes = "根据项目创建周期任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/createcycletasks")
     public ResponseEntity<SubTaskDTO> createCycleTasksByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -248,7 +248,7 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 
-    @ApiOperation(value = "根据项目删除任务任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目删除任务", tags = {"任务" },  notes = "根据项目删除任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/delete")
     public ResponseEntity<SubTaskDTO> deleteByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -259,7 +259,7 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 
-    @ApiOperation(value = "根据项目删除工时任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目删除工时", tags = {"任务" },  notes = "根据项目删除工时")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/deleteestimate")
     public ResponseEntity<SubTaskDTO> deleteEstimateByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -270,7 +270,7 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 
-    @ApiOperation(value = "根据项目编辑工时任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目编辑工时", tags = {"任务" },  notes = "根据项目编辑工时")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/editestimate")
     public ResponseEntity<SubTaskDTO> editEstimateByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -282,7 +282,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
-    @ApiOperation(value = "根据项目完成任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目完成", tags = {"任务" },  notes = "根据项目完成")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/finish")
     public ResponseEntity<SubTaskDTO> finishByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -294,7 +294,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目获取下一个团队成员(完成)任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目获取下一个团队成员(完成)", tags = {"任务" },  notes = "根据项目获取下一个团队成员(完成)")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/subtasks/{subtask_id}/getnextteamuser")
     public ResponseEntity<SubTaskDTO> getNextTeamUserByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -306,7 +306,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目获取团队成员剩余工时（激活）任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目获取团队成员剩余工时（激活）", tags = {"任务" },  notes = "根据项目获取团队成员剩余工时（激活）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/subtasks/{subtask_id}/getteamuserleftactivity")
     public ResponseEntity<SubTaskDTO> getTeamUserLeftActivityByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -318,7 +318,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目获取团队成员剩余工时（开始或继续）任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目获取团队成员剩余工时（开始或继续）", tags = {"任务" },  notes = "根据项目获取团队成员剩余工时（开始或继续）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/subtasks/{subtask_id}/getteamuserleftstart")
     public ResponseEntity<SubTaskDTO> getTeamUserLeftStartByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -330,7 +330,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目获取团队成员任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目获取团队成员", tags = {"任务" },  notes = "根据项目获取团队成员")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/subtasks/{subtask_id}/getusernames")
     public ResponseEntity<SubTaskDTO> getUsernamesByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -341,7 +341,7 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 
-    @ApiOperation(value = "根据项目关联计划任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目关联计划", tags = {"任务" },  notes = "根据项目关联计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/linkplan")
     public ResponseEntity<SubTaskDTO> linkPlanByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -353,7 +353,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
-    @ApiOperation(value = "根据项目其他更新任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目其他更新", tags = {"任务" },  notes = "根据项目其他更新")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/subtasks/{subtask_id}/otherupdate")
     public ResponseEntity<SubTaskDTO> otherUpdateByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -365,7 +365,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
-    @ApiOperation(value = "根据项目暂停任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目暂停", tags = {"任务" },  notes = "根据项目暂停")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/pause")
     public ResponseEntity<SubTaskDTO> pauseByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -377,7 +377,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
-    @ApiOperation(value = "根据项目工时录入任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目工时录入", tags = {"任务" },  notes = "根据项目工时录入")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/recordestimate")
     public ResponseEntity<SubTaskDTO> recordEstimateByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -388,7 +388,7 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 
-    @ApiOperation(value = "根据项目继续任务时填入预计剩余为0设置为进行中任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目继续任务时填入预计剩余为0设置为进行中", tags = {"任务" },  notes = "根据项目继续任务时填入预计剩余为0设置为进行中")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/recordtimzeroleftaftercontinue")
     public ResponseEntity<SubTaskDTO> recordTimZeroLeftAfterContinueByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -399,7 +399,7 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 
-    @ApiOperation(value = "根据项目预计剩余为0进行中任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目预计剩余为0进行中", tags = {"任务" },  notes = "根据项目预计剩余为0进行中")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/recordtimatezeroleft")
     public ResponseEntity<SubTaskDTO> recordTimateZeroLeftByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -410,7 +410,7 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 
-    @ApiOperation(value = "根据项目开始任务时填入预计剩余为0设为进行中任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目开始任务时填入预计剩余为0设为进行中", tags = {"任务" },  notes = "根据项目开始任务时填入预计剩余为0设为进行中")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/recordtimatezeroleftafterstart")
     public ResponseEntity<SubTaskDTO> recordTimateZeroLeftAfterStartByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -422,7 +422,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
-    @ApiOperation(value = "根据项目继续任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目继续", tags = {"任务" },  notes = "根据项目继续")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/restart")
     public ResponseEntity<SubTaskDTO> restartByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -455,7 +455,7 @@ public class SubTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "根据项目行为任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目行为", tags = {"任务" },  notes = "根据项目行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/sendmessage")
     public ResponseEntity<SubTaskDTO> sendMessageByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -466,7 +466,7 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 
-    @ApiOperation(value = "根据项目发送消息前置处理任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目发送消息前置处理", tags = {"任务" },  notes = "根据项目发送消息前置处理")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/sendmsgpreprocess")
     public ResponseEntity<SubTaskDTO> sendMsgPreProcessByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -478,7 +478,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
-    @ApiOperation(value = "根据项目开始任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目开始", tags = {"任务" },  notes = "根据项目开始")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/start")
     public ResponseEntity<SubTaskDTO> startByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -489,7 +489,7 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 
-    @ApiOperation(value = "根据项目任务收藏任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目任务收藏", tags = {"任务" },  notes = "根据项目任务收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/taskfavorites")
     public ResponseEntity<SubTaskDTO> taskFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -500,7 +500,7 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 
-    @ApiOperation(value = "根据项目检查多人任务操作权限任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目检查多人任务操作权限", tags = {"任务" },  notes = "根据项目检查多人任务操作权限")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/taskforward")
     public ResponseEntity<SubTaskDTO> taskForwardByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -511,7 +511,7 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 
-    @ApiOperation(value = "根据项目任务收藏任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目任务收藏", tags = {"任务" },  notes = "根据项目任务收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/subtasks/{subtask_id}/tasknfavorites")
     public ResponseEntity<SubTaskDTO> taskNFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -523,7 +523,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
-    @ApiOperation(value = "根据项目更新父任务状态任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目更新父任务状态", tags = {"任务" },  notes = "根据项目更新父任务状态")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/subtasks/{subtask_id}/updateparentstatus")
     public ResponseEntity<SubTaskDTO> updateParentStatusByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -535,7 +535,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
-    @ApiOperation(value = "根据项目更新父任务计划状态任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目更新父任务计划状态", tags = {"任务" },  notes = "根据项目更新父任务计划状态")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/subtasks/{subtask_id}/updaterelatedplanstatus")
     public ResponseEntity<SubTaskDTO> updateRelatedPlanStatusByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -547,7 +547,7 @@ public class SubTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'TASKMANAGE')")
-    @ApiOperation(value = "根据项目更新需求版本任务", tags = {"任务" },  notes = "根据项目任务")
+    @ApiOperation(value = "根据项目更新需求版本", tags = {"任务" },  notes = "根据项目更新需求版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/subtasks/{subtask_id}/updatestoryversion")
     public ResponseEntity<SubTaskDTO> updateStoryVersionByProject(@PathVariable("project_id") Long project_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -571,16 +571,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询指派给我任务", tags = {"任务" } ,notes = "根据项目查询指派给我任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchassignedtomytask")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskAssignedToMyTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取指派给我任务（PC）", tags = {"任务" } ,notes = "根据项目获取指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchassignedtomytaskpc")
@@ -594,16 +584,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询指派给我任务（PC）", tags = {"任务" } ,notes = "根据项目查询指派给我任务（PC）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchassignedtomytaskpc")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskAssignedToMyTaskPcByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 	@ApiOperation(value = "根据项目获取Bug相关任务", tags = {"任务" } ,notes = "根据项目获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchbugtask")
 	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
@@ -615,15 +595,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "根据项目查询Bug相关任务", tags = {"任务" } ,notes = "根据项目查询Bug相关任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchbugtask")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskBugTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchBugTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取通过模块查询", tags = {"任务" } ,notes = "根据项目获取通过模块查询")
@@ -638,16 +609,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询通过模块查询", tags = {"任务" } ,notes = "根据项目查询通过模块查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchbymodule")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskByModuleByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchByModule(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取数据查询（子任务）", tags = {"任务" } ,notes = "根据项目获取数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchchilddefault")
@@ -660,16 +621,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询数据查询（子任务）", tags = {"任务" } ,notes = "根据项目查询数据查询（子任务）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchchilddefault")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskChildDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchChildDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取子任务（更多）", tags = {"任务" } ,notes = "根据项目获取子任务（更多）")
@@ -684,16 +635,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询子任务（更多）", tags = {"任务" } ,notes = "根据项目查询子任务（更多）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchchilddefaultmore")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskChildDefaultMoreByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchChildDefaultMore(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取子任务", tags = {"任务" } ,notes = "根据项目获取子任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchchildtask")
@@ -706,16 +647,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询子任务", tags = {"任务" } ,notes = "根据项目查询子任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchchildtask")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskChildTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchChildTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取子任务（树）", tags = {"任务" } ,notes = "根据项目获取子任务（树）")
@@ -730,16 +661,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询子任务（树）", tags = {"任务" } ,notes = "根据项目查询子任务（树）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchchildtasktree")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskChildTaskTreeByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchChildTaskTree(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取用户年度完成任务", tags = {"任务" } ,notes = "根据项目获取用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchcurfinishtask")
@@ -752,16 +673,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询用户年度完成任务", tags = {"任务" } ,notes = "根据项目查询用户年度完成任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchcurfinishtask")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskCurFinishTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchCurFinishTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取当前项目任务", tags = {"任务" } ,notes = "根据项目获取当前项目任务")
@@ -776,16 +687,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询当前项目任务", tags = {"任务" } ,notes = "根据项目查询当前项目任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchcurprojecttaskquery")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskCurProjectTaskQueryByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchCurProjectTaskQuery(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"任务" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchdefault")
@@ -798,16 +699,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"任务" } ,notes = "根据项目查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchdefault")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DefaultRow", tags = {"任务" } ,notes = "根据项目获取DefaultRow")
@@ -822,16 +713,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询DefaultRow", tags = {"任务" } ,notes = "根据项目查询DefaultRow")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchdefaultrow")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskDefaultRowByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchDefaultRow(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取ES批量的导入", tags = {"任务" } ,notes = "根据项目获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchesbulk")
@@ -844,16 +725,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询ES批量的导入", tags = {"任务" } ,notes = "根据项目查询ES批量的导入")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchesbulk")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskESBulkByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchESBulk(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我代理的任务", tags = {"任务" } ,notes = "根据项目获取我代理的任务")
@@ -868,16 +739,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我代理的任务", tags = {"任务" } ,notes = "根据项目查询我代理的任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchmyagenttask")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskMyAgentTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchMyAgentTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我相关的任务", tags = {"任务" } ,notes = "根据项目获取我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchmyalltask")
@@ -890,16 +751,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我相关的任务", tags = {"任务" } ,notes = "根据项目查询我相关的任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchmyalltask")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskMyAllTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchMyAllTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据项目获取我完成的任务（汇报）")
@@ -914,16 +765,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我完成的任务（汇报）", tags = {"任务" } ,notes = "根据项目查询我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchmycompletetask")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskMyCompleteTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchMyCompleteTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据项目获取我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchmycompletetaskmobdaily")
@@ -936,16 +777,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据项目查询我完成的任务（移动端日报）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchmycompletetaskmobdaily")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskMyCompleteTaskMobDailyByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据项目获取我完成的任务（移动端月报）")
@@ -960,16 +791,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据项目查询我完成的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchmycompletetaskmobmonthly")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskMyCompleteTaskMobMonthlyByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据项目获取我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchmycompletetaskmonthlyzs")
@@ -982,16 +803,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据项目查询我完成的任务（月报展示）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchmycompletetaskmonthlyzs")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskMyCompleteTaskMonthlyZSByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据项目获取我完成的任务（汇报）")
@@ -1006,16 +817,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我完成的任务（汇报）", tags = {"任务" } ,notes = "根据项目查询我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchmycompletetaskzs")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskMyCompleteTaskZSByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我的收藏", tags = {"任务" } ,notes = "根据项目获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchmyfavorites")
@@ -1028,16 +829,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我的收藏", tags = {"任务" } ,notes = "根据项目查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchmyfavorites")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskMyFavoritesByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchMyFavorites(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据项目获取我计划参与的任务（移动端月报）")
@@ -1052,16 +843,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据项目查询我计划参与的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchmyplanstaskmobmonthly")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskMyPlansTaskMobMonthlyByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据项目获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchmytomorrowplantask")
@@ -1074,16 +855,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据项目查询我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchmytomorrowplantask")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskMyTomorrowPlanTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据项目获取我计划参与的任务（汇报）")
@@ -1098,16 +869,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据项目查询我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchmytomorrowplantaskmobdaily")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskMyTomorrowPlanTaskMobDailyByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据项目获取移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchnextweekcompletetaskmobzs")
@@ -1120,16 +881,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据项目查询移动端下周计划参与(汇报)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchnextweekcompletetaskmobzs")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskNextWeekCompleteTaskMobZSByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目获取本周完成的任务(汇报)")
@@ -1144,16 +895,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目查询本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchnextweekcompletetaskzs")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskNextWeekCompleteTaskZSByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据项目获取下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchnextweekplancompletetask")
@@ -1166,16 +907,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据项目查询下周计划完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchnextweekplancompletetask")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskNextWeekPlanCompleteTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取相关任务（计划）", tags = {"任务" } ,notes = "根据项目获取相关任务（计划）")
@@ -1190,16 +921,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询相关任务（计划）", tags = {"任务" } ,notes = "根据项目查询相关任务（计划）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchplantask")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskPlanTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchPlanTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取项目任务（项目立项）", tags = {"任务" } ,notes = "根据项目获取项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchprojectapptask")
@@ -1212,16 +933,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询项目任务（项目立项）", tags = {"任务" } ,notes = "根据项目查询项目任务（项目立项）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchprojectapptask")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskProjectAppTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchProjectAppTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取项目任务", tags = {"任务" } ,notes = "根据项目获取项目任务")
@@ -1236,16 +947,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询项目任务", tags = {"任务" } ,notes = "根据项目查询项目任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchprojecttask")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskProjectTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchProjectTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取根任务", tags = {"任务" } ,notes = "根据项目获取根任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchroottask")
@@ -1258,16 +959,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询根任务", tags = {"任务" } ,notes = "根据项目查询根任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchroottask")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskRootTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchRootTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据项目获取关联计划（当前项目未关联）")
@@ -1282,16 +973,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据项目查询关联计划（当前项目未关联）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchtasklinkplan")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskTaskLinkPlanByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据项目获取我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchthismonthcompletetaskchoice")
@@ -1304,16 +985,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据项目查询我本月完成的任务（下拉列表框）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchthismonthcompletetaskchoice")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskThisMonthCompleteTaskChoiceByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目获取本周完成的任务(汇报)")
@@ -1328,16 +999,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目查询本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchthisweekcompletetask")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskThisWeekCompleteTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据项目获取本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchthisweekcompletetaskchoice")
@@ -1350,16 +1011,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据项目查询本周已完成任务(下拉框选择)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchthisweekcompletetaskchoice")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskThisWeekCompleteTaskChoiceByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据项目获取移动端本周已完成任务(汇报)")
@@ -1374,16 +1025,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据项目查询移动端本周已完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchthisweekcompletetaskmobzs")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskThisWeekCompleteTaskMobZSByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchthisweekcompletetaskzs")
@@ -1396,16 +1037,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目查询本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchthisweekcompletetaskzs")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskThisWeekCompleteTaskZSByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取todo列表查询", tags = {"任务" } ,notes = "根据项目获取todo列表查询")
@@ -1420,16 +1051,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询todo列表查询", tags = {"任务" } ,notes = "根据项目查询todo列表查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchtodolisttask")
-	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskTodoListTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchTodoListTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取任务类型分组", tags = {"任务" } ,notes = "根据项目获取任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchtypegroup")
@@ -1442,16 +1063,6 @@ public class SubTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(domains.getContent());
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询任务类型分组", tags = {"任务" } ,notes = "根据项目查询任务类型分组")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchtypegroup")
-	public ResponseEntity<Page<Map>> searchSubTaskTypeGroupByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Map> domains = taskService.searchTypeGroup(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取任务类型分组（计划）", tags = {"任务" } ,notes = "根据项目获取任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/fetchtypegroupplan")
@@ -1463,16 +1074,6 @@ public class SubTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(domains.getContent());
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询任务类型分组（计划）", tags = {"任务" } ,notes = "根据项目查询任务类型分组（计划）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/subtasks/searchtypegroupplan")
-	public ResponseEntity<Page<Map>> searchSubTaskTypeGroupPlanByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
-        
-        Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
 
 }

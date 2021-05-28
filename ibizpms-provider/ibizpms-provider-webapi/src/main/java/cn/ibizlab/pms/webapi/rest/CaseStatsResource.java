@@ -142,14 +142,6 @@ public class CaseStatsResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"测试用例统计" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/casestats/searchdefault")
-	public ResponseEntity<Page<CaseStatsDTO>> searchDefault(@RequestBody CaseStatsSearchContext context) {
-        Page<CaseStats> domains = casestatsService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" } ,notes = "获取测试用例统计")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/fetchtestcasestats")
 	public ResponseEntity<List<CaseStatsDTO>> fetchtestcasestats(@RequestBody CaseStatsSearchContext context) {
@@ -160,14 +152,6 @@ public class CaseStatsResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询测试用例统计", tags = {"测试用例统计" } ,notes = "查询测试用例统计")
-    @RequestMapping(method= RequestMethod.POST , value="/casestats/searchtestcasestats")
-	public ResponseEntity<Page<CaseStatsDTO>> searchTestCaseStats(@RequestBody CaseStatsSearchContext context) {
-        Page<CaseStats> domains = casestatsService.searchTestCaseStats(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(casestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

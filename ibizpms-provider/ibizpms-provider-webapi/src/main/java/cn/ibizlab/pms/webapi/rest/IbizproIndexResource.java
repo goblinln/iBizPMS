@@ -145,16 +145,6 @@ public class IbizproIndexResource {
 	}
 
     @PreAuthorize("@IbizproIndexRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"索引检索" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/searchdefault")
-	public ResponseEntity<Page<IbizproIndexDTO>> searchDefault(@RequestBody IbizproIndexSearchContext context) {
-        ibizproindexRuntime.addAuthorityConditions(context,"READ");
-        Page<IbizproIndex> domains = ibizproindexService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibizproindexMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@IbizproIndexRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取全文检索", tags = {"索引检索" } ,notes = "获取全文检索")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/fetchesquery")
 	public ResponseEntity<List<IbizproIndexDTO>> fetchesquery(@RequestBody IbizproIndexSearchContext context) {
@@ -169,16 +159,6 @@ public class IbizproIndexResource {
 	}
 
     @PreAuthorize("@IbizproIndexRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询全文检索", tags = {"索引检索" } ,notes = "查询全文检索")
-    @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/searchesquery")
-	public ResponseEntity<Page<IbizproIndexDTO>> searchESquery(@RequestBody IbizproIndexSearchContext context) {
-        ibizproindexRuntime.addAuthorityConditions(context,"READ");
-        Page<IbizproIndex> domains = ibizproindexService.searchESquery(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibizproindexMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@IbizproIndexRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集2", tags = {"索引检索" } ,notes = "获取数据集2")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/fetchindexder")
 	public ResponseEntity<List<IbizproIndexDTO>> fetchindexder(@RequestBody IbizproIndexSearchContext context) {
@@ -190,16 +170,6 @@ public class IbizproIndexResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbizproIndexRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集2", tags = {"索引检索" } ,notes = "查询数据集2")
-    @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/searchindexder")
-	public ResponseEntity<Page<IbizproIndexDTO>> searchIndexDER(@RequestBody IbizproIndexSearchContext context) {
-        ibizproindexRuntime.addAuthorityConditions(context,"READ");
-        Page<IbizproIndex> domains = ibizproindexService.searchIndexDER(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibizproindexMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

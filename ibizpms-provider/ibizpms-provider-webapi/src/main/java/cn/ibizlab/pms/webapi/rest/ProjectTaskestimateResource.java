@@ -145,16 +145,6 @@ public class ProjectTaskestimateResource {
 	}
 
     @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询用户月工时详情", tags = {"项目工时统计" } ,notes = "查询用户月工时详情")
-    @RequestMapping(method= RequestMethod.POST , value="/projecttaskestimates/searchaccountdetail")
-	public ResponseEntity<Page<ProjectTaskestimateDTO>> searchAccountDetail(@RequestBody ProjectTaskestimateSearchContext context) {
-        projecttaskestimateRuntime.addAuthorityConditions(context,"READ");
-        Page<ProjectTaskestimate> domains = projecttaskestimateService.searchAccountDetail(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projecttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"项目工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/projecttaskestimates/fetchdefault")
 	public ResponseEntity<List<ProjectTaskestimateDTO>> fetchdefault(@RequestBody ProjectTaskestimateSearchContext context) {
@@ -166,16 +156,6 @@ public class ProjectTaskestimateResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"项目工时统计" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/projecttaskestimates/searchdefault")
-	public ResponseEntity<Page<ProjectTaskestimateDTO>> searchDefault(@RequestBody ProjectTaskestimateSearchContext context) {
-        projecttaskestimateRuntime.addAuthorityConditions(context,"READ");
-        Page<ProjectTaskestimate> domains = projecttaskestimateService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projecttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

@@ -121,14 +121,6 @@ public class IBIZProTagResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"标签" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibizprotags/searchdefault")
-	public ResponseEntity<Page<IBIZProTagDTO>> searchDefault(@RequestBody IBIZProTagSearchContext context) {
-        Page<IBIZProTag> domains = ibizprotagService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibizprotagMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/{ibizprotag_id}/{action}")

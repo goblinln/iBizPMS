@@ -144,16 +144,6 @@ public class IBZProProductResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IBZProProductRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"平台产品" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzproproducts/searchdefault")
-	public ResponseEntity<Page<IBZProProductDTO>> searchDefault(@RequestBody IBZProProductSearchContext context) {
-        ibzproproductRuntime.addAuthorityConditions(context,"READ");
-        Page<IBZProProduct> domains = ibzproproductService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzproproductMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzproproducts/{ibzproproduct_id}/{action}")

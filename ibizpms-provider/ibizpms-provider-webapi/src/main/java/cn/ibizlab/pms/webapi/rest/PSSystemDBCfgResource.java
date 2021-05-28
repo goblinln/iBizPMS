@@ -122,14 +122,6 @@ public class PSSystemDBCfgResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询版本", tags = {"系统数据库" } ,notes = "查询版本")
-    @RequestMapping(method= RequestMethod.POST , value="/pssystemdbcfgs/searchbuild")
-	public ResponseEntity<Page<PSSystemDBCfgDTO>> searchBuild(@RequestBody PSSystemDBCfgSearchContext context) {
-        Page<PSSystemDBCfg> domains = pssystemdbcfgService.searchBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(pssystemdbcfgMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取数据集", tags = {"系统数据库" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/pssystemdbcfgs/fetchdefault")
 	public ResponseEntity<List<PSSystemDBCfgDTO>> fetchdefault(@RequestBody PSSystemDBCfgSearchContext context) {
@@ -140,14 +132,6 @@ public class PSSystemDBCfgResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询数据集", tags = {"系统数据库" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/pssystemdbcfgs/searchdefault")
-	public ResponseEntity<Page<PSSystemDBCfgDTO>> searchDefault(@RequestBody PSSystemDBCfgSearchContext context) {
-        Page<PSSystemDBCfg> domains = pssystemdbcfgService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(pssystemdbcfgMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

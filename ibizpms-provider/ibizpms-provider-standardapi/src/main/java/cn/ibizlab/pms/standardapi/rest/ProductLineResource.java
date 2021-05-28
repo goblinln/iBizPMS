@@ -74,16 +74,6 @@ public class ProductLineResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IBZProProductLineRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"产品线" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/productlines/searchdefault")
-	public ResponseEntity<Page<ProductLineDTO>> searchDefault(@RequestBody IBZProProductLineSearchContext context) {
-        ibzproproductlineRuntime.addAuthorityConditions(context,"READ");
-        Page<IBZProProductLine> domains = ibzproproductlineService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productlineMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
     @PreAuthorize("@IBZProProductLineRuntime.test(#productline_id,'UPDATE')")
     @ApiOperation(value = "更新产品线", tags = {"产品线" },  notes = "更新产品线")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productlines/{productline_id}")

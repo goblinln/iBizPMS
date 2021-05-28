@@ -222,15 +222,6 @@ public class BuildResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@BuildRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询Bug产品版本", tags = {"版本" } ,notes = "查询Bug产品版本")
-    @RequestMapping(method= RequestMethod.POST , value="/builds/searchbugproductbuild")
-	public ResponseEntity<Page<BuildDTO>> searchBugProductBuild(@RequestBody BuildSearchContext context) {
-        Page<Build> domains = buildService.searchBugProductBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取Bug产品或者项目版本", tags = {"版本" } ,notes = "获取Bug产品或者项目版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchbugproductorprojectbuild")
 	public ResponseEntity<List<BuildDTO>> fetchbugproductorprojectbuild(@RequestBody BuildSearchContext context) {
@@ -241,14 +232,6 @@ public class BuildResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询Bug产品或者项目版本", tags = {"版本" } ,notes = "查询Bug产品或者项目版本")
-    @RequestMapping(method= RequestMethod.POST , value="/builds/searchbugproductorprojectbuild")
-	public ResponseEntity<Page<BuildDTO>> searchBugProductOrProjectBuild(@RequestBody BuildSearchContext context) {
-        Page<Build> domains = buildService.searchBugProductOrProjectBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
@@ -265,15 +248,6 @@ public class BuildResource {
 	}
 
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询产品版本", tags = {"版本" } ,notes = "查询产品版本")
-    @RequestMapping(method= RequestMethod.POST , value="/builds/searchcurproduct")
-	public ResponseEntity<Page<BuildDTO>> searchCurProduct(@RequestBody BuildSearchContext context) {
-        Page<Build> domains = buildService.searchCurProduct(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"版本" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchdefault")
 	public ResponseEntity<List<BuildDTO>> fetchdefault(@RequestBody BuildSearchContext context) {
@@ -286,15 +260,6 @@ public class BuildResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@BuildRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"版本" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/builds/searchdefault")
-	public ResponseEntity<Page<BuildDTO>> searchDefault(@RequestBody BuildSearchContext context) {
-        Page<Build> domains = buildService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取测试版本", tags = {"版本" } ,notes = "获取测试版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchtestbuild")
 	public ResponseEntity<List<BuildDTO>> fetchtestbuild(@RequestBody BuildSearchContext context) {
@@ -305,14 +270,6 @@ public class BuildResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询测试版本", tags = {"版本" } ,notes = "查询测试版本")
-    @RequestMapping(method= RequestMethod.POST , value="/builds/searchtestbuild")
-	public ResponseEntity<Page<BuildDTO>> searchTestBuild(@RequestBody BuildSearchContext context) {
-        Page<Build> domains = buildService.searchTestBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
@@ -329,15 +286,6 @@ public class BuildResource {
 	}
 
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询测试轮次", tags = {"版本" } ,notes = "查询测试轮次")
-    @RequestMapping(method= RequestMethod.POST , value="/builds/searchtestrounds")
-	public ResponseEntity<Page<BuildDTO>> searchTestRounds(@RequestBody BuildSearchContext context) {
-        Page<Build> domains = buildService.searchTestRounds(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取更新日志", tags = {"版本" } ,notes = "获取更新日志")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchupdatelog")
 	public ResponseEntity<List<BuildDTO>> fetchupdatelog(@RequestBody BuildSearchContext context) {
@@ -348,15 +296,6 @@ public class BuildResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BuildRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询更新日志", tags = {"版本" } ,notes = "查询更新日志")
-    @RequestMapping(method= RequestMethod.POST , value="/builds/searchupdatelog")
-	public ResponseEntity<Page<BuildDTO>> searchUpdateLog(@RequestBody BuildSearchContext context) {
-        Page<Build> domains = buildService.searchUpdateLog(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 
@@ -427,7 +366,7 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(buildService.checkKey(buildMapping.toDomain(builddto)));
     }
 
-    @ApiOperation(value = "根据产品关联Bug版本", tags = {"版本" },  notes = "根据产品版本")
+    @ApiOperation(value = "根据产品关联Bug", tags = {"版本" },  notes = "根据产品关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/linkbug")
     public ResponseEntity<BuildDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -438,7 +377,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @ApiOperation(value = "根据产品关联需求版本", tags = {"版本" },  notes = "根据产品版本")
+    @ApiOperation(value = "根据产品关联需求", tags = {"版本" },  notes = "根据产品关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/linkstory")
     public ResponseEntity<BuildDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -449,7 +388,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @ApiOperation(value = "根据产品移动端项目版本计数器版本", tags = {"版本" },  notes = "根据产品版本")
+    @ApiOperation(value = "根据产品移动端项目版本计数器", tags = {"版本" },  notes = "根据产品移动端项目版本计数器")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/builds/{build_id}/mobprojectbuildcounter")
     public ResponseEntity<BuildDTO> mobProjectBuildCounterByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -460,7 +399,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @ApiOperation(value = "根据产品一键发布版本", tags = {"版本" },  notes = "根据产品版本")
+    @ApiOperation(value = "根据产品一键发布", tags = {"版本" },  notes = "根据产品一键发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/oneclickrelease")
     public ResponseEntity<BuildDTO> oneClickReleaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -481,7 +420,7 @@ public class BuildResource {
     }
 
 
-    @ApiOperation(value = "根据产品移除Bug关联版本", tags = {"版本" },  notes = "根据产品版本")
+    @ApiOperation(value = "根据产品移除Bug关联", tags = {"版本" },  notes = "根据产品移除Bug关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/unlinkbug")
     public ResponseEntity<BuildDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -492,7 +431,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @ApiOperation(value = "根据产品移除关联需求版本", tags = {"版本" },  notes = "根据产品版本")
+    @ApiOperation(value = "根据产品移除关联需求", tags = {"版本" },  notes = "根据产品移除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/unlinkstory")
     public ResponseEntity<BuildDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -516,16 +455,6 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Bug产品版本", tags = {"版本" } ,notes = "根据产品查询Bug产品版本")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/searchbugproductbuild")
-	public ResponseEntity<Page<BuildDTO>> searchBuildBugProductBuildByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Build> domains = buildService.searchBugProductBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 	@ApiOperation(value = "根据产品获取Bug产品或者项目版本", tags = {"版本" } ,notes = "根据产品获取Bug产品或者项目版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchbugproductorprojectbuild")
 	public ResponseEntity<List<BuildDTO>> fetchBuildBugProductOrProjectBuildByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
@@ -537,15 +466,6 @@ public class BuildResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "根据产品查询Bug产品或者项目版本", tags = {"版本" } ,notes = "根据产品查询Bug产品或者项目版本")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/searchbugproductorprojectbuild")
-	public ResponseEntity<Page<BuildDTO>> searchBuildBugProductOrProjectBuildByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Build> domains = buildService.searchBugProductOrProjectBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取产品版本", tags = {"版本" } ,notes = "根据产品获取产品版本")
@@ -560,16 +480,6 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询产品版本", tags = {"版本" } ,notes = "根据产品查询产品版本")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/searchcurproduct")
-	public ResponseEntity<Page<BuildDTO>> searchBuildCurProductByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Build> domains = buildService.searchCurProduct(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"版本" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchdefault")
@@ -583,16 +493,6 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"版本" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/searchdefault")
-	public ResponseEntity<Page<BuildDTO>> searchBuildDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Build> domains = buildService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 	@ApiOperation(value = "根据产品获取测试版本", tags = {"版本" } ,notes = "根据产品获取测试版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchtestbuild")
 	public ResponseEntity<List<BuildDTO>> fetchBuildTestBuildByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
@@ -604,15 +504,6 @@ public class BuildResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "根据产品查询测试版本", tags = {"版本" } ,notes = "根据产品查询测试版本")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/searchtestbuild")
-	public ResponseEntity<Page<BuildDTO>> searchBuildTestBuildByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Build> domains = buildService.searchTestBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试轮次", tags = {"版本" } ,notes = "根据产品获取测试轮次")
@@ -627,16 +518,6 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试轮次", tags = {"版本" } ,notes = "根据产品查询测试轮次")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/searchtestrounds")
-	public ResponseEntity<Page<BuildDTO>> searchBuildTestRoundsByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Build> domains = buildService.searchTestRounds(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取更新日志", tags = {"版本" } ,notes = "根据产品获取更新日志")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchupdatelog")
@@ -649,16 +530,6 @@ public class BuildResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询更新日志", tags = {"版本" } ,notes = "根据产品查询更新日志")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/searchupdatelog")
-	public ResponseEntity<Page<BuildDTO>> searchBuildUpdateLogByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Build> domains = buildService.searchUpdateLog(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'BUILDMANAGE')")
@@ -720,7 +591,7 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(buildService.checkKey(buildMapping.toDomain(builddto)));
     }
 
-    @ApiOperation(value = "根据项目关联Bug版本", tags = {"版本" },  notes = "根据项目版本")
+    @ApiOperation(value = "根据项目关联Bug", tags = {"版本" },  notes = "根据项目关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/linkbug")
     public ResponseEntity<BuildDTO> linkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -731,7 +602,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @ApiOperation(value = "根据项目关联需求版本", tags = {"版本" },  notes = "根据项目版本")
+    @ApiOperation(value = "根据项目关联需求", tags = {"版本" },  notes = "根据项目关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/linkstory")
     public ResponseEntity<BuildDTO> linkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -742,7 +613,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @ApiOperation(value = "根据项目移动端项目版本计数器版本", tags = {"版本" },  notes = "根据项目版本")
+    @ApiOperation(value = "根据项目移动端项目版本计数器", tags = {"版本" },  notes = "根据项目移动端项目版本计数器")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/builds/{build_id}/mobprojectbuildcounter")
     public ResponseEntity<BuildDTO> mobProjectBuildCounterByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -753,7 +624,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @ApiOperation(value = "根据项目一键发布版本", tags = {"版本" },  notes = "根据项目版本")
+    @ApiOperation(value = "根据项目一键发布", tags = {"版本" },  notes = "根据项目一键发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/oneclickrelease")
     public ResponseEntity<BuildDTO> oneClickReleaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -774,7 +645,7 @@ public class BuildResource {
     }
 
 
-    @ApiOperation(value = "根据项目移除Bug关联版本", tags = {"版本" },  notes = "根据项目版本")
+    @ApiOperation(value = "根据项目移除Bug关联", tags = {"版本" },  notes = "根据项目移除Bug关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/unlinkbug")
     public ResponseEntity<BuildDTO> unlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -785,7 +656,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @ApiOperation(value = "根据项目移除关联需求版本", tags = {"版本" },  notes = "根据项目版本")
+    @ApiOperation(value = "根据项目移除关联需求", tags = {"版本" },  notes = "根据项目移除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/unlinkstory")
     public ResponseEntity<BuildDTO> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
@@ -809,16 +680,6 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询Bug产品版本", tags = {"版本" } ,notes = "根据项目查询Bug产品版本")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/searchbugproductbuild")
-	public ResponseEntity<Page<BuildDTO>> searchBuildBugProductBuildByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Build> domains = buildService.searchBugProductBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 	@ApiOperation(value = "根据项目获取Bug产品或者项目版本", tags = {"版本" } ,notes = "根据项目获取Bug产品或者项目版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchbugproductorprojectbuild")
 	public ResponseEntity<List<BuildDTO>> fetchBuildBugProductOrProjectBuildByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
@@ -830,15 +691,6 @@ public class BuildResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "根据项目查询Bug产品或者项目版本", tags = {"版本" } ,notes = "根据项目查询Bug产品或者项目版本")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/searchbugproductorprojectbuild")
-	public ResponseEntity<Page<BuildDTO>> searchBuildBugProductOrProjectBuildByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Build> domains = buildService.searchBugProductOrProjectBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取产品版本", tags = {"版本" } ,notes = "根据项目获取产品版本")
@@ -853,16 +705,6 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询产品版本", tags = {"版本" } ,notes = "根据项目查询产品版本")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/searchcurproduct")
-	public ResponseEntity<Page<BuildDTO>> searchBuildCurProductByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Build> domains = buildService.searchCurProduct(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"版本" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchdefault")
@@ -876,16 +718,6 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"版本" } ,notes = "根据项目查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/searchdefault")
-	public ResponseEntity<Page<BuildDTO>> searchBuildDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Build> domains = buildService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 	@ApiOperation(value = "根据项目获取测试版本", tags = {"版本" } ,notes = "根据项目获取测试版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchtestbuild")
 	public ResponseEntity<List<BuildDTO>> fetchBuildTestBuildByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
@@ -897,15 +729,6 @@ public class BuildResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "根据项目查询测试版本", tags = {"版本" } ,notes = "根据项目查询测试版本")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/searchtestbuild")
-	public ResponseEntity<Page<BuildDTO>> searchBuildTestBuildByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Build> domains = buildService.searchTestBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取测试轮次", tags = {"版本" } ,notes = "根据项目获取测试轮次")
@@ -920,16 +743,6 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询测试轮次", tags = {"版本" } ,notes = "根据项目查询测试轮次")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/searchtestrounds")
-	public ResponseEntity<Page<BuildDTO>> searchBuildTestRoundsByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Build> domains = buildService.searchTestRounds(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取更新日志", tags = {"版本" } ,notes = "根据项目获取更新日志")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchupdatelog")
@@ -942,16 +755,6 @@ public class BuildResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询更新日志", tags = {"版本" } ,notes = "根据项目查询更新日志")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/searchupdatelog")
-	public ResponseEntity<Page<BuildDTO>> searchBuildUpdateLogByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Build> domains = buildService.searchUpdateLog(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(buildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 }
 

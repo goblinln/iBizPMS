@@ -144,16 +144,6 @@ public class ProductPlanHistoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProductPlanHistoryRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"产品计划历史" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/productplanhistories/searchdefault")
-	public ResponseEntity<Page<ProductPlanHistoryDTO>> searchDefault(@RequestBody ProductPlanHistorySearchContext context) {
-        productplanhistoryRuntime.addAuthorityConditions(context,"READ");
-        Page<ProductPlanHistory> domains = productplanhistoryService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productplanhistoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/productplanhistories/{productplanhistory_id}/{action}")

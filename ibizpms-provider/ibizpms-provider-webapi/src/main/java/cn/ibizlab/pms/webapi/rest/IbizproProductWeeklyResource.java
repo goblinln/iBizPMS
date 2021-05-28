@@ -147,14 +147,6 @@ public class IbizproProductWeeklyResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"产品周报" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibizproproductweeklies/searchdefault")
-	public ResponseEntity<Page<IbizproProductWeeklyDTO>> searchDefault(@RequestBody IbizproProductWeeklySearchContext context) {
-        Page<IbizproProductWeekly> domains = ibizproproductweeklyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibizproproductweeklyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproproductweeklies/{ibizproproductweekly_id}/{action}")

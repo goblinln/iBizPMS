@@ -210,15 +210,6 @@ public class IbzProMonthlyActionResource {
 	}
 
     @PreAuthorize("@IbzProMonthlyActionRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"月报日志" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzpromonthlyactions/searchdefault")
-	public ResponseEntity<Page<IbzProMonthlyActionDTO>> searchDefault(@RequestBody IbzProMonthlyActionSearchContext context) {
-        Page<IbzProMonthlyAction> domains = ibzpromonthlyactionService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzpromonthlyactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@IbzProMonthlyActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"月报日志" } ,notes = "获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/ibzpromonthlyactions/fetchtype")
 	public ResponseEntity<List<IbzProMonthlyActionDTO>> fetchtype(@RequestBody IbzProMonthlyActionSearchContext context) {
@@ -229,15 +220,6 @@ public class IbzProMonthlyActionResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzProMonthlyActionRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"月报日志" } ,notes = "查询动态(根据类型过滤)")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzpromonthlyactions/searchtype")
-	public ResponseEntity<Page<IbzProMonthlyActionDTO>> searchType(@RequestBody IbzProMonthlyActionSearchContext context) {
-        Page<IbzProMonthlyAction> domains = ibzpromonthlyactionService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzpromonthlyactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

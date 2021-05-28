@@ -184,15 +184,6 @@ public class TestSuiteResource {
 	}
 
     @PreAuthorize("@TestSuiteRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"测试套件" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/testsuites/searchdefault")
-	public ResponseEntity<Page<TestSuiteDTO>> searchDefault(@RequestBody TestSuiteSearchContext context) {
-        Page<TestSuite> domains = testsuiteService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(testsuiteMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@TestSuiteRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取公开套件", tags = {"测试套件" } ,notes = "获取公开套件")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/fetchpublictestsuite")
 	public ResponseEntity<List<TestSuiteDTO>> fetchpublictestsuite(@RequestBody TestSuiteSearchContext context) {
@@ -203,15 +194,6 @@ public class TestSuiteResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TestSuiteRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询公开套件", tags = {"测试套件" } ,notes = "查询公开套件")
-    @RequestMapping(method= RequestMethod.POST , value="/testsuites/searchpublictestsuite")
-	public ResponseEntity<Page<TestSuiteDTO>> searchPublicTestSuite(@RequestBody TestSuiteSearchContext context) {
-        Page<TestSuite> domains = testsuiteService.searchPublicTestSuite(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(testsuiteMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 
@@ -282,7 +264,7 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testsuiteService.checkKey(testsuiteMapping.toDomain(testsuitedto)));
     }
 
-    @ApiOperation(value = "根据产品关联测试测试套件", tags = {"测试套件" },  notes = "根据产品测试套件")
+    @ApiOperation(value = "根据产品关联测试", tags = {"测试套件" },  notes = "根据产品关联测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/linkcase")
     public ResponseEntity<TestSuiteDTO> linkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
         TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
@@ -293,7 +275,7 @@ public class TestSuiteResource {
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
 
-    @ApiOperation(value = "根据产品移动端测试套件计数器测试套件", tags = {"测试套件" },  notes = "根据产品测试套件")
+    @ApiOperation(value = "根据产品移动端测试套件计数器", tags = {"测试套件" },  notes = "根据产品移动端测试套件计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/mobtestsuitecount")
     public ResponseEntity<TestSuiteDTO> mobTestSuiteCountByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
         TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
@@ -314,7 +296,7 @@ public class TestSuiteResource {
     }
 
 
-    @ApiOperation(value = "根据产品未关联测试测试套件", tags = {"测试套件" },  notes = "根据产品测试套件")
+    @ApiOperation(value = "根据产品未关联测试", tags = {"测试套件" },  notes = "根据产品未关联测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/unlinkcase")
     public ResponseEntity<TestSuiteDTO> unlinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
         TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
@@ -338,16 +320,6 @@ public class TestSuiteResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"测试套件" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/searchdefault")
-	public ResponseEntity<Page<TestSuiteDTO>> searchTestSuiteDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestSuiteSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<TestSuite> domains = testsuiteService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(testsuiteMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取公开套件", tags = {"测试套件" } ,notes = "根据产品获取公开套件")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/fetchpublictestsuite")
@@ -360,16 +332,6 @@ public class TestSuiteResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询公开套件", tags = {"测试套件" } ,notes = "根据产品查询公开套件")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/searchpublictestsuite")
-	public ResponseEntity<Page<TestSuiteDTO>> searchTestSuitePublicTestSuiteByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestSuiteSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<TestSuite> domains = testsuiteService.searchPublicTestSuite(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(testsuiteMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 }
 

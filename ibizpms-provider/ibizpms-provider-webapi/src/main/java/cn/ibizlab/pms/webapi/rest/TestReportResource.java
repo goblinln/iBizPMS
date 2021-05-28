@@ -255,15 +255,6 @@ public class TestReportResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TestReportRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"测试报告" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/testreports/searchdefault")
-	public ResponseEntity<Page<TestReportDTO>> searchDefault(@RequestBody TestReportSearchContext context) {
-        Page<TestReport> domains = testreportService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(testreportMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/testreports/{testreport_id}/{action}")
@@ -274,7 +265,7 @@ public class TestReportResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据测试单获取相应信息测试报告", tags = {"测试报告" },  notes = "根据产品测试报告")
+    @ApiOperation(value = "根据产品根据测试单获取相应信息", tags = {"测试报告" },  notes = "根据产品根据测试单获取相应信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}/getinfotesttask")
     public ResponseEntity<TestReportDTO> getInfoTestTaskByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -344,7 +335,7 @@ public class TestReportResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据起始时间获取概况信息测试报告", tags = {"测试报告" },  notes = "根据产品测试报告")
+    @ApiOperation(value = "根据产品根据起始时间获取概况信息", tags = {"测试报告" },  notes = "根据产品根据起始时间获取概况信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}/getinfotaskovbytime")
     public ResponseEntity<TestReportDTO> getInfoTaskOvByTimeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -356,7 +347,7 @@ public class TestReportResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据测试报告概况信息（项目报告）测试报告", tags = {"测试报告" },  notes = "根据产品测试报告")
+    @ApiOperation(value = "根据产品根据测试报告概况信息（项目报告）", tags = {"测试报告" },  notes = "根据产品根据测试报告概况信息（项目报告）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}/getinfotesttaskovproject")
     public ResponseEntity<TestReportDTO> getInfoTestTaskOvProjectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -368,7 +359,7 @@ public class TestReportResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）测试报告", tags = {"测试报告" },  notes = "根据产品测试报告")
+    @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）", tags = {"测试报告" },  notes = "根据产品根据测试单获取相应信息（项目报告）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}/getinfotesttaskproject")
     public ResponseEntity<TestReportDTO> getInfoTestTaskProjectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -380,7 +371,7 @@ public class TestReportResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）（单测试）测试报告", tags = {"测试报告" },  notes = "根据产品测试报告")
+    @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）（单测试）", tags = {"测试报告" },  notes = "根据产品根据测试单获取相应信息（项目报告）（单测试）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}/getinfotesttaskr")
     public ResponseEntity<TestReportDTO> getInfoTestTaskRByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -392,7 +383,7 @@ public class TestReportResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）（测试）测试报告", tags = {"测试报告" },  notes = "根据产品测试报告")
+    @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）（测试）", tags = {"测试报告" },  notes = "根据产品根据测试单获取相应信息（项目报告）（测试）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}/getinfotesttasks")
     public ResponseEntity<TestReportDTO> getInfoTestTaskSByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -404,7 +395,7 @@ public class TestReportResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据测试报告获取基本信息测试报告", tags = {"测试报告" },  notes = "根据产品测试报告")
+    @ApiOperation(value = "根据产品根据测试报告获取基本信息", tags = {"测试报告" },  notes = "根据产品根据测试报告获取基本信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}/gettestreportbasicinfo")
     public ResponseEntity<TestReportDTO> getTestReportBasicInfoByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -416,7 +407,7 @@ public class TestReportResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据测试报告获取基本信息（项目报告）测试报告", tags = {"测试报告" },  notes = "根据产品测试报告")
+    @ApiOperation(value = "根据产品根据测试报告获取基本信息（项目报告）", tags = {"测试报告" },  notes = "根据产品根据测试报告获取基本信息（项目报告）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}/gettestreportproject")
     public ResponseEntity<TestReportDTO> getTestReportProjectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -451,18 +442,8 @@ public class TestReportResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"测试报告" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testreports/searchdefault")
-	public ResponseEntity<Page<TestReportDTO>> searchTestReportDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestReportSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<TestReport> domains = testreportService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(testreportMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目根据测试单获取相应信息测试报告", tags = {"测试报告" },  notes = "根据项目测试报告")
+    @ApiOperation(value = "根据项目根据测试单获取相应信息", tags = {"测试报告" },  notes = "根据项目根据测试单获取相应信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttask")
     public ResponseEntity<TestReportDTO> getInfoTestTaskByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -532,7 +513,7 @@ public class TestReportResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目根据起始时间获取概况信息测试报告", tags = {"测试报告" },  notes = "根据项目测试报告")
+    @ApiOperation(value = "根据项目根据起始时间获取概况信息", tags = {"测试报告" },  notes = "根据项目根据起始时间获取概况信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotaskovbytime")
     public ResponseEntity<TestReportDTO> getInfoTaskOvByTimeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -544,7 +525,7 @@ public class TestReportResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目根据测试报告概况信息（项目报告）测试报告", tags = {"测试报告" },  notes = "根据项目测试报告")
+    @ApiOperation(value = "根据项目根据测试报告概况信息（项目报告）", tags = {"测试报告" },  notes = "根据项目根据测试报告概况信息（项目报告）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttaskovproject")
     public ResponseEntity<TestReportDTO> getInfoTestTaskOvProjectByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -556,7 +537,7 @@ public class TestReportResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）测试报告", tags = {"测试报告" },  notes = "根据项目测试报告")
+    @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）", tags = {"测试报告" },  notes = "根据项目根据测试单获取相应信息（项目报告）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttaskproject")
     public ResponseEntity<TestReportDTO> getInfoTestTaskProjectByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -568,7 +549,7 @@ public class TestReportResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）（单测试）测试报告", tags = {"测试报告" },  notes = "根据项目测试报告")
+    @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）（单测试）", tags = {"测试报告" },  notes = "根据项目根据测试单获取相应信息（项目报告）（单测试）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttaskr")
     public ResponseEntity<TestReportDTO> getInfoTestTaskRByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -580,7 +561,7 @@ public class TestReportResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）（测试）测试报告", tags = {"测试报告" },  notes = "根据项目测试报告")
+    @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）（测试）", tags = {"测试报告" },  notes = "根据项目根据测试单获取相应信息（项目报告）（测试）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttasks")
     public ResponseEntity<TestReportDTO> getInfoTestTaskSByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -592,7 +573,7 @@ public class TestReportResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目根据测试报告获取基本信息测试报告", tags = {"测试报告" },  notes = "根据项目测试报告")
+    @ApiOperation(value = "根据项目根据测试报告获取基本信息", tags = {"测试报告" },  notes = "根据项目根据测试报告获取基本信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}/gettestreportbasicinfo")
     public ResponseEntity<TestReportDTO> getTestReportBasicInfoByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -604,7 +585,7 @@ public class TestReportResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目根据测试报告获取基本信息（项目报告）测试报告", tags = {"测试报告" },  notes = "根据项目测试报告")
+    @ApiOperation(value = "根据项目根据测试报告获取基本信息（项目报告）", tags = {"测试报告" },  notes = "根据项目根据测试报告获取基本信息（项目报告）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}/gettestreportproject")
     public ResponseEntity<TestReportDTO> getTestReportProjectByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -637,16 +618,6 @@ public class TestReportResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"测试报告" } ,notes = "根据项目查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/searchdefault")
-	public ResponseEntity<Page<TestReportDTO>> searchTestReportDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody TestReportSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<TestReport> domains = testreportService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(testreportMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 }
 

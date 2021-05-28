@@ -143,15 +143,6 @@ public class IBZProReleaseHistoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IBZProReleaseHistoryRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"发布操作历史" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzproreleasehistories/searchdefault")
-	public ResponseEntity<Page<IBZProReleaseHistoryDTO>> searchDefault(@RequestBody IBZProReleaseHistorySearchContext context) {
-        Page<IBZProReleaseHistory> domains = ibzproreleasehistoryService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzproreleasehistoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzproreleasehistories/{ibzproreleasehistory_id}/{action}")

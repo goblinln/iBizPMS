@@ -168,14 +168,6 @@ public class IbizproProductDailyResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"产品日报" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibizproproductdailies/searchdefault")
-	public ResponseEntity<Page<IbizproProductDailyDTO>> searchDefault(@RequestBody IbizproProductDailySearchContext context) {
-        Page<IbizproProductDaily> domains = ibizproproductdailyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibizproproductdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取产品日报", tags = {"产品日报" } ,notes = "获取产品日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductdailies/fetchproductdaily")
 	public ResponseEntity<List<IbizproProductDailyDTO>> fetchproductdaily(@RequestBody IbizproProductDailySearchContext context) {
@@ -186,14 +178,6 @@ public class IbizproProductDailyResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询产品日报", tags = {"产品日报" } ,notes = "查询产品日报")
-    @RequestMapping(method= RequestMethod.POST , value="/ibizproproductdailies/searchproductdaily")
-	public ResponseEntity<Page<IbizproProductDailyDTO>> searchProductDaily(@RequestBody IbizproProductDailySearchContext context) {
-        Page<IbizproProductDaily> domains = ibizproproductdailyService.searchProductDaily(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibizproproductdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

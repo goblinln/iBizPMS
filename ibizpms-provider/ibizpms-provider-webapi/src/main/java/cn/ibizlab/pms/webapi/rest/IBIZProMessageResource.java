@@ -154,14 +154,6 @@ public class IBIZProMessageResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"消息" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibizpromessages/searchdefault")
-	public ResponseEntity<Page<IBIZProMessageDTO>> searchDefault(@RequestBody IBIZProMessageSearchContext context) {
-        Page<IBIZProMessage> domains = ibizpromessageService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibizpromessageMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取用户全部消息", tags = {"消息" } ,notes = "获取用户全部消息")
     @RequestMapping(method= RequestMethod.POST , value="/ibizpromessages/fetchuserallmessages")
 	public ResponseEntity<List<IBIZProMessageDTO>> fetchuserallmessages(@RequestBody IBIZProMessageSearchContext context) {
@@ -174,14 +166,6 @@ public class IBIZProMessageResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询用户全部消息", tags = {"消息" } ,notes = "查询用户全部消息")
-    @RequestMapping(method= RequestMethod.POST , value="/ibizpromessages/searchuserallmessages")
-	public ResponseEntity<Page<IBIZProMessageDTO>> searchUserAllMessages(@RequestBody IBIZProMessageSearchContext context) {
-        Page<IBIZProMessage> domains = ibizpromessageService.searchUserAllMessages(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibizpromessageMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取用户未读信息", tags = {"消息" } ,notes = "获取用户未读信息")
     @RequestMapping(method= RequestMethod.POST , value="/ibizpromessages/fetchuserunreadmessages")
 	public ResponseEntity<List<IBIZProMessageDTO>> fetchuserunreadmessages(@RequestBody IBIZProMessageSearchContext context) {
@@ -192,14 +176,6 @@ public class IBIZProMessageResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询用户未读信息", tags = {"消息" } ,notes = "查询用户未读信息")
-    @RequestMapping(method= RequestMethod.POST , value="/ibizpromessages/searchuserunreadmessages")
-	public ResponseEntity<Page<IBIZProMessageDTO>> searchUserUnreadMessages(@RequestBody IBIZProMessageSearchContext context) {
-        Page<IBIZProMessage> domains = ibizpromessageService.searchUserUnreadMessages(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibizpromessageMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

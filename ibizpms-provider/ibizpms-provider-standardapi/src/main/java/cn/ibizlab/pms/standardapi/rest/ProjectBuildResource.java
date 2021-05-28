@@ -53,7 +53,7 @@ public class ProjectBuildResource {
     public ProjectBuildMapping projectbuildMapping;
 
 
-    @ApiOperation(value = "根据项目关联Bug版本", tags = {"版本" },  notes = "根据项目版本")
+    @ApiOperation(value = "根据项目关联Bug", tags = {"版本" },  notes = "根据项目关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}/linkbug")
     public ResponseEntity<ProjectBuildDTO> linkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id, @RequestBody ProjectBuildDTO projectbuilddto) {
         Build domain = projectbuildMapping.toDomain(projectbuilddto);
@@ -86,7 +86,7 @@ public class ProjectBuildResource {
     }
 
 
-    @ApiOperation(value = "根据项目关联需求版本", tags = {"版本" },  notes = "根据项目版本")
+    @ApiOperation(value = "根据项目关联需求", tags = {"版本" },  notes = "根据项目关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}/linkstory")
     public ResponseEntity<ProjectBuildDTO> linkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id, @RequestBody ProjectBuildDTO projectbuilddto) {
         Build domain = projectbuildMapping.toDomain(projectbuilddto);
@@ -97,7 +97,7 @@ public class ProjectBuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbuilddto);
     }
 
-    @ApiOperation(value = "根据项目移除关联需求版本", tags = {"版本" },  notes = "根据项目版本")
+    @ApiOperation(value = "根据项目移除关联需求", tags = {"版本" },  notes = "根据项目移除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}/unlinkstory")
     public ResponseEntity<ProjectBuildDTO> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id, @RequestBody ProjectBuildDTO projectbuilddto) {
         Build domain = projectbuildMapping.toDomain(projectbuilddto);
@@ -138,7 +138,7 @@ public class ProjectBuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbuildMapping.toDto(buildService.getDraft(domain)));
     }
 
-    @ApiOperation(value = "根据项目移除Bug关联版本", tags = {"版本" },  notes = "根据项目版本")
+    @ApiOperation(value = "根据项目移除Bug关联", tags = {"版本" },  notes = "根据项目移除Bug关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}/unlinkbug")
     public ResponseEntity<ProjectBuildDTO> unlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id, @RequestBody ProjectBuildDTO projectbuilddto) {
         Build domain = projectbuildMapping.toDomain(projectbuilddto);
@@ -161,16 +161,6 @@ public class ProjectBuildResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"版本" } ,notes = "根据项目查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectbuilds/searchdefault")
-	public ResponseEntity<Page<ProjectBuildDTO>> searchProjectBuildDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Build> domains = buildService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectbuildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 }
 

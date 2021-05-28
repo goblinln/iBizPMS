@@ -157,14 +157,6 @@ public class SysUpdateLogResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"更新日志" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/sysupdatelogs/searchdefault")
-	public ResponseEntity<Page<SysUpdateLogDTO>> searchDefault(@RequestBody SysUpdateLogSearchContext context) {
-        Page<SysUpdateLog> domains = sysupdatelogService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(sysupdatelogMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/{sysupdatelog_id}/{action}")

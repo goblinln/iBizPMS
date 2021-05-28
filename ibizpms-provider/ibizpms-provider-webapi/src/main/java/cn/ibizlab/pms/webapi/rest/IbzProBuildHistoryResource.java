@@ -143,15 +143,6 @@ public class IbzProBuildHistoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzProBuildHistoryRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"版本操作历史" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzprobuildhistories/searchdefault")
-	public ResponseEntity<Page<IbzProBuildHistoryDTO>> searchDefault(@RequestBody IbzProBuildHistorySearchContext context) {
-        Page<IbzProBuildHistory> domains = ibzprobuildhistoryService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzprobuildhistoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzprobuildhistories/{ibzprobuildhistory_id}/{action}")

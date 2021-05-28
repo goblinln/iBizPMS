@@ -145,16 +145,6 @@ public class IbzLibResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzLibRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"用例库" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/searchdefault")
-	public ResponseEntity<Page<IbzLibDTO>> searchDefault(@RequestBody IbzLibSearchContext context) {
-        ibzlibRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzLib> domains = ibzlibService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzlibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/{action}")

@@ -121,14 +121,6 @@ public class SysPostResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"岗位" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/sysposts/searchdefault")
-	public ResponseEntity<Page<SysPostDTO>> searchDefault(@RequestBody SysPostSearchContext context) {
-        Page<SysPost> domains = syspostService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(syspostMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/sysposts/{syspost_id}/{action}")

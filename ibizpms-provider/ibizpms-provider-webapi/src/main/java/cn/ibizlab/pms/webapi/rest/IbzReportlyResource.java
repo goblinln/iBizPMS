@@ -161,14 +161,6 @@ public class IbzReportlyResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"汇报" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/searchdefault")
-	public ResponseEntity<Page<IbzReportlyDTO>> searchDefault(@RequestBody IbzReportlySearchContext context) {
-        Page<IbzReportly> domains = ibzreportlyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzreportlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取我所有的汇报", tags = {"汇报" } ,notes = "获取我所有的汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchmyallreportly")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchmyallreportly(@RequestBody IbzReportlySearchContext context) {
@@ -179,14 +171,6 @@ public class IbzReportlyResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询我所有的汇报", tags = {"汇报" } ,notes = "查询我所有的汇报")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/searchmyallreportly")
-	public ResponseEntity<Page<IbzReportlyDTO>> searchMyAllReportly(@RequestBody IbzReportlySearchContext context) {
-        Page<IbzReportly> domains = ibzreportlyService.searchMyAllReportly(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzreportlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 	@ApiOperation(value = "获取我收到的汇报", tags = {"汇报" } ,notes = "获取我收到的汇报")
@@ -201,14 +185,6 @@ public class IbzReportlyResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询我收到的汇报", tags = {"汇报" } ,notes = "查询我收到的汇报")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/searchmyreceived")
-	public ResponseEntity<Page<IbzReportlyDTO>> searchMyReceived(@RequestBody IbzReportlySearchContext context) {
-        Page<IbzReportly> domains = ibzreportlyService.searchMyReceived(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzreportlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取我的未提交汇报", tags = {"汇报" } ,notes = "获取我的未提交汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchmyreportlymob")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchmyreportlymob(@RequestBody IbzReportlySearchContext context) {
@@ -219,14 +195,6 @@ public class IbzReportlyResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询我的未提交汇报", tags = {"汇报" } ,notes = "查询我的未提交汇报")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/searchmyreportlymob")
-	public ResponseEntity<Page<IbzReportlyDTO>> searchMyReportlyMob(@RequestBody IbzReportlySearchContext context) {
-        Page<IbzReportly> domains = ibzreportlyService.searchMyReportlyMob(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzreportlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

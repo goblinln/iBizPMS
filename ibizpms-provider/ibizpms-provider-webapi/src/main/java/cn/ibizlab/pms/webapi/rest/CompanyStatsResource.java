@@ -142,14 +142,6 @@ public class CompanyStatsResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询公司动态统计", tags = {"公司动态汇总" } ,notes = "查询公司动态统计")
-    @RequestMapping(method= RequestMethod.POST , value="/companystats/searchcompanydynamicstats")
-	public ResponseEntity<Page<CompanyStatsDTO>> searchCompanyDynamicStats(@RequestBody CompanyStatsSearchContext context) {
-        Page<CompanyStats> domains = companystatsService.searchCompanyDynamicStats(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(companystatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取数据集", tags = {"公司动态汇总" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/companystats/fetchdefault")
 	public ResponseEntity<List<CompanyStatsDTO>> fetchdefault(@RequestBody CompanyStatsSearchContext context) {
@@ -160,14 +152,6 @@ public class CompanyStatsResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询数据集", tags = {"公司动态汇总" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/companystats/searchdefault")
-	public ResponseEntity<Page<CompanyStatsDTO>> searchDefault(@RequestBody CompanyStatsSearchContext context) {
-        Page<CompanyStats> domains = companystatsService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(companystatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

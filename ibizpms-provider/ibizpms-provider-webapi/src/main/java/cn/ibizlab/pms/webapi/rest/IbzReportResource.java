@@ -171,16 +171,6 @@ public class IbzReportResource {
 	}
 
     @PreAuthorize("@IbzReportRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询汇报汇总", tags = {"汇报汇总" } ,notes = "查询汇报汇总")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzreports/searchallreport")
-	public ResponseEntity<Page<IbzReportDTO>> searchAllReport(@RequestBody IbzReportSearchContext context) {
-        ibzreportRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzReport> domains = ibzreportService.searchAllReport(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzreportMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@IbzReportRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"汇报汇总" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreports/fetchdefault")
 	public ResponseEntity<List<IbzReportDTO>> fetchdefault(@RequestBody IbzReportSearchContext context) {
@@ -195,16 +185,6 @@ public class IbzReportResource {
 	}
 
     @PreAuthorize("@IbzReportRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"汇报汇总" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzreports/searchdefault")
-	public ResponseEntity<Page<IbzReportDTO>> searchDefault(@RequestBody IbzReportSearchContext context) {
-        ibzreportRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzReport> domains = ibzreportService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzreportMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@IbzReportRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取汇报汇总（我收到的）", tags = {"汇报汇总" } ,notes = "获取汇报汇总（我收到的）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreports/fetchmyreallreport")
 	public ResponseEntity<List<IbzReportDTO>> fetchmyreallreport(@RequestBody IbzReportSearchContext context) {
@@ -216,16 +196,6 @@ public class IbzReportResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzReportRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询汇报汇总（我收到的）", tags = {"汇报汇总" } ,notes = "查询汇报汇总（我收到的）")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzreports/searchmyreallreport")
-	public ResponseEntity<Page<IbzReportDTO>> searchMyReAllReport(@RequestBody IbzReportSearchContext context) {
-        ibzreportRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzReport> domains = ibzreportService.searchMyReAllReport(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzreportMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

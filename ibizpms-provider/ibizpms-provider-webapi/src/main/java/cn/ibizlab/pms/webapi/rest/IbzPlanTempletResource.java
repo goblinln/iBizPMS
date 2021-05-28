@@ -166,16 +166,6 @@ public class IbzPlanTempletResource {
 	}
 
     @PreAuthorize("@IbzPlanTempletRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询CurUserTemplet", tags = {"计划模板" } ,notes = "查询CurUserTemplet")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzplantemplets/searchcurusertemplet")
-	public ResponseEntity<Page<IbzPlanTempletDTO>> searchCurUserTemplet(@RequestBody IbzPlanTempletSearchContext context) {
-        ibzplantempletRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzPlanTemplet> domains = ibzplantempletService.searchCurUserTemplet(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzplantempletMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"计划模板" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzplantemplets/fetchdefault")
 	public ResponseEntity<List<IbzPlanTempletDTO>> fetchdefault(@RequestBody IbzPlanTempletSearchContext context) {
@@ -187,16 +177,6 @@ public class IbzPlanTempletResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"计划模板" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzplantemplets/searchdefault")
-	public ResponseEntity<Page<IbzPlanTempletDTO>> searchDefault(@RequestBody IbzPlanTempletSearchContext context) {
-        ibzplantempletRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzPlanTemplet> domains = ibzplantempletService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzplantempletMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

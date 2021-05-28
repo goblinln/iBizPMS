@@ -172,16 +172,6 @@ public class UserResource {
 	}
 
     @PreAuthorize("@UserRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询Bug用户", tags = {"用户" } ,notes = "查询Bug用户")
-    @RequestMapping(method= RequestMethod.POST , value="/users/searchbuguser")
-	public ResponseEntity<Page<UserDTO>> searchBugUser(@RequestBody UserSearchContext context) {
-        userRuntime.addAuthorityConditions(context,"READ");
-        Page<User> domains = userService.searchBugUser(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchdefault")
 	public ResponseEntity<List<UserDTO>> fetchdefault(@RequestBody UserSearchContext context) {
@@ -193,16 +183,6 @@ public class UserResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@UserRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"用户" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/users/searchdefault")
-	public ResponseEntity<Page<UserDTO>> searchDefault(@RequestBody UserSearchContext context) {
-        userRuntime.addAuthorityConditions(context,"READ");
-        Page<User> domains = userService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@UserRuntime.quickTest('READ')")
@@ -220,16 +200,6 @@ public class UserResource {
 	}
 
     @PreAuthorize("@UserRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询根据源代码账户获取登录名", tags = {"用户" } ,notes = "查询根据源代码账户获取登录名")
-    @RequestMapping(method= RequestMethod.POST , value="/users/searchgetbycommiter")
-	public ResponseEntity<Page<UserDTO>> searchGetByCommiter(@RequestBody UserSearchContext context) {
-        userRuntime.addAuthorityConditions(context,"READ");
-        Page<User> domains = userService.searchGetByCommiter(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队管理", tags = {"用户" } ,notes = "获取项目团队管理")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchprojectteamm")
 	public ResponseEntity<List<UserDTO>> fetchprojectteamm(@RequestBody UserSearchContext context) {
@@ -241,16 +211,6 @@ public class UserResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@UserRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询项目团队管理", tags = {"用户" } ,notes = "查询项目团队管理")
-    @RequestMapping(method= RequestMethod.POST , value="/users/searchprojectteamm")
-	public ResponseEntity<Page<UserDTO>> searchProjectTeamM(@RequestBody UserSearchContext context) {
-        userRuntime.addAuthorityConditions(context,"READ");
-        Page<User> domains = userService.searchProjectTeamM(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@UserRuntime.quickTest('READ')")
@@ -268,16 +228,6 @@ public class UserResource {
 	}
 
     @PreAuthorize("@UserRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询项目团队成员", tags = {"用户" } ,notes = "查询项目团队成员")
-    @RequestMapping(method= RequestMethod.POST , value="/users/searchprojectteamuser")
-	public ResponseEntity<Page<UserDTO>> searchProjectTeamUser(@RequestBody UserSearchContext context) {
-        userRuntime.addAuthorityConditions(context,"READ");
-        Page<User> domains = userService.searchProjectTeamUser(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队成员", tags = {"用户" } ,notes = "获取项目团队成员")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchprojectteamusertask")
 	public ResponseEntity<List<UserDTO>> fetchprojectteamusertask(@RequestBody UserSearchContext context) {
@@ -292,16 +242,6 @@ public class UserResource {
 	}
 
     @PreAuthorize("@UserRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询项目团队成员", tags = {"用户" } ,notes = "查询项目团队成员")
-    @RequestMapping(method= RequestMethod.POST , value="/users/searchprojectteamusertask")
-	public ResponseEntity<Page<UserDTO>> searchProjectTeamUserTask(@RequestBody UserSearchContext context) {
-        userRuntime.addAuthorityConditions(context,"READ");
-        Page<User> domains = userService.searchProjectTeamUserTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取TASKTEAM", tags = {"用户" } ,notes = "获取TASKTEAM")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchtaskteam")
 	public ResponseEntity<List<UserDTO>> fetchtaskteam(@RequestBody UserSearchContext context) {
@@ -313,16 +253,6 @@ public class UserResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@UserRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询TASKTEAM", tags = {"用户" } ,notes = "查询TASKTEAM")
-    @RequestMapping(method= RequestMethod.POST , value="/users/searchtaskteam")
-	public ResponseEntity<Page<UserDTO>> searchTaskTeam(@RequestBody UserSearchContext context) {
-        userRuntime.addAuthorityConditions(context,"READ");
-        Page<User> domains = userService.searchTaskTeam(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(userMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

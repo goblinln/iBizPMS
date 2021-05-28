@@ -145,16 +145,6 @@ public class IbzFavoritesResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzFavoritesRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"收藏" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzfavorites/searchdefault")
-	public ResponseEntity<Page<IbzFavoritesDTO>> searchDefault(@RequestBody IbzFavoritesSearchContext context) {
-        ibzfavoritesRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzFavorites> domains = ibzfavoritesService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzfavoritesMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzfavorites/{ibzfavorites_id}/{action}")

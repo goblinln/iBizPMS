@@ -106,7 +106,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品激活Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品激活", tags = {"Bug" },  notes = "根据产品激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/activate")
     public ResponseEntity<ProductBugDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -118,7 +118,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品指派Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品指派", tags = {"Bug" },  notes = "根据产品指派")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/assignto")
     public ResponseEntity<ProductBugDTO> assignToByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -129,7 +129,7 @@ public class ProductBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(productbugdto);
     }
 
-    @ApiOperation(value = "根据产品批量解除关联BugBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品批量解除关联Bug", tags = {"Bug" },  notes = "根据产品批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/batchunlinkbug")
     public ResponseEntity<ProductBugDTO> batchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -141,7 +141,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品Bug收藏Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品Bug收藏", tags = {"Bug" },  notes = "根据产品Bug收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/bugfavorites")
     public ResponseEntity<ProductBugDTO> bugFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -153,7 +153,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品取消收藏Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品取消收藏", tags = {"Bug" },  notes = "根据产品取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/bugnfavorites")
     public ResponseEntity<ProductBugDTO> bugNFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -164,7 +164,7 @@ public class ProductBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(productbugdto);
     }
 
-    @ApiOperation(value = "根据产品版本批量解除关联BugBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品版本批量解除关联Bug", tags = {"Bug" },  notes = "根据产品版本批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/buildbatchunlinkbug")
     public ResponseEntity<ProductBugDTO> buildBatchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -176,7 +176,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品版本关联BugBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品版本关联Bug", tags = {"Bug" },  notes = "根据产品版本关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/buildlinkbug")
     public ResponseEntity<ProductBugDTO> buildLinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -188,7 +188,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品版本解除关联BugBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品版本解除关联Bug", tags = {"Bug" },  notes = "根据产品版本解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/buildunlinkbug")
     public ResponseEntity<ProductBugDTO> buildUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -207,7 +207,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品关闭Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品关闭", tags = {"Bug" },  notes = "根据产品关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/close")
     public ResponseEntity<ProductBugDTO> closeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -219,7 +219,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品确认Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品确认", tags = {"Bug" },  notes = "根据产品确认")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/confirm")
     public ResponseEntity<ProductBugDTO> confirmByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -231,7 +231,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品关联BugBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品关联Bug", tags = {"Bug" },  notes = "根据产品关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/linkbug")
     public ResponseEntity<ProductBugDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -243,7 +243,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品批量解除关联BugBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品批量解除关联Bug", tags = {"Bug" },  notes = "根据产品批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/releaasebatchunlinkbug")
     public ResponseEntity<ProductBugDTO> releaaseBatchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -255,7 +255,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品关联Bug（解决Bug）Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品关联Bug（解决Bug）", tags = {"Bug" },  notes = "根据产品关联Bug（解决Bug）")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/releaselinkbugbybug")
     public ResponseEntity<ProductBugDTO> releaseLinkBugbyBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -267,7 +267,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品关联Bug（遗留Bug）Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品关联Bug（遗留Bug）", tags = {"Bug" },  notes = "根据产品关联Bug（遗留Bug）")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/releaselinkbugbyleftbug")
     public ResponseEntity<ProductBugDTO> releaseLinkBugbyLeftBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -279,7 +279,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品移除关联Bug（遗留Bug）Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品移除关联Bug（遗留Bug）", tags = {"Bug" },  notes = "根据产品移除关联Bug（遗留Bug）")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/releaseunlinkbugbyleftbug")
     public ResponseEntity<ProductBugDTO> releaseUnLinkBugbyLeftBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -291,7 +291,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品解除关联BugBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品解除关联Bug", tags = {"Bug" },  notes = "根据产品解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/releaseunlinkbug")
     public ResponseEntity<ProductBugDTO> releaseUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -303,7 +303,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品解决Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品解决", tags = {"Bug" },  notes = "根据产品解决")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/resolve")
     public ResponseEntity<ProductBugDTO> resolveByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -324,7 +324,7 @@ public class ProductBugResource {
     }
 
 
-    @ApiOperation(value = "根据产品行为Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品行为", tags = {"Bug" },  notes = "根据产品行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/sendmessage")
     public ResponseEntity<ProductBugDTO> sendMessageByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -335,7 +335,7 @@ public class ProductBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(productbugdto);
     }
 
-    @ApiOperation(value = "根据产品发送消息前置处理Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品发送消息前置处理", tags = {"Bug" },  notes = "根据产品发送消息前置处理")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/sendmsgpreprocess")
     public ResponseEntity<ProductBugDTO> sendMsgPreProcessByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -346,7 +346,7 @@ public class ProductBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(productbugdto);
     }
 
-    @ApiOperation(value = "根据产品TestScriptBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品TestScript", tags = {"Bug" },  notes = "根据产品TestScript")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/testscript")
     public ResponseEntity<ProductBugDTO> testScriptByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -358,7 +358,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品转需求Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品转需求", tags = {"Bug" },  notes = "根据产品转需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/tostory")
     public ResponseEntity<ProductBugDTO> toStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -370,7 +370,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品解除关联BugBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品解除关联Bug", tags = {"Bug" },  notes = "根据产品解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbugs/{productbug_id}/unlinkbug")
     public ResponseEntity<ProductBugDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);
@@ -382,7 +382,7 @@ public class ProductBugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品更新需求版本Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品更新需求版本", tags = {"Bug" },  notes = "根据产品更新需求版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productbugs/{productbug_id}/updatestoryversion")
     public ResponseEntity<ProductBugDTO> updateStoryVersionByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbug_id") Long productbug_id, @RequestBody ProductBugDTO productbugdto) {
         Bug domain = productbugMapping.toDomain(productbugdto);

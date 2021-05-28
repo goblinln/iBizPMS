@@ -74,16 +74,6 @@ public class ProductResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProductRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询默认查询", tags = {"产品" } ,notes = "查询默认查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/searchcurdefault")
-	public ResponseEntity<Page<ProductDTO>> searchCurDefault(@RequestBody ProductSearchContext context) {
-        productRuntime.addAuthorityConditions(context,"READ");
-        Page<Product> domains = productService.searchCurDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
     @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建产品", tags = {"产品" },  notes = "新建产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/products")

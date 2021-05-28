@@ -145,16 +145,6 @@ public class DynaDashboardResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@DynaDashboardRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"动态数据看板" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/dynadashboards/searchdefault")
-	public ResponseEntity<Page<DynaDashboardDTO>> searchDefault(@RequestBody DynaDashboardSearchContext context) {
-        dynadashboardRuntime.addAuthorityConditions(context,"READ");
-        Page<DynaDashboard> domains = dynadashboardService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(dynadashboardMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/dynadashboards/{dynadashboard_id}/{action}")

@@ -159,16 +159,6 @@ public class IbzproConfigResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzproConfigRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"系统配置表" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzproconfigs/searchdefault")
-	public ResponseEntity<Page<IbzproConfigDTO>> searchDefault(@RequestBody IbzproConfigSearchContext context) {
-        ibzproconfigRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzproConfig> domains = ibzproconfigService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzproconfigMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzproconfigs/{ibzproconfig_id}/{action}")

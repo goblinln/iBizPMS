@@ -67,16 +67,5 @@ public class ProductLifeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据产品查询RoadMapYear", tags = {"产品生命周期" } ,notes = "根据产品查询RoadMapYear")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productlives/searchroadmapyear")
-	public ResponseEntity<Page<ProductLifeDTO>> searchProductLifeRoadMapYearByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductLifeSearchContext context) {
-        
-        productlifeRuntime.addAuthorityConditions(context,"READ");
-        Page<ProductLife> domains = productlifeService.searchRoadMapYear(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productlifeMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 }
 

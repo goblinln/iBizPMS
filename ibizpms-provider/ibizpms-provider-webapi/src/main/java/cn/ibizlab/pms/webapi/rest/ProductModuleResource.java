@@ -168,15 +168,6 @@ public class ProductModuleResource {
 	}
 
     @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询BYPATH", tags = {"需求模块" } ,notes = "查询BYPATH")
-    @RequestMapping(method= RequestMethod.POST , value="/productmodules/searchbypath")
-	public ResponseEntity<Page<ProductModuleDTO>> searchByPath(@RequestBody ProductModuleSearchContext context) {
-        Page<ProductModule> domains = productmoduleService.searchByPath(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"需求模块" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productmodules/fetchdefault")
 	public ResponseEntity<List<ProductModuleDTO>> fetchdefault(@RequestBody ProductModuleSearchContext context) {
@@ -187,15 +178,6 @@ public class ProductModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"需求模块" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/productmodules/searchdefault")
-	public ResponseEntity<Page<ProductModuleDTO>> searchDefault(@RequestBody ProductModuleSearchContext context) {
-        Page<ProductModule> domains = productmoduleService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
@@ -212,15 +194,6 @@ public class ProductModuleResource {
 	}
 
     @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询父模块", tags = {"需求模块" } ,notes = "查询父模块")
-    @RequestMapping(method= RequestMethod.POST , value="/productmodules/searchparentmodule")
-	public ResponseEntity<Page<ProductModuleDTO>> searchParentModule(@RequestBody ProductModuleSearchContext context) {
-        Page<ProductModule> domains = productmoduleService.searchParentModule(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块", tags = {"需求模块" } ,notes = "获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/productmodules/fetchroot")
 	public ResponseEntity<List<ProductModuleDTO>> fetchroot(@RequestBody ProductModuleSearchContext context) {
@@ -231,15 +204,6 @@ public class ProductModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询根模块", tags = {"需求模块" } ,notes = "查询根模块")
-    @RequestMapping(method= RequestMethod.POST , value="/productmodules/searchroot")
-	public ResponseEntity<Page<ProductModuleDTO>> searchRoot(@RequestBody ProductModuleSearchContext context) {
-        Page<ProductModule> domains = productmoduleService.searchRoot(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
@@ -255,15 +219,6 @@ public class ProductModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询根模块_无分支", tags = {"需求模块" } ,notes = "查询根模块_无分支")
-    @RequestMapping(method= RequestMethod.POST , value="/productmodules/searchroot_nobranch")
-	public ResponseEntity<Page<ProductModuleDTO>> searchRoot_NoBranch(@RequestBody ProductModuleSearchContext context) {
-        Page<ProductModule> domains = productmoduleService.searchRoot_NoBranch(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取StoryModule", tags = {"需求模块" } ,notes = "获取StoryModule")
     @RequestMapping(method= RequestMethod.POST , value="/productmodules/fetchstorymodule")
 	public ResponseEntity<List<ProductModuleDTO>> fetchstorymodule(@RequestBody ProductModuleSearchContext context) {
@@ -274,14 +229,6 @@ public class ProductModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询StoryModule", tags = {"需求模块" } ,notes = "查询StoryModule")
-    @RequestMapping(method= RequestMethod.POST , value="/productmodules/searchstorymodule")
-	public ResponseEntity<Page<ProductModuleDTO>> searchStoryModule(@RequestBody ProductModuleSearchContext context) {
-        Page<ProductModule> domains = productmoduleService.searchStoryModule(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 
@@ -342,7 +289,7 @@ public class ProductModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productmoduleService.checkKey(productmoduleMapping.toDomain(productmoduledto)));
     }
 
-    @ApiOperation(value = "根据产品重建模块路径需求模块", tags = {"需求模块" },  notes = "根据产品需求模块")
+    @ApiOperation(value = "根据产品重建模块路径", tags = {"需求模块" },  notes = "根据产品重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productmodules/{productmodule_id}/fix")
     public ResponseEntity<ProductModuleDTO> fixByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
         ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
@@ -373,7 +320,7 @@ public class ProductModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "根据产品同步Ibz平台模块需求模块", tags = {"需求模块" },  notes = "根据产品需求模块")
+    @ApiOperation(value = "根据产品同步Ibz平台模块", tags = {"需求模块" },  notes = "根据产品同步Ibz平台模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productmodules/{productmodule_id}/syncfromibiz")
     public ResponseEntity<ProductModuleDTO> syncFromIBIZByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
         ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
@@ -397,16 +344,6 @@ public class ProductModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询BYPATH", tags = {"需求模块" } ,notes = "根据产品查询BYPATH")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productmodules/searchbypath")
-	public ResponseEntity<Page<ProductModuleDTO>> searchProductModuleByPathByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductModuleSearchContext context) {
-        context.setN_root_eq(product_id);
-        Page<ProductModule> domains = productmoduleService.searchByPath(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"需求模块" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productmodules/fetchdefault")
@@ -419,16 +356,6 @@ public class ProductModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"需求模块" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productmodules/searchdefault")
-	public ResponseEntity<Page<ProductModuleDTO>> searchProductModuleDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductModuleSearchContext context) {
-        context.setN_root_eq(product_id);
-        Page<ProductModule> domains = productmoduleService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取父模块", tags = {"需求模块" } ,notes = "根据产品获取父模块")
@@ -443,16 +370,6 @@ public class ProductModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询父模块", tags = {"需求模块" } ,notes = "根据产品查询父模块")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productmodules/searchparentmodule")
-	public ResponseEntity<Page<ProductModuleDTO>> searchProductModuleParentModuleByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductModuleSearchContext context) {
-        context.setN_root_eq(product_id);
-        Page<ProductModule> domains = productmoduleService.searchParentModule(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取根模块", tags = {"需求模块" } ,notes = "根据产品获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productmodules/fetchroot")
@@ -465,16 +382,6 @@ public class ProductModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询根模块", tags = {"需求模块" } ,notes = "根据产品查询根模块")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productmodules/searchroot")
-	public ResponseEntity<Page<ProductModuleDTO>> searchProductModuleRootByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductModuleSearchContext context) {
-        context.setN_root_eq(product_id);
-        Page<ProductModule> domains = productmoduleService.searchRoot(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取根模块_无分支", tags = {"需求模块" } ,notes = "根据产品获取根模块_无分支")
@@ -489,16 +396,6 @@ public class ProductModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询根模块_无分支", tags = {"需求模块" } ,notes = "根据产品查询根模块_无分支")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productmodules/searchroot_nobranch")
-	public ResponseEntity<Page<ProductModuleDTO>> searchProductModuleRoot_NoBranchByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductModuleSearchContext context) {
-        context.setN_root_eq(product_id);
-        Page<ProductModule> domains = productmoduleService.searchRoot_NoBranch(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 	@ApiOperation(value = "根据产品获取StoryModule", tags = {"需求模块" } ,notes = "根据产品获取StoryModule")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productmodules/fetchstorymodule")
 	public ResponseEntity<List<ProductModuleDTO>> fetchProductModuleStoryModuleByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductModuleSearchContext context) {
@@ -510,15 +407,6 @@ public class ProductModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "根据产品查询StoryModule", tags = {"需求模块" } ,notes = "根据产品查询StoryModule")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productmodules/searchstorymodule")
-	public ResponseEntity<Page<ProductModuleDTO>> searchProductModuleStoryModuleByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductModuleSearchContext context) {
-        context.setN_root_eq(product_id);
-        Page<ProductModule> domains = productmoduleService.searchStoryModule(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 }
 

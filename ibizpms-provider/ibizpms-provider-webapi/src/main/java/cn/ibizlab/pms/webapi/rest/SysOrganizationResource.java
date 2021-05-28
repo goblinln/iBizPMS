@@ -122,14 +122,6 @@ public class SysOrganizationResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"单位" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/sysorganizations/searchdefault")
-	public ResponseEntity<Page<SysOrganizationDTO>> searchDefault(@RequestBody SysOrganizationSearchContext context) {
-        Page<SysOrganization> domains = sysorganizationService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(sysorganizationMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/{sysorganization_id}/{action}")

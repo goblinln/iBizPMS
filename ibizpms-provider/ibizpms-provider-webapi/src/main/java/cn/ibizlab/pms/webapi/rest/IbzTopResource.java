@@ -145,16 +145,6 @@ public class IbzTopResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzTopRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"置顶" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibztops/searchdefault")
-	public ResponseEntity<Page<IbzTopDTO>> searchDefault(@RequestBody IbzTopSearchContext context) {
-        ibztopRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzTop> domains = ibztopService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibztopMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibztops/{ibztop_id}/{action}")

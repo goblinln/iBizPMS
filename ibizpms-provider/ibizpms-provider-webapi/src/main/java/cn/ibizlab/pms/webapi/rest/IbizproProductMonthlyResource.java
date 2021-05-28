@@ -160,14 +160,6 @@ public class IbizproProductMonthlyResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"产品月报" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibizproproductmonthlies/searchdefault")
-	public ResponseEntity<Page<IbizproProductMonthlyDTO>> searchDefault(@RequestBody IbizproProductMonthlySearchContext context) {
-        Page<IbizproProductMonthly> domains = ibizproproductmonthlyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibizproproductmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproproductmonthlies/{ibizproproductmonthly_id}/{action}")

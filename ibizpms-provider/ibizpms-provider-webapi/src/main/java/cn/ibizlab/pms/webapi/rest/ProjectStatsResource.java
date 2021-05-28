@@ -157,16 +157,6 @@ public class ProjectStatsResource {
 	}
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"项目统计" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchdefault")
-	public ResponseEntity<Page<ProjectStatsDTO>> searchDefault(@RequestBody ProjectStatsSearchContext context) {
-        projectstatsRuntime.addAuthorityConditions(context,"READ");
-        Page<ProjectStats> domains = projectstatsService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取未关闭产品", tags = {"项目统计" } ,notes = "获取未关闭产品")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchnoopenproduct")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchnoopenproduct(@RequestBody ProjectStatsSearchContext context) {
@@ -178,16 +168,6 @@ public class ProjectStatsResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询未关闭产品", tags = {"项目统计" } ,notes = "查询未关闭产品")
-    @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchnoopenproduct")
-	public ResponseEntity<Page<ProjectStatsDTO>> searchNoOpenProduct(@RequestBody ProjectStatsSearchContext context) {
-        projectstatsRuntime.addAuthorityConditions(context,"READ");
-        Page<ProjectStats> domains = projectstatsService.searchNoOpenProduct(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
@@ -205,16 +185,6 @@ public class ProjectStatsResource {
 	}
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询项目bug类型统计", tags = {"项目统计" } ,notes = "查询项目bug类型统计")
-    @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchprojectbugtype")
-	public ResponseEntity<Page<ProjectStatsDTO>> searchProjectBugType(@RequestBody ProjectStatsSearchContext context) {
-        projectstatsRuntime.addAuthorityConditions(context,"READ");
-        Page<ProjectStats> domains = projectstatsService.searchProjectBugType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目投入统计", tags = {"项目统计" } ,notes = "获取项目投入统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectinputstats")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchprojectinputstats(@RequestBody ProjectStatsSearchContext context) {
@@ -226,16 +196,6 @@ public class ProjectStatsResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询项目投入统计", tags = {"项目统计" } ,notes = "查询项目投入统计")
-    @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchprojectinputstats")
-	public ResponseEntity<Page<ProjectStatsDTO>> searchProjectInputStats(@RequestBody ProjectStatsSearchContext context) {
-        projectstatsRuntime.addAuthorityConditions(context,"READ");
-        Page<ProjectStats> domains = projectstatsService.searchProjectInputStats(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
@@ -253,16 +213,6 @@ public class ProjectStatsResource {
 	}
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询项目进度", tags = {"项目统计" } ,notes = "查询项目进度")
-    @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchprojectprogress")
-	public ResponseEntity<Page<ProjectStatsDTO>> searchProjectProgress(@RequestBody ProjectStatsSearchContext context) {
-        projectstatsRuntime.addAuthorityConditions(context,"READ");
-        Page<ProjectStats> domains = projectstatsService.searchProjectProgress(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目质量", tags = {"项目统计" } ,notes = "获取项目质量")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectquality")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchprojectquality(@RequestBody ProjectStatsSearchContext context) {
@@ -274,16 +224,6 @@ public class ProjectStatsResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询项目质量", tags = {"项目统计" } ,notes = "查询项目质量")
-    @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchprojectquality")
-	public ResponseEntity<Page<ProjectStatsDTO>> searchProjectQuality(@RequestBody ProjectStatsSearchContext context) {
-        projectstatsRuntime.addAuthorityConditions(context,"READ");
-        Page<ProjectStats> domains = projectstatsService.searchProjectQuality(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
@@ -301,16 +241,6 @@ public class ProjectStatsResource {
 	}
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询项目需求阶段统计", tags = {"项目统计" } ,notes = "查询项目需求阶段统计")
-    @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchprojectstorystagestats")
-	public ResponseEntity<Page<ProjectStatsDTO>> searchProjectStoryStageStats(@RequestBody ProjectStatsSearchContext context) {
-        projectstatsRuntime.addAuthorityConditions(context,"READ");
-        Page<ProjectStats> domains = projectstatsService.searchProjectStoryStageStats(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目需求状态统计", tags = {"项目统计" } ,notes = "获取项目需求状态统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectstorystatusstats")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchprojectstorystatusstats(@RequestBody ProjectStatsSearchContext context) {
@@ -322,16 +252,6 @@ public class ProjectStatsResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询项目需求状态统计", tags = {"项目统计" } ,notes = "查询项目需求状态统计")
-    @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchprojectstorystatusstats")
-	public ResponseEntity<Page<ProjectStatsDTO>> searchProjectStoryStatusStats(@RequestBody ProjectStatsSearchContext context) {
-        projectstatsRuntime.addAuthorityConditions(context,"READ");
-        Page<ProjectStats> domains = projectstatsService.searchProjectStoryStatusStats(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
@@ -349,16 +269,6 @@ public class ProjectStatsResource {
 	}
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询项目任务统计(任务状态)", tags = {"项目统计" } ,notes = "查询项目任务统计(任务状态)")
-    @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchprojecttaskcountbytaskstatus")
-	public ResponseEntity<Page<ProjectStatsDTO>> searchProjectTaskCountByTaskStatus(@RequestBody ProjectStatsSearchContext context) {
-        projectstatsRuntime.addAuthorityConditions(context,"READ");
-        Page<ProjectStats> domains = projectstatsService.searchProjectTaskCountByTaskStatus(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目任务类型统计", tags = {"项目统计" } ,notes = "获取项目任务类型统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojecttaskcountbytype")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchprojecttaskcountbytype(@RequestBody ProjectStatsSearchContext context) {
@@ -373,16 +283,6 @@ public class ProjectStatsResource {
 	}
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询项目任务类型统计", tags = {"项目统计" } ,notes = "查询项目任务类型统计")
-    @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchprojecttaskcountbytype")
-	public ResponseEntity<Page<ProjectStatsDTO>> searchProjectTaskCountByType(@RequestBody ProjectStatsSearchContext context) {
-        projectstatsRuntime.addAuthorityConditions(context,"READ");
-        Page<ProjectStats> domains = projectstatsService.searchProjectTaskCountByType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务工时消耗剩余查询", tags = {"项目统计" } ,notes = "获取任务工时消耗剩余查询")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchtasktime")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchtasktime(@RequestBody ProjectStatsSearchContext context) {
@@ -394,16 +294,6 @@ public class ProjectStatsResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询任务工时消耗剩余查询", tags = {"项目统计" } ,notes = "查询任务工时消耗剩余查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchtasktime")
-	public ResponseEntity<Page<ProjectStatsDTO>> searchTaskTime(@RequestBody ProjectStatsSearchContext context) {
-        projectstatsRuntime.addAuthorityConditions(context,"READ");
-        Page<ProjectStats> domains = projectstatsService.searchTaskTime(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

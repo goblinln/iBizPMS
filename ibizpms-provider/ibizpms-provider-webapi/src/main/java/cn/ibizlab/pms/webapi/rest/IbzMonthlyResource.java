@@ -212,14 +212,6 @@ public class IbzMonthlyResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"月报" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/searchdefault")
-	public ResponseEntity<Page<IbzMonthlyDTO>> searchDefault(@RequestBody IbzMonthlySearchContext context) {
-        Page<IbzMonthly> domains = ibzmonthlyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取我的月报", tags = {"月报" } ,notes = "获取我的月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchmymonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchmymonthly(@RequestBody IbzMonthlySearchContext context) {
@@ -230,14 +222,6 @@ public class IbzMonthlyResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询我的月报", tags = {"月报" } ,notes = "查询我的月报")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/searchmymonthly")
-	public ResponseEntity<Page<IbzMonthlyDTO>> searchMyMonthly(@RequestBody IbzMonthlySearchContext context) {
-        Page<IbzMonthly> domains = ibzmonthlyService.searchMyMonthly(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 	@ApiOperation(value = "获取我的月报（移动端）", tags = {"月报" } ,notes = "获取我的月报（移动端）")
@@ -252,14 +236,6 @@ public class IbzMonthlyResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询我的月报（移动端）", tags = {"月报" } ,notes = "查询我的月报（移动端）")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/searchmymonthlymob")
-	public ResponseEntity<Page<IbzMonthlyDTO>> searchMyMonthlyMob(@RequestBody IbzMonthlySearchContext context) {
-        Page<IbzMonthly> domains = ibzmonthlyService.searchMyMonthlyMob(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取我收到的月报", tags = {"月报" } ,notes = "获取我收到的月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchmyreceivedmonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchmyreceivedmonthly(@RequestBody IbzMonthlySearchContext context) {
@@ -270,14 +246,6 @@ public class IbzMonthlyResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询我收到的月报", tags = {"月报" } ,notes = "查询我收到的月报")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/searchmyreceivedmonthly")
-	public ResponseEntity<Page<IbzMonthlyDTO>> searchMyReceivedMonthly(@RequestBody IbzMonthlySearchContext context) {
-        Page<IbzMonthly> domains = ibzmonthlyService.searchMyReceivedMonthly(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 	@ApiOperation(value = "获取我提交的月报", tags = {"月报" } ,notes = "获取我提交的月报")
@@ -292,14 +260,6 @@ public class IbzMonthlyResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询我提交的月报", tags = {"月报" } ,notes = "查询我提交的月报")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/searchmysubmitmonthly")
-	public ResponseEntity<Page<IbzMonthlyDTO>> searchMySubmitMonthly(@RequestBody IbzMonthlySearchContext context) {
-        Page<IbzMonthly> domains = ibzmonthlyService.searchMySubmitMonthly(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取产品月报", tags = {"月报" } ,notes = "获取产品月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchproductmonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchproductmonthly(@RequestBody IbzMonthlySearchContext context) {
@@ -312,14 +272,6 @@ public class IbzMonthlyResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询产品月报", tags = {"月报" } ,notes = "查询产品月报")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/searchproductmonthly")
-	public ResponseEntity<Page<IbzMonthlyDTO>> searchProductMonthly(@RequestBody IbzMonthlySearchContext context) {
-        Page<IbzMonthly> domains = ibzmonthlyService.searchProductMonthly(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取项目月报", tags = {"月报" } ,notes = "获取项目月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchprojectmonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchprojectmonthly(@RequestBody IbzMonthlySearchContext context) {
@@ -330,14 +282,6 @@ public class IbzMonthlyResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询项目月报", tags = {"月报" } ,notes = "查询项目月报")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/searchprojectmonthly")
-	public ResponseEntity<Page<IbzMonthlyDTO>> searchProjectMonthly(@RequestBody IbzMonthlySearchContext context) {
-        Page<IbzMonthly> domains = ibzmonthlyService.searchProjectMonthly(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

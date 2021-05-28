@@ -249,16 +249,6 @@ public class ProjectResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询默认查询", tags = {"项目" } ,notes = "查询默认查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/searchcurdefaultquery")
-	public ResponseEntity<Page<ProjectDTO>> searchCurDefaultQuery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchCurDefaultQuery(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/{action}")

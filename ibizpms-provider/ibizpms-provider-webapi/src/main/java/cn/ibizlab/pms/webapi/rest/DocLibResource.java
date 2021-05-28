@@ -172,15 +172,6 @@ public class DocLibResource {
 	}
 
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询自定义文档库", tags = {"文档库" } ,notes = "查询自定义文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbycustom")
-	public ResponseEntity<Page<DocLibDTO>> searchByCustom(@RequestBody DocLibSearchContext context) {
-        Page<DocLib> domains = doclibService.searchByCustom(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品文档库", tags = {"文档库" } ,notes = "获取产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbyproduct")
 	public ResponseEntity<List<DocLibDTO>> fetchbyproduct(@RequestBody DocLibSearchContext context) {
@@ -191,15 +182,6 @@ public class DocLibResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询产品文档库", tags = {"文档库" } ,notes = "查询产品文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbyproduct")
-	public ResponseEntity<Page<DocLibDTO>> searchByProduct(@RequestBody DocLibSearchContext context) {
-        Page<DocLib> domains = doclibService.searchByProduct(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
@@ -216,15 +198,6 @@ public class DocLibResource {
 	}
 
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询产品文档库", tags = {"文档库" } ,notes = "查询产品文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbyproductnotfiles")
-	public ResponseEntity<Page<DocLibDTO>> searchByProductNotFiles(@RequestBody DocLibSearchContext context) {
-        Page<DocLib> domains = doclibService.searchByProductNotFiles(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目文件库", tags = {"文档库" } ,notes = "获取项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbyproject")
 	public ResponseEntity<List<DocLibDTO>> fetchbyproject(@RequestBody DocLibSearchContext context) {
@@ -235,15 +208,6 @@ public class DocLibResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询项目文件库", tags = {"文档库" } ,notes = "查询项目文件库")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbyproject")
-	public ResponseEntity<Page<DocLibDTO>> searchByProject(@RequestBody DocLibSearchContext context) {
-        Page<DocLib> domains = doclibService.searchByProject(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
@@ -260,15 +224,6 @@ public class DocLibResource {
 	}
 
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询项目文件库", tags = {"文档库" } ,notes = "查询项目文件库")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbyprojectnotfiles")
-	public ResponseEntity<Page<DocLibDTO>> searchByProjectNotFiles(@RequestBody DocLibSearchContext context) {
-        Page<DocLib> domains = doclibService.searchByProjectNotFiles(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取所属文档库", tags = {"文档库" } ,notes = "获取所属文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchcurdoclib")
 	public ResponseEntity<List<DocLibDTO>> fetchcurdoclib(@RequestBody DocLibSearchContext context) {
@@ -279,15 +234,6 @@ public class DocLibResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询所属文档库", tags = {"文档库" } ,notes = "查询所属文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchcurdoclib")
-	public ResponseEntity<Page<DocLibDTO>> searchCurDocLib(@RequestBody DocLibSearchContext context) {
-        Page<DocLib> domains = doclibService.searchCurDocLib(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
@@ -304,15 +250,6 @@ public class DocLibResource {
 	}
 
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"文档库" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchdefault")
-	public ResponseEntity<Page<DocLibDTO>> searchDefault(@RequestBody DocLibSearchContext context) {
-        Page<DocLib> domains = doclibService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"文档库" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchmyfavourites")
 	public ResponseEntity<List<DocLibDTO>> fetchmyfavourites(@RequestBody DocLibSearchContext context) {
@@ -326,15 +263,6 @@ public class DocLibResource {
 	}
 
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询我的收藏", tags = {"文档库" } ,notes = "查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchmyfavourites")
-	public ResponseEntity<Page<DocLibDTO>> searchMyFavourites(@RequestBody DocLibSearchContext context) {
-        Page<DocLib> domains = doclibService.searchMyFavourites(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根目录", tags = {"文档库" } ,notes = "获取根目录")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchrootmodulemulu")
 	public ResponseEntity<List<DocLibDTO>> fetchrootmodulemulu(@RequestBody DocLibSearchContext context) {
@@ -345,15 +273,6 @@ public class DocLibResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询根目录", tags = {"文档库" } ,notes = "查询根目录")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchrootmodulemulu")
-	public ResponseEntity<Page<DocLibDTO>> searchRootModuleMuLu(@RequestBody DocLibSearchContext context) {
-        Page<DocLib> domains = doclibService.searchRootModuleMuLu(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 
@@ -424,7 +343,7 @@ public class DocLibResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品收藏文档库", tags = {"文档库" },  notes = "根据产品文档库")
+    @ApiOperation(value = "根据产品收藏", tags = {"文档库" },  notes = "根据产品收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/collect")
     public ResponseEntity<DocLibDTO> collectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
         DocLib domain = doclibMapping.toDomain(doclibdto);
@@ -446,7 +365,7 @@ public class DocLibResource {
 
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品取消收藏文档库", tags = {"文档库" },  notes = "根据产品文档库")
+    @ApiOperation(value = "根据产品取消收藏", tags = {"文档库" },  notes = "根据产品取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/uncollect")
     public ResponseEntity<DocLibDTO> unCollectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
         DocLib domain = doclibMapping.toDomain(doclibdto);
@@ -470,16 +389,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询自定义文档库", tags = {"文档库" } ,notes = "根据产品查询自定义文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/searchbycustom")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibByCustomByProduct(@PathVariable("product_id") Long product_id, @RequestBody DocLibSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<DocLib> domains = doclibService.searchByCustom(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取产品文档库", tags = {"文档库" } ,notes = "根据产品获取产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/fetchbyproduct")
@@ -492,16 +401,6 @@ public class DocLibResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询产品文档库", tags = {"文档库" } ,notes = "根据产品查询产品文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/searchbyproduct")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibByProductByProduct(@PathVariable("product_id") Long product_id, @RequestBody DocLibSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<DocLib> domains = doclibService.searchByProduct(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取产品文档库", tags = {"文档库" } ,notes = "根据产品获取产品文档库")
@@ -516,16 +415,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询产品文档库", tags = {"文档库" } ,notes = "根据产品查询产品文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/searchbyproductnotfiles")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibByProductNotFilesByProduct(@PathVariable("product_id") Long product_id, @RequestBody DocLibSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<DocLib> domains = doclibService.searchByProductNotFiles(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目文件库", tags = {"文档库" } ,notes = "根据产品获取项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/fetchbyproject")
@@ -538,16 +427,6 @@ public class DocLibResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目文件库", tags = {"文档库" } ,notes = "根据产品查询项目文件库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/searchbyproject")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibByProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody DocLibSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<DocLib> domains = doclibService.searchByProject(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目文件库", tags = {"文档库" } ,notes = "根据产品获取项目文件库")
@@ -562,16 +441,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目文件库", tags = {"文档库" } ,notes = "根据产品查询项目文件库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/searchbyprojectnotfiles")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibByProjectNotFilesByProduct(@PathVariable("product_id") Long product_id, @RequestBody DocLibSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<DocLib> domains = doclibService.searchByProjectNotFiles(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取所属文档库", tags = {"文档库" } ,notes = "根据产品获取所属文档库")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/fetchcurdoclib")
@@ -584,16 +453,6 @@ public class DocLibResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询所属文档库", tags = {"文档库" } ,notes = "根据产品查询所属文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/searchcurdoclib")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibCurDocLibByProduct(@PathVariable("product_id") Long product_id, @RequestBody DocLibSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<DocLib> domains = doclibService.searchCurDocLib(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"文档库" } ,notes = "根据产品获取DEFAULT")
@@ -608,16 +467,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"文档库" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/searchdefault")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody DocLibSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<DocLib> domains = doclibService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取我的收藏", tags = {"文档库" } ,notes = "根据产品获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/fetchmyfavourites")
@@ -631,16 +480,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询我的收藏", tags = {"文档库" } ,notes = "根据产品查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/searchmyfavourites")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibMyFavouritesByProduct(@PathVariable("product_id") Long product_id, @RequestBody DocLibSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<DocLib> domains = doclibService.searchMyFavourites(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取根目录", tags = {"文档库" } ,notes = "根据产品获取根目录")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/fetchrootmodulemulu")
@@ -653,16 +492,6 @@ public class DocLibResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询根目录", tags = {"文档库" } ,notes = "根据产品查询根目录")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/searchrootmodulemulu")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibRootModuleMuLuByProduct(@PathVariable("product_id") Long product_id, @RequestBody DocLibSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<DocLib> domains = doclibService.searchRootModuleMuLu(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
@@ -724,7 +553,7 @@ public class DocLibResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
-    @ApiOperation(value = "根据项目收藏文档库", tags = {"文档库" },  notes = "根据项目文档库")
+    @ApiOperation(value = "根据项目收藏", tags = {"文档库" },  notes = "根据项目收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/collect")
     public ResponseEntity<DocLibDTO> collectByProject(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
         DocLib domain = doclibMapping.toDomain(doclibdto);
@@ -746,7 +575,7 @@ public class DocLibResource {
 
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
-    @ApiOperation(value = "根据项目取消收藏文档库", tags = {"文档库" },  notes = "根据项目文档库")
+    @ApiOperation(value = "根据项目取消收藏", tags = {"文档库" },  notes = "根据项目取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/uncollect")
     public ResponseEntity<DocLibDTO> unCollectByProject(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
         DocLib domain = doclibMapping.toDomain(doclibdto);
@@ -770,16 +599,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
-	@ApiOperation(value = "根据项目查询自定义文档库", tags = {"文档库" } ,notes = "根据项目查询自定义文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/searchbycustom")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibByCustomByProject(@PathVariable("project_id") Long project_id, @RequestBody DocLibSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<DocLib> domains = doclibService.searchByCustom(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目获取产品文档库", tags = {"文档库" } ,notes = "根据项目获取产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/fetchbyproduct")
@@ -792,16 +611,6 @@ public class DocLibResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
-	@ApiOperation(value = "根据项目查询产品文档库", tags = {"文档库" } ,notes = "根据项目查询产品文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/searchbyproduct")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibByProductByProject(@PathVariable("project_id") Long project_id, @RequestBody DocLibSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<DocLib> domains = doclibService.searchByProduct(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目获取产品文档库", tags = {"文档库" } ,notes = "根据项目获取产品文档库")
@@ -816,16 +625,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
-	@ApiOperation(value = "根据项目查询产品文档库", tags = {"文档库" } ,notes = "根据项目查询产品文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/searchbyproductnotfiles")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibByProductNotFilesByProject(@PathVariable("project_id") Long project_id, @RequestBody DocLibSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<DocLib> domains = doclibService.searchByProductNotFiles(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目获取项目文件库", tags = {"文档库" } ,notes = "根据项目获取项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/fetchbyproject")
@@ -838,16 +637,6 @@ public class DocLibResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
-	@ApiOperation(value = "根据项目查询项目文件库", tags = {"文档库" } ,notes = "根据项目查询项目文件库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/searchbyproject")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibByProjectByProject(@PathVariable("project_id") Long project_id, @RequestBody DocLibSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<DocLib> domains = doclibService.searchByProject(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目获取项目文件库", tags = {"文档库" } ,notes = "根据项目获取项目文件库")
@@ -862,16 +651,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
-	@ApiOperation(value = "根据项目查询项目文件库", tags = {"文档库" } ,notes = "根据项目查询项目文件库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/searchbyprojectnotfiles")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibByProjectNotFilesByProject(@PathVariable("project_id") Long project_id, @RequestBody DocLibSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<DocLib> domains = doclibService.searchByProjectNotFiles(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目获取所属文档库", tags = {"文档库" } ,notes = "根据项目获取所属文档库")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/fetchcurdoclib")
@@ -884,16 +663,6 @@ public class DocLibResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
-	@ApiOperation(value = "根据项目查询所属文档库", tags = {"文档库" } ,notes = "根据项目查询所属文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/searchcurdoclib")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibCurDocLibByProject(@PathVariable("project_id") Long project_id, @RequestBody DocLibSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<DocLib> domains = doclibService.searchCurDocLib(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"文档库" } ,notes = "根据项目获取DEFAULT")
@@ -908,16 +677,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
-	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"文档库" } ,notes = "根据项目查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/searchdefault")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody DocLibSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<DocLib> domains = doclibService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目获取我的收藏", tags = {"文档库" } ,notes = "根据项目获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/fetchmyfavourites")
@@ -931,16 +690,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
-	@ApiOperation(value = "根据项目查询我的收藏", tags = {"文档库" } ,notes = "根据项目查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/searchmyfavourites")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibMyFavouritesByProject(@PathVariable("project_id") Long project_id, @RequestBody DocLibSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<DocLib> domains = doclibService.searchMyFavourites(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目获取根目录", tags = {"文档库" } ,notes = "根据项目获取根目录")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/fetchrootmodulemulu")
@@ -953,16 +702,6 @@ public class DocLibResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DOCLIBMANAGE')")
-	@ApiOperation(value = "根据项目查询根目录", tags = {"文档库" } ,notes = "根据项目查询根目录")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/searchrootmodulemulu")
-	public ResponseEntity<Page<DocLibDTO>> searchDocLibRootModuleMuLuByProject(@PathVariable("project_id") Long project_id, @RequestBody DocLibSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<DocLib> domains = doclibService.searchRootModuleMuLu(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 }
 

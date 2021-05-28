@@ -243,16 +243,6 @@ public class TodoResource {
 	}
 
     @PreAuthorize("@TodoRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"待办" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/searchdefault")
-	public ResponseEntity<Page<TodoDTO>> searchDefault(@RequestBody TodoSearchContext context) {
-        todoRuntime.addAuthorityConditions(context,"READ");
-        Page<Todo> domains = todoService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(todoMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@TodoRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的待办", tags = {"待办" } ,notes = "获取我的待办")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmytodo")
 	public ResponseEntity<List<TodoDTO>> fetchmytodo(@RequestBody TodoSearchContext context) {
@@ -264,16 +254,6 @@ public class TodoResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TodoRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询我的待办", tags = {"待办" } ,notes = "查询我的待办")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/searchmytodo")
-	public ResponseEntity<Page<TodoDTO>> searchMyTodo(@RequestBody TodoSearchContext context) {
-        todoRuntime.addAuthorityConditions(context,"READ");
-        Page<Todo> domains = todoService.searchMyTodo(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(todoMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@TodoRuntime.quickTest('READ')")
@@ -291,16 +271,6 @@ public class TodoResource {
 	}
 
     @PreAuthorize("@TodoRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询我的待办", tags = {"待办" } ,notes = "查询我的待办")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/searchmytodopc")
-	public ResponseEntity<Page<TodoDTO>> searchMyTodoPc(@RequestBody TodoSearchContext context) {
-        todoRuntime.addAuthorityConditions(context,"READ");
-        Page<Todo> domains = todoService.searchMyTodoPc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(todoMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@TodoRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取MyUpcoming", tags = {"待办" } ,notes = "获取MyUpcoming")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmyupcoming")
 	public ResponseEntity<List<TodoDTO>> fetchmyupcoming(@RequestBody TodoSearchContext context) {
@@ -312,16 +282,6 @@ public class TodoResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TodoRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询MyUpcoming", tags = {"待办" } ,notes = "查询MyUpcoming")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/searchmyupcoming")
-	public ResponseEntity<Page<TodoDTO>> searchMyUpcoming(@RequestBody TodoSearchContext context) {
-        todoRuntime.addAuthorityConditions(context,"READ");
-        Page<Todo> domains = todoService.searchMyUpcoming(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(todoMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

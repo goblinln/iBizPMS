@@ -67,16 +67,5 @@ public class ProductProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据产品查询当前项目", tags = {"项目" } ,notes = "根据产品查询当前项目")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productprojects/searchcurproduct")
-	public ResponseEntity<Page<ProductProjectDTO>> searchProductProjectCurProductByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProjectSearchContext context) {
-        
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchCurProduct(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productprojectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 }
 

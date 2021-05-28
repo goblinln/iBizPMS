@@ -7848,40 +7848,40 @@
         "name" : "RESTART"
       }
     }, {
-      "name" : "SRFUR__TASK_ASSIGN_BUT",
+      "name" : "START",
       "getPSDEOPPriv" : {
-        "logicName" : "任务指派",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_ASSIGN_BUT"
-        },
-        "mapSysUniResCode" : "TASK_ASSIGN_BUT",
-        "name" : "SRFUR__TASK_ASSIGN_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "开始",
+        "name" : "START"
       }
     }, {
-      "name" : "SRFUR__TASK_FORWARD_BUT",
+      "name" : "XQCHANGE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务转交",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_FORWARD_BUT"
-        },
-        "mapSysUniResCode" : "TASK_FORWARD_BUT",
-        "name" : "SRFUR__TASK_FORWARD_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "需求变更确认",
+        "name" : "XQCHANGE"
       }
     }, {
-      "name" : "SRFUR__STORY_FJTASK_BUT",
+      "name" : "ASSIGNTO",
       "getPSDEOPPriv" : {
-        "logicName" : "需求分解任务",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_FJTASK_BUT"
-        },
-        "mapSysUniResCode" : "STORY_FJTASK_BUT",
-        "name" : "SRFUR__STORY_FJTASK_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "指派",
+        "name" : "ASSIGNTO"
+      }
+    }, {
+      "name" : "FORWARD",
+      "getPSDEOPPriv" : {
+        "logicName" : "转交",
+        "name" : "FORWARD"
+      }
+    }, {
+      "name" : "PAUSE",
+      "getPSDEOPPriv" : {
+        "logicName" : "暂停",
+        "name" : "PAUSE"
+      }
+    }, {
+      "name" : "FINISH",
+      "getPSDEOPPriv" : {
+        "logicName" : "完成",
+        "name" : "FINISH"
       }
     }, {
       "name" : "CONSUM",
@@ -7890,52 +7890,10 @@
         "name" : "CONSUM"
       }
     }, {
-      "name" : "SRFUR__TASK_FAVOR_BUT",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务已收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_FAVOR_BUT"
-        },
-        "mapSysUniResCode" : "TASK_FAVOR_BUT",
-        "name" : "SRFUR__TASK_FAVOR_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_CLOSE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_CLOSE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_CLOSE_BUT",
-        "name" : "SRFUR__TASK_CLOSE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_PAUSE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务暂停",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_PAUSE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_PAUSE_BUT",
-        "name" : "SRFUR__TASK_PAUSE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_XQCHANGE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务确认需求变更",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_XQCHANGE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_XQCHANGE_BUT",
-        "name" : "SRFUR__TASK_XQCHANGE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     }, {
       "name" : "DELETE",
@@ -7944,28 +7902,16 @@
         "name" : "DELETE"
       }
     }, {
-      "name" : "SRFUR__TASK_COMPLETE_BUT",
+      "name" : "FAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "任务完成",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_COMPLETE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_COMPLETE_BUT",
-        "name" : "SRFUR__TASK_COMPLETE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "任务收藏",
+        "name" : "FAVORITES"
       }
     }, {
-      "name" : "SRFUR__TASK_START_BUT",
+      "name" : "FJTASK",
       "getPSDEOPPriv" : {
-        "logicName" : "任务开始",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_START_BUT"
-        },
-        "mapSysUniResCode" : "TASK_START_BUT",
-        "name" : "SRFUR__TASK_START_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "分解任务",
+        "name" : "FJTASK"
       }
     } ],
     "state2Value" : "0",
@@ -9112,6 +9058,12 @@
         "mapSysUniRes" : true
       }
     }, {
+      "name" : "PAUSE",
+      "getPSDEOPPriv" : {
+        "logicName" : "暂停",
+        "name" : "PAUSE"
+      }
+    }, {
       "name" : "SRFUR__TASK_FORWARD_BUT",
       "getPSDEOPPriv" : {
         "logicName" : "任务转交",
@@ -9184,6 +9136,18 @@
         "mapSysUniRes" : true
       }
     }, {
+      "name" : "RESTART",
+      "getPSDEOPPriv" : {
+        "logicName" : "继续",
+        "name" : "RESTART"
+      }
+    }, {
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "logicName" : "删除",
+        "name" : "DELETE"
+      }
+    }, {
       "name" : "SRFUR__TASK_CONSUM_BUT",
       "getPSDEOPPriv" : {
         "logicName" : "任务工时",
@@ -9194,6 +9158,18 @@
         "mapSysUniResCode" : "TASK_CONSUM_BUT",
         "name" : "SRFUR__TASK_CONSUM_BUT",
         "mapSysUniRes" : true
+      }
+    }, {
+      "name" : "FJTASK",
+      "getPSDEOPPriv" : {
+        "logicName" : "分解任务",
+        "name" : "FJTASK"
+      }
+    }, {
+      "name" : "XQCHANGE",
+      "getPSDEOPPriv" : {
+        "logicName" : "需求变更确认",
+        "name" : "XQCHANGE"
       }
     }, {
       "name" : "SRFUR__TASK_ASSIGN_BUT",
@@ -15828,112 +15804,52 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__TASK_START_BUT",
+      "name" : "ASSIGNTO",
       "getPSDEOPPriv" : {
-        "logicName" : "任务开始",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_START_BUT"
-        },
-        "mapSysUniResCode" : "TASK_START_BUT",
-        "name" : "SRFUR__TASK_START_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "指派",
+        "name" : "ASSIGNTO"
       }
     }, {
-      "name" : "SRFUR__TASK_ASSIGN_BUT",
+      "name" : "PAUSE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务指派",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_ASSIGN_BUT"
-        },
-        "mapSysUniResCode" : "TASK_ASSIGN_BUT",
-        "name" : "SRFUR__TASK_ASSIGN_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "暂停",
+        "name" : "PAUSE"
       }
     }, {
-      "name" : "SRFUR__TASK_COMPLETE_BUT",
+      "name" : "START",
       "getPSDEOPPriv" : {
-        "logicName" : "任务完成",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_COMPLETE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_COMPLETE_BUT",
-        "name" : "SRFUR__TASK_COMPLETE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "开始",
+        "name" : "START"
       }
     }, {
-      "name" : "SRFUR__TASK_CANCEL_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务取消",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_CANCEL_BUT"
-        },
-        "mapSysUniResCode" : "TASK_CANCEL_BUT",
-        "name" : "SRFUR__TASK_CANCEL_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_PROCEED_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务继续",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_PROCEED_BUT"
-        },
-        "mapSysUniResCode" : "TASK_PROCEED_BUT",
-        "name" : "SRFUR__TASK_PROCEED_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_SUBTASKS_BUT",
+      "name" : "SUBTASKS",
       "getPSDEOPPriv" : {
         "logicName" : "任务子任务",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_SUBTASKS_BUT"
-        },
-        "mapSysUniResCode" : "TASK_SUBTASKS_BUT",
-        "name" : "SRFUR__TASK_SUBTASKS_BUT",
-        "mapSysUniRes" : true
+        "name" : "SUBTASKS"
       }
     }, {
-      "name" : "SRFUR__TASK_NFAVOR_BUT",
+      "name" : "FINISH",
       "getPSDEOPPriv" : {
-        "logicName" : "任务待收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_NFAVOR_BUT"
-        },
-        "mapSysUniResCode" : "TASK_NFAVOR_BUT",
-        "name" : "SRFUR__TASK_NFAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "完成",
+        "name" : "FINISH"
       }
     }, {
-      "name" : "SRFUR__TASK_PAUSE_BUT",
+      "name" : "XQCHANGE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务暂停",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_PAUSE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_PAUSE_BUT",
-        "name" : "SRFUR__TASK_PAUSE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "需求变更确认",
+        "name" : "XQCHANGE"
       }
     }, {
-      "name" : "SRFUR__TASK_XQCHANGE_BUT",
+      "name" : "CANCEL",
       "getPSDEOPPriv" : {
-        "logicName" : "任务确认需求变更",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_XQCHANGE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_XQCHANGE_BUT",
-        "name" : "SRFUR__TASK_XQCHANGE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "取消",
+        "name" : "CANCEL"
+      }
+    }, {
+      "name" : "RESTART",
+      "getPSDEOPPriv" : {
+        "logicName" : "继续",
+        "name" : "RESTART"
       }
     } ],
     "state2Value" : "1",

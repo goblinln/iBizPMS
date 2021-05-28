@@ -145,16 +145,6 @@ public class ProductLineResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProductLineRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"产品线（废弃）" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/productlines/searchdefault")
-	public ResponseEntity<Page<ProductLineDTO>> searchDefault(@RequestBody ProductLineSearchContext context) {
-        productlineRuntime.addAuthorityConditions(context,"READ");
-        Page<ProductLine> domains = productlineService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productlineMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/productlines/{productline_id}/{action}")

@@ -155,14 +155,6 @@ public class ModuleResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询BugModule", tags = {"模块" } ,notes = "查询BugModule")
-    @RequestMapping(method= RequestMethod.POST , value="/modules/searchbugmodule")
-	public ResponseEntity<Page<ModuleDTO>> searchBugModule(@RequestBody ModuleSearchContext context) {
-        Page<Module> domains = moduleService.searchBugModule(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"模块" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchbugmodulecodelist")
@@ -175,16 +167,6 @@ public class ModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"模块" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/modules/searchbugmodulecodelist")
-	public ResponseEntity<Page<ModuleDTO>> searchBugModuleCodeList(@RequestBody ModuleSearchContext context) {
-        moduleRuntime.addAuthorityConditions(context,"READ");
-        Page<Module> domains = moduleService.searchBugModuleCodeList(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
@@ -202,16 +184,6 @@ public class ModuleResource {
 	}
 
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"模块" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/modules/searchdefault")
-	public ResponseEntity<Page<ModuleDTO>> searchDefault(@RequestBody ModuleSearchContext context) {
-        moduleRuntime.addAuthorityConditions(context,"READ");
-        Page<Module> domains = moduleService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文档目录", tags = {"模块" } ,notes = "获取文档目录")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchdocmodule")
 	public ResponseEntity<List<ModuleDTO>> fetchdocmodule(@RequestBody ModuleSearchContext context) {
@@ -223,16 +195,6 @@ public class ModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询文档目录", tags = {"模块" } ,notes = "查询文档目录")
-    @RequestMapping(method= RequestMethod.POST , value="/modules/searchdocmodule")
-	public ResponseEntity<Page<ModuleDTO>> searchDocModule(@RequestBody ModuleSearchContext context) {
-        moduleRuntime.addAuthorityConditions(context,"READ");
-        Page<Module> domains = moduleService.searchDocModule(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
@@ -250,16 +212,6 @@ public class ModuleResource {
 	}
 
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询产品线", tags = {"模块" } ,notes = "查询产品线")
-    @RequestMapping(method= RequestMethod.POST , value="/modules/searchline")
-	public ResponseEntity<Page<ModuleDTO>> searchLine(@RequestBody ModuleSearchContext context) {
-        moduleRuntime.addAuthorityConditions(context,"READ");
-        Page<Module> domains = moduleService.searchLine(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取需求模块", tags = {"模块" } ,notes = "获取需求模块")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchstorymodule")
 	public ResponseEntity<List<ModuleDTO>> fetchstorymodule(@RequestBody ModuleSearchContext context) {
@@ -274,16 +226,6 @@ public class ModuleResource {
 	}
 
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询需求模块", tags = {"模块" } ,notes = "查询需求模块")
-    @RequestMapping(method= RequestMethod.POST , value="/modules/searchstorymodule")
-	public ResponseEntity<Page<ModuleDTO>> searchStoryModule(@RequestBody ModuleSearchContext context) {
-        moduleRuntime.addAuthorityConditions(context,"READ");
-        Page<Module> domains = moduleService.searchStoryModule(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务模块", tags = {"模块" } ,notes = "获取任务模块")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchtaskmodule")
 	public ResponseEntity<List<ModuleDTO>> fetchtaskmodule(@RequestBody ModuleSearchContext context) {
@@ -295,16 +237,6 @@ public class ModuleResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ModuleRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询任务模块", tags = {"模块" } ,notes = "查询任务模块")
-    @RequestMapping(method= RequestMethod.POST , value="/modules/searchtaskmodule")
-	public ResponseEntity<Page<ModuleDTO>> searchTaskModule(@RequestBody ModuleSearchContext context) {
-        moduleRuntime.addAuthorityConditions(context,"READ");
-        Page<Module> domains = moduleService.searchTaskModule(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

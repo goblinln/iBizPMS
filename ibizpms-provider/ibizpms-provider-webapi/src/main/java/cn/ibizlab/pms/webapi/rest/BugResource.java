@@ -462,15 +462,6 @@ public class BugResource {
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询指派给我Bug", tags = {"Bug" } ,notes = "查询指派给我Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchassignedtomybug")
-	public ResponseEntity<Page<BugDTO>> searchAssignedToMyBug(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchAssignedToMyBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指派给我Bug（PC）", tags = {"Bug" } ,notes = "获取指派给我Bug（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchassignedtomybugpc")
 	public ResponseEntity<List<BugDTO>> fetchassignedtomybugpc(@RequestBody BugSearchContext context) {
@@ -481,15 +472,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询指派给我Bug（PC）", tags = {"Bug" } ,notes = "查询指派给我Bug（PC）")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchassignedtomybugpc")
-	public ResponseEntity<Page<BugDTO>> searchAssignedToMyBugPc(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchAssignedToMyBugPc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
@@ -506,15 +488,6 @@ public class BugResource {
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询版本关联bug(遗留的)", tags = {"Bug" } ,notes = "查询版本关联bug(遗留的)")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbugsbybuild")
-	public ResponseEntity<Page<BugDTO>> searchBugsByBuild(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchBugsByBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本关联Bug（已解决）", tags = {"Bug" } ,notes = "获取版本关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildbugs")
 	public ResponseEntity<List<BugDTO>> fetchbuildbugs(@RequestBody BugSearchContext context) {
@@ -525,15 +498,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询版本关联Bug（已解决）", tags = {"Bug" } ,notes = "查询版本关联Bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildbugs")
-	public ResponseEntity<Page<BugDTO>> searchBuildBugs(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchBuildBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
@@ -550,15 +514,6 @@ public class BugResource {
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询版本可关联的已解决的Bugs集合", tags = {"Bug" } ,notes = "查询版本可关联的已解决的Bugs集合")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildlinkresolvedbugs")
-	public ResponseEntity<Page<BugDTO>> searchBuildLinkResolvedBugs(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchBuildLinkResolvedBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本关联Bug（已解决）", tags = {"Bug" } ,notes = "获取版本关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildopenbugs")
 	public ResponseEntity<List<BugDTO>> fetchbuildopenbugs(@RequestBody BugSearchContext context) {
@@ -569,15 +524,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询版本关联Bug（已解决）", tags = {"Bug" } ,notes = "查询版本关联Bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildopenbugs")
-	public ResponseEntity<Page<BugDTO>> searchBuildOpenBugs(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchBuildOpenBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
@@ -594,15 +540,6 @@ public class BugResource {
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询Build产生的Bug", tags = {"Bug" } ,notes = "查询Build产生的Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebug")
-	public ResponseEntity<Page<BugDTO>> searchBuildProduceBug(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchBuildProduceBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug", tags = {"Bug" } ,notes = "获取Build产生的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugmodule")
 	public ResponseEntity<List<BugDTO>> fetchbuildproducebugmodule(@RequestBody BugSearchContext context) {
@@ -613,15 +550,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询Build产生的Bug", tags = {"Bug" } ,notes = "查询Build产生的Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugmodule")
-	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugModule(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchBuildProduceBugModule(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
@@ -638,15 +566,6 @@ public class BugResource {
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询Build产生的Bug-创建者分布(项目)", tags = {"Bug" } ,notes = "查询Build产生的Bug-创建者分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugmodule_project")
-	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugModule_Project(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchBuildProduceBugModule_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-创建分类", tags = {"Bug" } ,notes = "获取Build产生的Bug-创建分类")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugopenedby")
 	public ResponseEntity<List<BugDTO>> fetchbuildproducebugopenedby(@RequestBody BugSearchContext context) {
@@ -657,15 +576,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询Build产生的Bug-创建分类", tags = {"Bug" } ,notes = "查询Build产生的Bug-创建分类")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugopenedby")
-	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugOpenedBy(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchBuildProduceBugOpenedBy(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
@@ -682,15 +592,6 @@ public class BugResource {
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询Build产生的Bug-创建者分布(项目)", tags = {"Bug" } ,notes = "查询Build产生的Bug-创建者分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugopenedby_project")
-	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugOpenedBy_Project(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchBuildProduceBugOpenedBy_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug（已解决）", tags = {"Bug" } ,notes = "获取Build产生的Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugres")
 	public ResponseEntity<List<BugDTO>> fetchbuildproducebugres(@RequestBody BugSearchContext context) {
@@ -701,15 +602,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询Build产生的Bug（已解决）", tags = {"Bug" } ,notes = "查询Build产生的Bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugres")
-	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugRES(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchBuildProduceBugRES(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
@@ -726,15 +618,6 @@ public class BugResource {
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询Build产生的Bug-解决者分布", tags = {"Bug" } ,notes = "查询Build产生的Bug-解决者分布")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugresolvedby")
-	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugRESOLVEDBY(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchBuildProduceBugRESOLVEDBY(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-解决者分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-解决者分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugresolvedby_project")
 	public ResponseEntity<List<BugDTO>> fetchbuildproducebugresolvedby_project(@RequestBody BugSearchContext context) {
@@ -745,15 +628,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询Build产生的Bug-解决者分布(项目)", tags = {"Bug" } ,notes = "查询Build产生的Bug-解决者分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugresolvedby_project")
-	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugRESOLVEDBY_Project(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchBuildProduceBugRESOLVEDBY_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
@@ -770,15 +644,6 @@ public class BugResource {
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询Build产生的Bug-解决方案分布(项目)", tags = {"Bug" } ,notes = "查询Build产生的Bug-解决方案分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugresolution_project")
-	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugResolution_Project(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchBuildProduceBugResolution_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-严重程度分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-严重程度分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugseverity_project")
 	public ResponseEntity<List<BugDTO>> fetchbuildproducebugseverity_project(@RequestBody BugSearchContext context) {
@@ -789,15 +654,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询Build产生的Bug-严重程度分布(项目)", tags = {"Bug" } ,notes = "查询Build产生的Bug-严重程度分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugseverity_project")
-	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugSeverity_Project(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchBuildProduceBugSeverity_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
@@ -814,15 +670,6 @@ public class BugResource {
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询Build产生的Bug-状态分布(项目)", tags = {"Bug" } ,notes = "查询Build产生的Bug-状态分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugstatus_project")
-	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugStatus_Project(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchBuildProduceBugStatus_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-类型分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-类型分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugtype_project")
 	public ResponseEntity<List<BugDTO>> fetchbuildproducebugtype_project(@RequestBody BugSearchContext context) {
@@ -833,15 +680,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询Build产生的Bug-类型分布(项目)", tags = {"Bug" } ,notes = "查询Build产生的Bug-类型分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchbuildproducebugtype_project")
-	public ResponseEntity<Page<BugDTO>> searchBuildProduceBugType_Project(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchBuildProduceBugType_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
@@ -858,15 +696,6 @@ public class BugResource {
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询当前用户解决的Bug", tags = {"Bug" } ,notes = "查询当前用户解决的Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchcuruserresolve")
-	public ResponseEntity<Page<BugDTO>> searchCurUserResolve(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchCurUserResolve(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"Bug" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchdefault")
 	public ResponseEntity<List<BugDTO>> fetchdefault(@RequestBody BugSearchContext context) {
@@ -877,15 +706,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"Bug" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchdefault")
-	public ResponseEntity<Page<BugDTO>> searchDefault(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
@@ -902,15 +722,6 @@ public class BugResource {
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询ES批量的导入", tags = {"Bug" } ,notes = "查询ES批量的导入")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchesbulk")
-	public ResponseEntity<Page<BugDTO>> searchESBulk(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchESBulk(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我代理的Bug", tags = {"Bug" } ,notes = "获取我代理的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchmyagentbug")
 	public ResponseEntity<List<BugDTO>> fetchmyagentbug(@RequestBody BugSearchContext context) {
@@ -921,15 +732,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询我代理的Bug", tags = {"Bug" } ,notes = "查询我代理的Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchmyagentbug")
-	public ResponseEntity<Page<BugDTO>> searchMyAgentBug(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchMyAgentBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
@@ -946,15 +748,6 @@ public class BugResource {
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询累计创建的Bug数", tags = {"Bug" } ,notes = "查询累计创建的Bug数")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchmycuropenedbug")
-	public ResponseEntity<Page<BugDTO>> searchMyCurOpenedBug(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchMyCurOpenedBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"Bug" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchmyfavorites")
 	public ResponseEntity<List<BugDTO>> fetchmyfavorites(@RequestBody BugSearchContext context) {
@@ -965,15 +758,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询我的收藏", tags = {"Bug" } ,notes = "查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchmyfavorites")
-	public ResponseEntity<Page<BugDTO>> searchMyFavorites(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchMyFavorites(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
@@ -990,15 +774,6 @@ public class BugResource {
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询计划关联bug（去除已关联）", tags = {"Bug" } ,notes = "查询计划关联bug（去除已关联）")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchnotcurplanlinkbug")
-	public ResponseEntity<Page<BugDTO>> searchNotCurPlanLinkBug(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchNotCurPlanLinkBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取遗留得Bug(项目)", tags = {"Bug" } ,notes = "获取遗留得Bug(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchprojectbugs")
 	public ResponseEntity<List<BugDTO>> fetchprojectbugs(@RequestBody BugSearchContext context) {
@@ -1009,15 +784,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询遗留得Bug(项目)", tags = {"Bug" } ,notes = "查询遗留得Bug(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchprojectbugs")
-	public ResponseEntity<Page<BugDTO>> searchProjectBugs(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchProjectBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
@@ -1034,15 +800,6 @@ public class BugResource {
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询发布关联Bug（已解决）", tags = {"Bug" } ,notes = "查询发布关联Bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchreleasebugs")
-	public ResponseEntity<Page<BugDTO>> searchReleaseBugs(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchReleaseBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取发布关联Bug（已解决）", tags = {"Bug" } ,notes = "获取发布关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchreleaseleftbugs")
 	public ResponseEntity<List<BugDTO>> fetchreleaseleftbugs(@RequestBody BugSearchContext context) {
@@ -1053,15 +810,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询发布关联Bug（已解决）", tags = {"Bug" } ,notes = "查询发布关联Bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchreleaseleftbugs")
-	public ResponseEntity<Page<BugDTO>> searchReleaseLeftBugs(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchReleaseLeftBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
@@ -1078,15 +826,6 @@ public class BugResource {
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询发布可关联的bug（遗留）", tags = {"Bug" } ,notes = "查询发布可关联的bug（遗留）")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchreleaselinkableleftbug")
-	public ResponseEntity<Page<BugDTO>> searchReleaseLinkableLeftBug(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchReleaseLinkableLeftBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取发布可关联的bug（已解决）", tags = {"Bug" } ,notes = "获取发布可关联的bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchreleaselinkableresolvedbug")
 	public ResponseEntity<List<BugDTO>> fetchreleaselinkableresolvedbug(@RequestBody BugSearchContext context) {
@@ -1097,15 +836,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询发布可关联的bug（已解决）", tags = {"Bug" } ,notes = "查询发布可关联的bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchreleaselinkableresolvedbug")
-	public ResponseEntity<Page<BugDTO>> searchReleaseLinkableResolvedBug(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchReleaseLinkableResolvedBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
@@ -1121,15 +851,6 @@ public class BugResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询发布关联Bug（未解决）", tags = {"Bug" } ,notes = "查询发布关联Bug（未解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchreportbugs")
-	public ResponseEntity<Page<BugDTO>> searchReportBugs(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchReportBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取需求来源Bug", tags = {"Bug" } ,notes = "获取需求来源Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchstoryformbug")
 	public ResponseEntity<List<BugDTO>> fetchstoryformbug(@RequestBody BugSearchContext context) {
@@ -1140,14 +861,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询需求来源Bug", tags = {"Bug" } ,notes = "查询需求来源Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchstoryformbug")
-	public ResponseEntity<Page<BugDTO>> searchStoryFormBug(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchStoryFormBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
@@ -1161,15 +874,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询任务相关bug", tags = {"Bug" } ,notes = "查询任务相关bug")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/searchtaskrelatedbug")
-	public ResponseEntity<Page<BugDTO>> searchTaskRelatedBug(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchTaskRelatedBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 
@@ -1234,7 +938,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品激活Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品激活", tags = {"Bug" },  notes = "根据产品激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/activate")
     public ResponseEntity<BugDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1246,7 +950,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品指派Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品指派", tags = {"Bug" },  notes = "根据产品指派")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/assignto")
     public ResponseEntity<BugDTO> assignToByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1257,7 +961,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @ApiOperation(value = "根据产品批量解除关联BugBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品批量解除关联Bug", tags = {"Bug" },  notes = "根据产品批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/batchunlinkbug")
     public ResponseEntity<BugDTO> batchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1269,7 +973,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品Bug收藏Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品Bug收藏", tags = {"Bug" },  notes = "根据产品Bug收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/bugfavorites")
     public ResponseEntity<BugDTO> bugFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1281,7 +985,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品取消收藏Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品取消收藏", tags = {"Bug" },  notes = "根据产品取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/bugnfavorites")
     public ResponseEntity<BugDTO> bugNFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1292,7 +996,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @ApiOperation(value = "根据产品版本批量解除关联BugBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品版本批量解除关联Bug", tags = {"Bug" },  notes = "根据产品版本批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/buildbatchunlinkbug")
     public ResponseEntity<BugDTO> buildBatchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1304,7 +1008,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品版本关联BugBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品版本关联Bug", tags = {"Bug" },  notes = "根据产品版本关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/buildlinkbug")
     public ResponseEntity<BugDTO> buildLinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1316,7 +1020,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品版本解除关联BugBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品版本解除关联Bug", tags = {"Bug" },  notes = "根据产品版本解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/buildunlinkbug")
     public ResponseEntity<BugDTO> buildUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1335,7 +1039,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品关闭Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品关闭", tags = {"Bug" },  notes = "根据产品关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/close")
     public ResponseEntity<BugDTO> closeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1347,7 +1051,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品确认Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品确认", tags = {"Bug" },  notes = "根据产品确认")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/confirm")
     public ResponseEntity<BugDTO> confirmByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1359,7 +1063,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品关联BugBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品关联Bug", tags = {"Bug" },  notes = "根据产品关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/linkbug")
     public ResponseEntity<BugDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1371,7 +1075,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品批量解除关联BugBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品批量解除关联Bug", tags = {"Bug" },  notes = "根据产品批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/releaasebatchunlinkbug")
     public ResponseEntity<BugDTO> releaaseBatchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1383,7 +1087,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品关联Bug（解决Bug）Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品关联Bug（解决Bug）", tags = {"Bug" },  notes = "根据产品关联Bug（解决Bug）")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/releaselinkbugbybug")
     public ResponseEntity<BugDTO> releaseLinkBugbyBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1395,7 +1099,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品关联Bug（遗留Bug）Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品关联Bug（遗留Bug）", tags = {"Bug" },  notes = "根据产品关联Bug（遗留Bug）")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/releaselinkbugbyleftbug")
     public ResponseEntity<BugDTO> releaseLinkBugbyLeftBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1407,7 +1111,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品移除关联Bug（遗留Bug）Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品移除关联Bug（遗留Bug）", tags = {"Bug" },  notes = "根据产品移除关联Bug（遗留Bug）")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/releaseunlinkbugbyleftbug")
     public ResponseEntity<BugDTO> releaseUnLinkBugbyLeftBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1419,7 +1123,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品解除关联BugBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品解除关联Bug", tags = {"Bug" },  notes = "根据产品解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/releaseunlinkbug")
     public ResponseEntity<BugDTO> releaseUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1431,7 +1135,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品解决Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品解决", tags = {"Bug" },  notes = "根据产品解决")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/resolve")
     public ResponseEntity<BugDTO> resolveByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1452,7 +1156,7 @@ public class BugResource {
     }
 
 
-    @ApiOperation(value = "根据产品行为Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品行为", tags = {"Bug" },  notes = "根据产品行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/sendmessage")
     public ResponseEntity<BugDTO> sendMessageByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1463,7 +1167,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @ApiOperation(value = "根据产品发送消息前置处理Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品发送消息前置处理", tags = {"Bug" },  notes = "根据产品发送消息前置处理")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/sendmsgpreprocess")
     public ResponseEntity<BugDTO> sendMsgPreProcessByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1474,7 +1178,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @ApiOperation(value = "根据产品TestScriptBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品TestScript", tags = {"Bug" },  notes = "根据产品TestScript")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/testscript")
     public ResponseEntity<BugDTO> testScriptByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1486,7 +1190,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品转需求Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品转需求", tags = {"Bug" },  notes = "根据产品转需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/tostory")
     public ResponseEntity<BugDTO> toStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1498,7 +1202,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品解除关联BugBug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品解除关联Bug", tags = {"Bug" },  notes = "根据产品解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/unlinkbug")
     public ResponseEntity<BugDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1510,7 +1214,7 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUGMANAGE')")
-    @ApiOperation(value = "根据产品更新需求版本Bug", tags = {"Bug" },  notes = "根据产品Bug")
+    @ApiOperation(value = "根据产品更新需求版本", tags = {"Bug" },  notes = "根据产品更新需求版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/bugs/{bug_id}/updatestoryversion")
     public ResponseEntity<BugDTO> updateStoryVersionByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
@@ -1534,16 +1238,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询指派给我Bug", tags = {"Bug" } ,notes = "根据产品查询指派给我Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchassignedtomybug")
-	public ResponseEntity<Page<BugDTO>> searchBugAssignedToMyBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchAssignedToMyBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取指派给我Bug（PC）", tags = {"Bug" } ,notes = "根据产品获取指派给我Bug（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchassignedtomybugpc")
@@ -1556,16 +1250,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询指派给我Bug（PC）", tags = {"Bug" } ,notes = "根据产品查询指派给我Bug（PC）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchassignedtomybugpc")
-	public ResponseEntity<Page<BugDTO>> searchBugAssignedToMyBugPcByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchAssignedToMyBugPc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取版本关联bug(遗留的)", tags = {"Bug" } ,notes = "根据产品获取版本关联bug(遗留的)")
@@ -1580,16 +1264,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询版本关联bug(遗留的)", tags = {"Bug" } ,notes = "根据产品查询版本关联bug(遗留的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchbugsbybuild")
-	public ResponseEntity<Page<BugDTO>> searchBugBugsByBuildByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchBugsByBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取版本关联Bug（已解决）", tags = {"Bug" } ,notes = "根据产品获取版本关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchbuildbugs")
@@ -1602,16 +1276,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询版本关联Bug（已解决）", tags = {"Bug" } ,notes = "根据产品查询版本关联Bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchbuildbugs")
-	public ResponseEntity<Page<BugDTO>> searchBugBuildBugsByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchBuildBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取版本可关联的已解决的Bugs集合", tags = {"Bug" } ,notes = "根据产品获取版本可关联的已解决的Bugs集合")
@@ -1626,16 +1290,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询版本可关联的已解决的Bugs集合", tags = {"Bug" } ,notes = "根据产品查询版本可关联的已解决的Bugs集合")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchbuildlinkresolvedbugs")
-	public ResponseEntity<Page<BugDTO>> searchBugBuildLinkResolvedBugsByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchBuildLinkResolvedBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取版本关联Bug（已解决）", tags = {"Bug" } ,notes = "根据产品获取版本关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchbuildopenbugs")
@@ -1648,16 +1302,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询版本关联Bug（已解决）", tags = {"Bug" } ,notes = "根据产品查询版本关联Bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchbuildopenbugs")
-	public ResponseEntity<Page<BugDTO>> searchBugBuildOpenBugsByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchBuildOpenBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug", tags = {"Bug" } ,notes = "根据产品获取Build产生的Bug")
@@ -1672,16 +1316,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug", tags = {"Bug" } ,notes = "根据产品查询Build产生的Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchbuildproducebug")
-	public ResponseEntity<Page<BugDTO>> searchBugBuildProduceBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchBuildProduceBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug", tags = {"Bug" } ,notes = "根据产品获取Build产生的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchbuildproducebugmodule")
@@ -1694,16 +1328,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug", tags = {"Bug" } ,notes = "根据产品查询Build产生的Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchbuildproducebugmodule")
-	public ResponseEntity<Page<BugDTO>> searchBugBuildProduceBugModuleByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchBuildProduceBugModule(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-创建者分布(项目)", tags = {"Bug" } ,notes = "根据产品获取Build产生的Bug-创建者分布(项目)")
@@ -1718,16 +1342,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-创建者分布(项目)", tags = {"Bug" } ,notes = "根据产品查询Build产生的Bug-创建者分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchbuildproducebugmodule_project")
-	public ResponseEntity<Page<BugDTO>> searchBugBuildProduceBugModule_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchBuildProduceBugModule_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-创建分类", tags = {"Bug" } ,notes = "根据产品获取Build产生的Bug-创建分类")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchbuildproducebugopenedby")
@@ -1740,16 +1354,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-创建分类", tags = {"Bug" } ,notes = "根据产品查询Build产生的Bug-创建分类")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchbuildproducebugopenedby")
-	public ResponseEntity<Page<BugDTO>> searchBugBuildProduceBugOpenedByByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchBuildProduceBugOpenedBy(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-创建者分布(项目)", tags = {"Bug" } ,notes = "根据产品获取Build产生的Bug-创建者分布(项目)")
@@ -1764,16 +1368,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-创建者分布(项目)", tags = {"Bug" } ,notes = "根据产品查询Build产生的Bug-创建者分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchbuildproducebugopenedby_project")
-	public ResponseEntity<Page<BugDTO>> searchBugBuildProduceBugOpenedBy_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchBuildProduceBugOpenedBy_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug（已解决）", tags = {"Bug" } ,notes = "根据产品获取Build产生的Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchbuildproducebugres")
@@ -1786,16 +1380,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug（已解决）", tags = {"Bug" } ,notes = "根据产品查询Build产生的Bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchbuildproducebugres")
-	public ResponseEntity<Page<BugDTO>> searchBugBuildProduceBugRESByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchBuildProduceBugRES(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-解决者分布", tags = {"Bug" } ,notes = "根据产品获取Build产生的Bug-解决者分布")
@@ -1810,16 +1394,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-解决者分布", tags = {"Bug" } ,notes = "根据产品查询Build产生的Bug-解决者分布")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchbuildproducebugresolvedby")
-	public ResponseEntity<Page<BugDTO>> searchBugBuildProduceBugRESOLVEDBYByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchBuildProduceBugRESOLVEDBY(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-解决者分布(项目)", tags = {"Bug" } ,notes = "根据产品获取Build产生的Bug-解决者分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchbuildproducebugresolvedby_project")
@@ -1832,16 +1406,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-解决者分布(项目)", tags = {"Bug" } ,notes = "根据产品查询Build产生的Bug-解决者分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchbuildproducebugresolvedby_project")
-	public ResponseEntity<Page<BugDTO>> searchBugBuildProduceBugRESOLVEDBY_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchBuildProduceBugRESOLVEDBY_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-解决方案分布(项目)", tags = {"Bug" } ,notes = "根据产品获取Build产生的Bug-解决方案分布(项目)")
@@ -1856,16 +1420,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-解决方案分布(项目)", tags = {"Bug" } ,notes = "根据产品查询Build产生的Bug-解决方案分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchbuildproducebugresolution_project")
-	public ResponseEntity<Page<BugDTO>> searchBugBuildProduceBugResolution_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchBuildProduceBugResolution_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-严重程度分布(项目)", tags = {"Bug" } ,notes = "根据产品获取Build产生的Bug-严重程度分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchbuildproducebugseverity_project")
@@ -1878,16 +1432,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-严重程度分布(项目)", tags = {"Bug" } ,notes = "根据产品查询Build产生的Bug-严重程度分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchbuildproducebugseverity_project")
-	public ResponseEntity<Page<BugDTO>> searchBugBuildProduceBugSeverity_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchBuildProduceBugSeverity_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-状态分布(项目)", tags = {"Bug" } ,notes = "根据产品获取Build产生的Bug-状态分布(项目)")
@@ -1902,16 +1446,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-状态分布(项目)", tags = {"Bug" } ,notes = "根据产品查询Build产生的Bug-状态分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchbuildproducebugstatus_project")
-	public ResponseEntity<Page<BugDTO>> searchBugBuildProduceBugStatus_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchBuildProduceBugStatus_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-类型分布(项目)", tags = {"Bug" } ,notes = "根据产品获取Build产生的Bug-类型分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchbuildproducebugtype_project")
@@ -1924,16 +1458,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-类型分布(项目)", tags = {"Bug" } ,notes = "根据产品查询Build产生的Bug-类型分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchbuildproducebugtype_project")
-	public ResponseEntity<Page<BugDTO>> searchBugBuildProduceBugType_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchBuildProduceBugType_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取当前用户解决的Bug", tags = {"Bug" } ,notes = "根据产品获取当前用户解决的Bug")
@@ -1948,16 +1472,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询当前用户解决的Bug", tags = {"Bug" } ,notes = "根据产品查询当前用户解决的Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchcuruserresolve")
-	public ResponseEntity<Page<BugDTO>> searchBugCurUserResolveByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchCurUserResolve(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"Bug" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchdefault")
@@ -1970,16 +1484,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"Bug" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchdefault")
-	public ResponseEntity<Page<BugDTO>> searchBugDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取ES批量的导入", tags = {"Bug" } ,notes = "根据产品获取ES批量的导入")
@@ -1994,16 +1498,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询ES批量的导入", tags = {"Bug" } ,notes = "根据产品查询ES批量的导入")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchesbulk")
-	public ResponseEntity<Page<BugDTO>> searchBugESBulkByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchESBulk(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取我代理的Bug", tags = {"Bug" } ,notes = "根据产品获取我代理的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchmyagentbug")
@@ -2016,16 +1510,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询我代理的Bug", tags = {"Bug" } ,notes = "根据产品查询我代理的Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchmyagentbug")
-	public ResponseEntity<Page<BugDTO>> searchBugMyAgentBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchMyAgentBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取累计创建的Bug数", tags = {"Bug" } ,notes = "根据产品获取累计创建的Bug数")
@@ -2040,16 +1524,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询累计创建的Bug数", tags = {"Bug" } ,notes = "根据产品查询累计创建的Bug数")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchmycuropenedbug")
-	public ResponseEntity<Page<BugDTO>> searchBugMyCurOpenedBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchMyCurOpenedBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取我的收藏", tags = {"Bug" } ,notes = "根据产品获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchmyfavorites")
@@ -2062,16 +1536,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询我的收藏", tags = {"Bug" } ,notes = "根据产品查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchmyfavorites")
-	public ResponseEntity<Page<BugDTO>> searchBugMyFavoritesByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchMyFavorites(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取计划关联bug（去除已关联）", tags = {"Bug" } ,notes = "根据产品获取计划关联bug（去除已关联）")
@@ -2086,16 +1550,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询计划关联bug（去除已关联）", tags = {"Bug" } ,notes = "根据产品查询计划关联bug（去除已关联）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchnotcurplanlinkbug")
-	public ResponseEntity<Page<BugDTO>> searchBugNotCurPlanLinkBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchNotCurPlanLinkBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取遗留得Bug(项目)", tags = {"Bug" } ,notes = "根据产品获取遗留得Bug(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchprojectbugs")
@@ -2108,16 +1562,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询遗留得Bug(项目)", tags = {"Bug" } ,notes = "根据产品查询遗留得Bug(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchprojectbugs")
-	public ResponseEntity<Page<BugDTO>> searchBugProjectBugsByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchProjectBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取发布关联Bug（已解决）", tags = {"Bug" } ,notes = "根据产品获取发布关联Bug（已解决）")
@@ -2132,16 +1576,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询发布关联Bug（已解决）", tags = {"Bug" } ,notes = "根据产品查询发布关联Bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchreleasebugs")
-	public ResponseEntity<Page<BugDTO>> searchBugReleaseBugsByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchReleaseBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取发布关联Bug（已解决）", tags = {"Bug" } ,notes = "根据产品获取发布关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchreleaseleftbugs")
@@ -2154,16 +1588,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询发布关联Bug（已解决）", tags = {"Bug" } ,notes = "根据产品查询发布关联Bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchreleaseleftbugs")
-	public ResponseEntity<Page<BugDTO>> searchBugReleaseLeftBugsByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchReleaseLeftBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取发布可关联的bug（遗留）", tags = {"Bug" } ,notes = "根据产品获取发布可关联的bug（遗留）")
@@ -2178,16 +1602,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询发布可关联的bug（遗留）", tags = {"Bug" } ,notes = "根据产品查询发布可关联的bug（遗留）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchreleaselinkableleftbug")
-	public ResponseEntity<Page<BugDTO>> searchBugReleaseLinkableLeftBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchReleaseLinkableLeftBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取发布可关联的bug（已解决）", tags = {"Bug" } ,notes = "根据产品获取发布可关联的bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchreleaselinkableresolvedbug")
@@ -2200,16 +1614,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询发布可关联的bug（已解决）", tags = {"Bug" } ,notes = "根据产品查询发布可关联的bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchreleaselinkableresolvedbug")
-	public ResponseEntity<Page<BugDTO>> searchBugReleaseLinkableResolvedBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchReleaseLinkableResolvedBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取发布关联Bug（未解决）", tags = {"Bug" } ,notes = "根据产品获取发布关联Bug（未解决）")
@@ -2224,16 +1628,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询发布关联Bug（未解决）", tags = {"Bug" } ,notes = "根据产品查询发布关联Bug（未解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchreportbugs")
-	public ResponseEntity<Page<BugDTO>> searchBugReportBugsByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchReportBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 	@ApiOperation(value = "根据产品获取需求来源Bug", tags = {"Bug" } ,notes = "根据产品获取需求来源Bug")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchstoryformbug")
 	public ResponseEntity<List<BugDTO>> fetchBugStoryFormBugByProduct(@PathVariable("product_id") Long product_id,@RequestBody BugSearchContext context) {
@@ -2245,15 +1639,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "根据产品查询需求来源Bug", tags = {"Bug" } ,notes = "根据产品查询需求来源Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchstoryformbug")
-	public ResponseEntity<Page<BugDTO>> searchBugStoryFormBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchStoryFormBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取任务相关bug", tags = {"Bug" } ,notes = "根据产品获取任务相关bug")
@@ -2267,16 +1652,6 @@ public class BugResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询任务相关bug", tags = {"Bug" } ,notes = "根据产品查询任务相关bug")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/searchtaskrelatedbug")
-	public ResponseEntity<Page<BugDTO>> searchBugTaskRelatedBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchTaskRelatedBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(bugMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 }
 

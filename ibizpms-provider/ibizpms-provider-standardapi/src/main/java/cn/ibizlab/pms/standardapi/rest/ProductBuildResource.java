@@ -66,15 +66,5 @@ public class ProductBuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"版本" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productbuilds/searchdefault")
-	public ResponseEntity<Page<ProductBuildDTO>> searchProductBuildDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Build> domains = buildService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(productbuildMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 }
 

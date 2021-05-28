@@ -144,16 +144,6 @@ public class SuiteCaseResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@SuiteCaseRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"套件用例" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/suitecases/searchdefault")
-	public ResponseEntity<Page<SuiteCaseDTO>> searchDefault(@RequestBody SuiteCaseSearchContext context) {
-        suitecaseRuntime.addAuthorityConditions(context,"READ");
-        Page<SuiteCase> domains = suitecaseService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(suitecaseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/suitecases/{suitecase_id}/{action}")

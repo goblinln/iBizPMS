@@ -65,15 +65,6 @@ public class HistoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@HistoryRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询DEFAULT", tags = {"操作历史" } ,notes = "查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchDefault(@RequestBody HistorySearchContext context) {
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/histories/{history_id}/{action}")
@@ -97,16 +88,6 @@ public class HistoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ActionRuntime.test(#action_id,'READ')")
-	@ApiOperation(value = "根据系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByAction(@PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
     @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
 	@ApiOperation(value = "根据Bug获取查询用户使用年", tags = {"操作历史" } ,notes = "根据Bug获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/{bug_id}/histories/fetchqueryuseryear")
@@ -119,16 +100,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
-	@ApiOperation(value = "根据Bug查询查询用户使用年", tags = {"操作历史" } ,notes = "根据Bug查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/{bug_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByBug(@PathVariable("bug_id") Long bug_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
 	@ApiOperation(value = "根据Bug获取Type", tags = {"操作历史" } ,notes = "根据Bug获取Type")
@@ -143,16 +114,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
-	@ApiOperation(value = "根据Bug查询Type", tags = {"操作历史" } ,notes = "根据Bug查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/{bug_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByBug(@PathVariable("bug_id") Long bug_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
 	@ApiOperation(value = "根据Bug获取DEFAULT", tags = {"操作历史" } ,notes = "根据Bug获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/{bug_id}/histories/fetchdefault")
@@ -165,16 +126,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
-	@ApiOperation(value = "根据Bug查询DEFAULT", tags = {"操作历史" } ,notes = "根据Bug查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/{bug_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByBug(@PathVariable("bug_id") Long bug_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@BugRuntime.test(#bug_id,'UPDATE')")
     @ApiOperation(value = "根据Bug更新操作历史", tags = {"操作历史" },  notes = "根据Bug更新操作历史")
@@ -211,16 +162,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
-	@ApiOperation(value = "根据Bug查询MobType", tags = {"操作历史" } ,notes = "根据Bug查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/{bug_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByBug(@PathVariable("bug_id") Long bug_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@BugRuntime.test(#bug_id,'CREATE')")
     @ApiOperation(value = "根据Bug建立操作历史", tags = {"操作历史" },  notes = "根据Bug建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/histories")
@@ -246,16 +187,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
-	@ApiOperation(value = "根据Bug查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据Bug查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/{bug_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByBug(@PathVariable("bug_id") Long bug_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
 	@ApiOperation(value = "根据Bug获取ProductTrends", tags = {"操作历史" } ,notes = "根据Bug获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/{bug_id}/histories/fetchproducttrends")
@@ -268,16 +199,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
-	@ApiOperation(value = "根据Bug查询ProductTrends", tags = {"操作历史" } ,notes = "根据Bug查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/{bug_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByBug(@PathVariable("bug_id") Long bug_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@BugRuntime.test(#bug_id,'CREATE')")
     @ApiOperation(value = "根据Bug获取操作历史草稿", tags = {"操作历史" },  notes = "根据Bug获取操作历史草稿")
@@ -303,16 +224,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
-	@ApiOperation(value = "根据Bug查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据Bug查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/{bug_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByBug(@PathVariable("bug_id") Long bug_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
 	@ApiOperation(value = "根据Bug系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据Bug系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/{bug_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByBugAction(@PathVariable("bug_id") Long bug_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -324,16 +235,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
-	@ApiOperation(value = "根据Bug系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据Bug系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/bugs/{bug_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByBugAction(@PathVariable("bug_id") Long bug_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
@@ -349,16 +250,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询查询用户使用年", tags = {"操作历史" } ,notes = "根据产品查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Type", tags = {"操作历史" } ,notes = "根据产品获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchtype")
@@ -372,16 +263,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Type", tags = {"操作历史" } ,notes = "根据产品查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchdefault")
@@ -394,16 +275,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品更新操作历史", tags = {"操作历史" },  notes = "根据产品更新操作历史")
@@ -440,16 +311,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询MobType", tags = {"操作历史" } ,notes = "根据产品查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品建立操作历史", tags = {"操作历史" },  notes = "根据产品建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories")
@@ -475,16 +336,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据产品查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取ProductTrends", tags = {"操作历史" } ,notes = "根据产品获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchproducttrends")
@@ -497,16 +348,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询ProductTrends", tags = {"操作历史" } ,notes = "根据产品查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品获取操作历史草稿", tags = {"操作历史" },  notes = "根据产品获取操作历史草稿")
@@ -532,16 +373,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据产品查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -553,16 +384,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductAction(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
@@ -578,16 +399,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
-	@ApiOperation(value = "根据产品计划查询查询用户使用年", tags = {"操作历史" } ,notes = "根据产品计划查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取Type", tags = {"操作历史" } ,notes = "根据产品计划获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/histories/fetchtype")
@@ -601,16 +412,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
-	@ApiOperation(value = "根据产品计划查询Type", tags = {"操作历史" } ,notes = "根据产品计划查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品计划获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/histories/fetchdefault")
@@ -623,16 +424,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
-	@ApiOperation(value = "根据产品计划查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品计划查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'UPDATE')")
     @ApiOperation(value = "根据产品计划更新操作历史", tags = {"操作历史" },  notes = "根据产品计划更新操作历史")
@@ -669,16 +460,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
-	@ApiOperation(value = "根据产品计划查询MobType", tags = {"操作历史" } ,notes = "根据产品计划查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'CREATE')")
     @ApiOperation(value = "根据产品计划建立操作历史", tags = {"操作历史" },  notes = "根据产品计划建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/histories")
@@ -704,16 +485,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
-	@ApiOperation(value = "根据产品计划查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据产品计划查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取ProductTrends", tags = {"操作历史" } ,notes = "根据产品计划获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/histories/fetchproducttrends")
@@ -726,16 +497,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
-	@ApiOperation(value = "根据产品计划查询ProductTrends", tags = {"操作历史" } ,notes = "根据产品计划查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'CREATE')")
     @ApiOperation(value = "根据产品计划获取操作历史草稿", tags = {"操作历史" },  notes = "根据产品计划获取操作历史草稿")
@@ -761,16 +522,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
-	@ApiOperation(value = "根据产品计划查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据产品计划查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品计划系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProductPlanAction(@PathVariable("productplan_id") Long productplan_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -782,16 +533,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
-	@ApiOperation(value = "根据产品计划系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品计划系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductPlanAction(@PathVariable("productplan_id") Long productplan_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@TodoRuntime.test(#todo_id,'READ')")
@@ -807,16 +548,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TodoRuntime.test(#todo_id,'READ')")
-	@ApiOperation(value = "根据待办查询查询用户使用年", tags = {"操作历史" } ,notes = "根据待办查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TodoRuntime.test(#todo_id,'READ')")
 	@ApiOperation(value = "根据待办获取Type", tags = {"操作历史" } ,notes = "根据待办获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/histories/fetchtype")
@@ -830,16 +561,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TodoRuntime.test(#todo_id,'READ')")
-	@ApiOperation(value = "根据待办查询Type", tags = {"操作历史" } ,notes = "根据待办查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TodoRuntime.test(#todo_id,'READ')")
 	@ApiOperation(value = "根据待办获取DEFAULT", tags = {"操作历史" } ,notes = "根据待办获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/histories/fetchdefault")
@@ -852,16 +573,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TodoRuntime.test(#todo_id,'READ')")
-	@ApiOperation(value = "根据待办查询DEFAULT", tags = {"操作历史" } ,notes = "根据待办查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@TodoRuntime.test(#todo_id,'UPDATE')")
     @ApiOperation(value = "根据待办更新操作历史", tags = {"操作历史" },  notes = "根据待办更新操作历史")
@@ -898,16 +609,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TodoRuntime.test(#todo_id,'READ')")
-	@ApiOperation(value = "根据待办查询MobType", tags = {"操作历史" } ,notes = "根据待办查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TodoRuntime.test(#todo_id,'CREATE')")
     @ApiOperation(value = "根据待办建立操作历史", tags = {"操作历史" },  notes = "根据待办建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/histories")
@@ -933,16 +634,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TodoRuntime.test(#todo_id,'READ')")
-	@ApiOperation(value = "根据待办查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据待办查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TodoRuntime.test(#todo_id,'READ')")
 	@ApiOperation(value = "根据待办获取ProductTrends", tags = {"操作历史" } ,notes = "根据待办获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/histories/fetchproducttrends")
@@ -955,16 +646,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TodoRuntime.test(#todo_id,'READ')")
-	@ApiOperation(value = "根据待办查询ProductTrends", tags = {"操作历史" } ,notes = "根据待办查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@TodoRuntime.test(#todo_id,'CREATE')")
     @ApiOperation(value = "根据待办获取操作历史草稿", tags = {"操作历史" },  notes = "根据待办获取操作历史草稿")
@@ -990,16 +671,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@TodoRuntime.test(#todo_id,'READ')")
-	@ApiOperation(value = "根据待办查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据待办查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByTodo(@PathVariable("todo_id") Long todo_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@TodoRuntime.test(#todo_id,'READ')")
 	@ApiOperation(value = "根据待办系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据待办系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByTodoAction(@PathVariable("todo_id") Long todo_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -1011,16 +682,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TodoRuntime.test(#todo_id,'READ')")
-	@ApiOperation(value = "根据待办系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据待办系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByTodoAction(@PathVariable("todo_id") Long todo_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
@@ -1036,16 +697,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
-	@ApiOperation(value = "根据任务查询查询用户使用年", tags = {"操作历史" } ,notes = "根据任务查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByTask(@PathVariable("task_id") Long task_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
 	@ApiOperation(value = "根据任务获取Type", tags = {"操作历史" } ,notes = "根据任务获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/histories/fetchtype")
@@ -1059,16 +710,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
-	@ApiOperation(value = "根据任务查询Type", tags = {"操作历史" } ,notes = "根据任务查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByTask(@PathVariable("task_id") Long task_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
 	@ApiOperation(value = "根据任务获取DEFAULT", tags = {"操作历史" } ,notes = "根据任务获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/histories/fetchdefault")
@@ -1081,16 +722,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
-	@ApiOperation(value = "根据任务查询DEFAULT", tags = {"操作历史" } ,notes = "根据任务查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByTask(@PathVariable("task_id") Long task_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@TaskRuntime.test(#task_id,'UPDATE')")
     @ApiOperation(value = "根据任务更新操作历史", tags = {"操作历史" },  notes = "根据任务更新操作历史")
@@ -1127,16 +758,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
-	@ApiOperation(value = "根据任务查询MobType", tags = {"操作历史" } ,notes = "根据任务查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByTask(@PathVariable("task_id") Long task_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TaskRuntime.test(#task_id,'CREATE')")
     @ApiOperation(value = "根据任务建立操作历史", tags = {"操作历史" },  notes = "根据任务建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/histories")
@@ -1162,16 +783,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
-	@ApiOperation(value = "根据任务查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据任务查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByTask(@PathVariable("task_id") Long task_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
 	@ApiOperation(value = "根据任务获取ProductTrends", tags = {"操作历史" } ,notes = "根据任务获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/histories/fetchproducttrends")
@@ -1184,16 +795,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
-	@ApiOperation(value = "根据任务查询ProductTrends", tags = {"操作历史" } ,notes = "根据任务查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByTask(@PathVariable("task_id") Long task_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@TaskRuntime.test(#task_id,'CREATE')")
     @ApiOperation(value = "根据任务获取操作历史草稿", tags = {"操作历史" },  notes = "根据任务获取操作历史草稿")
@@ -1219,16 +820,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
-	@ApiOperation(value = "根据任务查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据任务查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByTask(@PathVariable("task_id") Long task_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
 	@ApiOperation(value = "根据任务系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据任务系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByTaskAction(@PathVariable("task_id") Long task_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -1240,16 +831,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
-	@ApiOperation(value = "根据任务系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据任务系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByTaskAction(@PathVariable("task_id") Long task_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
@@ -1265,16 +846,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
-	@ApiOperation(value = "根据发布查询查询用户使用年", tags = {"操作历史" } ,notes = "根据发布查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/releases/{release_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByRelease(@PathVariable("release_id") Long release_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
 	@ApiOperation(value = "根据发布获取Type", tags = {"操作历史" } ,notes = "根据发布获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/releases/{release_id}/histories/fetchtype")
@@ -1288,16 +859,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
-	@ApiOperation(value = "根据发布查询Type", tags = {"操作历史" } ,notes = "根据发布查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/releases/{release_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByRelease(@PathVariable("release_id") Long release_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
 	@ApiOperation(value = "根据发布获取DEFAULT", tags = {"操作历史" } ,notes = "根据发布获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/releases/{release_id}/histories/fetchdefault")
@@ -1310,16 +871,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
-	@ApiOperation(value = "根据发布查询DEFAULT", tags = {"操作历史" } ,notes = "根据发布查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/releases/{release_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByRelease(@PathVariable("release_id") Long release_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ReleaseRuntime.test(#release_id,'UPDATE')")
     @ApiOperation(value = "根据发布更新操作历史", tags = {"操作历史" },  notes = "根据发布更新操作历史")
@@ -1356,16 +907,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
-	@ApiOperation(value = "根据发布查询MobType", tags = {"操作历史" } ,notes = "根据发布查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/releases/{release_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByRelease(@PathVariable("release_id") Long release_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ReleaseRuntime.test(#release_id,'CREATE')")
     @ApiOperation(value = "根据发布建立操作历史", tags = {"操作历史" },  notes = "根据发布建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/releases/{release_id}/histories")
@@ -1391,16 +932,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
-	@ApiOperation(value = "根据发布查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据发布查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/releases/{release_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByRelease(@PathVariable("release_id") Long release_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
 	@ApiOperation(value = "根据发布获取ProductTrends", tags = {"操作历史" } ,notes = "根据发布获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/releases/{release_id}/histories/fetchproducttrends")
@@ -1413,16 +944,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
-	@ApiOperation(value = "根据发布查询ProductTrends", tags = {"操作历史" } ,notes = "根据发布查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/releases/{release_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByRelease(@PathVariable("release_id") Long release_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ReleaseRuntime.test(#release_id,'CREATE')")
     @ApiOperation(value = "根据发布获取操作历史草稿", tags = {"操作历史" },  notes = "根据发布获取操作历史草稿")
@@ -1448,16 +969,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
-	@ApiOperation(value = "根据发布查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据发布查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/releases/{release_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByRelease(@PathVariable("release_id") Long release_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
 	@ApiOperation(value = "根据发布系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据发布系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/releases/{release_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByReleaseAction(@PathVariable("release_id") Long release_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -1469,16 +980,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
-	@ApiOperation(value = "根据发布系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据发布系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/releases/{release_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByReleaseAction(@PathVariable("release_id") Long release_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
@@ -1494,16 +995,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
-	@ApiOperation(value = "根据周报查询查询用户使用年", tags = {"操作历史" } ,notes = "根据周报查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/{ibzweekly_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
 	@ApiOperation(value = "根据周报获取Type", tags = {"操作历史" } ,notes = "根据周报获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/{ibzweekly_id}/histories/fetchtype")
@@ -1517,16 +1008,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
-	@ApiOperation(value = "根据周报查询Type", tags = {"操作历史" } ,notes = "根据周报查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/{ibzweekly_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
 	@ApiOperation(value = "根据周报获取DEFAULT", tags = {"操作历史" } ,notes = "根据周报获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/{ibzweekly_id}/histories/fetchdefault")
@@ -1539,16 +1020,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
-	@ApiOperation(value = "根据周报查询DEFAULT", tags = {"操作历史" } ,notes = "根据周报查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/{ibzweekly_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'UPDATE')")
     @ApiOperation(value = "根据周报更新操作历史", tags = {"操作历史" },  notes = "根据周报更新操作历史")
@@ -1585,16 +1056,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
-	@ApiOperation(value = "根据周报查询MobType", tags = {"操作历史" } ,notes = "根据周报查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/{ibzweekly_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'CREATE')")
     @ApiOperation(value = "根据周报建立操作历史", tags = {"操作历史" },  notes = "根据周报建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/histories")
@@ -1620,16 +1081,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
-	@ApiOperation(value = "根据周报查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据周报查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/{ibzweekly_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
 	@ApiOperation(value = "根据周报获取ProductTrends", tags = {"操作历史" } ,notes = "根据周报获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/{ibzweekly_id}/histories/fetchproducttrends")
@@ -1642,16 +1093,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
-	@ApiOperation(value = "根据周报查询ProductTrends", tags = {"操作历史" } ,notes = "根据周报查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/{ibzweekly_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'CREATE')")
     @ApiOperation(value = "根据周报获取操作历史草稿", tags = {"操作历史" },  notes = "根据周报获取操作历史草稿")
@@ -1677,16 +1118,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
-	@ApiOperation(value = "根据周报查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据周报查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/{ibzweekly_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
 	@ApiOperation(value = "根据周报系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据周报系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/{ibzweekly_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByIbzWeeklyAction(@PathVariable("ibzweekly_id") Long ibzweekly_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -1698,16 +1129,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
-	@ApiOperation(value = "根据周报系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据周报系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/{ibzweekly_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByIbzWeeklyAction(@PathVariable("ibzweekly_id") Long ibzweekly_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
@@ -1723,16 +1144,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
-	@ApiOperation(value = "根据测试报告查询查询用户使用年", tags = {"操作历史" } ,notes = "根据测试报告查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/testreports/{testreport_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByTestReport(@PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
 	@ApiOperation(value = "根据测试报告获取Type", tags = {"操作历史" } ,notes = "根据测试报告获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/testreports/{testreport_id}/histories/fetchtype")
@@ -1746,16 +1157,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
-	@ApiOperation(value = "根据测试报告查询Type", tags = {"操作历史" } ,notes = "根据测试报告查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/testreports/{testreport_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByTestReport(@PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
 	@ApiOperation(value = "根据测试报告获取DEFAULT", tags = {"操作历史" } ,notes = "根据测试报告获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testreports/{testreport_id}/histories/fetchdefault")
@@ -1768,16 +1169,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
-	@ApiOperation(value = "根据测试报告查询DEFAULT", tags = {"操作历史" } ,notes = "根据测试报告查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/testreports/{testreport_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByTestReport(@PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'UPDATE')")
     @ApiOperation(value = "根据测试报告更新操作历史", tags = {"操作历史" },  notes = "根据测试报告更新操作历史")
@@ -1814,16 +1205,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
-	@ApiOperation(value = "根据测试报告查询MobType", tags = {"操作历史" } ,notes = "根据测试报告查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/testreports/{testreport_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByTestReport(@PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'CREATE')")
     @ApiOperation(value = "根据测试报告建立操作历史", tags = {"操作历史" },  notes = "根据测试报告建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/testreports/{testreport_id}/histories")
@@ -1849,16 +1230,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
-	@ApiOperation(value = "根据测试报告查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据测试报告查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/testreports/{testreport_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByTestReport(@PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
 	@ApiOperation(value = "根据测试报告获取ProductTrends", tags = {"操作历史" } ,notes = "根据测试报告获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/testreports/{testreport_id}/histories/fetchproducttrends")
@@ -1871,16 +1242,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
-	@ApiOperation(value = "根据测试报告查询ProductTrends", tags = {"操作历史" } ,notes = "根据测试报告查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/testreports/{testreport_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByTestReport(@PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'CREATE')")
     @ApiOperation(value = "根据测试报告获取操作历史草稿", tags = {"操作历史" },  notes = "根据测试报告获取操作历史草稿")
@@ -1906,16 +1267,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
-	@ApiOperation(value = "根据测试报告查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据测试报告查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/testreports/{testreport_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByTestReport(@PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
 	@ApiOperation(value = "根据测试报告系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据测试报告系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testreports/{testreport_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByTestReportAction(@PathVariable("testreport_id") Long testreport_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -1927,16 +1278,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TestReportRuntime.test(#testreport_id,'READ')")
-	@ApiOperation(value = "根据测试报告系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据测试报告系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/testreports/{testreport_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByTestReportAction(@PathVariable("testreport_id") Long testreport_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
@@ -1952,16 +1293,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询查询用户使用年", tags = {"操作历史" } ,notes = "根据文档库查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库获取Type", tags = {"操作历史" } ,notes = "根据文档库获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/fetchtype")
@@ -1975,16 +1306,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询Type", tags = {"操作历史" } ,notes = "根据文档库查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库获取DEFAULT", tags = {"操作历史" } ,notes = "根据文档库获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/fetchdefault")
@@ -1997,16 +1318,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询DEFAULT", tags = {"操作历史" } ,notes = "根据文档库查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'UPDATE')")
     @ApiOperation(value = "根据文档库更新操作历史", tags = {"操作历史" },  notes = "根据文档库更新操作历史")
@@ -2043,16 +1354,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询MobType", tags = {"操作历史" } ,notes = "根据文档库查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'CREATE')")
     @ApiOperation(value = "根据文档库建立操作历史", tags = {"操作历史" },  notes = "根据文档库建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/histories")
@@ -2078,16 +1379,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据文档库查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库获取ProductTrends", tags = {"操作历史" } ,notes = "根据文档库获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/fetchproducttrends")
@@ -2100,16 +1391,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询ProductTrends", tags = {"操作历史" } ,notes = "根据文档库查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'CREATE')")
     @ApiOperation(value = "根据文档库获取操作历史草稿", tags = {"操作历史" },  notes = "根据文档库获取操作历史草稿")
@@ -2135,16 +1416,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据文档库查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据文档库系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByDocLibAction(@PathVariable("doclib_id") Long doclib_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -2156,16 +1427,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据文档库系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByDocLibAction(@PathVariable("doclib_id") Long doclib_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
@@ -2181,16 +1442,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
-	@ApiOperation(value = "根据文档查询查询用户使用年", tags = {"操作历史" } ,notes = "根据文档查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
 	@ApiOperation(value = "根据文档获取Type", tags = {"操作历史" } ,notes = "根据文档获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/histories/fetchtype")
@@ -2204,16 +1455,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
-	@ApiOperation(value = "根据文档查询Type", tags = {"操作历史" } ,notes = "根据文档查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
 	@ApiOperation(value = "根据文档获取DEFAULT", tags = {"操作历史" } ,notes = "根据文档获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/histories/fetchdefault")
@@ -2226,16 +1467,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
-	@ApiOperation(value = "根据文档查询DEFAULT", tags = {"操作历史" } ,notes = "根据文档查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@DocRuntime.test(#doc_id,'UPDATE')")
     @ApiOperation(value = "根据文档更新操作历史", tags = {"操作历史" },  notes = "根据文档更新操作历史")
@@ -2272,16 +1503,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
-	@ApiOperation(value = "根据文档查询MobType", tags = {"操作历史" } ,notes = "根据文档查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@DocRuntime.test(#doc_id,'CREATE')")
     @ApiOperation(value = "根据文档建立操作历史", tags = {"操作历史" },  notes = "根据文档建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/histories")
@@ -2307,16 +1528,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
-	@ApiOperation(value = "根据文档查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据文档查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
 	@ApiOperation(value = "根据文档获取ProductTrends", tags = {"操作历史" } ,notes = "根据文档获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/histories/fetchproducttrends")
@@ -2329,16 +1540,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
-	@ApiOperation(value = "根据文档查询ProductTrends", tags = {"操作历史" } ,notes = "根据文档查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@DocRuntime.test(#doc_id,'CREATE')")
     @ApiOperation(value = "根据文档获取操作历史草稿", tags = {"操作历史" },  notes = "根据文档获取操作历史草稿")
@@ -2364,16 +1565,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
-	@ApiOperation(value = "根据文档查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据文档查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
 	@ApiOperation(value = "根据文档系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据文档系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByDocAction(@PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -2385,16 +1576,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
-	@ApiOperation(value = "根据文档系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据文档系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByDocAction(@PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
@@ -2410,16 +1591,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
-	@ApiOperation(value = "根据日报查询查询用户使用年", tags = {"操作历史" } ,notes = "根据日报查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/{ibzdaily_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
 	@ApiOperation(value = "根据日报获取Type", tags = {"操作历史" } ,notes = "根据日报获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/{ibzdaily_id}/histories/fetchtype")
@@ -2433,16 +1604,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
-	@ApiOperation(value = "根据日报查询Type", tags = {"操作历史" } ,notes = "根据日报查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/{ibzdaily_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
 	@ApiOperation(value = "根据日报获取DEFAULT", tags = {"操作历史" } ,notes = "根据日报获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/{ibzdaily_id}/histories/fetchdefault")
@@ -2455,16 +1616,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
-	@ApiOperation(value = "根据日报查询DEFAULT", tags = {"操作历史" } ,notes = "根据日报查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/{ibzdaily_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'UPDATE')")
     @ApiOperation(value = "根据日报更新操作历史", tags = {"操作历史" },  notes = "根据日报更新操作历史")
@@ -2501,16 +1652,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
-	@ApiOperation(value = "根据日报查询MobType", tags = {"操作历史" } ,notes = "根据日报查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/{ibzdaily_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'CREATE')")
     @ApiOperation(value = "根据日报建立操作历史", tags = {"操作历史" },  notes = "根据日报建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/histories")
@@ -2536,16 +1677,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
-	@ApiOperation(value = "根据日报查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据日报查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/{ibzdaily_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
 	@ApiOperation(value = "根据日报获取ProductTrends", tags = {"操作历史" } ,notes = "根据日报获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/{ibzdaily_id}/histories/fetchproducttrends")
@@ -2558,16 +1689,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
-	@ApiOperation(value = "根据日报查询ProductTrends", tags = {"操作历史" } ,notes = "根据日报查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/{ibzdaily_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'CREATE')")
     @ApiOperation(value = "根据日报获取操作历史草稿", tags = {"操作历史" },  notes = "根据日报获取操作历史草稿")
@@ -2593,16 +1714,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
-	@ApiOperation(value = "根据日报查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据日报查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/{ibzdaily_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
 	@ApiOperation(value = "根据日报系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据日报系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/{ibzdaily_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByIbzDailyAction(@PathVariable("ibzdaily_id") Long ibzdaily_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -2614,16 +1725,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
-	@ApiOperation(value = "根据日报系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据日报系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/{ibzdaily_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByIbzDailyAction(@PathVariable("ibzdaily_id") Long ibzdaily_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'READ')")
@@ -2639,16 +1740,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'READ')")
-	@ApiOperation(value = "根据月报查询查询用户使用年", tags = {"操作历史" } ,notes = "根据月报查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/{ibzmonthly_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'READ')")
 	@ApiOperation(value = "根据月报获取Type", tags = {"操作历史" } ,notes = "根据月报获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/{ibzmonthly_id}/histories/fetchtype")
@@ -2662,16 +1753,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'READ')")
-	@ApiOperation(value = "根据月报查询Type", tags = {"操作历史" } ,notes = "根据月报查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/{ibzmonthly_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'READ')")
 	@ApiOperation(value = "根据月报获取DEFAULT", tags = {"操作历史" } ,notes = "根据月报获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/{ibzmonthly_id}/histories/fetchdefault")
@@ -2684,16 +1765,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'READ')")
-	@ApiOperation(value = "根据月报查询DEFAULT", tags = {"操作历史" } ,notes = "根据月报查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/{ibzmonthly_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'UPDATE')")
     @ApiOperation(value = "根据月报更新操作历史", tags = {"操作历史" },  notes = "根据月报更新操作历史")
@@ -2730,16 +1801,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'READ')")
-	@ApiOperation(value = "根据月报查询MobType", tags = {"操作历史" } ,notes = "根据月报查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/{ibzmonthly_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'CREATE')")
     @ApiOperation(value = "根据月报建立操作历史", tags = {"操作历史" },  notes = "根据月报建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/histories")
@@ -2765,16 +1826,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'READ')")
-	@ApiOperation(value = "根据月报查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据月报查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/{ibzmonthly_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'READ')")
 	@ApiOperation(value = "根据月报获取ProductTrends", tags = {"操作历史" } ,notes = "根据月报获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/{ibzmonthly_id}/histories/fetchproducttrends")
@@ -2787,16 +1838,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'READ')")
-	@ApiOperation(value = "根据月报查询ProductTrends", tags = {"操作历史" } ,notes = "根据月报查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/{ibzmonthly_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'CREATE')")
     @ApiOperation(value = "根据月报获取操作历史草稿", tags = {"操作历史" },  notes = "根据月报获取操作历史草稿")
@@ -2822,16 +1863,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'READ')")
-	@ApiOperation(value = "根据月报查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据月报查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/{ibzmonthly_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'READ')")
 	@ApiOperation(value = "根据月报系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据月报系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/{ibzmonthly_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByIbzMonthlyAction(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -2843,16 +1874,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id,'READ')")
-	@ApiOperation(value = "根据月报系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据月报系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/{ibzmonthly_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByIbzMonthlyAction(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
@@ -2868,16 +1889,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
-	@ApiOperation(value = "根据汇报查询查询用户使用年", tags = {"操作历史" } ,notes = "根据汇报查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/{ibzreportly_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
 	@ApiOperation(value = "根据汇报获取Type", tags = {"操作历史" } ,notes = "根据汇报获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/{ibzreportly_id}/histories/fetchtype")
@@ -2891,16 +1902,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
-	@ApiOperation(value = "根据汇报查询Type", tags = {"操作历史" } ,notes = "根据汇报查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/{ibzreportly_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
 	@ApiOperation(value = "根据汇报获取DEFAULT", tags = {"操作历史" } ,notes = "根据汇报获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/{ibzreportly_id}/histories/fetchdefault")
@@ -2913,16 +1914,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
-	@ApiOperation(value = "根据汇报查询DEFAULT", tags = {"操作历史" } ,notes = "根据汇报查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/{ibzreportly_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'UPDATE')")
     @ApiOperation(value = "根据汇报更新操作历史", tags = {"操作历史" },  notes = "根据汇报更新操作历史")
@@ -2959,16 +1950,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
-	@ApiOperation(value = "根据汇报查询MobType", tags = {"操作历史" } ,notes = "根据汇报查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/{ibzreportly_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'CREATE')")
     @ApiOperation(value = "根据汇报建立操作历史", tags = {"操作历史" },  notes = "根据汇报建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/{ibzreportly_id}/histories")
@@ -2994,16 +1975,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
-	@ApiOperation(value = "根据汇报查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据汇报查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/{ibzreportly_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
 	@ApiOperation(value = "根据汇报获取ProductTrends", tags = {"操作历史" } ,notes = "根据汇报获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/{ibzreportly_id}/histories/fetchproducttrends")
@@ -3016,16 +1987,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
-	@ApiOperation(value = "根据汇报查询ProductTrends", tags = {"操作历史" } ,notes = "根据汇报查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/{ibzreportly_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'CREATE')")
     @ApiOperation(value = "根据汇报获取操作历史草稿", tags = {"操作历史" },  notes = "根据汇报获取操作历史草稿")
@@ -3051,16 +2012,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
-	@ApiOperation(value = "根据汇报查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据汇报查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/{ibzreportly_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
 	@ApiOperation(value = "根据汇报系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据汇报系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/{ibzreportly_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByIbzReportlyAction(@PathVariable("ibzreportly_id") Long ibzreportly_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -3072,16 +2023,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
-	@ApiOperation(value = "根据汇报系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据汇报系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/{ibzreportly_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByIbzReportlyAction(@PathVariable("ibzreportly_id") Long ibzreportly_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
@@ -3097,16 +2038,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
-	@ApiOperation(value = "根据测试版本查询查询用户使用年", tags = {"操作历史" } ,notes = "根据测试版本查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
 	@ApiOperation(value = "根据测试版本获取Type", tags = {"操作历史" } ,notes = "根据测试版本获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/histories/fetchtype")
@@ -3120,16 +2051,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
-	@ApiOperation(value = "根据测试版本查询Type", tags = {"操作历史" } ,notes = "根据测试版本查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
 	@ApiOperation(value = "根据测试版本获取DEFAULT", tags = {"操作历史" } ,notes = "根据测试版本获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/histories/fetchdefault")
@@ -3142,16 +2063,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
-	@ApiOperation(value = "根据测试版本查询DEFAULT", tags = {"操作历史" } ,notes = "根据测试版本查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'UPDATE')")
     @ApiOperation(value = "根据测试版本更新操作历史", tags = {"操作历史" },  notes = "根据测试版本更新操作历史")
@@ -3188,16 +2099,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
-	@ApiOperation(value = "根据测试版本查询MobType", tags = {"操作历史" } ,notes = "根据测试版本查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'CREATE')")
     @ApiOperation(value = "根据测试版本建立操作历史", tags = {"操作历史" },  notes = "根据测试版本建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/histories")
@@ -3223,16 +2124,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
-	@ApiOperation(value = "根据测试版本查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据测试版本查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
 	@ApiOperation(value = "根据测试版本获取ProductTrends", tags = {"操作历史" } ,notes = "根据测试版本获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/histories/fetchproducttrends")
@@ -3245,16 +2136,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
-	@ApiOperation(value = "根据测试版本查询ProductTrends", tags = {"操作历史" } ,notes = "根据测试版本查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'CREATE')")
     @ApiOperation(value = "根据测试版本获取操作历史草稿", tags = {"操作历史" },  notes = "根据测试版本获取操作历史草稿")
@@ -3280,16 +2161,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
-	@ApiOperation(value = "根据测试版本查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据测试版本查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
 	@ApiOperation(value = "根据测试版本系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据测试版本系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByTestTaskAction(@PathVariable("testtask_id") Long testtask_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -3301,16 +2172,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
-	@ApiOperation(value = "根据测试版本系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据测试版本系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByTestTaskAction(@PathVariable("testtask_id") Long testtask_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
@@ -3326,16 +2187,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
-	@ApiOperation(value = "根据测试套件查询查询用户使用年", tags = {"操作历史" } ,notes = "根据测试套件查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
 	@ApiOperation(value = "根据测试套件获取Type", tags = {"操作历史" } ,notes = "根据测试套件获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/histories/fetchtype")
@@ -3349,16 +2200,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
-	@ApiOperation(value = "根据测试套件查询Type", tags = {"操作历史" } ,notes = "根据测试套件查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
 	@ApiOperation(value = "根据测试套件获取DEFAULT", tags = {"操作历史" } ,notes = "根据测试套件获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/histories/fetchdefault")
@@ -3371,16 +2212,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
-	@ApiOperation(value = "根据测试套件查询DEFAULT", tags = {"操作历史" } ,notes = "根据测试套件查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'UPDATE')")
     @ApiOperation(value = "根据测试套件更新操作历史", tags = {"操作历史" },  notes = "根据测试套件更新操作历史")
@@ -3417,16 +2248,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
-	@ApiOperation(value = "根据测试套件查询MobType", tags = {"操作历史" } ,notes = "根据测试套件查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'CREATE')")
     @ApiOperation(value = "根据测试套件建立操作历史", tags = {"操作历史" },  notes = "根据测试套件建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/histories")
@@ -3452,16 +2273,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
-	@ApiOperation(value = "根据测试套件查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据测试套件查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
 	@ApiOperation(value = "根据测试套件获取ProductTrends", tags = {"操作历史" } ,notes = "根据测试套件获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/histories/fetchproducttrends")
@@ -3474,16 +2285,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
-	@ApiOperation(value = "根据测试套件查询ProductTrends", tags = {"操作历史" } ,notes = "根据测试套件查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'CREATE')")
     @ApiOperation(value = "根据测试套件获取操作历史草稿", tags = {"操作历史" },  notes = "根据测试套件获取操作历史草稿")
@@ -3509,16 +2310,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
-	@ApiOperation(value = "根据测试套件查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据测试套件查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
 	@ApiOperation(value = "根据测试套件系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据测试套件系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByTestSuiteAction(@PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -3530,16 +2321,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
-	@ApiOperation(value = "根据测试套件系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据测试套件系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByTestSuiteAction(@PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
@@ -3555,16 +2336,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
-	@ApiOperation(value = "根据测试用例查询查询用户使用年", tags = {"操作历史" } ,notes = "根据测试用例查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByCase(@PathVariable("case_id") Long case_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
 	@ApiOperation(value = "根据测试用例获取Type", tags = {"操作历史" } ,notes = "根据测试用例获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/histories/fetchtype")
@@ -3578,16 +2349,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
-	@ApiOperation(value = "根据测试用例查询Type", tags = {"操作历史" } ,notes = "根据测试用例查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByCase(@PathVariable("case_id") Long case_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
 	@ApiOperation(value = "根据测试用例获取DEFAULT", tags = {"操作历史" } ,notes = "根据测试用例获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/histories/fetchdefault")
@@ -3600,16 +2361,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
-	@ApiOperation(value = "根据测试用例查询DEFAULT", tags = {"操作历史" } ,notes = "根据测试用例查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByCase(@PathVariable("case_id") Long case_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@CaseRuntime.test(#case_id,'UPDATE')")
     @ApiOperation(value = "根据测试用例更新操作历史", tags = {"操作历史" },  notes = "根据测试用例更新操作历史")
@@ -3646,16 +2397,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
-	@ApiOperation(value = "根据测试用例查询MobType", tags = {"操作历史" } ,notes = "根据测试用例查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByCase(@PathVariable("case_id") Long case_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@CaseRuntime.test(#case_id,'CREATE')")
     @ApiOperation(value = "根据测试用例建立操作历史", tags = {"操作历史" },  notes = "根据测试用例建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/histories")
@@ -3681,16 +2422,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
-	@ApiOperation(value = "根据测试用例查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据测试用例查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByCase(@PathVariable("case_id") Long case_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
 	@ApiOperation(value = "根据测试用例获取ProductTrends", tags = {"操作历史" } ,notes = "根据测试用例获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/histories/fetchproducttrends")
@@ -3703,16 +2434,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
-	@ApiOperation(value = "根据测试用例查询ProductTrends", tags = {"操作历史" } ,notes = "根据测试用例查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByCase(@PathVariable("case_id") Long case_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@CaseRuntime.test(#case_id,'CREATE')")
     @ApiOperation(value = "根据测试用例获取操作历史草稿", tags = {"操作历史" },  notes = "根据测试用例获取操作历史草稿")
@@ -3738,16 +2459,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
-	@ApiOperation(value = "根据测试用例查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据测试用例查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByCase(@PathVariable("case_id") Long case_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
 	@ApiOperation(value = "根据测试用例系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据测试用例系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByCaseAction(@PathVariable("case_id") Long case_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -3759,16 +2470,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
-	@ApiOperation(value = "根据测试用例系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据测试用例系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByCaseAction(@PathVariable("case_id") Long case_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@BuildRuntime.test(#build_id,'READ')")
@@ -3784,16 +2485,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@BuildRuntime.test(#build_id,'READ')")
-	@ApiOperation(value = "根据版本查询查询用户使用年", tags = {"操作历史" } ,notes = "根据版本查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/builds/{build_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByBuild(@PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@BuildRuntime.test(#build_id,'READ')")
 	@ApiOperation(value = "根据版本获取Type", tags = {"操作历史" } ,notes = "根据版本获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/builds/{build_id}/histories/fetchtype")
@@ -3807,16 +2498,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@BuildRuntime.test(#build_id,'READ')")
-	@ApiOperation(value = "根据版本查询Type", tags = {"操作历史" } ,notes = "根据版本查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/builds/{build_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByBuild(@PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@BuildRuntime.test(#build_id,'READ')")
 	@ApiOperation(value = "根据版本获取DEFAULT", tags = {"操作历史" } ,notes = "根据版本获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/builds/{build_id}/histories/fetchdefault")
@@ -3829,16 +2510,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BuildRuntime.test(#build_id,'READ')")
-	@ApiOperation(value = "根据版本查询DEFAULT", tags = {"操作历史" } ,notes = "根据版本查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/builds/{build_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByBuild(@PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@BuildRuntime.test(#build_id,'UPDATE')")
     @ApiOperation(value = "根据版本更新操作历史", tags = {"操作历史" },  notes = "根据版本更新操作历史")
@@ -3875,16 +2546,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@BuildRuntime.test(#build_id,'READ')")
-	@ApiOperation(value = "根据版本查询MobType", tags = {"操作历史" } ,notes = "根据版本查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/builds/{build_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByBuild(@PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@BuildRuntime.test(#build_id,'CREATE')")
     @ApiOperation(value = "根据版本建立操作历史", tags = {"操作历史" },  notes = "根据版本建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/{build_id}/histories")
@@ -3910,16 +2571,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@BuildRuntime.test(#build_id,'READ')")
-	@ApiOperation(value = "根据版本查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据版本查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/builds/{build_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByBuild(@PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@BuildRuntime.test(#build_id,'READ')")
 	@ApiOperation(value = "根据版本获取ProductTrends", tags = {"操作历史" } ,notes = "根据版本获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/builds/{build_id}/histories/fetchproducttrends")
@@ -3932,16 +2583,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BuildRuntime.test(#build_id,'READ')")
-	@ApiOperation(value = "根据版本查询ProductTrends", tags = {"操作历史" } ,notes = "根据版本查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/builds/{build_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByBuild(@PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@BuildRuntime.test(#build_id,'CREATE')")
     @ApiOperation(value = "根据版本获取操作历史草稿", tags = {"操作历史" },  notes = "根据版本获取操作历史草稿")
@@ -3967,16 +2608,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@BuildRuntime.test(#build_id,'READ')")
-	@ApiOperation(value = "根据版本查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据版本查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/builds/{build_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByBuild(@PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@BuildRuntime.test(#build_id,'READ')")
 	@ApiOperation(value = "根据版本系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据版本系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/builds/{build_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByBuildAction(@PathVariable("build_id") Long build_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -3988,16 +2619,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@BuildRuntime.test(#build_id,'READ')")
-	@ApiOperation(value = "根据版本系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据版本系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/builds/{build_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByBuildAction(@PathVariable("build_id") Long build_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'READ')")
@@ -4013,16 +2634,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'READ')")
-	@ApiOperation(value = "根据用例库查询查询用户使用年", tags = {"操作历史" } ,notes = "根据用例库查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'READ')")
 	@ApiOperation(value = "根据用例库获取Type", tags = {"操作历史" } ,notes = "根据用例库获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/histories/fetchtype")
@@ -4036,16 +2647,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'READ')")
-	@ApiOperation(value = "根据用例库查询Type", tags = {"操作历史" } ,notes = "根据用例库查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'READ')")
 	@ApiOperation(value = "根据用例库获取DEFAULT", tags = {"操作历史" } ,notes = "根据用例库获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/histories/fetchdefault")
@@ -4058,16 +2659,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'READ')")
-	@ApiOperation(value = "根据用例库查询DEFAULT", tags = {"操作历史" } ,notes = "根据用例库查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'UPDATE')")
     @ApiOperation(value = "根据用例库更新操作历史", tags = {"操作历史" },  notes = "根据用例库更新操作历史")
@@ -4104,16 +2695,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'READ')")
-	@ApiOperation(value = "根据用例库查询MobType", tags = {"操作历史" } ,notes = "根据用例库查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'CREATE')")
     @ApiOperation(value = "根据用例库建立操作历史", tags = {"操作历史" },  notes = "根据用例库建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/histories")
@@ -4139,16 +2720,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'READ')")
-	@ApiOperation(value = "根据用例库查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据用例库查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'READ')")
 	@ApiOperation(value = "根据用例库获取ProductTrends", tags = {"操作历史" } ,notes = "根据用例库获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/histories/fetchproducttrends")
@@ -4161,16 +2732,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'READ')")
-	@ApiOperation(value = "根据用例库查询ProductTrends", tags = {"操作历史" } ,notes = "根据用例库查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'CREATE')")
     @ApiOperation(value = "根据用例库获取操作历史草稿", tags = {"操作历史" },  notes = "根据用例库获取操作历史草稿")
@@ -4196,16 +2757,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'READ')")
-	@ApiOperation(value = "根据用例库查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据用例库查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'READ')")
 	@ApiOperation(value = "根据用例库系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据用例库系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByIbzLibAction(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -4217,16 +2768,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'READ')")
-	@ApiOperation(value = "根据用例库系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据用例库系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByIbzLibAction(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
@@ -4242,16 +2783,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
-	@ApiOperation(value = "根据需求查询查询用户使用年", tags = {"操作历史" } ,notes = "根据需求查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByStory(@PathVariable("story_id") Long story_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取Type", tags = {"操作历史" } ,notes = "根据需求获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/histories/fetchtype")
@@ -4265,16 +2796,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
-	@ApiOperation(value = "根据需求查询Type", tags = {"操作历史" } ,notes = "根据需求查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByStory(@PathVariable("story_id") Long story_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取DEFAULT", tags = {"操作历史" } ,notes = "根据需求获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/histories/fetchdefault")
@@ -4287,16 +2808,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
-	@ApiOperation(value = "根据需求查询DEFAULT", tags = {"操作历史" } ,notes = "根据需求查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByStory(@PathVariable("story_id") Long story_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@StoryRuntime.test(#story_id,'UPDATE')")
     @ApiOperation(value = "根据需求更新操作历史", tags = {"操作历史" },  notes = "根据需求更新操作历史")
@@ -4333,16 +2844,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
-	@ApiOperation(value = "根据需求查询MobType", tags = {"操作历史" } ,notes = "根据需求查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByStory(@PathVariable("story_id") Long story_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
     @ApiOperation(value = "根据需求建立操作历史", tags = {"操作历史" },  notes = "根据需求建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/histories")
@@ -4368,16 +2869,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
-	@ApiOperation(value = "根据需求查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据需求查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByStory(@PathVariable("story_id") Long story_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取ProductTrends", tags = {"操作历史" } ,notes = "根据需求获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/histories/fetchproducttrends")
@@ -4390,16 +2881,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
-	@ApiOperation(value = "根据需求查询ProductTrends", tags = {"操作历史" } ,notes = "根据需求查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByStory(@PathVariable("story_id") Long story_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
     @ApiOperation(value = "根据需求获取操作历史草稿", tags = {"操作历史" },  notes = "根据需求获取操作历史草稿")
@@ -4425,16 +2906,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
-	@ApiOperation(value = "根据需求查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据需求查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByStory(@PathVariable("story_id") Long story_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据需求系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByStoryAction(@PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -4446,16 +2917,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
-	@ApiOperation(value = "根据需求系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据需求系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByStoryAction(@PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
@@ -4471,16 +2932,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询查询用户使用年", tags = {"操作历史" } ,notes = "根据项目查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取Type", tags = {"操作历史" } ,notes = "根据项目获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchtype")
@@ -4494,16 +2945,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询Type", tags = {"操作历史" } ,notes = "根据项目查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchdefault")
@@ -4516,16 +2957,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目更新操作历史", tags = {"操作历史" },  notes = "根据项目更新操作历史")
@@ -4562,16 +2993,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询MobType", tags = {"操作历史" } ,notes = "根据项目查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目建立操作历史", tags = {"操作历史" },  notes = "根据项目建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories")
@@ -4597,16 +3018,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据项目查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取ProductTrends", tags = {"操作历史" } ,notes = "根据项目获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchproducttrends")
@@ -4619,16 +3030,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询ProductTrends", tags = {"操作历史" } ,notes = "根据项目查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目获取操作历史草稿", tags = {"操作历史" },  notes = "根据项目获取操作历史草稿")
@@ -4654,16 +3055,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据项目查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -4675,16 +3066,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
@@ -4746,7 +3127,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'COLLECT')")
-    @ApiOperation(value = "根据产品收藏操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品收藏", tags = {"操作历史" },  notes = "根据产品收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/collect")
     public ResponseEntity<HistoryDTO> collectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -4768,7 +3149,7 @@ public class HistoryResource {
 
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UNCOLLECT')")
-    @ApiOperation(value = "根据产品取消收藏操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品取消收藏", tags = {"操作历史" },  notes = "根据产品取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/uncollect")
     public ResponseEntity<HistoryDTO> unCollectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -4792,16 +3173,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询自定义文档库", tags = {"操作历史" } ,notes = "根据产品查询自定义文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbycustom")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByCustomByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByCustom(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取产品文档库", tags = {"操作历史" } ,notes = "根据产品获取产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchbyproduct")
@@ -4814,16 +3185,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询产品文档库", tags = {"操作历史" } ,notes = "根据产品查询产品文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbyproduct")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByProductByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByProduct(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取产品文档库", tags = {"操作历史" } ,notes = "根据产品获取产品文档库")
@@ -4838,16 +3199,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询产品文档库", tags = {"操作历史" } ,notes = "根据产品查询产品文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbyproductnotfiles")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByProductNotFilesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByProductNotFiles(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目文件库", tags = {"操作历史" } ,notes = "根据产品获取项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchbyproject")
@@ -4860,16 +3211,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目文件库", tags = {"操作历史" } ,notes = "根据产品查询项目文件库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbyproject")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByProject(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目文件库", tags = {"操作历史" } ,notes = "根据产品获取项目文件库")
@@ -4884,16 +3225,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目文件库", tags = {"操作历史" } ,notes = "根据产品查询项目文件库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbyprojectnotfiles")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByProjectNotFilesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByProjectNotFiles(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取所属文档库", tags = {"操作历史" } ,notes = "根据产品获取所属文档库")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchcurdoclib")
@@ -4906,16 +3237,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询所属文档库", tags = {"操作历史" } ,notes = "根据产品查询所属文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchcurdoclib")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryCurDocLibByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchCurDocLib(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品获取DEFAULT")
@@ -4930,16 +3251,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取我的收藏", tags = {"操作历史" } ,notes = "根据产品获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchmyfavourites")
@@ -4952,16 +3263,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询我的收藏", tags = {"操作历史" } ,notes = "根据产品查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchmyfavourites")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyFavouritesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyFavourites(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取根目录", tags = {"操作历史" } ,notes = "根据产品获取根目录")
@@ -4978,16 +3279,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询根目录", tags = {"操作历史" } ,notes = "根据产品查询根目录")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchrootmodulemulu")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRootModuleMuLuByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRootModuleMuLu(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库获取查询用户使用年", tags = {"操作历史" } ,notes = "根据产品文档库获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody HistorySearchContext context) {
@@ -4999,16 +3290,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询查询用户使用年", tags = {"操作历史" } ,notes = "根据产品文档库查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库获取Type", tags = {"操作历史" } ,notes = "根据产品文档库获取Type")
@@ -5023,16 +3304,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询Type", tags = {"操作历史" } ,notes = "根据产品文档库查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品文档库获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/fetchdefault")
@@ -5045,16 +3316,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品文档库查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品文档库更新操作历史", tags = {"操作历史" },  notes = "根据产品文档库更新操作历史")
@@ -5091,16 +3352,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询MobType", tags = {"操作历史" } ,notes = "根据产品文档库查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品文档库建立操作历史", tags = {"操作历史" },  notes = "根据产品文档库建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/histories")
@@ -5126,16 +3377,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据产品文档库查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库获取ProductTrends", tags = {"操作历史" } ,notes = "根据产品文档库获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/fetchproducttrends")
@@ -5148,16 +3389,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询ProductTrends", tags = {"操作历史" } ,notes = "根据产品文档库查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品文档库获取操作历史草稿", tags = {"操作历史" },  notes = "根据产品文档库获取操作历史草稿")
@@ -5183,16 +3414,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据产品文档库查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品文档库系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProductDocLibAction(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -5204,16 +3425,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品文档库系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductDocLibAction(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
@@ -5268,7 +3479,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'ACTIVATE')")
-    @ApiOperation(value = "根据产品激活操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品激活", tags = {"操作历史" },  notes = "根据产品激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/activate")
     public ResponseEntity<HistoryDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5280,7 +3491,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'ASSIGNTO')")
-    @ApiOperation(value = "根据产品指派操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品指派", tags = {"操作历史" },  notes = "根据产品指派")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/assignto")
     public ResponseEntity<HistoryDTO> assignToByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5291,7 +3502,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品批量解除关联Bug操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品批量解除关联Bug", tags = {"操作历史" },  notes = "根据产品批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/batchunlinkbug")
     public ResponseEntity<HistoryDTO> batchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5303,7 +3514,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'FAVORITES')")
-    @ApiOperation(value = "根据产品Bug收藏操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品Bug收藏", tags = {"操作历史" },  notes = "根据产品Bug收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/bugfavorites")
     public ResponseEntity<HistoryDTO> bugFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5315,7 +3526,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'NFAVORITES')")
-    @ApiOperation(value = "根据产品取消收藏操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品取消收藏", tags = {"操作历史" },  notes = "根据产品取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/bugnfavorites")
     public ResponseEntity<HistoryDTO> bugNFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5326,7 +3537,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品版本批量解除关联Bug操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品版本批量解除关联Bug", tags = {"操作历史" },  notes = "根据产品版本批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/buildbatchunlinkbug")
     public ResponseEntity<HistoryDTO> buildBatchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5338,7 +3549,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUILDLINK')")
-    @ApiOperation(value = "根据产品版本关联Bug操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品版本关联Bug", tags = {"操作历史" },  notes = "根据产品版本关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/buildlinkbug")
     public ResponseEntity<HistoryDTO> buildLinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5350,7 +3561,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUILDLINK')")
-    @ApiOperation(value = "根据产品版本解除关联Bug操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品版本解除关联Bug", tags = {"操作历史" },  notes = "根据产品版本解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/buildunlinkbug")
     public ResponseEntity<HistoryDTO> buildUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5369,7 +3580,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CLOSE')")
-    @ApiOperation(value = "根据产品关闭操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关闭", tags = {"操作历史" },  notes = "根据产品关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/close")
     public ResponseEntity<HistoryDTO> closeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5381,7 +3592,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CONFIRM')")
-    @ApiOperation(value = "根据产品确认操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品确认", tags = {"操作历史" },  notes = "根据产品确认")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/confirm")
     public ResponseEntity<HistoryDTO> confirmByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5393,7 +3604,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'PLANLINK')")
-    @ApiOperation(value = "根据产品关联Bug操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关联Bug", tags = {"操作历史" },  notes = "根据产品关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/linkbug")
     public ResponseEntity<HistoryDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5405,7 +3616,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'RELEASELINK')")
-    @ApiOperation(value = "根据产品批量解除关联Bug操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品批量解除关联Bug", tags = {"操作历史" },  notes = "根据产品批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/releaasebatchunlinkbug")
     public ResponseEntity<HistoryDTO> releaaseBatchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5417,7 +3628,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'RELEASELINK')")
-    @ApiOperation(value = "根据产品关联Bug（解决Bug）操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关联Bug（解决Bug）", tags = {"操作历史" },  notes = "根据产品关联Bug（解决Bug）")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/releaselinkbugbybug")
     public ResponseEntity<HistoryDTO> releaseLinkBugbyBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5429,7 +3640,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'RELEASELINK')")
-    @ApiOperation(value = "根据产品关联Bug（遗留Bug）操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关联Bug（遗留Bug）", tags = {"操作历史" },  notes = "根据产品关联Bug（遗留Bug）")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/releaselinkbugbyleftbug")
     public ResponseEntity<HistoryDTO> releaseLinkBugbyLeftBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5441,7 +3652,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'RESOLVE')")
-    @ApiOperation(value = "根据产品移除关联Bug（遗留Bug）操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品移除关联Bug（遗留Bug）", tags = {"操作历史" },  notes = "根据产品移除关联Bug（遗留Bug）")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/releaseunlinkbugbyleftbug")
     public ResponseEntity<HistoryDTO> releaseUnLinkBugbyLeftBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5453,7 +3664,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'RELEASELINK')")
-    @ApiOperation(value = "根据产品解除关联Bug操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品解除关联Bug", tags = {"操作历史" },  notes = "根据产品解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/releaseunlinkbug")
     public ResponseEntity<HistoryDTO> releaseUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5465,7 +3676,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'RESOLVE')")
-    @ApiOperation(value = "根据产品解决操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品解决", tags = {"操作历史" },  notes = "根据产品解决")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/resolve")
     public ResponseEntity<HistoryDTO> resolveByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5486,7 +3697,7 @@ public class HistoryResource {
     }
 
 
-    @ApiOperation(value = "根据产品行为操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品行为", tags = {"操作历史" },  notes = "根据产品行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/sendmessage")
     public ResponseEntity<HistoryDTO> sendMessageByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5497,7 +3708,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品发送消息前置处理操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品发送消息前置处理", tags = {"操作历史" },  notes = "根据产品发送消息前置处理")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/sendmsgpreprocess")
     public ResponseEntity<HistoryDTO> sendMsgPreProcessByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5508,7 +3719,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品TestScript操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品TestScript", tags = {"操作历史" },  notes = "根据产品TestScript")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/testscript")
     public ResponseEntity<HistoryDTO> testScriptByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5520,7 +3731,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'TOSTORY')")
-    @ApiOperation(value = "根据产品转需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品转需求", tags = {"操作历史" },  notes = "根据产品转需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/tostory")
     public ResponseEntity<HistoryDTO> toStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5532,7 +3743,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'PLANLINK')")
-    @ApiOperation(value = "根据产品解除关联Bug操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品解除关联Bug", tags = {"操作历史" },  notes = "根据产品解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/unlinkbug")
     public ResponseEntity<HistoryDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5544,7 +3755,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
-    @ApiOperation(value = "根据产品更新需求版本操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品更新需求版本", tags = {"操作历史" },  notes = "根据产品更新需求版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/histories/{history_id}/updatestoryversion")
     public ResponseEntity<HistoryDTO> updateStoryVersionByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -5568,16 +3779,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询指派给我Bug", tags = {"操作历史" } ,notes = "根据产品查询指派给我Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchassignedtomybug")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryAssignedToMyBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchAssignedToMyBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取指派给我Bug（PC）", tags = {"操作历史" } ,notes = "根据产品获取指派给我Bug（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchassignedtomybugpc")
@@ -5590,16 +3791,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询指派给我Bug（PC）", tags = {"操作历史" } ,notes = "根据产品查询指派给我Bug（PC）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchassignedtomybugpc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryAssignedToMyBugPcByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchAssignedToMyBugPc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取版本关联bug(遗留的)", tags = {"操作历史" } ,notes = "根据产品获取版本关联bug(遗留的)")
@@ -5614,16 +3805,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询版本关联bug(遗留的)", tags = {"操作历史" } ,notes = "根据产品查询版本关联bug(遗留的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbugsbybuild")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBugsByBuildByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBugsByBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取版本关联Bug（已解决）", tags = {"操作历史" } ,notes = "根据产品获取版本关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchbuildbugs")
@@ -5636,16 +3817,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询版本关联Bug（已解决）", tags = {"操作历史" } ,notes = "根据产品查询版本关联Bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildbugs")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildBugsByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取版本可关联的已解决的Bugs集合", tags = {"操作历史" } ,notes = "根据产品获取版本可关联的已解决的Bugs集合")
@@ -5660,16 +3831,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询版本可关联的已解决的Bugs集合", tags = {"操作历史" } ,notes = "根据产品查询版本可关联的已解决的Bugs集合")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildlinkresolvedbugs")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildLinkResolvedBugsByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildLinkResolvedBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取版本关联Bug（已解决）", tags = {"操作历史" } ,notes = "根据产品获取版本关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchbuildopenbugs")
@@ -5682,16 +3843,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询版本关联Bug（已解决）", tags = {"操作历史" } ,notes = "根据产品查询版本关联Bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildopenbugs")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildOpenBugsByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildOpenBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug", tags = {"操作历史" } ,notes = "根据产品获取Build产生的Bug")
@@ -5706,16 +3857,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug", tags = {"操作历史" } ,notes = "根据产品查询Build产生的Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildproducebug")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildProduceBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildProduceBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug", tags = {"操作历史" } ,notes = "根据产品获取Build产生的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchbuildproducebugmodule")
@@ -5728,16 +3869,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug", tags = {"操作历史" } ,notes = "根据产品查询Build产生的Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildproducebugmodule")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildProduceBugModuleByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildProduceBugModule(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-创建者分布(项目)", tags = {"操作历史" } ,notes = "根据产品获取Build产生的Bug-创建者分布(项目)")
@@ -5752,16 +3883,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-创建者分布(项目)", tags = {"操作历史" } ,notes = "根据产品查询Build产生的Bug-创建者分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildproducebugmodule_project")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildProduceBugModule_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildProduceBugModule_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-创建分类", tags = {"操作历史" } ,notes = "根据产品获取Build产生的Bug-创建分类")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchbuildproducebugopenedby")
@@ -5774,16 +3895,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-创建分类", tags = {"操作历史" } ,notes = "根据产品查询Build产生的Bug-创建分类")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildproducebugopenedby")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildProduceBugOpenedByByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildProduceBugOpenedBy(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-创建者分布(项目)", tags = {"操作历史" } ,notes = "根据产品获取Build产生的Bug-创建者分布(项目)")
@@ -5798,16 +3909,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-创建者分布(项目)", tags = {"操作历史" } ,notes = "根据产品查询Build产生的Bug-创建者分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildproducebugopenedby_project")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildProduceBugOpenedBy_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildProduceBugOpenedBy_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug（已解决）", tags = {"操作历史" } ,notes = "根据产品获取Build产生的Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchbuildproducebugres")
@@ -5820,16 +3921,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug（已解决）", tags = {"操作历史" } ,notes = "根据产品查询Build产生的Bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildproducebugres")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildProduceBugRESByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildProduceBugRES(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-解决者分布", tags = {"操作历史" } ,notes = "根据产品获取Build产生的Bug-解决者分布")
@@ -5844,16 +3935,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-解决者分布", tags = {"操作历史" } ,notes = "根据产品查询Build产生的Bug-解决者分布")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildproducebugresolvedby")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildProduceBugRESOLVEDBYByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildProduceBugRESOLVEDBY(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-解决者分布(项目)", tags = {"操作历史" } ,notes = "根据产品获取Build产生的Bug-解决者分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchbuildproducebugresolvedby_project")
@@ -5866,16 +3947,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-解决者分布(项目)", tags = {"操作历史" } ,notes = "根据产品查询Build产生的Bug-解决者分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildproducebugresolvedby_project")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildProduceBugRESOLVEDBY_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildProduceBugRESOLVEDBY_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-解决方案分布(项目)", tags = {"操作历史" } ,notes = "根据产品获取Build产生的Bug-解决方案分布(项目)")
@@ -5890,16 +3961,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-解决方案分布(项目)", tags = {"操作历史" } ,notes = "根据产品查询Build产生的Bug-解决方案分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildproducebugresolution_project")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildProduceBugResolution_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildProduceBugResolution_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-严重程度分布(项目)", tags = {"操作历史" } ,notes = "根据产品获取Build产生的Bug-严重程度分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchbuildproducebugseverity_project")
@@ -5912,16 +3973,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-严重程度分布(项目)", tags = {"操作历史" } ,notes = "根据产品查询Build产生的Bug-严重程度分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildproducebugseverity_project")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildProduceBugSeverity_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildProduceBugSeverity_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-状态分布(项目)", tags = {"操作历史" } ,notes = "根据产品获取Build产生的Bug-状态分布(项目)")
@@ -5936,16 +3987,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-状态分布(项目)", tags = {"操作历史" } ,notes = "根据产品查询Build产生的Bug-状态分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildproducebugstatus_project")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildProduceBugStatus_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildProduceBugStatus_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取Build产生的Bug-类型分布(项目)", tags = {"操作历史" } ,notes = "根据产品获取Build产生的Bug-类型分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchbuildproducebugtype_project")
@@ -5958,16 +3999,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Build产生的Bug-类型分布(项目)", tags = {"操作历史" } ,notes = "根据产品查询Build产生的Bug-类型分布(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildproducebugtype_project")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildProduceBugType_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildProduceBugType_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取当前用户解决的Bug", tags = {"操作历史" } ,notes = "根据产品获取当前用户解决的Bug")
@@ -5982,16 +4013,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询当前用户解决的Bug", tags = {"操作历史" } ,notes = "根据产品查询当前用户解决的Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchcuruserresolve")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryCurUserResolveByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchCurUserResolve(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchdefault")
@@ -6004,16 +4025,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取ES批量的导入", tags = {"操作历史" } ,notes = "根据产品获取ES批量的导入")
@@ -6028,16 +4039,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询ES批量的导入", tags = {"操作历史" } ,notes = "根据产品查询ES批量的导入")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchesbulk")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryESBulkByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchESBulk(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取我代理的Bug", tags = {"操作历史" } ,notes = "根据产品获取我代理的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchmyagentbug")
@@ -6050,16 +4051,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询我代理的Bug", tags = {"操作历史" } ,notes = "根据产品查询我代理的Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchmyagentbug")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyAgentBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyAgentBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取累计创建的Bug数", tags = {"操作历史" } ,notes = "根据产品获取累计创建的Bug数")
@@ -6074,16 +4065,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询累计创建的Bug数", tags = {"操作历史" } ,notes = "根据产品查询累计创建的Bug数")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchmycuropenedbug")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyCurOpenedBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyCurOpenedBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取我的收藏", tags = {"操作历史" } ,notes = "根据产品获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchmyfavorites")
@@ -6096,16 +4077,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询我的收藏", tags = {"操作历史" } ,notes = "根据产品查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchmyfavorites")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyFavoritesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyFavorites(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取计划关联bug（去除已关联）", tags = {"操作历史" } ,notes = "根据产品获取计划关联bug（去除已关联）")
@@ -6120,16 +4091,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询计划关联bug（去除已关联）", tags = {"操作历史" } ,notes = "根据产品查询计划关联bug（去除已关联）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchnotcurplanlinkbug")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryNotCurPlanLinkBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchNotCurPlanLinkBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取遗留得Bug(项目)", tags = {"操作历史" } ,notes = "根据产品获取遗留得Bug(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchprojectbugs")
@@ -6142,16 +4103,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询遗留得Bug(项目)", tags = {"操作历史" } ,notes = "根据产品查询遗留得Bug(项目)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchprojectbugs")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectBugsByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取发布关联Bug（已解决）", tags = {"操作历史" } ,notes = "根据产品获取发布关联Bug（已解决）")
@@ -6166,16 +4117,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询发布关联Bug（已解决）", tags = {"操作历史" } ,notes = "根据产品查询发布关联Bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchreleasebugs")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryReleaseBugsByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchReleaseBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取发布关联Bug（已解决）", tags = {"操作历史" } ,notes = "根据产品获取发布关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchreleaseleftbugs")
@@ -6188,16 +4129,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询发布关联Bug（已解决）", tags = {"操作历史" } ,notes = "根据产品查询发布关联Bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchreleaseleftbugs")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryReleaseLeftBugsByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchReleaseLeftBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取发布可关联的bug（遗留）", tags = {"操作历史" } ,notes = "根据产品获取发布可关联的bug（遗留）")
@@ -6212,16 +4143,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询发布可关联的bug（遗留）", tags = {"操作历史" } ,notes = "根据产品查询发布可关联的bug（遗留）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchreleaselinkableleftbug")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryReleaseLinkableLeftBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchReleaseLinkableLeftBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取发布可关联的bug（已解决）", tags = {"操作历史" } ,notes = "根据产品获取发布可关联的bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchreleaselinkableresolvedbug")
@@ -6234,16 +4155,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询发布可关联的bug（已解决）", tags = {"操作历史" } ,notes = "根据产品查询发布可关联的bug（已解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchreleaselinkableresolvedbug")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryReleaseLinkableResolvedBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchReleaseLinkableResolvedBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取发布关联Bug（未解决）", tags = {"操作历史" } ,notes = "根据产品获取发布关联Bug（未解决）")
@@ -6258,16 +4169,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询发布关联Bug（未解决）", tags = {"操作历史" } ,notes = "根据产品查询发布关联Bug（未解决）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchreportbugs")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryReportBugsByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchReportBugs(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 	@ApiOperation(value = "根据产品获取需求来源Bug", tags = {"操作历史" } ,notes = "根据产品获取需求来源Bug")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchstoryformbug")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryStoryFormBugByProduct(@PathVariable("product_id") Long product_id,@RequestBody HistorySearchContext context) {
@@ -6279,15 +4180,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "根据产品查询需求来源Bug", tags = {"操作历史" } ,notes = "根据产品查询需求来源Bug")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchstoryformbug")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryStoryFormBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchStoryFormBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取任务相关bug", tags = {"操作历史" } ,notes = "根据产品获取任务相关bug")
@@ -6304,16 +4196,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询任务相关bug", tags = {"操作历史" } ,notes = "根据产品查询任务相关bug")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchtaskrelatedbug")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTaskRelatedBugByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchTaskRelatedBug(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品Bug获取查询用户使用年", tags = {"操作历史" } ,notes = "根据产品Bug获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/{bug_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id,@RequestBody HistorySearchContext context) {
@@ -6325,16 +4207,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品Bug查询查询用户使用年", tags = {"操作历史" } ,notes = "根据产品Bug查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/{bug_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品Bug获取Type", tags = {"操作历史" } ,notes = "根据产品Bug获取Type")
@@ -6349,16 +4221,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品Bug查询Type", tags = {"操作历史" } ,notes = "根据产品Bug查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/{bug_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品Bug获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品Bug获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/{bug_id}/histories/fetchdefault")
@@ -6371,16 +4233,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品Bug查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品Bug查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/{bug_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品Bug更新操作历史", tags = {"操作历史" },  notes = "根据产品Bug更新操作历史")
@@ -6417,16 +4269,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品Bug查询MobType", tags = {"操作历史" } ,notes = "根据产品Bug查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/{bug_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品Bug建立操作历史", tags = {"操作历史" },  notes = "根据产品Bug建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/histories")
@@ -6452,16 +4294,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品Bug查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据产品Bug查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/{bug_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品Bug获取ProductTrends", tags = {"操作历史" } ,notes = "根据产品Bug获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/{bug_id}/histories/fetchproducttrends")
@@ -6474,16 +4306,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品Bug查询ProductTrends", tags = {"操作历史" } ,notes = "根据产品Bug查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/{bug_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品Bug获取操作历史草稿", tags = {"操作历史" },  notes = "根据产品Bug获取操作历史草稿")
@@ -6509,16 +4331,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品Bug查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据产品Bug查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/{bug_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品Bug系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品Bug系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/{bug_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProductBugAction(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -6530,16 +4342,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品Bug系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品Bug系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/{bug_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductBugAction(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
@@ -6594,7 +4396,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'ACTIVATE')")
-    @ApiOperation(value = "根据产品状态变更（激活）操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品状态变更（激活）", tags = {"操作历史" },  notes = "根据产品状态变更（激活）")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/activate")
     public ResponseEntity<HistoryDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -6606,7 +4408,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品批量解除关联Bug操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品批量解除关联Bug", tags = {"操作历史" },  notes = "根据产品批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/batchunlinkbug")
     public ResponseEntity<HistoryDTO> batchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -6618,7 +4420,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
-    @ApiOperation(value = "根据产品状态变更操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品状态变更", tags = {"操作历史" },  notes = "根据产品状态变更")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/changestatus")
     public ResponseEntity<HistoryDTO> changeStatusByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -6637,7 +4439,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'LINKBUG')")
-    @ApiOperation(value = "根据产品关联Bug操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关联Bug", tags = {"操作历史" },  notes = "根据产品关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/linkbug")
     public ResponseEntity<HistoryDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -6649,7 +4451,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品关联Bug（解决Bug）操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关联Bug（解决Bug）", tags = {"操作历史" },  notes = "根据产品关联Bug（解决Bug）")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/linkbugbybug")
     public ResponseEntity<HistoryDTO> linkBugbyBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -6661,7 +4463,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品关联Bug（遗留Bug）操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关联Bug（遗留Bug）", tags = {"操作历史" },  notes = "根据产品关联Bug（遗留Bug）")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/linkbugbyleftbug")
     public ResponseEntity<HistoryDTO> linkBugbyLeftBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -6673,7 +4475,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'LINKSTORY')")
-    @ApiOperation(value = "根据产品关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关联需求", tags = {"操作历史" },  notes = "根据产品关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/linkstory")
     public ResponseEntity<HistoryDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -6684,7 +4486,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品移动端发布计数器操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品移动端发布计数器", tags = {"操作历史" },  notes = "根据产品移动端发布计数器")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/histories/{history_id}/mobreleasecounter")
     public ResponseEntity<HistoryDTO> mobReleaseCounterByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -6695,7 +4497,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品一键发布操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品一键发布", tags = {"操作历史" },  notes = "根据产品一键发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/oneclickrelease")
     public ResponseEntity<HistoryDTO> oneClickReleaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -6727,7 +4529,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'TERMINATE')")
-    @ApiOperation(value = "根据产品状态变更（停止维护）操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品状态变更（停止维护）", tags = {"操作历史" },  notes = "根据产品状态变更（停止维护）")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/terminate")
     public ResponseEntity<HistoryDTO> terminateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -6739,7 +4541,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品解除关联Bug操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品解除关联Bug", tags = {"操作历史" },  notes = "根据产品解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/unlinkbug")
     public ResponseEntity<HistoryDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -6750,7 +4552,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品解除关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品解除关联需求", tags = {"操作历史" },  notes = "根据产品解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/unlinkstory")
     public ResponseEntity<HistoryDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -6774,16 +4576,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联发布", tags = {"操作历史" } ,notes = "根据产品获取测试报告关联发布")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchreportrelease")
@@ -6799,16 +4591,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联发布", tags = {"操作历史" } ,notes = "根据产品查询测试报告关联发布")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchreportrelease")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryReportReleaseByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchReportRelease(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品发布获取查询用户使用年", tags = {"操作历史" } ,notes = "根据产品发布获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/{release_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id,@RequestBody HistorySearchContext context) {
@@ -6820,16 +4602,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品发布查询查询用户使用年", tags = {"操作历史" } ,notes = "根据产品发布查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/{release_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品发布获取Type", tags = {"操作历史" } ,notes = "根据产品发布获取Type")
@@ -6844,16 +4616,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品发布查询Type", tags = {"操作历史" } ,notes = "根据产品发布查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/{release_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品发布获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品发布获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/{release_id}/histories/fetchdefault")
@@ -6866,16 +4628,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品发布查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品发布查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/{release_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品发布更新操作历史", tags = {"操作历史" },  notes = "根据产品发布更新操作历史")
@@ -6912,16 +4664,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品发布查询MobType", tags = {"操作历史" } ,notes = "根据产品发布查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/{release_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品发布建立操作历史", tags = {"操作历史" },  notes = "根据产品发布建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/{release_id}/histories")
@@ -6947,16 +4689,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品发布查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据产品发布查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/{release_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品发布获取ProductTrends", tags = {"操作历史" } ,notes = "根据产品发布获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/{release_id}/histories/fetchproducttrends")
@@ -6969,16 +4701,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品发布查询ProductTrends", tags = {"操作历史" } ,notes = "根据产品发布查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/{release_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品发布获取操作历史草稿", tags = {"操作历史" },  notes = "根据产品发布获取操作历史草稿")
@@ -7004,16 +4726,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品发布查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据产品发布查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/{release_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品发布系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品发布系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/{release_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProductReleaseAction(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -7025,16 +4737,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品发布系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品发布系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/{release_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductReleaseAction(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
@@ -7095,7 +4797,7 @@ public class HistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(historyService.checkKey(historyMapping.toDomain(historydto)));
     }
 
-    @ApiOperation(value = "根据产品关联测试操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关联测试", tags = {"操作历史" },  notes = "根据产品关联测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/linkcase")
     public ResponseEntity<HistoryDTO> linkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7106,7 +4808,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品移动端测试套件计数器操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品移动端测试套件计数器", tags = {"操作历史" },  notes = "根据产品移动端测试套件计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/mobtestsuitecount")
     public ResponseEntity<HistoryDTO> mobTestSuiteCountByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7127,7 +4829,7 @@ public class HistoryResource {
     }
 
 
-    @ApiOperation(value = "根据产品未关联测试操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品未关联测试", tags = {"操作历史" },  notes = "根据产品未关联测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/unlinkcase")
     public ResponseEntity<HistoryDTO> unlinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7151,16 +4853,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取公开套件", tags = {"操作历史" } ,notes = "根据产品获取公开套件")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchpublictestsuite")
@@ -7176,16 +4868,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询公开套件", tags = {"操作历史" } ,notes = "根据产品查询公开套件")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchpublictestsuite")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryPublicTestSuiteByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchPublicTestSuite(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试套件获取查询用户使用年", tags = {"操作历史" } ,notes = "根据产品测试套件获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id,@RequestBody HistorySearchContext context) {
@@ -7197,16 +4879,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试套件查询查询用户使用年", tags = {"操作历史" } ,notes = "根据产品测试套件查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试套件获取Type", tags = {"操作历史" } ,notes = "根据产品测试套件获取Type")
@@ -7221,16 +4893,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试套件查询Type", tags = {"操作历史" } ,notes = "根据产品测试套件查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试套件获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品测试套件获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/histories/fetchdefault")
@@ -7243,16 +4905,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试套件查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品测试套件查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品测试套件更新操作历史", tags = {"操作历史" },  notes = "根据产品测试套件更新操作历史")
@@ -7289,16 +4941,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试套件查询MobType", tags = {"操作历史" } ,notes = "根据产品测试套件查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品测试套件建立操作历史", tags = {"操作历史" },  notes = "根据产品测试套件建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/histories")
@@ -7324,16 +4966,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试套件查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据产品测试套件查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试套件获取ProductTrends", tags = {"操作历史" } ,notes = "根据产品测试套件获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/histories/fetchproducttrends")
@@ -7346,16 +4978,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试套件查询ProductTrends", tags = {"操作历史" } ,notes = "根据产品测试套件查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品测试套件获取操作历史草稿", tags = {"操作历史" },  notes = "根据产品测试套件获取操作历史草稿")
@@ -7381,16 +5003,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试套件查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据产品测试套件查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试套件系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品测试套件系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProductTestSuiteAction(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -7402,16 +5014,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试套件系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品测试套件系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/{testsuite_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductTestSuiteAction(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
@@ -7465,7 +5067,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historyMapping.toDto(historyService.getDraft(domain)));
     }
 
-    @ApiOperation(value = "根据产品激活操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品激活", tags = {"操作历史" },  notes = "根据产品激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/activate")
     public ResponseEntity<HistoryDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7476,7 +5078,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品阻塞操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品阻塞", tags = {"操作历史" },  notes = "根据产品阻塞")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/block")
     public ResponseEntity<HistoryDTO> blockByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7494,7 +5096,7 @@ public class HistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(historyService.checkKey(historyMapping.toDomain(historydto)));
     }
 
-    @ApiOperation(value = "根据产品关闭操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关闭", tags = {"操作历史" },  notes = "根据产品关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/close")
     public ResponseEntity<HistoryDTO> closeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7505,7 +5107,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品关联测试用例操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关联测试用例", tags = {"操作历史" },  notes = "根据产品关联测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/linkcase")
     public ResponseEntity<HistoryDTO> linkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7516,7 +5118,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品移动端测试版本计数器操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品移动端测试版本计数器", tags = {"操作历史" },  notes = "根据产品移动端测试版本计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/mobtesttaskcounter")
     public ResponseEntity<HistoryDTO> mobTestTaskCounterByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7537,7 +5139,7 @@ public class HistoryResource {
     }
 
 
-    @ApiOperation(value = "根据产品开始操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品开始", tags = {"操作历史" },  notes = "根据产品开始")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/start")
     public ResponseEntity<HistoryDTO> startByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7548,7 +5150,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品关联测试用例操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关联测试用例", tags = {"操作历史" },  notes = "根据产品关联测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/unlinkcase")
     public ResponseEntity<HistoryDTO> unlinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7572,16 +5174,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取我的测试单", tags = {"操作历史" } ,notes = "根据产品获取我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchmytesttaskpc")
@@ -7597,16 +5189,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询我的测试单", tags = {"操作历史" } ,notes = "根据产品查询我的测试单")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchmytesttaskpc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTestTaskPcByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTestTaskPc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试版本获取查询用户使用年", tags = {"操作历史" } ,notes = "根据产品测试版本获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody HistorySearchContext context) {
@@ -7618,16 +5200,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试版本查询查询用户使用年", tags = {"操作历史" } ,notes = "根据产品测试版本查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试版本获取Type", tags = {"操作历史" } ,notes = "根据产品测试版本获取Type")
@@ -7642,16 +5214,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试版本查询Type", tags = {"操作历史" } ,notes = "根据产品测试版本查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试版本获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品测试版本获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/histories/fetchdefault")
@@ -7664,16 +5226,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试版本查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品测试版本查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品测试版本更新操作历史", tags = {"操作历史" },  notes = "根据产品测试版本更新操作历史")
@@ -7710,16 +5262,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试版本查询MobType", tags = {"操作历史" } ,notes = "根据产品测试版本查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品测试版本建立操作历史", tags = {"操作历史" },  notes = "根据产品测试版本建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/histories")
@@ -7745,16 +5287,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试版本查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据产品测试版本查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试版本获取ProductTrends", tags = {"操作历史" } ,notes = "根据产品测试版本获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/histories/fetchproducttrends")
@@ -7767,16 +5299,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试版本查询ProductTrends", tags = {"操作历史" } ,notes = "根据产品测试版本查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品测试版本获取操作历史草稿", tags = {"操作历史" },  notes = "根据产品测试版本获取操作历史草稿")
@@ -7802,16 +5324,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试版本查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据产品测试版本查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试版本系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品测试版本系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProductTestTaskAction(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -7826,17 +5338,7 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试版本系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品测试版本系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductTestTaskAction(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据测试单获取相应信息操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品根据测试单获取相应信息", tags = {"操作历史" },  notes = "根据产品根据测试单获取相应信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/histories/{history_id}/getinfotesttask")
     public ResponseEntity<HistoryDTO> getInfoTestTaskByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7906,7 +5408,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据起始时间获取概况信息操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品根据起始时间获取概况信息", tags = {"操作历史" },  notes = "根据产品根据起始时间获取概况信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/histories/{history_id}/getinfotaskovbytime")
     public ResponseEntity<HistoryDTO> getInfoTaskOvByTimeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7918,7 +5420,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据测试报告概况信息（项目报告）操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品根据测试报告概况信息（项目报告）", tags = {"操作历史" },  notes = "根据产品根据测试报告概况信息（项目报告）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/histories/{history_id}/getinfotesttaskovproject")
     public ResponseEntity<HistoryDTO> getInfoTestTaskOvProjectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7930,7 +5432,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）", tags = {"操作历史" },  notes = "根据产品根据测试单获取相应信息（项目报告）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/histories/{history_id}/getinfotesttaskproject")
     public ResponseEntity<HistoryDTO> getInfoTestTaskProjectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7942,7 +5444,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）（单测试）操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）（单测试）", tags = {"操作历史" },  notes = "根据产品根据测试单获取相应信息（项目报告）（单测试）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/histories/{history_id}/getinfotesttaskr")
     public ResponseEntity<HistoryDTO> getInfoTestTaskRByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7954,7 +5456,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）（测试）操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）（测试）", tags = {"操作历史" },  notes = "根据产品根据测试单获取相应信息（项目报告）（测试）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/histories/{history_id}/getinfotesttasks")
     public ResponseEntity<HistoryDTO> getInfoTestTaskSByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7966,7 +5468,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据测试报告获取基本信息操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品根据测试报告获取基本信息", tags = {"操作历史" },  notes = "根据产品根据测试报告获取基本信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/histories/{history_id}/gettestreportbasicinfo")
     public ResponseEntity<HistoryDTO> getTestReportBasicInfoByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -7978,7 +5480,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据测试报告获取基本信息（项目报告）操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品根据测试报告获取基本信息（项目报告）", tags = {"操作历史" },  notes = "根据产品根据测试报告获取基本信息（项目报告）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/histories/{history_id}/gettestreportproject")
     public ResponseEntity<HistoryDTO> getTestReportProjectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8014,16 +5516,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试报告获取查询用户使用年", tags = {"操作历史" } ,notes = "根据产品测试报告获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testreports/{testreport_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody HistorySearchContext context) {
@@ -8035,16 +5527,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试报告查询查询用户使用年", tags = {"操作历史" } ,notes = "根据产品测试报告查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testreports/{testreport_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试报告获取Type", tags = {"操作历史" } ,notes = "根据产品测试报告获取Type")
@@ -8059,16 +5541,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试报告查询Type", tags = {"操作历史" } ,notes = "根据产品测试报告查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testreports/{testreport_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试报告获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品测试报告获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testreports/{testreport_id}/histories/fetchdefault")
@@ -8081,16 +5553,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试报告查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品测试报告查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testreports/{testreport_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品测试报告更新操作历史", tags = {"操作历史" },  notes = "根据产品测试报告更新操作历史")
@@ -8127,16 +5589,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试报告查询MobType", tags = {"操作历史" } ,notes = "根据产品测试报告查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testreports/{testreport_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品测试报告建立操作历史", tags = {"操作历史" },  notes = "根据产品测试报告建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testreports/{testreport_id}/histories")
@@ -8162,16 +5614,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试报告查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据产品测试报告查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testreports/{testreport_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试报告获取ProductTrends", tags = {"操作历史" } ,notes = "根据产品测试报告获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testreports/{testreport_id}/histories/fetchproducttrends")
@@ -8184,16 +5626,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试报告查询ProductTrends", tags = {"操作历史" } ,notes = "根据产品测试报告查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testreports/{testreport_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品测试报告获取操作历史草稿", tags = {"操作历史" },  notes = "根据产品测试报告获取操作历史草稿")
@@ -8219,16 +5651,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试报告查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据产品测试报告查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testreports/{testreport_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试报告系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品测试报告系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testreports/{testreport_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProductTestReportAction(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -8240,16 +5662,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试报告系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品测试报告系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testreports/{testreport_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductTestReportAction(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
@@ -8310,7 +5722,7 @@ public class HistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(historyService.checkKey(historyMapping.toDomain(historydto)));
     }
 
-    @ApiOperation(value = "根据产品关联Bug操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关联Bug", tags = {"操作历史" },  notes = "根据产品关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/linkbug")
     public ResponseEntity<HistoryDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8321,7 +5733,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关联需求", tags = {"操作历史" },  notes = "根据产品关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/linkstory")
     public ResponseEntity<HistoryDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8332,7 +5744,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品移动端项目版本计数器操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品移动端项目版本计数器", tags = {"操作历史" },  notes = "根据产品移动端项目版本计数器")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/histories/{history_id}/mobprojectbuildcounter")
     public ResponseEntity<HistoryDTO> mobProjectBuildCounterByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8343,7 +5755,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品一键发布操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品一键发布", tags = {"操作历史" },  notes = "根据产品一键发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/oneclickrelease")
     public ResponseEntity<HistoryDTO> oneClickReleaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8364,7 +5776,7 @@ public class HistoryResource {
     }
 
 
-    @ApiOperation(value = "根据产品移除Bug关联操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品移除Bug关联", tags = {"操作历史" },  notes = "根据产品移除Bug关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/unlinkbug")
     public ResponseEntity<HistoryDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8375,7 +5787,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品移除关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品移除关联需求", tags = {"操作历史" },  notes = "根据产品移除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/unlinkstory")
     public ResponseEntity<HistoryDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8399,16 +5811,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询Bug产品版本", tags = {"操作历史" } ,notes = "根据产品查询Bug产品版本")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbugproductbuild")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBugProductBuildByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBugProductBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 	@ApiOperation(value = "根据产品获取Bug产品或者项目版本", tags = {"操作历史" } ,notes = "根据产品获取Bug产品或者项目版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchbugproductorprojectbuild")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryBugProductOrProjectBuildByProduct(@PathVariable("product_id") Long product_id,@RequestBody HistorySearchContext context) {
@@ -8420,15 +5822,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "根据产品查询Bug产品或者项目版本", tags = {"操作历史" } ,notes = "根据产品查询Bug产品或者项目版本")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbugproductorprojectbuild")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBugProductOrProjectBuildByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBugProductOrProjectBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取产品版本", tags = {"操作历史" } ,notes = "根据产品获取产品版本")
@@ -8443,16 +5836,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询产品版本", tags = {"操作历史" } ,notes = "根据产品查询产品版本")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchcurproduct")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryCurProductByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchCurProduct(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchdefault")
@@ -8466,16 +5849,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 	@ApiOperation(value = "根据产品获取测试版本", tags = {"操作历史" } ,notes = "根据产品获取测试版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchtestbuild")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryTestBuildByProduct(@PathVariable("product_id") Long product_id,@RequestBody HistorySearchContext context) {
@@ -8487,15 +5860,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "根据产品查询测试版本", tags = {"操作历史" } ,notes = "根据产品查询测试版本")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchtestbuild")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTestBuildByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchTestBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试轮次", tags = {"操作历史" } ,notes = "根据产品获取测试轮次")
@@ -8509,16 +5873,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试轮次", tags = {"操作历史" } ,notes = "根据产品查询测试轮次")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchtestrounds")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTestRoundsByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchTestRounds(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取更新日志", tags = {"操作历史" } ,notes = "根据产品获取更新日志")
@@ -8535,16 +5889,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询更新日志", tags = {"操作历史" } ,notes = "根据产品查询更新日志")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchupdatelog")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryUpdateLogByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchUpdateLog(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品版本获取查询用户使用年", tags = {"操作历史" } ,notes = "根据产品版本获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id,@RequestBody HistorySearchContext context) {
@@ -8556,16 +5900,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品版本查询查询用户使用年", tags = {"操作历史" } ,notes = "根据产品版本查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品版本获取Type", tags = {"操作历史" } ,notes = "根据产品版本获取Type")
@@ -8580,16 +5914,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品版本查询Type", tags = {"操作历史" } ,notes = "根据产品版本查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品版本获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品版本获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/histories/fetchdefault")
@@ -8602,16 +5926,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品版本查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品版本查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品版本更新操作历史", tags = {"操作历史" },  notes = "根据产品版本更新操作历史")
@@ -8648,16 +5962,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品版本查询MobType", tags = {"操作历史" } ,notes = "根据产品版本查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品版本建立操作历史", tags = {"操作历史" },  notes = "根据产品版本建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/histories")
@@ -8683,16 +5987,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品版本查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据产品版本查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品版本获取ProductTrends", tags = {"操作历史" } ,notes = "根据产品版本获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/histories/fetchproducttrends")
@@ -8705,16 +5999,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品版本查询ProductTrends", tags = {"操作历史" } ,notes = "根据产品版本查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品版本获取操作历史草稿", tags = {"操作历史" },  notes = "根据产品版本获取操作历史草稿")
@@ -8740,16 +6024,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品版本查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据产品版本查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品版本系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品版本系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProductBuildAction(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -8761,16 +6035,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品版本系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品版本系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductBuildAction(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
@@ -8825,7 +6089,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'FAVORITE')")
-    @ApiOperation(value = "根据产品行为操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品行为", tags = {"操作历史" },  notes = "根据产品行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/casefavorite")
     public ResponseEntity<HistoryDTO> caseFavoriteByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8837,7 +6101,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'NFAVORITE')")
-    @ApiOperation(value = "根据产品CaseNFavorite操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品CaseNFavorite", tags = {"操作历史" },  notes = "根据产品CaseNFavorite")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/casenfavorite")
     public ResponseEntity<HistoryDTO> caseNFavoriteByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8856,7 +6120,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CONFIRMCHANGE')")
-    @ApiOperation(value = "根据产品确认用例变更操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品确认用例变更", tags = {"操作历史" },  notes = "根据产品确认用例变更")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/histories/{history_id}/confirmchange")
     public ResponseEntity<HistoryDTO> confirmChangeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8867,7 +6131,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品确认需求变更操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品确认需求变更", tags = {"操作历史" },  notes = "根据产品确认需求变更")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/confirmstorychange")
     public ResponseEntity<HistoryDTO> confirmstorychangeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8879,7 +6143,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品根据测试单获取或者状态操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品根据测试单获取或者状态", tags = {"操作历史" },  notes = "根据产品根据测试单获取或者状态")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/histories/{history_id}/getbytesttask")
     public ResponseEntity<HistoryDTO> getByTestTaskByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8891,7 +6155,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CASERESULT')")
-    @ApiOperation(value = "根据产品获取测试单执行结果操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品获取测试单执行结果", tags = {"操作历史" },  notes = "根据产品获取测试单执行结果")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/histories/{history_id}/gettesttaskcntrun")
     public ResponseEntity<HistoryDTO> getTestTaskCntRunByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8902,7 +6166,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品测试单关联测试用例操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品测试单关联测试用例", tags = {"操作历史" },  notes = "根据产品测试单关联测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/linkcase")
     public ResponseEntity<HistoryDTO> linkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8914,7 +6178,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'STORYLINK')")
-    @ApiOperation(value = "根据产品移动端关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品移动端关联需求", tags = {"操作历史" },  notes = "根据产品移动端关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/moblinkcase")
     public ResponseEntity<HistoryDTO> mobLinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8926,7 +6190,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'RUNCASE')")
-    @ApiOperation(value = "根据产品执行测试操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品执行测试", tags = {"操作历史" },  notes = "根据产品执行测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/runcase")
     public ResponseEntity<HistoryDTO> runCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8938,7 +6202,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'RUNCASE')")
-    @ApiOperation(value = "根据产品runCases操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品runCases", tags = {"操作历史" },  notes = "根据产品runCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/runcases")
     public ResponseEntity<HistoryDTO> runCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8972,7 +6236,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'TESRUNCASE')")
-    @ApiOperation(value = "根据产品执行测试操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品执行测试", tags = {"操作历史" },  notes = "根据产品执行测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/testruncase")
     public ResponseEntity<HistoryDTO> testRunCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8984,7 +6248,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'TESRUNCASE')")
-    @ApiOperation(value = "根据产品testRunCases操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品testRunCases", tags = {"操作历史" },  notes = "根据产品testRunCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/testruncases")
     public ResponseEntity<HistoryDTO> testRunCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -8995,7 +6259,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品套件关联操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品套件关联", tags = {"操作历史" },  notes = "根据产品套件关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/testsuitelinkcase")
     public ResponseEntity<HistoryDTO> testsuitelinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9007,7 +6271,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UNLINKCASE')")
-    @ApiOperation(value = "根据产品移除用例操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品移除用例", tags = {"操作历史" },  notes = "根据产品移除用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/unlinkcase")
     public ResponseEntity<HistoryDTO> unlinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9019,7 +6283,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UNLINKCASE')")
-    @ApiOperation(value = "根据产品unlinkCases操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品unlinkCases", tags = {"操作历史" },  notes = "根据产品unlinkCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/unlinkcases")
     public ResponseEntity<HistoryDTO> unlinkCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9031,7 +6295,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UNLINKSUITCASE')")
-    @ApiOperation(value = "根据产品移除用例操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品移除用例", tags = {"操作历史" },  notes = "根据产品移除用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/unlinksuitecase")
     public ResponseEntity<HistoryDTO> unlinkSuiteCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9043,7 +6307,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UNLINKSUITCASE')")
-    @ApiOperation(value = "根据产品unlinkSuiteCases操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品unlinkSuiteCases", tags = {"操作历史" },  notes = "根据产品unlinkSuiteCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/unlinksuitecases")
     public ResponseEntity<HistoryDTO> unlinkSuiteCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9067,16 +6331,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询批量新建用例", tags = {"操作历史" } ,notes = "根据产品查询批量新建用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbatchnew")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBatchNewByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBatchNew(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取累计创建的用例", tags = {"操作历史" } ,notes = "根据产品获取累计创建的用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchcuropenedcase")
@@ -9089,16 +6343,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询累计创建的用例", tags = {"操作历史" } ,notes = "根据产品查询累计创建的用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchcuropenedcase")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryCurOpenedCaseByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchCurOpenedCase(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取套件关联用例", tags = {"操作历史" } ,notes = "根据产品获取套件关联用例")
@@ -9113,16 +6357,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询套件关联用例", tags = {"操作历史" } ,notes = "根据产品查询套件关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchcursuite")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryCurSuiteByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchCurSuite(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试单关联用例", tags = {"操作历史" } ,notes = "根据产品获取测试单关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchcurtesttask")
@@ -9135,16 +6369,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试单关联用例", tags = {"操作历史" } ,notes = "根据产品查询测试单关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchcurtesttask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryCurTestTaskByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchCurTestTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品获取DEFAULT")
@@ -9159,16 +6383,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取ES批量的导入", tags = {"操作历史" } ,notes = "根据产品获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchesbulk")
@@ -9181,16 +6395,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询ES批量的导入", tags = {"操作历史" } ,notes = "根据产品查询ES批量的导入")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchesbulk")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryESBulkByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchESBulk(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联用例", tags = {"操作历史" } ,notes = "根据产品获取测试报告关联用例")
@@ -9205,16 +6409,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联用例", tags = {"操作历史" } ,notes = "根据产品查询测试报告关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchmodulereportcase")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryModuleRePortCaseByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchModuleRePortCase(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联-按模块-条目", tags = {"操作历史" } ,notes = "根据产品获取测试报告关联-按模块-条目")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchmodulereportcaseentry")
@@ -9227,16 +6421,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联-按模块-条目", tags = {"操作历史" } ,notes = "根据产品查询测试报告关联-按模块-条目")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchmodulereportcaseentry")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryModuleRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchModuleRePortCaseEntry(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目报告关联-按模块", tags = {"操作历史" } ,notes = "根据产品获取项目报告关联-按模块")
@@ -9251,16 +6435,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目报告关联-按模块", tags = {"操作历史" } ,notes = "根据产品查询项目报告关联-按模块")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchmodulereportcase_project")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryModuleRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchModuleRePortCase_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取我的收藏", tags = {"操作历史" } ,notes = "根据产品获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchmyfavorites")
@@ -9273,16 +6447,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询我的收藏", tags = {"操作历史" } ,notes = "根据产品查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchmyfavorites")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyFavoritesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyFavorites(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取套件关联用例", tags = {"操作历史" } ,notes = "根据产品获取套件关联用例")
@@ -9297,16 +6461,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询套件关联用例", tags = {"操作历史" } ,notes = "根据产品查询套件关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchnotcurtestsuite")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryNotCurTestSuiteByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchNotCurTestSuite(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试单关联用例", tags = {"操作历史" } ,notes = "根据产品获取测试单关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchnotcurtesttask")
@@ -9319,16 +6473,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试单关联用例", tags = {"操作历史" } ,notes = "根据产品查询测试单关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchnotcurtesttask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryNotCurTestTaskByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchNotCurTestTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试单关联用例（项目关联）", tags = {"操作历史" } ,notes = "根据产品获取测试单关联用例（项目关联）")
@@ -9343,16 +6487,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试单关联用例（项目关联）", tags = {"操作历史" } ,notes = "根据产品查询测试单关联用例（项目关联）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchnotcurtesttaskproject")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryNotCurTestTaskProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchNotCurTestTaskProject(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联用例", tags = {"操作历史" } ,notes = "根据产品获取测试报告关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchreportcase")
@@ -9365,16 +6499,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联用例", tags = {"操作历史" } ,notes = "根据产品查询测试报告关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchreportcase")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRePortCaseByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRePortCase(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联用例-条目", tags = {"操作历史" } ,notes = "根据产品获取测试报告关联用例-条目")
@@ -9389,16 +6513,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联用例-条目", tags = {"操作历史" } ,notes = "根据产品查询测试报告关联用例-条目")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchreportcaseentry")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRePortCaseEntry(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目报告关联用例-关联用例", tags = {"操作历史" } ,notes = "根据产品获取项目报告关联用例-关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchreportcase_project")
@@ -9411,16 +6525,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目报告关联用例-关联用例", tags = {"操作历史" } ,notes = "根据产品查询项目报告关联用例-关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchreportcase_project")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRePortCase_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联-执行人", tags = {"操作历史" } ,notes = "根据产品获取测试报告关联-执行人")
@@ -9435,16 +6539,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联-执行人", tags = {"操作历史" } ,notes = "根据产品查询测试报告关联-执行人")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchrunerreportcase")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRunERRePortCaseByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRunERRePortCase(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联-执行人-条目", tags = {"操作历史" } ,notes = "根据产品获取测试报告关联-执行人-条目")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchrunerreportcaseentry")
@@ -9457,16 +6551,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联-执行人-条目", tags = {"操作历史" } ,notes = "根据产品查询测试报告关联-执行人-条目")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchrunerreportcaseentry")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRunERRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRunERRePortCaseEntry(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目报告关联-执行人", tags = {"操作历史" } ,notes = "根据产品获取项目报告关联-执行人")
@@ -9481,16 +6565,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目报告关联-执行人", tags = {"操作历史" } ,notes = "根据产品查询项目报告关联-执行人")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchrunerreportcase_project")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRunERRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRunERRePortCase_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联用例", tags = {"操作历史" } ,notes = "根据产品获取测试报告关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchrunreportcase")
@@ -9504,16 +6578,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联用例", tags = {"操作历史" } ,notes = "根据产品查询测试报告关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchrunreportcase")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRunRePortCaseByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRunRePortCase(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联--执行结果条目", tags = {"操作历史" } ,notes = "根据产品获取测试报告关联--执行结果条目")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchrunreportcaseentry")
@@ -9526,16 +6590,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询测试报告关联--执行结果条目", tags = {"操作历史" } ,notes = "根据产品查询测试报告关联--执行结果条目")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchrunreportcaseentry")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRunRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRunRePortCaseEntry(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目报告关联-执行结果", tags = {"操作历史" } ,notes = "根据产品获取项目报告关联-执行结果")
@@ -9552,16 +6606,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目报告关联-执行结果", tags = {"操作历史" } ,notes = "根据产品查询项目报告关联-执行结果")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchrunreportcase_project")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRunRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRunRePortCase_Project(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试用例获取查询用户使用年", tags = {"操作历史" } ,notes = "根据产品测试用例获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody HistorySearchContext context) {
@@ -9573,16 +6617,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试用例查询查询用户使用年", tags = {"操作历史" } ,notes = "根据产品测试用例查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试用例获取Type", tags = {"操作历史" } ,notes = "根据产品测试用例获取Type")
@@ -9597,16 +6631,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试用例查询Type", tags = {"操作历史" } ,notes = "根据产品测试用例查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试用例获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品测试用例获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/histories/fetchdefault")
@@ -9619,16 +6643,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试用例查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品测试用例查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品测试用例更新操作历史", tags = {"操作历史" },  notes = "根据产品测试用例更新操作历史")
@@ -9665,16 +6679,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试用例查询MobType", tags = {"操作历史" } ,notes = "根据产品测试用例查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品测试用例建立操作历史", tags = {"操作历史" },  notes = "根据产品测试用例建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/histories")
@@ -9700,16 +6704,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试用例查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据产品测试用例查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试用例获取ProductTrends", tags = {"操作历史" } ,notes = "根据产品测试用例获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/histories/fetchproducttrends")
@@ -9722,16 +6716,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试用例查询ProductTrends", tags = {"操作历史" } ,notes = "根据产品测试用例查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品测试用例获取操作历史草稿", tags = {"操作历史" },  notes = "根据产品测试用例获取操作历史草稿")
@@ -9757,16 +6741,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试用例查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据产品测试用例查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品测试用例系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品测试用例系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProductCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -9778,16 +6752,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品测试用例系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品测试用例系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
@@ -9841,7 +6805,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historyMapping.toDto(historyService.getDraft(domain)));
     }
 
-    @ApiOperation(value = "根据产品批关联BUG操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品批关联BUG", tags = {"操作历史" },  notes = "根据产品批关联BUG")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/batchlinkbug")
     public ResponseEntity<HistoryDTO> batchLinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9852,7 +6816,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品批关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品批关联需求", tags = {"操作历史" },  notes = "根据产品批关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/batchlinkstory")
     public ResponseEntity<HistoryDTO> batchLinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9863,7 +6827,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品批量解除关联Bug操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品批量解除关联Bug", tags = {"操作历史" },  notes = "根据产品批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/batchunlinkbug")
     public ResponseEntity<HistoryDTO> batchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9874,7 +6838,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品批量解除关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品批量解除关联需求", tags = {"操作历史" },  notes = "根据产品批量解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/batchunlinkstory")
     public ResponseEntity<HistoryDTO> batchUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9892,7 +6856,7 @@ public class HistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(historyService.checkKey(historyMapping.toDomain(historydto)));
     }
 
-    @ApiOperation(value = "根据产品EE激活计划操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品EE激活计划", tags = {"操作历史" },  notes = "根据产品EE激活计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/eeactiveplan")
     public ResponseEntity<HistoryDTO> eeActivePlanByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9903,7 +6867,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品EE取消计划操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品EE取消计划", tags = {"操作历史" },  notes = "根据产品EE取消计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/eecancelplan")
     public ResponseEntity<HistoryDTO> eeCancelPlanByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9914,7 +6878,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品EE关闭计划操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品EE关闭计划", tags = {"操作历史" },  notes = "根据产品EE关闭计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/eecloseplan")
     public ResponseEntity<HistoryDTO> eeClosePlanByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9925,7 +6889,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品EE完成计划操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品EE完成计划", tags = {"操作历史" },  notes = "根据产品EE完成计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/eefinishplan")
     public ResponseEntity<HistoryDTO> eeFinishPlanByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9936,7 +6900,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品EE暂停计划操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品EE暂停计划", tags = {"操作历史" },  notes = "根据产品EE暂停计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/eepauseplan")
     public ResponseEntity<HistoryDTO> eePausePlanByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9947,7 +6911,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品继续计划操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品继续计划", tags = {"操作历史" },  notes = "根据产品继续计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/eerestartplan")
     public ResponseEntity<HistoryDTO> eeRestartPlanByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9958,7 +6922,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品EE开始计划操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品EE开始计划", tags = {"操作历史" },  notes = "根据产品EE开始计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/eestartplan")
     public ResponseEntity<HistoryDTO> eeStartPlanByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9970,7 +6934,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品获取上一个计划的名称操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品获取上一个计划的名称", tags = {"操作历史" },  notes = "根据产品获取上一个计划的名称")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/getoldplanname")
     public ResponseEntity<HistoryDTO> getOldPlanNameByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9982,7 +6946,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品导入计划模板操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品导入计划模板", tags = {"操作历史" },  notes = "根据产品导入计划模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/importplantemplet")
     public ResponseEntity<HistoryDTO> importPlanTempletByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -9994,7 +6958,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'LINKBUG')")
-    @ApiOperation(value = "根据产品关联Bug操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关联Bug", tags = {"操作历史" },  notes = "根据产品关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/linkbug")
     public ResponseEntity<HistoryDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10006,7 +6970,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'LINKSTORY')")
-    @ApiOperation(value = "根据产品关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关联需求", tags = {"操作历史" },  notes = "根据产品关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/linkstory")
     public ResponseEntity<HistoryDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10017,7 +6981,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品关联任务操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关联任务", tags = {"操作历史" },  notes = "根据产品关联任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/linktask")
     public ResponseEntity<HistoryDTO> linkTaskByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10028,7 +6992,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品移动端产品计划计数器操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品移动端产品计划计数器", tags = {"操作历史" },  notes = "根据产品移动端产品计划计数器")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/histories/{history_id}/mobproductplancounter")
     public ResponseEntity<HistoryDTO> mobProductPlanCounterByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10049,7 +7013,7 @@ public class HistoryResource {
     }
 
 
-    @ApiOperation(value = "根据产品解除关联Bug操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品解除关联Bug", tags = {"操作历史" },  notes = "根据产品解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/unlinkbug")
     public ResponseEntity<HistoryDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10060,7 +7024,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品解除关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品解除关联需求", tags = {"操作历史" },  notes = "根据产品解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/unlinkstory")
     public ResponseEntity<HistoryDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10084,16 +7048,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询子计划", tags = {"操作历史" } ,notes = "根据产品查询子计划")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchchildplan")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryChildPlanByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchChildPlan(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取CurProductPlan", tags = {"操作历史" } ,notes = "根据产品获取CurProductPlan")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchcurproductplan")
@@ -10106,16 +7060,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询CurProductPlan", tags = {"操作历史" } ,notes = "根据产品查询CurProductPlan")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchcurproductplan")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryCurProductPlanByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchCurProductPlan(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取数据集", tags = {"操作历史" } ,notes = "根据产品获取数据集")
@@ -10130,16 +7074,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询数据集", tags = {"操作历史" } ,notes = "根据产品查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchcurproductplanstory")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryCurProductPlanStoryByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchCurProductPlanStory(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchdefault")
@@ -10152,16 +7086,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取默认查询", tags = {"操作历史" } ,notes = "根据产品获取默认查询")
@@ -10176,16 +7100,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询默认查询", tags = {"操作历史" } ,notes = "根据产品查询默认查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchdefaultparent")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultParentByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefaultParent(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取计划（代码表）", tags = {"操作历史" } ,notes = "根据产品获取计划（代码表）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchplancodelist")
@@ -10198,16 +7112,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询计划（代码表）", tags = {"操作历史" } ,notes = "根据产品查询计划（代码表）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchplancodelist")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryPlanCodeListByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchPlanCodeList(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目计划任务（项目管理-项目计划）", tags = {"操作历史" } ,notes = "根据产品获取项目计划任务（项目管理-项目计划）")
@@ -10222,16 +7126,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目计划任务（项目管理-项目计划）", tags = {"操作历史" } ,notes = "根据产品查询项目计划任务（项目管理-项目计划）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchplantasks")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryPlanTasksByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchPlanTasks(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取产品默认查询", tags = {"操作历史" } ,notes = "根据产品获取产品默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchproductquery")
@@ -10244,16 +7138,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询产品默认查询", tags = {"操作历史" } ,notes = "根据产品查询产品默认查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchproductquery")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductQueryByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductQuery(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目立项", tags = {"操作历史" } ,notes = "根据产品获取项目立项")
@@ -10268,16 +7152,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目立项", tags = {"操作历史" } ,notes = "根据产品查询项目立项")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchprojectapp")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectAppByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectApp(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目计划列表", tags = {"操作历史" } ,notes = "根据产品获取项目计划列表")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchprojectplan")
@@ -10291,16 +7165,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目计划列表", tags = {"操作历史" } ,notes = "根据产品查询项目计划列表")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchprojectplan")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectPlanByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectPlan(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取跟计划", tags = {"操作历史" } ,notes = "根据产品获取跟计划")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchrootplan")
@@ -10313,16 +7177,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询跟计划", tags = {"操作历史" } ,notes = "根据产品查询跟计划")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchrootplan")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRootPlanByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRootPlan(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取任务计划", tags = {"操作历史" } ,notes = "根据产品获取任务计划")
@@ -10339,16 +7193,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询任务计划", tags = {"操作历史" } ,notes = "根据产品查询任务计划")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchtaskplan")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTaskPlanByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchTaskPlan(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取查询用户使用年", tags = {"操作历史" } ,notes = "根据产品产品计划获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody HistorySearchContext context) {
@@ -10360,16 +7204,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品产品计划查询查询用户使用年", tags = {"操作历史" } ,notes = "根据产品产品计划查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取Type", tags = {"操作历史" } ,notes = "根据产品产品计划获取Type")
@@ -10384,16 +7218,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品产品计划查询Type", tags = {"操作历史" } ,notes = "根据产品产品计划查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品产品计划获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/histories/fetchdefault")
@@ -10406,16 +7230,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品产品计划查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品产品计划查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品产品计划更新操作历史", tags = {"操作历史" },  notes = "根据产品产品计划更新操作历史")
@@ -10452,16 +7266,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品产品计划查询MobType", tags = {"操作历史" } ,notes = "根据产品产品计划查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品产品计划建立操作历史", tags = {"操作历史" },  notes = "根据产品产品计划建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/histories")
@@ -10487,16 +7291,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品产品计划查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据产品产品计划查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取ProductTrends", tags = {"操作历史" } ,notes = "根据产品产品计划获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/histories/fetchproducttrends")
@@ -10509,16 +7303,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品产品计划查询ProductTrends", tags = {"操作历史" } ,notes = "根据产品产品计划查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品产品计划获取操作历史草稿", tags = {"操作历史" },  notes = "根据产品产品计划获取操作历史草稿")
@@ -10544,16 +7328,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品产品计划查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据产品产品计划查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品产品计划系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProductProductPlanAction(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -10565,16 +7339,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品产品计划系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品产品计划系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductProductPlanAction(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
@@ -10640,7 +7404,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'ACTIVATE')")
-    @ApiOperation(value = "根据产品激活操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品激活", tags = {"操作历史" },  notes = "根据产品激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/activate")
     public ResponseEntity<HistoryDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10652,7 +7416,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品全部推送操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品全部推送", tags = {"操作历史" },  notes = "根据产品全部推送")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/allpush")
     public ResponseEntity<HistoryDTO> allPushByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10664,7 +7428,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'ASSIGNTO')")
-    @ApiOperation(value = "根据产品指派操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品指派", tags = {"操作历史" },  notes = "根据产品指派")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/assignto")
     public ResponseEntity<HistoryDTO> assignToByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10676,7 +7440,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品批量指派操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品批量指派", tags = {"操作历史" },  notes = "根据产品批量指派")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/batchassignto")
     public ResponseEntity<HistoryDTO> batchAssignToByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10688,7 +7452,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品批量变更平台/分支操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品批量变更平台/分支", tags = {"操作历史" },  notes = "根据产品批量变更平台/分支")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/batchchangebranch")
     public ResponseEntity<HistoryDTO> batchChangeBranchByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10700,7 +7464,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品批量变更模块操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品批量变更模块", tags = {"操作历史" },  notes = "根据产品批量变更模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/batchchangemodule")
     public ResponseEntity<HistoryDTO> batchChangeModuleByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10712,7 +7476,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品批量关联计划操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品批量关联计划", tags = {"操作历史" },  notes = "根据产品批量关联计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/batchchangeplan")
     public ResponseEntity<HistoryDTO> batchChangePlanByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10724,7 +7488,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品批量变更阶段操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品批量变更阶段", tags = {"操作历史" },  notes = "根据产品批量变更阶段")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/batchchangestage")
     public ResponseEntity<HistoryDTO> batchChangeStageByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10736,7 +7500,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品批量关闭操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品批量关闭", tags = {"操作历史" },  notes = "根据产品批量关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/batchclose")
     public ResponseEntity<HistoryDTO> batchCloseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10748,7 +7512,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品批量评审操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品批量评审", tags = {"操作历史" },  notes = "根据产品批量评审")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/batchreview")
     public ResponseEntity<HistoryDTO> batchReviewByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10760,7 +7524,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品计划批量解除关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品计划批量解除关联需求", tags = {"操作历史" },  notes = "根据产品计划批量解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/batchunlinkstory")
     public ResponseEntity<HistoryDTO> batchUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10772,7 +7536,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品bug转需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品bug转需求", tags = {"操作历史" },  notes = "根据产品bug转需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/bugtostory")
     public ResponseEntity<HistoryDTO> bugToStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10784,7 +7548,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品版本批量解除关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品版本批量解除关联需求", tags = {"操作历史" },  notes = "根据产品版本批量解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/buildbatchunlinkstory")
     public ResponseEntity<HistoryDTO> buildBatchUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10796,7 +7560,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUILDLINK')")
-    @ApiOperation(value = "根据产品项目关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品项目关联需求", tags = {"操作历史" },  notes = "根据产品项目关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/buildlinkstory")
     public ResponseEntity<HistoryDTO> buildLinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10808,7 +7572,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'BUILDLINK')")
-    @ApiOperation(value = "根据产品版本解除关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品版本解除关联需求", tags = {"操作历史" },  notes = "根据产品版本解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/buildunlinkstory")
     public ResponseEntity<HistoryDTO> buildUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10820,7 +7584,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品版本解除关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品版本解除关联需求", tags = {"操作历史" },  notes = "根据产品版本解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/buildunlinkstorys")
     public ResponseEntity<HistoryDTO> buildUnlinkStorysByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10832,7 +7596,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CHANGE')")
-    @ApiOperation(value = "根据产品变更操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品变更", tags = {"操作历史" },  notes = "根据产品变更")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/change")
     public ResponseEntity<HistoryDTO> changeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10851,7 +7615,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CLOSE')")
-    @ApiOperation(value = "根据产品关闭操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品关闭", tags = {"操作历史" },  notes = "根据产品关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/close")
     public ResponseEntity<HistoryDTO> closeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10863,7 +7627,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品生成任务操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品生成任务", tags = {"操作历史" },  notes = "根据产品生成任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/createtasks")
     public ResponseEntity<HistoryDTO> createTasksByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10875,7 +7639,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品获取需求描述操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品获取需求描述", tags = {"操作历史" },  notes = "根据产品获取需求描述")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/getstoryspec")
     public ResponseEntity<HistoryDTO> getStorySpecByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10887,7 +7651,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品获取需求描述操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品获取需求描述", tags = {"操作历史" },  notes = "根据产品获取需求描述")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/histories/{history_id}/getstoryspecs")
     public ResponseEntity<HistoryDTO> getStorySpecsByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10899,7 +7663,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品项目关联需求-按计划关联操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品项目关联需求-按计划关联", tags = {"操作历史" },  notes = "根据产品项目关联需求-按计划关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/importplanstories")
     public ResponseEntity<HistoryDTO> importPlanStoriesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10911,7 +7675,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'PLANLINK')")
-    @ApiOperation(value = "根据产品计划关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品计划关联需求", tags = {"操作历史" },  notes = "根据产品计划关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/linkstory")
     public ResponseEntity<HistoryDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10923,7 +7687,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品项目批量解除关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品项目批量解除关联需求", tags = {"操作历史" },  notes = "根据产品项目批量解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/projectbatchunlinkstory")
     public ResponseEntity<HistoryDTO> projectBatchUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10935,7 +7699,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'PROJECTLINK')")
-    @ApiOperation(value = "根据产品项目关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品项目关联需求", tags = {"操作历史" },  notes = "根据产品项目关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/projectlinkstory")
     public ResponseEntity<HistoryDTO> projectLinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10947,7 +7711,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'PROJECTLINK')")
-    @ApiOperation(value = "根据产品项目解除关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品项目解除关联需求", tags = {"操作历史" },  notes = "根据产品项目解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/projectunlinkstory")
     public ResponseEntity<HistoryDTO> projectUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10959,7 +7723,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品项目解除关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品项目解除关联需求", tags = {"操作历史" },  notes = "根据产品项目解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/projectunlinkstorys")
     public ResponseEntity<HistoryDTO> projectUnlinkStorysByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10971,7 +7735,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品推送操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品推送", tags = {"操作历史" },  notes = "根据产品推送")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/push")
     public ResponseEntity<HistoryDTO> pushByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10983,7 +7747,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品发布批量解除关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品发布批量解除关联需求", tags = {"操作历史" },  notes = "根据产品发布批量解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/releasebatchunlinkstory")
     public ResponseEntity<HistoryDTO> releaseBatchUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -10995,7 +7759,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'RELEASELINK')")
-    @ApiOperation(value = "根据产品发布关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品发布关联需求", tags = {"操作历史" },  notes = "根据产品发布关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/releaselinkstory")
     public ResponseEntity<HistoryDTO> releaseLinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -11007,7 +7771,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'RELEASELINK')")
-    @ApiOperation(value = "根据产品发布解除关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品发布解除关联需求", tags = {"操作历史" },  notes = "根据产品发布解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/releaseunlinkstory")
     public ResponseEntity<HistoryDTO> releaseUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -11019,7 +7783,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品重置由谁评审操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品重置由谁评审", tags = {"操作历史" },  notes = "根据产品重置由谁评审")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/resetreviewedby")
     public ResponseEntity<HistoryDTO> resetReviewedByByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -11031,7 +7795,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'REVIEW')")
-    @ApiOperation(value = "根据产品评审操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品评审", tags = {"操作历史" },  notes = "根据产品评审")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/review")
     public ResponseEntity<HistoryDTO> reviewByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -11065,7 +7829,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品行为操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品行为", tags = {"操作历史" },  notes = "根据产品行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/sendmessage")
     public ResponseEntity<HistoryDTO> sendMessageByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -11077,7 +7841,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
-    @ApiOperation(value = "根据产品发送消息前置处理操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品发送消息前置处理", tags = {"操作历史" },  notes = "根据产品发送消息前置处理")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/sendmsgpreprocess")
     public ResponseEntity<HistoryDTO> sendMsgPreProcessByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -11088,7 +7852,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品设置需求阶段操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品设置需求阶段", tags = {"操作历史" },  notes = "根据产品设置需求阶段")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/setstage")
     public ResponseEntity<HistoryDTO> setStageByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -11100,7 +7864,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'FAVORITES')")
-    @ApiOperation(value = "根据产品需求收藏操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品需求收藏", tags = {"操作历史" },  notes = "根据产品需求收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/storyfavorites")
     public ResponseEntity<HistoryDTO> storyFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -11112,7 +7876,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'NFAVORITES')")
-    @ApiOperation(value = "根据产品取消收藏操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品取消收藏", tags = {"操作历史" },  notes = "根据产品取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/storynfavorites")
     public ResponseEntity<HistoryDTO> storyNFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -11123,7 +7887,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品同步Ibz平台实体操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品同步Ibz平台实体", tags = {"操作历史" },  notes = "根据产品同步Ibz平台实体")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/syncfromibiz")
     public ResponseEntity<HistoryDTO> syncFromIbizByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -11135,7 +7899,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'PLANLINK')")
-    @ApiOperation(value = "根据产品计划解除关联需求操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品计划解除关联需求", tags = {"操作历史" },  notes = "根据产品计划解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/unlinkstory")
     public ResponseEntity<HistoryDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -11159,16 +7923,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询指派给我的需求", tags = {"操作历史" } ,notes = "根据产品查询指派给我的需求")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchassignedtomystory")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryAssignedToMyStoryByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchAssignedToMyStory(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取指派给我的需求（日历）", tags = {"操作历史" } ,notes = "根据产品获取指派给我的需求（日历）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchassignedtomystorycalendar")
@@ -11182,16 +7936,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询指派给我的需求（日历）", tags = {"操作历史" } ,notes = "根据产品查询指派给我的需求（日历）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchassignedtomystorycalendar")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryAssignedToMyStoryCalendarByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchAssignedToMyStoryCalendar(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 	@ApiOperation(value = "根据产品获取Bug相关需求", tags = {"操作历史" } ,notes = "根据产品获取Bug相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchbugstory")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryBugStoryByProduct(@PathVariable("product_id") Long product_id,@RequestBody HistorySearchContext context) {
@@ -11203,15 +7947,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "根据产品查询Bug相关需求", tags = {"操作历史" } ,notes = "根据产品查询Bug相关需求")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbugstory")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBugStoryByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBugStory(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取版本关联已完成的需求（选择数据源）", tags = {"操作历史" } ,notes = "根据产品获取版本关联已完成的需求（选择数据源）")
@@ -11226,16 +7961,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询版本关联已完成的需求（选择数据源）", tags = {"操作历史" } ,notes = "根据产品查询版本关联已完成的需求（选择数据源）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildlinkcompletedstories")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildLinkCompletedStoriesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildLinkCompletedStories(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取版本可关联的需求（产品内）", tags = {"操作历史" } ,notes = "根据产品获取版本可关联的需求（产品内）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchbuildlinkablestories")
@@ -11248,16 +7973,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询版本可关联的需求（产品内）", tags = {"操作历史" } ,notes = "根据产品查询版本可关联的需求（产品内）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildlinkablestories")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildLinkableStoriesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildLinkableStories(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取获取版本相关需求", tags = {"操作历史" } ,notes = "根据产品获取获取版本相关需求")
@@ -11272,16 +7987,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询获取版本相关需求", tags = {"操作历史" } ,notes = "根据产品查询获取版本相关需求")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbuildstories")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBuildStoriesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBuildStories(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取通过模块查询", tags = {"操作历史" } ,notes = "根据产品获取通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchbymodule")
@@ -11294,16 +7999,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询通过模块查询", tags = {"操作历史" } ,notes = "根据产品查询通过模块查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbymodule")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByModuleByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByModule(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取相关用例需求", tags = {"操作历史" } ,notes = "根据产品获取相关用例需求")
@@ -11318,16 +8013,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询相关用例需求", tags = {"操作历史" } ,notes = "根据产品查询相关用例需求")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchcasestory")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryCaseStoryByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchCaseStory(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取子需求（更多）", tags = {"操作历史" } ,notes = "根据产品获取子需求（更多）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchchildmore")
@@ -11340,16 +8025,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询子需求（更多）", tags = {"操作历史" } ,notes = "根据产品查询子需求（更多）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchchildmore")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryChildMoreByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchChildMore(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品获取DEFAULT")
@@ -11364,16 +8039,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取ES批量的导入", tags = {"操作历史" } ,notes = "根据产品获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchesbulk")
@@ -11386,16 +8051,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询ES批量的导入", tags = {"操作历史" } ,notes = "根据产品查询ES批量的导入")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchesbulk")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryESBulkByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchESBulk(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取获取产品需求", tags = {"操作历史" } ,notes = "根据产品获取获取产品需求")
@@ -11410,16 +8065,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询获取产品需求", tags = {"操作历史" } ,notes = "根据产品查询获取产品需求")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchgetproductstories")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryGetProductStoriesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchGetProductStories(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取我代理的需求", tags = {"操作历史" } ,notes = "根据产品获取我代理的需求")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchmyagentstory")
@@ -11432,16 +8077,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询我代理的需求", tags = {"操作历史" } ,notes = "根据产品查询我代理的需求")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchmyagentstory")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyAgentStoryByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyAgentStory(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取所创建需求数和对应的优先级及状态", tags = {"操作历史" } ,notes = "根据产品获取所创建需求数和对应的优先级及状态")
@@ -11456,16 +8091,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询所创建需求数和对应的优先级及状态", tags = {"操作历史" } ,notes = "根据产品查询所创建需求数和对应的优先级及状态")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchmycuropenedstory")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyCurOpenedStoryByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyCurOpenedStory(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取我的收藏", tags = {"操作历史" } ,notes = "根据产品获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchmyfavorites")
@@ -11478,16 +8103,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询我的收藏", tags = {"操作历史" } ,notes = "根据产品查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchmyfavorites")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyFavoritesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyFavorites(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取计划关联需求(去除已关联)", tags = {"操作历史" } ,notes = "根据产品获取计划关联需求(去除已关联)")
@@ -11502,16 +8117,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询计划关联需求(去除已关联)", tags = {"操作历史" } ,notes = "根据产品查询计划关联需求(去除已关联)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchnotcurplanlinkstory")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryNotCurPlanLinkStoryByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchNotCurPlanLinkStory(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取数据查询", tags = {"操作历史" } ,notes = "根据产品获取数据查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchparentdefault")
@@ -11524,16 +8129,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询数据查询", tags = {"操作历史" } ,notes = "根据产品查询数据查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchparentdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryParentDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchParentDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取数据查询", tags = {"操作历史" } ,notes = "根据产品获取数据查询")
@@ -11548,16 +8143,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询数据查询", tags = {"操作历史" } ,notes = "根据产品查询数据查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchparentdefaultq")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryParentDefaultQByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchParentDefaultQ(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目关联需求", tags = {"操作历史" } ,notes = "根据产品获取项目关联需求")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchprojectlinkstory")
@@ -11570,16 +8155,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目关联需求", tags = {"操作历史" } ,notes = "根据产品查询项目关联需求")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchprojectlinkstory")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectLinkStoryByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectLinkStory(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目相关需求", tags = {"操作历史" } ,notes = "根据产品获取项目相关需求")
@@ -11594,16 +8169,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目相关需求", tags = {"操作历史" } ,notes = "根据产品查询项目相关需求")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchprojectstories")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectStoriesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectStories(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取版本可关联的完成的需求", tags = {"操作历史" } ,notes = "根据产品获取版本可关联的完成的需求")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchreleaselinkablestories")
@@ -11616,16 +8181,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询版本可关联的完成的需求", tags = {"操作历史" } ,notes = "根据产品查询版本可关联的完成的需求")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchreleaselinkablestories")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryReleaseLinkableStoriesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchReleaseLinkableStories(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取获取产品发布相关需求", tags = {"操作历史" } ,notes = "根据产品获取获取产品发布相关需求")
@@ -11640,16 +8195,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询获取产品发布相关需求", tags = {"操作历史" } ,notes = "根据产品查询获取产品发布相关需求")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchreleasestories")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryReleaseStoriesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchReleaseStories(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取通过模块查询", tags = {"操作历史" } ,notes = "根据产品获取通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchreportstories")
@@ -11662,16 +8207,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询通过模块查询", tags = {"操作历史" } ,notes = "根据产品查询通过模块查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchreportstories")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryReportStoriesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchReportStories(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取获取产品发布相关需求", tags = {"操作历史" } ,notes = "根据产品获取获取产品发布相关需求")
@@ -11686,16 +8221,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询获取产品发布相关需求", tags = {"操作历史" } ,notes = "根据产品查询获取产品发布相关需求")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchstorychild")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryStoryChildByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchStoryChild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取获取产品发布相关需求", tags = {"操作历史" } ,notes = "根据产品获取获取产品发布相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchstoryrelated")
@@ -11708,16 +8233,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询获取产品发布相关需求", tags = {"操作历史" } ,notes = "根据产品查询获取产品发布相关需求")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchstoryrelated")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryStoryRelatedByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchStoryRelated(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取需求细分", tags = {"操作历史" } ,notes = "根据产品获取需求细分")
@@ -11732,16 +8247,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询需求细分", tags = {"操作历史" } ,notes = "根据产品查询需求细分")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchsubstory")
-	public ResponseEntity<Page<HistoryDTO>> searchHistorySubStoryByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchSubStory(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取任务相关需求", tags = {"操作历史" } ,notes = "根据产品获取任务相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchtaskrelatedstory")
@@ -11754,16 +8259,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询任务相关需求", tags = {"操作历史" } ,notes = "根据产品查询任务相关需求")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchtaskrelatedstory")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTaskRelatedStoryByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchTaskRelatedStory(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取默认（全部数据）", tags = {"操作历史" } ,notes = "根据产品获取默认（全部数据）")
@@ -11780,16 +8275,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询默认（全部数据）", tags = {"操作历史" } ,notes = "根据产品查询默认（全部数据）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchview")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryViewByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchView(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取查询用户使用年", tags = {"操作历史" } ,notes = "根据产品需求获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody HistorySearchContext context) {
@@ -11801,16 +8286,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品需求查询查询用户使用年", tags = {"操作历史" } ,notes = "根据产品需求查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取Type", tags = {"操作历史" } ,notes = "根据产品需求获取Type")
@@ -11825,16 +8300,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品需求查询Type", tags = {"操作历史" } ,notes = "根据产品需求查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品需求获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/histories/fetchdefault")
@@ -11847,16 +8312,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品需求查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品需求查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品需求更新操作历史", tags = {"操作历史" },  notes = "根据产品需求更新操作历史")
@@ -11893,16 +8348,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品需求查询MobType", tags = {"操作历史" } ,notes = "根据产品需求查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品需求建立操作历史", tags = {"操作历史" },  notes = "根据产品需求建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/histories")
@@ -11928,16 +8373,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品需求查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据产品需求查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取ProductTrends", tags = {"操作历史" } ,notes = "根据产品需求获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/histories/fetchproducttrends")
@@ -11950,16 +8385,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品需求查询ProductTrends", tags = {"操作历史" } ,notes = "根据产品需求查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品需求获取操作历史草稿", tags = {"操作历史" },  notes = "根据产品需求获取操作历史草稿")
@@ -11985,16 +8410,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品需求查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据产品需求查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品需求系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProductStoryAction(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -12006,16 +8421,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品需求系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品需求系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductStoryAction(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'CREATE')")
@@ -12070,7 +8475,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-    @ApiOperation(value = "根据文档库根据版本更新正文信息操作历史", tags = {"操作历史" },  notes = "根据文档库操作历史")
+    @ApiOperation(value = "根据文档库根据版本更新正文信息", tags = {"操作历史" },  notes = "根据文档库根据版本更新正文信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/histories/{history_id}/byversionupdatecontext")
     public ResponseEntity<HistoryDTO> byVersionUpdateContextByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -12089,7 +8494,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-    @ApiOperation(value = "根据文档库收藏操作历史", tags = {"操作历史" },  notes = "根据文档库操作历史")
+    @ApiOperation(value = "根据文档库收藏", tags = {"操作历史" },  notes = "根据文档库收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/histories/{history_id}/collect")
     public ResponseEntity<HistoryDTO> collectByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -12100,7 +8505,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据文档库行为操作历史", tags = {"操作历史" },  notes = "根据文档库操作历史")
+    @ApiOperation(value = "根据文档库行为", tags = {"操作历史" },  notes = "根据文档库行为")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/histories/{history_id}/getdocstatus")
     public ResponseEntity<HistoryDTO> getDocStatusByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -12112,7 +8517,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-    @ApiOperation(value = "根据文档库仅收藏文档操作历史", tags = {"操作历史" },  notes = "根据文档库操作历史")
+    @ApiOperation(value = "根据文档库仅收藏文档", tags = {"操作历史" },  notes = "根据文档库仅收藏文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/histories/{history_id}/onlycollectdoc")
     public ResponseEntity<HistoryDTO> onlyCollectDocByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -12124,7 +8529,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-    @ApiOperation(value = "根据文档库仅取消收藏文档操作历史", tags = {"操作历史" },  notes = "根据文档库操作历史")
+    @ApiOperation(value = "根据文档库仅取消收藏文档", tags = {"操作历史" },  notes = "根据文档库仅取消收藏文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/histories/{history_id}/onlyuncollectdoc")
     public ResponseEntity<HistoryDTO> onlyUnCollectDocByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -12146,7 +8551,7 @@ public class HistoryResource {
 
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-    @ApiOperation(value = "根据文档库取消收藏操作历史", tags = {"操作历史" },  notes = "根据文档库操作历史")
+    @ApiOperation(value = "根据文档库取消收藏", tags = {"操作历史" },  notes = "根据文档库取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/histories/{history_id}/uncollect")
     public ResponseEntity<HistoryDTO> unCollectByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -12170,16 +8575,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询文档库文档（子库）", tags = {"操作历史" } ,notes = "根据文档库查询文档库文档（子库）")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchchilddoclibdoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryChildDocLibDocByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchChildDocLibDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库获取DEFAULT", tags = {"操作历史" } ,notes = "根据文档库获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/fetchdefault")
@@ -12192,16 +8587,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询DEFAULT", tags = {"操作历史" } ,notes = "根据文档库查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库获取文档库文档", tags = {"操作历史" } ,notes = "根据文档库获取文档库文档")
@@ -12216,16 +8601,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询文档库文档", tags = {"操作历史" } ,notes = "根据文档库查询文档库文档")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchdoclibanddoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDocLibAndDocByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDocLibAndDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库获取文档库文档", tags = {"操作历史" } ,notes = "根据文档库获取文档库文档")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/fetchdoclibdoc")
@@ -12238,16 +8613,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询文档库文档", tags = {"操作历史" } ,notes = "根据文档库查询文档库文档")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchdoclibdoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDocLibDocByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDocLibDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库获取文档库分类文档", tags = {"操作历史" } ,notes = "根据文档库获取文档库分类文档")
@@ -12262,16 +8627,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询文档库分类文档", tags = {"操作历史" } ,notes = "根据文档库查询文档库分类文档")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchdocmoduledoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDocModuleDocByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDocModuleDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库获取文档统计", tags = {"操作历史" } ,notes = "根据文档库获取文档统计")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/fetchdocstatus")
@@ -12284,16 +8639,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询文档统计", tags = {"操作历史" } ,notes = "根据文档库查询文档统计")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchdocstatus")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDocStatusByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDocStatus(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库获取文件夹文档（子目录）", tags = {"操作历史" } ,notes = "根据文档库获取文件夹文档（子目录）")
@@ -12308,16 +8653,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询文件夹文档（子目录）", tags = {"操作历史" } ,notes = "根据文档库查询文件夹文档（子目录）")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchmoduledocchild")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryModuleDocChildByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchModuleDocChild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库获取我的收藏", tags = {"操作历史" } ,notes = "根据文档库获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/fetchmyfavourite")
@@ -12330,16 +8665,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询我的收藏", tags = {"操作历史" } ,notes = "根据文档库查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchmyfavourite")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyFavouriteByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyFavourite(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库获取我的收藏", tags = {"操作历史" } ,notes = "根据文档库获取我的收藏")
@@ -12354,16 +8679,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询我的收藏", tags = {"操作历史" } ,notes = "根据文档库查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchmyfavouritesonlydoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyFavouritesOnlyDocByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyFavouritesOnlyDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库获取子目录文档", tags = {"操作历史" } ,notes = "根据文档库获取子目录文档")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/fetchnotrootdoc")
@@ -12376,16 +8691,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询子目录文档", tags = {"操作历史" } ,notes = "根据文档库查询子目录文档")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchnotrootdoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryNotRootDocByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchNotRootDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库获取根目录文档", tags = {"操作历史" } ,notes = "根据文档库获取根目录文档")
@@ -12402,16 +8707,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库查询根目录文档", tags = {"操作历史" } ,notes = "根据文档库查询根目录文档")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/histories/searchrootdoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRootDocByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRootDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库文档获取查询用户使用年", tags = {"操作历史" } ,notes = "根据文档库文档获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody HistorySearchContext context) {
@@ -12423,16 +8718,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库文档查询查询用户使用年", tags = {"操作历史" } ,notes = "根据文档库文档查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库文档获取Type", tags = {"操作历史" } ,notes = "根据文档库文档获取Type")
@@ -12447,16 +8732,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库文档查询Type", tags = {"操作历史" } ,notes = "根据文档库文档查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库文档获取DEFAULT", tags = {"操作历史" } ,notes = "根据文档库文档获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/histories/fetchdefault")
@@ -12469,16 +8744,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库文档查询DEFAULT", tags = {"操作历史" } ,notes = "根据文档库文档查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'UPDATE')")
     @ApiOperation(value = "根据文档库文档更新操作历史", tags = {"操作历史" },  notes = "根据文档库文档更新操作历史")
@@ -12515,16 +8780,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库文档查询MobType", tags = {"操作历史" } ,notes = "根据文档库文档查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'CREATE')")
     @ApiOperation(value = "根据文档库文档建立操作历史", tags = {"操作历史" },  notes = "根据文档库文档建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/{doc_id}/histories")
@@ -12550,16 +8805,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库文档查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据文档库文档查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库文档获取ProductTrends", tags = {"操作历史" } ,notes = "根据文档库文档获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/histories/fetchproducttrends")
@@ -12572,16 +8817,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库文档查询ProductTrends", tags = {"操作历史" } ,notes = "根据文档库文档查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'CREATE')")
     @ApiOperation(value = "根据文档库文档获取操作历史草稿", tags = {"操作历史" },  notes = "根据文档库文档获取操作历史草稿")
@@ -12607,16 +8842,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库文档查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据文档库文档查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
 	@ApiOperation(value = "根据文档库文档系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据文档库文档系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByDocLibDocAction(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -12628,16 +8853,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@DocLibRuntime.test(#doclib_id,'READ')")
-	@ApiOperation(value = "根据文档库文档系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据文档库文档系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByDocLibDocAction(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
@@ -12699,7 +8914,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'COLLECT')")
-    @ApiOperation(value = "根据项目收藏操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目收藏", tags = {"操作历史" },  notes = "根据项目收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/collect")
     public ResponseEntity<HistoryDTO> collectByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -12721,7 +8936,7 @@ public class HistoryResource {
 
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UNCOLLECT')")
-    @ApiOperation(value = "根据项目取消收藏操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目取消收藏", tags = {"操作历史" },  notes = "根据项目取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/uncollect")
     public ResponseEntity<HistoryDTO> unCollectByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -12745,16 +8960,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询自定义文档库", tags = {"操作历史" } ,notes = "根据项目查询自定义文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchbycustom")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByCustomByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByCustom(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取产品文档库", tags = {"操作历史" } ,notes = "根据项目获取产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchbyproduct")
@@ -12767,16 +8972,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询产品文档库", tags = {"操作历史" } ,notes = "根据项目查询产品文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchbyproduct")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByProductByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByProduct(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取产品文档库", tags = {"操作历史" } ,notes = "根据项目获取产品文档库")
@@ -12791,16 +8986,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询产品文档库", tags = {"操作历史" } ,notes = "根据项目查询产品文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchbyproductnotfiles")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByProductNotFilesByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByProductNotFiles(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取项目文件库", tags = {"操作历史" } ,notes = "根据项目获取项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchbyproject")
@@ -12813,16 +8998,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询项目文件库", tags = {"操作历史" } ,notes = "根据项目查询项目文件库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchbyproject")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByProjectByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByProject(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取项目文件库", tags = {"操作历史" } ,notes = "根据项目获取项目文件库")
@@ -12837,16 +9012,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询项目文件库", tags = {"操作历史" } ,notes = "根据项目查询项目文件库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchbyprojectnotfiles")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByProjectNotFilesByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByProjectNotFiles(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取所属文档库", tags = {"操作历史" } ,notes = "根据项目获取所属文档库")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchcurdoclib")
@@ -12859,16 +9024,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询所属文档库", tags = {"操作历史" } ,notes = "根据项目查询所属文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchcurdoclib")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryCurDocLibByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchCurDocLib(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目获取DEFAULT")
@@ -12883,16 +9038,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我的收藏", tags = {"操作历史" } ,notes = "根据项目获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchmyfavourites")
@@ -12905,16 +9050,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我的收藏", tags = {"操作历史" } ,notes = "根据项目查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchmyfavourites")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyFavouritesByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyFavourites(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取根目录", tags = {"操作历史" } ,notes = "根据项目获取根目录")
@@ -12931,16 +9066,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询根目录", tags = {"操作历史" } ,notes = "根据项目查询根目录")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchrootmodulemulu")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRootModuleMuLuByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRootModuleMuLu(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库获取查询用户使用年", tags = {"操作历史" } ,notes = "根据项目文档库获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody HistorySearchContext context) {
@@ -12952,16 +9077,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询查询用户使用年", tags = {"操作历史" } ,notes = "根据项目文档库查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库获取Type", tags = {"操作历史" } ,notes = "根据项目文档库获取Type")
@@ -12976,16 +9091,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询Type", tags = {"操作历史" } ,notes = "根据项目文档库查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目文档库获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/fetchdefault")
@@ -12998,16 +9103,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目文档库查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目文档库更新操作历史", tags = {"操作历史" },  notes = "根据项目文档库更新操作历史")
@@ -13044,16 +9139,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询MobType", tags = {"操作历史" } ,notes = "根据项目文档库查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目文档库建立操作历史", tags = {"操作历史" },  notes = "根据项目文档库建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/histories")
@@ -13079,16 +9164,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据项目文档库查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库获取ProductTrends", tags = {"操作历史" } ,notes = "根据项目文档库获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/fetchproducttrends")
@@ -13101,16 +9176,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询ProductTrends", tags = {"操作历史" } ,notes = "根据项目文档库查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目文档库获取操作历史草稿", tags = {"操作历史" },  notes = "根据项目文档库获取操作历史草稿")
@@ -13136,16 +9201,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据项目文档库查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目文档库系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProjectDocLibAction(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -13157,16 +9212,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目文档库系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProjectDocLibAction(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
@@ -13232,7 +9277,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'ACTIVATE')")
-    @ApiOperation(value = "根据项目激活操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目激活", tags = {"操作历史" },  notes = "根据项目激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/activate")
     public ResponseEntity<HistoryDTO> activateByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13244,7 +9289,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'ASSIGNTO')")
-    @ApiOperation(value = "根据项目指派/转交操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目指派/转交", tags = {"操作历史" },  notes = "根据项目指派/转交")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/assignto")
     public ResponseEntity<HistoryDTO> assignToByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13256,7 +9301,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CANCEL')")
-    @ApiOperation(value = "根据项目取消操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目取消", tags = {"操作历史" },  notes = "根据项目取消")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/cancel")
     public ResponseEntity<HistoryDTO> cancelByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13275,7 +9320,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CLOSE')")
-    @ApiOperation(value = "根据项目关闭操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目关闭", tags = {"操作历史" },  notes = "根据项目关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/close")
     public ResponseEntity<HistoryDTO> closeByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13286,7 +9331,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目计算开始时间和完成时间操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目计算开始时间和完成时间", tags = {"操作历史" },  notes = "根据项目计算开始时间和完成时间")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/computebeginandend")
     public ResponseEntity<HistoryDTO> computeBeginAndEndByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13297,7 +9342,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目更新父任务时间操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目更新父任务时间", tags = {"操作历史" },  notes = "根据项目更新父任务时间")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/computehours4multiple")
     public ResponseEntity<HistoryDTO> computeHours4MultipleByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13308,7 +9353,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目更新工作时间操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目更新工作时间", tags = {"操作历史" },  notes = "根据项目更新工作时间")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/computeworkinghours")
     public ResponseEntity<HistoryDTO> computeWorkingHoursByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13319,7 +9364,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目需求变更确认操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目需求变更确认", tags = {"操作历史" },  notes = "根据项目需求变更确认")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/confirmstorychange")
     public ResponseEntity<HistoryDTO> confirmStoryChangeByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13331,7 +9376,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
-    @ApiOperation(value = "根据项目创建周期任务操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目创建周期任务", tags = {"操作历史" },  notes = "根据项目创建周期任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/createbycycle")
     public ResponseEntity<HistoryDTO> createByCycleByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13343,7 +9388,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
-    @ApiOperation(value = "根据项目创建周期任务操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目创建周期任务", tags = {"操作历史" },  notes = "根据项目创建周期任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/createcycletasks")
     public ResponseEntity<HistoryDTO> createCycleTasksByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13354,7 +9399,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目删除任务操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目删除任务", tags = {"操作历史" },  notes = "根据项目删除任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/delete")
     public ResponseEntity<HistoryDTO> deleteByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13365,7 +9410,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目删除工时操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目删除工时", tags = {"操作历史" },  notes = "根据项目删除工时")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/deleteestimate")
     public ResponseEntity<HistoryDTO> deleteEstimateByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13376,7 +9421,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目编辑工时操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目编辑工时", tags = {"操作历史" },  notes = "根据项目编辑工时")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/editestimate")
     public ResponseEntity<HistoryDTO> editEstimateByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13388,7 +9433,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'FINISH')")
-    @ApiOperation(value = "根据项目完成操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目完成", tags = {"操作历史" },  notes = "根据项目完成")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/finish")
     public ResponseEntity<HistoryDTO> finishByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13400,7 +9445,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目获取下一个团队成员(完成)操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目获取下一个团队成员(完成)", tags = {"操作历史" },  notes = "根据项目获取下一个团队成员(完成)")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/getnextteamuser")
     public ResponseEntity<HistoryDTO> getNextTeamUserByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13412,7 +9457,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目获取团队成员剩余工时（激活）操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目获取团队成员剩余工时（激活）", tags = {"操作历史" },  notes = "根据项目获取团队成员剩余工时（激活）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/getteamuserleftactivity")
     public ResponseEntity<HistoryDTO> getTeamUserLeftActivityByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13424,7 +9469,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目获取团队成员剩余工时（开始或继续）操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目获取团队成员剩余工时（开始或继续）", tags = {"操作历史" },  notes = "根据项目获取团队成员剩余工时（开始或继续）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/getteamuserleftstart")
     public ResponseEntity<HistoryDTO> getTeamUserLeftStartByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13436,7 +9481,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目获取团队成员操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目获取团队成员", tags = {"操作历史" },  notes = "根据项目获取团队成员")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/getusernames")
     public ResponseEntity<HistoryDTO> getUsernamesByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13447,7 +9492,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目关联计划操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目关联计划", tags = {"操作历史" },  notes = "根据项目关联计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/linkplan")
     public ResponseEntity<HistoryDTO> linkPlanByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13459,7 +9504,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
-    @ApiOperation(value = "根据项目其他更新操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目其他更新", tags = {"操作历史" },  notes = "根据项目其他更新")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/otherupdate")
     public ResponseEntity<HistoryDTO> otherUpdateByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13471,7 +9516,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'PAUSE')")
-    @ApiOperation(value = "根据项目暂停操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目暂停", tags = {"操作历史" },  notes = "根据项目暂停")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/pause")
     public ResponseEntity<HistoryDTO> pauseByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13483,7 +9528,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'RECORDESTIMATE')")
-    @ApiOperation(value = "根据项目工时录入操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目工时录入", tags = {"操作历史" },  notes = "根据项目工时录入")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/recordestimate")
     public ResponseEntity<HistoryDTO> recordEstimateByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13494,7 +9539,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目继续任务时填入预计剩余为0设置为进行中操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目继续任务时填入预计剩余为0设置为进行中", tags = {"操作历史" },  notes = "根据项目继续任务时填入预计剩余为0设置为进行中")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/recordtimzeroleftaftercontinue")
     public ResponseEntity<HistoryDTO> recordTimZeroLeftAfterContinueByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13505,7 +9550,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目预计剩余为0进行中操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目预计剩余为0进行中", tags = {"操作历史" },  notes = "根据项目预计剩余为0进行中")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/recordtimatezeroleft")
     public ResponseEntity<HistoryDTO> recordTimateZeroLeftByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13516,7 +9561,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目开始任务时填入预计剩余为0设为进行中操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目开始任务时填入预计剩余为0设为进行中", tags = {"操作历史" },  notes = "根据项目开始任务时填入预计剩余为0设为进行中")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/recordtimatezeroleftafterstart")
     public ResponseEntity<HistoryDTO> recordTimateZeroLeftAfterStartByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13528,7 +9573,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'RESTART')")
-    @ApiOperation(value = "根据项目继续操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目继续", tags = {"操作历史" },  notes = "根据项目继续")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/restart")
     public ResponseEntity<HistoryDTO> restartByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13561,7 +9606,7 @@ public class HistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "根据项目行为操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目行为", tags = {"操作历史" },  notes = "根据项目行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/sendmessage")
     public ResponseEntity<HistoryDTO> sendMessageByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13572,7 +9617,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目发送消息前置处理操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目发送消息前置处理", tags = {"操作历史" },  notes = "根据项目发送消息前置处理")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/sendmsgpreprocess")
     public ResponseEntity<HistoryDTO> sendMsgPreProcessByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13584,7 +9629,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'START')")
-    @ApiOperation(value = "根据项目开始操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目开始", tags = {"操作历史" },  notes = "根据项目开始")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/start")
     public ResponseEntity<HistoryDTO> startByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13595,7 +9640,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目任务收藏操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目任务收藏", tags = {"操作历史" },  notes = "根据项目任务收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/taskfavorites")
     public ResponseEntity<HistoryDTO> taskFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13606,7 +9651,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目检查多人任务操作权限操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目检查多人任务操作权限", tags = {"操作历史" },  notes = "根据项目检查多人任务操作权限")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/taskforward")
     public ResponseEntity<HistoryDTO> taskForwardByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13617,7 +9662,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目任务收藏操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目任务收藏", tags = {"操作历史" },  notes = "根据项目任务收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/tasknfavorites")
     public ResponseEntity<HistoryDTO> taskNFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13629,7 +9674,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
-    @ApiOperation(value = "根据项目更新父任务状态操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目更新父任务状态", tags = {"操作历史" },  notes = "根据项目更新父任务状态")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/updateparentstatus")
     public ResponseEntity<HistoryDTO> updateParentStatusByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13641,7 +9686,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
-    @ApiOperation(value = "根据项目更新父任务计划状态操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目更新父任务计划状态", tags = {"操作历史" },  notes = "根据项目更新父任务计划状态")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/updaterelatedplanstatus")
     public ResponseEntity<HistoryDTO> updateRelatedPlanStatusByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13653,7 +9698,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
-    @ApiOperation(value = "根据项目更新需求版本操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目更新需求版本", tags = {"操作历史" },  notes = "根据项目更新需求版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/updatestoryversion")
     public ResponseEntity<HistoryDTO> updateStoryVersionByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -13677,16 +9722,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询指派给我任务", tags = {"操作历史" } ,notes = "根据项目查询指派给我任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchassignedtomytask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryAssignedToMyTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchAssignedToMyTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取指派给我任务（PC）", tags = {"操作历史" } ,notes = "根据项目获取指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchassignedtomytaskpc")
@@ -13700,16 +9735,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询指派给我任务（PC）", tags = {"操作历史" } ,notes = "根据项目查询指派给我任务（PC）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchassignedtomytaskpc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryAssignedToMyTaskPcByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchAssignedToMyTaskPc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 	@ApiOperation(value = "根据项目获取Bug相关任务", tags = {"操作历史" } ,notes = "根据项目获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchbugtask")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryBugTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody HistorySearchContext context) {
@@ -13721,15 +9746,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "根据项目查询Bug相关任务", tags = {"操作历史" } ,notes = "根据项目查询Bug相关任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchbugtask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBugTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBugTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取通过模块查询", tags = {"操作历史" } ,notes = "根据项目获取通过模块查询")
@@ -13744,16 +9760,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询通过模块查询", tags = {"操作历史" } ,notes = "根据项目查询通过模块查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchbymodule")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByModuleByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByModule(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取数据查询（子任务）", tags = {"操作历史" } ,notes = "根据项目获取数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchchilddefault")
@@ -13766,16 +9772,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询数据查询（子任务）", tags = {"操作历史" } ,notes = "根据项目查询数据查询（子任务）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchchilddefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryChildDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchChildDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取子任务（更多）", tags = {"操作历史" } ,notes = "根据项目获取子任务（更多）")
@@ -13790,16 +9786,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询子任务（更多）", tags = {"操作历史" } ,notes = "根据项目查询子任务（更多）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchchilddefaultmore")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryChildDefaultMoreByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchChildDefaultMore(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取子任务", tags = {"操作历史" } ,notes = "根据项目获取子任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchchildtask")
@@ -13812,16 +9798,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询子任务", tags = {"操作历史" } ,notes = "根据项目查询子任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchchildtask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryChildTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchChildTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取子任务（树）", tags = {"操作历史" } ,notes = "根据项目获取子任务（树）")
@@ -13836,16 +9812,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询子任务（树）", tags = {"操作历史" } ,notes = "根据项目查询子任务（树）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchchildtasktree")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryChildTaskTreeByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchChildTaskTree(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取用户年度完成任务", tags = {"操作历史" } ,notes = "根据项目获取用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchcurfinishtask")
@@ -13858,16 +9824,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询用户年度完成任务", tags = {"操作历史" } ,notes = "根据项目查询用户年度完成任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchcurfinishtask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryCurFinishTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchCurFinishTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取当前项目任务", tags = {"操作历史" } ,notes = "根据项目获取当前项目任务")
@@ -13882,16 +9838,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询当前项目任务", tags = {"操作历史" } ,notes = "根据项目查询当前项目任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchcurprojecttaskquery")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryCurProjectTaskQueryByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchCurProjectTaskQuery(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchdefault")
@@ -13904,16 +9850,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DefaultRow", tags = {"操作历史" } ,notes = "根据项目获取DefaultRow")
@@ -13928,16 +9864,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询DefaultRow", tags = {"操作历史" } ,notes = "根据项目查询DefaultRow")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchdefaultrow")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultRowByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefaultRow(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取ES批量的导入", tags = {"操作历史" } ,notes = "根据项目获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchesbulk")
@@ -13950,16 +9876,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询ES批量的导入", tags = {"操作历史" } ,notes = "根据项目查询ES批量的导入")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchesbulk")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryESBulkByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchESBulk(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我代理的任务", tags = {"操作历史" } ,notes = "根据项目获取我代理的任务")
@@ -13974,16 +9890,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我代理的任务", tags = {"操作历史" } ,notes = "根据项目查询我代理的任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchmyagenttask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyAgentTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyAgentTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我相关的任务", tags = {"操作历史" } ,notes = "根据项目获取我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchmyalltask")
@@ -13996,16 +9902,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我相关的任务", tags = {"操作历史" } ,notes = "根据项目查询我相关的任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchmyalltask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyAllTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyAllTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我完成的任务（汇报）", tags = {"操作历史" } ,notes = "根据项目获取我完成的任务（汇报）")
@@ -14020,16 +9916,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我完成的任务（汇报）", tags = {"操作历史" } ,notes = "根据项目查询我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchmycompletetask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyCompleteTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyCompleteTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我完成的任务（移动端日报）", tags = {"操作历史" } ,notes = "根据项目获取我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchmycompletetaskmobdaily")
@@ -14042,16 +9928,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我完成的任务（移动端日报）", tags = {"操作历史" } ,notes = "根据项目查询我完成的任务（移动端日报）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchmycompletetaskmobdaily")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyCompleteTaskMobDailyByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyCompleteTaskMobDaily(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我完成的任务（移动端月报）", tags = {"操作历史" } ,notes = "根据项目获取我完成的任务（移动端月报）")
@@ -14066,16 +9942,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我完成的任务（移动端月报）", tags = {"操作历史" } ,notes = "根据项目查询我完成的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchmycompletetaskmobmonthly")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyCompleteTaskMobMonthlyByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyCompleteTaskMobMonthly(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我完成的任务（月报展示）", tags = {"操作历史" } ,notes = "根据项目获取我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchmycompletetaskmonthlyzs")
@@ -14088,16 +9954,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我完成的任务（月报展示）", tags = {"操作历史" } ,notes = "根据项目查询我完成的任务（月报展示）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchmycompletetaskmonthlyzs")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyCompleteTaskMonthlyZSByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyCompleteTaskMonthlyZS(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我完成的任务（汇报）", tags = {"操作历史" } ,notes = "根据项目获取我完成的任务（汇报）")
@@ -14112,16 +9968,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我完成的任务（汇报）", tags = {"操作历史" } ,notes = "根据项目查询我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchmycompletetaskzs")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyCompleteTaskZSByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyCompleteTaskZS(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我的收藏", tags = {"操作历史" } ,notes = "根据项目获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchmyfavorites")
@@ -14134,16 +9980,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我的收藏", tags = {"操作历史" } ,notes = "根据项目查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchmyfavorites")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyFavoritesByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyFavorites(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我计划参与的任务（移动端月报）", tags = {"操作历史" } ,notes = "根据项目获取我计划参与的任务（移动端月报）")
@@ -14158,16 +9994,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我计划参与的任务（移动端月报）", tags = {"操作历史" } ,notes = "根据项目查询我计划参与的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchmyplanstaskmobmonthly")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyPlansTaskMobMonthlyByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyPlansTaskMobMonthly(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我计划参与的任务（汇报）", tags = {"操作历史" } ,notes = "根据项目获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchmytomorrowplantask")
@@ -14180,16 +10006,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我计划参与的任务（汇报）", tags = {"操作历史" } ,notes = "根据项目查询我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchmytomorrowplantask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTomorrowPlanTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTomorrowPlanTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我计划参与的任务（汇报）", tags = {"操作历史" } ,notes = "根据项目获取我计划参与的任务（汇报）")
@@ -14204,16 +10020,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我计划参与的任务（汇报）", tags = {"操作历史" } ,notes = "根据项目查询我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchmytomorrowplantaskmobdaily")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTomorrowPlanTaskMobDailyByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTomorrowPlanTaskMobDaily(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取移动端下周计划参与(汇报)", tags = {"操作历史" } ,notes = "根据项目获取移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchnextweekcompletetaskmobzs")
@@ -14226,16 +10032,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询移动端下周计划参与(汇报)", tags = {"操作历史" } ,notes = "根据项目查询移动端下周计划参与(汇报)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchnextweekcompletetaskmobzs")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryNextWeekCompleteTaskMobZSByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchNextWeekCompleteTaskMobZS(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取本周完成的任务(汇报)", tags = {"操作历史" } ,notes = "根据项目获取本周完成的任务(汇报)")
@@ -14250,16 +10046,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询本周完成的任务(汇报)", tags = {"操作历史" } ,notes = "根据项目查询本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchnextweekcompletetaskzs")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryNextWeekCompleteTaskZSByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchNextWeekCompleteTaskZS(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取下周计划完成任务(汇报)", tags = {"操作历史" } ,notes = "根据项目获取下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchnextweekplancompletetask")
@@ -14272,16 +10058,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询下周计划完成任务(汇报)", tags = {"操作历史" } ,notes = "根据项目查询下周计划完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchnextweekplancompletetask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryNextWeekPlanCompleteTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchNextWeekPlanCompleteTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取相关任务（计划）", tags = {"操作历史" } ,notes = "根据项目获取相关任务（计划）")
@@ -14296,16 +10072,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询相关任务（计划）", tags = {"操作历史" } ,notes = "根据项目查询相关任务（计划）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchplantask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryPlanTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchPlanTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取项目任务（项目立项）", tags = {"操作历史" } ,notes = "根据项目获取项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchprojectapptask")
@@ -14318,16 +10084,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询项目任务（项目立项）", tags = {"操作历史" } ,notes = "根据项目查询项目任务（项目立项）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchprojectapptask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectAppTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectAppTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取项目任务", tags = {"操作历史" } ,notes = "根据项目获取项目任务")
@@ -14342,16 +10098,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询项目任务", tags = {"操作历史" } ,notes = "根据项目查询项目任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchprojecttask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取根任务", tags = {"操作历史" } ,notes = "根据项目获取根任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchroottask")
@@ -14364,16 +10110,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询根任务", tags = {"操作历史" } ,notes = "根据项目查询根任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchroottask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRootTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRootTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取关联计划（当前项目未关联）", tags = {"操作历史" } ,notes = "根据项目获取关联计划（当前项目未关联）")
@@ -14388,16 +10124,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询关联计划（当前项目未关联）", tags = {"操作历史" } ,notes = "根据项目查询关联计划（当前项目未关联）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchtasklinkplan")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTaskLinkPlanByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchTaskLinkPlan(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我本月完成的任务（下拉列表框）", tags = {"操作历史" } ,notes = "根据项目获取我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchthismonthcompletetaskchoice")
@@ -14410,16 +10136,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我本月完成的任务（下拉列表框）", tags = {"操作历史" } ,notes = "根据项目查询我本月完成的任务（下拉列表框）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchthismonthcompletetaskchoice")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryThisMonthCompleteTaskChoiceByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchThisMonthCompleteTaskChoice(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取本周完成的任务(汇报)", tags = {"操作历史" } ,notes = "根据项目获取本周完成的任务(汇报)")
@@ -14434,16 +10150,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询本周完成的任务(汇报)", tags = {"操作历史" } ,notes = "根据项目查询本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchthisweekcompletetask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryThisWeekCompleteTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchThisWeekCompleteTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取本周已完成任务(下拉框选择)", tags = {"操作历史" } ,notes = "根据项目获取本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchthisweekcompletetaskchoice")
@@ -14456,16 +10162,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询本周已完成任务(下拉框选择)", tags = {"操作历史" } ,notes = "根据项目查询本周已完成任务(下拉框选择)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchthisweekcompletetaskchoice")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryThisWeekCompleteTaskChoiceByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchThisWeekCompleteTaskChoice(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取移动端本周已完成任务(汇报)", tags = {"操作历史" } ,notes = "根据项目获取移动端本周已完成任务(汇报)")
@@ -14480,16 +10176,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询移动端本周已完成任务(汇报)", tags = {"操作历史" } ,notes = "根据项目查询移动端本周已完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchthisweekcompletetaskmobzs")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryThisWeekCompleteTaskMobZSByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchThisWeekCompleteTaskMobZS(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取本周完成的任务(汇报)", tags = {"操作历史" } ,notes = "根据项目获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchthisweekcompletetaskzs")
@@ -14502,16 +10188,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询本周完成的任务(汇报)", tags = {"操作历史" } ,notes = "根据项目查询本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchthisweekcompletetaskzs")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryThisWeekCompleteTaskZSByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchThisWeekCompleteTaskZS(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取todo列表查询", tags = {"操作历史" } ,notes = "根据项目获取todo列表查询")
@@ -14526,16 +10202,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询todo列表查询", tags = {"操作历史" } ,notes = "根据项目查询todo列表查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchtodolisttask")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTodoListTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchTodoListTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取任务类型分组", tags = {"操作历史" } ,notes = "根据项目获取任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchtypegroup")
@@ -14547,16 +10213,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(domains.getContent());
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询任务类型分组", tags = {"操作历史" } ,notes = "根据项目查询任务类型分组")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchtypegroup")
-	public ResponseEntity<Page<Map>> searchHistoryTypeGroupByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<Map> domains = historyService.searchTypeGroup(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取任务类型分组（计划）", tags = {"操作历史" } ,notes = "根据项目获取任务类型分组（计划）")
@@ -14572,16 +10228,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询任务类型分组（计划）", tags = {"操作历史" } ,notes = "根据项目查询任务类型分组（计划）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchtypegroupplan")
-	public ResponseEntity<Page<Map>> searchHistoryTypeGroupPlanByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<Map> domains = historyService.searchTypeGroupPlan(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务获取查询用户使用年", tags = {"操作历史" } ,notes = "根据项目任务获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody HistorySearchContext context) {
@@ -14593,16 +10239,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目任务查询查询用户使用年", tags = {"操作历史" } ,notes = "根据项目任务查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务获取Type", tags = {"操作历史" } ,notes = "根据项目任务获取Type")
@@ -14617,16 +10253,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目任务查询Type", tags = {"操作历史" } ,notes = "根据项目任务查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目任务获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/histories/fetchdefault")
@@ -14639,16 +10265,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目任务查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目任务查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目任务更新操作历史", tags = {"操作历史" },  notes = "根据项目任务更新操作历史")
@@ -14685,16 +10301,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目任务查询MobType", tags = {"操作历史" } ,notes = "根据项目任务查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目任务建立操作历史", tags = {"操作历史" },  notes = "根据项目任务建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/histories")
@@ -14720,16 +10326,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目任务查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据项目任务查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务获取ProductTrends", tags = {"操作历史" } ,notes = "根据项目任务获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/histories/fetchproducttrends")
@@ -14742,16 +10338,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目任务查询ProductTrends", tags = {"操作历史" } ,notes = "根据项目任务查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目任务获取操作历史草稿", tags = {"操作历史" },  notes = "根据项目任务获取操作历史草稿")
@@ -14777,16 +10363,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目任务查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据项目任务查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目任务系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProjectTaskAction(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -14801,17 +10377,7 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目任务系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目任务系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProjectTaskAction(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目根据测试单获取相应信息操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目根据测试单获取相应信息", tags = {"操作历史" },  notes = "根据项目根据测试单获取相应信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/getinfotesttask")
     public ResponseEntity<HistoryDTO> getInfoTestTaskByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -14881,7 +10447,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目根据起始时间获取概况信息操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目根据起始时间获取概况信息", tags = {"操作历史" },  notes = "根据项目根据起始时间获取概况信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/getinfotaskovbytime")
     public ResponseEntity<HistoryDTO> getInfoTaskOvByTimeByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -14893,7 +10459,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目根据测试报告概况信息（项目报告）操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目根据测试报告概况信息（项目报告）", tags = {"操作历史" },  notes = "根据项目根据测试报告概况信息（项目报告）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/getinfotesttaskovproject")
     public ResponseEntity<HistoryDTO> getInfoTestTaskOvProjectByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -14905,7 +10471,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）", tags = {"操作历史" },  notes = "根据项目根据测试单获取相应信息（项目报告）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/getinfotesttaskproject")
     public ResponseEntity<HistoryDTO> getInfoTestTaskProjectByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -14917,7 +10483,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）（单测试）操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）（单测试）", tags = {"操作历史" },  notes = "根据项目根据测试单获取相应信息（项目报告）（单测试）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/getinfotesttaskr")
     public ResponseEntity<HistoryDTO> getInfoTestTaskRByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -14929,7 +10495,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）（测试）操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）（测试）", tags = {"操作历史" },  notes = "根据项目根据测试单获取相应信息（项目报告）（测试）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/getinfotesttasks")
     public ResponseEntity<HistoryDTO> getInfoTestTaskSByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -14941,7 +10507,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目根据测试报告获取基本信息操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目根据测试报告获取基本信息", tags = {"操作历史" },  notes = "根据项目根据测试报告获取基本信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/gettestreportbasicinfo")
     public ResponseEntity<HistoryDTO> getTestReportBasicInfoByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -14953,7 +10519,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目根据测试报告获取基本信息（项目报告）操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目根据测试报告获取基本信息（项目报告）", tags = {"操作历史" },  notes = "根据项目根据测试报告获取基本信息（项目报告）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/gettestreportproject")
     public ResponseEntity<HistoryDTO> getTestReportProjectByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -14989,16 +10555,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目测试报告获取查询用户使用年", tags = {"操作历史" } ,notes = "根据项目测试报告获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody HistorySearchContext context) {
@@ -15010,16 +10566,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目测试报告查询查询用户使用年", tags = {"操作历史" } ,notes = "根据项目测试报告查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目测试报告获取Type", tags = {"操作历史" } ,notes = "根据项目测试报告获取Type")
@@ -15034,16 +10580,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目测试报告查询Type", tags = {"操作历史" } ,notes = "根据项目测试报告查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目测试报告获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目测试报告获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/histories/fetchdefault")
@@ -15056,16 +10592,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目测试报告查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目测试报告查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目测试报告更新操作历史", tags = {"操作历史" },  notes = "根据项目测试报告更新操作历史")
@@ -15102,16 +10628,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目测试报告查询MobType", tags = {"操作历史" } ,notes = "根据项目测试报告查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目测试报告建立操作历史", tags = {"操作历史" },  notes = "根据项目测试报告建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/histories")
@@ -15137,16 +10653,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目测试报告查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据项目测试报告查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目测试报告获取ProductTrends", tags = {"操作历史" } ,notes = "根据项目测试报告获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/histories/fetchproducttrends")
@@ -15159,16 +10665,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目测试报告查询ProductTrends", tags = {"操作历史" } ,notes = "根据项目测试报告查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目测试报告获取操作历史草稿", tags = {"操作历史" },  notes = "根据项目测试报告获取操作历史草稿")
@@ -15194,16 +10690,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目测试报告查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据项目测试报告查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目测试报告系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目测试报告系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProjectTestReportAction(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -15215,16 +10701,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目测试报告系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目测试报告系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProjectTestReportAction(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
@@ -15278,7 +10754,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historyMapping.toDto(historyService.getDraft(domain)));
     }
 
-    @ApiOperation(value = "根据项目激活操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目激活", tags = {"操作历史" },  notes = "根据项目激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/activate")
     public ResponseEntity<HistoryDTO> activateByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -15289,7 +10765,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目阻塞操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目阻塞", tags = {"操作历史" },  notes = "根据项目阻塞")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/block")
     public ResponseEntity<HistoryDTO> blockByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -15307,7 +10783,7 @@ public class HistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(historyService.checkKey(historyMapping.toDomain(historydto)));
     }
 
-    @ApiOperation(value = "根据项目关闭操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目关闭", tags = {"操作历史" },  notes = "根据项目关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/close")
     public ResponseEntity<HistoryDTO> closeByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -15318,7 +10794,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目关联测试用例操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目关联测试用例", tags = {"操作历史" },  notes = "根据项目关联测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/linkcase")
     public ResponseEntity<HistoryDTO> linkCaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -15329,7 +10805,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目移动端测试版本计数器操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目移动端测试版本计数器", tags = {"操作历史" },  notes = "根据项目移动端测试版本计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/mobtesttaskcounter")
     public ResponseEntity<HistoryDTO> mobTestTaskCounterByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -15350,7 +10826,7 @@ public class HistoryResource {
     }
 
 
-    @ApiOperation(value = "根据项目开始操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目开始", tags = {"操作历史" },  notes = "根据项目开始")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/start")
     public ResponseEntity<HistoryDTO> startByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -15361,7 +10837,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目关联测试用例操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目关联测试用例", tags = {"操作历史" },  notes = "根据项目关联测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/unlinkcase")
     public ResponseEntity<HistoryDTO> unlinkCaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -15385,16 +10861,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我的测试单", tags = {"操作历史" } ,notes = "根据项目获取我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchmytesttaskpc")
@@ -15410,16 +10876,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我的测试单", tags = {"操作历史" } ,notes = "根据项目查询我的测试单")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchmytesttaskpc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTestTaskPcByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTestTaskPc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目测试版本获取查询用户使用年", tags = {"操作历史" } ,notes = "根据项目测试版本获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody HistorySearchContext context) {
@@ -15431,16 +10887,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目测试版本查询查询用户使用年", tags = {"操作历史" } ,notes = "根据项目测试版本查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目测试版本获取Type", tags = {"操作历史" } ,notes = "根据项目测试版本获取Type")
@@ -15455,16 +10901,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目测试版本查询Type", tags = {"操作历史" } ,notes = "根据项目测试版本查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目测试版本获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目测试版本获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/histories/fetchdefault")
@@ -15477,16 +10913,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目测试版本查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目测试版本查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目测试版本更新操作历史", tags = {"操作历史" },  notes = "根据项目测试版本更新操作历史")
@@ -15523,16 +10949,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目测试版本查询MobType", tags = {"操作历史" } ,notes = "根据项目测试版本查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目测试版本建立操作历史", tags = {"操作历史" },  notes = "根据项目测试版本建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/histories")
@@ -15558,16 +10974,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目测试版本查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据项目测试版本查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目测试版本获取ProductTrends", tags = {"操作历史" } ,notes = "根据项目测试版本获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/histories/fetchproducttrends")
@@ -15580,16 +10986,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目测试版本查询ProductTrends", tags = {"操作历史" } ,notes = "根据项目测试版本查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目测试版本获取操作历史草稿", tags = {"操作历史" },  notes = "根据项目测试版本获取操作历史草稿")
@@ -15615,16 +11011,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目测试版本查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据项目测试版本查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目测试版本系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目测试版本系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProjectTestTaskAction(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -15636,16 +11022,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目测试版本系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目测试版本系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProjectTestTaskAction(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
@@ -15706,7 +11082,7 @@ public class HistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(historyService.checkKey(historyMapping.toDomain(historydto)));
     }
 
-    @ApiOperation(value = "根据项目关联Bug操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目关联Bug", tags = {"操作历史" },  notes = "根据项目关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/linkbug")
     public ResponseEntity<HistoryDTO> linkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -15717,7 +11093,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目关联需求操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目关联需求", tags = {"操作历史" },  notes = "根据项目关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/linkstory")
     public ResponseEntity<HistoryDTO> linkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -15728,7 +11104,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目移动端项目版本计数器操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目移动端项目版本计数器", tags = {"操作历史" },  notes = "根据项目移动端项目版本计数器")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/histories/{history_id}/mobprojectbuildcounter")
     public ResponseEntity<HistoryDTO> mobProjectBuildCounterByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -15739,7 +11115,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目一键发布操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目一键发布", tags = {"操作历史" },  notes = "根据项目一键发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/oneclickrelease")
     public ResponseEntity<HistoryDTO> oneClickReleaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -15760,7 +11136,7 @@ public class HistoryResource {
     }
 
 
-    @ApiOperation(value = "根据项目移除Bug关联操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目移除Bug关联", tags = {"操作历史" },  notes = "根据项目移除Bug关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/unlinkbug")
     public ResponseEntity<HistoryDTO> unlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -15771,7 +11147,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目移除关联需求操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目移除关联需求", tags = {"操作历史" },  notes = "根据项目移除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/unlinkstory")
     public ResponseEntity<HistoryDTO> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -15795,16 +11171,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询Bug产品版本", tags = {"操作历史" } ,notes = "根据项目查询Bug产品版本")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchbugproductbuild")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBugProductBuildByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBugProductBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 	@ApiOperation(value = "根据项目获取Bug产品或者项目版本", tags = {"操作历史" } ,notes = "根据项目获取Bug产品或者项目版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchbugproductorprojectbuild")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryBugProductOrProjectBuildByProject(@PathVariable("project_id") Long project_id,@RequestBody HistorySearchContext context) {
@@ -15816,15 +11182,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "根据项目查询Bug产品或者项目版本", tags = {"操作历史" } ,notes = "根据项目查询Bug产品或者项目版本")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchbugproductorprojectbuild")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryBugProductOrProjectBuildByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchBugProductOrProjectBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取产品版本", tags = {"操作历史" } ,notes = "根据项目获取产品版本")
@@ -15839,16 +11196,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询产品版本", tags = {"操作历史" } ,notes = "根据项目查询产品版本")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchcurproduct")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryCurProductByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchCurProduct(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchdefault")
@@ -15862,16 +11209,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
 	@ApiOperation(value = "根据项目获取测试版本", tags = {"操作历史" } ,notes = "根据项目获取测试版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchtestbuild")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryTestBuildByProject(@PathVariable("project_id") Long project_id,@RequestBody HistorySearchContext context) {
@@ -15883,15 +11220,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "根据项目查询测试版本", tags = {"操作历史" } ,notes = "根据项目查询测试版本")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchtestbuild")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTestBuildByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchTestBuild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取测试轮次", tags = {"操作历史" } ,notes = "根据项目获取测试轮次")
@@ -15905,16 +11233,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询测试轮次", tags = {"操作历史" } ,notes = "根据项目查询测试轮次")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchtestrounds")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTestRoundsByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchTestRounds(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取更新日志", tags = {"操作历史" } ,notes = "根据项目获取更新日志")
@@ -15931,16 +11249,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询更新日志", tags = {"操作历史" } ,notes = "根据项目查询更新日志")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchupdatelog")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryUpdateLogByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchUpdateLog(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目版本获取查询用户使用年", tags = {"操作历史" } ,notes = "根据项目版本获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody HistorySearchContext context) {
@@ -15952,16 +11260,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目版本查询查询用户使用年", tags = {"操作历史" } ,notes = "根据项目版本查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目版本获取Type", tags = {"操作历史" } ,notes = "根据项目版本获取Type")
@@ -15976,16 +11274,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目版本查询Type", tags = {"操作历史" } ,notes = "根据项目版本查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目版本获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目版本获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/histories/fetchdefault")
@@ -15998,16 +11286,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目版本查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目版本查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目版本更新操作历史", tags = {"操作历史" },  notes = "根据项目版本更新操作历史")
@@ -16044,16 +11322,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目版本查询MobType", tags = {"操作历史" } ,notes = "根据项目版本查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目版本建立操作历史", tags = {"操作历史" },  notes = "根据项目版本建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/histories")
@@ -16079,16 +11347,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目版本查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据项目版本查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目版本获取ProductTrends", tags = {"操作历史" } ,notes = "根据项目版本获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/histories/fetchproducttrends")
@@ -16101,16 +11359,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目版本查询ProductTrends", tags = {"操作历史" } ,notes = "根据项目版本查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目版本获取操作历史草稿", tags = {"操作历史" },  notes = "根据项目版本获取操作历史草稿")
@@ -16136,16 +11384,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目版本查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据项目版本查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目版本系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目版本系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProjectBuildAction(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -16157,16 +11395,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目版本系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目版本系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProjectBuildAction(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
@@ -16228,7 +11456,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'COLLECT')")
-    @ApiOperation(value = "根据产品收藏操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品收藏", tags = {"操作历史" },  notes = "根据产品收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/collect")
     public ResponseEntity<HistoryDTO> collectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -16250,7 +11478,7 @@ public class HistoryResource {
 
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'UNCOLLECT')")
-    @ApiOperation(value = "根据产品取消收藏操作历史", tags = {"操作历史" },  notes = "根据产品操作历史")
+    @ApiOperation(value = "根据产品取消收藏", tags = {"操作历史" },  notes = "根据产品取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/histories/{history_id}/uncollect")
     public ResponseEntity<HistoryDTO> unCollectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -16274,16 +11502,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询自定义文档库", tags = {"操作历史" } ,notes = "根据产品查询自定义文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbycustom")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByCustomByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByCustom(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取产品文档库", tags = {"操作历史" } ,notes = "根据产品获取产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchbyproduct")
@@ -16296,16 +11514,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询产品文档库", tags = {"操作历史" } ,notes = "根据产品查询产品文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbyproduct")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByProductByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByProduct(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取产品文档库", tags = {"操作历史" } ,notes = "根据产品获取产品文档库")
@@ -16320,16 +11528,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询产品文档库", tags = {"操作历史" } ,notes = "根据产品查询产品文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbyproductnotfiles")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByProductNotFilesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByProductNotFiles(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目文件库", tags = {"操作历史" } ,notes = "根据产品获取项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchbyproject")
@@ -16342,16 +11540,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目文件库", tags = {"操作历史" } ,notes = "根据产品查询项目文件库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbyproject")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByProjectByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByProject(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取项目文件库", tags = {"操作历史" } ,notes = "根据产品获取项目文件库")
@@ -16366,16 +11554,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询项目文件库", tags = {"操作历史" } ,notes = "根据产品查询项目文件库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchbyprojectnotfiles")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByProjectNotFilesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByProjectNotFiles(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取所属文档库", tags = {"操作历史" } ,notes = "根据产品获取所属文档库")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchcurdoclib")
@@ -16388,16 +11566,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询所属文档库", tags = {"操作历史" } ,notes = "根据产品查询所属文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchcurdoclib")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryCurDocLibByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchCurDocLib(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品获取DEFAULT")
@@ -16412,16 +11580,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取我的收藏", tags = {"操作历史" } ,notes = "根据产品获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchmyfavourites")
@@ -16435,16 +11593,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询我的收藏", tags = {"操作历史" } ,notes = "根据产品查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchmyfavourites")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyFavouritesByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyFavourites(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取根目录", tags = {"操作历史" } ,notes = "根据产品获取根目录")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/fetchrootmodulemulu")
@@ -16457,16 +11605,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品查询根目录", tags = {"操作历史" } ,notes = "根据产品查询根目录")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/histories/searchrootmodulemulu")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRootModuleMuLuByProduct(@PathVariable("product_id") Long product_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRootModuleMuLu(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
@@ -16521,7 +11659,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品文档库根据版本更新正文信息操作历史", tags = {"操作历史" },  notes = "根据产品文档库操作历史")
+    @ApiOperation(value = "根据产品文档库根据版本更新正文信息", tags = {"操作历史" },  notes = "根据产品文档库根据版本更新正文信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/histories/{history_id}/byversionupdatecontext")
     public ResponseEntity<HistoryDTO> byVersionUpdateContextByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -16540,7 +11678,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品文档库收藏操作历史", tags = {"操作历史" },  notes = "根据产品文档库操作历史")
+    @ApiOperation(value = "根据产品文档库收藏", tags = {"操作历史" },  notes = "根据产品文档库收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/histories/{history_id}/collect")
     public ResponseEntity<HistoryDTO> collectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -16551,7 +11689,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据产品文档库行为操作历史", tags = {"操作历史" },  notes = "根据产品文档库操作历史")
+    @ApiOperation(value = "根据产品文档库行为", tags = {"操作历史" },  notes = "根据产品文档库行为")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/histories/{history_id}/getdocstatus")
     public ResponseEntity<HistoryDTO> getDocStatusByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -16563,7 +11701,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品文档库仅收藏文档操作历史", tags = {"操作历史" },  notes = "根据产品文档库操作历史")
+    @ApiOperation(value = "根据产品文档库仅收藏文档", tags = {"操作历史" },  notes = "根据产品文档库仅收藏文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/histories/{history_id}/onlycollectdoc")
     public ResponseEntity<HistoryDTO> onlyCollectDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -16575,7 +11713,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品文档库仅取消收藏文档操作历史", tags = {"操作历史" },  notes = "根据产品文档库操作历史")
+    @ApiOperation(value = "根据产品文档库仅取消收藏文档", tags = {"操作历史" },  notes = "根据产品文档库仅取消收藏文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/histories/{history_id}/onlyuncollectdoc")
     public ResponseEntity<HistoryDTO> onlyUnCollectDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -16597,7 +11735,7 @@ public class HistoryResource {
 
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-    @ApiOperation(value = "根据产品文档库取消收藏操作历史", tags = {"操作历史" },  notes = "根据产品文档库操作历史")
+    @ApiOperation(value = "根据产品文档库取消收藏", tags = {"操作历史" },  notes = "根据产品文档库取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/histories/{history_id}/uncollect")
     public ResponseEntity<HistoryDTO> unCollectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -16621,16 +11759,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询文档库文档（子库）", tags = {"操作历史" } ,notes = "根据产品文档库查询文档库文档（子库）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchchilddoclibdoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryChildDocLibDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchChildDocLibDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品文档库获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/fetchdefault")
@@ -16643,16 +11771,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品文档库查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库获取文档库文档", tags = {"操作历史" } ,notes = "根据产品文档库获取文档库文档")
@@ -16667,16 +11785,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询文档库文档", tags = {"操作历史" } ,notes = "根据产品文档库查询文档库文档")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchdoclibanddoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDocLibAndDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDocLibAndDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库获取文档库文档", tags = {"操作历史" } ,notes = "根据产品文档库获取文档库文档")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/fetchdoclibdoc")
@@ -16689,16 +11797,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询文档库文档", tags = {"操作历史" } ,notes = "根据产品文档库查询文档库文档")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchdoclibdoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDocLibDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDocLibDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库获取文档库分类文档", tags = {"操作历史" } ,notes = "根据产品文档库获取文档库分类文档")
@@ -16713,16 +11811,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询文档库分类文档", tags = {"操作历史" } ,notes = "根据产品文档库查询文档库分类文档")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchdocmoduledoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDocModuleDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDocModuleDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库获取文档统计", tags = {"操作历史" } ,notes = "根据产品文档库获取文档统计")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/fetchdocstatus")
@@ -16735,16 +11823,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询文档统计", tags = {"操作历史" } ,notes = "根据产品文档库查询文档统计")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchdocstatus")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDocStatusByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDocStatus(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库获取文件夹文档（子目录）", tags = {"操作历史" } ,notes = "根据产品文档库获取文件夹文档（子目录）")
@@ -16759,16 +11837,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询文件夹文档（子目录）", tags = {"操作历史" } ,notes = "根据产品文档库查询文件夹文档（子目录）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchmoduledocchild")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryModuleDocChildByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchModuleDocChild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库获取我的收藏", tags = {"操作历史" } ,notes = "根据产品文档库获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/fetchmyfavourite")
@@ -16781,16 +11849,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询我的收藏", tags = {"操作历史" } ,notes = "根据产品文档库查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchmyfavourite")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyFavouriteByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyFavourite(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库获取我的收藏", tags = {"操作历史" } ,notes = "根据产品文档库获取我的收藏")
@@ -16805,16 +11863,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询我的收藏", tags = {"操作历史" } ,notes = "根据产品文档库查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchmyfavouritesonlydoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyFavouritesOnlyDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyFavouritesOnlyDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库获取子目录文档", tags = {"操作历史" } ,notes = "根据产品文档库获取子目录文档")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/fetchnotrootdoc")
@@ -16827,16 +11875,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询子目录文档", tags = {"操作历史" } ,notes = "根据产品文档库查询子目录文档")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchnotrootdoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryNotRootDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchNotRootDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库获取根目录文档", tags = {"操作历史" } ,notes = "根据产品文档库获取根目录文档")
@@ -16853,16 +11891,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库查询根目录文档", tags = {"操作历史" } ,notes = "根据产品文档库查询根目录文档")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/histories/searchrootdoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRootDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRootDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库文档获取查询用户使用年", tags = {"操作历史" } ,notes = "根据产品文档库文档获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody HistorySearchContext context) {
@@ -16874,16 +11902,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库文档查询查询用户使用年", tags = {"操作历史" } ,notes = "根据产品文档库文档查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库文档获取Type", tags = {"操作历史" } ,notes = "根据产品文档库文档获取Type")
@@ -16898,16 +11916,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库文档查询Type", tags = {"操作历史" } ,notes = "根据产品文档库文档查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库文档获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品文档库文档获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/fetchdefault")
@@ -16920,16 +11928,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库文档查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品文档库文档查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品文档库文档更新操作历史", tags = {"操作历史" },  notes = "根据产品文档库文档更新操作历史")
@@ -16966,16 +11964,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库文档查询MobType", tags = {"操作历史" } ,notes = "根据产品文档库文档查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品文档库文档建立操作历史", tags = {"操作历史" },  notes = "根据产品文档库文档建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/histories")
@@ -17001,16 +11989,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库文档查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据产品文档库文档查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库文档获取ProductTrends", tags = {"操作历史" } ,notes = "根据产品文档库文档获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/fetchproducttrends")
@@ -17023,16 +12001,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库文档查询ProductTrends", tags = {"操作历史" } ,notes = "根据产品文档库文档查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品文档库文档获取操作历史草稿", tags = {"操作历史" },  notes = "根据产品文档库文档获取操作历史草稿")
@@ -17058,16 +12026,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库文档查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据产品文档库文档查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品文档库文档系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品文档库文档系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProductDocLibDocAction(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -17079,16 +12037,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
-	@ApiOperation(value = "根据产品文档库文档系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据产品文档库文档系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProductDocLibDocAction(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
@@ -17150,7 +12098,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'COLLECT')")
-    @ApiOperation(value = "根据项目收藏操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目收藏", tags = {"操作历史" },  notes = "根据项目收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/collect")
     public ResponseEntity<HistoryDTO> collectByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -17172,7 +12120,7 @@ public class HistoryResource {
 
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UNCOLLECT')")
-    @ApiOperation(value = "根据项目取消收藏操作历史", tags = {"操作历史" },  notes = "根据项目操作历史")
+    @ApiOperation(value = "根据项目取消收藏", tags = {"操作历史" },  notes = "根据项目取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/histories/{history_id}/uncollect")
     public ResponseEntity<HistoryDTO> unCollectByProject(@PathVariable("project_id") Long project_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -17196,16 +12144,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询自定义文档库", tags = {"操作历史" } ,notes = "根据项目查询自定义文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchbycustom")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByCustomByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByCustom(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取产品文档库", tags = {"操作历史" } ,notes = "根据项目获取产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchbyproduct")
@@ -17218,16 +12156,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询产品文档库", tags = {"操作历史" } ,notes = "根据项目查询产品文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchbyproduct")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByProductByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByProduct(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取产品文档库", tags = {"操作历史" } ,notes = "根据项目获取产品文档库")
@@ -17242,16 +12170,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询产品文档库", tags = {"操作历史" } ,notes = "根据项目查询产品文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchbyproductnotfiles")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByProductNotFilesByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByProductNotFiles(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取项目文件库", tags = {"操作历史" } ,notes = "根据项目获取项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchbyproject")
@@ -17264,16 +12182,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询项目文件库", tags = {"操作历史" } ,notes = "根据项目查询项目文件库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchbyproject")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByProjectByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByProject(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取项目文件库", tags = {"操作历史" } ,notes = "根据项目获取项目文件库")
@@ -17288,16 +12196,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询项目文件库", tags = {"操作历史" } ,notes = "根据项目查询项目文件库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchbyprojectnotfiles")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryByProjectNotFilesByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchByProjectNotFiles(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取所属文档库", tags = {"操作历史" } ,notes = "根据项目获取所属文档库")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchcurdoclib")
@@ -17310,16 +12208,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询所属文档库", tags = {"操作历史" } ,notes = "根据项目查询所属文档库")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchcurdoclib")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryCurDocLibByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchCurDocLib(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目获取DEFAULT")
@@ -17334,16 +12222,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我的收藏", tags = {"操作历史" } ,notes = "根据项目获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchmyfavourites")
@@ -17357,16 +12235,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询我的收藏", tags = {"操作历史" } ,notes = "根据项目查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchmyfavourites")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyFavouritesByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyFavourites(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取根目录", tags = {"操作历史" } ,notes = "根据项目获取根目录")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/fetchrootmodulemulu")
@@ -17379,16 +12247,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目查询根目录", tags = {"操作历史" } ,notes = "根据项目查询根目录")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/histories/searchrootmodulemulu")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRootModuleMuLuByProject(@PathVariable("project_id") Long project_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRootModuleMuLu(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
@@ -17443,7 +12301,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目文档库根据版本更新正文信息操作历史", tags = {"操作历史" },  notes = "根据项目文档库操作历史")
+    @ApiOperation(value = "根据项目文档库根据版本更新正文信息", tags = {"操作历史" },  notes = "根据项目文档库根据版本更新正文信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/histories/{history_id}/byversionupdatecontext")
     public ResponseEntity<HistoryDTO> byVersionUpdateContextByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -17462,7 +12320,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目文档库收藏操作历史", tags = {"操作历史" },  notes = "根据项目文档库操作历史")
+    @ApiOperation(value = "根据项目文档库收藏", tags = {"操作历史" },  notes = "根据项目文档库收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/histories/{history_id}/collect")
     public ResponseEntity<HistoryDTO> collectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -17473,7 +12331,7 @@ public class HistoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(historydto);
     }
 
-    @ApiOperation(value = "根据项目文档库行为操作历史", tags = {"操作历史" },  notes = "根据项目文档库操作历史")
+    @ApiOperation(value = "根据项目文档库行为", tags = {"操作历史" },  notes = "根据项目文档库行为")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/histories/{history_id}/getdocstatus")
     public ResponseEntity<HistoryDTO> getDocStatusByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -17485,7 +12343,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目文档库仅收藏文档操作历史", tags = {"操作历史" },  notes = "根据项目文档库操作历史")
+    @ApiOperation(value = "根据项目文档库仅收藏文档", tags = {"操作历史" },  notes = "根据项目文档库仅收藏文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/histories/{history_id}/onlycollectdoc")
     public ResponseEntity<HistoryDTO> onlyCollectDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -17497,7 +12355,7 @@ public class HistoryResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目文档库仅取消收藏文档操作历史", tags = {"操作历史" },  notes = "根据项目文档库操作历史")
+    @ApiOperation(value = "根据项目文档库仅取消收藏文档", tags = {"操作历史" },  notes = "根据项目文档库仅取消收藏文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/histories/{history_id}/onlyuncollectdoc")
     public ResponseEntity<HistoryDTO> onlyUnCollectDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -17519,7 +12377,7 @@ public class HistoryResource {
 
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-    @ApiOperation(value = "根据项目文档库取消收藏操作历史", tags = {"操作历史" },  notes = "根据项目文档库操作历史")
+    @ApiOperation(value = "根据项目文档库取消收藏", tags = {"操作历史" },  notes = "根据项目文档库取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/histories/{history_id}/uncollect")
     public ResponseEntity<HistoryDTO> unCollectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
         History domain = historyMapping.toDomain(historydto);
@@ -17543,16 +12401,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询文档库文档（子库）", tags = {"操作历史" } ,notes = "根据项目文档库查询文档库文档（子库）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchchilddoclibdoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryChildDocLibDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchChildDocLibDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目文档库获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/fetchdefault")
@@ -17565,16 +12413,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目文档库查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库获取文档库文档", tags = {"操作历史" } ,notes = "根据项目文档库获取文档库文档")
@@ -17589,16 +12427,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询文档库文档", tags = {"操作历史" } ,notes = "根据项目文档库查询文档库文档")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchdoclibanddoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDocLibAndDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDocLibAndDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库获取文档库文档", tags = {"操作历史" } ,notes = "根据项目文档库获取文档库文档")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/fetchdoclibdoc")
@@ -17611,16 +12439,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询文档库文档", tags = {"操作历史" } ,notes = "根据项目文档库查询文档库文档")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchdoclibdoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDocLibDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDocLibDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库获取文档库分类文档", tags = {"操作历史" } ,notes = "根据项目文档库获取文档库分类文档")
@@ -17635,16 +12453,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询文档库分类文档", tags = {"操作历史" } ,notes = "根据项目文档库查询文档库分类文档")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchdocmoduledoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDocModuleDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDocModuleDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库获取文档统计", tags = {"操作历史" } ,notes = "根据项目文档库获取文档统计")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/fetchdocstatus")
@@ -17657,16 +12465,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询文档统计", tags = {"操作历史" } ,notes = "根据项目文档库查询文档统计")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchdocstatus")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDocStatusByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDocStatus(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库获取文件夹文档（子目录）", tags = {"操作历史" } ,notes = "根据项目文档库获取文件夹文档（子目录）")
@@ -17681,16 +12479,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询文件夹文档（子目录）", tags = {"操作历史" } ,notes = "根据项目文档库查询文件夹文档（子目录）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchmoduledocchild")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryModuleDocChildByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchModuleDocChild(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库获取我的收藏", tags = {"操作历史" } ,notes = "根据项目文档库获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/fetchmyfavourite")
@@ -17703,16 +12491,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询我的收藏", tags = {"操作历史" } ,notes = "根据项目文档库查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchmyfavourite")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyFavouriteByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyFavourite(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库获取我的收藏", tags = {"操作历史" } ,notes = "根据项目文档库获取我的收藏")
@@ -17727,16 +12505,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询我的收藏", tags = {"操作历史" } ,notes = "根据项目文档库查询我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchmyfavouritesonlydoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyFavouritesOnlyDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyFavouritesOnlyDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库获取子目录文档", tags = {"操作历史" } ,notes = "根据项目文档库获取子目录文档")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/fetchnotrootdoc")
@@ -17749,16 +12517,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询子目录文档", tags = {"操作历史" } ,notes = "根据项目文档库查询子目录文档")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchnotrootdoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryNotRootDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchNotRootDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库获取根目录文档", tags = {"操作历史" } ,notes = "根据项目文档库获取根目录文档")
@@ -17775,16 +12533,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库查询根目录文档", tags = {"操作历史" } ,notes = "根据项目文档库查询根目录文档")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/histories/searchrootdoc")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryRootDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchRootDoc(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库文档获取查询用户使用年", tags = {"操作历史" } ,notes = "根据项目文档库文档获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/fetchqueryuseryear")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryQueryUserYEARByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody HistorySearchContext context) {
@@ -17796,16 +12544,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库文档查询查询用户使用年", tags = {"操作历史" } ,notes = "根据项目文档库文档查询查询用户使用年")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/searchqueryuseryear")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryQueryUserYEARByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchQueryUserYEAR(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库文档获取Type", tags = {"操作历史" } ,notes = "根据项目文档库文档获取Type")
@@ -17820,16 +12558,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库文档查询Type", tags = {"操作历史" } ,notes = "根据项目文档库文档查询Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/searchtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryTypeByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库文档获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目文档库文档获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/fetchdefault")
@@ -17842,16 +12570,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库文档查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目文档库文档查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目文档库文档更新操作历史", tags = {"操作历史" },  notes = "根据项目文档库文档更新操作历史")
@@ -17888,16 +12606,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库文档查询MobType", tags = {"操作历史" } ,notes = "根据项目文档库文档查询MobType")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/searchmobtype")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMobTypeByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMobType(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目文档库文档建立操作历史", tags = {"操作历史" },  notes = "根据项目文档库文档建立操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/histories")
@@ -17923,16 +12631,6 @@ public class HistoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库文档查询项目动态(项目相关所有)", tags = {"操作历史" } ,notes = "根据项目文档库文档查询项目动态(项目相关所有)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/searchprojecttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProjectTrendsByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProjectTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库文档获取ProductTrends", tags = {"操作历史" } ,notes = "根据项目文档库文档获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/fetchproducttrends")
@@ -17945,16 +12643,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库文档查询ProductTrends", tags = {"操作历史" } ,notes = "根据项目文档库文档查询ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/searchproducttrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryProductTrendsByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchProductTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目文档库文档获取操作历史草稿", tags = {"操作历史" },  notes = "根据项目文档库文档获取操作历史草稿")
@@ -17980,16 +12668,6 @@ public class HistoryResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库文档查询项目动态(我的)", tags = {"操作历史" } ,notes = "根据项目文档库文档查询项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/histories/searchmytrends")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryMyTrendsByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody HistorySearchContext context) {
-        
-        Page<History> domains = historyService.searchMyTrends(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目文档库文档系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目文档库文档系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByProjectDocLibDocAction(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -18001,16 +12679,6 @@ public class HistoryResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
-	@ApiOperation(value = "根据项目文档库文档系统日志查询DEFAULT", tags = {"操作历史" } ,notes = "根据项目文档库文档系统日志查询DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/{action_id}/histories/searchdefault")
-	public ResponseEntity<Page<HistoryDTO>> searchHistoryDefaultByProjectDocLibDocAction(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id, @RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(historyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 }
 

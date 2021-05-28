@@ -142,14 +142,6 @@ public class IbzproProjectUserTaskResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询数据集", tags = {"项目汇报用户任务" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/searchdefault")
-	public ResponseEntity<Page<IbzproProjectUserTaskDTO>> searchDefault(@RequestBody IbzproProjectUserTaskSearchContext context) {
-        Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzproprojectusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取项目日报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目日报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchprojectdailytask")
 	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchprojectdailytask(@RequestBody IbzproProjectUserTaskSearchContext context) {
@@ -160,14 +152,6 @@ public class IbzproProjectUserTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询项目日报任务", tags = {"项目汇报用户任务" } ,notes = "查询项目日报任务")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/searchprojectdailytask")
-	public ResponseEntity<Page<IbzproProjectUserTaskDTO>> searchProjectDailyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
-        Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchProjectDailyTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzproprojectusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 	@ApiOperation(value = "获取项目日报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目日报任务")
@@ -182,14 +166,6 @@ public class IbzproProjectUserTaskResource {
                 .body(list);
 	}
 
-	@ApiOperation(value = "查询项目日报任务", tags = {"项目汇报用户任务" } ,notes = "查询项目日报任务")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/searchprojectmonthlytask")
-	public ResponseEntity<Page<IbzproProjectUserTaskDTO>> searchProjectMonthlyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
-        Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchProjectMonthlyTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzproprojectusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 	@ApiOperation(value = "获取项目周报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目周报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchprojectweeklytask")
 	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchprojectweeklytask(@RequestBody IbzproProjectUserTaskSearchContext context) {
@@ -200,14 +176,6 @@ public class IbzproProjectUserTaskResource {
                 .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
-	}
-
-	@ApiOperation(value = "查询项目周报任务", tags = {"项目汇报用户任务" } ,notes = "查询项目周报任务")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/searchprojectweeklytask")
-	public ResponseEntity<Page<IbzproProjectUserTaskDTO>> searchProjectWeeklyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
-        Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchProjectWeeklyTask(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzproprojectusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
 

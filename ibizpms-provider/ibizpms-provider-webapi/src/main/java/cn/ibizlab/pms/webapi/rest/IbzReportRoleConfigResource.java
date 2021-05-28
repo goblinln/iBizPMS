@@ -145,16 +145,6 @@ public class IbzReportRoleConfigResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzReportRoleConfigRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"汇报角色配置" } ,notes = "查询数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/ibzreportroleconfigs/searchdefault")
-	public ResponseEntity<Page<IbzReportRoleConfigDTO>> searchDefault(@RequestBody IbzReportRoleConfigSearchContext context) {
-        ibzreportroleconfigRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzReportRoleConfig> domains = ibzreportroleconfigService.searchDefault(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(ibzreportroleconfigMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzreportroleconfigs/{ibzreportroleconfig_id}/{action}")
