@@ -1003,20 +1003,20 @@ export default class RichTextEditor extends Vue {
         const templateContent = this.editor.getContent();
         templParams.ibizpublic = this.single == true? '1' : '0';
         if(!templateContent || Object.is(templateContent,'')){
-            this.$throw(this.$t('components.appCheckBox.content'),'saveTemplate');
+            this.$throw(this.$t('components.appcheckbox.content'),'saveTemplate');
             return;
         }
         if(!templateTitle || Object.is(templateTitle,'')){
-            this.$throw(this.$t('components.appCheckBox.title'),'saveTemplate');
+            this.$throw(this.$t('components.appcheckbox.title'),'saveTemplate');
             return;
         }
         templParams.title = templateTitle;
         templParams.content = templateContent;
         const response: any = await this.userTplService.Create({}, templParams);
         if(response && response.status === 200){
-            this.$success(this.$t('components.appCheckBox.success'),'saveTemplate');
+            this.$success(this.$t('components.appcheckbox.success'),'saveTemplate');
         }else{
-            this.$throw(this.$t('components.appCheckBox.error'),'saveTemplate');
+            this.$throw(this.$t('components.appcheckbox.error'),'saveTemplate');
         }
         this.appTemplateData();
         let propip: any = this.$refs.propip;
@@ -1051,9 +1051,9 @@ export default class RichTextEditor extends Vue {
         context.usertpl = event.id;
         const response: any = await this.userTplService.Remove(context,{});
         if(response && response.status === 200){
-            this.$success(this.$t('components.appCheckBox.delSuccess'),'removeAppTemplate');
+            this.$success(this.$t('components.appcheckbox.delSuccess'),'removeAppTemplate');
         }else{
-            this.$throw(this.$t('components.appCheckBox.delError'),'removeAppTemplate');
+            this.$throw(this.$t('components.appcheckbox.delError'),'removeAppTemplate');
         }
         this.appTemplateData();
     }

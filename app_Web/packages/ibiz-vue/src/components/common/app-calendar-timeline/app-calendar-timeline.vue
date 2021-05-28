@@ -233,7 +233,7 @@ export default class AppClaendarTimeline extends Vue{
             disabled: false,
         },
         {
-            text: this.$t('app.calendar.gotoDate'),
+            text: this.$t('app.calendar.gotodate'),
             icon: '',
             imgsrc: '',
             tag: 'jump',

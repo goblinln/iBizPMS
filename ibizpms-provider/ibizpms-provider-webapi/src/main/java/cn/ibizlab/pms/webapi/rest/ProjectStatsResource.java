@@ -155,7 +155,6 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取未关闭产品", tags = {"项目统计" } ,notes = "获取未关闭产品")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchnoopenproduct")
@@ -169,7 +168,6 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目bug类型统计", tags = {"项目统计" } ,notes = "获取项目bug类型统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectbugtype")
@@ -183,7 +181,6 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目投入统计", tags = {"项目统计" } ,notes = "获取项目投入统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectinputstats")
@@ -197,7 +194,6 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目进度", tags = {"项目统计" } ,notes = "获取项目进度")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectprogress")
@@ -211,7 +207,6 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目质量", tags = {"项目统计" } ,notes = "获取项目质量")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectquality")
@@ -225,7 +220,6 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目需求阶段统计", tags = {"项目统计" } ,notes = "获取项目需求阶段统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectstorystagestats")
@@ -239,7 +233,6 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目需求状态统计", tags = {"项目统计" } ,notes = "获取项目需求状态统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectstorystatusstats")
@@ -253,7 +246,6 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目任务统计(任务状态)", tags = {"项目统计" } ,notes = "获取项目任务统计(任务状态)")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojecttaskcountbytaskstatus")
@@ -267,7 +259,6 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目任务类型统计", tags = {"项目统计" } ,notes = "获取项目任务类型统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojecttaskcountbytype")
@@ -281,7 +272,6 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务工时消耗剩余查询", tags = {"项目统计" } ,notes = "获取任务工时消耗剩余查询")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchtasktime")
@@ -295,7 +285,6 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/projectstats/{projectstats_id}/{action}")

@@ -420,7 +420,6 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取默认查询", tags = {"项目" } ,notes = "获取默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurdefaultquery")
@@ -434,7 +433,6 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取默认查询（项目导航）", tags = {"项目" } ,notes = "获取默认查询（项目导航）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurdefaultqueryexp")
@@ -448,7 +446,6 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前计划项目", tags = {"项目" } ,notes = "获取当前计划项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurplanproject")
@@ -462,7 +459,6 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前项目", tags = {"项目" } ,notes = "获取当前项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurproduct")
@@ -476,7 +472,6 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前用户项目", tags = {"项目" } ,notes = "获取当前用户项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcuruser")
@@ -490,7 +485,6 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前用户项目（企业版）", tags = {"项目" } ,notes = "获取当前用户项目（企业版）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurusersa")
@@ -504,7 +498,6 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchdefault")
@@ -518,7 +511,6 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"项目" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchesbulk")
@@ -532,7 +524,6 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取参与项目(年度总结)", tags = {"项目" } ,notes = "获取参与项目(年度总结)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchinvolvedproject")
@@ -546,7 +537,6 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取参与项目完成需求任务bug", tags = {"项目" } ,notes = "获取参与项目完成需求任务bug")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchinvolvedproject_storytaskbug")
@@ -560,7 +550,6 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的项目", tags = {"项目" } ,notes = "获取我的项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchmyproject")
@@ -574,7 +563,6 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队", tags = {"项目" } ,notes = "获取项目团队")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchprojectteam")
@@ -588,7 +576,6 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取需求影响项目", tags = {"项目" } ,notes = "获取需求影响项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchstoryproject")
@@ -602,7 +589,6 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取未完成项目", tags = {"项目" } ,notes = "获取未完成项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchundoneproject")
@@ -616,7 +602,6 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/{action}")

@@ -224,7 +224,6 @@ public class IbzWeeklyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我的周报", tags = {"周报" } ,notes = "获取我的周报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchmynotsubmit")
 	public ResponseEntity<List<IbzWeeklyDTO>> fetchmynotsubmit(@RequestBody IbzWeeklySearchContext context) {
@@ -236,7 +235,6 @@ public class IbzWeeklyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我收到的周报", tags = {"周报" } ,notes = "获取我收到的周报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchmyweekly")
 	public ResponseEntity<List<IbzWeeklyDTO>> fetchmyweekly(@RequestBody IbzWeeklySearchContext context) {
@@ -248,7 +246,6 @@ public class IbzWeeklyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取产品团队成员周报", tags = {"周报" } ,notes = "获取产品团队成员周报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchproductteammemberweekly")
 	public ResponseEntity<List<IbzWeeklyDTO>> fetchproductteammemberweekly(@RequestBody IbzWeeklySearchContext context) {
@@ -260,7 +257,6 @@ public class IbzWeeklyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取项目周报", tags = {"周报" } ,notes = "获取项目周报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchprojectweekly")
 	public ResponseEntity<List<IbzWeeklyDTO>> fetchprojectweekly(@RequestBody IbzWeeklySearchContext context) {
@@ -272,7 +268,6 @@ public class IbzWeeklyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/{action}")

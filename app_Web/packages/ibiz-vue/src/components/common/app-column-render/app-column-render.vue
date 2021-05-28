@@ -5,12 +5,12 @@
         <input-box :disabled="disabled" v-model="editorvalue" @change="($event)=>{onEditorValueChange($event)}"></input-box>
     </template>
     <template v-else-if="Object.is(type,'dropdown')">
-        <i-select v-model="editorvalue"  :disabled="disabled" :clearable="true" :placeholder="$t('components.appColumnRender.select')" >
+        <i-select v-model="editorvalue"  :disabled="disabled" :clearable="true" :placeholder="$t('components.appcolumnrender.select')" >
             <i-option v-for="(item, index) in codelist" :key="index" :value="item.value">{{item.text}}</i-option>
         </i-select>
     </template>
     <template v-else>
-      <span>{{type}}{{$t('components.appColumnRender.unsupported')}}</span>
+      <span>{{type}}{{$t('components.appcolumnrender.unsupported')}}</span>
     </template>
   </div>
 </template>

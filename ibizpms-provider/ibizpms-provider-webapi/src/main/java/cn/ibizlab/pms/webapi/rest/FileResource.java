@@ -171,7 +171,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@FileRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文件库查询", tags = {"附件" } ,notes = "获取文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchdoclibfile")
@@ -185,7 +184,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@FileRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文件库查询", tags = {"附件" } ,notes = "获取文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchproductdoclibfile")
@@ -199,7 +197,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@FileRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"附件" } ,notes = "获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchtype")
@@ -213,7 +210,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@FileRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取查询附件", tags = {"附件" } ,notes = "获取查询附件")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchtypenotbysrfparentkey")
@@ -227,7 +223,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/files/{file_id}/{action}")

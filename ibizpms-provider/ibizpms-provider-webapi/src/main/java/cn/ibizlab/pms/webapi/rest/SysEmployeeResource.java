@@ -121,7 +121,6 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取联系人用户", tags = {"人员" } ,notes = "获取联系人用户")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchcontactlist")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchcontactlist(@RequestBody SysEmployeeSearchContext context) {
@@ -133,7 +132,6 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取数据集", tags = {"人员" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchdefault")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchdefault(@RequestBody SysEmployeeSearchContext context) {
@@ -145,7 +143,6 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取项目团队管理", tags = {"人员" } ,notes = "获取项目团队管理")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchproductteamm")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchproductteamm(@RequestBody SysEmployeeSearchContext context) {
@@ -157,7 +154,6 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取项目团队管理", tags = {"人员" } ,notes = "获取项目团队管理")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteamm")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteamm(@RequestBody SysEmployeeSearchContext context) {
@@ -169,7 +165,6 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取项目团队管理", tags = {"人员" } ,notes = "获取项目团队管理")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteammproduct")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteammproduct(@RequestBody SysEmployeeSearchContext context) {
@@ -181,7 +176,6 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取项目团队成员(临时)", tags = {"人员" } ,notes = "获取项目团队成员(临时)")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteamtaskusertemp")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteamtaskusertemp(@RequestBody SysEmployeeSearchContext context) {
@@ -193,7 +187,6 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取项目团队成员", tags = {"人员" } ,notes = "获取项目团队成员")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteamuser")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteamuser(@RequestBody SysEmployeeSearchContext context) {
@@ -205,7 +198,6 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取项目团队成员", tags = {"人员" } ,notes = "获取项目团队成员")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteamusertask")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteamusertask(@RequestBody SysEmployeeSearchContext context) {
@@ -217,7 +209,6 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取项目团队成员选择", tags = {"人员" } ,notes = "获取项目团队成员选择")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteampk")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteampk(@RequestBody SysEmployeeSearchContext context) {
@@ -229,7 +220,6 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取产品团队成员选择", tags = {"人员" } ,notes = "获取产品团队成员选择")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchstoryproductteampk")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchstoryproductteampk(@RequestBody SysEmployeeSearchContext context) {
@@ -241,7 +231,6 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取任务多人团队", tags = {"人员" } ,notes = "获取任务多人团队")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchtaskmteam")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchtaskmteam(@RequestBody SysEmployeeSearchContext context) {
@@ -253,7 +242,6 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取数据查询2", tags = {"人员" } ,notes = "获取数据查询2")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchtaskteam")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchtaskteam(@RequestBody SysEmployeeSearchContext context) {
@@ -265,7 +253,6 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/{sysemployee_id}/{action}")

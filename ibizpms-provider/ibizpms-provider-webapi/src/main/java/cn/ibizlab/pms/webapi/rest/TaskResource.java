@@ -644,7 +644,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指派给我任务（PC）", tags = {"任务" } ,notes = "获取指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchassignedtomytaskpc")
@@ -657,7 +656,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取Bug相关任务", tags = {"任务" } ,notes = "获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchbugtask")
 	public ResponseEntity<List<TaskDTO>> fetchbugtask(@RequestBody TaskSearchContext context) {
@@ -669,7 +667,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取通过模块查询", tags = {"任务" } ,notes = "获取通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchbymodule")
@@ -682,7 +679,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据查询（子任务）", tags = {"任务" } ,notes = "获取数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchchilddefault")
@@ -695,7 +691,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取子任务（更多）", tags = {"任务" } ,notes = "获取子任务（更多）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchchilddefaultmore")
@@ -708,7 +703,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取子任务", tags = {"任务" } ,notes = "获取子任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchchildtask")
@@ -721,7 +715,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取子任务（树）", tags = {"任务" } ,notes = "获取子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchchildtasktree")
@@ -734,7 +727,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取用户年度完成任务", tags = {"任务" } ,notes = "获取用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchcurfinishtask")
@@ -747,7 +739,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前项目任务", tags = {"任务" } ,notes = "获取当前项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchcurprojecttaskquery")
@@ -760,7 +751,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"任务" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchdefault")
@@ -773,7 +763,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DefaultRow", tags = {"任务" } ,notes = "获取DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchdefaultrow")
@@ -786,7 +775,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"任务" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchesbulk")
@@ -799,7 +787,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我代理的任务", tags = {"任务" } ,notes = "获取我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmyagenttask")
@@ -812,7 +799,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我相关的任务", tags = {"任务" } ,notes = "获取我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmyalltask")
@@ -825,7 +811,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我完成的任务（汇报）", tags = {"任务" } ,notes = "获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmycompletetask")
@@ -838,7 +823,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "获取我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmycompletetaskmobdaily")
@@ -851,7 +835,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "获取我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmycompletetaskmobmonthly")
@@ -864,7 +847,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "获取我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmycompletetaskmonthlyzs")
@@ -877,7 +859,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我完成的任务（汇报）", tags = {"任务" } ,notes = "获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmycompletetaskzs")
@@ -890,7 +871,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"任务" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmyfavorites")
@@ -903,7 +883,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "获取我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmyplanstaskmobmonthly")
@@ -916,7 +895,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmytomorrowplantask")
@@ -929,7 +907,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmytomorrowplantaskmobdaily")
@@ -942,7 +919,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "获取移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchnextweekcompletetaskmobzs")
@@ -955,7 +931,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchnextweekcompletetaskzs")
@@ -968,7 +943,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "获取下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchnextweekplancompletetask")
@@ -981,7 +955,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取相关任务（计划）", tags = {"任务" } ,notes = "获取相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchplantask")
@@ -994,7 +967,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目任务（项目立项）", tags = {"任务" } ,notes = "获取项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchprojectapptask")
@@ -1007,7 +979,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目任务", tags = {"任务" } ,notes = "获取项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchprojecttask")
@@ -1020,7 +991,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根任务", tags = {"任务" } ,notes = "获取根任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchroottask")
@@ -1033,7 +1003,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "获取关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchtasklinkplan")
@@ -1046,7 +1015,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "获取我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchthismonthcompletetaskchoice")
@@ -1059,7 +1027,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchthisweekcompletetask")
@@ -1072,7 +1039,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "获取本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchthisweekcompletetaskchoice")
@@ -1085,7 +1051,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "获取移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchthisweekcompletetaskmobzs")
@@ -1098,7 +1063,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchthisweekcompletetaskzs")
@@ -1111,7 +1075,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取todo列表查询", tags = {"任务" } ,notes = "获取todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchtodolisttask")
@@ -1124,7 +1087,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务类型分组", tags = {"任务" } ,notes = "获取任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchtypegroup")
@@ -1136,7 +1098,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(domains.getContent());
 	}
-
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务类型分组（计划）", tags = {"任务" } ,notes = "获取任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchtypegroupplan")
@@ -1148,7 +1109,6 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(domains.getContent());
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/{action}")

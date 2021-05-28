@@ -144,7 +144,6 @@ public class GroupResource {
                 .body(list);
 	}
 
-
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/groups/{group_id}/{action}")
     public ResponseEntity<GroupDTO> dynamicCall(@PathVariable("group_id") Long group_id , @PathVariable("action") String action , @RequestBody GroupDTO groupdto) {

@@ -118,16 +118,6 @@ public class BranchResource {
         return  ResponseEntity.status(HttpStatus.OK).body(branchService.checkKey(branchMapping.toDomain(branchdto)));
     }
 
-    @ApiOperation(value = "保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "保存产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/branches/save")
-    public ResponseEntity<BranchDTO> save(@RequestBody BranchDTO branchdto) {
-        Branch domain = branchMapping.toDomain(branchdto);
-        branchService.save(domain);
-        BranchDTO dto = branchMapping.toDto(domain);
-        Map<String,Integer> opprivs = branchRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
 
     @ApiOperation(value = "批量保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "批量保存产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/branches/savebatch")
@@ -161,7 +151,6 @@ public class BranchResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BranchRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/branches/fetchdefault")
@@ -174,7 +163,6 @@ public class BranchResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/branches/{branch_id}/{action}")
@@ -242,14 +230,6 @@ public class BranchResource {
         return  ResponseEntity.status(HttpStatus.OK).body(branchService.checkKey(branchMapping.toDomain(branchdto)));
     }
 
-    @ApiOperation(value = "根据产品保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品保存产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/branches/save")
-    public ResponseEntity<BranchDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody BranchDTO branchdto) {
-        Branch domain = branchMapping.toDomain(branchdto);
-        domain.setProduct(product_id);
-        branchService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(branchMapping.toDto(domain));
-    }
 
     @ApiOperation(value = "根据产品批量保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品批量保存产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/branches/savebatch")

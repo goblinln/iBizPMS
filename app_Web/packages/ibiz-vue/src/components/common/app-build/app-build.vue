@@ -6,7 +6,7 @@
             </i-button>
       </button-group>
       <button-group v-show="showTypeDir">
-          <el-tooltip :content="$t('components.appBuild.custom')">
+          <el-tooltip :content="$t('components.appbuild.custom')">
               <i-button icon="md-build" type="primary" @click="handleClick"></i-button>
           </el-tooltip>
           <i-button class="collapse-btn" type="primary" @click="clickCollapse('right')">

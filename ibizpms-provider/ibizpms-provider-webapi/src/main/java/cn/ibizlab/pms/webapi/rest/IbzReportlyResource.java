@@ -160,7 +160,6 @@ public class IbzReportlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我所有的汇报", tags = {"汇报" } ,notes = "获取我所有的汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchmyallreportly")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchmyallreportly(@RequestBody IbzReportlySearchContext context) {
@@ -172,7 +171,6 @@ public class IbzReportlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我收到的汇报", tags = {"汇报" } ,notes = "获取我收到的汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchmyreceived")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchmyreceived(@RequestBody IbzReportlySearchContext context) {
@@ -184,7 +182,6 @@ public class IbzReportlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我的未提交汇报", tags = {"汇报" } ,notes = "获取我的未提交汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchmyreportlymob")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchmyreportlymob(@RequestBody IbzReportlySearchContext context) {
@@ -196,7 +193,6 @@ public class IbzReportlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/{ibzreportly_id}/{action}")

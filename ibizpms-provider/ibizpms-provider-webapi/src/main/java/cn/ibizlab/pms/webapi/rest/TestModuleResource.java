@@ -169,7 +169,6 @@ public class TestModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试模块" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchdefault")
@@ -182,7 +181,6 @@ public class TestModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取父模块", tags = {"测试模块" } ,notes = "获取父模块")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchparentmodule")
@@ -195,7 +193,6 @@ public class TestModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块", tags = {"测试模块" } ,notes = "获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchroot")
@@ -208,7 +205,6 @@ public class TestModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块_无分支", tags = {"测试模块" } ,notes = "获取根模块_无分支")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchroot_nobranch")
@@ -221,7 +217,6 @@ public class TestModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取TestModule", tags = {"测试模块" } ,notes = "获取TestModule")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchtestmodule")
@@ -234,7 +229,6 @@ public class TestModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/testmodules/{testmodule_id}/{action}")

@@ -637,17 +637,17 @@ export class DataViewControlBase extends MDControlBase {
             dataInfo =
                 dataInfo +
                 ' ' +
-                (this.$t('app.dataView.sum') as string) +
+                (this.$t('app.dataview.sum') as string) +
                 _datas.length +
-                (this.$t('app.dataView.data') as string);
+                (this.$t('app.dataview.data') as string);
         } else {
             dataInfo =
                 dataInfo +
                 '...' +
                 ' ' +
-                (this.$t('app.dataView.sum') as string) +
+                (this.$t('app.dataview.sum') as string) +
                 _datas.length +
-                (this.$t('app.dataView.data') as string);
+                (this.$t('app.dataview.data') as string);
         }
 
         const removeData = () => {
@@ -825,7 +825,7 @@ export class DataViewControlBase extends MDControlBase {
             groups = Util.deepCopy(groupCodelist);
         }
         if (groups.length == 0) {
-            LogUtil.warn(this.$t('app.dataView.useless'));
+            LogUtil.warn(this.$t('app.dataview.useless'));
         }
         const map: Map<string, any> = new Map();
         data.forEach(item => {
@@ -891,7 +891,7 @@ export class DataViewControlBase extends MDControlBase {
         });
         groups = [...new Set(groups)];
         if (groups.length == 0) {
-            LogUtil.warn(this.$t('app.dataView.useless'));
+            LogUtil.warn(this.$t('app.dataview.useless'));
         }
         const groupTree: Array<any> = [];
         groups.forEach((group: any, i: number) => {

@@ -465,9 +465,9 @@ export class ListControlBase extends MDControlBase {
         });
 
         if (items.length < 5) {
-            dataInfo = dataInfo + this.$t('app.dataView.sum') + items.length + this.$t('app.dataView.data');
+            dataInfo = dataInfo + this.$t('app.dataview.sum') + items.length + this.$t('app.dataview.data');
         } else {
-            dataInfo = dataInfo + '...' + this.$t('app.dataView.sum') + items.length + this.$t('app.dataView.data');
+            dataInfo = dataInfo + '...' + this.$t('app.dataview.sum') + items.length + this.$t('app.dataview.data');
         }
         const removeData = () => {
             let keys: any[] = [];

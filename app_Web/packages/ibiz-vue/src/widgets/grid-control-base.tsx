@@ -1354,7 +1354,7 @@ export class GridControlBase extends MDControlBase {
             return;
         }
         if (allGroup.length == 0) {
-            LogUtil.warn(this.$t('app.dataView.useless'));
+            LogUtil.warn(this.$t('app.dataview.useless'));
             this.items.forEach((item: any, index: number) => {
                 Object.assign(item, {
                     groupById: index + 1,
@@ -1410,7 +1410,7 @@ export class GridControlBase extends MDControlBase {
         let groupTree: Array<any> = [];
         allGroup = [...new Set(allGroup)];
         if (allGroup.length == 0) {
-            LogUtil.warn(this.$t('app.dataView.useless'));
+            LogUtil.warn(this.$t('app.dataview.useless'));
         }
         // 组装数据
         allGroup.forEach((group: any, groupIndex: number) => {
@@ -1581,8 +1581,6 @@ export class GridControlBase extends MDControlBase {
      * @memberof GridControlBase
      */
     public selectAll(selection: any): void {
-      console.log(444);
-      
         this.selections = [];
         if (this.groupAppField) {
             let flag: boolean = true;
@@ -2293,10 +2291,10 @@ export class GridControlBase extends MDControlBase {
             result.then((response: any) => {
                 this.onControlResponse('submitbatch', response);
                 if (!response || response.status !== 200) {
-                    this.$throw((this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message,'submitbatch');
+                    this.$throw((this.$t('app.form.workflow.submiterror') as string) + ', ' + response.data.message,'submitbatch');
                     return;
                 }
-                this.$success((this.$t('app.formpage.workflow.submitsuccess') as string),'submitbatch');
+                this.$success((this.$t('app.form.workflow.submitsuccess') as string),'submitbatch');
                 resolve(response);
             }).catch((response: any) => {
                 this.onControlResponse('submitbatch', response);
@@ -2583,7 +2581,7 @@ export class GridControlBase extends MDControlBase {
                         }
                     }
                 })
-                response.data.message = errorMsg?errorMsg:(this.$t('app.searchForm.globalerrortip') as string);
+                response.data.message = errorMsg?errorMsg:(this.$t('app.searchform.globalerrortip') as string);
                 this.$forceUpdate();
             }
         }

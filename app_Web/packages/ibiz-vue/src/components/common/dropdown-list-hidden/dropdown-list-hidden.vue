@@ -406,11 +406,11 @@ export default class DropDownListHidden extends Vue {
                 
             });
             if(matching){
-                LogUtil.warn(`${ this.tag }${this.$t('components.appCheckBox.warn')}`);
+                LogUtil.warn(`${ this.tag }${this.$t('app.commonwords.codelistwarn')}`);
             }
             
         }catch(error){
-            LogUtil.warn(this.$t('components.appCheckBox.warn'));
+            LogUtil.warn(this.$t('app.commonwords.codelistwarn'));
         }
         this.handleLevelCodeList(Util.deepCopy(this.items));
     }

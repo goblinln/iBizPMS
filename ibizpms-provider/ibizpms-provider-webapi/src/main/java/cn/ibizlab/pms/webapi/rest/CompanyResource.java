@@ -144,7 +144,6 @@ public class CompanyResource {
                 .body(list);
 	}
 
-
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/companies/{company_id}/{action}")
     public ResponseEntity<CompanyDTO> dynamicCall(@PathVariable("company_id") Long company_id , @PathVariable("action") String action , @RequestBody CompanyDTO companydto) {

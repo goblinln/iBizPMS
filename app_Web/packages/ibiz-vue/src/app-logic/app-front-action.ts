@@ -175,7 +175,7 @@ export class AppFrontAction {
             Object.is(this.actionModel.frontProcessType, 'WIZARD')
         ) {
             if (!this.actionModel.getFrontPSAppView()) {
-                actionContext.$warning(`${this.actionModel.caption}${actionContext.warn.unOpenView}`,'oPenView');
+                actionContext.$warning(`${this.actionModel.caption}${actionContext.$t('app.warn.unopenview')}`,'oPenView');
                 return;
             }
             await frontPSAppView?.fill(true);

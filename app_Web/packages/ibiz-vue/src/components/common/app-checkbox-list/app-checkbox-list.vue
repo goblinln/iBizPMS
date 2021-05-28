@@ -267,7 +267,7 @@ export default class AppCheckBox extends Vue {
             this.codeListService.getDataItems({ tag: this.tag, type: this.codelistType,data: this.codeList,context:context,viewparam:viewparam }).then((codelistItems: Array<any>) => {
                 this.formatCodeList(codelistItems);
             }).catch((error: any) => {
-                LogUtil.log(`----${this.tag}----${this.$t('components.appCheckBox.notExist')}`);
+                LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codenotexist')}`);
             })
         }
     }
@@ -301,11 +301,11 @@ export default class AppCheckBox extends Vue {
                 this.items.push(item);
             });
             if(matching){
-                LogUtil.warn(`${ this.tag }${this.$t('components.appCheckBox.warn')}`);
+                LogUtil.warn(`${ this.tag }${this.$t('app.commonwords.codelistwarn')}`);
             }
             
         }catch(error){
-            LogUtil.warn(this.$t('components.appCheckBox.warn'));
+            LogUtil.warn(this.$t('app.commonwords.codelistwarn'));
         }
     }
 

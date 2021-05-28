@@ -47,25 +47,25 @@ export default class AppHeaderMenus extends Vue {
   public menus:any = [
       {
           name: "ibizlab",
-          title: "components.appHeaderMenus.ibizlab.title",
+          title: "components.appheadermenus.ibizlab.title",
           url: Environment.ibizlabtUrl,
           iconcls: 'fa fa-home',
       },
       {
           name: "publishProject",
-          title: "components.appHeaderMenus.publishProject.title",
+          title: "components.appheadermenus.publishproject.title",
           url: Environment.PublishProjectUrl,
           iconcls: 'fa fa-folder-open-o',
       },
       {
           name: "ibizstudio",
-          title: "components.appHeaderMenus.ibizstudio.title",
+          title: "components.appheadermenus.ibizstudio.title",
           url: `${Environment.StudioUrl}?#/common_mosindex/srfkeys=${Environment.SysId}`,
           iconcls: 'fa fa-wrench',
       },
       {
           name: "ibizbbs",
-          title: "components.appHeaderMenus.ibizbbs.title",
+          title: "components.appheadermenus.ibizbbs.title",
           url: Environment.ibizbbstUrl,
           iconcls: 'fa fa-comments-o',
       },

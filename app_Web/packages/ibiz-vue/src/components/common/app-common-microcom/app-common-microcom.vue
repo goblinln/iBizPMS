@@ -223,7 +223,7 @@ export default class AppCommonMicrocom extends Vue {
                     const filterIndex = key.slice(6);
                     if (filterIndex) {
                         if (isNaN(parseInt(filterIndex)) || filterArr.length < parseInt(filterIndex) - 1) {
-                            LogUtil.warn(this.$t('components.microcom.filterWarn'))
+                            LogUtil.warn(this.$t('components.microcom.filterwarn'))
                         } else {
                             value = this.handleFilterValue(filterArr[parseInt(filterIndex) - 1]);
                         }

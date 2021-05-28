@@ -22,7 +22,7 @@
       @viewLoaded="viewLoaded"
       @viewload="viewload">
     </component>
-    <spin v-if="blockUI" class="app-druipart-spin" fix>{{$t("components.appFormDRUIPart.blockUITipInfo")}}</spin>
+    <spin v-if="blockUI" class="app-druipart-spin" fix>{{$t("components.appformdruipart.blockuitipinfo")}}</spin>
   </div>
 </template>
 <script lang = 'ts'>
@@ -528,7 +528,7 @@ export default class AppFormDRUIPart extends Vue {
      * @memberof AppFormDRUIPart
      */
     public mditemsload() {
-        LogUtil.log(this.$t("components.appFormDRUIPart.viewLoadComp") as string);
+        LogUtil.log(this.$t("components.appformdruipart.viewloadcomp") as string);
     }
 
     /**
@@ -540,7 +540,7 @@ export default class AppFormDRUIPart extends Vue {
     public drdatasaved($event: any) {
         this.$emit("drdatasaved", $event);
         LogUtil.log(
-            this.viewname + (this.$t("components.appFormDRUIPart.save") as string)
+            this.viewname + (this.$t("components.appformdruipart.save") as string)
         );
     }
 
@@ -552,7 +552,7 @@ export default class AppFormDRUIPart extends Vue {
      */
     public drdatachange() {
         LogUtil.log(
-            "DEMEDITVIEW9 " + (this.$t("components.appFormDRUIPart.change") as string)
+            "DEMEDITVIEW9 " + (this.$t("components.appformdruipart.change") as string)
         );
     }
 
@@ -563,7 +563,7 @@ export default class AppFormDRUIPart extends Vue {
      * @memberof AppFormDRUIPart
      */
     public viewdataschange() {
-        LogUtil.log(this.$t("components.appFormDRUIPart.change1") as string);
+        LogUtil.log(this.$t("components.appformdruipart.change1") as string);
     }
 
     /**
@@ -573,7 +573,7 @@ export default class AppFormDRUIPart extends Vue {
      * @memberof AppFormDRUIPart
      */
     public viewload() {
-        LogUtil.log(this.$t("components.appFormDRUIPart.loadComp") as string);
+        LogUtil.log(this.$t("components.appformdruipart.loadcomp") as string);
     }
 
     /**

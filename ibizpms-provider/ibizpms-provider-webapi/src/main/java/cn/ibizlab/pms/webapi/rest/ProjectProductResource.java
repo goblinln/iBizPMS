@@ -143,7 +143,6 @@ public class ProjectProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取关联计划", tags = {"项目产品" } ,notes = "获取关联计划")
     @RequestMapping(method= RequestMethod.POST , value="/projectproducts/fetchrelationplan")
@@ -156,7 +155,6 @@ public class ProjectProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/projectproducts/{projectproduct_id}/{action}")

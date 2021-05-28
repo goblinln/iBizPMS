@@ -142,7 +142,6 @@ public class TestResultResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TestResultRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试结果" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testresults/fetchdefault")
@@ -155,7 +154,6 @@ public class TestResultResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/testresults/{testresult_id}/{action}")

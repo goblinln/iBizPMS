@@ -139,7 +139,7 @@ export default class AppRate extends Vue {
                 const maxItem = Math.max.apply(Math,items.map((item: any) => { return item.value; }));
                 this.maxItem = maxItem>5 ? 5 : maxItem;
             }).catch((error: any) => {
-                LogUtil.log(`----${this.tag}----$t('components.appCheckBox.notExist')`);
+                LogUtil.log(`----${this.tag}----$t('app.commonwords.codenotexist')`);
             });
           }
       }

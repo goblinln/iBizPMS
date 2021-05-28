@@ -182,7 +182,6 @@ public class TestSuiteResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TestSuiteRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取公开套件", tags = {"测试套件" } ,notes = "获取公开套件")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/fetchpublictestsuite")
@@ -195,7 +194,6 @@ public class TestSuiteResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/{action}")

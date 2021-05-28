@@ -153,7 +153,6 @@ public class ProductStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取未关闭产品", tags = {"产品统计" } ,notes = "获取未关闭产品")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchnoopenproduct")
 	public ResponseEntity<List<ProductStatsDTO>> fetchnoopenproduct(@RequestBody ProductStatsSearchContext context) {
@@ -165,7 +164,6 @@ public class ProductStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取产品质量表", tags = {"产品统计" } ,notes = "获取产品质量表")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchprodctquantigird")
 	public ResponseEntity<List<ProductStatsDTO>> fetchprodctquantigird(@RequestBody ProductStatsSearchContext context) {
@@ -177,7 +175,6 @@ public class ProductStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取产品投入表", tags = {"产品统计" } ,notes = "获取产品投入表")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchproductinputtable")
 	public ResponseEntity<List<ProductStatsDTO>> fetchproductinputtable(@RequestBody ProductStatsSearchContext context) {
@@ -189,7 +186,6 @@ public class ProductStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取产品完成统计表", tags = {"产品统计" } ,notes = "获取产品完成统计表")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchproductcompletionstatistics")
 	public ResponseEntity<List<ProductStatsDTO>> fetchproductcompletionstatistics(@RequestBody ProductStatsSearchContext context) {
@@ -201,7 +197,6 @@ public class ProductStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/productstats/{productstats_id}/{action}")

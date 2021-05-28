@@ -35,6 +35,7 @@
       :class = "{'el-upload-disabled':disabled}"
       :disabled = "disabled"
       :action = "uploadUrl"
+      :multiple="multipleSelect"
       :headers = "headers"
       :show-file-list = "false"
       list-type =  "picture-card"
@@ -499,6 +500,14 @@ export default class AppImageUpload extends Vue {
      * @memberof AppImageUpload
      */
     @Prop({ default: true }) public multiple?: boolean;
+
+    /**
+     * 是否多选
+     *
+     * @type {boolean}
+     * @memberof AppFileUpload
+     */
+    @Prop({default: true}) public multipleSelect?: boolean;
 
     /**
      * 预览

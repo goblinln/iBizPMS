@@ -169,7 +169,6 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"任务模块" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchdefault")
@@ -182,7 +181,6 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取父模块", tags = {"任务模块" } ,notes = "获取父模块")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchparentmodule")
@@ -195,7 +193,6 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块", tags = {"任务模块" } ,notes = "获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchroot")
@@ -208,7 +205,6 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块_无分支", tags = {"任务模块" } ,notes = "获取根模块_无分支")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchroot_nobranch")
@@ -221,7 +217,6 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块", tags = {"任务模块" } ,notes = "获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchroot_task")
@@ -234,7 +229,6 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取任务模块", tags = {"任务模块" } ,notes = "获取任务模块")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchtaskmodules")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchtaskmodules(@RequestBody ProjectModuleSearchContext context) {
@@ -246,7 +240,6 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/{action}")

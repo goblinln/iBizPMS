@@ -143,7 +143,6 @@ public class ProjectTaskestimateResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"项目工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/projecttaskestimates/fetchdefault")
@@ -157,7 +156,6 @@ public class ProjectTaskestimateResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/projecttaskestimates/{projecttaskestimate_id}/{action}")

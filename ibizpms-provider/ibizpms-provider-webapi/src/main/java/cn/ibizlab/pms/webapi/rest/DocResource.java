@@ -225,7 +225,6 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"文档" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchdefault")
@@ -238,7 +237,6 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文档库文档", tags = {"文档" } ,notes = "获取文档库文档")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchdoclibanddoc")
@@ -251,7 +249,6 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文档库文档", tags = {"文档" } ,notes = "获取文档库文档")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchdoclibdoc")
@@ -264,7 +261,6 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文档库分类文档", tags = {"文档" } ,notes = "获取文档库分类文档")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchdocmoduledoc")
@@ -277,7 +273,6 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文档统计", tags = {"文档" } ,notes = "获取文档统计")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchdocstatus")
@@ -290,7 +285,6 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文件夹文档（子目录）", tags = {"文档" } ,notes = "获取文件夹文档（子目录）")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchmoduledocchild")
@@ -303,7 +297,6 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"文档" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchmyfavourite")
@@ -316,7 +309,6 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"文档" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchmyfavouritesonlydoc")
@@ -329,7 +321,6 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取子目录文档", tags = {"文档" } ,notes = "获取子目录文档")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchnotrootdoc")
@@ -342,7 +333,6 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根目录文档", tags = {"文档" } ,notes = "获取根目录文档")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchrootdoc")
@@ -355,7 +345,6 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/{action}")

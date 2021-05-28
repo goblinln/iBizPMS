@@ -131,17 +131,6 @@ public class PRODUCTTEAMResource {
     }
 
 
-    @PreAuthorize("@PRODUCTTEAMRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "保存产品团队", tags = {"产品团队" },  notes = "保存产品团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/productteams/save")
-    public ResponseEntity<PRODUCTTEAMDTO> save(@RequestBody PRODUCTTEAMDTO productteamdto) {
-        PRODUCTTEAM domain = productteamMapping.toDomain(productteamdto);
-        productteamService.save(domain);
-        PRODUCTTEAMDTO dto = productteamMapping.toDto(domain);
-        Map<String,Integer> opprivs = productteamRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
 
     @PreAuthorize("@PRODUCTTEAMRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量保存产品团队", tags = {"产品团队" },  notes = "批量保存产品团队")
@@ -163,7 +152,6 @@ public class PRODUCTTEAMResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@PRODUCTTEAMRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品团队成员信息", tags = {"产品团队" } ,notes = "获取产品团队成员信息")
     @RequestMapping(method= RequestMethod.POST , value="/productteams/fetchproductteaminfo")
@@ -176,7 +164,6 @@ public class PRODUCTTEAMResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@PRODUCTTEAMRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目立项", tags = {"产品团队" } ,notes = "获取项目立项")
     @RequestMapping(method= RequestMethod.POST , value="/productteams/fetchprojectapp")
@@ -189,7 +176,6 @@ public class PRODUCTTEAMResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@PRODUCTTEAMRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品团队管理", tags = {"产品团队" } ,notes = "获取产品团队管理")
     @RequestMapping(method= RequestMethod.POST , value="/productteams/fetchroweditdefaultproductteam")
@@ -202,7 +188,6 @@ public class PRODUCTTEAMResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@PRODUCTTEAMRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指定团队部门", tags = {"产品团队" } ,notes = "获取指定团队部门")
     @RequestMapping(method= RequestMethod.POST , value="/productteams/fetchspecifyteam")
@@ -215,7 +200,6 @@ public class PRODUCTTEAMResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/productteams/{productteam_id}/{action}")
@@ -294,15 +278,6 @@ public class PRODUCTTEAMResource {
         return ResponseEntity.status(HttpStatus.OK).body(productteamdto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
-    @ApiOperation(value = "根据产品保存产品团队", tags = {"产品团队" },  notes = "根据产品保存产品团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productteams/save")
-    public ResponseEntity<PRODUCTTEAMDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody PRODUCTTEAMDTO productteamdto) {
-        PRODUCTTEAM domain = productteamMapping.toDomain(productteamdto);
-        domain.setRoot(product_id);
-        productteamService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productteamMapping.toDto(domain));
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品批量保存产品团队", tags = {"产品团队" },  notes = "根据产品批量保存产品团队")

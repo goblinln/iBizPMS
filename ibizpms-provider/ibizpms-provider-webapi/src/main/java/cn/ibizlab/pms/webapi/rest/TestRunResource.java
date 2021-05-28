@@ -144,7 +144,6 @@ public class TestRunResource {
                 .body(list);
 	}
 
-
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/testruns/{testrun_id}/{action}")
     public ResponseEntity<TestRunDTO> dynamicCall(@PathVariable("testrun_id") Long testrun_id , @PathVariable("action") String action , @RequestBody TestRunDTO testrundto) {

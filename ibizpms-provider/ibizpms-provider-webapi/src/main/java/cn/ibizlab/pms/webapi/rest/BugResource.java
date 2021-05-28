@@ -460,7 +460,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指派给我Bug（PC）", tags = {"Bug" } ,notes = "获取指派给我Bug（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchassignedtomybugpc")
@@ -473,7 +472,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本关联bug(遗留的)", tags = {"Bug" } ,notes = "获取版本关联bug(遗留的)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbugsbybuild")
@@ -486,7 +484,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本关联Bug（已解决）", tags = {"Bug" } ,notes = "获取版本关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildbugs")
@@ -499,7 +496,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本可关联的已解决的Bugs集合", tags = {"Bug" } ,notes = "获取版本可关联的已解决的Bugs集合")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildlinkresolvedbugs")
@@ -512,7 +508,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本关联Bug（已解决）", tags = {"Bug" } ,notes = "获取版本关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildopenbugs")
@@ -525,7 +520,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug", tags = {"Bug" } ,notes = "获取Build产生的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebug")
@@ -538,7 +532,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug", tags = {"Bug" } ,notes = "获取Build产生的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugmodule")
@@ -551,7 +544,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-创建者分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-创建者分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugmodule_project")
@@ -564,7 +556,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-创建分类", tags = {"Bug" } ,notes = "获取Build产生的Bug-创建分类")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugopenedby")
@@ -577,7 +568,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-创建者分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-创建者分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugopenedby_project")
@@ -590,7 +580,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug（已解决）", tags = {"Bug" } ,notes = "获取Build产生的Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugres")
@@ -603,7 +592,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-解决者分布", tags = {"Bug" } ,notes = "获取Build产生的Bug-解决者分布")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugresolvedby")
@@ -616,7 +604,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-解决者分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-解决者分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugresolvedby_project")
@@ -629,7 +616,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-解决方案分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-解决方案分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugresolution_project")
@@ -642,7 +628,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-严重程度分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-严重程度分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugseverity_project")
@@ -655,7 +640,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-状态分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-状态分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugstatus_project")
@@ -668,7 +652,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-类型分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-类型分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugtype_project")
@@ -681,7 +664,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前用户解决的Bug", tags = {"Bug" } ,notes = "获取当前用户解决的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchcuruserresolve")
@@ -694,7 +676,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"Bug" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchdefault")
@@ -707,7 +688,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"Bug" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchesbulk")
@@ -720,7 +700,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我代理的Bug", tags = {"Bug" } ,notes = "获取我代理的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchmyagentbug")
@@ -733,7 +712,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取累计创建的Bug数", tags = {"Bug" } ,notes = "获取累计创建的Bug数")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchmycuropenedbug")
@@ -746,7 +724,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"Bug" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchmyfavorites")
@@ -759,7 +736,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取计划关联bug（去除已关联）", tags = {"Bug" } ,notes = "获取计划关联bug（去除已关联）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchnotcurplanlinkbug")
@@ -772,7 +748,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取遗留得Bug(项目)", tags = {"Bug" } ,notes = "获取遗留得Bug(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchprojectbugs")
@@ -785,7 +760,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取发布关联Bug（已解决）", tags = {"Bug" } ,notes = "获取发布关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchreleasebugs")
@@ -798,7 +772,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取发布关联Bug（已解决）", tags = {"Bug" } ,notes = "获取发布关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchreleaseleftbugs")
@@ -811,7 +784,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取发布可关联的bug（遗留）", tags = {"Bug" } ,notes = "获取发布可关联的bug（遗留）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchreleaselinkableleftbug")
@@ -824,7 +796,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取发布可关联的bug（已解决）", tags = {"Bug" } ,notes = "获取发布可关联的bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchreleaselinkableresolvedbug")
@@ -837,7 +808,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取发布关联Bug（未解决）", tags = {"Bug" } ,notes = "获取发布关联Bug（未解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchreportbugs")
@@ -850,7 +820,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取需求来源Bug", tags = {"Bug" } ,notes = "获取需求来源Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchstoryformbug")
 	public ResponseEntity<List<BugDTO>> fetchstoryformbug(@RequestBody BugSearchContext context) {
@@ -862,7 +831,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务相关bug", tags = {"Bug" } ,notes = "获取任务相关bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchtaskrelatedbug")
@@ -875,7 +843,6 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/{action}")

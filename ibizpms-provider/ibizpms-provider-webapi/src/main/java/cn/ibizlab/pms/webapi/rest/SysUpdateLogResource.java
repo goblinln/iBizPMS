@@ -157,7 +157,6 @@ public class SysUpdateLogResource {
                 .body(list);
 	}
 
-
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/{sysupdatelog_id}/{action}")
     public ResponseEntity<SysUpdateLogDTO> dynamicCall(@PathVariable("sysupdatelog_id") String sysupdatelog_id , @PathVariable("action") String action , @RequestBody SysUpdateLogDTO sysupdatelogdto) {

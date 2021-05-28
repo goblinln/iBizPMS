@@ -169,7 +169,6 @@ public class IbzReportResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@IbzReportRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"汇报汇总" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreports/fetchdefault")
@@ -183,7 +182,6 @@ public class IbzReportResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@IbzReportRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取汇报汇总（我收到的）", tags = {"汇报汇总" } ,notes = "获取汇报汇总（我收到的）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreports/fetchmyreallreport")
@@ -197,7 +195,6 @@ public class IbzReportResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzreports/{ibzreport_id}/{action}")

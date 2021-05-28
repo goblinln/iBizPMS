@@ -212,7 +212,6 @@ public class ProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取所有产品", tags = {"产品" } ,notes = "获取所有产品")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchallproduct")
@@ -226,7 +225,6 @@ public class ProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取校验产品名称或产品代号是否已经存在", tags = {"产品" } ,notes = "获取校验产品名称或产品代号是否已经存在")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchchecknameorcode")
@@ -240,7 +238,6 @@ public class ProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取默认查询", tags = {"产品" } ,notes = "获取默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchcurdefault")
@@ -254,7 +251,6 @@ public class ProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前项目", tags = {"产品" } ,notes = "获取当前项目")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchcurproject")
@@ -268,7 +264,6 @@ public class ProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前用户", tags = {"产品" } ,notes = "获取当前用户")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchcuruer")
@@ -282,7 +277,6 @@ public class ProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchdefault")
@@ -296,7 +290,6 @@ public class ProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"产品" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchesbulk")
@@ -310,7 +303,6 @@ public class ProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品总览", tags = {"产品" } ,notes = "获取产品总览")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchproductpm")
@@ -324,7 +316,6 @@ public class ProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品团队", tags = {"产品" } ,notes = "获取产品团队")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchproductteam")
@@ -338,7 +329,6 @@ public class ProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前项目", tags = {"产品" } ,notes = "获取当前项目")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchstorycurproject")
@@ -352,7 +342,6 @@ public class ProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/{action}")

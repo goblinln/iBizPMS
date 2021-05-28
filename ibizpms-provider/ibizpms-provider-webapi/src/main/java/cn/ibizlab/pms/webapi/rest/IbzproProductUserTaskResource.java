@@ -141,7 +141,6 @@ public class IbzproProductUserTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取产品日报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品日报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/fetchproductdailyusertaskstats")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchproductdailyusertaskstats(@RequestBody IbzproProductUserTaskSearchContext context) {
@@ -153,7 +152,6 @@ public class IbzproProductUserTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取产品月报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品月报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/fetchproductmonthlyusertaskstats")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchproductmonthlyusertaskstats(@RequestBody IbzproProductUserTaskSearchContext context) {
@@ -165,7 +163,6 @@ public class IbzproProductUserTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取产品周报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品周报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/fetchproductweeklyusertaskstats")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchproductweeklyusertaskstats(@RequestBody IbzproProductUserTaskSearchContext context) {
@@ -177,7 +174,6 @@ public class IbzproProductUserTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzproproductusertasks/{ibzproproductusertask_id}/{action}")

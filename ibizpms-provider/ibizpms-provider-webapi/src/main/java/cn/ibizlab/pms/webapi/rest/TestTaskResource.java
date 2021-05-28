@@ -234,7 +234,6 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的测试单", tags = {"测试版本" } ,notes = "获取我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/fetchmytesttaskpc")
@@ -247,7 +246,6 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/{action}")

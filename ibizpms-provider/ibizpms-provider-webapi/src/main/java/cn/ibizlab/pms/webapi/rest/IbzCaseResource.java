@@ -150,7 +150,6 @@ public class IbzCaseResource {
                 .body(list);
 	}
 
-
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzcases/{ibzcase_id}/{action}")
     public ResponseEntity<IbzCaseDTO> dynamicCall(@PathVariable("ibzcase_id") Long ibzcase_id , @PathVariable("action") String action , @RequestBody IbzCaseDTO ibzcasedto) {

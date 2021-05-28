@@ -264,11 +264,11 @@ export default class AppRadioGroup extends Vue {
                 this.items.push(item);
             });
             if(matching){
-                LogUtil.warn(`${ this.tag }${this.$t('components.appCheckBox.warn')}`);
+                LogUtil.warn(`${ this.tag }${this.$t('app.commonwords.codelistwarn')}`);
             }
             
         }catch(error){
-            LogUtil.warn(this.$t('components.appCheckBox.warn'));
+            LogUtil.warn(this.$t('app.commonwords.codelistwarn'));
         }
     }
 

@@ -4,7 +4,7 @@
         <div class="main-content">
             <div v-if="importDataArray.length == 0" class="upload-container" @click="handleUpLoad">
                 <img class="icon-import" src="@/assets/img/icon-import.svg" />
-                <span class="select-file-text">{{$t('components.appDataUploadView.selectfile')}}</span>
+                <span class="select-file-text">{{$t('components.appdatauploadview.selectfile')}}</span>
             </div>
             <div v-else-if="importDataArray.length >0" class="data-info-container" >
                 <el-progress class="progress" :stroke-width="4" :show-text="false" :percentage="uploadProgress"></el-progress>
@@ -12,7 +12,7 @@
                     <div class="success-list">
                         <ul v-if="isUploading === false">
                             <li v-for="(item,index) in importDataArray" :key="index">
-                                {{(item[importUniqueItem] || `第${index+1}行`) +'：'+ $t('components.appDataUploadView.read')}}
+                                {{(item[importUniqueItem] || `第${index+1}行`) +'：'+ $t('components.appdatauploadview.read')}}
                             </li>
                         </ul>
                     </div>
@@ -23,7 +23,7 @@
                     <div class="success-list">
                         <ul>
                             <li v-for="(item,index) in successResult" :key="index">
-                                {{item.rowName +'：' + $t('components.appDataUploadView.completed')}}
+                                {{item.rowName +'：' + $t('components.appdatauploadview.completed')}}
                             </li>
                         </ul>
                     </div>
@@ -39,17 +39,17 @@
         </div>
         <el-row class="second-content">
             <el-col>
-                <div class="import-template-message">{{$t('components.appDataUploadView.dataTemplateMessage')}}</div>
+                <div class="import-template-message">{{$t('components.appdatauploadview.datatemplatemessage')}}</div>
                 <div class="import-template">
                     <img class="icon-link" src="@/assets/img/icon-link.svg"></img>
-                    <span style="cursor: pointer;" @click="downloadTemp">{{this.viewparams.appDeLogicName + $t('components.appDataUploadView.datatemplate')}}</span>
+                    <span style="cursor: pointer;" @click="downloadTemp">{{this.viewparams.appDeLogicName + $t('components.appdatauploadview.datatemplate')}}</span>
                 </div>
             </el-col>
         </el-row>
         <el-row class="button-container">
-            <el-button type="primary" @click="handleOK">{{$t('components.appDataUploadView.cancel')}}</el-button>
-            <el-button v-if="hasImported === false" :disabled="this.importDataArray.length == 0" type="primary" class="primary-button" @click="uploadServer">{{$t('components.appDataUploadView.uploadserver')}}</el-button>
-            <el-button v-if="hasImported === true" type="primary" class="primary-button"  @click="handleOK">{{$t('components.appDataUploadView.confirm')}}</el-button>
+            <el-button type="primary" @click="handleOK">{{$t('components.appdatauploadview.cancel')}}</el-button>
+            <el-button v-if="hasImported === false" :disabled="this.importDataArray.length == 0" type="primary" class="primary-button" @click="uploadServer">{{$t('components.appdatauploadview.uploadserver')}}</el-button>
+            <el-button v-if="hasImported === true" type="primary" class="primary-button"  @click="handleOK">{{$t('components.appdatauploadview.confirm')}}</el-button>
         </el-row>
     </div>
 </template>
@@ -295,7 +295,7 @@ export default class AppDataUploadView extends Vue {
      * @memberof AppDataUploadView
      */
     public downloadTemp(){
-        this.importExcel(this.viewparams.appDeLogicName+this.$t('components.appDataUploadView.datatemplate'),[]);
+        this.importExcel(this.viewparams.appDeLogicName+this.$t('components.appdatauploadview.datatemplate'),[]);
     }
 
     /**

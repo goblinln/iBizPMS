@@ -241,7 +241,6 @@ public class TodoResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TodoRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的待办", tags = {"待办" } ,notes = "获取我的待办")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmytodo")
@@ -255,7 +254,6 @@ public class TodoResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TodoRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的待办", tags = {"待办" } ,notes = "获取我的待办")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmytodopc")
@@ -269,7 +267,6 @@ public class TodoResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TodoRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取MyUpcoming", tags = {"待办" } ,notes = "获取MyUpcoming")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmyupcoming")
@@ -283,7 +280,6 @@ public class TodoResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/{action}")

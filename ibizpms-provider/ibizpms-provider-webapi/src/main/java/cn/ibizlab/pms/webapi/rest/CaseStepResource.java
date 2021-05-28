@@ -142,7 +142,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用例步骤" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchdefault")
@@ -155,7 +154,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT1", tags = {"用例步骤" } ,notes = "获取DEFAULT1")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchdefault1")
@@ -168,7 +166,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Mob", tags = {"用例步骤" } ,notes = "获取Mob")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchmob")
@@ -181,7 +178,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本", tags = {"用例步骤" } ,notes = "获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchversion")
@@ -194,7 +190,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本1", tags = {"用例步骤" } ,notes = "获取版本1")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchversions")
@@ -207,7 +202,6 @@ public class CaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/casesteps/{casestep_id}/{action}")

@@ -811,7 +811,7 @@ export class MainViewBase extends ViewBase {
                         .createBatch(JSON.parse(JSON.stringify(this.context)), requestParam, true)
                         .then((response: any) => {
                             if (!response || response.status !== 200) {
-                                this.$throw(this.$t('app.warn.batchError'),'newdata');
+                                this.$throw(this.$t('app.warn.batcherror'),'newdata');
                                 return;
                             }
                             if (!xData || !(xData.refresh instanceof Function)) {
@@ -821,7 +821,7 @@ export class MainViewBase extends ViewBase {
                         });
                 });
             } else if (viewNewAppUIlogic.batchAddOnly) {
-                LogUtil.warn(this.$t('app.warn.unbatchAdd'));
+                LogUtil.warn(this.$t('app.warn.unbatchadd'));
             } else if (viewNewAppUIlogic.getNewDataPSAppView()) {
                 const _this: any = this;
                 const newviewRef: IPSAppUILogicRefView | null = viewNewAppUIlogic.getNewDataPSAppView();

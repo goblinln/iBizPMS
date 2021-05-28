@@ -242,16 +242,6 @@ public class ReleaseResource {
     }
 
 
-    @ApiOperation(value = "保存发布", tags = {"发布" },  notes = "保存发布")
-	@RequestMapping(method = RequestMethod.POST, value = "/releases/save")
-    public ResponseEntity<ReleaseDTO> save(@RequestBody ReleaseDTO releasedto) {
-        Release domain = releaseMapping.toDomain(releasedto);
-        releaseService.save(domain);
-        ReleaseDTO dto = releaseMapping.toDto(domain);
-        Map<String,Integer> opprivs = releaseRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
 
     @ApiOperation(value = "批量保存发布", tags = {"发布" },  notes = "批量保存发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/releases/savebatch")
@@ -313,7 +303,6 @@ public class ReleaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ReleaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联发布", tags = {"发布" } ,notes = "获取测试报告关联发布")
     @RequestMapping(method= RequestMethod.POST , value="/releases/fetchreportrelease")
@@ -326,7 +315,6 @@ public class ReleaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/releases/{release_id}/{action}")
@@ -500,14 +488,6 @@ public class ReleaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 
-    @ApiOperation(value = "根据产品保存发布", tags = {"发布" },  notes = "根据产品保存发布")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/save")
-    public ResponseEntity<ReleaseDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody ReleaseDTO releasedto) {
-        Release domain = releaseMapping.toDomain(releasedto);
-        domain.setProduct(product_id);
-        releaseService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(releaseMapping.toDto(domain));
-    }
 
     @ApiOperation(value = "根据产品批量保存发布", tags = {"发布" },  notes = "根据产品批量保存发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/savebatch")

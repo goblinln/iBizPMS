@@ -105,7 +105,7 @@ export default class AppOrgSector extends Vue {
             this.$throw(response,'orgSelect');
           }
       }).catch((error:any) =>{
-          this.$throw((this.$t('components.appOrgSector.errorSwitch') as string),'orgSelect');
+          this.$throw((this.$t('components.apporgsector.errorswitch') as string),'orgSelect');
       })
     }else{
       let beforeActiveOrgData:any = this.selectedOrgArray.find((_item: any) => {

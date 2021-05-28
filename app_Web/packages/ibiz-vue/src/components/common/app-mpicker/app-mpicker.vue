@@ -202,9 +202,9 @@ export default class AppMpicker extends Vue {
             Object.assign(_param, { srfreferdata: this.data });
         }
         // 错误信息国际化
-        let error: string = (this.$t('components.appMpicker.error') as any);
-        let miss: string = (this.$t('components.appMpicker.miss') as any);
-        let requestException: string = (this.$t('components.appMpicker.requestException') as any);
+        let error: string = (this.$t('components.appmpicker.error') as any);
+        let miss: string = (this.$t('components.appmpicker.miss') as any);
+        let requestException: string = (this.$t('components.appmpicker.requestexception') as any);
         if(!this.service){
             this.$throw(miss+'service','onSearch');
         } else if(!this.acParams.serviceName) {

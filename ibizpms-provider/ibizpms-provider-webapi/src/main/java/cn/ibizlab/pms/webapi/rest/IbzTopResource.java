@@ -145,7 +145,6 @@ public class IbzTopResource {
                 .body(list);
 	}
 
-
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibztops/{ibztop_id}/{action}")
     public ResponseEntity<IbzTopDTO> dynamicCall(@PathVariable("ibztop_id") String ibztop_id , @PathVariable("action") String action , @RequestBody IbzTopDTO ibztopdto) {

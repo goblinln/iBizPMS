@@ -131,17 +131,6 @@ public class ProjectTeamResource {
     }
 
 
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "保存项目团队", tags = {"项目团队" },  notes = "保存项目团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/projectteams/save")
-    public ResponseEntity<ProjectTeamDTO> save(@RequestBody ProjectTeamDTO projectteamdto) {
-        ProjectTeam domain = projectteamMapping.toDomain(projectteamdto);
-        projectteamService.save(domain);
-        ProjectTeamDTO dto = projectteamMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectteamRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
 
     @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量保存项目团队", tags = {"项目团队" },  notes = "批量保存项目团队")
@@ -163,7 +152,6 @@ public class ProjectTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目成员（项目经理）", tags = {"项目团队" } ,notes = "获取项目成员（项目经理）")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchprojectteampm")
@@ -176,7 +164,6 @@ public class ProjectTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取行编辑查询", tags = {"项目团队" } ,notes = "获取行编辑查询")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchroweditdefault")
@@ -189,7 +176,6 @@ public class ProjectTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指定团队", tags = {"项目团队" } ,notes = "获取指定团队")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchspecifyteam")
@@ -202,7 +188,6 @@ public class ProjectTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据查询", tags = {"项目团队" } ,notes = "获取数据查询")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchtaskcntestimateconsumedleft")
@@ -215,7 +200,6 @@ public class ProjectTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/projectteams/{projectteam_id}/{action}")
@@ -294,15 +278,6 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectteamdto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
-    @ApiOperation(value = "根据项目保存项目团队", tags = {"项目团队" },  notes = "根据项目保存项目团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams/save")
-    public ResponseEntity<ProjectTeamDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamDTO projectteamdto) {
-        ProjectTeam domain = projectteamMapping.toDomain(projectteamdto);
-        domain.setRoot(project_id);
-        projectteamService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(domain));
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目批量保存项目团队", tags = {"项目团队" },  notes = "根据项目批量保存项目团队")

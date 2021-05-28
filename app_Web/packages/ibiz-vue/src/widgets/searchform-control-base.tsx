@@ -174,7 +174,7 @@ export class SearchFormControlBase extends EditFormControlBase {
      */
     public loadDraft(opt: any = {},mode?:string): void {
         if(!this.loaddraftAction){
-            this.$throw('视图' + (this.$t('app.searchForm.notConfig.loaddraftAction') as string),'loadDraft');
+            this.$throw('视图' + (this.$t('app.searchform.notconfig.loaddraftaction') as string),'loadDraft');
             return;
         }
         const arg: any = { ...opt } ;

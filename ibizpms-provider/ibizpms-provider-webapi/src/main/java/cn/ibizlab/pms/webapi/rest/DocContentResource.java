@@ -142,7 +142,6 @@ public class DocContentResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocContentRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"文档内容" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doccontents/fetchdefault")
@@ -155,7 +154,6 @@ public class DocContentResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/doccontents/{doccontent_id}/{action}")

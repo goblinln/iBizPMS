@@ -144,7 +144,6 @@ public class SysUpdateFeaturesResource {
                 .body(list);
 	}
 
-
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/sysupdatefeatures/{sysupdatefeatures_id}/{action}")
     public ResponseEntity<SysUpdateFeaturesDTO> dynamicCall(@PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id , @PathVariable("action") String action , @RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {

@@ -209,7 +209,6 @@ public class DocLibModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取所有文档库模块", tags = {"文档库分类" } ,notes = "获取所有文档库模块")
     @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchalldoclibmodule")
@@ -222,7 +221,6 @@ public class DocLibModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取子模块目录", tags = {"文档库分类" } ,notes = "获取子模块目录")
     @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchchildmodulebyparent")
@@ -235,7 +233,6 @@ public class DocLibModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文档库分类子模块", tags = {"文档库分类" } ,notes = "获取文档库分类子模块")
     @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchchildmodulebyrealparent")
@@ -248,7 +245,6 @@ public class DocLibModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"文档库分类" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchdefault")
@@ -261,7 +257,6 @@ public class DocLibModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"文档库分类" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchmyfavourites")
@@ -274,7 +269,6 @@ public class DocLibModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取父集合", tags = {"文档库分类" } ,notes = "获取父集合")
     @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchparentmodule")
@@ -287,7 +281,6 @@ public class DocLibModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取所有根模块目录", tags = {"文档库分类" } ,notes = "获取所有根模块目录")
     @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchrootmodulemulu")
@@ -300,7 +293,6 @@ public class DocLibModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块目录", tags = {"文档库分类" } ,notes = "获取根模块目录")
     @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchrootmodulemulubyroot")
@@ -313,7 +305,6 @@ public class DocLibModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块目录动态", tags = {"文档库分类" } ,notes = "获取根模块目录动态")
     @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchrootmodulemulubysrfparentkey")
@@ -326,7 +317,6 @@ public class DocLibModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/{doclibmodule_id}/{action}")

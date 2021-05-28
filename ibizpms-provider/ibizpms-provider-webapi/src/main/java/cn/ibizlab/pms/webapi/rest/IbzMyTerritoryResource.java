@@ -171,7 +171,6 @@ public class IbzMyTerritoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我的工作", tags = {"我的地盘" } ,notes = "获取我的工作")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchmywork")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchmywork(@RequestBody IbzMyTerritorySearchContext context) {
@@ -183,7 +182,6 @@ public class IbzMyTerritoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我的工作", tags = {"我的地盘" } ,notes = "获取我的工作")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchmyworkmob")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchmyworkmob(@RequestBody IbzMyTerritorySearchContext context) {
@@ -195,7 +193,6 @@ public class IbzMyTerritoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我的工作（项目经理）", tags = {"我的地盘" } ,notes = "获取我的工作（项目经理）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchmyworkpm")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchmyworkpm(@RequestBody IbzMyTerritorySearchContext context) {
@@ -207,7 +204,6 @@ public class IbzMyTerritoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取个人信息-个人贡献", tags = {"我的地盘" } ,notes = "获取个人信息-个人贡献")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchpersoninfo")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchpersoninfo(@RequestBody IbzMyTerritorySearchContext context) {
@@ -219,7 +215,6 @@ public class IbzMyTerritoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取欢迎", tags = {"我的地盘" } ,notes = "获取欢迎")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchwelcome")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchwelcome(@RequestBody IbzMyTerritorySearchContext context) {
@@ -231,7 +226,6 @@ public class IbzMyTerritoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzmyterritories/{ibzmyterritory_id}/{action}")

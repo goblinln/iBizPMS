@@ -213,7 +213,6 @@ public class UserYearWorkStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取月完成任务数及累计工时和解决Bug数", tags = {"用户年度工作内容统计" } ,notes = "获取月完成任务数及累计工时和解决Bug数")
     @RequestMapping(method= RequestMethod.POST , value="/useryearworkstats/fetchmonthfinishtaskandbug")
@@ -227,7 +226,6 @@ public class UserYearWorkStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取月创建Bug数和创建用例数", tags = {"用户年度工作内容统计" } ,notes = "获取月创建Bug数和创建用例数")
     @RequestMapping(method= RequestMethod.POST , value="/useryearworkstats/fetchmonthopenedbugandcase")
@@ -241,7 +239,6 @@ public class UserYearWorkStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取月创建需求数", tags = {"用户年度工作内容统计" } ,notes = "获取月创建需求数")
     @RequestMapping(method= RequestMethod.POST , value="/useryearworkstats/fetchmonthopenedstory")
@@ -255,7 +252,6 @@ public class UserYearWorkStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/useryearworkstats/{useryearworkstats_id}/{action}")

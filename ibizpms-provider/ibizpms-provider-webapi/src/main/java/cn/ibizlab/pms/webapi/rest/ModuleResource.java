@@ -154,7 +154,6 @@ public class ModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"模块" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchbugmodulecodelist")
@@ -168,7 +167,6 @@ public class ModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"模块" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchdefault")
@@ -182,7 +180,6 @@ public class ModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文档目录", tags = {"模块" } ,notes = "获取文档目录")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchdocmodule")
@@ -196,7 +193,6 @@ public class ModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品线", tags = {"模块" } ,notes = "获取产品线")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchline")
@@ -210,7 +206,6 @@ public class ModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取需求模块", tags = {"模块" } ,notes = "获取需求模块")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchstorymodule")
@@ -224,7 +219,6 @@ public class ModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务模块", tags = {"模块" } ,notes = "获取任务模块")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchtaskmodule")
@@ -238,7 +232,6 @@ public class ModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/modules/{module_id}/{action}")

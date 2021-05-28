@@ -168,7 +168,6 @@ public class IbizproProjectMonthlyResource {
                 .body(list);
 	}
 
-
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/{ibizproprojectmonthly_id}/{action}")
     public ResponseEntity<IbizproProjectMonthlyDTO> dynamicCall(@PathVariable("ibizproprojectmonthly_id") String ibizproprojectmonthly_id , @PathVariable("action") String action , @RequestBody IbizproProjectMonthlyDTO ibizproprojectmonthlydto) {

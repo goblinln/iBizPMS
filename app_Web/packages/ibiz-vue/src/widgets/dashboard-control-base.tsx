@@ -253,14 +253,14 @@ export class DashboardControlBase extends MainControlBase {
                         this.dashboardType = 'custom';
                         this.$forceUpdate();
                     }else{
-                      throw new Error(this.$t('app.dashBoard.dataError') as string);
+                      throw new Error(this.$t('app.dashboard.dataerror') as string);
                     }
                 }else{
-                  throw new Error(this.$t('app.dashBoard.serviceError') as string);
+                  throw new Error(this.$t('app.dashboard.serviceerror') as string);
                 }
             }
         } catch (error) {
-            LogUtil.warn(this.$t('app.dashBoard.loadError')+error);
+            LogUtil.warn(this.$t('app.dashboard.loaderror')+error);
             this.initStaticMountedMap();
             this.dashboardType = "default";
         }
@@ -274,7 +274,7 @@ export class DashboardControlBase extends MainControlBase {
     public handleClick(){
         const view:any ={
             viewname: 'app-portal-design',
-            title: (this.$t('app.dashBoard.handleClick.title')),
+            title: (this.$t('app.dashboard.handleclick.title')),
             width: 1600,
             placement: 'DRAWER_RIGHT'
         }

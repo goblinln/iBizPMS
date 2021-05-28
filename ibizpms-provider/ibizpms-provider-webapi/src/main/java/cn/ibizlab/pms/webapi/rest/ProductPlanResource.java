@@ -393,7 +393,6 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取CurProductPlan", tags = {"产品计划" } ,notes = "获取CurProductPlan")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchcurproductplan")
@@ -406,7 +405,6 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品计划" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchcurproductplanstory")
@@ -419,7 +417,6 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品计划" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchdefault")
@@ -432,7 +429,6 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取默认查询", tags = {"产品计划" } ,notes = "获取默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchdefaultparent")
@@ -445,7 +441,6 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取计划（代码表）", tags = {"产品计划" } ,notes = "获取计划（代码表）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchplancodelist")
@@ -458,7 +453,6 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目计划任务（项目管理-项目计划）", tags = {"产品计划" } ,notes = "获取项目计划任务（项目管理-项目计划）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchplantasks")
@@ -471,7 +465,6 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品默认查询", tags = {"产品计划" } ,notes = "获取产品默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchproductquery")
@@ -484,7 +477,6 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目立项", tags = {"产品计划" } ,notes = "获取项目立项")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchprojectapp")
@@ -497,7 +489,6 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目计划列表", tags = {"产品计划" } ,notes = "获取项目计划列表")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchprojectplan")
@@ -510,7 +501,6 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取跟计划", tags = {"产品计划" } ,notes = "获取跟计划")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchrootplan")
@@ -523,7 +513,6 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务计划", tags = {"产品计划" } ,notes = "获取任务计划")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchtaskplan")
@@ -536,7 +525,6 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/{action}")

@@ -279,13 +279,13 @@ export default class DropDownListDynamic extends Vue {
                     this.items.push(item);
                 });
                 if(!matching){
-                    LogUtil.warn(`${ this.tag }${this.$t('components.appCheckBox.warn')}`);
+                    LogUtil.warn(`${ this.tag }${this.$t('app.commonwords.codelistwarn')}`);
                 }
             }else{
                 this.items = items;
             }
         }catch(error){
-            LogUtil.warn(this.$t('components.appCheckBox.warn'));
+            LogUtil.warn(this.$t('app.commonwords.codelistwarn'));
         }
     }
 }

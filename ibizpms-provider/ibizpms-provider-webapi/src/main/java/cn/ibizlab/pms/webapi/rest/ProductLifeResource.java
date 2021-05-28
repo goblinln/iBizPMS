@@ -144,7 +144,6 @@ public class ProductLifeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取GetRoadmap", tags = {"产品生命周期" } ,notes = "获取GetRoadmap")
     @RequestMapping(method= RequestMethod.POST , value="/productlives/fetchgetroadmap")
@@ -158,7 +157,6 @@ public class ProductLifeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取产品路线", tags = {"产品生命周期" } ,notes = "获取获取产品路线")
     @RequestMapping(method= RequestMethod.POST , value="/productlives/fetchgetroadmaps")
@@ -172,7 +170,6 @@ public class ProductLifeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取RoadMapYear", tags = {"产品生命周期" } ,notes = "获取RoadMapYear")
     @RequestMapping(method= RequestMethod.POST , value="/productlives/fetchroadmapyear")
@@ -186,7 +183,6 @@ public class ProductLifeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/productlives/{productlife_id}/{action}")

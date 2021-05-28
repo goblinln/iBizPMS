@@ -1,77 +1,73 @@
 function getLocaleResourceBase(){
     const data:any = {
         "404": {
-            errorText1: '抱歉，您访问的页面不存在！',
-            errorText2: '您要找的页面不存在，请返回',
-            indexPage: '首页',
+            errortext1: '抱歉，您访问的页面不存在！',
+            errortext2: '您要找的页面不存在，请返回',
+            indexpage: '首页',
             continue: '继续浏览',
         },
         "500": {
-            errorText1: '抱歉，服务器出错了！',
-            errorText2: '服务器出错了，请返回 ',
-            indexPage: '首页',
+            errortext1: '抱歉，服务器出错了！',
+            errortext2: '服务器出错了，请返回 ',
+            indexpage: '首页',
             continue: '继续浏览',
         },
-        appOrgSector:{
-          successSwitch:'切换成功',
-          errorSwitch:'切换失败',
+        apporgsector:{
+          successswitch:'切换成功',
+          errorswitch:'切换失败',
         },
-        appAutocomplete: {
+        appautocomplete: {
             error: '错误',
             miss: '缺少参数',
-            requestException: '请求异常！',
+            requestexception: '请求异常！',
         },
-        appBuild: {
+        appbuild: {
           custom: '定制',
         },
-        appCheckBox: {
-            notExist: '代码表不存在',
-            warn: '代码表值类型和属性类型不匹配，自动强制转换异常，请修正代码表值类型和属性类型匹配'
-        },
-        appColumnLink: {
+        appcolumnlink: {
           error: '错误',
-          valueItemException:"值项异常",
-          rowDataException:"表格行数据异常",
+          valueitemexception:"值项异常",
+          rowdataexception:"表格行数据异常",
         },
-        appColumnRender: {
+        appcolumnrender: {
           select: '请选择...',
           unsupported: '不支持',
         },
         microcom: {
-          filterWarn: "filter参数配置错误, 请检查!"
+          filterwarn: "filter参数配置错误, 请检查!"
         },
-        appDashboardDesign: {
+        appdashboarddesign: {
           global: '全局',
         },
-        appDataUploadView: {
+        appdatauploadview: {
           "selectfile":"单击此区域进行上传",
           "uploadserver":"上传数据",
           "datatemplate":"导入数据模板",
-          "dataTemplateMessage":"下载导入模版，并按要求填写：",
+          "datatemplatemessage":"下载导入模版，并按要求填写：",
           "read":"读取成功",
           "completed":"导入完成",
           "confirm":"确认",
           "cancel":"取消",
           "importfailed":"导入失败"
         },
-        appDebugActions:{
+        appdebugactions:{
           button: '开启配置模式',
         },
-        appExportExcel: {
+        appexportexcel: {
           total: '全部',
           max: '最大',
           row: '行',
-          currentPage: '当前页',
+          currentpage: '当前页',
           desc:'请输入起始页',
           desc1:'请输入有效的起始页',
         },
-        appFileUpload: {
+        appfileupload: {
           preview: '查看',
-          uploadText: '将文件拖到此处，或<em>点击上传</em>',
-          uploadError: '上传失败',
-          fileTypeErrorTitle: '文件类型错误',
-          fileTypeErrorInfo: '请选择图片类型的文件，如JPEG，GIF，PNG，BMP',
-          downloadError: "图片下载失败！",
+          uploadtext: '将文件拖到此处，或<em>点击上传</em>',
+          uploaderror: '上传失败',
+          filetypeerrortitle: '文件类型错误',
+          filetypeerrorinfo: '请选择图片类型的文件，如JPEG，GIF，PNG，BMP',
+          downloaderror: "图片下载失败！",
           caption: "上传",
         },
         camera: {
@@ -91,19 +87,19 @@ function getLocaleResourceBase(){
         scren: {
           all: "应用全屏"
         },
-        appFormDRUIPart: {
-          blockUITipInfo: '请先保存主数据',
-          viewLoadComp:'多数据视图加载完成，触发后续表单项更新',
+        appformdruipart: {
+          blockuitipinfo: '请先保存主数据',
+          viewloadcomp:'多数据视图加载完成，触发后续表单项更新',
           save:'关系数据保存完成',
           change:'关系数据值变化',
           change1:'视图数据变化',
           loadComp:'视图加载完成',
         },
-        appHeaderMenus: {
+        appheadermenus: {
           ibizlab:{
               title: 'iBiz开放平台',
           },
-          publishProject:{
+          publishproject:{
               title: '项目文件',
           },
           ibizstudio:{
@@ -113,10 +109,10 @@ function getLocaleResourceBase(){
               title: 'iBiz论坛',
           },
         },
-        appMpicker: {
+        appmpicker: {
           error: '错误',
           miss: '缺少参数',
-          requestException: '请求异常！',
+          requestexception: '请求异常！',
         },
         appPicker: {
           error: '错误',

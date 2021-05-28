@@ -211,7 +211,6 @@ public class IbzMonthlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我的月报", tags = {"月报" } ,notes = "获取我的月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchmymonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchmymonthly(@RequestBody IbzMonthlySearchContext context) {
@@ -223,7 +222,6 @@ public class IbzMonthlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我的月报（移动端）", tags = {"月报" } ,notes = "获取我的月报（移动端）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchmymonthlymob")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchmymonthlymob(@RequestBody IbzMonthlySearchContext context) {
@@ -235,7 +233,6 @@ public class IbzMonthlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我收到的月报", tags = {"月报" } ,notes = "获取我收到的月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchmyreceivedmonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchmyreceivedmonthly(@RequestBody IbzMonthlySearchContext context) {
@@ -247,7 +244,6 @@ public class IbzMonthlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我提交的月报", tags = {"月报" } ,notes = "获取我提交的月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchmysubmitmonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchmysubmitmonthly(@RequestBody IbzMonthlySearchContext context) {
@@ -259,7 +255,6 @@ public class IbzMonthlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取产品月报", tags = {"月报" } ,notes = "获取产品月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchproductmonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchproductmonthly(@RequestBody IbzMonthlySearchContext context) {
@@ -271,7 +266,6 @@ public class IbzMonthlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取项目月报", tags = {"月报" } ,notes = "获取项目月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchprojectmonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchprojectmonthly(@RequestBody IbzMonthlySearchContext context) {
@@ -283,7 +277,6 @@ public class IbzMonthlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/{action}")

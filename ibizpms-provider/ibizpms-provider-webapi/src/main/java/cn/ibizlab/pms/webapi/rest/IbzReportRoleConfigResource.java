@@ -145,7 +145,6 @@ public class IbzReportRoleConfigResource {
                 .body(list);
 	}
 
-
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzreportroleconfigs/{ibzreportroleconfig_id}/{action}")
     public ResponseEntity<IbzReportRoleConfigDTO> dynamicCall(@PathVariable("ibzreportroleconfig_id") String ibzreportroleconfig_id , @PathVariable("action") String action , @RequestBody IbzReportRoleConfigDTO ibzreportroleconfigdto) {

@@ -137,7 +137,7 @@ export class CalendarControlBase extends MDControlBase{
      */
     public customButtons: any = {
         gotoDate: {
-          text: this.$t('app.calendar.gotoDate'),
+          text: this.$t('app.calendar.gotodate'),
           click: this.openDateSelect
         }
     };
@@ -241,7 +241,7 @@ export class CalendarControlBase extends MDControlBase{
         this.buttonText.week = this.$t('app.calendar.week'),
         this.buttonText.day = this.$t('app.calendar.day'),
         this.buttonText.list = this.$t('app.calendar.list')
-        this.customButtons.gotoDate.text = this.$t('app.calendar.gotoDate')
+        this.customButtons.gotoDate.text = this.$t('app.calendar.gotodate')
     }
 
     /**

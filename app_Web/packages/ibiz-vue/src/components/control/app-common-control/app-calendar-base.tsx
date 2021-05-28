@@ -142,7 +142,7 @@ export class AppCalendarBase extends CalendarControlBase{
             <modal 
                 v-model={this.modalVisible}
                 width="250px"
-                title={this.$t('app.calendar.dateSelectModalTitle')}
+                title={this.$t('app.calendar.dateselectmodaltitle')}
                 class-name="date-select-model"
                 on-on-ok={() => this.gotoDate()} >
                     <el-date-picker style="width: 200px" v-model={this.selectedGotoDate} type="date"></el-date-picker>

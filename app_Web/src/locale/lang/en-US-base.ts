@@ -163,7 +163,8 @@ function getAppLocale(){
                 getappiderror: "Failed to get web application appid",
                 getdinginfoerror: "Failed to retrieve user information",
                 getiderror: "Failed to get the enterprise ID",
-                noassign: "No application functionality specified"
+                noassign: "No application functionality specified",
+                codelistwarn: "Code table value type and property type do not match, automatic cast exception, please correct code table value type and property type match"
             },
             local:{
                 new: "New",
@@ -239,8 +240,8 @@ function getAppLocale(){
             week: "week",
             day: "day",
             list: "list",
-            dateSelectModalTitle: "select the time you wanted",
-            gotoDate: "goto",
+            dateselectmodaltitle: "select the time you wanted",
+            gotodate: "goto",
             from: "From",
             to: "To",
             },
@@ -305,7 +306,7 @@ function getAppLocale(){
                 'main': {
                 },
             },
-            formpage:{
+            form:{
                 error: "Error",
                 desc1: "Operation failed, failed to find current form item",
                 desc2: "Can't continue",
@@ -329,35 +330,35 @@ function getAppLocale(){
                 updateerror: "Form item update failed",  
                 valueverif:"Please input ",       
             },
-            gridBar: {
+            gridexpbar: {
                 title: "Table navigation bar",
             },
-            multiEditView: {
-                notConfig: {
-                    fetchAction: "View multi-edit view panel fetchAction parameter is not configured",
-                    loaddraftAction: "View multi-edit view panel loaddraftAction parameter is not configured",
+            multieditview: {
+                notconfig: {
+                    fetchaction: "View multi-edit view panel fetchAction parameter is not configured",
+                    loaddraftaction: "View multi-edit view panel loaddraftAction parameter is not configured",
                 },
             },
-            dataViewExpBar: {
+            dataviewexpbar: {
                 title: "Card view navigation bar",
             },
             kanban: {
-                notConfig: {
-                    fetchAction: "View list fetchAction parameter is not configured",
-                    removeAction: "View table removeAction parameter is not configured",
+                notconfig: {
+                    fetchaction: "View list fetchAction parameter is not configured",
+                    removeaction: "View table removeAction parameter is not configured",
                 },
                 delete1: "Confirm to delete ",
                 delete2: "the delete operation will be unrecoverable!",
             },
-            dashBoard: {
-                handleClick: {
+            dashboard: {
+                handleclick: {
                     title: "Panel design",
                 },
-                dataError: "Data Exception",
-                serviceError: "Server exception",
-                loadError: "Error loading panel model"
+                dataerror: "Data Exception",
+                serviceerror: "Server exception",
+                loaderror: "Error loading panel model"
             },
-            dataView: {
+            dataview: {
                 sum: "total",
                 data: "data",
                 useless: "Packet data invalid"
@@ -367,10 +368,10 @@ function getAppLocale(){
                 quarter: "Quarter",   
                 year: "Year",
             },
-            searchForm: {
+            searchform: {
                 notConfig: {
-                    loadAction: "View search form loadAction parameter is not configured",
-                    loaddraftAction: "View search form loaddraftAction parameter is not configured",
+                    loadaction: "View search form loadAction parameter is not configured",
+                    loaddraftaction: "View search form loaddraftAction parameter is not configured",
                 },
                 custom: "Store custom queries",
                 title: "Name",
@@ -385,19 +386,19 @@ function getAppLocale(){
                 success: "Submitted data successfully",
                 error: "Mark the backlog task as read failed"
             },
-            viewLayoutPanel: {
-                appLogoutView: {
+            viewlayoutpanel: {
+                applogoutview: {
                     prompt1: "Dear customer, you have successfully exited the system, after",
                     prompt2: "seconds, we will jump to the",
-                    logingPage: "login page",
+                    logingpage: "login page",
                 },
-                appWfstepTraceView: {
+                appwfsteptraceview: {
                     title: "Application process processing record view",
                 },
-                appWfstepDataView: {
+                appwfstepdataview: {
                     title: "Application process tracking view",
                 },
-                appLoginView: {
+                apploginview: {
                     username: "Username",
                     password: "Password",
                     login: "Login",
@@ -425,8 +426,8 @@ function getAppLocale(){
             },
             warn: {
               nton: "Batch add need to add N:N relation",
-              batchError: "The batch operation failed" ,
-              unbatchAdd: "Only batch additions are supported unimplemented",
+              batcherror: "The batch operation failed" ,
+              unbatchadd: "Only batch additions are supported unimplemented",
               geterror: "Data acquisition exception",
               load: "Loading data",
               nofind: "No relevant data could be found",
@@ -434,7 +435,7 @@ function getAppLocale(){
               unnewdata: "There is no newdata",
               unremove: "Don't remove",
               unrefresh: "There is no refresh",
-              unOpenView: "No open view"
+              unopenview: "No open view"
             },
         },
         entities: {

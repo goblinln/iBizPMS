@@ -497,13 +497,13 @@ export class AppGridBase extends GridControlBase {
         // 表格列筛选
         let columnPopTip;
         // 分页显示文字
-        let pageText = <span>{this.$t('app.dataView.sum')}&nbsp;{this.totalRecord}&nbsp;{this.$t('app.dataView.data')}</span>
+        let pageText = <span>{this.$t('app.dataview.sum')}&nbsp;{this.totalRecord}&nbsp;{this.$t('app.dataview.data')}</span>
         if (this.viewStyle == 'STYLE2') {
             pageText = <span>
                 &nbsp; {this.$t('app.grid.show')}&nbsp;
                 {this.items.length > 0 ? 1 : (this.curPage - 1) * this.limit + 1}&nbsp;-&nbsp;
                 {this.totalRecord > this.curPage * this.limit ? this.curPage * this.limit : this.totalRecord}&nbsp;
-                {this.$t('app.dataView.data')}，{this.$t('app.dataView.sum')}&nbsp;{this.totalRecord}&nbsp;{this.$t('app.dataView.data')}
+                {this.$t('app.dataview.data')}，{this.$t('app.dataview.sum')}&nbsp;{this.totalRecord}&nbsp;{this.$t('app.dataview.data')}
             </span>
             columnPopTip = <poptip transfer placement='top-start' class='page-column'>
                 <i-button icon='md-menu'>{this.$t('app.grid.choicecolumns')}</i-button>
@@ -525,7 +525,7 @@ export class AppGridBase extends GridControlBase {
                 </div>
             </poptip>
         } else {
-            pageText = <span>{this.$t('app.dataView.sum')}&nbsp;{this.totalRecord}&nbsp;{this.$t('app.dataView.data')}</span>
+            pageText = <span>{this.$t('app.dataview.sum')}&nbsp;{this.totalRecord}&nbsp;{this.$t('app.dataview.data')}</span>
         }
         return this.items?.length > 0 ? (
             <row class='grid-pagination'>

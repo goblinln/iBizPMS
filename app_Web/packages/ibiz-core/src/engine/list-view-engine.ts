@@ -92,9 +92,9 @@ export class ListViewEngine extends MDViewEngine {
 
 
         if (selectedData.length < 5) {
-            dataInfo = dataInfo + this.view.$t('app.dataView.sum') + selectedData.length + this.view.$t('app.dataView.data');
+            dataInfo = dataInfo + this.view.$t('app.dataview.sum') + selectedData.length + this.view.$t('app.dataview.data');
         } else {
-            dataInfo = dataInfo + '...' + this.view.$t('app.dataView.sum') + selectedData.length + this.view.$t('app.dataView.data');
+            dataInfo = dataInfo + '...' + this.view.$t('app.dataview.sum') + selectedData.length + this.view.$t('app.dataview.data');
         }
 
         dataInfo = dataInfo.replace(/[null]/g, '').replace(/[undefined]/g, '').replace(/[ ]/g, '');

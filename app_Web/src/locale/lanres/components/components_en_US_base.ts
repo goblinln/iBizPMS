@@ -1,76 +1,72 @@
 function getLocaleResourceBase(){
     const data:any = {
         "404": {
-            errorText1: 'sorry，the page you visited is not exist！',
-            errorText2: 'The page you visited is not exist，please return to',
-            indexPage: 'home page',
+            errortext1: 'sorry，the page you visited is not exist！',
+            errortext2: 'The page you visited is not exist，please return to',
+            indexpage: 'home page',
             continue: 'to continue browsing',
         },
         "500": {
-            errorText1: "sorry，there's something wrong with the server！",
-            errorText2: "There's something wrong with the server，please return to",
-            indexPage: 'home page',
+            errortext1: "sorry，there's something wrong with the server！",
+            errortext2: "There's something wrong with the server，please return to",
+            indexpage: 'home page',
             continue: 'to continue browsing',
         },
-        appOrgSector:{
-          successSwitch:'The switch was successful',
-          errorSwitch:'The switchover failed',
+        apporgsector:{
+          successswitch:'The switch was successful',
+          errorswitch:'The switchover failed',
         },
-        appAutocomplete: {
+        appautocomplete: {
             error: 'Error',
             miss: 'Missing parameter ',
-            requestException: 'Request Exception！',
+            requestexception: 'Request Exception！',
         },
-        appBuild: {
+        appbuild: {
             custom: 'Customize',
         },
-        appCheckBox: {
-            notExist: 'codelist is not existed',
-            warn: 'Code table value type and property type do not match, automatic cast exception, please correct code table value type and property type match'
-        },
-        appColumnLink: {
+        appcolumnlink: {
           error: 'error',
-          valueItemException:"value item exception",
-          rowDataException:"table row data exception",
+          valueitemexception:"value item exception",
+          rowdataexception:"table row data exception",
         },
-        appColumnRender: {
+        appcolumnrender: {
           select: 'please select...',
           unsupported: 'unsupported',
         },
         microcom: {
           filterWarn: "Filter parameter configuration error, please check!"
         },
-        appDashboardDesign: {
+        appdashboarddesign: {
           global: 'Global',
         },
-        appDataUploadView: {
+        appdatauploadview: {
           "selectfile":"Click this area to upload",
           "uploadserver":"Upload Server",
           "datatemplate":"Import Data Template",
-          "dataTemplateMessage":"Download the Import Data Template, According to the specification required to fill in",
+          "datatemplatemessage":"Download the Import Data Template, According to the specification required to fill in",
           "read":" read Successful",
           "completed":"Import Completed",
           "confirm":"OK",
           "cancel":"Cancel",
           "importfailed":"Import Failed"
         },
-        appDebugActions: {
+        appdebugactions: {
           button: 'Open Configuration Mode',
         },
-        appExportExcel: {
+        appexportexcel: {
           total: 'All',
           max: 'At Most',
           row: 'Lines',
-          currentPage: 'Current Page',
+          currentpage: 'Current Page',
           desc:'Please enter the start page',
           desc1:'Please enter a valid start page',
         },
-        appFileUpload: {
+        appfileupload: {
           preview: 'preview',
-          uploadText: 'Drag files here，or <em>Click</em> to upload',
-          fileTypeErrorTitle: 'File type incorrect',
-          fileTypeErrorInfo: 'Please select files with picture types，such as JPEG，GIF，PNG，BMP',
-          downloadError: "Image download failed!",
+          uploadtext: 'Drag files here，or <em>Click</em> to upload',
+          filetypeerrortitle: 'File type incorrect',
+          filetypeerrorinfo: 'Please select files with picture types，such as JPEG，GIF，PNG，BMP',
+          downloaderror: "Image download failed!",
           caption: "upload",
         },
         camera: {
@@ -90,19 +86,19 @@ function getLocaleResourceBase(){
         scren: {
           all: "Application of full screen"
         },
-        appFormDRUIPart: {
-          blockUITipInfo: 'Please save the major data first',
-          viewLoadComp:'After the multi data view is loaded, the subsequent form item update will be triggered',
+        appformdruipart: {
+          blockuitipinfo: 'Please save the major data first',
+          viewloadcomp:'After the multi data view is loaded, the subsequent form item update will be triggered',
           save:'Relationship data save complete',
           change:'Relationship data value change',
           change1:'View data changes',
-          loadComp:'View loading complete',
+          loadcomp:'View loading complete',
         },
-        appHeaderMenus: {
+        appheadermenus: {
           ibizlab:{
               title: 'iBizLab',
           },
-          publishProject:{
+          publishproject:{
               title: 'Publish Project',
           },
           ibizstudio:{
@@ -112,10 +108,10 @@ function getLocaleResourceBase(){
               title: 'iBizBBS',
           },
         },
-        appMpicker: {
+        appmpicker: {
           error: 'Error',
           miss: 'Missing parameter ',
-          requestException: 'Request Exception！',
+          requestexception: 'Request Exception！',
         },
         appPicker: {
           error: 'Error',

@@ -311,7 +311,7 @@ export class EditFormControlBase extends FormControlBase {
     public loadDraft(opt: any = {}): void {
         let callBack: any;
         if (!this.loaddraftAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.loaddraftaction') as string), 'loadDraft');
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.form.notconfig.loaddraftaction') as string), 'loadDraft');
             return;
         }
         this.createDefault();
@@ -383,7 +383,7 @@ export class EditFormControlBase extends FormControlBase {
         const action: any = Object.is(data.srfuf, '1') ? this.updateAction : this.createAction;
         if (!action) {
             let actionName: any = Object.is(data.srfuf, '1') ? "updateAction" : "createAction";
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string), 'autoSave');
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.form.notconfig.actionname') as string), 'autoSave');
             return;
         }
         Object.assign(arg, { viewparams: this.viewparams });
@@ -429,7 +429,7 @@ export class EditFormControlBase extends FormControlBase {
     public async save(opt: any = {}, showResultInfo: boolean = true, isStateNext: boolean = true): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
             if (!this.formValidateStatus()) {
-                this.$throw(this.$t('app.searchForm.globalerrortip') as string, 'save', { dangerouslyUseHTMLString: true });
+                this.$throw(this.$t('app.searchform.globalerrortip') as string, 'save', { dangerouslyUseHTMLString: true });
                 return;
             }
             const arg: any = { ...opt };
@@ -450,7 +450,7 @@ export class EditFormControlBase extends FormControlBase {
             const action: any = Object.is(data.srfuf, '1') ? this.updateAction : this.createAction;
             if (!action) {
                 let actionName: any = Object.is(data.srfuf, '1') ? "updateAction" : "createAction";
-                this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string), 'save');
+                this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.form.notconfig.actionname') as string), 'save');
                 return;
             }
             Object.assign(arg, { viewparams: this.viewparams });
@@ -476,7 +476,7 @@ export class EditFormControlBase extends FormControlBase {
                     this.formState.next({ type: 'save', data: data });
                 });
                 if (this.controlInstance.formFuncMode?.toLowerCase() != 'wizardform' && showResultInfo) {
-                    this.$success((data.srfmajortext ? data.srfmajortext : '') + (this.$t('app.formpage.savesuccess') as string), 'save');
+                    this.$success((data.srfmajortext ? data.srfmajortext : '') + (this.$t('app.form.savesuccess') as string), 'save');
                 }
                 resolve(response);
             }).catch((response: any) => {
@@ -503,7 +503,7 @@ export class EditFormControlBase extends FormControlBase {
     public async remove(opt: Array<any> = [], showResultInfo?: boolean): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
             if (!this.removeAction) {
-                this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.removeaction') as string), 'remove');
+                this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.form.notconfig.removeaction') as string), 'remove');
                 return;
             }
             const arg: any = opt[0];
@@ -522,7 +522,7 @@ export class EditFormControlBase extends FormControlBase {
                     });
                     this.formState.next({ type: 'remove', data: data });
                     this.data.ismodify = false;
-                    this.$success((data.srfmajortext ? data.srfmajortext : '') + (this.$t('app.formpage.deletesuccess') as string), 'remove');
+                    this.$success((data.srfmajortext ? data.srfmajortext : '') + (this.$t('app.form.deletesuccess') as string), 'remove');
                     AppCenterService.notifyMessage({ name: this.controlInstance.getPSAppDataEntity()?.codeName || '', action: 'appRefresh', data: data });
                     resolve(response);
                 }
@@ -544,7 +544,7 @@ export class EditFormControlBase extends FormControlBase {
      */
     public async wfstart(data: any, localdata?: any): Promise<any> {
         if (!this.formValidateStatus()) {
-            this.$throw(this.$t('app.searchForm.globalerrortip') as string, 'wfstart', { dangerouslyUseHTMLString: true });
+            this.$throw(this.$t('app.searchform.globalerrortip') as string, 'wfstart', { dangerouslyUseHTMLString: true });
             return;
         }
         return new Promise((resolve: any, reject: any) => {
@@ -603,10 +603,10 @@ export class EditFormControlBase extends FormControlBase {
                 result.then((response: any) => {
                     this.onControlResponse('wfstart', response);
                     if (!response || response.status !== 200) {
-                        this.$throw((this.$t('app.formpage.workflow.starterror') as string) + ', ' + response.data.message, 'wfstart');
+                        this.$throw((this.$t('app.form.workflow.starterror') as string) + ', ' + response.data.message, 'wfstart');
                         return;
                     }
-                    this.$success((this.$t('app.formpage.workflow.startsuccess') as string), 'wfstart');
+                    this.$success((this.$t('app.form.workflow.startsuccess') as string), 'wfstart');
                     resolve(response);
                 }).catch((response: any) => {
                     this.onControlResponse('wfstart', response);
@@ -631,7 +631,7 @@ export class EditFormControlBase extends FormControlBase {
      */
     public async wfsubmit(data: any, localdata?: any): Promise<any> {
         if (!this.formValidateStatus()) {
-            this.$throw(this.$t('app.searchForm.globalerrortip') as string, 'wfsubmit', { dangerouslyUseHTMLString: true });
+            this.$throw(this.$t('app.searchform.globalerrortip') as string, 'wfsubmit', { dangerouslyUseHTMLString: true });
             return;
         }
         return new Promise((resolve: any, reject: any) => {
@@ -675,12 +675,12 @@ export class EditFormControlBase extends FormControlBase {
                 result.then((response: any) => {
                     this.onControlResponse('wfsubmit', response);
                     if (!response || response.status !== 200) {
-                        this.$throw((this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message, 'wfsubmit');
+                        this.$throw((this.$t('app.form.workflow.submiterror') as string) + ', ' + response.data.message, 'wfsubmit');
                         return;
                     }
                     this.onFormLoad(arg, 'submit');
                     AppCenterService.notifyMessage({ name: this.controlInstance.getPSAppDataEntity()?.codeName || '', action: 'appRefresh', data: data });
-                    this.$success((this.$t('app.formpage.workflow.submitsuccess') as string), 'wfsubmit');
+                    this.$success((this.$t('app.form.workflow.submitsuccess') as string), 'wfsubmit');
                     resolve(response);
                 }).catch((response: any) => {
                     this.onControlResponse('wfsubmit', response);
@@ -804,7 +804,7 @@ export class EditFormControlBase extends FormControlBase {
         post.then((response: any) => {
             this.onControlResponse('updateFormItems', response);
             if (!response || response.status !== 200) {
-                this.$throw((this.$t('app.formpage.updateerror') as string), 'updateFormItems');
+                this.$throw((this.$t('app.form.updateerror') as string), 'updateFormItems');
                 return;
             }
             const data = response.data;
@@ -1324,7 +1324,7 @@ export class EditFormControlBase extends FormControlBase {
                     let editorRules = Verify.buildVerConditions(detail.getPSEditor())
                     this.rules[detail.name] = [
                         // 非空值规则
-                        { validator: (rule: any, value: any, callback: any) => { return !(this.detailsModel[detail.name].required && (value === null || value === undefined || value === "")) }, message: `${this.$t('app.formpage.valueverif') as string}${detail.caption}` },
+                        { validator: (rule: any, value: any, callback: any) => { return !(this.detailsModel[detail.name].required && (value === null || value === undefined || value === "")) }, message: `${this.$t('app.form.valueverif') as string}${detail.caption}` },
                         // 表单值规则
                         ...otherRules,
                         // 编辑器基础值规则

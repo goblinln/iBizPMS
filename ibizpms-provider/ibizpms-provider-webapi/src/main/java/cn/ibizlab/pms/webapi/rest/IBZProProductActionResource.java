@@ -236,7 +236,6 @@ public class IBZProProductActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@IBZProProductActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"产品日志" } ,notes = "获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductactions/fetchmobtype")
@@ -249,7 +248,6 @@ public class IBZProProductActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@IBZProProductActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品动态(产品相关所有)", tags = {"产品日志" } ,notes = "获取产品动态(产品相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductactions/fetchproducttrends")
@@ -262,7 +260,6 @@ public class IBZProProductActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@IBZProProductActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"产品日志" } ,notes = "获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductactions/fetchtype")
@@ -275,7 +272,6 @@ public class IBZProProductActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/{ibzproproductaction_id}/{action}")

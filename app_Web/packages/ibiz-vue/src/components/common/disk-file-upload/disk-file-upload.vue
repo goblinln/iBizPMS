@@ -6,7 +6,7 @@
                 <el-upload
                         ref="upload"
                         drag
-                        multiple
+                        :multiple="multiple"
                         list-type="text"
                         :action="getAction()"
                         :headers="headers"
@@ -26,7 +26,7 @@
             <el-col v-else class="withoutDrag">
                 <el-upload
                         ref="upload"
-                        multiple
+                        :multiple="multiple"
                         list-type="text"
                         :action="getAction()"
                         :headers="headers"
@@ -119,6 +119,14 @@ export default class DiskFileUpload extends Vue {
      * @memberof DiskFileUpload
      */
     @Prop() public value!: string;
+
+    /**
+     * 是否多选
+     *
+     * @type {boolean}
+     * @memberof AppFileUpload
+     */
+    @Prop({default: true}) public multiple?: boolean;
 
     /**
      * 当前表单状态

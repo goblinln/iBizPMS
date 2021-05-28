@@ -153,7 +153,6 @@ public class IBIZProMessageResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取用户全部消息", tags = {"消息" } ,notes = "获取用户全部消息")
     @RequestMapping(method= RequestMethod.POST , value="/ibizpromessages/fetchuserallmessages")
 	public ResponseEntity<List<IBIZProMessageDTO>> fetchuserallmessages(@RequestBody IBIZProMessageSearchContext context) {
@@ -165,7 +164,6 @@ public class IBIZProMessageResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取用户未读信息", tags = {"消息" } ,notes = "获取用户未读信息")
     @RequestMapping(method= RequestMethod.POST , value="/ibizpromessages/fetchuserunreadmessages")
 	public ResponseEntity<List<IBIZProMessageDTO>> fetchuserunreadmessages(@RequestBody IBIZProMessageSearchContext context) {
@@ -177,7 +175,6 @@ public class IBIZProMessageResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/{ibizpromessage_id}/{action}")

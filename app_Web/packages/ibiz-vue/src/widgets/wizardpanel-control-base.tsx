@@ -352,7 +352,7 @@ export class WizardPanelControlBase extends MainControlBase {
                     let form: any = (this.$refs[this.activeForm] as any).ctrl;
                     this.curState = 'PREV';
                     if (!this.stepActions[this.activeForm].preAction) {
-                        this.$throw((this.$t('app.wizardPanel.preactionmessage') as string),'onClickPrev');
+                        this.$throw((this.$t('app.wizardpanel.preactionmessage') as string),'onClickPrev');
                         return;
                     }
                     this.viewState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].preAction, emitAction: 'save', data: this.formParam } });

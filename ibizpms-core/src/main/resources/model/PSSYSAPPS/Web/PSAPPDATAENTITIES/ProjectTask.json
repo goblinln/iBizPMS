@@ -31,210 +31,6 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "Cancel",
-    "methodType" : "DEACTION",
-    "name" : "Cancel",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Cancel.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CANCEL"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Cancel"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Finish",
-    "methodType" : "DEACTION",
-    "name" : "Finish",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "FINISH"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Finish"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "AssignTo",
-    "methodType" : "DEACTION",
-    "name" : "AssignTo",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ASSIGNTO"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "AssignTo"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Close",
-    "methodType" : "DEACTION",
-    "name" : "Close",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CLOSE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Close"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Start",
-    "methodType" : "DEACTION",
-    "name" : "Start",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Start.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "START"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Start"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Restart",
-    "methodType" : "DEACTION",
-    "name" : "Restart",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "RESTART"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Restart"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Activate",
-    "methodType" : "DEACTION",
-    "name" : "Activate",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ACTIVATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Activate"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "ConfirmStoryChange",
     "methodType" : "DEACTION",
     "name" : "ConfirmStoryChange",
@@ -262,6 +58,210 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Pause"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Start",
+    "methodType" : "DEACTION",
+    "name" : "Start",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Start.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "START"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Start"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Cancel",
+    "methodType" : "DEACTION",
+    "name" : "Cancel",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Cancel.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CANCEL"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Cancel"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Restart",
+    "methodType" : "DEACTION",
+    "name" : "Restart",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RESTART"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Restart"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Activate",
+    "methodType" : "DEACTION",
+    "name" : "Activate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ACTIVATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Activate"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Finish",
+    "methodType" : "DEACTION",
+    "name" : "Finish",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FINISH"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Finish"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Close",
+    "methodType" : "DEACTION",
+    "name" : "Close",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Close"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "AssignTo",
+    "methodType" : "DEACTION",
+    "name" : "AssignTo",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ASSIGNTO"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "AssignTo"
     },
     "builtinMethod" : false
   }, {
@@ -785,23 +785,6 @@
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchDefault",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchCurProjectTaskQuery",
     "methodType" : "FETCH",
     "name" : "FetchCurProjectTaskQuery",
@@ -816,6 +799,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurProjectTaskQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
     },
     "builtinMethod" : false
   }, {
@@ -1783,88 +1783,16 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Cancel",
+    "codeName" : "ConfirmStoryChange",
     "methodType" : "DEACTION",
-    "name" : "Cancel",
+    "name" : "ConfirmStoryChange",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Cancel.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CANCEL"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Cancel"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Finish",
-    "methodType" : "DEACTION",
-    "name" : "Finish",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "FINISH"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Finish"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchDefault",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "AssignTo",
-    "methodType" : "DEACTION",
-    "name" : "AssignTo",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ASSIGNTO"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "AssignTo"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Close",
-    "methodType" : "DEACTION",
-    "name" : "Close",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CLOSE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Close"
+      "id" : "ConfirmStoryChange"
     },
     "builtinMethod" : false
   }, {
@@ -1885,71 +1813,37 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Start",
-    "methodType" : "DEACTION",
-    "name" : "Start",
-    "getPSDEAction" : {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Start.json"
+      "id" : "Default"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "START"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Start"
+      "id" : "FetchDefault"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Restart",
+    "codeName" : "Pause",
     "methodType" : "DEACTION",
-    "name" : "Restart",
+    "name" : "Pause",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "RESTART"
+      "id" : "PAUSE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Restart"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Activate",
-    "methodType" : "DEACTION",
-    "name" : "Activate",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ACTIVATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Activate"
+      "id" : "Pause"
     },
     "builtinMethod" : false
   }, {
@@ -1970,37 +1864,20 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Create",
+    "codeName" : "Update",
     "methodType" : "DEACTION",
-    "name" : "Create",
+    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ZTProject__UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Create"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
+      "id" : "Update"
     },
     "builtinMethod" : false
   }, {
@@ -2021,33 +1898,156 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "ConfirmStoryChange",
+    "codeName" : "Get",
     "methodType" : "DEACTION",
-    "name" : "ConfirmStoryChange",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ConfirmStoryChange"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Pause",
-    "methodType" : "DEACTION",
-    "name" : "Pause",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "PAUSE"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Pause"
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Start",
+    "methodType" : "DEACTION",
+    "name" : "Start",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Start.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "START"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Start"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Cancel",
+    "methodType" : "DEACTION",
+    "name" : "Cancel",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Cancel.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CANCEL"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Cancel"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Restart",
+    "methodType" : "DEACTION",
+    "name" : "Restart",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RESTART"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Restart"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Activate",
+    "methodType" : "DEACTION",
+    "name" : "Activate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ACTIVATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Activate"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Finish",
+    "methodType" : "DEACTION",
+    "name" : "Finish",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FINISH"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Finish"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Close",
+    "methodType" : "DEACTION",
+    "name" : "Close",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Close"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "AssignTo",
+    "methodType" : "DEACTION",
+    "name" : "AssignTo",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ASSIGNTO"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "AssignTo"
     },
     "builtinMethod" : false
   }, {
@@ -6321,64 +6321,35 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__TASK_DELETE_BUT",
+      "name" : "NFAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "任务删除",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_DELETE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_DELETE_BUT",
-        "name" : "SRFUR__TASK_DELETE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "任务取消收藏",
+        "name" : "NFAVORITES"
       }
     }, {
-      "name" : "SRFUR__TASK_PROCEED_BUT",
+      "name" : "FORWARD",
       "getPSDEOPPriv" : {
-        "logicName" : "任务继续",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_PROCEED_BUT"
-        },
-        "mapSysUniResCode" : "TASK_PROCEED_BUT",
-        "name" : "SRFUR__TASK_PROCEED_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "转交",
+        "name" : "FORWARD"
       }
     }, {
-      "name" : "SRFUR__TASK_XQCHANGE_BUT",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务确认需求变更",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_XQCHANGE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_XQCHANGE_BUT",
-        "name" : "SRFUR__TASK_XQCHANGE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     }, {
-      "name" : "SRFUR__TASK_PAUSE_BUT",
+      "name" : "CANCEL",
       "getPSDEOPPriv" : {
-        "logicName" : "任务暂停",
-        "getMapPSSysUniRes" : {
+        "logicName" : "项目-取消",
+        "mapPSDEName" : "ZT_PROJECT",
+        "mapPSDEOPPrivName" : "TASKMANAGE",
+        "getMapPSDER" : {
           "modelref" : true,
-          "id" : "ibiz__TASK_PAUSE_BUT"
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
         },
-        "mapSysUniResCode" : "TASK_PAUSE_BUT",
-        "name" : "SRFUR__TASK_PAUSE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__STORY_FJTASK_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求分解任务",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_FJTASK_BUT"
-        },
-        "mapSysUniResCode" : "STORY_FJTASK_BUT",
-        "name" : "SRFUR__STORY_FJTASK_BUT",
-        "mapSysUniRes" : true
+        "name" : "CANCEL",
+        "id" : "ZTProject__CANCEL"
       }
     }, {
       "name" : "PAUSE",
@@ -6387,100 +6358,28 @@
         "name" : "PAUSE"
       }
     }, {
-      "name" : "SRFUR__TASK_FORWARD_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务转交",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_FORWARD_BUT"
-        },
-        "mapSysUniResCode" : "TASK_FORWARD_BUT",
-        "name" : "SRFUR__TASK_FORWARD_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_START_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务开始",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_START_BUT"
-        },
-        "mapSysUniResCode" : "TASK_START_BUT",
-        "name" : "SRFUR__TASK_START_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_COMPLETE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务完成",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_COMPLETE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_COMPLETE_BUT",
-        "name" : "SRFUR__TASK_COMPLETE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_NFAVOR_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务待收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_NFAVOR_BUT"
-        },
-        "mapSysUniResCode" : "TASK_NFAVOR_BUT",
-        "name" : "SRFUR__TASK_NFAVOR_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_CLOSE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_CLOSE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_CLOSE_BUT",
-        "name" : "SRFUR__TASK_CLOSE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_CANCEL_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务取消",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_CANCEL_BUT"
-        },
-        "mapSysUniResCode" : "TASK_CANCEL_BUT",
-        "name" : "SRFUR__TASK_CANCEL_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
       "name" : "RESTART",
       "getPSDEOPPriv" : {
         "logicName" : "继续",
         "name" : "RESTART"
       }
     }, {
+      "name" : "START",
+      "getPSDEOPPriv" : {
+        "logicName" : "开始",
+        "name" : "START"
+      }
+    }, {
+      "name" : "CONSUM",
+      "getPSDEOPPriv" : {
+        "logicName" : "任务工时",
+        "name" : "CONSUM"
+      }
+    }, {
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
         "name" : "DELETE"
-      }
-    }, {
-      "name" : "SRFUR__TASK_CONSUM_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务工时",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_CONSUM_BUT"
-        },
-        "mapSysUniResCode" : "TASK_CONSUM_BUT",
-        "name" : "SRFUR__TASK_CONSUM_BUT",
-        "mapSysUniRes" : true
       }
     }, {
       "name" : "FJTASK",
@@ -6495,16 +6394,16 @@
         "name" : "XQCHANGE"
       }
     }, {
-      "name" : "SRFUR__TASK_ASSIGN_BUT",
+      "name" : "ASSIGNTO",
       "getPSDEOPPriv" : {
-        "logicName" : "任务指派",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_ASSIGN_BUT"
-        },
-        "mapSysUniResCode" : "TASK_ASSIGN_BUT",
-        "name" : "SRFUR__TASK_ASSIGN_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "指派",
+        "name" : "ASSIGNTO"
+      }
+    }, {
+      "name" : "FINISH",
+      "getPSDEOPPriv" : {
+        "logicName" : "完成",
+        "name" : "FINISH"
       }
     } ],
     "state2Value" : "1",
@@ -8136,136 +8035,70 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__TASK_SUBTASKS_BUT",
+      "name" : "FAVORITES",
+      "getPSDEOPPriv" : {
+        "logicName" : "任务收藏",
+        "name" : "FAVORITES"
+      }
+    }, {
+      "name" : "CLOSE",
+      "getPSDEOPPriv" : {
+        "logicName" : "关闭",
+        "name" : "CLOSE"
+      }
+    }, {
+      "name" : "FINISH",
+      "getPSDEOPPriv" : {
+        "logicName" : "完成",
+        "name" : "FINISH"
+      }
+    }, {
+      "name" : "RESTART",
+      "getPSDEOPPriv" : {
+        "logicName" : "继续",
+        "name" : "RESTART"
+      }
+    }, {
+      "name" : "SUBTASKS",
       "getPSDEOPPriv" : {
         "logicName" : "任务子任务",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_SUBTASKS_BUT"
-        },
-        "mapSysUniResCode" : "TASK_SUBTASKS_BUT",
-        "name" : "SRFUR__TASK_SUBTASKS_BUT",
-        "mapSysUniRes" : true
+        "name" : "SUBTASKS"
       }
     }, {
-      "name" : "SRFUR__TASK_ASSIGN_BUT",
+      "name" : "CANCEL",
       "getPSDEOPPriv" : {
-        "logicName" : "任务指派",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_ASSIGN_BUT"
-        },
-        "mapSysUniResCode" : "TASK_ASSIGN_BUT",
-        "name" : "SRFUR__TASK_ASSIGN_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "取消",
+        "name" : "CANCEL"
       }
     }, {
-      "name" : "SRFUR__TASK_CANCEL_BUT",
+      "name" : "PAUSE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务取消",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_CANCEL_BUT"
-        },
-        "mapSysUniResCode" : "TASK_CANCEL_BUT",
-        "name" : "SRFUR__TASK_CANCEL_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "暂停",
+        "name" : "PAUSE"
       }
     }, {
-      "name" : "SRFUR__TASK_XQCHANGE_BUT",
+      "name" : "FORWARD",
       "getPSDEOPPriv" : {
-        "logicName" : "任务确认需求变更",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_XQCHANGE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_XQCHANGE_BUT",
-        "name" : "SRFUR__TASK_XQCHANGE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "转交",
+        "name" : "FORWARD"
       }
     }, {
-      "name" : "SRFUR__TASK_COMPLETE_BUT",
+      "name" : "ASSIGNTO",
       "getPSDEOPPriv" : {
-        "logicName" : "任务完成",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_COMPLETE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_COMPLETE_BUT",
-        "name" : "SRFUR__TASK_COMPLETE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "指派",
+        "name" : "ASSIGNTO"
       }
     }, {
-      "name" : "SRFUR__TASK_FAVOR_BUT",
+      "name" : "XQCHANGE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务已收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_FAVOR_BUT"
-        },
-        "mapSysUniResCode" : "TASK_FAVOR_BUT",
-        "name" : "SRFUR__TASK_FAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "需求变更确认",
+        "name" : "XQCHANGE"
       }
     }, {
-      "name" : "SRFUR__TASK_PROCEED_BUT",
+      "name" : "START",
       "getPSDEOPPriv" : {
-        "logicName" : "任务继续",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_PROCEED_BUT"
-        },
-        "mapSysUniResCode" : "TASK_PROCEED_BUT",
-        "name" : "SRFUR__TASK_PROCEED_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_START_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务开始",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_START_BUT"
-        },
-        "mapSysUniResCode" : "TASK_START_BUT",
-        "name" : "SRFUR__TASK_START_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_PAUSE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务暂停",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_PAUSE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_PAUSE_BUT",
-        "name" : "SRFUR__TASK_PAUSE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_CLOSE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_CLOSE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_CLOSE_BUT",
-        "name" : "SRFUR__TASK_CLOSE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_FORWARD_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务转交",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_FORWARD_BUT"
-        },
-        "mapSysUniResCode" : "TASK_FORWARD_BUT",
-        "name" : "SRFUR__TASK_FORWARD_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "开始",
+        "name" : "START"
       }
     } ],
     "state2Value" : "0",
@@ -11002,160 +10835,82 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__TASK_PAUSE_BUT",
+      "name" : "RESTART",
       "getPSDEOPPriv" : {
-        "logicName" : "任务暂停",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_PAUSE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_PAUSE_BUT",
-        "name" : "SRFUR__TASK_PAUSE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "继续",
+        "name" : "RESTART"
       }
     }, {
-      "name" : "SRFUR__TASK_PROCEED_BUT",
+      "name" : "DELETE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务继续",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_PROCEED_BUT"
-        },
-        "mapSysUniResCode" : "TASK_PROCEED_BUT",
-        "name" : "SRFUR__TASK_PROCEED_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "删除",
+        "name" : "DELETE"
       }
     }, {
-      "name" : "SRFUR__TASK_NFAVOR_BUT",
+      "name" : "ASSIGNTO",
       "getPSDEOPPriv" : {
-        "logicName" : "任务待收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_NFAVOR_BUT"
-        },
-        "mapSysUniResCode" : "TASK_NFAVOR_BUT",
-        "name" : "SRFUR__TASK_NFAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "指派",
+        "name" : "ASSIGNTO"
       }
     }, {
-      "name" : "SRFUR__TASK_ASSIGN_BUT",
+      "name" : "FJTASK",
       "getPSDEOPPriv" : {
-        "logicName" : "任务指派",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_ASSIGN_BUT"
-        },
-        "mapSysUniResCode" : "TASK_ASSIGN_BUT",
-        "name" : "SRFUR__TASK_ASSIGN_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "分解任务",
+        "name" : "FJTASK"
       }
     }, {
-      "name" : "SRFUR__TASK_COMPLETE_BUT",
+      "name" : "START",
       "getPSDEOPPriv" : {
-        "logicName" : "任务完成",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_COMPLETE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_COMPLETE_BUT",
-        "name" : "SRFUR__TASK_COMPLETE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "开始",
+        "name" : "START"
       }
     }, {
-      "name" : "SRFUR__TASK_ACTIVATION_BUT",
+      "name" : "NFAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "任务激活",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_ACTIVATION_BUT"
-        },
-        "mapSysUniResCode" : "TASK_ACTIVATION_BUT",
-        "name" : "SRFUR__TASK_ACTIVATION_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "任务取消收藏",
+        "name" : "NFAVORITES"
       }
     }, {
-      "name" : "SRFUR__TASK_CLOSE_BUT",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_CLOSE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_CLOSE_BUT",
-        "name" : "SRFUR__TASK_CLOSE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     }, {
-      "name" : "SRFUR__TASK_CONSUM_BUT",
+      "name" : "XQCHANGE",
+      "getPSDEOPPriv" : {
+        "logicName" : "需求变更确认",
+        "name" : "XQCHANGE"
+      }
+    }, {
+      "name" : "ACTIVATE",
+      "getPSDEOPPriv" : {
+        "logicName" : "激活",
+        "name" : "ACTIVATE"
+      }
+    }, {
+      "name" : "FINISH",
+      "getPSDEOPPriv" : {
+        "logicName" : "完成",
+        "name" : "FINISH"
+      }
+    }, {
+      "name" : "FORWARD",
+      "getPSDEOPPriv" : {
+        "logicName" : "转交",
+        "name" : "FORWARD"
+      }
+    }, {
+      "name" : "CONSUM",
       "getPSDEOPPriv" : {
         "logicName" : "任务工时",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_CONSUM_BUT"
-        },
-        "mapSysUniResCode" : "TASK_CONSUM_BUT",
-        "name" : "SRFUR__TASK_CONSUM_BUT",
-        "mapSysUniRes" : true
+        "name" : "CONSUM"
       }
     }, {
-      "name" : "SRFUR__TASK_FORWARD_BUT",
+      "name" : "PAUSE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务转交",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_FORWARD_BUT"
-        },
-        "mapSysUniResCode" : "TASK_FORWARD_BUT",
-        "name" : "SRFUR__TASK_FORWARD_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_XQCHANGE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务确认需求变更",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_XQCHANGE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_XQCHANGE_BUT",
-        "name" : "SRFUR__TASK_XQCHANGE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_DELETE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务删除",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_DELETE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_DELETE_BUT",
-        "name" : "SRFUR__TASK_DELETE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_START_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务开始",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_START_BUT"
-        },
-        "mapSysUniResCode" : "TASK_START_BUT",
-        "name" : "SRFUR__TASK_START_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__STORY_FJTASK_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求分解任务",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_FJTASK_BUT"
-        },
-        "mapSysUniResCode" : "STORY_FJTASK_BUT",
-        "name" : "SRFUR__STORY_FJTASK_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "暂停",
+        "name" : "PAUSE"
       }
     } ],
     "state2Value" : "1",
@@ -11366,88 +11121,46 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__TASK_START_BUT",
+      "name" : "NFAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "任务开始",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_START_BUT"
-        },
-        "mapSysUniResCode" : "TASK_START_BUT",
-        "name" : "SRFUR__TASK_START_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "任务取消收藏",
+        "name" : "NFAVORITES"
       }
     }, {
-      "name" : "SRFUR__TASK_CLOSE_BUT",
+      "name" : "FORWARD",
       "getPSDEOPPriv" : {
-        "logicName" : "任务关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_CLOSE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_CLOSE_BUT",
-        "name" : "SRFUR__TASK_CLOSE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "转交",
+        "name" : "FORWARD"
       }
     }, {
-      "name" : "SRFUR__TASK_XQCHANGE_BUT",
+      "name" : "XQCHANGE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务确认需求变更",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_XQCHANGE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_XQCHANGE_BUT",
-        "name" : "SRFUR__TASK_XQCHANGE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "需求变更确认",
+        "name" : "XQCHANGE"
       }
     }, {
-      "name" : "SRFUR__TASK_PROCEED_BUT",
+      "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务继续",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_PROCEED_BUT"
-        },
-        "mapSysUniResCode" : "TASK_PROCEED_BUT",
-        "name" : "SRFUR__TASK_PROCEED_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "激活",
+        "name" : "ACTIVATE"
       }
     }, {
-      "name" : "SRFUR__TASK_ACTIVATION_BUT",
+      "name" : "RESTART",
       "getPSDEOPPriv" : {
-        "logicName" : "任务激活",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_ACTIVATION_BUT"
-        },
-        "mapSysUniResCode" : "TASK_ACTIVATION_BUT",
-        "name" : "SRFUR__TASK_ACTIVATION_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "继续",
+        "name" : "RESTART"
       }
     }, {
-      "name" : "SRFUR__TASK_FORWARD_BUT",
+      "name" : "START",
       "getPSDEOPPriv" : {
-        "logicName" : "任务转交",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_FORWARD_BUT"
-        },
-        "mapSysUniResCode" : "TASK_FORWARD_BUT",
-        "name" : "SRFUR__TASK_FORWARD_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "开始",
+        "name" : "START"
       }
     }, {
-      "name" : "SRFUR__TASK_NFAVOR_BUT",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务待收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_NFAVOR_BUT"
-        },
-        "mapSysUniResCode" : "TASK_NFAVOR_BUT",
-        "name" : "SRFUR__TASK_NFAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     } ],
     "state2Value" : "1",
@@ -15013,100 +14726,52 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__TASK_FAVOR_BUT",
+      "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务已收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_FAVOR_BUT"
-        },
-        "mapSysUniResCode" : "TASK_FAVOR_BUT",
-        "name" : "SRFUR__TASK_FAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "激活",
+        "name" : "ACTIVATE"
       }
     }, {
-      "name" : "SRFUR__TASK_CLOSE_BUT",
+      "name" : "PAUSE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_CLOSE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_CLOSE_BUT",
-        "name" : "SRFUR__TASK_CLOSE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "暂停",
+        "name" : "PAUSE"
       }
     }, {
-      "name" : "SRFUR__TASK_SUBTASKS_BUT",
+      "name" : "XQCHANGE",
+      "getPSDEOPPriv" : {
+        "logicName" : "需求变更确认",
+        "name" : "XQCHANGE"
+      }
+    }, {
+      "name" : "FAVORITES",
+      "getPSDEOPPriv" : {
+        "logicName" : "任务收藏",
+        "name" : "FAVORITES"
+      }
+    }, {
+      "name" : "START",
+      "getPSDEOPPriv" : {
+        "logicName" : "开始",
+        "name" : "START"
+      }
+    }, {
+      "name" : "SUBTASKS",
       "getPSDEOPPriv" : {
         "logicName" : "任务子任务",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_SUBTASKS_BUT"
-        },
-        "mapSysUniResCode" : "TASK_SUBTASKS_BUT",
-        "name" : "SRFUR__TASK_SUBTASKS_BUT",
-        "mapSysUniRes" : true
+        "name" : "SUBTASKS"
       }
     }, {
-      "name" : "SRFUR__TASK_START_BUT",
+      "name" : "FORWARD",
       "getPSDEOPPriv" : {
-        "logicName" : "任务开始",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_START_BUT"
-        },
-        "mapSysUniResCode" : "TASK_START_BUT",
-        "name" : "SRFUR__TASK_START_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "转交",
+        "name" : "FORWARD"
       }
     }, {
-      "name" : "SRFUR__TASK_FORWARD_BUT",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务转交",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_FORWARD_BUT"
-        },
-        "mapSysUniResCode" : "TASK_FORWARD_BUT",
-        "name" : "SRFUR__TASK_FORWARD_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_PAUSE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务暂停",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_PAUSE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_PAUSE_BUT",
-        "name" : "SRFUR__TASK_PAUSE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_XQCHANGE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务确认需求变更",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_XQCHANGE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_XQCHANGE_BUT",
-        "name" : "SRFUR__TASK_XQCHANGE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_ACTIVATION_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务激活",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_ACTIVATION_BUT"
-        },
-        "mapSysUniResCode" : "TASK_ACTIVATION_BUT",
-        "name" : "SRFUR__TASK_ACTIVATION_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     } ],
     "state2Value" : "0",

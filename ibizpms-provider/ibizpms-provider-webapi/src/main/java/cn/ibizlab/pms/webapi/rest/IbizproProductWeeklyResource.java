@@ -147,7 +147,6 @@ public class IbizproProductWeeklyResource {
                 .body(list);
 	}
 
-
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproproductweeklies/{ibizproproductweekly_id}/{action}")
     public ResponseEntity<IbizproProductWeeklyDTO> dynamicCall(@PathVariable("ibizproproductweekly_id") Long ibizproproductweekly_id , @PathVariable("action") String action , @RequestBody IbizproProductWeeklyDTO ibizproproductweeklydto) {

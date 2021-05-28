@@ -224,7 +224,6 @@ public class IbzDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我的日报（已提交和未提交）", tags = {"日报" } ,notes = "获取我的日报（已提交和未提交）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchmyalldaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchmyalldaily(@RequestBody IbzDailySearchContext context) {
@@ -236,7 +235,6 @@ public class IbzDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我收到的日报", tags = {"日报" } ,notes = "获取我收到的日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchmydaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchmydaily(@RequestBody IbzDailySearchContext context) {
@@ -248,7 +246,6 @@ public class IbzDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我的日报", tags = {"日报" } ,notes = "获取我的日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchmynotsubmit")
 	public ResponseEntity<List<IbzDailyDTO>> fetchmynotsubmit(@RequestBody IbzDailySearchContext context) {
@@ -260,7 +257,6 @@ public class IbzDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我提交的日报", tags = {"日报" } ,notes = "获取我提交的日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchmysubmitdaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchmysubmitdaily(@RequestBody IbzDailySearchContext context) {
@@ -272,7 +268,6 @@ public class IbzDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取产品日报", tags = {"日报" } ,notes = "获取产品日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchproductdaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchproductdaily(@RequestBody IbzDailySearchContext context) {
@@ -284,7 +279,6 @@ public class IbzDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取项目日报", tags = {"日报" } ,notes = "获取项目日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchprojectdaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchprojectdaily(@RequestBody IbzDailySearchContext context) {
@@ -296,7 +290,6 @@ public class IbzDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/{action}")

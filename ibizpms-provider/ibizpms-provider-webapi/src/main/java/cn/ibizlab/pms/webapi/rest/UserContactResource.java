@@ -133,7 +133,6 @@ public class UserContactResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户联系方式" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchdefault")
 	public ResponseEntity<List<UserContactDTO>> fetchdefault(@RequestBody UserContactSearchContext context) {
@@ -145,7 +144,6 @@ public class UserContactResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取我的联系人", tags = {"用户联系方式" } ,notes = "获取我的联系人")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchmyusercontact")
 	public ResponseEntity<List<UserContactDTO>> fetchmyusercontact(@RequestBody UserContactSearchContext context) {
@@ -157,7 +155,6 @@ public class UserContactResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/usercontacts/{usercontact_id}/{action}")

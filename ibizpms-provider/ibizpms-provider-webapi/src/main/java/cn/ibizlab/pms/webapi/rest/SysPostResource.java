@@ -121,7 +121,6 @@ public class SysPostResource {
                 .body(list);
 	}
 
-
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/sysposts/{syspost_id}/{action}")
     public ResponseEntity<SysPostDTO> dynamicCall(@PathVariable("syspost_id") String syspost_id , @PathVariable("action") String action , @RequestBody SysPostDTO syspostdto) {

@@ -121,7 +121,6 @@ public class PSSystemDBCfgResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取数据集", tags = {"系统数据库" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/pssystemdbcfgs/fetchdefault")
 	public ResponseEntity<List<PSSystemDBCfgDTO>> fetchdefault(@RequestBody PSSystemDBCfgSearchContext context) {
@@ -133,7 +132,6 @@ public class PSSystemDBCfgResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/{pssystemdbcfg_id}/{action}")

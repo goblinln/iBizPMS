@@ -211,9 +211,9 @@ export default class AppAutocomplete extends Vue {
         }
         Object.assign(_param, { query: query });
         // 错误信息国际化
-        let error: string = (this.$t('components.appAutocomplete.error') as any);
-        let miss: string = (this.$t('components.appAutocomplete.miss') as any);
-        let requestException: string = (this.$t('components.appAutocomplete.requestException') as any);
+        let error: string = (this.$t('components.appautocomplete.error') as any);
+        let miss: string = (this.$t('components.appautocomplete.miss') as any);
+        let requestException: string = (this.$t('components.appautocomplete.requestexception') as any);
 
         if(!this.service){
             this.$throw(miss+'service','onSearch');

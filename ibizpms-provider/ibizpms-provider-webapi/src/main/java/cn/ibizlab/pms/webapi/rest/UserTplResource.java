@@ -156,7 +156,6 @@ public class UserTplResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@UserTplRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的模板", tags = {"用户模板" } ,notes = "获取我的模板")
     @RequestMapping(method= RequestMethod.POST , value="/usertpls/fetchmyusertpl")
@@ -170,7 +169,6 @@ public class UserTplResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/usertpls/{usertpl_id}/{action}")

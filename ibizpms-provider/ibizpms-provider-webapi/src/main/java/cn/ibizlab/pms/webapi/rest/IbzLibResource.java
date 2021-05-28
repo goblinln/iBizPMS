@@ -145,7 +145,6 @@ public class IbzLibResource {
                 .body(list);
 	}
 
-
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/{action}")
     public ResponseEntity<IbzLibDTO> dynamicCall(@PathVariable("ibzlib_id") Long ibzlib_id , @PathVariable("action") String action , @RequestBody IbzLibDTO ibzlibdto) {

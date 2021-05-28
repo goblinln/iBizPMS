@@ -163,7 +163,8 @@ function getAppLocale(){
                 getappiderror: "获取网站应用appid失败",
                 getdinginfoerror: "钉钉用户信息获取失败",
                 getiderror: "获取企业ID失败",
-                noassign: "未指定应用功能"
+                noassign: "未指定应用功能",
+                codelistwarn: "代码表值类型和属性类型不匹配，自动强制转换异常，请修正代码表值类型和属性类型匹配"
             },
             local:{
                 new: "新建",
@@ -239,8 +240,8 @@ function getAppLocale(){
             week: "周",
             day: "天",
             list: "列",
-            dateSelectModalTitle: "选择要跳转的时间",
-            gotoDate: "跳转",
+            dateselectmodaltitle: "选择要跳转的时间",
+            gotodate: "跳转",
             from: "从",
             to: "至",
             },
@@ -305,7 +306,7 @@ function getAppLocale(){
                 'main': {
                 },
             },
-            formpage:{
+            form:{
                 desc1: "操作失败,未能找到当前表单项",
                 desc2: "无法继续操作",
                 notconfig: {
@@ -328,35 +329,35 @@ function getAppLocale(){
                 updateerror: "表单项更新失败",   
                 valueverif:"请输入",     
             },
-            gridBar: {
+            gridexpbar: {
                 title: "表格导航栏",
             },
-            multiEditView: {
-                notConfig: {
-                    fetchAction: "视图多编辑视图面板fetchAction参数未配置",
-                    loaddraftAction: "视图多编辑视图面板loaddraftAction参数未配置",
+            multieditview: {
+                notconfig: {
+                    fetchaction: "视图多编辑视图面板fetchAction参数未配置",
+                    loaddraftaction: "视图多编辑视图面板loaddraftAction参数未配置",
                 },
             },
-            dataViewExpBar: {
+            dataviewexpbar: {
                 title: "卡片视图导航栏",
             },
             kanban: {
-                notConfig: {
-                    fetchAction: "视图列表fetchAction参数未配置",
-                    removeAction: "视图表格removeAction参数未配置",
+                notconfig: {
+                    fetchaction: "视图列表fetchAction参数未配置",
+                    removeaction: "视图表格removeAction参数未配置",
                 },
                 delete1: "确认要删除 ",
                 delete2: "删除操作将不可恢复？",
             },
-            dashBoard: {
-                handleClick: {
+            dashboard: {
+                handleclick: {
                     title: "面板设计",
                 },
-                dataError: "data数据异常",
-                serviceError: "服务器异常",
-                loadError: "加载面板模型异常"
+                dataerror: "data数据异常",
+                serviceerror: "服务器异常",
+                loaderror: "加载面板模型异常"
             },
-            dataView: {
+            dataview: {
                 sum: "共",
                 data: "条数据",
                 useless: "分组数据无效"
@@ -366,15 +367,15 @@ function getAppLocale(){
                 quarter: "季度",   
                 year: "年",
             },
-            searchForm: {
-                notConfig: {
-                    loadAction: "视图搜索表单loadAction参数未配置",
-                    loaddraftAction: "视图搜索表单loaddraftAction参数未配置",
+            searchform: {
+                notconfig: {
+                    loadaction: "视图搜索表单loadAction参数未配置",
+                    loaddraftaction: "视图搜索表单loaddraftAction参数未配置",
                 },
                 custom: "存储自定义查询",
                 globalerrortip:"填写信息有误，请检查",
             },
-            wizardPanel: {
+            wizardpanel: {
                 back: "上一步",
                 next: "下一步",
                 complete: "完成",
@@ -383,19 +384,19 @@ function getAppLocale(){
                 success: "提交数据成功",
                 error: "将待办任务标记为已读失败"
             },
-            viewLayoutPanel: {
-                appLogoutView: {
+            viewlayoutpanel: {
+                applogoutview: {
                     prompt1: "尊敬的客户您好，您已成功退出系统，将在",
                     prompt2: "秒后跳转至",
-                    logingPage: "登录页",
+                    logingpage: "登录页",
                 },
-                appWfstepTraceView: {
+                appwfsteptraceview: {
                     title: "应用流程处理记录视图",
                 },
-                appWfstepDataView: {
+                appwfstepdataview: {
                     title: "应用流程跟踪视图",
                 },
-                appLoginView: {
+                apploginview: {
                     username: "用户名",
                     password: "密码",
                     login: "登录",
@@ -423,8 +424,8 @@ function getAppLocale(){
             },
             warn: {
               nton: "批量添加需添加N:N关系",
-              batchError: "批处理操作失败" ,
-              unbatchAdd: "只支持批添加未实现",
+              batcherror: "批处理操作失败" ,
+              unbatchadd: "只支持批添加未实现",
               geterror: "获取数据异常",
               load: "正在加载数据",
               nofind: "未找到相关数据",
@@ -432,7 +433,7 @@ function getAppLocale(){
               unnewdata: "没有newdata",
               unremove: "没有remove",
               unrefresh: "没有refresh",
-              unOpenView: "无打开视图"
+              unopenview: "无打开视图"
             },
         },
         entities: {

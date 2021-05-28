@@ -2,7 +2,7 @@
 <div class="app-debug-actions" v-if="isShow">
     <div class="actions">
         <button-group vertical>
-            <i-button :title="$t('components.appDebugActions.button')" :type="sdc.isShowTool ? 'warning' : 'info'" ghost @click="() => sdc.showToolChange()" :icon="sdc.isShowTool ? 'ios-bug' : 'ios-bug-outline'" ></i-button>
+            <i-button :title="$t('components.appdebugactions.button')" :type="sdc.isShowTool ? 'warning' : 'info'" ghost @click="() => sdc.showToolChange()" :icon="sdc.isShowTool ? 'ios-bug' : 'ios-bug-outline'" ></i-button>
         </button-group>
     </div>
     <div class="show-buttons">

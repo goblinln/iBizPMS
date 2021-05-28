@@ -221,7 +221,6 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取Bug产品或者项目版本", tags = {"版本" } ,notes = "获取Bug产品或者项目版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchbugproductorprojectbuild")
 	public ResponseEntity<List<BuildDTO>> fetchbugproductorprojectbuild(@RequestBody BuildSearchContext context) {
@@ -233,7 +232,6 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品版本", tags = {"版本" } ,notes = "获取产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchcurproduct")
@@ -246,7 +244,6 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"版本" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchdefault")
@@ -259,7 +256,6 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取测试版本", tags = {"版本" } ,notes = "获取测试版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchtestbuild")
 	public ResponseEntity<List<BuildDTO>> fetchtestbuild(@RequestBody BuildSearchContext context) {
@@ -271,7 +267,6 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试轮次", tags = {"版本" } ,notes = "获取测试轮次")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchtestrounds")
@@ -284,7 +279,6 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取更新日志", tags = {"版本" } ,notes = "获取更新日志")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchupdatelog")
@@ -297,7 +291,6 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/builds/{build_id}/{action}")

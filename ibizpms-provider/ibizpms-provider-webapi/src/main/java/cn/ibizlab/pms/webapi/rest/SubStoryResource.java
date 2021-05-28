@@ -716,7 +716,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指派给我的需求（日历）", tags = {"需求" } ,notes = "获取指派给我的需求（日历）")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchassignedtomystorycalendar")
@@ -729,7 +728,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取Bug相关需求", tags = {"需求" } ,notes = "获取Bug相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchbugstory")
 	public ResponseEntity<List<SubStoryDTO>> fetchbugstory(@RequestBody StorySearchContext context) {
@@ -741,7 +739,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本关联已完成的需求（选择数据源）", tags = {"需求" } ,notes = "获取版本关联已完成的需求（选择数据源）")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchbuildlinkcompletedstories")
@@ -754,7 +751,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本可关联的需求（产品内）", tags = {"需求" } ,notes = "获取版本可关联的需求（产品内）")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchbuildlinkablestories")
@@ -767,7 +763,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取版本相关需求", tags = {"需求" } ,notes = "获取获取版本相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchbuildstories")
@@ -780,7 +775,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取通过模块查询", tags = {"需求" } ,notes = "获取通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchbymodule")
@@ -793,7 +787,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取相关用例需求", tags = {"需求" } ,notes = "获取相关用例需求")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchcasestory")
@@ -806,7 +799,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取子需求（更多）", tags = {"需求" } ,notes = "获取子需求（更多）")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchchildmore")
@@ -819,7 +811,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"需求" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchdefault")
@@ -832,7 +823,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"需求" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchesbulk")
@@ -845,7 +835,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取产品需求", tags = {"需求" } ,notes = "获取获取产品需求")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchgetproductstories")
@@ -858,7 +847,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我代理的需求", tags = {"需求" } ,notes = "获取我代理的需求")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchmyagentstory")
@@ -871,7 +859,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取所创建需求数和对应的优先级及状态", tags = {"需求" } ,notes = "获取所创建需求数和对应的优先级及状态")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchmycuropenedstory")
@@ -884,7 +871,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"需求" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchmyfavorites")
@@ -897,7 +883,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取计划关联需求(去除已关联)", tags = {"需求" } ,notes = "获取计划关联需求(去除已关联)")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchnotcurplanlinkstory")
@@ -910,7 +895,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据查询", tags = {"需求" } ,notes = "获取数据查询")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchparentdefault")
@@ -923,7 +907,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据查询", tags = {"需求" } ,notes = "获取数据查询")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchparentdefaultq")
@@ -936,7 +919,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目关联需求", tags = {"需求" } ,notes = "获取项目关联需求")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchprojectlinkstory")
@@ -949,7 +931,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目相关需求", tags = {"需求" } ,notes = "获取项目相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchprojectstories")
@@ -962,7 +943,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本可关联的完成的需求", tags = {"需求" } ,notes = "获取版本可关联的完成的需求")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchreleaselinkablestories")
@@ -975,7 +955,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取产品发布相关需求", tags = {"需求" } ,notes = "获取获取产品发布相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchreleasestories")
@@ -988,7 +967,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取通过模块查询", tags = {"需求" } ,notes = "获取通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchreportstories")
@@ -1001,7 +979,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取产品发布相关需求", tags = {"需求" } ,notes = "获取获取产品发布相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchstorychild")
@@ -1014,7 +991,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取产品发布相关需求", tags = {"需求" } ,notes = "获取获取产品发布相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchstoryrelated")
@@ -1027,7 +1003,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取需求细分", tags = {"需求" } ,notes = "获取需求细分")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchsubstory")
@@ -1040,7 +1015,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务相关需求", tags = {"需求" } ,notes = "获取任务相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchtaskrelatedstory")
@@ -1053,7 +1027,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取默认（全部数据）", tags = {"需求" } ,notes = "获取默认（全部数据）")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchview")
@@ -1066,7 +1039,6 @@ public class SubStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/substories/{substory_id}/{action}")

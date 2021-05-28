@@ -392,7 +392,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取累计创建的用例", tags = {"测试用例" } ,notes = "获取累计创建的用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchcuropenedcase")
@@ -405,7 +404,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取套件关联用例", tags = {"测试用例" } ,notes = "获取套件关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchcursuite")
@@ -418,7 +416,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试单关联用例", tags = {"测试用例" } ,notes = "获取测试单关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchcurtesttask")
@@ -431,7 +428,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试用例" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchdefault")
@@ -444,7 +440,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"测试用例" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchesbulk")
@@ -457,7 +452,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联用例", tags = {"测试用例" } ,notes = "获取测试报告关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchmodulereportcase")
@@ -470,7 +464,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联-按模块-条目", tags = {"测试用例" } ,notes = "获取测试报告关联-按模块-条目")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchmodulereportcaseentry")
@@ -483,7 +476,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目报告关联-按模块", tags = {"测试用例" } ,notes = "获取项目报告关联-按模块")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchmodulereportcase_project")
@@ -496,7 +488,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"测试用例" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchmyfavorites")
@@ -509,7 +500,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取套件关联用例", tags = {"测试用例" } ,notes = "获取套件关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchnotcurtestsuite")
@@ -522,7 +512,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试单关联用例", tags = {"测试用例" } ,notes = "获取测试单关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchnotcurtesttask")
@@ -535,7 +524,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试单关联用例（项目关联）", tags = {"测试用例" } ,notes = "获取测试单关联用例（项目关联）")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchnotcurtesttaskproject")
@@ -548,7 +536,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联用例", tags = {"测试用例" } ,notes = "获取测试报告关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchreportcase")
@@ -561,7 +548,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联用例-条目", tags = {"测试用例" } ,notes = "获取测试报告关联用例-条目")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchreportcaseentry")
@@ -574,7 +560,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目报告关联用例-关联用例", tags = {"测试用例" } ,notes = "获取项目报告关联用例-关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchreportcase_project")
@@ -587,7 +572,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联-执行人", tags = {"测试用例" } ,notes = "获取测试报告关联-执行人")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunerreportcase")
@@ -600,7 +584,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联-执行人-条目", tags = {"测试用例" } ,notes = "获取测试报告关联-执行人-条目")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunerreportcaseentry")
@@ -613,7 +596,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目报告关联-执行人", tags = {"测试用例" } ,notes = "获取项目报告关联-执行人")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunerreportcase_project")
@@ -626,7 +608,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联用例", tags = {"测试用例" } ,notes = "获取测试报告关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunreportcase")
@@ -639,7 +620,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联--执行结果条目", tags = {"测试用例" } ,notes = "获取测试报告关联--执行结果条目")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunreportcaseentry")
@@ -652,7 +632,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目报告关联-执行结果", tags = {"测试用例" } ,notes = "获取项目报告关联-执行结果")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunreportcase_project")
@@ -665,7 +644,6 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/{action}")

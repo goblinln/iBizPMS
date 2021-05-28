@@ -164,7 +164,6 @@ public class IbzPlanTempletResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@IbzPlanTempletRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"计划模板" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzplantemplets/fetchdefault")
@@ -178,7 +177,6 @@ public class IbzPlanTempletResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets/{ibzplantemplet_id}/{action}")

@@ -143,7 +143,6 @@ public class IbzProReportlyHistoryResource {
                 .body(list);
 	}
 
-
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyhistories/{ibzproreportlyhistory_id}/{action}")
     public ResponseEntity<IbzProReportlyHistoryDTO> dynamicCall(@PathVariable("ibzproreportlyhistory_id") Long ibzproreportlyhistory_id , @PathVariable("action") String action , @RequestBody IbzProReportlyHistoryDTO ibzproreportlyhistorydto) {

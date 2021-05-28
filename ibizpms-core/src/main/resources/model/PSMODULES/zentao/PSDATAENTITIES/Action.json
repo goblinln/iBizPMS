@@ -3250,7 +3250,7 @@
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 2,
-  "serviceAPIMode" : 1,
+  "serviceAPIMode" : 0,
   "serviceCodeName" : "Action",
   "storageMode" : 1,
   "systemTag" : "iBizPMS",

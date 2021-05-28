@@ -7,12 +7,12 @@
         <dropdown-menu slot='list'>
             <dropdown-item>
                 <p @click="exportExcel($event, 'maxRowCount')">
-                    {{caption}}{{$t('components.appExportExcel.total')}}({{$t('components.appExportExcel.max')}}{{caption}}{{item.MaxRowCount || 1000}}{{$t('components.appExportExcel.row')}})
+                    {{caption}}{{$t('components.appexportexcel.total')}}({{$t('components.appexportexcel.max')}}{{caption}}{{item.MaxRowCount || 1000}}{{$t('components.appexportexcel.row')}})
                 </p>
             </dropdown-item>
             <dropdown-item>
                 <p @click="exportExcel($event, 'activatedPage')">
-                    {{caption}}{{$t('components.appExportExcel.currentPage')}}
+                    {{caption}}{{$t('components.appexportexcel.currentpage')}}
                 </p>
             </dropdown-item>
         </dropdown-menu>
@@ -115,18 +115,18 @@ export default class AppExportExcel extends Vue {
             this.visible = false;
         } else if (Object.is(type, 'custom')) {
             if (!this.startPage || !this.endPage) {
-                this.$warning((this.$t('components.appExportExcel.desc') as string),'exportExcel');
+                this.$warning((this.$t('components.appexportexcel.desc') as string),'exportExcel');
                 return;
             }
             const startPage: any = Number.parseInt(this.startPage, 10);
             const endPage: any = Number.parseInt(this.endPage, 10);
             if (Number.isNaN(startPage) || Number.isNaN(endPage)) {
-                this.$warning((this.$t('components.appExportExcel.desc1') as string),'exportExcel');
+                this.$warning((this.$t('components.appexportexcel.desc1') as string),'exportExcel');
                 return;
             }
 
             if (startPage < 1 || endPage < 1 || startPage > endPage) {
-                this.$warning((this.$t('components.appExportExcel.desc1') as string),'exportExcel');
+                this.$warning((this.$t('components.appexportexcel.desc1') as string),'exportExcel');
                 return;
             }
             this.startPage = null;

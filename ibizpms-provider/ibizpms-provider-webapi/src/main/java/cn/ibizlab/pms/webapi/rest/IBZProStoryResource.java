@@ -157,7 +157,6 @@ public class IBZProStoryResource {
                 .body(list);
 	}
 
-
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzprostories/{ibzprostory_id}/{action}")
     public ResponseEntity<IBZProStoryDTO> dynamicCall(@PathVariable("ibzprostory_id") Long ibzprostory_id , @PathVariable("action") String action , @RequestBody IBZProStoryDTO ibzprostorydto) {

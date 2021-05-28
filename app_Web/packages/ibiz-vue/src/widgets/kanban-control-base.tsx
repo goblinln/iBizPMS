@@ -323,7 +323,7 @@ export class KanbanControlBase extends MDControlBase {
      */
     public async load(opt: any = {}, isReset: boolean = false) {
         if (!this.fetchAction) {
-            this.$throw(this.$t('app.kanban.notConfig.fetchAction'),'load');
+            this.$throw(this.$t('app.kanban.notconfig.fetchaction'),'load');
             return;
         }
         const arg: any = { ...opt };
@@ -475,7 +475,7 @@ export class KanbanControlBase extends MDControlBase {
      */
     public async remove(datas: any[]): Promise<any> {
         if (!this.removeAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.kanban.notConfig.removeAction') as string),'remove');
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.kanban.notconfig.removeaction') as string),'remove');
             return;
         }
         let _datas: any[] = [];
@@ -508,9 +508,9 @@ export class KanbanControlBase extends MDControlBase {
         });
 
         if (_datas.length < 5) {
-            dataInfo = dataInfo + this.$t('app.dataView.sum') + _datas.length + this.$t('app.dataView.data');
+            dataInfo = dataInfo + this.$t('app.dataview.sum') + _datas.length + this.$t('app.dataview.data');
         } else {
-            dataInfo = dataInfo + '...' + this.$t('app.dataView.sum') + _datas.length + this.$t('app.dataView.data');
+            dataInfo = dataInfo + '...' + this.$t('app.dataview.sum') + _datas.length + this.$t('app.dataview.data');
         }
 
         const removeData = () => {

@@ -191,7 +191,7 @@ export class MEditViewPanelControlBase extends MDControlBase {
      */
     public load(data: any): void {
         if(!this.fetchAction){
-            this.$throw(this.$t('app.multiEditView.notConfig.fetchAction'),'load');
+            this.$throw(this.$t('app.multieditview.notconfig.fetchaction'),'load');
             return;
         }
         let arg: any = {};
@@ -231,7 +231,7 @@ export class MEditViewPanelControlBase extends MDControlBase {
             return;
         }
         if(!this.loaddraftAction){
-            this.$throw(this.$t('app.multiEditView.notConfig.loaddraftAction'),'handleAdd');
+            this.$throw(this.$t('app.multieditview.notconfig.loaddraftaction'),'handleAdd');
             return;
         }
         let tempContext: any = JSON.parse(JSON.stringify(this.context));
@@ -292,6 +292,6 @@ export class MEditViewPanelControlBase extends MDControlBase {
      * @memberof MEditViewPanelControlBase
      */
     public viewload($event:any){
-        LogUtil.log(this.$t('components.appFormDRUIPart.loadComp'));
+        LogUtil.log(this.$t('components.appformdruipart.loadcomp'));
     }
 }

@@ -143,7 +143,6 @@ public class IbzLibModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@IbzLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取无枝叶", tags = {"用例库模块" } ,notes = "获取无枝叶")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibmodules/fetchroot_nobranch")
@@ -157,7 +156,6 @@ public class IbzLibModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzlibmodules/{ibzlibmodule_id}/{action}")

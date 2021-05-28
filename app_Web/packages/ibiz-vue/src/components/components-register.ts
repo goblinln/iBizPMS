@@ -112,6 +112,7 @@ import TextFileUpload from './common/text-file-upload/text-file-upload.vue';
 import AppCommonMicrocom from './common/app-common-microcom/app-common-microcom.vue';
 import AppCalendarTimeline from './common/app-calendar-timeline/app-calendar-timeline.vue';
 import AppCustomTheme from './common/app-custom-theme/app-custom-theme.vue';
+import AppWFOpinion from './common/app-wf-opinion/app-wf-opinion.vue';
 
 // 视图组件
 import { AppViewShell } from '../view-container/app-view-shell';
@@ -349,6 +350,7 @@ export const ComponentsRegister = {
         v.component('app-form-group-data-panel', AppFormGroupDataPanel);
         v.component('text-file-upload', TextFileUpload);
         v.component('app-custom-theme', AppCustomTheme);
+        v.component('app-wf-opinion', AppWFOpinion);
         // 视图组件
         v.component('app-view-shell', AppViewShell);
         v.component('app-default-indexview', AppDefaultIndexView);

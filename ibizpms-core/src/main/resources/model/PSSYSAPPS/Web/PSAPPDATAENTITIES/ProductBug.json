@@ -33,6 +33,7 @@
   "getAllPSAppDEActions" : [ {
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Create.json"
@@ -43,7 +44,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "PRODUCTBUG__DEACTION__CREATE"
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
@@ -1509,6 +1510,7 @@
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Create.json"
@@ -1519,7 +1521,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "PRODUCTBUG__DEACTION__CREATE"
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {

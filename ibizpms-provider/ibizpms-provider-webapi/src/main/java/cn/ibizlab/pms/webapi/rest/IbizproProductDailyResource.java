@@ -167,7 +167,6 @@ public class IbizproProductDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取产品日报", tags = {"产品日报" } ,notes = "获取产品日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductdailies/fetchproductdaily")
 	public ResponseEntity<List<IbizproProductDailyDTO>> fetchproductdaily(@RequestBody IbizproProductDailySearchContext context) {
@@ -179,7 +178,6 @@ public class IbizproProductDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproproductdailies/{ibizproproductdaily_id}/{action}")

@@ -3,8 +3,8 @@
         <div class="app-error-container">
             <img src="@/assets/img/404.png" />
             <div class="error-text">
-                <div class="error-text1">{{$t('components.404.errorText1')}}</div>
-                <div class="error-text2">{{$t('components.404.errorText2')}} <a @click="gotoIndexView">{{$t('components.404.indexPage')}}</a> {{$t('components.404.continue')}}</div>
+                <div class="error-text1">{{$t('components.404.errortext1')}}</div>
+                <div class="error-text2">{{$t('components.404.errortext2')}} <a @click="gotoIndexView">{{$t('components.404.indexpage')}}</a> {{$t('components.404.continue')}}</div>
             </div>
         </div>
     </div>

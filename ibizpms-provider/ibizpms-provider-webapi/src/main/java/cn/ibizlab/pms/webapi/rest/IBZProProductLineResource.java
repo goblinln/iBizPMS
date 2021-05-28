@@ -118,16 +118,6 @@ public class IBZProProductLineResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzproproductlineService.checkKey(ibzproproductlineMapping.toDomain(ibzproproductlinedto)));
     }
 
-    @ApiOperation(value = "保存产品线", tags = {"产品线" },  notes = "保存产品线")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductlines/save")
-    public ResponseEntity<IBZProProductLineDTO> save(@RequestBody IBZProProductLineDTO ibzproproductlinedto) {
-        IBZProProductLine domain = ibzproproductlineMapping.toDomain(ibzproproductlinedto);
-        ibzproproductlineService.save(domain);
-        IBZProProductLineDTO dto = ibzproproductlineMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzproproductlineRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
 
     @ApiOperation(value = "批量保存产品线", tags = {"产品线" },  notes = "批量保存产品线")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductlines/savebatch")
@@ -149,7 +139,6 @@ public class IBZProProductLineResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzproproductlines/{ibzproproductline_id}/{action}")

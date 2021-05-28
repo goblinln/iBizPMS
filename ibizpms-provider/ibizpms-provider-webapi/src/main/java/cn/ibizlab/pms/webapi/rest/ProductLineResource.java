@@ -145,7 +145,6 @@ public class ProductLineResource {
                 .body(list);
 	}
 
-
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/productlines/{productline_id}/{action}")
     public ResponseEntity<ProductLineDTO> dynamicCall(@PathVariable("productline_id") String productline_id , @PathVariable("action") String action , @RequestBody ProductLineDTO productlinedto) {

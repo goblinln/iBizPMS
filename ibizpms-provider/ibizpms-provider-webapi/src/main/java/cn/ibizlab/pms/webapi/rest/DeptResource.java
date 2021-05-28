@@ -143,7 +143,6 @@ public class DeptResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DeptRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根部门", tags = {"部门" } ,notes = "获取根部门")
     @RequestMapping(method= RequestMethod.POST , value="/depts/fetchroot")
@@ -157,7 +156,6 @@ public class DeptResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/depts/{dept_id}/{action}")

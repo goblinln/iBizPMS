@@ -143,7 +143,6 @@ public class taskestimatestatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志年", tags = {"任务工时统计" } ,notes = "获取日志年")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/fetchactionyear")
@@ -157,7 +156,6 @@ public class taskestimatestatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"任务工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/fetchdefault")
@@ -171,7 +169,6 @@ public class taskestimatestatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats/{taskestimatestats_id}/{action}")

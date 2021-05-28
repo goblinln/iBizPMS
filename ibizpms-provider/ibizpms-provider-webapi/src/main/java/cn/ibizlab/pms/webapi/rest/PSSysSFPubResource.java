@@ -121,7 +121,6 @@ public class PSSysSFPubResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取数据集", tags = {"后台服务架构" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/pssyssfpubs/fetchdefault")
 	public ResponseEntity<List<PSSysSFPubDTO>> fetchdefault(@RequestBody PSSysSFPubSearchContext context) {
@@ -133,7 +132,6 @@ public class PSSysSFPubResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/{pssyssfpub_id}/{action}")

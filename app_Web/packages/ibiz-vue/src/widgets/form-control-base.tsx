@@ -415,7 +415,7 @@ export class FormControlBase extends MainControlBase {
      */
     public load(opt: any = {}): void {
         if (!this.loadAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.loadaction') as string), 'load');
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.form.notconfig.loadaction') as string), 'load');
             return;
         }
         const arg: any = { ...opt };
@@ -453,7 +453,7 @@ export class FormControlBase extends MainControlBase {
      */
     public loadDraft(opt: any = {}, mode?: string): void {
         if (!this.loaddraftAction) {
-            this.$throw((this.$t('app.searchForm.notConfig.loaddraftAction') as string), 'loadDraft');
+            this.$throw((this.$t('app.searchform.notconfig.loaddraftaction') as string), 'loadDraft');
             return;
         }
         const arg: any = { ...opt };
@@ -577,7 +577,7 @@ export class FormControlBase extends MainControlBase {
                         }
                     }
                 })
-                response.data.message = errorMsg?errorMsg:(this.$t('app.searchForm.globalerrortip') as string);
+                response.data.message = errorMsg?errorMsg:(this.$t('app.searchform.globalerrortip') as string);
                 this.$forceUpdate();
             }
         }

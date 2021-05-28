@@ -121,7 +121,6 @@ public class PSSysAppResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 	@ApiOperation(value = "获取数据集", tags = {"系统应用" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/pssysapps/fetchdefault")
 	public ResponseEntity<List<PSSysAppDTO>> fetchdefault(@RequestBody PSSysAppSearchContext context) {
@@ -133,7 +132,6 @@ public class PSSysAppResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/{pssysapp_id}/{action}")

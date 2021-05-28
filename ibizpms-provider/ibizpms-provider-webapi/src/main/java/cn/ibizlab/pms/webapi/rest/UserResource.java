@@ -170,7 +170,6 @@ public class UserResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchdefault")
@@ -184,7 +183,6 @@ public class UserResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根据源代码账户获取登录名", tags = {"用户" } ,notes = "获取根据源代码账户获取登录名")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchgetbycommiter")
@@ -198,7 +196,6 @@ public class UserResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队管理", tags = {"用户" } ,notes = "获取项目团队管理")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchprojectteamm")
@@ -212,7 +209,6 @@ public class UserResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队成员", tags = {"用户" } ,notes = "获取项目团队成员")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchprojectteamuser")
@@ -226,7 +222,6 @@ public class UserResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队成员", tags = {"用户" } ,notes = "获取项目团队成员")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchprojectteamusertask")
@@ -240,7 +235,6 @@ public class UserResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取TASKTEAM", tags = {"用户" } ,notes = "获取TASKTEAM")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchtaskteam")
@@ -254,7 +248,6 @@ public class UserResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/users/{user_id}/{action}")

@@ -159,7 +159,6 @@ public class IbzproConfigResource {
                 .body(list);
 	}
 
-
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzproconfigs/{ibzproconfig_id}/{action}")
     public ResponseEntity<IbzproConfigDTO> dynamicCall(@PathVariable("ibzproconfig_id") String ibzproconfig_id , @PathVariable("action") String action , @RequestBody IbzproConfigDTO ibzproconfigdto) {

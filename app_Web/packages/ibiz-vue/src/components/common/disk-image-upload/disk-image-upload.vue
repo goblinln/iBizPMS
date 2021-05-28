@@ -2,7 +2,7 @@
     <div id="image-upload">
         <el-upload
                 ref="imageUpload"
-                multiple
+                :multiple="multiple"
                 :file-list="imageList"
                 list-type="picture-card"
                 :action="getAction()"
@@ -96,6 +96,14 @@ export default class DiskImageUplaod extends Vue {
      * @memberof DiskImageUplaod
      */
     @Prop() public value!: string;
+
+    /**
+     * 是否多选
+     *
+     * @type {boolean}
+     * @memberof AppFileUpload
+     */
+    @Prop({default: true}) public multiple?: boolean;
 
     /**
      * 当前表单状态

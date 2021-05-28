@@ -170,7 +170,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品文档库", tags = {"文档库" } ,notes = "获取产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbyproduct")
@@ -183,7 +182,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品文档库", tags = {"文档库" } ,notes = "获取产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbyproductnotfiles")
@@ -196,7 +194,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目文件库", tags = {"文档库" } ,notes = "获取项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbyproject")
@@ -209,7 +206,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目文件库", tags = {"文档库" } ,notes = "获取项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbyprojectnotfiles")
@@ -222,7 +218,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取所属文档库", tags = {"文档库" } ,notes = "获取所属文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchcurdoclib")
@@ -235,7 +230,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"文档库" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchdefault")
@@ -248,7 +242,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"文档库" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchmyfavourites")
@@ -261,7 +254,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根目录", tags = {"文档库" } ,notes = "获取根目录")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchrootmodulemulu")
@@ -274,7 +266,6 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/{action}")
