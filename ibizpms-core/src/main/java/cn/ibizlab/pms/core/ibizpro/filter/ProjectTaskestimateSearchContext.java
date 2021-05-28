@@ -27,6 +27,13 @@ import cn.ibizlab.pms.core.ibizpro.domain.ProjectTaskestimate;
 @Data
 public class ProjectTaskestimateSearchContext extends QueryWrapperContext<ProjectTaskestimate> {
 
+	private Long n_project_eq;//[项目标识]
+	public void setN_project_eq(Long n_project_eq) {
+        this.n_project_eq = n_project_eq;
+        if(!ObjectUtils.isEmpty(this.n_project_eq)){
+            this.getSearchCond().eq("`project`", n_project_eq);
+        }
+    }
 	private String n_project_in;//[项目标识]
 	public void setN_project_in(String n_project_in) {
         this.n_project_in = n_project_in;
