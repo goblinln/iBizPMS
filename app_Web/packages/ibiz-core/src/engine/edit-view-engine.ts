@@ -136,7 +136,7 @@ export class EditViewEngine extends ViewEngine {
         this.calcToolbarItemState(newdata);
         this.calcToolbarItemAuthState(this.transformData(arg));
         this.emitViewEvent('save', arg);
-        this.emitViewEvent('viewdataschange', JSON.stringify({ action: 'save', status: 'success', data: arg }));
+        this.emitViewEvent('viewdataschange',arg);
     }
 
     /**

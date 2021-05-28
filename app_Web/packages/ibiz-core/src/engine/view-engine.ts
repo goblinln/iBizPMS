@@ -1,3 +1,5 @@
+import { isArray, isObject } from "qx-util";
+
 /**
  * 视图引擎基类
  *
@@ -105,6 +107,9 @@ export class ViewEngine {
      */
     public emitViewEvent(eventName: string, args: any): void {
         if(this.view) {
+            if (!isArray(args) && isObject(args)) {
+                args = [args];
+            }
             this.view.$emit('view-event', { viewName: this.view.viewName, action: eventName, data: args });
         }
     }

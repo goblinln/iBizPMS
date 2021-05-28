@@ -81,7 +81,7 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
             return false;
         }
         if(!ibzcaseRuntime.isRtmodel()){
-            ibzlibcasestepsService.saveByIbizcase(et.getId(), et.getIbzlibcasesteps());
+            ibzlibcasestepsService.saveByIbizcase(et.getId(), et.getIbzlibcasestepss());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -109,7 +109,7 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
             return false;
         }
         if(!ibzcaseRuntime.isRtmodel()){
-            ibzlibcasestepsService.saveByIbizcase(et.getId(), et.getIbzlibcasesteps());
+            ibzlibcasestepsService.saveByIbizcase(et.getId(), et.getIbzlibcasestepss());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -167,7 +167,7 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
         }
         else {
             if(!ibzcaseRuntime.isRtmodel()){
-                et.setIbzlibcasesteps(ibzlibcasestepsService.selectByIbizcase(key));
+                et.setIbzlibcasestepss(ibzlibcasestepsService.selectByIbizcase(key));
             }
         }
         return et;

@@ -132,170 +132,6 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         return this.condCache.get('view');
     }
     /**
-     * FetchMyTrends
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async FetchMyTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
-        }
-        if (_context.ibzlib && true) {
-            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchmytrends`, _data);
-        }
-        if (_context.case && true) {
-            return this.http.post(`/cases/${_context.case}/actions/fetchmytrends`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmytrends`, _data);
-        }
-        if (_context.testtask && true) {
-            return this.http.post(`/testtasks/${_context.testtask}/actions/fetchmytrends`, _data);
-        }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchmytrends`, _data);
-        }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchmytrends`, _data);
-        }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchmytrends`, _data);
-        }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchmytrends`, _data);
-        }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
-        }
-        if (_context.testreport && true) {
-            return this.http.post(`/testreports/${_context.testreport}/actions/fetchmytrends`, _data);
-        }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchmytrends`, _data);
-        }
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchmytrends`, _data);
-        }
-        return this.http.post(`/actions/fetchmytrends`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && _context.action) {
-            const res = await this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.ibzlib && _context.action) {
-            const res = await this.http.get(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.case && _context.action) {
-            const res = await this.http.get(`/cases/${_context.case}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.testsuite && _context.action) {
-            const res = await this.http.get(`/testsuites/${_context.testsuite}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.testtask && _context.action) {
-            const res = await this.http.get(`/testtasks/${_context.testtask}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.ibzreportly && _context.action) {
-            const res = await this.http.get(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.ibzmonthly && _context.action) {
-            const res = await this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.ibzdaily && _context.action) {
-            const res = await this.http.get(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.doc && _context.action) {
-            const res = await this.http.get(`/docs/${_context.doc}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.doclib && _context.action) {
-            const res = await this.http.get(`/doclibs/${_context.doclib}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.testreport && _context.action) {
-            const res = await this.http.get(`/testreports/${_context.testreport}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.ibzweekly && _context.action) {
-            const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.todo && _context.action) {
-            const res = await this.http.get(`/todos/${_context.todo}/actions/${_context.action}`);
-            return res;
-        }
-        const res = await this.http.get(`/actions/${_context.action}`);
-        return res;
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchdefault`, _data);
-        }
-        if (_context.ibzlib && true) {
-            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchdefault`, _data);
-        }
-        if (_context.case && true) {
-            return this.http.post(`/cases/${_context.case}/actions/fetchdefault`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchdefault`, _data);
-        }
-        if (_context.testtask && true) {
-            return this.http.post(`/testtasks/${_context.testtask}/actions/fetchdefault`, _data);
-        }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchdefault`, _data);
-        }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchdefault`, _data);
-        }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchdefault`, _data);
-        }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchdefault`, _data);
-        }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchdefault`, _data);
-        }
-        if (_context.testreport && true) {
-            return this.http.post(`/testreports/${_context.testreport}/actions/fetchdefault`, _data);
-        }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchdefault`, _data);
-        }
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchdefault`, _data);
-        }
-        return this.http.post(`/actions/fetchdefault`, _data);
-    }
-    /**
      * FetchProjectTrends
      *
      * @param {*} [_context={}]
@@ -344,56 +180,6 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             return this.http.post(`/todos/${_context.todo}/actions/fetchprojecttrends`, _data);
         }
         return this.http.post(`/actions/fetchprojecttrends`, _data);
-    }
-    /**
-     * FetchType
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchtype`, _data);
-        }
-        if (_context.ibzlib && true) {
-            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchtype`, _data);
-        }
-        if (_context.case && true) {
-            return this.http.post(`/cases/${_context.case}/actions/fetchtype`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchtype`, _data);
-        }
-        if (_context.testtask && true) {
-            return this.http.post(`/testtasks/${_context.testtask}/actions/fetchtype`, _data);
-        }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchtype`, _data);
-        }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchtype`, _data);
-        }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchtype`, _data);
-        }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchtype`, _data);
-        }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchtype`, _data);
-        }
-        if (_context.testreport && true) {
-            return this.http.post(`/testreports/${_context.testreport}/actions/fetchtype`, _data);
-        }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchtype`, _data);
-        }
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchtype`, _data);
-        }
-        return this.http.post(`/actions/fetchtype`, _data);
     }
     /**
      * FetchQueryUserYEAR
@@ -594,6 +380,184 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         return this.http.post(`/actions`, _data);
     }
     /**
+     * FetchProductTrends
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async FetchProductTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.doclib && _context.doc && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.ibzlib && true) {
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.case && true) {
+            return this.http.post(`/cases/${_context.case}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.testsuite && true) {
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.testtask && true) {
+            return this.http.post(`/testtasks/${_context.testtask}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.ibzreportly && true) {
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.ibzmonthly && true) {
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.ibzdaily && true) {
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.doc && true) {
+            return this.http.post(`/docs/${_context.doc}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.doclib && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.testreport && true) {
+            return this.http.post(`/testreports/${_context.testreport}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.ibzweekly && true) {
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchproducttrends`, _data);
+        }
+        if (_context.todo && true) {
+            return this.http.post(`/todos/${_context.todo}/actions/fetchproducttrends`, _data);
+        }
+        return this.http.post(`/actions/fetchproducttrends`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.doclib && _context.doc && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`, _data);
+        }
+        if (_context.ibzlib && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}`, _data);
+        }
+        if (_context.case && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/cases/${_context.case}/actions/${_context.action}`, _data);
+        }
+        if (_context.testsuite && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/testsuites/${_context.testsuite}/actions/${_context.action}`, _data);
+        }
+        if (_context.testtask && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/testtasks/${_context.testtask}/actions/${_context.action}`, _data);
+        }
+        if (_context.ibzreportly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}`, _data);
+        }
+        if (_context.ibzmonthly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}`, _data);
+        }
+        if (_context.ibzdaily && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}`, _data);
+        }
+        if (_context.doc && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/docs/${_context.doc}/actions/${_context.action}`, _data);
+        }
+        if (_context.doclib && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/doclibs/${_context.doclib}/actions/${_context.action}`, _data);
+        }
+        if (_context.testreport && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/testreports/${_context.testreport}/actions/${_context.action}`, _data);
+        }
+        if (_context.ibzweekly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}`, _data);
+        }
+        if (_context.todo && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/todos/${_context.todo}/actions/${_context.action}`, _data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/actions/${_context.action}`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.doclib && _context.doc && _context.action) {
+            const res = await this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.ibzlib && _context.action) {
+            const res = await this.http.get(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.case && _context.action) {
+            const res = await this.http.get(`/cases/${_context.case}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.testsuite && _context.action) {
+            const res = await this.http.get(`/testsuites/${_context.testsuite}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.testtask && _context.action) {
+            const res = await this.http.get(`/testtasks/${_context.testtask}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.ibzreportly && _context.action) {
+            const res = await this.http.get(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.ibzmonthly && _context.action) {
+            const res = await this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.ibzdaily && _context.action) {
+            const res = await this.http.get(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.doc && _context.action) {
+            const res = await this.http.get(`/docs/${_context.doc}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.doclib && _context.action) {
+            const res = await this.http.get(`/doclibs/${_context.doclib}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.testreport && _context.action) {
+            const res = await this.http.get(`/testreports/${_context.testreport}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.ibzweekly && _context.action) {
+            const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.todo && _context.action) {
+            const res = await this.http.get(`/todos/${_context.todo}/actions/${_context.action}`);
+            return res;
+        }
+        const res = await this.http.get(`/actions/${_context.action}`);
+        return res;
+    }
+    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -686,54 +650,54 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         return res;
     }
     /**
-     * FetchProductTrends
+     * FetchType
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ActionService
      */
-    async FetchProductTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproducttrends`, _data);
+            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchtype`, _data);
         }
         if (_context.ibzlib && true) {
-            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchproducttrends`, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchtype`, _data);
         }
         if (_context.case && true) {
-            return this.http.post(`/cases/${_context.case}/actions/fetchproducttrends`, _data);
+            return this.http.post(`/cases/${_context.case}/actions/fetchtype`, _data);
         }
         if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproducttrends`, _data);
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchtype`, _data);
         }
         if (_context.testtask && true) {
-            return this.http.post(`/testtasks/${_context.testtask}/actions/fetchproducttrends`, _data);
+            return this.http.post(`/testtasks/${_context.testtask}/actions/fetchtype`, _data);
         }
         if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchproducttrends`, _data);
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchtype`, _data);
         }
         if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchproducttrends`, _data);
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchtype`, _data);
         }
         if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchproducttrends`, _data);
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchtype`, _data);
         }
         if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchproducttrends`, _data);
+            return this.http.post(`/docs/${_context.doc}/actions/fetchtype`, _data);
         }
         if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchproducttrends`, _data);
+            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchtype`, _data);
         }
         if (_context.testreport && true) {
-            return this.http.post(`/testreports/${_context.testreport}/actions/fetchproducttrends`, _data);
+            return this.http.post(`/testreports/${_context.testreport}/actions/fetchtype`, _data);
         }
         if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchproducttrends`, _data);
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchtype`, _data);
         }
         if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchproducttrends`, _data);
+            return this.http.post(`/todos/${_context.todo}/actions/fetchtype`, _data);
         }
-        return this.http.post(`/actions/fetchproducttrends`, _data);
+        return this.http.post(`/actions/fetchtype`, _data);
     }
     /**
      * FetchMobType
@@ -786,67 +750,103 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         return this.http.post(`/actions/fetchmobtype`, _data);
     }
     /**
-     * Update
+     * FetchDefault
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ActionService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`, _data);
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.doclib && _context.doc && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchdefault`, _data);
         }
-        if (_context.ibzlib && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}`, _data);
+        if (_context.ibzlib && true) {
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchdefault`, _data);
         }
-        if (_context.case && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/cases/${_context.case}/actions/${_context.action}`, _data);
+        if (_context.case && true) {
+            return this.http.post(`/cases/${_context.case}/actions/fetchdefault`, _data);
         }
-        if (_context.testsuite && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/testsuites/${_context.testsuite}/actions/${_context.action}`, _data);
+        if (_context.testsuite && true) {
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchdefault`, _data);
         }
-        if (_context.testtask && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/testtasks/${_context.testtask}/actions/${_context.action}`, _data);
+        if (_context.testtask && true) {
+            return this.http.post(`/testtasks/${_context.testtask}/actions/fetchdefault`, _data);
         }
-        if (_context.ibzreportly && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}`, _data);
+        if (_context.ibzreportly && true) {
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchdefault`, _data);
         }
-        if (_context.ibzmonthly && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}`, _data);
+        if (_context.ibzmonthly && true) {
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchdefault`, _data);
         }
-        if (_context.ibzdaily && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}`, _data);
+        if (_context.ibzdaily && true) {
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchdefault`, _data);
         }
-        if (_context.doc && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/docs/${_context.doc}/actions/${_context.action}`, _data);
+        if (_context.doc && true) {
+            return this.http.post(`/docs/${_context.doc}/actions/fetchdefault`, _data);
         }
-        if (_context.doclib && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/doclibs/${_context.doclib}/actions/${_context.action}`, _data);
+        if (_context.doclib && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchdefault`, _data);
         }
-        if (_context.testreport && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/testreports/${_context.testreport}/actions/${_context.action}`, _data);
+        if (_context.testreport && true) {
+            return this.http.post(`/testreports/${_context.testreport}/actions/fetchdefault`, _data);
         }
-        if (_context.ibzweekly && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}`, _data);
+        if (_context.ibzweekly && true) {
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchdefault`, _data);
         }
-        if (_context.todo && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/todos/${_context.todo}/actions/${_context.action}`, _data);
+        if (_context.todo && true) {
+            return this.http.post(`/todos/${_context.todo}/actions/fetchdefault`, _data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/actions/${_context.action}`, _data);
+        return this.http.post(`/actions/fetchdefault`, _data);
+    }
+    /**
+     * FetchMyTrends
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async FetchMyTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.doclib && _context.doc && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        }
+        if (_context.ibzlib && true) {
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchmytrends`, _data);
+        }
+        if (_context.case && true) {
+            return this.http.post(`/cases/${_context.case}/actions/fetchmytrends`, _data);
+        }
+        if (_context.testsuite && true) {
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmytrends`, _data);
+        }
+        if (_context.testtask && true) {
+            return this.http.post(`/testtasks/${_context.testtask}/actions/fetchmytrends`, _data);
+        }
+        if (_context.ibzreportly && true) {
+            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchmytrends`, _data);
+        }
+        if (_context.ibzmonthly && true) {
+            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchmytrends`, _data);
+        }
+        if (_context.ibzdaily && true) {
+            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchmytrends`, _data);
+        }
+        if (_context.doc && true) {
+            return this.http.post(`/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        }
+        if (_context.doclib && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
+        }
+        if (_context.testreport && true) {
+            return this.http.post(`/testreports/${_context.testreport}/actions/fetchmytrends`, _data);
+        }
+        if (_context.ibzweekly && true) {
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchmytrends`, _data);
+        }
+        if (_context.todo && true) {
+            return this.http.post(`/todos/${_context.todo}/actions/fetchmytrends`, _data);
+        }
+        return this.http.post(`/actions/fetchmytrends`, _data);
     }
 }

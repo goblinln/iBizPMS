@@ -1603,6 +1603,7 @@
     },
     "masterOrder" : -1,
     "masterRS" : 8,
+    "minorCodeName" : "IbzLibCaseStepss",
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps.json"

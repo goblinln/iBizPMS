@@ -693,7 +693,7 @@
   "logicName" : "用例库用例步骤",
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
-    "codeName" : "IbzLibCaseSteps",
+    "codeName" : "IbzLibCaseStepss",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,

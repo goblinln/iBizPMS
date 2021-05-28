@@ -5,7 +5,9 @@
         :closable="false"
         v-model="isShow"
         :width="width"
-        @on-visible-change="onVisibleChange($event)">
+        @on-visible-change="onVisibleChange($event)"
+        @on-close="close(tempResult)"
+    >
         <component
             :is="viewname"
             class="viewcontainer2"
@@ -19,7 +21,7 @@
     </drawer>
 </template>
 <script lang="ts">
-import { Vue, Component, Prop, Provide, Emit, Watch } from "vue-property-decorator";
+import { Vue, Component, Prop } from "vue-property-decorator";
 import { Subject } from "rxjs";
 import { Util } from 'ibiz-core'
 @Component({

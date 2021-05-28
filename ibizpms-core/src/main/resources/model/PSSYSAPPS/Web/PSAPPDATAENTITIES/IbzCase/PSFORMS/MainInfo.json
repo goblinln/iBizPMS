@@ -602,7 +602,7 @@
             "enableUpdateDataRS" : false
           }, {
             "actionRSMode" : 1,
-            "codeName" : "IbzLibCaseSteps",
+            "codeName" : "IbzLibCaseStepss",
             "dataRSMode" : 0,
             "getMajorPSAppDataEntity" : {
               "modelref" : true,
@@ -627,7 +627,7 @@
             "enableUpdateDataRS" : false
           } ], [ {
             "actionRSMode" : 1,
-            "codeName" : "IbzLibCaseSteps",
+            "codeName" : "IbzLibCaseStepss",
             "dataRSMode" : 0,
             "getMajorPSAppDataEntity" : {
               "modelref" : true,

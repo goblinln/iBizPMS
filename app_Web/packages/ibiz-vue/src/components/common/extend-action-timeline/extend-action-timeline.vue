@@ -33,21 +33,21 @@
                   <Tooltip
                     placement="bottom"
                     theme="light"
-                    :disabled="usertask.comments.length > 1 ? false : true"
+                    :disabled="acceptingOfficerNodup('authorName',usertask.comments).length > 1 ? false : true"
                   >
                     {{
-                      usertask.comments
-                        .map((item) => item.authorName)
+                      acceptingOfficerNodup('authorName',usertask.comments)
+                        .map((item) => item)
                         .toString()
                     }}
                     <div slot="content">
                       <div class="tooltips">
                         <div
                           class="tooltips-content"
-                          v-for="(item, toolindex) in usertask.comments"
+                          v-for="(item, toolindex) in acceptingOfficerNodup('authorName',usertask.comments)"
                           :key="toolindex"
                         >
-                          {{ item.authorName }}
+                          {{ item }}
                         </div>
                       </div>
                     </div>
@@ -138,21 +138,21 @@
                   <Tooltip
                     placement="bottom"
                     theme="light"
-                    :disabled="usertask.identitylinks.length > 1 ? false : true"
+                    :disabled="acceptingOfficerNodup('displayname',usertask.identitylinks).length > 1 ? false : true"
                   >
                     {{
-                      usertask.identitylinks
-                        .map((item) => item.displayname)
+                      acceptingOfficerNodup('displayname',usertask.identitylinks)
+                        .map((item) => item)
                         .toString()
                     }}
                     <div slot="content">
                       <div class="tooltips">
                         <div
                           class="tooltips-content"
-                          v-for="(item, toolindex) in usertask.identitylinks"
+                          v-for="(item, toolindex) in acceptingOfficerNodup('displayname',usertask.identitylinks)"
                           :key="toolindex"
                         >
-                          {{ item.displayname }}
+                          {{ item }}
                         </div>
                       </div>
                     </div>
@@ -308,6 +308,24 @@ export default class ExtendActionTimeline extends Vue {
   public changeExpand(usertask: any) {
     usertask.isShow = !usertask.isShow;
     this.$forceUpdate();
+  }
+  
+  /**
+   * 办理人员名称显示去重
+   * 
+   * @param tag 需要去重的名称标识
+   * @param datas 需要去重数据集
+   * @memberof ExtendActionTimeline
+   */
+  public acceptingOfficerNodup(tag: string, datas: any[]): any[] {
+    let tempData: any[] = [];
+    if (datas?.length > 0 && tag) {
+      datas.forEach((data: any)=>{
+        tempData.push(data[tag]);
+      })
+    }
+    const nodup = [...new Set(tempData)];
+    return nodup;
   }
 }
 </script>
