@@ -492,7 +492,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "( ( t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_CASE\"}')}  OR  t1.`REVIEWEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"REVIEWEDBY\",\"dename\":\"ZT_CASE\"}')}  OR  t1.`LASTEDITEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"LASTEDITEDBY\",\"dename\":\"ZT_CASE\"}')}  OR  t2.`ASSIGNEDTO` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ASSIGNEDTO\",\"dename\":\"ZT_CASE\"}')} ) )",
+        "customCond" : "( ( t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_CASE\"}')}  OR  t1.`REVIEWEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"REVIEWEDBY\",\"dename\":\"ZT_CASE\"}')}  OR  t1.`LASTEDITEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"LASTEDITEDBY\",\"dename\":\"ZT_CASE\"}')} ) )",
         "name" : "查询条件"
       } ]
     } ],

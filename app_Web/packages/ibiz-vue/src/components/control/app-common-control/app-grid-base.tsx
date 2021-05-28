@@ -86,6 +86,17 @@ export class AppGridBase extends GridControlBase {
     public ctrlEvent({ controlname, action, data }: { controlname: string; action: string; data: any }): void { }
 
     /**
+     * 操作列动画
+     *
+     * @param {show: boolean}
+     * @memberof AppGridBase
+     */
+    public showPoptip(show: boolean) {
+      let cls: string = show?"ivu-poptip page-column show-poptip":"ivu-poptip page-column hide-poptip";
+      (this.$refs.pageColumn as any).$el.setAttribute("class",cls);
+    }
+
+    /**
      * 计算表格参数
      *
      * @memberof AppGridBase
@@ -560,7 +571,7 @@ export class AppGridBase extends GridControlBase {
      */
     public renderColumnFilter() {
         if (this.viewStyle == 'DEFAULT') {
-            return <poptip transfer placement='bottom-end' class='page-column' popper-class="view-default">
+              return <poptip transfer ref='pageColumn' placement='bottom-end' class='page-column' on-on-popper-show={()=>this.showPoptip(true)} on-on-popper-hide={()=>this.showPoptip(false)} popper-class="view-default"> 
                 <icon type="md-options" />
                 <div slot='content'>
                     <draggable value={this.allColumns} animation={300} handle='.handle-icon' on-change={({ moved }: any) => {

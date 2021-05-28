@@ -78,15 +78,6 @@ public class ProjectTaskEstimateResource {
     }
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目任务获取任务预计草稿", tags = {"任务预计" },  notes = "根据项目任务获取任务预计草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projecttasks/{task_id}/projecttaskestimates/getdraft")
-    public ResponseEntity<ProjectTaskEstimateDTO> getDraftByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, ProjectTaskEstimateDTO dto) {
-        TaskEstimate domain = projecttaskestimateMapping.toDomain(dto);
-        domain.setTask(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(projecttaskestimateMapping.toDto(taskestimateService.getDraft(domain)));
-    }
-
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据项目任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据项目任务获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projecttasks/{task_id}/projecttaskestimates/fetchdefault")
 	public ResponseEntity<List<ProjectTaskEstimateDTO>> fetchProjectTaskEstimateDefaultByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
@@ -112,6 +103,15 @@ public class ProjectTaskEstimateResource {
     public ResponseEntity<Boolean> removeBatchByProjectTask(@RequestBody List<Long> ids) {
         taskestimateService.removeBatch(ids);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目任务获取任务预计草稿", tags = {"任务预计" },  notes = "根据项目任务获取任务预计草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projecttasks/{task_id}/projecttaskestimates/getdraft")
+    public ResponseEntity<ProjectTaskEstimateDTO> getDraftByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, ProjectTaskEstimateDTO dto) {
+        TaskEstimate domain = projecttaskestimateMapping.toDomain(dto);
+        domain.setTask(task_id);
+        return ResponseEntity.status(HttpStatus.OK).body(projecttaskestimateMapping.toDto(taskestimateService.getDraft(domain)));
     }
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('DENY')")
