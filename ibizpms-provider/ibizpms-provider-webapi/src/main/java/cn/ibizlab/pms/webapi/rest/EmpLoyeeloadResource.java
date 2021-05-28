@@ -67,7 +67,7 @@ public class EmpLoyeeloadResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id,'UPDATE')")
+    @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id, 'UPDATE')")
     @ApiOperation(value = "更新员工负载表", tags = {"员工负载表" },  notes = "更新员工负载表")
 	@RequestMapping(method = RequestMethod.PUT, value = "/employeeloads/{employeeload_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class EmpLoyeeloadResource {
     }
 
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id,'DELETE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
     @ApiOperation(value = "删除员工负载表", tags = {"员工负载表" },  notes = "删除员工负载表")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/employeeloads/{employeeload_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("employeeload_id") Long employeeload_id) {
@@ -92,7 +92,7 @@ public class EmpLoyeeloadResource {
     }
 
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id,'READ')")
+    @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id, 'READ')")
     @ApiOperation(value = "获取员工负载表", tags = {"员工负载表" },  notes = "获取员工负载表")
 	@RequestMapping(method = RequestMethod.GET, value = "/employeeloads/{employeeload_id}")
     public ResponseEntity<EmpLoyeeloadDTO> get(@PathVariable("employeeload_id") Long employeeload_id) {
@@ -118,6 +118,7 @@ public class EmpLoyeeloadResource {
         return  ResponseEntity.status(HttpStatus.OK).body(employeeloadService.checkKey(employeeloadMapping.toDomain(employeeloaddto)));
     }
 
+    @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存员工负载表", tags = {"员工负载表" },  notes = "保存员工负载表")
 	@RequestMapping(method = RequestMethod.POST, value = "/employeeloads/save")
     public ResponseEntity<EmpLoyeeloadDTO> save(@RequestBody EmpLoyeeloadDTO employeeloaddto) {
@@ -130,6 +131,7 @@ public class EmpLoyeeloadResource {
     }
 
 
+    @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"员工负载表" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/employeeloads/fetchdefault")
 	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchdefault(@RequestBody EmpLoyeeloadSearchContext context) {
@@ -141,6 +143,7 @@ public class EmpLoyeeloadResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取获取员工负载表", tags = {"员工负载表" } ,notes = "获取获取员工负载表")
     @RequestMapping(method= RequestMethod.POST , value="/employeeloads/fetchgetwoerkload")
 	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchgetwoerkload(@RequestBody EmpLoyeeloadSearchContext context) {

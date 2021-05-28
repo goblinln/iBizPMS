@@ -67,7 +67,7 @@ public class ProductStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductStatsRuntime.test(#productstats_id,'UPDATE')")
+    @PreAuthorize("@ProductStatsRuntime.test(#productstats_id, 'UPDATE')")
     @ApiOperation(value = "更新产品统计", tags = {"产品统计" },  notes = "更新产品统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productstats/{productstats_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class ProductStatsResource {
     }
 
 
-    @PreAuthorize("@ProductStatsRuntime.test(#productstats_id,'DELETE')")
+    @PreAuthorize("@ProductStatsRuntime.test(#productstats_id, 'DELETE')")
     @ApiOperation(value = "删除产品统计", tags = {"产品统计" },  notes = "删除产品统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productstats/{productstats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("productstats_id") Long productstats_id) {
@@ -92,6 +92,7 @@ public class ProductStatsResource {
     }
 
 
+    @PreAuthorize("@ProductStatsRuntime.test(#productstats_id, 'NONE')")
     @ApiOperation(value = "获取产品统计", tags = {"产品统计" },  notes = "获取产品统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/productstats/{productstats_id}")
     public ResponseEntity<ProductStatsDTO> get(@PathVariable("productstats_id") Long productstats_id) {
@@ -117,6 +118,7 @@ public class ProductStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productstatsService.checkKey(productstatsMapping.toDomain(productstatsdto)));
     }
 
+    @PreAuthorize("@ProductStatsRuntime.test(#productstats_id, 'NONE')")
     @ApiOperation(value = "获取测试统计详情", tags = {"产品统计" },  notes = "获取测试统计详情")
 	@RequestMapping(method = RequestMethod.GET, value = "/productstats/{productstats_id}/getteststats")
     public ResponseEntity<ProductStatsDTO> getTestStats(@PathVariable("productstats_id") Long productstats_id, ProductStatsDTO productstatsdto) {
@@ -130,6 +132,7 @@ public class ProductStatsResource {
     }
 
 
+    @PreAuthorize("@ProductStatsRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存产品统计", tags = {"产品统计" },  notes = "保存产品统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/productstats/save")
     public ResponseEntity<ProductStatsDTO> save(@RequestBody ProductStatsDTO productstatsdto) {
@@ -142,6 +145,7 @@ public class ProductStatsResource {
     }
 
 
+    @PreAuthorize("@ProductStatsRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品统计" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchdefault")
 	public ResponseEntity<List<ProductStatsDTO>> fetchdefault(@RequestBody ProductStatsSearchContext context) {
@@ -153,6 +157,7 @@ public class ProductStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProductStatsRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取未关闭产品", tags = {"产品统计" } ,notes = "获取未关闭产品")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchnoopenproduct")
 	public ResponseEntity<List<ProductStatsDTO>> fetchnoopenproduct(@RequestBody ProductStatsSearchContext context) {
@@ -164,6 +169,7 @@ public class ProductStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProductStatsRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取产品质量表", tags = {"产品统计" } ,notes = "获取产品质量表")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchprodctquantigird")
 	public ResponseEntity<List<ProductStatsDTO>> fetchprodctquantigird(@RequestBody ProductStatsSearchContext context) {
@@ -175,6 +181,7 @@ public class ProductStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProductStatsRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取产品投入表", tags = {"产品统计" } ,notes = "获取产品投入表")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchproductinputtable")
 	public ResponseEntity<List<ProductStatsDTO>> fetchproductinputtable(@RequestBody ProductStatsSearchContext context) {
@@ -186,6 +193,7 @@ public class ProductStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProductStatsRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取产品完成统计表", tags = {"产品统计" } ,notes = "获取产品完成统计表")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchproductcompletionstatistics")
 	public ResponseEntity<List<ProductStatsDTO>> fetchproductcompletionstatistics(@RequestBody ProductStatsSearchContext context) {

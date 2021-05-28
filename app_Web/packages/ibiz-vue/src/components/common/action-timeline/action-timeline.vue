@@ -21,7 +21,7 @@
                         <td>
                             <div class='timeline'>
                                 <template v-if="usertask.identitylinks && usertask.identitylinks.length > 0">
-                                    {{$t('components.appWFApproval.wait')}}
+                                    {{$t('components.appwfapproval.wait')}}
                                     <strong>
                                         <template v-for="(identitylink, len) in usertask.identitylinks">
                                             <template v-if="identitylink.displayname">
@@ -32,7 +32,7 @@
                                             </template>
                                         </template>  
                                     </strong>  
-                                    {{$t('components.appWFApproval.handle')}}
+                                    {{$t('components.appwfapproval.handle')}}
                                 </template>
                                 <template v-else>
                                     <ul class="action-timeline-wrapper">

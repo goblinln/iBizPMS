@@ -67,7 +67,7 @@ public class IBZProToDoHistoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProToDoHistoryRuntime.test(#ibzprotodohistory_id,'UPDATE')")
+    @PreAuthorize("@IBZProToDoHistoryRuntime.test(#ibzprotodohistory_id, 'UPDATE')")
     @ApiOperation(value = "更新todo操作历史", tags = {"todo操作历史" },  notes = "更新todo操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprotodohistories/{ibzprotodohistory_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IBZProToDoHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZProToDoHistoryRuntime.test(#ibzprotodohistory_id,'DELETE')")
+    @PreAuthorize("@IBZProToDoHistoryRuntime.test(#ibzprotodohistory_id, 'DELETE')")
     @ApiOperation(value = "删除todo操作历史", tags = {"todo操作历史" },  notes = "删除todo操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprotodohistories/{ibzprotodohistory_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzprotodohistory_id") Long ibzprotodohistory_id) {
@@ -92,7 +92,7 @@ public class IBZProToDoHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZProToDoHistoryRuntime.test(#ibzprotodohistory_id,'READ')")
+    @PreAuthorize("@IBZProToDoHistoryRuntime.test(#ibzprotodohistory_id, 'READ')")
     @ApiOperation(value = "获取todo操作历史", tags = {"todo操作历史" },  notes = "获取todo操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprotodohistories/{ibzprotodohistory_id}")
     public ResponseEntity<IBZProToDoHistoryDTO> get(@PathVariable("ibzprotodohistory_id") Long ibzprotodohistory_id) {
@@ -118,6 +118,7 @@ public class IBZProToDoHistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprotodohistoryService.checkKey(ibzprotodohistoryMapping.toDomain(ibzprotodohistorydto)));
     }
 
+    @PreAuthorize("@IBZProToDoHistoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存todo操作历史", tags = {"todo操作历史" },  notes = "保存todo操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodohistories/save")
     public ResponseEntity<IBZProToDoHistoryDTO> save(@RequestBody IBZProToDoHistoryDTO ibzprotodohistorydto) {

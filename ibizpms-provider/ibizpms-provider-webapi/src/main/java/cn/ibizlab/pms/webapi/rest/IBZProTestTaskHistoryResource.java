@@ -67,7 +67,7 @@ public class IBZProTestTaskHistoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProTestTaskHistoryRuntime.test(#ibzprotesttaskhistory_id,'UPDATE')")
+    @PreAuthorize("@IBZProTestTaskHistoryRuntime.test(#ibzprotesttaskhistory_id, 'UPDATE')")
     @ApiOperation(value = "更新测试单操作历史", tags = {"测试单操作历史" },  notes = "更新测试单操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprotesttaskhistories/{ibzprotesttaskhistory_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IBZProTestTaskHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZProTestTaskHistoryRuntime.test(#ibzprotesttaskhistory_id,'DELETE')")
+    @PreAuthorize("@IBZProTestTaskHistoryRuntime.test(#ibzprotesttaskhistory_id, 'DELETE')")
     @ApiOperation(value = "删除测试单操作历史", tags = {"测试单操作历史" },  notes = "删除测试单操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprotesttaskhistories/{ibzprotesttaskhistory_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzprotesttaskhistory_id") Long ibzprotesttaskhistory_id) {
@@ -92,7 +92,7 @@ public class IBZProTestTaskHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZProTestTaskHistoryRuntime.test(#ibzprotesttaskhistory_id,'READ')")
+    @PreAuthorize("@IBZProTestTaskHistoryRuntime.test(#ibzprotesttaskhistory_id, 'READ')")
     @ApiOperation(value = "获取测试单操作历史", tags = {"测试单操作历史" },  notes = "获取测试单操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprotesttaskhistories/{ibzprotesttaskhistory_id}")
     public ResponseEntity<IBZProTestTaskHistoryDTO> get(@PathVariable("ibzprotesttaskhistory_id") Long ibzprotesttaskhistory_id) {
@@ -118,6 +118,7 @@ public class IBZProTestTaskHistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskhistoryService.checkKey(ibzprotesttaskhistoryMapping.toDomain(ibzprotesttaskhistorydto)));
     }
 
+    @PreAuthorize("@IBZProTestTaskHistoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存测试单操作历史", tags = {"测试单操作历史" },  notes = "保存测试单操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskhistories/save")
     public ResponseEntity<IBZProTestTaskHistoryDTO> save(@RequestBody IBZProTestTaskHistoryDTO ibzprotesttaskhistorydto) {

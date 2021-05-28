@@ -67,7 +67,7 @@ public class ProjectModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'UPDATE')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id, 'UPDATE')")
     @ApiOperation(value = "更新任务模块", tags = {"任务模块" },  notes = "更新任务模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class ProjectModuleResource {
     }
 
 
-    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'DELETE')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id, 'DELETE')")
     @ApiOperation(value = "删除任务模块", tags = {"任务模块" },  notes = "删除任务模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projectmodules/{projectmodule_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("projectmodule_id") Long projectmodule_id) {
@@ -92,7 +92,7 @@ public class ProjectModuleResource {
     }
 
 
-    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
     @ApiOperation(value = "获取任务模块", tags = {"任务模块" },  notes = "获取任务模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectmodules/{projectmodule_id}")
     public ResponseEntity<ProjectModuleDTO> get(@PathVariable("projectmodule_id") Long projectmodule_id) {
@@ -118,6 +118,7 @@ public class ProjectModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projectmoduleService.checkKey(projectmoduleMapping.toDomain(projectmoduledto)));
     }
 
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "重建模块路径", tags = {"任务模块" },  notes = "重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/fix")
     public ResponseEntity<ProjectModuleDTO> fix(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
@@ -131,7 +132,7 @@ public class ProjectModuleResource {
     }
 
 
-    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'DELETE')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id, 'DELETE')")
     @ApiOperation(value = "删除模块", tags = {"任务模块" },  notes = "删除模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/removemodule")
     public ResponseEntity<ProjectModuleDTO> removeModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
@@ -145,6 +146,7 @@ public class ProjectModuleResource {
     }
 
 
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存任务模块", tags = {"任务模块" },  notes = "保存任务模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/save")
     public ResponseEntity<ProjectModuleDTO> save(@RequestBody ProjectModuleDTO projectmoduledto) {
@@ -157,7 +159,7 @@ public class ProjectModuleResource {
     }
 
 
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "获取BYPATH", tags = {"任务模块" } ,notes = "获取BYPATH")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchbypath")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchbypath(@RequestBody ProjectModuleSearchContext context) {
@@ -169,7 +171,7 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"任务模块" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchdefault")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchdefault(@RequestBody ProjectModuleSearchContext context) {
@@ -181,7 +183,7 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "获取父模块", tags = {"任务模块" } ,notes = "获取父模块")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchparentmodule")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchparentmodule(@RequestBody ProjectModuleSearchContext context) {
@@ -193,7 +195,7 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "获取根模块", tags = {"任务模块" } ,notes = "获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchroot")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchroot(@RequestBody ProjectModuleSearchContext context) {
@@ -205,7 +207,7 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "获取根模块_无分支", tags = {"任务模块" } ,notes = "获取根模块_无分支")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchroot_nobranch")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchroot_nobranch(@RequestBody ProjectModuleSearchContext context) {
@@ -217,7 +219,7 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "获取根模块", tags = {"任务模块" } ,notes = "获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchroot_task")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchroot_task(@RequestBody ProjectModuleSearchContext context) {
@@ -229,6 +231,7 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取任务模块", tags = {"任务模块" } ,notes = "获取任务模块")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchtaskmodules")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchtaskmodules(@RequestBody ProjectModuleSearchContext context) {
@@ -249,7 +252,7 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduledto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目建立任务模块", tags = {"任务模块" },  notes = "根据项目建立任务模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules")
     public ResponseEntity<ProjectModuleDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
@@ -261,7 +264,7 @@ public class ProjectModuleResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目更新任务模块", tags = {"任务模块" },  notes = "根据项目更新任务模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}")
     public ResponseEntity<ProjectModuleDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
@@ -274,7 +277,7 @@ public class ProjectModuleResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目删除任务模块", tags = {"任务模块" },  notes = "根据项目删除任务模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/{projectmodule_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id) {
@@ -282,7 +285,7 @@ public class ProjectModuleResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目获取任务模块", tags = {"任务模块" },  notes = "根据项目获取任务模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectmodules/{projectmodule_id}")
     public ResponseEntity<ProjectModuleDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id) {
@@ -291,7 +294,7 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目获取任务模块草稿", tags = {"任务模块" },  notes = "根据项目获取任务模块草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectmodules/getdraft")
     public ResponseEntity<ProjectModuleDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectModuleDTO dto) {
@@ -300,13 +303,14 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(projectmoduleService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目检查任务模块", tags = {"任务模块" },  notes = "根据项目检查任务模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/checkkey")
     public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
         return  ResponseEntity.status(HttpStatus.OK).body(projectmoduleService.checkKey(projectmoduleMapping.toDomain(projectmoduledto)));
     }
 
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目重建模块路径", tags = {"任务模块" },  notes = "根据项目重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/fix")
     public ResponseEntity<ProjectModuleDTO> fixByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
@@ -318,7 +322,7 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduledto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目删除模块", tags = {"任务模块" },  notes = "根据项目删除模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/removemodule")
     public ResponseEntity<ProjectModuleDTO> removeModuleByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
@@ -330,6 +334,7 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduledto);
     }
 
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目保存任务模块", tags = {"任务模块" },  notes = "根据项目保存任务模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/save")
     public ResponseEntity<ProjectModuleDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
@@ -340,7 +345,7 @@ public class ProjectModuleResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据项目获取BYPATH", tags = {"任务模块" } ,notes = "根据项目获取BYPATH")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/fetchbypath")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchProjectModuleByPathByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectModuleSearchContext context) {
@@ -353,7 +358,7 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"任务模块" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/fetchdefault")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchProjectModuleDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectModuleSearchContext context) {
@@ -366,7 +371,7 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据项目获取父模块", tags = {"任务模块" } ,notes = "根据项目获取父模块")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/fetchparentmodule")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchProjectModuleParentModuleByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectModuleSearchContext context) {
@@ -379,7 +384,7 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据项目获取根模块", tags = {"任务模块" } ,notes = "根据项目获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/fetchroot")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchProjectModuleRootByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectModuleSearchContext context) {
@@ -392,7 +397,7 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据项目获取根模块_无分支", tags = {"任务模块" } ,notes = "根据项目获取根模块_无分支")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/fetchroot_nobranch")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchProjectModuleRoot_NoBranchByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectModuleSearchContext context) {
@@ -405,7 +410,7 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据项目获取根模块", tags = {"任务模块" } ,notes = "根据项目获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/fetchroot_task")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchProjectModuleRoot_TaskByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectModuleSearchContext context) {
@@ -418,6 +423,7 @@ public class ProjectModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('NONE')")
 	@ApiOperation(value = "根据项目获取任务模块", tags = {"任务模块" } ,notes = "根据项目获取任务模块")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/fetchtaskmodules")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchProjectModuleTaskModulesByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectModuleSearchContext context) {

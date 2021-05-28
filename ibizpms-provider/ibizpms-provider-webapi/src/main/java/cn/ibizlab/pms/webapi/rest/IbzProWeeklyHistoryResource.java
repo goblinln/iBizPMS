@@ -67,7 +67,7 @@ public class IbzProWeeklyHistoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProWeeklyHistoryRuntime.test(#ibzproweeklyhistory_id,'UPDATE')")
+    @PreAuthorize("@IbzProWeeklyHistoryRuntime.test(#ibzproweeklyhistory_id, 'UPDATE')")
     @ApiOperation(value = "更新周报操作历史", tags = {"周报操作历史" },  notes = "更新周报操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproweeklyhistories/{ibzproweeklyhistory_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IbzProWeeklyHistoryResource {
     }
 
 
-    @PreAuthorize("@IbzProWeeklyHistoryRuntime.test(#ibzproweeklyhistory_id,'DELETE')")
+    @PreAuthorize("@IbzProWeeklyHistoryRuntime.test(#ibzproweeklyhistory_id, 'DELETE')")
     @ApiOperation(value = "删除周报操作历史", tags = {"周报操作历史" },  notes = "删除周报操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproweeklyhistories/{ibzproweeklyhistory_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzproweeklyhistory_id") Long ibzproweeklyhistory_id) {
@@ -92,7 +92,7 @@ public class IbzProWeeklyHistoryResource {
     }
 
 
-    @PreAuthorize("@IbzProWeeklyHistoryRuntime.test(#ibzproweeklyhistory_id,'READ')")
+    @PreAuthorize("@IBZProWeeklyActionRuntime.test(#ibzproweeklyaction_id, 'READ')")
     @ApiOperation(value = "获取周报操作历史", tags = {"周报操作历史" },  notes = "获取周报操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproweeklyhistories/{ibzproweeklyhistory_id}")
     public ResponseEntity<IbzProWeeklyHistoryDTO> get(@PathVariable("ibzproweeklyhistory_id") Long ibzproweeklyhistory_id) {
@@ -118,6 +118,7 @@ public class IbzProWeeklyHistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyhistoryService.checkKey(ibzproweeklyhistoryMapping.toDomain(ibzproweeklyhistorydto)));
     }
 
+    @PreAuthorize("@IbzProWeeklyHistoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存周报操作历史", tags = {"周报操作历史" },  notes = "保存周报操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyhistories/save")
     public ResponseEntity<IbzProWeeklyHistoryDTO> save(@RequestBody IbzProWeeklyHistoryDTO ibzproweeklyhistorydto) {
@@ -130,7 +131,7 @@ public class IbzProWeeklyHistoryResource {
     }
 
 
-    @PreAuthorize("@IbzProWeeklyHistoryRuntime.quickTest('READ')")
+    @PreAuthorize("@IBZProWeeklyActionRuntime.test(#ibzproweeklyaction_id, 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"周报操作历史" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproweeklyhistories/fetchdefault")
 	public ResponseEntity<List<IbzProWeeklyHistoryDTO>> fetchdefault(@RequestBody IbzProWeeklyHistorySearchContext context) {

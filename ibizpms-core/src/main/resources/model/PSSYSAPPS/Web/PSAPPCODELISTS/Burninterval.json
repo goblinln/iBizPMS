@@ -7,7 +7,7 @@
   "name" : "燃尽图间隔显示",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
   },
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",

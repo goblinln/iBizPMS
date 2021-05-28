@@ -52,7 +52,7 @@ public class IBZProWeeklyActionResource {
     @Lazy
     public IBZProWeeklyActionMapping ibzproweeklyactionMapping;
 
-    @PreAuthorize("@IBZProWeeklyActionRuntime.quickTest('CREATE')")
+    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'CREATE')")
     @ApiOperation(value = "新建周报日志", tags = {"周报日志" },  notes = "新建周报日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyactions")
     @Transactional
@@ -67,7 +67,7 @@ public class IBZProWeeklyActionResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProWeeklyActionRuntime.test(#ibzproweeklyaction_id,'UPDATE')")
+    @PreAuthorize("@IBZProWeeklyActionRuntime.test(#ibzproweeklyaction_id, 'UPDATE')")
     @ApiOperation(value = "更新周报日志", tags = {"周报日志" },  notes = "更新周报日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproweeklyactions/{ibzproweeklyaction_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IBZProWeeklyActionResource {
     }
 
 
-    @PreAuthorize("@IBZProWeeklyActionRuntime.test(#ibzproweeklyaction_id,'DELETE')")
+    @PreAuthorize("@IBZProWeeklyActionRuntime.test(#ibzproweeklyaction_id, 'DELETE')")
     @ApiOperation(value = "删除周报日志", tags = {"周报日志" },  notes = "删除周报日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproweeklyactions/{ibzproweeklyaction_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzproweeklyaction_id") Long ibzproweeklyaction_id) {
@@ -92,7 +92,7 @@ public class IBZProWeeklyActionResource {
     }
 
 
-    @PreAuthorize("@IBZProWeeklyActionRuntime.test(#ibzproweeklyaction_id,'READ')")
+    @PreAuthorize("@IBZProWeeklyActionRuntime.test(#ibzproweeklyaction_id, 'READ')")
     @ApiOperation(value = "获取周报日志", tags = {"周报日志" },  notes = "获取周报日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproweeklyactions/{ibzproweeklyaction_id}")
     public ResponseEntity<IBZProWeeklyActionDTO> get(@PathVariable("ibzproweeklyaction_id") Long ibzproweeklyaction_id) {
@@ -103,7 +103,7 @@ public class IBZProWeeklyActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProWeeklyActionRuntime.quickTest('CREATE')")
+    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'CREATE')")
     @ApiOperation(value = "获取周报日志草稿", tags = {"周报日志" },  notes = "获取周报日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproweeklyactions/getdraft")
     public ResponseEntity<IBZProWeeklyActionDTO> getDraft(IBZProWeeklyActionDTO dto) {
@@ -111,14 +111,14 @@ public class IBZProWeeklyActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyactionMapping.toDto(ibzproweeklyactionService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IBZProWeeklyActionRuntime.quickTest('CREATE')")
+    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'CREATE')")
     @ApiOperation(value = "检查周报日志", tags = {"周报日志" },  notes = "检查周报日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyactions/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProWeeklyActionDTO ibzproweeklyactiondto) {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyactionService.checkKey(ibzproweeklyactionMapping.toDomain(ibzproweeklyactiondto)));
     }
 
-    @PreAuthorize("@IBZProWeeklyActionRuntime.test(#ibzproweeklyaction_id,'CREATE')")
+    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"周报日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyactions/{ibzproweeklyaction_id}/createhis")
     public ResponseEntity<IBZProWeeklyActionDTO> createHis(@PathVariable("ibzproweeklyaction_id") Long ibzproweeklyaction_id, @RequestBody IBZProWeeklyActionDTO ibzproweeklyactiondto) {
@@ -132,6 +132,7 @@ public class IBZProWeeklyActionResource {
     }
 
 
+    @PreAuthorize("@IBZProWeeklyActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "Pms企业专用", tags = {"周报日志" },  notes = "Pms企业专用")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyactions/{ibzproweeklyaction_id}/managepmsee")
     public ResponseEntity<IBZProWeeklyActionDTO> managePmsEe(@PathVariable("ibzproweeklyaction_id") Long ibzproweeklyaction_id, @RequestBody IBZProWeeklyActionDTO ibzproweeklyactiondto) {
@@ -145,6 +146,7 @@ public class IBZProWeeklyActionResource {
     }
 
 
+    @PreAuthorize("@IBZProWeeklyActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存周报日志", tags = {"周报日志" },  notes = "保存周报日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyactions/save")
     public ResponseEntity<IBZProWeeklyActionDTO> save(@RequestBody IBZProWeeklyActionDTO ibzproweeklyactiondto) {
@@ -157,6 +159,7 @@ public class IBZProWeeklyActionResource {
     }
 
 
+    @PreAuthorize("@IBZProWeeklyActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "已读", tags = {"周报日志" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyactions/{ibzproweeklyaction_id}/sendmarkdone")
     public ResponseEntity<IBZProWeeklyActionDTO> sendMarkDone(@PathVariable("ibzproweeklyaction_id") Long ibzproweeklyaction_id, @RequestBody IBZProWeeklyActionDTO ibzproweeklyactiondto) {
@@ -170,6 +173,7 @@ public class IBZProWeeklyActionResource {
     }
 
 
+    @PreAuthorize("@IBZProWeeklyActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "发送待办", tags = {"周报日志" },  notes = "发送待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyactions/{ibzproweeklyaction_id}/sendtodo")
     public ResponseEntity<IBZProWeeklyActionDTO> sendTodo(@PathVariable("ibzproweeklyaction_id") Long ibzproweeklyaction_id, @RequestBody IBZProWeeklyActionDTO ibzproweeklyactiondto) {
@@ -183,6 +187,7 @@ public class IBZProWeeklyActionResource {
     }
 
 
+    @PreAuthorize("@IBZProWeeklyActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "发送待阅", tags = {"周报日志" },  notes = "发送待阅")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyactions/{ibzproweeklyaction_id}/sendtoread")
     public ResponseEntity<IBZProWeeklyActionDTO> sendToread(@PathVariable("ibzproweeklyaction_id") Long ibzproweeklyaction_id, @RequestBody IBZProWeeklyActionDTO ibzproweeklyactiondto) {

@@ -37,8 +37,8 @@
                     </template>
                     <template>
                         <div class='show-more' @click="showMore('taskShowCnt')">
-                            <label v-if="taskShowCnt < myTasks.length ">{{ this.$t('components.appMessagePopover.loadMore') }}</label>
-                            <label v-else>{{ this.$t('components.appMessagePopover.noMore') }}</label>
+                            <label v-if="taskShowCnt < myTasks.length ">{{ this.$t('components.appmessagepopover.loadmore') }}</label>
+                            <label v-else>{{ this.$t('components.appmessagepopover.nomore') }}</label>
                         </div>
                     </template>
                 </el-tab-pane>
@@ -71,8 +71,8 @@
                     </template>
                     <template>
                         <div class='show-more' @click="showMore('msgShowCnt')">
-                            <label v-if="msgShowCnt < myTasks.length ">{{ this.$t('components.appMessagePopover.loadMore') }}</label>
-                            <label v-else>{{ this.$t('components.appMessagePopover.noMore') }}</label>
+                            <label v-if="msgShowCnt < myTasks.length ">{{ this.$t('components.appmessagepopover.loadmore') }}</label>
+                            <label v-else>{{ this.$t('components.appmessagepopover.nomore') }}</label>
                         </div>
                     </template>
                 </el-tab-pane>
@@ -153,7 +153,7 @@ export default class AppMessagePopover extends Vue {
                 this.getMyMsgs();
             }
         }).catch((error: any) => {
-            LogUtil.warn(this.$t('components.appMessagePopover.error'));
+            LogUtil.warn(this.$t('components.appmessagepopover.error'));
         })
     }
 
@@ -173,7 +173,7 @@ export default class AppMessagePopover extends Vue {
      * 点击标签事件
      */
     public handleTag(data: any) {
-        if (!data)  return this.$throw(this.$t('components.appMessagePopover.getError'),'handleTag');
+        if (!data)  return this.$throw(this.$t('components.appmessagepopover.geterror'),'handleTag');
         // 拼接要打开的窗口地址
         const baseUrl:any = this.environment.BaseUrl;
         const openUrl:any = baseUrl + `/wfcore/mytasks/${data.processDefinitionKey}/web/${data.processInstanceBusinessKey}/usertasks/${data.taskDefinitionKey}`;

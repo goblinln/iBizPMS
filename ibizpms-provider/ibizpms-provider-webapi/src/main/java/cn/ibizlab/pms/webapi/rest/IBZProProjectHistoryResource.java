@@ -67,7 +67,7 @@ public class IBZProProjectHistoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProProjectHistoryRuntime.test(#ibzproprojecthistory_id,'UPDATE')")
+    @PreAuthorize("@IBZProProjectHistoryRuntime.test(#ibzproprojecthistory_id, 'UPDATE')")
     @ApiOperation(value = "更新项目操作历史", tags = {"项目操作历史" },  notes = "更新项目操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproprojecthistories/{ibzproprojecthistory_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IBZProProjectHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZProProjectHistoryRuntime.test(#ibzproprojecthistory_id,'DELETE')")
+    @PreAuthorize("@IBZProProjectHistoryRuntime.test(#ibzproprojecthistory_id, 'DELETE')")
     @ApiOperation(value = "删除项目操作历史", tags = {"项目操作历史" },  notes = "删除项目操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproprojecthistories/{ibzproprojecthistory_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzproprojecthistory_id") Long ibzproprojecthistory_id) {
@@ -92,7 +92,7 @@ public class IBZProProjectHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZProProjectHistoryRuntime.test(#ibzproprojecthistory_id,'READ')")
+    @PreAuthorize("@IBZProProjectActionRuntime.test(#ibzproprojectaction_id, 'READ')")
     @ApiOperation(value = "获取项目操作历史", tags = {"项目操作历史" },  notes = "获取项目操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproprojecthistories/{ibzproprojecthistory_id}")
     public ResponseEntity<IBZProProjectHistoryDTO> get(@PathVariable("ibzproprojecthistory_id") Long ibzproprojecthistory_id) {
@@ -118,6 +118,7 @@ public class IBZProProjectHistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzproprojecthistoryService.checkKey(ibzproprojecthistoryMapping.toDomain(ibzproprojecthistorydto)));
     }
 
+    @PreAuthorize("@IBZProProjectHistoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存项目操作历史", tags = {"项目操作历史" },  notes = "保存项目操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojecthistories/save")
     public ResponseEntity<IBZProProjectHistoryDTO> save(@RequestBody IBZProProjectHistoryDTO ibzproprojecthistorydto) {
@@ -130,7 +131,7 @@ public class IBZProProjectHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZProProjectHistoryRuntime.quickTest('READ')")
+    @PreAuthorize("@IBZProProjectActionRuntime.test(#ibzproprojectaction_id, 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"项目操作历史" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojecthistories/fetchdefault")
 	public ResponseEntity<List<IBZProProjectHistoryDTO>> fetchdefault(@RequestBody IBZProProjectHistorySearchContext context) {

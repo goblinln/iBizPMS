@@ -113,64 +113,64 @@ function getLocaleResourceBase(){
           miss: 'Missing parameter ',
           requestexception: 'Request Exception！',
         },
-        appPicker: {
+        apppicker: {
           error: 'Error',
           miss: 'Missing parameter ',
-          requestException: 'Request Exception！',
-          newAndEdit: 'Create And Edit...',
-          systemException: 'System Error！',
-          valueitemException: 'valueitem Error！',
-          formdataException: 'formdata Error！',
+          requestexception: 'Request Exception！',
+          newandedit: 'Create And Edit...',
+          systemexception: 'System Error！',
+          valueitemexception: 'valueitem Error！',
+          formdataexception: 'formdata Error！',
           nosupport: "The redirect view is not yet supported"
         },
-        appPickerSelectView: {
+        apppickerselectview: {
           error: 'Error',
-          valueitemException: 'valueitem Error！',
-          formdataException: 'formdata Error！',
+          valueitemexception: 'valueitem Error！',
+          formdataexception: 'formdata Error！',
           placeholder: 'Please select...',
         },
-        appPortalDesign: {
-          customPortal: 'Custom portal',
+        appportaldesign: {
+          customportal: 'Custom portal',
           recover: "restore default",
           save: 'Save',
         },
-        appRangDate: {
+        apprangdate: {
           placeholder: 'Please select time...',
           from: 'from',
           daystart: '00:00:00 to',
           dayend: '24:00:00',
         },
-        appRangeEditor: {
+        apprangeeditor: {
           placeholder: 'Please select time...',
           input: 'Please input...',
         },
-        appStudioAction: {
-          configTitle: 'Enter the configuration of current view',
-          configButton: 'Configuration',
-          issueTitle: 'Create issues of current view',
-          issueButton: 'Create issues',
+        appstudioaction: {
+          configtitle: 'Enter the configuration of current view',
+          configbutton: 'Configuration',
+          issuetitle: 'Create issues of current view',
+          issuebutton: 'Create issues',
           success: "Copy success!",
           copyname: "Click copy view name",
           view: "check"
         },
-        appTreePicker: {
+        apptreepicker: {
           placeholder: 'please select...',
         },
-        dateRange: {
-          startText: 'Insurance period ： From',
-          endText: '24:00:00',
-          startPlaceholder: 'Begin Date',
-          rangeSeparatorr: ' 00:00:00 To',
-          endPlaceholder: 'End Dat4e',
+        daterange: {
+          starttext: 'Insurance period ： From',
+          endtext: '24:00:00',
+          startplaceholder: 'Begin Date',
+          rangeseparatorr: ' 00:00:00 To',
+          endplaceholder: 'End Dat4e',
         },
-        dropDownList: {
+        dropdownlist: {
           placeholder: 'please select...',
-          valueError: "Drop down list, value conversion failed",
+          valueerror: "Drop down list, value conversion failed",
         },
-        dropDownListDynamic: {
+        dropdownlistdynamic: {
           placeholder: 'please select...',
         },
-        dropDownListMpicker: {
+        dropdownlistmpicker: {
           placeholder: 'please select...',
         },
         login: {
@@ -194,99 +194,99 @@ function getLocaleResourceBase(){
           },
           loginfailed: 'Login failed',
         },
-        appUser: {
+        appuser: {
           name: 'System',
           logout: 'Logout',
           surelogout: 'Are you sure logout?',
           changepwd: "Change Password",
         },
-        appTheme: {
+        apptheme: {
           caption: {
             theme: 'Theme',
             font: 'Font family',
           },
-          fontFamilys: {
+          fontfamilys: {
               MicrosoftYaHei: 'Microsoft YaHei',
               SimHei: 'SimHei',
               YouYuan: 'YouYuan',
           },
           config: "The topic configuration",
-          customTheme: "Custom Theme",
+          customtheme: "Custom Theme",
           color: "subject color",
           preview: "preview",
           save: "Save the configuration",
           reset: "reset",
           success: "Save custom theme successfully"
         },
-        appFormGroup: {
+        appformgroup: {
           hide: 'hide',
-          showMore: 'show more',
+          showmore: 'show more',
         },
-        appUpdatePassword: {
-          oldPwd: 'Original password',
-          newPwd: 'New password',
-          confirmPwd: 'Confirm password',
+        appupdatepassword: {
+          oldpwd: 'Original password',
+          newpwd: 'New password',
+          confirmpwd: 'Confirm password',
           sure: 'Confirm modification',
-          oldPwdErr: 'The original password cannot be empty!',
-          newPwdErr: 'New password cannot be empty!',
-          confirmPwdErr: 'The two input passwords are inconsistent!',
+          oldpwderr: 'The original password cannot be empty!',
+          newpwderr: 'New password cannot be empty!',
+          confirmewderr: 'The two input passwords are inconsistent!',
         },
-        appAddressSelection: {
-          loadDataFail: 'City data loading failed'
+        appaddressselection: {
+          loaddatafail: 'City data loading failed'
         },
         appGroupSelect:{
           groupSelect:'Group selection', 
         },
-        appImageUpload:{
-          uploadFail:'Upload failed'
+        appimageupload:{
+          uploadfail:'Upload failed'
         },
-        appOrgSelect:{
-          loadFail:'Failed to load data',
-          resetError: "An exception occurred in resetting application data"
+        apporgselect:{
+          loadfail:'Failed to load data',
+          reseterror: "An exception occurred in resetting application data"
         },
         appTransfer:{
           title1:'Not selected',
           title2:'Selected',
         },
-        appWFApproval:{
+        appwfapproval:{
           commit:'Commit',
           wait:'Waiting',
           handle:'Handle',
           placeholder:'Please enter the content',
           end:'End'
         },
-        contextMenuDrag:{
-          allApp:'All applications',
-          noFind:'The app was not found',
+        contextmenudrag:{
+          allapp:'All applications',
+          nofind:'The app was not found',
           error: "Error loading data",
           portlet: "enterprise portal"
         },
-        filterMode:{
+        filtermode:{
           placeholder:'Conditional logic',  
         },
-        filterTree:{
+        filtertree:{
           title1:'Add condition',
           title2:'Add group',
           placeholder:'Attribute', 
         },
-        iBizGroupPicker:{
+        ibizgrouppicker:{
           ok:'Ok',
           cancel:'Cancel',
         },
-        iBizGroupSelect:{
-          groupSelect:'Group selection'
+        ibizgroupselect:{
+          groupselect:'Group selection'
         },
-        tabPageExp:{
+        tabpageexp:{
           more:'More',
         },
-        uploadFile:{
-          imgMsg:'Drag the picture here to replace it',
-          localUpload:'Local upload',
+        uploadfile:{
+          imgmsg:'Drag the picture here to replace it',
+          localupload:'Local upload',
           or:'Or',
-          imgMsg1:'Select from stock',
+          imgmsg1:'Select from stock',
           choose: "Select Upload File"
         },
-        lockScren:{
+        lockscren:{
           title:'Set the password lock screen',
           label:'password',
           message:'The lock screen password cannot be empty',
@@ -295,11 +295,11 @@ function getLocaleResourceBase(){
           message1: 'The unlock password is wrong. Please reenter it',
           promptInformation:'Do you want to quit the system? Do you want to continue?',
           prompt:'prompt',
-          confirmButtonText:'determine',
-          cancelButtonText:'cancel',
+          confirmbuttontext:'determine',
+          cancelbuttontext:'cancel',
           lock: "Application of lock screen"
         },
-        cronEditor: {
+        croneditor: {
           label: {
             second: 'Second',
             minute: 'Minute',
@@ -311,7 +311,7 @@ function getLocaleResourceBase(){
           },
           public : {
             specify: 'Specify',
-            notSpecify: 'Not specify',
+            notspecify: 'Not specify',
             cycle: 'Cycle',
             from: 'From',
             to: 'to',
@@ -323,54 +323,54 @@ function getLocaleResourceBase(){
           minute: 'minute',
           hour: {
             title: 'hour',
-            everyHour: 'Every hour',
-            hourStart: "o'clock start, every ",
-            onceAHour: "o'clock to execute once.",
+            everyhour: 'Every hour',
+            hourstart: "o'clock start, every ",
+            onceahour: "o'clock to execute once.",
           },
           day: {
             title: 'day',
             daily: 'Every day',
-            workDay: 'Working day',
-            dayStart: 'rd start, every ',
-            onceADay: 'rd to execute once',
-            thisMonth: 'this month',
-            lastWorkDay: 'rd, Recent working day',
-            lastDayOfMonth: 'Last day of the month',
+            workday: 'Working day',
+            daystart: 'rd start, every ',
+            onceaday: 'rd to execute once',
+            thismonth: 'this month',
+            lastworkday: 'rd, Recent working day',
+            lastdayofmonth: 'Last day of the month',
           },
           month: {
             title: 'month',
-            everyMonth: 'Every month',
-            monthStart: ' month start, every',
-            onceAMonth: ' month to execute once',
+            everymonth: 'Every month',
+            monthstart: ' month start, every',
+            onceamonth: ' month to execute once',
           },
           week: {
             title: 'week',
-            everyWeek: 'Every week',
+            everyweek: 'Every week',
             from: '',
             to: 'from weekday',
             start: 'start, every',
-            onceADay: 'days to execute once',
-            specifyWeek: 'Specify week',
-            weekOfMonth: 'this month',
-            weekWeek: 'week, weekday',
-            lastOfMonth: 'Last of the month',
+            onceaday: 'days to execute once',
+            specifyweek: 'Specify week',
+            weekofmonth: 'this month',
+            weekweek: 'week, weekday',
+            lastofmonth: 'Last of the month',
             week: 'weekday',
           },
           year: {
             title: 'year',
-            everyYear: 'Every year',
+            everyyear: 'Every year',
           },
           message: {
             error1: 'Date and day of the week cannot be "not specified" at the same time',
             error2: 'Both the date and the day of the week must be "not specified"',
           },
         },
-        appMessagePopover: {
-          loadMore: 'Load more',
-          noMore: 'No more',
+        appmessagepopover: {
+          loadmore: 'Load more',
+          nomore: 'No more',
           error: "Error loading data",
-          getError: "The tag content was not retrieved",
-          errorReturn: "Event trigger source has no value, force return"
+          geterror: "The tag content was not retrieved",
+          errorreturn: "Event trigger source has no value, force return"
         },
         diskFileUpload:{
           fileDrag: 'Drag the file here, or',

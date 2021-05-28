@@ -67,7 +67,7 @@ public class IBZCaseHistoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZCaseHistoryRuntime.test(#ibzcasehistory_id,'UPDATE')")
+    @PreAuthorize("@IBZCaseHistoryRuntime.test(#ibzcasehistory_id, 'UPDATE')")
     @ApiOperation(value = "更新测试操作历史", tags = {"测试操作历史" },  notes = "更新测试操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcasehistories/{ibzcasehistory_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IBZCaseHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZCaseHistoryRuntime.test(#ibzcasehistory_id,'DELETE')")
+    @PreAuthorize("@IBZCaseHistoryRuntime.test(#ibzcasehistory_id, 'DELETE')")
     @ApiOperation(value = "删除测试操作历史", tags = {"测试操作历史" },  notes = "删除测试操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcasehistories/{ibzcasehistory_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzcasehistory_id") Long ibzcasehistory_id) {
@@ -92,7 +92,7 @@ public class IBZCaseHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZCaseHistoryRuntime.test(#ibzcasehistory_id,'READ')")
+    @PreAuthorize("@IBZCaseHistoryRuntime.test(#ibzcasehistory_id, 'READ')")
     @ApiOperation(value = "获取测试操作历史", tags = {"测试操作历史" },  notes = "获取测试操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzcasehistories/{ibzcasehistory_id}")
     public ResponseEntity<IBZCaseHistoryDTO> get(@PathVariable("ibzcasehistory_id") Long ibzcasehistory_id) {
@@ -118,6 +118,7 @@ public class IBZCaseHistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryService.checkKey(ibzcasehistoryMapping.toDomain(ibzcasehistorydto)));
     }
 
+    @PreAuthorize("@IBZCaseHistoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存测试操作历史", tags = {"测试操作历史" },  notes = "保存测试操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcasehistories/save")
     public ResponseEntity<IBZCaseHistoryDTO> save(@RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {

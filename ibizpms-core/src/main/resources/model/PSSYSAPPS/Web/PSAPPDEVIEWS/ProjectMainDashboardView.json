@@ -101,7 +101,7 @@
           "name" : "dashboard_sysportlet1",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
           },
           "getPSControlHandler" : {
             "enableDEFieldPrivilege" : false,
@@ -115,7 +115,7 @@
           "getPSControls" : [ {
             "codeName" : "BurnDown",
             "controlType" : "CHART",
-            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn/PSCHARTS/BurnDown.json",
+            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn/PSCHARTS/BurnDown.json",
             "getFetchPSControlAction" : {
               "modelref" : true,
               "id" : "fetch"
@@ -124,7 +124,7 @@
             "logicName" : "BurnDown",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
             },
             "getPSChartCoordinateSystems" : [ {
               "eChartsType" : "cartesian2d",
@@ -244,18 +244,18 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
                 }
               }, {
                 "actionType" : "DEDATASET",
                 "name" : "fetch",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "FetchESTIMATEANDLEFT"
+                  "id" : "FetchEstimate"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
                 }
               }, {
                 "actionName" : "Remove",
@@ -268,7 +268,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
                 }
               }, {
                 "actionName" : "Get",
@@ -281,7 +281,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
                 }
               }, {
                 "actionName" : "Create",
@@ -294,7 +294,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
                 }
               } ],
               "userDRAction" : "READ",

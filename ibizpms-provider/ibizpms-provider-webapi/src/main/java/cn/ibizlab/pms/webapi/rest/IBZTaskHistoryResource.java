@@ -67,7 +67,7 @@ public class IBZTaskHistoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZTaskHistoryRuntime.test(#ibztaskhistory_id,'UPDATE')")
+    @PreAuthorize("@IBZTaskHistoryRuntime.test(#ibztaskhistory_id, 'UPDATE')")
     @ApiOperation(value = "更新任务操作历史", tags = {"任务操作历史" },  notes = "更新任务操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibztaskhistories/{ibztaskhistory_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IBZTaskHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZTaskHistoryRuntime.test(#ibztaskhistory_id,'DELETE')")
+    @PreAuthorize("@IBZTaskHistoryRuntime.test(#ibztaskhistory_id, 'DELETE')")
     @ApiOperation(value = "删除任务操作历史", tags = {"任务操作历史" },  notes = "删除任务操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztaskhistories/{ibztaskhistory_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibztaskhistory_id") Long ibztaskhistory_id) {
@@ -92,7 +92,7 @@ public class IBZTaskHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZTaskHistoryRuntime.test(#ibztaskhistory_id,'READ')")
+    @PreAuthorize("@IBZTaskHistoryRuntime.test(#ibztaskhistory_id, 'READ')")
     @ApiOperation(value = "获取任务操作历史", tags = {"任务操作历史" },  notes = "获取任务操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibztaskhistories/{ibztaskhistory_id}")
     public ResponseEntity<IBZTaskHistoryDTO> get(@PathVariable("ibztaskhistory_id") Long ibztaskhistory_id) {
@@ -118,6 +118,7 @@ public class IBZTaskHistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztaskhistoryService.checkKey(ibztaskhistoryMapping.toDomain(ibztaskhistorydto)));
     }
 
+    @PreAuthorize("@IBZTaskHistoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存任务操作历史", tags = {"任务操作历史" },  notes = "保存任务操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztaskhistories/save")
     public ResponseEntity<IBZTaskHistoryDTO> save(@RequestBody IBZTaskHistoryDTO ibztaskhistorydto) {

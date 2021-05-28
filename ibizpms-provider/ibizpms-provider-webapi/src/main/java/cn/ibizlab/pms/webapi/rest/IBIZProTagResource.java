@@ -49,6 +49,7 @@ public class IBIZProTagResource {
     @Lazy
     public IBIZProTagMapping ibizprotagMapping;
 
+    @PreAuthorize("@IBIZProTagRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建标签", tags = {"标签" },  notes = "新建标签")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizprotags")
     @Transactional
@@ -59,6 +60,7 @@ public class IBIZProTagResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IBIZProTagRuntime.test(#ibizprotag_id, 'UPDATE')")
     @ApiOperation(value = "更新标签", tags = {"标签" },  notes = "更新标签")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizprotags/{ibizprotag_id}")
     @Transactional
@@ -71,6 +73,7 @@ public class IBIZProTagResource {
     }
 
 
+    @PreAuthorize("@IBIZProTagRuntime.test(#ibizprotag_id, 'DELETE')")
     @ApiOperation(value = "删除标签", tags = {"标签" },  notes = "删除标签")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizprotags/{ibizprotag_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibizprotag_id") String ibizprotag_id) {
@@ -78,6 +81,7 @@ public class IBIZProTagResource {
     }
 
 
+    @PreAuthorize("@IBIZProTagRuntime.test(#ibizprotag_id, 'READ')")
     @ApiOperation(value = "获取标签", tags = {"标签" },  notes = "获取标签")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/{ibizprotag_id}")
     public ResponseEntity<IBIZProTagDTO> get(@PathVariable("ibizprotag_id") String ibizprotag_id) {
@@ -86,6 +90,7 @@ public class IBIZProTagResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IBIZProTagRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取标签草稿", tags = {"标签" },  notes = "获取标签草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/getdraft")
     public ResponseEntity<IBIZProTagDTO> getDraft(IBIZProTagDTO dto) {
@@ -93,12 +98,14 @@ public class IBIZProTagResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizprotagMapping.toDto(ibizprotagService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IBIZProTagRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查标签", tags = {"标签" },  notes = "检查标签")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBIZProTagDTO ibizprotagdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(ibizprotagService.checkKey(ibizprotagMapping.toDomain(ibizprotagdto)));
     }
 
+    @PreAuthorize("@IBIZProTagRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存标签", tags = {"标签" },  notes = "保存标签")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/save")
     public ResponseEntity<IBIZProTagDTO> save(@RequestBody IBIZProTagDTO ibizprotagdto) {
@@ -109,6 +116,7 @@ public class IBIZProTagResource {
     }
 
 
+    @PreAuthorize("@IBIZProTagRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"标签" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizprotags/fetchdefault")
 	public ResponseEntity<List<IBIZProTagDTO>> fetchdefault(@RequestBody IBIZProTagSearchContext context) {

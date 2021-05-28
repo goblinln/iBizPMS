@@ -67,7 +67,7 @@ public class IBZDailyHistoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZDailyHistoryRuntime.test(#ibzdailyhistory_id,'UPDATE')")
+    @PreAuthorize("@IBZDailyHistoryRuntime.test(#ibzdailyhistory_id, 'UPDATE')")
     @ApiOperation(value = "更新日报操作历史", tags = {"日报操作历史" },  notes = "更新日报操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailyhistories/{ibzdailyhistory_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IBZDailyHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZDailyHistoryRuntime.test(#ibzdailyhistory_id,'DELETE')")
+    @PreAuthorize("@IBZDailyHistoryRuntime.test(#ibzdailyhistory_id, 'DELETE')")
     @ApiOperation(value = "删除日报操作历史", tags = {"日报操作历史" },  notes = "删除日报操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailyhistories/{ibzdailyhistory_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzdailyhistory_id") Long ibzdailyhistory_id) {
@@ -92,7 +92,7 @@ public class IBZDailyHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZDailyHistoryRuntime.test(#ibzdailyhistory_id,'READ')")
+    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id, 'READ')")
     @ApiOperation(value = "获取日报操作历史", tags = {"日报操作历史" },  notes = "获取日报操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailyhistories/{ibzdailyhistory_id}")
     public ResponseEntity<IBZDailyHistoryDTO> get(@PathVariable("ibzdailyhistory_id") Long ibzdailyhistory_id) {
@@ -118,6 +118,7 @@ public class IBZDailyHistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzdailyhistoryService.checkKey(ibzdailyhistoryMapping.toDomain(ibzdailyhistorydto)));
     }
 
+    @PreAuthorize("@IBZDailyHistoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存日报操作历史", tags = {"日报操作历史" },  notes = "保存日报操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyhistories/save")
     public ResponseEntity<IBZDailyHistoryDTO> save(@RequestBody IBZDailyHistoryDTO ibzdailyhistorydto) {
@@ -130,7 +131,7 @@ public class IBZDailyHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZDailyHistoryRuntime.quickTest('READ')")
+    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id, 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"日报操作历史" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailyhistories/fetchdefault")
 	public ResponseEntity<List<IBZDailyHistoryDTO>> fetchdefault(@RequestBody IBZDailyHistorySearchContext context) {

@@ -3,7 +3,7 @@
     <div class="lock-form animated bounceInDown">
       <div class="animated">
         <h3 class="title">{{username}}</h3>
-        <el-input :placeholder="$t('components.lockScren.placeholder1')"
+        <el-input :placeholder="$t('components.lockscren.placeholder1')"
                   type="password"
                   class="input-with-select animated"
                   v-model="passwd">
@@ -68,7 +68,7 @@ export default class AppLockIndex extends Vue{
     public handleLogin(){
         if(this.lockpasswd != this.passwd){
             this.passwd = '';
-            this.$throw((this.$t('components.lockScren.message1') as string),'handleLogin');
+            this.$throw((this.$t('components.lockscren.message1') as string),'handleLogin');
             return;
         }
         this.clearSession();
@@ -81,9 +81,9 @@ export default class AppLockIndex extends Vue{
      * @memberof AppLockIndex
      */
     public handleLogout(){
-        this.$confirm((this.$t('components.lockScren.promptInformation') as string), (this.$t('components.lockScren.prompt') as string), {
-            confirmButtonText: (this.$t('components.lockScren.confirmButtonText') as string),
-            cancelButtonText: (this.$t('components.lockScren.cancelButtonText') as string),
+        this.$confirm((this.$t('components.lockscren.promptinformation') as string), (this.$t('components.lockscren.prompt') as string), {
+            confirmButtonText: (this.$t('components.lockscren.confirmbuttontext') as string),
+            cancelButtonText: (this.$t('components.lockscren.cancelbuttontext') as string),
             type: "warning"
         }).then(() => {
             this.clearSession();

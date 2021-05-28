@@ -67,7 +67,7 @@ public class IbzLibModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzLibModuleRuntime.test(#ibzlibmodule_id,'UPDATE')")
+    @PreAuthorize("@IbzLibModuleRuntime.test(#ibzlibmodule_id, 'UPDATE')")
     @ApiOperation(value = "更新用例库模块", tags = {"用例库模块" },  notes = "更新用例库模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibmodules/{ibzlibmodule_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IbzLibModuleResource {
     }
 
 
-    @PreAuthorize("@IbzLibModuleRuntime.test(#ibzlibmodule_id,'DELETE')")
+    @PreAuthorize("@IbzLibModuleRuntime.test(#ibzlibmodule_id, 'DELETE')")
     @ApiOperation(value = "删除用例库模块", tags = {"用例库模块" },  notes = "删除用例库模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibmodules/{ibzlibmodule_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzlibmodule_id") Long ibzlibmodule_id) {
@@ -92,7 +92,7 @@ public class IbzLibModuleResource {
     }
 
 
-    @PreAuthorize("@IbzLibModuleRuntime.test(#ibzlibmodule_id,'READ')")
+    @PreAuthorize("@IbzLibModuleRuntime.test(#ibzlibmodule_id, 'READ')")
     @ApiOperation(value = "获取用例库模块", tags = {"用例库模块" },  notes = "获取用例库模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibmodules/{ibzlibmodule_id}")
     public ResponseEntity<IbzLibModuleDTO> get(@PathVariable("ibzlibmodule_id") Long ibzlibmodule_id) {
@@ -118,6 +118,7 @@ public class IbzLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.checkKey(ibzlibmoduleMapping.toDomain(ibzlibmoduledto)));
     }
 
+    @PreAuthorize("@IbzLibModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存用例库模块", tags = {"用例库模块" },  notes = "保存用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibmodules/save")
     public ResponseEntity<IbzLibModuleDTO> save(@RequestBody IbzLibModuleDTO ibzlibmoduledto) {
@@ -165,7 +166,7 @@ public class IbzLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduledto);
     }
 
-    @PreAuthorize("@IbzLibModuleRuntime.quickTest('CREATE')")
+    @PreAuthorize("@IbzLibModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据用例库建立用例库模块", tags = {"用例库模块" },  notes = "根据用例库建立用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules")
     public ResponseEntity<IbzLibModuleDTO> createByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibModuleDTO ibzlibmoduledto) {
@@ -179,7 +180,7 @@ public class IbzLibModuleResource {
     }
 
 
-    @PreAuthorize("@IbzLibModuleRuntime.test(#ibzlibmodule_id,'UPDATE')")
+    @PreAuthorize("@IbzLibModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据用例库更新用例库模块", tags = {"用例库模块" },  notes = "根据用例库更新用例库模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/{ibzlibmodule_id}")
     public ResponseEntity<IbzLibModuleDTO> updateByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzlibmodule_id") Long ibzlibmodule_id, @RequestBody IbzLibModuleDTO ibzlibmoduledto) {
@@ -194,7 +195,7 @@ public class IbzLibModuleResource {
     }
 
 
-    @PreAuthorize("@IbzLibModuleRuntime.test(#ibzlibmodule_id,'DELETE')")
+    @PreAuthorize("@IbzLibModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据用例库删除用例库模块", tags = {"用例库模块" },  notes = "根据用例库删除用例库模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/{ibzlibmodule_id}")
     public ResponseEntity<Boolean> removeByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzlibmodule_id") Long ibzlibmodule_id) {
@@ -202,7 +203,7 @@ public class IbzLibModuleResource {
     }
 
 
-    @PreAuthorize("@IbzLibModuleRuntime.test(#ibzlibmodule_id,'READ')")
+    @PreAuthorize("@IbzLibModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据用例库获取用例库模块", tags = {"用例库模块" },  notes = "根据用例库获取用例库模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/{ibzlibmodule_id}")
     public ResponseEntity<IbzLibModuleDTO> getByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzlibmodule_id") Long ibzlibmodule_id) {
@@ -211,7 +212,7 @@ public class IbzLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzLibModuleRuntime.quickTest('CREATE')")
+    @PreAuthorize("@IbzLibModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据用例库获取用例库模块草稿", tags = {"用例库模块" },  notes = "根据用例库获取用例库模块草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/getdraft")
     public ResponseEntity<IbzLibModuleDTO> getDraftByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, IbzLibModuleDTO dto) {
@@ -220,13 +221,14 @@ public class IbzLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleMapping.toDto(ibzlibmoduleService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzLibModuleRuntime.quickTest('CREATE')")
+    @PreAuthorize("@IbzLibModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据用例库检查用例库模块", tags = {"用例库模块" },  notes = "根据用例库检查用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/checkkey")
     public ResponseEntity<Boolean> checkKeyByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibModuleDTO ibzlibmoduledto) {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.checkKey(ibzlibmoduleMapping.toDomain(ibzlibmoduledto)));
     }
 
+    @PreAuthorize("@IbzLibModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据用例库保存用例库模块", tags = {"用例库模块" },  notes = "根据用例库保存用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/save")
     public ResponseEntity<IbzLibModuleDTO> saveByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibModuleDTO ibzlibmoduledto) {
@@ -237,7 +239,7 @@ public class IbzLibModuleResource {
     }
 
 
-    @PreAuthorize("@IbzLibModuleRuntime.quickTest('READ')")
+    @PreAuthorize("@IbzLibModuleRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据用例库获取DEFAULT", tags = {"用例库模块" } ,notes = "根据用例库获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzlibmodules/fetchdefault")
 	public ResponseEntity<List<IbzLibModuleDTO>> fetchIbzLibModuleDefaultByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,@RequestBody IbzLibModuleSearchContext context) {
@@ -251,7 +253,7 @@ public class IbzLibModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzLibModuleRuntime.quickTest('READ')")
+    @PreAuthorize("@IbzLibModuleRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据用例库获取无枝叶", tags = {"用例库模块" } ,notes = "根据用例库获取无枝叶")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzlibmodules/fetchroot_nobranch")
 	public ResponseEntity<List<IbzLibModuleDTO>> fetchIbzLibModuleRoot_NoBranchByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,@RequestBody IbzLibModuleSearchContext context) {

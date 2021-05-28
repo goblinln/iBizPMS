@@ -8,7 +8,7 @@
         :clearable="true"
         :filterable="filterable"
         @on-open-change="onClick"
-        :placeholder="placeholder?placeholder:$t('components.dropDownListHidden.placeholder')">
+        :placeholder="placeholder?placeholder:$t('components.dropdownlistHidden.placeholder')">
         <i-option v-for="(item, index) in items" :key="index" :disabled="item.disabled" :class="item.class" :value="item.value">{{item.text}}</i-option>
         </i-select>
         <ibiz-select-tree v-if="hasChildren" class="tree-dropdown-list" :disabled="disabled" :NodesData="items" v-model="currentVal" :multiple="false"></ibiz-select-tree>
@@ -75,7 +75,7 @@ export default class DropDownListHidden extends Vue {
                 this.loadData();
             }
         } catch (error) {
-            LogUtil.log(this.$t('components.dropDownList.valueError'));
+            LogUtil.log(this.$t('components.dropdownlist.valueerror'));
         }
     }
 

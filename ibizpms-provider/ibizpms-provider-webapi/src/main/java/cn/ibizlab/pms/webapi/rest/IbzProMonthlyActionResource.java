@@ -67,7 +67,7 @@ public class IbzProMonthlyActionResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProMonthlyActionRuntime.test(#ibzpromonthlyaction_id,'UPDATE')")
+    @PreAuthorize("@IbzProMonthlyActionRuntime.test(#ibzpromonthlyaction_id, 'UPDATE')")
     @ApiOperation(value = "更新月报日志", tags = {"月报日志" },  notes = "更新月报日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzpromonthlyactions/{ibzpromonthlyaction_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IbzProMonthlyActionResource {
     }
 
 
-    @PreAuthorize("@IbzProMonthlyActionRuntime.test(#ibzpromonthlyaction_id,'DELETE')")
+    @PreAuthorize("@IbzProMonthlyActionRuntime.test(#ibzpromonthlyaction_id, 'DELETE')")
     @ApiOperation(value = "删除月报日志", tags = {"月报日志" },  notes = "删除月报日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzpromonthlyactions/{ibzpromonthlyaction_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id) {
@@ -92,7 +92,7 @@ public class IbzProMonthlyActionResource {
     }
 
 
-    @PreAuthorize("@IbzProMonthlyActionRuntime.test(#ibzpromonthlyaction_id,'READ')")
+    @PreAuthorize("@IbzProMonthlyActionRuntime.test(#ibzpromonthlyaction_id, 'READ')")
     @ApiOperation(value = "获取月报日志", tags = {"月报日志" },  notes = "获取月报日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzpromonthlyactions/{ibzpromonthlyaction_id}")
     public ResponseEntity<IbzProMonthlyActionDTO> get(@PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id) {
@@ -118,7 +118,7 @@ public class IbzProMonthlyActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyactionService.checkKey(ibzpromonthlyactionMapping.toDomain(ibzpromonthlyactiondto)));
     }
 
-    @PreAuthorize("@IbzProMonthlyActionRuntime.test(#ibzpromonthlyaction_id,'CREATE')")
+    @PreAuthorize("@IbzProMonthlyActionRuntime.test(#ibzpromonthlyaction_id, 'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"月报日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/{ibzpromonthlyaction_id}/createhis")
     public ResponseEntity<IbzProMonthlyActionDTO> createHis(@PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id, @RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
@@ -132,6 +132,7 @@ public class IbzProMonthlyActionResource {
     }
 
 
+    @PreAuthorize("@IbzProMonthlyActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "Pms企业专用", tags = {"月报日志" },  notes = "Pms企业专用")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/{ibzpromonthlyaction_id}/managepmsee")
     public ResponseEntity<IbzProMonthlyActionDTO> managePmsEe(@PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id, @RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
@@ -145,6 +146,7 @@ public class IbzProMonthlyActionResource {
     }
 
 
+    @PreAuthorize("@IbzProMonthlyActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存月报日志", tags = {"月报日志" },  notes = "保存月报日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/save")
     public ResponseEntity<IbzProMonthlyActionDTO> save(@RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
@@ -157,6 +159,7 @@ public class IbzProMonthlyActionResource {
     }
 
 
+    @PreAuthorize("@IbzProMonthlyActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "已读", tags = {"月报日志" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/{ibzpromonthlyaction_id}/sendmarkdone")
     public ResponseEntity<IbzProMonthlyActionDTO> sendMarkDone(@PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id, @RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
@@ -170,6 +173,7 @@ public class IbzProMonthlyActionResource {
     }
 
 
+    @PreAuthorize("@IbzProMonthlyActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "发送待办", tags = {"月报日志" },  notes = "发送待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/{ibzpromonthlyaction_id}/sendtodo")
     public ResponseEntity<IbzProMonthlyActionDTO> sendTodo(@PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id, @RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {
@@ -183,6 +187,7 @@ public class IbzProMonthlyActionResource {
     }
 
 
+    @PreAuthorize("@IbzProMonthlyActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "发送待阅", tags = {"月报日志" },  notes = "发送待阅")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/{ibzpromonthlyaction_id}/sendtoread")
     public ResponseEntity<IbzProMonthlyActionDTO> sendToread(@PathVariable("ibzpromonthlyaction_id") Long ibzpromonthlyaction_id, @RequestBody IbzProMonthlyActionDTO ibzpromonthlyactiondto) {

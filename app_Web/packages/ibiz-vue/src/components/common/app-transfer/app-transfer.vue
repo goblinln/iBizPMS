@@ -169,7 +169,7 @@ export default class AppTransfer extends Vue {
      */
     public created() {
         this.loadData();
-        this.titles= [(this.$t('components.appTransfer.title1') as string),(this.$t('components.appTransfer.title2') as string)];
+        this.titles= [(this.$t('components.apptransfer.title1') as string),(this.$t('components.apptransfer.title2') as string)];
     }
 
     /**

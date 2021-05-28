@@ -1,18 +1,18 @@
 <template lang="html">
   <div :val="value_">
     <div>
-      <el-radio v-model="type" label="1" size="mini" border>{{ $t('components.cronEditor.year.everyYear') }}</el-radio>
+      <el-radio v-model="type" label="1" size="mini" border>{{ $t('components.croneditor.year.everyyear') }}</el-radio>
     </div>
     <div>
-      <el-radio v-model="type" label="5" size="mini" border>{{ $t('components.cronEditor.public.notSpecify') }}</el-radio>
+      <el-radio v-model="type" label="5" size="mini" border>{{ $t('components.croneditor.public.notspecify') }}</el-radio>
     </div>
     <div>
-      <el-radio v-model="type" label="2" size="mini" border>{{ $t('components.cronEditor.public.cycle') }}</el-radio>
-      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.cronEditor.public.from') }}</span>
+      <el-radio v-model="type" label="2" size="mini" border>{{ $t('components.croneditor.public.cycle') }}</el-radio>
+      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.croneditor.public.from') }}</span>
       <el-input-number @change="type = '2'" v-model="cycle.start" :min="2000" size="mini" style="width: 100px;"></el-input-number>
-      <span style="margin-left: 5px; margin-right: 5px;">{{ $t('components.cronEditor.public.to') }}</span>
+      <span style="margin-left: 5px; margin-right: 5px;">{{ $t('components.croneditor.public.to') }}</span>
       <el-input-number @change="type = '2'" v-model="cycle.end" :min="2000"  size="mini" style="width: 100px;"></el-input-number>
-      {{ $t('components.cronEditor.year.title') }}
+      {{ $t('components.croneditor.year.title') }}
     </div>
   </div>
 </template>

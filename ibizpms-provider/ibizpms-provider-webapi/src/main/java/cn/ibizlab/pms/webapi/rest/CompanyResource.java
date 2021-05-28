@@ -67,7 +67,7 @@ public class CompanyResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CompanyRuntime.test(#company_id,'UPDATE')")
+    @PreAuthorize("@CompanyRuntime.test(#company_id, 'UPDATE')")
     @ApiOperation(value = "更新公司", tags = {"公司" },  notes = "更新公司")
 	@RequestMapping(method = RequestMethod.PUT, value = "/companies/{company_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class CompanyResource {
     }
 
 
-    @PreAuthorize("@CompanyRuntime.test(#company_id,'DELETE')")
+    @PreAuthorize("@CompanyRuntime.test(#company_id, 'DELETE')")
     @ApiOperation(value = "删除公司", tags = {"公司" },  notes = "删除公司")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/companies/{company_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("company_id") Long company_id) {
@@ -92,7 +92,7 @@ public class CompanyResource {
     }
 
 
-    @PreAuthorize("@CompanyRuntime.test(#company_id,'READ')")
+    @PreAuthorize("@CompanyRuntime.test(#company_id, 'READ')")
     @ApiOperation(value = "获取公司", tags = {"公司" },  notes = "获取公司")
 	@RequestMapping(method = RequestMethod.GET, value = "/companies/{company_id}")
     public ResponseEntity<CompanyDTO> get(@PathVariable("company_id") Long company_id) {
@@ -118,6 +118,7 @@ public class CompanyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(companyService.checkKey(companyMapping.toDomain(companydto)));
     }
 
+    @PreAuthorize("@CompanyRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存公司", tags = {"公司" },  notes = "保存公司")
 	@RequestMapping(method = RequestMethod.POST, value = "/companies/save")
     public ResponseEntity<CompanyDTO> save(@RequestBody CompanyDTO companydto) {

@@ -7,15 +7,15 @@
                         <el-option v-for="mode in relationModes" :key="mode.value" :label="getLabel(mode)" :value="mode.value"></el-option>
                     </el-select>
                     <div class="filter-tree-action">
-                        <i-button :title="$t('components.filterTree.title1')" @click="onAddItem(data)"><i class="fa fa-plus" aria-hidden="true"></i> {{$t('components.filterTree.title1')}}</i-button>
-                        <i-button :title="$t('components.filterTree.title2')" @click="onAddGroup(data)"><i class="fa fa-plus" aria-hidden="true"></i> {{$t('components.filterTree.title2')}}</i-button>
+                        <i-button :title="$t('components.filtertree.title1')" @click="onAddItem(data)"><i class="fa fa-plus" aria-hidden="true"></i> {{$t('components.filtertree.title1')}}</i-button>
+                        <i-button :title="$t('components.filtertree.title2')" @click="onAddGroup(data)"><i class="fa fa-plus" aria-hidden="true"></i> {{$t('components.filtertree.title2')}}</i-button>
                         <icon v-if="!data.isroot" type="md-close"  @click="onRemoveItem(node, data)"/>
                     </div>
                 </div>
             </template>
             <template v-else>
                 <div class="filter-tree-item">
-                    <el-select size="small" class="filter-item-field" v-model="data.field" clearable :placeholder="$t('components.filterTree.placeholder')">
+                    <el-select size="small" class="filter-item-field" v-model="data.field" clearable :placeholder="$t('components.filtertree.placeholder')">
                         <el-option
                             v-for="item in fieldItems"
                             :key="item.value"

@@ -100,7 +100,7 @@
                 </template>
                 <template v-if="isManageContainer">
                     <i-button type="primary" :icon="manageContainerStatus?'ios-repeat':'ios-more'" @click="doManageContainer">
-                        {{manageContainerStatus?$t('components.appFormGroup.hide'):$t('components.appFormGroup.showMore')}}
+                        {{manageContainerStatus?$t('components.appformgroup.hide'):$t('components.appformgroup.showmore')}}
                     </i-button>
                 </template>
             </card>

@@ -759,6 +759,9 @@ export class EditFormControlBase extends FormControlBase {
         Object.assign(arg, formdata);
         Object.assign(arg, this.viewparams);
         let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        if (data[this.appDeCodeName.toLowerCase()]) {
+            Object.assign(tempContext, { [this.appDeCodeName.toLowerCase()]: data[this.appDeCodeName.toLowerCase()] });
+        }
         this.onControlRequset('panelAction', tempContext, arg);
         const post: Promise<any> = this.service.frontLogic(action, tempContext, arg, showloading);
         post.then((response: any) => {

@@ -67,7 +67,7 @@ public class DeptResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DeptRuntime.test(#dept_id,'UPDATE')")
+    @PreAuthorize("@DeptRuntime.test(#dept_id, 'UPDATE')")
     @ApiOperation(value = "更新部门", tags = {"部门" },  notes = "更新部门")
 	@RequestMapping(method = RequestMethod.PUT, value = "/depts/{dept_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class DeptResource {
     }
 
 
-    @PreAuthorize("@DeptRuntime.test(#dept_id,'DELETE')")
+    @PreAuthorize("@DeptRuntime.test(#dept_id, 'DELETE')")
     @ApiOperation(value = "删除部门", tags = {"部门" },  notes = "删除部门")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/depts/{dept_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("dept_id") Long dept_id) {
@@ -92,7 +92,7 @@ public class DeptResource {
     }
 
 
-    @PreAuthorize("@DeptRuntime.test(#dept_id,'READ')")
+    @PreAuthorize("@DeptRuntime.test(#dept_id, 'READ')")
     @ApiOperation(value = "获取部门", tags = {"部门" },  notes = "获取部门")
 	@RequestMapping(method = RequestMethod.GET, value = "/depts/{dept_id}")
     public ResponseEntity<DeptDTO> get(@PathVariable("dept_id") Long dept_id) {
@@ -118,6 +118,7 @@ public class DeptResource {
         return  ResponseEntity.status(HttpStatus.OK).body(deptService.checkKey(deptMapping.toDomain(deptdto)));
     }
 
+    @PreAuthorize("@DeptRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存部门", tags = {"部门" },  notes = "保存部门")
 	@RequestMapping(method = RequestMethod.POST, value = "/depts/save")
     public ResponseEntity<DeptDTO> save(@RequestBody DeptDTO deptdto) {

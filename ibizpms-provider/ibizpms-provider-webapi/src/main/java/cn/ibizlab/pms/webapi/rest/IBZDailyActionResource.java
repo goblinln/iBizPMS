@@ -67,7 +67,7 @@ public class IBZDailyActionResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id,'UPDATE')")
+    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id, 'UPDATE')")
     @ApiOperation(value = "更新日报日志", tags = {"日报日志" },  notes = "更新日报日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailyactions/{ibzdailyaction_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IBZDailyActionResource {
     }
 
 
-    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id,'DELETE')")
+    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id, 'DELETE')")
     @ApiOperation(value = "删除日报日志", tags = {"日报日志" },  notes = "删除日报日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailyactions/{ibzdailyaction_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzdailyaction_id") Long ibzdailyaction_id) {
@@ -92,7 +92,7 @@ public class IBZDailyActionResource {
     }
 
 
-    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id,'READ')")
+    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id, 'READ')")
     @ApiOperation(value = "获取日报日志", tags = {"日报日志" },  notes = "获取日报日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailyactions/{ibzdailyaction_id}")
     public ResponseEntity<IBZDailyActionDTO> get(@PathVariable("ibzdailyaction_id") Long ibzdailyaction_id) {
@@ -118,7 +118,7 @@ public class IBZDailyActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzdailyactionService.checkKey(ibzdailyactionMapping.toDomain(ibzdailyactiondto)));
     }
 
-    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id,'MANAGE')")
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id, 'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"日报日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/{ibzdailyaction_id}/comment")
     public ResponseEntity<IBZDailyActionDTO> comment(@PathVariable("ibzdailyaction_id") Long ibzdailyaction_id, @RequestBody IBZDailyActionDTO ibzdailyactiondto) {
@@ -132,7 +132,7 @@ public class IBZDailyActionResource {
     }
 
 
-    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id,'CREATE')")
+    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id, 'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"日报日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/{ibzdailyaction_id}/createhis")
     public ResponseEntity<IBZDailyActionDTO> createHis(@PathVariable("ibzdailyaction_id") Long ibzdailyaction_id, @RequestBody IBZDailyActionDTO ibzdailyactiondto) {
@@ -146,7 +146,7 @@ public class IBZDailyActionResource {
     }
 
 
-    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id,'MANAGE')")
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id, 'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"日报日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/{ibzdailyaction_id}/editcomment")
     public ResponseEntity<IBZDailyActionDTO> editComment(@PathVariable("ibzdailyaction_id") Long ibzdailyaction_id, @RequestBody IBZDailyActionDTO ibzdailyactiondto) {
@@ -160,6 +160,7 @@ public class IBZDailyActionResource {
     }
 
 
+    @PreAuthorize("@IBZDailyActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "Pms企业专用", tags = {"日报日志" },  notes = "Pms企业专用")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/{ibzdailyaction_id}/managepmsee")
     public ResponseEntity<IBZDailyActionDTO> managePmsEe(@PathVariable("ibzdailyaction_id") Long ibzdailyaction_id, @RequestBody IBZDailyActionDTO ibzdailyactiondto) {
@@ -173,6 +174,7 @@ public class IBZDailyActionResource {
     }
 
 
+    @PreAuthorize("@IBZDailyActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存日报日志", tags = {"日报日志" },  notes = "保存日报日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/save")
     public ResponseEntity<IBZDailyActionDTO> save(@RequestBody IBZDailyActionDTO ibzdailyactiondto) {
@@ -185,6 +187,7 @@ public class IBZDailyActionResource {
     }
 
 
+    @PreAuthorize("@IBZDailyActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "已读", tags = {"日报日志" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/{ibzdailyaction_id}/sendmarkdone")
     public ResponseEntity<IBZDailyActionDTO> sendMarkDone(@PathVariable("ibzdailyaction_id") Long ibzdailyaction_id, @RequestBody IBZDailyActionDTO ibzdailyactiondto) {
@@ -198,6 +201,7 @@ public class IBZDailyActionResource {
     }
 
 
+    @PreAuthorize("@IBZDailyActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "发送待办", tags = {"日报日志" },  notes = "发送待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/{ibzdailyaction_id}/sendtodo")
     public ResponseEntity<IBZDailyActionDTO> sendTodo(@PathVariable("ibzdailyaction_id") Long ibzdailyaction_id, @RequestBody IBZDailyActionDTO ibzdailyactiondto) {
@@ -211,6 +215,7 @@ public class IBZDailyActionResource {
     }
 
 
+    @PreAuthorize("@IBZDailyActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "发送待阅", tags = {"日报日志" },  notes = "发送待阅")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailyactions/{ibzdailyaction_id}/sendtoread")
     public ResponseEntity<IBZDailyActionDTO> sendToread(@PathVariable("ibzdailyaction_id") Long ibzdailyaction_id, @RequestBody IBZDailyActionDTO ibzdailyactiondto) {

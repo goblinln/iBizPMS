@@ -1,15 +1,15 @@
 <template>
   <div class="app-range-date">
-    <span class="editor-span">{{$t('components.appRangDate.from')}}</span>
+    <span class="editor-span">{{$t('components.apprangdate.from')}}</span>
     <template v-for="(item, index) in refFormItem">
-      <span v-if="index > 0" class="editor-space" :key="index">{{$t('components.appRangDate.daystart')}}</span>
+      <span v-if="index > 0" class="editor-space" :key="index">{{$t('components.apprangdate.daystart')}}</span>
       <date-picker
         :key="index + '-onlydate'"
         v-if="Object.is(editorType, 'DATEPICKEREX') || Object.is(editorType, 'DATEPICKEREX_NOTIME') && index == 0"
         type="date"
         :transfer="true"
         :format="valFormat"
-        :placeholder="$t('components.appRangDate.placeholder')"
+        :placeholder="$t('components.apprangdate.placeholder')"
         :value="activeData[item]"
         :disabled="disabled"
         @on-change="startOnValueChange"
@@ -21,7 +21,7 @@
         type="datetime"
         :transfer="true"
         :format="valFormat"
-        :placeholder="$t('components.appRangDate.placeholder')"
+        :placeholder="$t('components.apprangdate.placeholder')"
         :value="activeData[item]"
         :disabled="disabled"
         @on-change="startOnValueChange"
@@ -33,7 +33,7 @@
         type="date"
         :transfer="true"
         :format="valFormat"
-        :placeholder="$t('components.appRangDate.placeholder')"
+        :placeholder="$t('components.apprangdate.placeholder')"
         :value="activeData[item]"
         :disabled="disabled"
         @on-change="endOnValueChange"
@@ -45,12 +45,12 @@
         type="datetime"
         :transfer="true"
         :format="valFormat"
-        :placeholder="$t('components.appRangDate.placeholder')"
+        :placeholder="$t('components.apprangdate.placeholder')"
         :value="activeData[item]"
         :disabled="disabled"
         @on-change="endOnValueChange"
       ></date-picker>
-      <span v-if="index  > 0" :key="index + '-only'" class="editor-space">{{$t('components.appRangDate.dayend')}}</span>
+      <span v-if="index  > 0" :key="index + '-only'" class="editor-space">{{$t('components.apprangdate.dayend')}}</span>
     </template>
   </div>
 </template>

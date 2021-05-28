@@ -68,7 +68,7 @@ public class IbzLibResource {
     }
 
     @VersionCheck(entity = "ibzlib" , versionfield = "lastediteddate")
-    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'UPDATE')")
+    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id, 'UPDATE')")
     @ApiOperation(value = "更新用例库", tags = {"用例库" },  notes = "更新用例库")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}")
     @Transactional
@@ -85,7 +85,7 @@ public class IbzLibResource {
     }
 
 
-    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'DELETE')")
+    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id, 'DELETE')")
     @ApiOperation(value = "删除用例库", tags = {"用例库" },  notes = "删除用例库")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzlib_id") Long ibzlib_id) {
@@ -93,7 +93,7 @@ public class IbzLibResource {
     }
 
 
-    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'READ')")
+    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id, 'READ')")
     @ApiOperation(value = "获取用例库", tags = {"用例库" },  notes = "获取用例库")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}")
     public ResponseEntity<IbzLibDTO> get(@PathVariable("ibzlib_id") Long ibzlib_id) {
@@ -119,6 +119,7 @@ public class IbzLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzlibService.checkKey(ibzlibMapping.toDomain(ibzlibdto)));
     }
 
+    @PreAuthorize("@IbzLibRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存用例库", tags = {"用例库" },  notes = "保存用例库")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/save")
     public ResponseEntity<IbzLibDTO> save(@RequestBody IbzLibDTO ibzlibdto) {

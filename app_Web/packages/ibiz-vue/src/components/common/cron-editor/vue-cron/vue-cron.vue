@@ -2,26 +2,26 @@
 <template>
     <div class="cron" :val="_value">
     <el-tabs v-model="activeName">
-      <el-tab-pane :label="$t('components.cronEditor.label.second')" name="s">
-        <second-and-minute v-model="sVal" :label="$t('components.cronEditor.second')"></second-and-minute >
+      <el-tab-pane :label="$t('components.croneditor.label.second')" name="s">
+        <second-and-minute v-model="sVal" :label="$t('components.croneditor.second')"></second-and-minute >
       </el-tab-pane>
-      <el-tab-pane :label="$t('components.cronEditor.label.minute')" name="m">
-        <second-and-minute v-model="mVal" :label="$t('components.cronEditor.minute')"></second-and-minute >
+      <el-tab-pane :label="$t('components.croneditor.label.minute')" name="m">
+        <second-and-minute v-model="mVal" :label="$t('components.croneditor.minute')"></second-and-minute >
       </el-tab-pane>
-      <el-tab-pane :label="$t('components.cronEditor.label.hour')" name="h">
-        <hour v-model="hVal" :lable="$t('components.cronEditor.hour.title')"></hour>
+      <el-tab-pane :label="$t('components.croneditor.label.hour')" name="h">
+        <hour v-model="hVal" :lable="$t('components.croneditor.hour.title')"></hour>
       </el-tab-pane>
-      <el-tab-pane :label="$t('components.cronEditor.label.day')" name="d">
-        <day v-model="dVal" :lable="$t('components.cronEditor.day.title')"></day>
+      <el-tab-pane :label="$t('components.croneditor.label.day')" name="d">
+        <day v-model="dVal" :lable="$t('components.croneditor.day.title')"></day>
       </el-tab-pane>
-      <el-tab-pane :label="$t('components.cronEditor.label.month')" name="month">
-        <month v-model="monthVal" :lable="$t('components.cronEditor.month.title')"></month>
+      <el-tab-pane :label="$t('components.croneditor.label.month')" name="month">
+        <month v-model="monthVal" :lable="$t('components.croneditor.month.title')"></month>
       </el-tab-pane>
-      <el-tab-pane :label="$t('components.cronEditor.label.week')" name="week">
-        <week v-model="weekVal" :lable="$t('components.cronEditor.week.title')"></week>
+      <el-tab-pane :label="$t('components.croneditor.label.week')" name="week">
+        <week v-model="weekVal" :lable="$t('components.croneditor.week.title')"></week>
       </el-tab-pane>
-      <el-tab-pane :label="$t('components.cronEditor.label.year')" name="year">
-        <year v-model="yearVal" :lable="$t('components.cronEditor.year.title')"></year>
+      <el-tab-pane :label="$t('components.croneditor.label.year')" name="year">
+        <year v-model="yearVal" :lable="$t('components.croneditor.year.title')"></year>
       </el-tab-pane>
     </el-tabs>
     <!-- table -->
@@ -32,37 +32,37 @@
        style="width: 100%;">
        <el-table-column
          prop="sVal"
-         :label="$t('components.cronEditor.second')"
+         :label="$t('components.croneditor.second')"
          width="70">
        </el-table-column>
        <el-table-column
          prop="mVal"
-         :label="$t('components.cronEditor.minute')"
+         :label="$t('components.croneditor.minute')"
          width="70">
        </el-table-column>
        <el-table-column
          prop="hVal"
-         :label="$t('components.cronEditor.hour.title')"
+         :label="$t('components.croneditor.hour.title')"
          width="70">
        </el-table-column>
        <el-table-column
          prop="dVal"
-         :label="$t('components.cronEditor.day.title')"
+         :label="$t('components.croneditor.day.title')"
          width="70">
        </el-table-column>
        <el-table-column
          prop="monthVal"
-         :label="$t('components.cronEditor.month.title')"
+         :label="$t('components.croneditor.month.title')"
          width="70">
        </el-table-column>
        <el-table-column
          prop="weekVal"
-         :label="$t('components.cronEditor.week.title')"
+         :label="$t('components.croneditor.week.title')"
          width="70">
        </el-table-column>
        <el-table-column
          prop="yearVal"
-         :label="this.$t('components.cronEditor.year.title')">
+         :label="this.$t('components.croneditor.year.title')">
        </el-table-column>
      </el-table>
   </div>
@@ -217,10 +217,10 @@ export default class VueCron extends Vue {
         return '';
       }
       if (this.dVal === '?' && this.weekVal === '?') {
-        this.$throw((this.$t('components.cronEditor.message.error1') as string),'_value');
+        this.$throw((this.$t('components.croneditor.message.error1') as string),'_value');
       }
       if (this.dVal !== '?' && this.weekVal !== '?') {
-        this.$throw((this.$t('components.cronEditor.message.error1') as string),'_value');
+        this.$throw((this.$t('components.croneditor.message.error1') as string),'_value');
       }
       let v: any = `${this.sVal} ${this.mVal} ${this.hVal} ${this.dVal} ${this.monthVal} ${this.weekVal} ${this.yearVal}`;
       if (v !== this.value) {

@@ -1,26 +1,26 @@
 <template lang="html">
   <div :val="value_">
     <div>
-      <el-radio v-model="type" label="1" size="mini" border>{{ $t('components.cronEditor.hour.everyHour') }}</el-radio>
+      <el-radio v-model="type" label="1" size="mini" border>{{ $t('components.croneditor.hour.everyhour') }}</el-radio>
     </div>
     <div>
-      <el-radio v-model="type" label="2" size="mini" border>{{ $t('components.cronEditor.public.cycle') }}</el-radio>
-      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.cronEditor.public.from') }}</span>
+      <el-radio v-model="type" label="2" size="mini" border>{{ $t('components.croneditor.public.cycle') }}</el-radio>
+      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.croneditor.public.from') }}</span>
       <el-input-number @change="type = '2'" v-model="cycle.start" :min="0" :max="23" size="mini" style="width: 100px;"></el-input-number>
-      <span style="margin-left: 5px; margin-right: 5px;">{{ $t('components.cronEditor.public.to') }}</span>
+      <span style="margin-left: 5px; margin-right: 5px;">{{ $t('components.croneditor.public.to') }}</span>
       <el-input-number @change="type = '2'" v-model="cycle.end" :min="2" :max="23" size="mini" style="width: 100px;"></el-input-number>
-      {{ $t('components.cronEditor.hour.title') }}
+      {{ $t('components.croneditor.hour.title') }}
     </div>
     <div>
-      <el-radio v-model="type" label="3" size="mini" border>{{ $t('components.cronEditor.public.loop') }}</el-radio>
-      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.cronEditor.public.from') }}</span>
+      <el-radio v-model="type" label="3" size="mini" border>{{ $t('components.croneditor.public.loop') }}</el-radio>
+      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.croneditor.public.from') }}</span>
       <el-input-number @change="type = '3'" v-model="loop.start" :min="0" :max="23" size="mini" style="width: 100px;"></el-input-number>
-      <span style="margin-left: 5px; margin-right: 5px;">{{ $t('components.cronEditor.hour.hourStart') }}</span>
+      <span style="margin-left: 5px; margin-right: 5px;">{{ $t('components.croneditor.hour.hourstart') }}</span>
       <el-input-number @change="type = '3'" v-model="loop.end" :min="1" :max="23" size="mini" style="width: 100px;"></el-input-number>
-      {{ $t('components.cronEditor.hour.onceAHour') }}
+      {{ $t('components.croneditor.hour.onceahour') }}
     </div>
     <div>
-      <el-radio v-model="type" label="4" size="mini" border>{{ $t('components.cronEditor.public.specify') }}</el-radio>
+      <el-radio v-model="type" label="4" size="mini" border>{{ $t('components.croneditor.public.specify') }}</el-radio>
       <el-checkbox-group v-model="appoint">
         <div  v-for="i in 3" :key="i" style="margin-left: 10px;  line-height: 25px;">
           <template v-for="j in 10">

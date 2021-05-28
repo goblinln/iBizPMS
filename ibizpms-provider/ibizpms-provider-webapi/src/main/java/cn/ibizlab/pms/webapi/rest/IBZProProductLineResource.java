@@ -67,7 +67,7 @@ public class IBZProProductLineResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProProductLineRuntime.test(#ibzproproductline_id,'UPDATE')")
+    @PreAuthorize("@IBZProProductLineRuntime.test(#ibzproproductline_id, 'UPDATE')")
     @ApiOperation(value = "更新产品线", tags = {"产品线" },  notes = "更新产品线")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproproductlines/{ibzproproductline_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IBZProProductLineResource {
     }
 
 
-    @PreAuthorize("@IBZProProductLineRuntime.test(#ibzproproductline_id,'DELETE')")
+    @PreAuthorize("@IBZProProductLineRuntime.test(#ibzproproductline_id, 'DELETE')")
     @ApiOperation(value = "删除产品线", tags = {"产品线" },  notes = "删除产品线")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproductlines/{ibzproproductline_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzproproductline_id") Long ibzproproductline_id) {
@@ -92,7 +92,7 @@ public class IBZProProductLineResource {
     }
 
 
-    @PreAuthorize("@IBZProProductLineRuntime.test(#ibzproproductline_id,'READ')")
+    @PreAuthorize("@IBZProProductLineRuntime.test(#ibzproproductline_id, 'READ')")
     @ApiOperation(value = "获取产品线", tags = {"产品线" },  notes = "获取产品线")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproproductlines/{ibzproproductline_id}")
     public ResponseEntity<IBZProProductLineDTO> get(@PathVariable("ibzproproductline_id") Long ibzproproductline_id) {
@@ -119,6 +119,7 @@ public class IBZProProductLineResource {
     }
 
 
+    @PreAuthorize("@IBZProProductLineRuntime.quickTest('DENY')")
     @ApiOperation(value = "批量保存产品线", tags = {"产品线" },  notes = "批量保存产品线")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductlines/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBZProProductLineDTO> ibzproproductlinedtos) {

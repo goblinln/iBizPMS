@@ -67,7 +67,7 @@ public class taskestimatestatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskEstimateStatsRuntime.test(#taskestimatestats_id,'UPDATE')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.test(#taskestimatestats_id, 'UPDATE')")
     @ApiOperation(value = "更新任务工时统计", tags = {"任务工时统计" },  notes = "更新任务工时统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/taskestimatestats/{taskestimatestats_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class taskestimatestatsResource {
     }
 
 
-    @PreAuthorize("@TaskEstimateStatsRuntime.test(#taskestimatestats_id,'DELETE')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.test(#taskestimatestats_id, 'DELETE')")
     @ApiOperation(value = "删除任务工时统计", tags = {"任务工时统计" },  notes = "删除任务工时统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/taskestimatestats/{taskestimatestats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("taskestimatestats_id") Long taskestimatestats_id) {
@@ -92,7 +92,7 @@ public class taskestimatestatsResource {
     }
 
 
-    @PreAuthorize("@TaskEstimateStatsRuntime.test(#taskestimatestats_id,'READ')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.test(#taskestimatestats_id, 'READ')")
     @ApiOperation(value = "获取任务工时统计", tags = {"任务工时统计" },  notes = "获取任务工时统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/taskestimatestats/{taskestimatestats_id}")
     public ResponseEntity<taskestimatestatsDTO> get(@PathVariable("taskestimatestats_id") Long taskestimatestats_id) {
@@ -118,6 +118,7 @@ public class taskestimatestatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsService.checkKey(taskestimatestatsMapping.toDomain(taskestimatestatsdto)));
     }
 
+    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存任务工时统计", tags = {"任务工时统计" },  notes = "保存任务工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats/save")
     public ResponseEntity<taskestimatestatsDTO> save(@RequestBody taskestimatestatsDTO taskestimatestatsdto) {

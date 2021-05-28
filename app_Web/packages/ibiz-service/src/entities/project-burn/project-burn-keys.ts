@@ -1,0 +1,16 @@
+export default [
+    'createby',
+    'isweekend',
+    'updateby',
+    'orgname',
+    'dept',
+    'deptname',
+    'date',
+    'consumed',
+    'org',
+    'id',
+    'left',
+    'estimate',
+    'project',
+    'task',
+];

@@ -117,10 +117,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("项目",null),
 				title: commonLogic.appcommonhandle("项目",null),
 			},
-			'curproductgridview': {
-				caption: commonLogic.appcommonhandle("项目",null),
-				title: commonLogic.appcommonhandle("project表格视图",null),
-			},
 			'pickupview': {
 				caption: commonLogic.appcommonhandle("项目",null),
 				title: commonLogic.appcommonhandle("项目数据选择视图",null),
@@ -626,20 +622,6 @@ function getLocaleResourceBase(){
 			'deuiaction1': {
 				caption: commonLogic.appcommonhandle("Save And Close",null),
 				tip: commonLogic.appcommonhandle("Save And Close Window",null),
-			},
-		},
-		curproductgridviewtoolbar_toolbar: {
-			'deuiaction2': {
-				caption: commonLogic.appcommonhandle("刷新",null),
-				tip: commonLogic.appcommonhandle("刷新",null),
-			},
-			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("Export",null),
-				tip: commonLogic.appcommonhandle("Export {0} Data To Excel",null),
-			},
-			'deuiaction4': {
-				caption: commonLogic.appcommonhandle("Filter",null),
-				tip: commonLogic.appcommonhandle("Filter",null),
 			},
 		},
 		editviewtoolbar_toolbar: {

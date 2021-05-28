@@ -1,40 +1,40 @@
 <template lang="html">
   <div :val="value_">
     <div>
-      <el-radio v-model="type" label="1" size="mini" border>{{ $t('components.cronEditor.week.everyWeek') }}</el-radio>
+      <el-radio v-model="type" label="1" size="mini" border>{{ $t('components.croneditor.week.everyweek') }}</el-radio>
     </div>
     <div>
-      <el-radio v-model="type" label="5" size="mini" border>{{ $t('components.cronEditor.public.notSpecify') }}</el-radio>
+      <el-radio v-model="type" label="5" size="mini" border>{{ $t('components.croneditor.public.notspecify') }}</el-radio>
     </div>
     <div>
-      <el-radio v-model="type" label="2" size="mini" border>{{ $t('components.cronEditor.public.cycle') }}</el-radio>
-      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.cronEditor.week.from') }}</span>
+      <el-radio v-model="type" label="2" size="mini" border>{{ $t('components.croneditor.public.cycle') }}</el-radio>
+      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.croneditor.week.from') }}</span>
       <el-input-number @change="type = '2'" v-model="cycle.start" :min="1" :max="7" size="mini" style="width: 100px;"></el-input-number>
-      <span style="margin-left: 5px; margin-right: 5px;">{{ $t('components.cronEditor.week.to') }}</span>
+      <span style="margin-left: 5px; margin-right: 5px;">{{ $t('components.croneditor.week.to') }}</span>
       <el-input-number @change="type = '2'" v-model="cycle.end" :min="2" :max="7" size="mini" style="width: 100px;"></el-input-number>
     </div>
     <div>
-      <el-radio v-model="type" label="3" size="mini" border>{{ $t('components.cronEditor.public.loop') }}</el-radio>
-      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.cronEditor.week.from') }}</span>
+      <el-radio v-model="type" label="3" size="mini" border>{{ $t('components.croneditor.public.loop') }}</el-radio>
+      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.croneditor.week.from') }}</span>
       <el-input-number @change="type = '3'" v-model="loop.start" :min="1" :max="7" size="mini" style="width: 100px;"></el-input-number>
-      <span style="margin-left: 5px; margin-right: 5px;">{{ $t('components.cronEditor.week.start') }}</span>
+      <span style="margin-left: 5px; margin-right: 5px;">{{ $t('components.croneditor.week.start') }}</span>
       <el-input-number @change="type = '3'" v-model="loop.end" :min="1" :max="7" size="mini" style="width: 100px;"></el-input-number>
-      {{ $t('components.cronEditor.week.onceADay') }}
+      {{ $t('components.croneditor.week.onceaday') }}
     </div>
     <div>
-      <el-radio v-model="type" label="7" size="mini" border>{{ $t('components.cronEditor.week.specifyWeek') }}</el-radio>
-      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.cronEditor.week.weekOfMonth') }}</span>
+      <el-radio v-model="type" label="7" size="mini" border>{{ $t('components.croneditor.week.specifyweek') }}</el-radio>
+      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.croneditor.week.weekofmonth') }}</span>
       <el-input-number @change="type = '7'" v-model="week.start" :min="1" :max="4" size="mini" style="width: 100px;"></el-input-number>
-      <span style="margin-left: 5px; margin-right: 5px;">{{ $t('components.cronEditor.week.weekWeek') }}</span>
+      <span style="margin-left: 5px; margin-right: 5px;">{{ $t('components.croneditor.week.weekweek') }}</span>
       <el-input-number @change="type = '7'" v-model="week.end" :min="1" :max="7" size="mini" style="width: 100px;"></el-input-number>
     </div>
     <div>
-      <el-radio v-model="type" label="6" size="mini" border>{{ $t('components.cronEditor.week.lastOfMonth') }}</el-radio>
-      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.cronEditor.week.week') }}</span>
+      <el-radio v-model="type" label="6" size="mini" border>{{ $t('components.croneditor.week.lastofmonth') }}</el-radio>
+      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.croneditor.week.week') }}</span>
       <el-input-number @change="type = '6'" v-model="last" :min="1" :max="7" size="mini" style="width: 100px;"></el-input-number>
     </div>
     <div>
-      <el-radio v-model="type" label="4" size="mini" border>{{ $t('components.cronEditor.public.specify') }}</el-radio>
+      <el-radio v-model="type" label="4" size="mini" border>{{ $t('components.croneditor.public.specify') }}</el-radio>
       <el-checkbox-group v-model="appoint" style="margin-left: 50px;  line-height: 25px;">
         <template v-for="i in 7" >
           <el-checkbox  @change="type = '4'" :key="i" :label="i.toString()"></el-checkbox>

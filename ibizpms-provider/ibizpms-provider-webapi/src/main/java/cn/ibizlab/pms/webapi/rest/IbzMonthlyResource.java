@@ -52,6 +52,7 @@ public class IbzMonthlyResource {
     @Lazy
     public IbzMonthlyMapping ibzmonthlyMapping;
 
+    @PreAuthorize("@IbzMonthlyRuntime.quickTest('NONE')")
     @ApiOperation(value = "新建月报", tags = {"月报" },  notes = "新建月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies")
     @Transactional
@@ -65,6 +66,7 @@ public class IbzMonthlyResource {
     }
 
     @VersionCheck(entity = "ibzmonthly" , versionfield = "updatedate")
+    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id, 'NONE')")
     @ApiOperation(value = "更新月报", tags = {"月报" },  notes = "更新月报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzmonthlies/{ibzmonthly_id}")
     @Transactional
@@ -79,6 +81,7 @@ public class IbzMonthlyResource {
     }
 
 
+    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id, 'NONE')")
     @ApiOperation(value = "删除月报", tags = {"月报" },  notes = "删除月报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzmonthlies/{ibzmonthly_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzmonthly_id") Long ibzmonthly_id) {
@@ -86,6 +89,7 @@ public class IbzMonthlyResource {
     }
 
 
+    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id, 'NONE')")
     @ApiOperation(value = "获取月报", tags = {"月报" },  notes = "获取月报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzmonthlies/{ibzmonthly_id}")
     public ResponseEntity<IbzMonthlyDTO> get(@PathVariable("ibzmonthly_id") Long ibzmonthly_id) {
@@ -96,6 +100,7 @@ public class IbzMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzMonthlyRuntime.quickTest('NONE')")
     @ApiOperation(value = "获取月报草稿", tags = {"月报" },  notes = "获取月报草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzmonthlies/getdraft")
     public ResponseEntity<IbzMonthlyDTO> getDraft(IbzMonthlyDTO dto) {
@@ -110,6 +115,7 @@ public class IbzMonthlyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzmonthlyService.checkKey(ibzmonthlyMapping.toDomain(ibzmonthlydto)));
     }
 
+    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id, 'NONE')")
     @ApiOperation(value = "新建时获取信息", tags = {"月报" },  notes = "新建时获取信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/creategetinfo")
     public ResponseEntity<IbzMonthlyDTO> createGetInfo(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody IbzMonthlyDTO ibzmonthlydto) {
@@ -123,6 +129,7 @@ public class IbzMonthlyResource {
     }
 
 
+    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id, 'NONE')")
     @ApiOperation(value = "定时生成用户月报", tags = {"月报" },  notes = "定时生成用户月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/createusermonthly")
     public ResponseEntity<IbzMonthlyDTO> createUserMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody IbzMonthlyDTO ibzmonthlydto) {
@@ -136,6 +143,7 @@ public class IbzMonthlyResource {
     }
 
 
+    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id, 'NONE')")
     @ApiOperation(value = "编辑时获取完成任务", tags = {"月报" },  notes = "编辑时获取完成任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/editgetcompletetask")
     public ResponseEntity<IbzMonthlyDTO> editGetCompleteTask(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody IbzMonthlyDTO ibzmonthlydto) {
@@ -149,6 +157,7 @@ public class IbzMonthlyResource {
     }
 
 
+    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id, 'NONE')")
     @ApiOperation(value = "已读", tags = {"月报" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/haveread")
     public ResponseEntity<IbzMonthlyDTO> haveRead(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody IbzMonthlyDTO ibzmonthlydto) {
@@ -162,6 +171,7 @@ public class IbzMonthlyResource {
     }
 
 
+    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id, 'NONE')")
     @ApiOperation(value = "定时推送待阅提醒用户月报", tags = {"月报" },  notes = "定时推送待阅提醒用户月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/pushusermonthly")
     public ResponseEntity<IbzMonthlyDTO> pushUserMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody IbzMonthlyDTO ibzmonthlydto) {
@@ -175,6 +185,7 @@ public class IbzMonthlyResource {
     }
 
 
+    @PreAuthorize("@IbzMonthlyRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存月报", tags = {"月报" },  notes = "保存月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/save")
     public ResponseEntity<IbzMonthlyDTO> save(@RequestBody IbzMonthlyDTO ibzmonthlydto) {
@@ -187,6 +198,7 @@ public class IbzMonthlyResource {
     }
 
 
+    @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id, 'NONE')")
     @ApiOperation(value = "提交", tags = {"月报" },  notes = "提交")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzmonthlies/{ibzmonthly_id}/submit")
     public ResponseEntity<IbzMonthlyDTO> submit(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody IbzMonthlyDTO ibzmonthlydto) {
@@ -200,6 +212,7 @@ public class IbzMonthlyResource {
     }
 
 
+    @PreAuthorize("@IbzMonthlyRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"月报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchdefault")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchdefault(@RequestBody IbzMonthlySearchContext context) {
@@ -211,6 +224,7 @@ public class IbzMonthlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@IbzMonthlyRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取我的月报", tags = {"月报" } ,notes = "获取我的月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchmymonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchmymonthly(@RequestBody IbzMonthlySearchContext context) {
@@ -222,6 +236,7 @@ public class IbzMonthlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@IbzMonthlyRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取我的月报（移动端）", tags = {"月报" } ,notes = "获取我的月报（移动端）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchmymonthlymob")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchmymonthlymob(@RequestBody IbzMonthlySearchContext context) {
@@ -233,6 +248,7 @@ public class IbzMonthlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@IbzMonthlyRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取我收到的月报", tags = {"月报" } ,notes = "获取我收到的月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchmyreceivedmonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchmyreceivedmonthly(@RequestBody IbzMonthlySearchContext context) {
@@ -244,6 +260,7 @@ public class IbzMonthlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@IbzMonthlyRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取我提交的月报", tags = {"月报" } ,notes = "获取我提交的月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchmysubmitmonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchmysubmitmonthly(@RequestBody IbzMonthlySearchContext context) {
@@ -255,6 +272,7 @@ public class IbzMonthlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@IbzMonthlyRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取产品月报", tags = {"月报" } ,notes = "获取产品月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchproductmonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchproductmonthly(@RequestBody IbzMonthlySearchContext context) {
@@ -266,6 +284,7 @@ public class IbzMonthlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@IbzMonthlyRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取项目月报", tags = {"月报" } ,notes = "获取项目月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchprojectmonthly")
 	public ResponseEntity<List<IbzMonthlyDTO>> fetchprojectmonthly(@RequestBody IbzMonthlySearchContext context) {

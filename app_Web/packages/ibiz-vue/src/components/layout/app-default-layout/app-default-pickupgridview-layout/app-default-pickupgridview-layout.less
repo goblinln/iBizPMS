@@ -46,6 +46,7 @@
 
 .app-modal .ivu-modal .ivu-modal-content .ivu-modal-body .view-container.dempickupview.view-default {
     padding-right: 14px;
+    padding-bottom: 0px;
 }
 
 .view-default.dempickupview.view-container {
@@ -57,7 +58,7 @@
                 flex-direction: row;
                 align-items: center;
                 background-color: #f6f6f6;
-                padding: 6px 14px 0 0;
+                padding: 18px 14px 0 0;
                 >.ivu-row {
                     overflow: auto;
                     height: 100%;
@@ -91,6 +92,16 @@
                         .grid-selected-row {
                             background-color: var(--ctrl-select-color);
                         }
+                    }
+                }
+                .grid-pagination {
+                    background-color: #fff;
+                    border-radius: 0 0 4px 4px;
+                    box-shadow: 0px -1px 7px 0px rgba(225, 225, 225, 0.5);
+                    padding-right: 18px;
+                    .page-button button {
+                        height: 32px;
+                        margin-top: 5px;
                     }
                 }
             }
@@ -133,8 +144,11 @@
             }
 
         }
-        .footer .ivu-card-body {
-            padding: 16px 10px;
+        .footer {
+            height: 58px;
+            .ivu-card-body {
+                padding: 10px;
+            }
         }
     }
 }

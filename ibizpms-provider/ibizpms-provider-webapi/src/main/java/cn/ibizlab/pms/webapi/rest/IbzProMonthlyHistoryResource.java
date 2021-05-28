@@ -67,7 +67,7 @@ public class IbzProMonthlyHistoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProMonthlyHistoryRuntime.test(#ibzpromonthlyhistory_id,'UPDATE')")
+    @PreAuthorize("@IbzProMonthlyHistoryRuntime.test(#ibzpromonthlyhistory_id, 'UPDATE')")
     @ApiOperation(value = "更新月报操作历史", tags = {"月报操作历史" },  notes = "更新月报操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzpromonthlyhistories/{ibzpromonthlyhistory_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IbzProMonthlyHistoryResource {
     }
 
 
-    @PreAuthorize("@IbzProMonthlyHistoryRuntime.test(#ibzpromonthlyhistory_id,'DELETE')")
+    @PreAuthorize("@IbzProMonthlyHistoryRuntime.test(#ibzpromonthlyhistory_id, 'DELETE')")
     @ApiOperation(value = "删除月报操作历史", tags = {"月报操作历史" },  notes = "删除月报操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzpromonthlyhistories/{ibzpromonthlyhistory_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzpromonthlyhistory_id") Long ibzpromonthlyhistory_id) {
@@ -92,7 +92,7 @@ public class IbzProMonthlyHistoryResource {
     }
 
 
-    @PreAuthorize("@IbzProMonthlyHistoryRuntime.test(#ibzpromonthlyhistory_id,'READ')")
+    @PreAuthorize("@IbzProMonthlyHistoryRuntime.test(#ibzpromonthlyhistory_id, 'READ')")
     @ApiOperation(value = "获取月报操作历史", tags = {"月报操作历史" },  notes = "获取月报操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzpromonthlyhistories/{ibzpromonthlyhistory_id}")
     public ResponseEntity<IbzProMonthlyHistoryDTO> get(@PathVariable("ibzpromonthlyhistory_id") Long ibzpromonthlyhistory_id) {
@@ -118,6 +118,7 @@ public class IbzProMonthlyHistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzpromonthlyhistoryService.checkKey(ibzpromonthlyhistoryMapping.toDomain(ibzpromonthlyhistorydto)));
     }
 
+    @PreAuthorize("@IbzProMonthlyHistoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存月报操作历史", tags = {"月报操作历史" },  notes = "保存月报操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyhistories/save")
     public ResponseEntity<IbzProMonthlyHistoryDTO> save(@RequestBody IbzProMonthlyHistoryDTO ibzpromonthlyhistorydto) {

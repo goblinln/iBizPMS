@@ -68,7 +68,7 @@ public class IbizproProjectMonthlyResource {
     }
 
     @VersionCheck(entity = "ibizproprojectmonthly" , versionfield = "updatedate")
-    @PreAuthorize("@IbizproProjectMonthlyRuntime.test(#ibizproprojectmonthly_id,'UPDATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'UPDATE')")
     @ApiOperation(value = "更新项目月报", tags = {"项目月报" },  notes = "更新项目月报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproprojectmonthlies/{ibizproprojectmonthly_id}")
     @Transactional
@@ -85,7 +85,7 @@ public class IbizproProjectMonthlyResource {
     }
 
 
-    @PreAuthorize("@IbizproProjectMonthlyRuntime.test(#ibizproprojectmonthly_id,'DELETE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
     @ApiOperation(value = "删除项目月报", tags = {"项目月报" },  notes = "删除项目月报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectmonthlies/{ibizproprojectmonthly_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibizproprojectmonthly_id") String ibizproprojectmonthly_id) {
@@ -93,6 +93,7 @@ public class IbizproProjectMonthlyResource {
     }
 
 
+    @PreAuthorize("@IbizproProjectMonthlyRuntime.test(#ibizproprojectmonthly_id, 'NONE')")
     @ApiOperation(value = "获取项目月报", tags = {"项目月报" },  notes = "获取项目月报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectmonthlies/{ibizproprojectmonthly_id}")
     public ResponseEntity<IbizproProjectMonthlyDTO> get(@PathVariable("ibizproprojectmonthly_id") String ibizproprojectmonthly_id) {
@@ -118,6 +119,7 @@ public class IbizproProjectMonthlyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibizproprojectmonthlyService.checkKey(ibizproprojectmonthlyMapping.toDomain(ibizproprojectmonthlydto)));
     }
 
+    @PreAuthorize("@IbizproProjectMonthlyRuntime.test(#ibizproprojectmonthly_id, 'NONE')")
     @ApiOperation(value = "手动生成项目月报", tags = {"项目月报" },  notes = "手动生成项目月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/{ibizproprojectmonthly_id}/manualcreatemonthly")
     public ResponseEntity<IbizproProjectMonthlyDTO> manualCreateMonthly(@PathVariable("ibizproprojectmonthly_id") String ibizproprojectmonthly_id, @RequestBody IbizproProjectMonthlyDTO ibizproprojectmonthlydto) {
@@ -131,6 +133,7 @@ public class IbizproProjectMonthlyResource {
     }
 
 
+    @PreAuthorize("@IbizproProjectMonthlyRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存项目月报", tags = {"项目月报" },  notes = "保存项目月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/save")
     public ResponseEntity<IbizproProjectMonthlyDTO> save(@RequestBody IbizproProjectMonthlyDTO ibizproprojectmonthlydto) {
@@ -143,6 +146,7 @@ public class IbizproProjectMonthlyResource {
     }
 
 
+    @PreAuthorize("@IbizproProjectMonthlyRuntime.quickTest('DENY')")
     @ApiOperation(value = "汇总项目月报", tags = {"项目月报" },  notes = "汇总项目月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/{ibizproprojectmonthly_id}/sumprojectmonthly")
     public ResponseEntity<IbizproProjectMonthlyDTO> sumProjectMonthly(@PathVariable("ibizproprojectmonthly_id") String ibizproprojectmonthly_id, @RequestBody IbizproProjectMonthlyDTO ibizproprojectmonthlydto) {
@@ -156,6 +160,7 @@ public class IbizproProjectMonthlyResource {
     }
 
 
+    @PreAuthorize("@IbizproProjectMonthlyRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"项目月报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproprojectmonthlies/fetchdefault")
 	public ResponseEntity<List<IbizproProjectMonthlyDTO>> fetchdefault(@RequestBody IbizproProjectMonthlySearchContext context) {

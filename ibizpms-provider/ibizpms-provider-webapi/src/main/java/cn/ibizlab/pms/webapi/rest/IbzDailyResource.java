@@ -52,6 +52,7 @@ public class IbzDailyResource {
     @Lazy
     public IbzDailyMapping ibzdailyMapping;
 
+    @PreAuthorize("@IbzDailyRuntime.quickTest('NONE')")
     @ApiOperation(value = "新建日报", tags = {"日报" },  notes = "新建日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies")
     @Transactional
@@ -65,6 +66,7 @@ public class IbzDailyResource {
     }
 
     @VersionCheck(entity = "ibzdaily" , versionfield = "updatedate")
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id, 'NONE')")
     @ApiOperation(value = "更新日报", tags = {"日报" },  notes = "更新日报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailies/{ibzdaily_id}")
     @Transactional
@@ -79,6 +81,7 @@ public class IbzDailyResource {
     }
 
 
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id, 'NONE')")
     @ApiOperation(value = "删除日报", tags = {"日报" },  notes = "删除日报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailies/{ibzdaily_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzdaily_id") Long ibzdaily_id) {
@@ -86,6 +89,7 @@ public class IbzDailyResource {
     }
 
 
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id, 'NONE')")
     @ApiOperation(value = "获取日报", tags = {"日报" },  notes = "获取日报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailies/{ibzdaily_id}")
     public ResponseEntity<IbzDailyDTO> get(@PathVariable("ibzdaily_id") Long ibzdaily_id) {
@@ -96,6 +100,7 @@ public class IbzDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbzDailyRuntime.quickTest('NONE')")
     @ApiOperation(value = "获取日报草稿", tags = {"日报" },  notes = "获取日报草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailies/getdraft")
     public ResponseEntity<IbzDailyDTO> getDraft(IbzDailyDTO dto) {
@@ -110,6 +115,7 @@ public class IbzDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzdailyService.checkKey(ibzdailyMapping.toDomain(ibzdailydto)));
     }
 
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id, 'NONE')")
     @ApiOperation(value = "定时生成用户日报", tags = {"日报" },  notes = "定时生成用户日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/createuserdaily")
     public ResponseEntity<IbzDailyDTO> createUserDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
@@ -123,6 +129,7 @@ public class IbzDailyResource {
     }
 
 
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id, 'NONE')")
     @ApiOperation(value = "获取前一天日报计划参与任务（编辑）", tags = {"日报" },  notes = "获取前一天日报计划参与任务（编辑）")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/getyeaterdaydailyplanstaskedit")
     public ResponseEntity<IbzDailyDTO> getYeaterdayDailyPlansTaskEdit(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
@@ -136,6 +143,7 @@ public class IbzDailyResource {
     }
 
 
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id, 'NONE')")
     @ApiOperation(value = "获取前一天日报计划参与任务（新建）", tags = {"日报" },  notes = "获取前一天日报计划参与任务（新建）")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/getyesterdaydailyplanstask")
     public ResponseEntity<IbzDailyDTO> getYesterdayDailyPlansTask(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
@@ -149,6 +157,7 @@ public class IbzDailyResource {
     }
 
 
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id, 'NONE')")
     @ApiOperation(value = "已读", tags = {"日报" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/haveread")
     public ResponseEntity<IbzDailyDTO> haveRead(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
@@ -162,6 +171,7 @@ public class IbzDailyResource {
     }
 
 
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id, 'NONE')")
     @ApiOperation(value = "关联完成任务", tags = {"日报" },  notes = "关联完成任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailies/{ibzdaily_id}/linkcompletetask")
     public ResponseEntity<IbzDailyDTO> linkCompleteTask(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
@@ -175,6 +185,7 @@ public class IbzDailyResource {
     }
 
 
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id, 'NONE')")
     @ApiOperation(value = "定时推送待阅提醒用户日报", tags = {"日报" },  notes = "定时推送待阅提醒用户日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/pushuserdaily")
     public ResponseEntity<IbzDailyDTO> pushUserDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
@@ -188,6 +199,7 @@ public class IbzDailyResource {
     }
 
 
+    @PreAuthorize("@IbzDailyRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存日报", tags = {"日报" },  notes = "保存日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/save")
     public ResponseEntity<IbzDailyDTO> save(@RequestBody IbzDailyDTO ibzdailydto) {
@@ -200,6 +212,7 @@ public class IbzDailyResource {
     }
 
 
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id, 'NONE')")
     @ApiOperation(value = "提交", tags = {"日报" },  notes = "提交")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailies/{ibzdaily_id}/submit")
     public ResponseEntity<IbzDailyDTO> submit(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
@@ -213,6 +226,7 @@ public class IbzDailyResource {
     }
 
 
+    @PreAuthorize("@IbzDailyRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"日报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchdefault")
 	public ResponseEntity<List<IbzDailyDTO>> fetchdefault(@RequestBody IbzDailySearchContext context) {
@@ -224,6 +238,7 @@ public class IbzDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@IbzDailyRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取我的日报（已提交和未提交）", tags = {"日报" } ,notes = "获取我的日报（已提交和未提交）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchmyalldaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchmyalldaily(@RequestBody IbzDailySearchContext context) {
@@ -235,6 +250,7 @@ public class IbzDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@IbzDailyRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取我收到的日报", tags = {"日报" } ,notes = "获取我收到的日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchmydaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchmydaily(@RequestBody IbzDailySearchContext context) {
@@ -246,6 +262,7 @@ public class IbzDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@IbzDailyRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取我的日报", tags = {"日报" } ,notes = "获取我的日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchmynotsubmit")
 	public ResponseEntity<List<IbzDailyDTO>> fetchmynotsubmit(@RequestBody IbzDailySearchContext context) {
@@ -257,6 +274,7 @@ public class IbzDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@IbzDailyRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取我提交的日报", tags = {"日报" } ,notes = "获取我提交的日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchmysubmitdaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchmysubmitdaily(@RequestBody IbzDailySearchContext context) {
@@ -268,6 +286,7 @@ public class IbzDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@IbzDailyRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取产品日报", tags = {"日报" } ,notes = "获取产品日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchproductdaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchproductdaily(@RequestBody IbzDailySearchContext context) {
@@ -279,6 +298,7 @@ public class IbzDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@IbzDailyRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取项目日报", tags = {"日报" } ,notes = "获取项目日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchprojectdaily")
 	public ResponseEntity<List<IbzDailyDTO>> fetchprojectdaily(@RequestBody IbzDailySearchContext context) {

@@ -68,7 +68,7 @@ public class IbzFavoritesResource {
     }
 
     @VersionCheck(entity = "ibzfavorites" , versionfield = "updatedate")
-    @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id,'UPDATE')")
+    @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id, 'UPDATE')")
     @ApiOperation(value = "更新收藏", tags = {"收藏" },  notes = "更新收藏")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzfavorites/{ibzfavorites_id}")
     @Transactional
@@ -85,7 +85,7 @@ public class IbzFavoritesResource {
     }
 
 
-    @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id,'DELETE')")
+    @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id, 'DELETE')")
     @ApiOperation(value = "删除收藏", tags = {"收藏" },  notes = "删除收藏")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzfavorites/{ibzfavorites_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzfavorites_id") String ibzfavorites_id) {
@@ -93,7 +93,7 @@ public class IbzFavoritesResource {
     }
 
 
-    @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id,'READ')")
+    @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id, 'READ')")
     @ApiOperation(value = "获取收藏", tags = {"收藏" },  notes = "获取收藏")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzfavorites/{ibzfavorites_id}")
     public ResponseEntity<IbzFavoritesDTO> get(@PathVariable("ibzfavorites_id") String ibzfavorites_id) {
@@ -119,6 +119,7 @@ public class IbzFavoritesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzfavoritesService.checkKey(ibzfavoritesMapping.toDomain(ibzfavoritesdto)));
     }
 
+    @PreAuthorize("@IbzFavoritesRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存收藏", tags = {"收藏" },  notes = "保存收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzfavorites/save")
     public ResponseEntity<IbzFavoritesDTO> save(@RequestBody IbzFavoritesDTO ibzfavoritesdto) {

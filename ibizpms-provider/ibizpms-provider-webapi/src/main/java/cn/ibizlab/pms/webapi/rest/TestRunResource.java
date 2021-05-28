@@ -67,7 +67,7 @@ public class TestRunResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'UPDATE')")
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id, 'UPDATE')")
     @ApiOperation(value = "更新测试运行", tags = {"测试运行" },  notes = "更新测试运行")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testruns/{testrun_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class TestRunResource {
     }
 
 
-    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'DELETE')")
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id, 'DELETE')")
     @ApiOperation(value = "删除测试运行", tags = {"测试运行" },  notes = "删除测试运行")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testruns/{testrun_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("testrun_id") Long testrun_id) {
@@ -92,7 +92,7 @@ public class TestRunResource {
     }
 
 
-    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'READ')")
+    @PreAuthorize("@TestRunRuntime.test(#testrun_id, 'READ')")
     @ApiOperation(value = "获取测试运行", tags = {"测试运行" },  notes = "获取测试运行")
 	@RequestMapping(method = RequestMethod.GET, value = "/testruns/{testrun_id}")
     public ResponseEntity<TestRunDTO> get(@PathVariable("testrun_id") Long testrun_id) {
@@ -118,6 +118,7 @@ public class TestRunResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testrunService.checkKey(testrunMapping.toDomain(testrundto)));
     }
 
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存测试运行", tags = {"测试运行" },  notes = "保存测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/testruns/save")
     public ResponseEntity<TestRunDTO> save(@RequestBody TestRunDTO testrundto) {
@@ -152,7 +153,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrundto);
     }
 
-    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据测试版本建立测试运行", tags = {"测试运行" },  notes = "根据测试版本建立测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/testruns")
     public ResponseEntity<TestRunDTO> createByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
@@ -166,7 +167,7 @@ public class TestRunResource {
     }
 
 
-    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'UPDATE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据测试版本更新测试运行", tags = {"测试运行" },  notes = "根据测试版本更新测试运行")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<TestRunDTO> updateByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
@@ -181,7 +182,7 @@ public class TestRunResource {
     }
 
 
-    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'DELETE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据测试版本删除测试运行", tags = {"测试运行" },  notes = "根据测试版本删除测试运行")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<Boolean> removeByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id) {
@@ -189,7 +190,7 @@ public class TestRunResource {
     }
 
 
-    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'READ')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据测试版本获取测试运行", tags = {"测试运行" },  notes = "根据测试版本获取测试运行")
 	@RequestMapping(method = RequestMethod.GET, value = "/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<TestRunDTO> getByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id) {
@@ -198,7 +199,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据测试版本获取测试运行草稿", tags = {"测试运行" },  notes = "根据测试版本获取测试运行草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/testtasks/{testtask_id}/testruns/getdraft")
     public ResponseEntity<TestRunDTO> getDraftByTestTask(@PathVariable("testtask_id") Long testtask_id, TestRunDTO dto) {
@@ -207,13 +208,14 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrunMapping.toDto(testrunService.getDraft(domain)));
     }
 
-    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据测试版本检查测试运行", tags = {"测试运行" },  notes = "根据测试版本检查测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/testruns/checkkey")
     public ResponseEntity<Boolean> checkKeyByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
         return  ResponseEntity.status(HttpStatus.OK).body(testrunService.checkKey(testrunMapping.toDomain(testrundto)));
     }
 
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据测试版本保存测试运行", tags = {"测试运行" },  notes = "根据测试版本保存测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/testruns/save")
     public ResponseEntity<TestRunDTO> saveByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
@@ -224,7 +226,7 @@ public class TestRunResource {
     }
 
 
-    @PreAuthorize("@TestRunRuntime.quickTest('READ')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据测试版本获取DEFAULT", tags = {"测试运行" } ,notes = "根据测试版本获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/testruns/fetchdefault")
 	public ResponseEntity<List<TestRunDTO>> fetchTestRunDefaultByTestTask(@PathVariable("testtask_id") Long testtask_id,@RequestBody TestRunSearchContext context) {
@@ -240,7 +242,7 @@ public class TestRunResource {
 	}
 
 
-    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品测试版本建立测试运行", tags = {"测试运行" },  notes = "根据产品测试版本建立测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/testruns")
     public ResponseEntity<TestRunDTO> createByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
@@ -254,7 +256,7 @@ public class TestRunResource {
     }
 
 
-    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'UPDATE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品测试版本更新测试运行", tags = {"测试运行" },  notes = "根据产品测试版本更新测试运行")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<TestRunDTO> updateByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
@@ -269,7 +271,7 @@ public class TestRunResource {
     }
 
 
-    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'DELETE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品测试版本删除测试运行", tags = {"测试运行" },  notes = "根据产品测试版本删除测试运行")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<Boolean> removeByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id) {
@@ -277,7 +279,7 @@ public class TestRunResource {
     }
 
 
-    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'READ')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品测试版本获取测试运行", tags = {"测试运行" },  notes = "根据产品测试版本获取测试运行")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<TestRunDTO> getByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id) {
@@ -286,7 +288,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品测试版本获取测试运行草稿", tags = {"测试运行" },  notes = "根据产品测试版本获取测试运行草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/getdraft")
     public ResponseEntity<TestRunDTO> getDraftByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, TestRunDTO dto) {
@@ -295,13 +297,14 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrunMapping.toDto(testrunService.getDraft(domain)));
     }
 
-    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品测试版本检查测试运行", tags = {"测试运行" },  notes = "根据产品测试版本检查测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/checkkey")
     public ResponseEntity<Boolean> checkKeyByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
         return  ResponseEntity.status(HttpStatus.OK).body(testrunService.checkKey(testrunMapping.toDomain(testrundto)));
     }
 
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品测试版本保存测试运行", tags = {"测试运行" },  notes = "根据产品测试版本保存测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/save")
     public ResponseEntity<TestRunDTO> saveByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
@@ -312,7 +315,7 @@ public class TestRunResource {
     }
 
 
-    @PreAuthorize("@TestRunRuntime.quickTest('READ')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品测试版本获取DEFAULT", tags = {"测试运行" } ,notes = "根据产品测试版本获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/testruns/fetchdefault")
 	public ResponseEntity<List<TestRunDTO>> fetchTestRunDefaultByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody TestRunSearchContext context) {
@@ -328,7 +331,7 @@ public class TestRunResource {
 	}
 
 
-    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目测试版本建立测试运行", tags = {"测试运行" },  notes = "根据项目测试版本建立测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns")
     public ResponseEntity<TestRunDTO> createByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
@@ -342,7 +345,7 @@ public class TestRunResource {
     }
 
 
-    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'UPDATE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目测试版本更新测试运行", tags = {"测试运行" },  notes = "根据项目测试版本更新测试运行")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<TestRunDTO> updateByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
@@ -357,7 +360,7 @@ public class TestRunResource {
     }
 
 
-    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'DELETE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目测试版本删除测试运行", tags = {"测试运行" },  notes = "根据项目测试版本删除测试运行")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<Boolean> removeByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id) {
@@ -365,7 +368,7 @@ public class TestRunResource {
     }
 
 
-    @PreAuthorize("@TestRunRuntime.test(#testrun_id,'READ')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目测试版本获取测试运行", tags = {"测试运行" },  notes = "根据项目测试版本获取测试运行")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<TestRunDTO> getByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id) {
@@ -374,7 +377,7 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目测试版本获取测试运行草稿", tags = {"测试运行" },  notes = "根据项目测试版本获取测试运行草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/getdraft")
     public ResponseEntity<TestRunDTO> getDraftByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, TestRunDTO dto) {
@@ -383,13 +386,14 @@ public class TestRunResource {
         return ResponseEntity.status(HttpStatus.OK).body(testrunMapping.toDto(testrunService.getDraft(domain)));
     }
 
-    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目测试版本检查测试运行", tags = {"测试运行" },  notes = "根据项目测试版本检查测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/checkkey")
     public ResponseEntity<Boolean> checkKeyByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
         return  ResponseEntity.status(HttpStatus.OK).body(testrunService.checkKey(testrunMapping.toDomain(testrundto)));
     }
 
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目测试版本保存测试运行", tags = {"测试运行" },  notes = "根据项目测试版本保存测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/save")
     public ResponseEntity<TestRunDTO> saveByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
@@ -400,7 +404,7 @@ public class TestRunResource {
     }
 
 
-    @PreAuthorize("@TestRunRuntime.quickTest('READ')")
+    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据项目测试版本获取DEFAULT", tags = {"测试运行" } ,notes = "根据项目测试版本获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/testruns/fetchdefault")
 	public ResponseEntity<List<TestRunDTO>> fetchTestRunDefaultByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody TestRunSearchContext context) {

@@ -49,6 +49,7 @@ public class SysPostResource {
     @Lazy
     public SysPostMapping syspostMapping;
 
+    @PreAuthorize("@SysPostRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建岗位", tags = {"岗位" },  notes = "新建岗位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysposts")
     @Transactional
@@ -59,6 +60,7 @@ public class SysPostResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@SysPostRuntime.test(#syspost_id, 'UPDATE')")
     @ApiOperation(value = "更新岗位", tags = {"岗位" },  notes = "更新岗位")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysposts/{syspost_id}")
     @Transactional
@@ -71,6 +73,7 @@ public class SysPostResource {
     }
 
 
+    @PreAuthorize("@SysPostRuntime.test(#syspost_id, 'DELETE')")
     @ApiOperation(value = "删除岗位", tags = {"岗位" },  notes = "删除岗位")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysposts/{syspost_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("syspost_id") String syspost_id) {
@@ -78,6 +81,7 @@ public class SysPostResource {
     }
 
 
+    @PreAuthorize("@SysPostRuntime.test(#syspost_id, 'READ')")
     @ApiOperation(value = "获取岗位", tags = {"岗位" },  notes = "获取岗位")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysposts/{syspost_id}")
     public ResponseEntity<SysPostDTO> get(@PathVariable("syspost_id") String syspost_id) {
@@ -86,6 +90,7 @@ public class SysPostResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@SysPostRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取岗位草稿", tags = {"岗位" },  notes = "获取岗位草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysposts/getdraft")
     public ResponseEntity<SysPostDTO> getDraft(SysPostDTO dto) {
@@ -93,12 +98,14 @@ public class SysPostResource {
         return ResponseEntity.status(HttpStatus.OK).body(syspostMapping.toDto(syspostService.getDraft(domain)));
     }
 
+    @PreAuthorize("@SysPostRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查岗位", tags = {"岗位" },  notes = "检查岗位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysposts/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SysPostDTO syspostdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(syspostService.checkKey(syspostMapping.toDomain(syspostdto)));
     }
 
+    @PreAuthorize("@SysPostRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存岗位", tags = {"岗位" },  notes = "保存岗位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysposts/save")
     public ResponseEntity<SysPostDTO> save(@RequestBody SysPostDTO syspostdto) {
@@ -109,6 +116,7 @@ public class SysPostResource {
     }
 
 
+    @PreAuthorize("@SysPostRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"岗位" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysposts/fetchdefault")
 	public ResponseEntity<List<SysPostDTO>> fetchdefault(@RequestBody SysPostSearchContext context) {

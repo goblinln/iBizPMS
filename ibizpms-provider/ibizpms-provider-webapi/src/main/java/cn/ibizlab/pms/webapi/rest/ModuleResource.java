@@ -67,7 +67,7 @@ public class ModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ModuleRuntime.test(#module_id,'UPDATE')")
+    @PreAuthorize("@ModuleRuntime.test(#module_id, 'UPDATE')")
     @ApiOperation(value = "更新模块", tags = {"模块" },  notes = "更新模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/modules/{module_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class ModuleResource {
     }
 
 
-    @PreAuthorize("@ModuleRuntime.test(#module_id,'DELETE')")
+    @PreAuthorize("@ModuleRuntime.test(#module_id, 'DELETE')")
     @ApiOperation(value = "删除模块", tags = {"模块" },  notes = "删除模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/modules/{module_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("module_id") Long module_id) {
@@ -92,7 +92,7 @@ public class ModuleResource {
     }
 
 
-    @PreAuthorize("@ModuleRuntime.test(#module_id,'READ')")
+    @PreAuthorize("@ModuleRuntime.test(#module_id, 'READ')")
     @ApiOperation(value = "获取模块", tags = {"模块" },  notes = "获取模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/modules/{module_id}")
     public ResponseEntity<ModuleDTO> get(@PathVariable("module_id") Long module_id) {
@@ -118,6 +118,7 @@ public class ModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(moduleService.checkKey(moduleMapping.toDomain(moduledto)));
     }
 
+    @PreAuthorize("@ModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "重建模块路径", tags = {"模块" },  notes = "重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/modules/{module_id}/fix")
     public ResponseEntity<ModuleDTO> fix(@PathVariable("module_id") Long module_id, @RequestBody ModuleDTO moduledto) {
@@ -131,6 +132,7 @@ public class ModuleResource {
     }
 
 
+    @PreAuthorize("@ModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存模块", tags = {"模块" },  notes = "保存模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/modules/save")
     public ResponseEntity<ModuleDTO> save(@RequestBody ModuleDTO moduledto) {
@@ -143,6 +145,7 @@ public class ModuleResource {
     }
 
 
+    @PreAuthorize("@ModuleRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取BugModule", tags = {"模块" } ,notes = "获取BugModule")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchbugmodule")
 	public ResponseEntity<List<ModuleDTO>> fetchbugmodule(@RequestBody ModuleSearchContext context) {

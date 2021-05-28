@@ -67,7 +67,7 @@ public class UserYearWorkStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'UPDATE')")
+    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'UPDATE')")
     @ApiOperation(value = "更新用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "更新用户年度工作内容统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/useryearworkstats/{useryearworkstats_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class UserYearWorkStatsResource {
     }
 
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'DELETE')")
+    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'DELETE')")
     @ApiOperation(value = "删除用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "删除用户年度工作内容统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/useryearworkstats/{useryearworkstats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("useryearworkstats_id") Long useryearworkstats_id) {
@@ -92,7 +92,7 @@ public class UserYearWorkStatsResource {
     }
 
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'READ')")
+    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'READ')")
     @ApiOperation(value = "获取用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "获取用户年度工作内容统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/{useryearworkstats_id}")
     public ResponseEntity<UserYearWorkStatsDTO> get(@PathVariable("useryearworkstats_id") Long useryearworkstats_id) {
@@ -118,7 +118,7 @@ public class UserYearWorkStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsService.checkKey(useryearworkstatsMapping.toDomain(useryearworkstatsdto)));
     }
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'READ')")
+    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'READ')")
     @ApiOperation(value = "获取研发人员相关数据", tags = {"用户年度工作内容统计" },  notes = "获取研发人员相关数据")
 	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/{useryearworkstats_id}/getdevinfomation")
     public ResponseEntity<UserYearWorkStatsDTO> getDevInfomation(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, UserYearWorkStatsDTO useryearworkstatsdto) {
@@ -132,7 +132,7 @@ public class UserYearWorkStatsResource {
     }
 
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'READ')")
+    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'READ')")
     @ApiOperation(value = "获取产品经理相关数据", tags = {"用户年度工作内容统计" },  notes = "获取产品经理相关数据")
 	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/{useryearworkstats_id}/getpoinfomation")
     public ResponseEntity<UserYearWorkStatsDTO> getPoInfomation(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, UserYearWorkStatsDTO useryearworkstatsdto) {
@@ -146,7 +146,7 @@ public class UserYearWorkStatsResource {
     }
 
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'READ')")
+    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'READ')")
     @ApiOperation(value = "获取测试人员相关数据", tags = {"用户年度工作内容统计" },  notes = "获取测试人员相关数据")
 	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/{useryearworkstats_id}/getqainfomation")
     public ResponseEntity<UserYearWorkStatsDTO> getQaInfomation(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, UserYearWorkStatsDTO useryearworkstatsdto) {
@@ -160,7 +160,7 @@ public class UserYearWorkStatsResource {
     }
 
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'READ')")
+    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'READ')")
     @ApiOperation(value = "获取用户所选年度的动作", tags = {"用户年度工作内容统计" },  notes = "获取用户所选年度的动作")
 	@RequestMapping(method = RequestMethod.PUT, value = "/useryearworkstats/{useryearworkstats_id}/getuseryearaction")
     public ResponseEntity<UserYearWorkStatsDTO> getUserYearAction(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, @RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {
@@ -174,6 +174,7 @@ public class UserYearWorkStatsResource {
     }
 
 
+    @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "保存用户年度工作内容统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/useryearworkstats/save")
     public ResponseEntity<UserYearWorkStatsDTO> save(@RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {
@@ -186,7 +187,7 @@ public class UserYearWorkStatsResource {
     }
 
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'READ')")
+    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'READ')")
     @ApiOperation(value = "更新标题", tags = {"用户年度工作内容统计" },  notes = "更新标题")
 	@RequestMapping(method = RequestMethod.PUT, value = "/useryearworkstats/{useryearworkstats_id}/updatetitlebyyear")
     public ResponseEntity<UserYearWorkStatsDTO> updateTitleByYear(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, @RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {

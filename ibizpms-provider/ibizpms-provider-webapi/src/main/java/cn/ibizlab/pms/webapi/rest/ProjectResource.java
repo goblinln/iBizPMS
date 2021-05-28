@@ -73,7 +73,7 @@ public class ProjectResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'UPDATE')")
     @ApiOperation(value = "更新项目", tags = {"项目" },  notes = "更新项目")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}")
     @Transactional
@@ -90,7 +90,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
     @ApiOperation(value = "删除项目", tags = {"项目" },  notes = "删除项目")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("project_id") Long project_id) {
@@ -98,7 +98,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
     @ApiOperation(value = "获取项目", tags = {"项目" },  notes = "获取项目")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}")
     public ResponseEntity<ProjectDTO> get(@PathVariable("project_id") Long project_id) {
@@ -117,7 +117,7 @@ public class ProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectMapping.toDto(projectService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'ACTIVATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'ACTIVATE')")
     @ApiOperation(value = "激活", tags = {"项目" },  notes = "激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/activate")
     public ResponseEntity<ProjectDTO> activate(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -131,7 +131,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'MANAGE')")
     @ApiOperation(value = "批量解除关联需求", tags = {"项目" },  notes = "批量解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/batchunlinkstory")
     public ResponseEntity<ProjectDTO> batchUnlinkStory(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -145,7 +145,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
     @ApiOperation(value = "取消置顶", tags = {"项目" },  notes = "取消置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/cancelprojecttop")
     public ResponseEntity<ProjectDTO> cancelProjectTop(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -166,7 +166,7 @@ public class ProjectResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projectService.checkKey(projectMapping.toDomain(projectdto)));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'CLOSE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'CLOSE')")
     @ApiOperation(value = "关闭", tags = {"项目" },  notes = "关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/close")
     public ResponseEntity<ProjectDTO> close(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -180,6 +180,7 @@ public class ProjectResource {
     }
 
 
+    @PreAuthorize("@ProjectRuntime.quickTest('DENY')")
     @ApiOperation(value = "项目关联需求-按计划关联", tags = {"项目" },  notes = "项目关联需求-按计划关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/importplanstories")
     public ResponseEntity<ProjectDTO> importPlanStories(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -193,6 +194,7 @@ public class ProjectResource {
     }
 
 
+    @PreAuthorize("@ProjectRuntime.quickTest('DENY')")
     @ApiOperation(value = "关联产品", tags = {"项目" },  notes = "关联产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/linkproduct")
     public ResponseEntity<ProjectDTO> linkProduct(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -206,7 +208,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'MANAGE')")
     @ApiOperation(value = "关联需求", tags = {"项目" },  notes = "关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/linkstory")
     public ResponseEntity<ProjectDTO> linkStory(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -220,7 +222,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'MANAGE')")
     @ApiOperation(value = "团队管理", tags = {"项目" },  notes = "团队管理")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/managemembers")
     public ResponseEntity<ProjectDTO> manageMembers(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -234,6 +236,7 @@ public class ProjectResource {
     }
 
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'NONE')")
     @ApiOperation(value = "移动端项目计数器", tags = {"项目" },  notes = "移动端项目计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/mobprojectcount")
     public ResponseEntity<ProjectDTO> mobProjectCount(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -247,6 +250,7 @@ public class ProjectResource {
     }
 
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'NONE')")
     @ApiOperation(value = "项目立项任务快速分组计数器", tags = {"项目" },  notes = "项目立项任务快速分组计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/pmseeprojectalltaskcount")
     public ResponseEntity<ProjectDTO> pmsEeProjectAllTaskCount(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -260,6 +264,7 @@ public class ProjectResource {
     }
 
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'NONE')")
     @ApiOperation(value = "项目立项待办任务快速分组计数器", tags = {"项目" },  notes = "项目立项待办任务快速分组计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/pmseeprojecttodotaskcount")
     public ResponseEntity<ProjectDTO> pmsEeProjectTodoTaskCount(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -273,6 +278,7 @@ public class ProjectResource {
     }
 
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'NONE')")
     @ApiOperation(value = "项目任务快速分组计数器", tags = {"项目" },  notes = "项目任务快速分组计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttaskqcnt")
     public ResponseEntity<ProjectDTO> projectTaskQCnt(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -286,7 +292,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
     @ApiOperation(value = "置顶", tags = {"项目" },  notes = "置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttop")
     public ResponseEntity<ProjectDTO> projectTop(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -300,7 +306,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'PUTOFF')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'PUTOFF')")
     @ApiOperation(value = "延期", tags = {"项目" },  notes = "延期")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/putoff")
     public ResponseEntity<ProjectDTO> putoff(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -314,6 +320,7 @@ public class ProjectResource {
     }
 
 
+    @PreAuthorize("@ProjectRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存项目", tags = {"项目" },  notes = "保存项目")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/save")
     public ResponseEntity<ProjectDTO> save(@RequestBody ProjectDTO projectdto) {
@@ -326,7 +333,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'START')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'START')")
     @ApiOperation(value = "开始", tags = {"项目" },  notes = "开始")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/start")
     public ResponseEntity<ProjectDTO> start(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -340,7 +347,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'SUSPEND')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'SUSPEND')")
     @ApiOperation(value = "挂起", tags = {"项目" },  notes = "挂起")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/suspend")
     public ResponseEntity<ProjectDTO> suspend(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -354,7 +361,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'MANAGE')")
     @ApiOperation(value = "移除成员", tags = {"项目" },  notes = "移除成员")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/unlinkmember")
     public ResponseEntity<ProjectDTO> unlinkMember(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -368,6 +375,7 @@ public class ProjectResource {
     }
 
 
+    @PreAuthorize("@ProjectRuntime.quickTest('DENY')")
     @ApiOperation(value = "解除关联产品", tags = {"项目" },  notes = "解除关联产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/unlinkproduct")
     public ResponseEntity<ProjectDTO> unlinkProduct(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -381,7 +389,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'MANAGE')")
     @ApiOperation(value = "解除关联需求", tags = {"项目" },  notes = "解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/unlinkstory")
     public ResponseEntity<ProjectDTO> unlinkStory(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -395,7 +403,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'MANAGE')")
     @ApiOperation(value = "排序", tags = {"项目" },  notes = "排序")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/updateorder")
     public ResponseEntity<ProjectDTO> updateOrder(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -409,6 +417,7 @@ public class ProjectResource {
     }
 
 
+    @PreAuthorize("@ProjectRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取BugProject", tags = {"项目" } ,notes = "获取BugProject")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchbugproject")
 	public ResponseEntity<List<ProjectDTO>> fetchbugproject(@RequestBody ProjectSearchContext context) {

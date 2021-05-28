@@ -30,7 +30,7 @@
             :file-list="uploadFileList"
             :show-file-list="false"
             :http-request="customUploadFile">
-            <el-button>{{$t('components.uploadFile.choose')}}</el-button>
+            <el-button>{{$t('components.uploadfile.choose')}}</el-button>
         </el-upload>
         <!-- 自定义弹框 -->
         <div class="dialogDiv">

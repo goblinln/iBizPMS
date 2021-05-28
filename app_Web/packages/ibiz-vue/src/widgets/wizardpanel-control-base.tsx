@@ -209,8 +209,8 @@ export class WizardPanelControlBase extends MainControlBase {
      */
     public getStepTag(wizardSteps: Array<any>, tag: string) {
         if (wizardSteps && (wizardSteps.length > 0) && tag) {
-            let curStep: any = wizardSteps.find((step: any) => {
-                return step.title === tag;
+            const curStep: any = wizardSteps.find((step: any) => {
+                return step.stepTag === tag;
             })
             return curStep.stepTag || tag;
         } else {

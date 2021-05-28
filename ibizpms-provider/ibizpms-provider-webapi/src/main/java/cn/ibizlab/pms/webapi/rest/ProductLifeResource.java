@@ -68,7 +68,7 @@ public class ProductLifeResource {
     }
 
     @VersionCheck(entity = "productlife" , versionfield = "updatedate")
-    @PreAuthorize("@ProductLifeRuntime.test(#productlife_id,'UPDATE')")
+    @PreAuthorize("@ProductLifeRuntime.test(#productlife_id, 'UPDATE')")
     @ApiOperation(value = "更新产品生命周期", tags = {"产品生命周期" },  notes = "更新产品生命周期")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productlives/{productlife_id}")
     @Transactional
@@ -85,7 +85,7 @@ public class ProductLifeResource {
     }
 
 
-    @PreAuthorize("@ProductLifeRuntime.test(#productlife_id,'DELETE')")
+    @PreAuthorize("@ProductLifeRuntime.test(#productlife_id, 'DELETE')")
     @ApiOperation(value = "删除产品生命周期", tags = {"产品生命周期" },  notes = "删除产品生命周期")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productlives/{productlife_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("productlife_id") String productlife_id) {
@@ -93,7 +93,7 @@ public class ProductLifeResource {
     }
 
 
-    @PreAuthorize("@ProductLifeRuntime.test(#productlife_id,'READ')")
+    @PreAuthorize("@ProductLifeRuntime.test(#productlife_id, 'READ')")
     @ApiOperation(value = "获取产品生命周期", tags = {"产品生命周期" },  notes = "获取产品生命周期")
 	@RequestMapping(method = RequestMethod.GET, value = "/productlives/{productlife_id}")
     public ResponseEntity<ProductLifeDTO> get(@PathVariable("productlife_id") String productlife_id) {
@@ -119,6 +119,7 @@ public class ProductLifeResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productlifeService.checkKey(productlifeMapping.toDomain(productlifedto)));
     }
 
+    @PreAuthorize("@ProductLifeRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存产品生命周期", tags = {"产品生命周期" },  notes = "保存产品生命周期")
 	@RequestMapping(method = RequestMethod.POST, value = "/productlives/save")
     public ResponseEntity<ProductLifeDTO> save(@RequestBody ProductLifeDTO productlifedto) {

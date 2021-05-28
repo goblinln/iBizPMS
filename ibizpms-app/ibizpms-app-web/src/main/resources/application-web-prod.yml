@@ -75,6 +75,10 @@ zuul:
       path: /products/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    zt_burn:
+      path: /projectburns/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     zt_branch:
       path: /productbranches/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -99,6 +103,10 @@ zuul:
       path: /productteams/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    ibz_productlife:
+      path: /productlives/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     zt_task:
       path: /projecttasks/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -117,6 +125,10 @@ zuul:
       stripPrefix: false
     ibz_projectmodule:
       path: /projectmodules/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
+    ibz_api__product_project:
+      path: /productprojects/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     zt_release:
@@ -173,10 +185,6 @@ zuul:
       stripPrefix: false
     zt_suitecase:
       path: /suitecases/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
-    zt_burn:
-      path: /burns/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     ibz_employeeload:
@@ -349,10 +357,6 @@ zuul:
       stripPrefix: false
     ibz_doclibmodule:
       path: /doclibmodules/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
-    ibz_productlife:
-      path: /productlives/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     zt_usercontact:

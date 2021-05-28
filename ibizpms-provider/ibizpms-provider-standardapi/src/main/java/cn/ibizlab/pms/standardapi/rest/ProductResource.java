@@ -52,7 +52,7 @@ public class ProductResource {
     @Lazy
     public ProductMapping productMapping;
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
     @ApiOperation(value = "取消置顶", tags = {"产品" },  notes = "取消置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cancelproducttop")
     public ResponseEntity<ProductDTO> cancelProductTop(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
@@ -67,7 +67,7 @@ public class ProductResource {
 
 
     @VersionCheck(entity = "product" , versionfield = "updatedate")
-    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
     @ApiOperation(value = "更新产品", tags = {"产品" },  notes = "更新产品")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class ProductResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
     @ApiOperation(value = "删除产品", tags = {"产品" },  notes = "删除产品")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("product_id") Long product_id) {
@@ -105,7 +105,7 @@ public class ProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
     @ApiOperation(value = "获取产品", tags = {"产品" },  notes = "获取产品")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}")
     public ResponseEntity<ProductDTO> get(@PathVariable("product_id") Long product_id) {
@@ -116,7 +116,7 @@ public class ProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
     @ApiOperation(value = "关闭", tags = {"产品" },  notes = "关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/close")
     public ResponseEntity<ProductDTO> close(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
@@ -153,7 +153,7 @@ public class ProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(productMapping.toDto(productService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
     @ApiOperation(value = "置顶", tags = {"产品" },  notes = "置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/producttop")
     public ResponseEntity<ProductDTO> productTop(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {

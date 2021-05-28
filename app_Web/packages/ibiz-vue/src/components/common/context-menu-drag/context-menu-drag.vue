@@ -15,7 +15,7 @@
                         <Icon type="md-apps" />
                     </div>
                     <div class="content">
-                        <span>{{ $t('components.contextMenuDrag.allApp') }}</span>
+                        <span>{{ $t('components.contextmenudrag.allapp') }}</span>
                     </div>
                     <div class="forward">
                         <Icon type="ios-arrow-forward" />
@@ -152,7 +152,7 @@ export default class ContextMenuDrag extends Vue {
         if (item.addr) {
             window.location.href = item.addr;
         } else {
-            this.$info(this.$t('components.contextMenuDrag.noFind') as string,'skipTo');
+            this.$info(this.$t('components.contextmenudrag.nofind') as string,'skipTo');
         }
     }
 
@@ -169,7 +169,7 @@ export default class ContextMenuDrag extends Vue {
                 this.handleAppList(response?.data?.model);
             }
         }).catch((error: any) => {
-            LogUtil.warn(this.$t('components.contextMenuDrag.error'));
+            LogUtil.warn(this.$t('components.contextmenudrag.error'));
         });
     }
 
@@ -183,7 +183,7 @@ export default class ContextMenuDrag extends Vue {
         this.list = [];
       }
       const Environment: any = AppServiceBase.getInstance().getAppEnvironment();
-      let protalData:any = {fullName:this.$t('components.contextMenuDrag.portlet'),addr:Environment.portalUrl};
+      let protalData:any = {fullName:this.$t('components.contextmenudrag.portlet'),addr:Environment.portalUrl};
       this.list.push(protalData);
       this.list.push(...data);
     }

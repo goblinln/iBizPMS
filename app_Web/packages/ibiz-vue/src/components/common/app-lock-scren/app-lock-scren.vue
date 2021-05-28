@@ -1,8 +1,8 @@
 <template>
     <div class="lockscren">
         <span><Icon type="md-lock" size="15" @click="handleLock"/></span>
-        <span class="title" @click="handleLock">{{$t('components.lockScren.lock')}}</span>
-        <el-dialog :title="$t('components.lockScren.title')"
+        <span class="title" @click="handleLock">{{$t('components.lockscren.lock')}}</span>
+        <el-dialog :title="$t('components.lockscren.title')"
             :visible.sync="box"
             width="30%"
             custom-class="lockscren-body"
@@ -10,15 +10,15 @@
             <el-form :model="form"
                 ref="form"
                 label-width="82px">
-                <el-form-item :label="$t('components.lockScren.label')"
+                <el-form-item :label="$t('components.lockscren.label')"
                     prop="passwd"
-                    :rules="[{ required: true, message: $t('components.lockScren.message')}]">
+                    :rules="[{ required: true, message: $t('components.lockscren.message')}]">
                     <el-input v-model="form.passwd"
-                        :placeholder="$t('components.lockScren.placeholder')"></el-input>
+                        :placeholder="$t('components.lockscren.placeholder')"></el-input>
                 </el-form-item>
             </el-form>
             <span slot="footer" class="dialog-footer">
-                <el-button type="primary" @click="handleSetLock">{{$t('components.lockScren.confirmButtonText')}}</el-button>
+                <el-button type="primary" @click="handleSetLock">{{$t('components.lockscren.confirmbuttontext')}}</el-button>
             </span>
         </el-dialog>
     </div>

@@ -52,7 +52,7 @@ public class CaseStatsResource {
     @Lazy
     public CaseStatsMapping casestatsMapping;
 
-    @PreAuthorize("@CaseStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
     @ApiOperation(value = "新建测试用例统计", tags = {"测试用例统计" },  notes = "新建测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats")
     @Transactional
@@ -67,7 +67,7 @@ public class CaseStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CaseStatsRuntime.test(#casestats_id,'UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
     @ApiOperation(value = "更新测试用例统计", tags = {"测试用例统计" },  notes = "更新测试用例统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/casestats/{casestats_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class CaseStatsResource {
     }
 
 
-    @PreAuthorize("@CaseStatsRuntime.test(#casestats_id,'DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
     @ApiOperation(value = "删除测试用例统计", tags = {"测试用例统计" },  notes = "删除测试用例统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/casestats/{casestats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("casestats_id") Long casestats_id) {
@@ -92,7 +92,7 @@ public class CaseStatsResource {
     }
 
 
-    @PreAuthorize("@CaseStatsRuntime.test(#casestats_id,'READ')")
+    @PreAuthorize("@CaseStatsRuntime.test(#casestats_id, 'READ')")
     @ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" },  notes = "获取测试用例统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/casestats/{casestats_id}")
     public ResponseEntity<CaseStatsDTO> get(@PathVariable("casestats_id") Long casestats_id) {
@@ -103,7 +103,7 @@ public class CaseStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CaseStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
     @ApiOperation(value = "获取测试用例统计草稿", tags = {"测试用例统计" },  notes = "获取测试用例统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/casestats/getdraft")
     public ResponseEntity<CaseStatsDTO> getDraft(CaseStatsDTO dto) {
@@ -111,13 +111,14 @@ public class CaseStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(casestatsMapping.toDto(casestatsService.getDraft(domain)));
     }
 
-    @PreAuthorize("@CaseStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
     @ApiOperation(value = "检查测试用例统计", tags = {"测试用例统计" },  notes = "检查测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody CaseStatsDTO casestatsdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(casestatsService.checkKey(casestatsMapping.toDomain(casestatsdto)));
     }
 
+    @PreAuthorize("@CaseStatsRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存测试用例统计", tags = {"测试用例统计" },  notes = "保存测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats/save")
     public ResponseEntity<CaseStatsDTO> save(@RequestBody CaseStatsDTO casestatsdto) {
@@ -130,6 +131,7 @@ public class CaseStatsResource {
     }
 
 
+    @PreAuthorize("@CaseStatsRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"测试用例统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/fetchdefault")
 	public ResponseEntity<List<CaseStatsDTO>> fetchdefault(@RequestBody CaseStatsSearchContext context) {
@@ -141,6 +143,7 @@ public class CaseStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@CaseStatsRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" } ,notes = "获取测试用例统计")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/fetchtestcasestats")
 	public ResponseEntity<List<CaseStatsDTO>> fetchtestcasestats(@RequestBody CaseStatsSearchContext context) {

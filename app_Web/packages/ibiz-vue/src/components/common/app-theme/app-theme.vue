@@ -1,7 +1,7 @@
 <template>
     <div class='app-theme'>
         <poptip
-            :title="$t('components.appTheme.caption.theme')"
+            :title="$t('components.apptheme.caption.theme')"
             popper-class='app-app-theme'
             placement='bottom-end'
             :width="Object.is($i18n.locale, 'zh-CN') ? 180 : 250">
@@ -23,7 +23,7 @@
                 </div>
                 <div>
                     <i-form label-position='left'>
-                        <form-item :label="$t('components.appTheme.caption.font')">
+                        <form-item :label="$t('components.apptheme.caption.font')">
                             <i-select
                                 :value="selectFont"
                                 size='small'
@@ -34,7 +34,7 @@
                                     <i-option
                                         :value="font.value"
                                         :key="font.value">
-                                        {{$t(`components.appTheme.fontFamilys.${font.label}`)}}
+                                        {{$t(`components.apptheme.fontfamilys.${font.label}`)}}
                                     </i-option>
                                 </template>
                             </i-select>

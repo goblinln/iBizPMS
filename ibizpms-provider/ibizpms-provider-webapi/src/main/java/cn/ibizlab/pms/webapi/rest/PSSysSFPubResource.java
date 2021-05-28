@@ -49,6 +49,7 @@ public class PSSysSFPubResource {
     @Lazy
     public PSSysSFPubMapping pssyssfpubMapping;
 
+    @PreAuthorize("@PSSysSFPubRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建后台服务架构", tags = {"后台服务架构" },  notes = "新建后台服务架构")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs")
     @Transactional
@@ -60,6 +61,7 @@ public class PSSysSFPubResource {
     }
 
     @VersionCheck(entity = "pssyssfpub" , versionfield = "updatedate")
+    @PreAuthorize("@PSSysSFPubRuntime.test(#pssyssfpub_id, 'UPDATE')")
     @ApiOperation(value = "更新后台服务架构", tags = {"后台服务架构" },  notes = "更新后台服务架构")
 	@RequestMapping(method = RequestMethod.PUT, value = "/pssyssfpubs/{pssyssfpub_id}")
     @Transactional
@@ -72,6 +74,7 @@ public class PSSysSFPubResource {
     }
 
 
+    @PreAuthorize("@PSSysSFPubRuntime.test(#pssyssfpub_id, 'DELETE')")
     @ApiOperation(value = "删除后台服务架构", tags = {"后台服务架构" },  notes = "删除后台服务架构")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/pssyssfpubs/{pssyssfpub_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("pssyssfpub_id") String pssyssfpub_id) {
@@ -79,6 +82,7 @@ public class PSSysSFPubResource {
     }
 
 
+    @PreAuthorize("@PSSysSFPubRuntime.test(#pssyssfpub_id, 'READ')")
     @ApiOperation(value = "获取后台服务架构", tags = {"后台服务架构" },  notes = "获取后台服务架构")
 	@RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/{pssyssfpub_id}")
     public ResponseEntity<PSSysSFPubDTO> get(@PathVariable("pssyssfpub_id") String pssyssfpub_id) {
@@ -87,6 +91,7 @@ public class PSSysSFPubResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@PSSysSFPubRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取后台服务架构草稿", tags = {"后台服务架构" },  notes = "获取后台服务架构草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/getdraft")
     public ResponseEntity<PSSysSFPubDTO> getDraft(PSSysSFPubDTO dto) {
@@ -94,12 +99,14 @@ public class PSSysSFPubResource {
         return ResponseEntity.status(HttpStatus.OK).body(pssyssfpubMapping.toDto(pssyssfpubService.getDraft(domain)));
     }
 
+    @PreAuthorize("@PSSysSFPubRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查后台服务架构", tags = {"后台服务架构" },  notes = "检查后台服务架构")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody PSSysSFPubDTO pssyssfpubdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(pssyssfpubService.checkKey(pssyssfpubMapping.toDomain(pssyssfpubdto)));
     }
 
+    @PreAuthorize("@PSSysSFPubRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存后台服务架构", tags = {"后台服务架构" },  notes = "保存后台服务架构")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/save")
     public ResponseEntity<PSSysSFPubDTO> save(@RequestBody PSSysSFPubDTO pssyssfpubdto) {
@@ -110,6 +117,7 @@ public class PSSysSFPubResource {
     }
 
 
+    @PreAuthorize("@PSSysSFPubRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本", tags = {"后台服务架构" } ,notes = "获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/pssyssfpubs/fetchbuild")
 	public ResponseEntity<List<PSSysSFPubDTO>> fetchbuild(@RequestBody PSSysSFPubSearchContext context) {
@@ -121,6 +129,7 @@ public class PSSysSFPubResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@PSSysSFPubRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"后台服务架构" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/pssyssfpubs/fetchdefault")
 	public ResponseEntity<List<PSSysSFPubDTO>> fetchdefault(@RequestBody PSSysSFPubSearchContext context) {

@@ -67,7 +67,7 @@ public class IbzProBuildHistoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProBuildHistoryRuntime.test(#ibzprobuildhistory_id,'UPDATE')")
+    @PreAuthorize("@IbzProBuildHistoryRuntime.test(#ibzprobuildhistory_id, 'UPDATE')")
     @ApiOperation(value = "更新版本操作历史", tags = {"版本操作历史" },  notes = "更新版本操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprobuildhistories/{ibzprobuildhistory_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IbzProBuildHistoryResource {
     }
 
 
-    @PreAuthorize("@IbzProBuildHistoryRuntime.test(#ibzprobuildhistory_id,'DELETE')")
+    @PreAuthorize("@IbzProBuildHistoryRuntime.test(#ibzprobuildhistory_id, 'DELETE')")
     @ApiOperation(value = "删除版本操作历史", tags = {"版本操作历史" },  notes = "删除版本操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprobuildhistories/{ibzprobuildhistory_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzprobuildhistory_id") Long ibzprobuildhistory_id) {
@@ -92,7 +92,7 @@ public class IbzProBuildHistoryResource {
     }
 
 
-    @PreAuthorize("@IbzProBuildHistoryRuntime.test(#ibzprobuildhistory_id,'READ')")
+    @PreAuthorize("@IbzProBuildActionRuntime.test(#ibzprobuildaction_id, 'READ')")
     @ApiOperation(value = "获取版本操作历史", tags = {"版本操作历史" },  notes = "获取版本操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprobuildhistories/{ibzprobuildhistory_id}")
     public ResponseEntity<IbzProBuildHistoryDTO> get(@PathVariable("ibzprobuildhistory_id") Long ibzprobuildhistory_id) {
@@ -118,6 +118,7 @@ public class IbzProBuildHistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprobuildhistoryService.checkKey(ibzprobuildhistoryMapping.toDomain(ibzprobuildhistorydto)));
     }
 
+    @PreAuthorize("@IbzProBuildHistoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存版本操作历史", tags = {"版本操作历史" },  notes = "保存版本操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobuildhistories/save")
     public ResponseEntity<IbzProBuildHistoryDTO> save(@RequestBody IbzProBuildHistoryDTO ibzprobuildhistorydto) {
@@ -130,7 +131,7 @@ public class IbzProBuildHistoryResource {
     }
 
 
-    @PreAuthorize("@IbzProBuildHistoryRuntime.quickTest('READ')")
+    @PreAuthorize("@IbzProBuildActionRuntime.test(#ibzprobuildaction_id, 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"版本操作历史" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprobuildhistories/fetchdefault")
 	public ResponseEntity<List<IbzProBuildHistoryDTO>> fetchdefault(@RequestBody IbzProBuildHistorySearchContext context) {

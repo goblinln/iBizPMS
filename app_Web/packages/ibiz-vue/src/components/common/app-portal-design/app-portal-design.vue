@@ -1,11 +1,11 @@
 <template>
     <card class="app-portal-design" :dis-hover="true" :padding="0" :bordered="false">
         <p slot="title">
-            {{$t('components.appPortalDesign.customPortal')}}
+            {{$t('components.appportaldesign.customportal')}}
         </p>
         <div class="design-toolbar" slot="extra">
-            <i-button @click="click('reset')">{{$t('components.appPortalDesign.recover')}}</i-button>
-            <i-button @click="click('save')">{{$t('components.appPortalDesign.save')}}</i-button> 
+            <i-button @click="click('reset')">{{$t('components.appportaldesign.recover')}}</i-button>
+            <i-button @click="click('save')">{{$t('components.appportaldesign.save')}}</i-button> 
         </div>
         <div class="design-container">
             <app-dashboard-design :viewState="viewState" :context="context" :customModel="customModel" :viewparams="viewparams" :utilServiceName="utilServiceName" @save="onSaved"></app-dashboard-design>

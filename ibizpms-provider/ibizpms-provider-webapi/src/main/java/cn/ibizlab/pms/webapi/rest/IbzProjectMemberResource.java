@@ -67,7 +67,7 @@ public class IbzProjectMemberResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id,'UPDATE')")
+    @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id, 'UPDATE')")
     @ApiOperation(value = "更新项目相关成员", tags = {"项目相关成员" },  notes = "更新项目相关成员")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprojectmembers/{ibzprojectmember_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IbzProjectMemberResource {
     }
 
 
-    @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id,'DELETE')")
+    @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id, 'DELETE')")
     @ApiOperation(value = "删除项目相关成员", tags = {"项目相关成员" },  notes = "删除项目相关成员")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprojectmembers/{ibzprojectmember_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzprojectmember_id") Long ibzprojectmember_id) {
@@ -92,6 +92,7 @@ public class IbzProjectMemberResource {
     }
 
 
+    @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id, 'NONE')")
     @ApiOperation(value = "获取项目相关成员", tags = {"项目相关成员" },  notes = "获取项目相关成员")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprojectmembers/{ibzprojectmember_id}")
     public ResponseEntity<IbzProjectMemberDTO> get(@PathVariable("ibzprojectmember_id") Long ibzprojectmember_id) {
@@ -117,6 +118,7 @@ public class IbzProjectMemberResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprojectmemberService.checkKey(ibzprojectmemberMapping.toDomain(ibzprojectmemberdto)));
     }
 
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存项目相关成员", tags = {"项目相关成员" },  notes = "保存项目相关成员")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprojectmembers/save")
     public ResponseEntity<IbzProjectMemberDTO> save(@RequestBody IbzProjectMemberDTO ibzprojectmemberdto) {

@@ -645,6 +645,37 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/projectburns/:projectburn?/views/chartview',
+                    meta: {
+                        caption: 'entities.projectburn.views.chartview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'projectburns', parameterName: 'projectburn' },
+                            { pathName: 'views', parameterName: 'chartview' },
+                        ],
+                        resource:'projectburn',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projectburns/:projectburn?/views/chartview',
+                    meta: {
+                        caption: 'entities.projectburn.views.chartview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projectburns', parameterName: 'projectburn' },
+                            { pathName: 'views', parameterName: 'chartview' },
+                        ],
+                        resource:'projectburn',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'products/:product?/productbranches/:productbranch?/views/pmgridview',
                     meta: {
                         caption: 'entities.productbranch.views.pmgridview.caption',
@@ -2876,21 +2907,6 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/views/curproductgridview',
-                    meta: {
-                        caption: 'entities.project.views.curproductgridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'views', parameterName: 'curproductgridview' },
-                        ],
-                        resource:'project',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
                     path: 'projects/:project?/views/pickupview',
                     meta: {
                         caption: 'entities.project.views.pickupview.caption',
@@ -3494,6 +3510,99 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'editview' },
                         ],
                         resource:'productteam',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/productlives/:productlife?/views/roadmaplistview',
+                    meta: {
+                        caption: 'entities.productlife.views.roadmaplistview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productlives', parameterName: 'productlife' },
+                            { pathName: 'views', parameterName: 'roadmaplistview' },
+                        ],
+                        resource:'productlife',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'productlives/:productlife?/views/roadmaplistview',
+                    meta: {
+                        caption: 'entities.productlife.views.roadmaplistview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productlives', parameterName: 'productlife' },
+                            { pathName: 'views', parameterName: 'roadmaplistview' },
+                        ],
+                        resource:'productlife',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/productlives/:productlife?/views/roadmaplistview9',
+                    meta: {
+                        caption: 'entities.productlife.views.roadmaplistview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productlives', parameterName: 'productlife' },
+                            { pathName: 'views', parameterName: 'roadmaplistview9' },
+                        ],
+                        resource:'productlife',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'productlives/:productlife?/views/roadmaplistview9',
+                    meta: {
+                        caption: 'entities.productlife.views.roadmaplistview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productlives', parameterName: 'productlife' },
+                            { pathName: 'views', parameterName: 'roadmaplistview9' },
+                        ],
+                        resource:'productlife',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/productlives/:productlife?/views/roadmapslistview9',
+                    meta: {
+                        caption: 'entities.productlife.views.roadmapslistview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productlives', parameterName: 'productlife' },
+                            { pathName: 'views', parameterName: 'roadmapslistview9' },
+                        ],
+                        resource:'productlife',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'productlives/:productlife?/views/roadmapslistview9',
+                    meta: {
+                        caption: 'entities.productlife.views.roadmapslistview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productlives', parameterName: 'productlife' },
+                            { pathName: 'views', parameterName: 'roadmapslistview9' },
+                        ],
+                        resource:'productlife',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -7687,6 +7796,37 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'products/:product?/productprojects/:productproject?/views/curproductgridview',
+                    meta: {
+                        caption: 'entities.productproject.views.curproductgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productprojects', parameterName: 'productproject' },
+                            { pathName: 'views', parameterName: 'curproductgridview' },
+                        ],
+                        resource:'productproject',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'productprojects/:productproject?/views/curproductgridview',
+                    meta: {
+                        caption: 'entities.productproject.views.curproductgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productprojects', parameterName: 'productproject' },
+                            { pathName: 'views', parameterName: 'curproductgridview' },
+                        ],
+                        resource:'productproject',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'products/:product?/productreleases/:productrelease?/views/quickcreateview',
                     meta: {
                         caption: 'entities.productrelease.views.quickcreateview.caption',
@@ -9220,21 +9360,6 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'dailyinfoeditview' },
                         ],
                         resource:'ibzdaily',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'burns/:burn?/views/chartview',
-                    meta: {
-                        caption: 'entities.burn.views.chartview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'burns', parameterName: 'burn' },
-                            { pathName: 'views', parameterName: 'chartview' },
-                        ],
-                        resource:'burn',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -12005,51 +12130,6 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'treeexpview' },
                         ],
                         resource:'doclibmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productlives/:productlife?/views/roadmaplistview',
-                    meta: {
-                        caption: 'entities.productlife.views.roadmaplistview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productlives', parameterName: 'productlife' },
-                            { pathName: 'views', parameterName: 'roadmaplistview' },
-                        ],
-                        resource:'productlife',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productlives/:productlife?/views/roadmaplistview9',
-                    meta: {
-                        caption: 'entities.productlife.views.roadmaplistview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productlives', parameterName: 'productlife' },
-                            { pathName: 'views', parameterName: 'roadmaplistview9' },
-                        ],
-                        resource:'productlife',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productlives/:productlife?/views/roadmapslistview9',
-                    meta: {
-                        caption: 'entities.productlife.views.roadmapslistview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productlives', parameterName: 'productlife' },
-                            { pathName: 'views', parameterName: 'roadmapslistview9' },
-                        ],
-                        resource:'productlife',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -22145,7 +22225,7 @@ const router = new Router({
                 {
                     path: 'views/projectcurproductgridview',
                     meta: {
-                        caption: 'entities.project.views.curproductgridview.caption',
+                        caption: 'entities.productproject.views.curproductgridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
@@ -26994,7 +27074,7 @@ const router = new Router({
                 {
                     path: 'views/burnchartview',
                     meta: {
-                        caption: 'entities.burn.views.chartview.caption',
+                        caption: 'entities.projectburn.views.chartview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },

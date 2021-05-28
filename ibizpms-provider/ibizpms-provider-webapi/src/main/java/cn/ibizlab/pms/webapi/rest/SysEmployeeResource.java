@@ -49,6 +49,7 @@ public class SysEmployeeResource {
     @Lazy
     public SysEmployeeMapping sysemployeeMapping;
 
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建人员", tags = {"人员" },  notes = "新建人员")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysemployees")
     @Transactional
@@ -60,6 +61,7 @@ public class SysEmployeeResource {
     }
 
     @VersionCheck(entity = "sysemployee" , versionfield = "updatedate")
+    @PreAuthorize("@SysEmployeeRuntime.test(#sysemployee_id, 'UPDATE')")
     @ApiOperation(value = "更新人员", tags = {"人员" },  notes = "更新人员")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysemployees/{sysemployee_id}")
     @Transactional
@@ -72,6 +74,7 @@ public class SysEmployeeResource {
     }
 
 
+    @PreAuthorize("@SysEmployeeRuntime.test(#sysemployee_id, 'DELETE')")
     @ApiOperation(value = "删除人员", tags = {"人员" },  notes = "删除人员")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysemployees/{sysemployee_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("sysemployee_id") String sysemployee_id) {
@@ -79,6 +82,7 @@ public class SysEmployeeResource {
     }
 
 
+    @PreAuthorize("@SysEmployeeRuntime.test(#sysemployee_id, 'READ')")
     @ApiOperation(value = "获取人员", tags = {"人员" },  notes = "获取人员")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysemployees/{sysemployee_id}")
     public ResponseEntity<SysEmployeeDTO> get(@PathVariable("sysemployee_id") String sysemployee_id) {
@@ -87,6 +91,7 @@ public class SysEmployeeResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取人员草稿", tags = {"人员" },  notes = "获取人员草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysemployees/getdraft")
     public ResponseEntity<SysEmployeeDTO> getDraft(SysEmployeeDTO dto) {
@@ -94,12 +99,14 @@ public class SysEmployeeResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysemployeeMapping.toDto(sysemployeeService.getDraft(domain)));
     }
 
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查人员", tags = {"人员" },  notes = "检查人员")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysemployees/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SysEmployeeDTO sysemployeedto) {
         return  ResponseEntity.status(HttpStatus.OK).body(sysemployeeService.checkKey(sysemployeeMapping.toDomain(sysemployeedto)));
     }
 
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存人员", tags = {"人员" },  notes = "保存人员")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysemployees/save")
     public ResponseEntity<SysEmployeeDTO> save(@RequestBody SysEmployeeDTO sysemployeedto) {
@@ -110,6 +117,7 @@ public class SysEmployeeResource {
     }
 
 
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取Bug用户", tags = {"人员" } ,notes = "获取Bug用户")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchbuguser")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchbuguser(@RequestBody SysEmployeeSearchContext context) {
@@ -121,6 +129,7 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取联系人用户", tags = {"人员" } ,notes = "获取联系人用户")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchcontactlist")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchcontactlist(@RequestBody SysEmployeeSearchContext context) {
@@ -132,6 +141,7 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"人员" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchdefault")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchdefault(@RequestBody SysEmployeeSearchContext context) {
@@ -143,6 +153,7 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队管理", tags = {"人员" } ,notes = "获取项目团队管理")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchproductteamm")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchproductteamm(@RequestBody SysEmployeeSearchContext context) {
@@ -154,6 +165,7 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队管理", tags = {"人员" } ,notes = "获取项目团队管理")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteamm")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteamm(@RequestBody SysEmployeeSearchContext context) {
@@ -165,6 +177,7 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队管理", tags = {"人员" } ,notes = "获取项目团队管理")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteammproduct")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteammproduct(@RequestBody SysEmployeeSearchContext context) {
@@ -176,6 +189,7 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队成员(临时)", tags = {"人员" } ,notes = "获取项目团队成员(临时)")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteamtaskusertemp")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteamtaskusertemp(@RequestBody SysEmployeeSearchContext context) {
@@ -187,6 +201,7 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取项目团队成员", tags = {"人员" } ,notes = "获取项目团队成员")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteamuser")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteamuser(@RequestBody SysEmployeeSearchContext context) {
@@ -198,6 +213,7 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队成员", tags = {"人员" } ,notes = "获取项目团队成员")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteamusertask")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteamusertask(@RequestBody SysEmployeeSearchContext context) {
@@ -209,6 +225,7 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队成员选择", tags = {"人员" } ,notes = "获取项目团队成员选择")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteampk")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteampk(@RequestBody SysEmployeeSearchContext context) {
@@ -220,6 +237,7 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取产品团队成员选择", tags = {"人员" } ,notes = "获取产品团队成员选择")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchstoryproductteampk")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchstoryproductteampk(@RequestBody SysEmployeeSearchContext context) {
@@ -231,6 +249,7 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务多人团队", tags = {"人员" } ,notes = "获取任务多人团队")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchtaskmteam")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchtaskmteam(@RequestBody SysEmployeeSearchContext context) {
@@ -242,6 +261,7 @@ public class SysEmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@SysEmployeeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据查询2", tags = {"人员" } ,notes = "获取数据查询2")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchtaskteam")
 	public ResponseEntity<List<SysEmployeeDTO>> fetchtaskteam(@RequestBody SysEmployeeSearchContext context) {

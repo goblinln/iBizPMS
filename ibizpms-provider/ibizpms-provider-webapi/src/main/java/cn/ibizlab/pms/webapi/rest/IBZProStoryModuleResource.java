@@ -67,7 +67,7 @@ public class IBZProStoryModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProStoryModuleRuntime.test(#ibzprostorymodule_id,'UPDATE')")
+    @PreAuthorize("@IBZProStoryModuleRuntime.test(#ibzprostorymodule_id, 'UPDATE')")
     @ApiOperation(value = "更新需求模块（iBizSys）", tags = {"需求模块（iBizSys）" },  notes = "更新需求模块（iBizSys）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprostorymodules/{ibzprostorymodule_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IBZProStoryModuleResource {
     }
 
 
-    @PreAuthorize("@IBZProStoryModuleRuntime.test(#ibzprostorymodule_id,'DELETE')")
+    @PreAuthorize("@IBZProStoryModuleRuntime.test(#ibzprostorymodule_id, 'DELETE')")
     @ApiOperation(value = "删除需求模块（iBizSys）", tags = {"需求模块（iBizSys）" },  notes = "删除需求模块（iBizSys）")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprostorymodules/{ibzprostorymodule_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzprostorymodule_id") Long ibzprostorymodule_id) {
@@ -92,7 +92,7 @@ public class IBZProStoryModuleResource {
     }
 
 
-    @PreAuthorize("@IBZProStoryModuleRuntime.test(#ibzprostorymodule_id,'READ')")
+    @PreAuthorize("@IBZProStoryModuleRuntime.test(#ibzprostorymodule_id, 'READ')")
     @ApiOperation(value = "获取需求模块（iBizSys）", tags = {"需求模块（iBizSys）" },  notes = "获取需求模块（iBizSys）")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprostorymodules/{ibzprostorymodule_id}")
     public ResponseEntity<IBZProStoryModuleDTO> get(@PathVariable("ibzprostorymodule_id") Long ibzprostorymodule_id) {
@@ -118,6 +118,7 @@ public class IBZProStoryModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprostorymoduleService.checkKey(ibzprostorymoduleMapping.toDomain(ibzprostorymoduledto)));
     }
 
+    @PreAuthorize("@IBZProStoryModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存需求模块（iBizSys）", tags = {"需求模块（iBizSys）" },  notes = "保存需求模块（iBizSys）")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostorymodules/save")
     public ResponseEntity<IBZProStoryModuleDTO> save(@RequestBody IBZProStoryModuleDTO ibzprostorymoduledto) {
@@ -130,6 +131,7 @@ public class IBZProStoryModuleResource {
     }
 
 
+    @PreAuthorize("@IBZProStoryModuleRuntime.quickTest('DENY')")
     @ApiOperation(value = "同步Ibz平台模块", tags = {"需求模块（iBizSys）" },  notes = "同步Ibz平台模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostorymodules/{ibzprostorymodule_id}/syncfromibiz")
     public ResponseEntity<IBZProStoryModuleDTO> syncFromIBIZ(@PathVariable("ibzprostorymodule_id") Long ibzprostorymodule_id, @RequestBody IBZProStoryModuleDTO ibzprostorymoduledto) {

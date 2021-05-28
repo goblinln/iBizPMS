@@ -67,7 +67,7 @@ public class FileResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@FileRuntime.test(#file_id,'UPDATE')")
+    @PreAuthorize("@FileRuntime.test(#file_id, 'UPDATE')")
     @ApiOperation(value = "更新附件", tags = {"附件" },  notes = "更新附件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/files/{file_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class FileResource {
     }
 
 
-    @PreAuthorize("@FileRuntime.test(#file_id,'DELETE')")
+    @PreAuthorize("@FileRuntime.test(#file_id, 'DELETE')")
     @ApiOperation(value = "删除附件", tags = {"附件" },  notes = "删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/files/{file_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("file_id") Long file_id) {
@@ -92,7 +92,7 @@ public class FileResource {
     }
 
 
-    @PreAuthorize("@FileRuntime.test(#file_id,'READ')")
+    @PreAuthorize("@FileRuntime.test(#file_id, 'READ')")
     @ApiOperation(value = "获取附件", tags = {"附件" },  notes = "获取附件")
 	@RequestMapping(method = RequestMethod.GET, value = "/files/{file_id}")
     public ResponseEntity<FileDTO> get(@PathVariable("file_id") Long file_id) {
@@ -118,6 +118,7 @@ public class FileResource {
         return  ResponseEntity.status(HttpStatus.OK).body(fileService.checkKey(fileMapping.toDomain(filedto)));
     }
 
+    @PreAuthorize("@FileRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存附件", tags = {"附件" },  notes = "保存附件")
 	@RequestMapping(method = RequestMethod.POST, value = "/files/save")
     public ResponseEntity<FileDTO> save(@RequestBody FileDTO filedto) {
@@ -130,7 +131,7 @@ public class FileResource {
     }
 
 
-    @PreAuthorize("@FileRuntime.test(#file_id,'UPDATE')")
+    @PreAuthorize("@FileRuntime.test(#file_id, 'UPDATE')")
     @ApiOperation(value = "更新文件", tags = {"附件" },  notes = "更新文件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/files/{file_id}/updateobjectid")
     public ResponseEntity<FileDTO> updateObjectID(@PathVariable("file_id") Long file_id, @RequestBody FileDTO filedto) {
@@ -144,7 +145,7 @@ public class FileResource {
     }
 
 
-    @PreAuthorize("@FileRuntime.test(#file_id,'UPDATE')")
+    @PreAuthorize("@FileRuntime.test(#file_id, 'UPDATE')")
     @ApiOperation(value = "保存附件", tags = {"附件" },  notes = "保存附件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/files/{file_id}/updateobjectidforpmsee")
     public ResponseEntity<FileDTO> updateObjectIDForPmsEe(@PathVariable("file_id") Long file_id, @RequestBody FileDTO filedto) {

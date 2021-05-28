@@ -66,117 +66,6 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLifeService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/productlives/${_context.productlife}/select`);
-    }
-    /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLifeService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/productlives`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLifeService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productlives/${_context.productlife}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLifeService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/productlives/${_context.productlife}`);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLifeService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/productlives/${_context.productlife}`);
-        return res;
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLifeService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/productlives/getdraft`, _data);
-        return res;
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLifeService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productlives/fetchdefault`, _data);
-    }
-    /**
-     * FetchGetRoadmap
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLifeService
-     */
-    async FetchGetRoadmap(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productlives/fetchgetroadmap`, _data);
-    }
-    /**
-     * FetchGetRoadmapS
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLifeService
-     */
-    async FetchGetRoadmapS(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productlives/fetchgetroadmaps`, _data);
-    }
-    /**
      * FetchRoadMapYear
      *
      * @param {*} [_context={}]
@@ -185,6 +74,9 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
      * @memberof ProductLifeService
      */
     async FetchRoadMapYear(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productlives/fetchroadmapyear`, _data);
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productlives/fetchroadmapyear`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

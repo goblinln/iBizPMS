@@ -2,7 +2,7 @@
     <div class='app-header-user'>
         <dropdown transfer-class-name="user-dropdownMenu" @on-click="userSelect" :transfer="true">
             <div class='user'>
-                <span>{{user.name ? user.name : $t('components.appUser.name')}}</span>
+                <span>{{user.name ? user.name : $t('components.appuser.name')}}</span>
                 &nbsp;&nbsp;<avatar :src="user.avatar" />
             </div>
             <dropdown-menu class='menu' slot='list' style='font-size: 15px !important;'>
@@ -17,11 +17,11 @@
                 </dropdown-item>
                 <dropdown-item name='updatepwd' style='font-size: 15px !important;'>
                     <span><Icon type="ios-create-outline" style='margin-right: 8px;'/></span>
-                    <span>{{$t('components.appUser.changepwd')}}</span>
+                    <span>{{$t('components.appuser.changepwd')}}</span>
                 </dropdown-item>
                 <dropdown-item name='logout' style='font-size: 15px !important;'>
                     <span><i aria-hidden='true' class='ivu-icon ivu-icon-md-power' style='margin-right: 8px;'></i></span>
-                    <span>{{$t('components.appUser.logout')}}</span>
+                    <span>{{$t('components.appuser.logout')}}</span>
                 </dropdown-item>
             </dropdown-menu>
         </dropdown>
@@ -57,7 +57,7 @@ export default class AppUser extends Vue {
      */
     public userSelect(data: any) {
         if (Object.is(data, 'logout')) {
-            const title: any = this.$t('components.appUser.surelogout');
+            const title: any = this.$t('components.appuser.surelogout');
             this.$Modal.confirm({
                 title: title,
                 onOk: () => {
@@ -65,7 +65,7 @@ export default class AppUser extends Vue {
                 }
             });
         }else if (Object.is(data, 'updatepwd')) {
-            let container: Subject<any> = this.$appmodal.openModal({ viewname: 'app-update-password', title: (this.$t('components.appUser.changepwd') as string),  width: 500, height: 400, }, {}, {});
+            let container: Subject<any> = this.$appmodal.openModal({ viewname: 'app-update-password', title: (this.$t('components.appuser.changepwd') as string),  width: 500, height: 400, }, {}, {});
                     container.subscribe((result: any) => {
                         if (!result || !Object.is(result.ret, 'OK')) {
                             return;

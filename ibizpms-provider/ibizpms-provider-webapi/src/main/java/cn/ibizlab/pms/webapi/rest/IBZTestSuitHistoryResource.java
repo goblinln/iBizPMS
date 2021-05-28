@@ -67,7 +67,7 @@ public class IBZTestSuitHistoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZTestSuitHistoryRuntime.test(#ibztestsuithistory_id,'UPDATE')")
+    @PreAuthorize("@IBZTestSuitHistoryRuntime.test(#ibztestsuithistory_id, 'UPDATE')")
     @ApiOperation(value = "更新套件操作历史", tags = {"套件操作历史" },  notes = "更新套件操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibztestsuithistories/{ibztestsuithistory_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IBZTestSuitHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZTestSuitHistoryRuntime.test(#ibztestsuithistory_id,'DELETE')")
+    @PreAuthorize("@IBZTestSuitHistoryRuntime.test(#ibztestsuithistory_id, 'DELETE')")
     @ApiOperation(value = "删除套件操作历史", tags = {"套件操作历史" },  notes = "删除套件操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztestsuithistories/{ibztestsuithistory_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibztestsuithistory_id") Long ibztestsuithistory_id) {
@@ -92,7 +92,7 @@ public class IBZTestSuitHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZTestSuitHistoryRuntime.test(#ibztestsuithistory_id,'READ')")
+    @PreAuthorize("@IBZTestSuiteActionRuntime.test(#ibztestsuiteaction_id, 'READ')")
     @ApiOperation(value = "获取套件操作历史", tags = {"套件操作历史" },  notes = "获取套件操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibztestsuithistories/{ibztestsuithistory_id}")
     public ResponseEntity<IBZTestSuitHistoryDTO> get(@PathVariable("ibztestsuithistory_id") Long ibztestsuithistory_id) {
@@ -118,6 +118,7 @@ public class IBZTestSuitHistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztestsuithistoryService.checkKey(ibztestsuithistoryMapping.toDomain(ibztestsuithistorydto)));
     }
 
+    @PreAuthorize("@IBZTestSuitHistoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存套件操作历史", tags = {"套件操作历史" },  notes = "保存套件操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztestsuithistories/save")
     public ResponseEntity<IBZTestSuitHistoryDTO> save(@RequestBody IBZTestSuitHistoryDTO ibztestsuithistorydto) {
@@ -130,7 +131,7 @@ public class IBZTestSuitHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZTestSuitHistoryRuntime.quickTest('READ')")
+    @PreAuthorize("@IBZTestSuiteActionRuntime.test(#ibztestsuiteaction_id, 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"套件操作历史" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibztestsuithistories/fetchdefault")
 	public ResponseEntity<List<IBZTestSuitHistoryDTO>> fetchdefault(@RequestBody IBZTestSuitHistorySearchContext context) {

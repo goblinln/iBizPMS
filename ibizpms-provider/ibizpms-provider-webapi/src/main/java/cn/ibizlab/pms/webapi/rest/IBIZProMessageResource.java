@@ -49,6 +49,7 @@ public class IBIZProMessageResource {
     @Lazy
     public IBIZProMessageMapping ibizpromessageMapping;
 
+    @PreAuthorize("@IBIZProMessageRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建消息", tags = {"消息" },  notes = "新建消息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages")
     @Transactional
@@ -59,6 +60,7 @@ public class IBIZProMessageResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IBIZProMessageRuntime.test(#ibizpromessage_id, 'UPDATE')")
     @ApiOperation(value = "更新消息", tags = {"消息" },  notes = "更新消息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizpromessages/{ibizpromessage_id}")
     @Transactional
@@ -71,6 +73,7 @@ public class IBIZProMessageResource {
     }
 
 
+    @PreAuthorize("@IBIZProMessageRuntime.test(#ibizpromessage_id, 'DELETE')")
     @ApiOperation(value = "删除消息", tags = {"消息" },  notes = "删除消息")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/{ibizpromessage_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibizpromessage_id") String ibizpromessage_id) {
@@ -78,6 +81,7 @@ public class IBIZProMessageResource {
     }
 
 
+    @PreAuthorize("@IBIZProMessageRuntime.test(#ibizpromessage_id, 'READ')")
     @ApiOperation(value = "获取消息", tags = {"消息" },  notes = "获取消息")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/{ibizpromessage_id}")
     public ResponseEntity<IBIZProMessageDTO> get(@PathVariable("ibizpromessage_id") String ibizpromessage_id) {
@@ -86,6 +90,7 @@ public class IBIZProMessageResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IBIZProMessageRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取消息草稿", tags = {"消息" },  notes = "获取消息草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/getdraft")
     public ResponseEntity<IBIZProMessageDTO> getDraft(IBIZProMessageDTO dto) {
@@ -93,12 +98,14 @@ public class IBIZProMessageResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizpromessageMapping.toDto(ibizpromessageService.getDraft(domain)));
     }
 
+    @PreAuthorize("@IBIZProMessageRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查消息", tags = {"消息" },  notes = "检查消息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBIZProMessageDTO ibizpromessagedto) {
         return  ResponseEntity.status(HttpStatus.OK).body(ibizpromessageService.checkKey(ibizpromessageMapping.toDomain(ibizpromessagedto)));
     }
 
+    @PreAuthorize("@IBIZProMessageRuntime.quickTest('DENY')")
     @ApiOperation(value = "标记已完成", tags = {"消息" },  notes = "标记已完成")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/{ibizpromessage_id}/markdone")
     public ResponseEntity<IBIZProMessageDTO> markDone(@PathVariable("ibizpromessage_id") String ibizpromessage_id, @RequestBody IBIZProMessageDTO ibizpromessagedto) {
@@ -110,6 +117,7 @@ public class IBIZProMessageResource {
     }
 
 
+    @PreAuthorize("@IBIZProMessageRuntime.quickTest('DENY')")
     @ApiOperation(value = "标记已读", tags = {"消息" },  notes = "标记已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/{ibizpromessage_id}/markread")
     public ResponseEntity<IBIZProMessageDTO> markRead(@PathVariable("ibizpromessage_id") String ibizpromessage_id, @RequestBody IBIZProMessageDTO ibizpromessagedto) {
@@ -121,6 +129,7 @@ public class IBIZProMessageResource {
     }
 
 
+    @PreAuthorize("@IBIZProMessageRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存消息", tags = {"消息" },  notes = "保存消息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/save")
     public ResponseEntity<IBIZProMessageDTO> save(@RequestBody IBIZProMessageDTO ibizpromessagedto) {
@@ -131,6 +140,7 @@ public class IBIZProMessageResource {
     }
 
 
+    @PreAuthorize("@IBIZProMessageRuntime.quickTest('DENY')")
     @ApiOperation(value = "发送消息", tags = {"消息" },  notes = "发送消息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/{ibizpromessage_id}/send")
     public ResponseEntity<IBIZProMessageDTO> send(@PathVariable("ibizpromessage_id") String ibizpromessage_id, @RequestBody IBIZProMessageDTO ibizpromessagedto) {
@@ -142,6 +152,7 @@ public class IBIZProMessageResource {
     }
 
 
+    @PreAuthorize("@IBIZProMessageRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"消息" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizpromessages/fetchdefault")
 	public ResponseEntity<List<IBIZProMessageDTO>> fetchdefault(@RequestBody IBIZProMessageSearchContext context) {
@@ -153,6 +164,7 @@ public class IBIZProMessageResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@IBIZProMessageRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取用户全部消息", tags = {"消息" } ,notes = "获取用户全部消息")
     @RequestMapping(method= RequestMethod.POST , value="/ibizpromessages/fetchuserallmessages")
 	public ResponseEntity<List<IBIZProMessageDTO>> fetchuserallmessages(@RequestBody IBIZProMessageSearchContext context) {
@@ -164,6 +176,7 @@ public class IBIZProMessageResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@IBIZProMessageRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取用户未读信息", tags = {"消息" } ,notes = "获取用户未读信息")
     @RequestMapping(method= RequestMethod.POST , value="/ibizpromessages/fetchuserunreadmessages")
 	public ResponseEntity<List<IBIZProMessageDTO>> fetchuserunreadmessages(@RequestBody IBIZProMessageSearchContext context) {

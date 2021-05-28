@@ -67,7 +67,7 @@ public class IBZProStoryHistoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProStoryHistoryRuntime.test(#ibzprostoryhistory_id,'UPDATE')")
+    @PreAuthorize("@IBZProStoryHistoryRuntime.test(#ibzprostoryhistory_id, 'UPDATE')")
     @ApiOperation(value = "更新需求操作历史", tags = {"需求操作历史" },  notes = "更新需求操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprostoryhistories/{ibzprostoryhistory_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IBZProStoryHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZProStoryHistoryRuntime.test(#ibzprostoryhistory_id,'DELETE')")
+    @PreAuthorize("@IBZProStoryHistoryRuntime.test(#ibzprostoryhistory_id, 'DELETE')")
     @ApiOperation(value = "删除需求操作历史", tags = {"需求操作历史" },  notes = "删除需求操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprostoryhistories/{ibzprostoryhistory_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzprostoryhistory_id") Long ibzprostoryhistory_id) {
@@ -92,7 +92,7 @@ public class IBZProStoryHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZProStoryHistoryRuntime.test(#ibzprostoryhistory_id,'READ')")
+    @PreAuthorize("@IBZStoryActionRuntime.test(#ibzstoryaction_id, 'READ')")
     @ApiOperation(value = "获取需求操作历史", tags = {"需求操作历史" },  notes = "获取需求操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprostoryhistories/{ibzprostoryhistory_id}")
     public ResponseEntity<IBZProStoryHistoryDTO> get(@PathVariable("ibzprostoryhistory_id") Long ibzprostoryhistory_id) {
@@ -118,6 +118,7 @@ public class IBZProStoryHistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprostoryhistoryService.checkKey(ibzprostoryhistoryMapping.toDomain(ibzprostoryhistorydto)));
     }
 
+    @PreAuthorize("@IBZProStoryHistoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存需求操作历史", tags = {"需求操作历史" },  notes = "保存需求操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostoryhistories/save")
     public ResponseEntity<IBZProStoryHistoryDTO> save(@RequestBody IBZProStoryHistoryDTO ibzprostoryhistorydto) {
@@ -130,7 +131,7 @@ public class IBZProStoryHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZProStoryHistoryRuntime.quickTest('READ')")
+    @PreAuthorize("@IBZStoryActionRuntime.test(#ibzstoryaction_id, 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"需求操作历史" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprostoryhistories/fetchdefault")
 	public ResponseEntity<List<IBZProStoryHistoryDTO>> fetchdefault(@RequestBody IBZProStoryHistorySearchContext context) {

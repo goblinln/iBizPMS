@@ -352,7 +352,7 @@ export default class AppUpicker extends Vue {
      */
     public handlePublicParams(arg: any): boolean {
         if (!this.data) {
-            this.$throw((this.$t('components.appPicker.formdataException') as any),'handlePublicParams');
+            this.$throw((this.$t('components.apppicker.formdataexception') as any),'handlePublicParams');
             return false;
         }
         // 合并表单参数

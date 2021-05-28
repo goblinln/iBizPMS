@@ -52,6 +52,7 @@ public class IbizproProjectWeeklyResource {
     @Lazy
     public IbizproProjectWeeklyMapping ibizproprojectweeklyMapping;
 
+    @PreAuthorize("@IbizproProjectWeeklyRuntime.quickTest('NONE')")
     @ApiOperation(value = "新建项目周报", tags = {"项目周报" },  notes = "新建项目周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectweeklies")
     @Transactional
@@ -65,6 +66,7 @@ public class IbizproProjectWeeklyResource {
     }
 
     @VersionCheck(entity = "ibizproprojectweekly" , versionfield = "updatedate")
+    @PreAuthorize("@IbizproProjectWeeklyRuntime.test(#ibizproprojectweekly_id, 'NONE')")
     @ApiOperation(value = "更新项目周报", tags = {"项目周报" },  notes = "更新项目周报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproprojectweeklies/{ibizproprojectweekly_id}")
     @Transactional
@@ -79,6 +81,7 @@ public class IbizproProjectWeeklyResource {
     }
 
 
+    @PreAuthorize("@IbizproProjectWeeklyRuntime.test(#ibizproprojectweekly_id, 'NONE')")
     @ApiOperation(value = "删除项目周报", tags = {"项目周报" },  notes = "删除项目周报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectweeklies/{ibizproprojectweekly_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibizproprojectweekly_id") String ibizproprojectweekly_id) {
@@ -86,6 +89,7 @@ public class IbizproProjectWeeklyResource {
     }
 
 
+    @PreAuthorize("@IbizproProjectWeeklyRuntime.test(#ibizproprojectweekly_id, 'NONE')")
     @ApiOperation(value = "获取项目周报", tags = {"项目周报" },  notes = "获取项目周报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectweeklies/{ibizproprojectweekly_id}")
     public ResponseEntity<IbizproProjectWeeklyDTO> get(@PathVariable("ibizproprojectweekly_id") String ibizproprojectweekly_id) {
@@ -96,6 +100,7 @@ public class IbizproProjectWeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@IbizproProjectWeeklyRuntime.quickTest('NONE')")
     @ApiOperation(value = "获取项目周报草稿", tags = {"项目周报" },  notes = "获取项目周报草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectweeklies/getdraft")
     public ResponseEntity<IbizproProjectWeeklyDTO> getDraft(IbizproProjectWeeklyDTO dto) {
@@ -103,13 +108,14 @@ public class IbizproProjectWeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklyMapping.toDto(ibizproprojectweeklyService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbizproProjectWeeklyRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'CREATE')")
     @ApiOperation(value = "检查项目周报", tags = {"项目周报" },  notes = "检查项目周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectweeklies/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProjectWeeklyDTO ibizproprojectweeklydto) {
         return  ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklyService.checkKey(ibizproprojectweeklyMapping.toDomain(ibizproprojectweeklydto)));
     }
 
+    @PreAuthorize("@IbizproProjectWeeklyRuntime.test(#ibizproprojectweekly_id, 'NONE')")
     @ApiOperation(value = "定时推送项目周报", tags = {"项目周报" },  notes = "定时推送项目周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectweeklies/{ibizproprojectweekly_id}/pushsumprojectweekly")
     public ResponseEntity<IbizproProjectWeeklyDTO> pushSumProjectWeekly(@PathVariable("ibizproprojectweekly_id") String ibizproprojectweekly_id, @RequestBody IbizproProjectWeeklyDTO ibizproprojectweeklydto) {
@@ -123,6 +129,7 @@ public class IbizproProjectWeeklyResource {
     }
 
 
+    @PreAuthorize("@IbizproProjectWeeklyRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存项目周报", tags = {"项目周报" },  notes = "保存项目周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectweeklies/save")
     public ResponseEntity<IbizproProjectWeeklyDTO> save(@RequestBody IbizproProjectWeeklyDTO ibizproprojectweeklydto) {
@@ -135,6 +142,7 @@ public class IbizproProjectWeeklyResource {
     }
 
 
+    @PreAuthorize("@IbizproProjectWeeklyRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"项目周报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproprojectweeklies/fetchdefault")
 	public ResponseEntity<List<IbizproProjectWeeklyDTO>> fetchdefault(@RequestBody IbizproProjectWeeklySearchContext context) {

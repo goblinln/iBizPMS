@@ -10,7 +10,7 @@
                 :placeholder="placeholder">
                 <template v-slot:default="{item}">
                     <!-- <template v-if="item.isNew">
-                        <div v-if="linkview" @click="newAndEdit">{{$t('components.appPicker.newAndEdit')}}</div>
+                        <div v-if="linkview" @click="newAndEdit">{{$t('components.apppicker.newandedit')}}</div>
                     </template> -->
                     <template v-if="item.tag">
                         <div @click="clickAction(item.tag)">{{item.caption}}</div>
@@ -426,8 +426,8 @@ export default class AppPicker extends Vue {
         Object.assign(_param, { query: query, size: 1000 });
         // 错误信息国际化
         // let error: string = '错误';
-        // let miss: string = (this.$t('components.appPicker.miss') as any);
-        // let requestException: string = (this.$t('components.appPicker.requestException') as any);
+        // let miss: string = (this.$t('components.apppicker.miss') as any);
+        // let requestException: string = (this.$t('components.apppicker.requestexception') as any);
         if(!this.service){
             // this.$throw(miss+'service','onSearch');
         } else if(!this.acParams.serviceName) {
@@ -642,7 +642,7 @@ export default class AppPicker extends Vue {
      * @memberof AppPicker
      */
     private openRedirectView($event: any, view: any, data: any): void {
-        LogUtil.warn(this.$t('components.appPicker.nosupport'));
+        LogUtil.warn(this.$t('components.apppicker.nosupport'));
     }
 
     /**
@@ -652,7 +652,7 @@ export default class AppPicker extends Vue {
      */
     public openLinkView($event: any): void {
         if (!this.data || !this.valueitem || !this.data[this.valueitem]) {
-            this.$throw((this.$t('components.appPicker.valueitemException') as any),'openLinkView');
+            this.$throw((this.$t('components.apppicker.valueitemexception') as any),'openLinkView');
             return;
         }
         // 公共参数处理
@@ -713,7 +713,7 @@ export default class AppPicker extends Vue {
      */
     public handlePublicParams(arg: any): boolean {
         if (!this.data) {
-            this.$throw((this.$t('components.appPicker.formdataException') as any),'handlePublicParams');
+            this.$throw((this.$t('components.apppicker.formdataexception') as any),'handlePublicParams');
             return false;
         }
         // 合并表单参数

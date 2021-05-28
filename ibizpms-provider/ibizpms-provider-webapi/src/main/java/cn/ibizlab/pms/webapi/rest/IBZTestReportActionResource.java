@@ -67,7 +67,7 @@ public class IBZTestReportActionResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id,'UPDATE')")
+    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id, 'UPDATE')")
     @ApiOperation(value = "更新报告日志", tags = {"报告日志" },  notes = "更新报告日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibztestreportactions/{ibztestreportaction_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IBZTestReportActionResource {
     }
 
 
-    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id,'DELETE')")
+    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id, 'DELETE')")
     @ApiOperation(value = "删除报告日志", tags = {"报告日志" },  notes = "删除报告日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztestreportactions/{ibztestreportaction_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id) {
@@ -92,7 +92,7 @@ public class IBZTestReportActionResource {
     }
 
 
-    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id,'READ')")
+    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id, 'READ')")
     @ApiOperation(value = "获取报告日志", tags = {"报告日志" },  notes = "获取报告日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibztestreportactions/{ibztestreportaction_id}")
     public ResponseEntity<IBZTestReportActionDTO> get(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id) {
@@ -118,7 +118,7 @@ public class IBZTestReportActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztestreportactionService.checkKey(ibztestreportactionMapping.toDomain(ibztestreportactiondto)));
     }
 
-    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id,'MANAGE')")
+    @PreAuthorize("@TestReportRuntime.test(#testreport_id, 'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"报告日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztestreportactions/{ibztestreportaction_id}/comment")
     public ResponseEntity<IBZTestReportActionDTO> comment(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @RequestBody IBZTestReportActionDTO ibztestreportactiondto) {
@@ -132,7 +132,7 @@ public class IBZTestReportActionResource {
     }
 
 
-    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id,'CREATE')")
+    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id, 'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"报告日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztestreportactions/{ibztestreportaction_id}/createhis")
     public ResponseEntity<IBZTestReportActionDTO> createHis(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @RequestBody IBZTestReportActionDTO ibztestreportactiondto) {
@@ -146,7 +146,7 @@ public class IBZTestReportActionResource {
     }
 
 
-    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id,'MANAGE')")
+    @PreAuthorize("@TestReportRuntime.test(#testreport_id, 'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"报告日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztestreportactions/{ibztestreportaction_id}/editcomment")
     public ResponseEntity<IBZTestReportActionDTO> editComment(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @RequestBody IBZTestReportActionDTO ibztestreportactiondto) {
@@ -160,6 +160,7 @@ public class IBZTestReportActionResource {
     }
 
 
+    @PreAuthorize("@IBZTestReportActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "Pms企业专用", tags = {"报告日志" },  notes = "Pms企业专用")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztestreportactions/{ibztestreportaction_id}/managepmsee")
     public ResponseEntity<IBZTestReportActionDTO> managePmsEe(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @RequestBody IBZTestReportActionDTO ibztestreportactiondto) {
@@ -173,6 +174,7 @@ public class IBZTestReportActionResource {
     }
 
 
+    @PreAuthorize("@IBZTestReportActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存报告日志", tags = {"报告日志" },  notes = "保存报告日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztestreportactions/save")
     public ResponseEntity<IBZTestReportActionDTO> save(@RequestBody IBZTestReportActionDTO ibztestreportactiondto) {
@@ -185,6 +187,7 @@ public class IBZTestReportActionResource {
     }
 
 
+    @PreAuthorize("@IBZTestReportActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "已读", tags = {"报告日志" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztestreportactions/{ibztestreportaction_id}/sendmarkdone")
     public ResponseEntity<IBZTestReportActionDTO> sendMarkDone(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @RequestBody IBZTestReportActionDTO ibztestreportactiondto) {
@@ -198,6 +201,7 @@ public class IBZTestReportActionResource {
     }
 
 
+    @PreAuthorize("@IBZTestReportActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "发送待办", tags = {"报告日志" },  notes = "发送待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztestreportactions/{ibztestreportaction_id}/sendtodo")
     public ResponseEntity<IBZTestReportActionDTO> sendTodo(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @RequestBody IBZTestReportActionDTO ibztestreportactiondto) {
@@ -211,6 +215,7 @@ public class IBZTestReportActionResource {
     }
 
 
+    @PreAuthorize("@IBZTestReportActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "发送待阅", tags = {"报告日志" },  notes = "发送待阅")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztestreportactions/{ibztestreportaction_id}/sendtoread")
     public ResponseEntity<IBZTestReportActionDTO> sendToread(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @RequestBody IBZTestReportActionDTO ibztestreportactiondto) {

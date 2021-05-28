@@ -67,7 +67,7 @@ public class IBZProBugHostoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProBugHostoryRuntime.test(#ibzprobughostory_id,'UPDATE')")
+    @PreAuthorize("@IBZProBugHostoryRuntime.test(#ibzprobughostory_id, 'UPDATE')")
     @ApiOperation(value = "更新Bug操作历史", tags = {"Bug操作历史" },  notes = "更新Bug操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprobughostories/{ibzprobughostory_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IBZProBugHostoryResource {
     }
 
 
-    @PreAuthorize("@IBZProBugHostoryRuntime.test(#ibzprobughostory_id,'DELETE')")
+    @PreAuthorize("@IBZProBugHostoryRuntime.test(#ibzprobughostory_id, 'DELETE')")
     @ApiOperation(value = "删除Bug操作历史", tags = {"Bug操作历史" },  notes = "删除Bug操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprobughostories/{ibzprobughostory_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzprobughostory_id") Long ibzprobughostory_id) {
@@ -92,7 +92,7 @@ public class IBZProBugHostoryResource {
     }
 
 
-    @PreAuthorize("@IBZProBugHostoryRuntime.test(#ibzprobughostory_id,'READ')")
+    @PreAuthorize("@IbzProBugActionRuntime.test(#ibzprobugaction_id, 'READ')")
     @ApiOperation(value = "获取Bug操作历史", tags = {"Bug操作历史" },  notes = "获取Bug操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprobughostories/{ibzprobughostory_id}")
     public ResponseEntity<IBZProBugHostoryDTO> get(@PathVariable("ibzprobughostory_id") Long ibzprobughostory_id) {
@@ -118,6 +118,7 @@ public class IBZProBugHostoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprobughostoryService.checkKey(ibzprobughostoryMapping.toDomain(ibzprobughostorydto)));
     }
 
+    @PreAuthorize("@IBZProBugHostoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存Bug操作历史", tags = {"Bug操作历史" },  notes = "保存Bug操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobughostories/save")
     public ResponseEntity<IBZProBugHostoryDTO> save(@RequestBody IBZProBugHostoryDTO ibzprobughostorydto) {
@@ -130,7 +131,7 @@ public class IBZProBugHostoryResource {
     }
 
 
-    @PreAuthorize("@IBZProBugHostoryRuntime.quickTest('READ')")
+    @PreAuthorize("@IbzProBugActionRuntime.test(#ibzprobugaction_id, 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"Bug操作历史" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprobughostories/fetchdefault")
 	public ResponseEntity<List<IBZProBugHostoryDTO>> fetchdefault(@RequestBody IBZProBugHostorySearchContext context) {

@@ -67,7 +67,7 @@ public class ProductPlanHistoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductPlanHistoryRuntime.test(#productplanhistory_id,'UPDATE')")
+    @PreAuthorize("@ProductPlanHistoryRuntime.test(#productplanhistory_id, 'UPDATE')")
     @ApiOperation(value = "更新产品计划历史", tags = {"产品计划历史" },  notes = "更新产品计划历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplanhistories/{productplanhistory_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class ProductPlanHistoryResource {
     }
 
 
-    @PreAuthorize("@ProductPlanHistoryRuntime.test(#productplanhistory_id,'DELETE')")
+    @PreAuthorize("@ProductPlanHistoryRuntime.test(#productplanhistory_id, 'DELETE')")
     @ApiOperation(value = "删除产品计划历史", tags = {"产品计划历史" },  notes = "删除产品计划历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productplanhistories/{productplanhistory_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("productplanhistory_id") Long productplanhistory_id) {
@@ -92,7 +92,7 @@ public class ProductPlanHistoryResource {
     }
 
 
-    @PreAuthorize("@ProductPlanHistoryRuntime.test(#productplanhistory_id,'READ')")
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id, 'READ')")
     @ApiOperation(value = "获取产品计划历史", tags = {"产品计划历史" },  notes = "获取产品计划历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/productplanhistories/{productplanhistory_id}")
     public ResponseEntity<ProductPlanHistoryDTO> get(@PathVariable("productplanhistory_id") Long productplanhistory_id) {
@@ -118,6 +118,7 @@ public class ProductPlanHistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productplanhistoryService.checkKey(productplanhistoryMapping.toDomain(productplanhistorydto)));
     }
 
+    @PreAuthorize("@ProductPlanHistoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存产品计划历史", tags = {"产品计划历史" },  notes = "保存产品计划历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanhistories/save")
     public ResponseEntity<ProductPlanHistoryDTO> save(@RequestBody ProductPlanHistoryDTO productplanhistorydto) {
@@ -130,7 +131,7 @@ public class ProductPlanHistoryResource {
     }
 
 
-    @PreAuthorize("@ProductPlanHistoryRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id, 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品计划历史" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/productplanhistories/fetchdefault")
 	public ResponseEntity<List<ProductPlanHistoryDTO>> fetchdefault(@RequestBody ProductPlanHistorySearchContext context) {

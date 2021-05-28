@@ -49,6 +49,7 @@ public class SysDepartmentResource {
     @Lazy
     public SysDepartmentMapping sysdepartmentMapping;
 
+    @PreAuthorize("@SysDepartmentRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建部门", tags = {"部门" },  notes = "新建部门")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysdepartments")
     @Transactional
@@ -60,6 +61,7 @@ public class SysDepartmentResource {
     }
 
     @VersionCheck(entity = "sysdepartment" , versionfield = "updatedate")
+    @PreAuthorize("@SysDepartmentRuntime.test(#sysdepartment_id, 'UPDATE')")
     @ApiOperation(value = "更新部门", tags = {"部门" },  notes = "更新部门")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysdepartments/{sysdepartment_id}")
     @Transactional
@@ -72,6 +74,7 @@ public class SysDepartmentResource {
     }
 
 
+    @PreAuthorize("@SysDepartmentRuntime.test(#sysdepartment_id, 'DELETE')")
     @ApiOperation(value = "删除部门", tags = {"部门" },  notes = "删除部门")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysdepartments/{sysdepartment_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("sysdepartment_id") String sysdepartment_id) {
@@ -79,6 +82,7 @@ public class SysDepartmentResource {
     }
 
 
+    @PreAuthorize("@SysDepartmentRuntime.test(#sysdepartment_id, 'READ')")
     @ApiOperation(value = "获取部门", tags = {"部门" },  notes = "获取部门")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysdepartments/{sysdepartment_id}")
     public ResponseEntity<SysDepartmentDTO> get(@PathVariable("sysdepartment_id") String sysdepartment_id) {
@@ -87,6 +91,7 @@ public class SysDepartmentResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@SysDepartmentRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取部门草稿", tags = {"部门" },  notes = "获取部门草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysdepartments/getdraft")
     public ResponseEntity<SysDepartmentDTO> getDraft(SysDepartmentDTO dto) {
@@ -94,12 +99,14 @@ public class SysDepartmentResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysdepartmentMapping.toDto(sysdepartmentService.getDraft(domain)));
     }
 
+    @PreAuthorize("@SysDepartmentRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查部门", tags = {"部门" },  notes = "检查部门")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SysDepartmentDTO sysdepartmentdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(sysdepartmentService.checkKey(sysdepartmentMapping.toDomain(sysdepartmentdto)));
     }
 
+    @PreAuthorize("@SysDepartmentRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存部门", tags = {"部门" },  notes = "保存部门")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/save")
     public ResponseEntity<SysDepartmentDTO> save(@RequestBody SysDepartmentDTO sysdepartmentdto) {
@@ -110,6 +117,7 @@ public class SysDepartmentResource {
     }
 
 
+    @PreAuthorize("@SysDepartmentRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"部门" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/sysdepartments/fetchdefault")
 	public ResponseEntity<List<SysDepartmentDTO>> fetchdefault(SysDepartmentSearchContext context) {

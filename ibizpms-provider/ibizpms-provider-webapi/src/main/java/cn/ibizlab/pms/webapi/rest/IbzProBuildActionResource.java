@@ -67,7 +67,7 @@ public class IbzProBuildActionResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProBuildActionRuntime.test(#ibzprobuildaction_id,'UPDATE')")
+    @PreAuthorize("@IbzProBuildActionRuntime.test(#ibzprobuildaction_id, 'UPDATE')")
     @ApiOperation(value = "更新版本日志", tags = {"版本日志" },  notes = "更新版本日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprobuildactions/{ibzprobuildaction_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IbzProBuildActionResource {
     }
 
 
-    @PreAuthorize("@IbzProBuildActionRuntime.test(#ibzprobuildaction_id,'DELETE')")
+    @PreAuthorize("@IbzProBuildActionRuntime.test(#ibzprobuildaction_id, 'DELETE')")
     @ApiOperation(value = "删除版本日志", tags = {"版本日志" },  notes = "删除版本日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprobuildactions/{ibzprobuildaction_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id) {
@@ -92,7 +92,7 @@ public class IbzProBuildActionResource {
     }
 
 
-    @PreAuthorize("@IbzProBuildActionRuntime.test(#ibzprobuildaction_id,'READ')")
+    @PreAuthorize("@IbzProBuildActionRuntime.test(#ibzprobuildaction_id, 'READ')")
     @ApiOperation(value = "获取版本日志", tags = {"版本日志" },  notes = "获取版本日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprobuildactions/{ibzprobuildaction_id}")
     public ResponseEntity<IbzProBuildActionDTO> get(@PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id) {
@@ -118,6 +118,7 @@ public class IbzProBuildActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprobuildactionService.checkKey(ibzprobuildactionMapping.toDomain(ibzprobuildactiondto)));
     }
 
+    @PreAuthorize("@IbzProBuildActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "添加备注", tags = {"版本日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobuildactions/{ibzprobuildaction_id}/comment")
     public ResponseEntity<IbzProBuildActionDTO> comment(@PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id, @RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {
@@ -131,7 +132,7 @@ public class IbzProBuildActionResource {
     }
 
 
-    @PreAuthorize("@IbzProBuildActionRuntime.test(#ibzprobuildaction_id,'CREATE')")
+    @PreAuthorize("@IbzProBuildActionRuntime.test(#ibzprobuildaction_id, 'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"版本日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobuildactions/{ibzprobuildaction_id}/createhis")
     public ResponseEntity<IbzProBuildActionDTO> createHis(@PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id, @RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {
@@ -145,6 +146,7 @@ public class IbzProBuildActionResource {
     }
 
 
+    @PreAuthorize("@IbzProBuildActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "编辑备注信息", tags = {"版本日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobuildactions/{ibzprobuildaction_id}/editcomment")
     public ResponseEntity<IbzProBuildActionDTO> editComment(@PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id, @RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {
@@ -158,6 +160,7 @@ public class IbzProBuildActionResource {
     }
 
 
+    @PreAuthorize("@IbzProBuildActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "Pms企业专用", tags = {"版本日志" },  notes = "Pms企业专用")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobuildactions/{ibzprobuildaction_id}/managepmsee")
     public ResponseEntity<IbzProBuildActionDTO> managePmsEe(@PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id, @RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {
@@ -171,6 +174,7 @@ public class IbzProBuildActionResource {
     }
 
 
+    @PreAuthorize("@IbzProBuildActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存版本日志", tags = {"版本日志" },  notes = "保存版本日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobuildactions/save")
     public ResponseEntity<IbzProBuildActionDTO> save(@RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {
@@ -183,6 +187,7 @@ public class IbzProBuildActionResource {
     }
 
 
+    @PreAuthorize("@IbzProBuildActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "已读", tags = {"版本日志" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobuildactions/{ibzprobuildaction_id}/sendmarkdone")
     public ResponseEntity<IbzProBuildActionDTO> sendMarkDone(@PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id, @RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {
@@ -196,6 +201,7 @@ public class IbzProBuildActionResource {
     }
 
 
+    @PreAuthorize("@IbzProBuildActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "发送待办", tags = {"版本日志" },  notes = "发送待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobuildactions/{ibzprobuildaction_id}/sendtodo")
     public ResponseEntity<IbzProBuildActionDTO> sendTodo(@PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id, @RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {
@@ -209,6 +215,7 @@ public class IbzProBuildActionResource {
     }
 
 
+    @PreAuthorize("@IbzProBuildActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "发送待阅", tags = {"版本日志" },  notes = "发送待阅")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprobuildactions/{ibzprobuildaction_id}/sendtoread")
     public ResponseEntity<IbzProBuildActionDTO> sendToread(@PathVariable("ibzprobuildaction_id") Long ibzprobuildaction_id, @RequestBody IbzProBuildActionDTO ibzprobuildactiondto) {

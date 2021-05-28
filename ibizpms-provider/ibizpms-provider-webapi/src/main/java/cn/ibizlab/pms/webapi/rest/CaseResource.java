@@ -74,7 +74,7 @@ public class CaseResource {
     }
 
     @VersionCheck(entity = "case" , versionfield = "lastediteddate")
-    @PreAuthorize("@CaseRuntime.test(#case_id,'UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
     @ApiOperation(value = "更新测试用例", tags = {"测试用例" },  notes = "更新测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/cases/{case_id}")
     @Transactional
@@ -91,7 +91,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'DELETE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id, 'DELETE')")
     @ApiOperation(value = "删除测试用例", tags = {"测试用例" },  notes = "删除测试用例")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/cases/{case_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("case_id") Long case_id) {
@@ -99,7 +99,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
+    @PreAuthorize("@CaseRuntime.test(#case_id, 'READ')")
     @ApiOperation(value = "获取测试用例", tags = {"测试用例" },  notes = "获取测试用例")
 	@RequestMapping(method = RequestMethod.GET, value = "/cases/{case_id}")
     public ResponseEntity<CaseDTO> get(@PathVariable("case_id") Long case_id) {
@@ -110,7 +110,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CaseRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
     @ApiOperation(value = "获取测试用例草稿", tags = {"测试用例" },  notes = "获取测试用例草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/cases/getdraft")
     public ResponseEntity<CaseDTO> getDraft(CaseDTO dto) {
@@ -118,7 +118,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(caseMapping.toDto(caseService.getDraft(domain)));
     }
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'FAVORITE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id, 'FAVORITE')")
     @ApiOperation(value = "行为", tags = {"测试用例" },  notes = "行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/casefavorite")
     public ResponseEntity<CaseDTO> caseFavorite(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -132,7 +132,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'NFAVORITE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id, 'NFAVORITE')")
     @ApiOperation(value = "CaseNFavorite", tags = {"测试用例" },  notes = "CaseNFavorite")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/casenfavorite")
     public ResponseEntity<CaseDTO> caseNFavorite(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -146,14 +146,14 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
     @ApiOperation(value = "检查测试用例", tags = {"测试用例" },  notes = "检查测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody CaseDTO casedto) {
         return  ResponseEntity.status(HttpStatus.OK).body(caseService.checkKey(caseMapping.toDomain(casedto)));
     }
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'CONFIRMCHANGE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id, 'CONFIRMCHANGE')")
     @ApiOperation(value = "确认用例变更", tags = {"测试用例" },  notes = "确认用例变更")
 	@RequestMapping(method = RequestMethod.PUT, value = "/cases/{case_id}/confirmchange")
     public ResponseEntity<CaseDTO> confirmChange(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -167,6 +167,7 @@ public class CaseResource {
     }
 
 
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "确认需求变更", tags = {"测试用例" },  notes = "确认需求变更")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/confirmstorychange")
     public ResponseEntity<CaseDTO> confirmstorychange(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -180,7 +181,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
+    @PreAuthorize("@CaseRuntime.test(#case_id, 'READ')")
     @ApiOperation(value = "根据测试单获取或者状态", tags = {"测试用例" },  notes = "根据测试单获取或者状态")
 	@RequestMapping(method = RequestMethod.GET, value = "/cases/{case_id}/getbytesttask")
     public ResponseEntity<CaseDTO> getByTestTask(@PathVariable("case_id") Long case_id, CaseDTO casedto) {
@@ -194,7 +195,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'CASERESULT')")
+    @PreAuthorize("@CaseRuntime.test(#case_id, 'CASERESULT')")
     @ApiOperation(value = "获取测试单执行结果", tags = {"测试用例" },  notes = "获取测试单执行结果")
 	@RequestMapping(method = RequestMethod.PUT, value = "/cases/{case_id}/gettesttaskcntrun")
     public ResponseEntity<CaseDTO> getTestTaskCntRun(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -208,6 +209,7 @@ public class CaseResource {
     }
 
 
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "测试单关联测试用例", tags = {"测试用例" },  notes = "测试单关联测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/linkcase")
     public ResponseEntity<CaseDTO> linkCase(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -221,7 +223,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'STORYLINK')")
+    @PreAuthorize("@CaseRuntime.test(#case_id, 'STORYLINK')")
     @ApiOperation(value = "移动端关联需求", tags = {"测试用例" },  notes = "移动端关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/moblinkcase")
     public ResponseEntity<CaseDTO> mobLinkCase(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -235,7 +237,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'RUNCASE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id, 'RUNCASE')")
     @ApiOperation(value = "执行测试", tags = {"测试用例" },  notes = "执行测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/runcase")
     public ResponseEntity<CaseDTO> runCase(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -249,7 +251,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'RUNCASE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id, 'RUNCASE')")
     @ApiOperation(value = "runCases", tags = {"测试用例" },  notes = "runCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/runcases")
     public ResponseEntity<CaseDTO> runCases(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -283,7 +285,7 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'TESRUNCASE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id, 'TESRUNCASE')")
     @ApiOperation(value = "执行测试", tags = {"测试用例" },  notes = "执行测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/testruncase")
     public ResponseEntity<CaseDTO> testRunCase(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -297,7 +299,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'TESRUNCASE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id, 'TESRUNCASE')")
     @ApiOperation(value = "testRunCases", tags = {"测试用例" },  notes = "testRunCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/testruncases")
     public ResponseEntity<CaseDTO> testRunCases(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -311,6 +313,7 @@ public class CaseResource {
     }
 
 
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "套件关联", tags = {"测试用例" },  notes = "套件关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/testsuitelinkcase")
     public ResponseEntity<CaseDTO> testsuitelinkCase(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -324,7 +327,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'UNLINKCASE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id, 'UNLINKCASE')")
     @ApiOperation(value = "移除用例", tags = {"测试用例" },  notes = "移除用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/unlinkcase")
     public ResponseEntity<CaseDTO> unlinkCase(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -338,7 +341,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'UNLINKCASE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id, 'UNLINKCASE')")
     @ApiOperation(value = "unlinkCases", tags = {"测试用例" },  notes = "unlinkCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/unlinkcases")
     public ResponseEntity<CaseDTO> unlinkCases(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -352,7 +355,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'UNLINKSUITCASE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id, 'UNLINKSUITCASE')")
     @ApiOperation(value = "移除用例", tags = {"测试用例" },  notes = "移除用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/unlinksuitecase")
     public ResponseEntity<CaseDTO> unlinkSuiteCase(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -366,7 +369,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.test(#case_id,'UNLINKSUITCASE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id, 'UNLINKSUITCASE')")
     @ApiOperation(value = "unlinkSuiteCases", tags = {"测试用例" },  notes = "unlinkSuiteCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/unlinksuitecases")
     public ResponseEntity<CaseDTO> unlinkSuiteCases(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -653,7 +656,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品建立测试用例", tags = {"测试用例" },  notes = "根据产品建立测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases")
     public ResponseEntity<CaseDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseDTO casedto) {
@@ -666,7 +669,7 @@ public class CaseResource {
 
 
     @VersionCheck(entity = "case" , versionfield = "lastediteddate")
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品更新测试用例", tags = {"测试用例" },  notes = "根据产品更新测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/cases/{case_id}")
     public ResponseEntity<CaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -679,7 +682,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品删除测试用例", tags = {"测试用例" },  notes = "根据产品删除测试用例")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/cases/{case_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id) {
@@ -687,7 +690,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品获取测试用例", tags = {"测试用例" },  notes = "根据产品获取测试用例")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}")
     public ResponseEntity<CaseDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id) {
@@ -696,7 +699,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品获取测试用例草稿", tags = {"测试用例" },  notes = "根据产品获取测试用例草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/getdraft")
     public ResponseEntity<CaseDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, CaseDTO dto) {
@@ -705,7 +708,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(caseMapping.toDto(caseService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品行为", tags = {"测试用例" },  notes = "根据产品行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/casefavorite")
     public ResponseEntity<CaseDTO> caseFavoriteByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -717,7 +720,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品CaseNFavorite", tags = {"测试用例" },  notes = "根据产品CaseNFavorite")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/casenfavorite")
     public ResponseEntity<CaseDTO> caseNFavoriteByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -729,14 +732,14 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品检查测试用例", tags = {"测试用例" },  notes = "根据产品检查测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseDTO casedto) {
         return  ResponseEntity.status(HttpStatus.OK).body(caseService.checkKey(caseMapping.toDomain(casedto)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品确认用例变更", tags = {"测试用例" },  notes = "根据产品确认用例变更")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/cases/{case_id}/confirmchange")
     public ResponseEntity<CaseDTO> confirmChangeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -748,6 +751,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品确认需求变更", tags = {"测试用例" },  notes = "根据产品确认需求变更")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/confirmstorychange")
     public ResponseEntity<CaseDTO> confirmstorychangeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -759,7 +763,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品根据测试单获取或者状态", tags = {"测试用例" },  notes = "根据产品根据测试单获取或者状态")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}/getbytesttask")
     public ResponseEntity<CaseDTO> getByTestTaskByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, CaseDTO casedto) {
@@ -771,7 +775,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品获取测试单执行结果", tags = {"测试用例" },  notes = "根据产品获取测试单执行结果")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/cases/{case_id}/gettesttaskcntrun")
     public ResponseEntity<CaseDTO> getTestTaskCntRunByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -783,6 +787,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品测试单关联测试用例", tags = {"测试用例" },  notes = "根据产品测试单关联测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/linkcase")
     public ResponseEntity<CaseDTO> linkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -794,7 +799,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品移动端关联需求", tags = {"测试用例" },  notes = "根据产品移动端关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/moblinkcase")
     public ResponseEntity<CaseDTO> mobLinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -806,7 +811,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品执行测试", tags = {"测试用例" },  notes = "根据产品执行测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/runcase")
     public ResponseEntity<CaseDTO> runCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -818,7 +823,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品runCases", tags = {"测试用例" },  notes = "根据产品runCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/runcases")
     public ResponseEntity<CaseDTO> runCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -830,7 +835,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品保存测试用例", tags = {"测试用例" },  notes = "根据产品保存测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/save")
     public ResponseEntity<CaseDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody CaseDTO casedto) {
@@ -840,7 +845,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(caseMapping.toDto(domain));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品批量保存测试用例", tags = {"测试用例" },  notes = "根据产品批量保存测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/savebatch")
     public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<CaseDTO> casedtos) {
@@ -852,7 +857,7 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品执行测试", tags = {"测试用例" },  notes = "根据产品执行测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/testruncase")
     public ResponseEntity<CaseDTO> testRunCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -864,7 +869,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品testRunCases", tags = {"测试用例" },  notes = "根据产品testRunCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/testruncases")
     public ResponseEntity<CaseDTO> testRunCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -876,6 +881,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品套件关联", tags = {"测试用例" },  notes = "根据产品套件关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/testsuitelinkcase")
     public ResponseEntity<CaseDTO> testsuitelinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -887,7 +893,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品移除用例", tags = {"测试用例" },  notes = "根据产品移除用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/unlinkcase")
     public ResponseEntity<CaseDTO> unlinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -899,7 +905,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品unlinkCases", tags = {"测试用例" },  notes = "根据产品unlinkCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/unlinkcases")
     public ResponseEntity<CaseDTO> unlinkCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -911,7 +917,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品移除用例", tags = {"测试用例" },  notes = "根据产品移除用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/unlinksuitecase")
     public ResponseEntity<CaseDTO> unlinkSuiteCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -923,7 +929,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'CASEMANAGE')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品unlinkSuiteCases", tags = {"测试用例" },  notes = "根据产品unlinkSuiteCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/unlinksuitecases")
     public ResponseEntity<CaseDTO> unlinkSuiteCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -935,7 +941,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取批量新建用例", tags = {"测试用例" } ,notes = "根据产品获取批量新建用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchbatchnew")
 	public ResponseEntity<List<CaseDTO>> fetchCaseBatchNewByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -948,7 +954,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取累计创建的用例", tags = {"测试用例" } ,notes = "根据产品获取累计创建的用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchcuropenedcase")
 	public ResponseEntity<List<CaseDTO>> fetchCaseCurOpenedCaseByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -961,7 +967,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取套件关联用例", tags = {"测试用例" } ,notes = "根据产品获取套件关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchcursuite")
 	public ResponseEntity<List<CaseDTO>> fetchCaseCurSuiteByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -974,7 +980,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取测试单关联用例", tags = {"测试用例" } ,notes = "根据产品获取测试单关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchcurtesttask")
 	public ResponseEntity<List<CaseDTO>> fetchCaseCurTestTaskByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -987,7 +993,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试用例" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchdefault")
 	public ResponseEntity<List<CaseDTO>> fetchCaseDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1000,7 +1006,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取ES批量的导入", tags = {"测试用例" } ,notes = "根据产品获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchesbulk")
 	public ResponseEntity<List<CaseDTO>> fetchCaseESBulkByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1013,7 +1019,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取测试报告关联用例", tags = {"测试用例" } ,notes = "根据产品获取测试报告关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchmodulereportcase")
 	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCaseByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1026,7 +1032,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取测试报告关联-按模块-条目", tags = {"测试用例" } ,notes = "根据产品获取测试报告关联-按模块-条目")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchmodulereportcaseentry")
 	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1039,7 +1045,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取项目报告关联-按模块", tags = {"测试用例" } ,notes = "根据产品获取项目报告关联-按模块")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchmodulereportcase_project")
 	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1052,7 +1058,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取我的收藏", tags = {"测试用例" } ,notes = "根据产品获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchmyfavorites")
 	public ResponseEntity<List<CaseDTO>> fetchCaseMyFavoritesByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1065,7 +1071,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取套件关联用例", tags = {"测试用例" } ,notes = "根据产品获取套件关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchnotcurtestsuite")
 	public ResponseEntity<List<CaseDTO>> fetchCaseNotCurTestSuiteByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1078,7 +1084,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取测试单关联用例", tags = {"测试用例" } ,notes = "根据产品获取测试单关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchnotcurtesttask")
 	public ResponseEntity<List<CaseDTO>> fetchCaseNotCurTestTaskByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1091,7 +1097,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取测试单关联用例（项目关联）", tags = {"测试用例" } ,notes = "根据产品获取测试单关联用例（项目关联）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchnotcurtesttaskproject")
 	public ResponseEntity<List<CaseDTO>> fetchCaseNotCurTestTaskProjectByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1104,7 +1110,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取测试报告关联用例", tags = {"测试用例" } ,notes = "根据产品获取测试报告关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchreportcase")
 	public ResponseEntity<List<CaseDTO>> fetchCaseRePortCaseByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1117,7 +1123,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取测试报告关联用例-条目", tags = {"测试用例" } ,notes = "根据产品获取测试报告关联用例-条目")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchreportcaseentry")
 	public ResponseEntity<List<CaseDTO>> fetchCaseRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1130,7 +1136,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取项目报告关联用例-关联用例", tags = {"测试用例" } ,notes = "根据产品获取项目报告关联用例-关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchreportcase_project")
 	public ResponseEntity<List<CaseDTO>> fetchCaseRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1143,7 +1149,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取测试报告关联-执行人", tags = {"测试用例" } ,notes = "根据产品获取测试报告关联-执行人")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchrunerreportcase")
 	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCaseByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1156,7 +1162,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取测试报告关联-执行人-条目", tags = {"测试用例" } ,notes = "根据产品获取测试报告关联-执行人-条目")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchrunerreportcaseentry")
 	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1169,7 +1175,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取项目报告关联-执行人", tags = {"测试用例" } ,notes = "根据产品获取项目报告关联-执行人")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchrunerreportcase_project")
 	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1182,7 +1188,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取测试报告关联用例", tags = {"测试用例" } ,notes = "根据产品获取测试报告关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchrunreportcase")
 	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCaseByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1195,7 +1201,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取测试报告关联--执行结果条目", tags = {"测试用例" } ,notes = "根据产品获取测试报告关联--执行结果条目")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchrunreportcaseentry")
 	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1208,7 +1214,7 @@ public class CaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取项目报告关联-执行结果", tags = {"测试用例" } ,notes = "根据产品获取项目报告关联-执行结果")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchrunreportcase_project")
 	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {

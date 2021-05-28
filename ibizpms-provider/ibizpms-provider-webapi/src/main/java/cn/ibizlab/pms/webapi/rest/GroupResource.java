@@ -67,7 +67,7 @@ public class GroupResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@GroupRuntime.test(#group_id,'UPDATE')")
+    @PreAuthorize("@GroupRuntime.test(#group_id, 'UPDATE')")
     @ApiOperation(value = "更新群组", tags = {"群组" },  notes = "更新群组")
 	@RequestMapping(method = RequestMethod.PUT, value = "/groups/{group_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class GroupResource {
     }
 
 
-    @PreAuthorize("@GroupRuntime.test(#group_id,'DELETE')")
+    @PreAuthorize("@GroupRuntime.test(#group_id, 'DELETE')")
     @ApiOperation(value = "删除群组", tags = {"群组" },  notes = "删除群组")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/groups/{group_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("group_id") Long group_id) {
@@ -92,7 +92,7 @@ public class GroupResource {
     }
 
 
-    @PreAuthorize("@GroupRuntime.test(#group_id,'READ')")
+    @PreAuthorize("@GroupRuntime.test(#group_id, 'READ')")
     @ApiOperation(value = "获取群组", tags = {"群组" },  notes = "获取群组")
 	@RequestMapping(method = RequestMethod.GET, value = "/groups/{group_id}")
     public ResponseEntity<GroupDTO> get(@PathVariable("group_id") Long group_id) {
@@ -118,6 +118,7 @@ public class GroupResource {
         return  ResponseEntity.status(HttpStatus.OK).body(groupService.checkKey(groupMapping.toDomain(groupdto)));
     }
 
+    @PreAuthorize("@GroupRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存群组", tags = {"群组" },  notes = "保存群组")
 	@RequestMapping(method = RequestMethod.POST, value = "/groups/save")
     public ResponseEntity<GroupDTO> save(@RequestBody GroupDTO groupdto) {

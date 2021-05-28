@@ -67,7 +67,7 @@ public class ProjectStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id,'UPDATE')")
+    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id, 'UPDATE')")
     @ApiOperation(value = "更新项目统计", tags = {"项目统计" },  notes = "更新项目统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectstats/{projectstats_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class ProjectStatsResource {
     }
 
 
-    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id,'DELETE')")
+    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id, 'DELETE')")
     @ApiOperation(value = "删除项目统计", tags = {"项目统计" },  notes = "删除项目统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projectstats/{projectstats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("projectstats_id") Long projectstats_id) {
@@ -92,6 +92,7 @@ public class ProjectStatsResource {
     }
 
 
+    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id, 'NONE')")
     @ApiOperation(value = "获取项目统计", tags = {"项目统计" },  notes = "获取项目统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectstats/{projectstats_id}")
     public ResponseEntity<ProjectStatsDTO> get(@PathVariable("projectstats_id") Long projectstats_id) {
@@ -117,6 +118,7 @@ public class ProjectStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projectstatsService.checkKey(projectstatsMapping.toDomain(projectstatsdto)));
     }
 
+    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id, 'NONE')")
     @ApiOperation(value = "项目质量表聚合逻辑", tags = {"项目统计" },  notes = "项目质量表聚合逻辑")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectstats/{projectstats_id}/projectqualitysum")
     public ResponseEntity<ProjectStatsDTO> projectQualitySum(@PathVariable("projectstats_id") Long projectstats_id, @RequestBody ProjectStatsDTO projectstatsdto) {
@@ -130,6 +132,7 @@ public class ProjectStatsResource {
     }
 
 
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存项目统计", tags = {"项目统计" },  notes = "保存项目统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectstats/save")
     public ResponseEntity<ProjectStatsDTO> save(@RequestBody ProjectStatsDTO projectstatsdto) {

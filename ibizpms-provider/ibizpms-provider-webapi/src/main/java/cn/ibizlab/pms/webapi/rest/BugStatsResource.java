@@ -67,7 +67,7 @@ public class BugStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@BugStatsRuntime.test(#bugstats_id,'UPDATE')")
+    @PreAuthorize("@BugStatsRuntime.test(#bugstats_id, 'UPDATE')")
     @ApiOperation(value = "更新Bug统计", tags = {"Bug统计" },  notes = "更新Bug统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/bugstats/{bugstats_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class BugStatsResource {
     }
 
 
-    @PreAuthorize("@BugStatsRuntime.test(#bugstats_id,'DELETE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
     @ApiOperation(value = "删除Bug统计", tags = {"Bug统计" },  notes = "删除Bug统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/bugstats/{bugstats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("bugstats_id") Long bugstats_id) {
@@ -92,7 +92,7 @@ public class BugStatsResource {
     }
 
 
-    @PreAuthorize("@BugStatsRuntime.test(#bugstats_id,'READ')")
+    @PreAuthorize("@BugStatsRuntime.test(#bugstats_id, 'READ')")
     @ApiOperation(value = "获取Bug统计", tags = {"Bug统计" },  notes = "获取Bug统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/bugstats/{bugstats_id}")
     public ResponseEntity<BugStatsDTO> get(@PathVariable("bugstats_id") Long bugstats_id) {
@@ -118,6 +118,7 @@ public class BugStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(bugstatsService.checkKey(bugstatsMapping.toDomain(bugstatsdto)));
     }
 
+    @PreAuthorize("@BugStatsRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存Bug统计", tags = {"Bug统计" },  notes = "保存Bug统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugstats/save")
     public ResponseEntity<BugStatsDTO> save(@RequestBody BugStatsDTO bugstatsdto) {
@@ -130,6 +131,7 @@ public class BugStatsResource {
     }
 
 
+    @PreAuthorize("@BugStatsRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取Bug在每个解决方案的Bug数", tags = {"Bug统计" } ,notes = "获取Bug在每个解决方案的Bug数")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchbugcountinresolution")
 	public ResponseEntity<List<BugStatsDTO>> fetchbugcountinresolution(@RequestBody BugStatsSearchContext context) {
@@ -141,6 +143,7 @@ public class BugStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@BugStatsRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取Bug完成表", tags = {"Bug统计" } ,notes = "获取Bug完成表")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchbugresolvedby")
 	public ResponseEntity<List<BugStatsDTO>> fetchbugresolvedby(@RequestBody BugStatsSearchContext context) {
@@ -152,6 +155,7 @@ public class BugStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@BugStatsRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取bug解决汇总表", tags = {"Bug统计" } ,notes = "获取bug解决汇总表")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchbugresolvedgird")
 	public ResponseEntity<List<BugStatsDTO>> fetchbugresolvedgird(@RequestBody BugStatsSearchContext context) {
@@ -163,6 +167,7 @@ public class BugStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@BugStatsRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取Bug指派表", tags = {"Bug统计" } ,notes = "获取Bug指派表")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchbugassignedto")
 	public ResponseEntity<List<BugStatsDTO>> fetchbugassignedto(@RequestBody BugStatsSearchContext context) {
@@ -174,6 +179,7 @@ public class BugStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@BugStatsRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"Bug统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchdefault")
 	public ResponseEntity<List<BugStatsDTO>> fetchdefault(@RequestBody BugStatsSearchContext context) {
@@ -185,6 +191,7 @@ public class BugStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@BugStatsRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取产品Bug解决方案汇总", tags = {"Bug统计" } ,notes = "获取产品Bug解决方案汇总")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchproductbugresolutionstats")
 	public ResponseEntity<List<BugStatsDTO>> fetchproductbugresolutionstats(@RequestBody BugStatsSearchContext context) {
@@ -196,6 +203,7 @@ public class BugStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@BugStatsRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取产品Bug状态汇总", tags = {"Bug统计" } ,notes = "获取产品Bug状态汇总")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchproductbugstatussum")
 	public ResponseEntity<List<BugStatsDTO>> fetchproductbugstatussum(@RequestBody BugStatsSearchContext context) {
@@ -207,6 +215,7 @@ public class BugStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@BugStatsRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取产品创建bug占比", tags = {"Bug统计" } ,notes = "获取产品创建bug占比")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchproductcreatebug")
 	public ResponseEntity<List<BugStatsDTO>> fetchproductcreatebug(@RequestBody BugStatsSearchContext context) {
@@ -218,6 +227,7 @@ public class BugStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@BugStatsRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取项目bug状态统计", tags = {"Bug统计" } ,notes = "获取项目bug状态统计")
     @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchprojectbugstatuscount")
 	public ResponseEntity<List<BugStatsDTO>> fetchprojectbugstatuscount(@RequestBody BugStatsSearchContext context) {

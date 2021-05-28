@@ -53,7 +53,7 @@ public class ProductLifeResource {
     public ProductLifeMapping productlifeMapping;
 
 
-    @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductLifeRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据产品获取RoadMapYear", tags = {"产品生命周期" } ,notes = "根据产品获取RoadMapYear")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productlives/fetchroadmapyear")
 	public ResponseEntity<List<ProductLifeDTO>> fetchProductLifeRoadMapYearByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductLifeSearchContext context) {

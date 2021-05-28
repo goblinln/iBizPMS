@@ -286,6 +286,21 @@ export class ProjectTaskBaseService extends EntityBaseService<IProjectTask> {
         return this.condCache.get('view');
     }
     /**
+     * Close
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTaskService
+     */
+    async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projecttask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/projecttasks/${_context.projecttask}/close`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * ConfirmStoryChange
      *
      * @param {*} [_context={}]
@@ -348,6 +363,21 @@ export class ProjectTaskBaseService extends EntityBaseService<IProjectTask> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * Pause
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTaskService
+     */
+    async Pause(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projecttask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/projecttasks/${_context.projecttask}/pause`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * Cancel
      *
      * @param {*} [_context={}]
@@ -374,36 +404,6 @@ export class ProjectTaskBaseService extends EntityBaseService<IProjectTask> {
         if (_context.project && _context.projecttask) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/projecttasks/${_context.projecttask}/restart`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Pause
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTaskService
-     */
-    async Pause(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projecttask) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projecttasks/${_context.projecttask}/pause`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Close
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTaskService
-     */
-    async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projecttask) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projecttasks/${_context.projecttask}/close`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -545,6 +545,23 @@ export class ProjectTaskBaseService extends EntityBaseService<IProjectTask> {
     }
 
     /**
+     * CloseBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProjectTaskServiceBase
+     */
+    public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/projecttasks/closebatch`,_data);
+        }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+
+    /**
      * ConfirmStoryChangeBatch接口方法
      *
      * @param {*} [context={}]
@@ -579,6 +596,23 @@ export class ProjectTaskBaseService extends EntityBaseService<IProjectTask> {
     }
 
     /**
+     * PauseBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProjectTaskServiceBase
+     */
+    public async PauseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/projecttasks/pausebatch`,_data);
+        }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+
+    /**
      * CancelBatch接口方法
      *
      * @param {*} [context={}]
@@ -608,40 +642,6 @@ export class ProjectTaskBaseService extends EntityBaseService<IProjectTask> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/projecttasks/restartbatch`,_data);
-        }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-
-    /**
-     * PauseBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProjectTaskServiceBase
-     */
-    public async PauseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projecttasks/pausebatch`,_data);
-        }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-
-    /**
-     * CloseBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProjectTaskServiceBase
-     */
-    public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projecttasks/closebatch`,_data);
         }
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

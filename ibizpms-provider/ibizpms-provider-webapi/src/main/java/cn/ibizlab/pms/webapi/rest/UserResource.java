@@ -67,7 +67,7 @@ public class UserResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserRuntime.test(#user_id,'UPDATE')")
+    @PreAuthorize("@UserRuntime.test(#user_id, 'UPDATE')")
     @ApiOperation(value = "更新用户", tags = {"用户" },  notes = "更新用户")
 	@RequestMapping(method = RequestMethod.PUT, value = "/users/{user_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class UserResource {
     }
 
 
-    @PreAuthorize("@UserRuntime.test(#user_id,'DELETE')")
+    @PreAuthorize("@UserRuntime.test(#user_id, 'DELETE')")
     @ApiOperation(value = "删除用户", tags = {"用户" },  notes = "删除用户")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/users/{user_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("user_id") Long user_id) {
@@ -92,7 +92,7 @@ public class UserResource {
     }
 
 
-    @PreAuthorize("@UserRuntime.test(#user_id,'READ')")
+    @PreAuthorize("@UserRuntime.test(#user_id, 'READ')")
     @ApiOperation(value = "获取用户", tags = {"用户" },  notes = "获取用户")
 	@RequestMapping(method = RequestMethod.GET, value = "/users/{user_id}")
     public ResponseEntity<UserDTO> get(@PathVariable("user_id") Long user_id) {
@@ -118,7 +118,7 @@ public class UserResource {
         return  ResponseEntity.status(HttpStatus.OK).body(userService.checkKey(userMapping.toDomain(userdto)));
     }
 
-    @PreAuthorize("@UserRuntime.test(#user_id,'READ')")
+    @PreAuthorize("@UserRuntime.test(#user_id, 'READ')")
     @ApiOperation(value = "根据代码账户查询用户信息", tags = {"用户" },  notes = "根据代码账户查询用户信息")
 	@RequestMapping(method = RequestMethod.GET, value = "/users/{user_id}/getbycommiter")
     public ResponseEntity<UserDTO> getByCommiter(@PathVariable("user_id") Long user_id, UserDTO userdto) {
@@ -132,6 +132,7 @@ public class UserResource {
     }
 
 
+    @PreAuthorize("@UserRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存用户", tags = {"用户" },  notes = "保存用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/users/save")
     public ResponseEntity<UserDTO> save(@RequestBody UserDTO userdto) {
@@ -144,6 +145,7 @@ public class UserResource {
     }
 
 
+    @PreAuthorize("@UserRuntime.quickTest('DENY')")
     @ApiOperation(value = "同步账号", tags = {"用户" },  notes = "同步账号")
 	@RequestMapping(method = RequestMethod.POST, value = "/users/{user_id}/syncaccount")
     public ResponseEntity<UserDTO> syncAccount(@PathVariable("user_id") Long user_id, @RequestBody UserDTO userdto) {

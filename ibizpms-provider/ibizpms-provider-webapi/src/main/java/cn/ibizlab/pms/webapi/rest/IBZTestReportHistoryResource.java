@@ -67,7 +67,7 @@ public class IBZTestReportHistoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZTestReportHistoryRuntime.test(#ibztestreporthistory_id,'UPDATE')")
+    @PreAuthorize("@IBZTestReportHistoryRuntime.test(#ibztestreporthistory_id, 'UPDATE')")
     @ApiOperation(value = "更新报告操作历史", tags = {"报告操作历史" },  notes = "更新报告操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibztestreporthistories/{ibztestreporthistory_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IBZTestReportHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZTestReportHistoryRuntime.test(#ibztestreporthistory_id,'DELETE')")
+    @PreAuthorize("@IBZTestReportHistoryRuntime.test(#ibztestreporthistory_id, 'DELETE')")
     @ApiOperation(value = "删除报告操作历史", tags = {"报告操作历史" },  notes = "删除报告操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztestreporthistories/{ibztestreporthistory_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibztestreporthistory_id") Long ibztestreporthistory_id) {
@@ -92,7 +92,7 @@ public class IBZTestReportHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZTestReportHistoryRuntime.test(#ibztestreporthistory_id,'READ')")
+    @PreAuthorize("@IBZTestReportHistoryRuntime.test(#ibztestreporthistory_id, 'READ')")
     @ApiOperation(value = "获取报告操作历史", tags = {"报告操作历史" },  notes = "获取报告操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibztestreporthistories/{ibztestreporthistory_id}")
     public ResponseEntity<IBZTestReportHistoryDTO> get(@PathVariable("ibztestreporthistory_id") Long ibztestreporthistory_id) {
@@ -118,6 +118,7 @@ public class IBZTestReportHistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztestreporthistoryService.checkKey(ibztestreporthistoryMapping.toDomain(ibztestreporthistorydto)));
     }
 
+    @PreAuthorize("@IBZTestReportHistoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存报告操作历史", tags = {"报告操作历史" },  notes = "保存报告操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztestreporthistories/save")
     public ResponseEntity<IBZTestReportHistoryDTO> save(@RequestBody IBZTestReportHistoryDTO ibztestreporthistorydto) {

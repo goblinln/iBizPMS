@@ -20,8 +20,8 @@
           :on-exceeded-size="exceededsize" 
           :on-progress="progress">
             <div class="upload-text">
-                <p>{{$t('components.uploadFile.imgMsg')}}</p>
-                <p><span class="text-style">{{$t('components.uploadFile.localUpload')}}</span>{{$t('components.uploadFile.or')}}<span class="text-style">{{$t('components.uploadFile.imgMsg1')}}</span></p>
+                <p>{{$t('components.uploadfile.imgmsg')}}</p>
+                <p><span class="text-style">{{$t('components.uploadfile.localupload')}}</span>{{$t('components.uploadfile.or')}}<span class="text-style">{{$t('components.uploadfile.imgmsg1')}}</span></p>
             </div>
         </upload>
     </div>

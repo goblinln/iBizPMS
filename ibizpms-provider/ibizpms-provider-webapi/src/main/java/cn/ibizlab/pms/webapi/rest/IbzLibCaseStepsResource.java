@@ -53,7 +53,7 @@ public class IbzLibCaseStepsResource {
     public IbzLibCaseStepsMapping ibzlibcasestepsMapping;
 
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('CREATE')")
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据测试用例建立用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例建立用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps")
     public ResponseEntity<IbzLibCaseStepsDTO> createByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
@@ -67,7 +67,7 @@ public class IbzLibCaseStepsResource {
     }
 
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.test(#ibzlibcasesteps_id,'UPDATE')")
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据测试用例更新用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例更新用例库用例步骤")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<IbzLibCaseStepsDTO> updateByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
@@ -82,7 +82,7 @@ public class IbzLibCaseStepsResource {
     }
 
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.test(#ibzlibcasesteps_id,'DELETE')")
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据测试用例删除用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例删除用例库用例步骤")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<Boolean> removeByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id) {
@@ -90,7 +90,7 @@ public class IbzLibCaseStepsResource {
     }
 
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.test(#ibzlibcasesteps_id,'READ')")
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据测试用例获取用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例获取用例库用例步骤")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<IbzLibCaseStepsDTO> getByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id) {
@@ -99,7 +99,7 @@ public class IbzLibCaseStepsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('CREATE')")
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据测试用例获取用例库用例步骤草稿", tags = {"用例库用例步骤" },  notes = "根据测试用例获取用例库用例步骤草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/getdraft")
     public ResponseEntity<IbzLibCaseStepsDTO> getDraftByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, IbzLibCaseStepsDTO dto) {
@@ -108,13 +108,14 @@ public class IbzLibCaseStepsResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsMapping.toDto(ibzlibcasestepsService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('CREATE')")
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据测试用例检查用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例检查用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/checkkey")
     public ResponseEntity<Boolean> checkKeyByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsService.checkKey(ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdto)));
     }
 
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据测试用例保存用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例保存用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/save")
     public ResponseEntity<IbzLibCaseStepsDTO> saveByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
@@ -125,7 +126,7 @@ public class IbzLibCaseStepsResource {
     }
 
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('READ')")
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据测试用例获取DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据测试用例获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzcases/{ibzcase_id}/ibzlibcasesteps/fetchdefault")
 	public ResponseEntity<List<IbzLibCaseStepsDTO>> fetchIbzLibCaseStepsDefaultByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id,@RequestBody IbzLibCaseStepsSearchContext context) {
@@ -141,7 +142,7 @@ public class IbzLibCaseStepsResource {
 	}
 
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('CREATE')")
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据用例库测试用例建立用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例建立用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps")
     public ResponseEntity<IbzLibCaseStepsDTO> createByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
@@ -155,7 +156,7 @@ public class IbzLibCaseStepsResource {
     }
 
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.test(#ibzlibcasesteps_id,'UPDATE')")
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据用例库测试用例更新用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例更新用例库用例步骤")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<IbzLibCaseStepsDTO> updateByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
@@ -170,7 +171,7 @@ public class IbzLibCaseStepsResource {
     }
 
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.test(#ibzlibcasesteps_id,'DELETE')")
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据用例库测试用例删除用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例删除用例库用例步骤")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<Boolean> removeByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id) {
@@ -178,7 +179,7 @@ public class IbzLibCaseStepsResource {
     }
 
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.test(#ibzlibcasesteps_id,'READ')")
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据用例库测试用例获取用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例获取用例库用例步骤")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<IbzLibCaseStepsDTO> getByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id) {
@@ -187,7 +188,7 @@ public class IbzLibCaseStepsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('CREATE')")
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据用例库测试用例获取用例库用例步骤草稿", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例获取用例库用例步骤草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/getdraft")
     public ResponseEntity<IbzLibCaseStepsDTO> getDraftByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, IbzLibCaseStepsDTO dto) {
@@ -196,13 +197,14 @@ public class IbzLibCaseStepsResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsMapping.toDto(ibzlibcasestepsService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('CREATE')")
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据用例库测试用例检查用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例检查用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/checkkey")
     public ResponseEntity<Boolean> checkKeyByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsService.checkKey(ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdto)));
     }
 
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据用例库测试用例保存用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例保存用例库用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/save")
     public ResponseEntity<IbzLibCaseStepsDTO> saveByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
@@ -213,7 +215,7 @@ public class IbzLibCaseStepsResource {
     }
 
 
-    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('READ')")
+    @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('DENY')")
 	@ApiOperation(value = "根据用例库测试用例获取DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据用例库测试用例获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/fetchdefault")
 	public ResponseEntity<List<IbzLibCaseStepsDTO>> fetchIbzLibCaseStepsDefaultByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id,@RequestBody IbzLibCaseStepsSearchContext context) {

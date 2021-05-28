@@ -67,7 +67,7 @@ public class IbzProTestTaskActionResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProTestTaskActionRuntime.test(#ibzprotesttaskaction_id,'UPDATE')")
+    @PreAuthorize("@IbzProTestTaskActionRuntime.test(#ibzprotesttaskaction_id, 'UPDATE')")
     @ApiOperation(value = "更新测试单日志", tags = {"测试单日志" },  notes = "更新测试单日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IbzProTestTaskActionResource {
     }
 
 
-    @PreAuthorize("@IbzProTestTaskActionRuntime.test(#ibzprotesttaskaction_id,'DELETE')")
+    @PreAuthorize("@IbzProTestTaskActionRuntime.test(#ibzprotesttaskaction_id, 'DELETE')")
     @ApiOperation(value = "删除测试单日志", tags = {"测试单日志" },  notes = "删除测试单日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id) {
@@ -92,7 +92,7 @@ public class IbzProTestTaskActionResource {
     }
 
 
-    @PreAuthorize("@IbzProTestTaskActionRuntime.test(#ibzprotesttaskaction_id,'READ')")
+    @PreAuthorize("@IbzProTestTaskActionRuntime.test(#ibzprotesttaskaction_id, 'READ')")
     @ApiOperation(value = "获取测试单日志", tags = {"测试单日志" },  notes = "获取测试单日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}")
     public ResponseEntity<IbzProTestTaskActionDTO> get(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id) {
@@ -118,6 +118,7 @@ public class IbzProTestTaskActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskactionService.checkKey(ibzprotesttaskactionMapping.toDomain(ibzprotesttaskactiondto)));
     }
 
+    @PreAuthorize("@IbzProTestTaskActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "添加备注", tags = {"测试单日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}/comment")
     public ResponseEntity<IbzProTestTaskActionDTO> comment(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -131,7 +132,7 @@ public class IbzProTestTaskActionResource {
     }
 
 
-    @PreAuthorize("@IbzProTestTaskActionRuntime.test(#ibzprotesttaskaction_id,'CREATE')")
+    @PreAuthorize("@IbzProTestTaskActionRuntime.test(#ibzprotesttaskaction_id, 'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"测试单日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}/createhis")
     public ResponseEntity<IbzProTestTaskActionDTO> createHis(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -145,6 +146,7 @@ public class IbzProTestTaskActionResource {
     }
 
 
+    @PreAuthorize("@IbzProTestTaskActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "编辑备注信息", tags = {"测试单日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}/editcomment")
     public ResponseEntity<IbzProTestTaskActionDTO> editComment(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -158,6 +160,7 @@ public class IbzProTestTaskActionResource {
     }
 
 
+    @PreAuthorize("@IbzProTestTaskActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "Pms企业专用", tags = {"测试单日志" },  notes = "Pms企业专用")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}/managepmsee")
     public ResponseEntity<IbzProTestTaskActionDTO> managePmsEe(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -171,6 +174,7 @@ public class IbzProTestTaskActionResource {
     }
 
 
+    @PreAuthorize("@IbzProTestTaskActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存测试单日志", tags = {"测试单日志" },  notes = "保存测试单日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/save")
     public ResponseEntity<IbzProTestTaskActionDTO> save(@RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -183,6 +187,7 @@ public class IbzProTestTaskActionResource {
     }
 
 
+    @PreAuthorize("@IbzProTestTaskActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "已读", tags = {"测试单日志" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}/sendmarkdone")
     public ResponseEntity<IbzProTestTaskActionDTO> sendMarkDone(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -196,6 +201,7 @@ public class IbzProTestTaskActionResource {
     }
 
 
+    @PreAuthorize("@IbzProTestTaskActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "发送待办", tags = {"测试单日志" },  notes = "发送待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}/sendtodo")
     public ResponseEntity<IbzProTestTaskActionDTO> sendTodo(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {
@@ -209,6 +215,7 @@ public class IbzProTestTaskActionResource {
     }
 
 
+    @PreAuthorize("@IbzProTestTaskActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "发送待阅", tags = {"测试单日志" },  notes = "发送待阅")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotesttaskactions/{ibzprotesttaskaction_id}/sendtoread")
     public ResponseEntity<IbzProTestTaskActionDTO> sendToread(@PathVariable("ibzprotesttaskaction_id") Long ibzprotesttaskaction_id, @RequestBody IbzProTestTaskActionDTO ibzprotesttaskactiondto) {

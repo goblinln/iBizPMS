@@ -67,7 +67,7 @@ public class UserTplResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserTplRuntime.test(#usertpl_id,'UPDATE')")
+    @PreAuthorize("@UserTplRuntime.test(#usertpl_id, 'UPDATE')")
     @ApiOperation(value = "更新用户模板", tags = {"用户模板" },  notes = "更新用户模板")
 	@RequestMapping(method = RequestMethod.PUT, value = "/usertpls/{usertpl_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class UserTplResource {
     }
 
 
-    @PreAuthorize("@UserTplRuntime.test(#usertpl_id,'DELETE')")
+    @PreAuthorize("@UserTplRuntime.test(#usertpl_id, 'DELETE')")
     @ApiOperation(value = "删除用户模板", tags = {"用户模板" },  notes = "删除用户模板")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/usertpls/{usertpl_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("usertpl_id") Long usertpl_id) {
@@ -92,7 +92,7 @@ public class UserTplResource {
     }
 
 
-    @PreAuthorize("@UserTplRuntime.test(#usertpl_id,'READ')")
+    @PreAuthorize("@UserTplRuntime.test(#usertpl_id, 'READ')")
     @ApiOperation(value = "获取用户模板", tags = {"用户模板" },  notes = "获取用户模板")
 	@RequestMapping(method = RequestMethod.GET, value = "/usertpls/{usertpl_id}")
     public ResponseEntity<UserTplDTO> get(@PathVariable("usertpl_id") Long usertpl_id) {
@@ -118,6 +118,7 @@ public class UserTplResource {
         return  ResponseEntity.status(HttpStatus.OK).body(usertplService.checkKey(usertplMapping.toDomain(usertpldto)));
     }
 
+    @PreAuthorize("@UserTplRuntime.quickTest('DENY')")
     @ApiOperation(value = "删除", tags = {"用户模板" },  notes = "删除")
 	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/{usertpl_id}/hasdeleted")
     public ResponseEntity<UserTplDTO> hasDeleted(@PathVariable("usertpl_id") Long usertpl_id, @RequestBody UserTplDTO usertpldto) {
@@ -131,6 +132,7 @@ public class UserTplResource {
     }
 
 
+    @PreAuthorize("@UserTplRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存用户模板", tags = {"用户模板" },  notes = "保存用户模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/save")
     public ResponseEntity<UserTplDTO> save(@RequestBody UserTplDTO usertpldto) {

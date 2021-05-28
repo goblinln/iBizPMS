@@ -6,7 +6,7 @@
   "name" : "BurnChartView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -34,7 +34,7 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
       },
       "modelref" : true,
       "id" : "ComputeBurn@Burn"
@@ -44,12 +44,12 @@
   "getPSControls" : [ {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn/PSSEARCHFORMS/Default.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn/PSSEARCHFORMS/Default.json",
     "formStyle" : "SEARCHBAR",
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -61,7 +61,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
         }
       }, {
         "actionType" : "FILTERACTION",
@@ -72,7 +72,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
         }
       }, {
         "actionType" : "FILTERACTION",
@@ -83,7 +83,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -173,7 +173,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -201,7 +201,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
         },
         "getPSNavigateContexts" : [ {
           "key" : "BURN",
@@ -234,7 +234,7 @@
   }, {
     "codeName" : "BurnDown2",
     "controlType" : "CHART",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn/PSCHARTS/BurnDown2.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn/PSCHARTS/BurnDown2.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -243,7 +243,7 @@
     "logicName" : "BurnDown2",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
     },
     "getPSChartCoordinateSystems" : [ {
       "eChartsType" : "cartesian2d",
@@ -363,18 +363,18 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
         }
       }, {
         "actionType" : "DEDATASET",
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchESTIMATEANDLEFT"
+          "id" : "FetchEstimate"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
         }
       }, {
         "actionName" : "Remove",
@@ -387,7 +387,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
         }
       }, {
         "actionName" : "Get",
@@ -400,7 +400,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
         }
       }, {
         "actionName" : "Create",
@@ -413,7 +413,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -533,7 +533,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -554,5 +554,31 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "modelid" : "bba3204a7f64b5eafe512a6b63658910",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "ProjectBurns",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
+    },
+    "name" : "PROJECT__PROJECT_BURN",
+    "getParentPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ] ]
 }

@@ -67,7 +67,7 @@ public class ProjectTaskestimateResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectTaskestimateRuntime.test(#projecttaskestimate_id,'UPDATE')")
+    @PreAuthorize("@ProjectTaskestimateRuntime.test(#projecttaskestimate_id, 'UPDATE')")
     @ApiOperation(value = "更新项目工时统计", tags = {"项目工时统计" },  notes = "更新项目工时统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projecttaskestimates/{projecttaskestimate_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class ProjectTaskestimateResource {
     }
 
 
-    @PreAuthorize("@ProjectTaskestimateRuntime.test(#projecttaskestimate_id,'DELETE')")
+    @PreAuthorize("@ProjectTaskestimateRuntime.test(#projecttaskestimate_id, 'DELETE')")
     @ApiOperation(value = "删除项目工时统计", tags = {"项目工时统计" },  notes = "删除项目工时统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projecttaskestimates/{projecttaskestimate_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("projecttaskestimate_id") String projecttaskestimate_id) {
@@ -92,7 +92,7 @@ public class ProjectTaskestimateResource {
     }
 
 
-    @PreAuthorize("@ProjectTaskestimateRuntime.test(#projecttaskestimate_id,'READ')")
+    @PreAuthorize("@ProjectTaskestimateRuntime.test(#projecttaskestimate_id, 'READ')")
     @ApiOperation(value = "获取项目工时统计", tags = {"项目工时统计" },  notes = "获取项目工时统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/projecttaskestimates/{projecttaskestimate_id}")
     public ResponseEntity<ProjectTaskestimateDTO> get(@PathVariable("projecttaskestimate_id") String projecttaskestimate_id) {
@@ -118,6 +118,7 @@ public class ProjectTaskestimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projecttaskestimateService.checkKey(projecttaskestimateMapping.toDomain(projecttaskestimatedto)));
     }
 
+    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存项目工时统计", tags = {"项目工时统计" },  notes = "保存项目工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projecttaskestimates/save")
     public ResponseEntity<ProjectTaskestimateDTO> save(@RequestBody ProjectTaskestimateDTO projecttaskestimatedto) {

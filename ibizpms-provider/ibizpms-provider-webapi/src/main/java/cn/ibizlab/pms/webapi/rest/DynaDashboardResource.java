@@ -68,7 +68,7 @@ public class DynaDashboardResource {
     }
 
     @VersionCheck(entity = "dynadashboard" , versionfield = "updatedate")
-    @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id,'UPDATE')")
+    @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id, 'UPDATE')")
     @ApiOperation(value = "更新动态数据看板", tags = {"动态数据看板" },  notes = "更新动态数据看板")
 	@RequestMapping(method = RequestMethod.PUT, value = "/dynadashboards/{dynadashboard_id}")
     @Transactional
@@ -85,7 +85,7 @@ public class DynaDashboardResource {
     }
 
 
-    @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id,'DELETE')")
+    @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id, 'DELETE')")
     @ApiOperation(value = "删除动态数据看板", tags = {"动态数据看板" },  notes = "删除动态数据看板")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/dynadashboards/{dynadashboard_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("dynadashboard_id") String dynadashboard_id) {
@@ -93,7 +93,7 @@ public class DynaDashboardResource {
     }
 
 
-    @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id,'READ')")
+    @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id, 'READ')")
     @ApiOperation(value = "获取动态数据看板", tags = {"动态数据看板" },  notes = "获取动态数据看板")
 	@RequestMapping(method = RequestMethod.GET, value = "/dynadashboards/{dynadashboard_id}")
     public ResponseEntity<DynaDashboardDTO> get(@PathVariable("dynadashboard_id") String dynadashboard_id) {
@@ -119,6 +119,7 @@ public class DynaDashboardResource {
         return  ResponseEntity.status(HttpStatus.OK).body(dynadashboardService.checkKey(dynadashboardMapping.toDomain(dynadashboarddto)));
     }
 
+    @PreAuthorize("@DynaDashboardRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存动态数据看板", tags = {"动态数据看板" },  notes = "保存动态数据看板")
 	@RequestMapping(method = RequestMethod.POST, value = "/dynadashboards/save")
     public ResponseEntity<DynaDashboardDTO> save(@RequestBody DynaDashboardDTO dynadashboarddto) {

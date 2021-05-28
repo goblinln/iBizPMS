@@ -49,6 +49,7 @@ public class SysUserResource {
     @Lazy
     public SysUserMapping sysuserMapping;
 
+    @PreAuthorize("@SysUserRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建系统用户", tags = {"系统用户" },  notes = "新建系统用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysusers")
     @Transactional
@@ -59,6 +60,7 @@ public class SysUserResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@SysUserRuntime.test(#sysuser_id, 'UPDATE')")
     @ApiOperation(value = "更新系统用户", tags = {"系统用户" },  notes = "更新系统用户")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysusers/{sysuser_id}")
     @Transactional
@@ -71,6 +73,7 @@ public class SysUserResource {
     }
 
 
+    @PreAuthorize("@SysUserRuntime.test(#sysuser_id, 'DELETE')")
     @ApiOperation(value = "删除系统用户", tags = {"系统用户" },  notes = "删除系统用户")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysusers/{sysuser_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("sysuser_id") String sysuser_id) {
@@ -78,6 +81,7 @@ public class SysUserResource {
     }
 
 
+    @PreAuthorize("@SysUserRuntime.test(#sysuser_id, 'READ')")
     @ApiOperation(value = "获取系统用户", tags = {"系统用户" },  notes = "获取系统用户")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysusers/{sysuser_id}")
     public ResponseEntity<SysUserDTO> get(@PathVariable("sysuser_id") String sysuser_id) {
@@ -86,6 +90,7 @@ public class SysUserResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@SysUserRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取系统用户草稿", tags = {"系统用户" },  notes = "获取系统用户草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysusers/getdraft")
     public ResponseEntity<SysUserDTO> getDraft(SysUserDTO dto) {
@@ -93,6 +98,7 @@ public class SysUserResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysuserMapping.toDto(sysuserService.getDraft(domain)));
     }
 
+    @PreAuthorize("@SysUserRuntime.quickTest('DENY')")
     @ApiOperation(value = "修改密码", tags = {"系统用户" },  notes = "修改密码")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysusers/{sysuser_id}/changepwd")
     public ResponseEntity<SysUserDTO> changePwd(@PathVariable("sysuser_id") String sysuser_id, @RequestBody SysUserDTO sysuserdto) {
@@ -104,12 +110,14 @@ public class SysUserResource {
     }
 
 
+    @PreAuthorize("@SysUserRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查系统用户", tags = {"系统用户" },  notes = "检查系统用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysusers/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SysUserDTO sysuserdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(sysuserService.checkKey(sysuserMapping.toDomain(sysuserdto)));
     }
 
+    @PreAuthorize("@SysUserRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存系统用户", tags = {"系统用户" },  notes = "保存系统用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysusers/save")
     public ResponseEntity<SysUserDTO> save(@RequestBody SysUserDTO sysuserdto) {
@@ -120,6 +128,7 @@ public class SysUserResource {
     }
 
 
+    @PreAuthorize("@SysUserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"系统用户" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysusers/fetchdefault")
 	public ResponseEntity<List<SysUserDTO>> fetchdefault(@RequestBody SysUserSearchContext context) {

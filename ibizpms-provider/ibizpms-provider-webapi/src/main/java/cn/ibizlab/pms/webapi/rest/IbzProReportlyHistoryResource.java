@@ -67,7 +67,7 @@ public class IbzProReportlyHistoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProReportlyHistoryRuntime.test(#ibzproreportlyhistory_id,'UPDATE')")
+    @PreAuthorize("@IbzProReportlyHistoryRuntime.test(#ibzproreportlyhistory_id, 'UPDATE')")
     @ApiOperation(value = "更新汇报操作历史", tags = {"汇报操作历史" },  notes = "更新汇报操作历史")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproreportlyhistories/{ibzproreportlyhistory_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class IbzProReportlyHistoryResource {
     }
 
 
-    @PreAuthorize("@IbzProReportlyHistoryRuntime.test(#ibzproreportlyhistory_id,'DELETE')")
+    @PreAuthorize("@IbzProReportlyHistoryRuntime.test(#ibzproreportlyhistory_id, 'DELETE')")
     @ApiOperation(value = "删除汇报操作历史", tags = {"汇报操作历史" },  notes = "删除汇报操作历史")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproreportlyhistories/{ibzproreportlyhistory_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzproreportlyhistory_id") Long ibzproreportlyhistory_id) {
@@ -92,7 +92,7 @@ public class IbzProReportlyHistoryResource {
     }
 
 
-    @PreAuthorize("@IbzProReportlyHistoryRuntime.test(#ibzproreportlyhistory_id,'READ')")
+    @PreAuthorize("@IbzProReportlyActionRuntime.test(#ibzproreportlyaction_id, 'READ')")
     @ApiOperation(value = "获取汇报操作历史", tags = {"汇报操作历史" },  notes = "获取汇报操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproreportlyhistories/{ibzproreportlyhistory_id}")
     public ResponseEntity<IbzProReportlyHistoryDTO> get(@PathVariable("ibzproreportlyhistory_id") Long ibzproreportlyhistory_id) {
@@ -118,6 +118,7 @@ public class IbzProReportlyHistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzproreportlyhistoryService.checkKey(ibzproreportlyhistoryMapping.toDomain(ibzproreportlyhistorydto)));
     }
 
+    @PreAuthorize("@IbzProReportlyHistoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存汇报操作历史", tags = {"汇报操作历史" },  notes = "保存汇报操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreportlyhistories/save")
     public ResponseEntity<IbzProReportlyHistoryDTO> save(@RequestBody IbzProReportlyHistoryDTO ibzproreportlyhistorydto) {
@@ -130,7 +131,7 @@ public class IbzProReportlyHistoryResource {
     }
 
 
-    @PreAuthorize("@IbzProReportlyHistoryRuntime.quickTest('READ')")
+    @PreAuthorize("@IbzProReportlyActionRuntime.test(#ibzproreportlyaction_id, 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"汇报操作历史" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproreportlyhistories/fetchdefault")
 	public ResponseEntity<List<IbzProReportlyHistoryDTO>> fetchdefault(@RequestBody IbzProReportlyHistorySearchContext context) {

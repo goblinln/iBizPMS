@@ -114,64 +114,64 @@ function getLocaleResourceBase(){
           miss: '缺少参数',
           requestexception: '请求异常！',
         },
-        appPicker: {
+        apppicker: {
           error: '错误',
           miss: '缺少参数',
-          requestException: '请求异常！',
-          newAndEdit: '创建并编辑...',
-          systemException: '系统异常！',
-          valueitemException: '值项异常！',
-          formdataException: '表单数据异常！',
+          requestexception: '请求异常！',
+          newandedit: '创建并编辑...',
+          systemexception: '系统异常！',
+          valueitemexception: '值项异常！',
+          formdataexception: '表单数据异常！',
           nosupport: "重定向视图暂未支持"
         },
-        appPickerSelectView: {
+        apppickerselectview: {
           error: '错误',
-          valueitemException: '值项异常！',
-          formdataException: '表单数据异常！',
+          valueitemexception: '值项异常！',
+          formdataexception: '表单数据异常！',
           placeholder: '请选择...',
         },
-        appPortalDesign: {
-          customPortal: '自定义门户',
+        appportaldesign: {
+          customportal: '自定义门户',
           recover: "恢复默认",
           save: '保存',
         },
-        appRangDate: {
+        apprangdate: {
           placeholder: '请选择时间...',
           from: '自',
           daystart: '日 0 时 起 至',
           dayend: '日 24 时 止',
         },
-        appRangeEditor: {
+        apprangeeditor: {
           placeholder: '请选择时间...',
           input: '请输入...',
         },
-        appStudioAction: {
-          configTitle: '进入当前视图配置界面',
-          configButton: '配置',
-          issueTitle: '建立当前界面的issues',
-          issueButton: '新建issues',
+        appstudioaction: {
+          configtitle: '进入当前视图配置界面',
+          configbutton: '配置',
+          issuetitle: '建立当前界面的issues',
+          issuebutton: '新建issues',
           success: "拷贝成功!",
           copyname: "点击拷贝视图名称",
           view: "查看"
         },
-        appTreePicker: {
+        apptreepicker: {
           placeholder: '请选择...',
         },
-        dateRange: {
-          startText: '保险期限 ： 自',
-          endText: '日 24 时 止',
-          startPlaceholder: '开始日期',
-          rangeSeparatorr: ' 0 时起 至',
-          endPlaceholder: '结束日期',
+        daterange: {
+          starttext: '保险期限 ： 自',
+          endtext: '日 24 时 止',
+          startplaceholder: '开始日期',
+          rangeseparatorr: ' 0 时起 至',
+          endplaceholder: '结束日期',
         },
-        dropDownList: {
+        dropdownlist: {
           placeholder: '请选择...',
-          valueError: "下拉列表，值转换失败",
+          valueerror: "下拉列表，值转换失败",
         },
-        dropDownListDynamic: {
+        dropdownlistdynamic: {
           placeholder: '请选择...',
         },
-        dropDownListMpicker: {
+        dropdownlistmpicker: {
           placeholder: '请选择...',
         },
         login: {
@@ -195,99 +195,99 @@ function getLocaleResourceBase(){
           },
           loginfailed: '登录失败',
         },
-        appUser: {
+        appuser: {
           name: '系统管理员',
           logout: '退出登录',
           surelogout: '确认要退出登录？',
           changepwd: "修改密码",
         },
-        appTheme: {
+        apptheme: {
           caption: {
             theme: '主题',
             font: '字体',
           },
-          fontFamilys: {
+          fontfamilys: {
               MicrosoftYaHei: '微软雅黑',
               SimHei: '黑体',
               YouYuan: '幼圆',
           },
           config: "主题配置",
-          customTheme: "自定义主题",
+          customtheme: "自定义主题",
           color: "主题色",
           preview: "预览",
           save: "保存配置",
           reset: "重置",
           success: "保存自定义主题成功"
         },
-        appFormGroup: {
+        appformgroup: {
           hide: '隐藏字段',
-          showMore: '显示更多字段',
+          showmore: '显示更多字段',
         },
-        appUpdatePassword: {
-          oldPwd: '原密码',
-          newPwd: '新密码',
-          confirmPwd: '确认密码',
+        appupdatepassword: {
+          oldpwd: '原密码',
+          newpwd: '新密码',
+          confirmpwd: '确认密码',
           sure: '确认修改',
-          oldPwdErr: '原密码不能为空！',
-          newPwdErr: '新密码不能为空！',
-          confirmPwdErr: '两次输入密码不一致！',
+          oldpwderr: '原密码不能为空！',
+          newpwderr: '新密码不能为空！',
+          confirmewderr: '两次输入密码不一致！',
         },
-        appAddressSelection: {
-          loadDataFail: '城市数据加载失败'
+        appaddressselection: {
+          loaddatafail: '城市数据加载失败'
         },
-        appGroupSelect:{
-          groupSelect:'分组选择', 
+        appgroupselect:{
+          groupselect:'分组选择', 
         },
-        appImageUpload:{
-          uploadFail:'上传失败'
+        appimageupload:{
+          uploadfail:'上传失败'
         },
-        appOrgSelect:{
-          loadFail:'加载数据失败',
-          resetError: "重置应用数据出现异常"
+        apporgselect:{
+          loadfail:'加载数据失败',
+          reseterror: "重置应用数据出现异常"
         },
-        appTransfer:{
+        apptransfer:{
           title1:'未选择',
           title2:'已选择',
         },
-        appWFApproval:{
+        appwfapproval:{
           commit:'提交',
           wait:'等待',
           handle:'处理',
           placeholder:'请输入内容',
           end:'结束'
         },
-        contextMenuDrag:{
-          allApp:'全部应用',
-          noFind:'未找到该应用',
+        contextmenudrag:{
+          allapp:'全部应用',
+          nofind:'未找到该应用',
           error: "加载数据错误",
           portlet: "企业门户"
         },
-        filterMode:{
+        filtermode:{
           placeholder:'条件逻辑',  
         },
-        filterTree:{
+        filtertree:{
           title1:'添加条件',
           title2:'添加组',
           placeholder:'属性', 
         },
-        iBizGroupPicker:{
+        ibizgrouppicker:{
           ok:'确认',
           cancel:'取消',
         },
-        iBizGroupSelect:{
-          groupSelect:'分组选择'
+        ibizgroupselect:{
+          groupselect:'分组选择'
         },
-        tabPageExp:{
+        tabpageexp:{
           more:'更多',
         },
-        uploadFile:{
-          imgMsg:'将图片拖到这里替换',
-          localUpload:'本地上传',
+        uploadfile:{
+          imgmsg:'将图片拖到这里替换',
+          localupload:'本地上传',
           or:'或',
-          imgMsg1:'从素材库选择',
+          imgmsg1:'从素材库选择',
           choose: "选择上传文件"
         },
-        lockScren:{
+        lockscren:{
           title:'设置锁屏密码',
           label:'锁屏密码',
           message:'锁屏密码不能为空',
@@ -296,11 +296,11 @@ function getLocaleResourceBase(){
           message1: '解锁密码错误,请重新输入',
           promptInformation:'是否退出系统, 是否继续?',
           prompt:'提示',
-          confirmButtonText:'确定',
-          cancelButtonText:'取消',
+          confirmbuttontext:'确定',
+          cancelbuttontext:'取消',
           lock: "应用锁屏"
         },
-        cronEditor: {
+        croneditor: {
           label: {
             second: '秒',
             minute: '分',
@@ -312,7 +312,7 @@ function getLocaleResourceBase(){
           },
           public : {
             specify: '指定',
-            notSpecify: '不指定',
+            notspecify: '不指定',
             cycle: '周期',
             from: '从',
             to: '至',
@@ -324,54 +324,54 @@ function getLocaleResourceBase(){
           minute: '分',
           hour: {
             title: '时',
-            everyHour: '每时',
-            hourStart: '时开始，每',
-            onceAHour: '时执行一次',
+            everyhour: '每时',
+            hourstart: '时开始，每',
+            onceahour: '时执行一次',
           },
           day: {
             title: '日',
             daily: '每日',
-            workDay: '工作日',
-            dayStart: '日开始，每',
-            onceADay: '日执行一次',
-            thisMonth: '本月',
-            lastWorkDay: '号，最近的工作日',
-            lastDayOfMonth: '本月最后一天',
+            workday: '工作日',
+            daystart: '日开始，每',
+            onceaday: '日执行一次',
+            thismonth: '本月',
+            lastworkday: '号，最近的工作日',
+            lastdayofmonth: '本月最后一天',
           },
           month: {
             title: '月',
-            everyMonth: '每月',
-            monthStart: '月开始，每',
-            onceAMonth: '月执行一次',
+            everymonth: '每月',
+            monthstart: '月开始，每',
+            onceamonth: '月执行一次',
           },
           week: {
             title: '周',
-            everyWeek: '每周',
+            everyweek: '每周',
             from: '从星期',
             to: '至星期',
             start: '开始，每',
-            onceADay: '天执行一次',
-            specifyWeek: '指定周',
-            weekOfMonth: '本月第',
-            weekWeek: '周，星期',
-            lastOfMonth: '本月最后一个',
+            onceaday: '天执行一次',
+            specifyweek: '指定周',
+            weekofmonth: '本月第',
+            weekweek: '周，星期',
+            lastofmonth: '本月最后一个',
             week: '星期',
           },
           year: {
             title: '年',
-            everyYear: '每年',
+            everyyear: '每年',
           },
           message: {
             error1: '日期与星期不可以同时为“不指定”',
             error2: '日期与星期必须有一个为“不指定”',
           },
         },
-        appMessagePopover: {
-          loadMore: '加载更多',
-          noMore: '没有更多了',
+        appmessagepopover: {
+          loadmore: '加载更多',
+          nomore: '没有更多了',
           error: "加载数据错误",
-          getError: "未获取到标签内容",
-          errorReturn: "事件触发源无值，强制返回"
+          geterror: "未获取到标签内容",
+          errorreturn: "事件触发源无值，强制返回"
         },
         diskFileUpload:{
           fileDrag: '将文件拖到此处，或',

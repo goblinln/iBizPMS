@@ -67,7 +67,7 @@ public class TestResultResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestResultRuntime.test(#testresult_id,'UPDATE')")
+    @PreAuthorize("@TestResultRuntime.test(#testresult_id, 'UPDATE')")
     @ApiOperation(value = "更新测试结果", tags = {"测试结果" },  notes = "更新测试结果")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testresults/{testresult_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class TestResultResource {
     }
 
 
-    @PreAuthorize("@TestResultRuntime.test(#testresult_id,'DELETE')")
+    @PreAuthorize("@TestResultRuntime.test(#testresult_id, 'DELETE')")
     @ApiOperation(value = "删除测试结果", tags = {"测试结果" },  notes = "删除测试结果")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testresults/{testresult_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("testresult_id") Long testresult_id) {
@@ -92,7 +92,7 @@ public class TestResultResource {
     }
 
 
-    @PreAuthorize("@TestResultRuntime.test(#testresult_id,'READ')")
+    @PreAuthorize("@TestResultRuntime.test(#testresult_id, 'READ')")
     @ApiOperation(value = "获取测试结果", tags = {"测试结果" },  notes = "获取测试结果")
 	@RequestMapping(method = RequestMethod.GET, value = "/testresults/{testresult_id}")
     public ResponseEntity<TestResultDTO> get(@PathVariable("testresult_id") Long testresult_id) {
@@ -118,6 +118,7 @@ public class TestResultResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
     }
 
+    @PreAuthorize("@TestResultRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存测试结果", tags = {"测试结果" },  notes = "保存测试结果")
 	@RequestMapping(method = RequestMethod.POST, value = "/testresults/save")
     public ResponseEntity<TestResultDTO> save(@RequestBody TestResultDTO testresultdto) {

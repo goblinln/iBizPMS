@@ -1,38 +1,38 @@
 <template>
   <div :val="value_">
     <div>
-      <el-radio v-model="type" label="1" size="mini" border>{{ $t('components.cronEditor.day.daily') }}</el-radio>
+      <el-radio v-model="type" label="1" size="mini" border>{{ $t('components.croneditor.day.daily') }}</el-radio>
     </div>
     <div>
-      <el-radio v-model="type" label="5" size="mini" border>{{ $t('components.cronEditor.public.notSpecify') }}</el-radio>
+      <el-radio v-model="type" label="5" size="mini" border>{{ $t('components.croneditor.public.notspecify') }}</el-radio>
     </div>
     <div>
-      <el-radio v-model="type" label="2" size="mini" border>{{ $t('components.cronEditor.public.cycle') }}</el-radio>
-      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.cronEditor.public.from') }}</span>
+      <el-radio v-model="type" label="2" size="mini" border>{{ $t('components.croneditor.public.cycle') }}</el-radio>
+      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.croneditor.public.from') }}</span>
       <el-input-number @change="type = '2'" v-model="cycle.start" :min="1" :max="31" size="mini" style="width: 100px;"></el-input-number>
-      <span style="margin-left: 5px; margin-right: 5px;">{{ $t('components.cronEditor.public.to') }}</span>
+      <span style="margin-left: 5px; margin-right: 5px;">{{ $t('components.croneditor.public.to') }}</span>
       <el-input-number @change="type = '2'" v-model="cycle.end" :min="2" :max="31" size="mini" style="width: 100px;"></el-input-number>
-      {{ $t('components.cronEditor.day.title') }}
+      {{ $t('components.croneditor.day.title') }}
     </div>
     <div>
-      <el-radio v-model="type" label="3" size="mini" border>{{ $t('components.cronEditor.public.loop') }}</el-radio>
-      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.cronEditor.public.from') }}</span>
+      <el-radio v-model="type" label="3" size="mini" border>{{ $t('components.croneditor.public.loop') }}</el-radio>
+      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.croneditor.public.from') }}</span>
       <el-input-number @change="type = '3'" v-model="loop.start" :min="1" :max="31" size="mini" style="width: 100px;"></el-input-number>
-      <span style="margin-left: 5px; margin-right: 5px;">{{ $t('components.cronEditor.day.dayStart') }}</span>
+      <span style="margin-left: 5px; margin-right: 5px;">{{ $t('components.croneditor.day.daystart') }}</span>
       <el-input-number @change="type = '3'" v-model="loop.end" :min="1" :max="31" size="mini" style="width: 100px;"></el-input-number>
-      {{ $t('components.cronEditor.day.onceADay') }}
+      {{ $t('components.croneditor.day.onceaday') }}
     </div>
     <div>
-      <el-radio v-model="type" label="8" size="mini" border>{{ $t('components.cronEditor.day.workDay') }}</el-radio>
-      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.cronEditor.day.thisMonth') }}</span>
+      <el-radio v-model="type" label="8" size="mini" border>{{ $t('components.croneditor.day.workday') }}</el-radio>
+      <span style="margin-left: 10px; margin-right: 5px;">{{ $t('components.croneditor.day.thismonth') }}</span>
       <el-input-number @change="type = '8'" v-model="work" :min="1" :max="7" size="mini" style="width: 100px;"></el-input-number>
-      {{ $t('components.cronEditor.day.lastWorkDay') }}
+      {{ $t('components.croneditor.day.lastworkday') }}
     </div>
     <div>
-      <el-radio v-model="type" label="6" size="mini" border>{{ $t('components.cronEditor.day.lastDayOfMonth') }}</el-radio>
+      <el-radio v-model="type" label="6" size="mini" border>{{ $t('components.croneditor.day.lastdayofmonth') }}</el-radio>
     </div>
     <div>
-      <el-radio v-model="type" label="4" size="mini" border>{{ $t('components.cronEditor.public.specify') }}</el-radio>
+      <el-radio v-model="type" label="4" size="mini" border>{{ $t('components.croneditor.public.specify') }}</el-radio>
       <el-checkbox-group v-model="appoint">
         <div  v-for="i in 4" :key="i" style="margin-left: 10px;  line-height: 25px;">
           <template v-for="j in 10">

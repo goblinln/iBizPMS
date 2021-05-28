@@ -1,7 +1,7 @@
 <template>
     <div v-if="refviewname" class="app-tree-picker">
         <Dropdown :visible="visible" trigger="custom" style="left:0px;width: 100%" @on-clickoutside="() => {triggerMenu(false);}" >
-          <Input v-model="inputValue" class="tree-input" type="text" :placeholder="placeholder ? placeholder : $t('components.appTreePicker.placeholder')" :disabled="disabled" @on-change="OnInputChange" @on-focus="()=>{triggerMenu();}" >
+          <Input v-model="inputValue" class="tree-input" type="text" :placeholder="placeholder ? placeholder : $t('components.apptreepicker.placeholder')" :disabled="disabled" @on-change="OnInputChange" @on-focus="()=>{triggerMenu();}" >
               <template v-slot:suffix>
                   <i v-if="inputValue && !disabled" class='el-icon-circle-close' @click="onClear"></i>
                   <Icon :type="visible ? 'ios-arrow-up' : 'ios-arrow-down'" class="icon-arrow" @click="() => {triggerMenu();}"></Icon>

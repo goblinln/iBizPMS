@@ -493,7 +493,29 @@
           "enableFilter" : false,
           "showCaptionBar" : false,
           "modelid" : "d1b3f6d9d0ca781020cf5e4665461fbf",
-          "modeltype" : "PSAPPDEVIEW"
+          "modeltype" : "PSAPPDEVIEW",
+          "getPSAppDERSPaths" : [ [ {
+            "actionRSMode" : 1,
+            "codeName" : "ProductLives",
+            "dataRSMode" : 0,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+            },
+            "getMinorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
+            },
+            "name" : "PRODUCT__PRODUCT_LIFE",
+            "rSMode" : 2,
+            "enableCreateDataRS" : false,
+            "enableDEAction" : true,
+            "enableDEDataSet" : true,
+            "enableGetDataRS" : false,
+            "enableSelect" : true,
+            "enableSelectDataRS" : false,
+            "enableUpdateDataRS" : false
+          } ] ]
         },
         "portletType" : "VIEW",
         "title" : "产品路线图",

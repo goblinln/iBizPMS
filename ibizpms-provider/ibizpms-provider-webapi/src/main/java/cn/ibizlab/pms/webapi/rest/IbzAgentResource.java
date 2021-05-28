@@ -68,7 +68,7 @@ public class IbzAgentResource {
     }
 
     @VersionCheck(entity = "ibzagent" , versionfield = "updatedate")
-    @PreAuthorize("@IbzAgentRuntime.test(#ibzagent_id,'UPDATE')")
+    @PreAuthorize("@IbzAgentRuntime.test(#ibzagent_id, 'UPDATE')")
     @ApiOperation(value = "更新代理", tags = {"代理" },  notes = "更新代理")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzagents/{ibzagent_id}")
     @Transactional
@@ -85,7 +85,7 @@ public class IbzAgentResource {
     }
 
 
-    @PreAuthorize("@IbzAgentRuntime.test(#ibzagent_id,'DELETE')")
+    @PreAuthorize("@IbzAgentRuntime.test(#ibzagent_id, 'DELETE')")
     @ApiOperation(value = "删除代理", tags = {"代理" },  notes = "删除代理")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzagents/{ibzagent_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzagent_id") Long ibzagent_id) {
@@ -93,7 +93,7 @@ public class IbzAgentResource {
     }
 
 
-    @PreAuthorize("@IbzAgentRuntime.test(#ibzagent_id,'READ')")
+    @PreAuthorize("@IbzAgentRuntime.test(#ibzagent_id, 'READ')")
     @ApiOperation(value = "获取代理", tags = {"代理" },  notes = "获取代理")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzagents/{ibzagent_id}")
     public ResponseEntity<IbzAgentDTO> get(@PathVariable("ibzagent_id") Long ibzagent_id) {
@@ -119,6 +119,7 @@ public class IbzAgentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzagentService.checkKey(ibzagentMapping.toDomain(ibzagentdto)));
     }
 
+    @PreAuthorize("@IbzAgentRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存代理", tags = {"代理" },  notes = "保存代理")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzagents/save")
     public ResponseEntity<IbzAgentDTO> save(@RequestBody IbzAgentDTO ibzagentdto) {
@@ -131,6 +132,7 @@ public class IbzAgentResource {
     }
 
 
+    @PreAuthorize("@IbzAgentRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"代理" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzagents/fetchdefault")
 	public ResponseEntity<List<IbzAgentDTO>> fetchdefault(@RequestBody IbzAgentSearchContext context) {

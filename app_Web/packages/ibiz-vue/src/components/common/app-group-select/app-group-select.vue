@@ -196,7 +196,7 @@ export default class AppGroupSelect extends Vue {
     public openView() {
         const view: any = {
             viewname: 'app-group-picker',
-            title: (this.$t('components.appGroupSelect.groupSelect') as string)
+            title: (this.$t('components.appgroupselect.groupselect') as string)
         };
         const context: any = JSON.parse(JSON.stringify(this.context));
         let filtervalue:string = "";

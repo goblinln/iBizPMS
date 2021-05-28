@@ -8,7 +8,7 @@
               type="date" 
               :transfer="true"
               :format="valFormat"
-              :placeholder="$t('components.appRangeEditor.placeholder')"
+              :placeholder="$t('components.apprangeeditor.placeholder')"
               :value="activeData[item]"
               :disabled="disabled" 
               @on-change="(value,type)=>{onValueChange(item,value)}">
@@ -18,7 +18,7 @@
               v-else-if="editorType.startsWith('DATEPICKEREX')"
               :transfer="true"
               :format="valFormat"
-              :placeholder="$t('components.appRangeEditor.placeholder')"
+              :placeholder="$t('components.apprangeeditor.placeholder')"
               :value="activeData[item]"
               :disabled="disabled"
               @on-change="(value)=>{onValueChange(item,value)}">
@@ -28,7 +28,7 @@
               v-else-if="Object.is(editorType, 'NUMBER')"
               :value="activeData[item]" 
               :disabled="disabled"
-              :placeholder="$t('components.appRangeEditor.input')"
+              :placeholder="$t('components.apprangeeditor.input')"
               @on-change="(value)=>{onValueChange(item,value)}">
             </InputNumber>
             <app-span
@@ -42,7 +42,7 @@
               v-else
               :value="getValue(item)" 
               :disabled="disabled"
-              :placeholder="$t('components.appRangeEditor.input')"
+              :placeholder="$t('components.apprangeeditor.input')"
               @input="(value)=>{onValueChange(item,value)}">
             </el-input>
         </template>

@@ -2,24 +2,24 @@
   <div class="update-password">
     <div class="password-item">
       <label for>
-        {{$t('components.appUpdatePassword.oldPwd')}}
+        {{$t('components.appupdatepassword.oldpwd')}}
         <Input type="password" v-model="oldPwd" @on-blur="oldPwdVaild"/>
       </label>
     </div>
     <div class="password-item">
       <label for>
-        {{$t('components.appUpdatePassword.newPwd')}}
+        {{$t('components.appupdatepassword.newpwd')}}
         <Input type="password" v-model="newPwd"  @on-blur="newPwdVaild"/>
       </label>
     </div>
     <div class="password-item">
       <label for>
-        {{$t('components.appUpdatePassword.confirmPwd')}}
+        {{$t('components.appupdatepassword.confirmpwd')}}
         <Input type="password" v-model="confirmPwd" :disabled="!this.newPwd" @on-blur="confirmVaild" />
       </label>
     </div>
     <div class="password-item password-btn">
-        <Button type="primary" long :disabled="!oldPwd || !newPwd || !confirmPwd || disUpdate" @click="updatePwd">{{$t('components.appUpdatePassword.sure')}}</Button>
+        <Button type="primary" long :disabled="!oldPwd || !newPwd || !confirmPwd || disUpdate" @click="updatePwd">{{$t('components.appupdatepassword.sure')}}</Button>
     </div>
   </div>
 </template>
@@ -71,7 +71,7 @@ export default class AppUpdatePassword extends Vue {
      */
     public oldPwdVaild(){
         if(!this.oldPwd){
-            this.$throw((this.$t('components.appUpdatePassword.oldPwdErr') as string),'oldPwdVaild');
+            this.$throw((this.$t('components.appupdatepassword.oldpwdErr') as string),'oldPwdVaild');
         }
     }
 
@@ -83,7 +83,7 @@ export default class AppUpdatePassword extends Vue {
      */
     public newPwdVaild(){
         if(!this.newPwd){
-            this.$throw((this.$t('components.appUpdatePassword.newPwdErr') as string),'newPwdVaild');
+            this.$throw((this.$t('components.appupdatepassword.newpwdErr') as string),'newPwdVaild');
         }
     }
 
@@ -96,7 +96,7 @@ export default class AppUpdatePassword extends Vue {
     public confirmVaild() {
         if (this.newPwd && this.confirmPwd) {
             if (this.confirmPwd !== this.newPwd) {
-                this.$throw((this.$t('components.appUpdatePassword.confirmPwdErr') as string),'confirmVaild');
+                this.$throw((this.$t('components.appupdatepassword.confirmpwdErr') as string),'confirmVaild');
             }else{
                 this.disUpdate=false;
             }

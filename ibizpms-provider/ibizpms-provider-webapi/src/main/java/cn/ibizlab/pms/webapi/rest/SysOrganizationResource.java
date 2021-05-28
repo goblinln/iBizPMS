@@ -49,6 +49,7 @@ public class SysOrganizationResource {
     @Lazy
     public SysOrganizationMapping sysorganizationMapping;
 
+    @PreAuthorize("@SysOrganizationRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建单位", tags = {"单位" },  notes = "新建单位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysorganizations")
     @Transactional
@@ -60,6 +61,7 @@ public class SysOrganizationResource {
     }
 
     @VersionCheck(entity = "sysorganization" , versionfield = "updatedate")
+    @PreAuthorize("@SysOrganizationRuntime.test(#sysorganization_id, 'UPDATE')")
     @ApiOperation(value = "更新单位", tags = {"单位" },  notes = "更新单位")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysorganizations/{sysorganization_id}")
     @Transactional
@@ -72,6 +74,7 @@ public class SysOrganizationResource {
     }
 
 
+    @PreAuthorize("@SysOrganizationRuntime.test(#sysorganization_id, 'DELETE')")
     @ApiOperation(value = "删除单位", tags = {"单位" },  notes = "删除单位")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysorganizations/{sysorganization_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("sysorganization_id") String sysorganization_id) {
@@ -79,6 +82,7 @@ public class SysOrganizationResource {
     }
 
 
+    @PreAuthorize("@SysOrganizationRuntime.test(#sysorganization_id, 'READ')")
     @ApiOperation(value = "获取单位", tags = {"单位" },  notes = "获取单位")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/{sysorganization_id}")
     public ResponseEntity<SysOrganizationDTO> get(@PathVariable("sysorganization_id") String sysorganization_id) {
@@ -87,6 +91,7 @@ public class SysOrganizationResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@SysOrganizationRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取单位草稿", tags = {"单位" },  notes = "获取单位草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/getdraft")
     public ResponseEntity<SysOrganizationDTO> getDraft(SysOrganizationDTO dto) {
@@ -94,12 +99,14 @@ public class SysOrganizationResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysorganizationMapping.toDto(sysorganizationService.getDraft(domain)));
     }
 
+    @PreAuthorize("@SysOrganizationRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查单位", tags = {"单位" },  notes = "检查单位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SysOrganizationDTO sysorganizationdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(sysorganizationService.checkKey(sysorganizationMapping.toDomain(sysorganizationdto)));
     }
 
+    @PreAuthorize("@SysOrganizationRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存单位", tags = {"单位" },  notes = "保存单位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/save")
     public ResponseEntity<SysOrganizationDTO> save(@RequestBody SysOrganizationDTO sysorganizationdto) {
@@ -110,6 +117,7 @@ public class SysOrganizationResource {
     }
 
 
+    @PreAuthorize("@SysOrganizationRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"单位" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/sysorganizations/fetchdefault")
 	public ResponseEntity<List<SysOrganizationDTO>> fetchdefault(SysOrganizationSearchContext context) {

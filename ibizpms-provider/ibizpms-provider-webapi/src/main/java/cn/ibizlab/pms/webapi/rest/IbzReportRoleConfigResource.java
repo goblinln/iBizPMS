@@ -68,7 +68,7 @@ public class IbzReportRoleConfigResource {
     }
 
     @VersionCheck(entity = "ibzreportroleconfig" , versionfield = "updatedate")
-    @PreAuthorize("@IbzReportRoleConfigRuntime.test(#ibzreportroleconfig_id,'UPDATE')")
+    @PreAuthorize("@IbzReportRoleConfigRuntime.test(#ibzreportroleconfig_id, 'UPDATE')")
     @ApiOperation(value = "更新汇报角色配置", tags = {"汇报角色配置" },  notes = "更新汇报角色配置")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportroleconfigs/{ibzreportroleconfig_id}")
     @Transactional
@@ -85,7 +85,7 @@ public class IbzReportRoleConfigResource {
     }
 
 
-    @PreAuthorize("@IbzReportRoleConfigRuntime.test(#ibzreportroleconfig_id,'DELETE')")
+    @PreAuthorize("@IbzReportRoleConfigRuntime.test(#ibzreportroleconfig_id, 'DELETE')")
     @ApiOperation(value = "删除汇报角色配置", tags = {"汇报角色配置" },  notes = "删除汇报角色配置")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportroleconfigs/{ibzreportroleconfig_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzreportroleconfig_id") String ibzreportroleconfig_id) {
@@ -93,7 +93,7 @@ public class IbzReportRoleConfigResource {
     }
 
 
-    @PreAuthorize("@IbzReportRoleConfigRuntime.test(#ibzreportroleconfig_id,'READ')")
+    @PreAuthorize("@IbzReportRoleConfigRuntime.test(#ibzreportroleconfig_id, 'READ')")
     @ApiOperation(value = "获取汇报角色配置", tags = {"汇报角色配置" },  notes = "获取汇报角色配置")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzreportroleconfigs/{ibzreportroleconfig_id}")
     public ResponseEntity<IbzReportRoleConfigDTO> get(@PathVariable("ibzreportroleconfig_id") String ibzreportroleconfig_id) {
@@ -119,6 +119,7 @@ public class IbzReportRoleConfigResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigService.checkKey(ibzreportroleconfigMapping.toDomain(ibzreportroleconfigdto)));
     }
 
+    @PreAuthorize("@IbzReportRoleConfigRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存汇报角色配置", tags = {"汇报角色配置" },  notes = "保存汇报角色配置")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportroleconfigs/save")
     public ResponseEntity<IbzReportRoleConfigDTO> save(@RequestBody IbzReportRoleConfigDTO ibzreportroleconfigdto) {

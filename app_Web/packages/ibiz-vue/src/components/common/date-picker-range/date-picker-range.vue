@@ -1,18 +1,18 @@
 <template>
 <div class="ibiz-date-picker">
-  <div class="date-picker-text">{{$t('components.dateRange.startText')}}</div>
+  <div class="date-picker-text">{{$t('components.daterange.starttext')}}</div>
   <el-date-picker
     v-model="value"
     type="daterange"
-    :range-separator="rangeSeparatorr ? rangeSeparatorr : $t('components.dateRange.rangeSeparatorr')"
-    :start-placeholder="startPlaceholder ? startPlaceholder : $t('components.dateRange.startPlaceholder')"
-    :end-placeholder="endPlaceholder ? endPlaceholder : $t('components.dateRange.endPlaceholder')"
+    :range-separator="rangeSeparatorr ? rangeSeparatorr : $t('components.daterange.rangeseparatorr')"
+    :start-placeholder="startPlaceholder ? startPlaceholder : $t('components.daterange.startplaceholder')"
+    :end-placeholder="endPlaceholder ? endPlaceholder : $t('components.daterange.endplaceholder')"
     :disabled="disabled"
     value-format="yyyy-MM-dd"
     @change="change"
     :format="format"
   ></el-date-picker>
-  <div class="date-picker-text">{{$t('components.dateRange.endText')}}</div>
+  <div class="date-picker-text">{{$t('components.daterange.endtext')}}</div>
 </div>
 
 </template>

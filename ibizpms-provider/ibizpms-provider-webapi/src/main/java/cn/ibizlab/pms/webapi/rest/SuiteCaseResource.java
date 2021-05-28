@@ -67,7 +67,7 @@ public class SuiteCaseResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@SuiteCaseRuntime.test(#suitecase_id,'UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
     @ApiOperation(value = "更新套件用例", tags = {"套件用例" },  notes = "更新套件用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/suitecases/{suitecase_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class SuiteCaseResource {
     }
 
 
-    @PreAuthorize("@SuiteCaseRuntime.test(#suitecase_id,'DELETE')")
+    @PreAuthorize("@SuiteCaseRuntime.test(#suitecase_id, 'DELETE')")
     @ApiOperation(value = "删除套件用例", tags = {"套件用例" },  notes = "删除套件用例")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/suitecases/{suitecase_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("suitecase_id") String suitecase_id) {
@@ -92,7 +92,7 @@ public class SuiteCaseResource {
     }
 
 
-    @PreAuthorize("@SuiteCaseRuntime.test(#suitecase_id,'READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
     @ApiOperation(value = "获取套件用例", tags = {"套件用例" },  notes = "获取套件用例")
 	@RequestMapping(method = RequestMethod.GET, value = "/suitecases/{suitecase_id}")
     public ResponseEntity<SuiteCaseDTO> get(@PathVariable("suitecase_id") String suitecase_id) {
@@ -118,6 +118,7 @@ public class SuiteCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(suitecaseService.checkKey(suitecaseMapping.toDomain(suitecasedto)));
     }
 
+    @PreAuthorize("@SuiteCaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存套件用例", tags = {"套件用例" },  notes = "保存套件用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/suitecases/save")
     public ResponseEntity<SuiteCaseDTO> save(@RequestBody SuiteCaseDTO suitecasedto) {
@@ -130,7 +131,7 @@ public class SuiteCaseResource {
     }
 
 
-    @PreAuthorize("@SuiteCaseRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"套件用例" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/suitecases/fetchdefault")
 	public ResponseEntity<List<SuiteCaseDTO>> fetchdefault(@RequestBody SuiteCaseSearchContext context) {

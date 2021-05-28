@@ -23,7 +23,7 @@
     <div v-show="$store.state.pageMetas.length > 0" class="right">
       <el-dropdown @command="handlerClose">
         <el-button size="mini" type="primary">
-          {{ $t("components.tabPageExp.more")
+          {{ $t("components.tabpageexp.more")
           }}<i class="el-icon-arrow-down el-icon--right"></i>
         </el-button>
         <el-dropdown-menu slot="dropdown">

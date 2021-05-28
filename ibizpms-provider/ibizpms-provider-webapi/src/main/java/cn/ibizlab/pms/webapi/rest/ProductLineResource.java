@@ -68,7 +68,7 @@ public class ProductLineResource {
     }
 
     @VersionCheck(entity = "productline" , versionfield = "updatedate")
-    @PreAuthorize("@ProductLineRuntime.test(#productline_id,'UPDATE')")
+    @PreAuthorize("@ProductLineRuntime.test(#productline_id, 'UPDATE')")
     @ApiOperation(value = "更新产品线（废弃）", tags = {"产品线（废弃）" },  notes = "更新产品线（废弃）")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productlines/{productline_id}")
     @Transactional
@@ -85,7 +85,7 @@ public class ProductLineResource {
     }
 
 
-    @PreAuthorize("@ProductLineRuntime.test(#productline_id,'DELETE')")
+    @PreAuthorize("@ProductLineRuntime.test(#productline_id, 'DELETE')")
     @ApiOperation(value = "删除产品线（废弃）", tags = {"产品线（废弃）" },  notes = "删除产品线（废弃）")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productlines/{productline_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("productline_id") String productline_id) {
@@ -93,7 +93,7 @@ public class ProductLineResource {
     }
 
 
-    @PreAuthorize("@ProductLineRuntime.test(#productline_id,'READ')")
+    @PreAuthorize("@ProductLineRuntime.test(#productline_id, 'READ')")
     @ApiOperation(value = "获取产品线（废弃）", tags = {"产品线（废弃）" },  notes = "获取产品线（废弃）")
 	@RequestMapping(method = RequestMethod.GET, value = "/productlines/{productline_id}")
     public ResponseEntity<ProductLineDTO> get(@PathVariable("productline_id") String productline_id) {
@@ -119,6 +119,7 @@ public class ProductLineResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productlineService.checkKey(productlineMapping.toDomain(productlinedto)));
     }
 
+    @PreAuthorize("@ProductLineRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存产品线（废弃）", tags = {"产品线（废弃）" },  notes = "保存产品线（废弃）")
 	@RequestMapping(method = RequestMethod.POST, value = "/productlines/save")
     public ResponseEntity<ProductLineDTO> save(@RequestBody ProductLineDTO productlinedto) {

@@ -67,7 +67,7 @@ public class ProductPlanActionResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'UPDATE')")
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id, 'UPDATE')")
     @ApiOperation(value = "更新产品计划日志", tags = {"产品计划日志" },  notes = "更新产品计划日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplanactions/{productplanaction_id}")
     @Transactional
@@ -84,7 +84,7 @@ public class ProductPlanActionResource {
     }
 
 
-    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'DELETE')")
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id, 'DELETE')")
     @ApiOperation(value = "删除产品计划日志", tags = {"产品计划日志" },  notes = "删除产品计划日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productplanactions/{productplanaction_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("productplanaction_id") Long productplanaction_id) {
@@ -92,7 +92,7 @@ public class ProductPlanActionResource {
     }
 
 
-    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'READ')")
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id, 'READ')")
     @ApiOperation(value = "获取产品计划日志", tags = {"产品计划日志" },  notes = "获取产品计划日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/productplanactions/{productplanaction_id}")
     public ResponseEntity<ProductPlanActionDTO> get(@PathVariable("productplanaction_id") Long productplanaction_id) {
@@ -118,7 +118,7 @@ public class ProductPlanActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productplanactionService.checkKey(productplanactionMapping.toDomain(productplanactiondto)));
     }
 
-    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'MANAGE')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id, 'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"产品计划日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/{productplanaction_id}/comment")
     public ResponseEntity<ProductPlanActionDTO> comment(@PathVariable("productplanaction_id") Long productplanaction_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
@@ -132,7 +132,7 @@ public class ProductPlanActionResource {
     }
 
 
-    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'CREATE')")
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id, 'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"产品计划日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/{productplanaction_id}/createhis")
     public ResponseEntity<ProductPlanActionDTO> createHis(@PathVariable("productplanaction_id") Long productplanaction_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
@@ -146,7 +146,7 @@ public class ProductPlanActionResource {
     }
 
 
-    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'MANAGE')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id, 'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"产品计划日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/{productplanaction_id}/editcomment")
     public ResponseEntity<ProductPlanActionDTO> editComment(@PathVariable("productplanaction_id") Long productplanaction_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
@@ -160,6 +160,7 @@ public class ProductPlanActionResource {
     }
 
 
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "Pms企业专用", tags = {"产品计划日志" },  notes = "Pms企业专用")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/{productplanaction_id}/managepmsee")
     public ResponseEntity<ProductPlanActionDTO> managePmsEe(@PathVariable("productplanaction_id") Long productplanaction_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
@@ -173,6 +174,7 @@ public class ProductPlanActionResource {
     }
 
 
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存产品计划日志", tags = {"产品计划日志" },  notes = "保存产品计划日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/save")
     public ResponseEntity<ProductPlanActionDTO> save(@RequestBody ProductPlanActionDTO productplanactiondto) {
@@ -185,6 +187,7 @@ public class ProductPlanActionResource {
     }
 
 
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "已读", tags = {"产品计划日志" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/{productplanaction_id}/sendmarkdone")
     public ResponseEntity<ProductPlanActionDTO> sendMarkDone(@PathVariable("productplanaction_id") Long productplanaction_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
@@ -198,6 +201,7 @@ public class ProductPlanActionResource {
     }
 
 
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "发送待办", tags = {"产品计划日志" },  notes = "发送待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/{productplanaction_id}/sendtodo")
     public ResponseEntity<ProductPlanActionDTO> sendTodo(@PathVariable("productplanaction_id") Long productplanaction_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
@@ -211,6 +215,7 @@ public class ProductPlanActionResource {
     }
 
 
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('DENY')")
     @ApiOperation(value = "发送待阅", tags = {"产品计划日志" },  notes = "发送待阅")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplanactions/{productplanaction_id}/sendtoread")
     public ResponseEntity<ProductPlanActionDTO> sendToread(@PathVariable("productplanaction_id") Long productplanaction_id, @RequestBody ProductPlanActionDTO productplanactiondto) {

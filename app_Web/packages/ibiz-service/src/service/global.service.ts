@@ -35,6 +35,15 @@ export class GlobalService {
         return (await import('./product/product.service')).default.getInstance();
     }
     /**
+     * burn服务
+     *
+     * @return {ProjectBurn}
+     * @memberof GlobalService
+     */
+    async getProjectBurnService() {
+        return (await import('./project-burn/project-burn.service')).default.getInstance();
+    }
+    /**
      * 产品的分支和平台信息服务
      *
      * @return {ProductBranch}
@@ -89,6 +98,15 @@ export class GlobalService {
         return (await import('./product-team/product-team.service')).default.getInstance();
     }
     /**
+     * 产品生命周期服务
+     *
+     * @return {ProductLife}
+     * @memberof GlobalService
+     */
+    async getProductLifeService() {
+        return (await import('./product-life/product-life.service')).default.getInstance();
+    }
+    /**
      * 任务服务
      *
      * @return {ProjectTask}
@@ -132,6 +150,15 @@ export class GlobalService {
      */
     async getProjectModuleService() {
         return (await import('./project-module/project-module.service')).default.getInstance();
+    }
+    /**
+     * 产品关联项目服务
+     *
+     * @return {ProductProject}
+     * @memberof GlobalService
+     */
+    async getProductProjectService() {
+        return (await import('./product-project/product-project.service')).default.getInstance();
     }
     /**
      * 发布服务
@@ -258,15 +285,6 @@ export class GlobalService {
      */
     async getSuiteCaseService() {
         return (await import('./suite-case/suite-case.service')).default.getInstance();
-    }
-    /**
-     * burn服务
-     *
-     * @return {Burn}
-     * @memberof GlobalService
-     */
-    async getBurnService() {
-        return (await import('./burn/burn.service')).default.getInstance();
     }
     /**
      * 员工负载表服务
@@ -654,15 +672,6 @@ export class GlobalService {
      */
     async getDocLibModuleService() {
         return (await import('./doc-lib-module/doc-lib-module.service')).default.getInstance();
-    }
-    /**
-     * 产品生命周期服务
-     *
-     * @return {ProductLife}
-     * @memberof GlobalService
-     */
-    async getProductLifeService() {
-        return (await import('./product-life/product-life.service')).default.getInstance();
     }
     /**
      * 用户联系方式服务
