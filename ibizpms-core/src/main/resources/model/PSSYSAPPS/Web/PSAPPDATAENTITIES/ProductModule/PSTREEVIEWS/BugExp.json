@@ -126,6 +126,17 @@
       "id" : "ROOTMODULE"
     },
     "name" : "全部 - 根模块（动态）",
+    "getPSNavigateParams" : [ {
+      "key" : "n_type_eq",
+      "name" : "n_type_eq",
+      "value" : "story",
+      "rawValue" : true
+    }, {
+      "key" : "n_parent_eq",
+      "name" : "n_parent_eq",
+      "value" : "0",
+      "rawValue" : true
+    } ],
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "ALL"
@@ -240,7 +251,7 @@
     "nodeType" : "ROOTMODULE",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchRoot"
+      "id" : "FetchDefault"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,

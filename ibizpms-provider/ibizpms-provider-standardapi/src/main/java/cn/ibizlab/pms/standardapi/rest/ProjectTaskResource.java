@@ -53,16 +53,37 @@ public class ProjectTaskResource {
     public ProjectTaskMapping projecttaskMapping;
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
-    @ApiOperation(value = "根据项目继续", tags = {"任务" },  notes = "根据项目继续")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttasks/{projecttask_id}/restart")
-    public ResponseEntity<ProjectTaskDTO> restartByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttask_id") Long projecttask_id, @RequestBody ProjectTaskDTO projecttaskdto) {
+    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目需求变更确认", tags = {"任务" },  notes = "根据项目需求变更确认")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttasks/{projecttask_id}/confirmstorychange")
+    public ResponseEntity<ProjectTaskDTO> confirmStoryChangeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttask_id") Long projecttask_id, @RequestBody ProjectTaskDTO projecttaskdto) {
         Task domain = projecttaskMapping.toDomain(projecttaskdto);
         domain.setProject(project_id);
         domain.setId(projecttask_id);
-        domain = taskService.restart(domain) ;
+        domain = taskService.confirmStoryChange(domain) ;
         projecttaskdto = projecttaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(projecttaskdto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
+    @ApiOperation(value = "根据项目完成", tags = {"任务" },  notes = "根据项目完成")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttasks/{projecttask_id}/finish")
+    public ResponseEntity<ProjectTaskDTO> finishByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttask_id") Long projecttask_id, @RequestBody ProjectTaskDTO projecttaskdto) {
+        Task domain = projecttaskMapping.toDomain(projecttaskdto);
+        domain.setProject(project_id);
+        domain.setId(projecttask_id);
+        domain = taskService.finish(domain) ;
+        projecttaskdto = projecttaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projecttaskdto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
+    @ApiOperation(value = "根据项目获取任务草稿", tags = {"任务" },  notes = "根据项目获取任务草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projecttasks/getdraft")
+    public ResponseEntity<ProjectTaskDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectTaskDTO dto) {
+        Task domain = projecttaskMapping.toDomain(dto);
+        domain.setProject(project_id);
+        return ResponseEntity.status(HttpStatus.OK).body(projecttaskMapping.toDto(taskService.getDraft(domain)));
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
@@ -78,18 +99,6 @@ public class ProjectTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
-    @ApiOperation(value = "根据项目暂停", tags = {"任务" },  notes = "根据项目暂停")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttasks/{projecttask_id}/pause")
-    public ResponseEntity<ProjectTaskDTO> pauseByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttask_id") Long projecttask_id, @RequestBody ProjectTaskDTO projecttaskdto) {
-        Task domain = projecttaskMapping.toDomain(projecttaskdto);
-        domain.setProject(project_id);
-        domain.setId(projecttask_id);
-        domain = taskService.pause(domain) ;
-        projecttaskdto = projecttaskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projecttaskdto);
-    }
-
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
     @ApiOperation(value = "根据项目更新任务", tags = {"任务" },  notes = "根据项目更新任务")
@@ -117,18 +126,50 @@ public class ProjectTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
-    @ApiOperation(value = "根据项目删除任务", tags = {"任务" },  notes = "根据项目删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projecttasks/{projecttask_id}")
-    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttask_id") Long projecttask_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(projecttask_id));
+    @ApiOperation(value = "根据项目建立任务", tags = {"任务" },  notes = "根据项目建立任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttasks")
+    public ResponseEntity<ProjectTaskDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTaskDTO projecttaskdto) {
+        Task domain = projecttaskMapping.toDomain(projecttaskdto);
+        domain.setProject(project_id);
+		taskService.create(domain);
+        ProjectTaskDTO dto = projecttaskMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
-    @ApiOperation(value = "根据项目批量删除任务", tags = {"任务" },  notes = "根据项目批量删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projecttasks/batch")
-    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
-        taskService.removeBatch(ids);
+    @ApiOperation(value = "根据项目批量建立任务", tags = {"任务" },  notes = "根据项目批量建立任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttasks/batch")
+    public ResponseEntity<Boolean> createBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectTaskDTO> projecttaskdtos) {
+        List<Task> domainlist=projecttaskMapping.toDomain(projecttaskdtos);
+        for(Task domain:domainlist){
+            domain.setProject(project_id);
+        }
+        taskService.createBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
+    @ApiOperation(value = "根据项目激活", tags = {"任务" },  notes = "根据项目激活")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttasks/{projecttask_id}/activate")
+    public ResponseEntity<ProjectTaskDTO> activateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttask_id") Long projecttask_id, @RequestBody ProjectTaskDTO projecttaskdto) {
+        Task domain = projecttaskMapping.toDomain(projecttaskdto);
+        domain.setProject(project_id);
+        domain.setId(projecttask_id);
+        domain = taskService.activate(domain) ;
+        projecttaskdto = projecttaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projecttaskdto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
+    @ApiOperation(value = "根据项目继续", tags = {"任务" },  notes = "根据项目继续")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttasks/{projecttask_id}/restart")
+    public ResponseEntity<ProjectTaskDTO> restartByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttask_id") Long projecttask_id, @RequestBody ProjectTaskDTO projecttaskdto) {
+        Task domain = projecttaskMapping.toDomain(projecttaskdto);
+        domain.setProject(project_id);
+        domain.setId(projecttask_id);
+        domain = taskService.restart(domain) ;
+        projecttaskdto = projecttaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projecttaskdto);
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
@@ -144,15 +185,30 @@ public class ProjectTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
-    @ApiOperation(value = "根据项目完成", tags = {"任务" },  notes = "根据项目完成")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttasks/{projecttask_id}/finish")
-    public ResponseEntity<ProjectTaskDTO> finishByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttask_id") Long projecttask_id, @RequestBody ProjectTaskDTO projecttaskdto) {
+    @ApiOperation(value = "根据项目暂停", tags = {"任务" },  notes = "根据项目暂停")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttasks/{projecttask_id}/pause")
+    public ResponseEntity<ProjectTaskDTO> pauseByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttask_id") Long projecttask_id, @RequestBody ProjectTaskDTO projecttaskdto) {
         Task domain = projecttaskMapping.toDomain(projecttaskdto);
         domain.setProject(project_id);
         domain.setId(projecttask_id);
-        domain = taskService.finish(domain) ;
+        domain = taskService.pause(domain) ;
         projecttaskdto = projecttaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(projecttaskdto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
+    @ApiOperation(value = "根据项目删除任务", tags = {"任务" },  notes = "根据项目删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projecttasks/{projecttask_id}")
+    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttask_id") Long projecttask_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(projecttask_id));
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
+    @ApiOperation(value = "根据项目批量删除任务", tags = {"任务" },  notes = "根据项目批量删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projecttasks/batch")
+    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
+        taskService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
@@ -167,25 +223,13 @@ public class ProjectTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(projecttaskdto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目需求变更确认", tags = {"任务" },  notes = "根据项目需求变更确认")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttasks/{projecttask_id}/confirmstorychange")
-    public ResponseEntity<ProjectTaskDTO> confirmStoryChangeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttask_id") Long projecttask_id, @RequestBody ProjectTaskDTO projecttaskdto) {
-        Task domain = projecttaskMapping.toDomain(projecttaskdto);
-        domain.setProject(project_id);
-        domain.setId(projecttask_id);
-        domain = taskService.confirmStoryChange(domain) ;
-        projecttaskdto = projecttaskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projecttaskdto);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
-    @ApiOperation(value = "根据项目获取任务草稿", tags = {"任务" },  notes = "根据项目获取任务草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projecttasks/getdraft")
-    public ResponseEntity<ProjectTaskDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectTaskDTO dto) {
-        Task domain = projecttaskMapping.toDomain(dto);
-        domain.setProject(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(projecttaskMapping.toDto(taskService.getDraft(domain)));
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @ApiOperation(value = "根据项目获取任务", tags = {"任务" },  notes = "根据项目获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projecttasks/{projecttask_id}")
+    public ResponseEntity<ProjectTaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttask_id") Long projecttask_id) {
+        Task domain = taskService.get(projecttask_id);
+        ProjectTaskDTO dto = projecttaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
@@ -211,50 +255,6 @@ public class ProjectTaskResource {
         domain = taskService.assignTo(domain) ;
         projecttaskdto = projecttaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(projecttaskdto);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
-    @ApiOperation(value = "根据项目激活", tags = {"任务" },  notes = "根据项目激活")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttasks/{projecttask_id}/activate")
-    public ResponseEntity<ProjectTaskDTO> activateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttask_id") Long projecttask_id, @RequestBody ProjectTaskDTO projecttaskdto) {
-        Task domain = projecttaskMapping.toDomain(projecttaskdto);
-        domain.setProject(project_id);
-        domain.setId(projecttask_id);
-        domain = taskService.activate(domain) ;
-        projecttaskdto = projecttaskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projecttaskdto);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-    @ApiOperation(value = "根据项目获取任务", tags = {"任务" },  notes = "根据项目获取任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projecttasks/{projecttask_id}")
-    public ResponseEntity<ProjectTaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttask_id") Long projecttask_id) {
-        Task domain = taskService.get(projecttask_id);
-        ProjectTaskDTO dto = projecttaskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
-    @ApiOperation(value = "根据项目建立任务", tags = {"任务" },  notes = "根据项目建立任务")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttasks")
-    public ResponseEntity<ProjectTaskDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTaskDTO projecttaskdto) {
-        Task domain = projecttaskMapping.toDomain(projecttaskdto);
-        domain.setProject(project_id);
-		taskService.create(domain);
-        ProjectTaskDTO dto = projecttaskMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
-    @ApiOperation(value = "根据项目批量建立任务", tags = {"任务" },  notes = "根据项目批量建立任务")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttasks/batch")
-    public ResponseEntity<Boolean> createBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectTaskDTO> projecttaskdtos) {
-        List<Task> domainlist=projecttaskMapping.toDomain(projecttaskdtos);
-        for(Task domain:domainlist){
-            domain.setProject(project_id);
-        }
-        taskService.createBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
 }
