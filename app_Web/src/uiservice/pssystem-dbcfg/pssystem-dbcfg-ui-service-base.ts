@@ -162,7 +162,7 @@ export default class PSSystemDBCfgUIServiceBase extends UIService {
      * @memberof  PSSystemDBCfgUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

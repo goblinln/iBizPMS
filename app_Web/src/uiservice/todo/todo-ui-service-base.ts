@@ -1346,7 +1346,7 @@ export default class TodoUIServiceBase extends UIService {
      * @memberof  TodoUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

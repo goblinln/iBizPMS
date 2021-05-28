@@ -274,7 +274,7 @@ export default class SubTaskUIServiceBase extends UIService {
      * @memberof  SubTaskUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

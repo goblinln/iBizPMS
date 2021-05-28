@@ -171,7 +171,7 @@ export default class GroupUIServiceBase extends UIService {
      * @memberof  GroupUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

@@ -162,7 +162,7 @@ export default class ProjectTaskestimateUIServiceBase extends UIService {
      * @memberof  ProjectTaskestimateUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

@@ -255,7 +255,7 @@ export default class TestModuleUIServiceBase extends UIService {
      * @memberof  TestModuleUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

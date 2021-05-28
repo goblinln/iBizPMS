@@ -198,7 +198,7 @@ export default class SysEmployeeUIServiceBase extends UIService {
      * @memberof  SysEmployeeUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

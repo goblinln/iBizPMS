@@ -481,7 +481,7 @@ export default class TestSuiteUIServiceBase extends UIService {
      * @memberof  TestSuiteUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

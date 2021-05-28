@@ -180,7 +180,7 @@ export default class IbzReportRoleConfigUIServiceBase extends UIService {
      * @memberof  IbzReportRoleConfigUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

@@ -333,7 +333,7 @@ export default class ProjectModuleUIServiceBase extends UIService {
      * @memberof  ProjectModuleUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

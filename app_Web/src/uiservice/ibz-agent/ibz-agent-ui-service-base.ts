@@ -277,7 +277,7 @@ export default class IbzAgentUIServiceBase extends UIService {
      * @memberof  IbzAgentUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

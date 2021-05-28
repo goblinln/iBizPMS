@@ -478,7 +478,7 @@ export default class IbzMonthlyUIServiceBase extends UIService {
      * @memberof  IbzMonthlyUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

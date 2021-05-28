@@ -162,7 +162,7 @@ export default class IbzFavoritesUIServiceBase extends UIService {
      * @memberof  IbzFavoritesUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

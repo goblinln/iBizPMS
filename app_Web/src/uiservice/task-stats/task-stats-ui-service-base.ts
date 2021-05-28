@@ -162,7 +162,7 @@ export default class TaskStatsUIServiceBase extends UIService {
      * @memberof  TaskStatsUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

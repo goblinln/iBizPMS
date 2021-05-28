@@ -162,7 +162,7 @@ export default class PSSysSFPubUIServiceBase extends UIService {
      * @memberof  PSSysSFPubUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

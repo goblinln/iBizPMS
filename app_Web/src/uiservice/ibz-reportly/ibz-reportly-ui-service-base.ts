@@ -587,7 +587,7 @@ export default class IbzReportlyUIServiceBase extends UIService {
      * @memberof  IbzReportlyUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

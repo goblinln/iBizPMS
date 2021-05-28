@@ -162,7 +162,7 @@ export default class IBZTaskTeamUIServiceBase extends UIService {
      * @memberof  IBZTaskTeamUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

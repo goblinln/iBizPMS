@@ -180,7 +180,7 @@ export default class IBIZProKeywordUIServiceBase extends UIService {
      * @memberof  IBIZProKeywordUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

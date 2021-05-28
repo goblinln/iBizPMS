@@ -530,7 +530,7 @@ export default class ProductStatsUIServiceBase extends UIService {
      * @memberof  ProductStatsUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

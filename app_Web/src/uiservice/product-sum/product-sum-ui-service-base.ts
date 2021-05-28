@@ -180,7 +180,7 @@ export default class ProductSumUIServiceBase extends UIService {
      * @memberof  ProductSumUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

@@ -334,7 +334,7 @@ export default class ProjectTeamUIServiceBase extends UIService {
      * @memberof  ProjectTeamUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

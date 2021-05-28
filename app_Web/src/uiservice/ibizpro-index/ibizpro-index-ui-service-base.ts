@@ -243,7 +243,7 @@ export default class IbizproIndexUIServiceBase extends UIService {
      * @memberof  IbizproIndexUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

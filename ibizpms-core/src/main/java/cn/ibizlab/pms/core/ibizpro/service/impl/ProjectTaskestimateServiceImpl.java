@@ -190,6 +190,15 @@ public class ProjectTaskestimateServiceImpl extends ServiceImpl<ProjectTaskestim
     }
 
     /**
+     * 查询集合 项目下用户工时详情
+     */
+    @Override
+    public Page<ProjectTaskestimate> searchCurProjectUserEstimate(ProjectTaskestimateSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProjectTaskestimate> pages=baseMapper.searchCurProjectUserEstimate(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<ProjectTaskestimate>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
      * 查询集合 数据集
      */
     @Override

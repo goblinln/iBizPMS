@@ -162,7 +162,7 @@ export default class ProductLineUIServiceBase extends UIService {
      * @memberof  ProductLineUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

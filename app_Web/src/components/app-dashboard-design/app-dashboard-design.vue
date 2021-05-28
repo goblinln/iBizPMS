@@ -252,6 +252,9 @@ export default class AppDashboardDesign extends Vue {
                 if (Object.is('save', action)) {
                     this.save();
                 }
+                if (Object.is('reset', action)) {
+                    this.save(true);
+                }
             });
         }
     }
@@ -307,10 +310,10 @@ export default class AppDashboardDesign extends Vue {
      *
      * @memberof AppDashboardDesign
      */
-    public save() {
+    public save(IsReset: boolean = false) {
         let param: any = {};
         Object.assign(param, {
-            model: this.layoutModel,
+             model: IsReset ? [] : this.layoutModel,
             ...this.viewparams,
         });
         let post = this.designService.saveModel(this.utilServiceName, this.context, param);

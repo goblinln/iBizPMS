@@ -16857,6 +16857,165 @@ WHERE t1.account =#{srf.webcontext.account}
 t1.`MONTH`=#{srf.webcontext.month} 
 
 ```
+### 项目下用户工时详情(CurProjectUserEstimate)<div id="ProjectTaskestimate_CurProjectUserEstimate"></div>
+```sql
+SELECT
+	t1.project,
+	t1.projectname,
+	t1.`YEAR`,
+	concat( t1.`YEAR`, t1.`MONTH` ) AS `MONTH`,
+	sum( IF ( t1.`day` = '01', t1.consumed, 0 ) ) AS oneconsumed,
+	sum( IF ( t1.`day` = '02', t1.consumed, 0 ) ) AS twoconsumed,
+	sum( IF ( t1.`day` = '03', t1.consumed, 0 ) ) AS threeconsumed,
+	sum( IF ( t1.`day` = '04', t1.consumed, 0 ) ) AS FOURONSUMED,
+	sum( IF ( t1.`day` = '05', t1.consumed, 0 ) ) AS fiveconsumed,
+	sum( IF ( t1.`day` = '06', t1.consumed, 0 ) ) AS sixconsumed,
+	sum( IF ( t1.`day` = '07', t1.consumed, 0 ) ) AS sevenconsumed,
+	sum( IF ( t1.`day` = '08', t1.consumed, 0 ) ) AS eightconsumed,
+	sum( IF ( t1.`day` = '09', t1.consumed, 0 ) ) AS nineconsumed,
+	sum( IF ( t1.`day` = '10', t1.consumed, 0 ) ) AS tenconsumed,
+	sum( IF ( t1.`day` = '11', t1.consumed, 0 ) ) AS elevenconsumed,
+	sum( IF ( t1.`day` = '12', t1.consumed, 0 ) ) AS twelveconsumed,
+	sum( IF ( t1.`day` = '13', t1.consumed, 0 ) ) AS thirteenconsumed,
+	sum( IF ( t1.`day` = '14', t1.consumed, 0 ) ) AS fourteenconsumed,
+	sum( IF ( t1.`day` = '15', t1.consumed, 0 ) ) AS fifteenconsumed,
+	sum( IF ( t1.`day` = '16', t1.consumed, 0 ) ) AS sixteenconsumed,
+	sum( IF ( t1.`day` = '17', t1.consumed, 0 ) ) AS seventeenconsumed,
+	sum( IF ( t1.`day` = '18', t1.consumed, 0 ) ) AS eighteenconsumed,
+	sum( IF ( t1.`day` = '19', t1.consumed, 0 ) ) AS nineteenconsumed,
+	sum( IF ( t1.`day` = '20', t1.consumed, 0 ) ) AS twentyconsumed,
+	sum( IF ( t1.`day` = '21', t1.consumed, 0 ) ) AS twentyoneconsumed,
+	sum( IF ( t1.`day` = '22', t1.consumed, 0 ) ) AS twentytwoconsumed,
+	sum( IF ( t1.`day` = '23', t1.consumed, 0 ) ) AS twentythreeconsumed,
+	sum( IF ( t1.`day` = '24', t1.consumed, 0 ) ) AS twentyfourconsumed,
+	sum( IF ( t1.`day` = '25', t1.consumed, 0 ) ) AS twentyfiveconsumed,
+	sum( IF ( t1.`day` = '26', t1.consumed, 0 ) ) AS twentysixconsumed,
+	sum( IF ( t1.`day` = '27', t1.consumed, 0 ) ) AS twentysevenconsumed,
+	sum( IF ( t1.`day` = '28', t1.consumed, 0 ) ) AS twentyeightconsumed,
+	sum( IF ( t1.`day` = '29', t1.consumed, 0 ) ) AS twentynineconsumed,
+	sum( IF ( t1.`day` = '30', t1.consumed, 0 ) ) AS thirtyconsumed,
+	sum( IF ( t1.`day` = '31', t1.consumed, 0 ) ) AS thirtyoneconsumed,
+	sum( IF ( t1.`day` = '01', t1.EVALUATIONTIME, 0 ) ) AS oneEVALUATIONTIME,
+	sum( IF ( t1.`day` = '02', t1.EVALUATIONTIME, 0 ) ) AS twoEVALUATIONTIME,
+	sum( IF ( t1.`day` = '03', t1.EVALUATIONTIME, 0 ) ) AS threeEVALUATIONTIME,
+	sum( IF ( t1.`day` = '04', t1.EVALUATIONTIME, 0 ) ) AS fourEVALUATIONTIME,
+	sum( IF ( t1.`day` = '05', t1.EVALUATIONTIME, 0 ) ) AS fiveEVALUATIONTIME,
+	sum( IF ( t1.`day` = '06', t1.EVALUATIONTIME, 0 ) ) AS sixEVALUATIONTIME,
+	sum( IF ( t1.`day` = '07', t1.EVALUATIONTIME, 0 ) ) AS sevenEVALUATIONTIME,
+	sum( IF ( t1.`day` = '08', t1.EVALUATIONTIME, 0 ) ) AS eightEVALUATIONTIME,
+	sum( IF ( t1.`day` = '09', t1.EVALUATIONTIME, 0 ) ) AS nineEVALUATIONTIME,
+	sum( IF ( t1.`day` = '10', t1.EVALUATIONTIME, 0 ) ) AS tenEVALUATIONTIME,
+	sum( IF ( t1.`day` = '11', t1.EVALUATIONTIME, 0 ) ) AS elevenEVALUATIONTIME,
+	sum( IF ( t1.`day` = '12', t1.EVALUATIONTIME, 0 ) ) AS twelveEVALUATIONTIME,
+	sum( IF ( t1.`day` = '13', t1.EVALUATIONTIME, 0 ) ) AS thirteenEVALUATIONTIME,
+	sum( IF ( t1.`day` = '14', t1.EVALUATIONTIME, 0 ) ) AS fourteenEVALUATIONTIME,
+	sum( IF ( t1.`day` = '15', t1.EVALUATIONTIME, 0 ) ) AS fifteenEVALUATIONTIME,
+	sum( IF ( t1.`day` = '16', t1.EVALUATIONTIME, 0 ) ) AS sixteenEVALUATIONTIME,
+	sum( IF ( t1.`day` = '17', t1.EVALUATIONTIME, 0 ) ) AS seventeenEVALUATIONTIME,
+	sum( IF ( t1.`day` = '18', t1.EVALUATIONTIME, 0 ) ) AS eighteenEVALUATIONTIME,
+	sum( IF ( t1.`day` = '19', t1.EVALUATIONTIME, 0 ) ) AS nineteenEVALUATIONTIME,
+	sum( IF ( t1.`day` = '20', t1.EVALUATIONTIME, 0 ) ) AS twentyEVALUATIONTIME,
+	sum( IF ( t1.`day` = '21', t1.EVALUATIONTIME, 0 ) ) AS twentyoneEVALUATIONTIME,
+	sum( IF ( t1.`day` = '22', t1.EVALUATIONTIME, 0 ) ) AS twentytwoEVALUATIONTIME,
+	sum( IF ( t1.`day` = '23', t1.EVALUATIONTIME, 0 ) ) AS twentythreeEVALUATIONTIME,
+	sum( IF ( t1.`day` = '24', t1.EVALUATIONTIME, 0 ) ) AS twentyfourEVALUATIONTIME,
+	sum( IF ( t1.`day` = '25', t1.EVALUATIONTIME, 0 ) ) AS twentyfiveEVALUATIONTIME,
+	sum( IF ( t1.`day` = '26', t1.EVALUATIONTIME, 0 ) ) AS twentysixEVALUATIONTIME,
+	sum( IF ( t1.`day` = '27', t1.EVALUATIONTIME, 0 ) ) AS twentysevenEVALUATIONTIME,
+	sum( IF ( t1.`day` = '28', t1.EVALUATIONTIME, 0 ) ) AS twentyeightEVALUATIONTIME,
+	sum( IF ( t1.`day` = '29', t1.EVALUATIONTIME, 0 ) ) AS twentynineEVALUATIONTIME,
+	sum( IF ( t1.`day` = '30', t1.EVALUATIONTIME, 0 ) ) AS thirtyEVALUATIONTIME,
+	sum( IF ( t1.`day` = '31', t1.EVALUATIONTIME, 0 ) ) AS thirtyoneEVALUATIONTIME,
+	sum( IF ( t1.`day` = '01', t1.EVALUATIONCOST, 0 ) ) AS oneEVALUATIONCOST,
+	sum( IF ( t1.`day` = '02', t1.EVALUATIONCOST, 0 ) ) AS twoEVALUATIONCOST,
+	sum( IF ( t1.`day` = '03', t1.EVALUATIONCOST, 0 ) ) AS threeEVALUATIONCOST,
+	sum( IF ( t1.`day` = '04', t1.EVALUATIONCOST, 0 ) ) AS fourEVALUATIONCOST,
+	sum( IF ( t1.`day` = '05', t1.EVALUATIONCOST, 0 ) ) AS fiveEVALUATIONCOST,
+	sum( IF ( t1.`day` = '06', t1.EVALUATIONCOST, 0 ) ) AS sixEVALUATIONCOST,
+	sum( IF ( t1.`day` = '07', t1.EVALUATIONCOST, 0 ) ) AS sevenEVALUATIONCOST,
+	sum( IF ( t1.`day` = '08', t1.EVALUATIONCOST, 0 ) ) AS eightEVALUATIONCOST,
+	sum( IF ( t1.`day` = '09', t1.EVALUATIONCOST, 0 ) ) AS nineEVALUATIONCOST,
+	sum( IF ( t1.`day` = '10', t1.EVALUATIONCOST, 0 ) ) AS tenEVALUATIONCOST,
+	sum( IF ( t1.`day` = '11', t1.EVALUATIONCOST, 0 ) ) AS elevenEVALUATIONCOST,
+	sum( IF ( t1.`day` = '12', t1.EVALUATIONCOST, 0 ) ) AS twelveEVALUATIONCOST,
+	sum( IF ( t1.`day` = '13', t1.EVALUATIONCOST, 0 ) ) AS thirteenEVALUATIONCOST,
+	sum( IF ( t1.`day` = '14', t1.EVALUATIONCOST, 0 ) ) AS fourteenEVALUATIONCOST,
+	sum( IF ( t1.`day` = '15', t1.EVALUATIONCOST, 0 ) ) AS fifteenEVALUATIONCOST,
+	sum( IF ( t1.`day` = '16', t1.EVALUATIONCOST, 0 ) ) AS sixteenEVALUATIONCOST,
+	sum( IF ( t1.`day` = '17', t1.EVALUATIONCOST, 0 ) ) AS seventeenEVALUATIONCOST,
+	sum( IF ( t1.`day` = '18', t1.EVALUATIONCOST, 0 ) ) AS eighteenEVALUATIONCOST,
+	sum( IF ( t1.`day` = '19', t1.EVALUATIONCOST, 0 ) ) AS nineteenEVALUATIONCOST,
+	sum( IF ( t1.`day` = '20', t1.EVALUATIONCOST, 0 ) ) AS twentyEVALUATIONCOST,
+	sum( IF ( t1.`day` = '21', t1.EVALUATIONCOST, 0 ) ) AS twentyoneEVALUATIONCOST,
+	sum( IF ( t1.`day` = '22', t1.EVALUATIONCOST, 0 ) ) AS twentytwoEVALUATIONCOST,
+	sum( IF ( t1.`day` = '23', t1.EVALUATIONCOST, 0 ) ) AS twentythreeEVALUATIONCOST,
+	sum( IF ( t1.`day` = '24', t1.EVALUATIONCOST, 0 ) ) AS twentyfourEVALUATIONCOST,
+	sum( IF ( t1.`day` = '25', t1.EVALUATIONCOST, 0 ) ) AS twentyfiveEVALUATIONCOST,
+	sum( IF ( t1.`day` = '26', t1.EVALUATIONCOST, 0 ) ) AS twentysixEVALUATIONCOST,
+	sum( IF ( t1.`day` = '27', t1.EVALUATIONCOST, 0 ) ) AS twentysevenEVALUATIONCOST,
+	sum( IF ( t1.`day` = '28', t1.EVALUATIONCOST, 0 ) ) AS twentyeightEVALUATIONCOST,
+	sum( IF ( t1.`day` = '29', t1.EVALUATIONCOST, 0 ) ) AS twentynineEVALUATIONCOST,
+	sum( IF ( t1.`day` = '30', t1.EVALUATIONCOST, 0 ) ) AS thirtyEVALUATIONCOST,
+	sum( IF ( t1.`day` = '31', t1.EVALUATIONCOST, 0 ) ) AS thirtyoneEVALUATIONCOST,
+	SUM( T1.consumed ) AS consumed,
+	SUM( T1.EVALUATIONCOST ) AS EVALUATIONCOST,
+	SUM( T1.INPUTCOST ) AS INPUTCOST,
+	SUM( T1.EVALUATIONTIME ) AS EVALUATIONTIME
+ 
+FROM
+(
+
+SELECT YEAR
+	( t1.date ) AS `year`,
+	RIGHT ( 100 + MONTH ( t1.date ), 2 ) AS `month`,
+	RIGHT ( 100 + DAY ( t1.date ), 2 ) AS `day`,
+	t11.project,
+	t21.`name` AS projectname,
+	t1.date,
+	ROUND( sum( t1.consumed ), 2 ) AS consumed,
+	ROUND( sum( t1.EVALUATIONCOST ), 2 ) AS EVALUATIONCOST,
+	ROUND( sum( t1.INPUTCOST ), 2 ) AS INPUTCOST,
+	ROUND( sum( t1.EVALUATIONTIME ), 2 ) AS EVALUATIONTIME 
+FROM
+	`zt_taskestimate` t1
+	LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
+	LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
+WHERE
+	t11.project IS NOT NULL 
+	AND t11.project <> '0' 
+	AND t1.date <> '0000-00-00' 
+	AND t11.deleted = '0' 
+GROUP BY
+	t11.project,
+	t21.`name`,
+	t1.date UNION
+SELECT YEAR
+	( t1.date ) AS `year`,
+	RIGHT ( 100 + MONTH ( t1.date ), 2 ) AS `month`,
+	RIGHT ( 100 + DAY ( t1.date ), 2 ) AS `day`,
+	t1.idvalue AS project,
+	t11.`name` AS projectname,
+	t1.date,
+	ROUND( sum( t1.consumed ), 2 ) AS consumed,
+	0.00 AS EVALUATIONCOST,
+	0.00 AS INPUTCOST,
+	0.00 AS EVALUATIONTIME 
+FROM
+	zt_todo t1
+	LEFT JOIN zt_project t11 ON t11.id = t1.idvalue 
+WHERE
+	t1.type = 'custom' 
+	AND t1.idvalue > 0 
+GROUP BY
+	t1.idvalue,
+	t11.`name`,
+	t1.date 
+	)t1
+	GROUP BY
+	t1.project,
+	t1.`YEAR`,
+	t1.`MONTH`
+```
 ### 数据查询(DEFAULT)<div id="ProjectTaskestimate_Default"></div>
 ```sql
 SELECT T1.* FROM (SELECT

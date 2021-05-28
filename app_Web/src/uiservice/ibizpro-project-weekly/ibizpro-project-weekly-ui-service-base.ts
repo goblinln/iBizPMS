@@ -262,7 +262,7 @@ export default class IbizproProjectWeeklyUIServiceBase extends UIService {
      * @memberof  IbizproProjectWeeklyUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

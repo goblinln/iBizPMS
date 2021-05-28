@@ -505,7 +505,7 @@ export default class DocLibModuleUIServiceBase extends UIService {
      * @memberof  DocLibModuleUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

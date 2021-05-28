@@ -171,7 +171,7 @@ export default class UserYearWorkStatsUIServiceBase extends UIService {
      * @memberof  UserYearWorkStatsUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

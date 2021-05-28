@@ -228,7 +228,7 @@ export default class SysUpdateLogUIServiceBase extends UIService {
      * @memberof  SysUpdateLogUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

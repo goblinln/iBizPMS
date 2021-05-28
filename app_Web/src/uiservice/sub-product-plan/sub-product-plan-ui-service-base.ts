@@ -168,7 +168,7 @@ export default class SubProductPlanUIServiceBase extends UIService {
      * @memberof  SubProductPlanUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

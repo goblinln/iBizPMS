@@ -533,7 +533,7 @@ export default class IbzLibUIServiceBase extends UIService {
      * @memberof  IbzLibUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

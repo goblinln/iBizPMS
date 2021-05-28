@@ -171,7 +171,7 @@ export default class IbzMyTerritoryUIServiceBase extends UIService {
      * @memberof  IbzMyTerritoryUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

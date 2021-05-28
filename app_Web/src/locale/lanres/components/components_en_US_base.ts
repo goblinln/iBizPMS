@@ -113,6 +113,7 @@ export default {
     appPortalDesign: {
         customPortal: 'Custom portal',
         save: 'Save',
+        reSet: 'reSet'
     },
     appRangDate: {
         placeholder: 'Please select time...',

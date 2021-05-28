@@ -162,7 +162,7 @@ export default class TaskestimatestatsUIServiceBase extends UIService {
      * @memberof  TaskestimatestatsUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

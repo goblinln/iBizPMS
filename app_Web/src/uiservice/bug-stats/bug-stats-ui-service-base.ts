@@ -180,7 +180,7 @@ export default class BugStatsUIServiceBase extends UIService {
      * @memberof  BugStatsUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

@@ -180,7 +180,7 @@ export default class EmpLoyeeloadUIServiceBase extends UIService {
      * @memberof  EmpLoyeeloadUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

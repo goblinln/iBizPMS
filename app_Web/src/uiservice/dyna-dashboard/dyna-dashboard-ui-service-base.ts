@@ -162,7 +162,7 @@ export default class DynaDashboardUIServiceBase extends UIService {
      * @memberof  DynaDashboardUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

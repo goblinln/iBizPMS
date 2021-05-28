@@ -229,7 +229,7 @@ export default class IbzProjectMemberUIServiceBase extends UIService {
      * @memberof  IbzProjectMemberUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

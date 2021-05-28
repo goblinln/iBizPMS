@@ -180,7 +180,7 @@ export default class SysOrganizationUIServiceBase extends UIService {
      * @memberof  SysOrganizationUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

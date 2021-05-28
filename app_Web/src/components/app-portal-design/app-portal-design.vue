@@ -4,7 +4,8 @@
             {{ $t('components.appPortalDesign.customPortal') }}
         </p>
         <div class="design-toolbar" slot="extra">
-            <i-button @click="click">{{ $t('components.appPortalDesign.save') }}</i-button>
+            <i-button @click="click('reset')">{{ $t('components.appPortalDesign.reSet') }}</i-button>
+            <i-button @click="click('save')">{{ $t('components.appPortalDesign.save') }}</i-button>
         </div>
         <div class="design-container">
             <app-dashboard-design
@@ -162,8 +163,8 @@ export default class AppPortalDesign extends Vue {
      *
      * @memberof AppPortalDesign
      */
-    public click() {
-        this.viewState.next({ tag: '', action: 'save', data: {} });
+    public click(action:string) {
+        this.viewState.next({ tag: '', action: action, data: {} });
     }
 
     /**

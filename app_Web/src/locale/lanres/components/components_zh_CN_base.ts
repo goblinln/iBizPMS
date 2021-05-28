@@ -114,6 +114,7 @@ export default {
     appPortalDesign: {
         customPortal: '自定义门户',
         save: '保存',
+        reSet: '恢复默认'
     },
     appRangDate: {
         placeholder: '请选择时间...',

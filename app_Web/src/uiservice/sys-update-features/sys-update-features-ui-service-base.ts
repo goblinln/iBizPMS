@@ -180,7 +180,7 @@ export default class SysUpdateFeaturesUIServiceBase extends UIService {
      * @memberof  SysUpdateFeaturesUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**

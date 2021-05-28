@@ -162,7 +162,7 @@ export default class PlanTempletDetailUIServiceBase extends UIService {
      * @memberof  PlanTempletDetailUIServiceBase
      */
     public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
-        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
+        return this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**
