@@ -253,6 +253,7 @@
 | --------  | --------   | --------   | ----- |
 |AccountDetail|用户月工时详情([MYSQL5](../../appendix/query_MYSQL5.md#ProjectTaskestimate_AccountDetail))|否|&nbsp;|
 |CurProjectUserEstimate|项目下用户工时详情([MYSQL5](../../appendix/query_MYSQL5.md#ProjectTaskestimate_CurProjectUserEstimate))|否|&nbsp;|
+|CurProjectUserEstimateDetail|当前项目下用户们工时详情([MYSQL5](../../appendix/query_MYSQL5.md#ProjectTaskestimate_CurProjectUserEstimateDetail))|否|&nbsp;|
 |DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#ProjectTaskestimate_Default))|是|&nbsp;|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#ProjectTaskestimate_View))|否|&nbsp;|
 
@@ -262,6 +263,7 @@
 | --------  | --------   | -------- | --------   | ----- |
 |AccountDetail|用户月工时详情|AccountDetail|否|&nbsp;|
 |CurProjectUserEstimate|项目下用户工时详情|CurProjectUserEstimate|否|&nbsp;|
+|CurProjectUserEstimateDetail|当前项目下用户们工时详情|CurProjectUserEstimateDetail|否|&nbsp;|
 |DEFAULT|数据集|DEFAULT|是|&nbsp;|
 
 ## 查询模式

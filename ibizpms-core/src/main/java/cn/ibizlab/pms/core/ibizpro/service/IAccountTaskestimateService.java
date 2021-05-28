@@ -47,7 +47,6 @@ public interface IAccountTaskestimateService extends IService<AccountTaskestimat
     boolean save(AccountTaskestimate et);
     void saveBatch(List<AccountTaskestimate> list);
     Page<AccountTaskestimate> searchAllAccountEstimate(AccountTaskestimateSearchContext context);
-    Page<AccountTaskestimate> searchCurProjectUserEstimateDetail(AccountTaskestimateSearchContext context);
     Page<AccountTaskestimate> searchDefault(AccountTaskestimateSearchContext context);
     /**
      *自定义查询SQL

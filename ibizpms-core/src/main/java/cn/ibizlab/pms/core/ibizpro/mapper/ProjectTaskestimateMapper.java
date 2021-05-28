@@ -21,6 +21,7 @@ public interface ProjectTaskestimateMapper extends BaseMapper<ProjectTaskestimat
 
     Page<ProjectTaskestimate> searchAccountDetail(IPage page, @Param("srf") ProjectTaskestimateSearchContext context, @Param("ew") Wrapper<ProjectTaskestimate> wrapper);
     Page<ProjectTaskestimate> searchCurProjectUserEstimate(IPage page, @Param("srf") ProjectTaskestimateSearchContext context, @Param("ew") Wrapper<ProjectTaskestimate> wrapper);
+    Page<ProjectTaskestimate> searchCurProjectUserEstimateDetail(IPage page, @Param("srf") ProjectTaskestimateSearchContext context, @Param("ew") Wrapper<ProjectTaskestimate> wrapper);
     Page<ProjectTaskestimate> searchDefault(IPage page, @Param("srf") ProjectTaskestimateSearchContext context, @Param("ew") Wrapper<ProjectTaskestimate> wrapper);
     @Override
     ProjectTaskestimate selectById(Serializable id);
