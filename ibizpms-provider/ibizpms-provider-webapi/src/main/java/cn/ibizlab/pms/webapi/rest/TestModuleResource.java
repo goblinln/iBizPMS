@@ -153,18 +153,14 @@ public class TestModuleResource {
     }
 
 
-    @PreAuthorize("@TestModuleRuntime.quickTest('DENY')")
-    @ApiOperation(value = "保存测试模块", tags = {"测试模块" },  notes = "保存测试模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/testmodules/save")
-    public ResponseEntity<TestModuleDTO> save(@RequestBody TestModuleDTO testmoduledto) {
-        TestModule domain = testmoduleMapping.toDomain(testmoduledto);
-        testmoduleService.save(domain);
-        TestModuleDTO dto = testmoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = testmoduleRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
 
+    @PreAuthorize("@TestModuleRuntime.quickTest('DENY')")
+    @ApiOperation(value = "批量保存测试模块", tags = {"测试模块" },  notes = "批量保存测试模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/testmodules/savebatch")
+    public ResponseEntity<Boolean> saveBatch(@RequestBody List<TestModuleDTO> testmoduledtos) {
+        testmoduleService.saveBatch(testmoduleMapping.toDomain(testmoduledtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取BYPATH", tags = {"测试模块" } ,notes = "获取BYPATH")
@@ -336,16 +332,18 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
 
-    @PreAuthorize("@TestModuleRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据产品保存测试模块", tags = {"测试模块" },  notes = "根据产品保存测试模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules/save")
-    public ResponseEntity<TestModuleDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestModuleDTO testmoduledto) {
-        TestModule domain = testmoduleMapping.toDomain(testmoduledto);
-        domain.setRoot(product_id);
-        testmoduleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testmoduleMapping.toDto(domain));
-    }
 
+    @PreAuthorize("@TestModuleRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据产品批量保存测试模块", tags = {"测试模块" },  notes = "根据产品批量保存测试模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestModuleDTO> testmoduledtos) {
+        List<TestModule> domainlist=testmoduleMapping.toDomain(testmoduledtos);
+        for(TestModule domain:domainlist){
+             domain.setRoot(product_id);
+        }
+        testmoduleService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取BYPATH", tags = {"测试模块" } ,notes = "根据产品获取BYPATH")

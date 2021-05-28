@@ -92,6 +92,15 @@ public class ProjectTaskEstimateResource {
                 .body(list);
 	}
     @PreAuthorize("@TaskEstimateRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目任务获取任务预计", tags = {"任务预计" },  notes = "根据项目任务获取任务预计")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projecttasks/{task_id}/projecttaskestimates/{projecttaskestimate_id}")
+    public ResponseEntity<ProjectTaskEstimateDTO> getByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("projecttaskestimate_id") Long projecttaskestimate_id) {
+        TaskEstimate domain = taskestimateService.get(projecttaskestimate_id);
+        ProjectTaskEstimateDTO dto = projecttaskestimateMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目任务更新任务预计", tags = {"任务预计" },  notes = "根据项目任务更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projecttasks/{task_id}/projecttaskestimates/{projecttaskestimate_id}")
     public ResponseEntity<ProjectTaskEstimateDTO> updateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("projecttaskestimate_id") Long projecttaskestimate_id, @RequestBody ProjectTaskEstimateDTO projecttaskestimatedto) {
@@ -103,15 +112,6 @@ public class ProjectTaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目任务获取任务预计", tags = {"任务预计" },  notes = "根据项目任务获取任务预计")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projecttasks/{task_id}/projecttaskestimates/{projecttaskestimate_id}")
-    public ResponseEntity<ProjectTaskEstimateDTO> getByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("projecttaskestimate_id") Long projecttaskestimate_id) {
-        TaskEstimate domain = taskestimateService.get(projecttaskestimate_id);
-        ProjectTaskEstimateDTO dto = projecttaskestimateMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目任务建立任务预计", tags = {"任务预计" },  notes = "根据项目任务建立任务预计")
