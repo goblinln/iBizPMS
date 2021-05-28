@@ -1281,6 +1281,17 @@
           "id" : "ROOTMODULE"
         },
         "name" : "平台（动态） - 产品根模块（动态）",
+        "getPSNavigateParams" : [ {
+          "key" : "n_type_eq",
+          "name" : "n_type_eq",
+          "value" : "story",
+          "rawValue" : true
+        }, {
+          "key" : "n_parent_eq",
+          "name" : "n_parent_eq",
+          "value" : "0",
+          "rawValue" : true
+        } ],
         "parentFilter" : "branch",
         "getParentPSDETreeNode" : {
           "modelref" : true,
@@ -1387,6 +1398,22 @@
           "name" : "PRODUCT",
           "value" : "projectproduct",
           "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "n_type_eq",
+          "name" : "n_type_eq",
+          "value" : "story",
+          "rawValue" : true
+        }, {
+          "key" : "n_parent_eq",
+          "name" : "n_parent_eq",
+          "value" : "0",
+          "rawValue" : true
+        }, {
+          "key" : "n_branch_eq",
+          "name" : "n_branch_eq",
+          "value" : "0",
+          "rawValue" : true
         } ],
         "parentFilter" : "root",
         "getParentPSDETreeNode" : {
@@ -1564,6 +1591,17 @@
           "id" : "ProjectModule"
         },
         "name" : "所有模块 - 项目根模块（动态）",
+        "getPSNavigateParams" : [ {
+          "key" : "n_type_eq",
+          "name" : "n_type_eq",
+          "value" : "task",
+          "rawValue" : true
+        }, {
+          "key" : "n_parent_eq",
+          "name" : "n_parent_eq",
+          "value" : "0",
+          "rawValue" : true
+        } ],
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "ALL"
@@ -2235,7 +2273,7 @@
         "nodeType" : "ROOTMODULE",
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchRoot"
+          "id" : "FetchDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -2378,7 +2416,7 @@
         "nodeType" : "Root_NoBranch",
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchRoot_NoBranch"
+          "id" : "FetchDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -2544,7 +2582,7 @@
         "nodeType" : "ProjectModule",
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchRoot_Task"
+          "id" : "FetchDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

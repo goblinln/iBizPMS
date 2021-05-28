@@ -921,6 +921,22 @@
           "id" : "Root_NoBranch"
         },
         "name" : "所以模块 - 根模块无分支（动态）",
+        "getPSNavigateParams" : [ {
+          "key" : "n_type_eq",
+          "name" : "n_type_eq",
+          "value" : "story",
+          "rawValue" : true
+        }, {
+          "key" : "n_parent_eq",
+          "name" : "n_parent_eq",
+          "value" : "0",
+          "rawValue" : true
+        }, {
+          "key" : "n_branch_eq",
+          "name" : "n_branch_eq",
+          "value" : "0",
+          "rawValue" : true
+        } ],
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "ALL"
@@ -989,6 +1005,17 @@
           "id" : "ROOTMODULE"
         },
         "name" : "平台（动态） - 跟模块（动态）",
+        "getPSNavigateParams" : [ {
+          "key" : "n_type_eq",
+          "name" : "n_type_eq",
+          "value" : "story",
+          "rawValue" : true
+        }, {
+          "key" : "n_parent_eq",
+          "name" : "n_parent_eq",
+          "value" : "0",
+          "rawValue" : true
+        } ],
         "parentFilter" : "branch",
         "getParentPSDETreeNode" : {
           "modelref" : true,
@@ -1286,7 +1313,7 @@
         "nodeType" : "ROOTMODULE",
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchRoot"
+          "id" : "FetchDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -1428,7 +1455,7 @@
         "nodeType" : "Root_NoBranch",
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchRoot_NoBranch"
+          "id" : "FetchDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

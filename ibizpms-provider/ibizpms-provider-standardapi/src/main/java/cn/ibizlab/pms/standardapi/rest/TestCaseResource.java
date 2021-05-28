@@ -35,6 +35,9 @@ import cn.ibizlab.pms.core.zentao.service.ICaseService;
 import cn.ibizlab.pms.core.zentao.filter.CaseSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
 import cn.ibizlab.pms.core.zentao.runtime.CaseRuntime;
+import cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext;
+import cn.ibizlab.pms.core.zentao.domain.CaseStep;
+import cn.ibizlab.pms.core.zentao.service.ICaseStepService;
 
 @Slf4j
 @Api(tags = {"测试用例" })
@@ -51,6 +54,9 @@ public class TestCaseResource {
     @Autowired
     @Lazy
     public TestCaseMapping testcaseMapping;
+
+    @Autowired
+    private ICaseStepService casestepService;
 
 
 }

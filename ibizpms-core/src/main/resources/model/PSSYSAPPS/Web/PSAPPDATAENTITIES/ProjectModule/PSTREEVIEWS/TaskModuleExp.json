@@ -649,6 +649,17 @@
       "id" : "ROOTMODULE"
     },
     "name" : "平台（动态） - 根模块（动态）",
+    "getPSNavigateParams" : [ {
+      "key" : "n_type_eq",
+      "name" : "n_type_eq",
+      "value" : "story",
+      "rawValue" : true
+    }, {
+      "key" : "n_parent_eq",
+      "name" : "n_parent_eq",
+      "value" : "0",
+      "rawValue" : true
+    } ],
     "parentFilter" : "branch",
     "getParentPSDETreeNode" : {
       "modelref" : true,
@@ -711,6 +722,22 @@
       "name" : "PRODUCT",
       "value" : "projectproduct",
       "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "n_type_eq",
+      "name" : "n_type_eq",
+      "value" : "story",
+      "rawValue" : true
+    }, {
+      "key" : "n_parent_eq",
+      "name" : "n_parent_eq",
+      "value" : "0",
+      "rawValue" : true
+    }, {
+      "key" : "n_branch_eq",
+      "name" : "n_branch_eq",
+      "value" : "0",
+      "rawValue" : true
     } ],
     "parentFilter" : "root",
     "getParentPSDETreeNode" : {
@@ -822,53 +849,20 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "productNotRoot"
-    },
-    "name" : "产品根模块无分支（动态） - 产品非跟模块",
-    "getParentPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
-    },
-    "getParentPSDER1N" : {
-      "codeName" : "ParentModule",
-      "dERType" : "DER1N",
-      "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-      },
-      "masterOrder" : -1,
-      "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-      },
-      "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT",
-      "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "PARENTNAME",
-        "codeName" : "ParentName"
-      },
-      "pickupDEFName" : "PARENT",
-      "removeActionType" : -1,
-      "removeOrder" : 0
-    },
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "Root_NoBranch"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
       "id" : "ProjectModule"
     },
     "name" : "所有模块 - 项目模块（动态）",
+    "getPSNavigateParams" : [ {
+      "key" : "n_type_eq",
+      "name" : "n_type_eq",
+      "value" : "task",
+      "rawValue" : true
+    }, {
+      "key" : "n_parent_eq",
+      "name" : "n_parent_eq",
+      "value" : "0",
+      "rawValue" : true
+    } ],
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "ALL"
@@ -935,24 +929,6 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "ROOTMODULE"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ROOTMODULE"
-    },
-    "name" : "项目产品（动态） - 产品根模块（动态）",
-    "getPSNavigateContexts" : [ {
-      "key" : "PRODUCT",
-      "name" : "PRODUCT",
-      "value" : "projectproduct",
-      "rawValue" : false
-    } ],
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ZT_PRODUCT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -1288,7 +1264,7 @@
     "nodeType" : "ProjectModule",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchRoot_Task"
+      "id" : "FetchDefault"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -1411,7 +1387,7 @@
     "nodeType" : "ROOTMODULE",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchRoot"
+      "id" : "FetchDefault"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -1753,7 +1729,7 @@
     "nodeType" : "Root_NoBranch",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchRoot_NoBranch"
+      "id" : "FetchDefault"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,

@@ -945,6 +945,13 @@ public class TestCaseDTO extends DTOBase implements Serializable {
     }
 
 
+    /**
+     *  [IBZ_API__TEST_CASE_STEP__NESTED]
+     */
+    @JsonProperty("testcasestepnesteds")
+    @JSONField(name = "testcasestepnesteds")
+	private List<TestCaseStepNestedDTO> casesteps ;
+
 }
 
 

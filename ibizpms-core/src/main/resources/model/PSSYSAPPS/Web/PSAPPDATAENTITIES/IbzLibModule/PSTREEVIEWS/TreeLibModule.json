@@ -50,6 +50,17 @@
       "id" : "LibRoot"
     },
     "name" : "所有模块 - 根模块",
+    "getPSNavigateParams" : [ {
+      "key" : "n_type_eq",
+      "name" : "n_type_eq",
+      "value" : "caselib",
+      "rawValue" : true
+    }, {
+      "key" : "n_parent_eq",
+      "name" : "n_parent_eq",
+      "value" : "0",
+      "rawValue" : true
+    } ],
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "ALL"
@@ -156,7 +167,7 @@
     "nodeType" : "LibRoot",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchRoot_NoBranch"
+      "id" : "FetchDefault"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
