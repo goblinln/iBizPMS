@@ -55,7 +55,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__UPDATE"
+      "id" : "UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -103,7 +103,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__CREATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -151,7 +151,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__CREATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -412,7 +412,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__CREATE"
+      "id" : "CREATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -426,7 +426,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__CREATE"
+      "id" : "CREATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -440,7 +440,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__UPDATE"
+      "id" : "UPDATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -454,7 +454,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__UPDATE"
+      "id" : "UPDATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -524,7 +524,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__CREATE"
+      "id" : "CREATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -538,7 +538,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__CREATE"
+      "id" : "CREATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -1577,7 +1577,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__UPDATE"
+      "id" : "UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1625,7 +1625,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__CREATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1673,7 +1673,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__CREATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2286,7 +2286,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__CREATE"
+      "id" : "CREATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -2300,7 +2300,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__CREATE"
+      "id" : "CREATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -2314,7 +2314,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__UPDATE"
+      "id" : "UPDATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -2328,7 +2328,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__UPDATE"
+      "id" : "UPDATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -2398,7 +2398,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__CREATE"
+      "id" : "CREATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -2412,7 +2412,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__CREATE"
+      "id" : "CREATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true

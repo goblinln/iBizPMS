@@ -88,6 +88,13 @@ public class IbizproProductWeeklyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklyService.remove(ibizproproductweekly_id));
     }
 
+    @PreAuthorize("@IbizproProductWeeklyRuntime.test(#ids, 'NONE')")
+    @ApiOperation(value = "批量删除产品周报", tags = {"产品周报" },  notes = "批量删除产品周报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductweeklies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibizproproductweeklyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IbizproProductWeeklyRuntime.test(#ibizproproductweekly_id, 'NONE')")
     @ApiOperation(value = "获取产品周报", tags = {"产品周报" },  notes = "获取产品周报")

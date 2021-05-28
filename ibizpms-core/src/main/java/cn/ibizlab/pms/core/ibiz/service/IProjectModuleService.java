@@ -38,6 +38,7 @@ public interface IProjectModuleService extends IService<ProjectModule> {
     boolean checkKey(ProjectModule et);
     ProjectModule fix(ProjectModule et);
     ProjectModule removeModule(ProjectModule et);
+    boolean removeModuleBatch(List<ProjectModule> etList);
     boolean save(ProjectModule et);
     void saveBatch(List<ProjectModule> list);
     List<ProjectModule> select(ProjectModuleSearchContext context);

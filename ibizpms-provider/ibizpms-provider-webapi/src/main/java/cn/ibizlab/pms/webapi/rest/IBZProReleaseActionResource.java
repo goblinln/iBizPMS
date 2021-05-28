@@ -52,7 +52,7 @@ public class IBZProReleaseActionResource {
     @Lazy
     public IBZProReleaseActionMapping ibzproreleaseactionMapping;
 
-    @PreAuthorize("@ReleaseRuntime.test(#release_id, 'CREATE')")
+    @PreAuthorize("@IBZProReleaseActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建发布日志", tags = {"发布日志" },  notes = "新建发布日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions")
     @Transactional
@@ -91,6 +91,13 @@ public class IBZProReleaseActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactionService.remove(ibzproreleaseaction_id));
     }
 
+    @PreAuthorize("@IBZProReleaseActionRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除发布日志", tags = {"发布日志" },  notes = "批量删除发布日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproreleaseactions/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzproreleaseactionService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IBZProReleaseActionRuntime.test(#ibzproreleaseaction_id, 'READ')")
     @ApiOperation(value = "获取发布日志", tags = {"发布日志" },  notes = "获取发布日志")
@@ -103,7 +110,7 @@ public class IBZProReleaseActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ReleaseRuntime.test(#release_id, 'CREATE')")
+    @PreAuthorize("@IBZProReleaseActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取发布日志草稿", tags = {"发布日志" },  notes = "获取发布日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproreleaseactions/getdraft")
     public ResponseEntity<IBZProReleaseActionDTO> getDraft(IBZProReleaseActionDTO dto) {
@@ -111,7 +118,7 @@ public class IBZProReleaseActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreleaseactionMapping.toDto(ibzproreleaseactionService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ReleaseRuntime.test(#release_id, 'CREATE')")
+    @PreAuthorize("@IBZProReleaseActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查发布日志", tags = {"发布日志" },  notes = "检查发布日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProReleaseActionDTO ibzproreleaseactiondto) {
@@ -132,7 +139,7 @@ public class IBZProReleaseActionResource {
     }
 
 
-    @PreAuthorize("@ReleaseRuntime.test(#release_id, 'CREATE')")
+    @PreAuthorize("@IBZProReleaseActionRuntime.test(#ibzproreleaseaction_id, 'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"发布日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/{ibzproreleaseaction_id}/createhis")
     public ResponseEntity<IBZProReleaseActionDTO> createHis(@PathVariable("ibzproreleaseaction_id") Long ibzproreleaseaction_id, @RequestBody IBZProReleaseActionDTO ibzproreleaseactiondto) {

@@ -91,6 +91,13 @@ public class IBZProProductResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproproductService.remove(ibzproproduct_id));
     }
 
+    @PreAuthorize("@IBZProProductRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除平台产品", tags = {"平台产品" },  notes = "批量删除平台产品")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproducts/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzproproductService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IBZProProductRuntime.test(#ibzproproduct_id, 'READ')")
     @ApiOperation(value = "获取平台产品", tags = {"平台产品" },  notes = "获取平台产品")

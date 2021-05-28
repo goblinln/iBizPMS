@@ -262,7 +262,7 @@
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Productweekly__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,

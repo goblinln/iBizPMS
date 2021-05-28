@@ -81,6 +81,13 @@ public class SysEmployeeResource {
          return ResponseEntity.status(HttpStatus.OK).body(sysemployeeService.remove(sysemployee_id));
     }
 
+    @PreAuthorize("@SysEmployeeRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除人员", tags = {"人员" },  notes = "批量删除人员")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysemployees/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        sysemployeeService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@SysEmployeeRuntime.test(#sysemployee_id, 'READ')")
     @ApiOperation(value = "获取人员", tags = {"人员" },  notes = "获取人员")

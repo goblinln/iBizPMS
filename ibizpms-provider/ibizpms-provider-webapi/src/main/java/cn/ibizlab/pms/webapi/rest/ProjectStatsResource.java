@@ -91,6 +91,13 @@ public class ProjectStatsResource {
          return ResponseEntity.status(HttpStatus.OK).body(projectstatsService.remove(projectstats_id));
     }
 
+    @PreAuthorize("@ProjectStatsRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除项目统计", tags = {"项目统计" },  notes = "批量删除项目统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projectstats/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        projectstatsService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id, 'NONE')")
     @ApiOperation(value = "获取项目统计", tags = {"项目统计" },  notes = "获取项目统计")

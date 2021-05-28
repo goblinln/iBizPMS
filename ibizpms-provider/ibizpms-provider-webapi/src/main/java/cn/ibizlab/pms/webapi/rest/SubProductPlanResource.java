@@ -85,6 +85,13 @@ public class SubProductPlanResource {
 		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(subproductplan_id));
     }
 
+    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据产品计划批量删除产品计划", tags = {"产品计划" },  notes = "根据产品计划批量删除产品计划")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/subproductplans/batch")
+    public ResponseEntity<Boolean> removeBatchByProductPlan(@RequestBody List<Long> ids) {
+        productplanService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品计划获取产品计划", tags = {"产品计划" },  notes = "根据产品计划获取产品计划")
@@ -540,6 +547,13 @@ public class SubProductPlanResource {
 		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(subproductplan_id));
     }
 
+    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据产品产品计划批量删除产品计划", tags = {"产品计划" },  notes = "根据产品产品计划批量删除产品计划")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/batch")
+    public ResponseEntity<Boolean> removeBatchByProductProductPlan(@RequestBody List<Long> ids) {
+        productplanService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品产品计划获取产品计划", tags = {"产品计划" },  notes = "根据产品产品计划获取产品计划")

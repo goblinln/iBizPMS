@@ -91,6 +91,13 @@ public class CaseStepResource {
          return ResponseEntity.status(HttpStatus.OK).body(casestepService.remove(casestep_id));
     }
 
+    @PreAuthorize("@CaseStepRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除用例步骤", tags = {"用例步骤" },  notes = "批量删除用例步骤")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/casesteps/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        casestepService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@CaseStepRuntime.test(#casestep_id, 'READ')")
     @ApiOperation(value = "获取用例步骤", tags = {"用例步骤" },  notes = "获取用例步骤")
@@ -244,6 +251,13 @@ public class CaseStepResource {
 		return ResponseEntity.status(HttpStatus.OK).body(casestepService.remove(casestep_id));
     }
 
+    @PreAuthorize("@CaseStepRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据测试用例批量删除用例步骤", tags = {"用例步骤" },  notes = "根据测试用例批量删除用例步骤")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/cases/{case_id}/casesteps/batch")
+    public ResponseEntity<Boolean> removeBatchByCase(@RequestBody List<Long> ids) {
+        casestepService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@CaseStepRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据测试用例获取用例步骤", tags = {"用例步骤" },  notes = "根据测试用例获取用例步骤")
@@ -393,6 +407,13 @@ public class CaseStepResource {
 		return ResponseEntity.status(HttpStatus.OK).body(casestepService.remove(casestep_id));
     }
 
+    @PreAuthorize("@CaseStepRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据产品测试用例批量删除用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例批量删除用例步骤")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/cases/{case_id}/casesteps/batch")
+    public ResponseEntity<Boolean> removeBatchByProductCase(@RequestBody List<Long> ids) {
+        casestepService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@CaseStepRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品测试用例获取用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例获取用例步骤")

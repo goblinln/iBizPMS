@@ -50,7 +50,7 @@
     "dataType" : 25,
     "name" : "branch"
   }, {
-    "dataType" : 9,
+    "dataType" : 1,
     "name" : "product"
   }, {
     "dataType" : 25,

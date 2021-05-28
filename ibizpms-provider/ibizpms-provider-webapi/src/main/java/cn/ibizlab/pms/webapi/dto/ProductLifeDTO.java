@@ -75,15 +75,6 @@ public class ProductLifeDTO extends DTOBase implements Serializable {
     private String productlifename;
 
     /**
-     * 属性 [PRODUCT]
-     *
-     */
-    @JSONField(name = "product")
-    @JsonProperty("product")
-    @ApiModelProperty("产品")
-    private Integer product;
-
-    /**
      * 属性 [CREATEDATE]
      *
      */
@@ -172,6 +163,16 @@ public class ProductLifeDTO extends DTOBase implements Serializable {
     @ApiModelProperty("结束日期")
     private Timestamp end;
 
+    /**
+     * 属性 [PRODUCT]
+     *
+     */
+    @JSONField(name = "product")
+    @JsonProperty("product")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("编号")
+    private Long product;
+
 
     /**
      * 设置 [BRANCH]
@@ -187,14 +188,6 @@ public class ProductLifeDTO extends DTOBase implements Serializable {
     public void setProductlifename(String  productlifename){
         this.productlifename = productlifename ;
         this.modify("ibz_productlifename",productlifename);
-    }
-
-    /**
-     * 设置 [PRODUCT]
-     */
-    public void setProduct(Integer  product){
-        this.product = product ;
-        this.modify("product",product);
     }
 
     /**
@@ -243,6 +236,14 @@ public class ProductLifeDTO extends DTOBase implements Serializable {
     public void setEnd(Timestamp  end){
         this.end = end ;
         this.modify("end",end);
+    }
+
+    /**
+     * 设置 [PRODUCT]
+     */
+    public void setProduct(Long  product){
+        this.product = product ;
+        this.modify("product",product);
     }
 
 

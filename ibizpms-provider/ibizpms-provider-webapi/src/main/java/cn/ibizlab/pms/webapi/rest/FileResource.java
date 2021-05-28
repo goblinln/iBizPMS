@@ -91,6 +91,13 @@ public class FileResource {
          return ResponseEntity.status(HttpStatus.OK).body(fileService.remove(file_id));
     }
 
+    @PreAuthorize("@FileRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除附件", tags = {"附件" },  notes = "批量删除附件")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/files/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        fileService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@FileRuntime.test(#file_id, 'READ')")
     @ApiOperation(value = "获取附件", tags = {"附件" },  notes = "获取附件")

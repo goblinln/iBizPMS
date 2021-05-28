@@ -55,7 +55,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__UPDATE"
+      "id" : "UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -71,7 +71,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__DELETE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -479,7 +479,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__UPDATE"
+      "id" : "UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1774,7 +1774,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__UPDATE"
+      "id" : "UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1790,7 +1790,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__DELETE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2198,7 +2198,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__UPDATE"
+      "id" : "UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,

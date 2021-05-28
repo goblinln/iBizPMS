@@ -91,6 +91,13 @@ public class ModuleResource {
          return ResponseEntity.status(HttpStatus.OK).body(moduleService.remove(module_id));
     }
 
+    @PreAuthorize("@ModuleRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除模块", tags = {"模块" },  notes = "批量删除模块")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/modules/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        moduleService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@ModuleRuntime.test(#module_id, 'READ')")
     @ApiOperation(value = "获取模块", tags = {"模块" },  notes = "获取模块")

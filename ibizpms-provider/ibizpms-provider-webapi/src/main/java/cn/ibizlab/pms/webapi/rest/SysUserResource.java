@@ -80,6 +80,13 @@ public class SysUserResource {
          return ResponseEntity.status(HttpStatus.OK).body(sysuserService.remove(sysuser_id));
     }
 
+    @PreAuthorize("@SysUserRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除系统用户", tags = {"系统用户" },  notes = "批量删除系统用户")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysusers/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        sysuserService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@SysUserRuntime.test(#sysuser_id, 'READ')")
     @ApiOperation(value = "获取系统用户", tags = {"系统用户" },  notes = "获取系统用户")

@@ -81,6 +81,13 @@ public class SysDepartmentResource {
          return ResponseEntity.status(HttpStatus.OK).body(sysdepartmentService.remove(sysdepartment_id));
     }
 
+    @PreAuthorize("@SysDepartmentRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除部门", tags = {"部门" },  notes = "批量删除部门")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysdepartments/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        sysdepartmentService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@SysDepartmentRuntime.test(#sysdepartment_id, 'READ')")
     @ApiOperation(value = "获取部门", tags = {"部门" },  notes = "获取部门")

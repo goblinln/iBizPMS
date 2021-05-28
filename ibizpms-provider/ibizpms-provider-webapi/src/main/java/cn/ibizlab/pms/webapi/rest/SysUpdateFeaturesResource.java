@@ -92,6 +92,13 @@ public class SysUpdateFeaturesResource {
          return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesService.remove(sysupdatefeatures_id));
     }
 
+    @PreAuthorize("@SysUpdateFeaturesRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除系统更新功能", tags = {"系统更新功能" },  notes = "批量删除系统更新功能")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatefeatures/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        sysupdatefeaturesService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@SysUpdateFeaturesRuntime.test(#sysupdatefeatures_id, 'READ')")
     @ApiOperation(value = "获取系统更新功能", tags = {"系统更新功能" },  notes = "获取系统更新功能")
@@ -186,6 +193,13 @@ public class SysUpdateFeaturesResource {
 		return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesService.remove(sysupdatefeatures_id));
     }
 
+    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据更新日志批量删除系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志批量删除系统更新功能")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/batch")
+    public ResponseEntity<Boolean> removeBatchBySysUpdateLog(@RequestBody List<String> ids) {
+        sysupdatefeaturesService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据更新日志获取系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志获取系统更新功能")

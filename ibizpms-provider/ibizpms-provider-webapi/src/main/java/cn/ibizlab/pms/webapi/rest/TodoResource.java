@@ -91,6 +91,13 @@ public class TodoResource {
          return ResponseEntity.status(HttpStatus.OK).body(todoService.remove(todo_id));
     }
 
+    @PreAuthorize("@TodoRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除待办", tags = {"待办" },  notes = "批量删除待办")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/todos/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        todoService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@TodoRuntime.test(#todo_id, 'READ')")
     @ApiOperation(value = "获取待办", tags = {"待办" },  notes = "获取待办")

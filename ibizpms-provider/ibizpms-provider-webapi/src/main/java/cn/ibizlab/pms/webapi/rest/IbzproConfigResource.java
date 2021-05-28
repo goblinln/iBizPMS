@@ -92,6 +92,13 @@ public class IbzproConfigResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproconfigService.remove(ibzproconfig_id));
     }
 
+    @PreAuthorize("@IbzproConfigRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除系统配置表", tags = {"系统配置表" },  notes = "批量删除系统配置表")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproconfigs/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibzproconfigService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IbzproConfigRuntime.test(#ibzproconfig_id, 'READ')")
     @ApiOperation(value = "获取系统配置表", tags = {"系统配置表" },  notes = "获取系统配置表")

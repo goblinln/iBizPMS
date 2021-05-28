@@ -91,8 +91,15 @@ public class IBZProBugHostoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprobughostoryService.remove(ibzprobughostory_id));
     }
 
+    @PreAuthorize("@IBZProBugHostoryRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除Bug操作历史", tags = {"Bug操作历史" },  notes = "批量删除Bug操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprobughostories/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzprobughostoryService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
-    @PreAuthorize("@IbzProBugActionRuntime.test(#ibzprobugaction_id, 'READ')")
+    @PreAuthorize("@IBZProBugHostoryRuntime.test(#ibzprobughostory_id, 'READ')")
     @ApiOperation(value = "获取Bug操作历史", tags = {"Bug操作历史" },  notes = "获取Bug操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprobughostories/{ibzprobughostory_id}")
     public ResponseEntity<IBZProBugHostoryDTO> get(@PathVariable("ibzprobughostory_id") Long ibzprobughostory_id) {
@@ -131,7 +138,7 @@ public class IBZProBugHostoryResource {
     }
 
 
-    @PreAuthorize("@IbzProBugActionRuntime.test(#ibzprobugaction_id, 'READ')")
+    @PreAuthorize("@IBZProBugHostoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"Bug操作历史" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprobughostories/fetchdefault")
 	public ResponseEntity<List<IBZProBugHostoryDTO>> fetchdefault(@RequestBody IBZProBugHostorySearchContext context) {

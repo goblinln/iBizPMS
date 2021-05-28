@@ -42,6 +42,11 @@ public class ProductLifeSearchContext extends QueryWrapperContext<ProductLife> {
 	public void setN_ibz_productlifeid_eq(String n_ibz_productlifeid_eq) {
         this.n_ibz_productlifeid_eq = n_ibz_productlifeid_eq;
     }
+                
+	private Long n_product_eq;//[编号]
+	public void setN_product_eq(Long n_product_eq) {
+        this.n_product_eq = n_product_eq;
+    }
 
     /**
 	 * 启用快速搜索

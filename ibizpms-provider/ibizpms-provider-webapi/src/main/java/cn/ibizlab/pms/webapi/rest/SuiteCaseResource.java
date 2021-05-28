@@ -67,7 +67,7 @@ public class SuiteCaseResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
+    @PreAuthorize("@SuiteCaseRuntime.test(#suitecase_id, 'UPDATE')")
     @ApiOperation(value = "更新套件用例", tags = {"套件用例" },  notes = "更新套件用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/suitecases/{suitecase_id}")
     @Transactional
@@ -91,8 +91,15 @@ public class SuiteCaseResource {
          return ResponseEntity.status(HttpStatus.OK).body(suitecaseService.remove(suitecase_id));
     }
 
+    @PreAuthorize("@SuiteCaseRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除套件用例", tags = {"套件用例" },  notes = "批量删除套件用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/suitecases/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        suitecaseService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("@SuiteCaseRuntime.test(#suitecase_id, 'READ')")
     @ApiOperation(value = "获取套件用例", tags = {"套件用例" },  notes = "获取套件用例")
 	@RequestMapping(method = RequestMethod.GET, value = "/suitecases/{suitecase_id}")
     public ResponseEntity<SuiteCaseDTO> get(@PathVariable("suitecase_id") String suitecase_id) {
@@ -131,7 +138,7 @@ public class SuiteCaseResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("@SuiteCaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"套件用例" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/suitecases/fetchdefault")
 	public ResponseEntity<List<SuiteCaseDTO>> fetchdefault(@RequestBody SuiteCaseSearchContext context) {

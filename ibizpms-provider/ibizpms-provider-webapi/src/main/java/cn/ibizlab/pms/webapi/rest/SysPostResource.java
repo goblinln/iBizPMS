@@ -80,6 +80,13 @@ public class SysPostResource {
          return ResponseEntity.status(HttpStatus.OK).body(syspostService.remove(syspost_id));
     }
 
+    @PreAuthorize("@SysPostRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除岗位", tags = {"岗位" },  notes = "批量删除岗位")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysposts/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        syspostService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@SysPostRuntime.test(#syspost_id, 'READ')")
     @ApiOperation(value = "获取岗位", tags = {"岗位" },  notes = "获取岗位")

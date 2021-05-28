@@ -49,6 +49,8 @@ public interface IProductLifeService extends IService<ProductLife> {
     Page<ProductLife> searchGetRoadmap(ProductLifeSearchContext context);
     Page<ProductLife> searchGetRoadmapS(ProductLifeSearchContext context);
     Page<ProductLife> searchRoadMapYear(ProductLifeSearchContext context);
+    List<ProductLife> selectByProduct(Long id);
+    void removeByProduct(Long id);
     ProductLife dynamicCall(String key, String action, ProductLife et);
     /**
      *自定义查询SQL

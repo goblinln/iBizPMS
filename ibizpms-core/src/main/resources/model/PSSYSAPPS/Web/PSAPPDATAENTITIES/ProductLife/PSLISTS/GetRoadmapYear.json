@@ -54,7 +54,7 @@
     },
     "name" : "marker"
   }, {
-    "dataType" : 9,
+    "dataType" : 1,
     "name" : "product"
   }, {
     "dataType" : 25,

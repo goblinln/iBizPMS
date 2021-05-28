@@ -39,7 +39,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_product__CREATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -55,7 +55,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__UPDATE"
+      "id" : "UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -71,7 +71,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_product__DELETE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -87,7 +87,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -103,7 +103,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_product__CREATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -119,7 +119,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_product__CREATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -180,7 +180,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -196,7 +196,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -228,7 +228,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -260,7 +260,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -276,7 +276,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -292,7 +292,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -308,7 +308,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -486,7 +486,7 @@
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -502,7 +502,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_product__CREATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -518,7 +518,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__UPDATE"
+      "id" : "UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -534,7 +534,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_product__DELETE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -550,7 +550,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -566,7 +566,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_product__CREATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -582,7 +582,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_product__CREATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -642,7 +642,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -658,7 +658,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -690,7 +690,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -722,7 +722,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -738,7 +738,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -754,7 +754,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -770,7 +770,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,

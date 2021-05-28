@@ -91,6 +91,13 @@ public class UserYearWorkStatsResource {
          return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsService.remove(useryearworkstats_id));
     }
 
+    @PreAuthorize("@UserYearWorkStatsRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "批量删除用户年度工作内容统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/useryearworkstats/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        useryearworkstatsService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'READ')")
     @ApiOperation(value = "获取用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "获取用户年度工作内容统计")

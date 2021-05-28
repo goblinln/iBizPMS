@@ -91,6 +91,13 @@ public class IbizproIndexResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproindexService.remove(ibizproindex_id));
     }
 
+    @PreAuthorize("@IbizproIndexRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除索引检索", tags = {"索引检索" },  notes = "批量删除索引检索")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproindices/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibizproindexService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IbizproIndexRuntime.test(#ibizproindex_id, 'READ')")
     @ApiOperation(value = "获取索引检索", tags = {"索引检索" },  notes = "获取索引检索")

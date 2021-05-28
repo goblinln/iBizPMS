@@ -91,8 +91,15 @@ public class IBZDailyHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzdailyhistoryService.remove(ibzdailyhistory_id));
     }
 
+    @PreAuthorize("@IBZDailyHistoryRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除日报操作历史", tags = {"日报操作历史" },  notes = "批量删除日报操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailyhistories/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzdailyhistoryService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
-    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id, 'READ')")
+    @PreAuthorize("@IBZDailyHistoryRuntime.test(#ibzdailyhistory_id, 'READ')")
     @ApiOperation(value = "获取日报操作历史", tags = {"日报操作历史" },  notes = "获取日报操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailyhistories/{ibzdailyhistory_id}")
     public ResponseEntity<IBZDailyHistoryDTO> get(@PathVariable("ibzdailyhistory_id") Long ibzdailyhistory_id) {
@@ -131,7 +138,7 @@ public class IBZDailyHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id, 'READ')")
+    @PreAuthorize("@IBZDailyHistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"日报操作历史" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzdailyhistories/fetchdefault")
 	public ResponseEntity<List<IBZDailyHistoryDTO>> fetchdefault(@RequestBody IBZDailyHistorySearchContext context) {

@@ -91,6 +91,13 @@ public class IBZProTestTaskHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprotesttaskhistoryService.remove(ibzprotesttaskhistory_id));
     }
 
+    @PreAuthorize("@IBZProTestTaskHistoryRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除测试单操作历史", tags = {"测试单操作历史" },  notes = "批量删除测试单操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprotesttaskhistories/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzprotesttaskhistoryService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IBZProTestTaskHistoryRuntime.test(#ibzprotesttaskhistory_id, 'READ')")
     @ApiOperation(value = "获取测试单操作历史", tags = {"测试单操作历史" },  notes = "获取测试单操作历史")

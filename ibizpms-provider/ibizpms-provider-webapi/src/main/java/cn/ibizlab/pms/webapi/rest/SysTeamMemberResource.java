@@ -80,6 +80,13 @@ public class SysTeamMemberResource {
          return ResponseEntity.status(HttpStatus.OK).body(systeammemberService.remove(systeammember_id));
     }
 
+    @PreAuthorize("@SysTeamMemberRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除组成员", tags = {"组成员" },  notes = "批量删除组成员")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/systeammembers/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        systeammemberService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@SysTeamMemberRuntime.test(#systeammember_id, 'READ')")
     @ApiOperation(value = "获取组成员", tags = {"组成员" },  notes = "获取组成员")

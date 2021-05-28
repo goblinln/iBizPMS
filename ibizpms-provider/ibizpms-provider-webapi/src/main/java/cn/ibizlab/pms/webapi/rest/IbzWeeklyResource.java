@@ -88,6 +88,13 @@ public class IbzWeeklyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzweeklyService.remove(ibzweekly_id));
     }
 
+    @PreAuthorize("@IbzWeeklyRuntime.test(#ids, 'NONE')")
+    @ApiOperation(value = "批量删除周报", tags = {"周报" },  notes = "批量删除周报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzweeklies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzweeklyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'NONE')")
     @ApiOperation(value = "获取周报", tags = {"周报" },  notes = "获取周报")

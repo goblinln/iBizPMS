@@ -68,6 +68,7 @@
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Remove.json",
     "logicName" : "Remove",
@@ -75,27 +76,32 @@
     "orderValue" : 21,
     "userCat" : "CAT1",
     "userTag4" : "remove",
+    "batchAction" : true,
     "builtinAction" : true
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/RemoveTemp.json",
     "logicName" : "RemoveTemp",
     "name" : "RemoveTemp",
     "orderValue" : 22,
     "tempDataMode" : 2,
+    "batchAction" : true,
     "builtinAction" : true,
     "enableTempData" : true
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/RemoveTempMajor.json",
     "logicName" : "RemoveTempMajor",
     "name" : "RemoveTempMajor",
     "orderValue" : 23,
     "tempDataMode" : 1,
+    "batchAction" : true,
     "builtinAction" : true,
     "enableTempData" : true
   }, {

@@ -88,6 +88,13 @@ public class IbizproProductMonthlyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlyService.remove(ibizproproductmonthly_id));
     }
 
+    @PreAuthorize("@IbizproProductMonthlyRuntime.test(#ids, 'NONE')")
+    @ApiOperation(value = "批量删除产品月报", tags = {"产品月报" },  notes = "批量删除产品月报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductmonthlies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibizproproductmonthlyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IbizproProductMonthlyRuntime.test(#ibizproproductmonthly_id, 'NONE')")
     @ApiOperation(value = "获取产品月报", tags = {"产品月报" },  notes = "获取产品月报")
@@ -108,7 +115,7 @@ public class IbizproProductMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlyMapping.toDto(ibizproproductmonthlyService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @PreAuthorize("@IbizproProductMonthlyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查产品月报", tags = {"产品月报" },  notes = "检查产品月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductmonthlies/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProductMonthlyDTO ibizproproductmonthlydto) {

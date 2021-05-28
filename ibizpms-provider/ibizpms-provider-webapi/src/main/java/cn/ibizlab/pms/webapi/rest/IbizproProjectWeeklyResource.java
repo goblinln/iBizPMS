@@ -88,6 +88,13 @@ public class IbizproProjectWeeklyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklyService.remove(ibizproprojectweekly_id));
     }
 
+    @PreAuthorize("@IbizproProjectWeeklyRuntime.test(#ids, 'NONE')")
+    @ApiOperation(value = "批量删除项目周报", tags = {"项目周报" },  notes = "批量删除项目周报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectweeklies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibizproprojectweeklyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IbizproProjectWeeklyRuntime.test(#ibizproprojectweekly_id, 'NONE')")
     @ApiOperation(value = "获取项目周报", tags = {"项目周报" },  notes = "获取项目周报")
@@ -108,7 +115,7 @@ public class IbizproProjectWeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklyMapping.toDto(ibizproprojectweeklyService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'CREATE')")
+    @PreAuthorize("@IbizproProjectWeeklyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查项目周报", tags = {"项目周报" },  notes = "检查项目周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectweeklies/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProjectWeeklyDTO ibizproprojectweeklydto) {

@@ -92,6 +92,13 @@ public class DynaDashboardResource {
          return ResponseEntity.status(HttpStatus.OK).body(dynadashboardService.remove(dynadashboard_id));
     }
 
+    @PreAuthorize("@DynaDashboardRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除动态数据看板", tags = {"动态数据看板" },  notes = "批量删除动态数据看板")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/dynadashboards/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        dynadashboardService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id, 'READ')")
     @ApiOperation(value = "获取动态数据看板", tags = {"动态数据看板" },  notes = "获取动态数据看板")

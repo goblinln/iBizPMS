@@ -84,13 +84,20 @@ public class BugStatsResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
+    @PreAuthorize("@BugStatsRuntime.test(#bugstats_id, 'DELETE')")
     @ApiOperation(value = "删除Bug统计", tags = {"Bug统计" },  notes = "删除Bug统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/bugstats/{bugstats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("bugstats_id") Long bugstats_id) {
          return ResponseEntity.status(HttpStatus.OK).body(bugstatsService.remove(bugstats_id));
     }
 
+    @PreAuthorize("@BugStatsRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除Bug统计", tags = {"Bug统计" },  notes = "批量删除Bug统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/bugstats/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        bugstatsService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@BugStatsRuntime.test(#bugstats_id, 'READ')")
     @ApiOperation(value = "获取Bug统计", tags = {"Bug统计" },  notes = "获取Bug统计")

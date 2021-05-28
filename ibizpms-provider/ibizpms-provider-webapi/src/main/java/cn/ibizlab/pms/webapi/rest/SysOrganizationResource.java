@@ -81,6 +81,13 @@ public class SysOrganizationResource {
          return ResponseEntity.status(HttpStatus.OK).body(sysorganizationService.remove(sysorganization_id));
     }
 
+    @PreAuthorize("@SysOrganizationRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除单位", tags = {"单位" },  notes = "批量删除单位")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysorganizations/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        sysorganizationService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@SysOrganizationRuntime.test(#sysorganization_id, 'READ')")
     @ApiOperation(value = "获取单位", tags = {"单位" },  notes = "获取单位")

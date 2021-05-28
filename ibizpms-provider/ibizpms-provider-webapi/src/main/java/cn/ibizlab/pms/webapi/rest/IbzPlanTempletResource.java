@@ -98,6 +98,13 @@ public class IbzPlanTempletResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletService.remove(ibzplantemplet_id));
     }
 
+    @PreAuthorize("@IbzPlanTempletRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除计划模板", tags = {"计划模板" },  notes = "批量删除计划模板")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzplantemplets/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibzplantempletService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id, 'READ')")
     @ApiOperation(value = "获取计划模板", tags = {"计划模板" },  notes = "获取计划模板")

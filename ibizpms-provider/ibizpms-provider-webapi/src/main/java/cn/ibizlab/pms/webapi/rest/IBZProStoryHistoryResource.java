@@ -91,8 +91,15 @@ public class IBZProStoryHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprostoryhistoryService.remove(ibzprostoryhistory_id));
     }
 
+    @PreAuthorize("@IBZProStoryHistoryRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除需求操作历史", tags = {"需求操作历史" },  notes = "批量删除需求操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprostoryhistories/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzprostoryhistoryService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
-    @PreAuthorize("@IBZStoryActionRuntime.test(#ibzstoryaction_id, 'READ')")
+    @PreAuthorize("@IBZProStoryHistoryRuntime.test(#ibzprostoryhistory_id, 'READ')")
     @ApiOperation(value = "获取需求操作历史", tags = {"需求操作历史" },  notes = "获取需求操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprostoryhistories/{ibzprostoryhistory_id}")
     public ResponseEntity<IBZProStoryHistoryDTO> get(@PathVariable("ibzprostoryhistory_id") Long ibzprostoryhistory_id) {
@@ -131,7 +138,7 @@ public class IBZProStoryHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZStoryActionRuntime.test(#ibzstoryaction_id, 'READ')")
+    @PreAuthorize("@IBZProStoryHistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"需求操作历史" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprostoryhistories/fetchdefault")
 	public ResponseEntity<List<IBZProStoryHistoryDTO>> fetchdefault(@RequestBody IBZProStoryHistorySearchContext context) {

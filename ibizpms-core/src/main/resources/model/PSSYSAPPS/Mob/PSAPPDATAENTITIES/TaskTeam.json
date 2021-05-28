@@ -204,7 +204,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "TaskTeam__DELETE"
+      "id" : "DELETE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -218,7 +218,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "TaskTeam__DELETE"
+      "id" : "DELETE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -232,7 +232,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "TaskTeam__READ"
+      "id" : "READ"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -246,7 +246,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "TaskTeam__READ"
+      "id" : "READ"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -422,7 +422,7 @@
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "TaskTeam__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -619,7 +619,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "TaskTeam__DELETE"
+      "id" : "DELETE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -633,7 +633,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "TaskTeam__DELETE"
+      "id" : "DELETE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -647,7 +647,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "TaskTeam__READ"
+      "id" : "READ"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -661,7 +661,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "TaskTeam__READ"
+      "id" : "READ"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true

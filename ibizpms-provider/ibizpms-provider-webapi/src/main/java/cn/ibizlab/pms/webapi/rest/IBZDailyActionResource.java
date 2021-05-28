@@ -91,6 +91,13 @@ public class IBZDailyActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzdailyactionService.remove(ibzdailyaction_id));
     }
 
+    @PreAuthorize("@IBZDailyActionRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除日报日志", tags = {"日报日志" },  notes = "批量删除日报日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailyactions/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzdailyactionService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IBZDailyActionRuntime.test(#ibzdailyaction_id, 'READ')")
     @ApiOperation(value = "获取日报日志", tags = {"日报日志" },  notes = "获取日报日志")

@@ -84,13 +84,20 @@ public class EmpLoyeeloadResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
+    @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id, 'DELETE')")
     @ApiOperation(value = "删除员工负载表", tags = {"员工负载表" },  notes = "删除员工负载表")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/employeeloads/{employeeload_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("employeeload_id") Long employeeload_id) {
          return ResponseEntity.status(HttpStatus.OK).body(employeeloadService.remove(employeeload_id));
     }
 
+    @PreAuthorize("@EmpLoyeeloadRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除员工负载表", tags = {"员工负载表" },  notes = "批量删除员工负载表")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/employeeloads/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        employeeloadService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id, 'READ')")
     @ApiOperation(value = "获取员工负载表", tags = {"员工负载表" },  notes = "获取员工负载表")

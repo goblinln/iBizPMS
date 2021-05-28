@@ -81,6 +81,13 @@ public class PSSysAppResource {
          return ResponseEntity.status(HttpStatus.OK).body(pssysappService.remove(pssysapp_id));
     }
 
+    @PreAuthorize("@PSSysAppRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除系统应用", tags = {"系统应用" },  notes = "批量删除系统应用")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/pssysapps/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        pssysappService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@PSSysAppRuntime.test(#pssysapp_id, 'READ')")
     @ApiOperation(value = "获取系统应用", tags = {"系统应用" },  notes = "获取系统应用")

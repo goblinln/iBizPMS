@@ -52,7 +52,7 @@ public class IBZProWeeklyActionResource {
     @Lazy
     public IBZProWeeklyActionMapping ibzproweeklyactionMapping;
 
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'CREATE')")
+    @PreAuthorize("@IBZProWeeklyActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建周报日志", tags = {"周报日志" },  notes = "新建周报日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyactions")
     @Transactional
@@ -91,6 +91,13 @@ public class IBZProWeeklyActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyactionService.remove(ibzproweeklyaction_id));
     }
 
+    @PreAuthorize("@IBZProWeeklyActionRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除周报日志", tags = {"周报日志" },  notes = "批量删除周报日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproweeklyactions/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzproweeklyactionService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IBZProWeeklyActionRuntime.test(#ibzproweeklyaction_id, 'READ')")
     @ApiOperation(value = "获取周报日志", tags = {"周报日志" },  notes = "获取周报日志")
@@ -103,7 +110,7 @@ public class IBZProWeeklyActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'CREATE')")
+    @PreAuthorize("@IBZProWeeklyActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取周报日志草稿", tags = {"周报日志" },  notes = "获取周报日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproweeklyactions/getdraft")
     public ResponseEntity<IBZProWeeklyActionDTO> getDraft(IBZProWeeklyActionDTO dto) {
@@ -111,14 +118,14 @@ public class IBZProWeeklyActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyactionMapping.toDto(ibzproweeklyactionService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'CREATE')")
+    @PreAuthorize("@IBZProWeeklyActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查周报日志", tags = {"周报日志" },  notes = "检查周报日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyactions/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProWeeklyActionDTO ibzproweeklyactiondto) {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyactionService.checkKey(ibzproweeklyactionMapping.toDomain(ibzproweeklyactiondto)));
     }
 
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'CREATE')")
+    @PreAuthorize("@IBZProWeeklyActionRuntime.test(#ibzproweeklyaction_id, 'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"周报日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproweeklyactions/{ibzproweeklyaction_id}/createhis")
     public ResponseEntity<IBZProWeeklyActionDTO> createHis(@PathVariable("ibzproweeklyaction_id") Long ibzproweeklyaction_id, @RequestBody IBZProWeeklyActionDTO ibzproweeklyactiondto) {

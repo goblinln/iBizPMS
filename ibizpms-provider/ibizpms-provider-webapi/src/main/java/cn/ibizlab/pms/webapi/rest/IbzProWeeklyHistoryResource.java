@@ -91,8 +91,15 @@ public class IbzProWeeklyHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproweeklyhistoryService.remove(ibzproweeklyhistory_id));
     }
 
+    @PreAuthorize("@IbzProWeeklyHistoryRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除周报操作历史", tags = {"周报操作历史" },  notes = "批量删除周报操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproweeklyhistories/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzproweeklyhistoryService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
-    @PreAuthorize("@IBZProWeeklyActionRuntime.test(#ibzproweeklyaction_id, 'READ')")
+    @PreAuthorize("@IbzProWeeklyHistoryRuntime.test(#ibzproweeklyhistory_id, 'READ')")
     @ApiOperation(value = "获取周报操作历史", tags = {"周报操作历史" },  notes = "获取周报操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproweeklyhistories/{ibzproweeklyhistory_id}")
     public ResponseEntity<IbzProWeeklyHistoryDTO> get(@PathVariable("ibzproweeklyhistory_id") Long ibzproweeklyhistory_id) {
@@ -131,7 +138,7 @@ public class IbzProWeeklyHistoryResource {
     }
 
 
-    @PreAuthorize("@IBZProWeeklyActionRuntime.test(#ibzproweeklyaction_id, 'READ')")
+    @PreAuthorize("@IbzProWeeklyHistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"周报操作历史" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproweeklyhistories/fetchdefault")
 	public ResponseEntity<List<IbzProWeeklyHistoryDTO>> fetchdefault(@RequestBody IbzProWeeklyHistorySearchContext context) {

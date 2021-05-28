@@ -1,11 +1,13 @@
 {
   "actionMode" : "DELETE",
   "actionType" : "BUILTIN",
+  "batchActionMode" : 1,
   "codeName" : "Remove",
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/Remove.json",
   "logicName" : "Remove",
   "name" : "Remove",
   "orderValue" : 21,
   "userCat" : "CAT1",
+  "batchAction" : true,
   "builtinAction" : true
 }

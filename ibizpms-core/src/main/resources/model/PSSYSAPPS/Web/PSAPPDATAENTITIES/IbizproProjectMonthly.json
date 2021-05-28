@@ -55,7 +55,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__UPDATE"
+      "id" : "UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -71,7 +71,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__DELETE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -270,7 +270,7 @@
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -302,7 +302,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__UPDATE"
+      "id" : "UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -318,7 +318,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__DELETE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,

@@ -88,6 +88,13 @@ public class IbzReportlyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzreportlyService.remove(ibzreportly_id));
     }
 
+    @PreAuthorize("@IbzReportlyRuntime.test(#ids, 'NONE')")
+    @ApiOperation(value = "批量删除汇报", tags = {"汇报" },  notes = "批量删除汇报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportlies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzreportlyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id, 'NONE')")
     @ApiOperation(value = "获取汇报", tags = {"汇报" },  notes = "获取汇报")

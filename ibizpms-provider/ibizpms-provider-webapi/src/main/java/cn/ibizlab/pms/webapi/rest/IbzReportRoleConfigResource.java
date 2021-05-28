@@ -92,6 +92,13 @@ public class IbzReportRoleConfigResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigService.remove(ibzreportroleconfig_id));
     }
 
+    @PreAuthorize("@IbzReportRoleConfigRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除汇报角色配置", tags = {"汇报角色配置" },  notes = "批量删除汇报角色配置")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportroleconfigs/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibzreportroleconfigService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IbzReportRoleConfigRuntime.test(#ibzreportroleconfig_id, 'READ')")
     @ApiOperation(value = "获取汇报角色配置", tags = {"汇报角色配置" },  notes = "获取汇报角色配置")

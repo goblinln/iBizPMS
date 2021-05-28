@@ -3392,7 +3392,7 @@
   } ],
   "codeName" : "ProductProject",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json",
   "enableUIActions" : 15,
   "logicName" : "产品关联项目",

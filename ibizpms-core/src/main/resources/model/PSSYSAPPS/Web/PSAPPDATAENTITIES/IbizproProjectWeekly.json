@@ -119,7 +119,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZtProject__CREATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -282,7 +282,7 @@
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZtProject__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -378,7 +378,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZtProject__CREATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,

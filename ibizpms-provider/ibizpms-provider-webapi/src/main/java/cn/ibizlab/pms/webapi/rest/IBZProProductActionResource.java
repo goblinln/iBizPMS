@@ -52,7 +52,7 @@ public class IBZProProductActionResource {
     @Lazy
     public IBZProProductActionMapping ibzproproductactionMapping;
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @PreAuthorize("@IBZProProductActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建产品日志", tags = {"产品日志" },  notes = "新建产品日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions")
     @Transactional
@@ -91,6 +91,13 @@ public class IBZProProductActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactionService.remove(ibzproproductaction_id));
     }
 
+    @PreAuthorize("@IBZProProductActionRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除产品日志", tags = {"产品日志" },  notes = "批量删除产品日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproductactions/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzproproductactionService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IBZProProductActionRuntime.test(#ibzproproductaction_id, 'READ')")
     @ApiOperation(value = "获取产品日志", tags = {"产品日志" },  notes = "获取产品日志")
@@ -103,7 +110,7 @@ public class IBZProProductActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @PreAuthorize("@IBZProProductActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取产品日志草稿", tags = {"产品日志" },  notes = "获取产品日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproproductactions/getdraft")
     public ResponseEntity<IBZProProductActionDTO> getDraft(IBZProProductActionDTO dto) {
@@ -111,7 +118,7 @@ public class IBZProProductActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductactionMapping.toDto(ibzproproductactionService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @PreAuthorize("@IBZProProductActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查产品日志", tags = {"产品日志" },  notes = "检查产品日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProProductActionDTO ibzproproductactiondto) {
@@ -132,7 +139,7 @@ public class IBZProProductActionResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @PreAuthorize("@IBZProProductActionRuntime.test(#ibzproproductaction_id, 'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"产品日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductactions/{ibzproproductaction_id}/createhis")
     public ResponseEntity<IBZProProductActionDTO> createHis(@PathVariable("ibzproproductaction_id") Long ibzproproductaction_id, @RequestBody IBZProProductActionDTO ibzproproductactiondto) {

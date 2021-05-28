@@ -53,49 +53,7 @@ public class ProjectBuildResource {
     public ProjectBuildMapping projectbuildMapping;
 
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目获取版本草稿", tags = {"版本" },  notes = "根据项目获取版本草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectbuilds/getdraft")
-    public ResponseEntity<ProjectBuildDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectBuildDTO dto) {
-        Build domain = projectbuildMapping.toDomain(dto);
-        domain.setProject(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(projectbuildMapping.toDto(buildService.getDraft(domain)));
-    }
-
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目关联Bug", tags = {"版本" },  notes = "根据项目关联Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}/linkbug")
-    public ResponseEntity<ProjectBuildDTO> linkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id, @RequestBody ProjectBuildDTO projectbuilddto) {
-        Build domain = projectbuildMapping.toDomain(projectbuilddto);
-        domain.setProject(project_id);
-        domain.setId(projectbuild_id);
-        domain = buildService.linkBug(domain) ;
-        projectbuilddto = projectbuildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectbuilddto);
-    }
-
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目删除版本", tags = {"版本" },  notes = "根据项目删除版本")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}")
-    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(buildService.remove(projectbuild_id));
-    }
-
-
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"版本" } ,notes = "根据项目获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectbuilds/fetchdefault")
-	public ResponseEntity<List<ProjectBuildDTO>> fetchProjectBuildDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Build> domains = buildService.searchDefault(context) ;
-        List<ProjectBuildDTO> list = projectbuildMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('BUILDMANAGE')")
     @ApiOperation(value = "根据项目建立版本", tags = {"版本" },  notes = "根据项目建立版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbuilds")
     public ResponseEntity<ProjectBuildDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectBuildDTO projectbuilddto) {
@@ -104,6 +62,20 @@ public class ProjectBuildResource {
 		buildService.create(domain);
         ProjectBuildDTO dto = projectbuildMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @VersionCheck(entity = "build" , versionfield = "updatedate")
+    @PreAuthorize("@ProjectRuntime.test(#projectbuild_id, 'BUILDMANAGE')")
+    @ApiOperation(value = "根据项目更新版本", tags = {"版本" },  notes = "根据项目更新版本")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}")
+    public ResponseEntity<ProjectBuildDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id, @RequestBody ProjectBuildDTO projectbuilddto) {
+        Build domain = projectbuildMapping.toDomain(projectbuilddto);
+        domain.setProject(project_id);
+        domain.setId(projectbuild_id);
+		buildService.update(domain);
+        ProjectBuildDTO dto = projectbuildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 
@@ -119,6 +91,15 @@ public class ProjectBuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbuilddto);
     }
 
+    @PreAuthorize("@ProjectRuntime.quickTest('BUILDMANAGE')")
+    @ApiOperation(value = "根据项目获取版本草稿", tags = {"版本" },  notes = "根据项目获取版本草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectbuilds/getdraft")
+    public ResponseEntity<ProjectBuildDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectBuildDTO dto) {
+        Build domain = projectbuildMapping.toDomain(dto);
+        domain.setProject(project_id);
+        return ResponseEntity.status(HttpStatus.OK).body(projectbuildMapping.toDto(buildService.getDraft(domain)));
+    }
+
     @PreAuthorize("@BuildRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目关联需求", tags = {"版本" },  notes = "根据项目关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}/linkstory")
@@ -129,6 +110,42 @@ public class ProjectBuildResource {
         domain = buildService.linkStory(domain) ;
         projectbuilddto = projectbuildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(projectbuilddto);
+    }
+
+    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目关联Bug", tags = {"版本" },  notes = "根据项目关联Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}/linkbug")
+    public ResponseEntity<ProjectBuildDTO> linkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id, @RequestBody ProjectBuildDTO projectbuilddto) {
+        Build domain = projectbuildMapping.toDomain(projectbuilddto);
+        domain.setProject(project_id);
+        domain.setId(projectbuild_id);
+        domain = buildService.linkBug(domain) ;
+        projectbuilddto = projectbuildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectbuilddto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#projectbuild_id, 'BUILDMANAGE')")
+    @ApiOperation(value = "根据项目删除版本", tags = {"版本" },  notes = "根据项目删除版本")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}")
+    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(buildService.remove(projectbuild_id));
+    }
+
+    @PreAuthorize("@ProjectRuntime.quickTest('BUILDMANAGE')")
+    @ApiOperation(value = "根据项目批量删除版本", tags = {"版本" },  notes = "根据项目批量删除版本")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectbuilds/batch")
+    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
+        buildService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目获取版本", tags = {"版本" },  notes = "根据项目获取版本")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}")
+    public ResponseEntity<ProjectBuildDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id) {
+        Build domain = buildService.get(projectbuild_id);
+        ProjectBuildDTO dto = projectbuildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @PreAuthorize("@BuildRuntime.quickTest('DENY')")
@@ -143,28 +160,18 @@ public class ProjectBuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbuilddto);
     }
 
-    @VersionCheck(entity = "build" , versionfield = "updatedate")
     @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目更新版本", tags = {"版本" },  notes = "根据项目更新版本")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}")
-    public ResponseEntity<ProjectBuildDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id, @RequestBody ProjectBuildDTO projectbuilddto) {
-        Build domain = projectbuildMapping.toDomain(projectbuilddto);
-        domain.setProject(project_id);
-        domain.setId(projectbuild_id);
-		buildService.update(domain);
-        ProjectBuildDTO dto = projectbuildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目获取版本", tags = {"版本" },  notes = "根据项目获取版本")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}")
-    public ResponseEntity<ProjectBuildDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id) {
-        Build domain = buildService.get(projectbuild_id);
-        ProjectBuildDTO dto = projectbuildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
+	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"版本" } ,notes = "根据项目获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectbuilds/fetchdefault")
+	public ResponseEntity<List<ProjectBuildDTO>> fetchProjectBuildDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Build> domains = buildService.searchDefault(context) ;
+        List<ProjectBuildDTO> list = projectbuildMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 }
 

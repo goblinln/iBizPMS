@@ -91,6 +91,13 @@ public class UserResource {
          return ResponseEntity.status(HttpStatus.OK).body(userService.remove(user_id));
     }
 
+    @PreAuthorize("@UserRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除用户", tags = {"用户" },  notes = "批量删除用户")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/users/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        userService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@UserRuntime.test(#user_id, 'READ')")
     @ApiOperation(value = "获取用户", tags = {"用户" },  notes = "获取用户")

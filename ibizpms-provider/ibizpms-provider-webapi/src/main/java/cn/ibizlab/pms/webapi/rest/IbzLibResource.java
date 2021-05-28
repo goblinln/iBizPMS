@@ -92,6 +92,13 @@ public class IbzLibResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzlibService.remove(ibzlib_id));
     }
 
+    @PreAuthorize("@IbzLibRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除用例库", tags = {"用例库" },  notes = "批量删除用例库")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzlibService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id, 'READ')")
     @ApiOperation(value = "获取用例库", tags = {"用例库" },  notes = "获取用例库")

@@ -44,11 +44,13 @@
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Remove.json",
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
+    "batchAction" : true,
     "builtinAction" : true
   }, {
     "actionMode" : "READ",
@@ -90,6 +92,7 @@
   }, {
     "actionMode" : "DELETE",
     "actionType" : "DELOGIC",
+    "batchActionMode" : 1,
     "codeName" : "RemoveModule",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/RemoveModule.json",
     "logicName" : "删除模块",
@@ -97,7 +100,8 @@
     "getPSDELogic" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDELOGICS/RemoveModule.json"
-    }
+    },
+    "batchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",

@@ -43783,6 +43783,12 @@
      "entity_name":"IBZ_CASESTATS",
      "ref_entity_name":"ZT_PRODUCT"
     },
+    {"name":"DER1N_IBZ_PRODUCTLIFE_ZT_PRODUCT_PRODUCT",
+     "relation_type":"DER1N",
+     "code_name":"IbzProduct",
+     "entity_name":"IBZ_PRODUCTLIFE",
+     "ref_entity_name":"ZT_PRODUCT"
+    },
     {"name":"DER1N_IBZ_PRODUCTMODULE_ZT_PRODUCT_ROOT",
      "relation_type":"DER1N",
      "code_name":"ZTProduct",
@@ -43984,20 +43990,6 @@
     "major_field":1
     },
     {
-    "fieldname":"PRODUCT" ,
-    "codename":"Product",
-    "field_logic_name":"产品",
-    "entity_name":"IBZ_PRODUCTLIFE",
-    "field_type":"INT",
-    "nullable":1,
-    "physical_field":1,
-    "data_type":"INT",
-    "data_length":8,
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
     "fieldname":"CREATEDATE" ,
     "codename":"CreateDate",
     "field_logic_name":"建立时间",
@@ -44123,11 +44115,35 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"PRODUCT" ,
+    "codename":"Product",
+    "field_logic_name":"编号",
+    "entity_name":"IBZ_PRODUCTLIFE",
+    "ref_de":"ZT_PRODUCT",
+    "ref_field_name":"ID",
+    "relation_name":"DER1N_IBZ_PRODUCTLIFE_ZT_PRODUCT_PRODUCT",
+    "relation_codename":"IbzProduct",
+    "field_type":"PICKUP",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":8,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
     ],
     "parentEntitys":[
+    {"name":"DER1N_IBZ_PRODUCTLIFE_ZT_PRODUCT_PRODUCT",
+     "relation_type":"DER1N",
+     "code_name":"IbzProduct",
+     "entity_name":"IBZ_PRODUCTLIFE",
+     "ref_entity_name":"ZT_PRODUCT"
+    }
     ]
  }
     ,

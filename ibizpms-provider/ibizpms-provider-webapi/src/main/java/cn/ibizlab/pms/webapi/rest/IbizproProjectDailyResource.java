@@ -92,6 +92,13 @@ public class IbizproProjectDailyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailyService.remove(ibizproprojectdaily_id));
     }
 
+    @PreAuthorize("@IbizproProjectDailyRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除项目日报", tags = {"项目日报" },  notes = "批量删除项目日报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectdailies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibizproprojectdailyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IbizproProjectDailyRuntime.test(#ibizproprojectdaily_id, 'NONE')")
     @ApiOperation(value = "获取项目日报", tags = {"项目日报" },  notes = "获取项目日报")

@@ -81,6 +81,13 @@ public class SysUserRoleResource {
          return ResponseEntity.status(HttpStatus.OK).body(sysuserroleService.remove(sysuserrole_id));
     }
 
+    @PreAuthorize("@SysUserRoleRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除用户角色关系", tags = {"用户角色关系" },  notes = "批量删除用户角色关系")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysuserroles/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        sysuserroleService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@SysUserRoleRuntime.test(#sysuserrole_id, 'READ')")
     @ApiOperation(value = "获取用户角色关系", tags = {"用户角色关系" },  notes = "获取用户角色关系")

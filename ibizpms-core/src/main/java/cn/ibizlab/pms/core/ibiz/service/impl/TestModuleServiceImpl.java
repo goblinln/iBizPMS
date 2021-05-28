@@ -202,6 +202,14 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     public TestModule removeModule(TestModule et) {
          return et ;
     }
+    @Override
+    @Transactional
+    public boolean removeModuleBatch(List<TestModule> etList) {
+        for(TestModule et : etList) {
+            removeModule(et);
+        }
+        return true;
+    }
 
     @Override
     @Transactional

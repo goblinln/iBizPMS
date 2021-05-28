@@ -20,11 +20,13 @@
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSystemDBCfg/PSDEACTIONS/Remove.json",
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
+    "batchAction" : true,
     "builtinAction" : true
   }, {
     "actionMode" : "READ",

@@ -80,6 +80,13 @@ public class IBIZProMessageResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibizpromessageService.remove(ibizpromessage_id));
     }
 
+    @PreAuthorize("@IBIZProMessageRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除消息", tags = {"消息" },  notes = "批量删除消息")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibizpromessageService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IBIZProMessageRuntime.test(#ibizpromessage_id, 'READ')")
     @ApiOperation(value = "获取消息", tags = {"消息" },  notes = "获取消息")

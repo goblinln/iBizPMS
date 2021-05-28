@@ -91,6 +91,13 @@ public class DocContentResource {
          return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
     }
 
+    @PreAuthorize("@DocContentRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除文档内容", tags = {"文档内容" },  notes = "批量删除文档内容")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/doccontents/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        doccontentService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@DocContentRuntime.test(#doccontent_id, 'READ')")
     @ApiOperation(value = "获取文档内容", tags = {"文档内容" },  notes = "获取文档内容")
@@ -196,6 +203,13 @@ public class DocContentResource {
 		return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
     }
 
+    @PreAuthorize("@DocContentRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据文档批量删除文档内容", tags = {"文档内容" },  notes = "根据文档批量删除文档内容")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/docs/{doc_id}/doccontents/batch")
+    public ResponseEntity<Boolean> removeBatchByDoc(@RequestBody List<Long> ids) {
+        doccontentService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@DocContentRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据文档获取文档内容", tags = {"文档内容" },  notes = "根据文档获取文档内容")
@@ -293,6 +307,13 @@ public class DocContentResource {
 		return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
     }
 
+    @PreAuthorize("@DocContentRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据文档库文档批量删除文档内容", tags = {"文档内容" },  notes = "根据文档库文档批量删除文档内容")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/doclibs/{doclib_id}/docs/{doc_id}/doccontents/batch")
+    public ResponseEntity<Boolean> removeBatchByDocLibDoc(@RequestBody List<Long> ids) {
+        doccontentService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@DocContentRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据文档库文档获取文档内容", tags = {"文档内容" },  notes = "根据文档库文档获取文档内容")
@@ -391,6 +412,13 @@ public class DocContentResource {
 		return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
     }
 
+    @PreAuthorize("@DocContentRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据产品文档库文档批量删除文档内容", tags = {"文档内容" },  notes = "根据产品文档库文档批量删除文档内容")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/doccontents/batch")
+    public ResponseEntity<Boolean> removeBatchByProductDocLibDoc(@RequestBody List<Long> ids) {
+        doccontentService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@DocContentRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品文档库文档获取文档内容", tags = {"文档内容" },  notes = "根据产品文档库文档获取文档内容")
@@ -489,6 +517,13 @@ public class DocContentResource {
 		return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
     }
 
+    @PreAuthorize("@DocContentRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目文档库文档批量删除文档内容", tags = {"文档内容" },  notes = "根据项目文档库文档批量删除文档内容")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/doccontents/batch")
+    public ResponseEntity<Boolean> removeBatchByProjectDocLibDoc(@RequestBody List<Long> ids) {
+        doccontentService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@DocContentRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目文档库文档获取文档内容", tags = {"文档内容" },  notes = "根据项目文档库文档获取文档内容")

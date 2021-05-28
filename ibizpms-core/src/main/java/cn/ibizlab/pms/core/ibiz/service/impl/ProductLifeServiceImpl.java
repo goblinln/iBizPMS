@@ -52,6 +52,9 @@ public class ProductLifeServiceImpl extends ServiceImpl<ProductLifeMapper, Produ
     @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.ProductLifeRuntime productlifeRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.zentao.service.IProductService productService;
 
     protected int batchSize = 500;
 
@@ -231,6 +234,15 @@ public class ProductLifeServiceImpl extends ServiceImpl<ProductLifeMapper, Produ
         }
     }
 
+
+	@Override
+    public List<ProductLife> selectByProduct(Long id) {
+        return baseMapper.selectByProduct(id);
+    }
+    @Override
+    public void removeByProduct(Long id) {
+        this.remove(new QueryWrapper<ProductLife>().eq("product",id));
+    }
 
 
     public List<ProductLife> selectDefault(ProductLifeSearchContext context){

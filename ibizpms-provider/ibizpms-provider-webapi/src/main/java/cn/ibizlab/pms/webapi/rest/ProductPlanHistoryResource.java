@@ -91,8 +91,15 @@ public class ProductPlanHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(productplanhistoryService.remove(productplanhistory_id));
     }
 
+    @PreAuthorize("@ProductPlanHistoryRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除产品计划历史", tags = {"产品计划历史" },  notes = "批量删除产品计划历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productplanhistories/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        productplanhistoryService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
-    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id, 'READ')")
+    @PreAuthorize("@ProductPlanHistoryRuntime.test(#productplanhistory_id, 'READ')")
     @ApiOperation(value = "获取产品计划历史", tags = {"产品计划历史" },  notes = "获取产品计划历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/productplanhistories/{productplanhistory_id}")
     public ResponseEntity<ProductPlanHistoryDTO> get(@PathVariable("productplanhistory_id") Long productplanhistory_id) {
@@ -131,7 +138,7 @@ public class ProductPlanHistoryResource {
     }
 
 
-    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id, 'READ')")
+    @PreAuthorize("@ProductPlanHistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品计划历史" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/productplanhistories/fetchdefault")
 	public ResponseEntity<List<ProductPlanHistoryDTO>> fetchdefault(@RequestBody ProductPlanHistorySearchContext context) {

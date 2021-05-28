@@ -92,6 +92,13 @@ public class IbzTopResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibztopService.remove(ibztop_id));
     }
 
+    @PreAuthorize("@IbzTopRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除置顶", tags = {"置顶" },  notes = "批量删除置顶")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztops/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibztopService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IbzTopRuntime.test(#ibztop_id, 'READ')")
     @ApiOperation(value = "获取置顶", tags = {"置顶" },  notes = "获取置顶")

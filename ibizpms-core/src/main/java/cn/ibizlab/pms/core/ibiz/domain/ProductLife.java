@@ -83,14 +83,6 @@ public class ProductLife extends EntityMP implements Serializable {
     @ApiModelProperty("产品生命周期名称")
     private String productlifename;
     /**
-     * 产品
-     */
-    @TableField(value = "`PRODUCT`")
-    @JSONField(name = "product")
-    @JsonProperty("product")
-    @ApiModelProperty("产品")
-    private Integer product;
-    /**
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
@@ -168,6 +160,22 @@ public class ProductLife extends EntityMP implements Serializable {
     @JsonProperty("end")
     @ApiModelProperty("结束日期")
     private Timestamp end;
+    /**
+     * 编号
+     */
+    @TableField(value = "`PRODUCT`")
+    @JSONField(name = "product")
+    @JsonProperty("product")
+    @ApiModelProperty("编号")
+    private Long product;
+
+    /**
+     * 产品
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private cn.ibizlab.pms.core.zentao.domain.Product ibzproduct;
 
 
 
@@ -185,14 +193,6 @@ public class ProductLife extends EntityMP implements Serializable {
     public void setProductlifename(String productlifename) {
         this.productlifename = productlifename;
         this.modify("ibz_productlifename", productlifename);
-    }
-
-    /**
-     * 设置 [产品]
-     */
-    public void setProduct(Integer product) {
-        this.product = product;
-        this.modify("product", product);
     }
 
     /**
@@ -263,6 +263,14 @@ public class ProductLife extends EntityMP implements Serializable {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(end);
     }
+    /**
+     * 设置 [编号]
+     */
+    public void setProduct(Long product) {
+        this.product = product;
+        this.modify("product", product);
+    }
+
 
     /**
      * 复制当前对象数据到目标对象(粘贴重置)

@@ -21,6 +21,9 @@
 		<if test="srf.n_ibz_productlifeid_eq != null ">
 			<![CDATA[ AND  t1.`IBZ_PRODUCTLIFEID` = #{srf.n_ibz_productlifeid_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_product_eq != null ">
+			<![CDATA[ AND  t1.`PRODUCT` = #{srf.n_product_eq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
 		AND ${ew.sqlSegment}
 		</if>
@@ -40,10 +43,20 @@
     <resultMap id="ProductLifeResultMap" type="cn.ibizlab.pms.core.ibiz.domain.ProductLife" autoMapping="true">
 		<id property="productlifeid" column="ibz_productlifeid" /><!--主键字段映射-->
 		<result property="productlifename" column="ibz_productlifename" />
+		<result property="product" column="product" />
             
 		
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ibzproduct" javaType="cn.ibizlab.pms.core.zentao.domain.Product" column="product" select="cn.ibizlab.pms.core.zentao.mapper.ProductMapper.selectById" fetchType="lazy"></association>
     </resultMap>
 
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZ_PRODUCTLIFE_ZT_PRODUCT_PRODUCT] -->
+	 <select id="selectByProduct" resultMap="ProductLifeResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND t1.`PRODUCT`=#{id} ]]>
+		</trim>
+     </select>
 
     <!--数据集合[Default]-->
 	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext"  resultMap="ProductLifeResultMap">

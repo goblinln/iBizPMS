@@ -190,11 +190,6 @@
     "enableQuickSearch" : true,
     "majorField" : true
   }, {
-    "codeName" : "Product",
-    "logicName" : "产品",
-    "name" : "PRODUCT",
-    "stdDataType" : 9
-  }, {
     "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "name" : "CREATEDATE",
@@ -248,6 +243,11 @@
     "name" : "END",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "Product",
+    "logicName" : "编号",
+    "name" : "PRODUCT",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "FetchRoadMapYear",
@@ -427,6 +427,16 @@
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "产品-读取",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDERS/DER1N_IBZ_PRODUCTLIFE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "READ",
+    "id" : "IbzProduct__READ"
   }, {
     "logicName" : "读取",
     "name" : "READ"

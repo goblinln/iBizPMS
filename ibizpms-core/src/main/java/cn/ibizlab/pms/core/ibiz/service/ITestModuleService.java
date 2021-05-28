@@ -38,6 +38,7 @@ public interface ITestModuleService extends IService<TestModule> {
     boolean checkKey(TestModule et);
     TestModule fix(TestModule et);
     TestModule removeModule(TestModule et);
+    boolean removeModuleBatch(List<TestModule> etList);
     boolean save(TestModule et);
     void saveBatch(List<TestModule> list);
     List<TestModule> select(TestModuleSearchContext context);

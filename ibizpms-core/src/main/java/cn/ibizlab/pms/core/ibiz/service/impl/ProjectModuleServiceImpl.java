@@ -205,6 +205,14 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     public ProjectModule removeModule(ProjectModule et) {
          return et ;
     }
+    @Override
+    @Transactional
+    public boolean removeModuleBatch(List<ProjectModule> etList) {
+        for(ProjectModule et : etList) {
+            removeModule(et);
+        }
+        return true;
+    }
 
     @Override
     @Transactional

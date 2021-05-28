@@ -91,6 +91,13 @@ public class TestResultResource {
          return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
     }
 
+    @PreAuthorize("@TestResultRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除测试结果", tags = {"测试结果" },  notes = "批量删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testresults/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        testresultService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@TestResultRuntime.test(#testresult_id, 'READ')")
     @ApiOperation(value = "获取测试结果", tags = {"测试结果" },  notes = "获取测试结果")

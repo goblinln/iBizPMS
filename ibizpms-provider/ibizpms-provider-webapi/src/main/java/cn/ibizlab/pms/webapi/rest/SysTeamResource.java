@@ -80,6 +80,13 @@ public class SysTeamResource {
          return ResponseEntity.status(HttpStatus.OK).body(systeamService.remove(systeam_id));
     }
 
+    @PreAuthorize("@SysTeamRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除组", tags = {"组" },  notes = "批量删除组")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/systeams/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        systeamService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@SysTeamRuntime.test(#systeam_id, 'READ')")
     @ApiOperation(value = "获取组", tags = {"组" },  notes = "获取组")

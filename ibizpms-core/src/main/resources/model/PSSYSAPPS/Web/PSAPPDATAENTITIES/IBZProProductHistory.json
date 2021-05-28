@@ -79,7 +79,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ProductAction__READ"
+      "id" : "READ"
     },
     "builtinMethod" : true
   }, {
@@ -212,7 +212,7 @@
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ProductAction__READ"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -268,7 +268,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ProductAction__READ"
+      "id" : "READ"
     },
     "builtinMethod" : true
   }, {

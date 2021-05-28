@@ -87,6 +87,13 @@ public class UserContactResource {
          return ResponseEntity.status(HttpStatus.OK).body(usercontactService.remove(usercontact_id));
     }
 
+    @PreAuthorize("@UserContactRuntime.test(#ids, 'NONE')")
+    @ApiOperation(value = "批量删除用户联系方式", tags = {"用户联系方式" },  notes = "批量删除用户联系方式")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/usercontacts/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        usercontactService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@UserContactRuntime.test(#usercontact_id, 'NONE')")
     @ApiOperation(value = "获取用户联系方式", tags = {"用户联系方式" },  notes = "获取用户联系方式")

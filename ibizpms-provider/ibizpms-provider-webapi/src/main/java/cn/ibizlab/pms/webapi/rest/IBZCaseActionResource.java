@@ -91,6 +91,13 @@ public class IBZCaseActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzcaseactionService.remove(ibzcaseaction_id));
     }
 
+    @PreAuthorize("@IBZCaseActionRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除测试用例日志", tags = {"测试用例日志" },  notes = "批量删除测试用例日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcaseactions/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzcaseactionService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IBZCaseActionRuntime.test(#ibzcaseaction_id, 'READ')")
     @ApiOperation(value = "获取测试用例日志", tags = {"测试用例日志" },  notes = "获取测试用例日志")

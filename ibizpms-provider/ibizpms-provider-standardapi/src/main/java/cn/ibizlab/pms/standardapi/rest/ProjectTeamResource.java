@@ -53,63 +53,7 @@ public class ProjectTeamResource {
     public ProjectTeamMapping projectteamMapping;
 
 
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('DENY')")
-	@ApiOperation(value = "根据项目获取数据查询", tags = {"项目团队" } ,notes = "根据项目获取数据查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/fetchtaskcntestimateconsumedleft")
-	public ResponseEntity<List<ProjectTeamDTO>> fetchProjectTeamTaskCntEstimateConsumedLeftByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectTeamSearchContext context) {
-        context.setN_root_eq(project_id);
-        Page<ProjectTeam> domains = projectteamService.searchTaskCntEstimateConsumedLeft(context) ;
-        List<ProjectTeamDTO> list = projectteamMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('DENY')")
-	@ApiOperation(value = "根据项目获取指定团队", tags = {"项目团队" } ,notes = "根据项目获取指定团队")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/fetchspecifyteam")
-	public ResponseEntity<List<ProjectTeamDTO>> fetchProjectTeamSpecifyTeamByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectTeamSearchContext context) {
-        context.setN_root_eq(project_id);
-        Page<ProjectTeam> domains = projectteamService.searchSpecifyTeam(context) ;
-        List<ProjectTeamDTO> list = projectteamMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目批量保存项目团队", tags = {"项目团队" },  notes = "根据项目批量保存项目团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectTeamDTO> projectteamdtos) {
-        List<ProjectTeam> domainlist=projectteamMapping.toDomain(projectteamdtos);
-        for(ProjectTeam domain:domainlist){
-             domain.setRoot(project_id);
-        }
-        projectteamService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目获取项目团队", tags = {"项目团队" },  notes = "根据项目获取项目团队")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectteams/{projectteam_id}")
-    public ResponseEntity<ProjectTeamDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
-        ProjectTeam domain = projectteamService.get(projectteam_id);
-        ProjectTeamDTO dto = projectteamMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目删除项目团队", tags = {"项目团队" },  notes = "根据项目删除项目团队")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectteams/{projectteam_id}")
-    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
-    }
-
-
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据项目获取项目团队草稿", tags = {"项目团队" },  notes = "根据项目获取项目团队草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectteams/getdraft")
     public ResponseEntity<ProjectTeamDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectTeamDTO dto) {
@@ -118,7 +62,7 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(projectteamService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.test(#projectteam_id, 'UPDATE')")
     @ApiOperation(value = "根据项目更新项目团队", tags = {"项目团队" },  notes = "根据项目更新项目团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectteams/{projectteam_id}")
     public ResponseEntity<ProjectTeamDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id, @RequestBody ProjectTeamDTO projectteamdto) {
@@ -131,7 +75,20 @@ public class ProjectTeamResource {
     }
 
 
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据项目获取数据查询", tags = {"项目团队" } ,notes = "根据项目获取数据查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/fetchtaskcntestimateconsumedleft")
+	public ResponseEntity<List<ProjectTeamDTO>> fetchProjectTeamTaskCntEstimateConsumedLeftByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectTeamSearchContext context) {
+        context.setN_root_eq(project_id);
+        Page<ProjectTeam> domains = projectteamService.searchTaskCntEstimateConsumedLeft(context) ;
+        List<ProjectTeamDTO> list = projectteamMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProjectRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据项目建立项目团队", tags = {"项目团队" },  notes = "根据项目建立项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams")
     public ResponseEntity<ProjectTeamDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamDTO projectteamdto) {
@@ -142,6 +99,56 @@ public class ProjectTeamResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("@ProjectRuntime.test(#projectteam_id, 'DELETE')")
+    @ApiOperation(value = "根据项目删除项目团队", tags = {"项目团队" },  notes = "根据项目删除项目团队")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectteams/{projectteam_id}")
+    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
+    }
+
+    @PreAuthorize("@ProjectRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据项目批量删除项目团队", tags = {"项目团队" },  notes = "根据项目批量删除项目团队")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectteams/batch")
+    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
+        projectteamService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据项目获取指定团队", tags = {"项目团队" } ,notes = "根据项目获取指定团队")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/fetchspecifyteam")
+	public ResponseEntity<List<ProjectTeamDTO>> fetchProjectTeamSpecifyTeamByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectTeamSearchContext context) {
+        context.setN_root_eq(project_id);
+        Page<ProjectTeam> domains = projectteamService.searchSpecifyTeam(context) ;
+        List<ProjectTeamDTO> list = projectteamMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProjectRuntime.test(#projectteam_id, 'READ')")
+    @ApiOperation(value = "根据项目获取项目团队", tags = {"项目团队" },  notes = "根据项目获取项目团队")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectteams/{projectteam_id}")
+    public ResponseEntity<ProjectTeamDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
+        ProjectTeam domain = projectteamService.get(projectteam_id);
+        ProjectTeamDTO dto = projectteamMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@ProjectRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据项目批量保存项目团队", tags = {"项目团队" },  notes = "根据项目批量保存项目团队")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectTeamDTO> projectteamdtos) {
+        List<ProjectTeam> domainlist=projectteamMapping.toDomain(projectteamdtos);
+        for(ProjectTeam domain:domainlist){
+             domain.setRoot(project_id);
+        }
+        projectteamService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
 }
 

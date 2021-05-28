@@ -91,8 +91,15 @@ public class IbzProBuildHistoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprobuildhistoryService.remove(ibzprobuildhistory_id));
     }
 
+    @PreAuthorize("@IbzProBuildHistoryRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除版本操作历史", tags = {"版本操作历史" },  notes = "批量删除版本操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprobuildhistories/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzprobuildhistoryService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
-    @PreAuthorize("@IbzProBuildActionRuntime.test(#ibzprobuildaction_id, 'READ')")
+    @PreAuthorize("@IbzProBuildHistoryRuntime.test(#ibzprobuildhistory_id, 'READ')")
     @ApiOperation(value = "获取版本操作历史", tags = {"版本操作历史" },  notes = "获取版本操作历史")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprobuildhistories/{ibzprobuildhistory_id}")
     public ResponseEntity<IbzProBuildHistoryDTO> get(@PathVariable("ibzprobuildhistory_id") Long ibzprobuildhistory_id) {
@@ -131,7 +138,7 @@ public class IbzProBuildHistoryResource {
     }
 
 
-    @PreAuthorize("@IbzProBuildActionRuntime.test(#ibzprobuildaction_id, 'READ')")
+    @PreAuthorize("@IbzProBuildHistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"版本操作历史" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprobuildhistories/fetchdefault")
 	public ResponseEntity<List<IbzProBuildHistoryDTO>> fetchdefault(@RequestBody IbzProBuildHistorySearchContext context) {

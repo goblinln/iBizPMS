@@ -64,32 +64,38 @@
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/Remove.json",
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
+    "batchAction" : true,
     "builtinAction" : true
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/RemoveTemp.json",
     "logicName" : "RemoveTemp",
     "name" : "RemoveTemp",
     "orderValue" : 22,
     "tempDataMode" : 2,
+    "batchAction" : true,
     "builtinAction" : true,
     "enableTempData" : true
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/RemoveTempMajor.json",
     "logicName" : "RemoveTempMajor",
     "name" : "RemoveTempMajor",
     "orderValue" : 23,
     "tempDataMode" : 1,
+    "batchAction" : true,
     "builtinAction" : true,
     "enableTempData" : true
   }, {

@@ -1,12 +1,14 @@
 {
   "actionMode" : "DELETE",
   "actionType" : "BUILTIN",
+  "batchActionMode" : 1,
   "codeName" : "RemoveTemp",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RemoveTemp.json",
   "logicName" : "RemoveTemp",
   "name" : "RemoveTemp",
   "orderValue" : 22,
   "tempDataMode" : 2,
+  "batchAction" : true,
   "builtinAction" : true,
   "enableTempData" : true
 }

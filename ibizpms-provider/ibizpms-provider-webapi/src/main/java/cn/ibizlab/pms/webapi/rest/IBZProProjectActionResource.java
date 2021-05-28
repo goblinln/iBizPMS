@@ -52,7 +52,7 @@ public class IBZProProjectActionResource {
     @Lazy
     public IBZProProjectActionMapping ibzproprojectactionMapping;
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'CREATE')")
+    @PreAuthorize("@IBZProProjectActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建项目日志", tags = {"项目日志" },  notes = "新建项目日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectactions")
     @Transactional
@@ -91,6 +91,13 @@ public class IBZProProjectActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectactionService.remove(ibzproprojectaction_id));
     }
 
+    @PreAuthorize("@IBZProProjectActionRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除项目日志", tags = {"项目日志" },  notes = "批量删除项目日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproprojectactions/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzproprojectactionService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IBZProProjectActionRuntime.test(#ibzproprojectaction_id, 'READ')")
     @ApiOperation(value = "获取项目日志", tags = {"项目日志" },  notes = "获取项目日志")
@@ -103,7 +110,7 @@ public class IBZProProjectActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'CREATE')")
+    @PreAuthorize("@IBZProProjectActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取项目日志草稿", tags = {"项目日志" },  notes = "获取项目日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproprojectactions/getdraft")
     public ResponseEntity<IBZProProjectActionDTO> getDraft(IBZProProjectActionDTO dto) {
@@ -111,7 +118,7 @@ public class IBZProProjectActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectactionMapping.toDto(ibzproprojectactionService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'CREATE')")
+    @PreAuthorize("@IBZProProjectActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查项目日志", tags = {"项目日志" },  notes = "检查项目日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectactions/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProProjectActionDTO ibzproprojectactiondto) {
@@ -132,7 +139,7 @@ public class IBZProProjectActionResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'CREATE')")
+    @PreAuthorize("@IBZProProjectActionRuntime.test(#ibzproprojectaction_id, 'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"项目日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectactions/{ibzproprojectaction_id}/createhis")
     public ResponseEntity<IBZProProjectActionDTO> createHis(@PathVariable("ibzproprojectaction_id") Long ibzproprojectaction_id, @RequestBody IBZProProjectActionDTO ibzproprojectactiondto) {

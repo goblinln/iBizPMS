@@ -81,6 +81,13 @@ public class PSSystemDBCfgResource {
          return ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgService.remove(pssystemdbcfg_id));
     }
 
+    @PreAuthorize("@PSSystemDBCfgRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除系统数据库", tags = {"系统数据库" },  notes = "批量删除系统数据库")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        pssystemdbcfgService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@PSSystemDBCfgRuntime.test(#pssystemdbcfg_id, 'READ')")
     @ApiOperation(value = "获取系统数据库", tags = {"系统数据库" },  notes = "获取系统数据库")

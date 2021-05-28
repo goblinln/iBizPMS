@@ -79,7 +79,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_action__READ"
+      "id" : "READ"
     },
     "builtinMethod" : true
   }, {
@@ -281,7 +281,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_action__READ"
+      "id" : "READ"
     },
     "builtinMethod" : true
   }, {

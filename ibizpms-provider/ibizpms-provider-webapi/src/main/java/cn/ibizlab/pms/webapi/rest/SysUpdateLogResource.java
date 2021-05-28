@@ -92,6 +92,13 @@ public class SysUpdateLogResource {
          return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogService.remove(sysupdatelog_id));
     }
 
+    @PreAuthorize("@SysUpdateLogRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除更新日志", tags = {"更新日志" },  notes = "批量删除更新日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatelogs/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        sysupdatelogService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id, 'READ')")
     @ApiOperation(value = "获取更新日志", tags = {"更新日志" },  notes = "获取更新日志")

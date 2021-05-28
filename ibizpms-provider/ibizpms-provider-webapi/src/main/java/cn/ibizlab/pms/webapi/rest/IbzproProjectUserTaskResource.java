@@ -91,6 +91,13 @@ public class IbzproProjectUserTaskResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskService.remove(ibzproprojectusertask_id));
     }
 
+    @PreAuthorize("@IbzproProjectUserTaskRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "批量删除项目汇报用户任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproprojectusertasks/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzproprojectusertaskService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IbzproProjectUserTaskRuntime.test(#ibzproprojectusertask_id, 'READ')")
     @ApiOperation(value = "获取项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "获取项目汇报用户任务")

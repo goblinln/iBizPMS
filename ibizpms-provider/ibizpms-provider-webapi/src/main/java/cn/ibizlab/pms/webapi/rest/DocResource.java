@@ -91,6 +91,13 @@ public class DocResource {
          return ResponseEntity.status(HttpStatus.OK).body(docService.remove(doc_id));
     }
 
+    @PreAuthorize("@DocRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除文档", tags = {"文档" },  notes = "批量删除文档")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/docs/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        docService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@DocRuntime.test(#doc_id, 'READ')")
     @ApiOperation(value = "获取文档", tags = {"文档" },  notes = "获取文档")
@@ -356,7 +363,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据文档库建立文档", tags = {"文档" },  notes = "根据文档库建立文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs")
     public ResponseEntity<DocDTO> createByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
@@ -368,7 +375,7 @@ public class DocResource {
     }
 
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.test(#doc_id, 'UPDATE')")
     @ApiOperation(value = "根据文档库更新文档", tags = {"文档" },  notes = "根据文档库更新文档")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<DocDTO> updateByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -381,15 +388,22 @@ public class DocResource {
     }
 
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.test(#doc_id, 'DELETE')")
     @ApiOperation(value = "根据文档库删除文档", tags = {"文档" },  notes = "根据文档库删除文档")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<Boolean> removeByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(docService.remove(doc_id));
     }
 
+    @PreAuthorize("@DocLibRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据文档库批量删除文档", tags = {"文档" },  notes = "根据文档库批量删除文档")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/doclibs/{doclib_id}/docs/batch")
+    public ResponseEntity<Boolean> removeBatchByDocLib(@RequestBody List<Long> ids) {
+        docService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.test(#doc_id, 'READ')")
     @ApiOperation(value = "根据文档库获取文档", tags = {"文档" },  notes = "根据文档库获取文档")
 	@RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<DocDTO> getByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
@@ -398,7 +412,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据文档库获取文档草稿", tags = {"文档" },  notes = "根据文档库获取文档草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}/docs/getdraft")
     public ResponseEntity<DocDTO> getDraftByDocLib(@PathVariable("doclib_id") Long doclib_id, DocDTO dto) {
@@ -407,7 +421,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(docService.getDraft(domain)));
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.test(#doc_id, 'READ')")
     @ApiOperation(value = "根据文档库根据版本更新正文信息", tags = {"文档" },  notes = "根据文档库根据版本更新正文信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/docs/{doc_id}/byversionupdatecontext")
     public ResponseEntity<DocDTO> byVersionUpdateContextByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -419,14 +433,14 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据文档库检查文档", tags = {"文档" },  notes = "根据文档库检查文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/checkkey")
     public ResponseEntity<Boolean> checkKeyByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(docService.checkKey(docMapping.toDomain(docdto)));
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.test(#doc_id, 'READ')")
     @ApiOperation(value = "根据文档库收藏", tags = {"文档" },  notes = "根据文档库收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/{doc_id}/collect")
     public ResponseEntity<DocDTO> collectByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -450,7 +464,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.test(#doc_id, 'READ')")
     @ApiOperation(value = "根据文档库仅收藏文档", tags = {"文档" },  notes = "根据文档库仅收藏文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/{doc_id}/onlycollectdoc")
     public ResponseEntity<DocDTO> onlyCollectDocByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -462,7 +476,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.test(#doc_id, 'READ')")
     @ApiOperation(value = "根据文档库仅取消收藏文档", tags = {"文档" },  notes = "根据文档库仅取消收藏文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/{doc_id}/onlyuncollectdoc")
     public ResponseEntity<DocDTO> onlyUnCollectDocByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -485,7 +499,7 @@ public class DocResource {
     }
 
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.test(#doc_id, 'READ')")
     @ApiOperation(value = "根据文档库取消收藏", tags = {"文档" },  notes = "根据文档库取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/{doc_id}/uncollect")
     public ResponseEntity<DocDTO> unCollectByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -497,7 +511,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据文档库获取文档库文档（子库）", tags = {"文档" } ,notes = "根据文档库获取文档库文档（子库）")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchchilddoclibdoc")
 	public ResponseEntity<List<DocDTO>> fetchDocChildDocLibDocByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -510,7 +524,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据文档库获取DEFAULT", tags = {"文档" } ,notes = "根据文档库获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchdefault")
 	public ResponseEntity<List<DocDTO>> fetchDocDefaultByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -523,7 +537,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据文档库获取文档库文档", tags = {"文档" } ,notes = "根据文档库获取文档库文档")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchdoclibanddoc")
 	public ResponseEntity<List<DocDTO>> fetchDocDocLibAndDocByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -536,7 +550,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据文档库获取文档库文档", tags = {"文档" } ,notes = "根据文档库获取文档库文档")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchdoclibdoc")
 	public ResponseEntity<List<DocDTO>> fetchDocDocLibDocByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -549,7 +563,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据文档库获取文档库分类文档", tags = {"文档" } ,notes = "根据文档库获取文档库分类文档")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchdocmoduledoc")
 	public ResponseEntity<List<DocDTO>> fetchDocDocModuleDocByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -562,7 +576,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据文档库获取文档统计", tags = {"文档" } ,notes = "根据文档库获取文档统计")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchdocstatus")
 	public ResponseEntity<List<DocDTO>> fetchDocDocStatusByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -575,7 +589,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据文档库获取文件夹文档（子目录）", tags = {"文档" } ,notes = "根据文档库获取文件夹文档（子目录）")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchmoduledocchild")
 	public ResponseEntity<List<DocDTO>> fetchDocModuleDocChildByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -588,7 +602,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据文档库获取我的收藏", tags = {"文档" } ,notes = "根据文档库获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchmyfavourite")
 	public ResponseEntity<List<DocDTO>> fetchDocMyFavouriteByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -601,7 +615,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据文档库获取我的收藏", tags = {"文档" } ,notes = "根据文档库获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchmyfavouritesonlydoc")
 	public ResponseEntity<List<DocDTO>> fetchDocMyFavouritesOnlyDocByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -614,7 +628,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据文档库获取子目录文档", tags = {"文档" } ,notes = "根据文档库获取子目录文档")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchnotrootdoc")
 	public ResponseEntity<List<DocDTO>> fetchDocNotRootDocByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -627,7 +641,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据文档库获取根目录文档", tags = {"文档" } ,notes = "根据文档库获取根目录文档")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchrootdoc")
 	public ResponseEntity<List<DocDTO>> fetchDocRootDocByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -642,7 +656,7 @@ public class DocResource {
 	}
 
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据产品文档库建立文档", tags = {"文档" },  notes = "根据产品文档库建立文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs")
     public ResponseEntity<DocDTO> createByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
@@ -654,7 +668,7 @@ public class DocResource {
     }
 
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.test(#doc_id, 'UPDATE')")
     @ApiOperation(value = "根据产品文档库更新文档", tags = {"文档" },  notes = "根据产品文档库更新文档")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<DocDTO> updateByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -667,15 +681,22 @@ public class DocResource {
     }
 
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.test(#doc_id, 'DELETE')")
     @ApiOperation(value = "根据产品文档库删除文档", tags = {"文档" },  notes = "根据产品文档库删除文档")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<Boolean> removeByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(docService.remove(doc_id));
     }
 
+    @PreAuthorize("@ProductRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据产品文档库批量删除文档", tags = {"文档" },  notes = "根据产品文档库批量删除文档")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/doclibs/{doclib_id}/docs/batch")
+    public ResponseEntity<Boolean> removeBatchByProductDocLib(@RequestBody List<Long> ids) {
+        docService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.test(#doc_id, 'READ')")
     @ApiOperation(value = "根据产品文档库获取文档", tags = {"文档" },  notes = "根据产品文档库获取文档")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<DocDTO> getByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
@@ -684,7 +705,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据产品文档库获取文档草稿", tags = {"文档" },  notes = "根据产品文档库获取文档草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/doclibs/{doclib_id}/docs/getdraft")
     public ResponseEntity<DocDTO> getDraftByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, DocDTO dto) {
@@ -693,7 +714,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(docService.getDraft(domain)));
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.test(#doc_id, 'READ')")
     @ApiOperation(value = "根据产品文档库根据版本更新正文信息", tags = {"文档" },  notes = "根据产品文档库根据版本更新正文信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/byversionupdatecontext")
     public ResponseEntity<DocDTO> byVersionUpdateContextByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -705,14 +726,14 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据产品文档库检查文档", tags = {"文档" },  notes = "根据产品文档库检查文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/checkkey")
     public ResponseEntity<Boolean> checkKeyByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(docService.checkKey(docMapping.toDomain(docdto)));
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.test(#doc_id, 'READ')")
     @ApiOperation(value = "根据产品文档库收藏", tags = {"文档" },  notes = "根据产品文档库收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/collect")
     public ResponseEntity<DocDTO> collectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -736,7 +757,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.test(#doc_id, 'READ')")
     @ApiOperation(value = "根据产品文档库仅收藏文档", tags = {"文档" },  notes = "根据产品文档库仅收藏文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/onlycollectdoc")
     public ResponseEntity<DocDTO> onlyCollectDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -748,7 +769,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.test(#doc_id, 'READ')")
     @ApiOperation(value = "根据产品文档库仅取消收藏文档", tags = {"文档" },  notes = "根据产品文档库仅取消收藏文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/onlyuncollectdoc")
     public ResponseEntity<DocDTO> onlyUnCollectDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -771,7 +792,7 @@ public class DocResource {
     }
 
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.test(#doc_id, 'READ')")
     @ApiOperation(value = "根据产品文档库取消收藏", tags = {"文档" },  notes = "根据产品文档库取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/uncollect")
     public ResponseEntity<DocDTO> unCollectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -783,7 +804,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品文档库获取文档库文档（子库）", tags = {"文档" } ,notes = "根据产品文档库获取文档库文档（子库）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchchilddoclibdoc")
 	public ResponseEntity<List<DocDTO>> fetchDocChildDocLibDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -796,7 +817,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品文档库获取DEFAULT", tags = {"文档" } ,notes = "根据产品文档库获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchdefault")
 	public ResponseEntity<List<DocDTO>> fetchDocDefaultByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -809,7 +830,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品文档库获取文档库文档", tags = {"文档" } ,notes = "根据产品文档库获取文档库文档")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchdoclibanddoc")
 	public ResponseEntity<List<DocDTO>> fetchDocDocLibAndDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -822,7 +843,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品文档库获取文档库文档", tags = {"文档" } ,notes = "根据产品文档库获取文档库文档")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchdoclibdoc")
 	public ResponseEntity<List<DocDTO>> fetchDocDocLibDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -835,7 +856,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品文档库获取文档库分类文档", tags = {"文档" } ,notes = "根据产品文档库获取文档库分类文档")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchdocmoduledoc")
 	public ResponseEntity<List<DocDTO>> fetchDocDocModuleDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -848,7 +869,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品文档库获取文档统计", tags = {"文档" } ,notes = "根据产品文档库获取文档统计")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchdocstatus")
 	public ResponseEntity<List<DocDTO>> fetchDocDocStatusByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -861,7 +882,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品文档库获取文件夹文档（子目录）", tags = {"文档" } ,notes = "根据产品文档库获取文件夹文档（子目录）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchmoduledocchild")
 	public ResponseEntity<List<DocDTO>> fetchDocModuleDocChildByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -874,7 +895,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品文档库获取我的收藏", tags = {"文档" } ,notes = "根据产品文档库获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchmyfavourite")
 	public ResponseEntity<List<DocDTO>> fetchDocMyFavouriteByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -887,7 +908,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品文档库获取我的收藏", tags = {"文档" } ,notes = "根据产品文档库获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchmyfavouritesonlydoc")
 	public ResponseEntity<List<DocDTO>> fetchDocMyFavouritesOnlyDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -900,7 +921,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品文档库获取子目录文档", tags = {"文档" } ,notes = "根据产品文档库获取子目录文档")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchnotrootdoc")
 	public ResponseEntity<List<DocDTO>> fetchDocNotRootDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -913,7 +934,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品文档库获取根目录文档", tags = {"文档" } ,notes = "根据产品文档库获取根目录文档")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchrootdoc")
 	public ResponseEntity<List<DocDTO>> fetchDocRootDocByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -928,7 +949,7 @@ public class DocResource {
 	}
 
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目文档库建立文档", tags = {"文档" },  notes = "根据项目文档库建立文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs")
     public ResponseEntity<DocDTO> createByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
@@ -940,7 +961,7 @@ public class DocResource {
     }
 
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.test(#doc_id, 'DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目文档库更新文档", tags = {"文档" },  notes = "根据项目文档库更新文档")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<DocDTO> updateByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -953,15 +974,22 @@ public class DocResource {
     }
 
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.test(#doc_id, 'DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目文档库删除文档", tags = {"文档" },  notes = "根据项目文档库删除文档")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<Boolean> removeByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(docService.remove(doc_id));
     }
 
+    @PreAuthorize("@ProjectRuntime.quickTest('DOCLIBMANAGE')")
+    @ApiOperation(value = "根据项目文档库批量删除文档", tags = {"文档" },  notes = "根据项目文档库批量删除文档")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/batch")
+    public ResponseEntity<Boolean> removeBatchByProjectDocLib(@RequestBody List<Long> ids) {
+        docService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.test(#doc_id, 'DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目文档库获取文档", tags = {"文档" },  notes = "根据项目文档库获取文档")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<DocDTO> getByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
@@ -970,7 +998,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目文档库获取文档草稿", tags = {"文档" },  notes = "根据项目文档库获取文档草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/getdraft")
     public ResponseEntity<DocDTO> getDraftByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, DocDTO dto) {
@@ -979,7 +1007,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(docService.getDraft(domain)));
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.test(#doc_id, 'DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目文档库根据版本更新正文信息", tags = {"文档" },  notes = "根据项目文档库根据版本更新正文信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/byversionupdatecontext")
     public ResponseEntity<DocDTO> byVersionUpdateContextByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -991,14 +1019,14 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目文档库检查文档", tags = {"文档" },  notes = "根据项目文档库检查文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/checkkey")
     public ResponseEntity<Boolean> checkKeyByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(docService.checkKey(docMapping.toDomain(docdto)));
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.test(#doc_id, 'DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目文档库收藏", tags = {"文档" },  notes = "根据项目文档库收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/collect")
     public ResponseEntity<DocDTO> collectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -1022,7 +1050,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.test(#doc_id, 'DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目文档库仅收藏文档", tags = {"文档" },  notes = "根据项目文档库仅收藏文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/onlycollectdoc")
     public ResponseEntity<DocDTO> onlyCollectDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -1034,7 +1062,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.test(#doc_id, 'DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目文档库仅取消收藏文档", tags = {"文档" },  notes = "根据项目文档库仅取消收藏文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/onlyuncollectdoc")
     public ResponseEntity<DocDTO> onlyUnCollectDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -1057,7 +1085,7 @@ public class DocResource {
     }
 
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.test(#doc_id, 'DOCLIBMANAGE')")
     @ApiOperation(value = "根据项目文档库取消收藏", tags = {"文档" },  notes = "根据项目文档库取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/uncollect")
     public ResponseEntity<DocDTO> unCollectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -1069,7 +1097,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取文档库文档（子库）", tags = {"文档" } ,notes = "根据项目文档库获取文档库文档（子库）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchchilddoclibdoc")
 	public ResponseEntity<List<DocDTO>> fetchDocChildDocLibDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -1082,7 +1110,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取DEFAULT", tags = {"文档" } ,notes = "根据项目文档库获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchdefault")
 	public ResponseEntity<List<DocDTO>> fetchDocDefaultByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -1095,7 +1123,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取文档库文档", tags = {"文档" } ,notes = "根据项目文档库获取文档库文档")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchdoclibanddoc")
 	public ResponseEntity<List<DocDTO>> fetchDocDocLibAndDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -1108,7 +1136,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取文档库文档", tags = {"文档" } ,notes = "根据项目文档库获取文档库文档")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchdoclibdoc")
 	public ResponseEntity<List<DocDTO>> fetchDocDocLibDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -1121,7 +1149,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取文档库分类文档", tags = {"文档" } ,notes = "根据项目文档库获取文档库分类文档")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchdocmoduledoc")
 	public ResponseEntity<List<DocDTO>> fetchDocDocModuleDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -1134,7 +1162,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取文档统计", tags = {"文档" } ,notes = "根据项目文档库获取文档统计")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchdocstatus")
 	public ResponseEntity<List<DocDTO>> fetchDocDocStatusByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -1147,7 +1175,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取文件夹文档（子目录）", tags = {"文档" } ,notes = "根据项目文档库获取文件夹文档（子目录）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchmoduledocchild")
 	public ResponseEntity<List<DocDTO>> fetchDocModuleDocChildByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -1160,7 +1188,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取我的收藏", tags = {"文档" } ,notes = "根据项目文档库获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchmyfavourite")
 	public ResponseEntity<List<DocDTO>> fetchDocMyFavouriteByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -1173,7 +1201,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取我的收藏", tags = {"文档" } ,notes = "根据项目文档库获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchmyfavouritesonlydoc")
 	public ResponseEntity<List<DocDTO>> fetchDocMyFavouritesOnlyDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -1186,7 +1214,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取子目录文档", tags = {"文档" } ,notes = "根据项目文档库获取子目录文档")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchnotrootdoc")
 	public ResponseEntity<List<DocDTO>> fetchDocNotRootDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -1199,7 +1227,7 @@ public class DocResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.quickTest('DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取根目录文档", tags = {"文档" } ,notes = "根据项目文档库获取根目录文档")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchrootdoc")
 	public ResponseEntity<List<DocDTO>> fetchDocRootDocByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {

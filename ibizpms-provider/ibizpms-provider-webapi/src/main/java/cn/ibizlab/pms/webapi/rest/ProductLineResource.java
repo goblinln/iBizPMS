@@ -92,6 +92,13 @@ public class ProductLineResource {
          return ResponseEntity.status(HttpStatus.OK).body(productlineService.remove(productline_id));
     }
 
+    @PreAuthorize("@ProductLineRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除产品线（废弃）", tags = {"产品线（废弃）" },  notes = "批量删除产品线（废弃）")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productlines/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        productlineService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@ProductLineRuntime.test(#productline_id, 'READ')")
     @ApiOperation(value = "获取产品线（废弃）", tags = {"产品线（废弃）" },  notes = "获取产品线（废弃）")

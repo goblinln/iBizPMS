@@ -88,6 +88,13 @@ public class IbzMonthlyResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlyService.remove(ibzmonthly_id));
     }
 
+    @PreAuthorize("@IbzMonthlyRuntime.test(#ids, 'NONE')")
+    @ApiOperation(value = "批量删除月报", tags = {"月报" },  notes = "批量删除月报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzmonthlies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzmonthlyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IbzMonthlyRuntime.test(#ibzmonthly_id, 'NONE')")
     @ApiOperation(value = "获取月报", tags = {"月报" },  notes = "获取月报")

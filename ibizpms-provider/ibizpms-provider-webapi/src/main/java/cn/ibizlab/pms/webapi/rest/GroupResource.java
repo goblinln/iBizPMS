@@ -91,6 +91,13 @@ public class GroupResource {
          return ResponseEntity.status(HttpStatus.OK).body(groupService.remove(group_id));
     }
 
+    @PreAuthorize("@GroupRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除群组", tags = {"群组" },  notes = "批量删除群组")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/groups/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        groupService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@GroupRuntime.test(#group_id, 'READ')")
     @ApiOperation(value = "获取群组", tags = {"群组" },  notes = "获取群组")

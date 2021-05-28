@@ -52,7 +52,7 @@ public class IBZProToDoActionResource {
     @Lazy
     public IBZProToDoActionMapping ibzprotodoactionMapping;
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'CREATE')")
+    @PreAuthorize("@IBZProToDoActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建ToDo日志", tags = {"ToDo日志" },  notes = "新建ToDo日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions")
     @Transactional
@@ -91,6 +91,13 @@ public class IBZProToDoActionResource {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactionService.remove(ibzprotodoaction_id));
     }
 
+    @PreAuthorize("@IBZProToDoActionRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除ToDo日志", tags = {"ToDo日志" },  notes = "批量删除ToDo日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprotodoactions/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzprotodoactionService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IBZProToDoActionRuntime.test(#ibzprotodoaction_id, 'READ')")
     @ApiOperation(value = "获取ToDo日志", tags = {"ToDo日志" },  notes = "获取ToDo日志")
@@ -103,7 +110,7 @@ public class IBZProToDoActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'CREATE')")
+    @PreAuthorize("@IBZProToDoActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取ToDo日志草稿", tags = {"ToDo日志" },  notes = "获取ToDo日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprotodoactions/getdraft")
     public ResponseEntity<IBZProToDoActionDTO> getDraft(IBZProToDoActionDTO dto) {
@@ -111,7 +118,7 @@ public class IBZProToDoActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprotodoactionMapping.toDto(ibzprotodoactionService.getDraft(domain)));
     }
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'CREATE')")
+    @PreAuthorize("@IBZProToDoActionRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查ToDo日志", tags = {"ToDo日志" },  notes = "检查ToDo日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {
@@ -132,7 +139,7 @@ public class IBZProToDoActionResource {
     }
 
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'CREATE')")
+    @PreAuthorize("@IBZProToDoActionRuntime.test(#ibzprotodoaction_id, 'CREATE')")
     @ApiOperation(value = "创建历史日志", tags = {"ToDo日志" },  notes = "创建历史日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprotodoactions/{ibzprotodoaction_id}/createhis")
     public ResponseEntity<IBZProToDoActionDTO> createHis(@PathVariable("ibzprotodoaction_id") Long ibzprotodoaction_id, @RequestBody IBZProToDoActionDTO ibzprotodoactiondto) {

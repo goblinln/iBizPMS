@@ -71,4 +71,6 @@ public interface ProductLifeMapper extends BaseMapper<ProductLife> {
     @Delete("${sql}")
     boolean deleteBySQL(@Param("sql") String sql, @Param("et")Map param);
 
+    List<ProductLife> selectByProduct(@Param("id") Serializable id);
+
 }

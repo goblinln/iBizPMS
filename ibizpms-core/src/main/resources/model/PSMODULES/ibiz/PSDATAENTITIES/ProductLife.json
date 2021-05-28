@@ -20,11 +20,13 @@
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEACTIONS/Remove.json",
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
+    "batchAction" : true,
     "builtinAction" : true
   }, {
     "actionMode" : "READ",
@@ -342,41 +344,6 @@
     "valueFormat" : "%1$s",
     "enableQuickSearch" : true,
     "majorDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "PRODUCT",
-      "dBType" : "MYSQL5",
-      "name" : "PRODUCT",
-      "queryCodeExp" : "t1.`PRODUCT`",
-      "standardColumnName" : "`PRODUCT`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Product",
-    "dEFType" : 1,
-    "dataType" : "INT",
-    "importOrder" : 1000,
-    "length" : 8,
-    "logicName" : "产品",
-    "name" : "PRODUCT",
-    "stdDataType" : 9,
-    "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "CREATEDATE",
@@ -778,6 +745,56 @@
     "name" : "END",
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "PRODUCT",
+      "dBType" : "MYSQL5",
+      "name" : "PRODUCT",
+      "queryCodeExp" : "t1.`PRODUCT`",
+      "standardColumnName" : "`PRODUCT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PRODUCT_EQ",
+      "name" : "N_PRODUCT_EQ",
+      "stdDataType" : 1,
+      "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Product",
+    "dEFType" : 1,
+    "dataType" : "PICKUP",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "编号",
+    "name" : "PRODUCT",
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDERS/DER1N_IBZ_PRODUCTLIFE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s",
+    "linkDEField" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -785,6 +802,16 @@
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "产品-读取",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDERS/DER1N_IBZ_PRODUCTLIFE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "READ",
+    "id" : "IbzProduct__READ"
   }, {
     "logicName" : "读取",
     "name" : "READ"
@@ -812,7 +839,7 @@
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -826,6 +853,31 @@
   "enableViewLevel" : 0,
   "extendMode" : 0,
   "logicName" : "产品生命周期",
+  "getMinorPSDERs" : [ {
+    "codeName" : "IbzProduct",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDERS/DER1N_IBZ_PRODUCTLIFE_ZT_PRODUCT_PRODUCT.json",
+    "logicName" : "产品",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 4,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife.json"
+    },
+    "name" : "DER1N_IBZ_PRODUCTLIFE_ZT_PRODUCT_PRODUCT",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "pickupDEFName" : "PRODUCT",
+    "removeActionType" : -1,
+    "removeOrder" : 0
+  } ],
   "name" : "IBZ_PRODUCTLIFE",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",

@@ -1,6 +1,7 @@
 {
   "actionMode" : "DELETE",
   "actionType" : "BUILTIN",
+  "batchActionMode" : 1,
   "codeName" : "Remove",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Remove.json",
   "logicName" : "Remove",
@@ -8,5 +9,6 @@
   "orderValue" : 21,
   "userCat" : "CAT1",
   "userTag4" : "remove",
+  "batchAction" : true,
   "builtinAction" : true
 }

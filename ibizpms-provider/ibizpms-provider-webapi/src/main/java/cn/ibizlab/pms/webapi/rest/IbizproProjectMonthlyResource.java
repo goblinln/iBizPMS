@@ -68,7 +68,7 @@ public class IbizproProjectMonthlyResource {
     }
 
     @VersionCheck(entity = "ibizproprojectmonthly" , versionfield = "updatedate")
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'UPDATE')")
+    @PreAuthorize("@IbizproProjectMonthlyRuntime.test(#ibizproprojectmonthly_id, 'UPDATE')")
     @ApiOperation(value = "更新项目月报", tags = {"项目月报" },  notes = "更新项目月报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproprojectmonthlies/{ibizproprojectmonthly_id}")
     @Transactional
@@ -85,13 +85,20 @@ public class IbizproProjectMonthlyResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
+    @PreAuthorize("@IbizproProjectMonthlyRuntime.test(#ibizproprojectmonthly_id, 'DELETE')")
     @ApiOperation(value = "删除项目月报", tags = {"项目月报" },  notes = "删除项目月报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectmonthlies/{ibizproprojectmonthly_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibizproprojectmonthly_id") String ibizproprojectmonthly_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectmonthlyService.remove(ibizproprojectmonthly_id));
     }
 
+    @PreAuthorize("@IbizproProjectMonthlyRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除项目月报", tags = {"项目月报" },  notes = "批量删除项目月报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectmonthlies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibizproprojectmonthlyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@IbizproProjectMonthlyRuntime.test(#ibizproprojectmonthly_id, 'NONE')")
     @ApiOperation(value = "获取项目月报", tags = {"项目月报" },  notes = "获取项目月报")

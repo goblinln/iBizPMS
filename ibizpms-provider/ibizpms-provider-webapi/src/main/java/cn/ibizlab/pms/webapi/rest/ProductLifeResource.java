@@ -92,6 +92,13 @@ public class ProductLifeResource {
          return ResponseEntity.status(HttpStatus.OK).body(productlifeService.remove(productlife_id));
     }
 
+    @PreAuthorize("@ProductLifeRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除产品生命周期", tags = {"产品生命周期" },  notes = "批量删除产品生命周期")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productlives/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        productlifeService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@ProductLifeRuntime.test(#productlife_id, 'READ')")
     @ApiOperation(value = "获取产品生命周期", tags = {"产品生命周期" },  notes = "获取产品生命周期")
@@ -136,7 +143,6 @@ public class ProductLifeResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品生命周期" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productlives/fetchdefault")
 	public ResponseEntity<List<ProductLifeDTO>> fetchdefault(@RequestBody ProductLifeSearchContext context) {
-        productlifeRuntime.addAuthorityConditions(context,"READ");
         Page<ProductLife> domains = productlifeService.searchDefault(context) ;
         List<ProductLifeDTO> list = productlifeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -149,7 +155,6 @@ public class ProductLifeResource {
 	@ApiOperation(value = "获取GetRoadmap", tags = {"产品生命周期" } ,notes = "获取GetRoadmap")
     @RequestMapping(method= RequestMethod.POST , value="/productlives/fetchgetroadmap")
 	public ResponseEntity<List<ProductLifeDTO>> fetchgetroadmap(@RequestBody ProductLifeSearchContext context) {
-        productlifeRuntime.addAuthorityConditions(context,"READ");
         Page<ProductLife> domains = productlifeService.searchGetRoadmap(context) ;
         List<ProductLifeDTO> list = productlifeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -162,7 +167,6 @@ public class ProductLifeResource {
 	@ApiOperation(value = "获取获取产品路线", tags = {"产品生命周期" } ,notes = "获取获取产品路线")
     @RequestMapping(method= RequestMethod.POST , value="/productlives/fetchgetroadmaps")
 	public ResponseEntity<List<ProductLifeDTO>> fetchgetroadmaps(@RequestBody ProductLifeSearchContext context) {
-        productlifeRuntime.addAuthorityConditions(context,"READ");
         Page<ProductLife> domains = productlifeService.searchGetRoadmapS(context) ;
         List<ProductLifeDTO> list = productlifeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -175,7 +179,6 @@ public class ProductLifeResource {
 	@ApiOperation(value = "获取RoadMapYear", tags = {"产品生命周期" } ,notes = "获取RoadMapYear")
     @RequestMapping(method= RequestMethod.POST , value="/productlives/fetchroadmapyear")
 	public ResponseEntity<List<ProductLifeDTO>> fetchroadmapyear(@RequestBody ProductLifeSearchContext context) {
-        productlifeRuntime.addAuthorityConditions(context,"READ");
         Page<ProductLife> domains = productlifeService.searchRoadMapYear(context) ;
         List<ProductLifeDTO> list = productlifeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

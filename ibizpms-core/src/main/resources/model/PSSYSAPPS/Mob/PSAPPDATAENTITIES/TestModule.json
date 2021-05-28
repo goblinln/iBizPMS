@@ -71,7 +71,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "RootTest__DELETE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -147,7 +147,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "RootTest__DELETE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -447,7 +447,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "RootTest__DELETE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -523,7 +523,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "RootTest__DELETE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,

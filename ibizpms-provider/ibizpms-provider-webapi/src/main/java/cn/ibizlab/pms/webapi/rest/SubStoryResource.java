@@ -99,6 +99,13 @@ public class SubStoryResource {
          return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(substory_id));
     }
 
+    @PreAuthorize("@StoryRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除需求", tags = {"需求" },  notes = "批量删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/substories/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        storyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@StoryRuntime.test(#substory_id, 'READ')")
     @ApiOperation(value = "获取需求", tags = {"需求" },  notes = "获取需求")
@@ -111,7 +118,7 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @PreAuthorize("@StoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取需求草稿", tags = {"需求" },  notes = "获取需求草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/substories/getdraft")
     public ResponseEntity<SubStoryDTO> getDraft(SubStoryDTO dto) {
@@ -357,7 +364,7 @@ public class SubStoryResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @PreAuthorize("@StoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查需求", tags = {"需求" },  notes = "检查需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SubStoryDTO substorydto) {
@@ -1095,6 +1102,13 @@ public class SubStoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(substory_id));
     }
 
+    @PreAuthorize("@StoryRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据需求批量删除需求", tags = {"需求" },  notes = "根据需求批量删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/substories/batch")
+    public ResponseEntity<Boolean> removeBatchByStory(@RequestBody List<Long> ids) {
+        storyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@StoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据需求获取需求", tags = {"需求" },  notes = "根据需求获取需求")
@@ -2033,6 +2047,13 @@ public class SubStoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(substory_id));
     }
 
+    @PreAuthorize("@StoryRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据产品需求批量删除需求", tags = {"需求" },  notes = "根据产品需求批量删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/substories/batch")
+    public ResponseEntity<Boolean> removeBatchByProductStory(@RequestBody List<Long> ids) {
+        storyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@StoryRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品需求获取需求", tags = {"需求" },  notes = "根据产品需求获取需求")

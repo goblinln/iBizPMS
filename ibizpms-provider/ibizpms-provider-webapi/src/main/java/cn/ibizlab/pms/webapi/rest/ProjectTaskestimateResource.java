@@ -91,6 +91,13 @@ public class ProjectTaskestimateResource {
          return ResponseEntity.status(HttpStatus.OK).body(projecttaskestimateService.remove(projecttaskestimate_id));
     }
 
+    @PreAuthorize("@ProjectTaskestimateRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除项目工时统计", tags = {"项目工时统计" },  notes = "批量删除项目工时统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projecttaskestimates/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        projecttaskestimateService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@ProjectTaskestimateRuntime.test(#projecttaskestimate_id, 'READ')")
     @ApiOperation(value = "获取项目工时统计", tags = {"项目工时统计" },  notes = "获取项目工时统计")

@@ -91,6 +91,13 @@ public class CompanyResource {
          return ResponseEntity.status(HttpStatus.OK).body(companyService.remove(company_id));
     }
 
+    @PreAuthorize("@CompanyRuntime.test(#ids, 'DELETE')")
+    @ApiOperation(value = "批量删除公司", tags = {"公司" },  notes = "批量删除公司")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/companies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        companyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("@CompanyRuntime.test(#company_id, 'READ')")
     @ApiOperation(value = "获取公司", tags = {"公司" },  notes = "获取公司")
