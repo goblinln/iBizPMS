@@ -4147,6 +4147,10 @@
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_BugManage_Open.json",
     "name" : "产品Bug管理（公开）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "BUGMANAGE",
       "name" : "BUGMANAGE",
@@ -4200,6 +4204,10 @@
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_BuildManage_Open.json",
     "name" : "产品版本管理（公开）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "BUILDMANAGE",
       "name" : "BUILDMANAGE",
@@ -4253,6 +4261,10 @@
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_CaseManage_Open.json",
     "name" : "产品功能测试管理（公开）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "CASEMANAGE",
       "name" : "CASEMANAGE",
@@ -4695,6 +4707,10 @@
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_SuiteManage_Open.json",
     "name" : "产品测试套件管理（公开）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "TESTSUITEMANAGE",
       "name" : "TESTSUITEMANAGE",
@@ -4748,6 +4764,10 @@
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_TestReportManage_Open.json",
     "name" : "产品测试报告管理（公开）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "TESTREPORTMANAGE",
       "name" : "TESTREPORTMANAGE",
@@ -4782,6 +4802,10 @@
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_TesttaskManage_Open.json",
     "name" : "产品测试版本管理（公开）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "TESTTASKMANAGE",
       "name" : "TESTTASKMANAGE",

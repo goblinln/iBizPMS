@@ -1,6 +1,10 @@
 {
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_CaseManage_Open.json",
   "name" : "产品功能测试管理（公开）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "OpenQuery"
+  },
   "getPSDEUserRoleOPPrivs" : [ {
     "dataAccessAction" : "CASEMANAGE",
     "name" : "CASEMANAGE",
