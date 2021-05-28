@@ -27,7 +27,7 @@ public class IbzCaseHelper extends ZTBaseHelper<IbzCaseMapper, IbzCase> {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public boolean create(IbzCase et) {
-        List<IbzLibCaseSteps> list = et.getIbzlibcasesteps();
+        List<IbzLibCaseSteps> list = et.getIbzlibcasestepss();
         List<CaseStep> caseStepList = new ArrayList<>();
         CachedBeanCopier.copy(list, caseStepList);
         Case cases = new Case();
@@ -39,7 +39,7 @@ public class IbzCaseHelper extends ZTBaseHelper<IbzCaseMapper, IbzCase> {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public boolean edit(IbzCase et) {
-        List<IbzLibCaseSteps> list = et.getIbzlibcasesteps();
+        List<IbzLibCaseSteps> list = et.getIbzlibcasestepss();
         List<CaseStep> caseStepList = new ArrayList<>();
         CachedBeanCopier.copy(list, caseStepList);
         Case cases = new Case();

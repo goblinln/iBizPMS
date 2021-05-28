@@ -32,7 +32,7 @@ public class IbzCaseExService extends IbzCaseServiceImpl {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public boolean create(IbzCase et) {
-        List<IbzLibCaseSteps> list = et.getIbzlibcasesteps();
+        List<IbzLibCaseSteps> list = et.getIbzlibcasestepss();
         List<CaseStep> caseStepList = new ArrayList<>();
         CachedBeanCopier.copy(list, caseStepList);
         Case cases = new Case();
@@ -44,7 +44,7 @@ public class IbzCaseExService extends IbzCaseServiceImpl {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public boolean update(IbzCase et) {
-        List<IbzLibCaseSteps> list = et.getIbzlibcasesteps();
+        List<IbzLibCaseSteps> list = et.getIbzlibcasestepss();
         List<CaseStep> caseStepList = new ArrayList<>();
         CachedBeanCopier.copy(list, caseStepList);
         Case cases = new Case();
