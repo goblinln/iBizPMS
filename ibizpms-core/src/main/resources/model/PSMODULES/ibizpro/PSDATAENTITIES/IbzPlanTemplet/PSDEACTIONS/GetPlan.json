@@ -1,8 +1,0 @@
-{
-  "actionMode" : "READ",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "GetPlan",
-  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/GetPlan.json",
-  "logicName" : "获取计划",
-  "name" : "getPlan"
-}

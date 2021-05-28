@@ -1,8 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "SendToread",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZDailyAction/PSDEACTIONS/SendToread.json",
-  "logicName" : "发送待阅",
-  "name" : "sendToread"
-}

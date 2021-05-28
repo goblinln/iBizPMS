@@ -1,8 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "UnlinkProduct",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UnlinkProduct.json",
-  "logicName" : "解除关联产品",
-  "name" : "UnlinkProduct"
-}

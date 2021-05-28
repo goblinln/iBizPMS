@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "PmsEeProjectTodoTaskCount",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/PmsEeProjectTodoTaskCount.json",
-  "logicName" : "项目立项待办任务快速分组计数器",
-  "name" : "PmsEeProjectTodoTaskCount",
-  "userCat" : "CAT1"
-}

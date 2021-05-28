@@ -1,8 +1,0 @@
-{
-  "customCond" : "[ (1, '=', 1) ]",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEUSERROLES/ProjectStats_Read.json",
-  "name" : "项目统计查看（默认角色）",
-  "roleTag" : "ProjectStats_Read",
-  "userDRAction" : "READ",
-  "defaultMode" : true
-}

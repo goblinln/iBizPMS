@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CREATE",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "CreateEveryWeekReport",
-  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateEveryWeekReport.json",
-  "logicName" : "定时生成每周周报",
-  "name" : "createEveryWeekReport",
-  "userCat" : "CAT1"
-}

@@ -1,8 +1,0 @@
-{
-  "actionMode" : "UPDATE",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "UpdateCycle",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UpdateCycle.json",
-  "logicName" : "根据结束日期更新可用工作日",
-  "name" : "UpdateCycle"
-}

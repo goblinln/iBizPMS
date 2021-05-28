@@ -1,9 +1,0 @@
-{
-  "actionMode" : "READ",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "GetNextTeamUser",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetNextTeamUser.json",
-  "logicName" : "获取下一个团队成员(完成)",
-  "name" : "GetNextTeamUserFinish",
-  "userCat" : "CAT1"
-}

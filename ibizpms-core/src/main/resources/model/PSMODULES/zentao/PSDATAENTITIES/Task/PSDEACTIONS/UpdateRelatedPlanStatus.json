@@ -1,8 +1,0 @@
-{
-  "actionMode" : "UPDATE",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "UpdateRelatedPlanStatus",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json",
-  "logicName" : "更新父任务计划状态",
-  "name" : "updateRelatedPlanStatus"
-}

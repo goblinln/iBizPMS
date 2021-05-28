@@ -1,6 +1,0 @@
-{
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Manage_ALL.json",
-  "name" : "项目管理（全部数据）",
-  "roleTag" : "Project_Manage_ALL",
-  "userDRAction" : "READ"
-}

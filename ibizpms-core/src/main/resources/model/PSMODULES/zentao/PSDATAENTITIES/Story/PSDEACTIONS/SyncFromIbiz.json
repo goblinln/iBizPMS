@@ -1,8 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "SyncFromIbiz",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SyncFromIbiz.json",
-  "logicName" : "同步Ibz平台实体",
-  "name" : "SyncFromIbiz"
-}

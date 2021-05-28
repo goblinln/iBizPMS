@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "LinkBugbyLeftBug",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBugbyLeftBug.json",
-  "logicName" : "关联Bug（遗留Bug）",
-  "name" : "LinkBugbyLeftBug",
-  "userCat" : "CAT1"
-}

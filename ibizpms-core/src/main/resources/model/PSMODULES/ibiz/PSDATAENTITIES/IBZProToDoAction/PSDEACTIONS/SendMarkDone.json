@@ -1,8 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "SendMarkDone",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction/PSDEACTIONS/SendMarkDone.json",
-  "logicName" : "已读",
-  "name" : "sendMarkDone"
-}

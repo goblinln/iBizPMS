@@ -1,8 +1,0 @@
-{
-  "actionMode" : "READ",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "GetTeamUserLeftActivity",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftActivity.json",
-  "logicName" : "获取团队成员剩余工时（激活）",
-  "name" : "GetTeamUserLeftActivity"
-}

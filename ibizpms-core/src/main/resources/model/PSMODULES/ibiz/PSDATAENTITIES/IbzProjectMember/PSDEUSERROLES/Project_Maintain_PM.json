@@ -1,6 +1,0 @@
-{
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Maintain_PM.json",
-  "name" : "项目维护（项目负责人）",
-  "roleTag" : "Project_Maintain_PM",
-  "userDRAction" : "READ"
-}

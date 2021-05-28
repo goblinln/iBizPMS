@@ -1,8 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "SendTodo",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDEACTIONS/SendTodo.json",
-  "logicName" : "发送待办",
-  "name" : "sendTodo"
-}

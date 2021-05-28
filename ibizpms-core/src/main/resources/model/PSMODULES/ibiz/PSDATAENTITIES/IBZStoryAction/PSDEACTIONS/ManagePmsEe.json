@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "ManagePmsEe",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDEACTIONS/ManagePmsEe.json",
-  "logicName" : "Pms企业专用",
-  "name" : "ManagePmsEe",
-  "userCat" : "CAT1"
-}

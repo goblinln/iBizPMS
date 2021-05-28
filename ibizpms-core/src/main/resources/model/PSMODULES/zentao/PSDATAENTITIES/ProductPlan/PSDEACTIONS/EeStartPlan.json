@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "EeStartPlan",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeStartPlan.json",
-  "logicName" : "EE开始计划",
-  "name" : "EeStartPlan",
-  "userCat" : "CAT1"
-}
