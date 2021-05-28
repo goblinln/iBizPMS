@@ -205,6 +205,35 @@ export default class AccountTaskestimateServiceBase extends EntityService {
     }
 
     /**
+     * FetchCurProjectUserEstimateDetail接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof AccountTaskestimateServiceBase
+     */
+    public async FetchCurProjectUserEstimateDetail(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        let res:any = await Http.getInstance().get(`/accounttaskestimates/fetchcurprojectuserestimatedetail`,tempData,isloading);
+        return res;
+    }
+
+    /**
+     * searchCurProjectUserEstimateDetail接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof AccountTaskestimateServiceBase
+     */
+    public async searchCurProjectUserEstimateDetail(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/accounttaskestimates/searchcurprojectuserestimatedetail`,tempData,isloading);
+    }
+
+    /**
      * FetchDefault接口方法
      *
      * @param {*} [context={}]

@@ -160,6 +160,28 @@ public class AccountTaskestimateResource {
                 .body(new PageImpl(accounttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-AccountTaskestimate-searchCurProjectUserEstimateDetail-all')")
+	@ApiOperation(value = "获取当前项目下用户工时详情", tags = {"用户工时统计" } ,notes = "获取当前项目下用户工时详情")
+    @RequestMapping(method= RequestMethod.GET , value="/accounttaskestimates/fetchcurprojectuserestimatedetail")
+	public ResponseEntity<List<AccountTaskestimateDTO>> fetchCurProjectUserEstimateDetail(AccountTaskestimateSearchContext context) {
+        Page<AccountTaskestimate> domains = accounttaskestimateService.searchCurProjectUserEstimateDetail(context) ;
+        List<AccountTaskestimateDTO> list = accounttaskestimateMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-AccountTaskestimate-searchCurProjectUserEstimateDetail-all')")
+	@ApiOperation(value = "查询当前项目下用户工时详情", tags = {"用户工时统计" } ,notes = "查询当前项目下用户工时详情")
+    @RequestMapping(method= RequestMethod.POST , value="/accounttaskestimates/searchcurprojectuserestimatedetail")
+	public ResponseEntity<Page<AccountTaskestimateDTO>> searchCurProjectUserEstimateDetail(@RequestBody AccountTaskestimateSearchContext context) {
+        Page<AccountTaskestimate> domains = accounttaskestimateService.searchCurProjectUserEstimateDetail(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(accounttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-AccountTaskestimate-searchDefault-all')")
 	@ApiOperation(value = "获取数据集", tags = {"用户工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/accounttaskestimates/fetchdefault")
