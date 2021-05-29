@@ -134,7 +134,7 @@ export default class CurProductPlan {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.productplanService.FetchCurProductPlanStory(context, data);
+            const promise: Promise<any> = this.productplanService.FetchProductQuery(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

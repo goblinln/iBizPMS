@@ -49,7 +49,6 @@ public class PSSysAppResource {
     @Lazy
     public PSSysAppMapping pssysappMapping;
 
-    @PreAuthorize("@PSSysAppRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建系统应用", tags = {"系统应用" },  notes = "新建系统应用")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssysapps")
     @Transactional
@@ -61,7 +60,6 @@ public class PSSysAppResource {
     }
 
     @VersionCheck(entity = "pssysapp" , versionfield = "updatedate")
-    @PreAuthorize("@PSSysAppRuntime.test(#pssysapp_id, 'UPDATE')")
     @ApiOperation(value = "更新系统应用", tags = {"系统应用" },  notes = "更新系统应用")
 	@RequestMapping(method = RequestMethod.PUT, value = "/pssysapps/{pssysapp_id}")
     @Transactional
@@ -74,14 +72,12 @@ public class PSSysAppResource {
     }
 
 
-    @PreAuthorize("@PSSysAppRuntime.test(#pssysapp_id, 'DELETE')")
     @ApiOperation(value = "删除系统应用", tags = {"系统应用" },  notes = "删除系统应用")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/pssysapps/{pssysapp_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("pssysapp_id") String pssysapp_id) {
          return ResponseEntity.status(HttpStatus.OK).body(pssysappService.remove(pssysapp_id));
     }
 
-    @PreAuthorize("@PSSysAppRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除系统应用", tags = {"系统应用" },  notes = "批量删除系统应用")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/pssysapps/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -89,7 +85,6 @@ public class PSSysAppResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@PSSysAppRuntime.test(#pssysapp_id, 'READ')")
     @ApiOperation(value = "获取系统应用", tags = {"系统应用" },  notes = "获取系统应用")
 	@RequestMapping(method = RequestMethod.GET, value = "/pssysapps/{pssysapp_id}")
     public ResponseEntity<PSSysAppDTO> get(@PathVariable("pssysapp_id") String pssysapp_id) {
@@ -98,7 +93,6 @@ public class PSSysAppResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@PSSysAppRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取系统应用草稿", tags = {"系统应用" },  notes = "获取系统应用草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/pssysapps/getdraft")
     public ResponseEntity<PSSysAppDTO> getDraft(PSSysAppDTO dto) {
@@ -106,14 +100,12 @@ public class PSSysAppResource {
         return ResponseEntity.status(HttpStatus.OK).body(pssysappMapping.toDto(pssysappService.getDraft(domain)));
     }
 
-    @PreAuthorize("@PSSysAppRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查系统应用", tags = {"系统应用" },  notes = "检查系统应用")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssysapps/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody PSSysAppDTO pssysappdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(pssysappService.checkKey(pssysappMapping.toDomain(pssysappdto)));
     }
 
-    @PreAuthorize("@PSSysAppRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存系统应用", tags = {"系统应用" },  notes = "保存系统应用")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssysapps/save")
     public ResponseEntity<PSSysAppDTO> save(@RequestBody PSSysAppDTO pssysappdto) {
@@ -124,7 +116,6 @@ public class PSSysAppResource {
     }
 
 
-    @PreAuthorize("@PSSysAppRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本", tags = {"系统应用" } ,notes = "获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/pssysapps/fetchbuild")
 	public ResponseEntity<List<PSSysAppDTO>> fetchbuild(@RequestBody PSSysAppSearchContext context) {
@@ -136,7 +127,6 @@ public class PSSysAppResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@PSSysAppRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"系统应用" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/pssysapps/fetchdefault")
 	public ResponseEntity<List<PSSysAppDTO>> fetchdefault(@RequestBody PSSysAppSearchContext context) {

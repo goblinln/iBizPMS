@@ -49,7 +49,6 @@ public class IBIZProKeywordResource {
     @Lazy
     public IBIZProKeywordMapping ibizprokeywordMapping;
 
-    @PreAuthorize("@IBIZProKeywordRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建关键字", tags = {"关键字" },  notes = "新建关键字")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords")
     @Transactional
@@ -60,7 +59,6 @@ public class IBIZProKeywordResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBIZProKeywordRuntime.test(#ibizprokeyword_id, 'UPDATE')")
     @ApiOperation(value = "更新关键字", tags = {"关键字" },  notes = "更新关键字")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizprokeywords/{ibizprokeyword_id}")
     @Transactional
@@ -73,14 +71,12 @@ public class IBIZProKeywordResource {
     }
 
 
-    @PreAuthorize("@IBIZProKeywordRuntime.test(#ibizprokeyword_id, 'DELETE')")
     @ApiOperation(value = "删除关键字", tags = {"关键字" },  notes = "删除关键字")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizprokeywords/{ibizprokeyword_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibizprokeyword_id") String ibizprokeyword_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibizprokeywordService.remove(ibizprokeyword_id));
     }
 
-    @PreAuthorize("@IBIZProKeywordRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除关键字", tags = {"关键字" },  notes = "批量删除关键字")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizprokeywords/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -88,7 +84,6 @@ public class IBIZProKeywordResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IBIZProKeywordRuntime.test(#ibizprokeyword_id, 'READ')")
     @ApiOperation(value = "获取关键字", tags = {"关键字" },  notes = "获取关键字")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/{ibizprokeyword_id}")
     public ResponseEntity<IBIZProKeywordDTO> get(@PathVariable("ibizprokeyword_id") String ibizprokeyword_id) {
@@ -97,7 +92,6 @@ public class IBIZProKeywordResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBIZProKeywordRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取关键字草稿", tags = {"关键字" },  notes = "获取关键字草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/getdraft")
     public ResponseEntity<IBIZProKeywordDTO> getDraft(IBIZProKeywordDTO dto) {
@@ -105,14 +99,12 @@ public class IBIZProKeywordResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizprokeywordMapping.toDto(ibizprokeywordService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IBIZProKeywordRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查关键字", tags = {"关键字" },  notes = "检查关键字")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBIZProKeywordDTO ibizprokeyworddto) {
         return  ResponseEntity.status(HttpStatus.OK).body(ibizprokeywordService.checkKey(ibizprokeywordMapping.toDomain(ibizprokeyworddto)));
     }
 
-    @PreAuthorize("@IBIZProKeywordRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存关键字", tags = {"关键字" },  notes = "保存关键字")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/save")
     public ResponseEntity<IBIZProKeywordDTO> save(@RequestBody IBIZProKeywordDTO ibizprokeyworddto) {
@@ -123,7 +115,6 @@ public class IBIZProKeywordResource {
     }
 
 
-    @PreAuthorize("@IBIZProKeywordRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"关键字" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizprokeywords/fetchdefault")
 	public ResponseEntity<List<IBIZProKeywordDTO>> fetchdefault(@RequestBody IBIZProKeywordSearchContext context) {

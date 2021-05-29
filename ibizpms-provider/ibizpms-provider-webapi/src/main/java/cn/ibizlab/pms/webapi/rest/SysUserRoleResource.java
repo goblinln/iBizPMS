@@ -49,7 +49,6 @@ public class SysUserRoleResource {
     @Lazy
     public SysUserRoleMapping sysuserroleMapping;
 
-    @PreAuthorize("@SysUserRoleRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建用户角色关系", tags = {"用户角色关系" },  notes = "新建用户角色关系")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysuserroles")
     @Transactional
@@ -61,7 +60,6 @@ public class SysUserRoleResource {
     }
 
     @VersionCheck(entity = "sysuserrole" , versionfield = "updatedate")
-    @PreAuthorize("@SysUserRoleRuntime.test(#sysuserrole_id, 'UPDATE')")
     @ApiOperation(value = "更新用户角色关系", tags = {"用户角色关系" },  notes = "更新用户角色关系")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysuserroles/{sysuserrole_id}")
     @Transactional
@@ -74,14 +72,12 @@ public class SysUserRoleResource {
     }
 
 
-    @PreAuthorize("@SysUserRoleRuntime.test(#sysuserrole_id, 'DELETE')")
     @ApiOperation(value = "删除用户角色关系", tags = {"用户角色关系" },  notes = "删除用户角色关系")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysuserroles/{sysuserrole_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("sysuserrole_id") String sysuserrole_id) {
          return ResponseEntity.status(HttpStatus.OK).body(sysuserroleService.remove(sysuserrole_id));
     }
 
-    @PreAuthorize("@SysUserRoleRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除用户角色关系", tags = {"用户角色关系" },  notes = "批量删除用户角色关系")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysuserroles/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -89,7 +85,6 @@ public class SysUserRoleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@SysUserRoleRuntime.test(#sysuserrole_id, 'READ')")
     @ApiOperation(value = "获取用户角色关系", tags = {"用户角色关系" },  notes = "获取用户角色关系")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysuserroles/{sysuserrole_id}")
     public ResponseEntity<SysUserRoleDTO> get(@PathVariable("sysuserrole_id") String sysuserrole_id) {
@@ -98,7 +93,6 @@ public class SysUserRoleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@SysUserRoleRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取用户角色关系草稿", tags = {"用户角色关系" },  notes = "获取用户角色关系草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysuserroles/getdraft")
     public ResponseEntity<SysUserRoleDTO> getDraft(SysUserRoleDTO dto) {
@@ -106,14 +100,12 @@ public class SysUserRoleResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysuserroleMapping.toDto(sysuserroleService.getDraft(domain)));
     }
 
-    @PreAuthorize("@SysUserRoleRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查用户角色关系", tags = {"用户角色关系" },  notes = "检查用户角色关系")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysuserroles/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SysUserRoleDTO sysuserroledto) {
         return  ResponseEntity.status(HttpStatus.OK).body(sysuserroleService.checkKey(sysuserroleMapping.toDomain(sysuserroledto)));
     }
 
-    @PreAuthorize("@SysUserRoleRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存用户角色关系", tags = {"用户角色关系" },  notes = "保存用户角色关系")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysuserroles/save")
     public ResponseEntity<SysUserRoleDTO> save(@RequestBody SysUserRoleDTO sysuserroledto) {
@@ -124,7 +116,6 @@ public class SysUserRoleResource {
     }
 
 
-    @PreAuthorize("@SysUserRoleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"用户角色关系" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysuserroles/fetchdefault")
 	public ResponseEntity<List<SysUserRoleDTO>> fetchdefault(@RequestBody SysUserRoleSearchContext context) {

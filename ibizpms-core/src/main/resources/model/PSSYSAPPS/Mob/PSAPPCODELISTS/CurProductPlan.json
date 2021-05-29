@@ -7,7 +7,7 @@
   "name" : "当前产品计划（动态）_缓存",
   "getPSAppDEDataSet" : {
     "modelref" : true,
-    "id" : "FetchCurProductPlanStory"
+    "id" : "FetchProductQuery"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

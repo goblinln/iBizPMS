@@ -49,7 +49,6 @@ public class SysRoleResource {
     @Lazy
     public SysRoleMapping sysroleMapping;
 
-    @PreAuthorize("@SysRoleRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建系统角色", tags = {"系统角色" },  notes = "新建系统角色")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysroles")
     @Transactional
@@ -61,7 +60,6 @@ public class SysRoleResource {
     }
 
     @VersionCheck(entity = "sysrole" , versionfield = "updatedate")
-    @PreAuthorize("@SysRoleRuntime.test(#sysrole_id, 'UPDATE')")
     @ApiOperation(value = "更新系统角色", tags = {"系统角色" },  notes = "更新系统角色")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysroles/{sysrole_id}")
     @Transactional
@@ -74,14 +72,12 @@ public class SysRoleResource {
     }
 
 
-    @PreAuthorize("@SysRoleRuntime.test(#sysrole_id, 'DELETE')")
     @ApiOperation(value = "删除系统角色", tags = {"系统角色" },  notes = "删除系统角色")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysroles/{sysrole_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("sysrole_id") String sysrole_id) {
          return ResponseEntity.status(HttpStatus.OK).body(sysroleService.remove(sysrole_id));
     }
 
-    @PreAuthorize("@SysRoleRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除系统角色", tags = {"系统角色" },  notes = "批量删除系统角色")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysroles/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -89,7 +85,6 @@ public class SysRoleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@SysRoleRuntime.test(#sysrole_id, 'READ')")
     @ApiOperation(value = "获取系统角色", tags = {"系统角色" },  notes = "获取系统角色")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysroles/{sysrole_id}")
     public ResponseEntity<SysRoleDTO> get(@PathVariable("sysrole_id") String sysrole_id) {
@@ -98,7 +93,6 @@ public class SysRoleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@SysRoleRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取系统角色草稿", tags = {"系统角色" },  notes = "获取系统角色草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysroles/getdraft")
     public ResponseEntity<SysRoleDTO> getDraft(SysRoleDTO dto) {
@@ -106,14 +100,12 @@ public class SysRoleResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysroleMapping.toDto(sysroleService.getDraft(domain)));
     }
 
-    @PreAuthorize("@SysRoleRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查系统角色", tags = {"系统角色" },  notes = "检查系统角色")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysroles/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SysRoleDTO sysroledto) {
         return  ResponseEntity.status(HttpStatus.OK).body(sysroleService.checkKey(sysroleMapping.toDomain(sysroledto)));
     }
 
-    @PreAuthorize("@SysRoleRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存系统角色", tags = {"系统角色" },  notes = "保存系统角色")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysroles/save")
     public ResponseEntity<SysRoleDTO> save(@RequestBody SysRoleDTO sysroledto) {
@@ -124,7 +116,6 @@ public class SysRoleResource {
     }
 
 
-    @PreAuthorize("@SysRoleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"系统角色" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysroles/fetchdefault")
 	public ResponseEntity<List<SysRoleDTO>> fetchdefault(@RequestBody SysRoleSearchContext context) {

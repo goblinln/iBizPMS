@@ -49,7 +49,6 @@ public class PSSystemDBCfgResource {
     @Lazy
     public PSSystemDBCfgMapping pssystemdbcfgMapping;
 
-    @PreAuthorize("@PSSystemDBCfgRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建系统数据库", tags = {"系统数据库" },  notes = "新建系统数据库")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs")
     @Transactional
@@ -61,7 +60,6 @@ public class PSSystemDBCfgResource {
     }
 
     @VersionCheck(entity = "pssystemdbcfg" , versionfield = "updatedate")
-    @PreAuthorize("@PSSystemDBCfgRuntime.test(#pssystemdbcfg_id, 'UPDATE')")
     @ApiOperation(value = "更新系统数据库", tags = {"系统数据库" },  notes = "更新系统数据库")
 	@RequestMapping(method = RequestMethod.PUT, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
     @Transactional
@@ -74,14 +72,12 @@ public class PSSystemDBCfgResource {
     }
 
 
-    @PreAuthorize("@PSSystemDBCfgRuntime.test(#pssystemdbcfg_id, 'DELETE')")
     @ApiOperation(value = "删除系统数据库", tags = {"系统数据库" },  notes = "删除系统数据库")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("pssystemdbcfg_id") String pssystemdbcfg_id) {
          return ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgService.remove(pssystemdbcfg_id));
     }
 
-    @PreAuthorize("@PSSystemDBCfgRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除系统数据库", tags = {"系统数据库" },  notes = "批量删除系统数据库")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -89,7 +85,6 @@ public class PSSystemDBCfgResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@PSSystemDBCfgRuntime.test(#pssystemdbcfg_id, 'READ')")
     @ApiOperation(value = "获取系统数据库", tags = {"系统数据库" },  notes = "获取系统数据库")
 	@RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
     public ResponseEntity<PSSystemDBCfgDTO> get(@PathVariable("pssystemdbcfg_id") String pssystemdbcfg_id) {
@@ -98,7 +93,6 @@ public class PSSystemDBCfgResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@PSSystemDBCfgRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取系统数据库草稿", tags = {"系统数据库" },  notes = "获取系统数据库草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/getdraft")
     public ResponseEntity<PSSystemDBCfgDTO> getDraft(PSSystemDBCfgDTO dto) {
@@ -106,14 +100,12 @@ public class PSSystemDBCfgResource {
         return ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgMapping.toDto(pssystemdbcfgService.getDraft(domain)));
     }
 
-    @PreAuthorize("@PSSystemDBCfgRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查系统数据库", tags = {"系统数据库" },  notes = "检查系统数据库")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody PSSystemDBCfgDTO pssystemdbcfgdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgService.checkKey(pssystemdbcfgMapping.toDomain(pssystemdbcfgdto)));
     }
 
-    @PreAuthorize("@PSSystemDBCfgRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存系统数据库", tags = {"系统数据库" },  notes = "保存系统数据库")
 	@RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/save")
     public ResponseEntity<PSSystemDBCfgDTO> save(@RequestBody PSSystemDBCfgDTO pssystemdbcfgdto) {
@@ -124,7 +116,6 @@ public class PSSystemDBCfgResource {
     }
 
 
-    @PreAuthorize("@PSSystemDBCfgRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本", tags = {"系统数据库" } ,notes = "获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/pssystemdbcfgs/fetchbuild")
 	public ResponseEntity<List<PSSystemDBCfgDTO>> fetchbuild(@RequestBody PSSystemDBCfgSearchContext context) {
@@ -136,7 +127,6 @@ public class PSSystemDBCfgResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@PSSystemDBCfgRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"系统数据库" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/pssystemdbcfgs/fetchdefault")
 	public ResponseEntity<List<PSSystemDBCfgDTO>> fetchdefault(@RequestBody PSSystemDBCfgSearchContext context) {

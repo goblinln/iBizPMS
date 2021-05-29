@@ -59,18 +59,6 @@ public class TestCaseResource {
     private ICaseStepService casestepService;
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
-    @ApiOperation(value = "根据产品建立测试用例", tags = {"测试用例" },  notes = "根据产品建立测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases")
-    public ResponseEntity<TestCaseDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestCaseDTO testcasedto) {
-        Case domain = testcaseMapping.toDomain(testcasedto);
-        domain.setProduct(product_id);
-		caseService.create(domain);
-        TestCaseDTO dto = testcaseMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
     @ApiOperation(value = "根据产品获取测试用例", tags = {"测试用例" },  notes = "根据产品获取测试用例")
 	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testcases/{testcase_id}")
@@ -100,6 +88,18 @@ public class TestCaseResource {
 		caseService.update(domain);
         TestCaseDTO dto = testcaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
+    @ApiOperation(value = "根据产品建立测试用例", tags = {"测试用例" },  notes = "根据产品建立测试用例")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases")
+    public ResponseEntity<TestCaseDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestCaseDTO testcasedto) {
+        Case domain = testcaseMapping.toDomain(testcasedto);
+        domain.setProduct(product_id);
+		caseService.create(domain);
+        TestCaseDTO dto = testcaseMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 

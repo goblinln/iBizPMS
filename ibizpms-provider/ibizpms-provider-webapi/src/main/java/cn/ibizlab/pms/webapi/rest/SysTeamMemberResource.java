@@ -49,7 +49,6 @@ public class SysTeamMemberResource {
     @Lazy
     public SysTeamMemberMapping systeammemberMapping;
 
-    @PreAuthorize("@SysTeamMemberRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建组成员", tags = {"组成员" },  notes = "新建组成员")
 	@RequestMapping(method = RequestMethod.POST, value = "/systeammembers")
     @Transactional
@@ -60,7 +59,6 @@ public class SysTeamMemberResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@SysTeamMemberRuntime.test(#systeammember_id, 'UPDATE')")
     @ApiOperation(value = "更新组成员", tags = {"组成员" },  notes = "更新组成员")
 	@RequestMapping(method = RequestMethod.PUT, value = "/systeammembers/{systeammember_id}")
     @Transactional
@@ -73,14 +71,12 @@ public class SysTeamMemberResource {
     }
 
 
-    @PreAuthorize("@SysTeamMemberRuntime.test(#systeammember_id, 'DELETE')")
     @ApiOperation(value = "删除组成员", tags = {"组成员" },  notes = "删除组成员")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/systeammembers/{systeammember_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("systeammember_id") String systeammember_id) {
          return ResponseEntity.status(HttpStatus.OK).body(systeammemberService.remove(systeammember_id));
     }
 
-    @PreAuthorize("@SysTeamMemberRuntime.quickTest('DELETE')")
     @ApiOperation(value = "批量删除组成员", tags = {"组成员" },  notes = "批量删除组成员")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/systeammembers/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -88,7 +84,6 @@ public class SysTeamMemberResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@SysTeamMemberRuntime.test(#systeammember_id, 'READ')")
     @ApiOperation(value = "获取组成员", tags = {"组成员" },  notes = "获取组成员")
 	@RequestMapping(method = RequestMethod.GET, value = "/systeammembers/{systeammember_id}")
     public ResponseEntity<SysTeamMemberDTO> get(@PathVariable("systeammember_id") String systeammember_id) {
@@ -97,7 +92,6 @@ public class SysTeamMemberResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@SysTeamMemberRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取组成员草稿", tags = {"组成员" },  notes = "获取组成员草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/systeammembers/getdraft")
     public ResponseEntity<SysTeamMemberDTO> getDraft(SysTeamMemberDTO dto) {
@@ -105,14 +99,12 @@ public class SysTeamMemberResource {
         return ResponseEntity.status(HttpStatus.OK).body(systeammemberMapping.toDto(systeammemberService.getDraft(domain)));
     }
 
-    @PreAuthorize("@SysTeamMemberRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查组成员", tags = {"组成员" },  notes = "检查组成员")
 	@RequestMapping(method = RequestMethod.POST, value = "/systeammembers/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SysTeamMemberDTO systeammemberdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(systeammemberService.checkKey(systeammemberMapping.toDomain(systeammemberdto)));
     }
 
-    @PreAuthorize("@SysTeamMemberRuntime.quickTest('DENY')")
     @ApiOperation(value = "保存组成员", tags = {"组成员" },  notes = "保存组成员")
 	@RequestMapping(method = RequestMethod.POST, value = "/systeammembers/save")
     public ResponseEntity<SysTeamMemberDTO> save(@RequestBody SysTeamMemberDTO systeammemberdto) {
@@ -123,7 +115,6 @@ public class SysTeamMemberResource {
     }
 
 
-    @PreAuthorize("@SysTeamMemberRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"组成员" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/systeammembers/fetchdefault")
 	public ResponseEntity<List<SysTeamMemberDTO>> fetchdefault(@RequestBody SysTeamMemberSearchContext context) {

@@ -8,7 +8,7 @@
   "name" : "所以计划",
   "getPSAppDEDataSet" : {
     "modelref" : true,
-    "id" : "FetchDefault"
+    "id" : "FetchProductQuery"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

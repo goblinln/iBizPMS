@@ -7,7 +7,7 @@
   "name" : "产品（动态）",
   "getPSAppDEDataSet" : {
     "modelref" : true,
-    "id" : "FetchAllList"
+    "id" : "FetchCurDefault"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
