@@ -52,6 +52,49 @@ public class ProjectResource {
     @Lazy
     public ProjectMapping projectMapping;
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'MANAGE')")
+    @ApiOperation(value = "关联需求", tags = {"项目" },  notes = "关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/linkstory")
+    public ResponseEntity<ProjectDTO> linkStory(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.linkStory(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
+    @ApiOperation(value = "删除项目", tags = {"项目" },  notes = "删除项目")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("project_id") Long project_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(projectService.remove(project_id));
+    }
+
+    @PreAuthorize("@ProjectRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "批量删除项目", tags = {"项目" },  notes = "批量删除项目")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        projectService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'MANAGE')")
+    @ApiOperation(value = "解除关联需求", tags = {"项目" },  notes = "解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/unlinkstory")
+    public ResponseEntity<ProjectDTO> unlinkStory(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.unlinkStory(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'SUSPEND')")
     @ApiOperation(value = "挂起", tags = {"项目" },  notes = "挂起")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/suspend")
@@ -65,6 +108,14 @@ public class ProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
 
+
+    @PreAuthorize("@ProjectRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "获取项目草稿", tags = {"项目" },  notes = "获取项目草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/getdraft")
+    public ResponseEntity<ProjectDTO> getDraft(ProjectDTO dto) {
+        Project domain = projectMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(projectMapping.toDto(projectService.getDraft(domain)));
+    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'UPDATE')")
     @ApiOperation(value = "更新项目", tags = {"项目" },  notes = "更新项目")
@@ -96,34 +147,6 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'MANAGE')")
-    @ApiOperation(value = "关联需求", tags = {"项目" },  notes = "关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/linkstory")
-    public ResponseEntity<ProjectDTO> linkStory(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
-        Project domain = projectMapping.toDomain(projectdto);
-        domain.setId(project_id);
-        domain = projectService.linkStory(domain);
-        projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        projectdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
-    }
-
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'MANAGE')")
-    @ApiOperation(value = "解除关联需求", tags = {"项目" },  notes = "解除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/unlinkstory")
-    public ResponseEntity<ProjectDTO> unlinkStory(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
-        Project domain = projectMapping.toDomain(projectdto);
-        domain.setId(project_id);
-        domain = projectService.unlinkStory(domain);
-        projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        projectdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
-    }
-
-
     @PreAuthorize("@ProjectRuntime.quickTest('DENY')")
     @ApiOperation(value = "解除关联产品", tags = {"项目" },  notes = "解除关联产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/unlinkproduct")
@@ -137,28 +160,6 @@ public class ProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
 
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'CLOSE')")
-    @ApiOperation(value = "关闭", tags = {"项目" },  notes = "关闭")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/close")
-    public ResponseEntity<ProjectDTO> close(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
-        Project domain = projectMapping.toDomain(projectdto);
-        domain.setId(project_id);
-        domain = projectService.close(domain);
-        projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        projectdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
-    }
-
-
-    @PreAuthorize("@ProjectRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "获取项目草稿", tags = {"项目" },  notes = "获取项目草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/getdraft")
-    public ResponseEntity<ProjectDTO> getDraft(ProjectDTO dto) {
-        Project domain = projectMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(projectMapping.toDto(projectService.getDraft(domain)));
-    }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'PUTOFF')")
     @ApiOperation(value = "延期", tags = {"项目" },  notes = "延期")
@@ -188,39 +189,13 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
-    @ApiOperation(value = "删除项目", tags = {"项目" },  notes = "删除项目")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("project_id") Long project_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(projectService.remove(project_id));
-    }
-
-    @PreAuthorize("@ProjectRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "批量删除项目", tags = {"项目" },  notes = "批量删除项目")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        projectService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-    @ApiOperation(value = "获取项目", tags = {"项目" },  notes = "获取项目")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}")
-    public ResponseEntity<ProjectDTO> get(@PathVariable("project_id") Long project_id) {
-        Project domain = projectService.get(project_id);
-        ProjectDTO dto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(project_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("@ProjectRuntime.quickTest('DENY')")
-    @ApiOperation(value = "关联产品", tags = {"项目" },  notes = "关联产品")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/linkproduct")
-    public ResponseEntity<ProjectDTO> linkProduct(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'CLOSE')")
+    @ApiOperation(value = "关闭", tags = {"项目" },  notes = "关闭")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/close")
+    public ResponseEntity<ProjectDTO> close(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
         Project domain = projectMapping.toDomain(projectdto);
         domain.setId(project_id);
-        domain = projectService.linkProduct(domain);
+        domain = projectService.close(domain);
         projectdto = projectMapping.toDto(domain);
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
@@ -255,6 +230,31 @@ public class ProjectResource {
         Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.quickTest('DENY')")
+    @ApiOperation(value = "关联产品", tags = {"项目" },  notes = "关联产品")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/linkproduct")
+    public ResponseEntity<ProjectDTO> linkProduct(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.linkProduct(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @ApiOperation(value = "获取项目", tags = {"项目" },  notes = "获取项目")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}")
+    public ResponseEntity<ProjectDTO> get(@PathVariable("project_id") Long project_id) {
+        Project domain = projectService.get(project_id);
+        ProjectDTO dto = projectMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(project_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 

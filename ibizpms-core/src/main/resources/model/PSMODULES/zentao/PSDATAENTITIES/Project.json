@@ -6861,6 +6861,9 @@
     "logicName" : "开始",
     "name" : "START"
   }, {
+    "logicName" : "需求管理",
+    "name" : "STORYMANAGE"
+  }, {
     "logicName" : "挂起",
     "name" : "SUSPEND"
   }, {
@@ -7488,6 +7491,63 @@
       }
     } ],
     "roleTag" : "Project_Read_OpenBy",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_StoryManage_DEV.json",
+    "name" : "项目需求管理（参与者）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "STORYMANAGE",
+      "name" : "STORYMANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "STORYMANAGE"
+      }
+    } ],
+    "roleTag" : "Project_StoryManage_DEV",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_StoryManage_Open.json",
+    "name" : "项目需求管理（公开项目）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "STORYMANAGE",
+      "name" : "STORYMANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "STORYMANAGE"
+      }
+    } ],
+    "roleTag" : "Project_StoryManage_Open",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_StoryManage_OpenBy.json",
+    "name" : "项目需求管理（创建者或者更新者）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenByQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "STORYMANAGE",
+      "name" : "STORYMANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "STORYMANAGE"
+      }
+    } ],
+    "roleTag" : "Project_StoryManage_OpenBy",
     "userCat" : "CAT1",
     "userDRAction" : "READ",
     "systemReserved" : true

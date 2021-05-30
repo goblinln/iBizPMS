@@ -3499,6 +3499,7 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "projectLinkStoriesMob",
+    "dataAccessAction" : "PROJECTLINK",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryUsr3MobMPickupView.json",
@@ -3641,6 +3642,7 @@
     "caption" : "移除",
     "codeName" : "ProjectUnlinkStoryMob",
     "confirmMsg" : "您确定从该项目中移除该需求吗？",
+    "dataAccessAction" : "PROJECTLINK",
     "fullCodeName" : "Story_ProjectUnlinkStoryMob",
     "name" : "移除项目关联（移动端）",
     "getPSAppDEMethod" : {
@@ -10207,6 +10209,16 @@
     "name" : "CREATE",
     "id" : "ZTProduct__CREATE"
   }, {
+    "logicName" : "Project_Create",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "STORYMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DERCUSTOM_ZT_STORY_ZT_PROJECT.json"
+    },
+    "name" : "CREATE",
+    "id" : "Project__CREATE"
+  }, {
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
@@ -10284,6 +10296,16 @@
     },
     "name" : "PLANLINK",
     "id" : "ZTProduct__PLANLINK"
+  }, {
+    "logicName" : "项目关联",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "STORYMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DERCUSTOM_ZT_STORY_ZT_PROJECT.json"
+    },
+    "name" : "PROJECTLINK",
+    "id" : "Project__PROJECTLINK"
   }, {
     "logicName" : "项目关联",
     "name" : "PROJECTLINK"

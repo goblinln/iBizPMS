@@ -512,6 +512,7 @@
         "actionTarget" : "NONE",
         "caption" : "关联需求",
         "codeName" : "projectLinkStoriesMob",
+        "dataAccessAction" : "PROJECTLINK",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryUsr3MobMPickupView.json",

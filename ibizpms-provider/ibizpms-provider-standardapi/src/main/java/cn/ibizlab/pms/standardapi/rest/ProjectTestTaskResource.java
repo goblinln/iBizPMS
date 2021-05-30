@@ -53,6 +53,42 @@ public class ProjectTestTaskResource {
     public ProjectTestTaskMapping projecttesttaskMapping;
 
 
+    @PreAuthorize("@TestTaskRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目开始", tags = {"测试版本" },  notes = "根据项目开始")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttesttasks/{projecttesttask_id}/start")
+    public ResponseEntity<ProjectTestTaskDTO> startByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttesttask_id") Long projecttesttask_id, @RequestBody ProjectTestTaskDTO projecttesttaskdto) {
+        TestTask domain = projecttesttaskMapping.toDomain(projecttesttaskdto);
+        domain.setProject(project_id);
+        domain.setId(projecttesttask_id);
+        domain = testtaskService.start(domain) ;
+        projecttesttaskdto = projecttesttaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projecttesttaskdto);
+    }
+
+    @PreAuthorize("@TestTaskRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目关联测试用例", tags = {"测试版本" },  notes = "根据项目关联测试用例")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttesttasks/{projecttesttask_id}/linkcase")
+    public ResponseEntity<ProjectTestTaskDTO> linkCaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttesttask_id") Long projecttesttask_id, @RequestBody ProjectTestTaskDTO projecttesttaskdto) {
+        TestTask domain = projecttesttaskMapping.toDomain(projecttesttaskdto);
+        domain.setProject(project_id);
+        domain.setId(projecttesttask_id);
+        domain = testtaskService.linkCase(domain) ;
+        projecttesttaskdto = projecttesttaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projecttesttaskdto);
+    }
+
+    @PreAuthorize("@TestTaskRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目关联测试用例", tags = {"测试版本" },  notes = "根据项目关联测试用例")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttesttasks/{projecttesttask_id}/unlinkcase")
+    public ResponseEntity<ProjectTestTaskDTO> unlinkCaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttesttask_id") Long projecttesttask_id, @RequestBody ProjectTestTaskDTO projecttesttaskdto) {
+        TestTask domain = projecttesttaskMapping.toDomain(projecttesttaskdto);
+        domain.setProject(project_id);
+        domain.setId(projecttesttask_id);
+        domain = testtaskService.unlinkCase(domain) ;
+        projecttesttaskdto = projecttesttaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projecttesttaskdto);
+    }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'TESTTASKMANAGE')")
     @ApiOperation(value = "根据项目删除测试版本", tags = {"测试版本" },  notes = "根据项目删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projecttesttasks/{projecttesttask_id}")
@@ -66,18 +102,6 @@ public class ProjectTestTaskResource {
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
         testtaskService.removeBatch(ids);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@TestTaskRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目关联测试用例", tags = {"测试版本" },  notes = "根据项目关联测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttesttasks/{projecttesttask_id}/unlinkcase")
-    public ResponseEntity<ProjectTestTaskDTO> unlinkCaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttesttask_id") Long projecttesttask_id, @RequestBody ProjectTestTaskDTO projecttesttaskdto) {
-        TestTask domain = projecttesttaskMapping.toDomain(projecttesttaskdto);
-        domain.setProject(project_id);
-        domain.setId(projecttesttask_id);
-        domain = testtaskService.unlinkCase(domain) ;
-        projecttesttaskdto = projecttesttaskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projecttesttaskdto);
     }
 
     @PreAuthorize("@TestTaskRuntime.quickTest('DENY')")
@@ -114,15 +138,6 @@ public class ProjectTestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-    @ApiOperation(value = "根据项目获取测试版本", tags = {"测试版本" },  notes = "根据项目获取测试版本")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projecttesttasks/{projecttesttask_id}")
-    public ResponseEntity<ProjectTestTaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttesttask_id") Long projecttesttask_id) {
-        TestTask domain = testtaskService.get(projecttesttask_id);
-        ProjectTestTaskDTO dto = projecttesttaskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @PreAuthorize("@TestTaskRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目阻塞", tags = {"测试版本" },  notes = "根据项目阻塞")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttesttasks/{projecttesttask_id}/block")
@@ -133,6 +148,15 @@ public class ProjectTestTaskResource {
         domain = testtaskService.block(domain) ;
         projecttesttaskdto = projecttesttaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(projecttesttaskdto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @ApiOperation(value = "根据项目获取测试版本", tags = {"测试版本" },  notes = "根据项目获取测试版本")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projecttesttasks/{projecttesttask_id}")
+    public ResponseEntity<ProjectTestTaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttesttask_id") Long projecttesttask_id) {
+        TestTask domain = testtaskService.get(projecttesttask_id);
+        ProjectTestTaskDTO dto = projecttesttaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'TESTTASKMANAGE')")
@@ -146,30 +170,6 @@ public class ProjectTestTaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @PreAuthorize("@TestTaskRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目开始", tags = {"测试版本" },  notes = "根据项目开始")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttesttasks/{projecttesttask_id}/start")
-    public ResponseEntity<ProjectTestTaskDTO> startByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttesttask_id") Long projecttesttask_id, @RequestBody ProjectTestTaskDTO projecttesttaskdto) {
-        TestTask domain = projecttesttaskMapping.toDomain(projecttesttaskdto);
-        domain.setProject(project_id);
-        domain.setId(projecttesttask_id);
-        domain = testtaskService.start(domain) ;
-        projecttesttaskdto = projecttesttaskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projecttesttaskdto);
-    }
-
-    @PreAuthorize("@TestTaskRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目关联测试用例", tags = {"测试版本" },  notes = "根据项目关联测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttesttasks/{projecttesttask_id}/linkcase")
-    public ResponseEntity<ProjectTestTaskDTO> linkCaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttesttask_id") Long projecttesttask_id, @RequestBody ProjectTestTaskDTO projecttesttaskdto) {
-        TestTask domain = projecttesttaskMapping.toDomain(projecttesttaskdto);
-        domain.setProject(project_id);
-        domain.setId(projecttesttask_id);
-        domain = testtaskService.linkCase(domain) ;
-        projecttesttaskdto = projecttesttaskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projecttesttaskdto);
-    }
 
     @PreAuthorize("@TestTaskRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目激活", tags = {"测试版本" },  notes = "根据项目激活")

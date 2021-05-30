@@ -107,20 +107,6 @@ public class ProductResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-    @ApiOperation(value = "取消置顶", tags = {"产品" },  notes = "取消置顶")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cancelproducttop")
-    public ResponseEntity<ProductDTO> cancelProductTop(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
-        Product domain = productMapping.toDomain(productdto);
-        domain.setId(product_id);
-        domain = productService.cancelProductTop(domain);
-        productdto = productMapping.toDto(domain);
-        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
-        productdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(productdto);
-    }
-
-
     @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
     @ApiOperation(value = "删除产品", tags = {"产品" },  notes = "删除产品")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}")
@@ -137,15 +123,18 @@ public class ProductResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-    @ApiOperation(value = "获取产品", tags = {"产品" },  notes = "获取产品")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}")
-    public ResponseEntity<ProductDTO> get(@PathVariable("product_id") Long product_id) {
-        Product domain = productService.get(product_id);
-        ProductDTO dto = productMapping.toDto(domain);
-        Map<String,Integer> opprivs = productRuntime.getOPPrivs(product_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "取消置顶", tags = {"产品" },  notes = "取消置顶")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cancelproducttop")
+    public ResponseEntity<ProductDTO> cancelProductTop(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
+        Product domain = productMapping.toDomain(productdto);
+        domain.setId(product_id);
+        domain = productService.cancelProductTop(domain);
+        productdto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        productdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
+
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
     @ApiOperation(value = "关闭", tags = {"产品" },  notes = "关闭")
@@ -174,6 +163,17 @@ public class ProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @ApiOperation(value = "获取产品", tags = {"产品" },  notes = "获取产品")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}")
+    public ResponseEntity<ProductDTO> get(@PathVariable("product_id") Long product_id) {
+        Product domain = productService.get(product_id);
+        ProductDTO dto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(product_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/{action}")

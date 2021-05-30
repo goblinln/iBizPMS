@@ -103,6 +103,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     }
   }, {
+    "name" : "产品主管-ZT_PROJECT[项目需求管理（创建者或者更新者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_StoryManage_OpenBy.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
     "name" : "产品主管-ZT_USERTPL[用户模板维护（我的模板或公开模板）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -141,6 +151,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  }, {
+    "name" : "产品主管-ZT_PROJECT[项目需求管理（公开项目）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_StoryManage_Open.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     }
   }, {
     "name" : "null-ZT_PRODUCT[null]",
@@ -201,6 +221,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "产品主管-ZT_PROJECT[项目需求管理（参与者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_StoryManage_DEV.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     }
   }, {
     "name" : "产品主管-ZT_STORY[需求维护（我创建或参与）（跟随角色）]",

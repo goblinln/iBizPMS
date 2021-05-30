@@ -627,6 +627,7 @@
           "caption" : "移除",
           "codeName" : "ProjectUnlinkStoryMob",
           "confirmMsg" : "您确定从该项目中移除该需求吗？",
+          "dataAccessAction" : "PROJECTLINK",
           "fullCodeName" : "Story_ProjectUnlinkStoryMob",
           "name" : "移除项目关联（移动端）",
           "getPSAppDEMethod" : {
@@ -771,6 +772,7 @@
         "actionTarget" : "NONE",
         "caption" : "关联需求",
         "codeName" : "projectLinkStoriesMob",
+        "dataAccessAction" : "PROJECTLINK",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryUsr3MobMPickupView.json",

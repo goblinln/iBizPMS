@@ -2561,7 +2561,7 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "projectLinkStories",
-    "dataAccessAction" : "SRFUR__PROJ_LINKSTORY_BUT",
+    "dataAccessAction" : "PROJECTLINK",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMPickupView3.json",
@@ -2690,7 +2690,7 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "ProjectCreateView",
-    "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
+    "dataAccessAction" : "CREATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectEditView.json",
@@ -2782,7 +2782,7 @@
     "actionTarget" : "NONE",
     "caption" : "按照计划关联",
     "codeName" : "ProjecPlanLink",
-    "dataAccessAction" : "SRFUR__PROJ_LINKSTORY_BUT",
+    "dataAccessAction" : "PROJECTLINK",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectPlanView.json",
@@ -9056,6 +9056,16 @@
     "name" : "CREATE",
     "id" : "ZTProduct__CREATE"
   }, {
+    "logicName" : "Project_Create",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "STORYMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DERCUSTOM_ZT_STORY_ZT_PROJECT.json"
+    },
+    "name" : "CREATE",
+    "id" : "Project__CREATE"
+  }, {
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
@@ -9133,6 +9143,16 @@
     },
     "name" : "PLANLINK",
     "id" : "ZTProduct__PLANLINK"
+  }, {
+    "logicName" : "项目关联",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "STORYMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DERCUSTOM_ZT_STORY_ZT_PROJECT.json"
+    },
+    "name" : "PROJECTLINK",
+    "id" : "Project__PROJECTLINK"
   }, {
     "logicName" : "项目关联",
     "name" : "PROJECTLINK"

@@ -4135,6 +4135,9 @@
     "logicName" : "开始",
     "name" : "START"
   }, {
+    "logicName" : "需求管理",
+    "name" : "STORYMANAGE"
+  }, {
     "logicName" : "挂起",
     "name" : "SUSPEND"
   }, {
