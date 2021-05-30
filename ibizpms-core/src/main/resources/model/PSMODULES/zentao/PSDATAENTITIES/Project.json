@@ -8219,6 +8219,24 @@
     "removeActionType" : 0,
     "removeOrder" : -1,
     "typeValue" : "project"
+  }, {
+    "codeName" : "Project",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DERCUSTOM_ZT_STORY_ZT_PROJECT.json",
+    "logicName" : "项目",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
+    "masterRS" : 4,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    },
+    "name" : "DERCUSTOM_ZT_STORY_ZT_PROJECT",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1
   } ],
   "getMinorPSDERs" : [ {
     "codeName" : "IBizParent",

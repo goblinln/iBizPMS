@@ -53,7 +53,7 @@ public class ProjectStoryResource {
     public ProjectStoryMapping projectstoryMapping;
 
 
-    @PreAuthorize("@StoryRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据项目获取项目相关需求", tags = {"需求" } ,notes = "根据项目获取项目相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectstories/fetchprojectstories")
 	public ResponseEntity<List<ProjectStoryDTO>> fetchProjectStoryProjectStoriesByProject(@PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {

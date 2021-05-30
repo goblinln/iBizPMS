@@ -10308,6 +10308,16 @@
     "name" : "READ",
     "id" : "ZTProduct__READ"
   }, {
+    "logicName" : "Project_Read",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DERCUSTOM_ZT_STORY_ZT_PROJECT.json"
+    },
+    "name" : "READ",
+    "id" : "Project__READ"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {

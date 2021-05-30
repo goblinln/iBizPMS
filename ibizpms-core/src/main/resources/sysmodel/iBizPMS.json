@@ -37996,6 +37996,12 @@
      "code_name":"Project",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_PROJECT"
+    },
+    {"name":"DERCUSTOM_ZT_STORY_ZT_PROJECT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Project",
+     "entity_name":"ZT_STORY",
+     "ref_entity_name":"ZT_PROJECT"
     }
     ],
     "parentEntitys":[
@@ -44706,6 +44712,12 @@
      "code_name":"ZTParent",
      "entity_name":"ZT_STORY",
      "ref_entity_name":"ZT_STORY"
+    },
+    {"name":"DERCUSTOM_ZT_STORY_ZT_PROJECT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Project",
+     "entity_name":"ZT_STORY",
+     "ref_entity_name":"ZT_PROJECT"
     },
     {"name":"DERINDEX_ZT_STORY_IBIZPRO_INDEX",
      "relation_type":"DERINDEX",
