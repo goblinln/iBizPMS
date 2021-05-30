@@ -1,0 +1,7 @@
+package cn.ibizlab.pms.zentao.logic.tasklogic.computeprogressrate;
+global cn.ibizlab.pms.core.zentao.service.ITaskService iBzSysTaskDefaultService;
+global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
+
+
+no-loop
+

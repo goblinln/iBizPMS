@@ -1,0 +1,104 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain_MyReP.json",
+  "name" : "BUG维护（我相关的产品）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "MyReProduct"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "ASSIGNTO",
+    "name" : "ASSIGNTO",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__ASSIGNTO"
+    }
+  }, {
+    "dataAccessAction" : "ACTIVATE",
+    "name" : "ACTIVATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__ACTIVATE"
+    }
+  }, {
+    "dataAccessAction" : "BUILDLINK",
+    "name" : "BUILDLINK",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "BUILDLINK"
+    }
+  }, {
+    "dataAccessAction" : "PLANLINK",
+    "name" : "PLANLINK",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "PLANLINK"
+    }
+  }, {
+    "dataAccessAction" : "RELEASELINK",
+    "name" : "RELEASELINK",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__RELEASELINK"
+    }
+  }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "Bug_Maintain_OpenBy_Update",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "CONFIRM",
+    "name" : "CONFIRM",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__CONFIRM"
+    }
+  }, {
+    "dataAccessAction" : "CREATE",
+    "name" : "CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__CREATE"
+    }
+  }, {
+    "dataAccessAction" : "FAVORITES",
+    "name" : "FAVORITES",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__FAVORITES"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "Bug_Maintain_OpenBy_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "dataAccessAction" : "NFAVORITES",
+    "name" : "NFAVORITES",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__NFAVORITES"
+    }
+  }, {
+    "dataAccessAction" : "CLOSE",
+    "name" : "CLOSE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
+    }
+  }, {
+    "dataAccessAction" : "RESOLVE",
+    "name" : "RESOLVE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__RESOLVE"
+    }
+  } ],
+  "roleTag" : "Bug_Maintain_MyReP",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

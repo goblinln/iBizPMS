@@ -1,0 +1,20 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_TOCASE_MyReP.json",
+  "name" : "BUG转用例（我相关的产品）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "MyReProduct"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "TOCASE",
+    "name" : "TOCASE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__TOCASE"
+    }
+  } ],
+  "roleTag" : "Bug_TOCASE_MyReP",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

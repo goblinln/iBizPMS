@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UPDATE",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "UpdateTime",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/UpdateTime.json",
+  "logicName" : "UpdateTime",
+  "name" : "UpdateTime"
+}

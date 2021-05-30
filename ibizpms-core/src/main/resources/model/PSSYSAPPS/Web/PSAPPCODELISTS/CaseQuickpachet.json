@@ -1,0 +1,25 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "CaseQuickpachet",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/CaseQuickpachet.json",
+  "emptyText" : "未定义",
+  "name" : "功能测试快速分组",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "All",
+    "data" : "{}",
+    "text" : "所有",
+    "value" : "ALL",
+    "default" : true
+  }, {
+    "codeName" : "Tome",
+    "data" : "{\"n_status1_eq\":\"storychange\"}",
+    "text" : "需求变动",
+    "value" : "TOME"
+  } ],
+  "enableCache" : true
+}

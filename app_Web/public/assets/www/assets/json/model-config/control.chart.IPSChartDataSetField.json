@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"getPSCodeList","desc":"代码表对象","order":1000},{"name":"groupField","desc":"分组属性","order":1000},{"name":"groupMode","desc":"分组模式","order":1000}]}]

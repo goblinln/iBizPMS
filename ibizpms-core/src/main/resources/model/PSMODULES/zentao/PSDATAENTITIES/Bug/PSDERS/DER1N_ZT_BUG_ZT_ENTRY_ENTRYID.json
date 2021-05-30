@@ -1,0 +1,24 @@
+{
+  "codeName" : "ZTEntry",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_ENTRY_ENTRYID.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Entry.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+  },
+  "name" : "DER1N_ZT_BUG_ZT_ENTRY_ENTRYID",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "ENTRY",
+    "codeName" : "Entry"
+  },
+  "pickupDEFName" : "ENTRYID",
+  "removeActionType" : -1,
+  "removeOrder" : 0
+}

@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"getMapPSDER","desc":"映射关系对象","order":1000},{"name":"logicName","desc":"逻辑名称","order":1000},{"name":"mapPSDEOPPrivName","desc":"映射实体操作标识","order":1000},{"name":"mapSysUniRes","desc":"映射系统统一资源","order":1000},{"name":"mapSysUniResCode","desc":"统一资源代码","order":1000},{"name":"systemReserved","desc":"系统保留","order":1000}]}]

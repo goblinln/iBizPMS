@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:g="http://www.jboss.org/drools/flow/gpd" xmlns:tns="http://www.jboss.org/drools" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.mvel.org/2.0" id="Definition" name="" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes">
+    <process id="cn.ibizlab.pms.core.ibiz.service.logic.useryearworkstatsgetinfo" isClosed="false" isExecutable="true" name="ibiz_useryearworkstats_getinfo_RuleFlow" processType="Private" tns:packageName="cn.ibizlab.pms.core.ibiz.service.logic.useryearworkstatsgetinfo">
+        <extensionElements>
+            <tns:import name="java.util.Map" />
+            <tns:import name="org.springframework.util.StringUtils"/>
+            <tns:import name="cn.ibizlab.pms.util.helper.RuleUtils"/>
+            <tns:metaData express="" name="useryearworkstatsgetinfodefault" type="entity"/>
+            <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.ibiz.service.IUserYearWorkStatsService))" name="useryearworkstatsservice" type="service"/>
+            <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.ibiz.service.IUserYearWorkStatsService))" name="iBzSysUseryearworkstatsDefaultService" type="service"/>
+            <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
+        <tns:global identifier="useryearworkstatsgetinfodefault" type="cn.ibizlab.pms.core.ibiz.domain.UserYearWorkStats" />
+        </extensionElements>
+     <startEvent id="begin" isInterrupting="true"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsgetinfodeaction4" id="deaction4" implementation="http://www.jboss.org/drools/rule" name="获取产品经理信息"/>
+     <endEvent id="deaction4_end" name="end"/>
+     <sequenceFlow id="deaction4_end_line" sourceRef="deaction4" targetRef="deaction4_end"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsgetinfodeaction2" id="deaction2" implementation="http://www.jboss.org/drools/rule" name="获取研发用户信息"/>
+     <endEvent id="deaction2_end" name="end"/>
+     <sequenceFlow id="deaction2_end_line" sourceRef="deaction2" targetRef="deaction2_end"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsgetinfodeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="获取用户信息"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsgetinfodeaction3" id="deaction3" implementation="http://www.jboss.org/drools/rule" name="获取测试用户信息"/>
+     <endEvent id="deaction3_end" name="end"/>
+     <sequenceFlow id="deaction3_end_line" sourceRef="deaction3" targetRef="deaction3_end"/>
+     <sequenceFlow id="begin_deaction1" sourceRef="begin" targetRef="deaction1">
+     </sequenceFlow>
+     <sequenceFlow id="gateway-deaction1_deaction2" sourceRef="gateway-deaction1" targetRef="deaction2">
+            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+            $useryearworkstatsgetinfodefault:UserYearWorkStats();
+            eval($useryearworkstatsgetinfodefault==useryearworkstatsgetinfodefault);
+                eval((RuleUtils.test($useryearworkstatsgetinfodefault.get("judgerole"),"EQ","dev")))
+                ]]>
+            </conditionExpression>
+     </sequenceFlow>
+     <sequenceFlow id="gateway-deaction1_deaction4" sourceRef="gateway-deaction1" targetRef="deaction4">
+            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+            $useryearworkstatsgetinfodefault:UserYearWorkStats();
+            eval($useryearworkstatsgetinfodefault==useryearworkstatsgetinfodefault);
+                eval((RuleUtils.test($useryearworkstatsgetinfodefault.get("judgerole"),"EQ","po")))
+                ]]>
+            </conditionExpression>
+     </sequenceFlow>
+     <sequenceFlow id="gateway-deaction1_deaction3" sourceRef="gateway-deaction1" targetRef="deaction3">
+            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+            $useryearworkstatsgetinfodefault:UserYearWorkStats();
+            eval($useryearworkstatsgetinfodefault==useryearworkstatsgetinfodefault);
+                eval((RuleUtils.test($useryearworkstatsgetinfodefault.get("judgerole"),"EQ","qa")))
+                ]]>
+            </conditionExpression>
+     </sequenceFlow>
+    <exclusiveGateway id="gateway-deaction1" name="Gateway" gatewayDirection="Diverging" default="gateway-deaction1_end_line"></exclusiveGateway>
+    <sequenceFlow id="deaction1_gateway-deaction1_gatewayline" sourceRef="deaction1" targetRef="gateway-deaction1"></sequenceFlow>
+    <sequenceFlow id="gateway-deaction1_end_line" sourceRef="gateway-deaction1" targetRef="gateway-deaction1_end"/>
+    <endEvent id="gateway-deaction1_end" name="end"/>
+    </process>
+</definitions>
+

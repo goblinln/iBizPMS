@@ -1,0 +1,8 @@
+{
+  "codeName" : "Proxy",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/Proxy.json",
+  "name" : "代理用户",
+  "roleTag" : "Proxy",
+  "roleType" : "CUSTOM",
+  "globalRole" : true
+}

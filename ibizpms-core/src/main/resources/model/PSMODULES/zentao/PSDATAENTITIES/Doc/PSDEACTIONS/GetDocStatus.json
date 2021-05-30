@@ -1,0 +1,8 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "GetDocStatus",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/GetDocStatus.json",
+  "logicName" : "行为",
+  "name" : "GetDocStatus"
+}

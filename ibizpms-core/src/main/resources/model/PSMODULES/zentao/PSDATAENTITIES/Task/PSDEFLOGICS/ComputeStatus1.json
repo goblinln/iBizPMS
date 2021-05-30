@@ -1,0 +1,17 @@
+{
+  "codeName" : "ComputeStatus1",
+  "dEFLogicMode" : "COMPUTE",
+  "defaultParamName" : "DEFAULT",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEFLOGICS/ComputeStatus1.json",
+  "logicName" : "计算任务真实的状态值",
+  "logicSubType" : "DEFIELD",
+  "name" : "计算任务真实的状态值",
+  "getPSDEField" : {
+    "name" : "STATUS1",
+    "codeName" : "Status1"
+  },
+  "scriptCode" : "var status = entity.get(\"status\");\nvar status1 = entity.get(\"status\");\nvar storyversionnew = entity.get(\"storyversionnew\");\nvar storyversion = entity.get(\"storyversion\");\nvar storystatus = entity.get(\"storystatus\");\nif(storyversionnew !== null && storyversion !== null && storystatus !== null) {\n\tif(storyversion < storyversionnew && status !== \"changed\") {\n\t\tstatus1 = \"storychange\";\n\t}\n}\nreturn status1;",
+  "customCode" : true,
+  "enableBackend" : true,
+  "enableFront" : false
+}

@@ -1,0 +1,38 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Testcase__stage",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__stage.json",
+  "emptyText" : "未定义",
+  "name" : "测试用例阶段",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "Unittest",
+    "text" : "单元测试阶段",
+    "value" : "unittest"
+  }, {
+    "codeName" : "Feature",
+    "text" : "功能测试阶段",
+    "value" : "feature"
+  }, {
+    "codeName" : "Intergrate",
+    "text" : "集成测试阶段",
+    "value" : "intergrate"
+  }, {
+    "codeName" : "System",
+    "text" : "系统测试阶段",
+    "value" : "system"
+  }, {
+    "codeName" : "Smoke",
+    "text" : "冒烟测试阶段",
+    "value" : "smoke"
+  }, {
+    "codeName" : "Bvt",
+    "text" : "版本验证阶段",
+    "value" : "bvt"
+  } ],
+  "enableCache" : true
+}

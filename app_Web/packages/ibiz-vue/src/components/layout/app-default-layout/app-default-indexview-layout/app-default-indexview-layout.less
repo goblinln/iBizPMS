@@ -1,0 +1,203 @@
+.view-default.view-container.appindexview {
+    padding: 0;
+}
+
+.view-default.view-container.inner_indexview {
+    padding: 0 20px;
+}
+
+.appindexview {
+    margin-bottom: 1px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    color: var(--app-font-color-light);
+    background-color: var(--view-background-color);
+
+    .loading-bar {
+        height: 2px;
+        width: 100%;
+        position: fixed !important;
+        z-index: 1;
+    }
+
+    .app-horizontal-layout {
+        .view-container {
+            height: calc(100% - 32px);
+            margin: 12px;
+        }
+    }
+
+    .index_header {
+        height: 50px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--app-background-color-bright);
+
+        .header-left {
+            .page-logo {
+                display: flex;
+                align-items: center;
+
+                >.page-logo-left {
+                    width: 180px;
+                    display: flex;
+                    align-items: center;
+
+                    >.page-logo-menuicon {
+                        display: inline-block;
+                        height: 50px;
+                        line-height: 50px;
+                        cursor: pointer;
+                    }
+
+                    >.page-logo-image {
+                        max-width: 20px;
+                    }
+
+                    >.page-logo-title {
+                        padding-left: 12px;
+                        overflow-x: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        display: block;
+                        text-align: left;
+                        font-weight: 400;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            i {
+                color: var(--app-font-color);
+            }
+
+            i:hover {
+                color: var(--app-font-color-bright);
+            }
+
+            >.app-breadcrumb {
+                >span .el-breadcrumb__item .el-breadcrumb__inner {
+                    a {
+                        color: var(--app-font-color-light);
+                        cursor: pointer !important;
+                    }
+
+                    a:last-child:hover {
+                        color: var(--app-font-color-bright);
+                    }
+                }
+            }
+
+            .ivu-icon {
+                font-size: 20px;
+                padding: 4px;
+                margin-top: -2px;
+                cursor: pointer;
+            }
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .el-menu.el-menu--horizontal {
+                border-bottom: none;
+
+                .el-submenu {
+                    border-top: none;
+                }
+            }
+        }
+
+        >div {
+            line-height: 49px;
+        }
+    }
+
+    .index_content {
+        height: calc(100vh - 50px);
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        background-color: var(--app-background-color-light);
+    }
+
+    >.ivu-layout {
+        color: var(--app-font-color);
+
+        .ivu-layout-sider {
+            background-color: var(--leftsidebar-background-color);
+        }
+    }
+
+    >.ivu-layout {
+        >.ivu-layout {
+            height: calc(100vh - 50px);
+        }
+    }
+}
+
+.tabexp-container>div {
+    height: 100%;
+    padding: 6px 0;
+}
+
+.content-tab .ivu-card-body {
+    height: 100%;
+}
+
+.bottom-view .el-submenu>.el-submenu__title .el-submenu__icon-arrow {
+    -webkit-transform: rotateZ(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotateZ(-180deg);
+}
+
+.bottom-view .el-submenu.is-opened>.el-submenu__title .el-submenu__icon-arrow {
+    -webkit-transform: rotateZ(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotateZ(0deg);
+}
+
+.index_sider {
+    flex: none !important;
+    max-width: none !important;
+    transition: none 0s ease 0s;
+}
+
+.inner_indexview {
+    padding: 0 12px;
+    background: var(--view-background-color);
+    width: auto !important;
+}
+
+.fullscreen_logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/***    BRGIN:滚动条样式    ***/
+::-webkit-scrollbar {
+    background: transparent;
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    box-shadow: none;
+    border: 0;
+    background-color: var(--app-background-color-scrollbar);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0;
+    box-shadow: none;
+    border: 0;
+}
+div {
+  scrollbar-color: var(--app-background-color-scrollbar) #ffffff; /* 滑块颜色  滚动条背景颜色 */
+  scrollbar-width: thin; /* 滚动条宽度有三种：thin、auto、none */
+}

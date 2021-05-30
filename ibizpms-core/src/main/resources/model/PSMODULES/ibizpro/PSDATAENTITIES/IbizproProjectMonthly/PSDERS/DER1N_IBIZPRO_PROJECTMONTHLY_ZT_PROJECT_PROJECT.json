@@ -1,0 +1,29 @@
+{
+  "codeName" : "ZTProject",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectMonthly/PSDERS/DER1N_IBIZPRO_PROJECTMONTHLY_ZT_PROJECT_PROJECT.json",
+  "logicName" : "项目编号",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 4,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectMonthly.json"
+  },
+  "name" : "DER1N_IBIZPRO_PROJECTMONTHLY_ZT_PROJECT_PROJECT",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "PROJECT",
+    "codeName" : "Project"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "PROJECTNAME",
+    "codeName" : "ProjectName"
+  },
+  "pickupDEFName" : "PROJECT",
+  "removeActionType" : -1,
+  "removeOrder" : 0
+}

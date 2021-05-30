@@ -1,0 +1,10 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "Ztlogin",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbiLogin/PSDEACTIONS/Ztlogin.json",
+  "logicName" : "\bZT登录\b",
+  "name" : "ztlogin",
+  "transactionMode" : "NONE",
+  "customParam" : true
+}

@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"getPSChartXAxis","desc":"图表X坐标轴","order":1000},{"name":"getPSChartYAxis","desc":"图表Y坐标轴","order":1000},{"name":"getX","desc":"X轴维度集合","order":1000},{"name":"getY","desc":"Y轴维度集合","order":1000}]}]

@@ -1,0 +1,16 @@
+{
+  "codeListType" : "DYNAMIC",
+  "codeName" : "ProductBranch_Cache",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCODELISTS/ProductBranch_Cache.json",
+  "emptyText" : "未定义",
+  "name" : "产品平台（动态）_缓存",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchCurProduct"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Branch.json"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "CaseQuickpachet",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/CaseQuickpachet.json",
+  "emptyText" : "未定义",
+  "getPSCodeItems" : [ {
+    "codeName" : "All",
+    "data" : "{}",
+    "text" : "所有",
+    "value" : "ALL",
+    "default" : true
+  }, {
+    "codeName" : "Tome",
+    "data" : "{\"n_status1_eq\":\"storychange\"}",
+    "text" : "需求变动",
+    "value" : "TOME"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
+}

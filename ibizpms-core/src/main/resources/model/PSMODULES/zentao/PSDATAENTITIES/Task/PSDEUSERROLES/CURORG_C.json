@@ -1,0 +1,8 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/CURORG_C.json",
+  "name" : "当前组织（创建）",
+  "orgDR" : 1,
+  "roleTag" : "CURORG_C",
+  "userDRAction" : "READ",
+  "enableOrgDR" : true
+}

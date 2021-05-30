@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"errorCode","desc":"错误代码","order":1000},{"name":"errorInfo","desc":"错误信息","order":1000},{"name":"exceptionObj","desc":"异常对象","order":1000}]}]

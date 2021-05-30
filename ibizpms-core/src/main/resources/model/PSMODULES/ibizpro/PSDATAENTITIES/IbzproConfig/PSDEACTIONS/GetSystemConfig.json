@@ -1,0 +1,8 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "GetSystemConfig",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig/PSDEACTIONS/GetSystemConfig.json",
+  "logicName" : "获取系统配置",
+  "name" : "GetSystemConfig"
+}

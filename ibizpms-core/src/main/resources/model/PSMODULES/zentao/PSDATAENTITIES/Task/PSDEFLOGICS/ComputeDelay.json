@@ -1,0 +1,17 @@
+{
+  "codeName" : "ComputeDelay",
+  "dEFLogicMode" : "COMPUTE",
+  "defaultParamName" : "DEFAULT",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEFLOGICS/ComputeDelay.json",
+  "logicName" : "计算延期",
+  "logicSubType" : "DEFIELD",
+  "name" : "计算延期",
+  "getPSDEField" : {
+    "name" : "DELAY",
+    "codeName" : "Delay"
+  },
+  "scriptCode" : "var Delay = '';\nvar deadline = entity.get(\"deadline\");\ndeadline = Date.parse(deadline);\nvar status = entity.get(\"status\");\nvar now = Date.parse(new Date());\nif (isNaN(deadline) || deadline == Date.parse('0000-00-00') || deadline == Date.parse('1970-01-01')) {\n    Delay = '';\n} else if ((status == 'wait' || status == 'doing') && deadline < now) {\n    var ms = Math.abs(now - deadline);\n    var days = Math.floor(ms / (24 * 3600 * 1000));\n    Delay = '' + '延期' + days + '天';\n }\nreturn Delay;",
+  "customCode" : true,
+  "enableBackend" : true,
+  "enableFront" : false
+}

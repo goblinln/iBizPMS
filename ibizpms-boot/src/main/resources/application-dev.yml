@@ -1,0 +1,164 @@
+server:
+  port: 8080
+
+#zuul网关路由设置
+zuul:
+  routes:
+    ibizpro_keyword:
+      path: /ibizpro_keywords/**
+      serviceId: ${ibiz.ref.service.pmspro-pluginserviceapi:pmspro-pluginserviceapi}
+      stripPrefix: false
+    ibizpro_message:
+      path: /ibizpro_messages/**
+      serviceId: ${ibiz.ref.service.pmspro-pluginserviceapi:pmspro-pluginserviceapi}
+      stripPrefix: false
+    ibizpro_plugin:
+      path: /ibizpro_plugins/**
+      serviceId: ${ibiz.ref.service.pmspro-pluginserviceapi:pmspro-pluginserviceapi}
+      stripPrefix: false
+    ibizpro_tag:
+      path: /ibizpro_tags/**
+      serviceId: ${ibiz.ref.service.pmspro-pluginserviceapi:pmspro-pluginserviceapi}
+      stripPrefix: false
+    psdefield:
+      path: /psdefields/**
+      serviceId: ${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}
+      stripPrefix: false
+    psdataentity:
+      path: /psdataentities/**
+      serviceId: ${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}
+      stripPrefix: false
+    psmodule:
+      path: /psmodules/**
+      serviceId: ${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}
+      stripPrefix: false
+    pssubsyssade:
+      path: /pssubsyssades/**
+      serviceId: ${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}
+      stripPrefix: false
+    pssubsysserviceapi:
+      path: /pssubsysserviceapis/**
+      serviceId: ${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}
+      stripPrefix: false
+    pssysapp:
+      path: /pssysapps/**
+      serviceId: ${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}
+      stripPrefix: false
+    pssysreqitem:
+      path: /pssysreqitems/**
+      serviceId: ${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}
+      stripPrefix: false
+    pssysreqmodule:
+      path: /pssysreqmodules/**
+      serviceId: ${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}
+      stripPrefix: false
+    pssysrunsession:
+      path: /pssysrunsessions/**
+      serviceId: ${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}
+      stripPrefix: false
+    pssyssfpub:
+      path: /pssyssfpubs/**
+      serviceId: ${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}
+      stripPrefix: false
+    pssysserviceapi:
+      path: /pssysserviceapis/**
+      serviceId: ${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}
+      stripPrefix: false
+    pssystemdbcfg:
+      path: /pssystemdbcfgs/**
+      serviceId: ${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}
+      stripPrefix: false
+    sys_dept:
+      path: /sys_depts/**
+      serviceId: ${ibiz.ref.service.ibzou-api:ibzou-api}
+      stripPrefix: false
+    ibzemp:
+      path: /ibzemps/**
+      serviceId: ${ibiz.ref.service.ibzou-api:ibzou-api}
+      stripPrefix: false
+    sys_org:
+      path: /sys_orgs/**
+      serviceId: ${ibiz.ref.service.ibzou-api:ibzou-api}
+      stripPrefix: false
+    sys_post:
+      path: /sys_posts/**
+      serviceId: ${ibiz.ref.service.ibzou-api:ibzou-api}
+      stripPrefix: false
+    sys_role:
+      path: /sys_roles/**
+      serviceId: ${ibiz.ref.service.ibzuaa-api:ibzuaa-api}
+      stripPrefix: false
+    sys_team:
+      path: /sys_teams/**
+      serviceId: ${ibiz.ref.service.ibzou-api:ibzou-api}
+      stripPrefix: false
+    sys_teammember:
+      path: /sys_teammembers/**
+      serviceId: ${ibiz.ref.service.ibzou-api:ibzou-api}
+      stripPrefix: false
+    sys_user:
+      path: /sys_users/**
+      serviceId: ${ibiz.ref.service.ibzuaa-api:ibzuaa-api}
+      stripPrefix: false
+    sys_user_role:
+      path: /sys_user_roles/**
+      serviceId: ${ibiz.ref.service.ibzuaa-api:ibzuaa-api}
+      stripPrefix: false
+    loginv7:
+      path: /v7/login
+      serviceId: ${ibiz.ref.service.uaa:ibzuaa-api}
+      stripPrefix: false
+    changepwd:
+      path: /v7/changepwd
+      serviceId: ${ibiz.ref.service.uaa:ibzuaa-api}
+      stripPrefix: false
+    uaa:
+      path: /uaa/**
+      serviceId: ${ibiz.ref.service.uaa:ibzuaa-api}
+      stripPrefix: false
+    config:
+      path: /configs/**
+      serviceId: ${ibiz.ref.service.uaa:ibzuaa-api}
+      stripPrefix: false
+    oucore:
+      path: /ibzorganizations/**
+      serviceId: ${ibiz.ref.service.ou:ibzou-api}
+      stripPrefix: false
+    oudict:
+      path: /dictionarys/**/Ibzou**
+      serviceId: ${ibiz.ref.service.ou:ibzou-api}
+      stripPrefix: false
+    ou:
+      path: /ibzdepartments/**
+      serviceId: ${ibiz.ref.service.ou:ibzou-api}
+      stripPrefix: false
+    uaadict:
+      path: /dictionarys/**/SysOperator
+      serviceId: ${ibiz.ref.service.uaa:ibzuaa-api}
+      stripPrefix: false
+    dict:
+      path: /dictionarys/**
+      serviceId: ${ibiz.ref.service.dict:ibzdict-api}
+      stripPrefix: false
+    disk:
+      path: /net-disk/**
+      serviceId: ${ibiz.ref.service.disk:ibzdisk-api}
+      stripPrefix: false
+    ou_sys_org:
+      path: /sysorganizations/**
+      serviceId: ${ibiz.ref.service.ou:ibzou-api}
+      stripPrefix: false
+    ou_sys_dept:
+      path: /sysdepartments/**
+      serviceId: ${ibiz.ref.service.ou:ibzou-api}
+      stripPrefix: false
+    lite-core:
+      path: /lite/**
+      serviceId: ${ibiz.ref.service.lite:ibzlite-api}
+      stripPrefix: false
+    sysauthlog:
+      path: /sysauthlogs
+      serviceId: ${ibiz.ref.service.uaa:ibzuaa-api}
+      stripPrefix: false
+  sensitive-headers:
+    - Cookie,Set-Cookie,Authorization

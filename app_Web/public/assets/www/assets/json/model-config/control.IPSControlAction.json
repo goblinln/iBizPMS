@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"actionDesc","desc":"行为描述","order":1000},{"name":"actionName","desc":null,"order":1000},{"name":"getPSAppDEMethod","desc":"应用实体方法","order":1000},{"name":"getPSAppDataEntity","desc":"应用实体对象","order":1000},{"name":"timeout","desc":"处理超时时长（毫秒）","order":1000}]}]

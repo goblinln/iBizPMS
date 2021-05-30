@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"caption","desc":"标题","order":1000},{"name":"getCapPSLanguageRes","desc":"标题语言资源","order":1000},{"name":"getPSSysImage","desc":"图标资源","order":1000},{"name":"titleBarStyle","desc":"标题栏样式","order":1000},{"name":"titleBarType","desc":"标题栏类型","order":1000}]}]

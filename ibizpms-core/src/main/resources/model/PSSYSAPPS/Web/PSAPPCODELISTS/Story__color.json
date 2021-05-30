@@ -1,0 +1,44 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Story__color",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__color.json",
+  "emptyText" : "未定义",
+  "name" : "需求颜色",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "Item_1",
+    "color" : "rgba(61, 167, 245, 1)",
+    "text" : "#3da7f5",
+    "value" : "#3da7f5"
+  }, {
+    "codeName" : "Item_2",
+    "color" : "rgba(117, 201, 65, 1)",
+    "text" : "#75c941",
+    "value" : "#75c941"
+  }, {
+    "codeName" : "Item_3",
+    "color" : "rgba(45, 189, 178, 1)",
+    "text" : "#2dbdb2",
+    "value" : "#2dbdb2"
+  }, {
+    "codeName" : "Item_4",
+    "color" : "rgba(121, 126, 201, 1)",
+    "text" : "#797ec9",
+    "value" : "#797ec9"
+  }, {
+    "codeName" : "Item_5",
+    "color" : "rgba(255, 175, 56, 1)",
+    "text" : "#ffaf38",
+    "value" : "#ffaf38"
+  }, {
+    "codeName" : "Item_6",
+    "color" : "rgba(255, 78, 62, 1)",
+    "text" : "#ff4e3e",
+    "value" : "#ff4e3e"
+  } ],
+  "enableCache" : true
+}

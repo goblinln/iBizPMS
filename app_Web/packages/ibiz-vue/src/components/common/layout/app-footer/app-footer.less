@@ -1,0 +1,45 @@
+.app-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+    color: var(--app-background-color);
+    fill: var(--app-background-color);
+    background: var(--app-footer-background-color);
+
+    > .app-footer-left,
+    > .app-footer-center,
+    > .app-footer-right {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        > .item {
+            cursor: pointer;
+            padding: 0px 6px;
+            color: var(--app-background-color);
+            fill: var(--app-background-color);
+            font-size: 14px;
+
+            > .action-item {
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+                > i,
+                > img {
+                    padding-right: 3px;
+                }
+            }
+        }
+
+        > .item:hover {
+            background: hsla(0, 0%, 100%, 0.12);
+        }
+    }
+
+    > .app-footer-right {
+        flex-direction: row-reverse;
+    }
+}

@@ -1,0 +1,28 @@
+{
+  "codeName" : "Zt_doclib",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 4,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+  },
+  "name" : "DER1N_ZT_DOC_ZT_DOCLIB_LIB",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "LIB",
+    "codeName" : "Lib"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "LIBNAME",
+    "codeName" : "Libname"
+  },
+  "pickupDEFName" : "LIB",
+  "removeActionType" : -1,
+  "removeOrder" : 0
+}

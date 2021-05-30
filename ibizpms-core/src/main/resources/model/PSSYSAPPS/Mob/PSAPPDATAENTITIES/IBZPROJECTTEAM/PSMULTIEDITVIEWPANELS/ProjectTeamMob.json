@@ -1,0 +1,249 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "ProjectTeamMob",
+  "columnEnableLink" : 2,
+  "controlType" : "MULTIEDITVIEWPANEL",
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IBZPROJECTTEAM/PSMULTIEDITVIEWPANELS/ProjectTeamMob.json",
+  "getEmbeddedPSAppView" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProjectTeamProjectTeamMobEditView.json",
+    "viewType" : "DEMOBEDITVIEW9"
+  },
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "DATACHANGE", "SAVE", "BEFORESAVE", "LOAD" ],
+  "logicName" : "项目团队",
+  "minorSortDir" : "DESC",
+  "getMinorSortPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IBZPROJECTTEAM.json"
+  },
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "用户",
+    "codeName" : "account",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "account",
+    "excelCaption" : "用户",
+    "name" : "account",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "width" : 200,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "角色",
+    "codeName" : "role",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "role",
+    "excelCaption" : "角色",
+    "name" : "role",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "ROLE",
+      "codeName" : "Role"
+    },
+    "width" : 100,
+    "widthUnit" : "STAR",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "可用工日",
+    "codeName" : "days",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "days",
+    "excelCaption" : "可用工日",
+    "name" : "days",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "DAYS",
+      "codeName" : "Days"
+    },
+    "width" : 200,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "可用工时/天",
+    "codeName" : "hours",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "hours",
+    "excelCaption" : "可用工时/天",
+    "name" : "hours",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "HOURS",
+      "codeName" : "Hours"
+    },
+    "width" : 200,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "受限用户",
+    "codeName" : "limited",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "limited",
+    "excelCaption" : "受限用户",
+    "name" : "limited",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo3.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "LIMITED",
+      "codeName" : "Limited"
+    },
+    "width" : 200,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 9,
+    "name" : "total",
+    "getPSAppDEField" : {
+      "name" : "TOTAL",
+      "codeName" : "Total"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "limited",
+    "getPSAppDEField" : {
+      "name" : "LIMITED",
+      "codeName" : "Limited"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "days",
+    "getPSAppDEField" : {
+      "name" : "DAYS",
+      "codeName" : "Days"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "root",
+    "getPSAppDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "hours",
+    "getPSAppDEField" : {
+      "name" : "HOURS",
+      "codeName" : "Hours"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "role",
+    "getPSAppDEField" : {
+      "name" : "ROLE",
+      "codeName" : "Role"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "account",
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    }
+  }, {
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "join",
+    "getPSAppDEField" : {
+      "name" : "JOIN",
+      "codeName" : "Join"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "编号",
+    "codeName" : "srfkey",
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 1000,
+  "panelStyle" : "ROW",
+  "getRemovePSControlAction" : {
+    "actionName" : "RemoveTemp",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "RemoveTemp"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IBZPROJECTTEAM.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "56e2ec74bb2426017d48573217654889",
+  "modeltype" : "PSDEGRID"
+}

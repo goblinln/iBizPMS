@@ -1,0 +1,8 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "GetLastUpdateInfo",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDEACTIONS/GetLastUpdateInfo.json",
+  "logicName" : "获取最新更新信息",
+  "name" : "getLastUpdateInfo"
+}

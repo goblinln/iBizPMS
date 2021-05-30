@@ -1,0 +1,11 @@
+{
+  "actionMode" : "UPDATE",
+  "actionType" : "BUILTIN",
+  "codeName" : "Update",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLib/PSDEACTIONS/Update.json",
+  "logicName" : "Update",
+  "name" : "Update",
+  "orderValue" : 11,
+  "userCat" : "CAT1",
+  "builtinAction" : true
+}

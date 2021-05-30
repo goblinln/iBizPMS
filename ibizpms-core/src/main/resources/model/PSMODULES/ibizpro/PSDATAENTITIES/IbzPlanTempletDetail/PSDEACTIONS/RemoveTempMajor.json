@@ -1,0 +1,14 @@
+{
+  "actionMode" : "DELETE",
+  "actionType" : "BUILTIN",
+  "batchActionMode" : 1,
+  "codeName" : "RemoveTempMajor",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail/PSDEACTIONS/RemoveTempMajor.json",
+  "logicName" : "RemoveTempMajor",
+  "name" : "RemoveTempMajor",
+  "orderValue" : 23,
+  "tempDataMode" : 1,
+  "batchAction" : true,
+  "builtinAction" : true,
+  "enableTempData" : true
+}

@@ -1,0 +1,109 @@
+.calendar{
+    height:100%;
+    overflow: auto;
+    .context-menu-container {
+        height: calc(100% - 70px);
+    }
+    .el-timeline{
+      padding-left: 2px;
+    }
+    .app-data-empty{
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+    .event-legends{
+      width: 100%;
+      text-align: center;
+      .event-lengend{
+        display: inline-block;
+        margin-left: 10px;
+        height: 20px;
+        .lengend-icon{
+          display: inline-block;
+          width: 30px;
+          height: 20px;
+          border-radius: 5px;
+        }
+        span{
+          display: inline-block;
+          margin-left: 5px;
+          line-height: 20px;
+          vertical-align: top;
+        }
+      }
+      .event-lengend.event-disabled{
+        .lengend-icon{
+          background: var(--ctrl-background-color-bright) !important;
+        }
+        span{
+          color:var(--ctrl-font-color-light) !important;
+        }
+      }
+    }
+  }
+  // 选中样式
+  .calendar .selected-event,
+  .select-first-calendar .select-first-event{
+    border: 2px solid var(--ctrl-font-color) !important;
+  }
+  .calendar .fc-dayGrid-view .selected-event:before,
+  .select-first-calendar .fc-dayGrid-view .select-first-event:before,
+  .calendar .fc-timeGrid-view .selected-event:before,
+  .select-first-calendar .fc-timeGrid-view .select-first-event:before{
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 9px solid var(--ctrl-font-color);
+    border-top-color: transparent;
+    border-left-color: transparent;
+    color: var(--ctrl-font-color-bright);
+  }
+  .calendar .fc-dayGrid-view .selected-event:after,
+  .select-first-calendar .fc-dayGrid-view .select-first-event:after,
+  .calendar .fc-timeGrid-view .selected-event:after,
+  .select-first-calendar .fc-timeGrid-view .select-first-event:after{
+    content: '';
+    display: block;
+    width: 4px;
+    height: 11px;
+    position: absolute;
+    right: 1px;
+    bottom: 0px;
+    border: 2px solid var(--ctrl-font-color-bright);
+    border-top-color: transparent;
+    border-left-color: transparent;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    box-sizing: content-box;
+  }
+  // 选择跳转日期模态
+  .date-select-modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .ivu-modal{
+        top: 0;
+        .ivu-modal-body {
+          text-align: center;
+        }
+    }
+  }
+  
+  .app-popover {
+    background-color: var(--view-background-color) !important;
+    border-color: var(--view-font-color-light);
+  }
+  #calendar-popover {
+    .ivu-dropdown {
+      .ivu-select-dropdown {
+        top: 0px;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }

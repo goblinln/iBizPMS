@@ -1,0 +1,22 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Task__closed_reason",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__closed_reason.json",
+  "emptyText" : "未定义",
+  "name" : "任务关闭原因",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "Done",
+    "text" : "已完成",
+    "value" : "done"
+  }, {
+    "codeName" : "Cancel",
+    "text" : "已取消",
+    "value" : "cancel"
+  } ],
+  "enableCache" : true
+}

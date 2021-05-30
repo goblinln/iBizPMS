@@ -1,0 +1,1 @@
+[{"group":"基本","order":10,"methods":[{"name":"codeName","desc":"代码名称","order":1000}]},{"group":"其它","order":100,"methods":[{"name":"getPSAppWFVers","desc":"应用工作流版本集合","order":1000},{"name":"hasPSAppWFVer","desc":"有工作流版本","order":1000}]}]

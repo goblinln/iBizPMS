@@ -1,0 +1,146 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain_MyReP.json",
+  "name" : "任务维护（我相关项目）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "MyReProject"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "ACTIVATE",
+    "name" : "ACTIVATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__ACTIVATE"
+    }
+  }, {
+    "dataAccessAction" : "ASSIGNTO",
+    "name" : "ASSIGNTO",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ASSIGNTO"
+    }
+  }, {
+    "dataAccessAction" : "FJTASK",
+    "name" : "FJTASK",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FJTASK"
+    }
+  }, {
+    "dataAccessAction" : "CANCEL",
+    "name" : "CANCEL",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__CANCEL"
+    }
+  }, {
+    "dataAccessAction" : "NFAVORITES",
+    "name" : "NFAVORITES",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NFAVORITES"
+    }
+  }, {
+    "dataAccessAction" : "TOBUG",
+    "name" : "TOBUG",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "TOBUG"
+    }
+  }, {
+    "dataAccessAction" : "START",
+    "name" : "START",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__START"
+    }
+  }, {
+    "dataAccessAction" : "CLOSE",
+    "name" : "CLOSE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__CLOSE"
+    }
+  }, {
+    "dataAccessAction" : "CONSUM",
+    "name" : "CONSUM",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__CONSUM"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "dataAccessAction" : "XQCHANGE",
+    "name" : "XQCHANGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__XQCHANGE"
+    }
+  }, {
+    "dataAccessAction" : "RESTART",
+    "name" : "RESTART",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RESTART"
+    }
+  }, {
+    "dataAccessAction" : "RECORDESTIMATE",
+    "name" : "RECORDESTIMATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__RECORDESTIMATE"
+    }
+  }, {
+    "dataAccessAction" : "FORWARD",
+    "name" : "FORWARD",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__FORWARD"
+    }
+  }, {
+    "dataAccessAction" : "FAVORITES",
+    "name" : "FAVORITES",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FAVORITES"
+    }
+  }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "PAUSE",
+    "name" : "PAUSE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__PAUSE"
+    }
+  }, {
+    "dataAccessAction" : "SUBTASKS",
+    "name" : "SUBTASKS",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__SUBTASKS"
+    }
+  }, {
+    "dataAccessAction" : "FINISH",
+    "name" : "FINISH",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__FINISH"
+    }
+  } ],
+  "roleTag" : "Task_Maintain_MyReP",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

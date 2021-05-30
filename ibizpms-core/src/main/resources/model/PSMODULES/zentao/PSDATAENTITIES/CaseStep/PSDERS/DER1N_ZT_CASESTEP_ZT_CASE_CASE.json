@@ -1,0 +1,30 @@
+{
+  "codeName" : "ZTCase",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N_ZT_CASESTEP_ZT_CASE_CASE.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+  },
+  "masterOrder" : 100,
+  "masterRS" : 13,
+  "minorCodeName" : "caseSteps",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+  },
+  "name" : "DER1N_ZT_CASESTEP_ZT_CASE_CASE",
+  "orderValue" : 100,
+  "getPSOne2ManyDataDEField" : {
+    "name" : "CASESTEPS",
+    "codeName" : "CaseSteps"
+  },
+  "getPSPickupDEField" : {
+    "name" : "CASE",
+    "codeName" : "IBizCase"
+  },
+  "pickupDEFName" : "CASE",
+  "removeActionType" : -1,
+  "removeOrder" : 0,
+  "nestedRS" : true
+}

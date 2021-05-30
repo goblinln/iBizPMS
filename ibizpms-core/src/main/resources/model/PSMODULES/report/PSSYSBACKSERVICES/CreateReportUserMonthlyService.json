@@ -1,0 +1,18 @@
+{
+  "codeName" : "CreateReportUserMonthlyService",
+  "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserMonthlyService.json",
+  "name" : "每月定时生成用户月报",
+  "getPSDEAction" : {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/CreateUserMonthly.json"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly.json"
+  },
+  "serviceContainer" : "SC01",
+  "serviceHandler" : "CreateReportUserMonthlyService",
+  "serviceOrder" : 0,
+  "startMode" : "MANUAL",
+  "taskType" : "DEACTION"
+}

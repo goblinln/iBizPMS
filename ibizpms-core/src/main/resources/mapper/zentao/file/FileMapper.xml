@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.zentao.mapper.FileMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`ADDEDBY`, t1.`ADDEDDATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DOWNLOADS`, t1.`EXTENSION`, t1.`EXTRA`, t1.`FILESN`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`PATHNAME`, t1.`SIZE`, CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) AS `STRSIZE`, t1.`TITLE`, t1.`UPDATEBY` FROM `zt_file` t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_objectid_eq != null ">
+			<![CDATA[ AND  t1.`OBJECTID` = #{srf.n_objectid_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="srf.n_objecttype_eq != null ">
+			<![CDATA[ AND  t1.`OBJECTTYPE` = #{srf.n_objecttype_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_title_like != null ">
+            <bind name="bind_n_title_like" value="'%' + srf.n_title_like + '%'" />
+            <![CDATA[ AND  t1.`TITLE` like #{bind_n_title_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="srf.n_extra_eq != null ">
+			<![CDATA[ AND  t1.`EXTRA` = #{srf.n_extra_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_extra_noteq != null ">
+			<![CDATA[ AND  t1.`EXTRA` <> #{srf.n_extra_noteq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="FileResultMap" databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<![CDATA[ AND T1.ID = #{id} ]]>
+		</trim>
+    </select>
+
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="FileResultMap" type="cn.ibizlab.pms.core.zentao.domain.File" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
+            
+		
+    </resultMap>
+
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext"  resultMap="FileResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+     </select>
+
+    <!--数据集合[DocLibFile]-->
+	 <select id="searchDocLibFile"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext"  resultMap="FileResultMap">
+         select t1.* from (
+                <include refid="DocLibFile" />
+         )t1
+     </select>
+
+    <!--数据集合[MySubmitFile]-->
+	 <select id="searchMySubmitFile"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext"  resultMap="FileResultMap">
+         select t1.* from (
+                <include refid="MySubmitFile" />
+         )t1
+     </select>
+
+    <!--数据集合[ProductDocLibFile]-->
+	 <select id="searchProductDocLibFile"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext"  resultMap="FileResultMap">
+         select t1.* from (
+                <include refid="ProductDocLibFile" />
+         )t1
+     </select>
+
+    <!--数据集合[Type]-->
+	 <select id="searchType"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext"  resultMap="FileResultMap">
+         select t1.* from (
+                <include refid="Type" />
+         )t1
+     </select>
+
+    <!--数据集合[TypeNotBySrfparentkey]-->
+	 <select id="searchTypeNotBySrfparentkey"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext"  resultMap="FileResultMap">
+         select t1.* from (
+                <include refid="TypeNotBySrfparentkey" />
+         )t1
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ADDEDBY`, t1.`ADDEDDATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DOWNLOADS`, t1.`EXTENSION`, t1.`EXTRA`, t1.`FILESN`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`PATHNAME`, t1.`SIZE`, CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) AS `STRSIZE`, t1.`TITLE`, t1.`UPDATEBY` FROM `zt_file` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
+		<include refid="Default" />
+	</select>
+
+    <!--数据查询[DocLibFile]-->
+    <sql id="DocLibFile" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ADDEDBY`, t1.`ADDEDDATE`, t1.`DELETED`, t1.`DOWNLOADS`, t1.`EXTENSION`, t1.`EXTRA`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`PATHNAME`, CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) as `STRSIZE`, t1.size, CONCAT_WS('',t1.`TITLE`,' [',UPPER(t1.objectType),' #',t1.objectID,']') AS `TITLE`, 'file' as doclibtype, t1.FILESN FROM `zt_file` t1 ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.deleted = '0' ]]>
+            </if>
+			<if test="true">
+                <![CDATA[ AND ((t1.objectType = 'project' and t1.objectID = #{srf.datacontext.project}) or (t1.objectType = 'task' and EXISTS(select 1 from zt_task t where t.deleted = '0' and t.project = #{srf.datacontext.project} and t.id = t1.objectID)) or (t1.objectType = 'doc' and EXISTS(select 1 from zt_doc t where t.deleted = '0' and t.project = #{srf.datacontext.project} and t.id = t1.objectID)) or (t1.objectType = 'build' and EXISTS(select 1 from zt_build t where t.deleted = '0' and t.project = #{srf.datacontext.project} and t.id = t1.objectID)) ) ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectDocLibFile"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
+		<include refid="DocLibFile" />
+	</select>
+
+    <!--数据查询[MySubmitFile]-->
+    <sql id="MySubmitFile" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ADDEDBY`, t1.`ADDEDDATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DOWNLOADS`, t1.`EXTENSION`, t1.`EXTRA`, t1.`FILESN`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`PATHNAME`, t1.`SIZE`, CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) AS `STRSIZE`, t1.`TITLE`, t1.`UPDATEBY` FROM `zt_file` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
+			<if test="true">
+                <![CDATA[ AND ( t1.`ADDEDBY` =  #{srf.sessioncontext.srfloginname} ) ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectMySubmitFile"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
+		<include refid="MySubmitFile" />
+	</select>
+
+    <!--数据查询[ProductDocLibFile]-->
+    <sql id="ProductDocLibFile" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ADDEDBY`, t1.`ADDEDDATE`, t1.`DELETED`, t1.`DOWNLOADS`, t1.`EXTENSION`, t1.`EXTRA`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`PATHNAME`, CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) as `STRSIZE`, t1.size, CONCAT_WS('',t1.`TITLE`,' [',UPPER(t1.objectType),' #',t1.objectID,']') AS `TITLE`, 'file' as doclibtype, t1.FILESN FROM `zt_file` t1 ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.deleted = '0' ]]>
+            </if>
+			<if test="true">
+                <![CDATA[ AND ((t1.objectType = 'product' and t1.objectID = #{srf.datacontext.product}) or (t1.objectType = 'story' and EXISTS(select 1 from zt_story t where t.deleted = '0' and t.product = #{srf.datacontext.product} and t.id = t1.objectID)) or (t1.objectType = 'doc' and EXISTS(select 1 from zt_doc t where t.deleted = '0' and t.product = #{srf.datacontext.product} and t.id = t1.objectID)) or (t1.objectType = 'bug' and EXISTS(select 1 from zt_bug t where t.deleted = '0' and t.product = #{srf.datacontext.product} and t.id = t1.objectID)) ) ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectProductDocLibFile"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
+		<include refid="ProductDocLibFile" />
+	</select>
+
+    <!--数据查询[Type]-->
+    <sql id="Type" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ADDEDBY`, t1.`ADDEDDATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DOWNLOADS`, t1.`EXTENSION`, t1.`EXTRA`, t1.`FILESN`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`PATHNAME`, t1.`SIZE`, CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) AS `STRSIZE`, t1.`TITLE`, t1.`UPDATEBY` FROM `zt_file` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
+			<if test="true">
+                <![CDATA[ AND ( t1.`OBJECTID` = #{srf.datacontext.srfparentkey}  AND  t1.`OBJECTTYPE` =  #{srf.datacontext.objecttype}  AND  t1.`EXTRA` <> 'editor' ) ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectType"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
+		<include refid="Type" />
+	</select>
+
+    <!--数据查询[TypeNotBySrfparentkey]-->
+    <sql id="TypeNotBySrfparentkey" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ADDEDBY`, t1.`ADDEDDATE`, t1.`DELETED`, t1.`DOWNLOADS`, t1.`EXTENSION`, t1.`EXTRA`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`PATHNAME`, t1.`SIZE`, CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) AS `STRSIZE`, t1.`TITLE`, t1.FILESN FROM `zt_file` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
+			<if test="true">
+                <![CDATA[ AND ( t1.`OBJECTID` = #{srf.datacontext.objectid}  AND  t1.`OBJECTTYPE` =  #{srf.datacontext.objecttype}  AND  t1.`EXTRA` <> 'editor' ) ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectTypeNotBySrfparentkey"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
+		<include refid="TypeNotBySrfparentkey" />
+	</select>
+
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ADDEDBY`, t1.`ADDEDDATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DOWNLOADS`, t1.`EXTENSION`, t1.`EXTRA`, t1.`FILESN`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`PATHNAME`, t1.`SIZE`, CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) AS `STRSIZE`, t1.`TITLE`, t1.`UPDATEBY` FROM `zt_file` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
+		<include refid="View" />
+	</select>
+
+</mapper>
+

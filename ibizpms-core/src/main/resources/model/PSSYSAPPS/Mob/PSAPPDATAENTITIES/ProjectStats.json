@@ -1,0 +1,1223 @@
+{
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTSTATS__DEACTION__CREATE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTSTATS__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTSTATS__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTSTATS__DEACTION__GET"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ProjectQualitySum",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/ProjectQualitySum.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ProjectQualitySum"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEDataExports" : [ {
+    "codeName" : "ProjectTaskType",
+    "maxRowCount" : 1000,
+    "name" : "项目任务类型统计-数据导出",
+    "getPSDEDataExportItems" : [ {
+      "caption" : "项目名称",
+      "format" : "%1$s",
+      "name" : "name",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "caption" : "设计",
+      "format" : "%1$s",
+      "name" : "designtaskcnt",
+      "getPSAppDEField" : {
+        "name" : "DESIGNTASKCNT",
+        "codeName" : "DesignTASKCNT"
+      }
+    }, {
+      "caption" : "开发",
+      "format" : "%1$s",
+      "name" : "develtaskcnt",
+      "getPSAppDEField" : {
+        "name" : "DEVELTASKCNT",
+        "codeName" : "DEVELTASKCNT"
+      }
+    }, {
+      "caption" : "测试",
+      "format" : "%1$s",
+      "name" : "testtaskcnt",
+      "getPSAppDEField" : {
+        "name" : "TESTTASKCNT",
+        "codeName" : "TESTTASKCNT"
+      }
+    }, {
+      "caption" : "研究",
+      "format" : "%1$s",
+      "name" : "studytaskcnt",
+      "getPSAppDEField" : {
+        "name" : "STUDYTASKCNT",
+        "codeName" : "StudyTASKCNT"
+      }
+    }, {
+      "caption" : "讨论",
+      "format" : "%1$s",
+      "name" : "discusstaskcnt",
+      "getPSAppDEField" : {
+        "name" : "DISCUSSTASKCNT",
+        "codeName" : "DiscussTASKCNT"
+      }
+    }, {
+      "caption" : "界面",
+      "format" : "%1$s",
+      "name" : "uitaskcnt",
+      "getPSAppDEField" : {
+        "name" : "UITASKCNT",
+        "codeName" : "UiTASKCNT"
+      }
+    }, {
+      "caption" : "事务",
+      "format" : "%1$s",
+      "name" : "affairtaskcnt",
+      "getPSAppDEField" : {
+        "name" : "AFFAIRTASKCNT",
+        "codeName" : "AFFAIRTASKCNT"
+      }
+    }, {
+      "caption" : "服务",
+      "format" : "%1$s",
+      "name" : "servetaskcnt",
+      "getPSAppDEField" : {
+        "name" : "SERVETASKCNT",
+        "codeName" : "SERVETASKCNT"
+      }
+    }, {
+      "caption" : "其他",
+      "format" : "%1$s",
+      "name" : "misctaskcnt",
+      "getPSAppDEField" : {
+        "name" : "MISCTASKCNT",
+        "codeName" : "MISCTASKCNT"
+      }
+    }, {
+      "caption" : "总计",
+      "format" : "%1$s",
+      "name" : "taskcnt",
+      "getPSAppDEField" : {
+        "name" : "TASKCNT",
+        "codeName" : "TaskCnt"
+      }
+    } ]
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchNoOpenProduct",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "NoOpenProduct"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchNoOpenProduct"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectBugType",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectBugType"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectBugType"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectInputStats",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectInputStats"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectInputStats"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectProgress",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectProgress"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectProgress"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectQuality",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectQuality"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectQuality"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectStoryStageStats",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectStoryStageStats"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectStoryStageStats"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectStoryStatusStats",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectStoryStatusStats"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectStoryStatusStats"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectTaskCountByTaskStatus",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTaskCountByTaskStatus"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectTaskCountByTaskStatus"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectTaskCountByType",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTaskCountByType"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectTaskCountByType"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTaskTime",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskTime"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchTaskTime"
+    },
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "Standard",
+    "logicName" : "标准规范",
+    "name" : "STANDARD",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Type",
+    "logicName" : "工时类型",
+    "name" : "TYPE",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Emptystory",
+    "logicName" : "空需求",
+    "name" : "EMPTYSTORY",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Draftstory",
+    "logicName" : "草稿需求",
+    "name" : "DRAFTSTORY",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "End",
+    "logicName" : "截止日期",
+    "name" : "END",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "Releasedstagestorycnt",
+    "logicName" : "已发布阶段需求数",
+    "name" : "RELEASEDSTAGESTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Importantbugcnt",
+    "logicName" : "重要Bug数",
+    "name" : "IMPORTANTBUGCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Canceltaskcnt",
+    "logicName" : "已取消任务数",
+    "name" : "CANCELTASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Begin",
+    "logicName" : "开始时间",
+    "name" : "BEGIN",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "Status",
+    "logicName" : "状态",
+    "name" : "STATUS",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Seriousbugproportion",
+    "logicName" : "严重Bug比率",
+    "name" : "SERIOUSBUGPROPORTION",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "Doingtaskcnt",
+    "logicName" : "进行中任务数",
+    "name" : "DOINGTASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "UnDoneTaskCnt",
+    "logicName" : "未完成任务总数",
+    "name" : "UNDONETASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "SERVETASKCNT",
+    "logicName" : "服务类型任务",
+    "name" : "SERVETASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Donetaskcnt",
+    "logicName" : "已完成任务数",
+    "name" : "DONETASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Totalwh",
+    "logicName" : "总工时",
+    "name" : "TOTALWH",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "UnClosedStoryCnt",
+    "logicName" : "未关闭需求总数",
+    "name" : "UNCLOSEDSTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "MISCTASKCNT",
+    "logicName" : "其他类型任务",
+    "name" : "MISCTASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Leftstorycnt",
+    "logicName" : "剩余需求数",
+    "name" : "LEFTSTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Performance",
+    "logicName" : "性能问题",
+    "name" : "PERFORMANCE",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Emptystagestorycnt",
+    "logicName" : "空阶段需求数",
+    "name" : "EMPTYSTAGESTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Waitstagestorycnt",
+    "logicName" : "未开始阶段需求数",
+    "name" : "WAITSTAGESTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Developingstagestorycnt",
+    "logicName" : "研发中阶段需求数",
+    "name" : "DEVELOPINGSTAGESTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Istop",
+    "logicName" : "是否置顶",
+    "name" : "ISTOP",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Completestorycnt",
+    "logicName" : "完成需求数",
+    "name" : "COMPLETESTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "TESTTASKCNT",
+    "logicName" : "测试类型任务",
+    "name" : "TESTTASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Deleted",
+    "logicName" : "已删除",
+    "name" : "DELETED",
+    "stdDataType" : 25,
+    "stringLength" : 1
+  }, {
+    "codeName" : "StoryCnt",
+    "logicName" : "需求总数",
+    "name" : "STORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Projectedstagestorycnt",
+    "logicName" : "已立项阶段需求数",
+    "name" : "PROJECTEDSTAGESTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "DiscussTASKCNT",
+    "logicName" : "讨论类型任务",
+    "name" : "DISCUSSTASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Completetaskcnt",
+    "logicName" : "完成任务数",
+    "name" : "COMPLETETASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Plannedstagestorycnt",
+    "logicName" : "已计划阶段需求数",
+    "name" : "PLANNEDSTAGESTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Testedstagestorycnt",
+    "logicName" : "测试完毕阶段需求数",
+    "name" : "TESTEDSTAGESTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Name",
+    "logicName" : "项目名称",
+    "name" : "NAME",
+    "stdDataType" : 25,
+    "stringLength" : 90,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "TaskCnt",
+    "logicName" : "任务总数",
+    "name" : "TASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "TotalLeft",
+    "logicName" : "任务预计剩余总工时",
+    "name" : "TOTALLEFT",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Timescale",
+    "logicName" : "工期",
+    "name" : "TIMESCALE",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Activestory",
+    "logicName" : "激活需求",
+    "name" : "ACTIVESTORY",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Order1",
+    "logicName" : "项目排序",
+    "name" : "ORDER1",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "ActiveBugCnt",
+    "logicName" : "未解决Bug总数",
+    "name" : "ACTIVEBUGCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Designdefect",
+    "logicName" : "设计缺陷",
+    "name" : "DESIGNDEFECT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Waittaskcnt",
+    "logicName" : "未开始任务数",
+    "name" : "WAITTASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Pausetaskcnt",
+    "logicName" : "已暂停任务数",
+    "name" : "PAUSETASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Closedstagestorycnt",
+    "logicName" : "已关闭阶段需求数",
+    "name" : "CLOSEDSTAGESTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "TotalEstimate",
+    "logicName" : "任务最初预计总工时",
+    "name" : "TOTALESTIMATE",
+    "precision" : 2,
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Verifiedstagestorycnt",
+    "logicName" : "已验收阶段需求数",
+    "name" : "VERIFIEDSTAGESTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Install",
+    "logicName" : "安装部署",
+    "name" : "INSTALL",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Id",
+    "logicName" : "项目编号",
+    "name" : "ID",
+    "stdDataType" : 1,
+    "keyField" : true
+  }, {
+    "codeName" : "DesignTASKCNT",
+    "logicName" : "设计类型任务",
+    "name" : "DESIGNTASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Security",
+    "logicName" : "安全相关",
+    "name" : "SECURITY",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Others",
+    "logicName" : "其他",
+    "name" : "OTHERS",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "BugCnt",
+    "logicName" : "Bug总数",
+    "name" : "BUGCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "UnclosedBugCnt",
+    "logicName" : "未关闭Bug总数",
+    "name" : "UNCLOSEDBUGCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Yesterdayctaskcnt",
+    "logicName" : "昨日完成任务数",
+    "name" : "YESTERDAYCTASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Time",
+    "logicName" : "工时",
+    "name" : "TIME",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Automation",
+    "logicName" : "测试脚本",
+    "name" : "AUTOMATION",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "UnconfirmedBugCnt",
+    "logicName" : "未确认Bug总数",
+    "name" : "UNCONFIRMEDBUGCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Developedstagestorycnt",
+    "logicName" : "研发完毕阶段需求数",
+    "name" : "DEVELOPEDSTAGESTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Testingstagestorycnt",
+    "logicName" : "测试中阶段需求数",
+    "name" : "TESTINGSTAGESTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "FinishTaskCnt",
+    "logicName" : "已结束任务总数",
+    "name" : "FINISHTASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Config",
+    "logicName" : "配置相关",
+    "name" : "CONFIG",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "TotalConsumed",
+    "logicName" : "任务消耗总工时",
+    "name" : "TOTALCONSUMED",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "AFFAIRTASKCNT",
+    "logicName" : "事务类型任务",
+    "name" : "AFFAIRTASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Projecttotalconsumed",
+    "logicName" : "项目消耗总工时",
+    "name" : "PROJECTTOTALCONSUMED",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "UiTASKCNT",
+    "logicName" : "界面类型任务",
+    "name" : "UITASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Bugstory",
+    "logicName" : "Bug/完成需求",
+    "name" : "BUGSTORY",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Closedstory",
+    "logicName" : "已关闭需求",
+    "name" : "CLOSEDSTORY",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Bugtask",
+    "logicName" : "Bug/完成任务",
+    "name" : "BUGTASK",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "ReleasedStoryCnt",
+    "logicName" : "已发布需求数",
+    "name" : "RELEASEDSTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "StudyTASKCNT",
+    "logicName" : "研究类型任务",
+    "name" : "STUDYTASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Closedtaskcnt",
+    "logicName" : "已关闭任务数",
+    "name" : "CLOSEDTASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Codeerror",
+    "logicName" : "代码错误",
+    "name" : "CODEERROR",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "ClosedStoryCnt",
+    "logicName" : "关闭需求总数",
+    "name" : "CLOSEDSTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "FinishBugCnt",
+    "logicName" : "已解决Bug总数",
+    "name" : "FINISHBUGCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Changedstory",
+    "logicName" : "已变更需求",
+    "name" : "CHANGEDSTORY",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "DEVELTASKCNT",
+    "logicName" : "开发类型任务",
+    "name" : "DEVELTASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Membercnt",
+    "logicName" : "人数",
+    "name" : "MEMBERCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Progress",
+    "logicName" : "进度",
+    "name" : "PROGRESS",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Yesterdayrbugcnt",
+    "logicName" : "昨天解决Bug数",
+    "name" : "YESTERDAYRBUGCNT",
+    "stdDataType" : 9
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "codeName" : "Select",
+    "methodType" : "SELECT",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTSTATS__DEACTION__CREATE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTSTATS__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTSTATS__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTSTATS__DEACTION__GET"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ProjectQualitySum",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/ProjectQualitySum.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ProjectQualitySum"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchNoOpenProduct",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "NoOpenProduct"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchNoOpenProduct"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectBugType",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectBugType"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectBugType"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectInputStats",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectInputStats"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectInputStats"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectProgress",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectProgress"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectProgress"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectQuality",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectQuality"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectQuality"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectStoryStageStats",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectStoryStageStats"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectStoryStageStats"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectStoryStatusStats",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectStoryStatusStats"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectStoryStatusStats"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectTaskCountByTaskStatus",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTaskCountByTaskStatus"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectTaskCountByTaskStatus"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectTaskCountByType",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTaskCountByType"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectTaskCountByType"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTaskTime",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskTime"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchTaskTime"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "codeName" : "ProjectStats",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectStats.json",
+  "enableUIActions" : 15,
+  "logicName" : "项目统计",
+  "name" : "IBZ_PROJECTSTATS",
+  "getPSDEName" : "IBZ_PROJECTSTATS",
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDESERVICEAPIS/ProjectStats.json"
+  },
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "NAME",
+    "codeName" : "Name"
+  } ],
+  "storageMode" : 0,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
+}
