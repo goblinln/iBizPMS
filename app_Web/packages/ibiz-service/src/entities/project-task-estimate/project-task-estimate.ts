@@ -1,7 +1,7 @@
 import { ProjectTaskEstimateBase } from './project-task-estimate-base';
 
 /**
- * 项目工时统计
+ * 任务预计
  *
  * @export
  * @class ProjectTaskEstimate

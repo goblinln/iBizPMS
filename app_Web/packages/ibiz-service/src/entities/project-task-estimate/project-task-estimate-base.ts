@@ -2,7 +2,7 @@ import { EntityBase } from 'ibiz-core';
 import { IProjectTaskEstimate } from '../interface';
 
 /**
- * 项目工时统计基类
+ * 任务预计基类
  *
  * @export
  * @abstract
@@ -19,7 +19,7 @@ export abstract class ProjectTaskEstimateBase extends EntityBase implements IPro
      * @memberof ProjectTaskEstimateBase
      */
     get srfdename(): string {
-        return 'PROJECTTASKESTIMATE';
+        return 'ZT_TASKESTIMATE';
     }
     get srfkey() {
         return this.id;

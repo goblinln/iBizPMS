@@ -22,7 +22,6 @@ export * from './ibug';
 export * from './iproject-module';
 export * from './iproduct-project';
 export * from './iproduct-release';
-export * from './iproject-task-estimate';
 export * from './iibz-report-role-config';
 export * from './isys-user';
 export * from './iibzcase-step';

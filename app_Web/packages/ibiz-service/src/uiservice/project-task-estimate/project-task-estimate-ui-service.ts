@@ -1,7 +1,7 @@
 import { ProjectTaskEstimateUIServiceBase } from './project-task-estimate-ui-service-base';
 
 /**
- * 项目工时统计UI服务对象
+ * 任务预计UI服务对象
  *
  * @export
  * @class ProjectTaskEstimateUIService

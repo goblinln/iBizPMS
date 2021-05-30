@@ -23,7 +23,6 @@ export * from './bug/bug';
 export * from './project-module/project-module';
 export * from './product-project/product-project';
 export * from './product-release/product-release';
-export * from './project-task-estimate/project-task-estimate';
 export * from './ibz-report-role-config/ibz-report-role-config';
 export * from './sys-user/sys-user';
 export * from './ibzcase-step/ibzcase-step';

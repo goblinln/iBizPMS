@@ -22,7 +22,6 @@ export * from './bug/bug-ui-service';
 export * from './project-module/project-module-ui-service';
 export * from './product-project/product-project-ui-service';
 export * from './product-release/product-release-ui-service';
-export * from './project-task-estimate/project-task-estimate-ui-service';
 export * from './ibz-report-role-config/ibz-report-role-config-ui-service';
 export * from './sys-user/sys-user-ui-service';
 export * from './ibzcase-step/ibzcase-step-ui-service';

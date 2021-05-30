@@ -1,7 +1,7 @@
 import { AuthService } from '../auth-service';
 
 /**
- * 项目工时统计权限服务对象基类
+ * 任务预计权限服务对象基类
  *
  * @export
  * @class ProjectTaskEstimateAuthServiceBase

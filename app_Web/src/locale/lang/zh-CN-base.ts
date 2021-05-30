@@ -22,7 +22,6 @@ import bug_zh_CN from '@locale/lanres/entities/bug/bug_zh_CN';
 import projectmodule_zh_CN from '@locale/lanres/entities/project-module/project-module_zh_CN';
 import productproject_zh_CN from '@locale/lanres/entities/product-project/product-project_zh_CN';
 import productrelease_zh_CN from '@locale/lanres/entities/product-release/product-release_zh_CN';
-import projecttaskestimate_zh_CN from '@locale/lanres/entities/project-task-estimate/project-task-estimate_zh_CN';
 import ibzreportroleconfig_zh_CN from '@locale/lanres/entities/ibz-report-role-config/ibz-report-role-config_zh_CN';
 import sysuser_zh_CN from '@locale/lanres/entities/sys-user/sys-user_zh_CN';
 import ibzcasestep_zh_CN from '@locale/lanres/entities/ibzcase-step/ibzcase-step_zh_CN';
@@ -450,7 +449,6 @@ function getAppLocale(){
             'projectmodule': projectmodule_zh_CN(),
             'productproject': productproject_zh_CN(),
             'productrelease': productrelease_zh_CN(),
-            'projecttaskestimate': projecttaskestimate_zh_CN(),
             'ibzreportroleconfig': ibzreportroleconfig_zh_CN(),
             'sysuser': sysuser_zh_CN(),
             'ibzcasestep': ibzcasestep_zh_CN(),

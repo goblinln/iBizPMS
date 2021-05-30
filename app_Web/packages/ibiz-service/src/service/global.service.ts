@@ -233,15 +233,6 @@ export class GlobalService {
         return (await import('./product-release/product-release.service')).default.getInstance();
     }
     /**
-     * 项目工时统计服务
-     *
-     * @return {ProjectTaskEstimate}
-     * @memberof GlobalService
-     */
-    async getProjectTaskEstimateService() {
-        return (await import('./project-task-estimate/project-task-estimate.service')).default.getInstance();
-    }
-    /**
      * 汇报角色配置服务
      *
      * @return {IbzReportRoleConfig}

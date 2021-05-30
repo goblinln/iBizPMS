@@ -77,7 +77,6 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('projectmodule', () => import('../authservice/project-module/project-module-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productproject', () => import('../authservice/product-project/product-project-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productrelease', () => import('../authservice/product-release/product-release-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('projecttaskestimate', () => import('../authservice/project-task-estimate/project-task-estimate-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzreportroleconfig', () => import('../authservice/ibz-report-role-config/ibz-report-role-config-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('sysuser', () => import('../authservice/sys-user/sys-user-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzcasestep', () => import('../authservice/ibzcase-step/ibzcase-step-auth-service'));

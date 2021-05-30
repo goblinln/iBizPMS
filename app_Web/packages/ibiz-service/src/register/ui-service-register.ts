@@ -78,7 +78,6 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('projectmodule', () => import('../uiservice/project-module/project-module-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productproject', () => import('../uiservice/product-project/product-project-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productrelease', () => import('../uiservice/product-release/product-release-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('projecttaskestimate', () => import('../uiservice/project-task-estimate/project-task-estimate-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzreportroleconfig', () => import('../uiservice/ibz-report-role-config/ibz-report-role-config-ui-service'));
         UIServiceRegister.allUIServiceMap.set('sysuser', () => import('../uiservice/sys-user/sys-user-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzcasestep', () => import('../uiservice/ibzcase-step/ibzcase-step-ui-service'));
