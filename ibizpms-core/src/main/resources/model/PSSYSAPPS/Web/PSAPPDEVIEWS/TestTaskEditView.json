@@ -8,7 +8,7 @@
   "openMode" : "DRAWER_RIGHT",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -63,7 +63,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -119,7 +119,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask/PSFORMS/Main.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask/PSFORMS/Main.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -136,7 +136,7 @@
     "logicName" : "新建模式",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -150,7 +150,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
         }
       }, {
         "actionName" : "GETDRAFTFROM",
@@ -159,7 +159,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
         }
       }, {
         "actionName" : "Remove",
@@ -172,7 +172,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -185,7 +185,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
         }
       }, {
         "actionName" : "Get",
@@ -198,7 +198,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
         }
       }, {
         "actionName" : "Create",
@@ -211,7 +211,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -1173,7 +1173,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -1187,5 +1187,31 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "5b139a407fa34f386f3f784f33841184",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "ProjectTestTasks",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+    },
+    "name" : "PROJECT__TEST_TASK",
+    "getParentPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ] ]
 }

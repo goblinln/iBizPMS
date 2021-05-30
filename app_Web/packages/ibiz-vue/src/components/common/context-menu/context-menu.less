@@ -1,30 +1,16 @@
 .context-menu-container {
-  // width: 100vw;
-  // height: 100vh;
-  // z-index: -10000;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  // line-height: 1;
   z-index: 10001;
 
   .context-menu-content {
       position: absolute;
       background: var(--item-background-color-bright);
-      // border: 1px solid #e3e3e3;
-      .tree-right-menu{
-        .ivu-select-dropdown{
-          // overflow: auto;
-        }
-      }
-      .ivu-divider{
-        width: 100%;
-      }
 
+      .ivu-divider {
+          width: 100%;
+      }
   }
 
   .context-menus {
-
       .context-menus-item {
           list-style: none;
           line-height: 36px;
@@ -35,7 +21,7 @@
           cursor: pointer;
           outline: none;
           display: flex;
-  
+
           .icon {
               display: flex;
               justify-content: center;
@@ -45,17 +31,22 @@
               margin-right: 8px;
           }
       }
-  
+
       .context-menus-item:hover {
           background-color: var(--item-background-color-hover);
           color: var(--item-font-color-light);
       }
   }
 }
+
 .context-menu {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.context-menu-component {
+  line-height: 100%;
 }

@@ -326,7 +326,7 @@
     "name" : "周报我完成的任务(下拉框选择)",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchThisWeekCompleteTaskChoice"
+      "id" : "FetchDefault"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -350,7 +350,7 @@
     "name" : "我完成的任务（汇报）",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchMyCompleteTask"
+      "id" : "FetchDefault"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -1545,7 +1545,7 @@
     "name" : "月报我完成的任务（下拉列表框）",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchThisMonthCompleteTaskChoice"
+      "id" : "FetchDefault"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -1822,15 +1822,15 @@
     "name" : "当前产品版本（动态）",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchBugProductOrProjectBuild"
+      "id" : "FetchDefault"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
     },
     "getValuePSAppDEField" : {
-      "name" : "IDS",
-      "codeName" : "Ids"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "codeListType" : "STATIC",
@@ -2168,7 +2168,7 @@
     "name" : "我计划参与的任务（汇报）",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchMyTomorrowPlanTask"
+      "id" : "FetchDefault"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -25361,23 +25361,6 @@
         "enablePagingBar" : false
       } ],
       "getAllPSAppDEActions" : [ {
-        "codeName" : "Update",
-        "methodType" : "DEACTION",
-        "name" : "Update",
-        "getPSDEAction" : {
-          "modelref" : true,
-          "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/Update.json"
-        },
-        "getPSDEOPPriv" : {
-          "modelref" : true,
-          "id" : "UPDATE"
-        },
-        "getPSDEServiceAPIMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
-        "builtinMethod" : false
-      }, {
         "codeName" : "Create",
         "methodType" : "DEACTION",
         "name" : "Create",
@@ -25426,6 +25409,23 @@
         "getPSDEServiceAPIMethod" : {
           "modelref" : true,
           "id" : "GetDraft"
+        },
+        "builtinMethod" : false
+      }, {
+        "codeName" : "Update",
+        "methodType" : "DEACTION",
+        "name" : "Update",
+        "getPSDEAction" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/Update.json"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "UPDATE"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "Update"
         },
         "builtinMethod" : false
       }, {
@@ -25492,23 +25492,6 @@
         "builtinMethod" : true
       } ],
       "getAllPSAppDEDataSets" : [ {
-        "codeName" : "FetchQueryUserYEAR",
-        "methodType" : "FETCH",
-        "name" : "FetchQueryUserYEAR",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "QueryUserYEAR"
-        },
-        "getPSDEOPPriv" : {
-          "modelref" : true,
-          "id" : "READ"
-        },
-        "getPSDEServiceAPIMethod" : {
-          "modelref" : true,
-          "id" : "FetchQueryUserYEAR"
-        },
-        "builtinMethod" : false
-      }, {
         "codeName" : "FetchMobType",
         "methodType" : "FETCH",
         "name" : "FetchMobType",
@@ -25560,6 +25543,23 @@
         },
         "builtinMethod" : false
       }, {
+        "codeName" : "FetchQueryUserYEAR",
+        "methodType" : "FETCH",
+        "name" : "FetchQueryUserYEAR",
+        "getPSDEDataSet" : {
+          "modelref" : true,
+          "id" : "QueryUserYEAR"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchQueryUserYEAR"
+        },
+        "builtinMethod" : false
+      }, {
         "codeName" : "FetchType",
         "methodType" : "FETCH",
         "name" : "FetchType",
@@ -25577,23 +25577,6 @@
         },
         "builtinMethod" : false
       }, {
-        "codeName" : "FetchMyTrends",
-        "methodType" : "FETCH",
-        "name" : "FetchMyTrends",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "MyTrends"
-        },
-        "getPSDEOPPriv" : {
-          "modelref" : true,
-          "id" : "READ"
-        },
-        "getPSDEServiceAPIMethod" : {
-          "modelref" : true,
-          "id" : "FetchMyTrends"
-        },
-        "builtinMethod" : false
-      }, {
         "codeName" : "FetchProjectTrends",
         "methodType" : "FETCH",
         "name" : "FetchProjectTrends",
@@ -25608,6 +25591,23 @@
         "getPSDEServiceAPIMethod" : {
           "modelref" : true,
           "id" : "FetchProjectTrends"
+        },
+        "builtinMethod" : false
+      }, {
+        "codeName" : "FetchMyTrends",
+        "methodType" : "FETCH",
+        "name" : "FetchMyTrends",
+        "getPSDEDataSet" : {
+          "modelref" : true,
+          "id" : "MyTrends"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchMyTrends"
         },
         "builtinMethod" : false
       }, {
@@ -25811,40 +25811,6 @@
         "stringLength" : 60
       } ],
       "getAllPSAppDEMethods" : [ {
-        "codeName" : "Update",
-        "methodType" : "DEACTION",
-        "name" : "Update",
-        "getPSDEAction" : {
-          "modelref" : true,
-          "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/Update.json"
-        },
-        "getPSDEOPPriv" : {
-          "modelref" : true,
-          "id" : "UPDATE"
-        },
-        "getPSDEServiceAPIMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchQueryUserYEAR",
-        "methodType" : "FETCH",
-        "name" : "FetchQueryUserYEAR",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "QueryUserYEAR"
-        },
-        "getPSDEOPPriv" : {
-          "modelref" : true,
-          "id" : "READ"
-        },
-        "getPSDEServiceAPIMethod" : {
-          "modelref" : true,
-          "id" : "FetchQueryUserYEAR"
-        },
-        "builtinMethod" : false
-      }, {
         "codeName" : "FetchMobType",
         "methodType" : "FETCH",
         "name" : "FetchMobType",
@@ -25896,6 +25862,23 @@
         },
         "builtinMethod" : false
       }, {
+        "codeName" : "Get",
+        "methodType" : "DEACTION",
+        "name" : "Get",
+        "getPSDEAction" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/Get.json"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "builtinMethod" : false
+      }, {
         "codeName" : "FetchDefault",
         "methodType" : "FETCH",
         "name" : "FetchDefault",
@@ -25913,6 +25896,23 @@
         },
         "builtinMethod" : false
       }, {
+        "codeName" : "FetchQueryUserYEAR",
+        "methodType" : "FETCH",
+        "name" : "FetchQueryUserYEAR",
+        "getPSDEDataSet" : {
+          "modelref" : true,
+          "id" : "QueryUserYEAR"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchQueryUserYEAR"
+        },
+        "builtinMethod" : false
+      }, {
         "codeName" : "FetchType",
         "methodType" : "FETCH",
         "name" : "FetchType",
@@ -25927,40 +25927,6 @@
         "getPSDEServiceAPIMethod" : {
           "modelref" : true,
           "id" : "FetchType"
-        },
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchMyTrends",
-        "methodType" : "FETCH",
-        "name" : "FetchMyTrends",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "MyTrends"
-        },
-        "getPSDEOPPriv" : {
-          "modelref" : true,
-          "id" : "READ"
-        },
-        "getPSDEServiceAPIMethod" : {
-          "modelref" : true,
-          "id" : "FetchMyTrends"
-        },
-        "builtinMethod" : false
-      }, {
-        "codeName" : "Get",
-        "methodType" : "DEACTION",
-        "name" : "Get",
-        "getPSDEAction" : {
-          "modelref" : true,
-          "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/Get.json"
-        },
-        "getPSDEOPPriv" : {
-          "modelref" : true,
-          "id" : "READ"
-        },
-        "getPSDEServiceAPIMethod" : {
-          "modelref" : true,
-          "id" : "Get"
         },
         "builtinMethod" : false
       }, {
@@ -25995,6 +25961,40 @@
         "getPSDEServiceAPIMethod" : {
           "modelref" : true,
           "id" : "GetDraft"
+        },
+        "builtinMethod" : false
+      }, {
+        "codeName" : "FetchMyTrends",
+        "methodType" : "FETCH",
+        "name" : "FetchMyTrends",
+        "getPSDEDataSet" : {
+          "modelref" : true,
+          "id" : "MyTrends"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchMyTrends"
+        },
+        "builtinMethod" : false
+      }, {
+        "codeName" : "Update",
+        "methodType" : "DEACTION",
+        "name" : "Update",
+        "getPSDEAction" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/Update.json"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "UPDATE"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "Update"
         },
         "builtinMethod" : false
       }, {

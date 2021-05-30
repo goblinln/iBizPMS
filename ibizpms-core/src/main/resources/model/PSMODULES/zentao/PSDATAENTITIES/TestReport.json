@@ -7329,29 +7329,6 @@
   "invalidLogicValue" : "1",
   "logicName" : "测试报告",
   "getMajorPSDERs" : [ {
-    "codeName" : "IbzProTestReport",
-    "dERType" : "DER1N",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction/PSDERS/DER1N_IBZPRO_TESTREPROTACTION_ZT_TESTREPORT_OBJECTID.json",
-    "getMajorPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
-    },
-    "masterOrder" : -1,
-    "masterRS" : 4,
-    "getMinorPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction.json"
-    },
-    "name" : "DER1N_IBZPRO_TESTREPROTACTION_ZT_TESTREPORT_OBJECTID",
-    "orderValue" : 100,
-    "getPSPickupDEField" : {
-      "name" : "OBJECTID",
-      "codeName" : "ObjectID"
-    },
-    "pickupDEFName" : "OBJECTID",
-    "removeActionType" : -1,
-    "removeOrder" : 0
-  }, {
     "codeName" : "TestReport",
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",

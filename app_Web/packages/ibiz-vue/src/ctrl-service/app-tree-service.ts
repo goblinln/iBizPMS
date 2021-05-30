@@ -246,7 +246,7 @@ export class AppTreeService extends ControlServiceBase {
                     enablecheck: nodeJson.enableCheck,
                     disabled: nodeJson.disableSelect,
                     expanded: nodeJson.expanded || filter.isAutoExpand,
-                    leaf: !nodeJson.hasPSDETreeNodeRSs,
+                    leaf: !nodeJson.hasPSDETreeNodeRSs(),
                     selected: nodeJson.selected,
                     navfilter: nodeJson.navFilter,
                     navigateContext: nodeJson?.getPSNavigateContexts() && ModelTool.getNavigateContext(nodeJson),

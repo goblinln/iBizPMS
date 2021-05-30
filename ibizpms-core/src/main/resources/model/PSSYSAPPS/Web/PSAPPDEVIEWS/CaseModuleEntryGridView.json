@@ -7,7 +7,7 @@
   "name" : "CaseModuleEntryGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -23,7 +23,7 @@
     "codeName" : "CaseResultEntry",
     "columnEnableLink" : 2,
     "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSGRIDS/CaseResultEntry.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase/PSGRIDS/CaseResultEntry.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -38,7 +38,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -52,7 +52,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -63,7 +63,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
         }
       }, {
         "actionName" : "Remove",
@@ -76,7 +76,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
         }
       }, {
         "actionName" : "Get",
@@ -89,7 +89,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -102,7 +102,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
         }
       }, {
         "actionName" : "Create",
@@ -115,7 +115,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -314,7 +314,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -347,7 +347,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

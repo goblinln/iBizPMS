@@ -7,7 +7,7 @@
   "name" : "测试用例工具/框架",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
   },
   "getPSCodeItems" : [ {
     "codeName" : "Junit",

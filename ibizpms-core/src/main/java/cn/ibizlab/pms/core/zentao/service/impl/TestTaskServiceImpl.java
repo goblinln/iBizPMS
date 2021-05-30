@@ -54,9 +54,6 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.pms.core.ibiz.service.IIbzProTestTaskActionService ibzprotesttaskactionService;
-    @Autowired
-    @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IBugService bugService;
     @Autowired
     @Lazy

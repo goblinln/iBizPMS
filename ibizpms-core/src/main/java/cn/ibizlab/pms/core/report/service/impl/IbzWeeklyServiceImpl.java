@@ -52,9 +52,6 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
     @Lazy
     cn.ibizlab.pms.core.report.runtime.IbzWeeklyRuntime ibzweeklyRuntime;
 
-    @Autowired
-    @Lazy
-    protected cn.ibizlab.pms.core.ibiz.service.IIBZProWeeklyActionService ibzproweeklyactionService;
 
     @Autowired
     @Lazy

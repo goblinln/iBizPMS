@@ -54,9 +54,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.pms.core.ibiz.service.IIBZStoryActionService ibzstoryactionService;
-    @Autowired
-    @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IBugService bugService;
     @Autowired
     @Lazy
@@ -104,9 +101,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
             return false;
         }
         if(!storyRuntime.isRtmodel()){
-            ibzstoryactionService.saveByObjectid(et.getId(), et.getIbzstoryaction());
-        }
-        if(!storyRuntime.isRtmodel()){
             storyspecService.saveByStory(et.getId(), et.getStoryspecs());
         }
         if(!storyRuntime.isRtmodel()){
@@ -136,9 +130,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
-        }
-        if(!storyRuntime.isRtmodel()){
-            ibzstoryactionService.saveByObjectid(et.getId(), et.getIbzstoryaction());
         }
         if(!storyRuntime.isRtmodel()){
             storyspecService.saveByStory(et.getId(), et.getStoryspecs());
@@ -176,7 +167,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Transactional
     public boolean remove(Long key) {
         if(!storyRuntime.isRtmodel()){
-            ibzstoryactionService.removeByObjectid(key) ;
             storyspecService.removeByStory(key) ;
             storystageService.removeByStory(key) ;
         }
@@ -204,7 +194,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         }
         else {
             if(!storyRuntime.isRtmodel()){
-                et.setIbzstoryaction(ibzstoryactionService.selectByObjectid(key));
                 et.setStoryspecs(storyspecService.selectByStory(key));
                 et.setStorystages(storystageService.selectByStory(key));
             }

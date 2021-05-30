@@ -63,9 +63,6 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     protected cn.ibizlab.pms.core.ibizpro.service.IIbizproProductWeeklyService ibizproproductweeklyService;
     @Autowired
     @Lazy
-    protected cn.ibizlab.pms.core.ibiz.service.IIBZProProductActionService ibzproproductactionService;
-    @Autowired
-    @Lazy
     protected cn.ibizlab.pms.core.ibiz.service.IBugStatsService bugstatsService;
     @Autowired
     @Lazy

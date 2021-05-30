@@ -1120,29 +1120,6 @@
   "invalidLogicValue" : "1",
   "logicName" : "测试套件",
   "getMajorPSDERs" : [ {
-    "codeName" : "IbzProTestSuit",
-    "dERType" : "DER1N",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestSuiteAction/PSDERS/DER1N_IBZPRO_TESTSUITACTION_ZT_TESTSUITE_OBJECTID.json",
-    "getMajorPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
-    },
-    "masterOrder" : -1,
-    "masterRS" : 4,
-    "getMinorPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestSuiteAction.json"
-    },
-    "name" : "DER1N_IBZPRO_TESTSUITACTION_ZT_TESTSUITE_OBJECTID",
-    "orderValue" : 100,
-    "getPSPickupDEField" : {
-      "name" : "OBJECTID",
-      "codeName" : "ObjectID"
-    },
-    "pickupDEFName" : "OBJECTID",
-    "removeActionType" : -1,
-    "removeOrder" : 0
-  }, {
     "codeName" : "ZTTestsuite",
     "dERType" : "DER1N",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_TESTSUITE_LIB.json",

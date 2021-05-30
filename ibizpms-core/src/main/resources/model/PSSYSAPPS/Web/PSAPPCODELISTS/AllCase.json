@@ -12,7 +12,7 @@
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
   },
   "getTextPSAppDEField" : {
     "name" : "TITLE",

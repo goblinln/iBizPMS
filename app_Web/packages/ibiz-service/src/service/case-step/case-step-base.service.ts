@@ -22,7 +22,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
     protected APPDETEXT = 'expect';
     protected quickSearchFields = ['expect',];
     protected selectContextParam = {
-        case: 'ibizcase',
     };
 
     newEntity(data: ICaseStep): CaseStep {
@@ -39,13 +38,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
 
     async getLocal(context: IContext, srfKey: string): Promise<ICaseStep> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.ibizcase && entity.ibizcase !== '') {
-            const s = await ___ibz___.gs.getCaseService();
-            const data = await s.getLocal2(context, entity.ibizcase);
-            if (data) {
-                entity.ibizcase = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -54,13 +46,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
     }
 
     async getDraftLocal(_context: IContext, entity: ICaseStep = {}): Promise<ICaseStep> {
-        if (_context.case && _context.case !== '') {
-            const s = await ___ibz___.gs.getCaseService();
-            const data = await s.getLocal2(_context, _context.case);
-            if (data) {
-                entity.ibizcase = data.id;
-            }
-        }
         return new CaseStep(entity);
     }
 
@@ -89,9 +74,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.case && _context.casestep) {
-            return this.http.get(`/cases/${_context.case}/casesteps/${_context.casestep}/select`);
-        }
         return this.http.get(`/casesteps/${_context.casestep}/select`);
     }
     /**
@@ -103,16 +85,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.case && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/cases/${_context.case}/casesteps`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -131,10 +103,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.case && _context.casestep) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/cases/${_context.case}/casesteps/${_context.casestep}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/casesteps/${_context.casestep}`, _data);
     }
@@ -147,9 +115,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.case && _context.casestep) {
-            return this.http.delete(`/cases/${_context.case}/casesteps/${_context.casestep}`);
-        }
         return this.http.delete(`/casesteps/${_context.casestep}`);
     }
     /**
@@ -161,10 +126,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.case && _context.casestep) {
-            const res = await this.http.get(`/cases/${_context.case}/casesteps/${_context.casestep}`);
-            return res;
-        }
         const res = await this.http.get(`/casesteps/${_context.casestep}`);
         return res;
     }
@@ -177,12 +138,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.case && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/cases/${_context.case}/casesteps/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/casesteps/getdraft`, _data);
@@ -197,9 +152,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async FetchCurTest(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.case && true) {
-            return this.http.post(`/cases/${_context.case}/casesteps/fetchcurtest`, _data);
-        }
         return this.http.post(`/casesteps/fetchcurtest`, _data);
     }
     /**
@@ -211,9 +163,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.case && true) {
-            return this.http.post(`/cases/${_context.case}/casesteps/fetchdefault`, _data);
-        }
         return this.http.post(`/casesteps/fetchdefault`, _data);
     }
     /**
@@ -225,9 +174,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async FetchDefault1(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.case && true) {
-            return this.http.post(`/cases/${_context.case}/casesteps/fetchdefault1`, _data);
-        }
         return this.http.post(`/casesteps/fetchdefault1`, _data);
     }
     /**
@@ -239,9 +185,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async FetchMob(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.case && true) {
-            return this.http.post(`/cases/${_context.case}/casesteps/fetchmob`, _data);
-        }
         return this.http.post(`/casesteps/fetchmob`, _data);
     }
     /**
@@ -253,9 +196,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async FetchVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.case && true) {
-            return this.http.post(`/cases/${_context.case}/casesteps/fetchversion`, _data);
-        }
         return this.http.post(`/casesteps/fetchversion`, _data);
     }
     /**
@@ -267,9 +207,6 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      * @memberof CaseStepService
      */
     async FetchVersions(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.case && true) {
-            return this.http.post(`/cases/${_context.case}/casesteps/fetchversions`, _data);
-        }
         return this.http.post(`/casesteps/fetchversions`, _data);
     }
 }

@@ -1476,27 +1476,6 @@
             "dataRSMode" : 0,
             "getMajorPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
-            "getMinorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
-            },
-            "name" : "测试用例日志",
-            "rSMode" : 2,
-            "enableCreateDataRS" : false,
-            "enableDEAction" : true,
-            "enableDEDataSet" : true,
-            "enableGetDataRS" : false,
-            "enableSelect" : true,
-            "enableSelectDataRS" : false,
-            "enableUpdateDataRS" : false
-          } ], [ {
-            "actionRSMode" : 1,
-            "codeName" : "Actions",
-            "dataRSMode" : 0,
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestSuite.json"
             },
             "getMinorPSAppDataEntity" : {
@@ -1504,27 +1483,6 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
             },
             "name" : "测试套件日志",
-            "rSMode" : 2,
-            "enableCreateDataRS" : false,
-            "enableDEAction" : true,
-            "enableDEDataSet" : true,
-            "enableGetDataRS" : false,
-            "enableSelect" : true,
-            "enableSelectDataRS" : false,
-            "enableUpdateDataRS" : false
-          } ], [ {
-            "actionRSMode" : 1,
-            "codeName" : "Actions",
-            "dataRSMode" : 0,
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
-            },
-            "getMinorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
-            },
-            "name" : "测试单日志",
             "rSMode" : 2,
             "enableCreateDataRS" : false,
             "enableDEAction" : true,

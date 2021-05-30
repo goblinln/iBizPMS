@@ -54,9 +54,6 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.pms.core.ibiz.service.IIBZProReleaseActionService ibzproreleaseactionService;
-    @Autowired
-    @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IBranchService branchService;
     @Autowired
     @Lazy

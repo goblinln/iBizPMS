@@ -270,31 +270,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     @JsonProperty("project")
     @ApiModelProperty("项目")
     private Long project;
-    /**
-     * 汇报标识
-     */
-    @TableField(value = "`OBJECTID`")
-    @JSONField(name = "objectid")
-    @JsonProperty("objectid")
-    @ApiModelProperty("汇报标识")
-    private Long objectid;
 
-    /**
-     * 
-     */
-    @JsonIgnore
-    @JSONField(serialize = false)
-    @TableField(exist = false)
-    private cn.ibizlab.pms.core.report.domain.IbzReportly ibzproreportly;
-
-
-    /**
-     * 汇报操作历史
-     */
-    @JsonIgnore
-    @JSONField(serialize = false)
-    @TableField(exist = false)
-    private List<cn.ibizlab.pms.core.ibiz.domain.IbzProReportlyHistory> ibzproreportlyhistory;
 
 
     /**
@@ -367,14 +343,6 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     public void setProject(Long project) {
         this.project = project;
         this.modify("project", project);
-    }
-
-    /**
-     * 设置 [汇报标识]
-     */
-    public void setObjectid(Long objectid) {
-        this.objectid = objectid;
-        this.modify("objectid", objectid);
     }
 
 

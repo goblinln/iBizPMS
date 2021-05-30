@@ -52,9 +52,6 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
     @Lazy
     cn.ibizlab.pms.core.report.runtime.IbzReportlyRuntime ibzreportlyRuntime;
 
-    @Autowired
-    @Lazy
-    protected cn.ibizlab.pms.core.ibiz.service.IIbzProReportlyActionService ibzproreportlyactionService;
 
     protected int batchSize = 500;
 

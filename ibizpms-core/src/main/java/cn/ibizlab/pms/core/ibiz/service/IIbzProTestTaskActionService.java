@@ -36,15 +36,8 @@ public interface IIbzProTestTaskActionService extends IService<IbzProTestTaskAct
     IbzProTestTaskAction sysGet(Long key);
     IbzProTestTaskAction getDraft(IbzProTestTaskAction et);
     boolean checkKey(IbzProTestTaskAction et);
-    IbzProTestTaskAction comment(IbzProTestTaskAction et);
-    IbzProTestTaskAction createHis(IbzProTestTaskAction et);
-    IbzProTestTaskAction editComment(IbzProTestTaskAction et);
-    IbzProTestTaskAction managePmsEe(IbzProTestTaskAction et);
     boolean save(IbzProTestTaskAction et);
     void saveBatch(List<IbzProTestTaskAction> list);
-    IbzProTestTaskAction sendMarkDone(IbzProTestTaskAction et);
-    IbzProTestTaskAction sendTodo(IbzProTestTaskAction et);
-    IbzProTestTaskAction sendToread(IbzProTestTaskAction et);
     List<IbzProTestTaskAction> select(IbzProTestTaskActionSearchContext context);
     List<IbzProTestTaskAction> selectDefault(IbzProTestTaskActionSearchContext context);
     List<IbzProTestTaskAction> selectSimple(IbzProTestTaskActionSearchContext context);
@@ -53,8 +46,6 @@ public interface IIbzProTestTaskActionService extends IService<IbzProTestTaskAct
 
     Page<IbzProTestTaskAction> searchDefault(IbzProTestTaskActionSearchContext context);
     Page<IbzProTestTaskAction> searchType(IbzProTestTaskActionSearchContext context);
-    List<IbzProTestTaskAction> selectByObjectid(Long id);
-    void removeByObjectid(Long id);
     IbzProTestTaskAction dynamicCall(Long key, String action, IbzProTestTaskAction et);
     /**
      *自定义查询SQL

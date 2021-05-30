@@ -69,7 +69,7 @@ export class AppTimeLineCalendar extends CalendarControlBase {
      * @memberof AppTimeLineCalendar
      */
     public renderItemPanel(item: any,calendarItem: any) {
-        let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(calendarItem.getPSLayoutPanel);
+        let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(calendarItem.getPSLayoutPanel());
         Object.assign(targetCtrlParam.dynamicProps,{ "inputData": item })
         return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref:item.id, on: targetCtrlEvent });
     }
@@ -98,7 +98,7 @@ export class AppTimeLineCalendar extends CalendarControlBase {
                             <el-card
                                 native-on-click={(...params: any[]) => debounce(this.onEventClick,params,this)}
                                 class={item.className}>
-                                    {calendarItem && calendarItem.getPSLayoutPanel ? 
+                                    {calendarItem && calendarItem.getPSLayoutPanel() ? 
                                         this.renderItemPanel(item,calendarItem) : 
                                         <div>
                                             <h4>{item.title}</h4>

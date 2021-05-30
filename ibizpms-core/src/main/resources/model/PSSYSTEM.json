@@ -1107,52 +1107,16 @@
     "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProTag.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZCaseAction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZCaseHistory.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZDailyAction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZDailyHistory.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProBugHostory.json"
-  }, {
-    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProduct.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductAction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductHistory.json"
-  }, {
-    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProjectAction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProjectHistory.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseHistory.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProStoryHistory.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule.json"
@@ -1164,40 +1128,7 @@
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSystem.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProTestTaskHistory.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoHistory.json"
-  }, {
-    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProTranslator.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProWeeklyAction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskAction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskHistory.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportHistory.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestSuitHistory.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestSuiteAction.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBzDoc.json"
@@ -1263,31 +1194,10 @@
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBugAction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildAction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildHistory.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProMonthlyAction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProMonthlyHistory.json"
-  }, {
-    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProReportlyAction.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProReportlyHistory.json"
-  }, {
-    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProWeeklyHistory.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
@@ -1411,12 +1321,6 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductPlanAction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductPlanHistory.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats.json"
@@ -2893,75 +2797,6 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload.json"
     }, {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZCaseAction.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZCaseHistory.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZDailyAction.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZDailyHistory.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProBugHostory.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductAction.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductHistory.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProjectAction.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProjectHistory.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseHistory.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProStoryHistory.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProTestTaskHistory.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoHistory.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProWeeklyAction.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskAction.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskHistory.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportAction.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestReportHistory.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestSuitHistory.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTestSuiteAction.json"
-    }, {
-      "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBzDoc.json"
     }, {
       "modelref" : true,
@@ -2992,31 +2827,10 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory.json"
     }, {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBugAction.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildAction.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildHistory.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProMonthlyAction.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProMonthlyHistory.json"
-    }, {
-      "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProReportlyAction.json"
     }, {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProReportlyHistory.json"
-    }, {
-      "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProWeeklyHistory.json"
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
@@ -3035,12 +2849,6 @@
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductPlanAction.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductPlanHistory.json"
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats.json"

@@ -22,7 +22,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
     protected APPDETEXT = 'id';
     protected quickSearchFields = ['id',];
     protected selectContextParam = {
-        testtask: 'task',
     };
 
     newEntity(data: ITestRun): TestRun {
@@ -39,13 +38,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
 
     async getLocal(context: IContext, srfKey: string): Promise<ITestRun> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.task && entity.task !== '') {
-            const s = await ___ibz___.gs.getTestTaskService();
-            const data = await s.getLocal2(context, entity.task);
-            if (data) {
-                entity.task = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -54,13 +46,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
     }
 
     async getDraftLocal(_context: IContext, entity: ITestRun = {}): Promise<ITestRun> {
-        if (_context.testtask && _context.testtask !== '') {
-            const s = await ___ibz___.gs.getTestTaskService();
-            const data = await s.getLocal2(_context, _context.testtask);
-            if (data) {
-                entity.task = data.id;
-            }
-        }
         return new TestRun(entity);
     }
 
@@ -89,9 +74,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.testtask && _context.testrun) {
-            return this.http.get(`/testtasks/${_context.testtask}/testruns/${_context.testrun}/select`);
-        }
         return this.http.get(`/testruns/${_context.testrun}/select`);
     }
     /**
@@ -103,16 +85,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.testtask && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/testtasks/${_context.testtask}/testruns`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -131,10 +103,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.testtask && _context.testrun) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/testtasks/${_context.testtask}/testruns/${_context.testrun}`, _data);
-        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/testruns/${_context.testrun}`, _data);
     }
@@ -147,9 +115,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.testtask && _context.testrun) {
-            return this.http.delete(`/testtasks/${_context.testtask}/testruns/${_context.testrun}`);
-        }
         return this.http.delete(`/testruns/${_context.testrun}`);
     }
     /**
@@ -161,10 +126,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.testtask && _context.testrun) {
-            const res = await this.http.get(`/testtasks/${_context.testtask}/testruns/${_context.testrun}`);
-            return res;
-        }
         const res = await this.http.get(`/testruns/${_context.testrun}`);
         return res;
     }
@@ -177,12 +138,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.testtask && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/testtasks/${_context.testtask}/testruns/getdraft`, _data);
-            return res;
-        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/testruns/getdraft`, _data);
@@ -197,9 +152,6 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.testtask && true) {
-            return this.http.post(`/testtasks/${_context.testtask}/testruns/fetchdefault`, _data);
-        }
         return this.http.post(`/testruns/fetchdefault`, _data);
     }
 }

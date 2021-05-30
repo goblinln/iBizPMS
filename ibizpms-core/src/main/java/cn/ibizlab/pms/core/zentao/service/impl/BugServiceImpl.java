@@ -52,9 +52,6 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Lazy
     cn.ibizlab.pms.core.zentao.runtime.BugRuntime bugRuntime;
 
-    @Autowired
-    @Lazy
-    protected cn.ibizlab.pms.core.ibiz.service.IIbzProBugActionService ibzprobugactionService;
 
     protected cn.ibizlab.pms.core.zentao.service.IBugService bugService = this;
     @Autowired

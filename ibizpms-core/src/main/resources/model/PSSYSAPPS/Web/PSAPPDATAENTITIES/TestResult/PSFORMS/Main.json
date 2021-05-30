@@ -856,34 +856,7 @@
           "rowEditDefault" : false,
           "showCaptionBar" : false,
           "modelid" : "21c4e5c64f8c35ef32192c3a1c27259d",
-          "modeltype" : "PSAPPDEVIEW",
-          "getPSAppDERSPaths" : [ [ {
-            "actionRSMode" : 1,
-            "codeName" : "caseSteps",
-            "dataRSMode" : 0,
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-            },
-            "getMinorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
-            },
-            "name" : "用例步骤",
-            "getParentPSAppDEField" : {
-              "name" : "CASE",
-              "codeName" : "IBizCase"
-            },
-            "rSMode" : 2,
-            "tempDataOrder" : 10,
-            "enableCreateDataRS" : false,
-            "enableDEAction" : true,
-            "enableDEDataSet" : true,
-            "enableGetDataRS" : false,
-            "enableSelect" : true,
-            "enableSelectDataRS" : false,
-            "enableUpdateDataRS" : false
-          } ] ]
+          "modeltype" : "PSAPPDEVIEW"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,

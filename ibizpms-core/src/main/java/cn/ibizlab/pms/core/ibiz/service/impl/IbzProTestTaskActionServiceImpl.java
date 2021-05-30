@@ -52,12 +52,6 @@ public class IbzProTestTaskActionServiceImpl extends ServiceImpl<IbzProTestTaskA
     @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IbzProTestTaskActionRuntime ibzprotesttaskactionRuntime;
 
-    @Autowired
-    @Lazy
-    protected cn.ibizlab.pms.core.ibiz.service.IIBZProTestTaskHistoryService ibzprotesttaskhistoryService;
-    @Autowired
-    @Lazy
-    protected cn.ibizlab.pms.core.zentao.service.ITestTaskService testtaskService;
 
     protected int batchSize = 500;
 
@@ -74,9 +68,6 @@ public class IbzProTestTaskActionServiceImpl extends ServiceImpl<IbzProTestTaskA
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
-        if(!ibzprotesttaskactionRuntime.isRtmodel()){
-            ibzprotesttaskhistoryService.saveByAction(et.getId(), et.getIbzprotesttaskhistory());
-        }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -87,9 +78,7 @@ public class IbzProTestTaskActionServiceImpl extends ServiceImpl<IbzProTestTaskA
         if(ibzprotesttaskactionRuntime.isRtmodel()){
             list.forEach(item -> getProxyService().create(item));
         }else{
-        for (IbzProTestTaskAction et : list) {
-            getProxyService().save(et);
-        }
+        this.saveBatch(list, batchSize);
         }
         
     }
@@ -99,9 +88,6 @@ public class IbzProTestTaskActionServiceImpl extends ServiceImpl<IbzProTestTaskA
     public boolean update(IbzProTestTaskAction et) {
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
-        }
-        if(!ibzprotesttaskactionRuntime.isRtmodel()){
-            ibzprotesttaskhistoryService.saveByAction(et.getId(), et.getIbzprotesttaskhistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -132,7 +118,6 @@ public class IbzProTestTaskActionServiceImpl extends ServiceImpl<IbzProTestTaskA
     @Transactional
     public boolean remove(Long key) {
         if(!ibzprotesttaskactionRuntime.isRtmodel()){
-            ibzprotesttaskhistoryService.removeByAction(key) ;
         }
         boolean result = removeById(key);
         return result ;
@@ -158,7 +143,6 @@ public class IbzProTestTaskActionServiceImpl extends ServiceImpl<IbzProTestTaskA
         }
         else {
             if(!ibzprotesttaskactionRuntime.isRtmodel()){
-                et.setIbzprotesttaskhistory(ibzprotesttaskhistoryService.selectByAction(key));
             }
         }
         return et;
@@ -187,33 +171,6 @@ public class IbzProTestTaskActionServiceImpl extends ServiceImpl<IbzProTestTaskA
     public boolean checkKey(IbzProTestTaskAction et) {
         return (!ObjectUtils.isEmpty(et.getId())) && (!Objects.isNull(this.getById(et.getId())));
     }
-    @Override
-    @Transactional
-    public IbzProTestTaskAction comment(IbzProTestTaskAction et) {
-         return et ;
-    }
-
-    @Override
-    @Transactional
-    public IbzProTestTaskAction createHis(IbzProTestTaskAction et) {
-        //自定义代码
-        return et;
-    }
-
-    @Override
-    @Transactional
-    public IbzProTestTaskAction editComment(IbzProTestTaskAction et) {
-        //自定义代码
-        return et;
-    }
-
-    @Override
-    @Transactional
-    public IbzProTestTaskAction managePmsEe(IbzProTestTaskAction et) {
-        //自定义代码
-        return et;
-    }
-
     @Override
     @Transactional
     public boolean save(IbzProTestTaskAction et) {
@@ -274,36 +231,6 @@ public class IbzProTestTaskActionServiceImpl extends ServiceImpl<IbzProTestTaskA
         }
     }
 
-    @Override
-    @Transactional
-    public IbzProTestTaskAction sendMarkDone(IbzProTestTaskAction et) {
-        //自定义代码
-        return et;
-    }
-
-    @Override
-    @Transactional
-    public IbzProTestTaskAction sendTodo(IbzProTestTaskAction et) {
-        //自定义代码
-        return et;
-    }
-
-    @Override
-    @Transactional
-    public IbzProTestTaskAction sendToread(IbzProTestTaskAction et) {
-        //自定义代码
-        return et;
-    }
-
-
-	@Override
-    public List<IbzProTestTaskAction> selectByObjectid(Long id) {
-        return baseMapper.selectByObjectid(id);
-    }
-    @Override
-    public void removeByObjectid(Long id) {
-        this.remove(new QueryWrapper<IbzProTestTaskAction>().eq("objectid",id));
-    }
 
 
     public List<IbzProTestTaskAction> selectDefault(IbzProTestTaskActionSearchContext context){

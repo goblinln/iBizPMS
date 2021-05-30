@@ -8,7 +8,7 @@
   "name" : "月报我完成的任务（下拉列表框）",
   "getPSAppDEDataSet" : {
     "modelref" : true,
-    "id" : "FetchThisMonthCompleteTaskChoice"
+    "id" : "FetchDefault"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

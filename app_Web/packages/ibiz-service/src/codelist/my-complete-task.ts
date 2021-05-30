@@ -134,7 +134,7 @@ export default class MyCompleteTask {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.projecttaskService.FetchMyCompleteTask(context, data);
+            const promise: Promise<any> = this.projecttaskService.FetchDefault(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

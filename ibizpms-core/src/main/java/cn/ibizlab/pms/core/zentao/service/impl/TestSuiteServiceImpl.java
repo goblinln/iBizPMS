@@ -54,9 +54,6 @@ public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.pms.core.ibiz.service.IIBZTestSuiteActionService ibztestsuiteactionService;
-    @Autowired
-    @Lazy
     protected cn.ibizlab.pms.core.zentao.service.ICaseService caseService;
     @Autowired
     @Lazy

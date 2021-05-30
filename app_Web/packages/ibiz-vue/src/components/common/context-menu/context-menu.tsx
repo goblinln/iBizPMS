@@ -42,7 +42,6 @@ class ContextMenuService {
             this.container.remove();
         }
     }
-
 }
 
 const service = new ContextMenuService();
@@ -91,15 +90,15 @@ export class ContextMenu extends Vue {
      * @memberof ContextMenu
      */
     @Prop()
-    public menus?: any[]
+    public menus?: any[];
     /**
      * 是否阻止默认绘制上下文菜单
      *
      * @type {any}
      * @memberof ContextMenu
      */
-    @Prop({default:false})
-    public isBlocked?:any;
+    @Prop({ default: false })
+    public isBlocked?: any;
 
     /**
      * 显示右键菜单
@@ -118,10 +117,14 @@ export class ContextMenu extends Vue {
         // 创建Vue实例挂载
         const mount = document.createElement('div');
         container.appendChild(mount);
-        this.renderContextMenu({
-            top: y + 'px',
-            left: x + 'px'
-        }, mount, container);
+        this.renderContextMenu(
+            {
+                top: y + 'px',
+                left: x + 'px',
+            },
+            mount,
+            container,
+        );
     }
 
     /**
@@ -137,7 +140,7 @@ export class ContextMenu extends Vue {
         new Vue({
             data() {
                 return {
-                    menus: self.menus
+                    menus: self.menus,
                 };
             },
             methods: {
@@ -152,7 +155,7 @@ export class ContextMenu extends Vue {
                 renderContent() {
                     let menus;
                     if (this.menus) {
-                        menus = this.menus.map((item) => {
+                        menus = this.menus.map(item => {
                             let icon;
                             if (item.icon) {
                                 icon = <img src={item.icon} />;
@@ -162,14 +165,14 @@ export class ContextMenu extends Vue {
                             }
                             return (
                                 <li class='context-menus-item' on-click={() => self.menuClick(item, self.data)}>
-                                    {icon ? <div class="icon">{icon}</div> : null}
-                                    <div class="text">{item.text}</div>
+                                    {icon ? <div class='icon'>{icon}</div> : null}
+                                    <div class='text'>{item.text}</div>
                                 </li>
                             );
                         });
                     }
                     return <ul class='context-menus'>{menus}</ul>;
-                }
+                },
             },
             render() {
                 let content;
@@ -183,13 +186,17 @@ export class ContextMenu extends Vue {
                     content = this.renderContent();
                 }
                 return (
-                    <div class='context-menu-container context-menu' on-contextmenu={($event: any) => this.onContextMenu($event)} on-click={($event: Event) => this.destroy($event)}>
+                    <div
+                        class='context-menu-container context-menu'
+                        on-contextmenu={($event: any) => this.onContextMenu($event)}
+                        on-click={($event: Event) => this.destroy($event)}
+                    >
                         <div class='context-menu-content' style={position}>
                             {content}
                         </div>
                     </div>
                 );
-            }
+            },
         }).$mount(mount);
     }
 
@@ -203,10 +210,10 @@ export class ContextMenu extends Vue {
         if (contextRef) {
             contextRef.oncontextmenu = (event: MouseEvent) => {
                 event.preventDefault();
-                if(!this.isBlocked){
+                if (!this.isBlocked) {
                     this.showContextMenu(event.clientX, event.clientY);
                 }
-                this.$emit("showContext",event);
+                this.$emit('showContext', event);
             };
         }
     }
@@ -218,7 +225,7 @@ export class ContextMenu extends Vue {
      * @memberof ContextMenu
      */
     @Emit('menu-click')
-    public menuClick(item: any, data: any) { }
+    public menuClick(item: any, data: any) {}
 
     /**
      * 绘制内容
@@ -228,10 +235,13 @@ export class ContextMenu extends Vue {
      */
     public render() {
         return (
-            <div class={'context-menu-component ' + this.contextMenuClass} style={this.contextMenuStyle} ref='context'>
+            <div
+                class={'context-menu-component ' + (this.contextMenuClass || '')}
+                style={this.contextMenuStyle}
+                ref='context'
+            >
                 {this.$slots.default}
             </div>
         );
     }
-
 }

@@ -7,7 +7,7 @@
   "name" : "功能测试快速分组_测试单",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
   },
   "getPSCodeItems" : [ {
     "codeName" : "All",

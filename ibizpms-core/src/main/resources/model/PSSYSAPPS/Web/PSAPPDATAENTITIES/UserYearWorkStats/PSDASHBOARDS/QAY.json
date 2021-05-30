@@ -340,7 +340,7 @@
           "name" : "dashboard_sysportlet5",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
           },
           "getPSControlHandler" : {
             "enableDEFieldPrivilege" : false,
@@ -354,7 +354,7 @@
           "getPSControls" : [ {
             "codeName" : "CurOpenedCase",
             "controlType" : "CHART",
-            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CurOpenedCase.json",
+            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase/PSCHARTS/CurOpenedCase.json",
             "emptyText" : "无",
             "getFetchPSControlAction" : {
               "modelref" : true,
@@ -364,7 +364,7 @@
             "logicName" : "CurOpenedCase",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
             },
             "getPSChartCoordinateSystems" : [ {
               "eChartsType" : "none",
@@ -410,7 +410,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
                 }
               }, {
                 "actionType" : "DEDATASET",
@@ -421,7 +421,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
                 }
               }, {
                 "actionName" : "Remove",
@@ -434,7 +434,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
                 }
               }, {
                 "actionName" : "Get",
@@ -447,7 +447,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
                 }
               }, {
                 "actionName" : "Create",
@@ -460,7 +460,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
                 }
               } ],
               "userDRAction" : "READ",

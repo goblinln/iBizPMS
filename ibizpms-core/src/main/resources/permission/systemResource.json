@@ -1115,46 +1115,6 @@
     "datascope":[{"id":"all","name":"全部数据"}]
     }
     ,    {
-    "dename":"IBZCaseAction",
-    "delogicname":"测试用例日志",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"Type" , "name":"动态(根据类型过滤)"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Comment" , "name":"添加备注" , "type":"DELOGIC" },{"id":"CreateHis" , "name":"创建历史日志" , "type":"USERCUSTOM" },{"id":"EditComment" , "name":"编辑备注信息" , "type":"USERCUSTOM" },{"id":"ManagePmsEe" , "name":"Pms企业专用" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SendMarkDone" , "name":"已读" , "type":"USERCUSTOM" },{"id":"SendTodo" , "name":"发送待办" , "type":"USERCUSTOM" },{"id":"SendToread" , "name":"发送待阅" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZCaseHistory",
-    "delogicname":"测试操作历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZDailyAction",
-    "delogicname":"日报日志",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"Type" , "name":"动态(根据类型过滤)"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Comment" , "name":"添加备注" , "type":"DELOGIC" },{"id":"CreateHis" , "name":"创建历史日志" , "type":"USERCUSTOM" },{"id":"EditComment" , "name":"编辑备注信息" , "type":"USERCUSTOM" },{"id":"ManagePmsEe" , "name":"Pms企业专用" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SendMarkDone" , "name":"已读" , "type":"USERCUSTOM" },{"id":"SendTodo" , "name":"发送待办" , "type":"USERCUSTOM" },{"id":"SendToread" , "name":"发送待阅" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZDailyHistory",
-    "delogicname":"日报操作历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZProBugHostory",
-    "delogicname":"Bug操作历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
     "dename":"IBZProProduct",
     "delogicname":"平台产品",
     "sysmoudle":{"id":"IBIZPRO","name":"iBizPro模块"},
@@ -1163,57 +1123,9 @@
     "datascope":[{"id":"all","name":"全部数据"}]
     }
     ,    {
-    "dename":"IBZProProductAction",
-    "delogicname":"产品日志",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"MobType" , "name":"动态(根据类型过滤)"},{"id":"ProductTrends" , "name":"产品动态(产品相关所有)"},{"id":"Type" , "name":"动态(根据类型过滤)"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Comment" , "name":"添加备注" , "type":"DELOGIC" },{"id":"CreateHis" , "name":"创建历史日志" , "type":"USERCUSTOM" },{"id":"EditComment" , "name":"编辑备注信息" , "type":"USERCUSTOM" },{"id":"ManagePmsEe" , "name":"Pms企业专用" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SendMarkDone" , "name":"已读" , "type":"USERCUSTOM" },{"id":"SendTodo" , "name":"发送待办" , "type":"USERCUSTOM" },{"id":"SendToread" , "name":"发送待阅" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZProProductHistory",
-    "delogicname":"产品操作历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
     "dename":"IBZProProductLine",
     "delogicname":"产品线",
     "sysmoudle":{"id":"IBIZPRO","name":"iBizPro模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZProProjectAction",
-    "delogicname":"项目日志",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"Type" , "name":"动态(根据类型过滤)"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Comment" , "name":"添加备注" , "type":"DELOGIC" },{"id":"CreateHis" , "name":"创建历史日志" , "type":"USERCUSTOM" },{"id":"EditComment" , "name":"编辑备注信息" , "type":"USERCUSTOM" },{"id":"ManagePmsEe" , "name":"Pms企业专用" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SendMarkDone" , "name":"已读" , "type":"USERCUSTOM" },{"id":"SendTodo" , "name":"发送待办" , "type":"USERCUSTOM" },{"id":"SendToread" , "name":"发送待阅" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZProProjectHistory",
-    "delogicname":"项目操作历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZProReleaseAction",
-    "delogicname":"发布日志",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"Type" , "name":"动态(根据类型过滤)"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Comment" , "name":"添加备注" , "type":"DELOGIC" },{"id":"CreateHis" , "name":"创建历史日志" , "type":"USERCUSTOM" },{"id":"EditComment" , "name":"编辑备注信息" , "type":"USERCUSTOM" },{"id":"ManagePmsEe" , "name":"Pms企业专用" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SendMarkDone" , "name":"已读" , "type":"USERCUSTOM" },{"id":"SendTodo" , "name":"发送待办" , "type":"USERCUSTOM" },{"id":"SendToread" , "name":"发送待阅" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZProReleaseHistory",
-    "delogicname":"发布操作历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
     "dedataset":[{"id":"Default" , "name":"数据集"}],
     "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
     "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
@@ -1227,107 +1139,11 @@
     "datascope":[{"id":"all","name":"全部数据"}]
     }
     ,    {
-    "dename":"IBZProStoryHistory",
-    "delogicname":"需求操作历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
     "dename":"IBZProStoryModule",
     "delogicname":"需求模块（iBizSys）",
     "sysmoudle":{"id":"IBIZPRO","name":"iBizPro模块"},
     "dedataset":[{"id":"Default" , "name":"数据集"}],
     "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SyncFromIBIZ" , "name":"同步Ibz平台模块" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZProTestTaskHistory",
-    "delogicname":"测试单操作历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZProToDoAction",
-    "delogicname":"ToDo日志",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"Type" , "name":"动态(根据类型过滤)"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Comment" , "name":"添加备注" , "type":"DELOGIC" },{"id":"CreateHis" , "name":"创建历史日志" , "type":"USERCUSTOM" },{"id":"EditComment" , "name":"编辑备注信息" , "type":"USERCUSTOM" },{"id":"ManagePmsEe" , "name":"Pms企业专用" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SendMarkDone" , "name":"已读" , "type":"USERCUSTOM" },{"id":"SendTodo" , "name":"发送待办" , "type":"USERCUSTOM" },{"id":"SendToread" , "name":"发送待阅" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZProToDoHistory",
-    "delogicname":"todo操作历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZProWeeklyAction",
-    "delogicname":"周报日志",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"Type" , "name":"动态(根据类型过滤)"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"CreateHis" , "name":"创建历史日志" , "type":"USERCUSTOM" },{"id":"ManagePmsEe" , "name":"Pms企业专用" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SendMarkDone" , "name":"已读" , "type":"USERCUSTOM" },{"id":"SendTodo" , "name":"发送待办" , "type":"USERCUSTOM" },{"id":"SendToread" , "name":"发送待阅" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZStoryAction",
-    "delogicname":"需求日志",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"Type" , "name":"动态(根据类型过滤)"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Comment" , "name":"添加备注" , "type":"DELOGIC" },{"id":"CreateHis" , "name":"创建历史日志" , "type":"USERCUSTOM" },{"id":"EditComment" , "name":"编辑备注信息" , "type":"USERCUSTOM" },{"id":"ManagePmsEe" , "name":"Pms企业专用" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SendMarkDone" , "name":"已读" , "type":"USERCUSTOM" },{"id":"SendTodo" , "name":"发送待办" , "type":"USERCUSTOM" },{"id":"SendToread" , "name":"发送待阅" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZTaskAction",
-    "delogicname":"任务日志",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"Type" , "name":"动态(根据类型过滤)"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Comment" , "name":"添加备注" , "type":"DELOGIC" },{"id":"CreateHis" , "name":"创建历史日志" , "type":"USERCUSTOM" },{"id":"EditComment" , "name":"编辑备注信息" , "type":"USERCUSTOM" },{"id":"ManagePmsEe" , "name":"Pms企业专用" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SendMarkDone" , "name":"已读" , "type":"USERCUSTOM" },{"id":"SendTodo" , "name":"发送待办" , "type":"USERCUSTOM" },{"id":"SendToread" , "name":"发送待阅" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZTaskHistory",
-    "delogicname":"任务操作历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZTestReportAction",
-    "delogicname":"报告日志",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"Type" , "name":"动态(根据类型过滤)"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Comment" , "name":"添加备注" , "type":"DELOGIC" },{"id":"CreateHis" , "name":"创建历史日志" , "type":"USERCUSTOM" },{"id":"EditComment" , "name":"编辑备注信息" , "type":"USERCUSTOM" },{"id":"ManagePmsEe" , "name":"Pms企业专用" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SendMarkDone" , "name":"已读" , "type":"USERCUSTOM" },{"id":"SendTodo" , "name":"发送待办" , "type":"USERCUSTOM" },{"id":"SendToread" , "name":"发送待阅" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZTestReportHistory",
-    "delogicname":"报告操作历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZTestSuitHistory",
-    "delogicname":"套件操作历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IBZTestSuiteAction",
-    "delogicname":"套件日志",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"Type" , "name":"动态(根据类型过滤)"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Comment" , "name":"添加备注" , "type":"DELOGIC" },{"id":"CreateHis" , "name":"创建历史日志" , "type":"USERCUSTOM" },{"id":"EditComment" , "name":"编辑备注信息" , "type":"USERCUSTOM" },{"id":"ManagePmsEe" , "name":"Pms企业专用" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SendMarkDone" , "name":"已读" , "type":"USERCUSTOM" },{"id":"SendTodo" , "name":"发送待办" , "type":"USERCUSTOM" },{"id":"SendToread" , "name":"发送待阅" , "type":"USERCUSTOM" }],
     "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
     }
     ,    {
@@ -1491,70 +1307,6 @@
     "datascope":[{"id":"all","name":"全部数据"}, {"id":"createman","name":"创建人"}]
     }
     ,    {
-    "dename":"IbzProBugAction",
-    "delogicname":"Bug日志",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"Type" , "name":"动态(根据类型过滤)"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Comment" , "name":"添加备注" , "type":"DELOGIC" },{"id":"CreateHis" , "name":"创建历史日志" , "type":"USERCUSTOM" },{"id":"EditComment" , "name":"编辑备注信息" , "type":"USERCUSTOM" },{"id":"ManagePmsEe" , "name":"Pms企业专用" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SendMarkDone" , "name":"已读" , "type":"USERCUSTOM" },{"id":"SendTodo" , "name":"发送待办" , "type":"USERCUSTOM" },{"id":"SendToread" , "name":"发送待阅" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IbzProBuildAction",
-    "delogicname":"版本日志",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"Type" , "name":"动态(根据类型过滤)"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Comment" , "name":"添加备注" , "type":"DELOGIC" },{"id":"CreateHis" , "name":"创建历史日志" , "type":"USERCUSTOM" },{"id":"EditComment" , "name":"编辑备注信息" , "type":"USERCUSTOM" },{"id":"ManagePmsEe" , "name":"Pms企业专用" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SendMarkDone" , "name":"已读" , "type":"USERCUSTOM" },{"id":"SendTodo" , "name":"发送待办" , "type":"USERCUSTOM" },{"id":"SendToread" , "name":"发送待阅" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IbzProBuildHistory",
-    "delogicname":"版本操作历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IbzProMonthlyAction",
-    "delogicname":"月报日志",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"Type" , "name":"动态(根据类型过滤)"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"CreateHis" , "name":"创建历史日志" , "type":"USERCUSTOM" },{"id":"ManagePmsEe" , "name":"Pms企业专用" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SendMarkDone" , "name":"已读" , "type":"USERCUSTOM" },{"id":"SendTodo" , "name":"发送待办" , "type":"USERCUSTOM" },{"id":"SendToread" , "name":"发送待阅" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IbzProMonthlyHistory",
-    "delogicname":"月报操作历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IbzProReportlyHistory",
-    "delogicname":"汇报操作历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IbzProTestTaskAction",
-    "delogicname":"测试单日志",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"Type" , "name":"动态(根据类型过滤)"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Comment" , "name":"添加备注" , "type":"DELOGIC" },{"id":"CreateHis" , "name":"创建历史日志" , "type":"USERCUSTOM" },{"id":"EditComment" , "name":"编辑备注信息" , "type":"USERCUSTOM" },{"id":"ManagePmsEe" , "name":"Pms企业专用" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SendMarkDone" , "name":"已读" , "type":"USERCUSTOM" },{"id":"SendTodo" , "name":"发送待办" , "type":"USERCUSTOM" },{"id":"SendToread" , "name":"发送待阅" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"IbzProWeeklyHistory",
-    "delogicname":"周报操作历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
     "dename":"IbzProjectMember",
     "delogicname":"项目相关成员",
     "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
@@ -1704,22 +1456,6 @@
     "sysmoudle":{"id":"ZENTAO","name":"基础管理模块"},
     "dedataset":[{"id":"ChildPlan" , "name":"子计划"},{"id":"CurProductPlan" , "name":"CurProductPlan"},{"id":"CurProductPlanStory" , "name":"数据集"},{"id":"Default" , "name":"DEFAULT"},{"id":"DefaultParent" , "name":"默认查询"},{"id":"PlanCodeList" , "name":"计划（代码表）"},{"id":"PlanTasks" , "name":"项目计划任务（项目管理-项目计划）"},{"id":"ProductQuery" , "name":"产品默认查询"},{"id":"ProjectApp" , "name":"项目立项"},{"id":"ProjectPlan" , "name":"项目计划列表"},{"id":"RootPlan" , "name":"跟计划"},{"id":"TaskPlan" , "name":"任务计划"}],
     "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"BatchLinkBug" , "name":"批关联BUG" , "type":"USERCUSTOM" },{"id":"BatchLinkStory" , "name":"批关联需求" , "type":"USERCUSTOM" },{"id":"BatchUnlinkBug" , "name":"批量解除关联Bug" , "type":"USERCUSTOM" },{"id":"BatchUnlinkStory" , "name":"批量解除关联需求" , "type":"USERCUSTOM" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"EeActivePlan" , "name":"EE激活计划" , "type":"USERCUSTOM" },{"id":"EeCancelPlan" , "name":"EE取消计划" , "type":"USERCUSTOM" },{"id":"EeClosePlan" , "name":"EE关闭计划" , "type":"USERCUSTOM" },{"id":"EeFinishPlan" , "name":"EE完成计划" , "type":"USERCUSTOM" },{"id":"EePausePlan" , "name":"EE暂停计划" , "type":"USERCUSTOM" },{"id":"EeRestartPlan" , "name":"继续计划" , "type":"USERCUSTOM" },{"id":"EeStartPlan" , "name":"EE开始计划" , "type":"USERCUSTOM" },{"id":"GetOldPlanName" , "name":"获取上一个计划的名称" , "type":"DELOGIC" },{"id":"GetPlanEnd" , "name":"计算计划结束时间" , "type":"USERCUSTOM" },{"id":"ImportPlanTemplet" , "name":"导入计划模板" , "type":"USERCUSTOM" },{"id":"LinkBug" , "name":"关联Bug" , "type":"USERCUSTOM" },{"id":"LinkStory" , "name":"关联需求" , "type":"USERCUSTOM" },{"id":"LinkTask" , "name":"关联任务" , "type":"USERCUSTOM" },{"id":"MobProductPlanCounter" , "name":"移动端产品计划计数器" , "type":"DELOGIC" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"UnlinkBug" , "name":"解除关联Bug" , "type":"USERCUSTOM" },{"id":"UnlinkStory" , "name":"解除关联需求" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"ProductPlanAction",
-    "delogicname":"产品计划日志",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"},{"id":"Type" , "name":"动态(根据类型过滤)"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Comment" , "name":"添加备注" , "type":"DELOGIC" },{"id":"CreateHis" , "name":"创建历史日志" , "type":"USERCUSTOM" },{"id":"EditComment" , "name":"编辑备注信息" , "type":"USERCUSTOM" },{"id":"ManagePmsEe" , "name":"Pms企业专用" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"SendMarkDone" , "name":"已读" , "type":"USERCUSTOM" },{"id":"SendTodo" , "name":"发送待办" , "type":"USERCUSTOM" },{"id":"SendToread" , "name":"发送待阅" , "type":"USERCUSTOM" }],
-    "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
-    }
-    ,    {
-    "dename":"ProductPlanHistory",
-    "delogicname":"产品计划历史",
-    "sysmoudle":{"id":"IBIZ","name":"iBiz增强模块"},
-    "dedataset":[{"id":"Default" , "name":"数据集"}],
-    "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
     "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
     }
     ,    {

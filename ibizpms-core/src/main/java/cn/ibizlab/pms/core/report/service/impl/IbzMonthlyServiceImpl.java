@@ -52,9 +52,6 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
     @Lazy
     cn.ibizlab.pms.core.report.runtime.IbzMonthlyRuntime ibzmonthlyRuntime;
 
-    @Autowired
-    @Lazy
-    protected cn.ibizlab.pms.core.ibiz.service.IIbzProMonthlyActionService ibzpromonthlyactionService;
 
     @Autowired
     @Lazy

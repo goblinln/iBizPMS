@@ -8,7 +8,7 @@
   "name" : "周报我完成的任务(下拉框选择)",
   "getPSAppDEDataSet" : {
     "modelref" : true,
-    "id" : "FetchThisWeekCompleteTaskChoice"
+    "id" : "FetchDefault"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

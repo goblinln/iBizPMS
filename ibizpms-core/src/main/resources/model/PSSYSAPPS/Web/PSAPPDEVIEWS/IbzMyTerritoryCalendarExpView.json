@@ -1038,7 +1038,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
         },
         "getPSLayoutPanel" : {
           "getAllPSPanelFields" : [ {

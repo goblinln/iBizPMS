@@ -7,7 +7,7 @@
   "name" : "测试单快速分组",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
   },
   "getPSCodeItems" : [ {
     "codeName" : "All",

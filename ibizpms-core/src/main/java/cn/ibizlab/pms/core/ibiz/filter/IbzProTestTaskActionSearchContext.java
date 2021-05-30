@@ -57,11 +57,6 @@ public class IbzProTestTaskActionSearchContext extends QueryWrapperContext<IbzPr
 	public void setN_read_eq(String n_read_eq) {
         this.n_read_eq = n_read_eq;
     }
-                
-	private Long n_objectid_eq;//[编号]
-	public void setN_objectid_eq(Long n_objectid_eq) {
-        this.n_objectid_eq = n_objectid_eq;
-    }
 
     /**
 	 * 启用快速搜索

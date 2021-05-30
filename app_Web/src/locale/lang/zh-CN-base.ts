@@ -1,4 +1,5 @@
 import productplan_zh_CN from '@locale/lanres/entities/product-plan/product-plan_zh_CN';
+import testcase_zh_CN from '@locale/lanres/entities/test-case/test-case_zh_CN';
 import product_zh_CN from '@locale/lanres/entities/product/product_zh_CN';
 import projecttaskreport_zh_CN from '@locale/lanres/entities/project-task-report/project-task-report_zh_CN';
 import projectburn_zh_CN from '@locale/lanres/entities/project-burn/project-burn_zh_CN';
@@ -14,13 +15,14 @@ import productlife_zh_CN from '@locale/lanres/entities/product-life/product-life
 import projecttask_zh_CN from '@locale/lanres/entities/project-task/project-task_zh_CN';
 import projectbuild_zh_CN from '@locale/lanres/entities/project-build/project-build_zh_CN';
 import projecttaskgantt_zh_CN from '@locale/lanres/entities/project-task-gantt/project-task-gantt_zh_CN';
+import productbuild_zh_CN from '@locale/lanres/entities/product-build/product-build_zh_CN';
 import projectteam_zh_CN from '@locale/lanres/entities/project-team/project-team_zh_CN';
+import projecttesttask_zh_CN from '@locale/lanres/entities/project-test-task/project-test-task_zh_CN';
 import bug_zh_CN from '@locale/lanres/entities/bug/bug_zh_CN';
 import projectmodule_zh_CN from '@locale/lanres/entities/project-module/project-module_zh_CN';
 import productproject_zh_CN from '@locale/lanres/entities/product-project/product-project_zh_CN';
 import productrelease_zh_CN from '@locale/lanres/entities/product-release/product-release_zh_CN';
 import ibzreportroleconfig_zh_CN from '@locale/lanres/entities/ibz-report-role-config/ibz-report-role-config_zh_CN';
-import case_zh_CN from '@locale/lanres/entities/case/case_zh_CN';
 import sysuser_zh_CN from '@locale/lanres/entities/sys-user/sys-user_zh_CN';
 import ibzcasestep_zh_CN from '@locale/lanres/entities/ibzcase-step/ibzcase-step_zh_CN';
 import taskteam_zh_CN from '@locale/lanres/entities/task-team/task-team_zh_CN';
@@ -86,7 +88,6 @@ import ibzplantempletdetail_zh_CN from '@locale/lanres/entities/ibz-plan-templet
 import ibzproconfig_zh_CN from '@locale/lanres/entities/ibzpro-config/ibzpro-config_zh_CN';
 import ibzprostory_zh_CN from '@locale/lanres/entities/ibzpro-story/ibzpro-story_zh_CN';
 import ibztaskteam_zh_CN from '@locale/lanres/entities/ibztask-team/ibztask-team_zh_CN';
-import testtask_zh_CN from '@locale/lanres/entities/test-task/test-task_zh_CN';
 import productline_zh_CN from '@locale/lanres/entities/product-line/product-line_zh_CN';
 import pssyssfpub_zh_CN from '@locale/lanres/entities/pssys-sfpub/pssys-sfpub_zh_CN';
 import testreport_zh_CN from '@locale/lanres/entities/test-report/test-report_zh_CN';
@@ -111,28 +112,11 @@ import sysemployee_zh_CN from '@locale/lanres/entities/sys-employee/sys-employee
 import ibzproproductline_zh_CN from '@locale/lanres/entities/ibzpro-product-line/ibzpro-product-line_zh_CN';
 import projectproduct_zh_CN from '@locale/lanres/entities/project-product/project-product_zh_CN';
 import accounttaskestimate_zh_CN from '@locale/lanres/entities/account-taskestimate/account-taskestimate_zh_CN';
-import ibzproproductaction_zh_CN from '@locale/lanres/entities/ibzpro-product-action/ibzpro-product-action_zh_CN';
-import productplanaction_zh_CN from '@locale/lanres/entities/product-plan-action/product-plan-action_zh_CN';
-import ibzprobuildaction_zh_CN from '@locale/lanres/entities/ibz-pro-build-action/ibz-pro-build-action_zh_CN';
-import ibzproprojectaction_zh_CN from '@locale/lanres/entities/ibzpro-project-action/ibzpro-project-action_zh_CN';
 import action_zh_CN from '@locale/lanres/entities/action/action_zh_CN';
-import ibzprobugaction_zh_CN from '@locale/lanres/entities/ibz-pro-bug-action/ibz-pro-bug-action_zh_CN';
 import dynafilter_zh_CN from '@locale/lanres/entities/dyna-filter/dyna-filter_zh_CN';
-import ibzproweeklyaction_zh_CN from '@locale/lanres/entities/ibzpro-weekly-action/ibzpro-weekly-action_zh_CN';
-import ibzcaseaction_zh_CN from '@locale/lanres/entities/ibzcase-action/ibzcase-action_zh_CN';
-import ibzproreleaseaction_zh_CN from '@locale/lanres/entities/ibzpro-release-action/ibzpro-release-action_zh_CN';
 import history_zh_CN from '@locale/lanres/entities/history/history_zh_CN';
-import ibzproproducthistory_zh_CN from '@locale/lanres/entities/ibzpro-product-history/ibzpro-product-history_zh_CN';
-import ibzpromonthlyaction_zh_CN from '@locale/lanres/entities/ibz-pro-monthly-action/ibz-pro-monthly-action_zh_CN';
-import ibzstoryaction_zh_CN from '@locale/lanres/entities/ibzstory-action/ibzstory-action_zh_CN';
 import module_zh_CN from '@locale/lanres/entities/module/module_zh_CN';
-import ibzprotesttaskaction_zh_CN from '@locale/lanres/entities/ibz-pro-test-task-action/ibz-pro-test-task-action_zh_CN';
-import ibztestsuiteaction_zh_CN from '@locale/lanres/entities/ibztest-suite-action/ibztest-suite-action_zh_CN';
-import ibztestreportaction_zh_CN from '@locale/lanres/entities/ibztest-report-action/ibztest-report-action_zh_CN';
-import ibzdailyaction_zh_CN from '@locale/lanres/entities/ibzdaily-action/ibzdaily-action_zh_CN';
-import ibzprotodoaction_zh_CN from '@locale/lanres/entities/ibzpro-to-do-action/ibzpro-to-do-action_zh_CN';
 import projecttaskestimate_zh_CN from '@locale/lanres/entities/project-taskestimate/project-taskestimate_zh_CN';
-import ibztaskaction_zh_CN from '@locale/lanres/entities/ibztask-action/ibztask-action_zh_CN';
 import components_zh_CN from '@locale/lanres/components/components_zh_CN';
 import codelist_zh_CN from '@locale/lanres/codelist/codelist_zh_CN';
 import userCustom_zh_CN from '@locale/lanres/userCustom/userCustom_zh_CN';
@@ -443,6 +427,7 @@ function getAppLocale(){
         },
         entities: {
             'productplan': productplan_zh_CN(),
+            'testcase': testcase_zh_CN(),
             'product': product_zh_CN(),
             'projecttaskreport': projecttaskreport_zh_CN(),
             'projectburn': projectburn_zh_CN(),
@@ -458,13 +443,14 @@ function getAppLocale(){
             'projecttask': projecttask_zh_CN(),
             'projectbuild': projectbuild_zh_CN(),
             'projecttaskgantt': projecttaskgantt_zh_CN(),
+            'productbuild': productbuild_zh_CN(),
             'projectteam': projectteam_zh_CN(),
+            'projecttesttask': projecttesttask_zh_CN(),
             'bug': bug_zh_CN(),
             'projectmodule': projectmodule_zh_CN(),
             'productproject': productproject_zh_CN(),
             'productrelease': productrelease_zh_CN(),
             'ibzreportroleconfig': ibzreportroleconfig_zh_CN(),
-            'case': case_zh_CN(),
             'sysuser': sysuser_zh_CN(),
             'ibzcasestep': ibzcasestep_zh_CN(),
             'taskteam': taskteam_zh_CN(),
@@ -530,7 +516,6 @@ function getAppLocale(){
             'ibzproconfig': ibzproconfig_zh_CN(),
             'ibzprostory': ibzprostory_zh_CN(),
             'ibztaskteam': ibztaskteam_zh_CN(),
-            'testtask': testtask_zh_CN(),
             'productline': productline_zh_CN(),
             'pssyssfpub': pssyssfpub_zh_CN(),
             'testreport': testreport_zh_CN(),
@@ -555,28 +540,11 @@ function getAppLocale(){
             'ibzproproductline': ibzproproductline_zh_CN(),
             'projectproduct': projectproduct_zh_CN(),
             'accounttaskestimate': accounttaskestimate_zh_CN(),
-            'ibzproproductaction': ibzproproductaction_zh_CN(),
-            'productplanaction': productplanaction_zh_CN(),
-            'ibzprobuildaction': ibzprobuildaction_zh_CN(),
-            'ibzproprojectaction': ibzproprojectaction_zh_CN(),
             'action': action_zh_CN(),
-            'ibzprobugaction': ibzprobugaction_zh_CN(),
             'dynafilter': dynafilter_zh_CN(),
-            'ibzproweeklyaction': ibzproweeklyaction_zh_CN(),
-            'ibzcaseaction': ibzcaseaction_zh_CN(),
-            'ibzproreleaseaction': ibzproreleaseaction_zh_CN(),
             'history': history_zh_CN(),
-            'ibzproproducthistory': ibzproproducthistory_zh_CN(),
-            'ibzpromonthlyaction': ibzpromonthlyaction_zh_CN(),
-            'ibzstoryaction': ibzstoryaction_zh_CN(),
             'module': module_zh_CN(),
-            'ibzprotesttaskaction': ibzprotesttaskaction_zh_CN(),
-            'ibztestsuiteaction': ibztestsuiteaction_zh_CN(),
-            'ibztestreportaction': ibztestreportaction_zh_CN(),
-            'ibzdailyaction': ibzdailyaction_zh_CN(),
-            'ibzprotodoaction': ibzprotodoaction_zh_CN(),
             'projecttaskestimate': projecttaskestimate_zh_CN(),
-            'ibztaskaction': ibztaskaction_zh_CN(),
         },
         components: components_zh_CN(),
         codelist: codelist_zh_CN(),

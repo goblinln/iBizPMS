@@ -33,12 +33,12 @@ export class AppTreeViewBase extends TreeControlBase {
      * @param {*} oldVal
      * @memberof AppTreeViewBase
      */
-    @Watch('dynamicProps',{
+    @Watch('dynamicProps', {
         immediate: true,
     })
     public onDynamicPropsChange(newVal: any, oldVal: any) {
-        if (newVal && !Util.isFieldsSame(newVal,oldVal)) {
-           super.onDynamicPropsChange(newVal,oldVal);
+        if (newVal && !Util.isFieldsSame(newVal, oldVal)) {
+            super.onDynamicPropsChange(newVal, oldVal);
         }
     }
 
@@ -53,8 +53,8 @@ export class AppTreeViewBase extends TreeControlBase {
         immediate: true,
     })
     public onStaticPropsChange(newVal: any, oldVal: any) {
-        if (newVal && !Util.isFieldsSame(newVal,oldVal)) {
-            super.onStaticPropsChange(newVal,oldVal);
+        if (newVal && !Util.isFieldsSame(newVal, oldVal)) {
+            super.onStaticPropsChange(newVal, oldVal);
         }
     }
 
@@ -63,7 +63,7 @@ export class AppTreeViewBase extends TreeControlBase {
      *
      * @memberof AppTreeViewBase
      */
-    public destroyed(){
+    public destroyed() {
         this.ctrlDestroyed();
     }
 
@@ -74,7 +74,7 @@ export class AppTreeViewBase extends TreeControlBase {
      * @memberof AppTreeViewBase
      */
     @Emit('ctrl-event')
-    public ctrlEvent({ controlname, action, data }: { controlname: string; action: string; data: any }): void {}
+    public ctrlEvent({ controlname, action, data }: { controlname: string; action: string; data: any }): void { }
 
     /**
      * 绘制右击菜单
@@ -91,10 +91,10 @@ export class AppTreeViewBase extends TreeControlBase {
             let treeNodes = this.controlInstance.getPSDETreeNodes() || [];
             let treeNode = treeNodes.find((node: IPSDETreeNode) => tags[0] == node.nodeType) as IPSDETreeNode;
             let contextMenu = treeNode.getPSDEContextMenu() as IPSDEContextMenu;;
-            if(contextMenu && contextMenu.controlType == "CONTEXTMENU"){
+            if (contextMenu && contextMenu.controlType == "CONTEXTMENU") {
                 let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(contextMenu);
                 targetCtrlParam.dynamicProps.contextMenuActionModel = this.copyActionModel;
-                Object.assign(targetCtrlEvent,{
+                Object.assign(targetCtrlEvent, {
                     'ctrl-event': ({ controlname, action, data }: { controlname: string, action: string, data: any }) => {
                         this.onCtrlEvent(controlname, action, data, Util.deepCopy(this.currentselectedNode));
                     },
@@ -111,29 +111,29 @@ export class AppTreeViewBase extends TreeControlBase {
      * @returns
      * @memberof AppTreeViewBase
      */
-    public renderNode( {node, data} : any): any {
+    public renderNode({ node, data }: any): any {
         // 绘制图标
         let iconElement = null;
-        if(data.iconcls){
+        if (data.iconcls) {
             iconElement = <i class={data.iconcls}></i>
-        }else if(data.icon){
+        } else if (data.icon) {
             iconElement = <img src={data.icon} />
-        }else if(this.controlInstance.outputIconDefault){
+        } else if (this.controlInstance.outputIconDefault) {
             iconElement = <icon type="ios-paper-outline"></icon>
         }
 
         // 绘制显示文本
         let textElement = null;
-        if(data.html){
+        if (data.html) {
             textElement = <span domPropsInnerHTML={data.html}></span>;
-        }else{
-            textElement = <span>{ data.isUseLangRes ? this.$t(data.text) : data.text}</span>
+        } else {
+            textElement = <span>{data.isUseLangRes ? this.$t(data.text) : data.text}</span>
         }
-        
+
         // 计数器 
-        let nodeCount:any = undefined;
-        if(this.controlInstance.getPSAppCounterRef()?.id){
-            let counterService= Util.findElementByField(this.counterServiceArray, 'id', this.controlInstance.getPSAppCounterRef()?.id)?.service;
+        let nodeCount: any = undefined;
+        if (this.controlInstance.getPSAppCounterRef()?.id) {
+            let counterService = Util.findElementByField(this.counterServiceArray, 'id', this.controlInstance.getPSAppCounterRef()?.id)?.service;
             nodeCount = counterService?.counterData?.[data.counterId];
         }
 
@@ -152,7 +152,7 @@ export class AppTreeViewBase extends TreeControlBase {
                     <div
                         class='tree-node'
                         on-dblclick={() => {
-                          debounce(this.doDefaultAction,[node],this);
+                            debounce(this.doDefaultAction, [node], this);
                         }}
                     >
                         {iconElement ? <span class='icon'>{iconElement}&nbsp;</span> : null}
@@ -176,7 +176,7 @@ export class AppTreeViewBase extends TreeControlBase {
      * @memberof AppTreeViewBase
      */
     public render(): any {
-        if(!this.controlIsLoaded || !this.inited){
+        if (!this.controlIsLoaded || !this.inited) {
             return null;
         }
         const { controlClassNames } = this.renderOptions;
@@ -192,9 +192,11 @@ export class AppTreeViewBase extends TreeControlBase {
                         check-on-click-node={!this.isSingleSelect}
                         default-expanded-keys={this.expandedKeys}
                         props={{
-                            label: 'text',
-                            isLeaf: 'leaf',
-                            children: 'children',
+                            props: {
+                                label: 'text',
+                                isLeaf: 'leaf',
+                                children: 'children',
+                            }
                         }}
                         load={this.load.bind(this)}
                         highlight-current={true}

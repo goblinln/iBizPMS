@@ -53,6 +53,17 @@ public class ProjectModuleResource {
     public ProjectModuleMapping projectmoduleMapping;
 
 
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目保存任务模块", tags = {"任务模块" },  notes = "根据项目保存任务模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/save")
+    public ResponseEntity<ProjectModuleDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
+        ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
+        domain.setRoot(project_id);
+        projectmoduleService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(domain));
+    }
+
+
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"任务模块" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/fetchdefault")
@@ -79,21 +90,6 @@ public class ProjectModuleResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
-    @ApiOperation(value = "根据项目删除任务模块", tags = {"任务模块" },  notes = "根据项目删除任务模块")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/{projectmodule_id}")
-    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(projectmoduleService.remove(projectmodule_id));
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
-    @ApiOperation(value = "根据项目批量删除任务模块", tags = {"任务模块" },  notes = "根据项目批量删除任务模块")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/batch")
-    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
-        projectmoduleService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
     @ApiOperation(value = "根据项目获取任务模块", tags = {"任务模块" },  notes = "根据项目获取任务模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectmodules/{projectmodule_id}")
@@ -102,17 +98,6 @@ public class ProjectModuleResource {
         ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目保存任务模块", tags = {"任务模块" },  notes = "根据项目保存任务模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/save")
-    public ResponseEntity<ProjectModuleDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
-        ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
-        domain.setRoot(project_id);
-        projectmoduleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(domain));
-    }
-
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'CREATE')")
     @ApiOperation(value = "根据项目获取任务模块草稿", tags = {"任务模块" },  notes = "根据项目获取任务模块草稿")
@@ -134,6 +119,21 @@ public class ProjectModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
+    @ApiOperation(value = "根据项目删除任务模块", tags = {"任务模块" },  notes = "根据项目删除任务模块")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/{projectmodule_id}")
+    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(projectmoduleService.remove(projectmodule_id));
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
+    @ApiOperation(value = "根据项目批量删除任务模块", tags = {"任务模块" },  notes = "根据项目批量删除任务模块")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/batch")
+    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
+        projectmoduleService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
 }
 

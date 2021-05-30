@@ -270,31 +270,7 @@ public class IbzProTestTaskAction extends EntityMP implements Serializable {
     @JsonProperty("project")
     @ApiModelProperty("项目")
     private Long project;
-    /**
-     * 编号
-     */
-    @TableField(value = "`OBJECTID`")
-    @JSONField(name = "objectid")
-    @JsonProperty("objectid")
-    @ApiModelProperty("编号")
-    private Long objectid;
 
-    /**
-     * 
-     */
-    @JsonIgnore
-    @JSONField(serialize = false)
-    @TableField(exist = false)
-    private cn.ibizlab.pms.core.zentao.domain.TestTask ibzprotesttaskaction;
-
-
-    /**
-     * 测试单操作历史
-     */
-    @JsonIgnore
-    @JSONField(serialize = false)
-    @TableField(exist = false)
-    private List<cn.ibizlab.pms.core.ibiz.domain.IBZProTestTaskHistory> ibzprotesttaskhistory;
 
 
     /**
@@ -367,14 +343,6 @@ public class IbzProTestTaskAction extends EntityMP implements Serializable {
     public void setProject(Long project) {
         this.project = project;
         this.modify("project", project);
-    }
-
-    /**
-     * 设置 [编号]
-     */
-    public void setObjectid(Long objectid) {
-        this.objectid = objectid;
-        this.modify("objectid", objectid);
     }
 
 

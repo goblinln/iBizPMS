@@ -113,14 +113,8 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.ibzlib && _context.action && true) {
             return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.case && _context.action && true) {
-            return this.http.post(`/cases/${_context.case}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
         if (_context.testsuite && _context.action && true) {
             return this.http.post(`/testsuites/${_context.testsuite}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        if (_context.testtask && _context.action && true) {
-            return this.http.post(`/testtasks/${_context.testtask}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.ibzreportly && _context.action && true) {
             return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/histories/fetchdefault`, _data);

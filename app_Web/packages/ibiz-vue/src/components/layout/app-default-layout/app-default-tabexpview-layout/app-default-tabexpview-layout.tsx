@@ -41,9 +41,7 @@ export class AppDefaultTabExpViewLayout extends AppDefaultViewLayout {
         };
         return (
             <card class={cardClass} disHover={true} bordered={false}>
-                {(this.showCaption || this.viewIsshowToolbar) && (
-                    this.renderViewHeader()
-                )}
+                {this.renderViewHeader()}
                 {this.$slots.topMessage}
                 {this.$slots.searchForm}
                 <div class='content-container'>

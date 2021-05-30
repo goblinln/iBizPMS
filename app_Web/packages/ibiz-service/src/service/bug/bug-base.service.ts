@@ -415,7 +415,7 @@ export class BugBaseService extends EntityBaseService<IBug> {
     }
 
     /**
-     * ResolveBatch接口方法
+     * ActivateBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -423,7 +423,7 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async ResolveBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
@@ -454,7 +454,7 @@ export class BugBaseService extends EntityBaseService<IBug> {
     }
 
     /**
-     * ActivateBatch接口方法
+     * ResolveBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -462,7 +462,7 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async ResolveBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

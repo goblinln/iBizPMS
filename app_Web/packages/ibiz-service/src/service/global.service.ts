@@ -26,6 +26,15 @@ export class GlobalService {
         return (await import('./product-plan/product-plan.service')).default.getInstance();
     }
     /**
+     * 测试用例服务
+     *
+     * @return {TestCase}
+     * @memberof GlobalService
+     */
+    async getTestCaseService() {
+        return (await import('./test-case/test-case.service')).default.getInstance();
+    }
+    /**
      * 产品服务
      *
      * @return {Product}
@@ -161,6 +170,15 @@ export class GlobalService {
         return (await import('./project-task-gantt/project-task-gantt.service')).default.getInstance();
     }
     /**
+     * 产品版本服务
+     *
+     * @return {ProductBuild}
+     * @memberof GlobalService
+     */
+    async getProductBuildService() {
+        return (await import('./product-build/product-build.service')).default.getInstance();
+    }
+    /**
      * 项目团队服务
      *
      * @return {ProjectTeam}
@@ -168,6 +186,15 @@ export class GlobalService {
      */
     async getProjectTeamService() {
         return (await import('./project-team/project-team.service')).default.getInstance();
+    }
+    /**
+     * 测试版本服务
+     *
+     * @return {ProjectTestTask}
+     * @memberof GlobalService
+     */
+    async getProjectTestTaskService() {
+        return (await import('./project-test-task/project-test-task.service')).default.getInstance();
     }
     /**
      * 测试BUG服务
@@ -213,15 +240,6 @@ export class GlobalService {
      */
     async getIbzReportRoleConfigService() {
         return (await import('./ibz-report-role-config/ibz-report-role-config.service')).default.getInstance();
-    }
-    /**
-     * 测试用例服务
-     *
-     * @return {Case}
-     * @memberof GlobalService
-     */
-    async getCaseService() {
-        return (await import('./case/case.service')).default.getInstance();
     }
     /**
      * 系统用户服务
@@ -809,15 +827,6 @@ export class GlobalService {
         return (await import('./ibztask-team/ibztask-team.service')).default.getInstance();
     }
     /**
-     * 测试版本服务
-     *
-     * @return {TestTask}
-     * @memberof GlobalService
-     */
-    async getTestTaskService() {
-        return (await import('./test-task/test-task.service')).default.getInstance();
-    }
-    /**
      * 产品线服务
      *
      * @return {ProductLine}
@@ -1034,42 +1043,6 @@ export class GlobalService {
         return (await import('./account-taskestimate/account-taskestimate.service')).default.getInstance();
     }
     /**
-     * 产品日志服务
-     *
-     * @return {IBZProProductAction}
-     * @memberof GlobalService
-     */
-    async getIBZProProductActionService() {
-        return (await import('./ibzpro-product-action/ibzpro-product-action.service')).default.getInstance();
-    }
-    /**
-     * 产品计划日志服务
-     *
-     * @return {ProductPlanAction}
-     * @memberof GlobalService
-     */
-    async getProductPlanActionService() {
-        return (await import('./product-plan-action/product-plan-action.service')).default.getInstance();
-    }
-    /**
-     * 版本日志服务
-     *
-     * @return {IbzProBuildAction}
-     * @memberof GlobalService
-     */
-    async getIbzProBuildActionService() {
-        return (await import('./ibz-pro-build-action/ibz-pro-build-action.service')).default.getInstance();
-    }
-    /**
-     * 项目日志服务
-     *
-     * @return {IBZProProjectAction}
-     * @memberof GlobalService
-     */
-    async getIBZProProjectActionService() {
-        return (await import('./ibzpro-project-action/ibzpro-project-action.service')).default.getInstance();
-    }
-    /**
      * 系统日志服务
      *
      * @return {Action}
@@ -1077,15 +1050,6 @@ export class GlobalService {
      */
     async getActionService() {
         return (await import('./action/action.service')).default.getInstance();
-    }
-    /**
-     * Bug日志服务
-     *
-     * @return {IbzProBugAction}
-     * @memberof GlobalService
-     */
-    async getIbzProBugActionService() {
-        return (await import('./ibz-pro-bug-action/ibz-pro-bug-action.service')).default.getInstance();
     }
     /**
      * 动态搜索栏服务
@@ -1097,33 +1061,6 @@ export class GlobalService {
         return (await import('./dyna-filter/dyna-filter.service')).default.getInstance();
     }
     /**
-     * 周报日志服务
-     *
-     * @return {IBZProWeeklyAction}
-     * @memberof GlobalService
-     */
-    async getIBZProWeeklyActionService() {
-        return (await import('./ibzpro-weekly-action/ibzpro-weekly-action.service')).default.getInstance();
-    }
-    /**
-     * 测试用例日志服务
-     *
-     * @return {IBZCaseAction}
-     * @memberof GlobalService
-     */
-    async getIBZCaseActionService() {
-        return (await import('./ibzcase-action/ibzcase-action.service')).default.getInstance();
-    }
-    /**
-     * 发布日志服务
-     *
-     * @return {IBZProReleaseAction}
-     * @memberof GlobalService
-     */
-    async getIBZProReleaseActionService() {
-        return (await import('./ibzpro-release-action/ibzpro-release-action.service')).default.getInstance();
-    }
-    /**
      * 操作历史服务
      *
      * @return {History}
@@ -1131,33 +1068,6 @@ export class GlobalService {
      */
     async getHistoryService() {
         return (await import('./history/history.service')).default.getInstance();
-    }
-    /**
-     * 产品操作历史服务
-     *
-     * @return {IBZProProductHistory}
-     * @memberof GlobalService
-     */
-    async getIBZProProductHistoryService() {
-        return (await import('./ibzpro-product-history/ibzpro-product-history.service')).default.getInstance();
-    }
-    /**
-     * 月报日志服务
-     *
-     * @return {IbzProMonthlyAction}
-     * @memberof GlobalService
-     */
-    async getIbzProMonthlyActionService() {
-        return (await import('./ibz-pro-monthly-action/ibz-pro-monthly-action.service')).default.getInstance();
-    }
-    /**
-     * 需求日志服务
-     *
-     * @return {IBZStoryAction}
-     * @memberof GlobalService
-     */
-    async getIBZStoryActionService() {
-        return (await import('./ibzstory-action/ibzstory-action.service')).default.getInstance();
     }
     /**
      * 模块服务
@@ -1169,51 +1079,6 @@ export class GlobalService {
         return (await import('./module/module.service')).default.getInstance();
     }
     /**
-     * 测试单日志服务
-     *
-     * @return {IbzProTestTaskAction}
-     * @memberof GlobalService
-     */
-    async getIbzProTestTaskActionService() {
-        return (await import('./ibz-pro-test-task-action/ibz-pro-test-task-action.service')).default.getInstance();
-    }
-    /**
-     * 套件日志服务
-     *
-     * @return {IBZTestSuiteAction}
-     * @memberof GlobalService
-     */
-    async getIBZTestSuiteActionService() {
-        return (await import('./ibztest-suite-action/ibztest-suite-action.service')).default.getInstance();
-    }
-    /**
-     * 报告日志服务
-     *
-     * @return {IBZTestReportAction}
-     * @memberof GlobalService
-     */
-    async getIBZTestReportActionService() {
-        return (await import('./ibztest-report-action/ibztest-report-action.service')).default.getInstance();
-    }
-    /**
-     * 日报日志服务
-     *
-     * @return {IBZDailyAction}
-     * @memberof GlobalService
-     */
-    async getIBZDailyActionService() {
-        return (await import('./ibzdaily-action/ibzdaily-action.service')).default.getInstance();
-    }
-    /**
-     * ToDo日志服务
-     *
-     * @return {IBZProToDoAction}
-     * @memberof GlobalService
-     */
-    async getIBZProToDoActionService() {
-        return (await import('./ibzpro-to-do-action/ibzpro-to-do-action.service')).default.getInstance();
-    }
-    /**
      * 项目工时统计服务
      *
      * @return {ProjectTaskestimate}
@@ -1221,14 +1086,5 @@ export class GlobalService {
      */
     async getProjectTaskestimateService() {
         return (await import('./project-taskestimate/project-taskestimate.service')).default.getInstance();
-    }
-    /**
-     * 任务日志服务
-     *
-     * @return {IBZTaskAction}
-     * @memberof GlobalService
-     */
-    async getIBZTaskActionService() {
-        return (await import('./ibztask-action/ibztask-action.service')).default.getInstance();
     }
 }

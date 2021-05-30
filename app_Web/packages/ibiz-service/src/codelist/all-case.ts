@@ -1,4 +1,4 @@
-import { CaseService } from "../service";
+import { TestCaseService } from "../service";
 /**
  * 代码表--所有用例
  *
@@ -90,10 +90,10 @@ export default class AllCase {
     /**
      * 测试用例应用实体服务对象
      *
-     * @type {CaseService}
+     * @type {TestCaseService}
      * @memberof AllCase
      */
-    public caseService: CaseService = new CaseService();
+    public testcaseService: TestCaseService = new TestCaseService();
 
 
     /**
@@ -134,7 +134,7 @@ export default class AllCase {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.caseService.FetchDefault(context, data);
+            const promise: Promise<any> = this.testcaseService.FetchDefault(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

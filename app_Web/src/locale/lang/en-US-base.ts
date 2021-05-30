@@ -1,4 +1,5 @@
 import productplan_en_US from '@locale/lanres/entities/product-plan/product-plan_en_US';
+import testcase_en_US from '@locale/lanres/entities/test-case/test-case_en_US';
 import product_en_US from '@locale/lanres/entities/product/product_en_US';
 import projecttaskreport_en_US from '@locale/lanres/entities/project-task-report/project-task-report_en_US';
 import projectburn_en_US from '@locale/lanres/entities/project-burn/project-burn_en_US';
@@ -14,13 +15,14 @@ import productlife_en_US from '@locale/lanres/entities/product-life/product-life
 import projecttask_en_US from '@locale/lanres/entities/project-task/project-task_en_US';
 import projectbuild_en_US from '@locale/lanres/entities/project-build/project-build_en_US';
 import projecttaskgantt_en_US from '@locale/lanres/entities/project-task-gantt/project-task-gantt_en_US';
+import productbuild_en_US from '@locale/lanres/entities/product-build/product-build_en_US';
 import projectteam_en_US from '@locale/lanres/entities/project-team/project-team_en_US';
+import projecttesttask_en_US from '@locale/lanres/entities/project-test-task/project-test-task_en_US';
 import bug_en_US from '@locale/lanres/entities/bug/bug_en_US';
 import projectmodule_en_US from '@locale/lanres/entities/project-module/project-module_en_US';
 import productproject_en_US from '@locale/lanres/entities/product-project/product-project_en_US';
 import productrelease_en_US from '@locale/lanres/entities/product-release/product-release_en_US';
 import ibzreportroleconfig_en_US from '@locale/lanres/entities/ibz-report-role-config/ibz-report-role-config_en_US';
-import case_en_US from '@locale/lanres/entities/case/case_en_US';
 import sysuser_en_US from '@locale/lanres/entities/sys-user/sys-user_en_US';
 import ibzcasestep_en_US from '@locale/lanres/entities/ibzcase-step/ibzcase-step_en_US';
 import taskteam_en_US from '@locale/lanres/entities/task-team/task-team_en_US';
@@ -86,7 +88,6 @@ import ibzplantempletdetail_en_US from '@locale/lanres/entities/ibz-plan-templet
 import ibzproconfig_en_US from '@locale/lanres/entities/ibzpro-config/ibzpro-config_en_US';
 import ibzprostory_en_US from '@locale/lanres/entities/ibzpro-story/ibzpro-story_en_US';
 import ibztaskteam_en_US from '@locale/lanres/entities/ibztask-team/ibztask-team_en_US';
-import testtask_en_US from '@locale/lanres/entities/test-task/test-task_en_US';
 import productline_en_US from '@locale/lanres/entities/product-line/product-line_en_US';
 import pssyssfpub_en_US from '@locale/lanres/entities/pssys-sfpub/pssys-sfpub_en_US';
 import testreport_en_US from '@locale/lanres/entities/test-report/test-report_en_US';
@@ -111,28 +112,11 @@ import sysemployee_en_US from '@locale/lanres/entities/sys-employee/sys-employee
 import ibzproproductline_en_US from '@locale/lanres/entities/ibzpro-product-line/ibzpro-product-line_en_US';
 import projectproduct_en_US from '@locale/lanres/entities/project-product/project-product_en_US';
 import accounttaskestimate_en_US from '@locale/lanres/entities/account-taskestimate/account-taskestimate_en_US';
-import ibzproproductaction_en_US from '@locale/lanres/entities/ibzpro-product-action/ibzpro-product-action_en_US';
-import productplanaction_en_US from '@locale/lanres/entities/product-plan-action/product-plan-action_en_US';
-import ibzprobuildaction_en_US from '@locale/lanres/entities/ibz-pro-build-action/ibz-pro-build-action_en_US';
-import ibzproprojectaction_en_US from '@locale/lanres/entities/ibzpro-project-action/ibzpro-project-action_en_US';
 import action_en_US from '@locale/lanres/entities/action/action_en_US';
-import ibzprobugaction_en_US from '@locale/lanres/entities/ibz-pro-bug-action/ibz-pro-bug-action_en_US';
 import dynafilter_en_US from '@locale/lanres/entities/dyna-filter/dyna-filter_en_US';
-import ibzproweeklyaction_en_US from '@locale/lanres/entities/ibzpro-weekly-action/ibzpro-weekly-action_en_US';
-import ibzcaseaction_en_US from '@locale/lanres/entities/ibzcase-action/ibzcase-action_en_US';
-import ibzproreleaseaction_en_US from '@locale/lanres/entities/ibzpro-release-action/ibzpro-release-action_en_US';
 import history_en_US from '@locale/lanres/entities/history/history_en_US';
-import ibzproproducthistory_en_US from '@locale/lanres/entities/ibzpro-product-history/ibzpro-product-history_en_US';
-import ibzpromonthlyaction_en_US from '@locale/lanres/entities/ibz-pro-monthly-action/ibz-pro-monthly-action_en_US';
-import ibzstoryaction_en_US from '@locale/lanres/entities/ibzstory-action/ibzstory-action_en_US';
 import module_en_US from '@locale/lanres/entities/module/module_en_US';
-import ibzprotesttaskaction_en_US from '@locale/lanres/entities/ibz-pro-test-task-action/ibz-pro-test-task-action_en_US';
-import ibztestsuiteaction_en_US from '@locale/lanres/entities/ibztest-suite-action/ibztest-suite-action_en_US';
-import ibztestreportaction_en_US from '@locale/lanres/entities/ibztest-report-action/ibztest-report-action_en_US';
-import ibzdailyaction_en_US from '@locale/lanres/entities/ibzdaily-action/ibzdaily-action_en_US';
-import ibzprotodoaction_en_US from '@locale/lanres/entities/ibzpro-to-do-action/ibzpro-to-do-action_en_US';
 import projecttaskestimate_en_US from '@locale/lanres/entities/project-taskestimate/project-taskestimate_en_US';
-import ibztaskaction_en_US from '@locale/lanres/entities/ibztask-action/ibztask-action_en_US';
 import components_en_US from '@locale/lanres/components/components_en_US';
 import codelist_en_US from '@locale/lanres/codelist/codelist_en_US';
 import userCustom_en_US from '@locale/lanres/userCustom/userCustom_en_US';
@@ -445,6 +429,7 @@ function getAppLocale(){
         },
         entities: {
             'productplan': productplan_en_US(),
+            'testcase': testcase_en_US(),
             'product': product_en_US(),
             'projecttaskreport': projecttaskreport_en_US(),
             'projectburn': projectburn_en_US(),
@@ -460,13 +445,14 @@ function getAppLocale(){
             'projecttask': projecttask_en_US(),
             'projectbuild': projectbuild_en_US(),
             'projecttaskgantt': projecttaskgantt_en_US(),
+            'productbuild': productbuild_en_US(),
             'projectteam': projectteam_en_US(),
+            'projecttesttask': projecttesttask_en_US(),
             'bug': bug_en_US(),
             'projectmodule': projectmodule_en_US(),
             'productproject': productproject_en_US(),
             'productrelease': productrelease_en_US(),
             'ibzreportroleconfig': ibzreportroleconfig_en_US(),
-            'case': case_en_US(),
             'sysuser': sysuser_en_US(),
             'ibzcasestep': ibzcasestep_en_US(),
             'taskteam': taskteam_en_US(),
@@ -532,7 +518,6 @@ function getAppLocale(){
             'ibzproconfig': ibzproconfig_en_US(),
             'ibzprostory': ibzprostory_en_US(),
             'ibztaskteam': ibztaskteam_en_US(),
-            'testtask': testtask_en_US(),
             'productline': productline_en_US(),
             'pssyssfpub': pssyssfpub_en_US(),
             'testreport': testreport_en_US(),
@@ -557,28 +542,11 @@ function getAppLocale(){
             'ibzproproductline': ibzproproductline_en_US(),
             'projectproduct': projectproduct_en_US(),
             'accounttaskestimate': accounttaskestimate_en_US(),
-            'ibzproproductaction': ibzproproductaction_en_US(),
-            'productplanaction': productplanaction_en_US(),
-            'ibzprobuildaction': ibzprobuildaction_en_US(),
-            'ibzproprojectaction': ibzproprojectaction_en_US(),
             'action': action_en_US(),
-            'ibzprobugaction': ibzprobugaction_en_US(),
             'dynafilter': dynafilter_en_US(),
-            'ibzproweeklyaction': ibzproweeklyaction_en_US(),
-            'ibzcaseaction': ibzcaseaction_en_US(),
-            'ibzproreleaseaction': ibzproreleaseaction_en_US(),
             'history': history_en_US(),
-            'ibzproproducthistory': ibzproproducthistory_en_US(),
-            'ibzpromonthlyaction': ibzpromonthlyaction_en_US(),
-            'ibzstoryaction': ibzstoryaction_en_US(),
             'module': module_en_US(),
-            'ibzprotesttaskaction': ibzprotesttaskaction_en_US(),
-            'ibztestsuiteaction': ibztestsuiteaction_en_US(),
-            'ibztestreportaction': ibztestreportaction_en_US(),
-            'ibzdailyaction': ibzdailyaction_en_US(),
-            'ibzprotodoaction': ibzprotodoaction_en_US(),
             'projecttaskestimate': projecttaskestimate_en_US(),
-            'ibztaskaction': ibztaskaction_en_US(),
         },
         components: components_en_US(),
         codelist: codelist_en_US(),

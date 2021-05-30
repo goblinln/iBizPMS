@@ -1,6 +1,6 @@
 .view-default.detabexpview.view-container {
-    .ivu-card {
-      .ivu-card-head {
+    >.ivu-card {
+      >.ivu-card-head {
         >.header-container >.tabs-container {
           display: flex;
           flex-direction: row;
@@ -30,6 +30,12 @@
                 .ivu-tabs-tab.ivu-tabs-tab-active {
                   font-weight: 700;
                 }
+                .ivu-tabs-tab:hover {
+                  color: #2d8cf0 !important;
+                  span {
+                    border-color: #2d8cf0 !important;
+                  }
+                }
               }
               .ivu-tabs-content {
                 display: none;
@@ -39,8 +45,11 @@
           }
         }
       }
-      .ivu-card-body {
-        .content-container >.tabexppanel >.ivu-tabs {
+      >.ivu-card-body {
+        >.content-container {
+          padding: 0;
+        }
+        >.content-container >.tabexppanel >.ivu-tabs {
           >.ivu-tabs-bar {
             display: none;
             visibility: hidden;

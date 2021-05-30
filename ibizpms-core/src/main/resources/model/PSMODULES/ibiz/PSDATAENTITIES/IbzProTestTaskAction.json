@@ -2,18 +2,6 @@
   "getAllPSDEActions" : [ {
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
-    "getAfterPSDEActionLogics" : [ {
-      "actionLogicType" : 1,
-      "attachMode" : "AFTER",
-      "name" : "附加逻辑",
-      "getPSDELogic" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDELOGICS/Comment.json"
-      },
-      "cloneParam" : false,
-      "ignoreException" : false,
-      "internalLogic" : true
-    } ],
     "codeName" : "Create",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDEACTIONS/Create.json",
     "logicName" : "Create",
@@ -67,40 +55,6 @@
     "name" : "CheckKey",
     "builtinAction" : true
   }, {
-    "actionMode" : "CUSTOM",
-    "actionType" : "DELOGIC",
-    "codeName" : "Comment",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDEACTIONS/Comment.json",
-    "logicName" : "添加备注",
-    "name" : "Comment",
-    "getPSDELogic" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDELOGICS/Comment.json"
-    }
-  }, {
-    "actionMode" : "CREATE",
-    "actionType" : "USERCUSTOM",
-    "codeName" : "CreateHis",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDEACTIONS/CreateHis.json",
-    "logicName" : "创建历史日志",
-    "name" : "CreateHis"
-  }, {
-    "actionMode" : "CUSTOM",
-    "actionType" : "USERCUSTOM",
-    "codeName" : "EditComment",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDEACTIONS/EditComment.json",
-    "logicName" : "编辑备注信息",
-    "name" : "editComment",
-    "userCat" : "CAT1"
-  }, {
-    "actionMode" : "CUSTOM",
-    "actionType" : "USERCUSTOM",
-    "codeName" : "ManagePmsEe",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDEACTIONS/ManagePmsEe.json",
-    "logicName" : "Pms企业专用",
-    "name" : "ManagePmsEe",
-    "userCat" : "CAT1"
-  }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
     "codeName" : "Save",
@@ -108,27 +62,6 @@
     "logicName" : "Save",
     "name" : "Save",
     "builtinAction" : true
-  }, {
-    "actionMode" : "CUSTOM",
-    "actionType" : "USERCUSTOM",
-    "codeName" : "SendMarkDone",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDEACTIONS/SendMarkDone.json",
-    "logicName" : "已读",
-    "name" : "sendMarkDone"
-  }, {
-    "actionMode" : "CUSTOM",
-    "actionType" : "USERCUSTOM",
-    "codeName" : "SendTodo",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDEACTIONS/SendTodo.json",
-    "logicName" : "发送待办",
-    "name" : "sendTodo"
-  }, {
-    "actionMode" : "CUSTOM",
-    "actionType" : "USERCUSTOM",
-    "codeName" : "SendToread",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDEACTIONS/SendToread.json",
-    "logicName" : "发送待阅",
-    "name" : "sendToread"
   } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1489,187 +1422,13 @@
     "name" : "PROJECT",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "OBJECTID",
-      "dBType" : "MYSQL5",
-      "name" : "OBJECTID",
-      "queryCodeExp" : "t1.`OBJECTID`",
-      "standardColumnName" : "`OBJECTID`"
-    } ],
-    "getAllPSDEFSearchModes" : [ {
-      "codeName" : "N_OBJECTID_EQ",
-      "name" : "N_OBJECTID_EQ",
-      "stdDataType" : 1,
-      "valueOP" : "EQ"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "OBJECTID",
-        "codeName" : "ObjectID"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "ObjectID",
-    "dEFType" : 1,
-    "dataType" : "PICKUP",
-    "importOrder" : 1000,
-    "length" : 8,
-    "logicName" : "编号",
-    "name" : "OBJECTID",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDERS/DER1N_IBZPRO_TESTTASKACTION_ZT_TESTTASK_OBJECTID.json"
-    },
-    "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s",
-    "linkDEField" : true
-  } ],
-  "getAllPSDELogics" : [ {
-    "codeName" : "Comment",
-    "defaultParamName" : "Default",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDELOGICS/Comment.json",
-    "logicName" : "Comment",
-    "name" : "Comment",
-    "getPSDELogicNodes" : [ {
-      "codeName" : "Prepareparam1",
-      "logicNodeType" : "PREPAREPARAM",
-      "name" : "设置默认参数",
-      "getPSDELogicNodeParams" : [ {
-        "dstFieldName" : "ACTOR",
-        "getDstPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "name" : "用户全局对象[srfloginname] ==> Default[ACTOR]",
-        "paramAction" : "SETPARAMVALUE",
-        "srcFieldName" : "srfloginname",
-        "srcValueType" : "SESSION"
-      }, {
-        "dstFieldName" : "PRODUCT",
-        "getDstPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "name" : "直接值[0] ==> Default[PRODUCT]",
-        "paramAction" : "SETPARAMVALUE",
-        "srcValue" : "0",
-        "srcValueType" : "SRCVALUE"
-      }, {
-        "dstFieldName" : "PROJECT",
-        "getDstPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "name" : "直接值[0] ==> Default[PROJECT]",
-        "paramAction" : "SETPARAMVALUE",
-        "srcValue" : "0",
-        "srcValueType" : "SRCVALUE"
-      }, {
-        "dstFieldName" : "READ",
-        "getDstPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "name" : "直接值[0] ==> Default[READ]",
-        "paramAction" : "SETPARAMVALUE",
-        "srcValue" : "0",
-        "srcValueType" : "SRCVALUE"
-      }, {
-        "dstFieldName" : "ACTION",
-        "getDstPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "name" : "直接值[commented] ==> Default[ACTION]",
-        "paramAction" : "SETPARAMVALUE",
-        "srcValue" : "commented",
-        "srcValueType" : "SRCVALUE"
-      }, {
-        "dstFieldName" : "EXTRA",
-        "getDstPSDELogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "name" : "直接值[null] ==> Default[EXTRA]",
-        "paramAction" : "SETPARAMVALUE",
-        "srcValueType" : "SRCVALUE"
-      } ],
-      "parallelOutput" : true
-    }, {
-      "codeName" : "Begin",
-      "logicNodeType" : "BEGIN",
-      "name" : "开始",
-      "getPSDELogicLinks" : [ {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Prepareparam1"
-        },
-        "name" : "连接6740",
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Begin"
-        },
-        "defaultLink" : false
-      } ],
-      "parallelOutput" : true
-    } ],
-    "getPSDELogicParams" : [ {
-      "codeName" : "Default",
-      "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
-    } ],
-    "getStartPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "enableBackend" : true,
-    "enableFront" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
-    "logicName" : "添加备注",
-    "mapPSDEName" : "ZT_TESTTASK",
-    "mapPSDEOPPrivName" : "CREATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDERS/DER1N_IBZPRO_TESTTASKACTION_ZT_TESTTASK_OBJECTID.json"
-    },
-    "name" : "CREATE",
-    "id" : "IBZProTestTaskAction__CREATE"
-  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
-  }, {
-    "logicName" : "管理",
-    "mapPSDEName" : "ZT_TESTTASK",
-    "mapPSDEOPPrivName" : "MANAGE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDERS/DER1N_IBZPRO_TESTTASKACTION_ZT_TESTTASK_OBJECTID.json"
-    },
-    "name" : "MANAGE",
-    "id" : "IBZProTestTaskAction__MANAGE"
   }, {
     "logicName" : "读取",
     "name" : "READ"
@@ -1770,7 +1529,7 @@
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 2,
+  "dataAccCtrlMode" : 1,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -1784,55 +1543,6 @@
   "enableViewLevel" : 0,
   "extendMode" : 0,
   "logicName" : "测试单日志",
-  "getMajorPSDERs" : [ {
-    "codeName" : "IbzProTestTask",
-    "dERType" : "DER1N",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProTestTaskHistory/PSDERS/DER1N_IBZPRO_TESTTASKHISTORY_IBZPRO_TESTTASKACTION_ACTION.json",
-    "getMajorPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction.json"
-    },
-    "masterOrder" : -1,
-    "masterRS" : 12,
-    "getMinorPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProTestTaskHistory.json"
-    },
-    "name" : "DER1N_IBZPRO_TESTTASKHISTORY_IBZPRO_TESTTASKACTION_ACTION",
-    "orderValue" : 100,
-    "getPSPickupDEField" : {
-      "name" : "ACTION",
-      "codeName" : "Action"
-    },
-    "pickupDEFName" : "ACTION",
-    "removeActionType" : -1,
-    "removeOrder" : 0,
-    "nestedRS" : true
-  } ],
-  "getMinorPSDERs" : [ {
-    "codeName" : "IBZProTestTaskAction",
-    "dERType" : "DER1N",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction/PSDERS/DER1N_IBZPRO_TESTTASKACTION_ZT_TESTTASK_OBJECTID.json",
-    "getMajorPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
-    },
-    "masterOrder" : -1,
-    "masterRS" : 4,
-    "getMinorPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProTestTaskAction.json"
-    },
-    "name" : "DER1N_IBZPRO_TESTTASKACTION_ZT_TESTTASK_OBJECTID",
-    "orderValue" : 100,
-    "getPSPickupDEField" : {
-      "name" : "OBJECTID",
-      "codeName" : "ObjectID"
-    },
-    "pickupDEFName" : "OBJECTID",
-    "removeActionType" : -1,
-    "removeOrder" : 0
-  } ],
   "name" : "IBZPRO_TESTTASKACTION",
   "saaSMode" : 0,
   "serviceAPIMode" : 1,

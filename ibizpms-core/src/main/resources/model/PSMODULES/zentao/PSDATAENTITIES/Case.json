@@ -14434,29 +14434,6 @@
     "codeName" : "Isfavorites"
   } ],
   "getMajorPSDERs" : [ {
-    "codeName" : "IbzProCase",
-    "dERType" : "DER1N",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZCaseAction/PSDERS/DER1N_IBZPRO_CASEACTION_ZT_CASE_OBJECTID.json",
-    "getMajorPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
-    },
-    "masterOrder" : -1,
-    "masterRS" : 4,
-    "getMinorPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZCaseAction.json"
-    },
-    "name" : "DER1N_IBZPRO_CASEACTION_ZT_CASE_OBJECTID",
-    "orderValue" : 100,
-    "getPSPickupDEField" : {
-      "name" : "OBJECTID",
-      "codeName" : "ObjectID"
-    },
-    "pickupDEFName" : "OBJECTID",
-    "removeActionType" : -1,
-    "removeOrder" : 0
-  }, {
     "codeName" : "ZTCase",
     "dERType" : "DER1N",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_CASE_CASEID.json",

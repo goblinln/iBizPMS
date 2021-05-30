@@ -12,14 +12,14 @@
   "name" : "当前产品版本（动态）",
   "getPSAppDEDataSet" : {
     "modelref" : true,
-    "id" : "FetchBugProductOrProjectBuild"
+    "id" : "FetchDefault"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
   },
   "getValuePSAppDEField" : {
-    "name" : "IDS",
-    "codeName" : "Ids"
+    "name" : "ID",
+    "codeName" : "Id"
   }
 }

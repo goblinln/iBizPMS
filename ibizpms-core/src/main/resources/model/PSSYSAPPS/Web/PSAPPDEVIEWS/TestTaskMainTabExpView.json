@@ -7,7 +7,7 @@
   "openMode" : "DRAWER_TOP",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -20,7 +20,7 @@
     "name" : "tabexppanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
     },
     "getPSAppViewRefs" : [ {
       "name" : "EXPITEM:tabviewpanel",
@@ -48,7 +48,7 @@
       "name" : "tabviewpanel",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
       },
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL"
@@ -64,7 +64,7 @@
         "name" : "CaseCurTestTaskGridView",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
         },
         "getPSAppViewEngines" : [ {
           "engineCat" : "VIEW",
@@ -202,7 +202,7 @@
           "getPSUIAction" : {
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
             },
             "modelref" : true,
             "id" : "LinkCaseC@Case"
@@ -232,7 +232,7 @@
           "name" : "toolbar",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
           },
           "getPSControlParam" : {
             "id" : "TOOLBAR"
@@ -265,7 +265,7 @@
               "name" : "关联用例（打开用例视图）",
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               },
               "getPSNavigateContexts" : [ {
                 "key" : "TASK",
@@ -390,7 +390,7 @@
           "codeName" : "TestMainGrid",
           "columnEnableLink" : 2,
           "controlType" : "GRID",
-          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSGRIDS/TestMainGrid.json",
+          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase/PSGRIDS/TestMainGrid.json",
           "getFetchPSControlAction" : {
             "modelref" : true,
             "id" : "fetch"
@@ -405,7 +405,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
           },
           "getPSAppViewLogics" : [ {
             "logicTrigger" : "CUSTOM",
@@ -461,7 +461,7 @@
             "getPSUIAction" : {
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               },
               "modelref" : true,
               "id" : "Edits@Case"
@@ -473,7 +473,7 @@
             "getPSUIAction" : {
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               },
               "modelref" : true,
               "id" : "confirmChange@Case"
@@ -485,7 +485,7 @@
             "getPSUIAction" : {
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               },
               "modelref" : true,
               "id" : "NewBugByTestCaseResult@Case"
@@ -497,7 +497,7 @@
             "getPSUIAction" : {
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               },
               "modelref" : true,
               "id" : "CASEOpenTestRunResultView@Case"
@@ -509,7 +509,7 @@
             "getPSUIAction" : {
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               },
               "modelref" : true,
               "id" : "CaseExecute@Case"
@@ -521,7 +521,7 @@
             "getPSUIAction" : {
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               },
               "modelref" : true,
               "id" : "unlinkCase@Case"
@@ -541,7 +541,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               }
             }, {
               "actionType" : "DEDATASET",
@@ -552,7 +552,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               }
             }, {
               "actionName" : "Remove",
@@ -565,7 +565,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               }
             }, {
               "actionName" : "Get",
@@ -578,7 +578,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               }
             }, {
               "actionName" : "GetDraft",
@@ -591,7 +591,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               }
             }, {
               "actionName" : "Create",
@@ -604,7 +604,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               }
             } ],
             "userDRAction" : "READ",
@@ -692,7 +692,7 @@
               "name" : "概况",
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               },
               "timeout" : 60000,
               "uIActionMode" : "FRONT",
@@ -928,7 +928,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
                   },
                   "getPSNavigateContexts" : [ {
                     "key" : "TASK",
@@ -980,7 +980,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
                   },
                   "getPSNavigateContexts" : [ {
                     "key" : "TASK",
@@ -1026,7 +1026,7 @@
                   "name" : "打开结果视图（测试单）",
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
                   },
                   "getPSNavigateContexts" : [ {
                     "key" : "TASK",
@@ -1071,7 +1071,7 @@
                   "name" : "执行测试（测试单）",
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
                   },
                   "getPSNavigateContexts" : [ {
                     "key" : "TASK",
@@ -1108,13 +1108,9 @@
                   "dataAccessAction" : "UNLINKCASE",
                   "fullCodeName" : "Case_unlinkCase",
                   "name" : "移除",
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "UnlinkCases"
-                  },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
                   },
                   "getPSNavigateContexts" : [ {
                     "key" : "TASK",
@@ -1387,7 +1383,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
             }
           },
           "sortMode" : "REMOTE",
@@ -1409,11 +1405,11 @@
         }, {
           "codeName" : "OtherCustom",
           "controlType" : "SEARCHBAR",
-          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSSEARCHBARS/OtherCustom.json",
+          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase/PSSEARCHBARS/OtherCustom.json",
           "logicName" : "测试用例自定义搜索栏（其它）",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
           },
           "getPSControlParam" : {
             "id" : "SEARCHBAR"
@@ -2283,7 +2279,7 @@
           "name" : "layoutpanel",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
           },
           "getPSControlParam" : { },
           "layoutPanel" : true,
@@ -2322,7 +2318,7 @@
       "name" : "tabviewpanel2",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
       },
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL2"
@@ -2352,7 +2348,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -2370,5 +2366,31 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "4e229fd1de7c3b68c2a18a3d16916d61",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "ProjectTestTasks",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+    },
+    "name" : "PROJECT__TEST_TASK",
+    "getParentPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ] ]
 }

@@ -25,24 +25,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbzProReportlyActionService extends IService<IbzProReportlyAction> {
 
-    boolean create(IbzProReportlyAction et);
-    void createBatch(List<IbzProReportlyAction> list);
-    boolean update(IbzProReportlyAction et);
-    boolean sysUpdate(IbzProReportlyAction et);
-    void updateBatch(List<IbzProReportlyAction> list);
-    boolean remove(Long key);
-    void removeBatch(Collection<Long> idList);
-    IbzProReportlyAction get(Long key);
-    IbzProReportlyAction sysGet(Long key);
-    IbzProReportlyAction getDraft(IbzProReportlyAction et);
-    boolean checkKey(IbzProReportlyAction et);
-    IbzProReportlyAction createHis(IbzProReportlyAction et);
-    IbzProReportlyAction managePmsEe(IbzProReportlyAction et);
-    boolean save(IbzProReportlyAction et);
-    void saveBatch(List<IbzProReportlyAction> list);
-    IbzProReportlyAction sendMarkDone(IbzProReportlyAction et);
-    IbzProReportlyAction sendTodo(IbzProReportlyAction et);
-    IbzProReportlyAction sendToread(IbzProReportlyAction et);
     List<IbzProReportlyAction> select(IbzProReportlyActionSearchContext context);
     List<IbzProReportlyAction> selectDefault(IbzProReportlyActionSearchContext context);
     List<IbzProReportlyAction> selectSimple(IbzProReportlyActionSearchContext context);
@@ -51,8 +33,6 @@ public interface IIbzProReportlyActionService extends IService<IbzProReportlyAct
 
     Page<IbzProReportlyAction> searchDefault(IbzProReportlyActionSearchContext context);
     Page<IbzProReportlyAction> searchType(IbzProReportlyActionSearchContext context);
-    List<IbzProReportlyAction> selectByObjectid(Long ibzreportlyid);
-    void removeByObjectid(Long ibzreportlyid);
     IbzProReportlyAction dynamicCall(Long key, String action, IbzProReportlyAction et);
     /**
      *自定义查询SQL

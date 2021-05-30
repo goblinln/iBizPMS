@@ -1154,29 +1154,6 @@
     "codeName" : "Issubmit"
   } ],
   "getMajorPSDERs" : [ {
-    "codeName" : "IbzProReportly",
-    "dERType" : "DER1N",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProReportlyAction/PSDERS/DER1N_IBZPRO_REPORTLYACTION_IBZ_REPORTLY_OBJECTID.json",
-    "getMajorPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly.json"
-    },
-    "masterOrder" : -1,
-    "masterRS" : 4,
-    "getMinorPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProReportlyAction.json"
-    },
-    "name" : "DER1N_IBZPRO_REPORTLYACTION_IBZ_REPORTLY_OBJECTID",
-    "orderValue" : 100,
-    "getPSPickupDEField" : {
-      "name" : "OBJECTID",
-      "codeName" : "ObjectID"
-    },
-    "pickupDEFName" : "OBJECTID",
-    "removeActionType" : -1,
-    "removeOrder" : 0
-  }, {
     "codeName" : "Reportly",
     "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",

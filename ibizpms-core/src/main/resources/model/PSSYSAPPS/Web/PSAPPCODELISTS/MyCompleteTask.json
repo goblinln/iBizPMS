@@ -7,7 +7,7 @@
   "name" : "我完成的任务（汇报）",
   "getPSAppDEDataSet" : {
     "modelref" : true,
-    "id" : "FetchMyCompleteTask"
+    "id" : "FetchDefault"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

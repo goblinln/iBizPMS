@@ -52,9 +52,6 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
     @Lazy
     cn.ibizlab.pms.core.zentao.runtime.TodoRuntime todoRuntime;
 
-    @Autowired
-    @Lazy
-    protected cn.ibizlab.pms.core.ibiz.service.IIBZProToDoActionService ibzprotodoactionService;
 
     protected int batchSize = 500;
 

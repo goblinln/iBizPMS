@@ -34,3 +34,4 @@ export { WizardViewBase } from './wizardview-base';
 export { WFActionViewBase } from './wfactionview-base';
 export { WfStepTraceViewBase } from './wfsteptraceview-base';
 export { WFDynaEditView3Base } from './wfdynaeditview3-base';
+export { HtmlViewBase } from './htmlview-base';

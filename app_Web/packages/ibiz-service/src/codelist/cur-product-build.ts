@@ -110,8 +110,8 @@ export default class CurProductBuild {
         if(items && items instanceof Array && items.length >0){
             items.forEach((item: any) => {
                 let itemdata:any = {};
-                Object.assign(itemdata,{id:item.ids});
-                Object.assign(itemdata,{value:item.ids});
+                Object.assign(itemdata,{id:item.id});
+                Object.assign(itemdata,{value:item.id});
                 Object.assign(itemdata,{text:item.name});
                 Object.assign(itemdata,{label:item.name});
                 
@@ -135,7 +135,7 @@ export default class CurProductBuild {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.projectbuildService.FetchBugProductOrProjectBuild(context, data);
+            const promise: Promise<any> = this.projectbuildService.FetchDefault(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

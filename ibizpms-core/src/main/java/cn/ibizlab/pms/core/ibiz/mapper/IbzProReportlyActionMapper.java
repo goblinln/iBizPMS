@@ -68,6 +68,4 @@ public interface IbzProReportlyActionMapper extends BaseMapper<IbzProReportlyAct
     @Delete("${sql}")
     boolean deleteBySQL(@Param("sql") String sql, @Param("et")Map param);
 
-    List<IbzProReportlyAction> selectByObjectid(@Param("ibzreportlyid") Serializable ibzreportlyid);
-
 }
