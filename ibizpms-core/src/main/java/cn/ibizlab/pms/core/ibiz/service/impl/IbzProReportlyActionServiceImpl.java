@@ -62,6 +62,175 @@ public class IbzProReportlyActionServiceImpl extends ServiceImpl<IbzProReportlyA
         return pages.getRecords();
     }
 
+    @Override
+    @Transactional
+    public boolean create(IbzProReportlyAction et) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void createBatch(List<IbzProReportlyAction> list) {
+        if(ibzproreportlyactionRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
+        this.saveBatch(list, batchSize);
+        }
+        
+    }
+
+    @Override
+    @Transactional
+    public boolean update(IbzProReportlyAction et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void updateBatch(List<IbzProReportlyAction> list) {
+        if(ibzproreportlyactionRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
+        updateBatchById(list, batchSize);
+        }
+        
+    }
+
+    @Override
+    @Transactional
+    public boolean sysUpdate(IbzProReportlyAction et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public boolean remove(Long key) {
+        if(!ibzproreportlyactionRuntime.isRtmodel()){
+        }
+        boolean result = removeById(key);
+        return result ;
+    }
+
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        if(ibzproreportlyactionRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
+        removeByIds(idList);
+        }
+        
+    }
+
+    @Override
+    @Transactional
+    public IbzProReportlyAction get(Long key) {
+        IbzProReportlyAction et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        }
+        else {
+            if(!ibzproreportlyactionRuntime.isRtmodel()){
+            }
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbzProReportlyAction sysGet(Long key) {
+        IbzProReportlyAction et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        }
+        return et;
+    }
+
+    @Override
+    public IbzProReportlyAction getDraft(IbzProReportlyAction et) {
+        return et;
+    }
+
+    @Override
+    public boolean checkKey(IbzProReportlyAction et) {
+        return (!ObjectUtils.isEmpty(et.getId())) && (!Objects.isNull(this.getById(et.getId())));
+    }
+    @Override
+    @Transactional
+    public boolean save(IbzProReportlyAction et) {
+        if(!saveOrUpdate(et)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public boolean saveOrUpdate(IbzProReportlyAction et) {
+        if (null == et) {
+            return false;
+        } else {
+            return checkKey(et) ? getProxyService().update(et) : getProxyService().create(et);
+        }
+    }
+
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<IbzProReportlyAction> list) {
+        List<IbzProReportlyAction> create = new ArrayList<>();
+        List<IbzProReportlyAction> update = new ArrayList<>();
+        for (IbzProReportlyAction et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void saveBatch(List<IbzProReportlyAction> list) {
+        List<IbzProReportlyAction> create = new ArrayList<>();
+        List<IbzProReportlyAction> update = new ArrayList<>();
+        for (IbzProReportlyAction et : list) {
+            if (ObjectUtils.isEmpty(et.getId()) || ObjectUtils.isEmpty(getById(et.getId()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+    }
+
 
 
     public List<IbzProReportlyAction> selectDefault(IbzProReportlyActionSearchContext context){

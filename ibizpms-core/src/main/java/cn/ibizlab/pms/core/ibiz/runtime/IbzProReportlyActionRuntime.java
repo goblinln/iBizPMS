@@ -157,8 +157,62 @@ public class IbzProReportlyActionRuntime extends cn.ibizlab.pms.core.runtime.Sys
     @Override
     public Object executeAction(String strActionName, IPSDEAction iPSDEAction, Object[] args) throws Throwable {
         if (iPSDEAction != null) {
+            if (iPSDEAction.getName().equals("Create")) {
+                return ibzproreportlyactionService.create((IbzProReportlyAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("Update")) {
+                return ibzproreportlyactionService.update((IbzProReportlyAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("Remove")) {
+                return ibzproreportlyactionService.remove((Long) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("Get")) {
+                if(args[0] instanceof IbzProReportlyAction){
+                    IbzProReportlyAction arg = (IbzProReportlyAction) args[0] ;
+                    CachedBeanCopier.copy(ibzproreportlyactionService.get(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return ibzproreportlyactionService.get((Long) args[0]);
+                }
+            }
+            else if (iPSDEAction.getName().equals("GetDraft")) {
+                return ibzproreportlyactionService.getDraft((IbzProReportlyAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("CheckKey")) {
+                return ibzproreportlyactionService.checkKey((IbzProReportlyAction) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("Save")) {
+                return ibzproreportlyactionService.save((IbzProReportlyAction) args[0]);
+            }
         }else if (StringUtils.isNotBlank(strActionName)) {
-             if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
+            if (strActionName.equalsIgnoreCase("Create")) {
+                return ibzproreportlyactionService.create((IbzProReportlyAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Update")) {
+                return ibzproreportlyactionService.update((IbzProReportlyAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Remove")) {
+                return ibzproreportlyactionService.remove((Long) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Get")) {
+                if(args[0] instanceof IbzProReportlyAction){
+                    IbzProReportlyAction arg = (IbzProReportlyAction) args[0] ;
+                    CachedBeanCopier.copy(ibzproreportlyactionService.get(arg.getId()), arg);
+                    return arg;
+                }else{
+                    return ibzproreportlyactionService.get((Long) args[0]);
+                }
+            }
+            else if (strActionName.equalsIgnoreCase("GetDraft")) {
+                return ibzproreportlyactionService.getDraft((IbzProReportlyAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("CheckKey")) {
+                return ibzproreportlyactionService.checkKey((IbzProReportlyAction) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Save")) {
+                return ibzproreportlyactionService.save((IbzProReportlyAction) args[0]);
+            }
+            else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
                 if(args[0] instanceof IbzProReportlyAction){
                     IbzProReportlyAction arg = (IbzProReportlyAction) args[0] ;
                     CachedBeanCopier.copy(ibzproreportlyactionService.sysGet(arg.getId()), arg);
@@ -242,7 +296,28 @@ public class IbzProReportlyActionRuntime extends cn.ibizlab.pms.core.runtime.Sys
             return point.proceed();
         }
         String action = point.getSignature().getName();
-        if (action.equals("searchDefault")) {
+        if (action.equals("create")) {
+            return aroundAction("Create", point);
+        }
+        else if (action.equals("update")) {
+            return aroundAction("Update", point);
+        }
+        else if (action.equals("remove")) {
+            return aroundAction("Remove", point);
+        }
+        else if (action.equals("get")) {
+            return aroundAction("Get", point);
+        }
+        else if (action.equals("getDraft")) {
+            return aroundAction("GetDraft", point);
+        }
+        else if (action.equals("checkKey")) {
+            return aroundAction("CheckKey", point);
+        }
+        else if (action.equals("save")) {
+            return aroundAction("Save", point);
+        }
+        else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
         }
         else if (action.equals("searchType")) {
