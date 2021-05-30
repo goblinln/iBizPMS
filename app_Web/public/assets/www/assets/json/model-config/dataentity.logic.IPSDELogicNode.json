@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"getDstPSDELogicParam","desc":"目标逻辑参数对象","order":1000},{"name":"getPSDELogicLinks","desc":"逻辑节点连出连接集合","order":1000},{"name":"getPSDELogicNodeParams","desc":"逻辑节点参数集合","order":1000},{"name":"getSrcPSDELogicParam","desc":"源逻辑参数对象","order":1000}]}]

@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "OtherUpdate",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/OtherUpdate.json",
-  "logicName" : "其他更新",
-  "name" : "OtherUpdate",
-  "userCat" : "CAT1"
-}

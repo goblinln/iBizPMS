@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"getPSAppView","desc":"嵌入视图","order":1000},{"name":"needSave","desc":"需要进行保存","order":1000},{"name":"paramItem","desc":"界面参数项名称","order":1000},{"name":"parentDataJO","desc":"父数据对象","order":1000},{"name":"refreshItems","desc":"界面刷新触发表单项","order":1000},{"name":"refreshItemsSetParamOnly","desc":"附加刷新项只赋值不刷新","order":1000}]}]

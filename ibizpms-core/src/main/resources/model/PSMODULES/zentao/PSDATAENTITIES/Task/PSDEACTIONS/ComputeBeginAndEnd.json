@@ -1,8 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "ComputeBeginAndEnd",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json",
-  "logicName" : "计算开始时间和完成时间",
-  "name" : "computeBeginAndEnd"
-}

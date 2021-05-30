@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"buttonsType","desc":"按钮集类型","order":1000},{"name":"message","desc":"消息内容","order":1000},{"name":"msgBoxType","desc":"消息框类型","order":1000},{"name":"showMode","desc":"显示模式","order":1000},{"name":"title","desc":"消息抬头","order":1000}]}]

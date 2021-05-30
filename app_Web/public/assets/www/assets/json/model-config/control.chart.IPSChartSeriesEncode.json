@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"itemId","desc":"序列标识维度","order":1000},{"name":"itemName","desc":"序列名称维度","order":1000},{"name":"type","desc":"坐标系类型","order":1000}]}]

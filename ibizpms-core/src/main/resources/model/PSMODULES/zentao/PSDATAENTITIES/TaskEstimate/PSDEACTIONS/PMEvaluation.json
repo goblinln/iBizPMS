@@ -1,8 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "PMEvaluation",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/PMEvaluation.json",
-  "logicName" : "项目经理评估",
-  "name" : "PMEvaluation"
-}

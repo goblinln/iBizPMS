@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "Finish",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Finish.json",
-  "logicName" : "Finish",
-  "name" : "Finish",
-  "userCat" : "CAT1"
-}

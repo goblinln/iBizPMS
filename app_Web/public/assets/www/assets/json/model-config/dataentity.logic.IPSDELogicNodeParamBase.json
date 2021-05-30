@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"dstFieldName","desc":"目标属性名称","order":1000},{"name":"paramAction","desc":"逻辑处理参数操作","order":1000},{"name":"srcFieldName","desc":"源属性名称","order":1000},{"name":"srcValue","desc":"直接值","order":1000},{"name":"srcValueType","desc":"源值类型","order":1000}]}]

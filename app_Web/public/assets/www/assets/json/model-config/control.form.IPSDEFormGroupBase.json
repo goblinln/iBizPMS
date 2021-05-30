@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"captionItemName","desc":"动态标题绑定值项","order":1000},{"name":"enableAnchor","desc":"提供锚点","order":1000},{"name":"getPSDEFormDetails","desc":"成员集合","order":1000},{"name":"itemIgnoreInput","desc":"成员项忽略输入模式","order":1000},{"name":"titleBarCloseMode","desc":"标题栏关闭模式","order":1000}]}]

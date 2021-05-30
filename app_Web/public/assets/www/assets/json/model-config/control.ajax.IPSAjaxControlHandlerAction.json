@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"actionName","desc":"目标行为名称","order":1000},{"name":"actionType","desc":"行为类型","order":1000},{"name":"customCond","desc":"结果集附加条件","order":1000},{"name":"dataAccessAction","desc":"数据访问行为","order":1000},{"name":"getPSDEOPPriv","desc":"实体操作标识对象","order":1000}]}]

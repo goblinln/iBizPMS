@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"getLinkPSAppView","desc":"链接应用视图","order":1000},{"name":"iFrameUrl","desc":"嵌入Url路径","order":1000},{"name":"refreshItems","desc":"界面刷新触发表单项","order":1000}]}]

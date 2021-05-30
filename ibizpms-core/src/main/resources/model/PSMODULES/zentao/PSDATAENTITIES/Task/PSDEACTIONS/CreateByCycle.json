@@ -1,8 +1,0 @@
-{
-  "actionMode" : "CREATE",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "CreateByCycle",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json",
-  "logicName" : "创建周期任务",
-  "name" : "createByCycle"
-}

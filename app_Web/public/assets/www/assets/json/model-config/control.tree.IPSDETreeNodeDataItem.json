@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"cLConvertMode","desc":"代码表输出模式","order":1000},{"name":"defaultValue","desc":"默认值","order":1000},{"name":"enableItemPriv","desc":"启用项权限控制","order":1000},{"name":"getFrontPSCodeList","desc":"前端代码表","order":1000},{"name":"getPSAppDEField","desc":"应用实体属性","order":1000}]}]

@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "HaveRead",
-  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/HaveRead.json",
-  "logicName" : "已读",
-  "name" : "HaveRead",
-  "userCat" : "CAT1"
-}

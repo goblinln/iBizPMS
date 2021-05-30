@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "Restart",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json",
-  "logicName" : "继续",
-  "name" : "Restart",
-  "userCat" : "CAT1"
-}

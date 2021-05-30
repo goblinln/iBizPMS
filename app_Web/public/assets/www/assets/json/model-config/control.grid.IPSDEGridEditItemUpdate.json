@@ -1,1 +1,0 @@
-[{"group":"基本","order":10,"methods":[{"name":"codeName","desc":"代码名称","order":1000}]},{"group":"其它","order":100,"methods":[{"name":"getPSAppDEMethod","desc":"处理应用实体方法","order":1000},{"name":"getPSDEGEIUpdateDetails","desc":"表格编辑项更新成员集合","order":1000},{"name":"showBusyIndicator","desc":"显示处理提示","order":1000}]}]

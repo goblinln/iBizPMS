@@ -1,8 +1,0 @@
-{
-  "actionMode" : "READ",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "GetTaskReStory",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetTaskReStory.json",
-  "logicName" : "任务相关需求草稿方法",
-  "name" : "GetTaskReStory"
-}

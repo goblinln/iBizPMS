@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"builtinLogic","desc":"内建逻辑","order":1000},{"name":"getPSAppDEUILogic","desc":"应用实体界面逻辑对象","order":1000},{"name":"getPSAppDataEntity","desc":"应用实体对象","order":1000},{"name":"getPSAppUILogicRefViews","desc":"应用界面逻辑引用视图集合","order":1000},{"name":"viewLogicType","desc":"界面逻辑类型","order":1000}]}]

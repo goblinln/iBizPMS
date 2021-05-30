@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"enableEditData","desc":"支持编辑数据","order":1000},{"name":"enableNewData","desc":"支持新建数据","order":1000},{"name":"enableRemoveData","desc":"支持删除数据","order":1000},{"name":"getPSDEPrint","desc":"打印对象","order":1000},{"name":"loadDefault","desc":"默认加载数据","order":1000},{"name":"readOnly","desc":"只读模式","order":1000}]}]

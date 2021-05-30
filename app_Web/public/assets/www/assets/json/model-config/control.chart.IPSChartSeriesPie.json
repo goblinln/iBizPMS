@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"center","desc":"圆心","order":1000},{"name":"minAngle","desc":"最小扇区角度","order":1000},{"name":"minShowLabelAngle","desc":"无标签扇区角度","order":1000},{"name":"radius","desc":"半径","order":1000},{"name":"roseType","desc":"展示南丁格尔图","order":1000},{"name":"startAngle","desc":"起始角度","order":1000}]}]

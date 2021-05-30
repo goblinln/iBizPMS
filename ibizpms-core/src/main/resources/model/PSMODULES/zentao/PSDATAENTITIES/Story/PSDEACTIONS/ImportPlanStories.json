@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "ImportPlanStories",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ImportPlanStories.json",
-  "logicName" : "项目关联需求-按计划关联",
-  "name" : "importPlanStories",
-  "userCat" : "CAT1"
-}

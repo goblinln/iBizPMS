@@ -1,8 +1,0 @@
-{
-  "actionMode" : "READ",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "GetYesterdayDailyPlansTask",
-  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/GetYesterdayDailyPlansTask.json",
-  "logicName" : "获取前一天日报计划参与任务（新建）",
-  "name" : "getYesterdayDailyPlansTask"
-}

@@ -1,1 +1,0 @@
-function n(n,r){return n.sort(((n,t)=>{const e=r?n[r]:n,o=r?t[r]:t;return e>o?1:e<o?-1:0}))}export{n as a}
