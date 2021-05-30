@@ -12,6 +12,7 @@ import productmodule_en_US from '@locale/lanres/entities/product-module/product-
 import productteam_en_US from '@locale/lanres/entities/product-team/product-team_en_US';
 import projectbug_en_US from '@locale/lanres/entities/project-bug/project-bug_en_US';
 import productlife_en_US from '@locale/lanres/entities/product-life/product-life_en_US';
+import projectstory_en_US from '@locale/lanres/entities/project-story/project-story_en_US';
 import projecttask_en_US from '@locale/lanres/entities/project-task/project-task_en_US';
 import projectbuild_en_US from '@locale/lanres/entities/project-build/project-build_en_US';
 import projecttaskgantt_en_US from '@locale/lanres/entities/project-task-gantt/project-task-gantt_en_US';
@@ -441,6 +442,7 @@ function getAppLocale(){
             'productteam': productteam_en_US(),
             'projectbug': projectbug_en_US(),
             'productlife': productlife_en_US(),
+            'projectstory': projectstory_en_US(),
             'projecttask': projecttask_en_US(),
             'projectbuild': projectbuild_en_US(),
             'projecttaskgantt': projecttaskgantt_en_US(),

@@ -7,7 +7,7 @@
   "openMode" : "DRAWER_RIGHT",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -50,7 +50,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -106,7 +106,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory/PSFORMS/MainProjectNew.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory/PSFORMS/MainProjectNew.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -123,7 +123,7 @@
     "logicName" : "项目新建",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -137,7 +137,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
         }
       }, {
         "actionName" : "GETDRAFTFROM",
@@ -146,7 +146,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
         }
       }, {
         "actionName" : "Remove",
@@ -159,7 +159,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -172,7 +172,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
         }
       }, {
         "actionName" : "Get",
@@ -185,7 +185,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
         }
       }, {
         "actionName" : "Create",
@@ -198,7 +198,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -1466,7 +1466,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -1483,21 +1483,17 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "ProductStories",
+    "codeName" : "ProjectStories",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStory.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
     },
-    "name" : "PRODUCT__PRODUCT_STORY",
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    },
+    "name" : "PROJECT__PROJECT_STORY",
     "rSMode" : 2,
     "enableCreateDataRS" : false,
     "enableDEAction" : true,

@@ -20,7 +20,7 @@ import net.ibizsys.runtime.IDynaInstRuntime;
 import cn.ibizlab.pms.util.domain.EntityBase;
 import cn.ibizlab.pms.util.errors.BadRequestAlertException;
 import cn.ibizlab.pms.util.helper.DELogicExecutor;
-import cn.ibizlab.pms.util.domain.WFTask;
+import cn.ibizlab.pms.util.domain.WFInstance;
 import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
 import net.ibizsys.runtime.util.IEntityBase;
 import net.ibizsys.runtime.util.ISearchContextBase;

@@ -1,6 +1,7 @@
 package cn.ibizlab.pms.util.client;
 
-import cn.ibizlab.pms.util.domain.WFTask;
+import cn.ibizlab.pms.util.domain.WFInstance;
+import cn.ibizlab.pms.util.domain.DataAccessMode;
 import org.springframework.stereotype.Component;
 import com.alibaba.fastjson.JSONObject;
 import java.util.*;
@@ -46,12 +47,17 @@ public class IBZWFFallback implements IBZWFFeignClient {
     }
 
     @Override
-    public WFTask WFRegister(WFTask task) {
+    public DataAccessMode getEditFields(String system, String entity, Serializable businessKey) {
         return null;
     }
 
     @Override
-    public Boolean WFUnregister(Serializable businessKey) {
+    public WFInstance WFRegister(String system, String entity, Serializable businessKey, WFInstance task) {
+        return null;
+    }
+
+    @Override
+    public Boolean WFUnregister(String system, String entity, Object businessKey) {
         return null;
     }
 }

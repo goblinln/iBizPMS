@@ -14,6 +14,9 @@ import cn.ibizlab.pms.util.helper.QueryContextHelper;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import cn.ibizlab.pms.util.security.UAADEAuthority;
 import cn.ibizlab.pms.util.client.IBZWFFeignClient;
+import cn.ibizlab.pms.util.domain.DTOBase;
+import cn.ibizlab.pms.util.domain.DataAccessMode;
+import cn.ibizlab.pms.util.errors.BadRequestAlertException;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
@@ -42,11 +45,17 @@ import net.ibizsys.runtime.security.DataRanges;
 import net.ibizsys.runtime.security.IUserContext;
 import net.ibizsys.runtime.util.*;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.flowable.ui.common.service.exception.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Sort;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+import javax.servlet.http.HttpServletRequest;
 import lombok.SneakyThrows;
-
 import javax.annotation.PostConstruct;
 
 @Slf4j
@@ -92,6 +101,15 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * 全部操作标识
      */
     protected Map<String, Integer> allOPPrivs = new HashMap<>();
+
+    /**
+    * 工作流（排除属性）
+    */
+    private final static String EXCLUDEFIELDS="1";
+    /**
+    * 工作流（包含属性）
+    */
+    private final static String INCLUDEFIELDS="2";
 
     @Autowired
     ISystemRuntime system;
@@ -1017,6 +1035,48 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             return fieldExp;
         }
         return fieldExp;
+    }
+
+    /**
+    * 工作流数据权限检查
+    *
+    * @param dto
+    * @param key
+    * @return
+    */
+    public DTOBase testWFDataAccess(DTOBase dto, Serializable key){
+        try {
+            IPSDataEntity dataEntity = this.getPSDataEntity();
+            if(testDataInWF(this.getSimpleEntity(key)) && dataEntity != null){
+                DataAccessMode rs = wfClient.getEditFields(AuthenticationUser.getAuthenticationUser().getSrfsystemid(), dataEntity.getCodeName().toLowerCase(), key);
+                if(rs != null){
+                    String editMode = rs.getEditMode();
+                    List<String> fieldMap = rs.getFieldMap();
+                    if(fieldMap != null){
+                        if(EXCLUDEFIELDS.equalsIgnoreCase(editMode)){
+                            RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
+                            if(!ObjectUtils.isEmpty(fieldMap) && requestAttributes!=null){
+                                HttpServletRequest request = ((ServletRequestAttributes)requestAttributes).getRequest();
+                                request.setAttribute("srffields",String.join(",",fieldMap));
+                            }
+                        }
+                        else if(INCLUDEFIELDS.equalsIgnoreCase(editMode)){
+                            List<IPSDEField> fields = getPSDataEntity().getAllPSDEFields();
+                            if(fields != null){
+                                for(IPSDEField field : fields){
+                                    String fieldName = field.getCodeName().toLowerCase();
+                                    if(!fieldMap.contains(fieldName))
+                                        dto.reset(fieldName);
+                                }
+                             }
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            throw new BadRequestException("工作流数据权限检查发生异常"+e);
+        }
+        return dto;
     }
 
 }

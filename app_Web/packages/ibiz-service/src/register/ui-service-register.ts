@@ -68,6 +68,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('productteam', () => import('../uiservice/product-team/product-team-ui-service'));
         UIServiceRegister.allUIServiceMap.set('projectbug', () => import('../uiservice/project-bug/project-bug-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productlife', () => import('../uiservice/product-life/product-life-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('projectstory', () => import('../uiservice/project-story/project-story-ui-service'));
         UIServiceRegister.allUIServiceMap.set('projecttask', () => import('../uiservice/project-task/project-task-ui-service'));
         UIServiceRegister.allUIServiceMap.set('projectbuild', () => import('../uiservice/project-build/project-build-ui-service'));
         UIServiceRegister.allUIServiceMap.set('projecttaskgantt', () => import('../uiservice/project-task-gantt/project-task-gantt-ui-service'));

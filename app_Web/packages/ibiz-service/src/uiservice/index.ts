@@ -12,6 +12,7 @@ export * from './product-module/product-module-ui-service';
 export * from './product-team/product-team-ui-service';
 export * from './project-bug/project-bug-ui-service';
 export * from './product-life/product-life-ui-service';
+export * from './project-story/project-story-ui-service';
 export * from './project-task/project-task-ui-service';
 export * from './project-build/project-build-ui-service';
 export * from './project-task-gantt/project-task-gantt-ui-service';

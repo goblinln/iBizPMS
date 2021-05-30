@@ -177,10 +177,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("需求",null),
 				title: commonLogic.appcommonhandle("story表格视图",null),
 			},
-			'tabexpview': {
-				caption: commonLogic.appcommonhandle("需求",null),
-				title: commonLogic.appcommonhandle("需求分页导航视图",null),
-			},
 			'reviewview': {
 				caption: commonLogic.appcommonhandle("需求评审",null),
 				title: commonLogic.appcommonhandle("需求评审",null),
@@ -205,17 +201,9 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("需求",null),
 				title: commonLogic.appcommonhandle("需求数据看板视图",null),
 			},
-			'curprojectwgridview': {
-				caption: commonLogic.appcommonhandle("需求",null),
-				title: commonLogic.appcommonhandle("story表格视图",null),
-			},
 			'mpickupview3': {
 				caption: commonLogic.appcommonhandle("关联需求",null),
 				title: commonLogic.appcommonhandle("关联需求",null),
-			},
-			'projecteditview': {
-				caption: commonLogic.appcommonhandle("需求",null),
-				title: commonLogic.appcommonhandle("需求",null),
 			},
 			'gridview9_child': {
 				caption: commonLogic.appcommonhandle("细分需求",null),
@@ -270,10 +258,6 @@ function getLocaleResourceBase(){
 				title: commonLogic.appcommonhandle("需求",null),
 			},
 			'reportsubgridview': {
-				caption: commonLogic.appcommonhandle("需求",null),
-				title: commonLogic.appcommonhandle("story表格视图",null),
-			},
-			'curprojectgridview': {
 				caption: commonLogic.appcommonhandle("需求",null),
 				title: commonLogic.appcommonhandle("story表格视图",null),
 			},
@@ -730,47 +714,6 @@ function getLocaleResourceBase(){
 			uiactions: {
 			},
 		},
-		mainprojectnew_form: {
-			details: {
-				'group1': commonLogic.appcommonhandle("需求基本信息",null), 
-				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
-				'srfupdatedate': commonLogic.appcommonhandle("最后修改日期",null), 
-				'srforikey': commonLogic.appcommonhandle("",null), 
-				'srfkey': commonLogic.appcommonhandle("编号",null), 
-				'srfmajortext': commonLogic.appcommonhandle("需求名称",null), 
-				'srftempmode': commonLogic.appcommonhandle("",null), 
-				'srfuf': commonLogic.appcommonhandle("",null), 
-				'srfdeid': commonLogic.appcommonhandle("",null), 
-				'srfsourcekey': commonLogic.appcommonhandle("",null), 
-				'product': commonLogic.appcommonhandle("所属产品",null), 
-				'module': commonLogic.appcommonhandle("所属模块",null), 
-				'prodoctname': commonLogic.appcommonhandle("所属产品",null), 
-				'branch': commonLogic.appcommonhandle("",null), 
-				'modulename': commonLogic.appcommonhandle("所属模块",null), 
-				'plan': commonLogic.appcommonhandle("计划",null), 
-				'source': commonLogic.appcommonhandle("需求来源",null), 
-				'sourcenote': commonLogic.appcommonhandle("来源备注",null), 
-				'assignedto': commonLogic.appcommonhandle("由谁评审",null), 
-				'neednotreview': commonLogic.appcommonhandle("",null), 
-				'reviewedby': commonLogic.appcommonhandle("由谁评审",null), 
-				'project': commonLogic.appcommonhandle("项目",null), 
-				'title': commonLogic.appcommonhandle("需求名称",null), 
-				'pri': commonLogic.appcommonhandle("优先级",null), 
-				'storypoints': commonLogic.appcommonhandle("故事点",null), 
-				'estimate': commonLogic.appcommonhandle("预计",null), 
-				'color': commonLogic.appcommonhandle("标题颜色",null), 
-				'spec': commonLogic.appcommonhandle("需求描述",null), 
-				'verify': commonLogic.appcommonhandle("验收标准",null), 
-				'files': commonLogic.appcommonhandle("附件",null), 
-				'mailto': commonLogic.appcommonhandle("抄送给",null), 
-				'mailtoconact': commonLogic.appcommonhandle("",null), 
-				'keywords': commonLogic.appcommonhandle("关键词",null), 
-				'id': commonLogic.appcommonhandle("编号",null), 
-				'mailtopk': commonLogic.appcommonhandle("抄送给",null), 
-			},
-			uiactions: {
-			},
-		},
 		projectplan_form: {
 			details: {
 				'group1': commonLogic.appcommonhandle("(此操作会将所选计划下面的需求全部关联到此项目中)",null), 
@@ -960,43 +903,6 @@ function getLocaleResourceBase(){
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
-			},
-		},
-		projectstory_grid: {
-			columns: {
-				'id': commonLogic.appcommonhandle("编号",null),
-				'pri': commonLogic.appcommonhandle("P",null),
-				'title': commonLogic.appcommonhandle("需求名称",null),
-				'plan': commonLogic.appcommonhandle("计划",null),
-				'openedby': commonLogic.appcommonhandle("创建",null),
-				'assignedto': commonLogic.appcommonhandle("指派",null),
-				'estimate': commonLogic.appcommonhandle("预计",null),
-				'status': commonLogic.appcommonhandle("状态",null),
-				'stage': commonLogic.appcommonhandle("阶段",null),
-				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
-			},
-			nodata:commonLogic.appcommonhandle("",null),
-		exportColumns: {
-				'storysn': commonLogic.appcommonhandle("编号",null),
-				'id': commonLogic.appcommonhandle("编号",null),
-				'pri': commonLogic.appcommonhandle("P",null),
-				'title': commonLogic.appcommonhandle("需求名称",null),
-				'plan': commonLogic.appcommonhandle("计划",null),
-				'openedby': commonLogic.appcommonhandle("创建",null),
-				'assignedto': commonLogic.appcommonhandle("指派",null),
-				'estimate': commonLogic.appcommonhandle("预计",null),
-				'status': commonLogic.appcommonhandle("状态",null),
-				'stage': commonLogic.appcommonhandle("阶段",null),
-				'modulename': commonLogic.appcommonhandle("所属模块名称",null),
-				'module': commonLogic.appcommonhandle("所属模块",null),
-				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
-				'ischild': commonLogic.appcommonhandle("是否可以细分",null),
-				'color': commonLogic.appcommonhandle("标题颜色",null),
-		},
-			uiactions: {
-				productstory_breakdowntasks: commonLogic.appcommonhandle("分解任务",null),
-				productstory_batchbreakdowntasks: commonLogic.appcommonhandle("批量分解",null),
-				productstory_projectunlinkstory: commonLogic.appcommonhandle("移除",null),
 			},
 		},
 		main_buildsub_grid: {
@@ -1325,12 +1231,12 @@ function getLocaleResourceBase(){
 		myopenedstory_stage_chart: {
 			nodata:commonLogic.appcommonhandle("",null),
 		},
-		storykanban_kanban: {
+		productstorykanban_kanban: {
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
 			},
 		},
-		productstorykanban_kanban: {
+		storykanban_kanban: {
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
 			},
@@ -1398,82 +1304,6 @@ function getLocaleResourceBase(){
 			'deuiaction1': {
 				caption: commonLogic.appcommonhandle("保存并关闭",null),
 				tip: commonLogic.appcommonhandle("保存并关闭",null),
-			},
-		},
-		projecteditviewtoolbar_toolbar: {
-			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("保存并关闭",null),
-				tip: commonLogic.appcommonhandle("保存并关闭",null),
-			},
-		},
-		curprojectgridviewtoolbar_toolbar: {
-			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("新建",null),
-				tip: commonLogic.appcommonhandle("新建",null),
-			},
-			'deuiaction3': {
-				caption: commonLogic.appcommonhandle("关联需求",null),
-				tip: commonLogic.appcommonhandle("关联需求",null),
-			},
-			'deuiaction4': {
-				caption: commonLogic.appcommonhandle("按照计划关联",null),
-				tip: commonLogic.appcommonhandle("按照计划关联",null),
-			},
-			'deuiaction5': {
-				caption: commonLogic.appcommonhandle("导出",null),
-				tip: commonLogic.appcommonhandle("导出",null),
-			},
-			'deuiaction2': {
-				caption: commonLogic.appcommonhandle("刷新",null),
-				tip: commonLogic.appcommonhandle("刷新",null),
-			},
-			'deuiaction6': {
-				caption: commonLogic.appcommonhandle("过滤",null),
-				tip: commonLogic.appcommonhandle("过滤",null),
-			},
-		},
-		curprojectwgridviewtoolbar_toolbar: {
-			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("新建",null),
-				tip: commonLogic.appcommonhandle("新建",null),
-			},
-			'deuiaction3': {
-				caption: commonLogic.appcommonhandle("关联需求",null),
-				tip: commonLogic.appcommonhandle("关联需求",null),
-			},
-			'deuiaction4': {
-				caption: commonLogic.appcommonhandle("按照计划关联",null),
-				tip: commonLogic.appcommonhandle("按照计划关联",null),
-			},
-			'deuiaction5': {
-				caption: commonLogic.appcommonhandle("导出",null),
-				tip: commonLogic.appcommonhandle("导出",null),
-			},
-			'deuiaction2': {
-				caption: commonLogic.appcommonhandle("刷新",null),
-				tip: commonLogic.appcommonhandle("刷新",null),
-			},
-			'deuiaction6': {
-				caption: commonLogic.appcommonhandle("过滤",null),
-				tip: commonLogic.appcommonhandle("过滤",null),
-			},
-		},
-		kanbanviewtoolbar_toolbar: {
-			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("新建",null),
-				tip: commonLogic.appcommonhandle("新建",null),
-			},
-			'deuiaction3': {
-				caption: commonLogic.appcommonhandle("关联需求",null),
-				tip: commonLogic.appcommonhandle("关联需求",null),
-			},
-			'deuiaction4': {
-				caption: commonLogic.appcommonhandle("按照计划关联",null),
-				tip: commonLogic.appcommonhandle("按照计划关联",null),
-			},
-			'deuiaction2': {
-				caption: commonLogic.appcommonhandle("刷新",null),
-				tip: commonLogic.appcommonhandle("刷新",null),
 			},
 		},
 		buildsubgridviewtoolbar_toolbar: {
@@ -1598,6 +1428,24 @@ function getLocaleResourceBase(){
 			'deuiaction1': {
 				caption: commonLogic.appcommonhandle("过滤",null),
 				tip: commonLogic.appcommonhandle("过滤",null),
+			},
+		},
+		kanbanviewtoolbar_toolbar: {
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("新建",null),
+				tip: commonLogic.appcommonhandle("新建",null),
+			},
+			'deuiaction3': {
+				caption: commonLogic.appcommonhandle("关联需求",null),
+				tip: commonLogic.appcommonhandle("关联需求",null),
+			},
+			'deuiaction4': {
+				caption: commonLogic.appcommonhandle("按照计划关联",null),
+				tip: commonLogic.appcommonhandle("按照计划关联",null),
+			},
+			'deuiaction2': {
+				caption: commonLogic.appcommonhandle("刷新",null),
+				tip: commonLogic.appcommonhandle("刷新",null),
 			},
 		},
 	};

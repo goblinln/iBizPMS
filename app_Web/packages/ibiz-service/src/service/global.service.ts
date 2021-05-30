@@ -143,6 +143,15 @@ export class GlobalService {
         return (await import('./product-life/product-life.service')).default.getInstance();
     }
     /**
+     * 项目关联需求服务
+     *
+     * @return {ProjectStory}
+     * @memberof GlobalService
+     */
+    async getProjectStoryService() {
+        return (await import('./project-story/project-story.service')).default.getInstance();
+    }
+    /**
      * 任务服务
      *
      * @return {ProjectTask}

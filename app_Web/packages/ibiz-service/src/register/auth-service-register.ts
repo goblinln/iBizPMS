@@ -67,6 +67,7 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('productteam', () => import('../authservice/product-team/product-team-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectbug', () => import('../authservice/project-bug/project-bug-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productlife', () => import('../authservice/product-life/product-life-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('projectstory', () => import('../authservice/project-story/project-story-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projecttask', () => import('../authservice/project-task/project-task-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectbuild', () => import('../authservice/project-build/project-build-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projecttaskgantt', () => import('../authservice/project-task-gantt/project-task-gantt-auth-service'));

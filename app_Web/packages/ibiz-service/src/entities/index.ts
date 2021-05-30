@@ -13,6 +13,7 @@ export * from './product-module/product-module';
 export * from './product-team/product-team';
 export * from './project-bug/project-bug';
 export * from './product-life/product-life';
+export * from './project-story/project-story';
 export * from './project-task/project-task';
 export * from './project-build/project-build';
 export * from './project-task-gantt/project-task-gantt';

@@ -12,6 +12,7 @@ export * from './iproduct-module';
 export * from './iproduct-team';
 export * from './iproject-bug';
 export * from './iproduct-life';
+export * from './iproject-story';
 export * from './iproject-task';
 export * from './iproject-build';
 export * from './iproject-task-gantt';

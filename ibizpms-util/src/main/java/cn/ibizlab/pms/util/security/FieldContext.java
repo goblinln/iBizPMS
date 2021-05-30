@@ -2,7 +2,8 @@ package cn.ibizlab.pms.util.security;
 
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-
+import org.springframework.util.ObjectUtils;
+import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 import java.util.List;
@@ -14,12 +15,17 @@ public class FieldContext {
         protected List<String> initialValue() {
             ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
             if (attributes != null) {
+                List<String> fieldList = new ArrayList<>();
                 HttpServletRequest request = attributes.getRequest();
                 String fields = request.getHeader("srffields");
+                Object fields2 = request.getAttribute("srffields");
                 if (org.apache.commons.lang3.StringUtils.isNotBlank(fields)) {
-                    return Arrays.asList(fields.split(","));
+                    fieldList.addAll(Arrays.asList(fields.split(",")));
                 }
-                return null;
+                if (!ObjectUtils.isEmpty(fields2)) {
+                    fieldList.addAll(Arrays.asList(fields2.toString().split(",")));
+                }
+                return fieldList;
             }
             return null;
         }

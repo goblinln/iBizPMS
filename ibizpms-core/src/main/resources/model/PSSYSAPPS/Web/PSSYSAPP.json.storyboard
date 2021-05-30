@@ -2390,6 +2390,14 @@
     "psappsbitemid" : "4c99a6182ec3e97cf281273b4db5c106",
     "itemtype" : "APPVIEW"
   }, {
+    "psappviewname" : "StoryCurProjectKanbanView",
+    "psappsbitemname" : "需求看板视图",
+    "itemtag2" : "B81ED4D1-F5D4-4937-B63D-2B88D7B88207",
+    "psappviewid" : "b71074fd6ed8635bd22a051c143204f6",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCurProjectKanbanView.json",
+    "psappsbitemid" : "85788f2ef92995cddf374ea6aa53902e",
+    "itemtype" : "APPVIEW"
+  }, {
     "psappviewname" : "StoryGridView9_Related",
     "psappsbitemname" : "相关需求",
     "itemtag2" : "066d0f4547d40a096b69f58b640686a9",
@@ -2420,14 +2428,6 @@
     "psappviewid" : "d1b3f6d9d0ca781020cf5e4665461fbf",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductLifeRoadMapSListView9.json",
     "psappsbitemid" : "363548004298e5115b2ac1a40a637606",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StoryKanbanView",
-    "psappsbitemname" : "需求看板视图",
-    "itemtag2" : "f9b6b13f17e16131ce34707f24c2ec51",
-    "psappviewid" : "f43e50ecf07b9c17a3a78139b17163f6",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryKanbanView.json",
-    "psappsbitemid" : "aa20b21d59ccd90b56a0536b3b4143b3",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ProductModuleGridView",
@@ -8865,65 +8865,65 @@
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "需求",
-    "psappsbitemrsid" : "3501f92b8ccefb5d95afd77c0b0375ec",
+    "psappsbitemrsid" : "46f9c893a09733b0b34dab4aa1c9cd12",
     "ppsappsbitemname" : "需求看板视图",
     "rstag" : "FRONT",
     "rstag2" : "前台调用",
-    "ppsappsbitemid" : "aa20b21d59ccd90b56a0536b3b4143b3",
+    "ppsappsbitemid" : "85788f2ef92995cddf374ea6aa53902e",
     "cpsappsbitemid" : "0579d232f476241af780969690624b05",
     "psappsbitemrsname" : "项目新建",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "d98f5bdcb8bcc65ee54a4bd9c29bcfc4",
+    "psappsbitemrsid" : "5bc0f829422cd5059b7d7c8e784ac393",
     "ppsappsbitemname" : "需求看板视图",
     "rstag" : "BACKEND",
     "rstag2" : "后台调用",
-    "ppsappsbitemid" : "aa20b21d59ccd90b56a0536b3b4143b3",
+    "ppsappsbitemid" : "85788f2ef92995cddf374ea6aa53902e",
     "psappsbitemrsname" : "关联需求（项目—需求）",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "按照计划关联",
-    "psappsbitemrsid" : "1dd3dfd31037db81f53d908178e3200a",
+    "psappsbitemrsid" : "63002bef7754ac1adc145ff37412c882",
     "ppsappsbitemname" : "需求看板视图",
     "rstag" : "FRONT",
     "rstag2" : "前台调用",
-    "ppsappsbitemid" : "aa20b21d59ccd90b56a0536b3b4143b3",
+    "ppsappsbitemid" : "85788f2ef92995cddf374ea6aa53902e",
     "cpsappsbitemid" : "ba0e6ea6e018a2a960074bf5145ea4d0",
     "psappsbitemrsname" : "按照计划关联",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "61d76fdf756971d78bfcf8a0230d3f5a",
+    "psappsbitemrsid" : "35deae4c141b4e51acf856f93231bc0d",
     "ppsappsbitemname" : "需求看板视图",
     "rstag" : "SYS",
     "rstag2" : "系统预定义",
-    "ppsappsbitemid" : "aa20b21d59ccd90b56a0536b3b4143b3",
+    "ppsappsbitemid" : "85788f2ef92995cddf374ea6aa53902e",
     "psappsbitemrsname" : "表格界面_刷新操作",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "需求",
-    "psappsbitemrsid" : "305cd6d28a10fab43174ce33f1ea6e09",
+    "psappsbitemrsid" : "3c3e7def07ed67ea4ddec0ce4d201d58",
     "ppsappsbitemname" : "需求看板视图",
     "rstag" : "NEWDATA",
-    "ppsappsbitemid" : "aa20b21d59ccd90b56a0536b3b4143b3",
+    "ppsappsbitemid" : "85788f2ef92995cddf374ea6aa53902e",
     "cpsappsbitemid" : "2e388392bdb8d1c415956899f9f17384",
     "psappsbitemrsname" : "新建视图",
     "rstype" : "APPVIEWREF"
   }, {
     "cpsappsbitemname" : "需求数据看板视图",
-    "psappsbitemrsid" : "b8576dcbac99f358d9995073919822ca",
+    "psappsbitemrsid" : "005e451b2df15478911a4e028e1ca171",
     "ppsappsbitemname" : "需求看板视图",
     "rstag" : "EDITDATA",
-    "ppsappsbitemid" : "aa20b21d59ccd90b56a0536b3b4143b3",
+    "ppsappsbitemid" : "85788f2ef92995cddf374ea6aa53902e",
     "cpsappsbitemid" : "49d180b79e583c15948ac861644a9c4f",
     "psappsbitemrsname" : "编辑数据视图",
     "rstype" : "APPVIEWREF"
   }, {
     "cpsappsbitemname" : "需求看板视图",
-    "psappsbitemrsid" : "0c96f1ea7760f6ecb3ab6d6c3f695780",
+    "psappsbitemrsid" : "6358ede2b72f678fb1c83be8d908dd98",
     "ppsappsbitemname" : "需求分页导航视图",
     "rstag" : "EXPITEM:tabviewpanel3",
     "ppsappsbitemid" : "8465a670adf957b56c9545a0406a641e",
-    "cpsappsbitemid" : "aa20b21d59ccd90b56a0536b3b4143b3",
+    "cpsappsbitemid" : "85788f2ef92995cddf374ea6aa53902e",
     "psappsbitemrsname" : "[看板]导航视图",
     "rstype" : "APPVIEWEMBED"
   }, {

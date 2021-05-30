@@ -16,10 +16,6 @@ public class DataAccessMode implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 访问模式（READ/UPDATE/DENY）
-     */
-    private int accessMode;
-    /**
      * 编辑模式（指定/排除属性）
      */
     private String editMode;
