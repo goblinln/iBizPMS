@@ -5,7 +5,7 @@ import { AuthServiceRegister } from '../../register';
 import { GlobalService } from '../../service';
 
 /**
- * 任务预计UI服务对象基类
+ * 项目工时统计UI服务对象基类
  *
  * @export
  * @class ProjectTaskEstimateUIServiceBase
@@ -51,7 +51,7 @@ export class ProjectTaskEstimateUIServiceBase extends UIServiceBase {
     protected initBasicData(){
         this.isEnableDEMainState = false;
         this.dynaInstTag = "";
-        this.tempOrgIdDEField ="org";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;
@@ -80,9 +80,6 @@ export class ProjectTaskEstimateUIServiceBase extends UIServiceBase {
      * @memberof  ProjectTaskEstimateUIServiceBase
      */  
     protected initViewFuncMap(){
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
     }
 
 }

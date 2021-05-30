@@ -1,7 +1,7 @@
 import { IEntityBase } from 'ibiz-core';
 
 /**
- * 任务预计
+ * 项目工时统计
  *
  * @export
  * @interface IProjectTaskEstimate

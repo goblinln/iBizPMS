@@ -2,7 +2,7 @@ import { ProjectTaskEstimateAuthServiceBase } from './project-task-estimate-auth
 
 
 /**
- * 任务预计权限服务对象
+ * 项目工时统计权限服务对象
  *
  * @export
  * @class ProjectTaskEstimateAuthService

@@ -1,7 +1,7 @@
 import { ProjectTaskEstimateBaseService } from './project-task-estimate-base.service';
 
 /**
- * 任务预计服务
+ * 项目工时统计服务
  *
  * @export
  * @class ProjectTaskEstimateService
