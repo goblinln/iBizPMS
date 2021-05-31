@@ -1,8 +1,0 @@
-{
-  "codeName" : "VisitorB",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/VisitorB.json",
-  "name" : "访客（B端）",
-  "roleTag" : "VisitorB",
-  "roleType" : "CUSTOM",
-  "globalRole" : true
-}

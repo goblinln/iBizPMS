@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "BuildLinkStory",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildLinkStory.json",
-  "logicName" : "项目关联需求",
-  "name" : "buildLinkStory",
-  "userCat" : "CAT1"
-}

@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "EeFinishPlan",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeFinishPlan.json",
-  "logicName" : "EE完成计划",
-  "name" : "EeFinishPlan",
-  "userCat" : "CAT1"
-}

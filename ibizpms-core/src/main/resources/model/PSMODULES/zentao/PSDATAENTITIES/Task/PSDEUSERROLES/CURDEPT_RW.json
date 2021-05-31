@@ -1,8 +1,0 @@
-{
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/CURDEPT_RW.json",
-  "name" : "当前部门（读写）",
-  "roleTag" : "CURDEPT_RW",
-  "secDR" : 1,
-  "userDRAction" : "READ",
-  "enableSecDR" : true
-}

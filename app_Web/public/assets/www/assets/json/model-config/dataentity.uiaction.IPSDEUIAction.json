@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"getFrontPSAppView","desc":"前端应用视图","order":1000},{"name":"getPSAppDEMethod","desc":"应用实体方法","order":1000},{"name":"noPrivDisplayMode","desc":"无权限显示模式","order":1000},{"name":"saveTargetFirst","desc":"先保存目标数据","order":1000}]}]

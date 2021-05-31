@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "Start",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Start.json",
-  "logicName" : "开始",
-  "name" : "Start",
-  "userCat" : "CAT1"
-}

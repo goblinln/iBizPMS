@@ -1,8 +1,0 @@
-{
-  "actionMode" : "UPDATE",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "UpdateObjectID",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEACTIONS/UpdateObjectID.json",
-  "logicName" : "更新文件",
-  "name" : "updateObjectID"
-}

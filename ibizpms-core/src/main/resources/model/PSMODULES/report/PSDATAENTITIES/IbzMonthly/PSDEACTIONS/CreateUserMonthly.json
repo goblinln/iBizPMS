@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CREATE",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "CreateUserMonthly",
-  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/CreateUserMonthly.json",
-  "logicName" : "定时生成用户月报",
-  "name" : "CreateUserMonthly",
-  "userCat" : "CAT1"
-}

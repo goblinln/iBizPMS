@@ -1,8 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "UnCollect",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/UnCollect.json",
-  "logicName" : "取消收藏",
-  "name" : "UnCollect"
-}

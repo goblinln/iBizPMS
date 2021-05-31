@@ -1,8 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "GetUserRole",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetUserRole.json",
-  "logicName" : "获取成员角色",
-  "name" : "GetUserRole"
-}

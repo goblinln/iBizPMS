@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "ReleaseLinkStory",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseLinkStory.json",
-  "logicName" : "发布关联需求",
-  "name" : "ReleaseLinkStory",
-  "userCat" : "CAT1"
-}

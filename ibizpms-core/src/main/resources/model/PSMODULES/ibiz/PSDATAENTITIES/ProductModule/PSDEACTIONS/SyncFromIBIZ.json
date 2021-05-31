@@ -1,8 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "SyncFromIBIZ",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEACTIONS/SyncFromIBIZ.json",
-  "logicName" : "同步Ibz平台模块",
-  "name" : "SyncFromIBIZ"
-}

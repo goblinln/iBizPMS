@@ -1,8 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "SendMsgPreProcess",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/SendMsgPreProcess.json",
-  "logicName" : "发送消息前置处理",
-  "name" : "sendMsgPreProcess"
-}

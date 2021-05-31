@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CREATE",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "CreateUserDaily",
-  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/CreateUserDaily.json",
-  "logicName" : "定时生成用户日报",
-  "name" : "CreateUserDaily",
-  "userCat" : "CAT1"
-}

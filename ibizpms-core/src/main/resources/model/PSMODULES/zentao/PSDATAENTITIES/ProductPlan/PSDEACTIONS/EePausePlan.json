@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "EePausePlan",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EePausePlan.json",
-  "logicName" : "EE暂停计划",
-  "name" : "EePausePlan",
-  "userCat" : "CAT1"
-}

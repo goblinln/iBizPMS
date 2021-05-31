@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"enableQuickGroup","desc":"支持快速分组搜索","order":1000},{"name":"getQuickGroupPSCodeList","desc":"快速分组代码表","order":1000}]}]

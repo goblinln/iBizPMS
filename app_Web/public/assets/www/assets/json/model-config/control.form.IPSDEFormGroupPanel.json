@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"actionGroupExtractMode","desc":"界面行为组展开模式","order":1000},{"name":"buildInActions","desc":"内建操作","order":1000},{"name":"getPSUIActionGroup","desc":"界面行为组对象","order":1000},{"name":"infoGroupMode","desc":"信息面板模式","order":1000}]}]

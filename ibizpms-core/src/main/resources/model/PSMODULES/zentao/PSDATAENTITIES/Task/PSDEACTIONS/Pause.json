@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "Pause",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json",
-  "logicName" : "暂停",
-  "name" : "Pause",
-  "userCat" : "CAT1"
-}

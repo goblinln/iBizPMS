@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"envParam","desc":"系统环境变量","order":1000},{"name":"lastParam","desc":"最后数据变量","order":1000},{"name":"sessionParam","desc":"操作会话变量","order":1000}]}]

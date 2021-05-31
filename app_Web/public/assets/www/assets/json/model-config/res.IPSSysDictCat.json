@@ -1,1 +1,0 @@
-[{"group":"基本","order":10,"methods":[{"name":"codeName","desc":"代码名称","order":1000}]},{"group":"其它","order":100,"methods":[{"name":"dictCatTag","desc":"词条分类标记","order":1000},{"name":"dictCatTag2","desc":"词条分类标记2","order":1000},{"name":"userDictCat","desc":"用户词典","order":1000}]}]
