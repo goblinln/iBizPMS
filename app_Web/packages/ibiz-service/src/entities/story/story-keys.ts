@@ -79,4 +79,5 @@ export default [
     'branch',
     'tobug',
     'storysn',
+    'planname',
 ];

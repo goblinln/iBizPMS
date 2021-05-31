@@ -350,4 +350,8 @@ export interface ISubStory extends IEntityBase {
      * 需求编号
      */
     storysn?: any;
+    /**
+     * 所属计划
+     */
+    planname?: any;
 }

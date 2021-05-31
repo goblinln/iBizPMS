@@ -83,6 +83,7 @@ function getLocaleResourceBase(){
 		'branch': commonLogic.appcommonhandle("平台/分支",null),
 		'tobug': commonLogic.appcommonhandle("转Bug",null),
 		'storysn': commonLogic.appcommonhandle("需求编号",null),
+		'planname': commonLogic.appcommonhandle("所属计划",null),
 	},
 		views: {
 			'subgridview': {

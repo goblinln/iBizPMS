@@ -2,9 +2,6 @@ import commonLogic from '@/locale/logic/common/common-logic';
 
 function getLocaleResourceBase(){
   const data:any = {
-      'AllProductPlan': {
-          "empty": commonLogic.appcommonhandle("",null),
-      },
       'ActionManner': {
           "story_closed_willnotdo": commonLogic.appcommonhandle("不做",null),
           "story_closed_cancel": commonLogic.appcommonhandle("已取消",null),

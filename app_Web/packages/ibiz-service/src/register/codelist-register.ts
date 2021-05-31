@@ -23,8 +23,7 @@ export class CodeListRegister extends ServiceRegisterBase  {
      * @memberof CodeListRegister
      */
     protected init(): void {
-            this.allService.set('AllProductPlan', () => import('../codelist/all-product-plan'));
-        this.allService.set('SQLBuild', () => import('../codelist/sqlbuild'));
+            this.allService.set('SQLBuild', () => import('../codelist/sqlbuild'));
         this.allService.set('UserRealNameProject', () => import('../codelist/user-real-name-project'));
         this.allService.set('AllBug', () => import('../codelist/all-bug'));
         this.allService.set('TestTask', () => import('../codelist/test-task'));

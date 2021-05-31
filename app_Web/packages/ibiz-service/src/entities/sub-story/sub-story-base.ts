@@ -375,6 +375,10 @@ export abstract class SubStoryBase extends EntityBase implements ISubStory {
      * 需求编号
      */
     storysn?: any;
+    /**
+     * 所属计划
+     */
+    planname?: any;
 
     /**
      * 重置实体数据
