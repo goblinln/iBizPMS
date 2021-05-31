@@ -1,0 +1,7 @@
+package cn.ibizlab.pms.zentao.logic.storylogic.computeischild;
+global cn.ibizlab.pms.core.zentao.service.IStoryService iBzSysStoryDefaultService;
+global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
+
+
+no-loop
+

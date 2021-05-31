@@ -1,0 +1,77 @@
+{
+  "getAllPSPanelFields" : [ {
+    "id" : "name"
+  }, {
+    "id" : "date"
+  } ],
+  "codeName" : "Mob_8373",
+  "controlType" : "PANEL",
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectBuild/PSPANELS/Mob_8373.json",
+  "layoutMode" : "TABLE_12COL",
+  "logicName" : "移动端列表项布局面板（更新日志）",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectBuild.json"
+  },
+  "getPSLayout" : {
+    "columnCount" : 12,
+    "layout" : "TABLE_12COL"
+  },
+  "getRootPSPanelItems" : [ {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "CONTAINER",
+    "name" : "container1",
+    "getPSLayout" : {
+      "columnCount" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getPSLayoutPos" : {
+      "colMD" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "name",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "name",
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 12,
+        "colMD" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "viewFieldName" : "name",
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "date",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "date",
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 12,
+        "colMD" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "viewFieldName" : "date",
+      "hidden" : false,
+      "showCaption" : false
+    } ],
+    "getPSSysCss" : {
+      "cssName" : "mob_list_card"
+    },
+    "showCaption" : true
+  } ],
+  "mobilePanel" : true,
+  "modelid" : "ab0e05cabd92b697ae11899bdfe04590",
+  "modeltype" : "PSSYSVIEWPANEL"
+}

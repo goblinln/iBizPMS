@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"getPSDEOPPrivId","desc":"访问操作标识","order":1000},{"name":"getPSSysImageId","desc":"标题图标","order":1000},{"name":"navFilter","desc":"导航过滤项","order":1000},{"name":"navPSDERId","desc":"导航关系标识","order":1000},{"name":"navPSDERName","desc":"导航关系名称","order":1000}]}]

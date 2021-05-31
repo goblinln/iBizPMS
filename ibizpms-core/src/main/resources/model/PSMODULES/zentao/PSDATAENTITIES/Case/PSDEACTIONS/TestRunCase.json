@@ -1,0 +1,9 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "TestRunCase",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestRunCase.json",
+  "logicName" : "执行测试",
+  "name" : "TestRunCase",
+  "userCat" : "CAT1"
+}

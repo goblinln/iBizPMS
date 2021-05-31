@@ -1,0 +1,1 @@
+[{"group":"基本","order":10,"methods":[{"name":"codeName","desc":"代码标识","order":1000}]},{"group":"其它","order":100,"methods":[{"name":"pluginCode","desc":"插件代码","order":1000},{"name":"pluginTag","desc":"插件标记","order":1000},{"name":"pluginType","desc":"应用插件类型","order":1000}]}]

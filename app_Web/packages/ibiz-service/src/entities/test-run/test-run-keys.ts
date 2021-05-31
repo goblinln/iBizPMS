@@ -1,0 +1,18 @@
+export default [
+    'deptname',
+    'lastrunresult',
+    'version',
+    'lastrundate',
+    'org',
+    'updateby',
+    'assignedto',
+    'dept',
+    'lastrunner',
+    'status',
+    'id',
+    'orgname',
+    'createby',
+    'ibizcase',
+    'task',
+    'testrunsn',
+];

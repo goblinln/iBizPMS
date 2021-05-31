@@ -1,0 +1,9 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "UnlinkBug",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/UnlinkBug.json",
+  "logicName" : "解除关联Bug",
+  "name" : "UnlinkBug",
+  "userCat" : "CAT1"
+}

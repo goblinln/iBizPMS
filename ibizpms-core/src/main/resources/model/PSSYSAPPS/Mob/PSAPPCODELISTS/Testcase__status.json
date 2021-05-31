@@ -1,0 +1,38 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Testcase__status",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testcase__status.json",
+  "emptyText" : "未定义",
+  "name" : "测试用例状态",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "Wait",
+    "text" : "待评审",
+    "value" : "wait",
+    "default" : true
+  }, {
+    "codeName" : "Normal",
+    "color" : "rgba(84, 238, 19, 1)",
+    "text" : "正常",
+    "value" : "normal"
+  }, {
+    "codeName" : "Blocked",
+    "color" : "rgba(242, 238, 7, 1)",
+    "getPSSysCss" : {
+      "cssName" : "codeitemback"
+    },
+    "text" : "被阻塞",
+    "textCls" : "codeitemback",
+    "value" : "blocked"
+  }, {
+    "codeName" : "Investigate",
+    "color" : "rgba(245, 12, 12, 1)",
+    "text" : "研究中",
+    "value" : "investigate"
+  } ],
+  "enableCache" : true
+}

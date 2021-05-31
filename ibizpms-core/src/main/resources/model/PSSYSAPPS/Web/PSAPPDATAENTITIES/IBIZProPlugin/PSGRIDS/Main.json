@@ -1,0 +1,310 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "Main",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProPlugin/PSGRIDS/Main.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "主表格",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProPlugin.json"
+  },
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "插件名称",
+    "codeName" : "ibizpro_pluginname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "ibizpro_pluginname",
+    "excelCaption" : "插件名称",
+    "name" : "ibizpro_pluginname",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PLUGINNAME",
+      "codeName" : "IBIZProPluginName"
+    },
+    "width" : 200,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "类型",
+    "codeName" : "type",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "type",
+    "excelCaption" : "类型",
+    "name" : "type",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "版本",
+    "codeName" : "version",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "version",
+    "excelCaption" : "版本",
+    "name" : "version",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "VERSION",
+      "codeName" : "Version"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "最新版本下载地址",
+    "codeName" : "downloadurl",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "downloadurl",
+    "excelCaption" : "最新版本下载地址",
+    "name" : "downloadurl",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "DOWNLOADURL",
+      "codeName" : "Downloadurl"
+    },
+    "width" : 200,
+    "widthUnit" : "STAR",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "总下载量",
+    "codeName" : "downloadcount",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "downloadcount",
+    "excelCaption" : "总下载量",
+    "name" : "downloadcount",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "DOWNLOADCOUNT",
+      "codeName" : "Downloadcount"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "总评论数",
+    "codeName" : "commentcount",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "commentcount",
+    "excelCaption" : "总评论数",
+    "name" : "commentcount",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "COMMENTCOUNT",
+      "codeName" : "Commentcount"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "总评分",
+    "codeName" : "score",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "score",
+    "excelCaption" : "总评分",
+    "name" : "score",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "SCORE",
+      "codeName" : "Score"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "更新时间",
+    "codeName" : "updatedate",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "updatedate",
+    "excelCaption" : "更新时间",
+    "name" : "updatedate",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "更新人",
+    "codeName" : "updateman",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "updateman",
+    "excelCaption" : "更新人",
+    "name" : "updateman",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SysOperator.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "ibizpro_pluginname",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PLUGINNAME",
+      "codeName" : "IBIZProPluginName"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "downloadcount",
+    "getPSAppDEField" : {
+      "name" : "DOWNLOADCOUNT",
+      "codeName" : "Downloadcount"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "downloadurl",
+    "getPSAppDEField" : {
+      "name" : "DOWNLOADURL",
+      "codeName" : "Downloadurl"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "commentcount",
+    "getPSAppDEField" : {
+      "name" : "COMMENTCOUNT",
+      "codeName" : "Commentcount"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "score",
+    "getPSAppDEField" : {
+      "name" : "SCORE",
+      "codeName" : "Score"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "updateman",
+    "getPSAppDEField" : {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "updatedate",
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "type",
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PLUGINNAME",
+      "codeName" : "IBIZProPluginName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PLUGINID",
+      "codeName" : "IBIZProPluginId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PLUGINID",
+      "codeName" : "IBIZProPluginId"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "version",
+    "getPSAppDEField" : {
+      "name" : "VERSION",
+      "codeName" : "Version"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "系统插件标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PLUGINID",
+      "codeName" : "IBIZProPluginId"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProPlugin.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "2f854edeeb01f9eb8bcef848bc4165ad",
+  "modeltype" : "PSDEGRID"
+}

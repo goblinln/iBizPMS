@@ -1,0 +1,27 @@
+
+.app-breadcrumb.el-breadcrumb {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 50px;
+  margin-left: 8px;
+  .el-breadcrumb__inner,
+  .el-breadcrumb__inner a {
+    color: var(--app-font-color);
+    font-weight: 400;
+  }
+  .el-breadcrumb__inner:hover,
+  .el-breadcrumb__inner:hover a {
+    color: var(--app-font-color-bright);
+  }
+  .no-redirect {
+    color: var(--app-font-color-light);
+    cursor: text;
+    .curselected{
+      color: var(--app-font-color-bright);
+      font-weight: bold;
+    }
+    .app-breadcrumb-selected{
+      cursor: pointer;
+    }
+  }
+}

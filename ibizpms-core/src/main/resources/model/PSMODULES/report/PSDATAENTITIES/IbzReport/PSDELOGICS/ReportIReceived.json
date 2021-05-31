@@ -1,0 +1,175 @@
+{
+  "codeName" : "ReportIReceived",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/ReportIReceived.json",
+  "logicName" : "我收到的汇报（计数器）",
+  "name" : "我收到的汇报（计数器）",
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Rawsqlcall3",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取未读周报",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall4"
+      },
+      "name" : "连接82",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      },
+      "defaultLink" : false
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall4",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "统计我收到的汇报数（未读）",
+    "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "name" : "连接879",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall1",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "统计我收到的日报数",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "name" : "连接2143",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "defaultLink" : false
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall2",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "统计我收到的月报数（未读）",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      },
+      "name" : "连接5862",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "defaultLink" : false
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    } ],
+    "parallelOutput" : true
+  } ],
+  "getPSDELogicParams" : [ {
+    "codeName" : "Default",
+    "name" : "传入变量",
+    "default" : true,
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  } ],
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
+}

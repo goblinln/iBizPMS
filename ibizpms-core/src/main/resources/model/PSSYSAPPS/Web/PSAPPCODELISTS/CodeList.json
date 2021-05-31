@@ -1,0 +1,26 @@
+{
+  "cacheTimeout" : 600,
+  "codeListType" : "DYNAMIC",
+  "codeName" : "CodeList",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/CodeList.json",
+  "emptyText" : "未定义",
+  "name" : "周报我完成的任务(下拉框选择)",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchDefault"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "NAME",
+    "codeName" : "Name"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "enableCache" : true
+}

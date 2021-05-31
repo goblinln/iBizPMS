@@ -1,0 +1,19 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Read_MyReP.json",
+  "name" : "BUG查看（我相关的产品）（默认角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "MyReProduct"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__READ"
+    }
+  } ],
+  "roleTag" : "Bug_Read_MyReP",
+  "userDRAction" : "READ",
+  "defaultMode" : true
+}

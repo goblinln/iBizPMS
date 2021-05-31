@@ -1,0 +1,20 @@
+{
+  "codeName" : "IBZProTaskEstimateSeq",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTaskEstimateSeq.json",
+  "getKeyPSDEField" : {
+    "name" : "IBZPRO_SEQUENCENAME",
+    "codeName" : "IBZProSequenceName"
+  },
+  "maxValue" : 999999,
+  "minValue" : 1,
+  "name" : "TASKESTIMATE编号序列",
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence.json"
+  },
+  "sequenceType" : "DE",
+  "getValuePSDEField" : {
+    "name" : "CURSEQ",
+    "codeName" : "Curseq"
+  }
+}

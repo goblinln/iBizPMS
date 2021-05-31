@@ -1,0 +1,8 @@
+{
+  "actionMode" : "CREATE",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "CreateGetInfo",
+  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/CreateGetInfo.json",
+  "logicName" : "新建时获取信息",
+  "name" : "CreateGetInfo"
+}

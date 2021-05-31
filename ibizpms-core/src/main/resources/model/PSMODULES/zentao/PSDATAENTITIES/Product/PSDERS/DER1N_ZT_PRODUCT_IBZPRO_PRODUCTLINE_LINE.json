@@ -1,0 +1,30 @@
+{
+  "codeName" : "ProductLine",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDERS/DER1N_ZT_PRODUCT_IBZPRO_PRODUCTLINE_LINE.json",
+  "logicName" : "产品线",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+  },
+  "name" : "DER1N_ZT_PRODUCT_IBZPRO_PRODUCTLINE_LINE",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "LINE",
+    "codeName" : "Line"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "LINENAME",
+    "codeName" : "LineName"
+  },
+  "pickupDEFName" : "LINE",
+  "removeActionType" : 3,
+  "removeOrder" : 0,
+  "removeRejectMsg" : "该产品线不能删除，已经关联产品！"
+}

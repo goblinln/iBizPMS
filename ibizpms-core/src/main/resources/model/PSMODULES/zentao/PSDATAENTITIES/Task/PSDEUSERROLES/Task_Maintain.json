@@ -1,0 +1,7 @@
+{
+  "customCond" : "[ (1, '=', 1) ]",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain.json",
+  "name" : "任务维护",
+  "roleTag" : "Task_Maintain",
+  "userDRAction" : "READ"
+}

@@ -1,0 +1,31 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "ReportType",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/report/PSCODELISTS/ReportType.json",
+  "emptyText" : "未定义",
+  "getPSCodeItems" : [ {
+    "codeName" : "Weekly",
+    "text" : "周报",
+    "value" : "weekly"
+  }, {
+    "codeName" : "Daily",
+    "text" : "日报",
+    "value" : "daily"
+  }, {
+    "codeName" : "Monthly",
+    "text" : "月报",
+    "value" : "monthly"
+  }, {
+    "codeName" : "Reportly",
+    "text" : "汇报",
+    "value" : "reportly"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
+}

@@ -1,0 +1,45 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "MobTestQuickpacket",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCODELISTS/MobTestQuickpacket.json",
+  "emptyText" : "未定义",
+  "name" : "测试单快速分组（移动端）",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTestTask.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "All",
+    "data" : "{}",
+    "text" : "全部",
+    "value" : "ALL",
+    "default" : true
+  }, {
+    "codeName" : "Icreate",
+    "data" : "{\"n_status_eq\":\"wait\"}",
+    "text" : "待测测试单",
+    "value" : "ICREATE"
+  }, {
+    "codeName" : "Ireview",
+    "data" : "{\"n_status_eq\":\"doing\"}",
+    "text" : "测试中测试单",
+    "value" : "IREVIEW"
+  }, {
+    "codeName" : "More",
+    "getPSCodeItems" : [ {
+      "codeName" : "Iclose",
+      "data" : "{\"n_status_eq\":\"blocked\"}",
+      "text" : "被阻塞测试单",
+      "value" : "ICLOSE"
+    }, {
+      "codeName" : "Tested",
+      "data" : "{\"n_status_eq\":\"done\"}",
+      "text" : "已测测试单",
+      "value" : "Tested"
+    } ],
+    "text" : "更多",
+    "value" : "MORE"
+  } ],
+  "enableCache" : true
+}

@@ -1,0 +1,112 @@
+{
+  "codeName" : "reportNew",
+  "controlType" : "APPMENU",
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPMENUS/reportNew.json",
+  "logicName" : "汇报",
+  "getPSAppMenuItems" : [ {
+    "accUserMode" : 2,
+    "caption" : "日报",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem1",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "AppFunc5"
+    },
+    "getPSSysImage" : {
+      "imagePath" : "assets/images/daily.svg"
+    },
+    "tooltip" : "日报"
+  }, {
+    "accUserMode" : 2,
+    "caption" : "周报",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem2",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "AppFunc9"
+    },
+    "getPSSysImage" : {
+      "imagePath" : "assets/images/weekly.svg"
+    },
+    "tooltip" : "周报"
+  }, {
+    "accUserMode" : 2,
+    "caption" : "月报",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem3",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "Monthly"
+    },
+    "getPSSysImage" : {
+      "imagePath" : "assets/images/monthly.svg"
+    },
+    "tooltip" : "月报"
+  }, {
+    "accUserMode" : 2,
+    "caption" : "汇报",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem6",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "Reportly"
+    },
+    "getPSSysImage" : {
+      "imagePath" : "assets/images/report.svg"
+    },
+    "tooltip" : "汇报"
+  }, {
+    "accUserMode" : 2,
+    "caption" : "我收到的",
+    "counterId" : "myunreadreportcnt",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem4",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "AppFunc12"
+    },
+    "getPSSysImage" : {
+      "imagePath" : "assets/images/myreview.svg"
+    },
+    "tooltip" : "我收到的"
+  }, {
+    "accUserMode" : 2,
+    "caption" : "我提交的",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem5",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "AppFunc11"
+    },
+    "getPSSysImage" : {
+      "imagePath" : "assets/images/submit.svg"
+    },
+    "tooltip" : "我提交的"
+  }, {
+    "accUserMode" : 2,
+    "caption" : "月报（待阅）",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem7",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "NeedLookMonthly"
+    },
+    "tooltip" : "月报（待阅）",
+    "hidden" : true
+  }, {
+    "accUserMode" : 2,
+    "caption" : "周报(待阅)",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem8",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "AppFunc13"
+    },
+    "tooltip" : "周报(待阅)",
+    "hidden" : true
+  } ],
+  "enableCustomize" : false,
+  "name" : "reportnew",
+  "modelid" : "952bf575ce64bb548f99b83834b283c0",
+  "modeltype" : "PSAPPMENU"
+}

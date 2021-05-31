@@ -1,0 +1,159 @@
+{
+  "getAllPSPanelFields" : [ {
+    "id" : "pri"
+  }, {
+    "id" : "title"
+  }, {
+    "id" : "type"
+  }, {
+    "id" : "status1"
+  }, {
+    "id" : "lastrunresult"
+  } ],
+  "codeName" : "Mob",
+  "controlType" : "PANEL",
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase/PSPANELS/Mob.json",
+  "layoutMode" : "TABLE_12COL",
+  "logicName" : "移动端列表项布局面板",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
+  },
+  "getPSLayout" : {
+    "columnCount" : 12,
+    "layout" : "TABLE_12COL"
+  },
+  "getRootPSPanelItems" : [ {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "CONTAINER",
+    "name" : "container1",
+    "getPSLayout" : {
+      "columnCount" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getPSLayoutPos" : {
+      "colMD" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "pri",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "pri",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testcase__pri.json"
+        },
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 1,
+        "colMD" : 1,
+        "layout" : "TABLE_12COL"
+      },
+      "viewFieldName" : "pri",
+      "convertToCodeItemText" : true,
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "title",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "title",
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 11,
+        "colMD" : 11,
+        "layout" : "TABLE_12COL"
+      },
+      "viewFieldName" : "title",
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "type",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "type",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testcase__type.json"
+        },
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 4,
+        "colMD" : 4,
+        "layout" : "TABLE_12COL"
+      },
+      "viewFieldName" : "type",
+      "convertToCodeItemText" : true,
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "status1",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "status1",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/TestCaseStatusGrid.json"
+        },
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 4,
+        "colMD" : 4,
+        "layout" : "TABLE_12COL"
+      },
+      "viewFieldName" : "status1",
+      "convertToCodeItemText" : true,
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "lastrunresult",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "lastrunresult",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testrun__result.json"
+        },
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 3,
+        "colLGOffset" : 1,
+        "colMD" : 3,
+        "colMDOffset" : 1,
+        "layout" : "TABLE_12COL"
+      },
+      "viewFieldName" : "lastrunresult",
+      "convertToCodeItemText" : true,
+      "hidden" : false,
+      "showCaption" : false
+    } ],
+    "getPSSysCss" : {
+      "cssName" : "mob_list_card"
+    },
+    "showCaption" : true
+  } ],
+  "mobilePanel" : true,
+  "modelid" : "de9c233c8690f6f19bbc4ff34186d92c",
+  "modeltype" : "PSSYSVIEWPANEL"
+}

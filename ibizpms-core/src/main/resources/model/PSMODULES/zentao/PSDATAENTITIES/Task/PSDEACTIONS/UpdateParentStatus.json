@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UPDATE",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "UpdateParentStatus",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateParentStatus.json",
+  "logicName" : "更新父任务状态",
+  "name" : "updateParentStatus"
+}

@@ -1,0 +1,81 @@
+{
+  "getAllPSPanelFields" : [ {
+    "id" : "account"
+  }, {
+    "id" : "submittime"
+  } ],
+  "codeName" : "Mob",
+  "controlType" : "PANEL",
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily/PSPANELS/Mob.json",
+  "layoutMode" : "TABLE_12COL",
+  "logicName" : "移动端列表项布局面板",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+  },
+  "getPSLayout" : {
+    "columnCount" : 12,
+    "layout" : "TABLE_12COL"
+  },
+  "getRootPSPanelItems" : [ {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "CONTAINER",
+    "name" : "container1",
+    "getPSLayout" : {
+      "columnCount" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getPSLayoutPos" : {
+      "colMD" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getPSPanelItems" : [ {
+      "caption" : "用户",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "account",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "account",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
+        },
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 6,
+        "colMD" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "viewFieldName" : "account",
+      "convertToCodeItemText" : true,
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "submittime",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "submittime",
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 3,
+        "colLGOffset" : 3,
+        "colMD" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "viewFieldName" : "submittime",
+      "hidden" : false,
+      "showCaption" : false
+    } ],
+    "showCaption" : false
+  } ],
+  "mobilePanel" : true,
+  "modelid" : "4d78ace183b45e7e6ff6b2ec6be25d9a",
+  "modeltype" : "PSSYSVIEWPANEL"
+}

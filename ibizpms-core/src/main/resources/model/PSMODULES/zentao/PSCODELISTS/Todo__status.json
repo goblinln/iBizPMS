@@ -1,0 +1,33 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Todo__status",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Todo__status.json",
+  "emptyText" : "未定义",
+  "getPSCodeItems" : [ {
+    "codeName" : "Wait",
+    "text" : "未开始",
+    "value" : "wait"
+  }, {
+    "codeName" : "Doing",
+    "color" : "rgba(245, 18, 18, 1)",
+    "text" : "进行中",
+    "value" : "doing"
+  }, {
+    "codeName" : "Done",
+    "color" : "rgba(4, 251, 17, 1)",
+    "text" : "已完成",
+    "value" : "done"
+  }, {
+    "codeName" : "Closed",
+    "text" : "已关闭",
+    "value" : "closed"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
+}

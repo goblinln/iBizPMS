@@ -1,0 +1,31 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Test__status",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Test__status.json",
+  "emptyText" : "未定义",
+  "getPSCodeItems" : [ {
+    "codeName" : "Wait",
+    "text" : "未开始",
+    "value" : "wait"
+  }, {
+    "codeName" : "Doing",
+    "text" : "进行中",
+    "value" : "doing"
+  }, {
+    "codeName" : "Done",
+    "text" : "已完成",
+    "value" : "done"
+  }, {
+    "codeName" : "Blocked",
+    "text" : "被阻塞",
+    "value" : "blocked"
+  } ],
+  "refFlag" : false,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
+}

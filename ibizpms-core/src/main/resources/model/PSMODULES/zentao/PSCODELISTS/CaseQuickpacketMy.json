@@ -1,0 +1,26 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "CaseQuickpacketMy",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/CaseQuickpacketMy.json",
+  "emptyText" : "未定义",
+  "getPSCodeItems" : [ {
+    "codeName" : "Tome",
+    "data" : "{\"n_lastrunner_eq\":\"%srfloginname%\"}",
+    "text" : "给我的用例",
+    "value" : "TOME",
+    "default" : true
+  }, {
+    "codeName" : "Icreate",
+    "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
+    "text" : "我建的用例",
+    "value" : "ICREATE"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
+}

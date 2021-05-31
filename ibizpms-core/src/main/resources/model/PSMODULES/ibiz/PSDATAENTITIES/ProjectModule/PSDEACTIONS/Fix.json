@@ -1,0 +1,12 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "DELOGIC",
+  "codeName" : "Fix",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Fix.json",
+  "logicName" : "重建模块路径",
+  "name" : "Fix",
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDELOGICS/FixPath.json"
+  }
+}

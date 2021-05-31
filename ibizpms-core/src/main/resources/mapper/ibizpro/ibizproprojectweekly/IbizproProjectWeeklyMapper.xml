@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.ibizpro.mapper.IbizproProjectWeeklyMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`BEGINDATESTATS`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`ENDDATESTATS`, t1.`IBZPRO_PROJECTWEEKLYID`, t1.`IBZPRO_PROJECTWEEKLYNAME`, t1.`MONTH`, t1.`PM`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, t1.`TASKS`, t1.`TOTALESTIMATES`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`WEEK`, t1.`YEAR` FROM `T_IBZPRO_PROJECTWEEKLY` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID`   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_ibzpro_projectweeklyname_like != null ">
+            <bind name="bind_n_ibzpro_projectweeklyname_like" value="'%' + srf.n_ibzpro_projectweeklyname_like + '%'" />
+            <![CDATA[ AND  t1.`IBZPRO_PROJECTWEEKLYNAME` like #{bind_n_ibzpro_projectweeklyname_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_ibzpro_projectweeklyid_eq != null ">
+			<![CDATA[ AND  t1.`IBZPRO_PROJECTWEEKLYID` = #{srf.n_ibzpro_projectweeklyid_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_pm_eq != null ">
+			<![CDATA[ AND  t1.`PM` = #{srf.n_pm_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_project_eq != null ">
+			<![CDATA[ AND  t1.`PROJECT` = #{srf.n_project_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="IbizproProjectWeeklyResultMap" databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.IBZPRO_PROJECTWEEKLYID = #{id} ]]>
+		</trim>
+    </select>
+
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="IbizproProjectWeeklyResultMap" type="cn.ibizlab.pms.core.ibizpro.domain.IbizproProjectWeekly" autoMapping="true">
+		<id property="projectweeklyid" column="ibzpro_projectweeklyid" /><!--主键字段映射-->
+		<result property="projectweeklyname" column="ibzpro_projectweeklyname" />
+		<result property="project" column="project" />
+            
+		
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztproject" javaType="cn.ibizlab.pms.core.zentao.domain.Project" column="project" select="cn.ibizlab.pms.core.zentao.mapper.ProjectMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZPRO_PROJECTWEEKLY_ZT_PROJECT_PROJECT] -->
+	 <select id="selectByProject" resultMap="IbizproProjectWeeklyResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND t1.`PROJECT`=#{id} ]]>
+		</trim>
+     </select>
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbizproProjectWeeklySearchContext"  resultMap="IbizproProjectWeeklyResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BEGINDATESTATS`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`ENDDATESTATS`, t1.`IBZPRO_PROJECTWEEKLYID`, t1.`IBZPRO_PROJECTWEEKLYNAME`, t1.`MONTH`, t1.`PM`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, t1.`TASKS`, t1.`TOTALESTIMATES`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`WEEK`, t1.`YEAR` FROM `T_IBZPRO_PROJECTWEEKLY` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbizproProjectWeeklySearchContext" resultMap="IbizproProjectWeeklyResultMap">
+		<include refid="Default" />
+	</select>
+
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BEGINDATESTATS`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`ENDDATESTATS`, t1.`IBZPRO_PROJECTWEEKLYID`, t1.`IBZPRO_PROJECTWEEKLYNAME`, t1.`MONTH`, t1.`PM`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, t1.`TASKS`, t1.`TOTALESTIMATES`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`WEEK`, t1.`YEAR` FROM `T_IBZPRO_PROJECTWEEKLY` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbizproProjectWeeklySearchContext" resultMap="IbizproProjectWeeklyResultMap">
+		<include refid="View" />
+	</select>
+
+</mapper>
+

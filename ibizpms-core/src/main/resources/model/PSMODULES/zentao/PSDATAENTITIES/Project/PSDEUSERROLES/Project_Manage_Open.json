@@ -1,0 +1,48 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Manage_Open.json",
+  "name" : "项目管理（公开项目）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "OpenQuery"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "SUSPEND",
+    "name" : "Project_Manage_Open_suspend",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SUSPEND"
+    }
+  }, {
+    "dataAccessAction" : "ACTIVATE",
+    "name" : "Project_Manage_Open_Activate",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ACTIVATE"
+    }
+  }, {
+    "dataAccessAction" : "PUTOFF",
+    "name" : "Project_Manage_Open_Putoff",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "PUTOFF"
+    }
+  }, {
+    "dataAccessAction" : "START",
+    "name" : "Project_Manage_Open_Start",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "START"
+    }
+  }, {
+    "dataAccessAction" : "CLOSE",
+    "name" : "Project_Manage_Open_Close",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
+    }
+  } ],
+  "roleTag" : "Project_Manage_Open",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

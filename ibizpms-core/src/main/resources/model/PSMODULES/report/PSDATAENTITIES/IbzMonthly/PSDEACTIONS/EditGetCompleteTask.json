@@ -1,0 +1,8 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "EditGetCompleteTask",
+  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/EditGetCompleteTask.json",
+  "logicName" : "编辑时获取完成任务",
+  "name" : "EditGetCompleteTask"
+}

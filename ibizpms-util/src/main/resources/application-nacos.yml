@@ -1,0 +1,12 @@
+#nacos配置中心
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 172.16.240.110:8850
+        enabled: true
+
+eureka:
+  client:
+    enabled: false
+

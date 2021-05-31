@@ -1,0 +1,139 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Maintain_MyReP.json",
+  "name" : "测试用例维护（我相关的产品）（系统使用）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "MyReProduct"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "CASECOF",
+    "name" : "CASECOF",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__CASECOF"
+    }
+  }, {
+    "dataAccessAction" : "CONFIRM",
+    "name" : "CONFIRM",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__CONFIRM"
+    }
+  }, {
+    "dataAccessAction" : "UNLINKCASE",
+    "name" : "UNLINKCASE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__UNLINKCASE"
+    }
+  }, {
+    "dataAccessAction" : "CONFIRMCHANGE",
+    "name" : "CONFIRMCHANGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CONFIRMCHANGE"
+    }
+  }, {
+    "dataAccessAction" : "CASEEDIT",
+    "name" : "Case_Manage_COU_CASEEDIT",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__CASEEDIT"
+    }
+  }, {
+    "dataAccessAction" : "MANAGE",
+    "name" : "MANAGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    }
+  }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__DELETE"
+    }
+  }, {
+    "dataAccessAction" : "STORYLINK",
+    "name" : "STORYLINK",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "STORYLINK"
+    }
+  }, {
+    "dataAccessAction" : "NFAVORITE",
+    "name" : "NFAVORITE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__NFAVORITE"
+    }
+  }, {
+    "dataAccessAction" : "LINKCASE",
+    "name" : "LINKCASE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__LINKCASE"
+    }
+  }, {
+    "dataAccessAction" : "RESULT",
+    "name" : "RESULT",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RESULT"
+    }
+  }, {
+    "dataAccessAction" : "RUNCASE",
+    "name" : "RUNCASE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__RUNCASE"
+    }
+  }, {
+    "dataAccessAction" : "FAVORITE",
+    "name" : "FAVORITE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FAVORITE"
+    }
+  }, {
+    "dataAccessAction" : "TESRUNCASE",
+    "name" : "TESRUNCASE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "TESRUNCASE"
+    }
+  }, {
+    "dataAccessAction" : "UNLINKSUITCASE",
+    "name" : "UNLINKSUITCASE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__UNLINKSUITCASE"
+    }
+  }, {
+    "dataAccessAction" : "CASERESULT",
+    "name" : "CASERESULT",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__CASERESULT"
+    }
+  }, {
+    "dataAccessAction" : "EDITSUITE",
+    "name" : "EDITSUITE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__EDITSUITE"
+    }
+  } ],
+  "roleTag" : "Case_Maintain_MyReP",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

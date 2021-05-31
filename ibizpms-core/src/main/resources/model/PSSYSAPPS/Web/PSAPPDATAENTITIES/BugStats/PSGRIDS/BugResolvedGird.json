@@ -1,0 +1,374 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "BugResolvedGird",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSGRIDS/BugResolvedGird.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "Bug解决汇总表",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
+  },
+  "getPSDEDataExport" : {
+    "modelref" : true,
+    "id" : "BugResolvedExport"
+  },
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "由谁解决",
+    "codeName" : "resolvedby",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "resolvedby",
+    "excelCaption" : "由谁解决",
+    "name" : "resolvedby",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "RESOLVEDBY",
+      "codeName" : "ResolvedBy"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "Bug编号",
+    "codeName" : "bugid",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "bugid",
+    "excelCaption" : "Bug编号",
+    "name" : "bugid",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "BUGID",
+      "codeName" : "Bugid"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "Bug标题",
+    "codeName" : "bugtitle",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "bugtitle",
+    "excelCaption" : "Bug标题",
+    "name" : "bugtitle",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "BUGTITLE",
+      "codeName" : "Bugtitle"
+    },
+    "width" : 200,
+    "widthUnit" : "STAR",
+    "enableSort" : false
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "优先级",
+    "codeName" : "bugpri",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "bugpri",
+    "excelCaption" : "优先级",
+    "name" : "bugpri",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__pri.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "BUGPRI",
+      "codeName" : "Bugpri"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "严重程度",
+    "codeName" : "bugseverity",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "bugseverity",
+    "excelCaption" : "严重程度",
+    "name" : "bugseverity",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__severity.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "BUGSEVERITY",
+      "codeName" : "Bugseverity"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "由谁创建",
+    "codeName" : "bugopenedby",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "bugopenedby",
+    "excelCaption" : "由谁创建",
+    "name" : "bugopenedby",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "BUGOPENEDBY",
+      "codeName" : "Bugopenedby"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "创建",
+    "codeName" : "bugopeneddate",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "bugopeneddate",
+    "excelCaption" : "创建",
+    "name" : "bugopeneddate",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "BUGOPENEDDATE",
+      "codeName" : "Bugopeneddate"
+    },
+    "valueFormat" : "YYYY-MM-DD",
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "解决方案",
+    "codeName" : "bugresolution",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "bugresolution",
+    "excelCaption" : "解决方案",
+    "name" : "bugresolution",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__resolution.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "BUGRESOLUTION",
+      "codeName" : "BugRESOLUTION"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "解决日期",
+    "codeName" : "bugresolveddate",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "bugresolveddate",
+    "excelCaption" : "解决日期",
+    "name" : "bugresolveddate",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "BUGRESOLVEDDATE",
+      "codeName" : "Bugresolveddate"
+    },
+    "valueFormat" : "YYYY-MM-DD",
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "Bug状态",
+    "codeName" : "bugstatus",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "bugstatus",
+    "excelCaption" : "Bug状态",
+    "name" : "bugstatus",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__status.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "BUGSTATUS",
+      "codeName" : "Bugstatus"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "bugstatus",
+    "getPSAppDEField" : {
+      "name" : "BUGSTATUS",
+      "codeName" : "Bugstatus"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "bugopeneddate",
+    "getPSAppDEField" : {
+      "name" : "BUGOPENEDDATE",
+      "codeName" : "Bugopeneddate"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "bugopenedby",
+    "getPSAppDEField" : {
+      "name" : "BUGOPENEDBY",
+      "codeName" : "Bugopenedby"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "project",
+    "getPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    }
+  }, {
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "bugresolveddate",
+    "getPSAppDEField" : {
+      "name" : "BUGRESOLVEDDATE",
+      "codeName" : "Bugresolveddate"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugid",
+    "getPSAppDEField" : {
+      "name" : "BUGID",
+      "codeName" : "Bugid"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "resolvedby",
+    "getPSAppDEField" : {
+      "name" : "RESOLVEDBY",
+      "codeName" : "ResolvedBy"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "bugtitle",
+    "getPSAppDEField" : {
+      "name" : "BUGTITLE",
+      "codeName" : "Bugtitle"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "bugresolution",
+    "getPSAppDEField" : {
+      "name" : "BUGRESOLUTION",
+      "codeName" : "BugRESOLUTION"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugpri",
+    "getPSAppDEField" : {
+      "name" : "BUGPRI",
+      "codeName" : "Bugpri"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugseverity",
+    "getPSAppDEField" : {
+      "name" : "BUGSEVERITY",
+      "codeName" : "Bugseverity"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 40,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : true,
+  "modelid" : "6f89d860f7f91dab681e0d1439abc6ac",
+  "modeltype" : "PSDEGRID"
+}

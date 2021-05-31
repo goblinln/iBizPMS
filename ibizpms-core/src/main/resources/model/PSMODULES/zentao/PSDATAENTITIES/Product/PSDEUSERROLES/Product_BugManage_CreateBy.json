@@ -1,0 +1,20 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_BugManage_CreateBy.json",
+  "name" : "产品Bug管理（创建者或更新者）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "ProductManagerQuery"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "BUGMANAGE",
+    "name" : "BUGMANAGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "BUGMANAGE"
+    }
+  } ],
+  "roleTag" : "Product_BugManage_CreateBy",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

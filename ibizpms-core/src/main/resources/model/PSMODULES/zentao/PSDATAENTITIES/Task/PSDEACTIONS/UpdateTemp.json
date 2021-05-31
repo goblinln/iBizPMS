@@ -1,0 +1,12 @@
+{
+  "actionMode" : "UPDATE",
+  "actionType" : "BUILTIN",
+  "codeName" : "UpdateTemp",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateTemp.json",
+  "logicName" : "UpdateTemp",
+  "name" : "UpdateTemp",
+  "orderValue" : 12,
+  "tempDataMode" : 2,
+  "builtinAction" : true,
+  "enableTempData" : true
+}

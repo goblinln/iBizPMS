@@ -1,0 +1,39 @@
+package cn.ibizlab.pms.zentao.logic.projectlogic.getcurusersettop;
+        import java.util.Map;
+        import java.util.HashMap;
+        import com.alibaba.fastjson.JSONObject;
+        import org.springframework.util.StringUtils;
+        import org.springframework.util.ObjectUtils;
+        import cn.ibizlab.pms.util.errors.BadRequestAlertException;
+                global cn.ibizlab.pms.core.zentao.domain.Project projectgetcurusersettopdefault;
+        global cn.ibizlab.pms.core.zentao.service.IProjectService iBzSysProjectDefaultService;
+        global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
+
+
+    no-loop
+
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "projectgetcurusersettopbegin"
+            when
+            then
+            end
+
+            //逻辑处理节点[获取置顶标识]
+            rule "rawsqlcall1"
+            ruleflow-group "projectgetcurusersettoprawsqlcall1"
+            when
+            then
+    Map param =new HashMap();
+        param.put("param0",projectgetcurusersettopdefault.get("id"));
+        param.put("param1",curuser.getSessionParams().get("srfloginname"));
+    String strSql="select COUNT(1) as ISTOP from t_ibz_top t where t.OBJECTID = #{et.param0} and  t.type = 'project'  and t.ACCOUNT = #{et.param1}";
+                        java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
+                            if(entities.size()>0){
+                            JSONObject entity=entities.get(0);
+                                    for (Map.Entry entry : entity.entrySet()) {
+                                    projectgetcurusersettopdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+                                    }
+                            }
+                        update(projectgetcurusersettopdefault);//更新fact中变量值
+            end

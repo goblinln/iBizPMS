@@ -1,0 +1,46 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Testcase__type",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testcase__type.json",
+  "emptyText" : "未定义",
+  "name" : "测试用例类型",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "Feature",
+    "text" : "功能测试",
+    "value" : "feature"
+  }, {
+    "codeName" : "Performance",
+    "text" : "性能测试",
+    "value" : "performance"
+  }, {
+    "codeName" : "Config",
+    "text" : "配置相关",
+    "value" : "config"
+  }, {
+    "codeName" : "Install",
+    "text" : "安装部署",
+    "value" : "install"
+  }, {
+    "codeName" : "Security",
+    "text" : "安全相关",
+    "value" : "security"
+  }, {
+    "codeName" : "Interface",
+    "text" : "接口测试",
+    "value" : "interface"
+  }, {
+    "codeName" : "Unit",
+    "text" : "单元测试",
+    "value" : "unit"
+  }, {
+    "codeName" : "Other",
+    "text" : "其他",
+    "value" : "other"
+  } ],
+  "enableCache" : true
+}

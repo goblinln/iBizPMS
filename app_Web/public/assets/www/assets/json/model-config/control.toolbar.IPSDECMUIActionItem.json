@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"actionLevel","desc":"行为级别","order":1000},{"name":"enableToggleMode","desc":"启用点击切换模式","order":1000},{"name":"groupExtractMode","desc":"界面行为组展开模式","order":1000},{"name":"hiddenItem","desc":"是否隐藏","order":1000}]}]

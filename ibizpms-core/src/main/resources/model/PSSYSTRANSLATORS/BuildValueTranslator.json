@@ -1,0 +1,6 @@
+{
+  "codeName" : "BuildValueTranslator",
+  "dynaModelFilePath" : "PSSYSTRANSLATORS/BuildValueTranslator.json",
+  "name" : "版本值转换",
+  "translatorType" : "USER"
+}

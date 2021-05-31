@@ -1,0 +1,1 @@
+[{"group":"基本","order":10,"methods":[{"name":"codeName","desc":"代码名称","order":1000}]},{"group":"其它","order":100,"methods":[{"name":"enableLog","desc":"支持日志","order":1000},{"name":"getPSSysUniRes","desc":"权限统一资源对象","order":1000},{"name":"multiPage","desc":"多页报表","order":1000},{"name":"reportModel","desc":"报表模型","order":1000},{"name":"reportType","desc":"报表类型","order":1000}]}]

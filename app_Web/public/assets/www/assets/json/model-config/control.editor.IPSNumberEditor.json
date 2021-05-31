@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"getPSSysValueRule","desc":"值规则","order":1000},{"name":"maxValue","desc":"最大值[MAXVALUE]","order":1000},{"name":"minValue","desc":"最小值[MINVALUE]","order":1000},{"name":"precision","desc":"浮点精度[Precision]","order":1000}]}]

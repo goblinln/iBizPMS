@@ -1,0 +1,16 @@
+{
+  "codeListType" : "DYNAMIC",
+  "codeName" : "TestTask",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/TestTask.json",
+  "emptyText" : "未定义",
+  "name" : "测试单（动态）",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchDefault"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+  }
+}

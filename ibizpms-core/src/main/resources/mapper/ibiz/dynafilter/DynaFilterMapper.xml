@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.ibiz.mapper.DynaFilterMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATA`, t1.`DENAME`, t1.`DEPTID`, t1.`DYNAFILTERID`, t1.`DYNAFILTERNAME`, t1.`FORMNAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_DYNAFILTER` t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_dynafilterid_eq != null ">
+			<![CDATA[ AND  t1.`DYNAFILTERID` = #{srf.n_dynafilterid_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_dynafiltername_like != null ">
+            <bind name="bind_n_dynafiltername_like" value="'%' + srf.n_dynafiltername_like + '%'" />
+            <![CDATA[ AND  t1.`DYNAFILTERNAME` like #{bind_n_dynafiltername_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="DynaFilterResultMap" databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.DYNAFILTERID = #{id} ]]>
+		</trim>
+    </select>
+
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="DynaFilterResultMap" type="cn.ibizlab.pms.core.ibiz.domain.DynaFilter" autoMapping="true">
+		<id property="dynafilterid" column="dynafilterid" /><!--主键字段映射-->
+            
+		
+    </resultMap>
+
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DynaFilterSearchContext"  resultMap="DynaFilterResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DENAME`, t1.`DEPTID`, t1.`DYNAFILTERID`, t1.`DYNAFILTERNAME`, t1.`FORMNAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_DYNAFILTER` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DynaFilterSearchContext" resultMap="DynaFilterResultMap">
+		<include refid="Default" />
+	</select>
+
+    <!--数据查询[Simple]-->
+    <sql id="Simple" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`DYNAFILTERID`, t1.`DYNAFILTERNAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_DYNAFILTER` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectSimple"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DynaFilterSearchContext" resultMap="DynaFilterResultMap">
+		<include refid="Simple" />
+	</select>
+
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATA`, t1.`DENAME`, t1.`DEPTID`, t1.`DYNAFILTERID`, t1.`DYNAFILTERNAME`, t1.`FORMNAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_DYNAFILTER` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DynaFilterSearchContext" resultMap="DynaFilterResultMap">
+		<include refid="View" />
+	</select>
+
+</mapper>
+

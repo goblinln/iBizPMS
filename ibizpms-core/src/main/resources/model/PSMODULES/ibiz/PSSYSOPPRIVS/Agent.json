@@ -1,0 +1,8 @@
+{
+  "codeName" : "Agent",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/Agent.json",
+  "name" : "代理服务用户（留痕）",
+  "roleTag" : "Agent",
+  "roleType" : "CUSTOM",
+  "globalRole" : true
+}

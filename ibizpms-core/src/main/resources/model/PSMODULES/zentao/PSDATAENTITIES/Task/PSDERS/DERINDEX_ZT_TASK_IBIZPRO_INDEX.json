@@ -1,0 +1,50 @@
+{
+  "codeName" : "Task",
+  "dERType" : "DERINDEX",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DERINDEX_ZT_TASK_IBIZPRO_INDEX.json",
+  "logicName" : "任务",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
+  },
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+  },
+  "name" : "DERINDEX_ZT_TASK_IBIZPRO_INDEX",
+  "orderValue" : 100,
+  "getPSDERIndexDEFieldMaps" : [ {
+    "getMajorPSDEField" : {
+      "name" : "DELETED",
+      "codeName" : "Deleted"
+    },
+    "getMinorPSDEField" : {
+      "name" : "DELETED",
+      "codeName" : "Deleted"
+    },
+    "name" : "deleted=deleted"
+  }, {
+    "getMajorPSDEField" : {
+      "name" : "INDEXDESC",
+      "codeName" : "Indexdesc"
+    },
+    "getMinorPSDEField" : {
+      "name" : "DESC",
+      "codeName" : "Desc"
+    },
+    "name" : "INDEXDESC=DESC"
+  }, {
+    "getMajorPSDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "getMinorPSDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "name" : "PROJECT=PROJECT"
+  } ],
+  "typeValue" : "task",
+  "inherit" : false,
+  "virtual" : true
+}

@@ -1,0 +1,22 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Testreport__object_type",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testreport__object_type.json",
+  "emptyText" : "未定义",
+  "name" : "测试报告对象类型",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "Testtask",
+    "text" : "测试单",
+    "value" : "testtask"
+  }, {
+    "codeName" : "Project",
+    "text" : "项目",
+    "value" : "project"
+  } ],
+  "enableCache" : true
+}

@@ -1,0 +1,28 @@
+{
+  "codeName" : "PSSubSysSADE",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDataEntity/PSDERS/DER1N_PSDATAENTITY_PSSUBSYSSADE_PSSUBSYSSADEID.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysSADE.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDataEntity.json"
+  },
+  "name" : "DER1N_PSDATAENTITY_PSSUBSYSSADE_PSSUBSYSSADEID",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "PSSUBSYSSADEID",
+    "codeName" : "PSSubSysSADEId"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "PSSUBSYSSADENAME",
+    "codeName" : "PSSubSysSADEName"
+  },
+  "pickupDEFName" : "PSSUBSYSSADEID",
+  "removeActionType" : 3,
+  "removeOrder" : 0
+}

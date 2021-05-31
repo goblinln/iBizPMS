@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"appMenuStyle","desc":"应用菜单样式","order":1000},{"name":"getPSAppCounterRef","desc":"应用计数器引用","order":1000},{"name":"getPSAppMenuItems","desc":"菜单项集合","order":1000},{"name":"layoutMode","desc":"布局模式","order":1000}]}]

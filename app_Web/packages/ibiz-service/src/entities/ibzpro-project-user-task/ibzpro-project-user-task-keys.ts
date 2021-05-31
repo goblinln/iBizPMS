@@ -1,0 +1,15 @@
+export default [
+    'work',
+    'tasktype',
+    'account',
+    'consumed',
+    'date',
+    'delaydays',
+    'id',
+    'progressrate',
+    'eststarted',
+    'deadline',
+    'task',
+    'left',
+    'taskname',
+];

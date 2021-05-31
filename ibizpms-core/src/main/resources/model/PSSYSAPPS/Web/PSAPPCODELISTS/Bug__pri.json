@@ -1,0 +1,48 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Bug__pri",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__pri.json",
+  "emptyText" : "未定义",
+  "name" : "Bug优先级",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "Item_1",
+    "getPSSysCss" : {
+      "cssName" : "text-red-border-color-lang"
+    },
+    "text" : "严重",
+    "textCls" : "text-red-border-color-lang",
+    "value" : "1"
+  }, {
+    "codeName" : "Item_2",
+    "getPSSysCss" : {
+      "cssName" : "text-pink-border-color-lang"
+    },
+    "text" : "主要",
+    "textCls" : "text-pink-border-color-lang",
+    "value" : "2"
+  }, {
+    "codeName" : "Item_3",
+    "getPSSysCss" : {
+      "cssName" : "text-blue-border-color-lang"
+    },
+    "text" : "次要",
+    "textCls" : "text-blue-border-color-lang",
+    "value" : "3",
+    "default" : true
+  }, {
+    "codeName" : "Item_4",
+    "getPSSysCss" : {
+      "cssName" : "text-green-border-color-lang"
+    },
+    "text" : "不重要",
+    "textCls" : "text-green-border-color-lang",
+    "value" : "4"
+  } ],
+  "codeItemValueNumber" : true,
+  "enableCache" : true
+}
