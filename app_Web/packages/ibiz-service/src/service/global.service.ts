@@ -62,6 +62,15 @@ export class GlobalService {
         return (await import('./project-burn/project-burn.service')).default.getInstance();
     }
     /**
+     * 测试服务
+     *
+     * @return {Test}
+     * @memberof GlobalService
+     */
+    async getTestService() {
+        return (await import('./test/test.service')).default.getInstance();
+    }
+    /**
      * 产品的分支和平台信息服务
      *
      * @return {ProductBranch}

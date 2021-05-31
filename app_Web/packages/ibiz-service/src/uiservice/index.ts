@@ -3,6 +3,7 @@ export * from './test-case/test-case-ui-service';
 export * from './product/product-ui-service';
 export * from './project-task-report/project-task-report-ui-service';
 export * from './project-burn/project-burn-ui-service';
+export * from './test/test-ui-service';
 export * from './product-branch/product-branch-ui-service';
 export * from './project-task-estimate/project-task-estimate-ui-service';
 export * from './product-story/product-story-ui-service';

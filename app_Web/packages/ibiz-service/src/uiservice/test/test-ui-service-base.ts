@@ -8,24 +8,24 @@ import { GlobalService } from '../../service';
  * 产品UI服务对象基类
  *
  * @export
- * @class ProductUIServiceBase
+ * @class TestUIServiceBase
  */
-export class ProductUIServiceBase extends UIServiceBase {
+export class TestUIServiceBase extends UIServiceBase {
 
     /**
      * 应用实体动态模型文件路径
      *
      * @protected
      * @type {string}
-     * @memberof ProductUIServiceBase
+     * @memberof TestUIServiceBase
      */
-    protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json";
+    protected dynaModelFilePath:string = "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json";
 
     /**
-     * Creates an instance of  ProductUIServiceBase.
+     * Creates an instance of  TestUIServiceBase.
      * 
      * @param {*} [opts={}]
-     * @memberof  ProductUIServiceBase
+     * @memberof  TestUIServiceBase
      */
     constructor(opts: any = {}) {
         super(opts);
@@ -34,7 +34,7 @@ export class ProductUIServiceBase extends UIServiceBase {
     /**
      * 加载应用实体模型数据
      *
-     * @memberof  ProductUIServiceBase
+     * @memberof  TestUIServiceBase
      */
      protected async loaded() {
         await super.loaded();
@@ -46,7 +46,7 @@ export class ProductUIServiceBase extends UIServiceBase {
     /**
      * 初始化基础数据
      * 
-     * @memberof  ProductUIServiceBase
+     * @memberof  TestUIServiceBase
      */
     protected initBasicData(){
         this.isEnableDEMainState = true;
@@ -62,7 +62,7 @@ export class ProductUIServiceBase extends UIServiceBase {
     /**
      * 初始化界面行为数据
      * 
-     * @memberof  ProductUIServiceBase
+     * @memberof  TestUIServiceBase
      */
     protected async initActionMap(): Promise<void> {
         const actions = this.entityModel?.getAllPSAppDEUIActions() as IPSAppDEUIAction[];
@@ -77,31 +77,9 @@ export class ProductUIServiceBase extends UIServiceBase {
     /**
      * 初始化视图功能数据Map
      * 
-     * @memberof  ProductUIServiceBase
+     * @memberof  TestUIServiceBase
      */  
     protected initViewFuncMap(){
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set('MDATAVIEW:','MDATAVIEW');
-        this.allViewFuncMap.set('PICKUPVIEW:','PICKUPVIEW');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set('EDITVIEW:','EDITVIEW');
-        this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
     }

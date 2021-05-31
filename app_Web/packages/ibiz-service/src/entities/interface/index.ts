@@ -3,6 +3,7 @@ export * from './itest-case';
 export * from './iproduct';
 export * from './iproject-task-report';
 export * from './iproject-burn';
+export * from './itest';
 export * from './iproduct-branch';
 export * from './iproject-task-estimate';
 export * from './iproduct-story';

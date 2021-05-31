@@ -1,56 +1,56 @@
 import { CodeListService } from '../app/codelist-service';
 import { EntityBaseService, IContext, HttpResponse } from 'ibiz-core';
-import { IProduct, Product } from '../../entities';
-import keys from '../../entities/product/product-keys';
+import { ITest, Test } from '../../entities';
+import keys from '../../entities/test/test-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { CancelProductTopLogic } from '../../logic/entity/product/cancel-product-top/cancel-product-top-logic';
-import { ProductTopLogic } from '../../logic/entity/product/product-top/product-top-logic';
+import { CancelProductTopLogic } from '../../logic/entity/test/cancel-product-top/cancel-product-top-logic';
+import { ProductTopLogic } from '../../logic/entity/test/product-top/product-top-logic';
 
 /**
  * 产品服务对象基类
  *
  * @export
- * @class ProductBaseService
+ * @class TestBaseService
  * @extends {EntityBaseService}
  */
-export class ProductBaseService extends EntityBaseService<IProduct> {
+export class TestBaseService extends EntityBaseService<ITest> {
     protected get keys(): string[] {
         return keys;
     }
     protected SYSTEMNAME = 'iBizPMS';
     protected APPNAME = 'Web';
-    protected APPDENAME = 'Product';
-    protected APPDENAMEPLURAL = 'Products';
+    protected APPDENAME = 'Test';
+    protected APPDENAMEPLURAL = 'Tests';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name','code','productsn',];
     protected selectContextParam = {
     };
 
-    newEntity(data: IProduct): Product {
-        return new Product(data);
+    newEntity(data: ITest): Test {
+        return new Test(data);
     }
 
-    async addLocal(context: IContext, entity: IProduct): Promise<IProduct | null> {
-        return this.cache.add(context, new Product(entity) as any);
+    async addLocal(context: IContext, entity: ITest): Promise<ITest | null> {
+        return this.cache.add(context, new Test(entity) as any);
     }
 
-    async createLocal(context: IContext, entity: IProduct): Promise<IProduct | null> {
-        return super.createLocal(context, new Product(entity) as any);
+    async createLocal(context: IContext, entity: ITest): Promise<ITest | null> {
+        return super.createLocal(context, new Test(entity) as any);
     }
 
-    async getLocal(context: IContext, srfKey: string): Promise<IProduct> {
+    async getLocal(context: IContext, srfKey: string): Promise<ITest> {
         const entity = this.cache.get(context, srfKey);
         return entity!;
     }
 
-    async updateLocal(context: IContext, entity: IProduct): Promise<IProduct> {
-        return super.updateLocal(context, new Product(entity) as any);
+    async updateLocal(context: IContext, entity: ITest): Promise<ITest> {
+        return super.updateLocal(context, new Test(entity) as any);
     }
 
-    async getDraftLocal(_context: IContext, entity: IProduct = {}): Promise<IProduct> {
-        return new Product(entity);
+    async getDraftLocal(_context: IContext, entity: ITest = {}): Promise<ITest> {
+        return new Test(entity);
     }
 
     /**
@@ -59,7 +59,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @param {*} [context={}]
      * @param {*} [data = {}]
      * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
+     * @memberof TestService
      */
     async DeepCopyTemp(context: any = {}, data: any = {}): Promise<HttpResponse> {
         let entity: any;
@@ -174,128 +174,14 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.condCache.get('view');
     }
     /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/products/${_context.product}`);
-    }
-    /**
-     * Close
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/${_context.product}/close`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/products/${_context.product}`, _data);
-    }
-    /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/products`, _data);
-    }
-    /**
-     * CancelProductTop
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async CancelProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/${_context.product}/cancelproducttop`, _data);
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/products/getdraft`, _data);
-        return res;
-    }
-    /**
      * FetchCurDefault
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
+     * @memberof TestService
      */
     async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/fetchcurdefault`, _data);
-    }
-    /**
-     * ProductTop
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async ProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/${_context.product}/producttop`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/products/${_context.product}`);
-        return res;
-    }
-
-    /**
-     * CloseBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProductServiceBase
-     */
-    public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/products/closebatch`,_data);
+        return this.http.post(`/tests/fetchcurdefault`, _data);
     }
 }

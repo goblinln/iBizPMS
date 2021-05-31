@@ -3,6 +3,7 @@ import testcase_en_US from '@locale/lanres/entities/test-case/test-case_en_US';
 import product_en_US from '@locale/lanres/entities/product/product_en_US';
 import projecttaskreport_en_US from '@locale/lanres/entities/project-task-report/project-task-report_en_US';
 import projectburn_en_US from '@locale/lanres/entities/project-burn/project-burn_en_US';
+import test_en_US from '@locale/lanres/entities/test/test_en_US';
 import productbranch_en_US from '@locale/lanres/entities/product-branch/product-branch_en_US';
 import projecttaskestimate_en_US from '@locale/lanres/entities/project-task-estimate/project-task-estimate_en_US';
 import productstory_en_US from '@locale/lanres/entities/product-story/product-story_en_US';
@@ -433,6 +434,7 @@ function getAppLocale(){
             'product': product_en_US(),
             'projecttaskreport': projecttaskreport_en_US(),
             'projectburn': projectburn_en_US(),
+            'test': test_en_US(),
             'productbranch': productbranch_en_US(),
             'projecttaskestimate': projecttaskestimate_en_US(),
             'productstory': productstory_en_US(),

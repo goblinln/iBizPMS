@@ -4,6 +4,7 @@ export * from './test-case/test-case';
 export * from './product/product';
 export * from './project-task-report/project-task-report';
 export * from './project-burn/project-burn';
+export * from './test/test';
 export * from './product-branch/product-branch';
 export * from './project-task-estimate/project-task-estimate';
 export * from './product-story/product-story';

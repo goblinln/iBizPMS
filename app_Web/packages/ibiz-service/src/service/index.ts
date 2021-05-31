@@ -4,6 +4,7 @@ export * from './test-case/test-case.service';
 export * from './product/product.service';
 export * from './project-task-report/project-task-report.service';
 export * from './project-burn/project-burn.service';
+export * from './test/test.service';
 export * from './product-branch/product-branch.service';
 export * from './project-task-estimate/project-task-estimate.service';
 export * from './product-story/product-story.service';

@@ -58,6 +58,7 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('product', () => import('../authservice/product/product-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projecttaskreport', () => import('../authservice/project-task-report/project-task-report-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectburn', () => import('../authservice/project-burn/project-burn-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('test', () => import('../authservice/test/test-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productbranch', () => import('../authservice/product-branch/product-branch-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projecttaskestimate', () => import('../authservice/project-task-estimate/project-task-estimate-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productstory', () => import('../authservice/product-story/product-story-auth-service'));

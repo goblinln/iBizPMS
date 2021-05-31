@@ -61,10 +61,6 @@ function getLocaleResourceBase(){
 		'linename': commonLogic.appcommonhandle("产品线",null),
 	},
 		views: {
-			'testtabexpview': {
-				caption: commonLogic.appcommonhandle("测试",null),
-				title: commonLogic.appcommonhandle("测试",null),
-			},
 			'testdashboardview': {
 				caption: commonLogic.appcommonhandle("产品",null),
 				title: commonLogic.appcommonhandle("产品测试数据看板视图",null),
@@ -124,10 +120,6 @@ function getLocaleResourceBase(){
 			'listexpview': {
 				caption: commonLogic.appcommonhandle("产品统计",null),
 				title: commonLogic.appcommonhandle("产品列表导航视图",null),
-			},
-			'testleftsidebarlistview': {
-				caption: commonLogic.appcommonhandle("测试",null),
-				title: commonLogic.appcommonhandle("所有测试",null),
 			},
 			'dashboardinfomainview9': {
 				caption: commonLogic.appcommonhandle("产品",null),
@@ -447,13 +439,6 @@ function getLocaleResourceBase(){
 			new: commonLogic.appcommonhandle("New",null),
 			},
 		},
-		testsidebar_list: {
-			nodata:commonLogic.appcommonhandle("",null),
-			uiactions: {
-			product_producttop: commonLogic.appcommonhandle("置顶",null),
-			product_cancelproducttop: commonLogic.appcommonhandle("取消置顶",null),
-			},
-		},
 		sidebar_list: {
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
@@ -498,26 +483,6 @@ function getLocaleResourceBase(){
 			},
 		},
 		testgridviewtoolbar_toolbar: {
-		},
-		testleftsidebarlistviewtoolbar_toolbar: {
-			'deuiaction3_testmanager': {
-				caption: commonLogic.appcommonhandle("管理",null),
-				tip: commonLogic.appcommonhandle("管理",null),
-			},
-			'deuiaction2': {
-				caption: commonLogic.appcommonhandle("刷新",null),
-				tip: commonLogic.appcommonhandle("刷新",null),
-			},
-		},
-		testleftsidebarlistviewlist_quicktoolbar_toolbar: {
-			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("置顶",null),
-				tip: commonLogic.appcommonhandle("置顶",null),
-			},
-			'deuiaction2': {
-				caption: commonLogic.appcommonhandle("取消置顶",null),
-				tip: commonLogic.appcommonhandle("取消置顶",null),
-			},
 		},
 		editviewtoolbar_toolbar: {
 			'deuiaction1': {

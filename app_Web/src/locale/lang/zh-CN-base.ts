@@ -3,6 +3,7 @@ import testcase_zh_CN from '@locale/lanres/entities/test-case/test-case_zh_CN';
 import product_zh_CN from '@locale/lanres/entities/product/product_zh_CN';
 import projecttaskreport_zh_CN from '@locale/lanres/entities/project-task-report/project-task-report_zh_CN';
 import projectburn_zh_CN from '@locale/lanres/entities/project-burn/project-burn_zh_CN';
+import test_zh_CN from '@locale/lanres/entities/test/test_zh_CN';
 import productbranch_zh_CN from '@locale/lanres/entities/product-branch/product-branch_zh_CN';
 import projecttaskestimate_zh_CN from '@locale/lanres/entities/project-task-estimate/project-task-estimate_zh_CN';
 import productstory_zh_CN from '@locale/lanres/entities/product-story/product-story_zh_CN';
@@ -431,6 +432,7 @@ function getAppLocale(){
             'product': product_zh_CN(),
             'projecttaskreport': projecttaskreport_zh_CN(),
             'projectburn': projectburn_zh_CN(),
+            'test': test_zh_CN(),
             'productbranch': productbranch_zh_CN(),
             'projecttaskestimate': projecttaskestimate_zh_CN(),
             'productstory': productstory_zh_CN(),
