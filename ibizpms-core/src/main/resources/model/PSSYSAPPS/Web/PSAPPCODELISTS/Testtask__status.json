@@ -7,7 +7,7 @@
   "name" : "测试单状态",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
   },
   "getPSCodeItems" : [ {
     "codeName" : "Wait",

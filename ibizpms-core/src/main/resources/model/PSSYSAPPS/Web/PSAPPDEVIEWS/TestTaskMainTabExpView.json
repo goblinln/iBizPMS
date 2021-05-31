@@ -7,7 +7,7 @@
   "openMode" : "DRAWER_TOP",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -20,7 +20,7 @@
     "name" : "tabexppanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
     },
     "getPSAppViewRefs" : [ {
       "name" : "EXPITEM:tabviewpanel",
@@ -48,7 +48,7 @@
       "name" : "tabviewpanel",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
       },
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL"
@@ -2344,7 +2344,7 @@
       "name" : "tabviewpanel2",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
       },
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL2"
@@ -2374,7 +2374,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -2395,7 +2395,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "ProjectTestTasks",
+    "codeName" : "TestTasks",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -2403,7 +2403,7 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
     },
     "name" : "PROJECT__TEST_TASK",
     "getParentPSAppDEField" : {

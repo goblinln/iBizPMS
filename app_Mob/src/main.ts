@@ -19,6 +19,7 @@ import { UserComponent } from '@/user-register';
 import store from '@/store';
 import router from '@/router/router';
 import { Interceptors } from '@/utils';
+import { NoticeHandler } from './utils/notice-handler/notice-handler';
 // 手势滑动
 import VueTouch from 'vue-touch';
 // 富文本
@@ -39,6 +40,25 @@ VueAMap.initAMapApiLoader({
       "AMap.Geolocation" 
     ],
 })
+// 消息提示
+Vue.prototype.$Notice = {
+    error: (err: any, info: any) => {
+        NoticeHandler.errorHandler(err, info);
+    },
+    warning: (message: any, fnName?: string, param?: any) => {
+        NoticeHandler.warningHandler(message, { param, caller: this, fnName });
+    },
+    info: (message: any, fnName?: string, param?: any) => {
+        NoticeHandler.infoHandler(message, { param, caller: this, fnName });
+    },
+    success: (err: any, info: any) => {
+        NoticeHandler.successHandler(err, info);
+    },
+    confirm: (title: any, message: any, param?: any) => {
+        NoticeHandler.confirmHandler(title, message, param);
+    }
+};
+
 installPlugin();
 install({baseUrl:Environment.BaseUrl});
 AppComponentService.registerAppComponents();

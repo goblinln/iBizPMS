@@ -284,6 +284,15 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchProductBuildDS",
+    "methodType" : "FETCH",
+    "name" : "ProductBuildDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductBuildDS"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTestBuild",
     "methodType" : "FETCH",
     "name" : "TestBuild",
@@ -679,6 +688,15 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "CurProduct"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProductBuildDS",
+    "methodType" : "FETCH",
+    "name" : "ProductBuildDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductBuildDS"
     },
     "builtinMethod" : false
   }, {

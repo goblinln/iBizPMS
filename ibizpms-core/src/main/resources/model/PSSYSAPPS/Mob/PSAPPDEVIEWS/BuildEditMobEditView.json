@@ -6,7 +6,7 @@
   "name" : "BuildEditMobEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectBuild.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -55,7 +55,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectBuild/PSFORMS/MobEditForm.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build/PSFORMS/MobEditForm.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -72,7 +72,7 @@
     "logicName" : "编辑模式（移动端）",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectBuild.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -86,7 +86,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectBuild.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
         }
       }, {
         "actionName" : "GETDRAFTFROM",
@@ -95,7 +95,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectBuild.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
         }
       }, {
         "actionName" : "Remove",
@@ -108,7 +108,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectBuild.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -121,7 +121,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectBuild.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
         }
       }, {
         "actionName" : "Get",
@@ -134,7 +134,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectBuild.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
         }
       }, {
         "actionName" : "Create",
@@ -147,7 +147,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectBuild.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -726,7 +726,7 @@
     "name" : "righttoolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectBuild.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
     },
     "getPSControlParam" : {
       "id" : "RIGHTTOOLBAR"
@@ -790,7 +790,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectBuild.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -808,7 +808,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "ProjectBuilds",
+    "codeName" : "Builds",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -816,7 +816,7 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectBuild.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
     },
     "name" : "PROJECT__PROJECT_BUILD",
     "getParentPSAppDEField" : {

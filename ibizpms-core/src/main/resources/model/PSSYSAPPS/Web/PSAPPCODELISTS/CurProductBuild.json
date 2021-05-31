@@ -16,7 +16,7 @@
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
   },
   "getValuePSAppDEField" : {
     "name" : "ID",

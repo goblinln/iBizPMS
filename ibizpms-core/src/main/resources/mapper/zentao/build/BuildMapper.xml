@@ -134,6 +134,13 @@
          )t1
      </select>
 
+    <!--数据集合[ProductBuildDS]-->
+	 <select id="searchProductBuildDS"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext"  resultMap="BuildResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+     </select>
+
     <!--数据集合[TestBuild]-->
 	 <select id="searchTestBuild"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext"  resultMap="BuildResultMap">
          select t1.* from (

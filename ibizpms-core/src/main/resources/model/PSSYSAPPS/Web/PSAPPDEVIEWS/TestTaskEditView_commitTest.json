@@ -7,7 +7,7 @@
   "openMode" : "DRAWER_RIGHT",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -71,7 +71,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -127,7 +127,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask/PSFORMS/BuildSUBMIT.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask/PSFORMS/BuildSUBMIT.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -144,7 +144,7 @@
     "logicName" : "版本提交测试",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -158,7 +158,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
         }
       }, {
         "actionName" : "GETDRAFTFROM",
@@ -167,7 +167,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
         }
       }, {
         "actionName" : "Remove",
@@ -180,7 +180,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -193,7 +193,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
         }
       }, {
         "actionName" : "Get",
@@ -206,7 +206,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
         }
       }, {
         "actionName" : "Create",
@@ -219,7 +219,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -624,7 +624,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
               },
               "valueItemName" : "build",
               "dropDownView" : false,
@@ -1189,7 +1189,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -1206,7 +1206,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "ProjectTestTasks",
+    "codeName" : "TestTasks",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -1214,7 +1214,7 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTestTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
     },
     "name" : "PROJECT__TEST_TASK",
     "getParentPSAppDEField" : {

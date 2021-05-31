@@ -22,7 +22,7 @@ export class AuthServiceRegister extends ServiceRegisterBase {
      * @memberof AuthServiceRegister
      */
     protected init(): void {
-                this.allService.set('authservice-projecttaskestimate', () => import('../authservice/project-task-estimate/project-task-estimate-auth-service'));
+                this.allService.set('authservice-taskestimate', () => import('../authservice/task-estimate/task-estimate-auth-service'));
         this.allService.set('authservice-testcasestep', () => import('../authservice/test-case-step/test-case-step-auth-service'));
         this.allService.set('authservice-project', () => import('../authservice/project/project-auth-service'));
         this.allService.set('authservice-projectteam', () => import('../authservice/project-team/project-team-auth-service'));
@@ -30,14 +30,14 @@ export class AuthServiceRegister extends ServiceRegisterBase {
         this.allService.set('authservice-productrelease', () => import('../authservice/product-release/product-release-auth-service'));
         this.allService.set('authservice-testcase', () => import('../authservice/test-case/test-case-auth-service'));
         this.allService.set('authservice-projectmodule', () => import('../authservice/project-module/project-module-auth-service'));
-        this.allService.set('authservice-projectbuild', () => import('../authservice/project-build/project-build-auth-service'));
+        this.allService.set('authservice-build', () => import('../authservice/build/build-auth-service'));
         this.allService.set('authservice-bug', () => import('../authservice/bug/bug-auth-service'));
         this.allService.set('authservice-product', () => import('../authservice/product/product-auth-service'));
         this.allService.set('authservice-productplan', () => import('../authservice/product-plan/product-plan-auth-service'));
         this.allService.set('authservice-productmodule', () => import('../authservice/product-module/product-module-auth-service'));
         this.allService.set('authservice-test', () => import('../authservice/test/test-auth-service'));
-        this.allService.set('authservice-projecttask', () => import('../authservice/project-task/project-task-auth-service'));
-        this.allService.set('authservice-projecttesttask', () => import('../authservice/project-test-task/project-test-task-auth-service'));
+        this.allService.set('authservice-task', () => import('../authservice/task/task-auth-service'));
+        this.allService.set('authservice-testtask', () => import('../authservice/test-task/test-task-auth-service'));
         this.allService.set('authservice-story', () => import('../authservice/story/story-auth-service'));
         this.allService.set('authservice-productline', () => import('../authservice/product-line/product-line-auth-service'));
         this.allService.set('authservice-ibzmonthly', () => import('../authservice/ibz-monthly/ibz-monthly-auth-service'));

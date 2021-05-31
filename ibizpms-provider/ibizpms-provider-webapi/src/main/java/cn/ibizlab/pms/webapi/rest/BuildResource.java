@@ -271,6 +271,18 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@BuildRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取产品版本", tags = {"版本" } ,notes = "获取产品版本")
+    @RequestMapping(method= RequestMethod.POST , value="/builds/fetchproductbuildds")
+	public ResponseEntity<List<BuildDTO>> fetchproductbuildds(@RequestBody BuildSearchContext context) {
+        Page<Build> domains = buildService.searchProductBuildDS(context) ;
+        List<BuildDTO> list = buildMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("@BuildRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取测试版本", tags = {"版本" } ,notes = "获取测试版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchtestbuild")
@@ -517,6 +529,19 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取产品版本", tags = {"版本" } ,notes = "根据产品获取产品版本")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchproductbuildds")
+	public ResponseEntity<List<BuildDTO>> fetchBuildProductBuildDSByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Build> domains = buildService.searchProductBuildDS(context) ;
+        List<BuildDTO> list = buildMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("@BuildRuntime.quickTest('NONE')")
 	@ApiOperation(value = "根据产品获取测试版本", tags = {"版本" } ,notes = "根据产品获取测试版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchtestbuild")
@@ -751,6 +776,19 @@ public class BuildResource {
 	public ResponseEntity<List<BuildDTO>> fetchBuildDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
         context.setN_project_eq(project_id);
         Page<Build> domains = buildService.searchDefault(context) ;
+        List<BuildDTO> list = buildMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@BuildRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据项目获取产品版本", tags = {"版本" } ,notes = "根据项目获取产品版本")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchproductbuildds")
+	public ResponseEntity<List<BuildDTO>> fetchBuildProductBuildDSByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Build> domains = buildService.searchProductBuildDS(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

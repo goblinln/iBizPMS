@@ -1,4 +1,4 @@
-import projecttaskestimate_en_US from '@locale/lanres/project-task-estimate/project-task-estimate_en_US';
+import taskestimate_en_US from '@locale/lanres/task-estimate/task-estimate_en_US';
 import testcasestep_en_US from '@locale/lanres/test-case-step/test-case-step_en_US';
 import project_en_US from '@locale/lanres/project/project_en_US';
 import projectteam_en_US from '@locale/lanres/project-team/project-team_en_US';
@@ -6,14 +6,14 @@ import productbranch_en_US from '@locale/lanres/product-branch/product-branch_en
 import productrelease_en_US from '@locale/lanres/product-release/product-release_en_US';
 import testcase_en_US from '@locale/lanres/test-case/test-case_en_US';
 import projectmodule_en_US from '@locale/lanres/project-module/project-module_en_US';
-import projectbuild_en_US from '@locale/lanres/project-build/project-build_en_US';
+import build_en_US from '@locale/lanres/build/build_en_US';
 import bug_en_US from '@locale/lanres/bug/bug_en_US';
 import product_en_US from '@locale/lanres/product/product_en_US';
 import productplan_en_US from '@locale/lanres/product-plan/product-plan_en_US';
 import productmodule_en_US from '@locale/lanres/product-module/product-module_en_US';
 import test_en_US from '@locale/lanres/test/test_en_US';
-import projecttask_en_US from '@locale/lanres/project-task/project-task_en_US';
-import projecttesttask_en_US from '@locale/lanres/project-test-task/project-test-task_en_US';
+import task_en_US from '@locale/lanres/task/task_en_US';
+import testtask_en_US from '@locale/lanres/test-task/test-task_en_US';
 import story_en_US from '@locale/lanres/story/story_en_US';
 import productline_en_US from '@locale/lanres/product-line/product-line_en_US';
 import ibzmonthly_en_US from '@locale/lanres/ibz-monthly/ibz-monthly_en_US';
@@ -338,7 +338,7 @@ export default {
             styleSetting: 'Style setting'
         }
     },
-    projecttaskestimate: projecttaskestimate_en_US,
+    taskestimate: taskestimate_en_US,
     testcasestep: testcasestep_en_US,
     project: project_en_US,
     projectteam: projectteam_en_US,
@@ -346,14 +346,14 @@ export default {
     productrelease: productrelease_en_US,
     testcase: testcase_en_US,
     projectmodule: projectmodule_en_US,
-    projectbuild: projectbuild_en_US,
+    build: build_en_US,
     bug: bug_en_US,
     product: product_en_US,
     productplan: productplan_en_US,
     productmodule: productmodule_en_US,
     test: test_en_US,
-    projecttask: projecttask_en_US,
-    projecttesttask: projecttesttask_en_US,
+    task: task_en_US,
+    testtask: testtask_en_US,
     story: story_en_US,
     productline: productline_en_US,
     ibzmonthly: ibzmonthly_en_US,

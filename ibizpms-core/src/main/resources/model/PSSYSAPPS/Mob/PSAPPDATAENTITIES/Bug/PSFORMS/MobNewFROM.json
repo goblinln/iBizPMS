@@ -1347,7 +1347,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+              "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "PROJECT",

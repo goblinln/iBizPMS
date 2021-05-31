@@ -1040,6 +1040,15 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchReportDS",
+    "methodType" : "FETCH",
+    "name" : "ReportDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ReportDS"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchRootTask",
     "methodType" : "FETCH",
     "name" : "RootTask",
@@ -2904,6 +2913,25 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ProjectTask"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchReportDS",
+    "methodType" : "FETCH",
+    "name" : "ReportDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ReportDS"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempReportDS",
+    "methodType" : "FETCHTEMP",
+    "name" : "ReportDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ReportDS"
     },
     "tempDataMode" : 2,
     "builtinMethod" : false
@@ -19455,7 +19483,7 @@
   }, {
     "logicName" : "项目-读取",
     "mapPSDEName" : "ZT_PROJECT",
-    "mapPSDEOPPrivName" : "READ",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
@@ -19562,33 +19590,7 @@
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskReport.json",
   "enableUIActions" : 15,
-  "logicName" : "项目任务管理",
-  "getMinorPSAppDERSs" : [ {
-    "actionRSMode" : 1,
-    "codeName" : "ProjectTaskReports",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskReport.json"
-    },
-    "name" : "PROJECT__PROJECT_TASK_MANAGE",
-    "getParentPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ],
+  "logicName" : "项目任务管理（待删除）",
   "name" : "IBZ_API__PROJECT_TASK_REPORT",
   "getPSDEName" : "ZT_TASK",
   "getPSDEServiceAPI" : {

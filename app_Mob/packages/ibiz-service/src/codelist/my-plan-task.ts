@@ -1,4 +1,4 @@
-import { ProjectTaskService } from "../service";
+import { TaskService } from "../service";
 /**
  * 代码表--我计划参与的任务（汇报）
  *
@@ -90,10 +90,10 @@ export default class MyPlanTask {
     /**
      * 任务应用实体服务对象
      *
-     * @type {ProjectTaskService}
+     * @type {TaskService}
      * @memberof MyPlanTask
      */
-    public projecttaskService: ProjectTaskService = new ProjectTaskService();
+    public taskService: TaskService = new TaskService();
 
 
     /**
@@ -134,7 +134,7 @@ export default class MyPlanTask {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.projecttaskService.FetchDefault(context, data);
+            const promise: Promise<any> = this.taskService.FetchDefault(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

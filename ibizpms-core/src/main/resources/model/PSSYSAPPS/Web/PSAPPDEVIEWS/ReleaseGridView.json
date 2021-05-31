@@ -1301,7 +1301,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
         },
         "dropDownView" : false,
         "enableAC" : true,
@@ -1350,7 +1350,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
         },
         "dropDownView" : false,
         "enableAC" : true,

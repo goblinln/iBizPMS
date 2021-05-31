@@ -74,14 +74,16 @@ public class ProjectModuleResource {
     }
 
 
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目保存任务模块", tags = {"任务模块" },  notes = "根据项目保存任务模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/save")
-    public ResponseEntity<ProjectModuleDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'UPDATE')")
+    @ApiOperation(value = "根据项目更新任务模块", tags = {"任务模块" },  notes = "根据项目更新任务模块")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}")
+    public ResponseEntity<ProjectModuleDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
         ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
         domain.setRoot(project_id);
-        projectmoduleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(domain));
+        domain.setId(projectmodule_id);
+		projectmoduleService.update(domain);
+        ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 
@@ -94,29 +96,14 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"任务模块" } ,notes = "根据项目获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/fetchdefault")
-	public ResponseEntity<List<ProjectModuleDTO>> fetchProjectModuleDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectModuleSearchContext context) {
-        context.setN_root_eq(project_id);
-        Page<ProjectModule> domains = projectmoduleService.searchDefault(context) ;
-        List<ProjectModuleDTO> list = projectmoduleMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'UPDATE')")
-    @ApiOperation(value = "根据项目更新任务模块", tags = {"任务模块" },  notes = "根据项目更新任务模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}")
-    public ResponseEntity<ProjectModuleDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目保存任务模块", tags = {"任务模块" },  notes = "根据项目保存任务模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/save")
+    public ResponseEntity<ProjectModuleDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
         ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
         domain.setRoot(project_id);
-        domain.setId(projectmodule_id);
-		projectmoduleService.update(domain);
-        ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+        projectmoduleService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(domain));
     }
 
 
@@ -135,5 +122,18 @@ public class ProjectModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"任务模块" } ,notes = "根据项目获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/fetchdefault")
+	public ResponseEntity<List<ProjectModuleDTO>> fetchProjectModuleDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectModuleSearchContext context) {
+        context.setN_root_eq(project_id);
+        Page<ProjectModule> domains = projectmoduleService.searchDefault(context) ;
+        List<ProjectModuleDTO> list = projectmoduleMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 }
 

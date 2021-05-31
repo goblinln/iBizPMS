@@ -33,6 +33,7 @@ public interface BuildMapper extends BaseMapper<Build> {
     Page<Build> searchBugProductOrProjectBuild(IPage page, @Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     Page<Build> searchCurProduct(IPage page, @Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     Page<Build> searchDefault(IPage page, @Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
+    Page<Build> searchProductBuildDS(IPage page, @Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     Page<Build> searchTestBuild(IPage page, @Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     Page<Build> searchTestRounds(IPage page, @Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     Page<Build> searchUpdateLog(IPage page, @Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);

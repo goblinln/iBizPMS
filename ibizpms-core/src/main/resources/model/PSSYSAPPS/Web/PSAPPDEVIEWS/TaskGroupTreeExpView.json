@@ -6,7 +6,7 @@
   "name" : "TaskGroupTreeExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -48,7 +48,7 @@
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getPSAppViewRefs" : [ {
       "name" : "EXPITEM:AssignedtoGroup",
@@ -107,7 +107,7 @@
         "modelref" : true,
         "id" : "create"
       },
-      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask/PSTREEVIEWS/TaskGroupTree.json",
+      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSTREEVIEWS/TaskGroupTree.json",
       "getFetchPSControlAction" : {
         "modelref" : true,
         "id" : "fetch"
@@ -120,7 +120,7 @@
       "logicName" : "分组任务树",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
       },
       "getPSControlHandler" : {
         "getPSHandlerActions" : [ {
@@ -134,14 +134,14 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
           }
         }, {
           "actionType" : "DEDATASET",
           "name" : "fetch",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
           }
         }, {
           "actionName" : "Remove",
@@ -154,7 +154,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
           }
         }, {
           "actionName" : "Get",
@@ -167,7 +167,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
           }
         }, {
           "actionName" : "Create",
@@ -180,7 +180,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
           }
         } ],
         "userDRAction" : "READ",
@@ -264,7 +264,7 @@
         "nodeType" : "PriGroup",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
         "text" : "优先级分组",
         "treeNodeType" : "STATIC",
@@ -295,7 +295,7 @@
         "nodeType" : "AssignedtoGroup",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
         "text" : "指派分组",
         "treeNodeType" : "STATIC",
@@ -326,7 +326,7 @@
         "nodeType" : "TypeGroup",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
         "text" : "类型分组",
         "treeNodeType" : "STATIC",
@@ -357,7 +357,7 @@
         "nodeType" : "StatusGroup",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
         "text" : "状态分组",
         "treeNodeType" : "STATIC",
@@ -411,7 +411,7 @@
         "nodeType" : "StoryGroup",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
         "text" : "需求分组",
         "treeNodeType" : "STATIC",
@@ -469,7 +469,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -487,7 +487,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "ProjectTasks",
+    "codeName" : "Tasks",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -495,7 +495,7 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "name" : "PROJECT__PROJECT_TASK",
     "getParentPSAppDEField" : {

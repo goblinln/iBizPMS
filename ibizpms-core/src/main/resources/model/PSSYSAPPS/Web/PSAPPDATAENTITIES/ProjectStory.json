@@ -9247,7 +9247,7 @@
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json",
   "enableUIActions" : 15,
-  "logicName" : "项目关联需求",
+  "logicName" : "项目关联需求（待删除）",
   "name" : "IBZ_API__PROJECT_STORY",
   "getPSDEName" : "ZT_STORY",
   "getPSDEServiceAPI" : {

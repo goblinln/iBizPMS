@@ -7,7 +7,7 @@
   "name" : "任务关闭原因",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
   },
   "getPSCodeItems" : [ {
     "codeName" : "Done",

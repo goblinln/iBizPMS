@@ -52,18 +52,5 @@ public class ProjectTaskGanttResource {
     @Lazy
     public ProjectTaskGanttMapping projecttaskganttMapping;
 
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-	@ApiOperation(value = "根据项目获取任务类型分组", tags = {"任务" } ,notes = "根据项目获取任务类型分组")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projecttaskgantts/fetchtypegroup")
-	public ResponseEntity<List<Map>> fetchProjectTaskGanttTypeGroupByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Map> domains = taskService.searchTypeGroup(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(domains.getContent());
-	}
 }
 

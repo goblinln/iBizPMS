@@ -6,7 +6,7 @@
   "name" : "TaskMobPickupMDView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -20,12 +20,12 @@
   "getPSControls" : [ {
     "codeName" : "MobDef",
     "controlType" : "SEARCHFORM",
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask/PSSEARCHFORMS/MobDef.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task/PSSEARCHFORMS/MobDef.json",
     "formStyle" : "MOBSEARCHBAR2",
     "logicName" : "移动端搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -37,7 +37,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionType" : "FILTERACTION",
@@ -48,7 +48,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionType" : "FILTERACTION",
@@ -59,7 +59,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -293,7 +293,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask/PSMOBMDCTRLS/Mob_3335.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task/PSMOBMDCTRLS/Mob_3335.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -318,12 +318,12 @@
       } ],
       "codeName" : "Mob",
       "controlType" : "PANEL",
-      "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask/PSPANELS/Mob.json",
+      "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task/PSPANELS/Mob.json",
       "layoutMode" : "TABLE_12COL",
       "logicName" : "移动端列表项布局面板",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
       },
       "getPSControlParam" : { },
       "getPSLayout" : {
@@ -546,7 +546,7 @@
     "mobListStyle" : "LISTVIEW",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -560,7 +560,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -571,7 +571,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "Remove",
@@ -584,7 +584,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "Get",
@@ -597,7 +597,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "Create",
@@ -610,7 +610,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -743,7 +743,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -763,7 +763,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "ProjectTasks",
+    "codeName" : "Tasks",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -771,7 +771,7 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
     },
     "name" : "PROJECT__PROJECT_TASK",
     "getParentPSAppDEField" : {

@@ -489,6 +489,13 @@
          )t1
      </select>
 
+    <!--数据集合[ReportDS]-->
+	 <select id="searchReportDS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext"  resultMap="TaskResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+     </select>
+
     <!--数据集合[RootTask]-->
 	 <select id="searchRootTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext"  resultMap="TaskResultMap">
          select t1.* from (

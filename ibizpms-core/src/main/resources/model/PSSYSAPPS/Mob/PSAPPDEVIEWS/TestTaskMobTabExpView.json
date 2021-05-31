@@ -6,7 +6,7 @@
   "name" : "TestTaskMobTabExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTestTask.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -30,7 +30,7 @@
     } ],
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTestTask.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
     },
     "getPSAppViewRefs" : [ {
       "name" : "EXPITEM:tabviewpanel",
@@ -62,7 +62,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTestTask.json"
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
       },
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL"
@@ -1131,7 +1131,7 @@
       "name" : "tabviewpanel2",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTestTask.json"
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
       },
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL2"
@@ -1161,7 +1161,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTestTask.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -1183,7 +1183,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "ProjectTestTasks",
+    "codeName" : "TestTasks",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -1191,7 +1191,7 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTestTask.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
     },
     "name" : "PROJECT__TEST_TASK",
     "getParentPSAppDEField" : {

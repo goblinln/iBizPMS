@@ -160,12 +160,12 @@
       } ],
       "codeName" : "Mob",
       "controlType" : "PANEL",
-      "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask/PSPANELS/Mob.json",
+      "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task/PSPANELS/Mob.json",
       "layoutMode" : "TABLE_12COL",
       "logicName" : "移动端列表项布局面板",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
       },
       "getPSControlParam" : { },
       "getPSLayout" : {

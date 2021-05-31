@@ -59,6 +59,7 @@ public interface IBuildService extends IService<Build> {
     Page<Build> searchBugProductOrProjectBuild(BuildSearchContext context);
     Page<Build> searchCurProduct(BuildSearchContext context);
     Page<Build> searchDefault(BuildSearchContext context);
+    Page<Build> searchProductBuildDS(BuildSearchContext context);
     Page<Build> searchTestBuild(BuildSearchContext context);
     Page<Build> searchTestRounds(BuildSearchContext context);
     Page<Build> searchUpdateLog(BuildSearchContext context);

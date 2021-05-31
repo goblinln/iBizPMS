@@ -96,7 +96,7 @@ zuul:
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     zt_taskestimate:
-      path: /projecttaskestimates/**
+      path: /taskestimates/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     zt_story:
@@ -132,11 +132,11 @@ zuul:
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     zt_task:
-      path: /projecttasks/**
+      path: /tasks/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     zt_build:
-      path: /projectbuilds/**
+      path: /builds/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     ibz_api__project_task_gantt:
@@ -152,7 +152,7 @@ zuul:
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     zt_testtask:
-      path: /projecttesttasks/**
+      path: /testtasks/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     zt_bug:

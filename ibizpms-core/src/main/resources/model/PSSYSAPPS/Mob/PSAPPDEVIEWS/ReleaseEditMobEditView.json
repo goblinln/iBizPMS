@@ -472,7 +472,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectBuild.json"
+                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
               },
               "getPickupPSAppView" : {
                 "modelref" : true,

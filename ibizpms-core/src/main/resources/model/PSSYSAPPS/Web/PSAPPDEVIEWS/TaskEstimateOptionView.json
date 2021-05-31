@@ -8,7 +8,7 @@
   "openMode" : "POPUPMODAL",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskEstimate.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -30,7 +30,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskEstimate/PSFORMS/Main.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate/PSFORMS/Main.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -47,7 +47,7 @@
     "logicName" : "主编辑表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskEstimate.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -61,7 +61,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskEstimate.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
         }
       }, {
         "actionName" : "GETDRAFTFROM",
@@ -70,7 +70,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskEstimate.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
         }
       }, {
         "actionName" : "Remove",
@@ -83,7 +83,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskEstimate.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -96,7 +96,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskEstimate.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
         }
       }, {
         "actionName" : "Get",
@@ -109,7 +109,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskEstimate.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
         }
       }, {
         "actionName" : "Create",
@@ -122,7 +122,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskEstimate.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -460,7 +460,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskEstimate.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -478,7 +478,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "ProjectTasks",
+    "codeName" : "Tasks",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -486,7 +486,7 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "name" : "PROJECT__PROJECT_TASK",
     "getParentPSAppDEField" : {
@@ -507,11 +507,11 @@
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskEstimate.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
     },
     "name" : "PROJECT_TASK__PROJECT_TASK_ESTIMATE",
     "getParentPSAppDEField" : {

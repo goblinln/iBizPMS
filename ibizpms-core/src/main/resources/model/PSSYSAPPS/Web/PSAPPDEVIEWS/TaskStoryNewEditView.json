@@ -7,7 +7,7 @@
   "openMode" : "DRAWER_RIGHT",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -66,7 +66,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -122,7 +122,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask/PSFORMS/Main.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSFORMS/Main.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -139,7 +139,7 @@
     "logicName" : "主编辑表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -153,7 +153,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "GETDRAFTTEMPMAJORFROM",
@@ -162,7 +162,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "RemoveTempMajor",
@@ -175,7 +175,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "GetDraftTempMajor",
@@ -188,7 +188,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "GetTempMajor",
@@ -201,7 +201,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "CreateTempMajor",
@@ -214,7 +214,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -2205,7 +2205,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -2223,7 +2223,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "ProjectTasks",
+    "codeName" : "Tasks",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -2231,7 +2231,7 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "name" : "PROJECT__PROJECT_TASK",
     "getParentPSAppDEField" : {

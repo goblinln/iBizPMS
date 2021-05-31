@@ -135,6 +135,8 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             return buildService.searchCurProduct(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return buildService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductBuildDS"))
+            return buildService.searchProductBuildDS(searchContext);    
         if (iPSDEDataSet.getName().equals("TestBuild"))
             return buildService.searchTestBuild(searchContext);    
         if (iPSDEDataSet.getName().equals("TestRounds"))
@@ -402,6 +404,9 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
+        }
+        else if (action.equals("searchProductBuildDS")) {
+            return aroundDataSet("ProductBuildDS", point);
         }
         else if (action.equals("searchTestBuild")) {
             return aroundDataSet("TestBuild", point);

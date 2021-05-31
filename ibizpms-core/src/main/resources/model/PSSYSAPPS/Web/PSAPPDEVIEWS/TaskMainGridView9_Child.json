@@ -7,7 +7,7 @@
   "name" : "TaskMainGridView9_Child",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -59,7 +59,7 @@
     "codeName" : "Main2",
     "columnEnableLink" : 2,
     "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask/PSGRIDS/Main2.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSGRIDS/Main2.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -74,7 +74,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
@@ -138,7 +138,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
         "modelref" : true,
         "id" : "AssignTask@Task"
@@ -150,7 +150,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
         "modelref" : true,
         "id" : "StartTask@Task"
@@ -162,7 +162,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
         "modelref" : true,
         "id" : "Activation@Task"
@@ -174,7 +174,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
         "modelref" : true,
         "id" : "WorkHours1@Task"
@@ -186,7 +186,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
         "modelref" : true,
         "id" : "DoneTask@Task"
@@ -198,7 +198,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
         "modelref" : true,
         "id" : "CloseTask@Task"
@@ -210,7 +210,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
         "modelref" : true,
         "id" : "MainEdit@Task"
@@ -230,7 +230,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -241,7 +241,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "Remove",
@@ -254,7 +254,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "Get",
@@ -267,7 +267,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -280,7 +280,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "Create",
@@ -293,7 +293,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -492,7 +492,7 @@
             "name" : "指派任务",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf0a4@FontAwesome",
@@ -525,7 +525,7 @@
             "name" : "开始任务",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "TASK",
@@ -564,7 +564,7 @@
             "name" : "激活",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf0d0@FontAwesome",
@@ -596,7 +596,7 @@
             "name" : "工时(子任务工时)",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf19a@FontAwesome",
@@ -629,7 +629,7 @@
             "name" : "完成任务",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "TASK",
@@ -673,7 +673,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf011@FontAwesome",
@@ -707,7 +707,7 @@
             "name" : "主信息编辑",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
@@ -909,7 +909,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -942,7 +942,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -963,7 +963,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "ProjectTasks",
+    "codeName" : "Tasks",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -971,7 +971,7 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "name" : "PROJECT__PROJECT_TASK",
     "getParentPSAppDEField" : {

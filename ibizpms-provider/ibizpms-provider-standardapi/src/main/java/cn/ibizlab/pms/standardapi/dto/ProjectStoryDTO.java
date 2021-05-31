@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
  * 服务DTO对象[ProjectStoryDTO]
  */
 @Data
-@ApiModel("项目关联需求")
+@ApiModel("项目关联需求（待删除）")
 @JsonFilter(value = "dtofieldfilter")
 public class ProjectStoryDTO extends DTOBase implements Serializable {
 

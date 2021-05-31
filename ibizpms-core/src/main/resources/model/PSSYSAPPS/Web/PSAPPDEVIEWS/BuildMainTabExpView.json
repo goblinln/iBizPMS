@@ -7,7 +7,7 @@
   "openMode" : "DRAWER_TOP",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -41,7 +41,7 @@
     "name" : "tabexppanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
     },
     "getPSAppViewRefs" : [ {
       "name" : "EXPITEM:tabviewpanel",
@@ -84,7 +84,7 @@
       "name" : "tabviewpanel",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
       },
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL"
@@ -2412,7 +2412,7 @@
       "name" : "tabviewpanel2",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
       },
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL2"
@@ -2431,7 +2431,7 @@
       "name" : "tabviewpanel3",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
       },
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL3"
@@ -2450,7 +2450,7 @@
       "name" : "tabviewpanel4",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
       },
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL4"
@@ -2484,7 +2484,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -2505,7 +2505,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "ProjectBuilds",
+    "codeName" : "Builds",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -2513,7 +2513,7 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBuild.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
     },
     "name" : "PROJECT__PROJECT_BUILD",
     "getParentPSAppDEField" : {

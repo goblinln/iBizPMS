@@ -879,7 +879,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
           },
           "getPSNavigateContexts" : [ {
             "key" : "N_ASSIGNEDTO_EQ",

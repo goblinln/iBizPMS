@@ -6,7 +6,7 @@
   "name" : "TaskEditMobEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -60,7 +60,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask/PSFORMS/MobMainEdit.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task/PSFORMS/MobMainEdit.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -77,7 +77,7 @@
     "logicName" : "主信息编辑（移动端）",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -91,7 +91,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "GETDRAFTTEMPMAJORFROM",
@@ -100,7 +100,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "RemoveTempMajor",
@@ -113,7 +113,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "GetDraftTempMajor",
@@ -126,7 +126,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "GetTempMajor",
@@ -139,7 +139,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         }
       }, {
         "actionName" : "CreateTempMajor",
@@ -152,7 +152,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -1091,7 +1091,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
               },
               "getPSNavigateContexts" : [ {
                 "key" : "N_PROJECT_EQ",
@@ -3445,7 +3445,7 @@
     "name" : "righttoolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
     },
     "getPSControlParam" : {
       "id" : "RIGHTTOOLBAR"
@@ -3509,7 +3509,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -3528,7 +3528,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "ProjectTasks",
+    "codeName" : "Tasks",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -3536,7 +3536,7 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
     },
     "name" : "PROJECT__PROJECT_TASK",
     "getParentPSAppDEField" : {

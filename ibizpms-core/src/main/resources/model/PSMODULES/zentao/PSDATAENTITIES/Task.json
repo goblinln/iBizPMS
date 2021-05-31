@@ -1643,6 +1643,17 @@
     "enableFront" : true,
     "enableTempData" : true
   }, {
+    "codeName" : "ReportDS",
+    "logicName" : "透视表结果集",
+    "name" : "ReportDS",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
     "codeName" : "RootTask",
     "logicName" : "根任务",
     "name" : "RootTask",
@@ -23635,7 +23646,7 @@
   }, {
     "logicName" : "项目-读取",
     "mapPSDEName" : "ZT_PROJECT",
-    "mapPSDEOPPrivName" : "READ",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"

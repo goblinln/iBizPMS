@@ -1,4 +1,4 @@
-import projecttaskestimate_zh_CN from '@locale/lanres/project-task-estimate/project-task-estimate_zh_CN';
+import taskestimate_zh_CN from '@locale/lanres/task-estimate/task-estimate_zh_CN';
 import testcasestep_zh_CN from '@locale/lanres/test-case-step/test-case-step_zh_CN';
 import project_zh_CN from '@locale/lanres/project/project_zh_CN';
 import projectteam_zh_CN from '@locale/lanres/project-team/project-team_zh_CN';
@@ -6,14 +6,14 @@ import productbranch_zh_CN from '@locale/lanres/product-branch/product-branch_zh
 import productrelease_zh_CN from '@locale/lanres/product-release/product-release_zh_CN';
 import testcase_zh_CN from '@locale/lanres/test-case/test-case_zh_CN';
 import projectmodule_zh_CN from '@locale/lanres/project-module/project-module_zh_CN';
-import projectbuild_zh_CN from '@locale/lanres/project-build/project-build_zh_CN';
+import build_zh_CN from '@locale/lanres/build/build_zh_CN';
 import bug_zh_CN from '@locale/lanres/bug/bug_zh_CN';
 import product_zh_CN from '@locale/lanres/product/product_zh_CN';
 import productplan_zh_CN from '@locale/lanres/product-plan/product-plan_zh_CN';
 import productmodule_zh_CN from '@locale/lanres/product-module/product-module_zh_CN';
 import test_zh_CN from '@locale/lanres/test/test_zh_CN';
-import projecttask_zh_CN from '@locale/lanres/project-task/project-task_zh_CN';
-import projecttesttask_zh_CN from '@locale/lanres/project-test-task/project-test-task_zh_CN';
+import task_zh_CN from '@locale/lanres/task/task_zh_CN';
+import testtask_zh_CN from '@locale/lanres/test-task/test-task_zh_CN';
 import story_zh_CN from '@locale/lanres/story/story_zh_CN';
 import productline_zh_CN from '@locale/lanres/product-line/product-line_zh_CN';
 import ibzmonthly_zh_CN from '@locale/lanres/ibz-monthly/ibz-monthly_zh_CN';
@@ -338,7 +338,7 @@ export default {
             styleSetting: '风格设置'
         }
     },
-    projecttaskestimate: projecttaskestimate_zh_CN,
+    taskestimate: taskestimate_zh_CN,
     testcasestep: testcasestep_zh_CN,
     project: project_zh_CN,
     projectteam: projectteam_zh_CN,
@@ -346,14 +346,14 @@ export default {
     productrelease: productrelease_zh_CN,
     testcase: testcase_zh_CN,
     projectmodule: projectmodule_zh_CN,
-    projectbuild: projectbuild_zh_CN,
+    build: build_zh_CN,
     bug: bug_zh_CN,
     product: product_zh_CN,
     productplan: productplan_zh_CN,
     productmodule: productmodule_zh_CN,
     test: test_zh_CN,
-    projecttask: projecttask_zh_CN,
-    projecttesttask: projecttesttask_zh_CN,
+    task: task_zh_CN,
+    testtask: testtask_zh_CN,
     story: story_zh_CN,
     productline: productline_zh_CN,
     ibzmonthly: ibzmonthly_zh_CN,

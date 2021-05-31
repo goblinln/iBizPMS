@@ -243,11 +243,11 @@
       "nodeType" : "TaskTypes",
       "getPSAppDEDataSet" : {
         "modelref" : true,
-        "id" : "FetchTypeGroup"
+        "id" : "FetchGantt"
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
       },
       "getPSDETreeNodeDataItems" : [ {
         "cLConvertMode" : "NONE",
@@ -364,7 +364,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
       },
       "getPSDETreeNodeDataItems" : [ {
         "cLConvertMode" : "NONE",
@@ -453,7 +453,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
       },
       "getPSDETreeNodeDataItems" : [ {
         "cLConvertMode" : "NONE",
@@ -563,31 +563,5 @@
   "enableFilter" : false,
   "showCaptionBar" : false,
   "modelid" : "5ef23f01b2cffa48351b3272dfeeaf14",
-  "modeltype" : "PSAPPDEVIEW",
-  "getPSAppDERSPaths" : [ [ {
-    "actionRSMode" : 1,
-    "codeName" : "ProjectTaskGantts",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTaskGantt.json"
-    },
-    "name" : "PROJECT__PROJECT_TASK_GANTT",
-    "getParentPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ] ]
+  "modeltype" : "PSAPPDEVIEW"
 }

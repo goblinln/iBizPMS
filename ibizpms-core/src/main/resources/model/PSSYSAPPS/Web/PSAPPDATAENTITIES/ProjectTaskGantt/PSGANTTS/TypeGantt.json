@@ -198,11 +198,11 @@
     "nodeType" : "TaskTypes",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchTypeGroup"
+      "id" : "FetchGantt"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getPSDETreeNodeDataItems" : [ {
       "cLConvertMode" : "NONE",
@@ -319,7 +319,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getPSDETreeNodeDataItems" : [ {
       "cLConvertMode" : "NONE",
@@ -408,7 +408,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getPSDETreeNodeDataItems" : [ {
       "cLConvertMode" : "NONE",

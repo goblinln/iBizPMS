@@ -1,4 +1,4 @@
-import { ProjectBuildService } from "../service";
+import { BuildService } from "../service";
 /**
  * 代码表--当前产品版本（动态）
  *
@@ -91,10 +91,10 @@ export default class CurProductBuild {
     /**
      * 版本应用实体服务对象
      *
-     * @type {ProjectBuildService}
+     * @type {BuildService}
      * @memberof CurProductBuild
      */
-    public projectbuildService: ProjectBuildService = new ProjectBuildService();
+    public buildService: BuildService = new BuildService();
 
 
     /**
@@ -135,7 +135,7 @@ export default class CurProductBuild {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.projectbuildService.FetchDefault(context, data);
+            const promise: Promise<any> = this.buildService.FetchDefault(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

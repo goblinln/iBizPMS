@@ -501,7 +501,7 @@
         "srfkey": "CodeList",
         "emptytext": "未定义",
         "codelisttype":"dynamic",
-        "appdataentity":"ProjectTask",
+        "appdataentity":"Task",
         "appdedataset":"FetchDefault",
         "items": []
     }, 
@@ -509,7 +509,7 @@
         "srfkey": "MyCompleteTask",
         "emptytext": "未定义",
         "codelisttype":"dynamic",
-        "appdataentity":"ProjectTask",
+        "appdataentity":"Task",
         "appdedataset":"FetchDefault",
         "items": []
     }, 
@@ -2549,7 +2549,7 @@
         "srfkey": "MonthlyCompleteTaskChoice",
         "emptytext": "未定义",
         "codelisttype":"dynamic",
-        "appdataentity":"ProjectTask",
+        "appdataentity":"Task",
         "appdedataset":"FetchDefault",
         "items": []
     }, 
@@ -2895,7 +2895,7 @@
         "srfkey": "CurProductBuild",
         "emptytext": "未定义",
         "codelisttype":"dynamic",
-        "appdataentity":"ProjectBuild",
+        "appdataentity":"Build",
         "appdedataset":"FetchDefault",
         "items": []
     }, 
@@ -3285,7 +3285,7 @@
         "srfkey": "MyPlanTask",
         "emptytext": "未定义",
         "codelisttype":"dynamic",
-        "appdataentity":"ProjectTask",
+        "appdataentity":"Task",
         "appdedataset":"FetchDefault",
         "items": []
     }, 

@@ -23,11 +23,11 @@ export class GlobalService {
     /**
      * 任务预计服务
      *
-     * @return {ProjectTaskEstimate}
+     * @return {TaskEstimate}
      * @memberof GlobalService
      */
-    async getProjectTaskEstimateService() {
-        return (await import('./project-task-estimate/project-task-estimate.service')).default.getInstance();
+    async getTaskEstimateService() {
+        return (await import('./task-estimate/task-estimate.service')).default.getInstance();
     }
     /**
      * 用例步骤服务
@@ -95,11 +95,11 @@ export class GlobalService {
     /**
      * 版本服务
      *
-     * @return {ProjectBuild}
+     * @return {Build}
      * @memberof GlobalService
      */
-    async getProjectBuildService() {
-        return (await import('./project-build/project-build.service')).default.getInstance();
+    async getBuildService() {
+        return (await import('./build/build.service')).default.getInstance();
     }
     /**
      * Bug服务
@@ -149,20 +149,20 @@ export class GlobalService {
     /**
      * 任务服务
      *
-     * @return {ProjectTask}
+     * @return {Task}
      * @memberof GlobalService
      */
-    async getProjectTaskService() {
-        return (await import('./project-task/project-task.service')).default.getInstance();
+    async getTaskService() {
+        return (await import('./task/task.service')).default.getInstance();
     }
     /**
      * 测试版本服务
      *
-     * @return {ProjectTestTask}
+     * @return {TestTask}
      * @memberof GlobalService
      */
-    async getProjectTestTaskService() {
-        return (await import('./project-test-task/project-test-task.service')).default.getInstance();
+    async getTestTaskService() {
+        return (await import('./test-task/test-task.service')).default.getInstance();
     }
     /**
      * 需求服务

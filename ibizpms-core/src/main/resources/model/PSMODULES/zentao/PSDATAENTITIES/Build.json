@@ -324,6 +324,16 @@
     "enableBackend" : true,
     "enableFront" : true
   }, {
+    "codeName" : "ProductBuildDS",
+    "logicName" : "产品版本",
+    "name" : "ProductBuildDS",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
     "codeName" : "TestBuild",
     "logicName" : "测试版本",
     "name" : "TestBuild",

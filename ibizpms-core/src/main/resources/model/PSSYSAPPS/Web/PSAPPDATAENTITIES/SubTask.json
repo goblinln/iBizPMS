@@ -1032,6 +1032,15 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchReportDS",
+    "methodType" : "FETCH",
+    "name" : "ReportDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ReportDS"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchRootTask",
     "methodType" : "FETCH",
     "name" : "RootTask",
@@ -2888,6 +2897,25 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ProjectTask"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchReportDS",
+    "methodType" : "FETCH",
+    "name" : "ReportDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ReportDS"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempReportDS",
+    "methodType" : "FETCHTEMP",
+    "name" : "ReportDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ReportDS"
     },
     "tempDataMode" : 2,
     "builtinMethod" : false
@@ -19439,7 +19467,7 @@
   }, {
     "logicName" : "项目-读取",
     "mapPSDEName" : "ZT_PROJECT",
-    "mapPSDEOPPrivName" : "READ",
+    "mapPSDEOPPrivName" : "TASKMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
