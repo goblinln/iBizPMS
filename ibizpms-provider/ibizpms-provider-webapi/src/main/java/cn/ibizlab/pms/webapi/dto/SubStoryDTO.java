@@ -831,6 +831,16 @@ public class SubStoryDTO extends DTOBase implements Serializable {
     @ApiModelProperty("需求编号")
     private Long storysn;
 
+    /**
+     * 属性 [PLANNAME]
+     *
+     */
+    @JSONField(name = "planname")
+    @JsonProperty("planname")
+    @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
+    @ApiModelProperty("所属计划")
+    private String planname;
+
 
     /**
      * 设置 [ASSIGNEDTO]

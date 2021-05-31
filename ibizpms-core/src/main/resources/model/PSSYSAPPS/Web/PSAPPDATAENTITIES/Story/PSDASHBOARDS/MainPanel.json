@@ -4161,8 +4161,16 @@
                 "codeName" : "Modulename1"
               }
             }, {
-              "id" : "plan",
+              "id" : "planname",
               "dataType" : 25,
+              "getPSAppDEField" : {
+                "name" : "PLANNAME",
+                "codeName" : "Planname"
+              }
+            }, {
+              "id" : "plan",
+              "hidden" : true,
+              "dataType" : 21,
               "getPSAppDEField" : {
                 "name" : "PLAN",
                 "codeName" : "Plan"
@@ -4543,12 +4551,43 @@
                   "showCaption" : true
                 }, {
                   "caption" : "所属计划",
-                  "codeName" : "plan",
+                  "codeName" : "planname",
                   "dataType" : 25,
                   "detailStyle" : "DEFAULT",
                   "detailType" : "FORMITEM",
                   "enableCond" : 3,
-                  "ignoreInput" : 3,
+                  "ignoreInput" : 0,
+                  "labelPos" : "LEFT",
+                  "labelWidth" : 70,
+                  "name" : "planname",
+                  "noPrivDisplayMode" : 1,
+                  "getPSAppDEField" : {
+                    "name" : "PLANNAME",
+                    "codeName" : "Planname"
+                  },
+                  "getPSEditor" : {
+                    "editorType" : "SPAN",
+                    "name" : "planname",
+                    "editable" : false,
+                    "enableLinkView" : false
+                  },
+                  "getPSLayoutPos" : {
+                    "colMD" : 24,
+                    "layout" : "TABLE_24COL"
+                  },
+                  "allowEmpty" : true,
+                  "emptyCaption" : false,
+                  "hidden" : false,
+                  "inputTipClosable" : false,
+                  "showCaption" : true
+                }, {
+                  "caption" : "所属计划",
+                  "codeName" : "plan",
+                  "dataType" : 21,
+                  "detailStyle" : "DEFAULT",
+                  "detailType" : "FORMITEM",
+                  "enableCond" : 3,
+                  "ignoreInput" : 0,
                   "labelPos" : "LEFT",
                   "labelWidth" : 70,
                   "name" : "plan",
@@ -4565,12 +4604,8 @@
                       "SRFNAVCTX.product" : "%product%",
                       "SRFNAVPARAM.plan" : "%plan%"
                     },
-                    "editorType" : "SPAN",
+                    "editorType" : "HIDDEN",
                     "name" : "plan",
-                    "getPSAppCodeList" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurProductPlan.json"
-                    },
                     "getPSNavigateContexts" : [ {
                       "key" : "PLAN",
                       "name" : "PLAN",
@@ -4592,18 +4627,15 @@
                       "name" : "plan",
                       "value" : "plan",
                       "rawValue" : false
-                    } ],
-                    "editable" : false,
-                    "enableLinkView" : false
+                    } ]
                   },
                   "getPSLayoutPos" : {
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
                   "allowEmpty" : true,
-                  "convertToCodeItemText" : true,
                   "emptyCaption" : false,
-                  "hidden" : false,
+                  "hidden" : true,
                   "inputTipClosable" : false,
                   "showCaption" : true
                 }, {

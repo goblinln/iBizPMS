@@ -1606,10 +1606,6 @@
     "length" : 1048576,
     "logicName" : "所属计划",
     "name" : "PLAN",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/CurProductPlan.json"
-    },
     "stdDataType" : 21,
     "stringLength" : 1048576,
     "valueFormat" : "%1$s"
@@ -5302,6 +5298,54 @@
     "name" : "STORYSN",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "PLANNAME",
+      "dBType" : "MYSQL5",
+      "name" : "PLANNAME",
+      "standardColumnName" : "`PLANNAME`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "PLANNAME",
+          "maxValue" : 200,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[200]"
+      },
+      "getPSDEField" : {
+        "name" : "PLANNAME",
+        "codeName" : "Planname"
+      },
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Planname",
+    "dEFType" : 2,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 200,
+    "logicName" : "所属计划",
+    "name" : "PLANNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "valueFormat" : "%1$s",
+    "formulaDEField" : true,
+    "phisicalDEField" : false
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "ComputeIsLeaf",

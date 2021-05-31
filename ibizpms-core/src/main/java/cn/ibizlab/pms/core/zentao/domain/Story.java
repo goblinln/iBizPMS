@@ -732,6 +732,14 @@ public class Story extends EntityMP implements Serializable {
     @JsonProperty("storysn")
     @ApiModelProperty("需求编号")
     private Long storysn;
+    /**
+     * 所属计划
+     */
+    @TableField(exist = false)
+    @JSONField(name = "planname")
+    @JsonProperty("planname")
+    @ApiModelProperty("所属计划")
+    private String planname;
 
     /**
      * 

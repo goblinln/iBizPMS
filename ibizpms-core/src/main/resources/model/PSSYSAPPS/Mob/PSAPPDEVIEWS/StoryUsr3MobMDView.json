@@ -273,10 +273,6 @@
       "name" : "id"
     }, {
       "dataType" : 21,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/CurProductPlan.json"
-      },
       "name" : "plan"
     }, {
       "dataType" : 9,

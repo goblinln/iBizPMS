@@ -582,10 +582,6 @@
           },
           "editorType" : "DROPDOWNLIST",
           "name" : "plan",
-          "getPSAppCodeList" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurProductPlan.json"
-          },
           "getPSNavigateContexts" : [ {
             "key" : "PRODUCT",
             "name" : "PRODUCT",

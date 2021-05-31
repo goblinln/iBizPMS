@@ -1,0 +1,316 @@
+// 主题相关样式
+
+  ion-tab-bar {
+      ion-tab-button {
+          --color-selected: var(--app-background-color);
+      }
+  }
+  // 按钮样式
+  ion-button {
+      --background: var(--app-background-color);
+      --color: var(--app-font-color);
+      --color-activated: var(--app-font-color);
+      --background-activated: var(--app-background-color);
+  }
+  // 多数据快速分组组件tab选中样式
+  .app-seleted-item {
+      color: var(--app-background-color);
+      border-bottom: 2px solid var(--app-background-color);
+  }
+  ion-fab-button {
+      --background: var(--app-background-color);
+      --box-shadow: -1px 1px 5px var(--app-shadow-color);
+      --background-activated: var(--app-background-color);
+  }
+  .view-container {
+      ion-header {
+          .ionoc-view-header {
+              --background: var(--app-background-color);
+              --color: var(--app-font-color);
+          }
+      }
+  }
+  ion-toggle {
+      --background-checked: var(--app-background-color);
+  }
+  .app-form-item.item-has-focus {
+      > ion-label {
+          color: var(--app-background-color);
+      }
+  }
+  ion-picker {
+      color: var(--app-background-color);
+      .picker-toolbar-button {
+          button {
+              color: var(--app-background-color);
+          }
+      }
+  }
+  ion-action-sheet {
+    --button-color: var(--app-background-color)!important;
+    --max-height: 60%!important;
+  }
+  ion-alert {
+      .alert-button {
+          color: var(--app-background-color);
+      }
+      [aria-checked='true'].sc-ion-alert-ios
+          .alert-checkbox-icon.sc-ion-alert-ios {
+          background-color: var(--app-background-color);
+          border-color: var(--app-background-color);
+      }
+  }
+  ion-checkbox {
+      --background-checked: var(--app-background-color);
+      --border-color-checked: var(--app-background-color);
+  }
+  .app-embed-view {
+      .embed-view-header {
+          ion-toolbar {
+              --background: var(--app-background-color);
+              color: var(--app-font-color);
+          }
+      }
+  }
+  .app-mobile-radio-list {
+      .van-radio__icon--checked .van-icon {
+          color: #fff;
+          background-color: var(--app-background-color);
+          border-color: var(--app-background-color);
+      }
+  }
+  .listexpbar_list {
+      .van-sidebar-item--select::before {
+          background-color: var(--app-background-color);
+      }
+      .van-sidebar-item--select {
+          border-color: var(--app-background-color);
+      }
+  }
+  .van-rate__icon--full {
+      color: var(--app-background-color);
+  }
+  ion-range {
+      --bar-background-active: var(--app-background-color);
+  }
+
+  // 多数据分类器样式
+  .ibiz-dropdown-menu {
+      .van-button--info {
+          background-color: var(--app-background-color);
+          border: 1px solid var(--app-background-color);
+      }
+      .dropdown-item-icon {
+          color: var(--app-background-color);
+      }
+  }
+  .ibiz-dropdown-menu.dropdown-menu-ative {
+      .van-ellipsis {
+          color: var(--app-background-color);
+      }
+      .van-dropdown-menu__title::after {
+          color: var(--app-background-color);
+      }
+  }
+  //多编辑面板底部新增按钮
+  .app-medit-view-panel {
+      ion-fab {
+          ion-fab-button {
+              --background: var(--app-background-color);
+          }
+      }
+  }
+  // 选项操作视图底部按钮
+  .mobtestmob-option-view {
+      .option-view-btnbox {
+          .success {
+              --background: var(--app-background-color);
+              --color: var(--app-font-color);
+          }
+      }
+  }
+  //日历选中样式
+  .mpvue-calendar td.selected span {
+      background-color: var(--app-background-color)!important;
+      color: var(--app-font-color) !important;
+  }
+  .mpvue-calendar-change span.active {
+      background-color: var(--app-background-color) !important;
+      color: var(--app-font-color)!important;
+  }
+
+  //分页tab样式
+  ion-segment {
+      ion-segment-button {
+          --indicator-box-shadow: var(--app-background-color)!important;
+          --color-checked: var(--app-background-color)!important;
+      }
+      .segment-button-checked {
+          // border-color: var(--app-background-color)!important;
+          --indicator-color: var(--app-background-color);
+          color: var(--app-font-color);
+      }
+  }
+  // 风格改变样式
+  .app-mob-select-changeStyle ion-list .align-boxs .active {
+      border: 2px solid var(--app-background-color);
+      ion-icon {
+          color: var(--app-background-color);
+      }
+  }
+  // 抽屉搜索表单主题
+  .searchform {
+      ion-header {
+          ion-toolbar {
+              --background: var(--app-background-color);
+              color: var(--app-font-color);
+          }
+      }
+  }
+  // 侧滑菜单插件
+  .app-menu-plugin {
+      .header {
+          background-color: var(--app-background-color);
+      }
+      .list {
+          &:active {
+              color: var(--app-background-color);
+          }
+      }
+      .active {
+          ion-icon {
+              color: var(--app-background-color);
+          }
+          ion-label {
+              color: var(--app-background-color);
+          }
+      }
+  }
+
+  // 快速搜索组件主题
+  .app-seach-history {
+      .record {
+          ion-icon {
+              background: var(--app-background-color);
+              color: var(--app-font-color);
+          }
+      }
+  }
+  // 分组组件主题
+  .van-dropdown-menu__title--active {
+      color: var(--app-background-color);
+  }
+  .van-button--info {
+      color: var(--app-font-color);
+      background-color: var(--app-background-color);
+      border-color: var(--app-background-color);
+  }
+  .dropdown-box .dropdown-item .dropdown-item-icon {
+      color: var(--app-background-color);
+  }
+
+  // 侧滑菜单头部
+  .app-mob-menu-sideslip-view-header {
+      .header {
+          .text {
+              color: var(--app-background-color);
+          }
+          .van-notice-bar {
+              color: var(--app-background-color);
+          }
+      }
+  }
+
+  // 搜索表单2主题
+  .app-search-editor {
+      .app-search-editor-item-active {
+          border-color: var(--app-background-color);
+      }
+  }
+
+  // 优先级工具栏
+  .mdview-tools {
+      .view-tool {
+          &-sorts {
+              &-item {
+                  .active {
+                      display: flex;
+                      flex-grow: 1;
+                      font-size: 15px;
+                      color: var(--app-background-color);
+                  }
+                  .sort-icon {
+                      .sort-select {
+                          color: var(--app-background-color);
+                      }
+                  }
+              }
+          }
+      }
+  }
+  // 树视图导航主题
+  .app-mob-treeview {
+      .treeNav {
+          .treeNav-active {
+              color: var(--app-background-color);
+          }
+      }
+  }
+
+  //快速操作工具栏
+  .app-mob-mdctrl .app-mob-mdctrl-mdctrl .no-data ion-button {
+      --color: var(--app-background-color);
+      --color-activated: var(--app-background-color);
+  }
+
+  .app-select-tree-list {
+      .app-select-tree-list-item {
+          .index_text {
+              background: var(--app-background-color);
+              color: var(--app-font-color);
+          }
+      }
+  }
+  .app-mob-treeview .tree_item_label .tree_item_index_text {
+      background: var(--app-background-color);
+      color: var(--app-font-color);
+  }
+  // .app-tree 组件
+  .app-tree {
+      width: 100%;
+      height: 100%;
+      .ok_button {
+          background: var(--app-background-color);
+          color: var(--app-font-color);
+      }
+  }
+
+  // app-mob-group-picker组件
+  .ibiz-mob-group-picker {
+      .ibiz-group-footer {
+          .van-button {
+              background: var(--app-background-color);
+              color: var(--app-font-color);
+          }
+      }
+  }
+
+  //多选图标
+  .app-mob-mdctrl-mdctrl{
+    .items{
+      .select-icon{
+        color: var(--app-background-color);
+      }
+    }
+  } 
+
+  //搜索表单全选图标
+  .batch_btn{
+    .selectall-icon{
+      color: var(--app-background-color);
+    }
+  }
+
+  // 用户自定义主题文件
+  .user_theme(var(--app-background-color), var(--app-font-color));
+

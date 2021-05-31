@@ -673,10 +673,6 @@
             },
             "editorType" : "MOBDROPDOWNLIST",
             "name" : "plan",
-            "getPSAppCodeList" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/CurProductPlan.json"
-            },
             "getPSNavigateContexts" : [ {
               "key" : "N_PRODUCT_EQ",
               "name" : "N_PRODUCT_EQ",

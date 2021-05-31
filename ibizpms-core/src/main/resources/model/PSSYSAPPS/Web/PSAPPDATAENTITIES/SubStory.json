@@ -865,10 +865,14 @@
       "getPSAppDEField" : {
         "name" : "PLAN",
         "codeName" : "Plan"
-      },
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurProductPlan.json"
+      }
+    }, {
+      "caption" : "计划",
+      "format" : "%1$s",
+      "name" : "planname",
+      "getPSAppDEField" : {
+        "name" : "PLANNAME",
+        "codeName" : "Planname"
       }
     }, {
       "caption" : "创建",
@@ -1909,6 +1913,12 @@
     "logicName" : "需求编号",
     "name" : "STORYSN",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Planname",
+    "logicName" : "所属计划",
+    "name" : "PLANNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "GetCurUserConcat",

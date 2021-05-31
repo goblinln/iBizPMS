@@ -666,25 +666,21 @@
       "enableSort" : true
     }, {
       "align" : "LEFT",
-      "cLConvertMode" : "FRONT",
+      "cLConvertMode" : "NONE",
       "caption" : "计划",
-      "codeName" : "plan",
+      "codeName" : "planname",
       "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "plan",
+      "dataItemName" : "planname",
       "excelCaption" : "计划",
-      "name" : "plan",
+      "name" : "planname",
       "noPrivDisplayMode" : 1,
-      "getPSAppCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/AllProductPlan.json"
-      },
       "getPSAppDEField" : {
-        "name" : "PLAN",
-        "codeName" : "Plan"
+        "name" : "PLANNAME",
+        "codeName" : "Planname"
       },
       "width" : 200,
       "widthUnit" : "PX",
-      "enableSort" : false
+      "enableSort" : true
     }, {
       "align" : "LEFT",
       "cLConvertMode" : "FRONT",
@@ -1171,6 +1167,13 @@
       }
     }, {
       "dataType" : 1,
+      "name" : "tobug",
+      "getPSAppDEField" : {
+        "name" : "TOBUG",
+        "codeName" : "ToBug"
+      }
+    }, {
+      "dataType" : 1,
       "name" : "srfkey",
       "getPSAppDEField" : {
         "name" : "ID",
@@ -1184,13 +1187,6 @@
         "codeName" : "Id"
       },
       "dataAccessAction" : true
-    }, {
-      "dataType" : 1,
-      "name" : "tobug",
-      "getPSAppDEField" : {
-        "name" : "TOBUG",
-        "codeName" : "ToBug"
-      }
     }, {
       "dataType" : 25,
       "name" : "openedby",
@@ -1246,6 +1242,13 @@
       "getPSAppDEField" : {
         "name" : "MODULE",
         "codeName" : "Module"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "planname",
+      "getPSAppDEField" : {
+        "name" : "PLANNAME",
+        "codeName" : "Planname"
       }
     }, {
       "dataType" : 25,
