@@ -71,6 +71,9 @@ public class CompileServiceImpl extends ServiceImpl<CompileMapper, Compile> impl
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
+        if(!compileRuntime.isRtmodel()){
+            testresultService.saveByCompile(et.getId(), et.getTestresult());
+        }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -91,6 +94,9 @@ public class CompileServiceImpl extends ServiceImpl<CompileMapper, Compile> impl
     public boolean update(Compile et) {
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
+        }
+        if(!compileRuntime.isRtmodel()){
+            testresultService.saveByCompile(et.getId(), et.getTestresult());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -146,6 +152,7 @@ public class CompileServiceImpl extends ServiceImpl<CompileMapper, Compile> impl
         }
         else {
             if(!compileRuntime.isRtmodel()){
+                et.setTestresult(testresultService.selectByCompile(key));
             }
         }
         return et;

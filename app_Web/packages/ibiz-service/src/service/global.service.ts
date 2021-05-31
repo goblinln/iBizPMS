@@ -116,6 +116,15 @@ export class GlobalService {
         return (await import('./product-team/product-team.service')).default.getInstance();
     }
     /**
+     * 测试模块服务
+     *
+     * @return {TestModule}
+     * @memberof GlobalService
+     */
+    async getTestModuleService() {
+        return (await import('./test-module/test-module.service')).default.getInstance();
+    }
+    /**
      * 产品生命周期服务
      *
      * @return {ProductLife}
@@ -627,15 +636,6 @@ export class GlobalService {
      */
     async getCompanyStatsService() {
         return (await import('./company-stats/company-stats.service')).default.getInstance();
-    }
-    /**
-     * 测试模块服务
-     *
-     * @return {TestModule}
-     * @memberof GlobalService
-     */
-    async getTestModuleService() {
-        return (await import('./test-module/test-module.service')).default.getInstance();
     }
     /**
      * 子需求服务

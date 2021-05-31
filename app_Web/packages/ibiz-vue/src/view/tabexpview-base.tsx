@@ -35,27 +35,6 @@ export class TabExpViewBase extends MainViewBase {
     public engine: TabExpViewEngine = new TabExpViewEngine();
 
     /**
-     * 当前激活分页视图面板
-     * 
-     * @memberof TabExpviewBase
-     */
-    public activiedTabViewPanel: any = {};
-
-    /**
-     * 分页面板权限标识存储对象
-     * 
-     * @memberof TabExpviewBase
-     */
-    public authResourceObject: any;
-
-    /**
-     * 分页标题绘制状态
-     * 
-     * @memberof TabExpviewBase
-     */
-    public tabsHeaderRenderState: boolean = false;
-
-    /**
      * 加载模型
      * 
      * @memberof TabExpviewBase
@@ -121,39 +100,6 @@ export class TabExpViewBase extends MainViewBase {
         this.viewInstance = (this.staticProps?.modeldata) as IPSAppDETabExplorerView;
         await super.viewModelInit();
         this.tabExpPanelInstance = ModelTool.findPSControlByType("TABEXPPANEL",this.viewInstance.getPSControls()) as IPSTabExpPanel;
-        const tabViewPanels: any[] = this.tabExpPanelInstance.getPSControls() || [];
-        if (tabViewPanels.length > 0) {
-            this.activiedTabViewPanel = tabViewPanels[0].name;
-        }
-    }
-
-    /**
-     * 分页面板点击
-     * 
-     * @memberof TabExpviewBase
-     */
-    public tabPanelClick(event: any) {
-        if (event) {
-            this.viewState.next({ tag: this.tabExpPanelInstance?.name, action: 'changeActivedTab', data: event });
-        }
-    }
-
-    /**
-     * 初始化分页导航面板标题
-     * 
-     * @memberof TabExpviewBase
-     */
-    public initTabExpHeader(data: any) {
-        const getActivedTabViewPanel = () => {
-            const tabViewPanels: any[] = this.tabExpPanelInstance.getPSControls() || [];
-            if (tabViewPanels.length > 0) {
-                return tabViewPanels[0].name;
-            }
-            return null;
-        }
-        this.activiedTabViewPanel = data?.activiedTabViewPanel || getActivedTabViewPanel();
-        this.authResourceObject = data?.authResourceObject;
-        this.tabsHeaderRenderState = this.viewInstance.viewStyle == 'DEFAULT' ? true : false;
     }
 
     /**
@@ -166,88 +112,4 @@ export class TabExpViewBase extends MainViewBase {
         return this.$createElement(targetCtrlName, { slot: 'default', props: targetCtrlParam, ref: this.tabExpPanelInstance?.name, on: targetCtrlEvent });
     }
 
-    /**
-     * 绘制分页面板项
-     * 
-     * @memberof TabExpviewBase
-     */
-    public renderTabPaneContent(tabViewPanel: IPSDETabViewPanel, index: number) {
-        const appCounterRef: IPSAppCounterRef = tabViewPanel.getPSAppCounterRef() as IPSAppCounterRef;
-        let viewPanelCount: any = undefined;
-        if (appCounterRef && tabViewPanel.counterId) {
-            const targetCounterService: any = Util.findElementByField(this.counterServiceArray, 'id', appCounterRef.id)?.service;
-            viewPanelCount = targetCounterService?.counterData?.[tabViewPanel.counterId.toLowerCase()]
-        }
-        const tabsName = `${this.appDeCodeName}_${this.viewInstance.codeName}_tabexpheader`;
-        let disabled = this.authResourceObject && this.authResourceObject[tabViewPanel.name]?.disabled;
-        const IPSSysImage: IPSSysImage = tabViewPanel.getPSSysImage() as IPSSysImage;
-        return (
-            <tab-pane lazy={true} name={tabViewPanel.name} tab={tabsName} disabled={disabled}
-                label={(h: any) => {
-                    return h('div', [
-                        IPSSysImage ? IPSSysImage.imagePath ?
-                            h('img', {
-                                src: IPSSysImage.imagePath,
-                                style: {
-                                    'margin-right': '2px'
-                                }
-                            }) :
-                            h('i', {
-                                class: IPSSysImage.cssClass,
-                                style: {
-                                    'margin-right': '2px'
-                                }
-                            }) : '',
-                        h('span', tabViewPanel.caption),
-                        h('Badge', {
-                            props: {
-                                count: viewPanelCount,
-                                type: 'primary'
-                            }
-                        })
-                    ])
-                }}>
-            </tab-pane>
-        )
-    }
-
-    /**
-     * 绘制分页面板标题栏
-     * 
-     * @memberof TabExpviewBase
-     */
-    public renderTabsHeader() {
-        if (!this.tabsHeaderRenderState) {
-            return;
-        }
-        const IPSDETabViewPanel = this.tabExpPanelInstance?.getPSControls() as IPSDETabViewPanel[];
-        const tabsName = `${this.appDeCodeName}_${this.viewInstance.codeName}_tabexpheader`;
-        return (
-            <div class={{ 'tabviewpanel-header': true }} slot="tabsHeader" >
-                <tabs value={this.activiedTabViewPanel} animated={false} class='tabexppanel' name={tabsName} on-on-click={($event: any) => this.tabPanelClick($event)}>
-                    {
-                        IPSDETabViewPanel?.map((tabViewPanel: IPSDETabViewPanel, index: number) => {
-                            return this.authResourceObject && this.authResourceObject[tabViewPanel.name]?.visabled ?
-                                this.renderTabPaneContent(tabViewPanel, index) : null
-                        })
-                    }
-                </tabs>
-            </div>
-        );
-    }
-
-    /**
-     * 部件事件处理
-     * 
-     * @memberof TabExpviewBase
-     */
-    public onCtrlEvent(controlName: any, action: any, data: any) {
-        super.onCtrlEvent(controlName, action, data);
-        if (action == 'tabexppanelIsMounted') {
-            this.initTabExpHeader(data);
-        }
-        if (action == 'viewPanelIsChange') {
-            this.activiedTabViewPanel = data;
-        }
-    }
 }

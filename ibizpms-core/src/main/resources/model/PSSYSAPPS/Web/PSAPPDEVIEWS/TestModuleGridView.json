@@ -406,6 +406,7 @@
           "getPSUIAction" : {
             "actionTarget" : "MULTIKEY",
             "getCapPSLanguageRes" : {
+              "codeName" : "Auto159",
               "lanResTag" : "TBB.TEXT.*.REMOVE"
             },
             "caption" : "删除",
@@ -418,6 +419,7 @@
             },
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
+              "codeName" : "Auto286",
               "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
             },
             "uIActionMode" : "SYS",
@@ -715,5 +717,31 @@
   "rowEditDefault" : false,
   "showCaptionBar" : false,
   "modelid" : "2cd7bc56e84d0466d176da964a839727",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "TestModules",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+    },
+    "name" : "TEST_MODULE",
+    "getParentPSAppDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ] ]
 }

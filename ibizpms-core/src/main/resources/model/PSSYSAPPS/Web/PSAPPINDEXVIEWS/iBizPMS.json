@@ -410,6 +410,7 @@
         },
         "tooltip" : "产品",
         "getTooltipPSLanguageRes" : {
+          "codeName" : "Auto291",
           "lanResTag" : "MENUITEM.CAPTION.MENUITEM.CAPTION.LEFT_PRODUCT"
         }
       }, {

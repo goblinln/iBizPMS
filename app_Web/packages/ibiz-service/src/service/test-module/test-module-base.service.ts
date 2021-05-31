@@ -24,6 +24,7 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];
     protected selectContextParam = {
+        test: 'root',
     };
 
     newEntity(data: ITestModule): TestModule {
@@ -40,6 +41,14 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
 
     async getLocal(context: IContext, srfKey: string): Promise<ITestModule> {
         const entity = this.cache.get(context, srfKey);
+        if (entity && entity.root && entity.root !== '') {
+            const s = await ___ibz___.gs.getTestService();
+            const data = await s.getLocal2(context, entity.root);
+            if (data) {
+                entity.rootname = data.name;
+                entity.root = data.id;
+            }
+        }
         return entity!;
     }
 
@@ -48,6 +57,14 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
     }
 
     async getDraftLocal(_context: IContext, entity: ITestModule = {}): Promise<ITestModule> {
+        if (_context.test && _context.test !== '') {
+            const s = await ___ibz___.gs.getTestService();
+            const data = await s.getLocal2(_context, _context.test);
+            if (data) {
+                entity.rootname = data.name;
+                entity.root = data.id;
+            }
+        }
         return new TestModule(entity);
     }
 
@@ -136,15 +153,21 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
         return this.condCache.get('view');
     }
     /**
-     * Select
+     * GetDraft
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestModuleService
      */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/testmodules/${_context.testmodule}/select`);
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/tests/${_context.test}/testmodules/getdraft`, _data);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Create
@@ -155,37 +178,17 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && true) {
         _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/tests/${_context.test}/testmodules`, _data);
         }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/testmodules`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestModuleService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/testmodules/${_context.testmodule}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestModuleService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/testmodules/${_context.testmodule}`);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Get
@@ -196,55 +199,26 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/testmodules/${_context.testmodule}`);
-        return res;
+        if (_context.test && _context.testmodule) {
+            const res = await this.http.get(`/tests/${_context.test}/testmodules/${_context.testmodule}`);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * GetDraft
+     * Update
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestModuleService
      */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/testmodules/getdraft`, _data);
-        return res;
-    }
-    /**
-     * Fix
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestModuleService
-     */
-    async Fix(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/testmodules/${_context.testmodule}/fix`, _data);
-    }
-    /**
-     * RemoveModule
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestModuleService
-     */
-    async RemoveModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.put(`/testmodules/${_context.testmodule}/removemodule`, _data);
-    }
-    /**
-     * FetchByPath
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestModuleService
-     */
-    async FetchByPath(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/testmodules/fetchbypath`, _data);
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testmodule) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/tests/${_context.test}/testmodules/${_context.testmodule}`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchDefault
@@ -255,50 +229,23 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      * @memberof TestModuleService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/testmodules/fetchdefault`, _data);
+        if (_context.test && true) {
+            return this.http.post(`/tests/${_context.test}/testmodules/fetchdefault`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchParentModule
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestModuleService
      */
-    async FetchParentModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/testmodules/fetchparentmodule`, _data);
-    }
-    /**
-     * FetchRoot
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestModuleService
-     */
-    async FetchRoot(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/testmodules/fetchroot`, _data);
-    }
-    /**
-     * FetchRoot_NoBranch
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestModuleService
-     */
-    async FetchRoot_NoBranch(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/testmodules/fetchroot_nobranch`, _data);
-    }
-    /**
-     * FetchTestModule
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestModuleService
-     */
-    async FetchTestModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/testmodules/fetchtestmodule`, _data);
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testmodule) {
+            return this.http.delete(`/tests/${_context.test}/testmodules/${_context.testmodule}`);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

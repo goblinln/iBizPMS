@@ -6,7 +6,7 @@
   "name" : "ProductBugTreeExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -48,7 +48,7 @@
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
     },
     "getPSAppViewRefs" : [ {
       "name" : "EXPITEM:MODULE",
@@ -484,7 +484,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

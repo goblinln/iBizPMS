@@ -1107,6 +1107,7 @@
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
                 "getCapPSLanguageRes" : {
+                  "codeName" : "Auto83",
                   "lanResTag" : "TBB.TEXT.*.COPY"
                 },
                 "caption" : "拷贝",
@@ -1119,6 +1120,7 @@
                 },
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
+                  "codeName" : "Auto243",
                   "lanResTag" : "TBB.TOOLTIP.*.COPY"
                 },
                 "uIActionMode" : "SYS",

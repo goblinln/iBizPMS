@@ -71,6 +71,9 @@ public class JobServiceImpl extends ServiceImpl<JobMapper, Job> implements IJobS
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
+        if(!jobRuntime.isRtmodel()){
+            testresultService.saveByJob(et.getId(), et.getTestresult());
+        }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -91,6 +94,9 @@ public class JobServiceImpl extends ServiceImpl<JobMapper, Job> implements IJobS
     public boolean update(Job et) {
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
+        }
+        if(!jobRuntime.isRtmodel()){
+            testresultService.saveByJob(et.getId(), et.getTestresult());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -146,6 +152,7 @@ public class JobServiceImpl extends ServiceImpl<JobMapper, Job> implements IJobS
         }
         else {
             if(!jobRuntime.isRtmodel()){
+                et.setTestresult(testresultService.selectByJob(key));
             }
         }
         return et;

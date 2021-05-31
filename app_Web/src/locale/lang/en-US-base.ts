@@ -9,6 +9,7 @@ import story_en_US from '@locale/lanres/entities/story/story_en_US';
 import project_en_US from '@locale/lanres/entities/project/project_en_US';
 import productmodule_en_US from '@locale/lanres/entities/product-module/product-module_en_US';
 import productteam_en_US from '@locale/lanres/entities/product-team/product-team_en_US';
+import testmodule_en_US from '@locale/lanres/entities/test-module/test-module_en_US';
 import productlife_en_US from '@locale/lanres/entities/product-life/product-life_en_US';
 import task_en_US from '@locale/lanres/entities/task/task_en_US';
 import build_en_US from '@locale/lanres/entities/build/build_en_US';
@@ -66,7 +67,6 @@ import ibizproprojectmonthly_en_US from '@locale/lanres/entities/ibizpro-project
 import user_en_US from '@locale/lanres/entities/user/user_en_US';
 import doclib_en_US from '@locale/lanres/entities/doc-lib/doc-lib_en_US';
 import companystats_en_US from '@locale/lanres/entities/company-stats/company-stats_en_US';
-import testmodule_en_US from '@locale/lanres/entities/test-module/test-module_en_US';
 import substory_en_US from '@locale/lanres/entities/sub-story/sub-story_en_US';
 import ibizproprojectdaily_en_US from '@locale/lanres/entities/ibizpro-project-daily/ibizpro-project-daily_en_US';
 import ibzplantemplet_en_US from '@locale/lanres/entities/ibz-plan-templet/ibz-plan-templet_en_US';
@@ -434,6 +434,7 @@ function getAppLocale(){
             'project': project_en_US(),
             'productmodule': productmodule_en_US(),
             'productteam': productteam_en_US(),
+            'testmodule': testmodule_en_US(),
             'productlife': productlife_en_US(),
             'task': task_en_US(),
             'build': build_en_US(),
@@ -491,7 +492,6 @@ function getAppLocale(){
             'user': user_en_US(),
             'doclib': doclib_en_US(),
             'companystats': companystats_en_US(),
-            'testmodule': testmodule_en_US(),
             'substory': substory_en_US(),
             'ibizproprojectdaily': ibizproprojectdaily_en_US(),
             'ibzplantemplet': ibzplantemplet_en_US(),

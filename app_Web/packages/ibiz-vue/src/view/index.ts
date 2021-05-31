@@ -11,6 +11,7 @@ export { KanbanViewBase } from './kanbanview-base';
 export { CalendarViewBase } from './calendarview-base';
 export { DashboardViewBase } from './dashboardview-base';
 export { TabExpViewBase } from './tabexpview-base';
+export { TabSearchViewBase } from './tabsearchview-base';
 export { MEditViewBase } from './meditview-base';
 export { GanttViewBase } from './ganttview-base';
 export { TreeViewBase } from './treeview-base';

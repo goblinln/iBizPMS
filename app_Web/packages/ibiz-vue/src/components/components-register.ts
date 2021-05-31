@@ -128,6 +128,7 @@ import { AppDefaultDataViewView } from './view/app-default-view/app-default-data
 import { AppDefaultDePortalView } from './view/app-default-view/app-default-deportalview';
 import { AppDefaultPortalView } from './view/app-default-view/app-default-portalview';
 import { AppDefaultTabExpView } from './view/app-default-view/app-default-tabexpview';
+import { AppDefaultTabSearchView } from './view/app-default-view/app-default-tabsearchview';
 import { AppDefaultNotSupportedView } from './view/app-default-view/app-default-notsupportedview';
 import { AppDefaultMEditView } from './view/app-default-view/app-default-meditview';
 import { AppDefaultGanttView } from './view/app-default-view/app-default-ganttview';
@@ -168,6 +169,7 @@ import { AppStyle2DataViewView } from './view/app-style2-view/app-style2-datavie
 import { AppStyle2DePortalView } from './view/app-style2-view/app-style2-deportalview';
 import { AppStyle2PortalView } from './view/app-style2-view/app-style2-portalview';
 import { AppStyle2TabExpView } from './view/app-style2-view/app-style2-tabexpview';
+import { AppStyle2TabSearchView } from './view/app-style2-view/app-style2-tabsearchview';
 import { AppStyle2MEditView } from './view/app-style2-view/app-style2-meditview';
 import { AppStyle2GanttView } from './view/app-style2-view/app-style2-ganttview';
 import { AppStyle2TreeView } from './view/app-style2-view/app-style2-treeview';
@@ -365,6 +367,7 @@ export const ComponentsRegister = {
         v.component('app-default-deportalview', AppDefaultDePortalView);
         v.component('app-default-portalview', AppDefaultPortalView);
         v.component('app-default-tabexpview', AppDefaultTabExpView);
+        v.component('app-default-tabsearchview', AppDefaultTabSearchView);
         v.component('app-default-notsupportedview', AppDefaultNotSupportedView);
         v.component('app-default-meditview', AppDefaultMEditView);
         v.component('app-default-ganttview', AppDefaultGanttView);
@@ -405,6 +408,7 @@ export const ComponentsRegister = {
         v.component('app-style2-deportalview', AppStyle2DePortalView);
         v.component('app-style2-portalview', AppStyle2PortalView);
         v.component('app-style2-tabexpview', AppStyle2TabExpView);
+        v.component('app-style2-tabsearchview', AppStyle2TabSearchView);
         v.component('app-style2-meditview', AppStyle2MEditView);
         v.component('app-style2-ganttview', AppStyle2GanttView);
         v.component('app-style2-treeview', AppStyle2TreeView);

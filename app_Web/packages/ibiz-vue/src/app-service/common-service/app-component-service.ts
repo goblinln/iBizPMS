@@ -55,6 +55,7 @@ export class AppComponentService {
         this.viewMap.set("DEKANBANVIEW_DEFAULT", 'app-default-kanbanview');
         this.viewMap.set("DEPORTALVIEW_DEFAULT", 'app-default-deportalview');
         this.viewMap.set("DETABEXPVIEW_DEFAULT", 'app-default-tabexpview');
+        this.viewMap.set("DETABSEARCHVIEW_DEFAULT", 'app-default-tabsearchview');
         this.viewMap.set("DEMEDITVIEW9_DEFAULT", 'app-default-meditview');
         this.viewMap.set("DEGANTTVIEW_DEFAULT", 'app-default-ganttview');
         this.viewMap.set("DETREEVIEW_DEFAULT", 'app-default-treeview');
@@ -102,6 +103,7 @@ export class AppComponentService {
         this.viewMap.set("DEKANBANVIEW_STYLE2", 'app-style2-kanbanview');
         this.viewMap.set("DEPORTALVIEW_STYLE2", 'app-style2-deportalview');
         this.viewMap.set("DETABEXPVIEW_STYLE2", 'app-style2-tabexpview');
+        this.viewMap.set("DETABSEARCHVIEW_STYLE2", 'app-style2-tabsearchview');
         this.viewMap.set("DEMEDITVIEW9_STYLE2", 'app-style2-meditview');
         this.viewMap.set("DEGANTTVIEW_STYLE2", 'app-style2-ganttview');
         this.viewMap.set("DETREEVIEW_STYLE2", 'app-style2-treeview');

@@ -330,7 +330,7 @@ export class MDViewBase extends MainViewBase {
             {enableFilter && <el-popover placement="bottom" popper-class={popoverClass} trigger="click" visible-arrow={false} on-hide={() => this.isExpandSearchForm = !this.isExpandSearchForm}>
                 <i-button slot="reference" class={{'filter': true, 'is-expand': this.isExpandSearchForm}} icon="ios-funnel" on-click={(e:any)=>{
                     if (!this.isExpandSearchForm) {
-                      debounce((AppGlobalService.getInstance() as any).executeGlobalAction,['ToggleFilter',undefined, undefined, undefined, e, undefined, this, undefined],this);
+                        debounce(() => (AppGlobalService.getInstance() as any).executeGlobalAction('ToggleFilter',undefined, undefined, undefined, e, undefined, this, undefined),[],this);
                     }}} />
                 {popoverClass && popoverClass != '' ? popoverClass == 'searchform-popover' ? this.renderSearchForm() : this.renderSearchBar() : null}
             </el-popover>}

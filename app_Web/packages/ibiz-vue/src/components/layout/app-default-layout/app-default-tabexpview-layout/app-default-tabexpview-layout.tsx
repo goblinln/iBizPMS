@@ -13,17 +13,10 @@ export class AppDefaultTabExpViewLayout extends AppDefaultViewLayout {
     public renderViewHeader() {
         return (
             <div slot="title" class='header-container' key='view-header'>
-                <div class="tabs-container">
-                    {this.showCaption ? 
-                        <div class="caption">
-                            <span class='info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.viewInstance.caption}</span>
-                        </div> : null }
-                    {this.$slots.tabsHeader}
-                </div>
-                {this.viewIsshowToolbar ? 
-                    <div class='toolbar-container'>
-                        {this.$slots.toolbar}
-                    </div> : null}
+                {this.showCaption ? 
+                    <div class="caption">
+                        <span class='info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.viewInstance.caption}</span>
+                    </div> : null }
             </div>
         )
     }
@@ -34,10 +27,12 @@ export class AppDefaultTabExpViewLayout extends AppDefaultViewLayout {
      * @memberof AppDefaultTabExpViewLayout
      */
     public renderContent() {
+        //TODO 分页位置样式等待模型补充
         let cardClass = {
             'view-card': true,
             'view-no-caption': !this.showCaption,
             'view-no-toolbar': !this.viewIsshowToolbar,
+            'view-tabs-mode-default': true
         };
         return (
             <card class={cardClass} disHover={true} bordered={false}>

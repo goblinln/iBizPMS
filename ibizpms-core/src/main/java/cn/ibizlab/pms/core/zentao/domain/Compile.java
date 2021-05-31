@@ -158,6 +158,14 @@ public class Compile extends EntityMP implements Serializable {
     private String createdby;
 
 
+    /**
+     * 测试结果
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private List<cn.ibizlab.pms.core.zentao.domain.TestResult> testresult;
+
 
     /**
      * 设置 [queue]

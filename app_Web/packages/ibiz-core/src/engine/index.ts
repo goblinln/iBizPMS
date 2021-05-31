@@ -33,6 +33,7 @@ export { PortalViewEngine } from './portal-view-engine';
 export { PortalView9Engine } from './portal-view9-engine';
 export { SearchViewEngine } from './search-view-engine';
 export { TabExpViewEngine } from './tab-exp-view-engine';
+export { TabSearchViewEngine } from './tab-search-view-engine';
 export { TreeExpViewEngine } from './tree-exp-view-engine';
 export { TreeGridExViewEngine } from './tree-grid-ex-view-engine';
 export { TreeViewEngine } from './tree-view-engine';

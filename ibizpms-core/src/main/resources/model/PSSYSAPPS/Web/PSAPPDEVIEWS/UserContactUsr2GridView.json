@@ -275,6 +275,7 @@
           "getPSUIAction" : {
             "actionTarget" : "MULTIKEY",
             "getCapPSLanguageRes" : {
+              "codeName" : "Auto159",
               "lanResTag" : "TBB.TEXT.*.REMOVE"
             },
             "caption" : "删除",
@@ -287,6 +288,7 @@
             },
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
+              "codeName" : "Auto286",
               "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
             },
             "uIActionMode" : "SYS",

@@ -1,0 +1,75 @@
+.view-default.detabsearchview.view-container {
+    >.ivu-card {
+      >.ivu-card-head {
+        >.header-container >.tabs-container {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          >.caption {
+            line-height: 48px;
+            color: var(--view-font-color-bright);
+            flex-shrink: 0;
+            font-size: 14px;
+            font-weight: 600;
+          }
+          >.tabviewpanel-header {
+            padding-left: 12px;
+            height: 48px;
+            margin-bottom: -1px;
+            >.ivu-tabs {
+              .ivu-tabs-bar .ivu-tabs-nav-container {
+                height: 48px;
+              }
+              .ivu-tabs-bar .ivu-tabs-nav-container .ivu-tabs-nav-wrap .ivu-tabs-nav-scroll .ivu-tabs-nav {
+                height: 48px;
+                line-height: 32px;
+                .ivu-tabs-ink-bar {
+                  bottom: 0px;
+                }
+                .ivu-tabs-tab.ivu-tabs-tab-active {
+                  font-weight: 700;
+                }
+                .ivu-tabs-tab:hover {
+                  color: #2d8cf0 !important;
+                  span {
+                    border-color: #2d8cf0 !important;
+                  }
+                }
+              }
+              .ivu-tabs-content {
+                display: none;
+                visibility: hidden;
+              }
+            }
+          }
+        }
+      }
+      >.ivu-card-body {
+        // 搜索表单
+        >.app-search-form{
+          height: auto;
+          padding: 5px 0;
+        }
+        // 搜索栏
+        >.searchbar{
+          .search-bar-action{
+            text-align: right;
+          }
+        }
+        >.content-container {
+          padding: 0;
+        }
+        >.content-container >.tabexppanel >.ivu-tabs {
+          >.ivu-tabs-bar {
+            display: none;
+            visibility: hidden;
+          }
+          >.ivu-tabs-content {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+  

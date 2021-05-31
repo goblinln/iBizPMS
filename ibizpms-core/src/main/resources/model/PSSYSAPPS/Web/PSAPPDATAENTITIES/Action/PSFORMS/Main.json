@@ -195,6 +195,7 @@
         "getPSDEFormDetails" : [ {
           "actionType" : "UIACTION",
           "getCapPSLanguageRes" : {
+            "codeName" : "Auto223",
             "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE"
           },
           "caption" : "关闭",
@@ -217,6 +218,7 @@
           },
           "getPSUIAction" : {
             "getCapPSLanguageRes" : {
+              "codeName" : "Auto223",
               "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE"
             },
             "caption" : "返回",
@@ -229,6 +231,7 @@
             },
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
+              "codeName" : "Auto92",
               "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE"
             },
             "uIActionMode" : "SYS",
@@ -240,6 +243,7 @@
         }, {
           "actionType" : "UIACTION",
           "getCapPSLanguageRes" : {
+            "codeName" : "Auto97",
             "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
           },
           "caption" : "保存",
@@ -262,6 +266,7 @@
           },
           "getPSUIAction" : {
             "getCapPSLanguageRes" : {
+              "codeName" : "Auto97",
               "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
             },
             "caption" : "保存并关闭",
@@ -273,6 +278,7 @@
             },
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
+              "codeName" : "Auto43",
               "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
             },
             "uIActionMode" : "SYS",

@@ -65,6 +65,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('project', () => import('../uiservice/project/project-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productmodule', () => import('../uiservice/product-module/product-module-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productteam', () => import('../uiservice/product-team/product-team-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('testmodule', () => import('../uiservice/test-module/test-module-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productlife', () => import('../uiservice/product-life/product-life-ui-service'));
         UIServiceRegister.allUIServiceMap.set('task', () => import('../uiservice/task/task-ui-service'));
         UIServiceRegister.allUIServiceMap.set('build', () => import('../uiservice/build/build-ui-service'));
@@ -122,7 +123,6 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('user', () => import('../uiservice/user/user-ui-service'));
         UIServiceRegister.allUIServiceMap.set('doclib', () => import('../uiservice/doc-lib/doc-lib-ui-service'));
         UIServiceRegister.allUIServiceMap.set('companystats', () => import('../uiservice/company-stats/company-stats-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('testmodule', () => import('../uiservice/test-module/test-module-ui-service'));
         UIServiceRegister.allUIServiceMap.set('substory', () => import('../uiservice/sub-story/sub-story-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibizproprojectdaily', () => import('../uiservice/ibizpro-project-daily/ibizpro-project-daily-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzplantemplet', () => import('../uiservice/ibz-plan-templet/ibz-plan-templet-ui-service'));

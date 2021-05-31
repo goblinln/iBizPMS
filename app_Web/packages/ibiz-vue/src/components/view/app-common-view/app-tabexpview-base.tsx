@@ -77,7 +77,6 @@ export class AppTabExpViewBase extends TabExpViewBase {
             this.renderCaptionInfo(),
             this.renderBodyMessage(),
             this.renderToolBar(),
-            this.viewInstance.viewStyle == "DEFAULT" ? this.renderTabsHeader() : null,
             this.renderMainContent(),
             this.renderBottomMessage()
         ]);

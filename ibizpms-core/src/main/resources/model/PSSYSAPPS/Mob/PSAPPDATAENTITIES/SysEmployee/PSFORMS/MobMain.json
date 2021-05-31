@@ -432,6 +432,7 @@
       "showCaption" : true
     }, {
       "getCapPSLanguageRes" : {
+        "codeName" : "Auto176",
         "lanResTag" : "TBB.TOOLTIP.*.PRINT"
       },
       "caption" : "创建时间",
@@ -551,6 +552,7 @@
       "showCaption" : true
     }, {
       "getCapPSLanguageRes" : {
+        "codeName" : "Auto79",
         "lanResTag" : "CTRL.WFSERVICE.ERR000015"
       },
       "caption" : "逻辑有效",

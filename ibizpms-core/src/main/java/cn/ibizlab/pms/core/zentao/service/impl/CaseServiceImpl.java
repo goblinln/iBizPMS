@@ -106,6 +106,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         if(!caseRuntime.isRtmodel()){
             casestepService.saveByIbizcase(et.getId(), et.getCasesteps());
         }
+        if(!caseRuntime.isRtmodel()){
+            testresultService.saveByIbizcase(et.getId(), et.getTestresult());
+        }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -133,6 +136,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         }
         if(!caseRuntime.isRtmodel()){
             casestepService.saveByIbizcase(et.getId(), et.getCasesteps());
+        }
+        if(!caseRuntime.isRtmodel()){
+            testresultService.saveByIbizcase(et.getId(), et.getTestresult());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -191,6 +197,7 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         else {
             if(!caseRuntime.isRtmodel()){
                 et.setCasesteps(casestepService.selectByIbizcase(key));
+                et.setTestresult(testresultService.selectByIbizcase(key));
             }
         }
         return et;

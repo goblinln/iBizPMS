@@ -165,6 +165,7 @@
     },
     "getPSDEToolbarItems" : [ {
       "getCapPSLanguageRes" : {
+        "codeName" : "Auto275",
         "lanResTag" : "TBB.TEXT.*.NEW"
       },
       "caption" : "新建",
@@ -182,6 +183,7 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
+          "codeName" : "Auto275",
           "lanResTag" : "TBB.TEXT.*.NEW"
         },
         "caption" : "新建",
@@ -194,6 +196,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
+          "codeName" : "Auto44",
           "lanResTag" : "TBB.TOOLTIP.*.NEW"
         },
         "uIActionMode" : "SYS",
@@ -202,6 +205,7 @@
       },
       "tooltip" : "新建",
       "getTooltipPSLanguageRes" : {
+        "codeName" : "Auto44",
         "lanResTag" : "TBB.TOOLTIP.*.NEW"
       },
       "showCaption" : false,
@@ -247,6 +251,7 @@
       "spanMode" : false
     }, {
       "getCapPSLanguageRes" : {
+        "codeName" : "Auto268",
         "lanResTag" : "TBB.TEXT.*.EXPORT"
       },
       "caption" : "导出",
@@ -264,6 +269,7 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
+          "codeName" : "Auto268",
           "lanResTag" : "TBB.TEXT.*.EXPORT"
         },
         "caption" : "导出",
@@ -276,6 +282,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
+          "codeName" : "Auto27",
           "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
         },
         "uIActionMode" : "SYS",
@@ -284,6 +291,7 @@
       },
       "tooltip" : "导出",
       "getTooltipPSLanguageRes" : {
+        "codeName" : "Auto27",
         "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
       },
       "showCaption" : true,
@@ -495,6 +503,7 @@
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
             "getCapPSLanguageRes" : {
+              "codeName" : "Auto253",
               "lanResTag" : "TBB.TEXT.*.EDIT"
             },
             "caption" : "编辑",
@@ -507,6 +516,7 @@
             },
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
+              "codeName" : "Auto130",
               "lanResTag" : "TBB.TOOLTIP.*.EDIT"
             },
             "uIActionMode" : "SYS",
@@ -522,6 +532,7 @@
           "getPSUIAction" : {
             "actionTarget" : "MULTIKEY",
             "getCapPSLanguageRes" : {
+              "codeName" : "Auto159",
               "lanResTag" : "TBB.TEXT.*.REMOVE"
             },
             "caption" : "删除",
@@ -534,6 +545,7 @@
             },
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
+              "codeName" : "Auto286",
               "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
             },
             "uIActionMode" : "SYS",

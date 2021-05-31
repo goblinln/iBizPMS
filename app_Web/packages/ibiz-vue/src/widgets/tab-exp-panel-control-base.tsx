@@ -102,9 +102,6 @@ export class TabExpPanelBase extends MainControlBase {
                 if (!Object.is(tag, this.name)) {
                     return;
                 }
-                if (Object.is(action, 'changeActivedTab')) {
-                    this.tabPanelClick(data);
-                }
                 if (Object.is(action, 'loadmodel')) {
                     this.activeData = data;
                     this.computedAuthPanel(data);
@@ -137,10 +134,6 @@ export class TabExpPanelBase extends MainControlBase {
                 });
             }
         }
-        this.ctrlEvent({ controlname: this.controlInstance.name, action: 'tabexppanelIsMounted', data: {
-            activiedTabViewPanel: this.activiedTabViewPanel,
-            authResourceObject: this.authResourceObject
-        }})
     }
 
     /**
@@ -247,7 +240,6 @@ export class TabExpPanelBase extends MainControlBase {
             return;
         }
         this.activiedTabViewPanel = $event;
-        this.ctrlEvent({ controlname: this.controlInstance.name, action: 'viewPanelIsChange', data: this.activiedTabViewPanel });
         this.viewState.next({ tag: this.activiedTabViewPanel, action: this.action, data: this.activeData });
     }
 

@@ -1,64 +1,72 @@
 .view-default.detabexpview.view-container {
-    >.ivu-card {
-      >.ivu-card-head {
-        >.header-container >.tabs-container {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-          >.caption {
-            line-height: 48px;
-            color: var(--view-font-color-bright);
-            flex-shrink: 0;
-            font-size: 14px;
-            font-weight: 600;
+  >.ivu-card >.ivu-card-head >.header-container {
+    height: 48px;
+    >.caption {
+      position: absolute;
+      top: 0;
+      line-height: 48px;
+      color: var(--view-font-color-bright);
+      flex-shrink: 0;
+      font-size: 14px;
+    }
+  }
+  >.ivu-card.view-tabs-mode-default {
+    >.ivu-card-head {
+      min-height: 0px;
+      height: 0px;
+      border-bottom: none;
+      >.header-container {
+        min-height: 0px;
+        height: 0px;
+        >.caption {
+          max-width: 120px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      } 
+    }
+    >.ivu-card-body {
+      >.content-container {
+        padding: 0;
+      }
+      >.content-container >.tabexppanel >.ivu-tabs {
+        .ivu-tabs-bar .ivu-tabs-nav-container {
+          padding-left: 120px;
+          height: 48px;
+        }
+        .ivu-tabs-bar .ivu-tabs-nav-container .ivu-tabs-nav-wrap .ivu-tabs-nav-scroll .ivu-tabs-nav {
+          height: 48px;
+          line-height: 32px;
+          .ivu-tabs-ink-bar {
+            bottom: 0px;
           }
-          >.tabviewpanel-header {
-            padding-left: 12px;
-            height: 48px;
-            margin-bottom: -1px;
-            >.ivu-tabs {
-              .ivu-tabs-bar .ivu-tabs-nav-container {
-                height: 48px;
-              }
-              .ivu-tabs-bar .ivu-tabs-nav-container .ivu-tabs-nav-wrap .ivu-tabs-nav-scroll .ivu-tabs-nav {
-                height: 48px;
-                line-height: 32px;
-                .ivu-tabs-ink-bar {
-                  bottom: 0px;
-                }
-                .ivu-tabs-tab.ivu-tabs-tab-active {
-                  font-weight: 700;
-                }
-                .ivu-tabs-tab:hover {
-                  color: #2d8cf0 !important;
-                  span {
-                    border-color: #2d8cf0 !important;
-                  }
-                }
-              }
-              .ivu-tabs-content {
-                display: none;
-                visibility: hidden;
-              }
+          .ivu-tabs-tab.ivu-tabs-tab-active {
+            font-weight: 700;
+          }
+          .ivu-tabs-tab:hover {
+            color: #2d8cf0 !important;
+            span {
+              border-color: #2d8cf0 !important;
             }
           }
         }
-      }
-      >.ivu-card-body {
-        >.content-container {
-          padding: 0;
+        >.ivu-tabs-content {
+          height: 100%;
         }
-        >.content-container >.tabexppanel >.ivu-tabs {
-          >.ivu-tabs-bar {
-            display: none;
-            visibility: hidden;
-          }
-          >.ivu-tabs-content {
-            height: 100%;
+        .tabviewpanel >.view-default.viewcontainer2 {
+          >.ivu-card >.ivu-card-head {
+            height: 0px;
+            min-height: 0px;
+            border-bottom: none;
+            >.header-container >.bar-container {
+              position: absolute;
+              right: 0px;
+              top: -50px;
+            }
           }
         }
       }
     }
   }
-  
+}

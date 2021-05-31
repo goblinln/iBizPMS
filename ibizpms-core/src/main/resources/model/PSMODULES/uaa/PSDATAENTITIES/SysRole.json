@@ -141,6 +141,7 @@
     "dataType" : "GUID",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
+      "codeName" : "Auto179",
       "lanResTag" : "CONTROL.SPEX.STANDARDPAGE"
     },
     "length" : 100,
@@ -200,6 +201,7 @@
     "dataType" : "TEXT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
+      "codeName" : "Auto261",
       "lanResTag" : "TBB.TOOLTIP.*.SAVE"
     },
     "length" : 200,
@@ -418,6 +420,7 @@
     "dataType" : "DATETIME",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
+      "codeName" : "Auto232",
       "lanResTag" : "COMMON.CONDITION.ABSGT"
     },
     "length" : 8,
@@ -459,6 +462,7 @@
     "dataType" : "DATETIME",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
+      "codeName" : "Auto255",
       "lanResTag" : "CONTROL.PICTURE.UPLOAD.TEXT"
     },
     "length" : 8,

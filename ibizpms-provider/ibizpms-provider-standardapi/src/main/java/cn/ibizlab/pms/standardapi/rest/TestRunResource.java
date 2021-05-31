@@ -52,5 +52,21 @@ public class TestRunResource {
     @Lazy
     public TestRunMapping testrunMapping;
 
+
+
+    @PreAuthorize("@TestRunRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据产品测试用例建立测试运行", tags = {"测试运行" },  notes = "根据产品测试用例建立测试运行")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases/{case_id}/testruns")
+    public ResponseEntity<TestRunDTO> createByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody TestRunDTO testrundto) {
+        TestRun domain = testrunMapping.toDomain(testrundto);
+        domain.setIbizcase(case_id);
+		testrunService.create(domain);
+        if(!testrunRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
+        TestRunDTO dto = testrunMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
 }
 

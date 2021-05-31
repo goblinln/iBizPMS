@@ -19,6 +19,7 @@ import { AppDefaultMEditViewLayout } from '../../components/layout/app-default-l
 import { AppDefaultDataViewExpViewLayout } from "../../components/layout/app-default-layout/app-default-dataviewexpview-layout/app-default-dataviewexpview-layout";
 import { AppDefaultPickupViewLayout } from "../../components/layout/app-default-layout/app-default-pickupview-layout/app-default-pickupview-layout";
 import { AppDefaultTabExpViewLayout } from "../../components/layout/app-default-layout/app-default-tabexpview-layout/app-default-tabexpview-layout";
+import { AppDefaultTabSearchViewLayout } from "../../components/layout/app-default-layout/app-default-tabsearchview-layout/app-default-tabsearchview-layout";
 import { AppDefaultMPickupViewLayout } from "../../components/layout/app-default-layout/app-default-mpickupview-layout/app-default-mpickupview-layout";
 import { AppDefaultGanttViewLayout } from "../../components/layout/app-default-layout/app-default-ganttview-layout/app-default-ganttview-layout";
 import { AppDefaultTreeGridExViewLayout } from "../../components/layout/app-default-layout/app-default-treegridexview-layout/app-default-treegridexview-layout";
@@ -42,6 +43,7 @@ import { AppStyle2ListExpViewLayout } from '../../components/layout/app-style2-l
 import { AppStyle2CalendarExpViewLayout } from '../../components/layout/app-style2-layout/app-style2-calendarexpview-layout/app-style2-calendarexpview-layout';
 import { AppStyle2ListViewLayout } from '../../components/layout/app-style2-layout/app-style2-listview-layout/app-style2-listview-layout';
 import { AppStyle2TabExpViewLayout } from '../../components/layout/app-style2-layout/app-style2-tabexpview-layout/app-style2-tabexpview-layout';
+import { AppStyle2TabSearchViewLayout } from '../../components/layout/app-style2-layout/app-style2-tabsearchview-layout/app-style2-tabsearchview-layout';
 import { AppStyle2CalendarViewLayout } from '../../components/layout/app-style2-layout/app-style2-calendarview-layout/app-style2-calendarview-layout';
 import { AppStyle2EditViewLayout } from '../../components/layout/app-style2-layout/app-style2-editview-layout/app-style2-editview-layout';
 import { AppStyle2EditView3Layout } from '../../components/layout/app-style2-layout/app-style2-editview3-layout/app-style2-editview3-layout';
@@ -120,6 +122,7 @@ export class AppLayoutService {
         this.layoutMap.set("DEDATAVIEWEXPVIEW-DEFAULT", AppDefaultDataViewExpViewLayout);
         this.layoutMap.set("DEPICKUPVIEW-DEFAULT", AppDefaultPickupViewLayout);
         this.layoutMap.set("DETABEXPVIEW-DEFAULT", AppDefaultTabExpViewLayout);
+        this.layoutMap.set("DETABSEARCHVIEW-DEFAULT", AppDefaultTabSearchViewLayout);
         this.layoutMap.set("DEMPICKUPVIEW-DEFAULT", AppDefaultMPickupViewLayout);
         this.layoutMap.set("DEGANTTVIEW-DEFAULT", AppDefaultGanttViewLayout);
         this.layoutMap.set("DETREEGRIDEXVIEW-DEFAULT", AppDefaultTreeGridExViewLayout);
@@ -166,6 +169,7 @@ export class AppLayoutService {
         this.layoutMap.set("DEDATAVIEWEXPVIEW-STYLE2", AppStyle2DataViewExpViewLayout);
         this.layoutMap.set("DEPICKUPVIEW-STYLE2", AppStyle2PickupViewLayout);
         this.layoutMap.set("DETABEXPVIEW-STYLE2", AppStyle2TabExpViewLayout);
+        this.layoutMap.set("DETABSEARCHVIEW-STYLE2", AppStyle2TabSearchViewLayout);
         this.layoutMap.set("DEMPICKUPVIEW-STYLE2", AppStyle2MPickupViewLayout);
         this.layoutMap.set("DEGANTTVIEW-STYLE2", AppStyle2GanttViewLayout);
         this.layoutMap.set("DETREEGRIDEXVIEW-STYLE2", AppStyle2TreeGridExViewLayout);

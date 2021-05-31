@@ -145,17 +145,9 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("产品",null),
 				title: commonLogic.appcommonhandle("产品编辑视图",null),
 			},
-			'casetreeexpview': {
-				caption: commonLogic.appcommonhandle("产品",null),
-				title: commonLogic.appcommonhandle("产品需求导航视图",null),
-			},
 			'editview_close': {
 				caption: commonLogic.appcommonhandle("关闭产品",null),
 				title: commonLogic.appcommonhandle("关闭产品",null),
-			},
-			'bugtreeexpview': {
-				caption: commonLogic.appcommonhandle("产品",null),
-				title: commonLogic.appcommonhandle("产品需求导航视图",null),
 			},
 		},
 		close_form: {

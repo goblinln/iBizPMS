@@ -9,6 +9,7 @@ import story_zh_CN from '@locale/lanres/entities/story/story_zh_CN';
 import project_zh_CN from '@locale/lanres/entities/project/project_zh_CN';
 import productmodule_zh_CN from '@locale/lanres/entities/product-module/product-module_zh_CN';
 import productteam_zh_CN from '@locale/lanres/entities/product-team/product-team_zh_CN';
+import testmodule_zh_CN from '@locale/lanres/entities/test-module/test-module_zh_CN';
 import productlife_zh_CN from '@locale/lanres/entities/product-life/product-life_zh_CN';
 import task_zh_CN from '@locale/lanres/entities/task/task_zh_CN';
 import build_zh_CN from '@locale/lanres/entities/build/build_zh_CN';
@@ -66,7 +67,6 @@ import ibizproprojectmonthly_zh_CN from '@locale/lanres/entities/ibizpro-project
 import user_zh_CN from '@locale/lanres/entities/user/user_zh_CN';
 import doclib_zh_CN from '@locale/lanres/entities/doc-lib/doc-lib_zh_CN';
 import companystats_zh_CN from '@locale/lanres/entities/company-stats/company-stats_zh_CN';
-import testmodule_zh_CN from '@locale/lanres/entities/test-module/test-module_zh_CN';
 import substory_zh_CN from '@locale/lanres/entities/sub-story/sub-story_zh_CN';
 import ibizproprojectdaily_zh_CN from '@locale/lanres/entities/ibizpro-project-daily/ibizpro-project-daily_zh_CN';
 import ibzplantemplet_zh_CN from '@locale/lanres/entities/ibz-plan-templet/ibz-plan-templet_zh_CN';
@@ -432,6 +432,7 @@ function getAppLocale(){
             'project': project_zh_CN(),
             'productmodule': productmodule_zh_CN(),
             'productteam': productteam_zh_CN(),
+            'testmodule': testmodule_zh_CN(),
             'productlife': productlife_zh_CN(),
             'task': task_zh_CN(),
             'build': build_zh_CN(),
@@ -489,7 +490,6 @@ function getAppLocale(){
             'user': user_zh_CN(),
             'doclib': doclib_zh_CN(),
             'companystats': companystats_zh_CN(),
-            'testmodule': testmodule_zh_CN(),
             'substory': substory_zh_CN(),
             'ibizproprojectdaily': ibizproprojectdaily_zh_CN(),
             'ibzplantemplet': ibzplantemplet_zh_CN(),

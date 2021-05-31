@@ -270,6 +270,38 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
         this.remove(new QueryWrapper<TestResult>().eq("case",id));
     }
 
+    public ITestResultService getProxyService() {
+        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
+    }
+	@Override
+    public void saveByIbizcase(Long id,List<TestResult> list) {
+        if(list==null)
+            return;
+        Set<Long> delIds=new HashSet<Long>();
+        List<TestResult> _update=new ArrayList<TestResult>();
+        List<TestResult> _create=new ArrayList<TestResult>();
+        for(TestResult before:selectByIbizcase(id)){
+            delIds.add(before.getId());
+        }
+        for(TestResult sub:list) {
+            sub.setIbizcase(id);
+            if(ObjectUtils.isEmpty(sub.getId()))
+                sub.setId((Long)sub.getDefaultKey(true));
+            if(delIds.contains(sub.getId())) {
+                delIds.remove(sub.getId());
+                _update.add(sub);
+            }
+            else
+                _create.add(sub);
+        }
+        if(_update.size()>0)
+            getProxyService().updateBatch(_update);
+        if(_create.size()>0)
+            getProxyService().createBatch(_create);
+        if(delIds.size()>0)
+            getProxyService().removeBatch(delIds);
+	}
+
 	@Override
     public List<TestResult> selectByCompile(Long id) {
         return baseMapper.selectByCompile(id);
@@ -278,6 +310,35 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     public void removeByCompile(Long id) {
         this.remove(new QueryWrapper<TestResult>().eq("compile",id));
     }
+
+	@Override
+    public void saveByCompile(Long id,List<TestResult> list) {
+        if(list==null)
+            return;
+        Set<Long> delIds=new HashSet<Long>();
+        List<TestResult> _update=new ArrayList<TestResult>();
+        List<TestResult> _create=new ArrayList<TestResult>();
+        for(TestResult before:selectByCompile(id)){
+            delIds.add(before.getId());
+        }
+        for(TestResult sub:list) {
+            sub.setCompile(id);
+            if(ObjectUtils.isEmpty(sub.getId()))
+                sub.setId((Long)sub.getDefaultKey(true));
+            if(delIds.contains(sub.getId())) {
+                delIds.remove(sub.getId());
+                _update.add(sub);
+            }
+            else
+                _create.add(sub);
+        }
+        if(_update.size()>0)
+            getProxyService().updateBatch(_update);
+        if(_create.size()>0)
+            getProxyService().createBatch(_create);
+        if(delIds.size()>0)
+            getProxyService().removeBatch(delIds);
+	}
 
 	@Override
     public List<TestResult> selectByJob(Long id) {
@@ -289,6 +350,35 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     }
 
 	@Override
+    public void saveByJob(Long id,List<TestResult> list) {
+        if(list==null)
+            return;
+        Set<Long> delIds=new HashSet<Long>();
+        List<TestResult> _update=new ArrayList<TestResult>();
+        List<TestResult> _create=new ArrayList<TestResult>();
+        for(TestResult before:selectByJob(id)){
+            delIds.add(before.getId());
+        }
+        for(TestResult sub:list) {
+            sub.setJob(id);
+            if(ObjectUtils.isEmpty(sub.getId()))
+                sub.setId((Long)sub.getDefaultKey(true));
+            if(delIds.contains(sub.getId())) {
+                delIds.remove(sub.getId());
+                _update.add(sub);
+            }
+            else
+                _create.add(sub);
+        }
+        if(_update.size()>0)
+            getProxyService().updateBatch(_update);
+        if(_create.size()>0)
+            getProxyService().createBatch(_create);
+        if(delIds.size()>0)
+            getProxyService().removeBatch(delIds);
+	}
+
+	@Override
     public List<TestResult> selectByRun(Long id) {
         return baseMapper.selectByRun(id);
     }
@@ -297,9 +387,6 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
         this.remove(new QueryWrapper<TestResult>().eq("run",id));
     }
 
-    public ITestResultService getProxyService() {
-        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
-    }
 	@Override
     public void saveByRun(Long id,List<TestResult> list) {
         if(list==null)

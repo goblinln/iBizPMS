@@ -167,6 +167,7 @@
     },
     "getPSDEToolbarItems" : [ {
       "getCapPSLanguageRes" : {
+        "codeName" : "Auto275",
         "lanResTag" : "TBB.TEXT.*.NEW"
       },
       "caption" : "新建",
@@ -184,6 +185,7 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
+          "codeName" : "Auto275",
           "lanResTag" : "TBB.TEXT.*.NEW"
         },
         "caption" : "新建",
@@ -196,6 +198,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
+          "codeName" : "Auto44",
           "lanResTag" : "TBB.TOOLTIP.*.NEW"
         },
         "uIActionMode" : "SYS",
@@ -204,6 +207,7 @@
       },
       "tooltip" : "新建",
       "getTooltipPSLanguageRes" : {
+        "codeName" : "Auto44",
         "lanResTag" : "TBB.TOOLTIP.*.NEW"
       },
       "showCaption" : true,
@@ -214,6 +218,7 @@
       "spanMode" : false
     }, {
       "getCapPSLanguageRes" : {
+        "codeName" : "Auto253",
         "lanResTag" : "TBB.TEXT.*.EDIT"
       },
       "caption" : "编辑",
@@ -232,6 +237,7 @@
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
         "getCapPSLanguageRes" : {
+          "codeName" : "Auto253",
           "lanResTag" : "TBB.TEXT.*.EDIT"
         },
         "caption" : "编辑",
@@ -244,6 +250,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
+          "codeName" : "Auto130",
           "lanResTag" : "TBB.TOOLTIP.*.EDIT"
         },
         "uIActionMode" : "SYS",
@@ -252,6 +259,7 @@
       },
       "tooltip" : "编辑",
       "getTooltipPSLanguageRes" : {
+        "codeName" : "Auto130",
         "lanResTag" : "TBB.TOOLTIP.*.EDIT"
       },
       "showCaption" : true,

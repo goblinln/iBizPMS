@@ -1935,21 +1935,6 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/views/casetreeexpview',
-                    meta: {
-                        caption: 'entities.product.views.casetreeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'views', parameterName: 'casetreeexpview' },
-                        ],
-                        resource:'product',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
                     path: 'products/:product?/views/editview_close',
                     meta: {
                         caption: 'entities.product.views.editview_close.caption',
@@ -1958,21 +1943,6 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'editview_close' },
-                        ],
-                        resource:'product',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'products/:product?/views/bugtreeexpview',
-                    meta: {
-                        caption: 'entities.product.views.bugtreeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'views', parameterName: 'bugtreeexpview' },
                         ],
                         resource:'product',
                         requireAuth: true,
@@ -2034,6 +2004,36 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
                             { pathName: 'views', parameterName: 'testleftsidebarlistview' },
+                        ],
+                        resource:'test',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'tests/:test?/views/casetreeexpview',
+                    meta: {
+                        caption: 'entities.test.views.casetreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'views', parameterName: 'casetreeexpview' },
+                        ],
+                        resource:'test',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'tests/:test?/views/bugtreeexpview',
+                    meta: {
+                        caption: 'entities.test.views.bugtreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'views', parameterName: 'bugtreeexpview' },
                         ],
                         resource:'test',
                         requireAuth: true,
@@ -5935,6 +5935,254 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'editview' },
                         ],
                         resource:'productteam',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'tests/:test?/testmodules/:testmodule?/views/gridview',
+                    meta: {
+                        caption: 'entities.testmodule.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'testmodules/:testmodule?/views/gridview',
+                    meta: {
+                        caption: 'entities.testmodule.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'tests/:test?/testmodules/:testmodule?/views/pickupview',
+                    meta: {
+                        caption: 'entities.testmodule.views.pickupview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'pickupview' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'testmodules/:testmodule?/views/pickupview',
+                    meta: {
+                        caption: 'entities.testmodule.views.pickupview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'pickupview' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'tests/:test?/testmodules/:testmodule?/views/treeexpview',
+                    meta: {
+                        caption: 'entities.testmodule.views.treeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'treeexpview' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'testmodules/:testmodule?/views/treeexpview',
+                    meta: {
+                        caption: 'entities.testmodule.views.treeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'treeexpview' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'tests/:test?/testmodules/:testmodule?/views/editview',
+                    meta: {
+                        caption: 'entities.testmodule.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'testmodules/:testmodule?/views/editview',
+                    meta: {
+                        caption: 'entities.testmodule.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'tests/:test?/testmodules/:testmodule?/views/gridviewbranch',
+                    meta: {
+                        caption: 'entities.testmodule.views.gridviewbranch.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'gridviewbranch' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'testmodules/:testmodule?/views/gridviewbranch',
+                    meta: {
+                        caption: 'entities.testmodule.views.gridviewbranch.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'gridviewbranch' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'tests/:test?/testmodules/:testmodule?/views/pickupgridview',
+                    meta: {
+                        caption: 'entities.testmodule.views.pickupgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'testmodules/:testmodule?/views/pickupgridview',
+                    meta: {
+                        caption: 'entities.testmodule.views.pickupgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'tests/:test?/testmodules/:testmodule?/views/quickcfgview',
+                    meta: {
+                        caption: 'entities.testmodule.views.quickcfgview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'quickcfgview' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'testmodules/:testmodule?/views/quickcfgview',
+                    meta: {
+                        caption: 'entities.testmodule.views.quickcfgview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'quickcfgview' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'tests/:test?/testmodules/:testmodule?/views/gridviewmain',
+                    meta: {
+                        caption: 'entities.testmodule.views.gridviewmain.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'gridviewmain' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'testmodules/:testmodule?/views/gridviewmain',
+                    meta: {
+                        caption: 'entities.testmodule.views.gridviewmain.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'gridviewmain' },
+                        ],
+                        resource:'testmodule',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -14953,126 +15201,6 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'companydynamicstatsgridview' },
                         ],
                         resource:'companystats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'testmodules/:testmodule?/views/gridview',
-                    meta: {
-                        caption: 'entities.testmodule.views.gridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'testmodules', parameterName: 'testmodule' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'testmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'testmodules/:testmodule?/views/pickupview',
-                    meta: {
-                        caption: 'entities.testmodule.views.pickupview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'testmodules', parameterName: 'testmodule' },
-                            { pathName: 'views', parameterName: 'pickupview' },
-                        ],
-                        resource:'testmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'testmodules/:testmodule?/views/treeexpview',
-                    meta: {
-                        caption: 'entities.testmodule.views.treeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'testmodules', parameterName: 'testmodule' },
-                            { pathName: 'views', parameterName: 'treeexpview' },
-                        ],
-                        resource:'testmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'testmodules/:testmodule?/views/editview',
-                    meta: {
-                        caption: 'entities.testmodule.views.editview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'testmodules', parameterName: 'testmodule' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'testmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'testmodules/:testmodule?/views/gridviewbranch',
-                    meta: {
-                        caption: 'entities.testmodule.views.gridviewbranch.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'testmodules', parameterName: 'testmodule' },
-                            { pathName: 'views', parameterName: 'gridviewbranch' },
-                        ],
-                        resource:'testmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'testmodules/:testmodule?/views/pickupgridview',
-                    meta: {
-                        caption: 'entities.testmodule.views.pickupgridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'testmodules', parameterName: 'testmodule' },
-                            { pathName: 'views', parameterName: 'pickupgridview' },
-                        ],
-                        resource:'testmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'testmodules/:testmodule?/views/quickcfgview',
-                    meta: {
-                        caption: 'entities.testmodule.views.quickcfgview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'testmodules', parameterName: 'testmodule' },
-                            { pathName: 'views', parameterName: 'quickcfgview' },
-                        ],
-                        resource:'testmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'testmodules/:testmodule?/views/gridviewmain',
-                    meta: {
-                        caption: 'entities.testmodule.views.gridviewmain.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'testmodules', parameterName: 'testmodule' },
-                            { pathName: 'views', parameterName: 'gridviewmain' },
-                        ],
-                        resource:'testmodule',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -30016,7 +30144,7 @@ const router = new Router({
                 {
                     path: 'views/productcasetreeexpview',
                     meta: {
-                        caption: 'entities.product.views.casetreeexpview.caption',
+                        caption: 'entities.test.views.casetreeexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
@@ -30316,7 +30444,7 @@ const router = new Router({
                 {
                     path: 'views/productbugtreeexpview',
                     meta: {
-                        caption: 'entities.product.views.bugtreeexpview.caption',
+                        caption: 'entities.test.views.bugtreeexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },

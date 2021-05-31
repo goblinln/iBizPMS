@@ -1709,6 +1709,7 @@
     "dataType" : "YESNO",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
+      "codeName" : "Auto79",
       "lanResTag" : "CTRL.WFSERVICE.ERR000015"
     },
     "logicName" : "逻辑有效",
@@ -1747,6 +1748,7 @@
     "dataType" : "DATETIME",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
+      "codeName" : "Auto176",
       "lanResTag" : "TBB.TOOLTIP.*.PRINT"
     },
     "logicName" : "创建时间",

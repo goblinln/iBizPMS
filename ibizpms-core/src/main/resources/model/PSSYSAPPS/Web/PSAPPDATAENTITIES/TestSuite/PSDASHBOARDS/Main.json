@@ -227,6 +227,7 @@
             },
             "getPSDEToolbarItems" : [ {
               "getCapPSLanguageRes" : {
+                "codeName" : "Auto229",
                 "lanResTag" : "TBB.TEXT.*.FILTER"
               },
               "caption" : "过滤",
@@ -244,6 +245,7 @@
               },
               "getPSUIAction" : {
                 "getCapPSLanguageRes" : {
+                  "codeName" : "Auto229",
                   "lanResTag" : "TBB.TEXT.*.FILTER"
                 },
                 "caption" : "过滤",
@@ -256,6 +258,7 @@
                 },
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
+                  "codeName" : "Auto122",
                   "lanResTag" : "TBB.TOOLTIP.*.FILTER"
                 },
                 "uIActionMode" : "SYS",
@@ -265,6 +268,7 @@
               },
               "tooltip" : "过滤",
               "getTooltipPSLanguageRes" : {
+                "codeName" : "Auto122",
                 "lanResTag" : "TBB.TOOLTIP.*.FILTER"
               },
               "enableToggleMode" : true,
@@ -2021,6 +2025,7 @@
               "name" : "ud46cf4d",
               "getPSUIAction" : {
                 "getCapPSLanguageRes" : {
+                  "codeName" : "Auto223",
                   "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE"
                 },
                 "caption" : "返回",
@@ -2033,6 +2038,7 @@
                 },
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
+                  "codeName" : "Auto92",
                   "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE"
                 },
                 "uIActionMode" : "SYS",

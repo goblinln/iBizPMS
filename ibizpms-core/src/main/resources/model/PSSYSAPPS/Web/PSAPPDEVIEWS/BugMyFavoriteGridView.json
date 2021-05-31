@@ -197,6 +197,7 @@
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
+        "codeName" : "Auto268",
         "lanResTag" : "TBB.TEXT.*.EXPORT"
       },
       "caption" : "导出",
@@ -214,6 +215,7 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
+          "codeName" : "Auto268",
           "lanResTag" : "TBB.TEXT.*.EXPORT"
         },
         "caption" : "导出",
@@ -226,6 +228,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
+          "codeName" : "Auto27",
           "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
         },
         "uIActionMode" : "SYS",
@@ -234,12 +237,14 @@
       },
       "tooltip" : "导出",
       "getTooltipPSLanguageRes" : {
+        "codeName" : "Auto27",
         "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
+        "codeName" : "Auto229",
         "lanResTag" : "TBB.TEXT.*.FILTER"
       },
       "caption" : "过滤",
@@ -257,6 +262,7 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
+          "codeName" : "Auto229",
           "lanResTag" : "TBB.TEXT.*.FILTER"
         },
         "caption" : "过滤",
@@ -269,6 +275,7 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
+          "codeName" : "Auto122",
           "lanResTag" : "TBB.TOOLTIP.*.FILTER"
         },
         "uIActionMode" : "SYS",
@@ -278,6 +285,7 @@
       },
       "tooltip" : "过滤",
       "getTooltipPSLanguageRes" : {
+        "codeName" : "Auto122",
         "lanResTag" : "TBB.TOOLTIP.*.FILTER"
       },
       "enableToggleMode" : true,
@@ -926,6 +934,7 @@
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
             "getCapPSLanguageRes" : {
+              "codeName" : "Auto83",
               "lanResTag" : "TBB.TEXT.*.COPY"
             },
             "caption" : "拷贝",
@@ -938,6 +947,7 @@
             },
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
+              "codeName" : "Auto243",
               "lanResTag" : "TBB.TOOLTIP.*.COPY"
             },
             "uIActionMode" : "SYS",

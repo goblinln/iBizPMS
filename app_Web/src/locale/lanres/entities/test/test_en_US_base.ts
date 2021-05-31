@@ -69,6 +69,14 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("测试",null),
 				title: commonLogic.appcommonhandle("所有测试",null),
 			},
+			'casetreeexpview': {
+				caption: commonLogic.appcommonhandle("产品",null),
+				title: commonLogic.appcommonhandle("产品需求导航视图",null),
+			},
+			'bugtreeexpview': {
+				caption: commonLogic.appcommonhandle("产品",null),
+				title: commonLogic.appcommonhandle("产品需求导航视图",null),
+			},
 		},
 		testsidebar_list: {
 			nodata:commonLogic.appcommonhandle("",null),
