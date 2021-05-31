@@ -225,7 +225,6 @@ import { AppDefaultDataViewExpBar } from './control/app-default-dataview-exp-bar
 import { AppDefaultCalendarExpBar } from './control/app-default-calendar-exp-bar/app-default-calendar-exp-bar';
 import { AppDefaultPickUpViewPanel } from './control/app-default-pick-up-view-panel/app-default-pick-up-view-panel';
 import { AppDefaultTreeExpBar } from './control/app-default-tree-exp-bar/app-default-tree-exp-bar';
-import { AppTimeLineCalendar } from './control/app-timeline-calendar/app-timeline-calendar';
 import { AppDefaultCaptionBar } from './control/app-default-captionbar/app-default-captionbar';
 import { AppDefaultDataInfoBar } from './control/app-default-datainfobar/app-default-datainfobar';
 import { AppPivotTable } from './control/app-pivot-table/app-pivot-table';
@@ -463,7 +462,6 @@ export const ComponentsRegister = {
         v.component('app-default-calendar-exp-bar', AppDefaultCalendarExpBar);
         v.component('app-default-pick-up-view-panel', AppDefaultPickUpViewPanel);
         v.component('app-default-tree-exp-bar', AppDefaultTreeExpBar);
-        v.component('app-timeline-calendar', AppTimeLineCalendar);
         v.component('app-default-searchbar', AppDefaultSearchBar);
         v.component('app-default-wizard-panel', AppDefaultWizardPanel);
         v.component('app-default-drtab', AppDefaultDrtab);

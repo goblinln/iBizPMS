@@ -160,6 +160,54 @@ export class AppCalendarBase extends CalendarControlBase{
     }
 
     /**
+     * 绘制数据项面板
+     * 
+     * @param item 数据项
+     * @memberof AppCalendarBase
+     */
+     public renderItemPanel(item: any,calendarItem: any) {
+      let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(calendarItem.getPSLayoutPanel());
+      Object.assign(targetCtrlParam.dynamicProps,{ "inputData": item })
+      return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref:item.id, on: targetCtrlEvent });
+    }
+
+    /**
+     * 绘制数据项
+     * 
+     * @param item 数据项
+     * @param index 下标
+     * @memberof AppCalendarBase
+     */
+     public renderTimeLineItem(item: any, index: number) {
+      const calendarItem = (this.controlInstance as IPSSysCalendar).getPSSysCalendarItems()?.find((_item: any) => {
+          return item?.itemType == _item.itemType;
+      });
+      return (
+          <el-timeline-item
+              key={`${item.title}${index}`}
+              color={item.color}
+              timestamp={item.start}
+              placement="top">
+                  <context-menu
+                      contextMenuStyle={{width: '100%'}}
+                      data={item}
+                      renderContent={this.renderContextMenu.bind(this)}>
+                          <el-card
+                              native-on-click={(...params: any[]) => debounce(this.onEventClick,params,this)}
+                              class={item.className}>
+                                  {calendarItem && calendarItem.getPSLayoutPanel() ? 
+                                      this.renderItemPanel(item,calendarItem) : 
+                                      <div>
+                                          <h4>{item.title}</h4>
+                                          <p>从 {item.start} 至 {item.end}</p>
+                                      </div>}
+                          </el-card>
+                  </context-menu>
+          </el-timeline-item>
+      );
+  }
+
+    /**
      * 绘制
      * 
      * @memberof AppCalendarBase
@@ -169,7 +217,27 @@ export class AppCalendarBase extends CalendarControlBase{
             return null;
         }
         const { controlClassNames } = this.renderOptions;
-        return (
+        if (Object.is(this.controlInstance.calendarStyle,"TIMELINE")) {
+          if(this.events.length>0) {
+              return (
+                  <el-timeline>
+                      {this.events.map((event: any, index: number) => {
+                          return this.renderTimeLineItem(event, index);
+                      })}
+                  </el-timeline>
+              );
+          } else {
+              return (
+                  <div>
+                      <span class="app-data-empty">{this.$t('app.commonwords.nodata')}</span>
+                      <span class="quick-toobar">
+                          {this.renderQuickToolbar()}
+                      </span>
+                  </div>
+              );
+          }
+        }else {
+          return (
             <div class={{...controlClassNames,[this.calendarClass]: true}}>
                 <context-menu-container>
                     <div class="event-legends">
@@ -179,6 +247,7 @@ export class AppCalendarBase extends CalendarControlBase{
                 </context-menu-container>
                 {this.renderBatchToolbar()}
             </div>
-        );
+          );
+        }
     }
 }

@@ -655,11 +655,12 @@ export const getSessionStorage: Function = (key: string) => {
  * @static
  * @memberof Util
  */
-export const debounce: Function = (fun: any,params: any[],context: any,delay: number = 500) => {
-    clearTimeout(fun.tId);
-    fun.tId = setTimeout(() => {
-        if (typeof fun === 'function') {
-            fun.apply(context,params);
-        }
-    }, delay)
+ export const debounce: Function = (fun: any,params: any[],context: any,delay: number = 300) => {
+  let now: any = Date.now();
+  if (!fun.last || now - fun.last >= delay) {
+    if (typeof fun === 'function') {
+        fun.apply(context,params);
+    }
+    fun.last = now;
+  }
 }

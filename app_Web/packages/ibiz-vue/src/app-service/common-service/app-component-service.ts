@@ -193,7 +193,6 @@ export class AppComponentService {
         this.controlMap.set("PICKUPVIEWPANEL_DEFAULT", 'app-default-pick-up-view-panel');
         this.controlMap.set("CALENDAREXPBAR_DEFAULT", 'app-default-calendar-exp-bar');
         this.controlMap.set("TREEEXPBAR_DEFAULT", 'app-default-tree-exp-bar');
-        this.controlMap.set("CALENDAR_TIMELINE", 'app-timeline-calendar');
         this.controlMap.set("SEARCHBAR_DEFAULT", 'app-default-searchbar');
         this.controlMap.set("TABVIEWPANEL_DEFAULT", 'app-default-tab-view-panel');
         this.controlMap.set("WIZARDPANEL_DEFAULT", 'app-default-wizard-panel');
