@@ -53,7 +53,7 @@ public class ProjectBugResource {
     public ProjectBugMapping projectbugMapping;
 
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"Bug" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectbugs/fetchdefault")
 	public ResponseEntity<List<ProjectBugDTO>> fetchProjectBugDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody BugSearchContext context) {
@@ -66,7 +66,7 @@ public class ProjectBugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据项目建立Bug", tags = {"Bug" },  notes = "根据项目建立Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs")
     public ResponseEntity<ProjectBugDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -79,7 +79,7 @@ public class ProjectBugResource {
 
 
     @VersionCheck(entity = "bug" , versionfield = "lastediteddate")
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "根据项目更新Bug", tags = {"Bug" },  notes = "根据项目更新Bug")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectbugs/{projectbug_id}")
     public ResponseEntity<ProjectBugDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -92,14 +92,14 @@ public class ProjectBugResource {
     }
 
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('DELETE')")
     @ApiOperation(value = "根据项目删除Bug", tags = {"Bug" },  notes = "根据项目删除Bug")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectbugs/{projectbug_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(bugService.remove(projectbug_id));
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('DELETE')")
     @ApiOperation(value = "根据项目批量删除Bug", tags = {"Bug" },  notes = "根据项目批量删除Bug")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectbugs/batch")
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
@@ -107,7 +107,7 @@ public class ProjectBugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('READ')")
     @ApiOperation(value = "根据项目获取Bug", tags = {"Bug" },  notes = "根据项目获取Bug")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectbugs/{projectbug_id}")
     public ResponseEntity<ProjectBugDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id) {
@@ -116,7 +116,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据项目获取Bug草稿", tags = {"Bug" },  notes = "根据项目获取Bug草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectbugs/getdraft")
     public ResponseEntity<ProjectBugDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectBugDTO dto) {
@@ -125,7 +125,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugMapping.toDto(bugService.getDraft(domain)));
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('ACTIVATE')")
     @ApiOperation(value = "根据项目激活", tags = {"Bug" },  notes = "根据项目激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/activate")
     public ResponseEntity<ProjectBugDTO> activateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -137,7 +137,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('ASSIGNTO')")
     @ApiOperation(value = "根据项目指派", tags = {"Bug" },  notes = "根据项目指派")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/assignto")
     public ResponseEntity<ProjectBugDTO> assignToByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -161,7 +161,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('FAVORITES')")
     @ApiOperation(value = "根据项目Bug收藏", tags = {"Bug" },  notes = "根据项目Bug收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/bugfavorites")
     public ResponseEntity<ProjectBugDTO> bugFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -173,7 +173,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('NFAVORITES')")
     @ApiOperation(value = "根据项目取消收藏", tags = {"Bug" },  notes = "根据项目取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/bugnfavorites")
     public ResponseEntity<ProjectBugDTO> bugNFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -197,7 +197,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('BUILDLINK')")
     @ApiOperation(value = "根据项目版本关联Bug", tags = {"Bug" },  notes = "根据项目版本关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/buildlinkbug")
     public ResponseEntity<ProjectBugDTO> buildLinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -209,7 +209,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('BUILDLINK')")
     @ApiOperation(value = "根据项目版本解除关联Bug", tags = {"Bug" },  notes = "根据项目版本解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/buildunlinkbug")
     public ResponseEntity<ProjectBugDTO> buildUnlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -221,14 +221,14 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据项目检查Bug", tags = {"Bug" },  notes = "根据项目检查Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/checkkey")
     public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectBugDTO projectbugdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(bugService.checkKey(projectbugMapping.toDomain(projectbugdto)));
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('CLOSE')")
     @ApiOperation(value = "根据项目关闭", tags = {"Bug" },  notes = "根据项目关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/close")
     public ResponseEntity<ProjectBugDTO> closeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -240,7 +240,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('CONFIRM')")
     @ApiOperation(value = "根据项目确认", tags = {"Bug" },  notes = "根据项目确认")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/confirm")
     public ResponseEntity<ProjectBugDTO> confirmByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -252,7 +252,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('PLANLINK')")
     @ApiOperation(value = "根据项目关联Bug", tags = {"Bug" },  notes = "根据项目关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/linkbug")
     public ResponseEntity<ProjectBugDTO> linkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -264,7 +264,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('RELEASELINK')")
     @ApiOperation(value = "根据项目批量解除关联Bug", tags = {"Bug" },  notes = "根据项目批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/releaasebatchunlinkbug")
     public ResponseEntity<ProjectBugDTO> releaaseBatchUnlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -276,7 +276,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('RELEASELINK')")
     @ApiOperation(value = "根据项目关联Bug（解决Bug）", tags = {"Bug" },  notes = "根据项目关联Bug（解决Bug）")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/releaselinkbugbybug")
     public ResponseEntity<ProjectBugDTO> releaseLinkBugbyBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -288,7 +288,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('RELEASELINK')")
     @ApiOperation(value = "根据项目关联Bug（遗留Bug）", tags = {"Bug" },  notes = "根据项目关联Bug（遗留Bug）")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/releaselinkbugbyleftbug")
     public ResponseEntity<ProjectBugDTO> releaseLinkBugbyLeftBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -300,7 +300,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('RESOLVE')")
     @ApiOperation(value = "根据项目移除关联Bug（遗留Bug）", tags = {"Bug" },  notes = "根据项目移除关联Bug（遗留Bug）")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/releaseunlinkbugbyleftbug")
     public ResponseEntity<ProjectBugDTO> releaseUnLinkBugbyLeftBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -312,7 +312,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('RELEASELINK')")
     @ApiOperation(value = "根据项目解除关联Bug", tags = {"Bug" },  notes = "根据项目解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/releaseunlinkbug")
     public ResponseEntity<ProjectBugDTO> releaseUnlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -324,7 +324,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('RESOLVE')")
     @ApiOperation(value = "根据项目解决", tags = {"Bug" },  notes = "根据项目解决")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/resolve")
     public ResponseEntity<ProjectBugDTO> resolveByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -383,7 +383,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('TOSTORY')")
     @ApiOperation(value = "根据项目转需求", tags = {"Bug" },  notes = "根据项目转需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/tostory")
     public ResponseEntity<ProjectBugDTO> toStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -395,7 +395,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('PLANLINK')")
     @ApiOperation(value = "根据项目解除关联Bug", tags = {"Bug" },  notes = "根据项目解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectbugs/{projectbug_id}/unlinkbug")
     public ResponseEntity<ProjectBugDTO> unlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {
@@ -407,7 +407,7 @@ public class ProjectBugResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("@BugRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "根据项目更新需求版本", tags = {"Bug" },  notes = "根据项目更新需求版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectbugs/{projectbug_id}/updatestoryversion")
     public ResponseEntity<ProjectBugDTO> updateStoryVersionByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbug_id") Long projectbug_id, @RequestBody ProjectBugDTO projectbugdto) {

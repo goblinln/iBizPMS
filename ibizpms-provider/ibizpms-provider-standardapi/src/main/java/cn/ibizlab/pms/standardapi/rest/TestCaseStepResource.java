@@ -54,7 +54,7 @@ public class TestCaseStepResource {
 
 
 
-    @PreAuthorize("@CaseStepRuntime.quickTest('DENY')")
+    @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品测试用例获取DEFAULT", tags = {"用例步骤" } ,notes = "根据产品测试用例获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/{case_id}/testcasesteps/fetchdefault")
 	public ResponseEntity<List<TestCaseStepDTO>> fetchTestCaseStepDefaultByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {

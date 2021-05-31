@@ -92,7 +92,7 @@ public class ProjectBuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"版本" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectbuilds/fetchdefault")
 	public ResponseEntity<List<ProjectBuildDTO>> fetchProjectBuildDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
@@ -117,7 +117,7 @@ public class ProjectBuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectbuilddto);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("@BuildRuntime.quickTest('READ')")
     @ApiOperation(value = "根据项目获取版本", tags = {"版本" },  notes = "根据项目获取版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectbuilds/{projectbuild_id}")
     public ResponseEntity<ProjectBuildDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectbuild_id") Long projectbuild_id) {

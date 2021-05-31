@@ -4973,7 +4973,7 @@ public class ActionResource {
 	}
 
 
-    @PreAuthorize("@ActionRuntime.quickTest('DENY')")
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目版本获取查询用户使用年", tags = {"系统日志" } ,notes = "根据项目版本获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/fetchqueryuseryear")
 	public ResponseEntity<List<ActionDTO>> fetchActionQueryUserYEARByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
@@ -4995,7 +4995,7 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ActionRuntime.quickTest('DENY')")
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目版本获取Type", tags = {"系统日志" } ,notes = "根据项目版本获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/fetchtype")
 	public ResponseEntity<List<ActionDTO>> fetchActionTypeByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
@@ -5008,7 +5008,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ActionRuntime.quickTest('DENY')")
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目版本获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目版本获取项目动态(我的)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/fetchmytrends")
 	public ResponseEntity<List<ActionDTO>> fetchActionMyTrendsByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
@@ -5021,7 +5021,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ActionRuntime.quickTest('DENY')")
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目版本获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目版本获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/fetchprojecttrends")
 	public ResponseEntity<List<ActionDTO>> fetchActionProjectTrendsByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
@@ -5046,7 +5046,7 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("@ActionRuntime.quickTest('DENY')")
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目版本获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目版本获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/fetchproducttrends")
 	public ResponseEntity<List<ActionDTO>> fetchActionProductTrendsByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
@@ -5059,7 +5059,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ActionRuntime.quickTest('DENY')")
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
     @ApiOperation(value = "根据项目版本获取系统日志", tags = {"系统日志" },  notes = "根据项目版本获取系统日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/builds/{build_id}/actions/{action_id}")
     public ResponseEntity<ActionDTO> getByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @PathVariable("action_id") Long action_id) {
@@ -5082,7 +5082,7 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("@ActionRuntime.quickTest('DENY')")
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目版本获取DEFAULT", tags = {"系统日志" } ,notes = "根据项目版本获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/fetchdefault")
 	public ResponseEntity<List<ActionDTO>> fetchActionDefaultByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
@@ -5095,7 +5095,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ActionRuntime.quickTest('DENY')")
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目版本获取MobType", tags = {"系统日志" } ,notes = "根据项目版本获取MobType")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/fetchmobtype")
 	public ResponseEntity<List<ActionDTO>> fetchActionMobTypeByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
