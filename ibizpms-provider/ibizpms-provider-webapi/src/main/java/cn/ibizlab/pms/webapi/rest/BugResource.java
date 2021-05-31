@@ -762,6 +762,30 @@ public class BugResource {
                 .body(list);
 	}
     @PreAuthorize("@BugRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取产品BUG", tags = {"Bug" } ,notes = "获取产品BUG")
+    @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchproductbugds")
+	public ResponseEntity<List<BugDTO>> fetchproductbugds(@RequestBody BugSearchContext context) {
+        Page<Bug> domains = bugService.searchProductBugDS(context) ;
+        List<BugDTO> list = bugMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@BugRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取项目BUG", tags = {"Bug" } ,notes = "获取项目BUG")
+    @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchprojectbugds")
+	public ResponseEntity<List<BugDTO>> fetchprojectbugds(@RequestBody BugSearchContext context) {
+        Page<Bug> domains = bugService.searchProjectBugDS(context) ;
+        List<BugDTO> list = bugMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取遗留得Bug(项目)", tags = {"Bug" } ,notes = "获取遗留得Bug(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchprojectbugs")
 	public ResponseEntity<List<BugDTO>> fetchprojectbugs(@RequestBody BugSearchContext context) {
@@ -1537,6 +1561,32 @@ public class BugResource {
 	public ResponseEntity<List<BugDTO>> fetchBugNotCurPlanLinkBugByProduct(@PathVariable("product_id") Long product_id,@RequestBody BugSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Bug> domains = bugService.searchNotCurPlanLinkBug(context) ;
+        List<BugDTO> list = bugMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取产品BUG", tags = {"Bug" } ,notes = "根据产品获取产品BUG")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchproductbugds")
+	public ResponseEntity<List<BugDTO>> fetchBugProductBugDSByProduct(@PathVariable("product_id") Long product_id,@RequestBody BugSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Bug> domains = bugService.searchProductBugDS(context) ;
+        List<BugDTO> list = bugMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取项目BUG", tags = {"Bug" } ,notes = "根据产品获取项目BUG")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchprojectbugds")
+	public ResponseEntity<List<BugDTO>> fetchBugProjectBugDSByProduct(@PathVariable("product_id") Long product_id,@RequestBody BugSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Bug> domains = bugService.searchProjectBugDS(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

@@ -906,6 +906,24 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchProductBugDS",
+    "methodType" : "FETCH",
+    "name" : "ProductBugDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductBugDS"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectBugDS",
+    "methodType" : "FETCH",
+    "name" : "ProjectBugDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectBugDS"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchProjectBugs",
     "methodType" : "FETCH",
     "name" : "ProjectBugs",
@@ -2236,6 +2254,24 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "NotCurPlanLinkBug"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProductBugDS",
+    "methodType" : "FETCH",
+    "name" : "ProductBugDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductBugDS"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectBugDS",
+    "methodType" : "FETCH",
+    "name" : "ProjectBugDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectBugDS"
     },
     "builtinMethod" : false
   }, {
@@ -4951,33 +4987,7 @@
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json",
   "enableUIActions" : 15,
-  "logicName" : "项目BUG",
-  "getMinorPSAppDERSs" : [ {
-    "actionRSMode" : 1,
-    "codeName" : "ProjectBugs",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
-    },
-    "name" : "PROJECT__PROJECT_BUG",
-    "getParentPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ],
+  "logicName" : "项目BUG（待删除）",
   "name" : "IBZ_API__PROJECT_BUG",
   "getPSDEName" : "ZT_BUG",
   "getPSDEServiceAPI" : {

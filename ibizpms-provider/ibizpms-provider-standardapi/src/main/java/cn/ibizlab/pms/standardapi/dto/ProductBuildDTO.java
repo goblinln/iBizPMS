@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
  * 服务DTO对象[ProductBuildDTO]
  */
 @Data
-@ApiModel("产品版本")
+@ApiModel("产品版本（待删除）")
 @JsonFilter(value = "dtofieldfilter")
 public class ProductBuildDTO extends DTOBase implements Serializable {
 

@@ -52,19 +52,5 @@ public class ProductBugResource {
     @Lazy
     public ProductBugMapping productbugMapping;
 
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"Bug" } ,notes = "根据产品获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productbugs/fetchdefault")
-	public ResponseEntity<List<ProductBugDTO>> fetchProductBugDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody BugSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Bug> domains = bugService.searchDefault(context) ;
-        List<ProductBugDTO> list = productbugMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 }
 

@@ -181,6 +181,10 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             return bugService.searchMyReProduct(searchContext);    
         if (iPSDEDataSet.getName().equals("NotCurPlanLinkBug"))
             return bugService.searchNotCurPlanLinkBug(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductBugDS"))
+            return bugService.searchProductBugDS(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectBugDS"))
+            return bugService.searchProjectBugDS(searchContext);    
         if (iPSDEDataSet.getName().equals("ProjectBugs"))
             return bugService.searchProjectBugs(searchContext);    
         if (iPSDEDataSet.getName().equals("ReleaseBugs"))
@@ -736,6 +740,12 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
         }
         else if (action.equals("searchNotCurPlanLinkBug")) {
             return aroundDataSet("NotCurPlanLinkBug", point);
+        }
+        else if (action.equals("searchProductBugDS")) {
+            return aroundDataSet("ProductBugDS", point);
+        }
+        else if (action.equals("searchProjectBugDS")) {
+            return aroundDataSet("ProjectBugDS", point);
         }
         else if (action.equals("searchProjectBugs")) {
             return aroundDataSet("ProjectBugs", point);

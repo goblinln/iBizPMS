@@ -1325,6 +1325,26 @@
     "enableBackend" : true,
     "enableFront" : true
   }, {
+    "codeName" : "ProductBugDS",
+    "logicName" : "产品BUG",
+    "name" : "ProductBugDS",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "ProjectBugDS",
+    "logicName" : "项目BUG",
+    "name" : "ProjectBugDS",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
     "codeName" : "ProjectBugs",
     "logicName" : "遗留得Bug(项目)",
     "name" : "ProjectBugs",

@@ -800,6 +800,24 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchProductBugDS",
+    "methodType" : "FETCH",
+    "name" : "ProductBugDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductBugDS"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectBugDS",
+    "methodType" : "FETCH",
+    "name" : "ProjectBugDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectBugDS"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchProjectBugs",
     "methodType" : "FETCH",
     "name" : "ProjectBugs",
@@ -2024,6 +2042,24 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "NotCurPlanLinkBug"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProductBugDS",
+    "methodType" : "FETCH",
+    "name" : "ProductBugDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductBugDS"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectBugDS",
+    "methodType" : "FETCH",
+    "name" : "ProjectBugDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectBugDS"
     },
     "builtinMethod" : false
   }, {
@@ -4515,33 +4551,7 @@
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json",
   "enableUIActions" : 15,
-  "logicName" : "产品缺陷",
-  "getMinorPSAppDERSs" : [ {
-    "actionRSMode" : 1,
-    "codeName" : "ProductBugs",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBug.json"
-    },
-    "name" : "PRODUCT__PRODUCT_BUG",
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ],
+  "logicName" : "产品BUG（待删除）",
   "name" : "IBZ_API__PRODUCT_BUG",
   "getPSDEName" : "ZT_BUG",
   "getPSDEServiceAPI" : {

@@ -3234,33 +3234,7 @@
         "rowEditDefault" : false,
         "showCaptionBar" : false,
         "modelid" : "9dfcc6cbfe4f53722baff0120924a35c",
-        "modeltype" : "PSAPPDEVIEW",
-        "getPSAppDERSPaths" : [ [ {
-          "actionRSMode" : 1,
-          "codeName" : "ProjectBugs",
-          "dataRSMode" : 0,
-          "getMajorPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-          },
-          "getMinorPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBug.json"
-          },
-          "name" : "PROJECT__PROJECT_BUG",
-          "getParentPSAppDEField" : {
-            "name" : "PROJECT",
-            "codeName" : "Project"
-          },
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
-        } ] ]
+        "modeltype" : "PSAPPDEVIEW"
       }
     }, {
       "caption" : "看板",
